@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Add your indie shop
+    url: https://github.com/Swixixle/ethicalalt/issues/new?template=seller_listing.md
+    about: List your independent business
+  - name: Submit a corporate profile
+    url: https://github.com/Swixixle/ethicalalt/issues/new?template=investigation_profile.md
+    about: Research and submit a company investigation
