@@ -116,7 +116,7 @@ we will ask for corrections before merging.
 ## Brand Aliases
 
 Many brands are known by names different from their parent company.
-The `server/data/brand_aliases.json` file maps these:
+The `server/db/brand_aliases.json` file maps these:
 
 ```
 Marlboro → philip-morris
@@ -129,4 +129,4 @@ YouTube → google
 When vision identifies "Marlboro," the alias lookup fires the
 Philip Morris investigation profile.
 
-[→ Add an alias](https://github.com/Swixixle/ethicalalt/edit/main/server/data/brand_aliases.json)
+[→ Add an alias](https://github.com/Swixixle/ethicalalt/edit/main/server/db/brand_aliases.json)
