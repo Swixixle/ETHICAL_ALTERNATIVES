@@ -6,6 +6,8 @@ import ResultCard from './components/ResultCard.jsx';
 import LoadingState from './components/LoadingState.jsx';
 import ErrorState from './components/ErrorState.jsx';
 import InvestigationCard from './components/InvestigationCard.jsx';
+import RegistryCard from './components/RegistryCard.jsx';
+import ListYourShop from './components/ListYourShop.jsx';
 import { useTapAnalysis } from './hooks/useTapAnalysis.js';
 import './App.css';
 
@@ -227,6 +229,55 @@ export default function App() {
                 <InvestigationCard investigation={result.investigation} identification={id} />
               </div>
             </div>
+
+            {Array.isArray(result.registry_results) && result.registry_results.length > 0 ? (
+              <section style={{ marginTop: 32 }}>
+                <h3
+                  style={{
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: 10,
+                    letterSpacing: 3,
+                    textTransform: 'uppercase',
+                    color: '#e8a020',
+                    marginBottom: 16,
+                  }}
+                >
+                  Independent sellers
+                </h3>
+                {result.registry_results.map((seller) => (
+                  <RegistryCard key={seller.id} seller={seller} />
+                ))}
+              </section>
+            ) : (
+              <section style={{ marginTop: 32 }}>
+                <h3
+                  style={{
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: 10,
+                    letterSpacing: 3,
+                    textTransform: 'uppercase',
+                    color: '#4a6478',
+                    marginBottom: 8,
+                  }}
+                >
+                  Independent sellers
+                </h3>
+                <p
+                  style={{
+                    fontFamily: "'Crimson Pro', serif",
+                    fontSize: 15,
+                    color: '#4a6478',
+                    lineHeight: 1.6,
+                    marginBottom: 4,
+                  }}
+                >
+                  No registered makers in this category near you yet. Know someone who should be here?
+                </p>
+                <ListYourShop />
+              </section>
+            )}
+
+            {Array.isArray(result.registry_results) && result.registry_results.length > 0 ? <ListYourShop /> : null}
 
             <h3 className="app__section-title">Etsy — independent sellers</h3>
             <div className="app__grid">
