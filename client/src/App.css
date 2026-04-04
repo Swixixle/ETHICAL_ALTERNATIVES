@@ -245,9 +245,68 @@ body,
 }
 
 .app__main {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 1.25rem 1rem 3rem;
+}
+
+/* Results: alternatives (left) + investigation (right), independently scrollable on wide viewports */
+.app__results-root {
+  width: 100%;
+}
+
+.app__results-top {
+  margin-bottom: 1rem;
+}
+
+.app__results-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 350px) minmax(0, 1fr);
+  gap: 0;
+  align-items: stretch;
+  min-height: calc(100vh - 8rem);
+}
+
+.app__results-grid--stacked {
+  grid-template-columns: 1fr;
+}
+
+.app__results-sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid var(--color-border);
+  padding: 2rem 1.25rem 2.5rem;
+  background: var(--color-bg);
+  -webkit-overflow-scrolling: touch;
+}
+
+.app__results-grid--stacked .app__results-sidebar {
+  position: relative;
+  height: auto;
+  max-height: none;
+  border-right: none;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 2rem;
+}
+
+.app__results-main {
+  padding: 2rem 1.5rem 3rem;
+  background: var(--color-bg);
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.app__results-grid--stacked .app__results-main {
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  padding-top: 1.5rem;
 }
 
 .app__panel {
