@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useId, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import EyeIcon from './EyeIcon.jsx';
 import './PhotoCapture.css';
 
@@ -64,8 +64,6 @@ async function waitForVideoFrame(video, maxMs = 2000) {
  * @param {boolean} [props.loading] — parent-driven: analyzing / waiting on API
  */
 export default function PhotoCapture({ onImageSelected, loading = false }) {
-  const fileInputId = useId();
-  const fileInputRef = useRef(null);
   const videoRef = useRef(null);
   const streamRef = useRef(null);
 
@@ -131,10 +129,10 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
     [finalizeImage]
   );
 
-  const onFileInputChange = (e) => {
+  const handleFileChange = (e) => {
     const file = e.target.files?.[0];
     e.target.value = '';
-    if (file) processFile(file);
+    if (file) void processFile(file);
   };
 
   const onDrop = (e) => {
@@ -260,24 +258,56 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
         onDragOver={(e) => e.preventDefault()}
         onDrop={onDrop}
       >
-        <input
-          id={fileInputId}
-          ref={fileInputRef}
-          type="file"
-          accept="image/*"
-          capture="environment"
-          className="photo-capture__visually-hidden"
-          aria-label="Take or choose photo from camera or library"
-          onChange={onFileInputChange}
-        />
-
-        <label htmlFor={fileInputId} className="photo-capture__main-upload">
-          <EyeIcon open={false} size={100} />
-          <span className="photo-capture__main-upload-title">Take or choose photo</span>
-          <span className="photo-capture__main-upload-sub">Camera or library — works on iPhone, Android, and desktop</span>
-          <span className="photo-capture__main-upload-hint">
-            Tap or drop a photo — then tap or draw a circle around the logo or product
-          </span>
+        <label
+          htmlFor="photo-upload"
+          style={{
+            display: 'flex',
+            width: '100%',
+            minHeight: 200,
+            background: dragActive ? 'rgba(240, 168, 32, 0.14)' : '#162030',
+            border: dragActive ? '2px dashed #f0a820' : '2px dashed #344d62',
+            borderRadius: 4,
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            padding: 32,
+            boxSizing: 'border-box',
+          }}
+        >
+          <EyeIcon open={false} size={80} />
+          <div
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 11,
+              letterSpacing: 2,
+              textTransform: 'uppercase',
+              color: '#f0a820',
+              marginTop: 16,
+              textAlign: 'center',
+            }}
+          >
+            Tap to choose a photo
+          </div>
+          <div
+            style={{
+              fontFamily: "'Crimson Pro', serif",
+              fontSize: 14,
+              color: '#6a8a9a',
+              marginTop: 6,
+              textAlign: 'center',
+            }}
+          >
+            Opens camera or photo library
+          </div>
+          <input
+            id="photo-upload"
+            type="file"
+            accept="image/*"
+            style={{ display: 'none' }}
+            aria-label="Choose photo from camera or library"
+            onChange={handleFileChange}
+          />
         </label>
 
         {canLivePreview ? (
