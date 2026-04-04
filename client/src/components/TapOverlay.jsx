@@ -60,6 +60,8 @@ export default function TapOverlay({
   const [localTap, setLocalTap] = useState(null);
   const [drawPoints, setDrawPoints] = useState([]);
   const drawingRef = useRef(false);
+  /** Ignore synthetic click right after touch tap (mobile double-fire). */
+  const suppressClickFromTouchRef = useRef(false);
 
   useEffect(() => {
     if (tappedPosition != null) {
@@ -89,33 +91,57 @@ export default function TapOverlay({
     };
   }, []);
 
-  const recordTap = useCallback(
-    (clientX, clientY) => {
-      const el = rootRef.current;
-      if (!el || loading) return;
-
-      const p = toNorm(clientX, clientY);
+  /** Normalized 0–1 coordinates (same as click and touch end). */
+  const handleTap = useCallback(
+    (x, y) => {
+      if (!rootRef.current || loading || interactionMode !== 'tap') return;
+      const p = { x: clamp01(x), y: clamp01(y) };
       setHintVisible(false);
       setLocalTap(p);
       setCrosshairKey((k) => k + 1);
       onTap?.({ x: p.x, y: p.y });
     },
-    [loading, onTap, toNorm]
+    [loading, onTap, interactionMode]
   );
 
-  const onPointerDownTap = useCallback(
+  const onClickTap = useCallback(
     (e) => {
-      if (interactionMode !== 'tap') return;
-      if (loading) return;
+      if (interactionMode !== 'tap' || loading) return;
+      if (suppressClickFromTouchRef.current) return;
       if (e.button !== undefined && e.button !== 0) return;
-      e.preventDefault();
-      e.currentTarget.setPointerCapture?.(e.pointerId);
-      recordTap(e.clientX, e.clientY);
+      const rect = e.currentTarget.getBoundingClientRect();
+      const w = rect.width;
+      const h = rect.height;
+      if (w <= 0 || h <= 0) return;
+      const x = (e.clientX - rect.left) / w;
+      const y = (e.clientY - rect.top) / h;
+      handleTap(x, y);
     },
-    [interactionMode, loading, recordTap]
+    [interactionMode, loading, handleTap]
   );
 
-  const onPointerDownCircle = useCallback(
+  const onTouchEndTap = useCallback(
+    (e) => {
+      if (interactionMode !== 'tap' || loading) return;
+      e.preventDefault();
+      const touch = e.changedTouches[0];
+      if (!touch) return;
+      suppressClickFromTouchRef.current = true;
+      window.setTimeout(() => {
+        suppressClickFromTouchRef.current = false;
+      }, 500);
+      const rect = e.currentTarget.getBoundingClientRect();
+      const w = rect.width;
+      const h = rect.height;
+      if (w <= 0 || h <= 0) return;
+      const x = (touch.clientX - rect.left) / w;
+      const y = (touch.clientY - rect.top) / h;
+      handleTap(x, y);
+    },
+    [interactionMode, loading, handleTap]
+  );
+
+  const startLasso = useCallback(
     (e) => {
       if (interactionMode !== 'circle') return;
       if (loading) return;
@@ -130,7 +156,7 @@ export default function TapOverlay({
     [interactionMode, loading, toNorm]
   );
 
-  const onPointerMoveCircle = useCallback(
+  const continueLasso = useCallback(
     (e) => {
       if (interactionMode !== 'circle' || !drawingRef.current || loading) return;
       const p = toNorm(e.clientX, e.clientY);
@@ -139,7 +165,7 @@ export default function TapOverlay({
     [interactionMode, loading, toNorm]
   );
 
-  const finishCircle = useCallback(
+  const finishLasso = useCallback(
     (e) => {
       if (interactionMode !== 'circle') return;
       if (!drawingRef.current) return;
@@ -164,45 +190,39 @@ export default function TapOverlay({
     [interactionMode, onLassoComplete]
   );
 
+  const cancelLasso = useCallback((e) => {
+    if (interactionMode !== 'circle' || !drawingRef.current) return;
+    drawingRef.current = false;
+    setDrawPoints([]);
+    e.currentTarget.releasePointerCapture?.(e.pointerId);
+  }, [interactionMode]);
+
   const onPointerDown = useCallback(
     (e) => {
-      onPointerDownTap(e);
-      onPointerDownCircle(e);
+      startLasso(e);
     },
-    [onPointerDownTap, onPointerDownCircle]
+    [startLasso]
   );
 
   const onPointerMove = useCallback(
     (e) => {
-      onPointerMoveCircle(e);
+      continueLasso(e);
     },
-    [onPointerMoveCircle]
+    [continueLasso]
   );
 
   const onPointerUp = useCallback(
     (e) => {
-      if (interactionMode === 'tap') {
-        e.currentTarget.releasePointerCapture?.(e.pointerId);
-        return;
-      }
-      finishCircle(e);
+      finishLasso(e);
     },
-    [interactionMode, finishCircle]
+    [finishLasso]
   );
 
   const onPointerCancel = useCallback(
     (e) => {
-      if (interactionMode === 'circle' && drawingRef.current) {
-        drawingRef.current = false;
-        setDrawPoints([]);
-        e.currentTarget.releasePointerCapture?.(e.pointerId);
-        return;
-      }
-      if (interactionMode === 'tap') {
-        e.currentTarget.releasePointerCapture?.(e.pointerId);
-      }
+      cancelLasso(e);
     },
-    [interactionMode]
+    [cancelLasso]
   );
 
   const pathD =
@@ -223,6 +243,8 @@ export default function TapOverlay({
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
       onPointerCancel={onPointerCancel}
+      onClick={onClickTap}
+      onTouchEnd={onTouchEndTap}
       onContextMenu={(e) => e.preventDefault()}
       role="presentation"
     >
@@ -232,6 +254,7 @@ export default function TapOverlay({
           viewBox="0 0 1 1"
           preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
+          style={{ touchAction: 'none' }}
         >
           <path d={pathD} className="tap-overlay__lasso-path" vectorEffect="non-scaling-stroke" />
         </svg>

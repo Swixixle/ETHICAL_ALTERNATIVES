@@ -2,8 +2,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import EyeIcon from './EyeIcon.jsx';
 import './PhotoCapture.css';
 
-const MAX_DIMENSION = 800;
-const JPEG_QUALITY = 0.85;
+const MAX_DIMENSION = 1200;
+const JPEG_QUALITY = 0.82;
 
 /** @param {HTMLImageElement | HTMLVideoElement} source */
 function drawToJpegBase64(source, maxDim = MAX_DIMENSION, quality = JPEG_QUALITY) {
@@ -26,13 +26,34 @@ function drawToJpegBase64(source, maxDim = MAX_DIMENSION, quality = JPEG_QUALITY
   return { base64, dataUrl };
 }
 
-function loadImageFromFile(file) {
+/**
+ * Resize file uploads before base64 encode — full-res decode is too heavy on mobile.
+ * @param {File} file
+ * @param {number} [maxDimension]
+ * @returns {Promise<string>} JPEG base64 (no data-URL prefix)
+ */
+function resizeImageForUpload(file, maxDimension = 1200) {
   return new Promise((resolve, reject) => {
-    const url = URL.createObjectURL(file);
     const img = new Image();
+    const url = URL.createObjectURL(file);
     img.onload = () => {
-      URL.revokeObjectURL(url);
-      resolve(img);
+      try {
+        const scale = Math.min(1, maxDimension / Math.max(img.width, img.height));
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.round(img.width * scale);
+        canvas.height = Math.round(img.height * scale);
+        const ctx = canvas.getContext('2d');
+        if (!ctx) {
+          reject(new Error('Canvas unsupported'));
+          return;
+        }
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        resolve(canvas.toDataURL('image/jpeg', 0.82).split(',')[1]);
+      } catch (err) {
+        reject(err instanceof Error ? err : new Error('Could not process image'));
+      } finally {
+        URL.revokeObjectURL(url);
+      }
     };
     img.onerror = () => {
       URL.revokeObjectURL(url);
@@ -118,15 +139,20 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
       setError(null);
       setPreparing(true);
       try {
-        const img = await loadImageFromFile(file);
-        await finalizeImage(img);
+        const base64 = await resizeImageForUpload(file, MAX_DIMENSION);
+        const dataUrl = `data:image/jpeg;base64,${base64}`;
+        setPreviewDataUrl(dataUrl);
+        onImageSelected(base64);
+        setMode('preview');
       } catch (e) {
         setError(e instanceof Error ? e.message : 'Could not load image');
+        setMode('idle');
+        setPreviewDataUrl(null);
       } finally {
         setPreparing(false);
       }
     },
-    [finalizeImage]
+    [onImageSelected]
   );
 
   const handleFileChange = (e) => {
