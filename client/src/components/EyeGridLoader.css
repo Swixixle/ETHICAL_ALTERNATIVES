@@ -1,0 +1,9 @@
+@keyframes eye-grid-loader-pulse {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 1;
+  }
+}

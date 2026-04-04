@@ -3,7 +3,7 @@ import PhotoCapture from './components/PhotoCapture.jsx';
 import TapOverlay from './components/TapOverlay.jsx';
 import ConfirmTap from './components/ConfirmTap.jsx';
 import RegionSelectOverlay from './components/RegionSelectOverlay.jsx';
-import LoadingState from './components/LoadingState.jsx';
+import EyeGridLoader from './components/EyeGridLoader.jsx';
 import ErrorState from './components/ErrorState.jsx';
 import InvestigationCard from './components/InvestigationCard.jsx';
 import ProofBlock from './components/ProofBlock.jsx';
@@ -297,7 +297,7 @@ export default function App() {
       <main className="app__main">
         {mode === 'deep' && loading ? (
           <div className="app__panel" style={{ padding: '3rem 1.5rem' }}>
-            <LoadingState />
+            <EyeGridLoader message="Researching..." />
           </div>
         ) : null}
 
@@ -349,7 +349,7 @@ export default function App() {
             </div>
             {loading ? (
               <div className="app__toolbar">
-                <LoadingState />
+                <EyeGridLoader message="Analyzing..." />
               </div>
             ) : null}
             {error ? (
@@ -375,6 +375,7 @@ export default function App() {
               sceneInventory={pendingConfirmation.scene_inventory}
               onSelectAlternativeBrand={selectAlternativeBrand}
             />
+            {loading ? <EyeGridLoader message="Analyzing..." /> : null}
             {error ? (
               <ErrorState message={error} onRetry={() => cancelPendingConfirmation()} />
             ) : null}
