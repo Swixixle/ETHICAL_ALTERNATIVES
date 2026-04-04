@@ -1,0 +1,65 @@
+.confirm-tap {
+  padding: 1rem 0;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.confirm-tap__prompt {
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem;
+  color: #e8e0cc;
+}
+
+.confirm-tap__zoom {
+  border: 1px solid #2a2720;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #0c0b09;
+  aspect-ratio: 1;
+  max-height: 240px;
+  margin-bottom: 0.75rem;
+}
+
+.confirm-tap__crop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.confirm-tap__crop-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  color: #8a8275;
+  font-size: 0.8rem;
+}
+
+.confirm-tap__guess {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+  color: #c8c2b0;
+}
+
+.confirm-tap__tier {
+  margin: 0 0 0.5rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #bea028;
+}
+
+.confirm-tap__notes {
+  margin: 0 0 1rem;
+  font-size: 0.78rem;
+  color: #8a8275;
+  line-height: 1.4;
+}
+
+.confirm-tap__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

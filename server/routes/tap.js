@@ -58,6 +58,17 @@ router.post('/tap', async (req, res) => {
 
   const identification_tier = getIdentificationTier(identification);
 
+  if (req.body?.preview_only === true) {
+    const response_ms = Date.now() - t0;
+    return res.json({
+      identification,
+      identification_tier,
+      preview_only: true,
+      version: 'v1',
+      response_ms,
+    });
+  }
+
   let investigation = null;
   if (identification.brand || identification.corporate_parent) {
     try {

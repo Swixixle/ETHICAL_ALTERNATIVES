@@ -1,5 +1,7 @@
 import PhotoCapture from './components/PhotoCapture.jsx';
 import TapOverlay from './components/TapOverlay.jsx';
+import ConfirmTap from './components/ConfirmTap.jsx';
+import RegionSelectOverlay from './components/RegionSelectOverlay.jsx';
 import ResultCard from './components/ResultCard.jsx';
 import LoadingState from './components/LoadingState.jsx';
 import ErrorState from './components/ErrorState.jsx';
@@ -44,6 +46,13 @@ export default function App() {
     error,
     setImage,
     analyzeTap,
+    confirmPendingIdentification,
+    cancelPendingConfirmation,
+    pendingConfirmation,
+    regionSelectActive,
+    startBackgroundReselect,
+    completeRegionSelect,
+    cancelRegionSelect,
     reset,
     clearResult,
     captureGeoOnce,
@@ -59,6 +68,9 @@ export default function App() {
 
   const id = result?.identification;
 
+  const tapPhase =
+    image && !result && !pendingConfirmation && !regionSelectActive ? 'tap' : null;
+
   return (
     <div className="app">
       <header className="app__header">
@@ -73,7 +85,7 @@ export default function App() {
           </div>
         ) : null}
 
-        {image && !result ? (
+        {tapPhase ? (
           <div className="app__panel">
             <div className="app__image-shell">
               <img className="app__photo" src={dataUrl} alt="Your capture" />
@@ -92,6 +104,47 @@ export default function App() {
             {error ? (
               <ErrorState message={error} onRetry={() => clearResult()} />
             ) : null}
+            <div className="app__toolbar">
+              <button type="button" className="app__btn app__btn--ghost" onClick={() => reset()}>
+                New photo
+              </button>
+            </div>
+          </div>
+        ) : null}
+
+        {image && pendingConfirmation && !result ? (
+          <div className="app__panel">
+            <ConfirmTap
+              cropDataUrl={
+                pendingConfirmation.identification?.crop_base64
+                  ? `data:image/jpeg;base64,${pendingConfirmation.identification.crop_base64}`
+                  : null
+              }
+              identification={pendingConfirmation.identification}
+              identificationTier={pendingConfirmation.identification_tier}
+              loading={loading}
+              onConfirm={() => confirmPendingIdentification()}
+              onRetap={() => cancelPendingConfirmation()}
+              onBackgroundMode={() => startBackgroundReselect()}
+            />
+            {error ? (
+              <ErrorState message={error} onRetry={() => cancelPendingConfirmation()} />
+            ) : null}
+            <div className="app__toolbar">
+              <button type="button" className="app__btn app__btn--ghost" onClick={() => reset()}>
+                New photo
+              </button>
+            </div>
+          </div>
+        ) : null}
+
+        {image && regionSelectActive && !result ? (
+          <div className="app__panel">
+            <RegionSelectOverlay
+              imageSrc={dataUrl}
+              onConfirm={(cx, cy) => completeRegionSelect(cx, cy)}
+              onCancel={() => cancelRegionSelect()}
+            />
             <div className="app__toolbar">
               <button type="button" className="app__btn app__btn--ghost" onClick={() => reset()}>
                 New photo

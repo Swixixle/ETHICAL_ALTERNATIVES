@@ -1,0 +1,43 @@
+.region-select {
+  padding: 0.5rem 0 1rem;
+}
+
+.region-select__hint {
+  font-size: 0.85rem;
+  color: #c8c2b0;
+  margin: 0 0 0.75rem;
+}
+
+.region-select__stage {
+  position: relative;
+  touch-action: none;
+  cursor: crosshair;
+  border: 1px solid #2a2720;
+  border-radius: 4px;
+  overflow: hidden;
+  max-height: min(70vh, 480px);
+}
+
+.region-select__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  pointer-events: none;
+  user-select: none;
+}
+
+.region-select__box {
+  position: absolute;
+  border: 2px solid #7ddf9a;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5) inset;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.region-select__toolbar {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
