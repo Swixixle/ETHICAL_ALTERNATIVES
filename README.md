@@ -235,18 +235,7 @@ Submit a PR with additions. One chain per line. Lowercase. Global or country-sco
 
 **3. Code** — see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
 
----
 
-## What We Will Never Do
-
-Standards in **[CONSTITUTION.md](CONSTITUTION.md)** apply here: claims separable from verdicts, confidence stated, absence labeled, primary sources or explicit uncertainty.
-
-- No advertising or sponsored results
-- No fabricated investigation data — every claim has a primary source URL
-- No user data sales — sessions are anonymous
-- No punishing companies for size — behavior is the filter, not revenue
-- No corporate brand partnerships
-- No VC funding
 
 ---
 
