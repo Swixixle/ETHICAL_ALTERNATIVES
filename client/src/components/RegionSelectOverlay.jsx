@@ -70,7 +70,7 @@ export default function RegionSelectOverlay({ imageSrc, onConfirm, onCancel }) {
     }
     const cx = clamp01(rect.x + rect.w / 2);
     const cy = clamp01(rect.y + rect.h / 2);
-    onConfirm(cx, cy);
+    onConfirm(cx, cy, { x: rect.x, y: rect.y, width: rect.w, height: rect.h });
   }, [rect, onConfirm, onCancel]);
 
   return (

@@ -62,20 +62,58 @@ export async function generateTapCrop(imageBase64, tapX, tapY) {
   return cropped.toString('base64');
 }
 
-function buildVisionPrompt(tapX, tapY) {
+/**
+ * Exact crop from normalized bounding box (fractions of full image width/height).
+ * @param {string} imageBase64
+ * @param {{ x: number, y: number, width: number, height: number }} box
+ */
+export async function generateSelectionBoxCrop(imageBase64, box) {
+  const buf = Buffer.from(imageBase64, 'base64');
+  const meta = await sharp(buf).metadata();
+  const w = meta.width;
+  const h = meta.height;
+  if (!w || !h) {
+    throw new Error('Could not read image dimensions');
+  }
+
+  let left = Math.round(Number(box.x) * w);
+  let top = Math.round(Number(box.y) * h);
+  let width = Math.round(Number(box.width) * w);
+  let height = Math.round(Number(box.height) * h);
+
+  left = Math.max(0, Math.min(left, w - 1));
+  top = Math.max(0, Math.min(top, h - 1));
+  width = Math.max(1, Math.min(width, w - left));
+  height = Math.max(1, Math.min(height, h - top));
+
+  const cropped = await sharp(buf)
+    .extract({ left, top, width, height })
+    .jpeg({ quality: 90 })
+    .toBuffer();
+
+  return cropped.toString('base64');
+}
+
+function buildVisionPrompt(tapX, tapY, userDrawnRegion) {
   const px = Math.round(tapX * 100);
   const py = Math.round(tapY * 100);
+  const intro = userDrawnRegion
+    ? `The user drew a freehand highlight around exactly what they meant in the
+FIRST image (full scene). The SECOND image is the precise rectangular crop of that
+highlight — use it as the primary subject. The full image is context only.`
+    : `The user tapped at ${px}% from left, ${py}% from top of the
+FIRST image (full scene). The SECOND image is a tight crop centered exactly on
+that tap point.`;
+
   return `You are a precise brand and product identification system.
 
-The user tapped at ${px}% from left, ${py}% from top of the
-FIRST image (full scene). The SECOND image is a tight crop centered exactly on
-that tap point.
+${intro}
 
 PRIMARY RULE: Identify what is in the CROP IMAGE. The crop shows exactly what
-the user tapped. The full image provides context only.
+the user intended. The full image provides context only.
 
 Even if the object in the crop is small, partially obscured, or in the
-background — it is what the user intended. Prioritize it over any more visually
+background — it is what the user indicated. Prioritize it over any more visually
 prominent object in the full scene.
 
 Identify at maximum specificity:
@@ -380,9 +418,26 @@ function mergeSceneInference(id, scene) {
  * @param {string} imageBase64 — raw base64 JPEG (no data URL prefix)
  * @param {number} tapX
  * @param {number} tapY
+ * @param {{ x: number, y: number, width: number, height: number } | null} [selectionBox] normalized 0–1
  */
-export async function identifyObject(imageBase64, tapX, tapY) {
-  const cropBase64 = await generateTapCrop(imageBase64, tapX, tapY);
+export async function identifyObject(imageBase64, tapX, tapY, selectionBox = null) {
+  const hasBox =
+    selectionBox &&
+    typeof selectionBox === 'object' &&
+    [selectionBox.x, selectionBox.y, selectionBox.width, selectionBox.height].every((n) =>
+      Number.isFinite(Number(n))
+    ) &&
+    Number(selectionBox.width) > 0 &&
+    Number(selectionBox.height) > 0;
+
+  const cropBase64 = hasBox
+    ? await generateSelectionBoxCrop(imageBase64, {
+        x: Number(selectionBox.x),
+        y: Number(selectionBox.y),
+        width: Number(selectionBox.width),
+        height: Number(selectionBox.height),
+      })
+    : await generateTapCrop(imageBase64, tapX, tapY);
 
   const message = await client.messages.create({
     model: VISION_MODEL,
@@ -409,7 +464,7 @@ export async function identifyObject(imageBase64, tapX, tapY) {
           },
           {
             type: 'text',
-            text: buildVisionPrompt(tapX, tapY),
+            text: buildVisionPrompt(tapX, tapY, Boolean(hasBox)),
           },
         ],
       },

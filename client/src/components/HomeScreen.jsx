@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   getUserLocation,
   locationFromManualCity,
@@ -143,7 +143,76 @@ const CATEGORIES = [
   { value: 'clothing', label: 'Clothing' },
   { value: 'repair', label: 'Repair' },
   { value: 'art', label: 'Art' },
+  { value: 'stay', label: 'Stay' },
 ];
+
+/** Independent lodging discovery links (Airbnb guidance + outdoor / farm stay directories). */
+function StayDiscoveryLinks({ city, state }) {
+  const place = [city, state].filter(Boolean).join(', ');
+  const q = encodeURIComponent(place || 'United States');
+  const airbnb = `https://www.airbnb.com/s/${q}/homes`;
+  const hipcamp = `https://www.hipcamp.com/en-US/search?q=${encodeURIComponent(place || '')}`;
+  const harvestHosts = 'https://www.harvesthosts.com';
+  const glampingHub = `https://glampinghub.com`;
+
+  const linkStyle = {
+    display: 'block',
+    fontFamily: "'Space Mono', monospace",
+    fontSize: 11,
+    letterSpacing: 1,
+    textTransform: 'uppercase',
+    color: '#f0a820',
+    marginBottom: 10,
+    textDecoration: 'underline',
+    textUnderlineOffset: 4,
+  };
+
+  return (
+    <div
+      style={{
+        padding: '16px 24px 8px',
+        borderBottom: '1px solid #1e3044',
+        marginBottom: 8,
+      }}
+    >
+      <div
+        style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: 11,
+          letterSpacing: 2,
+          textTransform: 'uppercase',
+          color: '#6a8a9a',
+          marginBottom: 12,
+        }}
+      >
+        Find a stay · indie-first tools
+      </div>
+      <a href={airbnb} target="_blank" rel="noreferrer" style={linkStyle}>
+        Airbnb — prefer entire homes hosted by individuals, not property managers
+      </a>
+      <a href={hipcamp} target="_blank" rel="noreferrer" style={linkStyle}>
+        Hipcamp — independent campgrounds & land
+      </a>
+      <a href={harvestHosts} target="_blank" rel="noreferrer" style={linkStyle}>
+        Harvest Hosts — farm & winery RV stays (membership)
+      </a>
+      <a href={glampingHub} target="_blank" rel="noreferrer" style={{ ...linkStyle, marginBottom: 0 }}>
+        Glamping Hub — small hosts & unique stays
+      </a>
+      <p
+        style={{
+          fontFamily: "'Crimson Pro', serif",
+          fontSize: 14,
+          color: '#5a6a78',
+          margin: '12px 0 0',
+          lineHeight: 1.5,
+        }}
+      >
+        Pre-filled for {place || 'your area'}. Always read host details — we link tools, not endorsements.
+      </p>
+    </div>
+  );
+}
 
 function apiPrefix() {
   return (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
@@ -736,9 +805,15 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
   const [territoryData, setTerritoryData] = useState(null);
   const [territoryOverlayOpen, setTerritoryOverlayOpen] = useState(false);
   const [communityBoardOpen, setCommunityBoardOpen] = useState(false);
+  const [travelStayActive, setTravelStayActive] = useState(false);
+  const [travelStayFeed, setTravelStayFeed] = useState([]);
+  const [travelStayNotVerified, setTravelStayNotVerified] = useState([]);
+  const [travelStayChain, setTravelStayChain] = useState([]);
+  const lastTerritoryCountyRef = useRef(null);
 
-  const fetchFeed = useCallback(async (lat, lng, cat) => {
-    setLoadingFeed(true);
+  const fetchFeed = useCallback(async (lat, lng, cat, opts = {}) => {
+    const silent = Boolean(opts.silent);
+    if (!silent) setLoadingFeed(true);
     try {
       const p = new URLSearchParams({
         lat: String(lat),
@@ -758,7 +833,7 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
     } catch {
       return { feed: [], chain_results: [], not_verified_independent: [] };
     } finally {
-      setLoadingFeed(false);
+      if (!silent) setLoadingFeed(false);
     }
   }, []);
 
@@ -842,6 +917,8 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
       .then((data) => {
         if (cancelled || !data?.history) return;
         setTerritoryData(data);
+        const c = data.county ? String(data.county) : null;
+        if (c) lastTerritoryCountyRef.current = c;
         primeTravelTracker(location.lat, location.lng, data.county || null);
       })
       .catch((err) => console.warn('[territory]', err?.message || err));
@@ -849,6 +926,11 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
     startTravelTracking(apiBase, (newData) => {
       if (cancelled || !newData?.history) return;
       setTerritoryData(newData);
+      const nc = newData.county ? String(newData.county) : null;
+      if (nc && lastTerritoryCountyRef.current && nc !== lastTerritoryCountyRef.current) {
+        setTravelStayActive(true);
+      }
+      if (nc) lastTerritoryCountyRef.current = nc;
     });
 
     return () => {
@@ -856,6 +938,28 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
       stopTravelTracking();
     };
   }, [phase, location?.lat, location?.lng]);
+
+  useEffect(() => {
+    if (!travelStayActive || phase !== 'ready') return;
+    if (category === 'stay') return;
+    if (!Number.isFinite(location?.lat) || !Number.isFinite(location?.lng)) return;
+    let cancelled = false;
+    (async () => {
+      const pack = await fetchFeed(location.lat, location.lng, 'stay', { silent: true });
+      if (cancelled) return;
+      const shuffleOpts = {
+        dateKey: utcDateKey(),
+        city: location.city,
+        state: location.state,
+      };
+      setTravelStayFeed(dailyFeedShuffle(pack.feed, shuffleOpts));
+      setTravelStayNotVerified(dailyNotVerifiedShuffle(pack.not_verified_independent, shuffleOpts));
+      setTravelStayChain(dailyChainShuffle(pack.chain_results, shuffleOpts));
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [travelStayActive, phase, category, location?.lat, location?.lng, location?.city, location?.state, fetchFeed]);
 
   async function handleAllow() {
     setGeoHint(null);
@@ -1154,6 +1258,94 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
       ) : null}
 
       <div style={{ paddingTop: 16, paddingBottom: 100 }}>
+        {phase === 'ready' && (category === 'stay' || travelStayActive) ? (
+          <StayDiscoveryLinks city={location?.city} state={location?.state} />
+        ) : null}
+
+        {phase === 'ready' && travelStayActive && category !== 'stay' ? (
+          <div
+            style={{
+              marginBottom: 8,
+              paddingBottom: 20,
+              borderBottom: '1px solid #283648',
+            }}
+          >
+            <div
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 11,
+                letterSpacing: 2,
+                textTransform: 'uppercase',
+                color: '#f0a820',
+                padding: '0 24px 12px',
+              }}
+            >
+              New county — independent stays nearby
+            </div>
+            {!loadingFeed && travelStayFeed.length > 0 ? (
+              <>
+                {travelStayFeed.map((business) => (
+                  <FeedCard key={`travel-${business.id}`} business={business} />
+                ))}
+              </>
+            ) : null}
+            {!loadingFeed && travelStayNotVerified.length > 0 ? (
+              <div style={{ marginTop: 16 }}>
+                <div
+                  style={{
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: 11,
+                    letterSpacing: 2,
+                    textTransform: 'uppercase',
+                    color: '#6a8a9a',
+                    padding: '0 24px 8px',
+                  }}
+                >
+                  Also nearby · not verified (travel)
+                </div>
+                {travelStayNotVerified.map((business) => (
+                  <FeedCard key={`travel-nv-${business.id}`} business={business} mutedSection />
+                ))}
+              </div>
+            ) : null}
+            {!loadingFeed && travelStayChain.length > 0 ? (
+              <div style={{ marginTop: 16, opacity: 0.85 }}>
+                <div
+                  style={{
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: 11,
+                    letterSpacing: 2,
+                    textTransform: 'uppercase',
+                    color: '#6a8a9a',
+                    padding: '0 24px 12px',
+                  }}
+                >
+                  Chain hotels (reference only)
+                </div>
+                {travelStayChain.map((business) => (
+                  <FeedCard key={`travel-ch-${business.id}`} business={business} chainFootnote />
+                ))}
+              </div>
+            ) : null}
+            {!loadingFeed &&
+            travelStayFeed.length === 0 &&
+            travelStayNotVerified.length === 0 &&
+            travelStayChain.length === 0 ? (
+              <p
+                style={{
+                  fontFamily: "'Crimson Pro', serif",
+                  fontSize: 16,
+                  color: '#6a8a9a',
+                  padding: '0 24px 16px',
+                  margin: 0,
+                }}
+              >
+                No mapped indie stays in radius yet — use the links above.
+              </p>
+            ) : null}
+          </div>
+        ) : null}
+
         {loadingFeed ? (
           <div
             style={{

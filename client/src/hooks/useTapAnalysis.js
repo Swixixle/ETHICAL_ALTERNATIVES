@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 const apiBase = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
 
@@ -23,6 +23,10 @@ export function useTapAnalysis() {
   /** @type {null | { identification: object, identification_tier: string, response_ms?: number }} */
   const [pendingConfirmation, setPendingConfirmation] = useState(null);
   const [regionSelectActive, setRegionSelectActive] = useState(false);
+  /** @type {React.MutableRefObject<{ x: number; y: number; width: number; height: number } | null>} */
+  const selectionBoxRef = useRef(null);
+  /** Normalized selection rect for loading UI (lasso / box) */
+  const [activeSelectionBox, setActiveSelectionBox] = useState(null);
 
   const captureGeoOnce = useCallback(() => {
     if (geo !== null || typeof navigator === 'undefined' || !navigator.geolocation) return;
@@ -39,13 +43,21 @@ export function useTapAnalysis() {
   }, [geo]);
 
   const buildBody = useCallback(
-    (tapX, tapY, { preview_only = false } = {}) => {
+    (tapX, tapY, { preview_only = false, selection_box = null } = {}) => {
       const body = {
         image_base64: image,
         tap_x: tapX,
         tap_y: tapY,
         preview_only,
       };
+      if (selection_box && typeof selection_box === 'object') {
+        body.selection_box = {
+          x: selection_box.x,
+          y: selection_box.y,
+          width: selection_box.width,
+          height: selection_box.height,
+        };
+      }
       if (geo && typeof geo === 'object' && Number.isFinite(geo.lat) && Number.isFinite(geo.lng)) {
         body.user_lat = geo.lat;
         body.user_lng = geo.lng;
@@ -66,8 +78,11 @@ export function useTapAnalysis() {
   }, [buildBody]);
 
   const runFullPipeline = useCallback(
-    async (tapX, tapY) => {
-      const { ok, data } = await fetchTap(tapX, tapY, { preview_only: false });
+    async (tapX, tapY, selBox = null) => {
+      const { ok, data } = await fetchTap(tapX, tapY, {
+        preview_only: false,
+        selection_box: selBox,
+      });
       if (!ok) {
         setError(data.error || `Request failed`);
         return;
@@ -80,13 +95,31 @@ export function useTapAnalysis() {
 
   /** Single tap: preview first; high confidence runs full pipeline immediately (second request). */
   const analyzeTap = useCallback(
-    async (tapX, tapY) => {
+    async (tapX, tapY, selectionBox = null) => {
       if (!image) {
         setError('No image loaded');
         return;
       }
 
+      const selBox =
+        selectionBox &&
+        typeof selectionBox === 'object' &&
+        [selectionBox.x, selectionBox.y, selectionBox.width, selectionBox.height].every((n) =>
+          Number.isFinite(Number(n))
+        ) &&
+        Number(selectionBox.width) > 0 &&
+        Number(selectionBox.height) > 0
+          ? {
+              x: Number(selectionBox.x),
+              y: Number(selectionBox.y),
+              width: Number(selectionBox.width),
+              height: Number(selectionBox.height),
+            }
+          : null;
+
+      selectionBoxRef.current = selBox;
       setTapPosition({ x: tapX, y: tapY });
+      setActiveSelectionBox(selBox);
       setLoading(true);
       setError(null);
       setResult(null);
@@ -94,7 +127,10 @@ export function useTapAnalysis() {
       setRegionSelectActive(false);
 
       try {
-        const preview = await fetchTap(tapX, tapY, { preview_only: true });
+        const preview = await fetchTap(tapX, tapY, {
+          preview_only: true,
+          selection_box: selBox,
+        });
         if (!preview.ok) {
           setError(preview.data.error || `Request failed (${preview.status})`);
           return;
@@ -104,7 +140,7 @@ export function useTapAnalysis() {
         const conf = typeof idRaw?.confidence === 'number' ? idRaw.confidence : 0;
 
         if (conf >= CONFIRM_THRESHOLD) {
-          await runFullPipeline(tapX, tapY);
+          await runFullPipeline(tapX, tapY, selBox);
           return;
         }
 
@@ -124,6 +160,7 @@ export function useTapAnalysis() {
         setError(e instanceof Error ? e.message : 'Network error');
       } finally {
         setLoading(false);
+        setActiveSelectionBox(null);
       }
     },
     [image, fetchTap, runFullPipeline]
@@ -133,18 +170,23 @@ export function useTapAnalysis() {
     if (!image || !tapPosition) return;
     setLoading(true);
     setError(null);
+    const sel = selectionBoxRef.current;
+    if (sel) setActiveSelectionBox(sel);
     try {
-      await runFullPipeline(tapPosition.x, tapPosition.y);
+      await runFullPipeline(tapPosition.x, tapPosition.y, sel);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Network error');
     } finally {
       setLoading(false);
+      setActiveSelectionBox(null);
     }
   }, [image, tapPosition, runFullPipeline]);
 
   const cancelPendingConfirmation = useCallback(() => {
     setPendingConfirmation(null);
     setTapPosition(null);
+    selectionBoxRef.current = null;
+    setActiveSelectionBox(null);
     setTapSession((s) => s + 1);
   }, []);
 
@@ -154,11 +196,11 @@ export function useTapAnalysis() {
   }, []);
 
   const completeRegionSelect = useCallback(
-    async (cx, cy) => {
+    async (cx, cy, normRect = null) => {
       setRegionSelectActive(false);
       setTapPosition({ x: cx, y: cy });
       setTapSession((s) => s + 1);
-      await analyzeTap(cx, cy);
+      await analyzeTap(cx, cy, normRect);
     },
     [analyzeTap]
   );
@@ -166,6 +208,8 @@ export function useTapAnalysis() {
   const cancelRegionSelect = useCallback(() => {
     setRegionSelectActive(false);
     setTapPosition(null);
+    selectionBoxRef.current = null;
+    setActiveSelectionBox(null);
     setTapSession((s) => s + 1);
   }, []);
 
@@ -182,6 +226,8 @@ export function useTapAnalysis() {
     setTapPosition(null);
     setPendingConfirmation(null);
     setRegionSelectActive(false);
+    selectionBoxRef.current = null;
+    setActiveSelectionBox(null);
     setTapSession((s) => s + 1);
     try {
       const res = await fetch(investigateUrl(), {
@@ -212,12 +258,16 @@ export function useTapAnalysis() {
     setTapSession((s) => s + 1);
     setPendingConfirmation(null);
     setRegionSelectActive(false);
+    selectionBoxRef.current = null;
+    setActiveSelectionBox(null);
   }, []);
 
   const clearResult = useCallback(() => {
     setResult(null);
     setError(null);
     setTapPosition(null);
+    selectionBoxRef.current = null;
+    setActiveSelectionBox(null);
     setPendingConfirmation(null);
     setRegionSelectActive(false);
     setTapSession((s) => s + 1);
@@ -236,6 +286,7 @@ export function useTapAnalysis() {
   return {
     image,
     tapPosition,
+    activeSelectionBox,
     loading,
     result,
     error,

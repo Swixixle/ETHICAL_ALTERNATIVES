@@ -13,7 +13,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const chainExclusionsRaw = JSON.parse(
   readFileSync(join(__dirname, '../data/chain-exclusions.json'), 'utf8')
 );
+const hotelChainRaw = JSON.parse(
+  readFileSync(join(__dirname, '../data/hotel-chain-needles.json'), 'utf8')
+);
 const chainNeedles = normalizeChainNeedles(chainExclusionsRaw);
+const stayListNeedles = normalizeChainNeedles([...chainExclusionsRaw, ...hotelChainRaw]);
 
 const router = Router();
 
@@ -86,6 +90,10 @@ router.get('/', async (req, res) => {
   }
 
   const radiusMeters = Math.round(radiusMiles * 1609.34);
+  const catLower = String(category).trim().toLowerCase();
+  const excludeForOsm =
+    catLower === 'stay' ? [...chainExclusionsRaw, ...hotelChainRaw] : chainExclusionsRaw;
+  const registryNameNeedles = catLower === 'stay' ? stayListNeedles : chainNeedles;
 
   try {
     const [{ places: osmPlaces, chainPlaces: osmExcludedByList }, registryResults, dbNeedlesRaw] =
@@ -95,7 +103,7 @@ router.get('/', async (req, res) => {
           lng,
           radiusMeters,
           category,
-          excludeNameSubstrings: chainExclusionsRaw,
+          excludeNameSubstrings: excludeForOsm,
         }),
         findLocalSellers({
           lat,
@@ -113,7 +121,7 @@ router.get('/', async (req, res) => {
     const registryChain = [];
     for (const s of registryResults) {
       const item = mapRegistryItem(s);
-      if (nameMatchesChain(item.name, chainNeedles) || nameMatchesChain(item.name, dbNeedles)) {
+      if (nameMatchesChain(item.name, registryNameNeedles) || nameMatchesChain(item.name, dbNeedles)) {
         registryChain.push(item);
       } else {
         registryFeed.push(item);

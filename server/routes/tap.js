@@ -37,6 +37,20 @@ export function getIdentificationTier(identification) {
 
 const router = Router();
 
+/** @param {unknown} raw */
+function parseSelectionBox(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const x = Number(raw.x);
+  const y = Number(raw.y);
+  const width = Number(raw.width);
+  const height = Number(raw.height);
+  if (![x, y, width, height].every(Number.isFinite)) return null;
+  if (width <= 0 || height <= 0) return null;
+  if (x < 0 || y < 0 || x > 1 || y > 1) return null;
+  if (x + width > 1.0001 || y + height > 1.0001) return null;
+  return { x, y, width, height };
+}
+
 /** @param {unknown[]} inventory @param {number} tapX @param {number} tapY */
 function findClosestToTap(inventory, tapX, tapY) {
   if (!inventory || inventory.length === 0) return null;
@@ -111,7 +125,7 @@ async function enhanceIdentificationWithScene(base64, tapX, tapY, identification
 
 router.post('/tap', async (req, res) => {
   const t0 = Date.now();
-  const { image_base64, tap_x, tap_y, user_lat, user_lng } = req.body || {};
+  const { image_base64, tap_x, tap_y, user_lat, user_lng, selection_box } = req.body || {};
 
   const validated = validateImagePayload(image_base64);
   if (!validated.ok) {
@@ -124,9 +138,16 @@ router.post('/tap', async (req, res) => {
     return res.status(400).json({ error: 'tap_x and tap_y must be between 0 and 1' });
   }
 
+  const selBox = parseSelectionBox(selection_box);
+  if (selection_box != null && !selBox) {
+    return res.status(400).json({
+      error: 'selection_box must be { x, y, width, height } in 0–1 with x+width,y+height ≤ 1',
+    });
+  }
+
   let identification;
   try {
-    identification = await identifyObject(validated.base64, tx, ty);
+    identification = await identifyObject(validated.base64, tx, ty, selBox);
   } catch (e) {
     console.error('Vision error', e);
     return res.status(500).json({ error: 'Vision service unavailable' });

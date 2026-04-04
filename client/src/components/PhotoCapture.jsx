@@ -233,7 +233,9 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
           <div className="photo-capture__image-shell">
             <img className="photo-capture__img" src={previewDataUrl} alt="Selected for analysis" />
           </div>
-          <p className="photo-capture__instruction">Tap any object in the photo</p>
+          <p className="photo-capture__instruction">
+            Then use Tap or Circle it on the next screen — point at what you mean
+          </p>
           {showAnalyzingOverlay ? (
             <div className="photo-capture__skeleton" aria-busy="true">
               <span className="photo-capture__skeleton-label">Analyzing</span>
@@ -274,7 +276,7 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
           <span className="photo-capture__main-upload-title">Take or choose photo</span>
           <span className="photo-capture__main-upload-sub">Camera or library — works on iPhone, Android, and desktop</span>
           <span className="photo-capture__main-upload-hint">
-            Tap to photograph or drop an image — then tap any object after you capture
+            Tap or drop a photo — then tap or draw a circle around the logo or product
           </span>
         </label>
 

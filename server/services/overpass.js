@@ -134,6 +134,7 @@ const FEED_PLACE_LABELS = {
   florist: 'Florist',
   coffee: 'Coffee',
   variety_store: 'Variety store',
+  hotel: 'Hotel',
   antiques: 'Antiques',
   music: 'Music',
   dry_cleaning: 'Dry cleaner',
@@ -149,6 +150,15 @@ const FEED_PLACE_LABELS = {
   hardware: 'Hardware',
   jewelry: 'Jewelry',
   pet: 'Pet supplies',
+};
+
+const STAY_TOURISM_LABELS = {
+  guest_house: 'Guest house',
+  hostel: 'Hostel',
+  bed_and_breakfast: 'B&B / inn',
+  apartment: 'Tourist apartment',
+  chalet: 'Chalet',
+  camp_site: 'Camp site',
 };
 
 /**
@@ -174,6 +184,77 @@ export async function queryLocalFeedPlaces({
   }
 
   const cat = typeof category === 'string' ? category.trim().toLowerCase() : 'all';
+
+  if (cat === 'stay') {
+    const tourismPat = 'guest_house|hostel|bed_and_breakfast|apartment|chalet|camp_site';
+    const stayQuery = `[out:json][timeout:25];
+(
+  node["tourism"~"^(${tourismPat})$",i](around:${radiusMeters},${lat},${lng});
+  node["amenity"="hotel"](around:${radiusMeters},${lat},${lng});
+);
+out body;`;
+    try {
+      const res = await fetch(OVERPASS_URL, {
+        method: 'POST',
+        body: `data=${encodeURIComponent(stayQuery)}`,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      });
+      if (!res.ok) {
+        console.error('Overpass stay HTTP', res.status);
+        return { places: [], chainPlaces: [] };
+      }
+      const data = await res.json();
+      const elements = Array.isArray(data?.elements) ? data.elements : [];
+      const needles = normalizeChainNeedles(excludeNameSubstrings);
+      const out = [];
+      const chainOut = [];
+      const seen = new Set();
+      for (const el of elements) {
+        if (el.type !== 'node' || !Number.isFinite(el.lat) || !Number.isFinite(el.lon)) continue;
+        const tags = el.tags || {};
+        const name = tags.name || tags['name:en'] || 'Lodging';
+        const id = String(el.id);
+        if (seen.has(id)) continue;
+        seen.add(id);
+        const tourism = tags.tourism;
+        const amenity = tags.amenity;
+        const labelKey =
+          tourism && STAY_TOURISM_LABELS[tourism]
+            ? STAY_TOURISM_LABELS[tourism]
+            : amenity === 'hotel'
+              ? FEED_PLACE_LABELS.hotel
+              : 'Stay';
+        const tagline =
+          typeof tags.description === 'string' && tags.description.trim()
+            ? tags.description.trim().slice(0, 140)
+            : labelKey;
+        const row = {
+          type: 'local',
+          osm_id: id,
+          name,
+          address: buildAddress(tags) || `${el.lat.toFixed(4)}, ${el.lon.toFixed(4)}`,
+          lat: el.lat,
+          lng: el.lon,
+          distance_miles: haversineMiles(lat, lng, el.lat, el.lon),
+          phone: tags.phone || tags['contact:phone'] || null,
+          website: tags.website || tags['contact:website'] || null,
+          tagline,
+          provenance_label: 'Local Unvetted',
+        };
+        if (nameMatchesChain(name, needles)) {
+          chainOut.push(row);
+        } else {
+          out.push(row);
+        }
+      }
+      out.sort((a, b) => a.distance_miles - b.distance_miles);
+      chainOut.sort((a, b) => a.distance_miles - b.distance_miles);
+      return { places: out.slice(0, 80), chainPlaces: chainOut.slice(0, 40) };
+    } catch (e) {
+      console.error('Overpass stay error', e);
+      return { places: [], chainPlaces: [] };
+    }
+  }
 
   const FEED_OSM_BY_CATEGORY = {
     all: {

@@ -14,6 +14,7 @@ const CATEGORY_MAP = {
   tobacco: [],
   tools: ['handmade', 'tools', 'other'],
   other: ['handmade', 'other'],
+  stay: ['lodging'],
 };
 
 function normalizeCategoryTerms(category) {
@@ -45,9 +46,16 @@ function keywordTokens(keywords) {
  * @param {string | string[]} params.keywords
  * @param {number} [params.radiusMiles]
  */
-/** All registry category tokens for home-feed "all" filter */
+/** All registry category tokens for home-feed "all" filter (lodging only under STAY) */
 export function allRegistryCategoryTerms() {
-  return [...new Set(Object.values(CATEGORY_MAP).flat().filter(Boolean))];
+  return [
+    ...new Set(
+      Object.entries(CATEGORY_MAP)
+        .filter(([k]) => k !== 'stay')
+        .flatMap(([, v]) => v)
+        .filter(Boolean)
+    ),
+  ];
 }
 
 export async function findLocalSellers({ lat, lng, category, keywords, radiusMiles = 50 }) {
