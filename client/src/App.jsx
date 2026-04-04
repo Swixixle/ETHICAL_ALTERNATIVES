@@ -6,12 +6,26 @@ import RegionSelectOverlay from './components/RegionSelectOverlay.jsx';
 import LoadingState from './components/LoadingState.jsx';
 import ErrorState from './components/ErrorState.jsx';
 import InvestigationCard from './components/InvestigationCard.jsx';
+import ProofBlock from './components/ProofBlock.jsx';
+import QuickAlternatives from './components/QuickAlternatives.jsx';
 import HealthCallout from './components/HealthCallout.jsx';
 import AlternativesSidebar from './components/AlternativesSidebar.jsx';
 import HomeScreen from './components/HomeScreen.jsx';
 import ShareCard from './components/ShareCard.jsx';
 import { useTapAnalysis } from './hooks/useTapAnalysis.js';
 import './App.css';
+
+function investigationHeadline(identification, investigation) {
+  const id = identification || {};
+  const inv = investigation || {};
+  const objectFallback =
+    typeof id.object === 'string' && id.object ? id.object : String(inv.brand || 'Investigation');
+  const generated =
+    typeof inv.generated_headline === 'string' && inv.generated_headline.trim()
+      ? inv.generated_headline.trim()
+      : null;
+  return generated || objectFallback;
+}
 
 function confidenceLabel(c) {
   const n = Number(c);
@@ -126,6 +140,20 @@ export default function App() {
   const identificationBlock =
     result ? (
       <div className="app__id-block">
+        <h2 className="app__headline">{investigationHeadline(id, result.investigation)}</h2>
+
+        {result.investigation ? (
+          <ProofBlock investigation={result.investigation} identification={id} result={result} />
+        ) : null}
+
+        {(Array.isArray(result.registry_results) && result.registry_results.length > 0) ||
+        (Array.isArray(result.local_results) && result.local_results.length > 0) ? (
+          <QuickAlternatives
+            registryResults={result.registry_results}
+            localResults={result.local_results}
+          />
+        ) : null}
+
         {id ? (
           <>
             <div className="app__method-row">
@@ -147,12 +175,14 @@ export default function App() {
             <p className="app__meta meta-space" style={{ fontSize: 11, marginTop: 8 }}>
               Match: <span className="app__badge">{confidenceLabel(id.confidence)}</span>
             </p>
-            <p className="app__footnote">
-              {typeof result.response_ms === 'number' ? `${result.response_ms} ms · ` : ''}
-              {Array.isArray(result.searched_sources)
-                ? `Sources: ${result.searched_sources.join(', ')}`
-                : null}
-            </p>
+            {result.investigation ? null : (
+              <p className="app__footnote">
+                {typeof result.response_ms === 'number' ? `${result.response_ms} ms · ` : ''}
+                {Array.isArray(result.searched_sources)
+                  ? `Sources: ${result.searched_sources.join(', ')}`
+                  : null}
+              </p>
+            )}
           </>
         ) : null}
 
