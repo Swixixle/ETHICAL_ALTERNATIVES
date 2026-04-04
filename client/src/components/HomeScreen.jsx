@@ -4,6 +4,14 @@ import { getCityIdentity } from '../services/cityIdentity.js';
 import { dailyChainShuffle, dailyFeedShuffle, utcDateKey } from '../utils/dailyShuffle.js';
 import ListYourShop from './ListYourShop.jsx';
 import CommunityBoard from './CommunityBoard.jsx';
+import TerritoryCard from './TerritoryCard.jsx';
+import {
+  lookupCurrentTerritory,
+  primeTravelTracker,
+  resetTravelTracker,
+  startTravelTracking,
+  stopTravelTracking,
+} from '../services/travelTracker.js';
 
 const ONBOARD_KEY = 'ea_geo_onboard';
 
@@ -658,6 +666,8 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
   const [geoHint, setGeoHint] = useState(null);
   const [manualCityVisible, setManualCityVisible] = useState(false);
   const [manualCityBusy, setManualCityBusy] = useState(false);
+  const [territoryData, setTerritoryData] = useState(null);
+  const [showTerritory, setShowTerritory] = useState(false);
 
   const fetchFeed = useCallback(async (lat, lng, cat) => {
     setLoadingFeed(true);
@@ -744,6 +754,37 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
       cancelled = true;
     };
   }, [phase, location, fetchFeed]);
+
+  useEffect(() => {
+    if (phase !== 'ready') return;
+    if (!Number.isFinite(location?.lat) || !Number.isFinite(location?.lng)) return;
+
+    const apiBase = apiPrefix();
+    let cancelled = false;
+
+    resetTravelTracker();
+    primeTravelTracker(location.lat, location.lng, null);
+
+    lookupCurrentTerritory(location.lat, location.lng, apiBase)
+      .then((data) => {
+        if (cancelled || !data?.history) return;
+        setTerritoryData(data);
+        setShowTerritory(true);
+        primeTravelTracker(location.lat, location.lng, data.county || null);
+      })
+      .catch((err) => console.warn('[territory]', err?.message || err));
+
+    startTravelTracking(apiBase, (newData) => {
+      if (cancelled || !newData?.history) return;
+      setTerritoryData(newData);
+      setShowTerritory(true);
+    });
+
+    return () => {
+      cancelled = true;
+      stopTravelTracking();
+    };
+  }, [phase, location?.lat, location?.lng]);
 
   async function handleAllow() {
     setGeoHint(null);
@@ -976,6 +1017,10 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
           </button>
         ))}
       </div>
+
+      {showTerritory && territoryData ? (
+        <TerritoryCard data={territoryData} onDismiss={() => setShowTerritory(false)} />
+      ) : null}
 
       <div style={{ paddingTop: 16, paddingBottom: 100 }}>
         {loadingFeed ? (
