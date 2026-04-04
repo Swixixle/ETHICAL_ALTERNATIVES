@@ -6,6 +6,7 @@ import RegionSelectOverlay from './components/RegionSelectOverlay.jsx';
 import LoadingState from './components/LoadingState.jsx';
 import ErrorState from './components/ErrorState.jsx';
 import InvestigationCard from './components/InvestigationCard.jsx';
+import HealthCallout from './components/HealthCallout.jsx';
 import AlternativesSidebar from './components/AlternativesSidebar.jsx';
 import { useTapAnalysis } from './hooks/useTapAnalysis.js';
 import './App.css';
@@ -194,6 +195,7 @@ export default function App() {
                   localResults={result.local_results}
                   etsyResults={result.results}
                   identification={id}
+                  investigation={result.investigation}
                 />
               </aside>
 
@@ -229,6 +231,7 @@ export default function App() {
                     </>
                   ) : null}
 
+                  <HealthCallout investigation={result.investigation} />
                   <InvestigationCard investigation={result.investigation} identification={id} />
                 </div>
               </div>

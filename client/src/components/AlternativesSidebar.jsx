@@ -1,6 +1,7 @@
 import RegistryCard from './RegistryCard.jsx';
 import ListYourShop from './ListYourShop.jsx';
 import SecondhandLinks from './SecondhandLinks.jsx';
+import DiySection from './DiySection.jsx';
 
 function SectionLabel({ children }) {
   return (
@@ -222,6 +223,7 @@ function EtsyCard({ listing }) {
  *   localResults?: Array<Record<string, unknown>>;
  *   etsyResults?: Array<Record<string, unknown>>;
  *   identification?: Record<string, unknown> | null;
+ *   investigation?: Record<string, unknown> | null;
  * }} props
  */
 export default function AlternativesSidebar({
@@ -229,6 +231,7 @@ export default function AlternativesSidebar({
   localResults,
   etsyResults,
   identification,
+  investigation,
 }) {
   const hasRegistry = Array.isArray(registryResults) && registryResults.length > 0;
   const hasLocal = Array.isArray(localResults) && localResults.length > 0;
@@ -236,6 +239,7 @@ export default function AlternativesSidebar({
 
   const object = identification?.object ? String(identification.object) : '';
   const keywords = identification?.search_keywords ? String(identification.search_keywords) : '';
+  const category = identification?.category ? String(identification.category) : '';
 
   return (
     <div>
@@ -292,6 +296,14 @@ export default function AlternativesSidebar({
 
       <SectionLabel>Secondhand</SectionLabel>
       <SecondhandLinks keywords={keywords} object={object} />
+
+      <SectionLabel>Make It Yourself</SectionLabel>
+      <DiySection
+        object={object}
+        category={category}
+        keywords={keywords}
+        investigation={investigation}
+      />
 
       {!hasRegistry && !hasLocal && !hasEtsy ? (
         <div
