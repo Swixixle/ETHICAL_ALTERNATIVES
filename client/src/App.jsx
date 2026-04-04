@@ -41,8 +41,6 @@ export default function App() {
 
   const {
     image,
-    tapPosition,
-    activeSelectionBox,
     loading,
     result,
     error,
@@ -64,7 +62,6 @@ export default function App() {
   } = useTapAnalysis();
 
   const [showShare, setShowShare] = useState(false);
-  const [tapInteractionMode, setTapInteractionMode] = useState(/** @type {'tap' | 'circle'} */ ('tap'));
 
   const [isDesktop, setIsDesktop] = useState(
     () => typeof window !== 'undefined' && window.innerWidth >= 768
@@ -81,15 +78,6 @@ export default function App() {
   }, [result]);
 
   const dataUrl = image ? `data:image/jpeg;base64,${image}` : null;
-
-  function tapPulseHighlight() {
-    if (activeSelectionBox) return activeSelectionBox;
-    if (!tapPosition) return null;
-    const s = 0.2;
-    const x = Math.max(0, Math.min(1 - s, tapPosition.x - s / 2));
-    const y = Math.max(0, Math.min(1 - s, tapPosition.y - s / 2));
-    return { x, y, width: s, height: s };
-  }
 
   const onImageSelected = (b64) => {
     setImage(b64);
@@ -112,7 +100,6 @@ export default function App() {
         <HomeScreen
           onStartSnap={() => {
             reset();
-            setTapInteractionMode('tap');
             setMode('snap');
           }}
           onSearchInvestigate={async (q) => {
@@ -341,37 +328,14 @@ export default function App() {
                   marginRight: 4,
                 }}
               >
-                Point at it
+                Tap your capture to point at it
               </span>
-              <button
-                type="button"
-                className={`app__btn ${tapInteractionMode === 'tap' ? '' : 'app__btn--ghost'}`}
-                style={{ fontSize: 11 }}
-                onClick={() => setTapInteractionMode('tap')}
-              >
-                Tap
-              </button>
-              <button
-                type="button"
-                className={`app__btn ${tapInteractionMode === 'circle' ? '' : 'app__btn--ghost'}`}
-                style={{ fontSize: 11 }}
-                onClick={() => setTapInteractionMode('circle')}
-              >
-                Circle it
-              </button>
             </div>
             <div className="app__image-shell">
-              <img className="app__photo" src={dataUrl} alt="Your capture" />
               <TapOverlay
                 key={tapSession}
-                interactionMode={tapInteractionMode}
-                onTap={(pos) => analyzeTap(pos.x, pos.y, null)}
-                onLassoComplete={({ tap_x, tap_y, selection_box }) =>
-                  analyzeTap(tap_x, tap_y, selection_box)
-                }
-                loading={loading}
-                tappedPosition={tapPosition}
-                loadingHighlightBox={loading ? tapPulseHighlight() : null}
+                imageUrl={dataUrl || ''}
+                onTap={(x, y) => analyzeTap(x, y, null)}
               />
             </div>
             {loading ? (

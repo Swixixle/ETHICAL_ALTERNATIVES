@@ -897,6 +897,20 @@ If web search is unavailable, use only well-established public knowledge. Use ov
   return finalizeFromParsed(parsed, citationUrls);
 }
 
+/** Structured completion log for debugging thin / missing profiles. */
+function logInvestigationProfileEnd(route, profile) {
+  if (!profile) {
+    console.log('[investigation] getInvestigationProfile:end', { route, profile: null });
+    return;
+  }
+  const tl = Array.isArray(profile.timeline) ? profile.timeline.length : 0;
+  console.log('[investigation] getInvestigationProfile:end', {
+    route,
+    overall_concern_level: profile.overall_concern_level ?? null,
+    timeline_entries: tl,
+  });
+}
+
 /**
  * @param {string | null} brandName
  * @param {string | null} corporateParent
@@ -908,10 +922,21 @@ export async function getInvestigationProfile(brandName, corporateParent, option
   const primaryBrand = brandName || corporateParent;
 
   if (!primaryBrand) {
+    console.log('[investigation] getInvestigationProfile:start', {
+      brandName,
+      corporateParent,
+      decision: 'no_primary_brand',
+    });
     return null;
   }
 
   const slug = resolveIncumbentSlug(brandName, corporateParent);
+  console.log('[investigation] getInvestigationProfile:start', {
+    brandName,
+    corporateParent,
+    slug,
+    db_pool: Boolean(pool),
+  });
 
   if (pool) {
     try {
@@ -924,6 +949,7 @@ export async function getInvestigationProfile(brandName, corporateParent, option
       );
       const row = rows[0];
       if (row) {
+        console.log('[investigation] getInvestigationProfile:route', { slug, source: 'database' });
         let inv;
         if (row.profile_json) {
           const data =
@@ -941,6 +967,7 @@ export async function getInvestigationProfile(brandName, corporateParent, option
           finalized.product_health = null;
           finalized.product_health_sources = [];
         }
+        logInvestigationProfileEnd('database', finalized);
         return finalized;
       }
     } catch (e) {
@@ -948,20 +975,26 @@ export async function getInvestigationProfile(brandName, corporateParent, option
     }
   }
 
-  console.log(
-    `[investigation] No DB profile for "${primaryBrand}" — running realtime research`
-  );
+  console.log('[investigation] getInvestigationProfile:route', {
+    slug,
+    source: 'realtime',
+    reason: pool ? 'no_db_row' : 'no_db_pool',
+  });
 
   try {
-    return await realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory);
+    const rt = await realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory);
+    logInvestigationProfileEnd('realtime', rt);
+    return rt;
   } catch (e) {
     console.error('getInvestigationProfile realtime failed', e);
-    return buildRealtimeEmergencyProfile(
+    const emergency = buildRealtimeEmergencyProfile(
       brandName,
       corporateParent,
       healthFlag,
       productCategory,
       e?.message || 'unexpected error'
     );
+    logInvestigationProfileEnd('realtime_emergency', emergency);
+    return emergency;
   }
 }

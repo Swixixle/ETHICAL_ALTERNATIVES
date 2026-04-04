@@ -208,7 +208,7 @@
   justify-content: center;
 }
 
-/* Sized to the image so TapOverlay (absolute inset 0) matches photo pixels */
+/* Preview image shell */
 .photo-capture__image-shell {
   position: relative;
   display: inline-block;

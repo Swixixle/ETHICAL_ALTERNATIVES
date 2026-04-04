@@ -63,6 +63,44 @@ function resizeImageForUpload(file, maxDimension = 1200) {
   });
 }
 
+function isIOS() {
+  if (typeof navigator === 'undefined') return false;
+  return (
+    /iPad|iPhone|iPod/i.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+  );
+}
+
+/**
+ * iOS sometimes exposes non-zero video dimensions but paints black — sample one frame.
+ * @param {HTMLVideoElement} video
+ */
+function isVideoFrameLikelyBlack(video) {
+  const w = video.videoWidth;
+  const h = video.videoHeight;
+  if (!w || !h) return true;
+  const sw = Math.min(64, w);
+  const sh = Math.min(64, h);
+  const canvas = document.createElement('canvas');
+  canvas.width = sw;
+  canvas.height = sh;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return false;
+  try {
+    ctx.drawImage(video, 0, 0, sw, sh);
+    const data = ctx.getImageData(0, 0, sw, sh).data;
+    let sum = 0;
+    for (let i = 0; i < data.length; i += 4) {
+      sum += data[i] + data[i + 1] + data[i + 2];
+    }
+    const denom = (data.length / 4) * 3;
+    const avg = sum / denom;
+    return avg < 10;
+  } catch {
+    return false;
+  }
+}
+
 /** Live stream on iOS sometimes resolves but never paints frames — detect near-zero dimensions. */
 async function waitForVideoFrame(video, maxMs = 2000) {
   const start = typeof performance !== 'undefined' ? performance.now() : Date.now();
@@ -186,6 +224,11 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
       await video.play().catch(() => {});
       const ok = await waitForVideoFrame(video, 2000);
       if (!ok) {
+        stopCamera();
+        setMode('idle');
+        return;
+      }
+      if (isIOS() && isVideoFrameLikelyBlack(video)) {
         stopCamera();
         setMode('idle');
         return;
