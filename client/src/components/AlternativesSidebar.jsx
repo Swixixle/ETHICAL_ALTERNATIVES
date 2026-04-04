@@ -1,4 +1,5 @@
 import RegistryCard from './RegistryCard.jsx';
+import TrustStrip from './TrustStrip.jsx';
 import ListYourShop from './ListYourShop.jsx';
 import SecondhandLinks from './SecondhandLinks.jsx';
 import DiySection from './DiySection.jsx';
@@ -24,6 +25,10 @@ function SectionLabel({ children }) {
 }
 
 function LocalCard({ place }) {
+  const trustTier =
+    typeof place.trust_tier === 'string' && place.trust_tier.trim()
+      ? place.trust_tier.trim()
+      : 'local_unvetted';
   const name = place.name || 'Independent Business';
   const website = place.website ? String(place.website) : null;
   const phone = place.phone ? String(place.phone) : null;
@@ -47,6 +52,7 @@ function LocalCard({ place }) {
         marginBottom: 10,
       }}
     >
+      <TrustStrip trustTier={trustTier} />
       <div
         style={{
           fontFamily: "'Bebas Neue', sans-serif",

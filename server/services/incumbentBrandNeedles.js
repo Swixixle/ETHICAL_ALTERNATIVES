@@ -28,10 +28,14 @@ export async function getIncumbentBrandNeedles() {
       SELECT DISTINCT lower(trim(ultimate_parent))
       FROM incumbent_profiles
       WHERE ultimate_parent IS NOT NULL AND length(trim(ultimate_parent)) >= 4
-      UNION
-      SELECT DISTINCT lower(trim(replace(brand_slug, '-', ' ')))
+      UNION SELECT DISTINCT lower(trim(replace(brand_slug, '-', ' ')))
       FROM incumbent_profiles
       WHERE brand_slug IS NOT NULL AND length(trim(brand_slug)) >= 3
+      UNION
+      SELECT DISTINCT lower(trim(s.n))
+      FROM incumbent_profiles,
+           LATERAL unnest(COALESCE(known_subsidiaries, ARRAY[]::text[])) AS s(n)
+      WHERE s.n IS NOT NULL AND length(trim(s.n)) >= 3
     `);
 
     const needles = [...new Set(rows.map((r) => r.n).filter(Boolean))];

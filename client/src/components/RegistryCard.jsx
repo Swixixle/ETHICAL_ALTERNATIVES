@@ -1,3 +1,5 @@
+import TrustStrip from './TrustStrip.jsx';
+
 function EthicsBadge({ label }) {
   return (
     <span
@@ -77,6 +79,7 @@ export default function RegistryCard({ seller }) {
         position: 'relative',
       }}
     >
+      <TrustStrip trustTier="verified_independent" />
       {verified ? (
         <div
           style={{

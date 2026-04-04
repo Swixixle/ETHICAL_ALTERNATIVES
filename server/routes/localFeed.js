@@ -6,6 +6,7 @@ import { queryLocalFeedPlaces } from '../services/overpass.js';
 import { findLocalSellers } from '../services/sellerRegistry.js';
 import { getIncumbentBrandNeedles } from '../services/incumbentBrandNeedles.js';
 import { nameMatchesChain, normalizeChainNeedles } from '../utils/chainMatch.js';
+import { classifyIndependentCandidates } from '../services/chainClassification.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -37,6 +38,7 @@ function mapRegistryItem(s) {
     state: s.state_province,
     address: null,
     verified: s.verified,
+    trust_tier: 'verified_independent',
     ethics_badges: [
       s.is_worker_owned ? 'Worker-owned' : null,
       s.is_bcorp ? 'B-Corp' : null,
@@ -45,7 +47,8 @@ function mapRegistryItem(s) {
   };
 }
 
-function mapOsmRow(b) {
+/** @param {{ osm_id: string, name: string, tagline?: string | null, distance_miles?: number, website?: string | null, phone?: string | null, address?: string | null }} b @param {'local_unvetted' | 'not_verified' | 'chain' | 'chain_candidate'} trust */
+function mapOsmRow(b, trust) {
   return {
     type: 'osm',
     id: `osm-${b.osm_id}`,
@@ -57,6 +60,7 @@ function mapOsmRow(b) {
     city: null,
     address: b.address || null,
     verified: false,
+    trust_tier: trust,
     ethics_badges: [],
   };
 }
@@ -84,7 +88,7 @@ router.get('/', async (req, res) => {
   const radiusMeters = Math.round(radiusMiles * 1609.34);
 
   try {
-    const [{ places: osmPlaces, chainPlaces: osmChainRaw }, registryResults, dbNeedlesRaw] =
+    const [{ places: osmPlaces, chainPlaces: osmExcludedByList }, registryResults, dbNeedlesRaw] =
       await Promise.all([
         queryLocalFeedPlaces({
           lat,
@@ -116,27 +120,58 @@ router.get('/', async (req, res) => {
       }
     }
 
-    const osmFeed = [];
     const osmDbChain = [];
+    const osmForClassification = [];
     for (const b of osmPlaces) {
       if (nameMatchesChain(b.name, dbNeedles)) {
         osmDbChain.push(b);
       } else {
-        osmFeed.push(b);
+        osmForClassification.push(b);
       }
     }
 
-    const osmItems = osmFeed.map((b) => mapOsmRow(b));
-    const osmChainItems = [...osmChainRaw.map((b) => mapOsmRow(b)), ...osmDbChain.map((b) => mapOsmRow(b))];
+    const classified = await classifyIndependentCandidates(osmForClassification.map((x) => x.name));
 
-    const feed = [...registryFeed, ...osmItems].sort(sortFeed);
-    const chain_results = [...registryChain, ...osmChainItems].sort(sortFeed);
+    const mainOsm = [];
+    const unverifiedOsm = [];
+    const claudeChainOsm = [];
+
+    for (const b of osmForClassification) {
+      const c = classified.get(b.name);
+      if (!c) {
+        unverifiedOsm.push(b);
+        continue;
+      }
+      if (c.is_chain && c.confidence > 0.7) {
+        claudeChainOsm.push(b);
+      } else if (!c.is_chain && c.confidence >= 0.45) {
+        mainOsm.push(b);
+      } else {
+        unverifiedOsm.push(b);
+      }
+    }
+
+    const feed = [
+      ...registryFeed,
+      ...mainOsm.map((b) => mapOsmRow(b, 'local_unvetted')),
+    ].sort(sortFeed);
+
+    const not_verified_independent = unverifiedOsm.map((b) => mapOsmRow(b, 'not_verified')).sort(sortFeed);
+
+    const chain_results = [
+      ...registryChain,
+      ...osmExcludedByList.map((b) => mapOsmRow(b, 'chain')),
+      ...osmDbChain.map((b) => mapOsmRow(b, 'chain')),
+      ...claudeChainOsm.map((b) => mapOsmRow(b, 'chain')),
+    ].sort(sortFeed);
 
     res.json({
       feed,
+      not_verified_independent,
       chain_results,
       count: feed.length,
       chain_count: chain_results.length,
+      not_verified_count: not_verified_independent.length,
     });
   } catch (err) {
     console.error('Local feed error:', err?.message || err);

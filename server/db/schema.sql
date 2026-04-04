@@ -137,3 +137,11 @@ CREATE INDEX IF NOT EXISTS community_board_date
 
 CREATE INDEX IF NOT EXISTS community_board_location
   ON community_board (lat, lng);
+
+-- Cached Claude chain / independent classification for OSM business names (local feed pass 3).
+CREATE TABLE IF NOT EXISTS chain_classifications (
+  name_normalized TEXT PRIMARY KEY,
+  is_chain        BOOLEAN NOT NULL,
+  confidence      REAL NOT NULL,
+  updated_at      TIMESTAMPTZ DEFAULT now()
+);
