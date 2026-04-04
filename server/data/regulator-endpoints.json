@@ -14,17 +14,17 @@
       "description": "Report securities fraud, corporate misconduct, accounting fraud",
       "url": "https://www.sec.gov/tcr",
       "twitter": "@SEC_Enforcement",
-      "applies_to": ["securities_fraud", "accounting_fraud", "insider_trading", "disclosure_violations"]
+      "applies_to": ["securities_fraud", "accounting_fraud", "insider_trading", "disclosure_violations", "sec_enforcement"]
     }
   ],
-  "tax": [
+  "irs": [
     {
       "agency": "IRS",
       "name": "IRS Whistleblower Office",
       "description": "Report significant federal tax underpayment, evasion, or fraud involving substantial amounts",
-      "url": "https://www.irs.gov/compliance/whistleblower-office",
+      "url": "https://www.irs.gov/compliance/whistleblower",
       "twitter": "@IRSnews",
-      "applies_to": ["tax_avoidance", "offshore_structure", "offshore_profit_shifting", "government_subsidies"]
+      "applies_to": ["tax_avoidance", "offshore_profit_shifting", "accounting_fraud"]
     }
   ],
   "environmental": [

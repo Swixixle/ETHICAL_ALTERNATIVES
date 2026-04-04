@@ -94,28 +94,29 @@ function buildRegulatorPackText(inv, brandName, sources) {
   return lines.join('\n');
 }
 
-function collectRelevantRegulators(tags) {
-  const buckets = ['tax', 'environmental', 'labor', 'financial', 'food_safety', 'default'];
-  const allRegulators = buckets.flatMap((b) =>
-    Array.isArray(regulatorData[b]) ? regulatorData[b] : []
-  );
+/** Agencies surfaced in the unified “send to all” checklist (fixed order). */
+const SHARE_REGULATOR_ORDER = ['FTC', 'SEC', 'IRS', 'NLRB', 'OSHA', 'EPA'];
 
-  const relevant = [];
-  for (const reg of allRegulators) {
-    if (!reg?.applies_to || !Array.isArray(reg.applies_to)) continue;
-    if (reg.applies_to.some((t) => tags.includes(t))) {
-      if (!relevant.find((r) => r.agency === reg.agency)) relevant.push(reg);
+/**
+ * Regulators whose applies_to intersects investigation verdict_tags only (no default list).
+ */
+function collectVerdictMatchedShareRegulators(verdictTags) {
+  const tagSet = new Set((verdictTags || []).map(String));
+  const buckets = ['default', 'irs', 'environmental', 'labor', 'financial', 'food_safety'];
+  const matchedByAgency = new Map();
+
+  for (const b of buckets) {
+    const arr = regulatorData[b];
+    if (!Array.isArray(arr)) continue;
+    for (const reg of arr) {
+      if (!reg?.agency || !SHARE_REGULATOR_ORDER.includes(reg.agency)) continue;
+      if (!reg.applies_to || !Array.isArray(reg.applies_to)) continue;
+      if (!reg.applies_to.some((t) => tagSet.has(String(t)))) continue;
+      if (!matchedByAgency.has(reg.agency)) matchedByAgency.set(reg.agency, reg);
     }
   }
 
-  const defaultRegs = Array.isArray(regulatorData.default) ? regulatorData.default : [];
-  for (const reg of defaultRegs) {
-    if (reg?.agency && !relevant.find((r) => r.agency === reg.agency)) {
-      relevant.push(reg);
-    }
-  }
-
-  return relevant.slice(0, 8);
+  return SHARE_REGULATOR_ORDER.map((a) => matchedByAgency.get(a)).filter(Boolean);
 }
 
 const router = Router();
@@ -140,10 +141,6 @@ router.post('/', (req, res) => {
     const verdictTags = Array.isArray(investigation.verdict_tags)
       ? investigation.verdict_tags.map(String)
       : [];
-    const concernFlags = Array.isArray(investigation.concern_flags)
-      ? investigation.concern_flags.map(String)
-      : [];
-    const tags = [...new Set([...verdictTags, ...concernFlags])];
 
     const accounts = pickCompanyAccounts(companyAccounts, brandSlug);
     const primarySources = collectPrimarySources(investigation);
@@ -186,7 +183,7 @@ router.post('/', (req, res) => {
       regulator_pack: regulatorPack,
     };
 
-    const relevantRegulators = collectRelevantRegulators(tags);
+    const relevantRegulators = collectVerdictMatchedShareRegulators(verdictTags);
 
     res.json({
       brand_name: brandName,
@@ -194,6 +191,7 @@ router.post('/', (req, res) => {
       company_accounts: accounts,
       company_tag: companyTag,
       relevant_regulators: relevantRegulators,
+      share_url: siteUrl,
       share_texts: shareTexts,
       card_data: {
         headline,

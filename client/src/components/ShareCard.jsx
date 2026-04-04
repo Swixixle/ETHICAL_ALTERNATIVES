@@ -160,63 +160,30 @@ function ShareCardVisual({ cardData }) {
   );
 }
 
-function platformLabel(key) {
-  const m = {
-    twitter_url: 'X / Twitter',
-    instagram_url: 'Instagram',
-    facebook_url: 'Facebook',
-    tiktok_url: 'TikTok',
-    youtube_url: 'YouTube',
-  };
-  return m[key] || key.replace(/_url$/, '').replace(/^./, (c) => c.toUpperCase());
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
 }
 
-function RegulatorRow({ regulator, onOpen }) {
-  return (
-    <button
-      type="button"
-      onClick={() => onOpen(regulator)}
-      style={{
-        display: 'flex',
-        alignItems: 'flex-start',
-        gap: 12,
-        width: '100%',
-        textAlign: 'left',
-        cursor: 'pointer',
-        background: 'rgba(255, 107, 107, 0.05)',
-        border: '1px solid rgba(255, 107, 107, 0.2)',
-        borderLeft: '3px solid #ff6b6b',
-        borderRadius: '0 4px 4px 0',
-        padding: '12px 16px',
-        marginBottom: 8,
-      }}
-    >
-      <div style={{ flex: 1 }}>
-        <div
-          style={{
-            fontFamily: "'Space Mono', monospace",
-            fontSize: 10,
-            letterSpacing: 1.5,
-            textTransform: 'uppercase',
-            color: '#ff6b6b',
-            marginBottom: 3,
-          }}
-        >
-          {regulator.agency} — copy report and open form ↗
-        </div>
-        <div
-          style={{
-            fontFamily: "'Crimson Pro', serif",
-            fontSize: 13,
-            color: '#4a6478',
-            lineHeight: 1.4,
-          }}
-        >
-          {regulator.description}
-        </div>
-      </div>
-    </button>
-  );
+function tweetUrl(text) {
+  return `https://x.com/intent/tweet?text=${encodeURIComponent(text)}`;
+}
+
+function facebookShareUrl(pageUrl) {
+  return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+}
+
+const REGULATOR_CHECKLIST_ACTION = {
+  FTC: 'Open complaint form',
+  SEC: 'Open tips portal',
+  IRS: 'Open whistleblower information',
+  NLRB: 'Open complaint form',
+  OSHA: 'Open complaint form',
+  EPA: 'Open report form',
+};
+
+function checklistLabelForRegulator(reg) {
+  const action = REGULATOR_CHECKLIST_ACTION[reg.agency] || 'Open form';
+  return `${reg.agency} — ${action}`;
 }
 
 /**
@@ -230,8 +197,11 @@ export default function ShareCard({ investigation, identification, onClose }) {
   const [shareData, setShareData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState(null);
-  const [copied, setCopied] = useState(null);
-  const [mode, setMode] = useState('share');
+  const [selected, setSelected] = useState({});
+  const [sending, setSending] = useState(false);
+  const [toast, setToast] = useState(null);
+  const [showSentConfirm, setShowSentConfirm] = useState(false);
+  const [sentItems, setSentItems] = useState([]);
 
   const loadShareData = useCallback(async () => {
     setLoading(true);
@@ -259,51 +229,251 @@ export default function ShareCard({ investigation, identification, onClose }) {
     loadShareData();
   }, [loadShareData]);
 
-  async function copyText(text, key) {
+  useEffect(() => {
+    if (!shareData) return;
+    const next = {
+      twitter_feed: true,
+      twitter_tag: true,
+      instagram: true,
+      tiktok: true,
+      facebook: true,
+    };
+    for (const reg of shareData.relevant_regulators || []) {
+      next[`reg_${reg.agency}`] = true;
+    }
+    setSelected(next);
+    setShowSentConfirm(false);
+    setSentItems([]);
+  }, [shareData]);
+
+  const toggle = (id) => {
+    setSelected((s) => ({ ...s, [id]: !s[id] }));
+  };
+
+  const anyChecked = shareData
+    ? (() => {
+        const s = selected;
+        if (s.twitter_feed || s.twitter_tag || s.instagram || s.tiktok || s.facebook) return true;
+        for (const reg of shareData.relevant_regulators || []) {
+          if (s[`reg_${reg.agency}`]) return true;
+        }
+        return false;
+      })()
+    : false;
+
+  const handleSendAll = async () => {
+    if (!shareData || sending || !anyChecked) return;
+    setSending(true);
+    setToast(null);
+    const completed = [];
+    const sel = selected;
+    const s = shareData;
+    const site = typeof s.share_url === 'string' && s.share_url ? s.share_url : 'https://ethicalalt-client.onrender.com';
+
     try {
-      await navigator.clipboard.writeText(text);
-      setCopied(key);
-      setTimeout(() => setCopied(null), 2000);
-    } catch {
-      setCopied(null);
-    }
-  }
-
-  function tweetUrl(text) {
-    return `https://x.com/intent/tweet?text=${encodeURIComponent(text)}`;
-  }
-
-  async function tryNativeShare(text, title) {
-    if (typeof navigator !== 'undefined' && navigator.share) {
-      try {
-        await navigator.share({ title, text });
-      } catch {
-        /* user cancelled or unsupported */
+      if (sel.twitter_feed) {
+        window.open(tweetUrl(s.share_texts.twitter), '_blank', 'noopener,noreferrer');
+        completed.push({ id: 'twitter_feed', label: 'X / Twitter — Post to my feed' });
       }
+      if (sel.twitter_tag) {
+        await sleep(sel.twitter_feed ? 500 : 0);
+        window.open(tweetUrl(s.share_texts.twitter_company), '_blank', 'noopener,noreferrer');
+        completed.push({
+          id: 'twitter_tag',
+          label: `X / Twitter — Tag the company (${s.company_tag})`,
+        });
+      }
+
+      if (sel.instagram && sel.tiktok) {
+        await navigator.clipboard.writeText(s.share_texts.instagram);
+        setToast('Caption copied — paste in Instagram and TikTok');
+        completed.push({ id: 'instagram', label: 'Instagram — Copy caption to clipboard' });
+        completed.push({ id: 'tiktok', label: 'TikTok — Copy caption to clipboard' });
+      } else if (sel.instagram) {
+        await navigator.clipboard.writeText(s.share_texts.instagram);
+        setToast('Instagram caption copied');
+        completed.push({ id: 'instagram', label: 'Instagram — Copy caption to clipboard' });
+      } else if (sel.tiktok) {
+        await navigator.clipboard.writeText(s.share_texts.instagram);
+        setToast('TikTok caption copied');
+        completed.push({ id: 'tiktok', label: 'TikTok — Copy caption to clipboard' });
+      }
+
+      if (sel.instagram || sel.tiktok) {
+        await sleep(600);
+      }
+      setToast(null);
+
+      if (sel.facebook) {
+        window.open(facebookShareUrl(site), '_blank', 'noopener,noreferrer');
+        completed.push({ id: 'facebook', label: 'Facebook — Share link' });
+      }
+
+      const regs = (s.relevant_regulators || []).filter((r) => sel[`reg_${r.agency}`]);
+      if (regs.length) {
+        try {
+          await navigator.clipboard.writeText(s.share_texts.regulator_pack);
+        } catch {
+          /* clipboard may fail; forms still open */
+        }
+        for (let i = 0; i < regs.length; i++) {
+          const reg = regs[i];
+          window.open(reg.url, '_blank', 'noopener,noreferrer');
+          completed.push({
+            id: `reg_${reg.agency}`,
+            label: checklistLabelForRegulator(reg),
+          });
+          if (i < regs.length - 1) await sleep(800);
+        }
+      }
+
+      setSentItems(completed);
+      setShowSentConfirm(true);
+    } finally {
+      setSending(false);
+      setToast(null);
     }
-  }
-
-  async function copyAndOpenInstagram(caption) {
-    await copyText(caption, 'instagram');
-    const u = 'instagram://app';
-    window.location.href = u;
-  }
-
-  async function copyAndOpenTikTok(caption) {
-    await copyText(caption, 'tiktok');
-    window.open('https://www.tiktok.com/', '_blank', 'noopener,noreferrer');
-  }
-
-  async function openRegulator(regulator) {
-    if (shareData?.share_texts?.regulator_pack) {
-      await copyText(shareData.share_texts.regulator_pack, `reg-${regulator.agency}`);
-    }
-    window.open(regulator.url, '_blank', 'noopener,noreferrer');
-  }
+  };
 
   if (!investigation || !identification) return null;
 
-  const brandLabel = shareData?.brand_name || String(identification.brand || identification.object || 'Company');
+  const staticRows = shareData
+    ? [
+        {
+          id: 'twitter_feed',
+          primary: 'X / Twitter — Post to my feed',
+          detail: 'Opens X with this record pre-filled as a post.',
+        },
+        {
+          id: 'twitter_tag',
+          primary: `X / Twitter — Tag the company (${shareData.company_tag})`,
+          detail: 'Second post that tags the brand so the receipt lands in their mentions.',
+        },
+        {
+          id: 'instagram',
+          primary: 'Instagram — Copy caption to clipboard',
+          detail: 'Copies the caption; paste it under your screenshot in Instagram.',
+        },
+        {
+          id: 'tiktok',
+          primary: 'TikTok — Copy caption to clipboard',
+          detail: 'Copies the same caption for a TikTok post.',
+        },
+        {
+          id: 'facebook',
+          primary: 'Facebook — Share link',
+          detail: 'Opens Facebook’s share dialog with the EthicalAlt link.',
+        },
+      ]
+    : [];
+
+  const regRows =
+    shareData?.relevant_regulators?.map((reg) => ({
+      id: `reg_${reg.agency}`,
+      primary: checklistLabelForRegulator(reg),
+      detail: reg.description || '',
+    })) || [];
+
+  const rowStyle = {
+    display: 'flex',
+    alignItems: 'flex-start',
+    gap: 14,
+    width: '100%',
+    padding: '14px 12px',
+    marginBottom: 8,
+    background: '#162030',
+    border: '1px solid #2a3f52',
+    borderRadius: 4,
+    cursor: 'pointer',
+    textAlign: 'left',
+    boxSizing: 'border-box',
+  };
+
+  if (showSentConfirm) {
+    return (
+      <div
+        style={{
+          position: 'fixed',
+          inset: 0,
+          background: 'rgba(15, 21, 32, 0.96)',
+          zIndex: 1000,
+          overflowY: 'auto',
+          padding: '24px 20px 48px',
+        }}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Record sent"
+      >
+        <div style={{ maxWidth: 520, margin: '0 auto' }}>
+          <div
+            style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: 36,
+              letterSpacing: 3,
+              color: '#6aaa8a',
+              textAlign: 'center',
+              marginBottom: 8,
+            }}
+          >
+            RECORD SENT
+          </div>
+          <p
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 9,
+              letterSpacing: 2,
+              textTransform: 'uppercase',
+              color: '#4a6478',
+              textAlign: 'center',
+              marginBottom: 28,
+            }}
+          >
+            This record was sent everywhere you selected
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px' }}>
+            {sentItems.map((item) => (
+              <li
+                key={item.id}
+                style={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: 12,
+                  fontFamily: "'Crimson Pro', serif",
+                  fontSize: 16,
+                  color: '#e8dfc8',
+                  lineHeight: 1.45,
+                  marginBottom: 14,
+                }}
+              >
+                <span style={{ color: '#6aaa8a', fontWeight: 700, flexShrink: 0 }}>✓</span>
+                <span>{item.label}</span>
+              </li>
+            ))}
+          </ul>
+          <button
+            type="button"
+            onClick={onClose}
+            style={{
+              width: '100%',
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 11,
+              letterSpacing: 2,
+              textTransform: 'uppercase',
+              color: '#0f1520',
+              background: '#e8a020',
+              border: 'none',
+              padding: '14px 20px',
+              borderRadius: 3,
+              cursor: 'pointer',
+              fontWeight: 700,
+            }}
+          >
+            Done
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -317,14 +487,9 @@ export default function ShareCard({ investigation, identification, onClose }) {
       }}
       role="dialog"
       aria-modal="true"
-      aria-label="Share the record"
+      aria-label="Send this record"
     >
-      <div
-        style={{
-          maxWidth: 520,
-          margin: '0 auto',
-        }}
-      >
+      <div style={{ maxWidth: 520, margin: '0 auto' }}>
         <div
           style={{
             display: 'flex',
@@ -341,7 +506,7 @@ export default function ShareCard({ investigation, identification, onClose }) {
               color: '#e8dfc8',
             }}
           >
-            Share the Record
+            Send This Record
           </div>
           <button
             type="button"
@@ -383,532 +548,122 @@ export default function ShareCard({ investigation, identification, onClose }) {
 
         {shareData ? <ShareCardVisual cardData={shareData.card_data} /> : null}
 
-        <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
-          {[
-            { id: 'share', label: 'Share to your network' },
-            { id: 'company', label: 'Tag the company' },
-            { id: 'regulators', label: 'Report to regulators' },
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              type="button"
-              onClick={() => setMode(tab.id)}
-              style={{
-                flex: '1 1 140px',
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 8,
-                letterSpacing: 1.2,
-                textTransform: 'uppercase',
-                padding: '8px 10px',
-                borderRadius: 2,
-                border: mode === tab.id ? '1px solid #e8a020' : '1px solid #2a3f52',
-                background: mode === tab.id ? 'rgba(232,160,32,0.1)' : 'transparent',
-                color: mode === tab.id ? '#e8a020' : '#4a6478',
-                cursor: 'pointer',
-              }}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        {mode === 'share' && shareData ? (
-          <div>
+        {shareData && !loading ? (
+          <>
             <p
-              style={{
-                fontFamily: "'Crimson Pro', serif",
-                fontSize: 15,
-                color: '#8fa8bc',
-                lineHeight: 1.6,
-                marginBottom: 16,
-              }}
-            >
-              Share this investigation with your network. On mobile, use your system share sheet for any
-              app (iMessage, WhatsApp, email). Use the buttons below for X, or copy captions for Instagram
-              and TikTok, then post your screenshot with the pasted text.
-            </p>
-
-            {typeof navigator !== 'undefined' && navigator.share ? (
-              <button
-                type="button"
-                onClick={() => tryNativeShare(shareData.share_texts.general, 'EthicalAlt — public record')}
-                style={{
-                  width: '100%',
-                  marginBottom: 16,
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 9,
-                  letterSpacing: 1.5,
-                  textTransform: 'uppercase',
-                  color: '#0f1520',
-                  background: '#e8a020',
-                  border: 'none',
-                  padding: '10px 16px',
-                  borderRadius: 2,
-                  cursor: 'pointer',
-                  fontWeight: 700,
-                }}
-              >
-                Share to your network (system sheet)
-              </button>
-            ) : null}
-
-            <div style={{ marginBottom: 16 }}>
-              <div
-                style={{
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 9,
-                  letterSpacing: 2,
-                  textTransform: 'uppercase',
-                  color: '#4a6478',
-                  marginBottom: 8,
-                }}
-              >
-                X / Twitter
-              </div>
-              <div
-                style={{
-                  background: '#162030',
-                  border: '1px solid #2a3f52',
-                  borderRadius: 4,
-                  padding: '12px 14px',
-                  fontFamily: "'Crimson Pro', serif",
-                  fontSize: 15,
-                  color: '#8fa8bc',
-                  lineHeight: 1.5,
-                  marginBottom: 8,
-                  whiteSpace: 'pre-line',
-                }}
-              >
-                {shareData.share_texts.twitter}
-              </div>
-              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                <a
-                  href={tweetUrl(shareData.share_texts.twitter)}
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    fontFamily: "'Space Mono', monospace",
-                    fontSize: 9,
-                    letterSpacing: 1.5,
-                    textTransform: 'uppercase',
-                    color: '#0f1520',
-                    background: '#e8a020',
-                    padding: '8px 16px',
-                    borderRadius: 2,
-                    textDecoration: 'none',
-                    fontWeight: 700,
-                  }}
-                >
-                  Post to X ↗
-                </a>
-                <button
-                  type="button"
-                  onClick={() => copyText(shareData.share_texts.twitter, 'twitter')}
-                  style={{
-                    fontFamily: "'Space Mono', monospace",
-                    fontSize: 9,
-                    letterSpacing: 1.5,
-                    textTransform: 'uppercase',
-                    color: copied === 'twitter' ? '#6aaa8a' : '#4a6478',
-                    background: 'transparent',
-                    border: '1px solid #2a3f52',
-                    padding: '8px 16px',
-                    borderRadius: 2,
-                    cursor: 'pointer',
-                  }}
-                >
-                  {copied === 'twitter' ? 'Copied ✓' : 'Copy'}
-                </button>
-              </div>
-            </div>
-
-            <div style={{ marginBottom: 16 }}>
-              <div
-                style={{
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 9,
-                  letterSpacing: 2,
-                  textTransform: 'uppercase',
-                  color: '#4a6478',
-                  marginBottom: 8,
-                }}
-              >
-                Instagram — copy caption, then open app
-              </div>
-              <div
-                style={{
-                  background: '#162030',
-                  border: '1px solid #2a3f52',
-                  borderRadius: 4,
-                  padding: '12px 14px',
-                  fontFamily: "'Crimson Pro', serif",
-                  fontSize: 14,
-                  color: '#8fa8bc',
-                  lineHeight: 1.5,
-                  marginBottom: 8,
-                  whiteSpace: 'pre-line',
-                }}
-              >
-                {shareData.share_texts.instagram}
-              </div>
-              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                <button
-                  type="button"
-                  onClick={() => copyText(shareData.share_texts.instagram, 'instagram')}
-                  style={{
-                    fontFamily: "'Space Mono', monospace",
-                    fontSize: 9,
-                    letterSpacing: 1.5,
-                    textTransform: 'uppercase',
-                    color: copied === 'instagram' ? '#6aaa8a' : '#4a6478',
-                    background: 'transparent',
-                    border: '1px solid #2a3f52',
-                    padding: '8px 16px',
-                    borderRadius: 2,
-                    cursor: 'pointer',
-                  }}
-                >
-                  {copied === 'instagram' ? 'Copied ✓' : 'Copy caption'}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => copyAndOpenInstagram(shareData.share_texts.instagram)}
-                  style={{
-                    fontFamily: "'Space Mono', monospace",
-                    fontSize: 9,
-                    letterSpacing: 1.5,
-                    textTransform: 'uppercase',
-                    color: '#0f1520',
-                    background: '#e8a020',
-                    border: 'none',
-                    padding: '8px 16px',
-                    borderRadius: 2,
-                    cursor: 'pointer',
-                    fontWeight: 700,
-                  }}
-                >
-                  Copy &amp; open Instagram
-                </button>
-              </div>
-            </div>
-
-            <div style={{ marginBottom: 16 }}>
-              <div
-                style={{
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 9,
-                  letterSpacing: 2,
-                  textTransform: 'uppercase',
-                  color: '#4a6478',
-                  marginBottom: 8,
-                }}
-              >
-                TikTok — copy caption, then open TikTok
-              </div>
-              <div
-                style={{
-                  background: '#162030',
-                  border: '1px solid #2a3f52',
-                  borderRadius: 4,
-                  padding: '12px 14px',
-                  fontFamily: "'Crimson Pro', serif",
-                  fontSize: 14,
-                  color: '#8fa8bc',
-                  lineHeight: 1.5,
-                  marginBottom: 8,
-                  whiteSpace: 'pre-line',
-                }}
-              >
-                {shareData.share_texts.instagram}
-              </div>
-              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                <button
-                  type="button"
-                  onClick={() => copyText(shareData.share_texts.instagram, 'tiktok-cap')}
-                  style={{
-                    fontFamily: "'Space Mono', monospace",
-                    fontSize: 9,
-                    letterSpacing: 1.5,
-                    textTransform: 'uppercase',
-                    color: copied === 'tiktok-cap' ? '#6aaa8a' : '#4a6478',
-                    background: 'transparent',
-                    border: '1px solid #2a3f52',
-                    padding: '8px 16px',
-                    borderRadius: 2,
-                    cursor: 'pointer',
-                  }}
-                >
-                  {copied === 'tiktok-cap' ? 'Copied ✓' : 'Copy caption'}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => copyAndOpenTikTok(shareData.share_texts.instagram)}
-                  style={{
-                    fontFamily: "'Space Mono', monospace",
-                    fontSize: 9,
-                    letterSpacing: 1.5,
-                    textTransform: 'uppercase',
-                    color: '#0f1520',
-                    background: '#e8a020',
-                    border: 'none',
-                    padding: '8px 16px',
-                    borderRadius: 2,
-                    cursor: 'pointer',
-                    fontWeight: 700,
-                  }}
-                >
-                  Copy &amp; open TikTok
-                </button>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => copyText(shareData.share_texts.general, 'general')}
-              style={{
-                width: '100%',
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 9,
-                letterSpacing: 1.5,
-                textTransform: 'uppercase',
-                color: copied === 'general' ? '#6aaa8a' : '#4a6478',
-                background: 'transparent',
-                border: '1px solid #2a3f52',
-                padding: '10px',
-                borderRadius: 2,
-                cursor: 'pointer',
-              }}
-            >
-              {copied === 'general' ? 'Copied ✓' : 'Copy for Facebook / LinkedIn / anywhere'}
-            </button>
-          </div>
-        ) : null}
-
-        {mode === 'company' && shareData ? (
-          <div>
-            <p
-              style={{
-                fontFamily: "'Crimson Pro', serif",
-                fontSize: 15,
-                color: '#8fa8bc',
-                lineHeight: 1.6,
-                marginBottom: 16,
-              }}
-            >
-              Deliver the record to {brandLabel}. One post tags their official account with only sourced,
-              factual language from the investigation — the receipt lands in their mentions.
-            </p>
-
-            {shareData.company_accounts ? (
-              <>
-                <div
-                  style={{
-                    background: '#162030',
-                    border: '1px solid #2a3f52',
-                    borderRadius: 4,
-                    padding: '12px 14px',
-                    fontFamily: "'Crimson Pro', serif",
-                    fontSize: 15,
-                    color: '#8fa8bc',
-                    lineHeight: 1.5,
-                    marginBottom: 12,
-                    whiteSpace: 'pre-line',
-                  }}
-                >
-                  {shareData.share_texts.twitter_company}
-                </div>
-
-                <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
-                  <a
-                    href={tweetUrl(shareData.share_texts.twitter_company)}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{
-                      fontFamily: "'Space Mono', monospace",
-                      fontSize: 9,
-                      letterSpacing: 1.5,
-                      textTransform: 'uppercase',
-                      color: '#0f1520',
-                      background: '#e8a020',
-                      padding: '8px 16px',
-                      borderRadius: 2,
-                      textDecoration: 'none',
-                      fontWeight: 700,
-                    }}
-                  >
-                    Post on X with tag ↗
-                  </a>
-                  <button
-                    type="button"
-                    onClick={() => copyText(shareData.share_texts.twitter_company, 'company')}
-                    style={{
-                      fontFamily: "'Space Mono', monospace",
-                      fontSize: 9,
-                      letterSpacing: 1.5,
-                      textTransform: 'uppercase',
-                      color: copied === 'company' ? '#6aaa8a' : '#4a6478',
-                      background: 'transparent',
-                      border: '1px solid #2a3f52',
-                      padding: '8px 16px',
-                      borderRadius: 2,
-                      cursor: 'pointer',
-                    }}
-                  >
-                    {copied === 'company' ? 'Copied ✓' : 'Copy'}
-                  </button>
-                </div>
-
-                <div
-                  style={{
-                    fontFamily: "'Space Mono', monospace",
-                    fontSize: 9,
-                    letterSpacing: 2,
-                    textTransform: 'uppercase',
-                    color: '#4a6478',
-                    marginBottom: 10,
-                  }}
-                >
-                  Official accounts
-                </div>
-                {Object.entries(shareData.company_accounts)
-                  .filter(([k]) => k.endsWith('_url'))
-                  .map(([k, url]) => {
-                    const base = k.replace(/_url$/, '');
-                    const handle = shareData.company_accounts[base];
-                    return (
-                      <a
-                        key={k}
-                        href={String(url)}
-                        target="_blank"
-                        rel="noreferrer"
-                        style={{
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'center',
-                          background: '#162030',
-                          border: '1px solid #2a3f52',
-                          borderRadius: 4,
-                          padding: '10px 14px',
-                          marginBottom: 6,
-                          textDecoration: 'none',
-                        }}
-                      >
-                        <span
-                          style={{
-                            fontFamily: "'Space Mono', monospace",
-                            fontSize: 10,
-                            letterSpacing: 1,
-                            textTransform: 'uppercase',
-                            color: '#e8dfc8',
-                          }}
-                        >
-                          {platformLabel(k)}
-                        </span>
-                        <span
-                          style={{
-                            fontFamily: "'Space Mono', monospace",
-                            fontSize: 9,
-                            color: '#e8a020',
-                          }}
-                        >
-                          {handle ? String(handle) : 'Open'} ↗
-                        </span>
-                      </a>
-                    );
-                  })}
-              </>
-            ) : (
-              <p
-                style={{
-                  fontFamily: "'Crimson Pro', serif",
-                  fontSize: 15,
-                  color: '#4a6478',
-                  lineHeight: 1.6,
-                  padding: '20px 0',
-                }}
-              >
-                We don&apos;t have verified social handles for this company in our database yet. Search for{' '}
-                {brandLabel} on X or Instagram and paste the copied record with your screenshot.
-              </p>
-            )}
-          </div>
-        ) : null}
-
-        {mode === 'regulators' && shareData ? (
-          <div>
-            <p
-              style={{
-                fontFamily: "'Crimson Pro', serif",
-                fontSize: 15,
-                color: '#8fa8bc',
-                lineHeight: 1.6,
-                marginBottom: 16,
-              }}
-            >
-              These agencies match documented concerns in this record. Each button copies the same factual
-              summary (with source URLs) and opens the agency&apos;s official intake — paste and submit.
-            </p>
-
-            <div
-              style={{
-                background: '#162030',
-                border: '1px solid #2a3f52',
-                borderRadius: 4,
-                padding: '12px 14px',
-                fontFamily: "'Crimson Pro', serif",
-                fontSize: 14,
-                color: '#8fa8bc',
-                lineHeight: 1.6,
-                marginBottom: 12,
-                whiteSpace: 'pre-line',
-                maxHeight: 220,
-                overflowY: 'auto',
-              }}
-            >
-              {shareData.share_texts.regulator_pack}
-            </div>
-            <button
-              type="button"
-              onClick={() => copyText(shareData.share_texts.regulator_pack, 'regulator')}
-              style={{
-                width: '100%',
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 9,
-                letterSpacing: 1.5,
-                textTransform: 'uppercase',
-                color: copied === 'regulator' ? '#6aaa8a' : '#4a6478',
-                background: 'transparent',
-                border: '1px solid #2a3f52',
-                padding: '10px',
-                borderRadius: 2,
-                cursor: 'pointer',
-                marginBottom: 20,
-              }}
-            >
-              {copied === 'regulator' ? 'Copied ✓' : 'Copy report text only'}
-            </button>
-
-            <div
               style={{
                 fontFamily: "'Space Mono', monospace",
                 fontSize: 9,
                 letterSpacing: 2,
                 textTransform: 'uppercase',
                 color: '#4a6478',
-                marginBottom: 10,
+                marginBottom: 12,
               }}
             >
-              Relevant agencies
+              Send to all selected
+            </p>
+            <p
+              style={{
+                fontFamily: "'Crimson Pro', serif",
+                fontSize: 14,
+                color: '#8fa8bc',
+                lineHeight: 1.55,
+                marginBottom: 18,
+              }}
+            >
+              Uncheck anywhere you don&apos;t want this run. One tap fires every destination you leave on —
+              social posts, clipboard captions, and regulator forms (only agencies that match this record&apos;s
+              issue tags).
+            </p>
+
+            <div style={{ marginBottom: 24 }}>
+              {[...staticRows, ...regRows].map((row) => (
+                <label key={row.id} style={rowStyle}>
+                  <input
+                    type="checkbox"
+                    checked={Boolean(selected[row.id])}
+                    onChange={() => toggle(row.id)}
+                    style={{
+                      width: 18,
+                      height: 18,
+                      marginTop: 2,
+                      accentColor: '#e8a020',
+                      cursor: 'pointer',
+                      flexShrink: 0,
+                    }}
+                  />
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div
+                      style={{
+                        fontFamily: "'Space Mono', monospace",
+                        fontSize: 10,
+                        letterSpacing: 0.8,
+                        textTransform: 'uppercase',
+                        color: '#e8dfc8',
+                        marginBottom: 4,
+                        lineHeight: 1.35,
+                      }}
+                    >
+                      {row.primary}
+                    </div>
+                    <div
+                      style={{
+                        fontFamily: "'Crimson Pro', serif",
+                        fontSize: 13,
+                        color: '#4a6478',
+                        lineHeight: 1.45,
+                      }}
+                    >
+                      {row.detail}
+                    </div>
+                  </div>
+                </label>
+              ))}
             </div>
-            {shareData.relevant_regulators.map((reg, i) => (
-              <RegulatorRow key={`${reg.agency}-${i}`} regulator={reg} onOpen={openRegulator} />
-            ))}
-          </div>
+
+            {toast ? (
+              <p
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 9,
+                  letterSpacing: 1,
+                  color: '#6aaa8a',
+                  textAlign: 'center',
+                  marginBottom: 12,
+                }}
+              >
+                {toast}
+              </p>
+            ) : null}
+
+            <button
+              type="button"
+              disabled={!anyChecked || sending}
+              onClick={handleSendAll}
+              style={{
+                width: '100%',
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 11,
+                letterSpacing: 2,
+                textTransform: 'uppercase',
+                color: !anyChecked || sending ? '#4a6478' : '#0f1520',
+                background: !anyChecked || sending ? '#2a3f52' : '#e8a020',
+                border: 'none',
+                padding: '16px 20px',
+                borderRadius: 3,
+                cursor: !anyChecked || sending ? 'not-allowed' : 'pointer',
+                fontWeight: 700,
+                marginBottom: 24,
+              }}
+            >
+              {sending ? 'SENDING…' : 'SEND TO ALL SELECTED'}
+            </button>
+          </>
         ) : null}
 
         <footer
           style={{
-            marginTop: 28,
+            marginTop: 8,
             paddingTop: 18,
             borderTop: '1px solid #2a3f52',
             fontFamily: "'Crimson Pro', serif",

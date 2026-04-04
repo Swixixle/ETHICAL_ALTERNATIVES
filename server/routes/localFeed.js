@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { Router } from 'express';
 import { queryLocalFeedPlaces } from '../services/overpass.js';
 import { findLocalSellers } from '../services/sellerRegistry.js';
+import { getIncumbentBrandNeedles } from '../services/incumbentBrandNeedles.js';
 import { nameMatchesChain, normalizeChainNeedles } from '../utils/chainMatch.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -83,36 +84,50 @@ router.get('/', async (req, res) => {
   const radiusMeters = Math.round(radiusMiles * 1609.34);
 
   try {
-    const [{ places: osmPlaces, chainPlaces: osmChainRaw }, registryResults] = await Promise.all([
-      queryLocalFeedPlaces({
-        lat,
-        lng,
-        radiusMeters,
-        category,
-        excludeNameSubstrings: chainExclusionsRaw,
-      }),
-      findLocalSellers({
-        lat,
-        lng,
-        category,
-        keywords: [],
-        radiusMiles,
-      }),
-    ]);
+    const [{ places: osmPlaces, chainPlaces: osmChainRaw }, registryResults, dbNeedlesRaw] =
+      await Promise.all([
+        queryLocalFeedPlaces({
+          lat,
+          lng,
+          radiusMeters,
+          category,
+          excludeNameSubstrings: chainExclusionsRaw,
+        }),
+        findLocalSellers({
+          lat,
+          lng,
+          category,
+          keywords: [],
+          radiusMiles,
+        }),
+        getIncumbentBrandNeedles(),
+      ]);
+
+    const dbNeedles = normalizeChainNeedles(dbNeedlesRaw);
 
     const registryFeed = [];
     const registryChain = [];
     for (const s of registryResults) {
       const item = mapRegistryItem(s);
-      if (nameMatchesChain(item.name, chainNeedles)) {
+      if (nameMatchesChain(item.name, chainNeedles) || nameMatchesChain(item.name, dbNeedles)) {
         registryChain.push(item);
       } else {
         registryFeed.push(item);
       }
     }
 
-    const osmItems = osmPlaces.map((b) => mapOsmRow(b));
-    const osmChainItems = osmChainRaw.map((b) => mapOsmRow(b));
+    const osmFeed = [];
+    const osmDbChain = [];
+    for (const b of osmPlaces) {
+      if (nameMatchesChain(b.name, dbNeedles)) {
+        osmDbChain.push(b);
+      } else {
+        osmFeed.push(b);
+      }
+    }
+
+    const osmItems = osmFeed.map((b) => mapOsmRow(b));
+    const osmChainItems = [...osmChainRaw.map((b) => mapOsmRow(b)), ...osmDbChain.map((b) => mapOsmRow(b))];
 
     const feed = [...registryFeed, ...osmItems].sort(sortFeed);
     const chain_results = [...registryChain, ...osmChainItems].sort(sortFeed);

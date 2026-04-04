@@ -69,12 +69,12 @@ export default function App() {
 
   const [showShare, setShowShare] = useState(false);
 
-  const [isNarrow, setIsNarrow] = useState(
-    () => typeof window !== 'undefined' && window.innerWidth < 768
+  const [isDesktop, setIsDesktop] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth >= 768
   );
 
   useEffect(() => {
-    const onResize = () => setIsNarrow(window.innerWidth < 768);
+    const onResize = () => setIsDesktop(window.innerWidth >= 768);
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
@@ -107,6 +107,106 @@ export default function App() {
       </div>
     );
   }
+
+  const identificationBlock =
+    image && result ? (
+      <div className="app__id-block">
+        {id ? (
+          <>
+            <div className="app__method-row">
+              <IdentificationMethodBadge id={id} tier={result.identification_tier} />
+              {id.text_based_identification && id.visible_text ? (
+                <span className="app__visible-text-note" title={id.visible_text}>
+                  From package text
+                </span>
+              ) : null}
+            </div>
+            {id.brand && id.corporate_parent ? (
+              <p className="app__meta">
+                Made by {id.brand} ({id.corporate_parent})
+              </p>
+            ) : null}
+            {!id.brand && id.corporate_parent ? (
+              <p className="app__meta">Corporate parent: {id.corporate_parent}</p>
+            ) : null}
+            <p className="app__meta meta-space" style={{ fontSize: 11, marginTop: 8 }}>
+              Match: <span className="app__badge">{confidenceLabel(id.confidence)}</span>
+            </p>
+            <p className="app__footnote">
+              {typeof result.response_ms === 'number' ? `${result.response_ms} ms · ` : ''}
+              {Array.isArray(result.searched_sources)
+                ? `Sources: ${result.searched_sources.join(', ')}`
+                : null}
+            </p>
+          </>
+        ) : null}
+
+        {result.investigation ? (
+          <button
+            type="button"
+            className="app__btn app__btn--share"
+            onClick={() => setShowShare(true)}
+          >
+            Share this record
+          </button>
+        ) : null}
+        <HealthCallout investigation={result.investigation} />
+        <InvestigationCard investigation={result.investigation} identification={id} />
+      </div>
+    ) : null;
+
+  const alternativesAside =
+    image && result ? (
+      <aside
+        className={
+          isDesktop ? 'app__results-sidebar' : 'app__results-sidebar app__results-sidebar--stacked'
+        }
+        aria-label="Alternatives"
+      >
+        <AlternativesSidebar
+          registryResults={result.registry_results}
+          localResults={result.local_results}
+          etsyResults={result.results}
+          identification={id}
+          investigation={result.investigation}
+        />
+      </aside>
+    ) : null;
+
+  const tapResultsSection =
+    image && result ? (
+      <div className="app__results-root">
+        <div className="app__results-top">
+          <div className="app__image-shell app__image-shell--compact">
+            <img className="app__photo" src={dataUrl} alt="Your capture" />
+          </div>
+          <div className="app__toolbar">
+            <button
+              type="button"
+              className="app__btn app__btn--ghost"
+              onClick={() => clearResult()}
+            >
+              Try another object
+            </button>
+            <button type="button" className="app__btn app__btn--ghost" onClick={() => reset()}>
+              New photo
+            </button>
+          </div>
+        </div>
+
+        {isDesktop ? (
+          <div className="app__results-grid">
+            {alternativesAside}
+            <div className="app__results-main">{identificationBlock}</div>
+          </div>
+        ) : (
+          <div className="app__results-stack">
+            <div className="app__results-main app__results-main--stacked">{identificationBlock}</div>
+            {alternativesAside}
+          </div>
+        )}
+      </div>
+    ) : null;
 
   return (
     <div className="app">
@@ -194,89 +294,7 @@ export default function App() {
           </div>
         ) : null}
 
-        {image && result ? (
-          <div className="app__results-root">
-            <div className="app__results-top">
-              <div className="app__image-shell app__image-shell--compact">
-                <img className="app__photo" src={dataUrl} alt="Your capture" />
-              </div>
-              <div className="app__toolbar">
-                <button
-                  type="button"
-                  className="app__btn app__btn--ghost"
-                  onClick={() => clearResult()}
-                >
-                  Try another object
-                </button>
-                <button type="button" className="app__btn app__btn--ghost" onClick={() => reset()}>
-                  New photo
-                </button>
-              </div>
-            </div>
-
-            <div
-              className={
-                isNarrow ? 'app__results-grid app__results-grid--stacked' : 'app__results-grid'
-              }
-            >
-              <aside className="app__results-sidebar" aria-label="Alternatives">
-                <AlternativesSidebar
-                  registryResults={result.registry_results}
-                  localResults={result.local_results}
-                  etsyResults={result.results}
-                  identification={id}
-                  investigation={result.investigation}
-                />
-              </aside>
-
-              <div className="app__results-main">
-                <div className="app__id-block">
-                  {id ? (
-                    <>
-                      <div className="app__method-row">
-                        <IdentificationMethodBadge id={id} tier={result.identification_tier} />
-                        {id.text_based_identification && id.visible_text ? (
-                          <span className="app__visible-text-note" title={id.visible_text}>
-                            From package text
-                          </span>
-                        ) : null}
-                      </div>
-                      {id.brand && id.corporate_parent ? (
-                        <p className="app__meta">
-                          Made by {id.brand} ({id.corporate_parent})
-                        </p>
-                      ) : null}
-                      {!id.brand && id.corporate_parent ? (
-                        <p className="app__meta">Corporate parent: {id.corporate_parent}</p>
-                      ) : null}
-                      <p className="app__meta meta-space" style={{ fontSize: 11, marginTop: 8 }}>
-                        Match: <span className="app__badge">{confidenceLabel(id.confidence)}</span>
-                      </p>
-                      <p className="app__footnote">
-                        {typeof result.response_ms === 'number' ? `${result.response_ms} ms · ` : ''}
-                        {Array.isArray(result.searched_sources)
-                          ? `Sources: ${result.searched_sources.join(', ')}`
-                          : null}
-                      </p>
-                    </>
-                  ) : null}
-
-                  <HealthCallout investigation={result.investigation} />
-                  {result.investigation ? (
-                    <button
-                      type="button"
-                      className="app__btn app__btn--share"
-                      onClick={() => setShowShare(true)}
-                    >
-                      Share this record
-                    </button>
-                  ) : null}
-                  <InvestigationCard investigation={result.investigation} identification={id} />
-                </div>
-              </div>
-            </div>
-          </div>
-        ) : null}
+        {tapResultsSection}
       </main>
 
       {showShare && result?.investigation && id ? (

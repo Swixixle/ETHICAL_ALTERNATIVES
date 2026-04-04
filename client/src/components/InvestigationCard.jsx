@@ -138,7 +138,9 @@ export default function InvestigationCard({ investigation, identification }) {
             <p className="investigation-card__disclaimer">Live research — verify sources</p>
           ) : null}
           {profileType === 'limited' ? (
-            <p className="investigation-card__disclaimer">Limited profile — no verified database entry yet</p>
+            <p className="investigation-card__disclaimer">
+              Preliminary realtime card — verify primary sources (database entry not loaded)
+            </p>
           ) : null}
           {profileType === 'database' ? (
             <p className="investigation-card__disclaimer investigation-card__disclaimer--muted">
