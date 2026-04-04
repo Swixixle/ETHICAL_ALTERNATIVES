@@ -8,7 +8,8 @@
     "dev": "node index.js",
     "dev:watch": "node --watch index.js",
     "db:import:v1": "node db/import_profiles_v1.mjs",
-    "db:import:v2": "node db/import_profiles_v2.mjs"
+    "db:import:v2": "node db/import_profiles_v2.mjs",
+    "db:import:farmers-markets": "node db/import_farmers_markets.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",

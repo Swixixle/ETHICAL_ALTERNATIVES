@@ -729,10 +729,18 @@ function FeedCard({ business, chainFootnote = false }) {
       };
 
   const trustTier = business.trust_tier ? String(business.trust_tier) : 'local';
+  const provenance =
+    typeof business.provenance_label === 'string' && business.provenance_label.trim()
+      ? business.provenance_label.trim()
+      : undefined;
 
   return (
     <div style={cardStyle}>
-      <TrustStrip trustTier={trustTier} chainFootnote={chainFootnote} />
+      <TrustStrip
+        trustTier={trustTier}
+        chainFootnote={chainFootnote}
+        customLabel={provenance}
+      />
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <div style={{ flex: 1, minWidth: 0 }}>
           <div

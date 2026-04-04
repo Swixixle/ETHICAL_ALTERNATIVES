@@ -3,6 +3,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Router } from 'express';
 import { nameMatchesChain, normalizeChainNeedles } from '../utils/chainMatch.js';
+import { bandcampDiscoverFromCoords, bandcampDiscoverSellerRow } from '../services/bandcamp.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const UA =
@@ -201,11 +202,54 @@ router.get('/', async (req, res) => {
   const place = { city: city || null, state: state || null };
   const token = process.env.EVENTBRITE_API_KEY?.trim();
 
+  let bandcamp_discovery = null;
+  try {
+    if (place.city) {
+      const bcRow = await bandcampDiscoverSellerRow({
+        city: place.city,
+        state: place.state,
+      });
+      if (bcRow?.website_url) {
+        bandcamp_discovery = {
+          label: String(bcRow.provenance_label || 'BANDCAMP — INDEPENDENT ARTIST'),
+          href: String(bcRow.website_url),
+          hint:
+            typeof bcRow.tagline === 'string'
+              ? bcRow.tagline
+              : 'Discover local artists on Bandcamp',
+          place_line: [place.city, place.state].filter(Boolean).join(', '),
+        };
+      }
+    }
+  } catch (e) {
+    console.warn('[events] bandcamp', e?.message || e);
+  }
+
+  if (!bandcamp_discovery && Number.isFinite(lat) && Number.isFinite(lng)) {
+    try {
+      const bcRow = await bandcampDiscoverFromCoords(lat, lng);
+      if (bcRow?.website_url) {
+        bandcamp_discovery = {
+          label: String(bcRow.provenance_label || 'BANDCAMP — INDEPENDENT ARTIST'),
+          href: String(bcRow.website_url),
+          hint:
+            typeof bcRow.tagline === 'string'
+              ? bcRow.tagline
+              : 'Discover local artists on Bandcamp',
+          place_line: [place.city, place.state].filter(Boolean).join(', ') || 'Near you',
+        };
+      }
+    } catch (e) {
+      console.warn('[events] bandcamp coords', e?.message || e);
+    }
+  }
+
   if (!token) {
     return res.json({
       mode: 'links',
       curated_links: buildCuratedLinks(city || undefined, state || undefined),
       place,
+      bandcamp_discovery,
     });
   }
 
@@ -215,6 +259,7 @@ router.get('/', async (req, res) => {
       mode: 'links',
       curated_links: buildCuratedLinks(city || undefined, state || undefined),
       place,
+      bandcamp_discovery,
     });
   }
 
@@ -260,6 +305,7 @@ router.get('/', async (req, res) => {
         curated_links: buildCuratedLinks(city || undefined, state || undefined),
         place,
         eventbrite_status: ebRes.status,
+        bandcamp_discovery,
       });
     }
 
@@ -279,6 +325,7 @@ router.get('/', async (req, res) => {
       mode: 'events',
       events: mapped,
       place,
+      bandcamp_discovery,
     });
   } catch (e) {
     console.error('[events]', e?.message || e);
@@ -287,6 +334,7 @@ router.get('/', async (req, res) => {
       curated_links: buildCuratedLinks(city || undefined, state || undefined),
       place,
       error: e instanceof Error ? e.message : 'events fetch failed',
+      bandcamp_discovery,
     });
   }
 });

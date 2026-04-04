@@ -44,6 +44,8 @@ export default function RegistryCard({ seller }) {
     is_worker_owned,
     is_bcorp,
     is_fair_trade,
+    trust_tier,
+    provenance_label,
   } = seller;
 
   const primaryUrl = website_url || etsy_url || instagram_url || other_url;
@@ -79,7 +81,16 @@ export default function RegistryCard({ seller }) {
         position: 'relative',
       }}
     >
-      <TrustStrip trustTier="verified_independent" />
+      <TrustStrip
+        trustTier={
+          typeof trust_tier === 'string' && trust_tier ? trust_tier : 'verified_independent'
+        }
+        customLabel={
+          typeof provenance_label === 'string' && provenance_label.trim()
+            ? provenance_label.trim()
+            : undefined
+        }
+      />
       {verified ? (
         <div
           style={{

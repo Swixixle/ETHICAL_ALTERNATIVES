@@ -33,6 +33,14 @@ function pickSellerWebsite(s) {
 }
 
 function mapRegistryItem(s) {
+  const latN = s.lat != null ? Number(s.lat) : NaN;
+  const lngN = s.lng != null ? Number(s.lng) : NaN;
+  const trust =
+    typeof s.trust_tier === 'string' && s.trust_tier ? s.trust_tier : 'verified_independent';
+  const streetLine =
+    typeof s.street_address_line === 'string' && s.street_address_line.trim()
+      ? s.street_address_line.trim()
+      : null;
   return {
     type: 'registry',
     id: `registry-${s.id}`,
@@ -44,8 +52,15 @@ function mapRegistryItem(s) {
     city: s.city,
     state: s.state_province,
     address: null,
+    street_address_line: streetLine,
+    lat: Number.isFinite(latN) ? latN : null,
+    lng: Number.isFinite(lngN) ? lngN : null,
     verified: s.verified,
-    trust_tier: 'verified_independent',
+    trust_tier: trust,
+    provenance_label:
+      typeof s.provenance_label === 'string' && s.provenance_label.trim()
+        ? s.provenance_label.trim()
+        : null,
     ethics_badges: [
       s.is_worker_owned ? 'Worker-owned' : null,
       s.is_bcorp ? 'B-Corp' : null,
@@ -83,7 +98,11 @@ const sortFeed = (a, b) => {
   if (ra !== rb) return ra - rb;
   const da = a.distance_mi ?? 9999;
   const db = b.distance_mi ?? 9999;
-  return da - db;
+  if (da !== db) return da - db;
+  if (Boolean(b.verified) !== Boolean(a.verified)) return a.verified ? -1 : 1;
+  const ta = a.trust_tier === 'verified_independent' ? 0 : 1;
+  const tb = b.trust_tier === 'verified_independent' ? 0 : 1;
+  return ta - tb;
 };
 
 /** GET /api/local-feed?lat=&lng=&category=&radius= */

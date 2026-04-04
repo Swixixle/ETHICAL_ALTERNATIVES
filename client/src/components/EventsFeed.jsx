@@ -1,4 +1,91 @@
 /**
+ * @param {{ discovery: Record<string, unknown> }} props
+ */
+function BandcampTonightCard({ discovery }) {
+  if (!discovery || typeof discovery !== 'object') return null;
+  const href = typeof discovery.href === 'string' ? discovery.href : '';
+  if (!href) return null;
+  const label = typeof discovery.label === 'string' ? discovery.label : 'Bandcamp';
+  const hint = typeof discovery.hint === 'string' ? discovery.hint : '';
+  const placeLine =
+    typeof discovery.place_line === 'string' ? discovery.place_line : '';
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      style={{
+        display: 'flex',
+        alignItems: 'flex-start',
+        gap: 12,
+        padding: '14px 16px',
+        marginBottom: 12,
+        background: '#141c28',
+        border: '1px solid rgba(240, 168, 32, 0.45)',
+        borderRadius: 4,
+        textDecoration: 'none',
+        color: '#f0a820',
+      }}
+    >
+      <span
+        aria-hidden
+        style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: 14,
+          flexShrink: 0,
+          marginTop: 2,
+        }}
+      >
+        ♪
+      </span>
+      <span style={{ minWidth: 0 }}>
+        <span
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontSize: 11,
+            letterSpacing: 1.2,
+            textTransform: 'uppercase',
+            color: '#f0a820',
+            display: 'block',
+            lineHeight: 1.4,
+          }}
+        >
+          {label}
+        </span>
+        {placeLine ? (
+          <span
+            style={{
+              fontFamily: "'Crimson Pro', serif",
+              fontSize: 13,
+              color: '#6a8a9a',
+              display: 'block',
+              marginTop: 4,
+            }}
+          >
+            {placeLine}
+          </span>
+        ) : null}
+        {hint ? (
+          <span
+            style={{
+              fontFamily: "'Crimson Pro', serif",
+              fontSize: 14,
+              color: '#6a8a9a',
+              display: 'block',
+              marginTop: 4,
+              lineHeight: 1.45,
+            }}
+          >
+            {hint}
+          </span>
+        ) : null}
+      </span>
+    </a>
+  );
+}
+
+/**
  * Local “Tonight” tab: Eventbrite-backed cards or curated external search links.
  * @param {{
  *   payload: Record<string, unknown> | null;
@@ -12,6 +99,10 @@ export default function EventsFeed({ payload, location: loc }) {
 
   const mode = String(payload.mode || '');
   const placeLabel = [loc?.city, loc?.state].filter(Boolean).join(', ');
+  const bandcampDiscovery =
+    payload.bandcamp_discovery && typeof payload.bandcamp_discovery === 'object'
+      ? payload.bandcamp_discovery
+      : null;
 
   if (mode === 'links' || payload.fetch_error) {
     const links = Array.isArray(payload.curated_links) ? payload.curated_links : [];
@@ -47,6 +138,7 @@ export default function EventsFeed({ payload, location: loc }) {
               : `Open listings on the web${placeLabel ? ` near ${placeLabel}` : ''}. Set EVENTBRITE_API_KEY on the server for live cards here.`}
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <BandcampTonightCard discovery={bandcampDiscovery} />
           {links.map((item) => {
             const href = typeof item.href === 'string' ? item.href : '#';
             const label = typeof item.label === 'string' ? item.label : 'Link';
@@ -121,7 +213,21 @@ export default function EventsFeed({ payload, location: loc }) {
 
   if (!events.length) {
     return (
-      <div style={{ padding: '24px 24px 32px' }}>
+      <div style={{ padding: '8px 16px 24px' }}>
+        <div
+          style={{
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontSize: 28,
+            letterSpacing: 3,
+            color: '#f0e8d0',
+            textTransform: 'uppercase',
+            marginBottom: 12,
+            padding: '0 8px',
+          }}
+        >
+          WHAT&apos;S ON TONIGHT
+        </div>
+        <BandcampTonightCard discovery={bandcampDiscovery} />
         <p
           style={{
             fontFamily: "'Crimson Pro', serif",
@@ -129,7 +235,7 @@ export default function EventsFeed({ payload, location: loc }) {
             color: '#6a8a9a',
             lineHeight: 1.65,
             textAlign: 'center',
-            margin: 0,
+            margin: '12px 0 0',
           }}
         >
           No upcoming events in the next week from this search, or all hits were chain venues.
@@ -153,6 +259,7 @@ export default function EventsFeed({ payload, location: loc }) {
       >
         Tonight & this week · Eventbrite (25 mi)
       </div>
+      <BandcampTonightCard discovery={bandcampDiscovery} />
       <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
         {events.map((ev) => {
           const name = typeof ev.name === 'string' ? ev.name : 'Event';

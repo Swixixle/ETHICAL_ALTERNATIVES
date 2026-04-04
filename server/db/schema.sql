@@ -122,6 +122,27 @@ CREATE INDEX IF NOT EXISTS seller_registry_categories_gin ON seller_registry USI
 CREATE INDEX IF NOT EXISTS seller_registry_keywords_gin ON seller_registry USING GIN (keywords);
 CREATE INDEX IF NOT EXISTS seller_registry_active ON seller_registry (active) WHERE active = true;
 
+-- USDA National Farmers Market Directory (import via server/db/import_farmers_markets.mjs).
+CREATE TABLE IF NOT EXISTS farmers_markets (
+  id              SERIAL PRIMARY KEY,
+  source_fmid   TEXT UNIQUE NOT NULL,
+  market_name     TEXT NOT NULL,
+  street          TEXT,
+  city            TEXT,
+  state           TEXT,
+  zip             TEXT,
+  lat             NUMERIC(9, 6),
+  lng             NUMERIC(9, 6),
+  schedule        TEXT,
+  products        TEXT,
+  website         TEXT,
+  updated_at      TIMESTAMPTZ DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS farmers_markets_lat_lng_idx
+  ON farmers_markets (lat, lng)
+  WHERE lat IS NOT NULL AND lng IS NOT NULL;
+
 -- Daily community labor board (resets by board_date; posts filtered in app/query).
 CREATE TABLE IF NOT EXISTS community_board (
   id              SERIAL PRIMARY KEY,

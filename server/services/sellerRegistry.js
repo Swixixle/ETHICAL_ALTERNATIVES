@@ -1,4 +1,7 @@
 import { pool } from '../db/pool.js';
+import { queryFarmersMarketsNear } from './farmersMarkets.js';
+import { bandcampDiscoverFromCoords } from './bandcamp.js';
+import { fetchLocalHarvestFarms } from './localHarvest.js';
 
 /** Vision / tap category → registry category tokens for overlap queries */
 const CATEGORY_MAP = {
@@ -58,9 +61,65 @@ export function allRegistryCategoryTerms() {
   ];
 }
 
-export async function findLocalSellers({ lat, lng, category, keywords, radiusMiles = 50 }) {
-  if (!pool) return [];
+const MUSIC_HINTS = /(music|band|vinyl|record|album|concert|musician|cassette|\bcd\b|soundtrack)/i;
 
+function shouldIncludeBandcamp(catKey, kw) {
+  if (catKey === 'art' || catKey === 'all' || catKey === '') return true;
+  if (catKey === 'books') return true;
+  const toks = keywordTokens(kw);
+  if (toks.some((t) => MUSIC_HINTS.test(t))) return true;
+  return false;
+}
+
+function shouldIncludeFarmersAndLocalHarvest(catKey) {
+  return catKey === 'food' || catKey === 'stay' || catKey === 'all' || catKey === '';
+}
+
+function mapFarmerMarketToSeller(r) {
+  const streetLine = [r.street, r.city, r.state].filter(Boolean).join(', ');
+  return {
+    id: `fm-${r.source_fmid}`,
+    seller_name: r.market_name,
+    tagline: r.schedule || 'USDA National Farmers Market Directory',
+    product_description: r.products,
+    website_url: r.website || null,
+    etsy_url: null,
+    instagram_url: null,
+    other_url: null,
+    other_url_label: null,
+    city: r.city,
+    state_province: r.state,
+    country: 'US',
+    lat: r.lat != null ? Number(r.lat) : null,
+    lng: r.lng != null ? Number(r.lng) : null,
+    ships_nationally: false,
+    ships_worldwide: false,
+    in_person_only: true,
+    categories: ['food', 'farm'],
+    keywords: [],
+    verified: false,
+    is_worker_owned: false,
+    is_bcorp: false,
+    is_fair_trade: false,
+    certifications: [],
+    distance_miles: r.distance_miles != null ? Number(r.distance_miles) : null,
+    trust_tier: 'sourced',
+    provenance_label: 'FARMERS MARKET',
+    street_address_line: streetLine || null,
+  };
+}
+
+function sortMergedSellers(a, b) {
+  const da = a.distance_miles != null ? Number(a.distance_miles) : 999999;
+  const db = b.distance_miles != null ? Number(b.distance_miles) : 999999;
+  if (da !== db) return da - db;
+  if (Boolean(b.verified) !== Boolean(a.verified)) return a.verified ? -1 : 1;
+  const ta = a.trust_tier === 'verified_independent' ? 0 : 1;
+  const tb = b.trust_tier === 'verified_independent' ? 0 : 1;
+  return ta - tb;
+}
+
+export async function findLocalSellers({ lat, lng, category, keywords, radiusMiles = 50 }) {
   const catKey = typeof category === 'string' ? category.trim().toLowerCase() : '';
   const categoryTerms =
     catKey === 'all' || catKey === ''
@@ -75,91 +134,138 @@ export async function findLocalSellers({ lat, lng, category, keywords, radiusMil
   const hasUserGeo = Number.isFinite(latN) && Number.isFinite(lngN);
   const radiusDeg = radiusMiles / 69.0;
 
-  try {
-    const result = await pool.query(
-      `
-      SELECT
-        id,
-        seller_name,
-        tagline,
-        description,
-        product_description,
-        website_url,
-        etsy_url,
-        instagram_url,
-        other_url,
-        other_url_label,
-        city,
-        state_province,
-        country,
-        lat,
-        lng,
-        ships_nationally,
-        ships_worldwide,
-        in_person_only,
-        categories,
-        keywords,
-        verified,
-        is_worker_owned,
-        is_bcorp,
-        is_fair_trade,
-        certifications,
-        CASE
-          WHEN lat IS NOT NULL AND lng IS NOT NULL AND $1::float8 IS NOT NULL AND $2::float8 IS NOT NULL
-          THEN ROUND(
-            SQRT(
+  const registryPromise = (async () => {
+    if (!pool) return [];
+    try {
+      const result = await pool.query(
+        `
+        SELECT
+          id,
+          seller_name,
+          tagline,
+          description,
+          product_description,
+          website_url,
+          etsy_url,
+          instagram_url,
+          other_url,
+          other_url_label,
+          city,
+          state_province,
+          country,
+          lat,
+          lng,
+          ships_nationally,
+          ships_worldwide,
+          in_person_only,
+          categories,
+          keywords,
+          verified,
+          is_worker_owned,
+          is_bcorp,
+          is_fair_trade,
+          certifications,
+          CASE
+            WHEN lat IS NOT NULL AND lng IS NOT NULL AND $1::float8 IS NOT NULL AND $2::float8 IS NOT NULL
+            THEN ROUND(
+              SQRT(
+                POWER((lat::float8 - $1) * 69.0, 2) +
+                POWER((lng::float8 - $2) * 69.0 * COS(RADIANS($1)), 2)
+              )::numeric,
+              1
+            )
+            ELSE NULL
+          END AS distance_miles
+        FROM seller_registry
+        WHERE active = true
+          AND (
+            (
+              $1::float8 IS NOT NULL AND $2::float8 IS NOT NULL
+              AND lat IS NOT NULL AND lng IS NOT NULL
+              AND lat::float8 BETWEEN ($1::float8 - $3::float8) AND ($1::float8 + $3::float8)
+              AND lng::float8 BETWEEN ($2::float8 - $3::float8) AND ($2::float8 + $3::float8)
+            )
+            OR ships_nationally = true
+            OR ships_worldwide = true
+          )
+          AND (
+            categories && $4::text[]
+            OR ($5::text[] <> '{}'::text[] AND keywords && $5::text[])
+          )
+        ORDER BY
+          CASE
+            WHEN lat IS NOT NULL AND lng IS NOT NULL AND $1::float8 IS NOT NULL AND $2::float8 IS NOT NULL
+            THEN SQRT(
               POWER((lat::float8 - $1) * 69.0, 2) +
               POWER((lng::float8 - $2) * 69.0 * COS(RADIANS($1)), 2)
-            )::numeric,
-            1
-          )
-          ELSE NULL
-        END AS distance_miles
-      FROM seller_registry
-      WHERE active = true
-        AND (
-          (
-            $1::float8 IS NOT NULL AND $2::float8 IS NOT NULL
-            AND lat IS NOT NULL AND lng IS NOT NULL
-            AND lat::float8 BETWEEN ($1::float8 - $3::float8) AND ($1::float8 + $3::float8)
-            AND lng::float8 BETWEEN ($2::float8 - $3::float8) AND ($2::float8 + $3::float8)
-          )
-          OR ships_nationally = true
-          OR ships_worldwide = true
-        )
-        AND (
-          categories && $4::text[]
-          OR ($5::text[] <> '{}'::text[] AND keywords && $5::text[])
-        )
-      ORDER BY
-        CASE
-          WHEN lat IS NOT NULL AND lng IS NOT NULL AND $1::float8 IS NOT NULL AND $2::float8 IS NOT NULL
-          THEN SQRT(
-            POWER((lat::float8 - $1) * 69.0, 2) +
-            POWER((lng::float8 - $2) * 69.0 * COS(RADIANS($1)), 2)
-          )
-          ELSE 999999
-        END ASC,
-        verified DESC,
-        is_worker_owned DESC
-      LIMIT 20
-    `,
-      [
-        hasUserGeo ? latN : null,
-        hasUserGeo ? lngN : null,
-        radiusDeg,
-        categoryTerms,
-        kw.length ? kw : [],
-      ]
-    );
+            )
+            ELSE 999999
+          END ASC,
+          verified DESC,
+          is_worker_owned DESC
+        LIMIT 20
+      `,
+        [
+          hasUserGeo ? latN : null,
+          hasUserGeo ? lngN : null,
+          radiusDeg,
+          categoryTerms,
+          kw.length ? kw : [],
+        ]
+      );
 
-    return result.rows.map((row) => ({
-      ...row,
-      distance_miles:
-        row.distance_miles != null ? Number(row.distance_miles) : null,
-    }));
+      return result.rows.map((row) => ({
+        ...row,
+        distance_miles:
+          row.distance_miles != null ? Number(row.distance_miles) : null,
+        trust_tier: 'verified_independent',
+        provenance_label: null,
+        street_address_line: null,
+      }));
+    } catch (err) {
+      console.error('sellerRegistry error:', err.message);
+      return [];
+    }
+  })();
+
+  const extrasPromise = (async () => {
+    const extra = [];
+    if (!hasUserGeo) return extra;
+
+    const geoTasks = [];
+    if (pool && shouldIncludeFarmersAndLocalHarvest(catKey)) {
+      geoTasks.push(
+        queryFarmersMarketsNear(latN, lngN, radiusMiles).then((rows) =>
+          rows.map(mapFarmerMarketToSeller)
+        )
+      );
+    } else {
+      geoTasks.push(Promise.resolve([]));
+    }
+
+    if (shouldIncludeFarmersAndLocalHarvest(catKey)) {
+      geoTasks.push(fetchLocalHarvestFarms(latN, lngN));
+    } else {
+      geoTasks.push(Promise.resolve([]));
+    }
+
+    const [fm, lh] = await Promise.all(geoTasks);
+    extra.push(...fm, ...lh);
+
+    if (shouldIncludeBandcamp(catKey, kw)) {
+      const bc = await bandcampDiscoverFromCoords(latN, lngN);
+      if (bc) extra.push(bc);
+    }
+
+    return extra;
+  })();
+
+  try {
+    const [registryRows, extraRows] = await Promise.all([registryPromise, extrasPromise]);
+    const merged = [...registryRows, ...extraRows].sort(sortMergedSellers);
+    return merged.slice(0, 30);
   } catch (err) {
-    console.error('sellerRegistry error:', err.message);
+    console.error('findLocalSellers merge:', err?.message || err);
     return [];
   }
 }

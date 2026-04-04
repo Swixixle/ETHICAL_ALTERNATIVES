@@ -30,6 +30,10 @@ function LocalCard({ place }) {
     typeof place.trust_tier === 'string' && place.trust_tier.trim()
       ? place.trust_tier.trim()
       : 'local';
+  const provenance =
+    typeof place.provenance_label === 'string' && place.provenance_label.trim()
+      ? place.provenance_label.trim()
+      : undefined;
   const name = place.name || 'Independent Business';
   const website = place.website ? String(place.website) : null;
   const phone = place.phone ? String(place.phone) : null;
@@ -70,7 +74,7 @@ function LocalCard({ place }) {
         marginBottom: 10,
       }}
     >
-      <TrustStrip trustTier={trustTier} />
+      <TrustStrip trustTier={trustTier} customLabel={provenance} />
       <div
         style={{
           fontFamily: "'Bebas Neue', sans-serif",

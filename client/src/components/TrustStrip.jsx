@@ -1,8 +1,8 @@
 /**
  * Local feed trust: registry = VERIFIED INDEPENDENT (green); OSM / map = LOCAL (amber, no border).
- * @param {{ trustTier?: string; chainFootnote?: boolean }} props
+ * @param {{ trustTier?: string; chainFootnote?: boolean; customLabel?: string }} props
  */
-export default function TrustStrip({ trustTier, chainFootnote = false }) {
+export default function TrustStrip({ trustTier, chainFootnote = false, customLabel }) {
   if (chainFootnote) {
     return (
       <div
@@ -16,6 +16,24 @@ export default function TrustStrip({ trustTier, chainFootnote = false }) {
         }}
       >
         Chain · reference only
+      </div>
+    );
+  }
+
+  const trimmed = typeof customLabel === 'string' ? customLabel.trim() : '';
+  if (trimmed) {
+    return (
+      <div
+        style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: 11,
+          letterSpacing: 2,
+          textTransform: 'uppercase',
+          color: '#f0a820',
+          marginBottom: 8,
+        }}
+      >
+        {trimmed}
       </div>
     );
   }
