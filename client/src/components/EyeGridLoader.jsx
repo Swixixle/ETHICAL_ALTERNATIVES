@@ -1,22 +1,16 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import './EyeGridLoader.css';
 
-const EYE_COLORS = [
-  '#8B4513',
-  '#4a90d9',
-  '#2d7a2d',
-  '#c8a020',
-  '#8B0000',
-  '#4a6090',
-  '#7a4a2d',
-  '#5a8a5a',
-  '#a07030',
-];
+const AMBER = '#f0a820';
+const PUPIL = '#0f1520';
+
+const EYE_COUNT = 9;
 
 /**
- * @param {{ color: string; clipId: string; baseDelay: number }} props
+ * Minimal surveillance-style eye: amber outline, amber iris, dark pupil; blink = horizontal slit.
+ * @param {{ clipId: string; baseDelay: number }} props
  */
-function SingleEye({ color, clipId, baseDelay }) {
+function SingleEye({ clipId, baseDelay }) {
   const [blinking, setBlinking] = useState(false);
 
   useEffect(() => {
@@ -50,42 +44,42 @@ function SingleEye({ color, clipId, baseDelay }) {
     };
   }, [baseDelay]);
 
-  const size = 64;
+  const size = 40;
   const cx = size / 2;
   const cy = size / 2;
-  const rx = size * 0.44;
-  const ry = blinking ? 1.5 : size * 0.38;
+  const rxOpen = size * 0.42;
+  const ryOpen = size * 0.36;
+  /** Closed: thin horizontal amber line */
+  const ry = blinking ? 0.85 : ryOpen;
+  const rx = rxOpen;
   const transition = 'ry 0.08s ease-in';
+
+  /** Iris radius = 30% of full eye width (2·rx) → r = 0.3·rx */
+  const irisR = rxOpen * 0.3;
+  const pupilR = irisR * 0.38;
 
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden>
       <defs>
         <clipPath id={clipId}>
-          <ellipse cx={cx} cy={cy} rx={rx} ry={ry} style={{ transition }} />
+          <ellipse cx={cx} cy={cy} rx={rxOpen * 0.9} ry={ryOpen * 0.92} />
         </clipPath>
       </defs>
-      <ellipse
-        cx={cx}
-        cy={cy}
-        rx={rx + 4}
-        ry={ry + 4}
-        fill="#d4956a"
-        style={{ transition }}
-      />
-      <ellipse cx={cx} cy={cy} rx={rx} ry={ry} fill="#f5f0e8" style={{ transition }} />
-      <g clipPath={`url(#${clipId})`}>
-        <circle cx={cx} cy={cy} r={size * 0.22} fill={color} />
-        <circle cx={cx} cy={cy} r={size * 0.11} fill="#111" />
-        <circle cx={cx - 5} cy={cy - 5} r={3} fill="white" opacity={0.7} />
-      </g>
+      {!blinking ? (
+        <g clipPath={`url(#${clipId})`}>
+          <circle cx={cx} cy={cy} r={irisR} fill={AMBER} />
+          <circle cx={cx} cy={cy} r={pupilR} fill={PUPIL} />
+        </g>
+      ) : null}
       <ellipse
         cx={cx}
         cy={cy}
         rx={rx}
         ry={ry}
         fill="none"
-        stroke="#a0704a"
-        strokeWidth={1.2}
+        stroke={AMBER}
+        strokeWidth={1.5}
+        vectorEffect="non-scaling-stroke"
         style={{ transition }}
       />
     </svg>
@@ -99,56 +93,18 @@ export default function EyeGridLoader({ message = 'Analyzing...' }) {
   const reactId = useId().replace(/:/g, '');
   const delaysRef = useRef(/** @type {number[] | null} */ (null));
   if (!delaysRef.current) {
-    delaysRef.current = EYE_COLORS.map((_, i) => i * 200 + Math.random() * 500);
+    delaysRef.current = Array.from({ length: EYE_COUNT }, (_, i) => i * 200 + Math.random() * 500);
   }
   const delays = delaysRef.current;
 
   return (
-    <div
-      role="status"
-      aria-busy="true"
-      aria-live="polite"
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '48px 24px',
-        gap: 24,
-      }}
-    >
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 64px)',
-          gap: 8,
-          background: '#d4956a',
-          padding: 12,
-          borderRadius: 12,
-          boxShadow: 'inset 0 2px 8px rgba(0,0,0,0.3)',
-        }}
-      >
-        {EYE_COLORS.map((color, i) => (
-          <SingleEye
-            key={i}
-            color={color}
-            clipId={`eye-${reactId}-${i}`}
-            baseDelay={delays[i]}
-          />
+    <div className="eye-grid-loader" role="status" aria-busy="true" aria-live="polite">
+      <div className="eye-grid-loader__grid">
+        {delays.map((baseDelay, i) => (
+          <SingleEye key={i} clipId={`eye-${reactId}-${i}`} baseDelay={baseDelay} />
         ))}
       </div>
-      <div
-        style={{
-          fontFamily: "'Space Mono', monospace",
-          fontSize: 11,
-          letterSpacing: 3,
-          textTransform: 'uppercase',
-          color: '#f0a820',
-          animation: 'eye-grid-loader-pulse 1.5s ease-in-out infinite',
-        }}
-      >
-        {message}
-      </div>
+      <div className="eye-grid-loader__message">{message}</div>
     </div>
   );
 }

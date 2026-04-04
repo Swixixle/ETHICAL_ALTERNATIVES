@@ -296,7 +296,7 @@ export default function App() {
 
       <main className="app__main">
         {mode === 'deep' && loading ? (
-          <div className="app__panel" style={{ padding: '3rem 1.5rem' }}>
+          <div className="app__panel app__panel--eye-loader">
             <EyeGridLoader message="Researching..." />
           </div>
         ) : null}
@@ -348,7 +348,7 @@ export default function App() {
               />
             </div>
             {loading ? (
-              <div className="app__toolbar">
+              <div className="app__loader-host">
                 <EyeGridLoader message="Analyzing..." />
               </div>
             ) : null}
@@ -375,7 +375,11 @@ export default function App() {
               sceneInventory={pendingConfirmation.scene_inventory}
               onSelectAlternativeBrand={selectAlternativeBrand}
             />
-            {loading ? <EyeGridLoader message="Analyzing..." /> : null}
+            {loading ? (
+              <div className="app__loader-host">
+                <EyeGridLoader message="Analyzing..." />
+              </div>
+            ) : null}
             {error ? (
               <ErrorState message={error} onRetry={() => cancelPendingConfirmation()} />
             ) : null}
