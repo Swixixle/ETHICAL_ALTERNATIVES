@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import SeverityMeter from './SeverityMeter';
 import Timeline from './Timeline';
 import CommunityImpact from './CommunityImpact';
 import CostAbsorption from './CostAbsorption.jsx';
@@ -126,7 +124,7 @@ const SECTIONS = [
   },
   {
     key: 'environmental',
-    title: 'Environment',
+    title: 'Environmental',
     summaryKey: 'environmental_summary',
     flagsKey: 'environmental_flags',
     sourcesKey: 'environmental_sources',
@@ -134,7 +132,7 @@ const SECTIONS = [
   },
   {
     key: 'political',
-    title: 'Political / influence',
+    title: 'Political',
     summaryKey: 'political_summary',
     flagsKey: null,
     sourcesKey: 'political_sources',
@@ -142,7 +140,7 @@ const SECTIONS = [
   },
   {
     key: 'product_health',
-    title: 'Product & health',
+    title: 'Product Health',
     summaryKey: 'product_health',
     flagsKey: null,
     sourcesKey: 'product_health_sources',
@@ -158,11 +156,6 @@ const SECTIONS = [
   },
 ];
 
-/** All research sections open by default when “The record” is expanded (Community Impact keeps its own toggle). */
-function initialSectionOpenState() {
-  return Object.fromEntries(SECTIONS.map((s) => [s.key, true]));
-}
-
 /**
  * @param {{
  *   investigation: Record<string, unknown>;
@@ -170,220 +163,154 @@ function initialSectionOpenState() {
  *   onShare?: () => void;
  * }} props
  */
-export default function InvestigationCard({ investigation, identification, onShare }) {
-  const [open, setOpen] = useState(initialSectionOpenState);
-  /** Open by default so Tax/Legal/… sections render without an extra click. */
-  const [expanded, setExpanded] = useState(true);
-
-  useEffect(() => {
-    console.log('[InvestigationCard] investigation payload', investigation);
-  }, [investigation]);
-
+export default function InvestigationCard({ investigation, onShare }) {
   if (!investigation) return null;
 
   const profileType = String(investigation.profile_type || '');
-  const id = identification || {};
-
-  const toggle = (key) => {
-    setOpen((o) => ({ ...o, [key]: !o[key] }));
-  };
 
   const verdictTags = Array.isArray(investigation.verdict_tags) ? investigation.verdict_tags.map(String) : [];
   const concernFlags = Array.isArray(investigation.concern_flags) ? investigation.concern_flags.map(String) : [];
   const uniqueTags = [...new Set([...verdictTags, ...concernFlags])];
   const grouped = groupTags(uniqueTags);
 
-  const objectFallback =
-    typeof id.object === 'string' && id.object ? id.object : String(investigation.brand || 'Investigation');
-  const generated =
-    typeof investigation.generated_headline === 'string' && investigation.generated_headline.trim()
-      ? investigation.generated_headline.trim()
-      : null;
-  const headline = generated || objectFallback;
-  const brandShown = investigation.brand || id.brand;
-
   return (
     <section className="investigation-card">
-      <button type="button" className="investigation-card__header" onClick={() => setExpanded((e) => !e)}>
-        <span className="investigation-card__title">The record</span>
-        <span className="investigation-card__chev">{expanded ? '▾' : '▸'}</span>
-      </button>
+      {profileType === 'realtime_search' ? (
+        <p className="investigation-card__disclaimer">Live research — verify sources</p>
+      ) : null}
+      {profileType === 'limited' ? (
+        <p className="investigation-card__disclaimer">
+          Preliminary realtime card — verify primary sources (database entry not loaded)
+        </p>
+      ) : null}
+      {profileType === 'database' ? (
+        <p className="investigation-card__disclaimer investigation-card__disclaimer--muted">
+          Verified database profile
+        </p>
+      ) : null}
+      {investigation.clean_card ? (
+        <p className="investigation-card__clean-card">
+          Clean card — highlighted alternative; sections below include honest caveats.
+        </p>
+      ) : null}
 
-      {expanded ? (
-        <>
-          {profileType === 'realtime_search' ? (
-            <p className="investigation-card__disclaimer">Live research — verify sources</p>
-          ) : null}
-          {profileType === 'limited' ? (
-            <p className="investigation-card__disclaimer">
-              Preliminary realtime card — verify primary sources (database entry not loaded)
-            </p>
-          ) : null}
-          {profileType === 'database' ? (
-            <p className="investigation-card__disclaimer investigation-card__disclaimer--muted">
-              Verified database profile
-            </p>
-          ) : null}
-          {investigation.clean_card ? (
-            <p className="investigation-card__clean-card">
-              Clean card — highlighted alternative; sections below include honest caveats.
-            </p>
-          ) : null}
+      <div style={{ padding: '0 1rem' }}>
+        {Object.keys(grouped).length > 0 ? (
+          <div className="verdict-tags-section">
+            {Object.entries(grouped).map(([category, tags]) => (
+              <div key={category} className="verdict-tag-group">
+                <div className="verdict-category-label">{category}</div>
+                <div className="verdict-tags-container">
+                  {tags.map((tag) => (
+                    <span key={tag} className="verdict-tag">
+                      {tag.replace(/_/g, ' ')}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : null}
 
-          <div style={{ padding: '0 1rem' }}>
-            <h1 className="investigation-object-headline">{headline}</h1>
-            <p className="brand-detected-line">
-              Brand detected: <strong>{brandShown || 'Unknown'}</strong>
-            </p>
-            <SeverityMeter concernLevel={investigation.overall_concern_level} />
-            {identification?.identification_method ? (
-              <p
-                style={{
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 12,
-                  color: 'var(--color-text-dim)',
-                  letterSpacing: 1,
-                  margin: '4px 0',
-                }}
-              >
-                {identification.identification_method === 'text_search' && 'Typed search — investigate from home'}
-                {identification.identification_method === 'direct_logo' && 'Logo confirmed'}
-                {identification.identification_method === 'partial_logo' && 'Brand identified from partial logo'}
-                {identification.identification_method === 'product_recognition' && 'Product identified from packaging'}
-                {identification.identification_method === 'scene_inference' && 'Brand inferred from scene context'}
-              </p>
-            ) : null}
-            {identification?.identification_method === 'scene_inference' && identification?.confidence_notes ? (
-              <p
-                style={{
-                  fontFamily: "'Crimson Pro', serif",
-                  fontSize: 18,
-                  fontStyle: 'italic',
-                  color: 'var(--color-text-muted)',
-                  marginBottom: 12,
-                }}
-              >
-                {identification.confidence_notes}
-              </p>
-            ) : null}
+        <Timeline events={investigation.timeline} />
+      </div>
 
-            <div className="verdict-tags-section">
-              {Object.entries(grouped).map(([category, tags]) => (
-                <div key={category} className="verdict-tag-group">
-                  <div className="verdict-category-label">{category}</div>
-                  <div className="verdict-tags-container">
-                    {tags.map((tag) => (
-                      <span key={tag} className="verdict-tag">
-                        {tag.replace(/_/g, ' ')}
-                      </span>
+      <div className="investigation-card__sections">
+        {SECTIONS.map((s) => {
+          const summary = investigation[s.summaryKey];
+          const fl = s.flagsKey ? investigation[s.flagsKey] : null;
+          const sources = investigation[s.sourcesKey];
+          const hasSummary = Boolean(summary && String(summary).trim());
+          const hasFlags = Array.isArray(fl) && fl.length > 0;
+          const hasSources = Array.isArray(sources) && sources.length > 0;
+          const has = hasSummary || hasFlags || hasSources;
+
+          const Icon = SECTION_ICONS[s.key];
+          const evGrade =
+            s.evidenceGradeKey && investigation[s.evidenceGradeKey]
+              ? investigation[s.evidenceGradeKey]
+              : null;
+
+          return (
+            <div key={s.key} className="investigation-card__section">
+              <div className="investigation-card__section-head investigation-card__section-head--static">
+                <h2
+                  className="section-header"
+                  style={{
+                    flex: 1,
+                    margin: '12px 0 0',
+                    textAlign: 'left',
+                    display: 'flex',
+                    alignItems: 'center',
+                    flexWrap: 'wrap',
+                    gap: 4,
+                  }}
+                >
+                  {Icon ? <Icon /> : null}
+                  {s.title}
+                  <EvidenceBadge grade={evGrade} />
+                </h2>
+              </div>
+              <div className="investigation-card__section-body investigation-body body-crimson">
+                {!has ? (
+                  <p className="investigation-card__section-empty">No indexed public material in this category.</p>
+                ) : null}
+                {hasSummary ? (
+                  <p className="investigation-card__section-summary">{String(summary)}</p>
+                ) : null}
+                {hasFlags ? (
+                  <ul className="investigation-card__list" style={{ listStyle: 'disc' }}>
+                    {fl.map((item) => (
+                      <li key={String(item)}>{String(item)}</li>
                     ))}
-                  </div>
-                </div>
-              ))}
+                  </ul>
+                ) : null}
+                {hasSources ? (
+                  <ul className="investigation-card__sources">
+                    {sources.map((url) => {
+                      const href = String(url);
+                      return (
+                        <li key={href}>
+                          <a href={href} target="_blank" rel="noreferrer">
+                            {href}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                ) : null}
+              </div>
             </div>
+          );
+        })}
+      </div>
 
-            <Timeline events={investigation.timeline} />
-          </div>
+      <div style={{ padding: '0 1rem' }}>
+        <CostAbsorption data={investigation.cost_absorption} />
+        {String(investigation.overall_concern_level || '').toLowerCase() === 'significant' ? (
+          <WealthChart />
+        ) : null}
+        <CommunityImpact data={investigation.community_impact} />
+      </div>
 
-          <div className="investigation-card__sections">
-            {SECTIONS.map((s) => {
-              const summary = investigation[s.summaryKey];
-              const fl = s.flagsKey ? investigation[s.flagsKey] : null;
-              const sources = investigation[s.sourcesKey];
-              const has =
-                (summary && String(summary).trim()) ||
-                (Array.isArray(fl) && fl.length) ||
-                (Array.isArray(sources) && sources.length);
-              if (!has) return null;
+      {Array.isArray(investigation.subsidiaries) && investigation.subsidiaries.length ? (
+        <div className="investigation-card__subs">
+          <span className="investigation-card__subs-label">Related brands / units</span>
+          <p className="investigation-card__subs-body">{investigation.subsidiaries.join(' · ')}</p>
+        </div>
+      ) : null}
 
-              const isOpen = open[s.key];
-              const Icon = SECTION_ICONS[s.key];
-              const evGrade =
-                s.evidenceGradeKey && investigation[s.evidenceGradeKey]
-                  ? investigation[s.evidenceGradeKey]
-                  : null;
-              return (
-                <div key={s.key} className="investigation-card__section">
-                  <button type="button" className="investigation-card__section-head" onClick={() => toggle(s.key)}>
-                    <h2
-                      className="section-header"
-                      style={{
-                        flex: 1,
-                        margin: '12px 0 0',
-                        textAlign: 'left',
-                        display: 'flex',
-                        alignItems: 'center',
-                        flexWrap: 'wrap',
-                        gap: 4,
-                      }}
-                    >
-                      {Icon ? <Icon /> : null}
-                      {s.title}
-                      <EvidenceBadge grade={evGrade} />
-                    </h2>
-                    <span className="investigation-card__section-chev">{isOpen ? '−' : '+'}</span>
-                  </button>
-                  {isOpen ? (
-                    <div className="investigation-card__section-body investigation-body body-crimson">
-                      {summary ? (
-                        <p className="investigation-card__section-summary">{String(summary)}</p>
-                      ) : null}
-                      {Array.isArray(fl) && fl.length ? (
-                        <ul className="investigation-card__list" style={{ listStyle: 'disc' }}>
-                          {fl.map((item) => (
-                            <li key={item}>{String(item)}</li>
-                          ))}
-                        </ul>
-                      ) : null}
-                      {Array.isArray(sources) && sources.length ? (
-                        <ul className="investigation-card__sources">
-                          {sources.map((url) => {
-                            const href = String(url);
-                            return (
-                              <li key={href}>
-                                <a href={href} target="_blank" rel="noreferrer">
-                                  {href}
-                                </a>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      ) : null}
-                    </div>
-                  ) : null}
-                </div>
-              );
-            })}
-          </div>
-
-          <div style={{ padding: '0 1rem' }}>
-            <CostAbsorption data={investigation.cost_absorption} />
-            {String(investigation.overall_concern_level || '').toLowerCase() === 'significant' ? (
-              <WealthChart />
-            ) : null}
-            <CommunityImpact data={investigation.community_impact} />
-          </div>
-
-          {Array.isArray(investigation.subsidiaries) && investigation.subsidiaries.length ? (
-            <div className="investigation-card__subs">
-              <span className="investigation-card__subs-label">Related brands / units</span>
-              <p className="investigation-card__subs-body">{investigation.subsidiaries.join(' · ')}</p>
-            </div>
-          ) : null}
-
-          {typeof onShare === 'function' ? (
-            <div style={{ padding: '24px 1rem 8px' }}>
-              <button
-                type="button"
-                className="app__btn app__btn--share"
-                onClick={onShare}
-                style={{ width: '100%', maxWidth: 420 }}
-              >
-                Share This Record ↑
-              </button>
-            </div>
-          ) : null}
-        </>
+      {typeof onShare === 'function' ? (
+        <div style={{ padding: '24px 1rem 8px' }}>
+          <button
+            type="button"
+            className="app__btn app__btn--share"
+            onClick={onShare}
+            style={{ width: '100%', maxWidth: 420 }}
+          >
+            Share This Record ↑
+          </button>
+        </div>
       ) : null}
     </section>
   );

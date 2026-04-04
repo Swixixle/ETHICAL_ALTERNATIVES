@@ -170,7 +170,6 @@ export default function App() {
         <HealthCallout investigation={result.investigation} />
         <InvestigationCard
           investigation={result.investigation}
-          identification={id}
           onShare={result.investigation ? () => setShowShare(true) : undefined}
         />
       </div>

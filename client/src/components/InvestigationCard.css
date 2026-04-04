@@ -146,20 +146,24 @@
   border: none;
   color: var(--color-accent, #f0a820);
   font: inherit;
-  cursor: pointer;
   text-align: left;
+}
+
+.investigation-card__section-head--static {
+  cursor: default;
 }
 
 .investigation-card__section-head .section-header {
   margin: 0;
 }
 
-.investigation-card__section-chev {
-  flex-shrink: 0;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.85rem;
-  color: var(--color-accent, #f0a820);
-  margin-top: 0.5rem;
+.investigation-card__section-empty {
+  font-family: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  line-height: 1.65;
+  font-style: italic;
+  color: var(--color-text-muted, #a8c4d8);
+  margin: 0 0 0.75rem;
 }
 
 .investigation-card__section-body {
