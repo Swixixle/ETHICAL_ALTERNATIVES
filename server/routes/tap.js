@@ -15,6 +15,22 @@ const chainExclusions = JSON.parse(
   readFileSync(join(__dirname, '../data/chain-exclusions.json'), 'utf8')
 );
 
+/** @param {Record<string, unknown>} identification */
+export function getIdentificationTier(identification) {
+  const conf = typeof identification?.confidence === 'number' ? identification.confidence : 0;
+  const method = String(identification?.identification_method || '');
+  if (conf >= 0.8 && method === 'direct_logo') {
+    return 'confirmed';
+  }
+  if (conf >= 0.6) {
+    return 'likely';
+  }
+  if (method === 'scene_inference') {
+    return 'inferred';
+  }
+  return 'ambiguous';
+}
+
 const router = Router();
 
 router.post('/tap', async (req, res) => {
@@ -39,6 +55,8 @@ router.post('/tap', async (req, res) => {
     console.error('Vision error', e);
     return res.status(500).json({ error: 'Vision service unavailable' });
   }
+
+  const identification_tier = getIdentificationTier(identification);
 
   let investigation = null;
   if (identification.brand || identification.corporate_parent) {
@@ -106,6 +124,7 @@ router.post('/tap', async (req, res) => {
 
   res.json({
     identification,
+    identification_tier,
     results: etsyResults,
     local_results: localResults,
     investigation,
