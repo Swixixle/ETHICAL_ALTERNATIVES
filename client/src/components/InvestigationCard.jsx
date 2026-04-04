@@ -116,7 +116,13 @@ export default function InvestigationCard({ investigation, identification }) {
   const uniqueTags = [...new Set([...verdictTags, ...concernFlags])];
   const grouped = groupTags(uniqueTags);
 
-  const headline = typeof id.object === 'string' && id.object ? id.object : String(investigation.brand || 'Investigation');
+  const objectFallback =
+    typeof id.object === 'string' && id.object ? id.object : String(investigation.brand || 'Investigation');
+  const generated =
+    typeof investigation.generated_headline === 'string' && investigation.generated_headline.trim()
+      ? investigation.generated_headline.trim()
+      : null;
+  const headline = generated || objectFallback;
   const brandShown = investigation.brand || id.brand;
 
   return (

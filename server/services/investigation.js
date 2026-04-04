@@ -210,6 +210,16 @@ function normalizeCommunityImpact(raw) {
   return hasAny ? out : null;
 }
 
+/** Newspaper-style headline; max 10 words; null if empty. */
+function normalizeGeneratedHeadline(raw) {
+  if (raw == null) return null;
+  const s = String(raw).trim();
+  if (!s) return null;
+  const words = s.replace(/\s+/g, ' ').split(' ');
+  if (words.length > 10) return words.slice(0, 10).join(' ');
+  return s;
+}
+
 function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) {
   const brand = typeof parsed?.brand === 'string' ? parsed.brand : brandName || 'Unknown';
   const parent =
@@ -284,6 +294,7 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
     overall_concern_level: overall,
     verdict_tags: Array.isArray(parsed?.verdict_tags) ? parsed.verdict_tags.map(String) : emptyArr(),
     clean_card: Boolean(parsed?.clean_card),
+    generated_headline: normalizeGeneratedHeadline(parsed?.generated_headline),
     community_impact: normalizeCommunityImpact(parsed?.community_impact),
   };
 
@@ -371,6 +382,7 @@ Return ONLY valid JSON (no markdown). Shape:
   "executive_sources": string[],
   "overall_concern_level": "significant" | "moderate" | "minor" | "clean" | "unknown",
   "verdict_tags": string[],
+  "generated_headline": string | null,
   "community_impact": {
     "category_label": string,
     "displacement_effect": {
@@ -426,6 +438,14 @@ Timeline rules:
 - moderate = minor settlement, citation
 - minor = investigation opened, allegation filed
 
+generated_headline:
+- At most 10 words. A short, punchy NEWSPAPER headline summarizing the single most significant finding or defining characteristic of THIS company's documented public record — as a front-page editor would write after reading the investigation.
+- Must reflect what the record reveals, NOT a description of a product, package, or photo. Never restate the user's tap or object label.
+- You MAY name the company when it sharpens the story (e.g. notable legal case, labor pattern).
+- If overall_concern_level is "clean" or clean_card is true, use a celebratory headline (the company's positive or distinctive record).
+- If concern is significant or moderate, lead with the most notable documented issue specifically (settlements, enforcement, pattern).
+- Style: ALL CAPS or Title Case — editorial judgment. Omit if there is genuinely no substantive record to summarize (use null).
+
 Also return a "community_impact" object.
 
 This is NOT about this specific company's documented record.
@@ -451,6 +471,7 @@ Rules:
 - Neutral tone. Cite primary sources as URLs in the *_sources arrays.
 - If insufficient evidence, use null summaries and "unknown" concern level.
 - verdict_tags: snake_case e.g. tax_avoidance, labor_violations, bribery, clean_record.
+- generated_headline: follow the headline rules above; null only when there is no substantive record to summarize.
 ${healthFlag ? '- product_health must summarize documented health implications for this product category, with sources.' : '- Set product_health and product_health_sources to null and [].'}
 
 Do not include profile_type or last_updated in the JSON.`;
