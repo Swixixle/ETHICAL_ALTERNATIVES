@@ -118,6 +118,11 @@ body,
   text-transform: uppercase;
 }
 
+.section-header--informational {
+  color: var(--color-text-muted, #a8c4d8);
+  border-bottom-color: var(--color-border-investigation, #344d62);
+}
+
 .concern-badge {
   font-family: "Space Mono", ui-monospace, monospace;
   font-weight: 700;
@@ -182,15 +187,15 @@ body,
   text-transform: uppercase;
   padding: 5px 10px;
   border-radius: 999px;
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background-color: rgba(28, 42, 58, 0.95);
+  border: none;
   color: var(--color-text-muted);
 }
 
 .identification-method-badge {
-  background-color: var(--color-accent-bg);
-  border: 1px solid var(--color-accent-dim);
-  color: var(--color-accent);
+  background-color: rgba(106, 138, 154, 0.15);
+  border: 1px solid var(--color-border-investigation, #344d62);
+  color: var(--color-text-muted, #a8c4d8);
   font-family: "Space Mono", monospace;
   font-size: 11px;
   letter-spacing: 1.5px;
@@ -199,9 +204,9 @@ body,
 }
 
 .timeline-category-badge {
-  border: 1px solid var(--color-accent);
-  color: var(--color-accent);
-  background: transparent;
+  border: none;
+  color: var(--color-text-dim, #6a8a9a);
+  background: rgba(106, 138, 154, 0.18);
 }
 
 .alt-brand-button {
@@ -723,7 +728,7 @@ body,
 }
 
 .investigation-card-enter {
-  animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation: slideUp 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 .app__btn:active {

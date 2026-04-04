@@ -140,7 +140,7 @@ export default function RegistryCard({ seller }) {
             fontFamily: "'Space Mono', monospace",
             fontSize: 11,
             letterSpacing: 1.5,
-            color: '#f0a820',
+            color: '#6a8a9a',
             textTransform: 'uppercase',
             marginBottom: 8,
           }}

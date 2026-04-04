@@ -14,6 +14,7 @@ import HistoryScreen from './components/HistoryScreen.jsx';
 import ShareCard from './components/ShareCard.jsx';
 import CommunityImpact from './components/CommunityImpact.jsx';
 import { useTapAnalysis } from './hooks/useTapAnalysis.js';
+import { getInvestigationRecordPresentation } from './utils/investigationConfidence.js';
 import { haptic } from './utils/haptics.js';
 import { playReveal } from './utils/sounds.js';
 import './App.css';
@@ -157,6 +158,14 @@ export default function App() {
       ? dbPreview.community_impact
       : null;
   const showResearchBanner = Boolean(result?.research_loading);
+
+  const recordPresentation = result
+    ? getInvestigationRecordPresentation(id, result.investigation, {
+        researchLoading: showResearchBanner,
+        searchedSources: result.searched_sources,
+      })
+    : null;
+
   const hasAlt =
     result &&
     ((Array.isArray(result.registry_results) && result.registry_results.length > 0) ||
@@ -201,9 +210,9 @@ export default function App() {
             style={{
               marginTop: 14,
               padding: '10px 12px',
-              border: '1px solid #344d62',
+              border: 'none',
               borderRadius: 4,
-              background: 'rgba(22,32,48,0.5)',
+              background: 'rgba(22,32,48,0.72)',
             }}
           >
             {dbConcern && dbConcern.trim() ? (
@@ -269,14 +278,57 @@ export default function App() {
         ) : null}
 
         {result.investigation ? (
-          <ProofBlock investigation={result.investigation} identification={id} result={result} />
+          <ProofBlock
+            investigation={result.investigation}
+            identification={id}
+            result={result}
+            recordPresentation={recordPresentation}
+          />
         ) : null}
 
-        {id && !result.investigation && !showResearchBanner ? (
-          <p className="app__footnote">
-            {typeof result.response_ms === 'number' ? `${result.response_ms} ms · ` : ''}
-            {Array.isArray(result.searched_sources) ? `Sources: ${result.searched_sources.join(', ')}` : null}
-          </p>
+        {id &&
+        recordPresentation &&
+        recordPresentation.variant === 'no_record' &&
+        !showResearchBanner ? (
+          <div
+            style={{
+              marginTop: 16,
+              padding: '12px 14px 14px 16px',
+              borderLeft:
+                typeof recordPresentation.borderLeft === 'string'
+                  ? recordPresentation.borderLeft
+                  : '3px solid #6a8a9a',
+              background: 'rgba(22, 32, 48, 0.55)',
+              borderRadius: 2,
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 10,
+                letterSpacing: 2,
+                textTransform: 'uppercase',
+                color: recordPresentation.badgeColor || '#a8c4d8',
+                background: recordPresentation.badgeBg || 'rgba(106,138,154,0.2)',
+                padding: '4px 10px',
+                borderRadius: 2,
+                display: 'inline-block',
+              }}
+            >
+              {recordPresentation.badge}
+            </span>
+            <p
+              style={{
+                fontFamily: "'Crimson Pro', serif",
+                fontSize: 15,
+                color: '#a8c4d8',
+                lineHeight: 1.5,
+                margin: '10px 0 0',
+              }}
+            >
+              {recordPresentation.sentence}
+            </p>
+          </div>
         ) : null}
 
         {result.investigation ? (
@@ -296,6 +348,7 @@ export default function App() {
           <div key={`investigation-${tapSession}`} className="investigation-card-enter">
             <InvestigationCard
               investigation={result.investigation}
+              recordPresentation={recordPresentation}
               onShare={() => {
                 haptic('confirm');
                 setShowShare(true);

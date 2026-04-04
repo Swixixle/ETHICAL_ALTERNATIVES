@@ -46,7 +46,7 @@ export default function LocalNewsTicker({ apiBase, city, state }) {
           style={{
             color: 'inherit',
             textDecoration: 'underline',
-            textDecorationColor: 'rgba(240, 168, 32, 0.45)',
+            textDecorationColor: 'rgba(106, 138, 154, 0.65)',
             textUnderlineOffset: 3,
           }}
         >
@@ -64,10 +64,12 @@ export default function LocalNewsTicker({ apiBase, city, state }) {
     fontSize: 11,
     letterSpacing: '0.12em',
     textTransform: 'uppercase',
-    color: '#f0a820',
-    paddingRight: 48,
+    color: '#a8c4d8',
     whiteSpace: 'nowrap',
-    display: 'inline-block',
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 0,
+    padding: '0 14px',
   };
 
   return (
@@ -81,32 +83,19 @@ export default function LocalNewsTicker({ apiBase, city, state }) {
         background: '#0a1020',
         borderTop: '1px solid #1a2840',
         height: 38,
-        overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
       }}
     >
-      <style>
-        {`
-          @keyframes ethicalalt-ticker-marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          .ethicalalt-ticker__track {
-            display: flex;
-            width: max-content;
-            animation: ethicalalt-ticker-marquee 50s linear infinite;
-          }
-          .ethicalalt-ticker-wrap:hover .ethicalalt-ticker__track {
-            animation-play-state: paused;
-          }
-        `}
-      </style>
-      <div className="ethicalalt-ticker-wrap" style={{ width: '100%', overflow: 'hidden' }}>
-        <div className="ethicalalt-ticker__track">
-          <span style={bandStyle}>{segment}</span>
-          <span style={bandStyle}>{segment}</span>
-        </div>
+      <div
+        style={{
+          width: '100%',
+          overflowX: 'auto',
+          overflowY: 'hidden',
+          WebkitOverflowScrolling: 'touch',
+        }}
+      >
+        <div style={bandStyle}>{segment}</div>
       </div>
     </div>
   );

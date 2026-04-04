@@ -115,7 +115,7 @@ export default function QuickAlternatives({ registryResults, localResults }) {
                     style={{
                       fontFamily: "'Space Mono', monospace",
                       fontSize: 11,
-                      color: 'var(--color-accent, #f0a820)',
+                      color: '#6a8a9a',
                       textTransform: 'uppercase',
                       letterSpacing: 1,
                       marginTop: 4,

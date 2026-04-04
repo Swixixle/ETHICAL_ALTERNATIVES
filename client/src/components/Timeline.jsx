@@ -19,7 +19,7 @@ export default function Timeline({ events }) {
 
   return (
     <section style={{ margin: "32px 0 24px" }}>
-      <h2 className="section-header">TIMELINE</h2>
+      <h2 className="section-header section-header--informational">TIMELINE</h2>
       <div style={{ position: "relative", paddingLeft: 44 }}>
         <div style={{
           position: "absolute",
@@ -52,7 +52,7 @@ export default function Timeline({ events }) {
                   fontFamily: "'Space Mono', monospace",
                   fontSize: 12,
                   letterSpacing: 2,
-                  color: "var(--color-accent, #f0a820)",
+                  color: "#a8c4d8",
                   textTransform: "uppercase",
                   marginBottom: 4,
                   display: "flex",

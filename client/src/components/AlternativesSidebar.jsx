@@ -13,7 +13,7 @@ function SectionLabel({ children }) {
         fontSize: 11,
         letterSpacing: 3,
         textTransform: 'uppercase',
-        color: '#f0a820',
+        color: '#a8c4d8',
         borderBottom: '1px solid #2a3f52',
         paddingBottom: 6,
         marginBottom: 14,
@@ -93,7 +93,7 @@ function LocalCard({ place }) {
             fontFamily: "'Space Mono', monospace",
             fontSize: 11,
             letterSpacing: 1.5,
-            color: '#f0a820',
+            color: '#6a8a9a',
             textTransform: 'uppercase',
             marginBottom: 6,
           }}

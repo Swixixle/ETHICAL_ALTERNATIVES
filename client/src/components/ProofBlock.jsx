@@ -86,9 +86,10 @@ function profileTypeLabel(inv) {
  *   investigation: Record<string, unknown>;
  *   identification?: Record<string, unknown> | null;
  *   result?: Record<string, unknown> | null;
+ *   recordPresentation?: Record<string, unknown> | null;
  * }} props
  */
-export default function ProofBlock({ investigation, identification, result }) {
+export default function ProofBlock({ investigation, identification, result, recordPresentation }) {
   if (!investigation) return null;
 
   const inv = investigation;
@@ -101,16 +102,60 @@ export default function ProofBlock({ investigation, identification, result }) {
   const gradeLevel = grade && typeof grade.level === 'string' ? grade.level.toLowerCase() : '';
   const gColors = GRADE_COLORS[gradeLevel] || GRADE_COLORS.limited;
 
+  const pres = recordPresentation && typeof recordPresentation === 'object' ? recordPresentation : null;
+  const borderLeft =
+    pres && typeof pres.borderLeft === 'string'
+      ? pres.borderLeft
+      : '3px solid rgba(106, 138, 154, 0.5)';
+  const showPresHeader =
+    pres && pres.variant !== 'loading' && typeof pres.badge === 'string' && pres.badge;
+  const presSentence = pres && typeof pres.sentence === 'string' ? pres.sentence : null;
+  const badgeBg = pres && typeof pres.badgeBg === 'string' ? pres.badgeBg : 'rgba(106,138,154,0.2)';
+  const badgeColor = pres && typeof pres.badgeColor === 'string' ? pres.badgeColor : '#a8c4d8';
+
   return (
     <div
       style={{
         margin: '0 0 1rem',
-        padding: '14px 16px',
+        padding: '14px 16px 14px 18px',
         background: 'var(--color-panel-bg, #121a24)',
-        border: '1px solid var(--color-border, #2a3f52)',
+        border: 'none',
+        borderLeft,
         borderRadius: 4,
       }}
     >
+      {showPresHeader ? (
+        <div style={{ marginBottom: presSentence ? 12 : 14 }}>
+          <span
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 10,
+              letterSpacing: 2,
+              textTransform: 'uppercase',
+              color: badgeColor,
+              background: badgeBg,
+              padding: '4px 10px',
+              borderRadius: 2,
+              display: 'inline-block',
+            }}
+          >
+            {String(pres.badge)}
+          </span>
+          {presSentence ? (
+            <p
+              style={{
+                fontFamily: "'Crimson Pro', serif",
+                fontSize: 15,
+                color: '#a8c4d8',
+                lineHeight: 1.5,
+                margin: '10px 0 0',
+              }}
+            >
+              {presSentence}
+            </p>
+          ) : null}
+        </div>
+      ) : null}
       <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', gap: '14px 24px' }}>
         <div>
           <div
@@ -118,7 +163,7 @@ export default function ProofBlock({ investigation, identification, result }) {
               fontFamily: "'Bebas Neue', sans-serif",
               fontSize: 'clamp(2.25rem, 6vw, 3rem)',
               letterSpacing: 2,
-              color: '#f0a820',
+              color: '#a8c4d8',
               lineHeight: 1,
             }}
           >
@@ -149,7 +194,7 @@ export default function ProofBlock({ investigation, identification, result }) {
                 textTransform: 'uppercase',
                 padding: '6px 12px',
                 borderRadius: 999,
-                border: `1px solid ${gColors.border}`,
+                border: 'none',
                 background: gColors.bg,
                 color: gColors.text,
                 display: 'inline-block',
@@ -159,25 +204,27 @@ export default function ProofBlock({ investigation, identification, result }) {
               Evidence · {gradeLevel}
             </div>
           ) : null}
+          {!showPresHeader ? (
+            <div
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 11,
+                letterSpacing: 1,
+                color: 'var(--color-text-dim, #a8c4d8)',
+                lineHeight: 1.5,
+              }}
+            >
+              <strong>Profile:</strong> {profileTypeLabel(inv)}
+            </div>
+          ) : null}
           <div
             style={{
               fontFamily: "'Space Mono', monospace",
               fontSize: 11,
               letterSpacing: 1,
-              color: 'var(--color-text-dim, #a8c4d8)',
+              color: 'var(--color-text-muted, #6a8a9a)',
               lineHeight: 1.5,
-            }}
-          >
-            <strong>Profile:</strong> {profileTypeLabel(inv)}
-          </div>
-          <div
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: 11,
-              letterSpacing: 1,
-              color: 'var(--color-text-dim, #a8c4d8)',
-              lineHeight: 1.5,
-              marginTop: 4,
+              marginTop: showPresHeader ? 0 : 4,
             }}
           >
             <strong>Match:</strong> {matchMethodLabel(id)}

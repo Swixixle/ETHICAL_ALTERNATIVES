@@ -13,6 +13,27 @@ import {
 } from './icons/SectionIcons';
 import './InvestigationCard.css';
 
+const PLACEHOLDER_EMPTY_NORM = 'no indexed public material in this category';
+
+/** @param {unknown} summary */
+function isSummaryMeaningful(summary) {
+  if (summary == null) return false;
+  const s = String(summary).trim();
+  if (!s) return false;
+  if (s.replace(/\.$/, '').toLowerCase() === PLACEHOLDER_EMPTY_NORM) return false;
+  return s.length >= 20;
+}
+
+const SECTION_PILL_LABEL = {
+  tax: 'TAX',
+  legal: 'LEGAL',
+  labor: 'LABOR',
+  environmental: 'ENVIRONMENTAL',
+  political: 'POLITICAL',
+  product_health: 'PRODUCT HEALTH',
+  executive: 'EXECUTIVES',
+};
+
 const TAG_CATEGORY_MAP = {
   tax_avoidance: 'FINANCIAL',
   offshore_profit_shifting: 'FINANCIAL',
@@ -75,7 +96,7 @@ function EvidenceBadge({ grade }) {
         textTransform: 'uppercase',
         padding: '2px 8px',
         borderRadius: 999,
-        border: `1px solid ${colors.border}`,
+        border: 'none',
         background: colors.bg,
         color: colors.text,
         marginLeft: 8,
@@ -119,11 +140,11 @@ function NotableMentionsCallout({ notable }) {
   return (
     <div
       style={{
-        border: '1px solid rgba(240, 168, 32, 0.65)',
+        border: 'none',
         borderRadius: 4,
         padding: '12px 14px 14px',
         margin: '0 1rem 16px',
-        background: 'rgba(240, 168, 32, 0.05)',
+        background: 'rgba(240, 168, 32, 0.08)',
       }}
     >
       <div
@@ -132,7 +153,7 @@ function NotableMentionsCallout({ notable }) {
           fontSize: 10,
           letterSpacing: 2.5,
           textTransform: 'uppercase',
-          color: '#f0a820',
+          color: '#6a8a9a',
           marginBottom: 10,
         }}
       >
@@ -231,9 +252,10 @@ const SECTIONS = [
  *   investigation: Record<string, unknown>;
  *   identification?: Record<string, unknown> | null;
  *   onShare?: () => void;
+ *   recordPresentation?: Record<string, unknown> | null;
  * }} props
  */
-export default function InvestigationCard({ investigation, onShare }) {
+export default function InvestigationCard({ investigation, onShare, recordPresentation }) {
   if (!investigation) return null;
 
   const profileType = String(investigation.profile_type || '');
@@ -247,22 +269,90 @@ export default function InvestigationCard({ investigation, onShare }) {
   const showNotable =
     profileType === 'realtime_search' && notableMentionsHasContent(notableRaw);
 
+  const emptySectionLabels = [];
+  const sectionNodes = [];
+
+  for (const s of SECTIONS) {
+    const summary = investigation[s.summaryKey];
+    const fl = s.flagsKey ? investigation[s.flagsKey] : null;
+    const sources = investigation[s.sourcesKey];
+    const hasSummary = isSummaryMeaningful(summary);
+    const hasFlags = Array.isArray(fl) && fl.length > 0;
+    const hasSources = Array.isArray(sources) && sources.length > 0;
+    const hasContent = hasSummary || hasFlags || hasSources;
+
+    if (!hasContent) {
+      const pill = SECTION_PILL_LABEL[s.key];
+      if (pill) emptySectionLabels.push(pill);
+      continue;
+    }
+
+    const Icon = SECTION_ICONS[s.key];
+    const evGrade =
+      s.evidenceGradeKey && investigation[s.evidenceGradeKey]
+        ? investigation[s.evidenceGradeKey]
+        : null;
+    const headerSourced = hasSources || hasSummary;
+
+    sectionNodes.push(
+      <div key={s.key} className="investigation-card__section">
+        <div className="investigation-card__section-head investigation-card__section-head--static">
+          <h2
+            className={`section-header investigation-card__section-title${headerSourced ? ' investigation-card__section-title--sourced' : ''}`}
+            style={{
+              flex: 1,
+              margin: '12px 0 0',
+              textAlign: 'left',
+              display: 'flex',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: 4,
+            }}
+          >
+            {Icon ? <Icon /> : null}
+            {s.title}
+            <EvidenceBadge grade={evGrade} />
+          </h2>
+        </div>
+        <div className="investigation-card__section-body investigation-body body-crimson">
+          {hasSummary ? (
+            <p className="investigation-card__section-summary">{String(summary)}</p>
+          ) : null}
+          {hasFlags ? (
+            <ul className="investigation-card__list" style={{ listStyle: 'disc' }}>
+              {fl.map((item) => (
+                <li key={String(item)}>{String(item)}</li>
+              ))}
+            </ul>
+          ) : null}
+          {hasSources ? (
+            <ul className="investigation-card__sources investigation-card__sources--blocks">
+              {sources.map((url) => {
+                const href = String(url);
+                return (
+                  <li key={href} className="investigation-card__source-li">
+                    <a href={href} target="_blank" rel="noreferrer" className="investigation-card__source-block">
+                      <span className="investigation-card__source-kicker">SOURCE</span>
+                      <span className="investigation-card__source-url">{href}</span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          ) : null}
+        </div>
+      </div>
+    );
+  }
+
+  const variantClass =
+    recordPresentation && typeof recordPresentation.variant === 'string'
+      ? ` investigation-card--${recordPresentation.variant}`
+      : '';
+
   return (
-    <section className="investigation-card">
+    <section className={`investigation-card${variantClass}`}>
       {showNotable ? <NotableMentionsCallout notable={notableRaw} /> : null}
-      {profileType === 'realtime_search' ? (
-        <p className="investigation-card__disclaimer">Live research — verify sources</p>
-      ) : null}
-      {profileType === 'limited' ? (
-        <p className="investigation-card__disclaimer">
-          Preliminary realtime card — verify primary sources (database entry not loaded)
-        </p>
-      ) : null}
-      {profileType === 'database' ? (
-        <p className="investigation-card__disclaimer investigation-card__disclaimer--muted">
-          Verified database profile
-        </p>
-      ) : null}
       {investigation.clean_card ? (
         <p className="investigation-card__clean-card">
           Clean card — highlighted alternative; sections below include honest caveats.
@@ -291,73 +381,19 @@ export default function InvestigationCard({ investigation, onShare }) {
       </div>
 
       <div className="investigation-card__sections">
-        {SECTIONS.map((s) => {
-          const summary = investigation[s.summaryKey];
-          const fl = s.flagsKey ? investigation[s.flagsKey] : null;
-          const sources = investigation[s.sourcesKey];
-          const hasSummary = Boolean(summary && String(summary).trim());
-          const hasFlags = Array.isArray(fl) && fl.length > 0;
-          const hasSources = Array.isArray(sources) && sources.length > 0;
-          const has = hasSummary || hasFlags || hasSources;
-
-          const Icon = SECTION_ICONS[s.key];
-          const evGrade =
-            s.evidenceGradeKey && investigation[s.evidenceGradeKey]
-              ? investigation[s.evidenceGradeKey]
-              : null;
-
-          return (
-            <div key={s.key} className="investigation-card__section">
-              <div className="investigation-card__section-head investigation-card__section-head--static">
-                <h2
-                  className="section-header"
-                  style={{
-                    flex: 1,
-                    margin: '12px 0 0',
-                    textAlign: 'left',
-                    display: 'flex',
-                    alignItems: 'center',
-                    flexWrap: 'wrap',
-                    gap: 4,
-                  }}
-                >
-                  {Icon ? <Icon /> : null}
-                  {s.title}
-                  <EvidenceBadge grade={evGrade} />
-                </h2>
-              </div>
-              <div className="investigation-card__section-body investigation-body body-crimson">
-                {!has ? (
-                  <p className="investigation-card__section-empty">No indexed public material in this category.</p>
-                ) : null}
-                {hasSummary ? (
-                  <p className="investigation-card__section-summary">{String(summary)}</p>
-                ) : null}
-                {hasFlags ? (
-                  <ul className="investigation-card__list" style={{ listStyle: 'disc' }}>
-                    {fl.map((item) => (
-                      <li key={String(item)}>{String(item)}</li>
-                    ))}
-                  </ul>
-                ) : null}
-                {hasSources ? (
-                  <ul className="investigation-card__sources">
-                    {sources.map((url) => {
-                      const href = String(url);
-                      return (
-                        <li key={href}>
-                          <a href={href} target="_blank" rel="noreferrer">
-                            {href}
-                          </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                ) : null}
-              </div>
+        {sectionNodes}
+        {emptySectionLabels.length > 0 ? (
+          <div className="investigation-card__empty-row">
+            <div className="investigation-card__empty-pills">
+              {emptySectionLabels.map((label) => (
+                <span key={label} className="investigation-card__empty-pill">
+                  {label}
+                </span>
+              ))}
             </div>
-          );
-        })}
+            <p className="investigation-card__empty-note">No indexed public record in these categories.</p>
+          </div>
+        ) : null}
       </div>
 
       <div style={{ padding: '0 1rem' }}>

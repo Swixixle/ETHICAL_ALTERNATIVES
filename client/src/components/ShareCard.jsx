@@ -53,7 +53,7 @@ function ShareCardVisual({ cardData }) {
             fontSize: 11,
             letterSpacing: 3,
             textTransform: 'uppercase',
-            color: '#f0a820',
+            color: '#a8c4d8',
             marginBottom: 8,
           }}
         >
@@ -85,7 +85,7 @@ function ShareCardVisual({ cardData }) {
               letterSpacing: 1.5,
               textTransform: 'uppercase',
               color: '#a8c4d8',
-              border: '1px solid #2a3f52',
+              background: 'rgba(42, 63, 82, 0.45)',
               borderRadius: 999,
               padding: '3px 8px',
             }}
@@ -147,7 +147,7 @@ function ShareCardVisual({ cardData }) {
           fontFamily: "'Space Mono', monospace",
           fontSize: 11,
           letterSpacing: 2,
-          color: '#f0a820',
+          color: '#6a8a9a',
           textTransform: 'uppercase',
           borderTop: '1px solid #2a3f52',
           paddingTop: 10,
@@ -202,6 +202,7 @@ export default function ShareCard({ investigation, identification, onClose }) {
   const [toast, setToast] = useState(null);
   const [showSentConfirm, setShowSentConfirm] = useState(false);
   const [sentItems, setSentItems] = useState([]);
+  const [shareHelpOpen, setShareHelpOpen] = useState(false);
 
   const loadShareData = useCallback(async () => {
     setLoading(true);
@@ -339,31 +340,14 @@ export default function ShareCard({ investigation, identification, onClose }) {
 
   const staticRows = shareData
     ? [
-        {
-          id: 'twitter_feed',
-          primary: 'X / Twitter — Post to my feed',
-          detail: 'Opens X with this record pre-filled as a post.',
-        },
+        { id: 'twitter_feed', primary: 'X / Twitter — Post to my feed' },
         {
           id: 'twitter_tag',
           primary: `X / Twitter — Tag the company (${shareData.company_tag})`,
-          detail: 'Second post that tags the brand so the receipt lands in their mentions.',
         },
-        {
-          id: 'instagram',
-          primary: 'Instagram — Copy caption to clipboard',
-          detail: 'Copies the caption; paste it under your screenshot in Instagram.',
-        },
-        {
-          id: 'tiktok',
-          primary: 'TikTok — Copy caption to clipboard',
-          detail: 'Copies the same caption for a TikTok post.',
-        },
-        {
-          id: 'facebook',
-          primary: 'Facebook — Share link',
-          detail: 'Opens Facebook’s share dialog with the EthicalAlt link.',
-        },
+        { id: 'instagram', primary: 'Instagram — Copy caption to clipboard' },
+        { id: 'tiktok', primary: 'TikTok — Copy caption to clipboard' },
+        { id: 'facebook', primary: 'Facebook — Share link' },
       ]
     : [];
 
@@ -371,18 +355,17 @@ export default function ShareCard({ investigation, identification, onClose }) {
     shareData?.relevant_regulators?.map((reg) => ({
       id: `reg_${reg.agency}`,
       primary: checklistLabelForRegulator(reg),
-      detail: reg.description || '',
     })) || [];
 
   const rowStyle = {
     display: 'flex',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     gap: 14,
     width: '100%',
-    padding: '14px 12px',
+    padding: '12px 12px',
     marginBottom: 8,
     background: '#162030',
-    border: '1px solid #2a3f52',
+    border: 'none',
     borderRadius: 4,
     cursor: 'pointer',
     textAlign: 'left',
@@ -496,6 +479,7 @@ export default function ShareCard({ investigation, identification, onClose }) {
             justifyContent: 'space-between',
             alignItems: 'center',
             marginBottom: 20,
+            gap: 12,
           }}
         >
           <div
@@ -508,23 +492,62 @@ export default function ShareCard({ investigation, identification, onClose }) {
           >
             Send This Record
           </div>
-          <button
-            type="button"
-            onClick={onClose}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <button
+              type="button"
+              aria-label="Help sending this record"
+              aria-expanded={shareHelpOpen}
+              onClick={() => setShareHelpOpen((v) => !v)}
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 13,
+                fontWeight: 700,
+                lineHeight: 1,
+                color: '#a8c4d8',
+                background: 'rgba(106, 138, 154, 0.2)',
+                border: 'none',
+                width: 28,
+                height: 28,
+                borderRadius: 999,
+                cursor: 'pointer',
+                padding: 0,
+              }}
+            >
+              ?
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 11,
+                color: '#6a8a9a',
+                background: 'transparent',
+                border: 'none',
+                padding: '6px 12px',
+                borderRadius: 2,
+                cursor: 'pointer',
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+
+        {shareHelpOpen ? (
+          <p
             style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: 11,
-              color: '#6a8a9a',
-              background: 'transparent',
-              border: '1px solid #2a3f52',
-              padding: '6px 12px',
-              borderRadius: 2,
-              cursor: 'pointer',
+              fontFamily: "'Crimson Pro', serif",
+              fontSize: 14,
+              color: '#a8c4d8',
+              lineHeight: 1.45,
+              margin: '0 0 16px',
             }}
           >
-            Close
-          </button>
-        </div>
+            Choose destinations, then tap the button. Selected items open in new tabs or copy text to your
+            clipboard where needed.
+          </p>
+        ) : null}
 
         {loading ? (
           <div
@@ -560,20 +583,7 @@ export default function ShareCard({ investigation, identification, onClose }) {
                 marginBottom: 12,
               }}
             >
-              Send to all selected
-            </p>
-            <p
-              style={{
-                fontFamily: "'Crimson Pro', serif",
-                fontSize: 14,
-                color: '#a8c4d8',
-                lineHeight: 1.55,
-                marginBottom: 18,
-              }}
-            >
-              Uncheck anywhere you don&apos;t want this run. One tap fires every destination you leave on —
-              social posts, clipboard captions, and regulator forms (only agencies that match this record&apos;s
-              issue tags).
+              Destinations
             </p>
 
             <div style={{ marginBottom: 24 }}>
@@ -586,36 +596,24 @@ export default function ShareCard({ investigation, identification, onClose }) {
                     style={{
                       width: 18,
                       height: 18,
-                      marginTop: 2,
                       accentColor: '#f0a820',
                       cursor: 'pointer',
                       flexShrink: 0,
                     }}
                   />
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div
-                      style={{
-                        fontFamily: "'Space Mono', monospace",
-                        fontSize: 11,
-                        letterSpacing: 0.8,
-                        textTransform: 'uppercase',
-                        color: '#f0e8d0',
-                        marginBottom: 4,
-                        lineHeight: 1.35,
-                      }}
-                    >
-                      {row.primary}
-                    </div>
-                    <div
-                      style={{
-                        fontFamily: "'Crimson Pro', serif",
-                        fontSize: 13,
-                        color: '#6a8a9a',
-                        lineHeight: 1.45,
-                      }}
-                    >
-                      {row.detail}
-                    </div>
+                  <div
+                    style={{
+                      fontFamily: "'Space Mono', monospace",
+                      fontSize: 11,
+                      letterSpacing: 0.8,
+                      textTransform: 'uppercase',
+                      color: '#f0e8d0',
+                      lineHeight: 1.35,
+                      flex: 1,
+                      minWidth: 0,
+                    }}
+                  >
+                    {row.primary}
                   </div>
                 </label>
               ))}
@@ -660,22 +658,6 @@ export default function ShareCard({ investigation, identification, onClose }) {
             </button>
           </>
         ) : null}
-
-        <footer
-          style={{
-            marginTop: 8,
-            paddingTop: 18,
-            borderTop: '1px solid #2a3f52',
-            fontFamily: "'Crimson Pro', serif",
-            fontSize: 13,
-            fontStyle: 'italic',
-            color: '#6a8a9a',
-            lineHeight: 1.65,
-          }}
-        >
-          {shareData?.disclaimer ||
-            'All shared content uses only documented public record claims with primary source URLs. Nothing fabricated. The record speaks.'}
-        </footer>
       </div>
     </div>
   );

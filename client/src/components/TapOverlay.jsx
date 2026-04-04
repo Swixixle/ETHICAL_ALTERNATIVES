@@ -86,7 +86,7 @@ export default function TapOverlay({
             height: 80,
             borderRadius: '50%',
             border: '2px solid #f0a820',
-            animation: 'tapRipple 0.4s ease-out forwards',
+            animation: 'tapRipple 0.28s ease-out forwards',
             pointerEvents: 'none',
           }}
         />

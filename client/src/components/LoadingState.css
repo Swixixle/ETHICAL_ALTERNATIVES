@@ -11,12 +11,10 @@
   border-radius: 2px;
   background: linear-gradient(
     90deg,
-    rgba(42, 63, 82, 0.6),
-    rgba(240, 168, 32, 0.35),
-    rgba(42, 63, 82, 0.6)
+    rgba(42, 63, 82, 0.85),
+    rgba(168, 196, 216, 0.35),
+    rgba(42, 63, 82, 0.85)
   );
-  background-size: 200% 100%;
-  animation: loading-state-shimmer 1s ease-in-out infinite;
 }
 
 .loading-state__bar--long {
@@ -41,11 +39,3 @@
   margin: 0.25rem 0 0;
 }
 
-@keyframes loading-state-shimmer {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: -100% 0;
-  }
-}
