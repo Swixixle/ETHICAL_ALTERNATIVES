@@ -411,6 +411,20 @@ body,
   background: transparent;
 }
 
+.app__btn--share {
+  margin: 0.75rem 0 1rem;
+  background: transparent;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.app__btn--share:hover {
+  background: var(--color-accent-bg);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
 .app__id-block {
   margin-top: 0.5rem;
 }

@@ -9,6 +9,7 @@ import InvestigationCard from './components/InvestigationCard.jsx';
 import HealthCallout from './components/HealthCallout.jsx';
 import AlternativesSidebar from './components/AlternativesSidebar.jsx';
 import HomeScreen from './components/HomeScreen.jsx';
+import ShareCard from './components/ShareCard.jsx';
 import { useTapAnalysis } from './hooks/useTapAnalysis.js';
 import './App.css';
 
@@ -66,6 +67,8 @@ export default function App() {
     selectAlternativeBrand,
   } = useTapAnalysis();
 
+  const [showShare, setShowShare] = useState(false);
+
   const [isNarrow, setIsNarrow] = useState(
     () => typeof window !== 'undefined' && window.innerWidth < 768
   );
@@ -75,6 +78,10 @@ export default function App() {
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
+
+  useEffect(() => {
+    if (!result) setShowShare(false);
+  }, [result]);
 
   const dataUrl = image ? `data:image/jpeg;base64,${image}` : null;
 
@@ -255,6 +262,15 @@ export default function App() {
                   ) : null}
 
                   <HealthCallout investigation={result.investigation} />
+                  {result.investigation ? (
+                    <button
+                      type="button"
+                      className="app__btn app__btn--share"
+                      onClick={() => setShowShare(true)}
+                    >
+                      Share this record
+                    </button>
+                  ) : null}
                   <InvestigationCard investigation={result.investigation} identification={id} />
                 </div>
               </div>
@@ -262,6 +278,14 @@ export default function App() {
           </div>
         ) : null}
       </main>
+
+      {showShare && result?.investigation && id ? (
+        <ShareCard
+          investigation={result.investigation}
+          identification={id}
+          onClose={() => setShowShare(false)}
+        />
+      ) : null}
     </div>
   );
 }
