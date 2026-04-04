@@ -1,4 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
+import sharp from 'sharp';
 
 const client = new Anthropic();
 
@@ -17,26 +18,98 @@ const ALLOWED_CATEGORIES = new Set([
   'other',
 ]);
 
-function buildPrompt(tapX, tapY) {
+const ID_METHODS = new Set(['direct_logo', 'partial_logo', 'product_recognition', 'scene_inference']);
+
+/**
+ * Tight square crop centered on tap. 20% of shorter side, min 150px, clamped to image bounds.
+ * @param {string} imageBase64
+ * @param {number} tapX
+ * @param {number} tapY
+ * @returns {Promise<string>} JPEG base64
+ */
+export async function generateTapCrop(imageBase64, tapX, tapY) {
+  const buf = Buffer.from(imageBase64, 'base64');
+  const meta = await sharp(buf).metadata();
+  const w = meta.width;
+  const h = meta.height;
+  if (!w || !h) {
+    throw new Error('Could not read image dimensions');
+  }
+
+  const shorter = Math.min(w, h);
+  let side = Math.max(150, Math.round(shorter * 0.2));
+  side = Math.min(side, w, h);
+
+  const cx = tapX * w;
+  const cy = tapY * h;
+  const half = side / 2;
+  let left = Math.round(cx - half);
+  let top = Math.round(cy - half);
+
+  if (left < 0) left = 0;
+  if (top < 0) top = 0;
+  if (left + side > w) left = Math.max(0, w - side);
+  if (top + side > h) top = Math.max(0, h - side);
+
+  const width = Math.min(side, w - left);
+  const height = Math.min(side, h - top);
+
+  const cropped = await sharp(buf)
+    .extract({ left, top, width, height })
+    .jpeg({ quality: 90 })
+    .toBuffer();
+
+  return cropped.toString('base64');
+}
+
+function buildVisionPrompt(tapX, tapY) {
   const px = Math.round(tapX * 100);
   const py = Math.round(tapY * 100);
-  return `You are a product identification expert.
-The user tapped at approximately ${px}% from the left and ${py}% from the top of this image.
+  return `You are a precise brand and product identification system.
 
-Identify the object at that position as specifically as possible.
+The user tapped at ${px}% from left, ${py}% from top of the
+FIRST image (full scene). The SECOND image is a tight crop centered exactly on
+that tap point.
 
-Requirements:
-1. Most specific product / brand / model visible at the tap.
-2. Name the brand if identifiable; name product line / model if identifiable.
-3. Extract attributes useful for finding alternatives: clothing (cut, material, color, style); food/drink (brand, product, type); electronics (make, model); tobacco (brand, type, set health implications); otherwise concise descriptors in specifications.
-4. Guess corporate parent of the brand when reasonably known, else null.
-5. search_keywords: a short phrase (4–8 words) for marketplace / indie search — NO brand names or trademarked product names.
-6. health_flag: true for tobacco/vape, high-risk consumables, or when documented health angles are central; else false.
+PRIMARY RULE: Identify what is in the CROP IMAGE. The crop shows exactly what
+the user tapped. The full image provides context only.
 
-You MUST reply with valid JSON only (no markdown, no prose):
-{"object":"","brand":null,"product_line":null,"specifications":{},"corporate_parent":null,"category":"other","search_keywords":"","confidence":0,"confidence_notes":"","health_flag":false}
+Even if the object in the crop is small, partially obscured, or in the
+background — it is what the user intended. Prioritize it over any more visually
+prominent object in the full scene.
+
+Identify at maximum specificity:
+- Brand name (Adidas, Doritos, Speedway — even if the logo is small)
+- Product line if visible (Doritos Cool Ranch, Adidas Trefoil, etc.)
+- If a logo is partially visible, reason about brand from visible elements:
+  colors, shapes, typography, partial text
+- If no clear product/brand is in the crop, infer from SCENE CONTEXT:
+  store layout, shelving, signage style, color palette, architectural elements
+
+Return JSON only (no markdown, no prose):
+{
+  "object": string,
+  "brand": string | null,
+  "product_line": string | null,
+  "specifications": object,
+  "corporate_parent": string | null,
+  "category": string,
+  "search_keywords": string,
+  "confidence": number,
+  "confidence_notes": string,
+  "health_flag": boolean,
+  "identification_method": "direct_logo" | "partial_logo" | "product_recognition" | "scene_inference",
+  "scene_context": string | null
+}
+
+identification_method values:
+- "direct_logo": brand logo clearly visible and readable in crop
+- "partial_logo": brand inferred from partial logo, colors, or typography
+- "product_recognition": product identified by packaging, shape, or design
+- "scene_inference": brand inferred from store/environment context
 
 category must be exactly one of: clothing, food, coffee, books, home_goods, personal_care, electronics, tobacco, tools, other.
+search_keywords: short phrase (4–8 words) for marketplace search — NO brand names or trademarked product names.
 confidence is 0..1.`;
 }
 
@@ -57,6 +130,12 @@ function parseIdentificationJson(text) {
 
 function normalizeIdentification(obj) {
   const category = ALLOWED_CATEGORIES.has(obj?.category) ? obj.category : 'other';
+  const methodRaw = typeof obj?.identification_method === 'string' ? obj.identification_method : '';
+  const identification_method = ID_METHODS.has(methodRaw) ? methodRaw : 'product_recognition';
+
+  const scene_context =
+    obj.scene_context == null || obj.scene_context === '' ? null : String(obj.scene_context);
+
   return {
     object: typeof obj.object === 'string' ? obj.object : 'Unknown object',
     brand: obj.brand == null || obj.brand === '' ? null : String(obj.brand),
@@ -72,6 +151,8 @@ function normalizeIdentification(obj) {
     confidence: typeof obj.confidence === 'number' ? Math.max(0, Math.min(1, obj.confidence)) : 0,
     confidence_notes: typeof obj.confidence_notes === 'string' ? obj.confidence_notes : '',
     health_flag: Boolean(obj.health_flag),
+    identification_method,
+    scene_context,
   };
 }
 
@@ -90,6 +171,8 @@ function salvageIdentification(text) {
     confidence: 0.25,
     confidence_notes: 'Could not parse full model output; please retake or tap again.',
     health_flag: cat === 'tobacco',
+    identification_method: 'partial_logo',
+    scene_context: null,
   };
 }
 
@@ -99,9 +182,11 @@ function salvageIdentification(text) {
  * @param {number} tapY
  */
 export async function identifyObject(imageBase64, tapX, tapY) {
+  const cropBase64 = await generateTapCrop(imageBase64, tapX, tapY);
+
   const message = await client.messages.create({
     model: VISION_MODEL,
-    max_tokens: 1200,
+    max_tokens: 1600,
     messages: [
       {
         role: 'user',
@@ -115,8 +200,16 @@ export async function identifyObject(imageBase64, tapX, tapY) {
             },
           },
           {
+            type: 'image',
+            source: {
+              type: 'base64',
+              media_type: 'image/jpeg',
+              data: cropBase64,
+            },
+          },
+          {
             type: 'text',
-            text: buildPrompt(tapX, tapY),
+            text: buildVisionPrompt(tapX, tapY),
           },
         ],
       },
@@ -125,5 +218,6 @@ export async function identifyObject(imageBase64, tapX, tapY) {
 
   const textBlock = message.content.find((b) => b.type === 'text');
   const text = textBlock?.type === 'text' ? textBlock.text : '';
-  return parseIdentificationJson(text);
+  const parsed = parseIdentificationJson(text);
+  return { ...parsed, crop_base64: cropBase64 };
 }
