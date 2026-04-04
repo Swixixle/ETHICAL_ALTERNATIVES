@@ -1,11 +1,9 @@
 /**
  * Request user location; reverse-geocode for city. Cached in sessionStorage for the session.
  * Manual entry uses GET /api/geocode and the same cache shape as GPS.
- * @returns {Promise<{ lat: number, lng: number, city: string, state: string | null, country: string, display: string }>}
  */
 
 const CACHE_KEY = 'ea_user_location';
-const GEO_TIMEOUT_MS = 15_000;
 
 function apiPrefix() {
   return (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
@@ -22,7 +20,12 @@ export function readCachedLocation() {
   }
 }
 
-async function reverseGeocode(lat, lng) {
+export function persistLocation(loc) {
+  if (typeof sessionStorage === 'undefined') return;
+  sessionStorage.setItem(CACHE_KEY, JSON.stringify(loc));
+}
+
+export async function reverseGeocode(lat, lng) {
   try {
     const res = await fetch(
       `https://nominatim.openstreetmap.org/reverse?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lng)}&format=json`,
@@ -55,60 +58,41 @@ async function reverseGeocode(lat, lng) {
   }
 }
 
-export async function getUserLocation() {
-  try {
-    const cached = readCachedLocation();
-    if (cached && Number.isFinite(cached.lat) && Number.isFinite(cached.lng)) {
-      return cached;
-    }
-
+/**
+ * iOS Safari: minimal path — only getCurrentPosition, then enrich with {@link reverseGeocode} at call site.
+ * @returns {Promise<{ lat: number, lng: number, city: null, state: null, country: string, display: string }>}
+ */
+export function getUserLocation() {
+  return new Promise((resolve, reject) => {
     if (typeof navigator === 'undefined' || !navigator.geolocation) {
-      const e = new Error('Geolocation is not supported in this browser.');
-      e.code = 0;
-      throw e;
+      reject(new Error('Geolocation not supported'));
+      return;
     }
-
     if (typeof window !== 'undefined' && !window.isSecureContext) {
       console.warn(
         '[location] not a secure context (HTTPS); geolocation often fails on iOS Safari'
       );
     }
-
-    console.log('[location] requesting location...');
-
-    const coords = await new Promise((resolve, reject) => {
-      navigator.geolocation.getCurrentPosition(
-        (pos) => {
-          console.log('[location] location received');
-          resolve({ lat: pos.coords.latitude, lng: pos.coords.longitude });
-        },
-        (err) => {
-          console.warn(
-            '[location] getCurrentPosition error',
-            err?.code,
-            err?.message || err
-          );
-          reject(err);
-        },
-        {
-          enableHighAccuracy: false,
-          timeout: GEO_TIMEOUT_MS,
-          maximumAge: 300_000,
-        }
-      );
-    });
-
-    console.log('[location] reverse geocoding...');
-    const geo = await reverseGeocode(coords.lat, coords.lng);
-    console.log('[location] geocoding complete');
-
-    const location = { ...coords, ...geo };
-    sessionStorage.setItem(CACHE_KEY, JSON.stringify(location));
-    return location;
-  } catch (err) {
-    console.error('[location] getUserLocation failed', err?.code, err?.message || err);
-    throw err;
-  }
+    console.log('[location] calling getCurrentPosition');
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        console.log('[location] got position', pos.coords);
+        resolve({
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude,
+          city: null,
+          state: null,
+          country: 'US',
+          display: 'your location',
+        });
+      },
+      (err) => {
+        console.log('[location] error', err.code, err.message);
+        reject(err);
+      },
+      { timeout: 15000, maximumAge: 300000, enableHighAccuracy: false }
+    );
+  });
 }
 
 /**
@@ -157,7 +141,7 @@ export async function locationFromManualCity(query) {
     throw e;
   }
 
-  sessionStorage.setItem(CACHE_KEY, JSON.stringify(location));
+  persistLocation(location);
   console.log('[location] manual geocoding complete', location.display);
   return location;
 }

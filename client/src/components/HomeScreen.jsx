@@ -1,5 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
-import { getUserLocation, locationFromManualCity, readCachedLocation } from '../services/location.js';
+import {
+  getUserLocation,
+  locationFromManualCity,
+  persistLocation,
+  readCachedLocation,
+  reverseGeocode,
+} from '../services/location.js';
 import { getCityIdentity } from '../services/cityIdentity.js';
 import { dailyChainShuffle, dailyFeedShuffle, utcDateKey } from '../utils/dailyShuffle.js';
 import ListYourShop from './ListYourShop.jsx';
@@ -791,7 +797,12 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
     setManualCityVisible(false);
     setPhase('loading');
     try {
-      const loc = await getUserLocation();
+      let loc = await getUserLocation();
+      if (!loc.city && Number.isFinite(loc.lat) && Number.isFinite(loc.lng)) {
+        const geo = await reverseGeocode(loc.lat, loc.lng);
+        loc = { ...loc, ...geo };
+      }
+      persistLocation(loc);
       setLocation(loc);
       sessionStorage.setItem(ONBOARD_KEY, 'granted');
     } catch (err) {
