@@ -9,6 +9,7 @@ const CATEGORY_MAP = {
   home_goods: ['ceramics', 'furniture', 'textiles', 'candles', 'art', 'home_goods'],
   electronics: ['electronics', 'repair', 'refurbished'],
   books: ['books', 'zines', 'publishing'],
+  art: ['art', 'ceramics', 'home_goods', 'handmade', 'textiles'],
   outdoor: ['outdoor', 'gear', 'clothing'],
   tobacco: [],
   tools: ['handmade', 'tools', 'other'],
@@ -44,10 +45,19 @@ function keywordTokens(keywords) {
  * @param {string | string[]} params.keywords
  * @param {number} [params.radiusMiles]
  */
+/** All registry category tokens for home-feed "all" filter */
+export function allRegistryCategoryTerms() {
+  return [...new Set(Object.values(CATEGORY_MAP).flat().filter(Boolean))];
+}
+
 export async function findLocalSellers({ lat, lng, category, keywords, radiusMiles = 50 }) {
   if (!pool) return [];
 
-  const categoryTerms = normalizeCategoryTerms(category);
+  const catKey = typeof category === 'string' ? category.trim().toLowerCase() : '';
+  const categoryTerms =
+    catKey === 'all' || catKey === ''
+      ? allRegistryCategoryTerms()
+      : normalizeCategoryTerms(category);
   if (!categoryTerms.length) return [];
 
   const kw = keywordTokens(keywords);

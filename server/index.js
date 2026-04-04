@@ -3,6 +3,8 @@ import cors from 'cors';
 import express from 'express';
 import tapRouter from './routes/tap.js';
 import sellersRouter from './routes/sellers.js';
+import cityIdentityRouter from './routes/cityIdentity.js';
+import localFeedRouter from './routes/localFeed.js';
 
 const app = express();
 
@@ -24,6 +26,8 @@ app.get('/health', (_req, res) => {
 
 app.use('/api', tapRouter);
 app.use('/api/sellers', sellersRouter);
+app.use('/api/city-identity', cityIdentityRouter);
+app.use('/api/local-feed', localFeedRouter);
 
 const PORT = Number(process.env.PORT) || 3001;
 app.listen(PORT, () => {

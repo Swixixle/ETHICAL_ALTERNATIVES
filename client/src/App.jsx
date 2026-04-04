@@ -8,6 +8,7 @@ import ErrorState from './components/ErrorState.jsx';
 import InvestigationCard from './components/InvestigationCard.jsx';
 import HealthCallout from './components/HealthCallout.jsx';
 import AlternativesSidebar from './components/AlternativesSidebar.jsx';
+import HomeScreen from './components/HomeScreen.jsx';
 import { useTapAnalysis } from './hooks/useTapAnalysis.js';
 import './App.css';
 
@@ -41,6 +42,8 @@ function IdentificationMethodBadge({ id, tier }) {
 }
 
 export default function App() {
+  const [screen, setScreen] = useState('home');
+
   const {
     image,
     tapPosition,
@@ -85,11 +88,31 @@ export default function App() {
   const tapPhase =
     image && !result && !pendingConfirmation && !regionSelectActive ? 'tap' : null;
 
+  const goHome = () => {
+    reset();
+    setScreen('home');
+  };
+
+  if (screen === 'home') {
+    return (
+      <div className="app app--home">
+        <HomeScreen onStartSnap={() => setScreen('snap')} />
+      </div>
+    );
+  }
+
   return (
     <div className="app">
       <header className="app__header">
-        <h1 className="app__logo">ETHICALALT</h1>
-        <p className="app__tagline">Tap anything · Find independent alternatives</p>
+        <div className="app__header-inner">
+          <div>
+            <h1 className="app__logo">ETHICALALT</h1>
+            <p className="app__tagline">Tap anything · Find independent alternatives</p>
+          </div>
+          <button type="button" className="app__btn app__btn--ghost app__btn--header" onClick={goHome}>
+            ← Home
+          </button>
+        </div>
       </header>
 
       <main className="app__main">

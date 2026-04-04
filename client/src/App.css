@@ -220,6 +220,24 @@ body,
   color: var(--color-text-main);
 }
 
+.app--home {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.app__header-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.app__btn--header {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
 .app__header {
   border-bottom: 3px solid var(--color-accent);
   padding: 1rem 1.25rem 1.1rem;
