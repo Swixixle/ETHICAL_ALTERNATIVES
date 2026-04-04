@@ -207,7 +207,7 @@ export default function WealthChart() {
       <div
         style={{
           fontFamily: "'Crimson Pro', serif",
-          fontSize: 16,
+          fontSize: 18,
           color: '#6a8a9a',
           marginTop: 10,
           lineHeight: 1.5,

@@ -94,7 +94,7 @@ body,
 
 .investigation-body a {
   font-family: "Space Mono", ui-monospace, monospace;
-  font-size: 12px;
+  font-size: 18px;
   color: var(--color-text-dim);
   text-decoration: none;
 }

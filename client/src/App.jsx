@@ -334,7 +334,7 @@ export default function App() {
               <span
                 style={{
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: 10,
+                  fontSize: 11,
                   letterSpacing: 2,
                   textTransform: 'uppercase',
                   color: 'var(--color-text-muted, #6a8a9a)',

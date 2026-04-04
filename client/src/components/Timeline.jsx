@@ -93,7 +93,7 @@ export default function Timeline({ events }) {
                     rel="noreferrer"
                     style={{
                       fontFamily: "'Space Mono', monospace",
-                      fontSize: 12,
+                      fontSize: 18,
                       color: "var(--color-text-dim, #6a8a9a)",
                       textDecoration: "underline",
                       display: "inline-block",

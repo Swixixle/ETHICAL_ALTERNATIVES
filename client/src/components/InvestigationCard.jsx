@@ -72,7 +72,7 @@ function EvidenceBadge({ grade }) {
       title={typeof grade.note === 'string' ? grade.note : undefined}
       style={{
         fontFamily: "'Space Mono', monospace",
-        fontSize: 10,
+        fontSize: 11,
         letterSpacing: 1.5,
         textTransform: 'uppercase',
         padding: '2px 8px',

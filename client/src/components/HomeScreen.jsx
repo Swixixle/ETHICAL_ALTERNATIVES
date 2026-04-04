@@ -1,6 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
-  getUserLocation,
   locationFromManualCity,
   persistLocation,
   readCachedLocation,
@@ -234,7 +233,7 @@ function BookIndependentStayLinks({ city, state }) {
               alignItems: 'baseline',
               gap: 8,
               fontFamily: "'Space Mono', monospace",
-              fontSize: 10,
+              fontSize: 11,
               letterSpacing: 1,
               textTransform: 'uppercase',
               color: '#f0a820',
@@ -277,7 +276,7 @@ function BookIndependentStayLinks({ city, state }) {
         <p
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 9,
+            fontSize: 11,
             letterSpacing: 1,
             color: '#4a5a68',
             margin: '10px 0 0',
@@ -304,7 +303,7 @@ function initialPhase() {
 }
 
 function LocationPrompt({
-  onAllow,
+  geoShare,
   onSkip,
   hint,
   manualVisible,
@@ -380,7 +379,9 @@ function LocationPrompt({
 
       <button
         type="button"
-        onClick={onAllow}
+        onClick={() =>
+          navigator.geolocation.getCurrentPosition(geoShare.success, geoShare.error, geoShare.options)
+        }
         style={{
           fontFamily: "'Space Mono', monospace",
           fontSize: 11,
@@ -552,7 +553,7 @@ function CityCard({ identity, city, state }) {
         <span
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 9,
+            fontSize: 11,
             letterSpacing: 1,
             color: '#f0a820',
             lineHeight: 1.45,
@@ -578,7 +579,7 @@ function CityCard({ identity, city, state }) {
         onClick={() => setOpen(false)}
         style={{
           fontFamily: "'Space Mono', monospace",
-          fontSize: 10,
+          fontSize: 11,
           letterSpacing: 2,
           textTransform: 'uppercase',
           color: '#6a8a9a',
@@ -1037,26 +1038,40 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
     };
   }, [travelStayActive, phase, category, location?.lat, location?.lng, location?.city, location?.state, fetchFeed]);
 
-  async function handleAllow() {
-    setGeoHint(null);
-    setManualCityVisible(false);
-    setPhase('loading');
-    try {
-      let loc = await getUserLocation();
-      if (!loc.city && Number.isFinite(loc.lat) && Number.isFinite(loc.lng)) {
-        const geo = await reverseGeocode(loc.lat, loc.lng);
-        loc = { ...loc, ...geo };
-      }
-      persistLocation(loc);
-      setLocation(loc);
-      sessionStorage.setItem(ONBOARD_KEY, 'granted');
-    } catch (err) {
-      const { message } = geolocationFailureHint(err);
-      setGeoHint(message);
-      setManualCityVisible(true);
-      setPhase('prompt');
-    }
-  }
+  const geoShare = useMemo(
+    () => ({
+      options: { enableHighAccuracy: true, timeout: 20000, maximumAge: 0 },
+      success: (position) => {
+        setGeoHint(null);
+        setManualCityVisible(false);
+        setPhase('loading');
+        let loc = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+          accuracy_m: position.coords.accuracy,
+        };
+        void reverseGeocode(loc.lat, loc.lng)
+          .then((geo) => {
+            loc = { ...loc, ...geo };
+            persistLocation(loc);
+            setLocation(loc);
+            sessionStorage.setItem(ONBOARD_KEY, 'granted');
+          })
+          .catch(() => {
+            persistLocation(loc);
+            setLocation(loc);
+            sessionStorage.setItem(ONBOARD_KEY, 'granted');
+          });
+      },
+      error: (err) => {
+        const { message } = geolocationFailureHint(err);
+        setGeoHint(message);
+        setManualCityVisible(true);
+        setPhase('prompt');
+      },
+    }),
+    []
+  );
 
   function handleOpenManualCity() {
     setGeoHint(
@@ -1106,7 +1121,7 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
   if (phase === 'prompt') {
     return (
       <LocationPrompt
-        onAllow={handleAllow}
+        geoShare={geoShare}
         onSkip={handleSkip}
         hint={geoHint}
         manualVisible={manualCityVisible}

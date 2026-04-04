@@ -66,7 +66,7 @@ export default function CostAbsorption({ data }) {
               <div
                 style={{
                   fontFamily: "'Crimson Pro', serif",
-                  fontSize: 16,
+                  fontSize: 18,
                   color: '#a8c4d8',
                   lineHeight: 1.5,
                 }}
@@ -105,7 +105,7 @@ export default function CostAbsorption({ data }) {
               <div
                 style={{
                   fontFamily: "'Crimson Pro', serif",
-                  fontSize: 16,
+                  fontSize: 18,
                   color: '#a8c4d8',
                   lineHeight: 1.5,
                 }}
@@ -124,7 +124,7 @@ export default function CostAbsorption({ data }) {
             paddingTop: 14,
             marginTop: 14,
             fontFamily: "'Crimson Pro', serif",
-            fontSize: 16,
+            fontSize: 18,
             fontStyle: 'italic',
             color: '#f0e8d0',
             lineHeight: 1.6,

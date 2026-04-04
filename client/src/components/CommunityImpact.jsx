@@ -121,7 +121,7 @@ function Bullets({ items }) {
           <span
             style={{
               fontFamily: "'Crimson Pro', Georgia, serif",
-              fontSize: 16,
+              fontSize: 18,
               lineHeight: 1.65,
               color: '#a8c4d8',
             }}
