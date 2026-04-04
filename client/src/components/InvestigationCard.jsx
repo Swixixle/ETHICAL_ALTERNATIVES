@@ -158,6 +158,11 @@ const SECTIONS = [
   },
 ];
 
+/** All research sections open by default when “The record” is expanded (Community Impact keeps its own toggle). */
+function initialSectionOpenState() {
+  return Object.fromEntries(SECTIONS.map((s) => [s.key, true]));
+}
+
 /**
  * @param {{
  *   investigation: Record<string, unknown>;
@@ -166,7 +171,7 @@ const SECTIONS = [
  * }} props
  */
 export default function InvestigationCard({ investigation, identification, onShare }) {
-  const [open, setOpen] = useState({});
+  const [open, setOpen] = useState(initialSectionOpenState);
   const [expanded, setExpanded] = useState(false);
 
   if (!investigation) return null;
@@ -315,7 +320,9 @@ export default function InvestigationCard({ investigation, identification, onSha
                   </button>
                   {isOpen ? (
                     <div className="investigation-card__section-body investigation-body body-crimson">
-                      {summary ? <p style={{ margin: '0 0 0.5rem' }}>{String(summary)}</p> : null}
+                      {summary ? (
+                        <p className="investigation-card__section-summary">{String(summary)}</p>
+                      ) : null}
                       {Array.isArray(fl) && fl.length ? (
                         <ul className="investigation-card__list" style={{ listStyle: 'disc' }}>
                           {fl.map((item) => (
@@ -325,14 +332,16 @@ export default function InvestigationCard({ investigation, identification, onSha
                       ) : null}
                       {Array.isArray(sources) && sources.length ? (
                         <ul className="investigation-card__sources">
-                          {sources.map((url) => (
-                            <li key={url}>
-                              <a href={String(url)} target="_blank" rel="noreferrer">
-                                {String(url).replace(/^https?:\/\//, '').slice(0, 72)}
-                                {String(url).length > 72 ? '…' : ''}
-                              </a>
-                            </li>
-                          ))}
+                          {sources.map((url) => {
+                            const href = String(url);
+                            return (
+                              <li key={href}>
+                                <a href={href} target="_blank" rel="noreferrer">
+                                  {href}
+                                </a>
+                              </li>
+                            );
+                          })}
                         </ul>
                       ) : null}
                     </div>
@@ -353,7 +362,7 @@ export default function InvestigationCard({ investigation, identification, onSha
           {Array.isArray(investigation.subsidiaries) && investigation.subsidiaries.length ? (
             <div className="investigation-card__subs">
               <span className="investigation-card__subs-label">Related brands / units</span>
-              <p>{investigation.subsidiaries.join(' · ')}</p>
+              <p className="investigation-card__subs-body">{investigation.subsidiaries.join(' · ')}</p>
             </div>
           ) : null}
 
