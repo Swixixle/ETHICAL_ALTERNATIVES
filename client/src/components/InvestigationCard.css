@@ -130,14 +130,27 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 0.5rem;
   padding: 0.65rem 1rem;
   background: transparent;
   border: none;
   color: #bea028;
-  font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 0.95rem;
+  font: inherit;
   cursor: pointer;
+  text-align: left;
+}
+
+.investigation-card__section-head .section-header {
+  margin: 0;
+}
+
+.investigation-card__section-chev {
+  flex-shrink: 0;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  color: #bea028;
+  margin-top: 0.5rem;
 }
 
 .investigation-card__section-body {

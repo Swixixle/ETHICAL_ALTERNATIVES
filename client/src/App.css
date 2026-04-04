@@ -1,4 +1,123 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:wght@500;600&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --color-bg: #0d0c09;
+  --color-paper: #15120f;
+  --color-text-main: #c9bfa8;
+  --color-accent-red: #c8370a;
+}
+
+.headline-bebas {
+  font-family: "Bebas Neue", system-ui, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.body-crimson {
+  font-family: "Crimson Pro", Georgia, "Times New Roman", serif;
+}
+
+.meta-space {
+  font-family: "Space Mono", ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.investigation-object-headline {
+  font-family: "Bebas Neue", system-ui, sans-serif;
+  font-size: clamp(48px, 8vw, 96px);
+  line-height: 0.9;
+  letter-spacing: 2px;
+  color: #e2d9c4;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.brand-detected-line {
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #c8370a;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.investigation-body {
+  font-family: "Crimson Pro", Georgia, serif;
+  max-width: 680px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #c9bfa8;
+}
+
+.investigation-body a {
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 10px;
+  color: #6a6050;
+  text-decoration: none;
+}
+
+.investigation-body a:hover {
+  color: #c8370a;
+  text-decoration: underline;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Bebas Neue", system-ui, sans-serif;
+  font-size: 28px;
+  letter-spacing: 3px;
+  color: #c8370a;
+  border-bottom: 2px solid #c8370a;
+  padding-bottom: 4px;
+  margin: 28px 0 16px;
+  text-transform: uppercase;
+}
+
+.concern-badge {
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 2px;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+.concern-significant { background: #c8370a; color: #ffffff; }
+.concern-moderate    { background: #bea028; color: #0d0c09; }
+.concern-minor       { background: #50a064; color: #0d0c09; }
+.concern-clean       { background: #3c82c8; color: #ffffff; }
+
+.verdict-tags-section { margin-bottom: 20px; }
+.verdict-tag-group    { margin-bottom: 12px; }
+
+.verdict-category-label {
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #6a6050;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.verdict-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.verdict-tag {
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid #3a3228;
+  color: #c9bfa8;
+}
 
 .app {
   min-height: 100vh;

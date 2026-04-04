@@ -1,5 +1,63 @@
 import { useState } from 'react';
+import SeverityMeter from './SeverityMeter';
+import {
+  TaxIcon,
+  LegalIcon,
+  LaborIcon,
+  EnvironmentIcon,
+  PoliticalIcon,
+  ExecutivesIcon,
+  HealthIcon,
+} from './icons/SectionIcons';
 import './InvestigationCard.css';
+
+const TAG_CATEGORY_MAP = {
+  tax_avoidance: 'FINANCIAL',
+  offshore_profit_shifting: 'FINANCIAL',
+  government_subsidies: 'FINANCIAL',
+  accounting_fraud: 'FINANCIAL',
+  criminal_charges: 'LEGAL',
+  settlements: 'LEGAL',
+  antitrust: 'LEGAL',
+  bribery: 'LEGAL',
+  rico_conviction: 'LEGAL',
+  sanctions_violations: 'LEGAL',
+  labor_violations: 'LABOR',
+  union_suppression: 'LABOR',
+  wage_theft: 'LABOR',
+  worker_safety: 'LABOR',
+  racial_discrimination: 'LABOR',
+  environmental_violations: 'ENVIRONMENT',
+  pollution: 'ENVIRONMENT',
+  greenwashing: 'ENVIRONMENT',
+  deforestation_supply_chain: 'ENVIRONMENT',
+  political_influence: 'POLITICAL',
+  lobbying: 'POLITICAL',
+  health_concerns: 'HEALTH',
+  product_safety_issues: 'HEALTH',
+  child_labor: 'SUPPLY CHAIN',
+  forced_labor_risk: 'SUPPLY CHAIN',
+};
+
+function groupTags(tags) {
+  if (!tags || !Array.isArray(tags)) return {};
+  return tags.reduce((acc, tag) => {
+    const cat = TAG_CATEGORY_MAP[tag] || 'OTHER';
+    if (!acc[cat]) acc[cat] = [];
+    acc[cat].push(tag);
+    return acc;
+  }, {});
+}
+
+const SECTION_ICONS = {
+  tax: TaxIcon,
+  legal: LegalIcon,
+  labor: LaborIcon,
+  environmental: EnvironmentIcon,
+  political: PoliticalIcon,
+  product_health: HealthIcon,
+  executive: ExecutivesIcon,
+};
 
 const SECTIONS = [
   { key: 'tax', title: 'Tax', summaryKey: 'tax_summary', flagsKey: 'tax_flags', sourcesKey: 'tax_sources' },
@@ -35,51 +93,34 @@ const SECTIONS = [
   },
 ];
 
-function flagTone(tag) {
-  const t = String(tag).toLowerCase();
-  if (/clean|living_wage|bcorp|fair|transparent/.test(t)) return 'investigation-card__flag--pos';
-  if (/tax|labor|violation|bribery|corrupt|fraud|criminal|wage|osha|nlrb|epa/.test(t))
-    return 'investigation-card__flag--neg';
-  return 'investigation-card__flag--neu';
-}
-
-function concernTone(level) {
-  switch (level) {
-    case 'significant':
-      return 'investigation-card__concern--high';
-    case 'moderate':
-      return 'investigation-card__concern--med';
-    case 'minor':
-      return 'investigation-card__concern--low';
-    case 'clean':
-      return 'investigation-card__concern--clean';
-    default:
-      return 'investigation-card__concern--unk';
-  }
-}
-
 /**
- * @param {{ investigation: Record<string, unknown> }} props
+ * @param {{ investigation: Record<string, unknown>; identification?: Record<string, unknown> | null }} props
  */
-export default function InvestigationCard({ investigation }) {
+export default function InvestigationCard({ investigation, identification }) {
   const [open, setOpen] = useState({});
   const [expanded, setExpanded] = useState(false);
 
   if (!investigation) return null;
 
   const profileType = String(investigation.profile_type || '');
-  const concern = investigation.overall_concern_level || 'unknown';
-  const flags = Array.isArray(investigation.concern_flags) ? investigation.concern_flags : [];
+  const id = identification || {};
 
   const toggle = (key) => {
     setOpen((o) => ({ ...o, [key]: !o[key] }));
   };
 
+  const verdictTags = Array.isArray(investigation.verdict_tags) ? investigation.verdict_tags.map(String) : [];
+  const concernFlags = Array.isArray(investigation.concern_flags) ? investigation.concern_flags.map(String) : [];
+  const uniqueTags = [...new Set([...verdictTags, ...concernFlags])];
+  const grouped = groupTags(uniqueTags);
+
+  const headline = typeof id.object === 'string' && id.object ? id.object : String(investigation.brand || 'Investigation');
+  const brandShown = investigation.brand || id.brand;
+
   return (
     <section className="investigation-card">
       <button type="button" className="investigation-card__header" onClick={() => setExpanded((e) => !e)}>
         <span className="investigation-card__title">The record</span>
-        <span className={`investigation-card__concern ${concernTone(concern)}`}>{String(concern)}</span>
         <span className="investigation-card__chev">{expanded ? '▾' : '▸'}</span>
       </button>
 
@@ -102,15 +143,28 @@ export default function InvestigationCard({ investigation }) {
             </p>
           ) : null}
 
-          {flags.length ? (
-            <div className="investigation-card__flags">
-              {flags.map((f) => (
-                <span key={f} className={`investigation-card__flag ${flagTone(f)}`}>
-                  {f.replace(/_/g, ' ')}
-                </span>
+          <div style={{ padding: '0 1rem' }}>
+            <h1 className="investigation-object-headline">{headline}</h1>
+            <p className="brand-detected-line">
+              Brand detected: <strong>{brandShown || 'Unknown'}</strong>
+            </p>
+            <SeverityMeter concernLevel={investigation.overall_concern_level} />
+
+            <div className="verdict-tags-section">
+              {Object.entries(grouped).map(([category, tags]) => (
+                <div key={category} className="verdict-tag-group">
+                  <div className="verdict-category-label">{category}</div>
+                  <div className="verdict-tags-container">
+                    {tags.map((tag) => (
+                      <span key={tag} className="verdict-tag">
+                        {tag.replace(/_/g, ' ')}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
-          ) : null}
+          </div>
 
           <div className="investigation-card__sections">
             {SECTIONS.map((s) => {
@@ -124,17 +178,21 @@ export default function InvestigationCard({ investigation }) {
               if (!has) return null;
 
               const isOpen = open[s.key];
+              const Icon = SECTION_ICONS[s.key];
               return (
                 <div key={s.key} className="investigation-card__section">
                   <button type="button" className="investigation-card__section-head" onClick={() => toggle(s.key)}>
-                    <span>{s.title}</span>
-                    <span>{isOpen ? '−' : '+'}</span>
+                    <h2 className="section-header" style={{ flex: 1, margin: '12px 0 0', textAlign: 'left' }}>
+                      {Icon ? <Icon /> : null}
+                      {s.title}
+                    </h2>
+                    <span className="investigation-card__section-chev">{isOpen ? '−' : '+'}</span>
                   </button>
                   {isOpen ? (
-                    <div className="investigation-card__section-body">
-                      {summary ? <p className="investigation-card__summary">{String(summary)}</p> : null}
+                    <div className="investigation-card__section-body investigation-body body-crimson">
+                      {summary ? <p style={{ margin: '0 0 0.5rem' }}>{String(summary)}</p> : null}
                       {Array.isArray(fl) && fl.length ? (
-                        <ul className="investigation-card__list">
+                        <ul className="investigation-card__list" style={{ listStyle: 'disc' }}>
                           {fl.map((item) => (
                             <li key={item}>{String(item)}</li>
                           ))}

@@ -193,7 +193,6 @@ export default function App() {
               <div className="app__id-block">
                 {id ? (
                   <>
-                    <h2 className="app__headline">{id.object}</h2>
                     <div className="app__method-row">
                       <IdentificationMethodBadge id={id} tier={result.identification_tier} />
                       {id.text_based_identification && id.visible_text ? (
@@ -202,12 +201,6 @@ export default function App() {
                         </span>
                       ) : null}
                     </div>
-                    {id.brand ? (
-                      <p className="app__meta">
-                        Brand detected: <strong>{id.brand}</strong>
-                        <span className="app__badge">{confidenceLabel(id.confidence)}</span>
-                      </p>
-                    ) : null}
                     {id.brand && id.corporate_parent ? (
                       <p className="app__meta">
                         Made by {id.brand} ({id.corporate_parent})
@@ -216,6 +209,9 @@ export default function App() {
                     {!id.brand && id.corporate_parent ? (
                       <p className="app__meta">Corporate parent: {id.corporate_parent}</p>
                     ) : null}
+                    <p className="app__meta meta-space" style={{ fontSize: 11, marginTop: 8 }}>
+                      Match: <span className="app__badge">{confidenceLabel(id.confidence)}</span>
+                    </p>
                     <p className="app__footnote">
                       {typeof result.response_ms === 'number' ? `${result.response_ms} ms · ` : ''}
                       {Array.isArray(result.searched_sources)
@@ -225,7 +221,7 @@ export default function App() {
                   </>
                 ) : null}
 
-                <InvestigationCard investigation={result.investigation} />
+                <InvestigationCard investigation={result.investigation} identification={id} />
               </div>
             </div>
 
