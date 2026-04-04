@@ -99,3 +99,41 @@ CREATE INDEX IF NOT EXISTS seller_registry_lat_lng_idx
 CREATE INDEX IF NOT EXISTS seller_registry_categories_gin ON seller_registry USING GIN (categories);
 CREATE INDEX IF NOT EXISTS seller_registry_keywords_gin ON seller_registry USING GIN (keywords);
 CREATE INDEX IF NOT EXISTS seller_registry_active ON seller_registry (active) WHERE active = true;
+
+-- Daily community labor board (resets by board_date; posts filtered in app/query).
+CREATE TABLE IF NOT EXISTS community_board (
+  id              SERIAL PRIMARY KEY,
+  created_at      TIMESTAMPTZ DEFAULT NOW(),
+  board_date      DATE DEFAULT CURRENT_DATE,
+
+  post_type       TEXT NOT NULL CHECK (post_type IN ('offer', 'need')),
+
+  name            TEXT NOT NULL,
+  contact         TEXT NOT NULL,
+  title           TEXT NOT NULL,
+  description     TEXT,
+  skills          TEXT[],
+
+  city            TEXT,
+  state_province  TEXT,
+  lat             NUMERIC(9, 6),
+  lng             NUMERIC(9, 6),
+  radius_miles    INTEGER DEFAULT 10,
+
+  available_from  TIME DEFAULT '08:00',
+  available_until TIME DEFAULT '18:00',
+
+  rate            TEXT,
+
+  matched         BOOLEAN DEFAULT false,
+  match_id        INTEGER REFERENCES community_board (id),
+  active          BOOLEAN DEFAULT true,
+
+  verified        BOOLEAN DEFAULT false
+);
+
+CREATE INDEX IF NOT EXISTS community_board_date
+  ON community_board (board_date, post_type, active);
+
+CREATE INDEX IF NOT EXISTS community_board_location
+  ON community_board (lat, lng);

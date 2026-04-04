@@ -6,6 +6,9 @@ import sellersRouter from './routes/sellers.js';
 import cityIdentityRouter from './routes/cityIdentity.js';
 import localFeedRouter from './routes/localFeed.js';
 import shareCardRouter from './routes/shareCard.js';
+import localNewsRouter from './routes/localNews.js';
+import geocodeRouter from './routes/geocode.js';
+import communityBoardRouter from './routes/communityBoard.js';
 
 const app = express();
 
@@ -30,6 +33,9 @@ app.use('/api/sellers', sellersRouter);
 app.use('/api/city-identity', cityIdentityRouter);
 app.use('/api/local-feed', localFeedRouter);
 app.use('/api/share-card', shareCardRouter);
+app.use('/api/local-news', localNewsRouter);
+app.use('/api/geocode', geocodeRouter);
+app.use('/api/board', communityBoardRouter);
 
 const PORT = Number(process.env.PORT) || 3001;
 app.listen(PORT, () => {

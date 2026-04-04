@@ -1,9 +1,35 @@
 import { useCallback, useEffect, useState } from 'react';
-import { getUserLocation, readCachedLocation } from '../services/location.js';
+import { getUserLocation, locationFromManualCity, readCachedLocation } from '../services/location.js';
 import { getCityIdentity } from '../services/cityIdentity.js';
+import { dailyChainShuffle, dailyFeedShuffle, utcDateKey } from '../utils/dailyShuffle.js';
 import ListYourShop from './ListYourShop.jsx';
+import LocalNewsTicker from './LocalNewsTicker.jsx';
+import CommunityBoard from './CommunityBoard.jsx';
 
 const ONBOARD_KEY = 'ea_geo_onboard';
+
+/** @param {GeolocationPositionError | Error} err */
+function geolocationFailureHint(err) {
+  const code = err && 'code' in err ? err.code : undefined;
+  if (code === 1) {
+    return {
+      message:
+        'Location access was denied. You can enable it in your browser settings or enter your city below.',
+    };
+  }
+  if (code === 3) {
+    return {
+      message: 'Location timed out — enter your city:',
+    };
+  }
+  const base =
+    typeof err?.message === 'string' && err.message.trim()
+      ? err.message.trim()
+      : 'Could not get your location.';
+  return {
+    message: `${base} Enter your city below to see the same home experience.`,
+  };
+}
 
 const CATEGORIES = [
   { value: 'all', label: 'All' },
@@ -28,7 +54,26 @@ function initialPhase() {
   return 'prompt';
 }
 
-function LocationPrompt({ onAllow, onSkip }) {
+function LocationPrompt({
+  onAllow,
+  onSkip,
+  hint,
+  manualVisible,
+  onOpenManualEntry,
+  onManualSubmit,
+  manualBusy,
+}) {
+  const [manualCity, setManualCity] = useState('');
+
+  async function submitManual(e) {
+    e.preventDefault();
+    const q = manualCity.trim();
+    if (!q || manualBusy) return;
+    await onManualSubmit(q);
+  }
+
+  const showManual = manualVisible || Boolean(hint);
+
   return (
     <div
       style={{
@@ -66,8 +111,23 @@ function LocationPrompt({ onAllow, onSkip }) {
         }}
       >
         To show you independent businesses near you, we need your location. We don&apos;t store it.
-        We don&apos;t sell it. It&apos;s used only to find what&apos;s close.
+        We don&apos;t sell it.         It&apos;s used only to find what&apos;s close.
       </div>
+
+      {hint ? (
+        <div
+          style={{
+            fontFamily: "'Crimson Pro', serif",
+            fontSize: 16,
+            color: '#d4a574',
+            lineHeight: 1.6,
+            maxWidth: 380,
+            marginBottom: 20,
+          }}
+        >
+          {hint}
+        </div>
+      ) : null}
 
       <button
         type="button"
@@ -113,6 +173,93 @@ function LocationPrompt({ onAllow, onSkip }) {
         Skip
       </button>
 
+      {showManual ? (
+        <form
+          onSubmit={submitManual}
+          style={{
+            width: '100%',
+            maxWidth: 320,
+            marginTop: 20,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 10,
+            textAlign: 'left',
+          }}
+        >
+          <label
+            htmlFor="ea-manual-city"
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 9,
+              letterSpacing: 1.5,
+              textTransform: 'uppercase',
+              color: '#8fa8bc',
+            }}
+          >
+            Your city
+          </label>
+          <input
+            id="ea-manual-city"
+            type="text"
+            name="city"
+            autoComplete="address-level2"
+            enterKeyHint="go"
+            value={manualCity}
+            onChange={(e) => setManualCity(e.target.value)}
+            placeholder="e.g. Indianapolis, IN"
+            disabled={manualBusy}
+            style={{
+              fontFamily: "'Crimson Pro', serif",
+              fontSize: 17,
+              padding: '12px 14px',
+              borderRadius: 2,
+              border: '1px solid #2a3f52',
+              background: '#0a1018',
+              color: '#e8dfc8',
+              width: '100%',
+              boxSizing: 'border-box',
+            }}
+          />
+          <button
+            type="submit"
+            disabled={manualBusy || !manualCity.trim()}
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 10,
+              letterSpacing: 2,
+              textTransform: 'uppercase',
+              background: manualBusy || !manualCity.trim() ? '#3d4f62' : '#2a4a30',
+              color: '#e8dfc8',
+              border: '1px solid #3d5c44',
+              padding: '12px 24px',
+              borderRadius: 2,
+              cursor: manualBusy || !manualCity.trim() ? 'default' : 'pointer',
+              fontWeight: 700,
+            }}
+          >
+            {manualBusy ? 'Looking up…' : 'Show my local feed'}
+          </button>
+        </form>
+      ) : (
+        <button
+          type="button"
+          onClick={onOpenManualEntry}
+          style={{
+            fontFamily: "'Crimson Pro', serif",
+            fontSize: 15,
+            color: '#6b8aa3',
+            background: 'none',
+            border: 'none',
+            marginTop: 20,
+            cursor: 'pointer',
+            textDecoration: 'underline',
+            textUnderlineOffset: 4,
+          }}
+        >
+          Enter my city instead
+        </button>
+      )}
+
       <div
         style={{
           fontFamily: "'Crimson Pro', serif",
@@ -152,6 +299,23 @@ function CityCard({ identity, city, state }) {
       >
         {[city, state].filter(Boolean).join(', ')}
       </div>
+
+      {identity.daily_rotation?.rotation_theme ? (
+        <div
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontSize: 7,
+            letterSpacing: 2,
+            textTransform: 'uppercase',
+            color: '#4a6478',
+            marginBottom: 14,
+            maxWidth: 420,
+            lineHeight: 1.45,
+          }}
+        >
+          Today — {identity.daily_rotation.rotation_theme}
+        </div>
+      ) : null}
 
       <div
         style={{
@@ -409,6 +573,9 @@ export default function HomeScreen({ onStartSnap }) {
   const [chainResults, setChainResults] = useState([]);
   const [category, setCategory] = useState('all');
   const [loadingFeed, setLoadingFeed] = useState(false);
+  const [geoHint, setGeoHint] = useState(null);
+  const [manualCityVisible, setManualCityVisible] = useState(false);
+  const [manualCityBusy, setManualCityBusy] = useState(false);
 
   const fetchFeed = useCallback(async (lat, lng, cat) => {
     setLoadingFeed(true);
@@ -434,7 +601,7 @@ export default function HomeScreen({ onStartSnap }) {
 
   useEffect(() => {
     if (phase !== 'loading') return;
-    if (!location?.lat || !location?.lng) {
+    if (!location || !Number.isFinite(location.lat) || !Number.isFinite(location.lng)) {
       setPhase('prompt');
       return;
     }
@@ -447,12 +614,25 @@ export default function HomeScreen({ onStartSnap }) {
         ]);
         if (cancelled) return;
         setIdentity(identityData);
-        setFeed(pack.feed);
-        setChainResults(pack.chain_results);
+        const dateKey = utcDateKey();
+        const shuffleOpts = {
+          dateKey,
+          city: location.city,
+          state: location.state,
+        };
+        setFeed(dailyFeedShuffle(pack.feed, shuffleOpts));
+        setChainResults(dailyChainShuffle(pack.chain_results, shuffleOpts));
         setCategory('all');
         setPhase('ready');
-      } catch {
-        if (!cancelled) setPhase('prompt');
+      } catch (e) {
+        if (!cancelled) {
+          console.error('[home] identity/feed load failed', e);
+          setPhase('prompt');
+          setGeoHint(
+            'Could not load your city feed. Check your connection or try entering your city again.'
+          );
+          setManualCityVisible(true);
+        }
       }
     })();
     return () => {
@@ -461,13 +641,46 @@ export default function HomeScreen({ onStartSnap }) {
   }, [phase, location, fetchFeed]);
 
   async function handleAllow() {
+    setGeoHint(null);
+    setManualCityVisible(false);
     setPhase('loading');
     try {
       const loc = await getUserLocation();
       setLocation(loc);
       sessionStorage.setItem(ONBOARD_KEY, 'granted');
-    } catch {
+    } catch (err) {
+      const { message } = geolocationFailureHint(err);
+      setGeoHint(message);
+      setManualCityVisible(true);
       setPhase('prompt');
+    }
+  }
+
+  function handleOpenManualCity() {
+    setGeoHint(
+      (prev) =>
+        prev ||
+        'Enter your city to get the same home experience as GPS — local identity and feed.'
+    );
+    setManualCityVisible(true);
+  }
+
+  async function handleManualCitySubmit(cityText) {
+    setManualCityBusy(true);
+    setGeoHint(null);
+    setPhase('loading');
+    try {
+      const loc = await locationFromManualCity(cityText);
+      setLocation(loc);
+      sessionStorage.setItem(ONBOARD_KEY, 'granted');
+      setManualCityVisible(false);
+    } catch (err) {
+      console.error('[home] manual city failed', err);
+      setGeoHint(err.message || 'Could not find that city.');
+      setManualCityVisible(true);
+      setPhase('prompt');
+    } finally {
+      setManualCityBusy(false);
     }
   }
 
@@ -480,12 +693,24 @@ export default function HomeScreen({ onStartSnap }) {
     setCategory(cat);
     if (!location?.lat || !location?.lng) return;
     const pack = await fetchFeed(location.lat, location.lng, cat);
-    setFeed(pack.feed);
-    setChainResults(pack.chain_results);
+    const dateKey = utcDateKey();
+    const shuffleOpts = { dateKey, city: location.city, state: location.state };
+    setFeed(dailyFeedShuffle(pack.feed, shuffleOpts));
+    setChainResults(dailyChainShuffle(pack.chain_results, shuffleOpts));
   }
 
   if (phase === 'prompt') {
-    return <LocationPrompt onAllow={handleAllow} onSkip={handleSkip} />;
+    return (
+      <LocationPrompt
+        onAllow={handleAllow}
+        onSkip={handleSkip}
+        hint={geoHint}
+        manualVisible={manualCityVisible}
+        onOpenManualEntry={handleOpenManualCity}
+        onManualSubmit={handleManualCitySubmit}
+        manualBusy={manualCityBusy}
+      />
+    );
   }
 
   if (phase === 'loading') {
@@ -664,7 +889,7 @@ export default function HomeScreen({ onStartSnap }) {
         ))}
       </div>
 
-      <div style={{ paddingTop: 16, paddingBottom: 80 }}>
+      <div style={{ paddingTop: 16, paddingBottom: 100 }}>
         {loadingFeed ? (
           <div
             style={{
@@ -759,6 +984,10 @@ export default function HomeScreen({ onStartSnap }) {
           </div>
         ) : null}
       </div>
+
+      <CommunityBoard location={location} />
+
+      <LocalNewsTicker apiBase={apiPrefix()} city={location?.city} state={location?.state} />
     </div>
   );
 }
