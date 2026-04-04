@@ -3,6 +3,7 @@ import SeverityMeter from './SeverityMeter';
 import Timeline from './Timeline';
 import CommunityImpact from './CommunityImpact';
 import CostAbsorption from './CostAbsorption.jsx';
+import WealthChart from './WealthChart.jsx';
 import {
   TaxIcon,
   LegalIcon,
@@ -339,6 +340,9 @@ export default function InvestigationCard({ investigation, identification }) {
 
           <div style={{ padding: '0 1rem' }}>
             <CostAbsorption data={investigation.cost_absorption} />
+            {String(investigation.overall_concern_level || '').toLowerCase() === 'significant' ? (
+              <WealthChart />
+            ) : null}
             <CommunityImpact data={investigation.community_impact} />
           </div>
 
