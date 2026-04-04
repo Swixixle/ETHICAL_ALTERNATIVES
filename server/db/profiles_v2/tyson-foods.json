@@ -1,0 +1,38 @@
+{
+  "brand_name": "Tyson Foods Inc.",
+  "brand_slug": "tyson-foods",
+  "research_confidence": "high",
+  "investigation_summary": "Waterloo, IA COVID outbreak: managers ran betting pool on infections; 1,031 workers infected, six dead; sheriff accused firm of misleading health officials. $221.5M chicken price-fixing settlement (2022). Top industrial water polluter in multiple analyses. OSHA citations; injury rates above average. Gulf dead-zone nutrient footprint from supply chain.",
+  "verdict_tags": ["worker_safety", "labor_violations", "environmental_violations", "price_fixing", "antitrust", "health_concerns", "water_pollution"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://www.propublica.org/article/tyson-foods-covid-deaths",
+    "https://environmentamerica.org/reports/ae/wasting-our-waterways-0/",
+    "https://www.justice.gov/opa/pr/chicken-producers-indicted-price-fixing-and-bid-rigging-conspiracy"
+  ],
+  "profile": {
+    "brand": "Tyson Foods",
+    "parent": "Tyson Foods Inc. (NYSE: TSN)",
+    "subsidiaries": ["Jimmy Dean", "Ball Park", "State Fair", "Hillshire Farm", "Sara Lee", "Aidells", "Wright Brand", "IBP"],
+    "tax_summary": "Effective rate ~23–25%. Good Jobs First $139M+ documented subsidies.",
+    "tax_flags": ["government_subsidies"],
+    "tax_sources": ["https://goodjobsfirst.org/violation-tracker"],
+    "legal_summary": "Waterloo COVID scandal; antitrust in chicken (and ongoing beef/pork matters). Environment America / related reporting on toxic water releases. Wrongful-death suits re COVID.",
+    "legal_flags": ["price_fixing", "worker_safety_covid", "water_pollution"],
+    "legal_sources": ["https://www.propublica.org/article/tyson-foods-covid-deaths", "https://www.justice.gov/opa/pr/chicken-producers-indicted-price-fixing-and-bid-rigging-conspiracy"],
+    "labor_summary": "High-injury processing work; line-speed concerns; immigrant-heavy workforce vulnerabilities; automation reducing headcount post-COVID.",
+    "labor_flags": ["processing_injuries", "covid_conduct"],
+    "labor_sources": ["https://www.propublica.org/article/tyson-foods-covid-deaths"],
+    "environmental_summary": "CAFO-linked pollution; antibiotic use in proteins; CDP Climate D (2023).",
+    "environmental_flags": ["water_pollution", "nutrient_runoff"],
+    "environmental_sources": ["https://environmentamerica.org/reports/ae/wasting-our-waterways-0/"],
+    "political_summary": "~$3.8M lobbying (2023) on line speeds, CAFO rules, labeling.",
+    "political_sources": [],
+    "product_health": "Processed meats (WHO Group 1 carcinogen). Recalls for listeria, salmonella, E. coli across brands.",
+    "product_health_sources": [],
+    "executive_summary": "No exec criminal charges summarized in author seed.",
+    "executive_sources": [],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["worker_safety", "labor_violations", "environmental_violations", "price_fixing", "antitrust", "health_concerns", "water_pollution"]
+  }
+}

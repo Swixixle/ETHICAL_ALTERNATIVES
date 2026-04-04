@@ -1,0 +1,40 @@
+{
+  "brand_name": "Johnson & Johnson",
+  "brand_slug": "johnson-johnson",
+  "research_confidence": "high",
+  "investigation_summary": "$8.9B talc ovarian/meso settlement pool (2023); Texas two-step bankruptcy rejected for separating tort liability (2024). $5B multi-state opioid settlement (2021). 2013 $2.2B DOJ Risperdal guilty plea + civil — misbranding to elderly dementia patients and pediatric uses. Benzene sunscreen recall 2021.",
+  "verdict_tags": ["criminal_charges", "product_safety_issues", "illegal_marketing", "opioid_settlement", "talc_asbestos"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://www.justice.gov/opa/pr/johnson-johnson-pay-more-22-billion-resolve-criminal-and-civil-investigations",
+    "https://www.reuters.com/legal/johnson-johnson-89-bln-talc-settlement/"
+  ],
+  "profile": {
+    "brand": "Johnson & Johnson",
+    "parent": "Johnson & Johnson (NYSE: JNJ); consumer now largely Kenvue (KVUE)",
+    "subsidiaries": ["Janssen Pharma", "Kenvue brands historically: Tylenol, Neutrogena"],
+    "tax_summary": "Pharma-heavy parent effective ~15–18% recent years; Kenvue ~22% — structure split post-spin commentary.",
+    "tax_flags": ["pharma_ip_planning"],
+    "tax_sources": ["https://www.justice.gov/opa/pr/johnson-johnson-pay-more-22-billion-resolve-criminal-and-civil-investigations"],
+    "legal_summary": "Talc MDL — ~60k claims; 2023 settlement framework ~$8.9B; bankruptcy divisive merger strategy failed judicially 2024. Oklahoma opioid bench trial $465M (later appellate path). National $5B opioid deal. Risperdal 2013 criminal + civil resolution — off-label dementia marketing with mortality risk / pediatric marketing. Neutrogena/Aveeno aerosol benzene recalls.",
+    "legal_flags": ["criminal_guilty_plea", "opioids", "talc_litigation", "bankruptcy_maneuver_rejected"],
+    "legal_sources": [
+      "https://www.justice.gov/opa/pr/johnson-johnson-pay-more-22-billion-resolve-criminal-and-civil-investigations",
+      "https://www.reuters.com/legal/johnson-johnson-89-bln-talc-settlement/"
+    ],
+    "labor_summary": "No systemic developed-market labor scandal surfaced in this pass.",
+    "labor_flags": [],
+    "labor_sources": ["https://www.justice.gov/opa/pr/johnson-johnson-pay-more-22-billion-resolve-criminal-and-civil-investigations"],
+    "environmental_summary": "Not core to allegations dossier.",
+    "environmental_flags": [],
+    "environmental_sources": ["https://www.reuters.com/legal/johnson-johnson-89-bln-talc-settlement/"],
+    "political_summary": "Pharma lobbying standard; opioids public settlements politically salient.",
+    "political_sources": ["https://www.justice.gov/opa/pr/johnson-johnson-pay-more-22-billion-resolve-criminal-and-civil-investigations"],
+    "product_health": "Talc withdrawn regionally; acetaminophen liver toxicity labeling debates; baby shampoo reformulated 2013 after dioxane/formaldehyde-releaser pressure.",
+    "product_health_sources": ["https://www.reuters.com/legal/johnson-johnson-89-bln-talc-settlement/"],
+    "executive_summary": "Litigation defined recent executive tenure; no racket tobacco analogue.",
+    "executive_sources": ["https://www.justice.gov/opa/pr/johnson-johnson-pay-more-22-billion-resolve-criminal-and-civil-investigations"],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["criminal_charges", "product_safety_issues", "illegal_marketing", "opioid_settlement", "talc_asbestos"]
+  }
+}

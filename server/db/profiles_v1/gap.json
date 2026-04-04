@@ -1,0 +1,40 @@
+{
+  "brand_name": "Gap Inc.",
+  "brand_slug": "gap",
+  "research_confidence": "high",
+  "investigation_summary": "Distinctive documented choice after Rana Plaza: refused legally binding Bangladesh Accord; operated proprietary weaker program while peers signed enforceable pact. Good On You 3/5. Gender pay cases. COVID warehouse safety class action 2020.",
+  "verdict_tags": ["labor_violations", "supply_chain_concerns", "safety_accord_refusal"],
+  "overall_concern_level": "moderate",
+  "primary_sources": [
+    "https://goodonyou.eco/how-ethical-is-gap/",
+    "https://goodjobsfirst.org/violation-tracker",
+    "https://www.theguardian.com/world/2013/may/03/bangladesh-workers-safety-initiatives"
+  ],
+  "profile": {
+    "brand": "Gap",
+    "parent": "Gap Inc. (NYSE: GPS)",
+    "subsidiaries": ["Old Navy", "Banana Republic", "Athleta", "Intermix"],
+    "tax_summary": "~26% effective (2023 commentary). >$110M Good Jobs First subsidy tally.",
+    "tax_flags": ["state_subsidies"],
+    "tax_sources": ["https://goodjobsfirst.org/violation-tracker"],
+    "legal_summary": "Post-Rana Plaza: Gap declined Bangladesh Accord; maintained Gap-led alternative — documented in Guardian contemporaneous coverage. 2020 warehouse COVID safety class action. Repeated corporate gender-pay litigation.",
+    "legal_flags": ["accord_refusal", "workplace_safety_suits"],
+    "legal_sources": [
+      "https://www.theguardian.com/world/2013/may/03/bangladesh-workers-safety-initiatives"
+    ],
+    "labor_summary": "Bangladesh supplier network overlap with tragedy ecosystem though not in collapsed building. Partial supplier disclosure; audits show violations. Athleta FLA certification contrast.",
+    "labor_flags": ["bangladesh_program_choice"],
+    "labor_sources": ["https://goodonyou.eco/how-ethical-is-gap/"],
+    "environmental_summary": "Denim water — Water<Less program reduces intensity. Virgin polyester microplastics. CDP B-.",
+    "environmental_flags": ["microplastics"],
+    "environmental_sources": ["https://goodonyou.eco/how-ethical-is-gap/"],
+    "political_summary": "Apparel trade-association engagement standard.",
+    "political_sources": ["https://goodonyou.eco/how-ethical-is-gap/"],
+    "product_health": "Typical apparel chemistry profile; no blockbuster recall emphasized here.",
+    "product_health_sources": ["https://goodonyou.eco/how-ethical-is-gap/"],
+    "executive_summary": "Governance stable absent criminal findings in set.",
+    "executive_sources": ["https://goodonyou.eco/how-ethical-is-gap/"],
+    "overall_concern_level": "moderate",
+    "verdict_tags": ["labor_violations", "supply_chain_concerns", "safety_accord_refusal"]
+  }
+}

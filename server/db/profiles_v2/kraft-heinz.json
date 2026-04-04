@@ -1,0 +1,37 @@
+{
+  "brand_name": "The Kraft Heinz Company",
+  "brand_slug": "kraft-heinz",
+  "research_confidence": "high",
+  "investigation_summary": "$62M SEC settlement (2021) — cookie-jar procurement accounting; restatements. $15.4B post-merger impairment. 3G zero-based budgeting: mass layoffs (~13k year one), quality/R&D squeeze per analysts. Portfolio ultra-processed (Lunchables, Oscar Mayer, Velveeta).",
+  "verdict_tags": ["accounting_fraud", "sec_enforcement", "labor_cuts", "health_concerns"],
+  "overall_concern_level": "moderate",
+  "primary_sources": [
+    "https://www.sec.gov/news/press-release/2021-176",
+    "https://www.sec.gov/edgar/browse/?CIK=1637459"
+  ],
+  "profile": {
+    "brand": "Kraft Heinz",
+    "parent": "The Kraft Heinz Company (NASDAQ: KHC) — 3G & Berkshire",
+    "subsidiaries": ["Heinz", "Kraft", "Velveeta", "Oscar Mayer", "Jell-O", "Philadelphia", "Planters", "Lunchables", "Capri Sun", "Maxwell House"],
+    "tax_summary": "~22% FY2023; Bermuda legacy entities pre-merger.",
+    "tax_flags": [],
+    "tax_sources": [],
+    "legal_summary": "SEC accounting fraud; brand writedowns; recalls (listeria, labeling).",
+    "legal_flags": ["sec_enforcement"],
+    "legal_sources": ["https://www.sec.gov/news/press-release/2021-176"],
+    "labor_summary": "3G-driven layoffs & plant closures; salaried manager overwork reports.",
+    "labor_flags": ["cost_cutting"],
+    "labor_sources": [],
+    "environmental_summary": "UPF supply chain footprint; not CDP headline in seed.",
+    "environmental_flags": [],
+    "environmental_sources": [],
+    "political_summary": "Standard big-food lobbying.",
+    "political_sources": [],
+    "product_health": "Processed meat (WHO G1); artificial colors in kids products; Lunchables sodium.",
+    "product_health_sources": [],
+    "executive_summary": "3G / Buffett governance story dominates financial press.",
+    "executive_sources": [],
+    "overall_concern_level": "moderate",
+    "verdict_tags": ["accounting_fraud", "sec_enforcement", "labor_cuts", "health_concerns"]
+  }
+}

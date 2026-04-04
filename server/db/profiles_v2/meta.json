@@ -1,0 +1,38 @@
+{
+  "brand_name": "Meta Platforms Inc.",
+  "brand_slug": "meta",
+  "research_confidence": "high",
+  "investigation_summary": "$5B FTC fine (2019) for Cambridge Analytica / consent-decree breach. UN FFM tied Facebook to Rohingya atrocities. Haugen leaks on teen Instagram harms. €1.2B GDPR fine (Ireland). DOJ antitrust challenge to Instagram/WhatsApp deals. Russian IRA 2016 operations. Content-moderator PTSD $52M settlement.",
+  "verdict_tags": ["privacy_violations", "data_fraud", "teen_harm", "genocide_facilitation", "antitrust", "election_interference", "research_suppression"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://www.ftc.gov/news-events/news/press-releases/2019/07/ftc-imposes-5-billion-penalty-sweeping-new-privacy-restrictions-facebook",
+    "https://www.ohchr.org/en/hr-bodies/hrc/myanmarinvestigation/pages/index.aspx",
+    "https://www.wsj.com/articles/facebook-knows-instagram-is-toxic-for-teen-girls-company-documents-show-11631620739"
+  ],
+  "profile": {
+    "brand": "Meta",
+    "parent": "Meta Platforms Inc. (NASDAQ: META)",
+    "subsidiaries": ["Facebook", "Instagram", "WhatsApp", "Meta Quest", "Threads"],
+    "tax_summary": "~18% FY2023 effective vs 21% statutory; Ireland EU routing; EU scrutiny.",
+    "tax_flags": ["irish_routing"],
+    "tax_sources": [],
+    "legal_summary": "Cambridge Analytica; Myanmar litigation; teen mental health AG suits; monopoly case; COPPA-adjacent issues historically; Oversight Board limited power; 2024–2025 policy shifts under political pressure per press.",
+    "legal_flags": ["privacy", "antitrust", "safety"],
+    "legal_sources": ["https://www.ftc.gov/news-events/news/press-releases/2019/07/ftc-imposes-5-billion-penalty-sweeping-new-privacy-restrictions-facebook"],
+    "labor_summary": "Moderator psychological harm settlement; organizer firings (NLRB); large contractor footprint.",
+    "labor_flags": ["contractor_harm", "organizing_retaliation"],
+    "labor_sources": [],
+    "environmental_summary": "Data-center energy; renewables/REC progress. CDP A- (2023).",
+    "environmental_flags": [],
+    "environmental_sources": [],
+    "political_summary": "~$19.2M lobbying (2023). Zuckerberg political spending & 2024–2025 posture changes in press.",
+    "political_sources": [],
+    "product_health": "Algorithmic engagement harms documented in internal research leaks.",
+    "product_health_sources": ["https://www.wsj.com/articles/facebook-knows-instagram-is-toxic-for-teen-girls-company-documents-show-11631620739"],
+    "executive_summary": "Zuckerberg dual-class control; Sandberg departed 2022.",
+    "executive_sources": [],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["privacy_violations", "data_fraud", "teen_harm", "genocide_facilitation", "antitrust", "election_interference", "research_suppression"]
+  }
+}

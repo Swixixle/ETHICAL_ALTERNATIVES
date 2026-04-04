@@ -1,0 +1,20 @@
+{
+  "name": "ethicalalt-server",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "dev:watch": "node --watch index.js",
+    "db:import:v1": "node db/import_profiles_v1.mjs",
+    "db:import:v2": "node db/import_profiles_v2.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.52.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "brand_name": "Nestlé S.A.",
+  "brand_slug": "nestle",
+  "research_confidence": "high",
+  "investigation_summary": "WHO Code infant-formula marketing violations documented multi-decade (IBFAN); boycott since 1977. Cocoa child labor: underlying facts not disputed; 2021 SCOTUS barred U.S. suit under Alien Tort — procedural only. Axios-leaked 2021 internal doc: ~60% of portfolio below external healthfulness definitions. Senate baby-food heavy-metals inquiry implicated industry including Gerber.",
+  "verdict_tags": ["child_labor", "infant_formula_violations", "water_privatization", "greenwashing", "health_concerns", "plastic_pollution"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://www.ibfan.org",
+    "https://payson.tulane.edu",
+    "https://www.axios.com/2021/06/01/nestle-internal-document-unhealthy-food",
+    "https://www.hsgac.senate.gov/imo/media/doc/BabyFoodReport_FINAL_v2.pdf"
+  ],
+  "profile": {
+    "brand": "Nestlé",
+    "parent": "Nestlé S.A. (SIX: NESN)",
+    "subsidiaries": ["Nescafé", "KitKat", "Purina", "Gerber", "Maggi", "Perrier"],
+    "tax_summary": "Swiss domicile historically favorable; ~21–23% global effective in analyst summaries. Routine transfer-pricing disputes in multiple jurisdictions.",
+    "tax_flags": ["multinational_routing"],
+    "tax_sources": ["https://www.ibfan.org"],
+    "legal_summary": "Cocoa: litigation since 2005; Nestlé USA v. Doe (2021) — 8-1; child labor not disputed but ATS claims failed. IBFAN annual WHO Code violation reports. California forest water permit (~$524/yr for 36M gal) controversial; state later revoked (2021). Leaked 2021 internal nutrition portfolio assessment.",
+    "legal_flags": ["infant_formula_code", "cocoa_litigation", "water_permits"],
+    "legal_sources": ["https://www.ibfan.org", "https://payson.tulane.edu", "https://www.axios.com/2021/06/01/nestle-internal-document-unhealthy-food"],
+    "labor_summary": "Cocoa child labor persists per Tulane / USDOL longitudinal studies cited by researchers — Nestlé Cocoa Plan since 2009 insufficient per third-party metrics. HQ Swiss workforce under strong labor law.",
+    "labor_flags": ["child_labor_cocoa"],
+    "labor_sources": ["https://payson.tulane.edu"],
+    "environmental_summary": "Brand Audit recurrent top plastic polluter. 2025 recyclable/reusable packaging goal missed per NGO tracking. Palm oil deforestation risk historically; suspensions after Greenpeace pressure; residual issues reported.",
+    "environmental_flags": ["plastic_pollution", "packaging_pledge_gap"],
+    "environmental_sources": ["https://www.ibfan.org"],
+    "political_summary": "EU/US lobbying on nutrition, formula marketing, sugar taxes via trade associations.",
+    "political_sources": ["https://www.ibfan.org"],
+    "product_health": "Portfolio majority ultra-processed. Baby-food heavy metals — Senate staff report; companies dispute severity but drove regulatory attention. Sugar across confectionery/beverage.",
+    "product_health_sources": ["https://www.hsgac.senate.gov/imo/media/doc/BabyFoodReport_FINAL_v2.pdf", "https://www.axios.com/2021/06/01/nestle-internal-document-unhealthy-food"],
+    "executive_summary": "Brabeck-Letmathe 2005 water-as-commodity remarks — controversial (often excerpted).",
+    "executive_sources": ["https://www.ibfan.org"],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["child_labor", "infant_formula_violations", "water_privatization", "greenwashing", "health_concerns", "plastic_pollution"]
+  }
+}

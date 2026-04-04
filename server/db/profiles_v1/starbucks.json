@@ -1,0 +1,38 @@
+{
+  "brand_name": "Starbucks Corporation",
+  "brand_slug": "starbucks",
+  "research_confidence": "high",
+  "investigation_summary": "The central public record is systematic U.S. labor-law findings: NLRB complaints citing 1,100+ violations (2024), reinstatement orders for fired union organizers, and Senate HELP scrutiny of union resistance. Environmental commitments (Greener Cup, 2030 targets) have repeatedly missed milestones while emissions rose in reported progress. Tax profile is comparatively ordinary; offshore IP entities exist.",
+  "verdict_tags": ["labor_violations", "union_suppression", "greenwashing", "political_influence"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://www.nlrb.gov",
+    "https://www.reuters.com/business/starbucks-union-senate/",
+    "https://goodjobsfirst.org/violation-tracker"
+  ],
+  "profile": {
+    "brand": "Starbucks",
+    "parent": "Starbucks Corporation (NASDAQ: SBUX)",
+    "subsidiaries": ["Teavana (closed)", "Evolution Fresh", "Seattle's Best Coffee", "Ethos Water"],
+    "tax_summary": "FY2023 effective rate ≈24.1% vs 21% statutory — unremarkable vs peers. IP licensing via entities in Switzerland, UK, and Netherlands. Good Jobs First tracks ~$2.3M in state/local subsidies for new facilities. No major tax fraud cases on record.",
+    "tax_flags": ["offshore_entities", "government_subsidies"],
+    "tax_sources": ["https://goodjobsfirst.org/violation-tracker"],
+    "legal_summary": "2023–2024: NLRB complaints citing 1,100+ labor-law violations; administrative law judges found federal labor-law violations across many U.S. stores. 2023: CEO summoned by Senate HELP re union practices; refused to testify. Multiple racial-bias store-level settlements. 2023: ~$25.6M jury verdict (Shannon Phillips wrongful termination).",
+    "legal_flags": ["nlrb_violations", "retaliation_findings"],
+    "legal_sources": ["https://www.nlrb.gov", "https://www.reuters.com/business/starbucks-union-senate/"],
+    "labor_summary": "Documented union-organizer firings and NLRB reinstatement orders (e.g., Buffalo). No living wage certification; U.S. starting pay commonly cited ~$15–17/hr — above federal minimum, below living-wage estimates in many metros. C.A.F.E. Practices is proprietary; criticized for limited independent verification.",
+    "labor_flags": ["union_suppression", "living_wage_gap"],
+    "labor_sources": ["https://www.nlrb.gov"],
+    "environmental_summary": "Billions of single-use cups annually; plastic liner limits recyclability. 2008+ greener-cup pledges unmet. 2020 pledge: 50% cut carbon/water/waste by 2030; 2023 progress reporting showed emissions increased.",
+    "environmental_flags": ["single_use_waste", "climate_pledge_gap"],
+    "environmental_sources": ["https://goodjobsfirst.org/violation-tracker"],
+    "political_summary": "Federal lobbying ~$1.8M (2023) — labor law, labeling, minimum wage. PAC ~$680K (2022 cycle), split across parties. Founder publicly framed union drives in adversarial terms.",
+    "political_sources": ["https://www.reuters.com/business/starbucks-union-senate/"],
+    "product_health": "Coffee at moderate intake has established benefits; many signature drinks are 400–600+ kcal with 50–80g sugar (above WHO daily sugar guidance in one drink). PFAS reported in some hot paper cups (third-party testing, 2023).",
+    "product_health_sources": ["https://www.reuters.com/business/starbucks-union-senate/"],
+    "executive_summary": "Howard Schultz (~$4B net worth cited in press) compared organizing to outdated labor movements; Senate rejected private testimony. Current CEO Laxman Narasimhan: no major secondary-business controversies noted in this volume.",
+    "executive_sources": ["https://www.reuters.com/business/starbucks-union-senate/"],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["labor_violations", "union_suppression", "greenwashing", "political_influence"]
+  }
+}

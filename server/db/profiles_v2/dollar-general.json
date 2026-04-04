@@ -1,0 +1,38 @@
+{
+  "brand_name": "Dollar General Corporation",
+  "brand_slug": "dollar-general",
+  "research_confidence": "high",
+  "investigation_summary": "Most OSHA citations among US retailers; $21M+ fines since 2017 (Good Jobs First). $15.6M OSHA action (2023) — firm contested. Sec. Walsh/OSHA called out willful indifference. Shelf-vs-register pricing (FTC CID; state AGs). Rural monopolization displacing independents. Single-employee shifts.",
+  "verdict_tags": ["worker_safety", "osha_violations", "consumer_fraud", "monopolization", "local_business_destruction"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://www.osha.gov/",
+    "https://goodjobsfirst.org/violation-tracker",
+    "https://www.dol.gov/newsroom/releases/osha/osha20230427"
+  ],
+  "profile": {
+    "brand": "Dollar General",
+    "parent": "Dollar General Corporation (NYSE: DG)",
+    "subsidiaries": [],
+    "tax_summary": "~22% FY2023; standard retail.",
+    "tax_flags": [],
+    "tax_sources": [],
+    "legal_summary": "OSHA willful / repeat citations; collapse-linked deaths in reporting; pricing investigations.",
+    "legal_flags": ["osha", "pricing"],
+    "legal_sources": ["https://www.dol.gov/newsroom/releases/osha/osha20230427"],
+    "labor_summary": "$12–14/hr average; understaffing; managers salaried overtime extraction.",
+    "labor_flags": ["understaffing", "low_wage"],
+    "labor_sources": [],
+    "environmental_summary": "Plastic-heavy mix; food-desert processed assortment.",
+    "environmental_flags": ["food_desert_dynamics"],
+    "environmental_sources": [],
+    "political_summary": "Minimum-wage opposition; small-town store-density strategy.",
+    "political_sources": [],
+    "product_health": "Ultra-processed, high sodium/sugar; minimal fresh.",
+    "product_health_sources": [],
+    "executive_summary": "Discount retail roll-up model.",
+    "executive_sources": [],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["worker_safety", "osha_violations", "consumer_fraud", "monopolization", "local_business_destruction"]
+  }
+}

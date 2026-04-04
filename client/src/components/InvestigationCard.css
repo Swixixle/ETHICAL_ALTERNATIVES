@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600&family=Space+Mono:wght@400&display=swap');
+
+.investigation-card {
+  margin: 1.25rem 0;
+  border: 1px solid #2a2720;
+  border-radius: 4px;
+  background: #141210;
+  color: #e8e0cc;
+  text-align: left;
+}
+
+.investigation-card__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #2a2720;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}
+
+.investigation-card__title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  flex: 1;
+  text-align: left;
+}
+
+.investigation-card__concern {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+}
+
+.investigation-card__concern--high {
+  background: rgba(200, 55, 10, 0.25);
+  color: #ff8a65;
+}
+.investigation-card__concern--med {
+  background: rgba(190, 160, 40, 0.2);
+  color: #bea028;
+}
+.investigation-card__concern--low {
+  background: rgba(232, 224, 204, 0.08);
+  color: #e8e0cc;
+}
+.investigation-card__concern--clean {
+  background: rgba(80, 160, 100, 0.18);
+  color: #7ddf9a;
+}
+.investigation-card__concern--unk {
+  background: rgba(232, 224, 204, 0.06);
+  color: #a8a095;
+}
+
+.investigation-card__chev {
+  opacity: 0.65;
+  font-size: 0.85rem;
+}
+
+.investigation-card__disclaimer {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  color: #c8370a;
+  margin: 0;
+  padding: 0.65rem 1rem 0;
+}
+
+.investigation-card__disclaimer--muted {
+  color: #8a8275;
+}
+
+.investigation-card__clean-card {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  color: #7ddf9a;
+  margin: 0;
+  padding: 0.5rem 1rem 0;
+  opacity: 0.92;
+}
+
+.investigation-card__flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.75rem 1rem 0.25rem;
+}
+
+.investigation-card__flag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid #2a2720;
+}
+
+.investigation-card__flag--neg {
+  border-color: rgba(200, 55, 10, 0.45);
+  color: #ffb4a8;
+}
+.investigation-card__flag--pos {
+  border-color: rgba(80, 160, 100, 0.4);
+  color: #7ddf9a;
+}
+.investigation-card__flag--neu {
+  color: #c9c2b5;
+}
+
+.investigation-card__sections {
+  padding: 0.5rem 0 0.5rem;
+}
+
+.investigation-card__section {
+  border-top: 1px solid #2a2720;
+}
+
+.investigation-card__section-head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  background: transparent;
+  border: none;
+  color: #bea028;
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.investigation-card__section-body {
+  padding: 0 1rem 0.85rem;
+}
+
+.investigation-card__summary {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  margin: 0 0 0.5rem;
+  color: #e8e0cc;
+}
+
+.investigation-card__list {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  margin: 0 0 0.5rem 1rem;
+  color: #d5cdc0;
+  line-height: 1.4;
+}
+
+.investigation-card__sources {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.investigation-card__sources a {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  color: #7eb8ff;
+  word-break: break-all;
+}
+
+.investigation-card__subs {
+  padding: 0.75rem 1rem 1rem;
+  border-top: 1px solid #2a2720;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  line-height: 1.45;
+  color: #a8a095;
+}
+
+.investigation-card__subs-label {
+  display: block;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  color: #bea028;
+}

@@ -1,0 +1,38 @@
+{
+  "brand_name": "Bayer AG (Monsanto)",
+  "brand_slug": "bayer-monsanto",
+  "research_confidence": "high",
+  "investigation_summary": "Monsanto Papers: ghostwriting, \"Let Nothing Go\" strategy, regulatory undermining documented in Roundup discovery. $11B+ glyphosate settlements; 170k+ cases. PCB legacy: Superfund scale, Anniston settlement. Agent Orange manufacturer. Seed-system concentration; dicamba drift liability. Neonicotinoids & bees.",
+  "verdict_tags": ["research_suppression", "cancer_settlements", "monopoly", "environmental_contamination", "regulatory_manipulation", "pcb_legacy"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://www.scientificamerican.com/article/monsanto-papers/",
+    "https://www.epa.gov/pcbs",
+    "https://www.iarc.who.int/featured-news/media-centre-iarc-news-glyphosate/"
+  ],
+  "profile": {
+    "brand": "Bayer / Monsanto",
+    "parent": "Bayer AG (ETR: BAYN)",
+    "subsidiaries": ["Roundup", "Dekalb", "Asgrow", "Climate Corporation", "Seminis", "Channel", "De Ruiter", "Aspirin", "Aleve", "Claritin", "Coppertone"],
+    "tax_summary": "German corp tax ~24–28%; Monsanto legacy offshore IP licensing; standard pharma/ag optimization.",
+    "tax_flags": ["multinational_optimization"],
+    "tax_sources": [],
+    "legal_summary": "Roundup / glyphosate mass torts; Monsanto Papers conduct; PCB & Agent Orange legacy; dicamba drift verdicts; seed-market power; Essure and Xarelto settlements on pharma side.",
+    "legal_flags": ["cancer_settlements", "research_suppression", "pcb_legacy", "seed_monopoly"],
+    "legal_sources": ["https://www.scientificamerican.com/article/monsanto-papers/"],
+    "labor_summary": "German HQ labor protections; farmworker glyphosate exposure documented.",
+    "labor_flags": ["supply_chain_exposure"],
+    "labor_sources": [],
+    "environmental_summary": "Glyphosate IARC 2A; PCB persistence; GMO monoculture & superweeds; neonics.",
+    "environmental_flags": ["pesticides", "biodiversity"],
+    "environmental_sources": ["https://www.iarc.who.int/featured-news/media-centre-iarc-news-glyphosate/"],
+    "political_summary": "Heavy US/EU lobbying; documented revolving door & IARC controversy.",
+    "political_sources": [],
+    "product_health": "Roundup litigation; some Coppertone PFAS detections in third-party tests.",
+    "product_health_sources": [],
+    "executive_summary": "Bayer market cap hit after $63B Monsanto deal.",
+    "executive_sources": [],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["research_suppression", "cancer_settlements", "monopoly", "environmental_contamination", "regulatory_manipulation", "pcb_legacy"]
+  }
+}

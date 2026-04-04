@@ -1,0 +1,38 @@
+{
+  "brand_name": "Unilever PLC",
+  "brand_slug": "unilever",
+  "research_confidence": "high",
+  "investigation_summary": "Mid-range: persistent Brand Audit plastic ranking; RSPO palm yet deforestation ties; Fair & Lovely / Glow & Lovely colorism litigation and reputational record; Ben & Jerry's 2022 West Bank sales dispute + U.S. state divestment laws complexity. CDP A- climate better than packaging honesty.",
+  "verdict_tags": ["plastic_pollution", "greenwashing", "deforestation_supply_chain", "colorism_marketing"],
+  "overall_concern_level": "moderate",
+  "primary_sources": [
+    "https://breakfreefromplastic.org/brandaudit/",
+    "https://www.greenpeace.org",
+    "https://goodonyou.eco"
+  ],
+  "profile": {
+    "brand": "Unilever",
+    "parent": "Unilever PLC (LON: ULVR / NYSE: UL)",
+    "subsidiaries": ["Dove", "Ben & Jerry's", "Hellmann's", "Magnum", "Knorr"],
+    "tax_summary": "~25–27% effective global rate in filings narrative — above many peers. Netherlands legacy structures simplified post-2020 unification.",
+    "tax_flags": [],
+    "tax_sources": ["https://goodonyou.eco"],
+    "legal_summary": "B&J Israel-Palestine distribution sale 2022 — legal/political crossfire. Fair & Lovely skin-lightening rebranded Glow & Lovely — continued colorism critique. PFAS personal-care suits. Greenpeace palm complaints. Plastic NGO audits.",
+    "legal_flags": ["geopolitical_brand_conflict", "pfas_suits"],
+    "legal_sources": ["https://www.greenpeace.org", "https://breakfreefromplastic.org/brandaudit/"],
+    "labor_summary": "Tea / palm / cocoa upper-stream risks noted in NGO reports. Developed-market HQ calm.",
+    "labor_flags": ["supply_chain_risk"],
+    "labor_sources": ["https://www.greenpeace.org"],
+    "environmental_summary": "Sustainable Living Plan mixed independent review. Top-quartile plastic waste brand audits. Palm RSPO + continued deforestation linkage allegations.",
+    "environmental_flags": ["plastic_pollution", "palm_risk"],
+    "environmental_sources": ["https://breakfreefromplastic.org/brandaudit/"],
+    "political_summary": "EU packaging / due-diligence lobbying via associations.",
+    "political_sources": ["https://www.greenpeace.org"],
+    "product_health": "Skin-lightening chemistry and marketing ethics. Axe phthalate debates in NGO science summaries.",
+    "product_health_sources": ["https://goodonyou.eco"],
+    "executive_summary": "No corruption prosecution in this dossier; B&J independent board contract historically strong until geopolitical event.",
+    "executive_sources": ["https://goodonyou.eco"],
+    "overall_concern_level": "moderate",
+    "verdict_tags": ["plastic_pollution", "greenwashing", "deforestation_supply_chain", "colorism_marketing"]
+  }
+}

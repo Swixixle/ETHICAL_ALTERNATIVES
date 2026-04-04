@@ -1,0 +1,38 @@
+{
+  "brand_name": "Exxon Mobil Corporation",
+  "brand_slug": "exxonmobil",
+  "research_confidence": "high",
+  "investigation_summary": "Internal research established climate science by the 1970s; company then spent decades funding denial while questioning science publicly (journalism & litigation documents). State AG climate investigations; Valdez & pipeline spills; sued shareholder Arjuna over climate resolution (2024). Near-zero federal tax years; $6.1B+ subsidies per Good Jobs First. Massive lobbying; historically funded Heartland, ALEC, CEI. CDP Climate C.",
+  "verdict_tags": ["climate_denial", "environmental_violations", "tax_avoidance", "political_influence", "knowledge_suppression", "government_subsidies"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://www.harvardmagazine.com/2021/01/exxon-knew-climate-change",
+    "https://goodjobsfirst.org/violation-tracker",
+    "https://www.sec.gov/litigation/litreleases/exxon-climate"
+  ],
+  "profile": {
+    "brand": "ExxonMobil",
+    "parent": "Exxon Mobil Corporation (NYSE: XOM)",
+    "subsidiaries": ["Esso", "Mobil", "ExxonMobil Chemical", "XTO Energy", "Imperial Oil"],
+    "tax_summary": "Effective federal rate often near zero or negative in high-credit years; offshore profit allocation (Netherlands, Singapore, Switzerland). Good Jobs First ~$6.1B documented US subsidies.",
+    "tax_flags": ["low_cash_tax_years", "offshore_profit_shifting", "government_subsidies"],
+    "tax_sources": ["https://goodjobsfirst.org/violation-tracker"],
+    "legal_summary": "Climate knowledge suppression documented by researchers & press; NY climate fraud case dismissed 2019; Massachusetts investigation ongoing. Exxon Valdez; Mayflower pipeline EPA settlement; refinery air pollution settlement. 2024 shareholder climate-resolution lawsuit vs Arjuna criticized as intimidation.",
+    "legal_flags": ["climate_accountability_litigation", "environmental_enforcement", "shareholder_intimidation"],
+    "legal_sources": ["https://www.harvardmagazine.com/2021/01/exxon-knew-climate-change", "https://www.sec.gov/litigation/litreleases/exxon-climate"],
+    "labor_summary": "Standard energy-sector practices; refinery exposure history including benzene; large contractor workforce.",
+    "labor_flags": ["contractor_workforce"],
+    "labor_sources": [],
+    "environmental_summary": "Core business is fossil fuels. Methane emissions; Arctic offshore drilling; major plastic precursor production. Net-zero pledge for operated assets by 2050 excludes scope 3 (product combustion). CDP Climate C (2023).",
+    "environmental_flags": ["fossil_fuels", "methane", "plastic_feedstocks", "scope3_excluded"],
+    "environmental_sources": ["https://www.harvardmagazine.com/2021/01/exxon-knew-climate-change"],
+    "political_summary": "~$12.4M US lobbying (2023). Historic funding to climate-skeptic groups; API membership.",
+    "political_sources": ["https://www.harvardmagazine.com/2021/01/exxon-knew-climate-change"],
+    "product_health": "Combustion drives air pollution and climate harm. Refinery benzene; PFAS-related chemical lines.",
+    "product_health_sources": [],
+    "executive_summary": "Darren Woods CEO. Lee Raymond era tied to climate denial campaigns; Rex Tillerson later SecState. No personal corruption charges in this record.",
+    "executive_sources": [],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["climate_denial", "environmental_violations", "tax_avoidance", "political_influence", "knowledge_suppression", "government_subsidies"]
+  }
+}

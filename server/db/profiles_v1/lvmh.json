@@ -1,0 +1,37 @@
+{
+  "brand_name": "LVMH Moët Hennessy Louis Vuitton SE",
+  "brand_slug": "lvmh",
+  "research_confidence": "high",
+  "investigation_summary": "Lowest flagged severity in Volume 1: Good On You fashion subsidiaries still weak transparency; 2023 Paris preliminary probe into far-right-linked security vendor (surveillance of journalists/activists — ongoing). Exotic-skin welfare debates. CDP B; luxury slow-model lower volume than fast fashion.",
+  "verdict_tags": ["supply_chain_transparency", "animal_welfare_concerns", "surveillance_investigation"],
+  "overall_concern_level": "minor",
+  "primary_sources": [
+    "https://goodonyou.eco",
+    "https://www.cdp.net"
+  ],
+  "profile": {
+    "brand": "LVMH",
+    "parent": "LVMH Moët Hennessy Louis Vuitton SE (EPA: MC)",
+    "subsidiaries": ["Louis Vuitton", "Dior", "Sephora", "Tiffany & Co.", "Hennessy"],
+    "tax_summary": "~25% French corporate effective in analyst summaries; Netherlands IP conduit reported. Arnault Belgian citizenship bid 2012 — withdrawn/denied press cycle — reputational tax chatter only.",
+    "tax_flags": [],
+    "tax_sources": ["https://goodonyou.eco"],
+    "legal_summary": "Aggressive anti-counterfeit enforcement — legitimate IP defense. Tiffany deal arbitration 2020 settled. 2023 media: prosecutor review of Sved security firm ties — not final conviction in dossier timing.",
+    "legal_flags": ["security_vendor_probe"],
+    "legal_sources": ["https://goodonyou.eco"],
+    "labor_summary": "Good On You low grades for many maisons — transparency not conditions scandal. Sephora Denver union 2023 first. Craft jobs in France substantial.",
+    "labor_flags": ["transparency_gaps"],
+    "labor_sources": ["https://goodonyou.eco"],
+    "environmental_summary": "LIFE 360 program; exotic leathers; structural lower throughput vs fast fashion. CDP B (2023).",
+    "environmental_flags": ["exotic_materials"],
+    "environmental_sources": ["https://www.cdp.net"],
+    "political_summary": "Arnault relational influence vs low disclosed lobbying Euros.",
+    "political_sources": ["https://goodonyou.eco"],
+    "product_health": "Perfume ingredient opacity; alcohol standard health externalities.",
+    "product_health_sources": ["https://goodonyou.eco"],
+    "executive_summary": "Bernard Arnault family control; art patronage; no bribery conviction captured here.",
+    "executive_sources": ["https://goodonyou.eco"],
+    "overall_concern_level": "minor",
+    "verdict_tags": ["supply_chain_transparency", "animal_welfare_concerns", "surveillance_investigation"]
+  }
+}

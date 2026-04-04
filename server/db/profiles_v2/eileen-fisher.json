@@ -1,0 +1,39 @@
+{
+  "brand_name": "Eileen Fisher Inc.",
+  "brand_slug": "eileen-fisher",
+  "research_confidence": "high",
+  "investigation_summary": "Clean card: B Corp; RENEW take-back & resale; GOTS organic cotton, responsible wool, Tencel; women-led with ~40% employee ownership; FLA fair compensation commitment; supplier list + audits public; Good On You Good; ~$400M scale — still independent.",
+  "verdict_tags": ["bcorp", "employee_owned", "women_owned", "take_back_program", "organic_materials", "transparent_supply_chain"],
+  "overall_concern_level": "clean",
+  "primary_sources": [
+    "https://www.bcorporation.net/en-us/find-a-b-corp/company/eileen-fisher-inc/",
+    "https://www.eileenfisher.com/renew",
+    "https://www.goodonyou.eco/brand/eileen-fisher/"
+  ],
+  "profile": {
+    "brand": "Eileen Fisher",
+    "parent": "Eileen Fisher Inc. (independent; majority founder / employee ownership)",
+    "subsidiaries": [],
+    "tax_summary": "Private; no headline avoidance narrative in seed.",
+    "tax_flags": [],
+    "tax_sources": [],
+    "legal_summary": "No material fraud/enforcement thread in author seed.",
+    "legal_flags": [],
+    "legal_sources": [],
+    "labor_summary": "Employee ownership program; FLA standards cited.",
+    "labor_flags": [],
+    "labor_sources": [],
+    "environmental_summary": "Circular RENEW; preferred fibers strategy.",
+    "environmental_flags": [],
+    "environmental_sources": [],
+    "political_summary": "Quiet sustainability leadership vs splashy marketing.",
+    "political_sources": [],
+    "product_health": "Women's apparel — lower-toxicity fiber priorities vs fast fashion.",
+    "product_health_sources": [],
+    "executive_summary": "Eileen Fisher founder/design voice; ESOP component.",
+    "executive_sources": [],
+    "overall_concern_level": "clean",
+    "verdict_tags": ["bcorp", "employee_owned", "women_owned", "take_back_program", "organic_materials", "transparent_supply_chain"],
+    "clean_card": true
+  }
+}

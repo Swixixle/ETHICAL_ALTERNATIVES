@@ -1,0 +1,38 @@
+{
+  "brand_name": "REI Co-op",
+  "brand_slug": "rei",
+  "research_confidence": "high",
+  "investigation_summary": "Clean card: 23M+ member consumer co-op; board elections; 10% dividend; #OptOutside; public-lands advocacy; part-time benefits; Good On You Good. Caveats: 2022–2024 union campaigns — REI contested/delayed bargaining vs worker expectations of co-op values; multi-brand floor sells vendors with mixed records.",
+  "verdict_tags": ["consumer_cooperative", "member_owned", "democratic_governance", "environmental_advocacy"],
+  "overall_concern_level": "minor",
+  "primary_sources": [
+    "https://www.rei.com/about-rei/",
+    "https://www.goodonyou.eco/brand/rei/"
+  ],
+  "profile": {
+    "brand": "REI",
+    "parent": "Recreational Equipment, Inc. (member cooperative)",
+    "subsidiaries": [],
+    "tax_summary": "Cooperative surplus patronage — different from C-corp tax story.",
+    "tax_flags": [],
+    "tax_sources": [],
+    "legal_summary": "NLRB filings and union contract fights in national press 2022+.",
+    "legal_flags": [],
+    "legal_sources": [],
+    "labor_summary": "Retail pay above discounters; tension with newly organized shops.",
+    "labor_flags": ["union_contestation"],
+    "labor_sources": [],
+    "environmental_summary": "Used gear, repair, circularity pilots.",
+    "environmental_flags": [],
+    "environmental_sources": [],
+    "political_summary": "Conservation lobbying; retail footprint expansion debates.",
+    "political_sources": [],
+    "product_health": "Sells third-party technical apparel — chemical safety varies by brand.",
+    "product_health_sources": [],
+    "executive_summary": "Multi-billion revenue co-op; exec comp debates internally.",
+    "executive_sources": [],
+    "overall_concern_level": "minor",
+    "verdict_tags": ["consumer_cooperative", "member_owned", "democratic_governance", "environmental_advocacy"],
+    "clean_card": true
+  }
+}

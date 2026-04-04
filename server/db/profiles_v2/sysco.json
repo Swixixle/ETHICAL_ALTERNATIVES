@@ -1,0 +1,38 @@
+{
+  "brand_name": "Sysco Corporation",
+  "brand_slug": "sysco",
+  "research_confidence": "high",
+  "investigation_summary": "Context row: dominant US broadline foodservice distributor — most restaurant/institution ingredients flow through Sysco & peers. FTC blocked US Foods merger (~75% share risk). DOJ price-fixing investigation history. Warehouse OSHA citations; driver union pockets.",
+  "verdict_tags": ["antitrust", "market_dominance"],
+  "overall_concern_level": "moderate",
+  "primary_sources": [
+    "https://www.ftc.gov/news-events/news/press-releases/2015/06/ftc-challenges-proposed-merger-sysco-corporation-and-us",
+    "https://www.justice.gov/opa/pr/sysco-and-us-foods-abandon-merger-after-federal-court-backs-doj-challenge",
+    "https://www.osha.gov/"
+  ],
+  "profile": {
+    "brand": "Sysco",
+    "parent": "Sysco Corporation (NYSE: SYY)",
+    "subsidiaries": [],
+    "tax_summary": "Standard distributor taxation; not author emphasis.",
+    "tax_flags": [],
+    "tax_sources": [],
+    "legal_summary": "FTC/DOJ stopped US Foods tie-up over 75% concentration risk; DOJ investigated industry price-fixing (monitor docket for Sysco-specific outcomes).",
+    "legal_flags": ["concentration"],
+    "legal_sources": ["https://www.ftc.gov/news-events/news/press-releases/2015/06/ftc-challenges-proposed-merger-sysco-corporation-and-us"],
+    "labor_summary": "UFCW in some markets; warehouse injury rates above average in reporting.",
+    "labor_flags": ["warehouse_injuries"],
+    "labor_sources": [],
+    "environmental_summary": "Logistics footprint; indirect to farm sourcing debate.",
+    "environmental_flags": [],
+    "environmental_sources": [],
+    "political_summary": "Foodservice trade association politics.",
+    "political_sources": [],
+    "product_health": "Distributor — safety via recall downstream.",
+    "product_health_sources": [],
+    "executive_summary": "Kevin Hourican CEO.",
+    "executive_sources": [],
+    "overall_concern_level": "moderate",
+    "verdict_tags": ["antitrust", "market_dominance"]
+  }
+}

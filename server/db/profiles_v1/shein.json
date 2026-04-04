@@ -1,0 +1,38 @@
+{
+  "brand_name": "SHEIN",
+  "brand_slug": "shein",
+  "research_confidence": "high",
+  "investigation_summary": "Channel 4 2023: garment piece-rate ~3¢, 18-h shifts disputed by company but filmed. Thousands of new SKUs daily with no verified environmental accounting. Designer copyright judgments (e.g., $150k trio 2023). UFLPA / House China Select Committee concerns on de minimis customs gap. CBC lead over limits in tested items.",
+  "verdict_tags": ["labor_violations", "ip_theft", "environmental_violations", "product_safety_issues", "forced_labor_risk", "no_transparency"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://www.channel4.com/news/exclusive-inside-shein",
+    "https://marketplace.cbc.ca",
+    "https://ustr.gov/sites/default/files/files/Press/Reports/2022NotoiousMarkets.pdf"
+  ],
+  "profile": {
+    "brand": "SHEIN",
+    "parent": "Roadget Business Pte. Ltd. (Singapore); founder Xu Yangtian",
+    "subsidiaries": ["SheGlam", "Romwe"],
+    "tax_summary": "Private — minimal public financials. Singapore hub; China export rebates. IPO attempts delayed — U.S. disclosure friction reported.",
+    "tax_flags": ["opacity"],
+    "tax_sources": ["https://ustr.gov/sites/default/files/files/Press/Reports/2022NotoiousMarkets.pdf"],
+    "legal_summary": "Mass independent-designer infringement pattern — settlements and judgments. U.S. House China committee flags UFLPA documentation risk. UK IPO governance scrutiny 2024. Privacy class actions (TikTok-parallels alleged).",
+    "legal_flags": ["copyright_infringement", "forced_labor_compliance_risk"],
+    "legal_sources": ["https://ustr.gov/sites/default/files/files/Press/Reports/2022NotoiousMarkets.pdf"],
+    "labor_summary": "Channel 4 undercover wages and hours. No published supplier list or third-party audit suite. Uyghur forced-labor documentation gaps under U.S. law cited by policy makers.",
+    "labor_flags": ["extreme_piece_rate", "no_transparency"],
+    "labor_sources": ["https://www.channel4.com/news/exclusive-inside-shein"],
+    "environmental_summary": "Ultra-fast model (thousands of styles/day). No CDP. Synthetic fabrics / microfibers. Chemical excess lead in CBC tests.",
+    "environmental_flags": ["no_disclosure", "chemical_exceedances"],
+    "environmental_sources": ["https://marketplace.cbc.ca"],
+    "political_summary": "Lobbying to preserve $800 de minimis exemption (with Temu peers) per press accounts.",
+    "political_sources": ["https://ustr.gov/sites/default/files/files/Press/Reports/2022NotoiousMarkets.pdf"],
+    "product_health": "Lead and other hazardous substances over limits in CBC Marketplace tests (children's accessories, etc.).",
+    "product_health_sources": ["https://marketplace.cbc.ca"],
+    "executive_summary": "Founder low-profile; company disputes labor TV findings — methodology archived by broadcaster.",
+    "executive_sources": ["https://www.channel4.com/news/exclusive-inside-shein"],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["labor_violations", "ip_theft", "environmental_violations", "product_safety_issues", "forced_labor_risk", "no_transparency"]
+  }
+}

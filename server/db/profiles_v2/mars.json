@@ -1,0 +1,38 @@
+{
+  "brand_name": "Mars, Incorporated",
+  "brand_slug": "mars",
+  "research_confidence": "high",
+  "investigation_summary": "Private — limited financial disclosure. Cocoa child-labor suits (jurisdictional dismissals; merits disputed). EU chocolate price-fixing € fine / UK settlement. Pet food recalls. Kind acquisition — health-halo brand inside confectionery giant. Deforestation & palm threads.",
+  "verdict_tags": ["child_labor", "price_fixing", "health_concerns", "supply_chain_opacity", "greenwashing"],
+  "overall_concern_level": "moderate",
+  "primary_sources": [
+    "https://www.hrw.org/report/2019/02/12/hiding-behind-business/human-rights-abuses-cocoa-ghana-and-cote-divoire",
+    "https://competition-cases.ec.europa.eu/cases/AT.39233",
+    "https://www.cdp.net/en/companies/companies-scores"
+  ],
+  "profile": {
+    "brand": "Mars",
+    "parent": "Mars, Incorporated (private — Mars family)",
+    "subsidiaries": ["M&M's", "Snickers", "Skittles", "Wrigley", "Ben's Original", "Pedigree", "Whiskas", "Royal Canin", "Banfield", "Kind"],
+    "tax_summary": "Private; offshore structures typical; effective rate unknown.",
+    "tax_flags": ["opacity"],
+    "tax_sources": [],
+    "legal_summary": "Cocoa litigation thread; EC price-fixing; recalls; Kind positioning scrutiny.",
+    "legal_flags": ["supply_chain_human_rights", "antitrust"],
+    "legal_sources": ["https://www.hrw.org/report/2019/02/12/hiding-behind-business/human-rights-abuses-cocoa-ghana-and-cote-divoire"],
+    "labor_summary": "Cocoa pledges vs on-ground critiques; vet burnout chain-wide.",
+    "labor_flags": ["supply_chain"],
+    "labor_sources": [],
+    "environmental_summary": "Cocoa deforestation; candy plastic; RSPO palm membership. CDP Climate B (2023).",
+    "environmental_flags": ["deforestation_risk"],
+    "environmental_sources": [],
+    "political_summary": "Confectionery lobbying on health labeling.",
+    "political_sources": [],
+    "product_health": "High-sugar confectionery; pet food recall history.",
+    "product_health_sources": [],
+    "executive_summary": "Family-controlled profit powerhouse ~$100B revenue (est.).",
+    "executive_sources": [],
+    "overall_concern_level": "moderate",
+    "verdict_tags": ["child_labor", "price_fixing", "health_concerns", "supply_chain_opacity", "greenwashing"]
+  }
+}

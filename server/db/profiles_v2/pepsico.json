@@ -1,0 +1,38 @@
+{
+  "brand_name": "PepsiCo Inc.",
+  "brand_slug": "pepsico",
+  "research_confidence": "high",
+  "investigation_summary": "Top-tier plastic polluter in brand audits. $3.9B IRS transfer pricing dispute (Puerto Rico) per SEC. Aquafina tap-water labeling; Naked Juice \"natural\" settlements. Sued Indian farmers over proprietary potato (later dropped). Predominantly UPF portfolio; glyphosate in oats litigation thread.",
+  "verdict_tags": ["plastic_pollution", "tax_avoidance", "health_concerns", "greenwashing", "consumer_fraud"],
+  "overall_concern_level": "moderate",
+  "primary_sources": [
+    "https://www.sec.gov/edgar/browse/?CIK=77476",
+    "https://www.breakfreefromplastic.org/",
+    "https://cspinet.org/news/fdcs-lawsuit-naked-juice"
+  ],
+  "profile": {
+    "brand": "PepsiCo",
+    "parent": "PepsiCo Inc. (NASDAQ: PEP)",
+    "subsidiaries": ["Pepsi", "Mountain Dew", "Starry", "Gatorade", "Lay's", "Doritos", "Cheetos", "Fritos", "Quaker Oats", "Pearl Milling Company", "Sabra", "Naked Juice", "LIFEWTR", "Aquafina"],
+    "tax_summary": "FY2023 ~20% effective; Ireland holding; Puerto Rico manufacturing; $3.9B IRS dispute disclosed. Good Jobs First $55M+ subsidies.",
+    "tax_flags": ["transfer_pricing_dispute", "offshore_structure"],
+    "tax_sources": ["https://www.sec.gov/edgar/browse/?CIK=77476"],
+    "legal_summary": "Aquafina / marketing; Tropicana class actions; DOJ distributor price-fixing agreement; Naked Juice settlements; India farmer suits.",
+    "legal_flags": ["consumer_fraud", "farmer_litigation"],
+    "legal_sources": ["https://cspinet.org/news/fdcs-lawsuit-naked-juice"],
+    "labor_summary": "Potato & oat supply chain farmworker concerns; India legal battle criticized.",
+    "labor_flags": ["supply_chain_labor"],
+    "labor_sources": [],
+    "environmental_summary": "Plastic footprint; failed 2025 virgin-plastic pledges in key lanes per reporting; CDP Climate B (2023).",
+    "environmental_flags": ["plastic_pollution"],
+    "environmental_sources": ["https://www.breakfreefromplastic.org/"],
+    "political_summary": "~$4.2M lobbying (2023); funded research downplaying sugar per CSPI-style critiques.",
+    "political_sources": [],
+    "product_health": "High-sugar beverages; ultra-processed snacks; sodium serving-size games; oats/glyphosate class action headline risk.",
+    "product_health_sources": [],
+    "executive_summary": "Large-cap diversified beverage/snack leadership.",
+    "executive_sources": [],
+    "overall_concern_level": "moderate",
+    "verdict_tags": ["plastic_pollution", "tax_avoidance", "health_concerns", "greenwashing", "consumer_fraud"]
+  }
+}

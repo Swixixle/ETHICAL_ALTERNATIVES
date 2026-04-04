@@ -1,0 +1,38 @@
+{
+  "brand_name": "Target Corporation",
+  "brand_slug": "target",
+  "research_confidence": "high",
+  "investigation_summary": "2013 payment card breach — 40M cards; $18.5M multistate AG settlement; major Visa settlement. 2023 Pride merch pullback under conservative pressure — brand & employee backlash. Otherwise above-average retail pay ($15–24), CDP A-, fewer severe labor cases vs peers.",
+  "verdict_tags": ["data_breach", "political_capitulation"],
+  "overall_concern_level": "minor",
+  "primary_sources": [
+    "https://www.naag.org/news/attorney-general-announces-18-5m-target-data-breach-settlement/",
+    "https://corporate.target.com/",
+    "https://www.cdp.net/en/companies/companies-scores"
+  ],
+  "profile": {
+    "brand": "Target",
+    "parent": "Target Corporation (NYSE: TGT)",
+    "subsidiaries": ["Target owned brands"],
+    "tax_summary": "~22% FY2023; Good Jobs First $72M+ subsidies.",
+    "tax_flags": ["subsidies"],
+    "tax_sources": ["https://goodjobsfirst.org/violation-tracker"],
+    "legal_summary": "Historic breach; episodic EEOC store settlements; Pride removal litigation chatter.",
+    "legal_flags": ["data_security"],
+    "legal_sources": ["https://www.naag.org/news/attorney-general-announces-18-5m-target-data-breach-settlement/"],
+    "labor_summary": "Better than Walmart/DG; no union headline cases in seed.",
+    "labor_flags": [],
+    "labor_sources": [],
+    "environmental_summary": "CDP A- (2023); packaging & renewable commitments.",
+    "environmental_flags": [],
+    "environmental_sources": [],
+    "political_summary": "2023 LGBTQ merch decision political flashpoint.",
+    "political_sources": [],
+    "product_health": "General merchandise + grocery — standard retail quality variance.",
+    "product_health_sources": [],
+    "executive_summary": "Brian Cornell CEO era — supply-chain modernization.",
+    "executive_sources": [],
+    "overall_concern_level": "minor",
+    "verdict_tags": ["data_breach", "political_capitulation"]
+  }
+}

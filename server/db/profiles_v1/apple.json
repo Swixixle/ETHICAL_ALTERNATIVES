@@ -1,0 +1,42 @@
+{
+  "brand_name": "Apple Inc.",
+  "brand_slug": "apple",
+  "research_confidence": "high",
+  "investigation_summary": "Major items: EU Court of Justice 2024 restoring €13B Irish state-aid tax decision; settled iPhone performance throttling (~$500M US class action, ~$1B global); active DOJ 2024 antitrust case; EU DMA non-compliance exposure; NLRB union interference findings (2023); DRC cobalt child-labor suits ongoing. Counterbalanced by stronger CDP trajectory vs peers and published supplier responsibility reports showing recurring noncompliance Apple acknowledges.",
+  "verdict_tags": ["tax_avoidance", "planned_obsolescence", "antitrust", "supply_chain_concerns", "right_to_repair_opposition"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://curia.europa.eu",
+    "https://www.justice.gov/opa/pr/justice-department-sues-apple",
+    "https://www.apple.com/supplier-responsibility/"
+  ],
+  "profile": {
+    "brand": "Apple",
+    "parent": "Apple Inc. (NASDAQ: AAPL)",
+    "subsidiaries": ["Beats Electronics", "Shazam", "Braeburn Capital"],
+    "tax_summary": "2016 EC: illegal state aid to Ireland ~€13B — recovery ordered. 2020 General Court annulment; ECJ 2024 set aside annulment — recovery posture reinstated per public judgment summary. Historical Double Irish / Dutch Sandwich routing. Recent US effective rate 14–16% vs 21% statutory cited in analyses. Large offshore cash historically reported.",
+    "tax_flags": ["eu_state_aid", "effective_rate_below_statutory"],
+    "tax_sources": ["https://curia.europa.eu"],
+    "legal_summary": "2020: throttle settlement — admitted degrading older iPhones via updates without adequate disclosure. 2024: DOJ complaint — App Store / NFC / interoperability. 2024: DMA gatekeeper compliance disputes. Epic v. Apple (2021) — mixed ruling; payments remedy contested. NLRB 2023: unlawful coordination against retail unions. DRC cobalt: active wrongful-death / child labor suits name Apple.",
+    "legal_flags": ["antitrust", "consumer_fraud_settlement", "nlrb_findings", "cobalt_litigation"],
+    "legal_sources": [
+      "https://www.justice.gov/opa/pr/justice-department-sues-apple",
+      "https://curia.europa.eu",
+      "https://www.apple.com/supplier-responsibility/"
+    ],
+    "labor_summary": "Foxconn Shenzhen suicides (2010–2013) documented; nets and wage increases followed. Supplier reports still cite overtime and recruitment-fee issues. Cobalt recycled-content pledge not met per 2024 reporting cited in press.",
+    "labor_flags": ["supplier_overtime", "cobalt_supply_chain"],
+    "labor_sources": ["https://www.apple.com/supplier-responsibility/"],
+    "environmental_summary": "Carbon-neutral operations claim; 2030 supply-chain neutrality target. Right-to-repair: historical lobbying against repair laws; Self Service Repair launched 2022 with pricing / parts availability critiques. CDP A- (2023).",
+    "environmental_flags": ["repair_restrictions", "product_churn"],
+    "environmental_sources": ["https://www.apple.com/supplier-responsibility/"],
+    "political_summary": "~$9.4M federal lobbying (2023). No corporate PAC; employee PACs separate. China manufacturing footprint creates geopolitical dependency.",
+    "political_sources": ["https://www.justice.gov/opa/pr/justice-department-sues-apple"],
+    "product_health": "RF EMF Group 2B classification (no proven consumer risk at typical use). PFAS in some keyboards (third-party tests); phase-out stated.",
+    "product_health_sources": ["https://www.apple.com/supplier-responsibility/"],
+    "executive_summary": "Tim Cook — disclosed wealth large; no corruption findings here. Board heavy finance representation.",
+    "executive_sources": ["https://www.justice.gov/opa/pr/justice-department-sues-apple"],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["tax_avoidance", "planned_obsolescence", "antitrust", "supply_chain_concerns", "right_to_repair_opposition"]
+  }
+}

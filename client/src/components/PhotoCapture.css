@@ -1,0 +1,252 @@
+.photo-capture {
+  --bg: #0f0e0a;
+  --cream: #e8e0cc;
+  --accent: #c8370a;
+  --border: #2a2720;
+
+  background: var(--bg);
+  color: var(--cream);
+  font-family: 'Space Mono', ui-monospace, monospace;
+  min-height: min(70vh, 520px);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.photo-capture__idle {
+  min-height: min(70vh, 520px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.photo-capture__dropzone {
+  width: 100%;
+  max-width: 420px;
+  min-height: 200px;
+  border: 2px dashed var(--accent);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.photo-capture__dropzone:hover,
+.photo-capture__dropzone--active {
+  background: rgba(200, 55, 10, 0.08);
+  border-color: #e04a1a;
+}
+
+.photo-capture__dropzone kbd {
+  font-size: 0.7rem;
+  opacity: 0.75;
+}
+
+.photo-capture__hint {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+  max-width: 320px;
+  line-height: 1.5;
+}
+
+.photo-capture__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.photo-capture__btn {
+  font-family: inherit;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.65rem 1rem;
+  border-radius: 3px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--cream);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.photo-capture__btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.photo-capture__btn--primary {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.photo-capture__btn--primary:hover {
+  filter: brightness(1.08);
+}
+
+.photo-capture__hidden-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.photo-capture__camera {
+  position: relative;
+  min-height: min(70vh, 520px);
+  background: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-capture__video {
+  flex: 1;
+  width: 100%;
+  object-fit: cover;
+  min-height: 260px;
+}
+
+.photo-capture__camera-bar {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+.photo-capture__stage {
+  position: relative;
+  min-height: min(70vh, 520px);
+  background: #080706;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sized to the image so TapOverlay (absolute inset 0) matches photo pixels */
+.photo-capture__image-shell {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  max-height: min(70vh, 640px);
+}
+
+.photo-capture__img {
+  display: block;
+  max-width: 100%;
+  max-height: min(70vh, 640px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.photo-capture__instruction {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(to top, rgba(15, 14, 10, 0.95), transparent);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--cream);
+  pointer-events: none;
+}
+
+.photo-capture__toolbar {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.photo-capture__toolbar .photo-capture__btn {
+  padding: 0.45rem 0.65rem;
+  font-size: 0.65rem;
+  background: rgba(15, 14, 10, 0.88);
+  color: var(--cream);
+}
+
+.photo-capture__toolbar .photo-capture__btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.photo-capture__skeleton {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(42, 39, 32, 0.6) 0%,
+    rgba(58, 54, 46, 0.85) 45%,
+    rgba(42, 39, 32, 0.6) 90%
+  );
+  background-size: 200% 100%;
+  animation: photo-capture-shimmer 1.2s ease-in-out infinite;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-capture__skeleton-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.85;
+}
+
+.photo-capture__idle-skeleton {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  background: linear-gradient(
+    105deg,
+    rgba(42, 39, 32, 0.4) 0%,
+    rgba(58, 54, 46, 0.55) 45%,
+    rgba(42, 39, 32, 0.4) 90%
+  );
+  background-size: 200% 100%;
+  animation: photo-capture-shimmer 1.2s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes photo-capture-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.photo-capture__error {
+  font-size: 0.75rem;
+  color: #ff8a65;
+  max-width: 360px;
+  margin: 0;
+  text-align: center;
+}

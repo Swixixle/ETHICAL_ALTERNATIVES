@@ -1,0 +1,38 @@
+{
+  "brand_name": "Procter & Gamble Co.",
+  "brand_slug": "procter-gamble",
+  "research_confidence": "high",
+  "investigation_summary": "Moderate among megacaps: palm-oil deforestation links despite policy (RAN). Charmin virgin-boreal fiber F grade NRDC Issue with Tissue. Tide Pod child-poisoning jury (2012) and CPSC friction over packaging reforms. PFAS detections in some SKUs. historic triclosan use until FDA 2016 ban.",
+  "verdict_tags": ["greenwashing", "deforestation_supply_chain", "pfas_concerns", "animal_testing"],
+  "overall_concern_level": "moderate",
+  "primary_sources": [
+    "https://www.ran.org",
+    "https://www.nrdc.org/resources/issue-tissue-2020",
+    "https://www.fda.gov/consumers/consumer-updates/5-things-know-about-triclosan"
+  ],
+  "profile": {
+    "brand": "Procter & Gamble",
+    "parent": "Procter & Gamble Co. (NYSE: PG)",
+    "subsidiaries": ["Tide", "Pampers", "Gillette", "Crest", "Charmin", "Oral-B"],
+    "tax_summary": "FY2023 ~18.8% effective vs 21% statutory. Ireland / Singapore / Luxembourg IP structures — typical MNE optimization without fraud finding here.",
+    "tax_flags": ["ip_routing"],
+    "tax_sources": ["https://www.ran.org"],
+    "legal_summary": "2012 jury on laundry-pod child access — redesign path. 2020s PFAS class actions. Sustainability labeling suits 2023. Ohio >$100M incentives (Good Jobs First).",
+    "legal_flags": ["product_safety_history", "pfas_litigation"],
+    "legal_sources": ["https://www.fda.gov/consumers/consumer-updates/5-things-know-about-triclosan"],
+    "labor_summary": "Developed-market operations quiet. Palm oil sourcing — RAN contested adequacy. China-market animal testing where legally mandated.",
+    "labor_flags": ["animal_testing_markets"],
+    "labor_sources": ["https://www.ran.org"],
+    "environmental_summary": "Palm-linked deforestation risk. PFAS persistence. Charmin virgin pulp critique. CDP A-.",
+    "environmental_flags": ["deforestation", "pfas"],
+    "environmental_sources": ["https://www.nrdc.org/resources/issue-tissue-2020"],
+    "political_summary": "Moderate consumer-goods lobbying; sugar / chemical regulation via trade groups.",
+    "political_sources": ["https://www.fda.gov/consumers/consumer-updates/5-things-know-about-triclosan"],
+    "product_health": "Tide pods poisoning surge 2012–2019 — design changes. Triclosan phased post-ban. Fragrance opacity typical. PFAS third-party tests.",
+    "product_health_sources": ["https://www.fda.gov/consumers/consumer-updates/5-things-know-about-triclosan"],
+    "executive_summary": "No executive criminal matters in this volume.",
+    "executive_sources": ["https://www.ran.org"],
+    "overall_concern_level": "moderate",
+    "verdict_tags": ["greenwashing", "deforestation_supply_chain", "pfas_concerns", "animal_testing"]
+  }
+}

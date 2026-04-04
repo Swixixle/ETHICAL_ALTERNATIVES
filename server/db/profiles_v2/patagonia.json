@@ -1,0 +1,38 @@
+{
+  "brand_name": "Patagonia, Inc.",
+  "brand_slug": "patagonia",
+  "research_confidence": "high",
+  "investigation_summary": "Clean card: 2022 transfer to Patagonia Purpose Trust + Holdfast Collective — profits to climate fight. 1% for the Planet cofounder; Worn Wear repairs; Fair Trade sewn product; Bluesign fabrics; supplier list public; Good On You Great. Caveats: premium pricing; synthetics/microplastics; ~$700M capital-gains tax benefit on transfer (acknowledged by Chouinard).",
+  "verdict_tags": ["great_good_on_you", "fair_trade", "worn_wear_repair", "climate_advocacy", "transparent_supply_chain", "purpose_trust_ownership"],
+  "overall_concern_level": "clean",
+  "primary_sources": [
+    "https://www.patagonia.com/ownership/",
+    "https://www.goodonyou.eco/brand/patagonia/"
+  ],
+  "profile": {
+    "brand": "Patagonia",
+    "parent": "Patagonia Purpose Trust / Holdfast Collective nonprofits",
+    "subsidiaries": [],
+    "tax_summary": "2022 restructuring — charitable + trust ownership; Chouinard cited tax mechanics transparently.",
+    "tax_flags": [],
+    "tax_sources": [],
+    "legal_summary": "Environmental litigation donations (e.g., Bears Ears) per company history.",
+    "legal_flags": [],
+    "legal_sources": [],
+    "labor_summary": "FLA-aligned fair compensation claims; union-free but above-sweatshop bar in audits cited by NGOs.",
+    "labor_flags": [],
+    "labor_sources": [],
+    "environmental_summary": "Climate activism core brand; materials programs; repair-first culture.",
+    "environmental_flags": [],
+    "environmental_sources": [],
+    "political_summary": "Advocacy-forward; non-partisan conservation focus historically.",
+    "political_sources": [],
+    "product_health": "Outdoor performance gear — chemical management via Bluesign on many lines.",
+    "product_health_sources": [],
+    "executive_summary": "Chouinard founder; leadership transition post-trust transfer.",
+    "executive_sources": [],
+    "overall_concern_level": "clean",
+    "verdict_tags": ["great_good_on_you", "fair_trade", "worn_wear_repair", "climate_advocacy", "transparent_supply_chain", "purpose_trust_ownership"],
+    "clean_card": true
+  }
+}

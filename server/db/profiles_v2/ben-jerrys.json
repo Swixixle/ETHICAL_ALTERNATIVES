@@ -1,0 +1,38 @@
+{
+  "brand_name": "Ben & Jerry's Homemade Inc.",
+  "brand_slug": "ben-jerrys",
+  "research_confidence": "high",
+  "investigation_summary": "Clean card: independent values board under Unilever sale (2000) protects social mission. B Corp; Fairtrade vanilla/cocoa/sugar; living-wage pioneer; Vermont manufacturing. Caveats: ultimate parent Unilever has its own ethics file; Israel settlements dispute tested independence; premium dairy & sugar.",
+  "verdict_tags": ["bcorp", "fair_trade", "living_wage", "independent_values_board", "social_advocacy"],
+  "overall_concern_level": "minor",
+  "primary_sources": [
+    "https://www.bcorporation.net/en-us/find-a-b-corp/company/ben-jerrys/",
+    "https://www.benjerry.com/values"
+  ],
+  "profile": {
+    "brand": "Ben & Jerry's",
+    "parent": "Unilever (with independent mission board)",
+    "subsidiaries": [],
+    "tax_summary": "Operates inside Unilever tax/consolidation envelope — see Unilever profile for parent.",
+    "tax_flags": [],
+    "tax_sources": [],
+    "legal_summary": "Public advocacy stances (criminal justice, climate, etc.); litigation with Unilever re West Bank distribution per press.",
+    "legal_flags": [],
+    "legal_sources": [],
+    "labor_summary": "Living wage commitment including supply chain (per company claims).",
+    "labor_flags": [],
+    "labor_sources": [],
+    "environmental_summary": "Dairy footprint; climate activism; sourcing certifications.",
+    "environmental_flags": ["dairy_emissions"],
+    "environmental_sources": [],
+    "political_summary": "Progressive brand voice — occasionally conflicts with parent.",
+    "political_sources": [],
+    "product_health": "Ice cream — high sugar; premium indulgence category.",
+    "product_health_sources": [],
+    "executive_summary": "Founders Cohen & Greenfield; Unilever ownership since 2000 with governance carve-out.",
+    "executive_sources": [],
+    "overall_concern_level": "minor",
+    "verdict_tags": ["bcorp", "fair_trade", "living_wage", "independent_values_board", "social_advocacy"],
+    "clean_card": true
+  }
+}

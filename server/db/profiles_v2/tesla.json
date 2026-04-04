@@ -1,0 +1,38 @@
+{
+  "brand_name": "Tesla Inc.",
+  "brand_slug": "tesla",
+  "research_confidence": "high",
+  "investigation_summary": "Fremont racial harassment verdict (later remitted). NLRB union retaliation; Musk tweet unlawful threat. NHTSA Autopilot/FSD probes; DOJ criminal probe reports. $20M+$20M SEC \"funding secured\" settlement. SolarCity conflict judgment on appeal. Musk political super-donor & DOGE role.",
+  "verdict_tags": ["racial_discrimination", "union_suppression", "securities_fraud", "autopilot_misrepresentation", "political_conflict_of_interest"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://www.nlrb.gov/",
+    "https://www.sec.gov/enforce/33-9887",
+    "https://goodjobsfirst.org/violation-tracker"
+  ],
+  "profile": {
+    "brand": "Tesla",
+    "parent": "Tesla Inc. (NASDAQ: TSLA)",
+    "subsidiaries": ["Tesla Autopilot", "FSD", "Tesla Energy", "Megapack"],
+    "tax_summary": "Low cash rate via credits/NOLs; $2.5B+ incentives (Good Jobs First). Texas HQ move tax optics for Musk.",
+    "tax_flags": ["incentives", "credits"],
+    "tax_sources": ["https://goodjobsfirst.org/violation-tracker"],
+    "legal_summary": "DFEH/ workplace race suits; NLRB orders; autopilot enforcement thread; SEC fraud settlement; SolarCity fiduciary litigation.",
+    "legal_flags": ["nlrb", "securities", "autopilot"],
+    "legal_sources": ["https://www.nlrb.gov/", "https://www.sec.gov/enforce/33-9887"],
+    "labor_summary": "Union resistance; injury rates cited above average some years.",
+    "labor_flags": ["union_suppression"],
+    "labor_sources": [],
+    "environmental_summary": "EVs net lower lifecycle emissions; cobalt supply-chain child-labor industry issue; gigafactory water stress.",
+    "environmental_flags": ["battery_supply_chain"],
+    "environmental_sources": [],
+    "political_summary": "Musk 2024 cycle megadonor; DOGE federal access; EV credit politics.",
+    "political_sources": [],
+    "product_health": "FSD marketing vs capability under regulatory scrutiny.",
+    "product_health_sources": [],
+    "executive_summary": "Musk controls multiple platforms; Twitter/Tesla collateral history.",
+    "executive_sources": [],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["racial_discrimination", "union_suppression", "securities_fraud", "autopilot_misrepresentation", "political_conflict_of_interest"]
+  }
+}

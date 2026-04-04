@@ -1,0 +1,39 @@
+{
+  "brand_name": "Amazon.com Inc.",
+  "brand_slug": "amazon",
+  "research_confidence": "high",
+  "investigation_summary": "OSHA / SOC analyses cite warehouse injury rates roughly double industry averages. NLRB findings on organizer retaliation; historic Chris Smalls firing reversed. FTC 2023 Amazon retail monopoly case + Prime dark-pattern case. Ring disclosed thousands of police footage shares without warrant (Senate inquiry). FTC $25M children's Alexa voice-data penalty (2023). Carbon up ~40% 2019–2022 despite Climate Pledge. Massive state/local incentives (Good Jobs First).",
+  "verdict_tags": ["tax_avoidance", "labor_violations", "union_suppression", "antitrust", "worker_safety", "surveillance", "government_subsidies", "greenwashing"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://www.ftc.gov/news-events/news/press-releases/2023/09/ftc-sues-amazon",
+    "https://goodjobsfirst.org/violation-tracker",
+    "https://strategicorganizingcenter.org/wp-content/uploads/2022/01/The-Injury-Machine_Final.pdf",
+    "https://www.propublica.org/article/amazon-taxes-bezos"
+  ],
+  "profile": {
+    "brand": "Amazon",
+    "parent": "Amazon.com Inc. (NASDAQ: AMZN)",
+    "subsidiaries": ["AWS", "Whole Foods", "MGM", "Ring", "Twitch", "Zappos", "One Medical"],
+    "tax_summary": "2018: $0 federal income tax on ~$11.2B profit (ProPublica analysis). 2023 federal effective ~12% vs 21% statutory. Luxembourg routing; IRS ~$1.5B transfer pricing dispute (SEC). >$4.7B state/local incentives (Good Jobs First). Bezos Washington→Florida move — documented state tax savings in press.",
+    "tax_flags": ["low_cash_tax_years", "transfer_pricing_dispute", "mega_subsidies"],
+    "tax_sources": ["https://www.propublica.org/article/amazon-taxes-bezos", "https://goodjobsfirst.org/violation-tracker"],
+    "legal_summary": "FTC 2023 monopoly complaint (Project Nessie allegations) + Prime cancellation UX case. NLRB unlawful interference pattern. Ring 2022 — law enforcement video sharing without user consent/warrant per congressional letters. Alexa COPPA penalty $25M (2023). Marketplace counterfeits repeatedly flagged by regulators and plaintiffs.",
+    "legal_flags": ["ftc_antitrust", "nlrb", "privacy_enforcement", "marketplace_counterfeits"],
+    "legal_sources": ["https://www.ftc.gov/news-events/news/press-releases/2023/09/ftc-sues-amazon"],
+    "labor_summary": "Strategic Organizing Center 2022: serious injury rate 6.6/100 vs 3.3/100 warehousing baseline. TOT surveillance disciplining breaks. Delivery DSP contractor model. Whole Foods covert union monitoring reported. $15–20/hr ware-house base — below living wage in major metros.",
+    "labor_flags": ["warehouse_injuries", "union_suppression", "misclassification_dsp"],
+    "labor_sources": ["https://strategicorganizingcenter.org/wp-content/uploads/2022/01/The-Injury-Machine_Final.pdf"],
+    "environmental_summary": "Absolute emissions +40% 2019–2022 vs Climate Pledge baseline per company sustainability reporting cited in critiques. Packaging improvements partial. Data-center water stress conflicts (VA, AZ) reported.",
+    "environmental_flags": ["emissions_growth_vs_pledge"],
+    "environmental_sources": ["https://www.ftc.gov/news-events/news/press-releases/2023/09/ftc-sues-amazon"],
+    "political_summary": "~$21M federal lobbying (2023). Amazon PAC ~$2.7M (2022). Anti-PRO Act posture reported.",
+    "political_sources": ["https://www.propublica.org/article/amazon-taxes-bezos"],
+    "product_health": "Counterfeit and unsafe goods on marketplace — FTC and class actions. Children's Alexa retention — see legal.",
+    "product_health_sources": ["https://www.ftc.gov/news-events/news/press-releases/2023/09/ftc-sues-amazon"],
+    "executive_summary": "Jeff Bezos — Blue Origin, Washington Post; no criminal case in this record. Andy Jassy — cost focus post-boom.",
+    "executive_sources": ["https://www.propublica.org/article/amazon-taxes-bezos"],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["tax_avoidance", "labor_violations", "union_suppression", "antitrust", "worker_safety", "surveillance", "government_subsidies", "greenwashing"]
+  }
+}

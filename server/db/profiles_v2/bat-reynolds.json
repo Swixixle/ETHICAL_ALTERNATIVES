@@ -1,0 +1,38 @@
+{
+  "brand_name": "British American Tobacco / Reynolds American",
+  "brand_slug": "bat-reynolds",
+  "research_confidence": "high",
+  "investigation_summary": "2024: BAT pleaded guilty to IEEPA conspiracy — $635M criminal penalty — 11-year scheme selling cigarettes to North Korea via fronts. MSA participant; DOJ RICO racketeering findings (industry-wide). FTC American Spirit \"natural\" scrutiny. Youth vaping enforcement thread on Vuse.",
+  "verdict_tags": ["sanctions_violations", "rico_conviction", "health_fraud", "marketing_to_minorities", "youth_targeting"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://www.justice.gov/nsd/case/united-states-v-british-american-tobacco-plc-et-al",
+    "https://www.ftc.gov/news-events/news/press-releases/2017/01/ftc-alleges-natural-american-spirit-cigarette-marketing",
+    "https://www.tobaccofreekids.org/issues/united-states/master-settlement-agreement"
+  ],
+  "profile": {
+    "brand": "BAT / Reynolds",
+    "parent": "British American Tobacco plc (LON: BATS)",
+    "subsidiaries": ["Reynolds American", "Camel", "Newport", "Pall Mall", "Natural American Spirit", "Vuse", "Grizzly", "Velo"],
+    "tax_summary": "BAT ~22–25% effective; Reynolds standard US structure.",
+    "tax_flags": [],
+    "tax_sources": [],
+    "legal_summary": "North Korea sanctions guilty plea; tobacco RICO; menthol disparities; American Spirit claims; vaping enforcement.",
+    "legal_flags": ["sanctions", "rico", "marketing"],
+    "legal_sources": ["https://www.justice.gov/nsd/case/united-states-v-british-american-tobacco-plc-et-al"],
+    "labor_summary": "Standard tobacco manufacturing where applicable.",
+    "labor_flags": [],
+    "labor_sources": [],
+    "environmental_summary": "Tobacco agriculture & waste; not primary headline vs sanctions/health.",
+    "environmental_flags": [],
+    "environmental_sources": [],
+    "political_summary": "Tobacco industry political footprint historically massive.",
+    "political_sources": [],
+    "product_health": "Combustible cigarettes; menthol targeted marketing in Black communities per public-health literature.",
+    "product_health_sources": [],
+    "executive_summary": "BAT global leadership; Reynolds US operating history.",
+    "executive_sources": [],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["sanctions_violations", "rico_conviction", "health_fraud", "marketing_to_minorities", "youth_targeting"]
+  }
+}

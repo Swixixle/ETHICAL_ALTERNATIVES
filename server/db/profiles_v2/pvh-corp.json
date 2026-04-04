@@ -1,0 +1,38 @@
+{
+  "brand_name": "PVH Corp.",
+  "brand_slug": "pvh-corp",
+  "research_confidence": "high",
+  "investigation_summary": "Signed Bangladesh Accord (positive vs Gap). Xinjiang cotton exposure in congressional reporting. Dutch tax structure — effective 13–18%. Calvin Klein ads drew FTC concern (1990s). Good On You \"Not Good Enough\" for CK & Tommy. Polyester microplastics.",
+  "verdict_tags": ["supply_chain_concerns", "tax_avoidance", "greenwashing"],
+  "overall_concern_level": "moderate",
+  "primary_sources": [
+    "https://www.goodonyou.eco/brand/calvin-klein/",
+    "https://www.hrw.org/report/2021/04/19/coerced-labor/threats-xinjiang-region",
+    "https://www.accord.foundation/"
+  ],
+  "profile": {
+    "brand": "PVH",
+    "parent": "PVH Corp (NYSE: PVH)",
+    "subsidiaries": ["Calvin Klein", "Tommy Hilfiger", "Van Heusen", "IZOD", "Arrow"],
+    "tax_summary": "Netherlands holding; below-statutory effective rates.",
+    "tax_flags": ["profit_shifting"],
+    "tax_sources": [],
+    "legal_summary": "Rana Plaza ecosystem tie (not collapse building); Accord commitment; Uyghur supply-chain scrutiny; minor-targeting ad history.",
+    "legal_flags": ["forced_labor_risk", "marketing"],
+    "legal_sources": ["https://www.hrw.org/report/2021/04/19/coerced-labor/threats-xinjiang-region"],
+    "labor_summary": "Bangladesh/Vietnam/China sourcing; no living-wage certification.",
+    "labor_flags": ["fast_fashion_supply"],
+    "labor_sources": ["https://www.goodonyou.eco/brand/calvin-klein/"],
+    "environmental_summary": "Polyester-heavy; Forward Fashion program — slow progress. CDP C (2023).",
+    "environmental_flags": ["microplastics"],
+    "environmental_sources": [],
+    "political_summary": "Fashion-sector standard trade footprint.",
+    "political_sources": [],
+    "product_health": "Apparel chemical residues managed via programs; not food toxicity.",
+    "product_health_sources": [],
+    "executive_summary": "Stefan Larsson-era turnaround focus.",
+    "executive_sources": [],
+    "overall_concern_level": "moderate",
+    "verdict_tags": ["supply_chain_concerns", "tax_avoidance", "greenwashing"]
+  }
+}

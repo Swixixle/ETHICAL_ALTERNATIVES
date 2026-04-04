@@ -1,0 +1,32 @@
+.error-state {
+  padding: 1rem;
+  border: 1px solid rgba(200, 55, 10, 0.45);
+  border-radius: 4px;
+  background: rgba(200, 55, 10, 0.06);
+}
+
+.error-state__text {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  color: #ffb4a8;
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+}
+
+.error-state__btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.75rem;
+  border-radius: 3px;
+  border: 1px solid #c8370a;
+  background: transparent;
+  color: #e8e0cc;
+  cursor: pointer;
+}
+
+.error-state__btn:hover {
+  background: #c8370a;
+  color: #0f0e0a;
+}

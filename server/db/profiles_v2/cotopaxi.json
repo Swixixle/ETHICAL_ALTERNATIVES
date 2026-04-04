@@ -1,0 +1,39 @@
+{
+  "brand_name": "Cotopaxi LLC",
+  "brand_slug": "cotopaxi",
+  "research_confidence": "high",
+  "investigation_summary": "Clean card: Certified B Corp; 1% revenue to poverty alleviation; published factory list; Higg Index; Fair Trade USA lines; Bluesign materials in range; LGBTQ-inclusive brand; independent (no PE rollup); Good On You Good.",
+  "verdict_tags": ["bcorp", "fair_trade", "transparent_supply_chain", "independent", "1pct_revenue_donation"],
+  "overall_concern_level": "clean",
+  "primary_sources": [
+    "https://www.bcorporation.net/en-us/find-a-b-corp/company/cotopaxi/",
+    "https://www.cotopaxi.com/pages/our-factories",
+    "https://www.goodonyou.eco/brand/cotopaxi/"
+  ],
+  "profile": {
+    "brand": "Cotopaxi",
+    "parent": "Cotopaxi LLC (independent)",
+    "subsidiaries": [],
+    "tax_summary": "Private benefit corp / standard LLC taxation.",
+    "tax_flags": [],
+    "tax_sources": [],
+    "legal_summary": "No major public fraud findings in seed narrative.",
+    "legal_flags": [],
+    "legal_sources": [],
+    "labor_summary": "Fair Trade certified products; living-wage claims on subset.",
+    "labor_flags": [],
+    "labor_sources": [],
+    "environmental_summary": "Higg participant; recycled inputs where marketed.",
+    "environmental_flags": [],
+    "environmental_sources": [],
+    "political_summary": "Poverty-alleviation mission brand.",
+    "political_sources": [],
+    "product_health": "Outdoor bags & apparel — standard chemical diligence via Bluesign on some SKUs.",
+    "product_health_sources": [],
+    "executive_summary": "Founder-led public-benefit positioning.",
+    "executive_sources": [],
+    "overall_concern_level": "clean",
+    "verdict_tags": ["bcorp", "fair_trade", "transparent_supply_chain", "independent", "1pct_revenue_donation"],
+    "clean_card": true
+  }
+}

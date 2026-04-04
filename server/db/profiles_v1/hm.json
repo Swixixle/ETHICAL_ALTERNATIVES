@@ -1,0 +1,38 @@
+{
+  "brand_name": "H&M Group",
+  "brand_slug": "hm",
+  "research_confidence": "high",
+  "investigation_summary": "European regulators found misleading sustainability marketing (Sweden Conscious line; Norway Higg MSI ruling). Germany fined €35.3M for illegal employee surveillance. Living-wage pledges (2013/2018/2022) documented unmet. Fast fashion volume (~3B garments/year) structurally conflicts with green claims.",
+  "verdict_tags": ["greenwashing", "labor_violations", "environmental_violations", "regulatory_action", "employee_surveillance"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://goodonyou.eco/how-ethical-is-hm/",
+    "https://www.forbrukerradet.no",
+    "https://www.datenschutz-hamburg.de"
+  ],
+  "profile": {
+    "brand": "H&M",
+    "parent": "H&M Group (STO: HM-B); Persson family ~35%",
+    "subsidiaries": ["COS", "Weekday", "Monki", "& Other Stories", "ARKET", "Afound"],
+    "tax_summary": "Netherlands IP licensing structure. Global effective rate ~20–22% cited in analyst summaries. No major tax fraud cases in this record.",
+    "tax_flags": ["ip_routing"],
+    "tax_sources": ["https://goodonyou.eco/how-ethical-is-hm/"],
+    "legal_summary": "2022: Swedish Consumer Agency — misleading 'Conscious' claims; line pulled. 2022: Norwegian authority — misleading Higg MSI use. 2020: Hamburg DPA €35.3M — illegal surveillance of workforce personal data. US consumer class actions (gift cards, etc.).",
+    "legal_flags": ["greenwashing_enforcement", "gdpr_major_fine"],
+    "legal_sources": ["https://www.forbrukerradet.no", "https://www.datenschutz-hamburg.de"],
+    "labor_summary": "Good On You: Not Good Enough (2/5). Bangladesh/Cambodia/Myanmar factory wages documented as poverty wages. Living-wage commitments unmet per UK Policy Exchange synthesis. 2017: investigative report on incineration of unsold new garments in Denmark despite sustainability marketing.",
+    "labor_flags": ["living_wage_gap", "fast_fashion_volume"],
+    "labor_sources": ["https://goodonyou.eco/how-ethical-is-hm/"],
+    "environmental_summary": "Very high garment output; polyester microplastic load. 2022 regulatory greenwashing findings. Take-back: critics — most collected textiles downcycled/incinerated vs closed-loop recycling. CDP climate C (2023).",
+    "environmental_flags": ["microplastics", "overproduction"],
+    "environmental_sources": ["https://goodonyou.eco/how-ethical-is-hm/"],
+    "political_summary": "EU textile policy lobbying; reported opposition to stronger mandatory due diligence. Limited PAC analogue (Swedish HQ).",
+    "political_sources": ["https://goodonyou.eco/how-ethical-is-hm/"],
+    "product_health": "Budget-line dyestuffs: EU testing has flagged azo-dye concerns in value segments (general literature; verify per market).",
+    "product_health_sources": ["https://goodonyou.eco/how-ethical-is-hm/"],
+    "executive_summary": "Persson family control via dual-class shares; large Swedish philanthropic footprint reported; no corruption findings in this volume.",
+    "executive_sources": ["https://goodonyou.eco/how-ethical-is-hm/"],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["greenwashing", "labor_violations", "environmental_violations", "regulatory_action", "employee_surveillance"]
+  }
+}

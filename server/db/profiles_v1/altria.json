@@ -1,0 +1,39 @@
+{
+  "brand_name": "Altria Group",
+  "brand_slug": "altria",
+  "research_confidence": "high",
+  "investigation_summary": "Same underlying U.S. tobacco public record as Philip Morris legacy: DOJ RICO civil findings (fraudulent denial of risks, youth marketing, concealed research) and MSA document archive. Altria holds Marlboro domestically; Juul stake implosion; oral nicotine (on!, NJOY acquisitions). ~480k annual U.S. smoking deaths CDC.",
+  "verdict_tags": ["rico_conviction", "health_fraud", "marketing_to_children", "political_influence", "child_labor_supply_chain", "menthol_targeting"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://www.industrydocuments.ucsf.edu/tobacco/",
+    "https://www.cdc.gov/tobacco/data_statistics/fact_sheets/fast_facts/",
+    "https://www.justice.gov/archive/usao/dc/tobacco/press.html",
+    "https://www.hrw.org/topic/childrens-rights/child-labor/tobacco"
+  ],
+  "profile": {
+    "brand": "Altria",
+    "parent": "Altria Group (NYSE: MO) — U.S. Marlboro; spun from PMI in 2008",
+    "subsidiaries": ["Marlboro (U.S.)", "Black & Mild", "NJOY", "on! nicotine pouches", "Juul (impaired investment)"],
+    "tax_summary": "U.S. domicile — effective federal rate commonly 21–24% in filings. Brand IP licensing offshore elements reported in industry analyses.",
+    "tax_flags": ["tobacco_specific_fees"],
+    "tax_sources": ["https://www.industrydocuments.ucsf.edu/tobacco/"],
+    "legal_summary": "MSA signatory — continuing payments and marketing restrictions. DOJ RICO judgment binds U.S. majors including PM USA (Altria). Juul youth-vaping settlements statewide; Altria write-down ~$12.8B stake.",
+    "legal_flags": ["rico_civil_liability", "youth_vaping_liabilities"],
+    "legal_sources": ["https://www.justice.gov/archive/usao/dc/tobacco/press.html"],
+    "labor_summary": "Upstream leaf child-labor risk same as PMI — HRW country reports.",
+    "labor_flags": ["child_labor_supply_chain"],
+    "labor_sources": ["https://www.hrw.org/topic/childrens-rights/child-labor/tobacco"],
+    "environmental_summary": "Butt litter / filter persistence same sector-wide issue.",
+    "environmental_flags": ["filter_litter"],
+    "environmental_sources": ["https://www.cdc.gov/tobacco/data_statistics/fact_sheets/fast_facts/"],
+    "political_summary": "~$7.6M federal lobbying (2023 figure cited in source volume) — anti-regulation focus; menthol politics.",
+    "political_sources": ["https://www.justice.gov/archive/usao/dc/tobacco/press.html"],
+    "product_health": "Combustibles: established mass mortality. Modified-risk and reduced-harm claims heavily contested; FDA orders on specific SKUs should be checked primary.",
+    "product_health_sources": ["https://www.cdc.gov/tobacco/data_statistics/fact_sheets/fast_facts/"],
+    "executive_summary": "MSA depository documents at UCSF underpin executive knowledge timelines.",
+    "executive_sources": ["https://www.industrydocuments.ucsf.edu/tobacco/"],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["rico_conviction", "health_fraud", "marketing_to_children", "political_influence", "child_labor_supply_chain", "menthol_targeting"]
+  }
+}

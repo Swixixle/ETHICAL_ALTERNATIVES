@@ -1,0 +1,38 @@
+{
+  "brand_name": "The Coca-Cola Company",
+  "brand_slug": "coca-cola",
+  "research_confidence": "high",
+  "investigation_summary": "Active multi-billion IRS transfer-pricing dispute (Tax Court 2023 loss on facts; appeal noted in SEC). Routinely #1–2 plastic polluter Brand Audit. Funded research minimizing sugar-obesity link (NYT 2015). India Kerala groundwater controversy. Historical Colombia bottler violence suits — jurisdictional dismissals in U.S.; underlying violence documented.",
+  "verdict_tags": ["tax_avoidance", "plastic_pollution", "health_concerns", "greenwashing", "water_extraction", "research_funding_bias"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://www.nytimes.com/2015/08/10/upshot/coca-cola-funds-scientists.html",
+    "https://breakfreefromplastic.org/brandaudit/",
+    "https://www.sec.gov/cgi-bin/browse-edgar"
+  ],
+  "profile": {
+    "brand": "Coca-Cola",
+    "parent": "The Coca-Cola Company (NYSE: KO)",
+    "subsidiaries": ["Sprite", "Fanta", "Dasani", "Minute Maid", "Costa Coffee"],
+    "tax_summary": "IRS alleges ~$9B+ underpayment 2007–2009 re IP charged to offshore affiliates; Tax Court 2023 decision adverse to Coca-Cola; appeal + penalties could exceed $12B. Effective rate volatile with reserves.",
+    "tax_flags": ["irs_transfer_pricing_trial_loss"],
+    "tax_sources": ["https://www.sec.gov/cgi-bin/browse-edgar"],
+    "legal_summary": "IRS case above. Plachimada India plant — state closure order, Supreme Court reversal, unpaid parliamentary compensation demand (historical). Guatemala franchise violence 1970s–80s — boycott history. 2024 press on distributor algorithmic pricing investigations involving PepsiCo.",
+    "legal_flags": ["major_tax_litigation", "historical_water_conflict"],
+    "legal_sources": ["https://www.sec.gov/cgi-bin/browse-edgar"],
+    "labor_summary": "Sugar supply chains — Brazil/Colombia labor risk literature. Colombia paramilitary murders of unionists — bottler not parent; ATS dismissal 2001 suit on jurisdiction.",
+    "labor_flags": ["supply_chain_labor_history"],
+    "labor_sources": ["https://www.nytimes.com/2015/08/10/upshot/coca-cola-funds-scientists.html"],
+    "environmental_summary": "Top plastic polluter audits. 2025 100% recyclability goal unmet. Dasani tap-water sourcing critiques. CDP A- operational climate.",
+    "environmental_flags": ["plastic_pollution", "water_stress"],
+    "environmental_sources": ["https://breakfreefromplastic.org/brandaudit/"],
+    "political_summary": "~$9.2M lobbying (2023) — sugar-tax opposition; trade/FDA. Research grants framing sugar debate.",
+    "political_sources": ["https://www.nytimes.com/2015/08/10/upshot/coca-cola-funds-scientists.html"],
+    "product_health": "39g sugar / 12oz — most of WHO daily limit. Diet formulations — aspartame IARC 2B 2023. Epidemiological obesity/diabetes links.",
+    "product_health_sources": ["https://www.nytimes.com/2015/08/10/upshot/coca-cola-funds-scientists.html"],
+    "executive_summary": "Long-tenured management; no individual criminal findings in this brief.",
+    "executive_sources": ["https://www.sec.gov/cgi-bin/browse-edgar"],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["tax_avoidance", "plastic_pollution", "health_concerns", "greenwashing", "water_extraction", "research_funding_bias"]
+  }
+}

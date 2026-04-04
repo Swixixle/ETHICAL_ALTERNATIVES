@@ -1,0 +1,39 @@
+{
+  "brand_name": "Nike Inc.",
+  "brand_slug": "nike",
+  "research_confidence": "high",
+  "investigation_summary": "Documented issues cluster in offshore supply-chain labor (audit gaming cited by NGOs), 2018 gender-discrimination class settlement ($13M), transfer-pricing / IRS disclosure risk, and sustainability claims vs verified progress. No criminal conviction in this record set.",
+  "verdict_tags": ["tax_avoidance", "labor_violations", "supply_chain_concerns", "greenwashing", "workplace_discrimination"],
+  "overall_concern_level": "moderate",
+  "primary_sources": [
+    "https://goodonyou.eco/how-ethical-is-nike/",
+    "https://www.sec.gov/cgi-bin/browse-edgar",
+    "https://goodjobsfirst.org/violation-tracker",
+    "https://www.nytimes.com/2018/04/28/business/nike-workplace.html"
+  ],
+  "profile": {
+    "brand": "Nike",
+    "parent": "Nike Inc. (NYSE: NKE)",
+    "subsidiaries": ["Converse", "Jordan Brand", "Hurley (sold 2020)"],
+    "tax_summary": "FY2023 effective rate ~18.4% vs 21% statutory. Bermuda / Dutch structures documented for IP royalties. SEC disclosures note IRS transfer-pricing dispute with potential ~$1.4B liability. Oregon incentives historically $2B+ (Good Jobs First).",
+    "tax_flags": ["transfer_pricing_dispute", "offshore_ip"],
+    "tax_sources": ["https://www.sec.gov/cgi-bin/browse-edgar", "https://goodjobsfirst.org/violation-tracker"],
+    "legal_summary": "2018: gender discrimination class action — $13M settlement; investigation described systemic promotion bias; executive exits. 2019: harassment-related executive departures. Ongoing cotton / Xinjiang forced-labor litigation allegations. 2023: FTC scrutiny of influencer disclosures.",
+    "legal_flags": ["workplace_discrimination", "supply_chain_litigation"],
+    "legal_sources": ["https://www.nytimes.com/2018/04/28/business/nike-workplace.html", "https://www.sec.gov/cgi-bin/browse-edgar"],
+    "labor_summary": "Good On You: It's a Start (3/5). Manufacturing concentrated Vietnam, Indonesia, China; NGO critiques of audit quality. No supply-chain living-wage certification. Historical sweatshop era led to programs; critics say gaps remain. U.S. warehouses: high injury rates reported. PFAS detected in garments (third-party tests 2022–2024).",
+    "labor_flags": ["supply_chain_labor", "warehouse_injuries", "pfas_products"],
+    "labor_sources": ["https://goodonyou.eco/how-ethical-is-nike/"],
+    "environmental_summary": "CDP climate B (2023). Move to Zero; scope 3 remains hard. Flyknit reduces cut waste vs traditional cut-and-sew. PFAS environmental persistence concerns parallel product testing.",
+    "environmental_flags": ["scope3_footprint", "pfas"],
+    "environmental_sources": ["https://goodonyou.eco/how-ethical-is-nike/"],
+    "political_summary": "~$800K federal lobbying (2023). Colin Kaepernick deal (2018) — commercial/cultural, not legal. Oregon HQ in business-friendly tax climate.",
+    "political_sources": ["https://www.sec.gov/cgi-bin/browse-edgar"],
+    "product_health": "Athletic wear typical profile. PFAS in technical fabrics under scrutiny in third-party testing. No major recalls emphasized in this volume.",
+    "product_health_sources": ["https://goodonyou.eco/how-ethical-is-nike/"],
+    "executive_summary": "Phil Knight: very large disclosed philanthropy (e.g., University of Oregon, Stanford); no corruption findings in this record. Recent CEOs: strategic and stock-performance commentary in press.",
+    "executive_sources": ["https://www.nytimes.com/2018/04/28/business/nike-workplace.html"],
+    "overall_concern_level": "moderate",
+    "verdict_tags": ["tax_avoidance", "labor_violations", "supply_chain_concerns", "greenwashing", "workplace_discrimination"]
+  }
+}

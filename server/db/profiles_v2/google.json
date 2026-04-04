@@ -1,0 +1,38 @@
+{
+  "brand_name": "Alphabet Inc.",
+  "brand_slug": "google",
+  "research_confidence": "high",
+  "investigation_summary": "Federal judge ruled illegal search monopoly via default deals (~$20B+/yr to Apple et al.). Ad-tech monopolization case ongoing. Double Irish / Dutch Sandwich history. $170M COPPA / YouTube Kids; $391M location tracking multistate. Street View WiFi payload. Dragonfly canceled after protest.",
+  "verdict_tags": ["antitrust", "tax_avoidance", "privacy_violations", "child_data_violations", "union_suppression", "location_tracking"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://www.justice.gov/opa/pr/justice-department-sues-google-illegally-monopolizing-digital-advertising-technologies",
+    "https://www.ftc.gov/news-events/news/press-releases/2019/09/google-youtube-will-pay-record-170-million-settling-ftc-new-york",
+    "https://www.naag.org/press-releases/attorney-general-coalition-secures-391-5-million-multistate-settlement-with-google/"
+  ],
+  "profile": {
+    "brand": "Google",
+    "parent": "Alphabet Inc. (NASDAQ: GOOGL)",
+    "subsidiaries": ["Google Search", "YouTube", "Gmail", "Chrome", "Android", "Google Cloud", "Waymo", "DeepMind", "Pixel", "Nest", "Fitbit", "Waze"],
+    "tax_summary": "Historic Double Irish Dutch Sandwich; UK sweetheart deal scrutiny; ~14–16% recent US effective; EU tax settlements.",
+    "tax_flags": ["profit_shifting"],
+    "tax_sources": [],
+    "legal_summary": "DOJ search monopoly liability ruling; ad-tech case; COPPA; AG location settlement; GDPR fines; NLRB organizing settlement.",
+    "legal_flags": ["antitrust", "privacy"],
+    "legal_sources": ["https://www.justice.gov/opa/pr/justice-department-sues-google-illegally-monopolizing-digital-advertising-technologies"],
+    "labor_summary": "2018 walkout; Rubin exit package scandal; shadow workforce of contractors.",
+    "labor_flags": ["organizing_conflicts", "two_tier_workforce"],
+    "labor_sources": [],
+    "environmental_summary": "Large data-center footprint; 24/7 carbon-free goal. CDP A (2023). AI energy demand rising.",
+    "environmental_flags": ["data_center_energy"],
+    "environmental_sources": [],
+    "political_summary": "~$12.5M lobbying (2023); EU competition fines historically.",
+    "political_sources": [],
+    "product_health": "YouTube algorithmic radicalization pathway cited in research literature.",
+    "product_health_sources": [],
+    "executive_summary": "Sundar Pichai CEO Alphabet/Google.",
+    "executive_sources": [],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["antitrust", "tax_avoidance", "privacy_violations", "child_data_violations", "union_suppression", "location_tracking"]
+  }
+}

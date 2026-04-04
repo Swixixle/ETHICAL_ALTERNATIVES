@@ -1,0 +1,38 @@
+{
+  "brand_name": "Microsoft Corporation",
+  "brand_slug": "microsoft",
+  "research_confidence": "high",
+  "investigation_summary": "1998 DOJ monopolist finding (IE/OEM). $28.9B IRS dispute disclosed (2004–2013 offshore allocation). Activision acquisition imported DFEH harassment culture & Kotick reporting. PRISM cooperation (Snowden). Teams bundling EU fine. Copilot copyright litigation emerging.",
+  "verdict_tags": ["antitrust", "tax_avoidance", "surveillance", "workplace_harassment_acquisition"],
+  "overall_concern_level": "moderate",
+  "primary_sources": [
+    "https://www.justice.gov/atr/us-v-microsoft-court-final-judgments",
+    "https://www.sec.gov/edgar/browse/?CIK=789019",
+    "https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-18-million-settlement-activision-blizzard-over"
+  ],
+  "profile": {
+    "brand": "Microsoft",
+    "parent": "Microsoft Corporation (NASDAQ: MSFT)",
+    "subsidiaries": ["Windows", "Microsoft 365", "Azure", "Xbox", "LinkedIn", "GitHub", "Activision Blizzard", "Bing", "Teams", "Surface"],
+    "tax_summary": "~19% FY2023 vs statutory 21%; historical Ireland/PR; $28.9B IRS dispute (company disputes).",
+    "tax_flags": ["irs_dispute"],
+    "tax_sources": ["https://www.sec.gov/edgar/browse/?CIK=789019"],
+    "legal_summary": "Landmark 1990s antitrust; Activision toxic-culture history; PRISM; Teams antitrust fine; Copilot suits.",
+    "legal_flags": ["historical_monopoly", "privacy_state", "harassment_legacy"],
+    "legal_sources": ["https://www.justice.gov/atr/us-v-microsoft-court-final-judgments", "https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-18-million-settlement-activision-blizzard-over"],
+    "labor_summary": "Generally stronger than sector average; AI displacement questions.",
+    "labor_flags": [],
+    "labor_sources": [],
+    "environmental_summary": "CDP A (2023); carbon-negative-by-2030 pledge; historic emissions removal goal.",
+    "environmental_flags": [],
+    "environmental_sources": [],
+    "political_summary": "~$10.1M lobbying (2023); AI regulation engagement.",
+    "political_sources": [],
+    "product_health": "Consumer electronics standard issues; no headline product-toxicity parallel to food/tobacco.",
+    "product_health_sources": [],
+    "executive_summary": "Nadella CEO; Gates philanthropic profile separate from ops; historical Epstein press coverage.",
+    "executive_sources": [],
+    "overall_concern_level": "moderate",
+    "verdict_tags": ["antitrust", "tax_avoidance", "surveillance", "workplace_harassment_acquisition"]
+  }
+}

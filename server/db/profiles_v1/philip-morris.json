@@ -1,0 +1,39 @@
+{
+  "brand_name": "Philip Morris International",
+  "brand_slug": "philip-morris",
+  "research_confidence": "high",
+  "investigation_summary": "U.S. v. Philip Morris USA — Judge Kessler 2006 RICO liability for fraudulently denying health risks, concealing research, and marketing to youth. 1998 MSA $206B+ and public document archive (~14M pages at UCSF). Product causal for ~480k annual U.S. deaths (CDC). Child labor on tobacco leaf documented HRW (Malawi, Zimbabwe).",
+  "verdict_tags": ["rico_conviction", "health_fraud", "marketing_to_children", "political_influence", "child_labor_supply_chain", "menthol_targeting"],
+  "overall_concern_level": "significant",
+  "primary_sources": [
+    "https://www.industrydocuments.ucsf.edu/tobacco/",
+    "https://www.cdc.gov/tobacco/data_statistics/fact_sheets/fast_facts/",
+    "https://www.justice.gov/archive/usao/dc/tobacco/press.html",
+    "https://www.hrw.org/topic/childrens-rights/child-labor/tobacco"
+  ],
+  "profile": {
+    "brand": "Philip Morris / Marlboro (PMI)",
+    "parent": "Philip Morris International (NYSE: PM); historically unified with Altria U.S. until 2008 spin",
+    "subsidiaries": ["Marlboro (international)", "IQOS heated tobacco"],
+    "tax_summary": "PMI Swiss domicile — rate advantage vs U.S. Altria ~21–24% effective. Complex brand-licensing IP routing both sides.",
+    "tax_flags": ["offshore_domicile"],
+    "tax_sources": ["https://www.industrydocuments.ucsf.edu/tobacco/"],
+    "legal_summary": "1998 MSA — largest civil settlement; document disclosure obligation. 1999–2006 DOJ RICO — civil remedies; fraud findings re marketing and concealment. Menthol rule fight. IQOS modified risk orders contested in public-health literature. Juul (Altria stake) youth-vaping settlements written down.",
+    "legal_flags": ["rico_civil_liability", "msa_documents"],
+    "legal_sources": ["https://www.justice.gov/archive/usao/dc/tobacco/press.html", "https://www.industrydocuments.ucsf.edu/tobacco/"],
+    "labor_summary": "Leaf-growing regions: HRW reports on child labor in Malawi/Zimbabwe supply chains.",
+    "labor_flags": ["child_labor_supply_chain"],
+    "labor_sources": ["https://www.hrw.org/topic/childrens-rights/child-labor/tobacco"],
+    "environmental_summary": "Cigarette butts — leading litter item; cellulose-acetate filters persistent. 'Unsmoke' campaigns critiqued as harm-reduction marketing.",
+    "environmental_flags": ["filter_litter"],
+    "environmental_sources": ["https://www.cdc.gov/tobacco/data_statistics/fact_sheets/fast_facts/"],
+    "political_summary": "Among top tobacco lobbying / political spend; menthol rule opposition; FARA filings for foreign activities.",
+    "political_sources": ["https://www.justice.gov/archive/usao/dc/tobacco/press.html"],
+    "product_health": "Combustible cigarettes: causal mortality/morbidity undisputed. IQOS aerosol still delivers addictive nicotine and toxicants — not risk-free per FDA communications. Menthol eases inhalation; disproportionate marketing to Black smokers per CDC summaries.",
+    "product_health_sources": ["https://www.cdc.gov/tobacco/data_statistics/fact_sheets/fast_facts/"],
+    "executive_summary": "UCSF industry documents — internal research suppression and youth marketing plans (e.g., Project SCUM archival references).",
+    "executive_sources": ["https://www.industrydocuments.ucsf.edu/tobacco/"],
+    "overall_concern_level": "significant",
+    "verdict_tags": ["rico_conviction", "health_fraud", "marketing_to_children", "political_influence", "child_labor_supply_chain", "menthol_targeting"]
+  }
+}

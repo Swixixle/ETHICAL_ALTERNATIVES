@@ -1,0 +1,38 @@
+{
+  "brand_name": "McDonald's Corporation",
+  "brand_slug": "mcdonalds",
+  "research_confidence": "high",
+  "investigation_summary": "France ~€1.25B tax settlement (2021–2022 press). Luxembourg royalty funnel drew EU scrutiny (no state aid finding but near-zero royalty tax story). Black franchisee steering $1B class (2021). EEOC $1.5M sexual harassment corporate-store settlement (2021). Franchise joint-employer NLRB/DOJ tension. Fight for $15 anchor.",
+  "verdict_tags": ["tax_avoidance", "labor_violations", "wage_theft", "racial_discrimination", "health_concerns", "franchise_exploitation"],
+  "overall_concern_level": "moderate",
+  "primary_sources": [
+    "https://www.reuters.com/business/mcdonalds-france-settle-tax-dispute-2022/",
+    "https://goodjobsfirst.org/violation-tracker",
+    "https://www.eeoc.gov/newsroom/mcdonalds-pay-15-million-resolve-eeoc-sexual-harassment-charges"
+  ],
+  "profile": {
+    "brand": "McDonald's",
+    "parent": "McDonald's Corporation (NYSE: MCD)",
+    "subsidiaries": ["Franchise system", "McDonald's USA"],
+    "tax_summary": "Luxembourg royalty routing reduced European tax on royalties (EU investigation closed without aid finding). Illinois EDGE credits ~$20M for Chicago HQ move. >$233M U.S. subsidies (Good Jobs First tracker).",
+    "tax_flags": ["europe_royalty_hubs", "state_incentives"],
+    "tax_sources": ["https://goodjobsfirst.org/violation-tracker", "https://www.reuters.com/business/mcdonalds-france-settle-tax-dispute-2022/"],
+    "legal_summary": "French tax fraud settlement widely reported ~€1.25B. Franchise wage-theft class settlements; joint-employer doctrine fights. EEOC harassment case. Racial steering litigation with large headline settlement value.",
+    "legal_flags": ["tax_settlement", "franchise_labor", "harassment_settlement"],
+    "legal_sources": ["https://www.reuters.com/business/mcdonalds-france-settle-tax-dispute-2022/", "https://www.eeoc.gov/newsroom/mcdonalds-pay-15-million-resolve-eeoc-sexual-harassment-charges"],
+    "labor_summary": "Fight for $15 icon. SEIU-tracked franchise wage theft settlements ~$5.5M aggregate (2018–2021). Starting pay ~$13–15 — below living wage in major cities. No living-wage certification.",
+    "labor_flags": ["wage_theft_franchisees", "joint_employer_gap"],
+    "labor_sources": ["https://goodjobsfirst.org/violation-tracker"],
+    "environmental_summary": "Beef GHG footprint large; 2030 supply-chain emissions target disputed by NGOs. Plastic Happy Meal toys partially reduced (UK pressure). CDP B.",
+    "environmental_flags": ["beef_carbon"],
+    "environmental_sources": ["https://goodjobsfirst.org/violation-tracker"],
+    "political_summary": "~$2.1M lobbying (2023) — joint-employer, wage law. Industry front-group nutrition politics historically.",
+    "political_sources": ["https://www.reuters.com/business/mcdonalds-france-settle-tax-dispute-2022/"],
+    "product_health": "Ultra-processed menu (NOVA). Sodium and sugar exceed single-meal WHO guidance in combo meals. 2024 Quarter Pounder onion E. coli outbreak (supplier Taylor Farms) — public health trace-back.",
+    "product_health_sources": ["https://www.eeoc.gov/newsroom/mcdonalds-pay-15-million-resolve-eeoc-sexual-harassment-charges"],
+    "executive_summary": "CEO rotation; franchisee relations politically sensitive.",
+    "executive_sources": ["https://www.reuters.com/business/mcdonalds-france-settle-tax-dispute-2022/"],
+    "overall_concern_level": "moderate",
+    "verdict_tags": ["tax_avoidance", "labor_violations", "wage_theft", "racial_discrimination", "health_concerns", "franchise_exploitation"]
+  }
+}
