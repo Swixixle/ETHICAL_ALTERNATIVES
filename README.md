@@ -4,7 +4,7 @@
 
 **Tap anything. Know everything. Find the independent version.**
 
-[Live App](#) · [Investigation Database](#investigation-database) · [Chain Exclusion List](#chain-exclusion-list) · [Add Your Shop](#add-your-shop)
+[Live App](https://ethicalalt-client.onrender.com) · [Investigation Database](#investigation-database) · [Chain Exclusion List](#chain-exclusion-list) · [Add Your Shop](#add-your-shop)
 
 ---
 
@@ -155,6 +155,64 @@ Client (React PWA → React Native + Expo)
 
 ---
 
+## Live App
+
+**[ethicalalt-client.onrender.com](https://ethicalalt-client.onrender.com)**
+
+Tap anything. The full investigation and independent alternatives load in real time.
+
+---
+
+## Deploy Your Own
+
+EthicalAlt deploys to Render in about 30 minutes.
+
+### 1. Fork the repo
+
+Fork `Swixixle/ETHICAL_ALTERNATIVES` on GitHub.
+
+### 2. Create a Render Web Service (server)
+
+- Root Directory: `server`
+- Build Command: `npm install`
+- Start Command: `node index.js`
+- Environment variables:
+
+```env
+ANTHROPIC_API_KEY=        # console.anthropic.com
+DATABASE_URL=             # Render PostgreSQL URL
+CORS_ORIGIN=              # your client URL
+PUBLIC_SITE_URL=          # your client URL
+```
+
+### 3. Create a Render Static Site (client)
+
+- Root Directory: `client`
+- Build Command: `npm install && npm run build`
+- Publish Directory: `dist`
+- Environment variables:
+
+```env
+VITE_API_URL=             # your server URL (no trailing slash)
+```
+
+### 4. Create a Render PostgreSQL database
+
+Copy the Internal Database URL into `DATABASE_URL` on the server service.
+
+### 5. Seed the database
+
+```bash
+DATABASE_URL="your-render-postgres-url" node server/db/import_profiles_v1.mjs
+DATABASE_URL="your-render-postgres-url" node server/db/import_profiles_v2.mjs
+```
+
+### 6. Deploy
+
+Push to main. Render auto-deploys on every push.
+
+---
+
 ## Running Locally
 
 ### Prerequisites
@@ -167,8 +225,8 @@ Client (React PWA → React Native + Expo)
 
 ```bash
 # Clone
-git clone https://github.com/Swixixle/ethicalalt.git
-cd ethicalalt
+git clone https://github.com/Swixixle/ETHICAL_ALTERNATIVES.git
+cd ETHICAL_ALTERNATIVES
 
 # Install dependencies
 npm install
