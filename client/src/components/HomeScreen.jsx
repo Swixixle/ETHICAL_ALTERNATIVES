@@ -146,33 +146,61 @@ const CATEGORIES = [
   { value: 'stay', label: 'Stay' },
 ];
 
-/** Independent lodging discovery links (Airbnb guidance + outdoor / farm stay directories). */
-function StayDiscoveryLinks({ city, state }) {
+/** Below OSM/registry lodging: third-party tools biased toward small hosts. */
+function BookIndependentStayLinks({ city, state }) {
   const place = [city, state].filter(Boolean).join(', ');
-  const q = encodeURIComponent(place || 'United States');
-  const airbnb = `https://www.airbnb.com/s/${q}/homes`;
-  const hipcamp = `https://www.hipcamp.com/en-US/search?q=${encodeURIComponent(place || '')}`;
+  const encPlace = encodeURIComponent(place || '');
+  const airbnb = place
+    ? `https://www.airbnb.com/s/${encodeURIComponent(place)}/homes`
+    : 'https://www.airbnb.com';
+  const vrbo = `https://www.vrbo.com/search?destination=${encPlace || encodeURIComponent('United States')}`;
+  const hipcamp = `https://www.hipcamp.com/en-US/search?q=${encPlace}`;
   const harvestHosts = 'https://www.harvesthosts.com';
-  const glampingHub = `https://glampinghub.com`;
+  const glampingHub = 'https://glampinghub.com';
+  const hostelworld = place
+    ? `https://www.hostelworld.com/hostels?search=${encodeURIComponent(place)}`
+    : 'https://www.hostelworld.com';
 
-  const linkStyle = {
-    display: 'block',
-    fontFamily: "'Space Mono', monospace",
-    fontSize: 11,
-    letterSpacing: 1,
-    textTransform: 'uppercase',
-    color: '#f0a820',
-    marginBottom: 10,
-    textDecoration: 'underline',
-    textUnderlineOffset: 4,
-  };
+  const items = [
+    {
+      href: airbnb,
+      title: 'Airbnb — prefer individual hosts, not property managers',
+      blurb: 'Whole-home and private-room stays; read host profiles and reviews before booking.',
+    },
+    {
+      href: vrbo,
+      title: 'VRBO — vacation rentals',
+      blurb: 'Often entire homes; good for longer trips and multi-room groups.',
+    },
+    {
+      href: hipcamp,
+      title: 'Hipcamp — independent campgrounds and farm stays',
+      blurb: 'Camping and glamping on private land and small campgrounds.',
+    },
+    {
+      href: harvestHosts,
+      title: 'Harvest Hosts — farm, winery, and brewery stays',
+      blurb: 'RV overnight spots at small producers; membership required.',
+    },
+    {
+      href: glampingHub,
+      title: 'Glamping Hub — unique independent stays',
+      blurb: 'Treehouses, yurts, and small-lot eco lodging from individual operators.',
+    },
+    {
+      href: hostelworld,
+      title: 'Hostelworld — independent hostels worldwide',
+      blurb: 'Budget beds; many listings are owner-operated — check recent reviews.',
+    },
+  ];
 
   return (
     <div
       style={{
-        padding: '16px 24px 8px',
-        borderBottom: '1px solid #1e3044',
-        marginBottom: 8,
+        padding: '20px 24px 24px',
+        marginTop: 8,
+        borderTop: '1px solid #283648',
+        background: 'rgba(15,21,32,0.35)',
       }}
     >
       <div
@@ -181,35 +209,76 @@ function StayDiscoveryLinks({ city, state }) {
           fontSize: 11,
           letterSpacing: 2,
           textTransform: 'uppercase',
-          color: '#6a8a9a',
-          marginBottom: 12,
+          color: '#f0a820',
+          marginBottom: 16,
         }}
       >
-        Find a stay · indie-first tools
+        Book independent
       </div>
-      <a href={airbnb} target="_blank" rel="noreferrer" style={linkStyle}>
-        Airbnb — prefer entire homes hosted by individuals, not property managers
-      </a>
-      <a href={hipcamp} target="_blank" rel="noreferrer" style={linkStyle}>
-        Hipcamp — independent campgrounds & land
-      </a>
-      <a href={harvestHosts} target="_blank" rel="noreferrer" style={linkStyle}>
-        Harvest Hosts — farm & winery RV stays (membership)
-      </a>
-      <a href={glampingHub} target="_blank" rel="noreferrer" style={{ ...linkStyle, marginBottom: 0 }}>
-        Glamping Hub — small hosts & unique stays
-      </a>
+      {items.map((item) => (
+        <div key={item.href} style={{ marginBottom: 16 }}>
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              display: 'flex',
+              alignItems: 'baseline',
+              gap: 8,
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 10,
+              letterSpacing: 1,
+              textTransform: 'uppercase',
+              color: '#f0a820',
+              textDecoration: 'none',
+              lineHeight: 1.35,
+            }}
+          >
+            <span aria-hidden="true" style={{ flexShrink: 0 }}>→</span>
+            <span>{item.title}</span>
+          </a>
+          <p
+            style={{
+              fontFamily: "'Crimson Pro', serif",
+              fontSize: 13,
+              color: '#5a6a78',
+              lineHeight: 1.45,
+              margin: '6px 0 0 22px',
+            }}
+          >
+            {item.blurb}
+          </p>
+        </div>
+      ))}
       <p
         style={{
           fontFamily: "'Crimson Pro', serif",
-          fontSize: 14,
+          fontSize: 13,
           color: '#5a6a78',
-          margin: '12px 0 0',
-          lineHeight: 1.5,
+          lineHeight: 1.55,
+          margin: '8px 0 0',
+          paddingTop: 12,
+          borderTop: '1px solid #1e3044',
         }}
       >
-        Pre-filled for {place || 'your area'}. Always read host details — we link tools, not endorsements.
+        On Airbnb and VRBO, choose entire homes hosted by individuals rather than property management
+        companies to keep money with local owners. Links open in a new tab — we do not endorse any
+        listing; always verify hosts and cancellation terms.
       </p>
+      {place ? (
+        <p
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontSize: 9,
+            letterSpacing: 1,
+            color: '#4a5a68',
+            margin: '10px 0 0',
+            textTransform: 'uppercase',
+          }}
+        >
+          Search hints use {place}
+        </p>
+      ) : null}
     </div>
   );
 }
@@ -1258,10 +1327,6 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
       ) : null}
 
       <div style={{ paddingTop: 16, paddingBottom: 100 }}>
-        {phase === 'ready' && (category === 'stay' || travelStayActive) ? (
-          <StayDiscoveryLinks city={location?.city} state={location?.state} />
-        ) : null}
-
         {phase === 'ready' && travelStayActive && category !== 'stay' ? (
           <div
             style={{
@@ -1340,9 +1405,10 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
                   margin: 0,
                 }}
               >
-                No mapped indie stays in radius yet — use the links above.
+                No mapped indie stays in radius yet — try Book independent below.
               </p>
             ) : null}
+            <BookIndependentStayLinks city={location?.city} state={location?.state} />
           </div>
         ) : null}
 
@@ -1481,6 +1547,10 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
               <FeedCard key={`chain-${business.id}`} business={business} chainFootnote />
             ))}
           </div>
+        ) : null}
+
+        {!loadingFeed && phase === 'ready' && category === 'stay' ? (
+          <BookIndependentStayLinks city={location?.city} state={location?.state} />
         ) : null}
       </div>
 
