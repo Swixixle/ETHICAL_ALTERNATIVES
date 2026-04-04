@@ -4,7 +4,7 @@
 
 **Tap anything. Know everything. Find the independent version.**
 
-[Live App](#) · [Constitution](CONSTITUTION.md) · [Investigation Database](#investigation-database) · [Chain Exclusion List](#chain-exclusion-list) · [Add Your Shop](#add-your-shop)
+[Live App](#) · [Investigation Database](#investigation-database) · [Chain Exclusion List](#chain-exclusion-list) · [Add Your Shop](#add-your-shop)
 
 ---
 
@@ -14,9 +14,7 @@
 
 ---
 
-## Constitution
 
-This repository follows **[CONSTITUTION.md](CONSTITUTION.md)** — the Nikodemus Systems governing document for voice, epistemic commitments, and how claim layers relate to verdict layers. Everyone contributing copy, prompts, or investigations should read it. Engineers and contributors should treat its **Governing rules for Cursor and Claude** as the default standard for generated text.
 
 ---
 
@@ -216,7 +214,7 @@ Listing is free during beta.
 [→ Submit your listing](.github/ISSUE_TEMPLATE/seller_listing.md)
 
 We verify every submission. Listing is free. Requirements:
-- Independent — no corporate parent, no private equity
+- Independent — no corporate parent,
 - Makes or sources what you sell
 - Has a way for people to buy from you (Etsy, website, Instagram, farmers market)
 
