@@ -176,6 +176,106 @@ function salvageIdentification(text) {
   };
 }
 
+const SCENE_CONTEXT_PROMPT = `Analyze this scene image. Identify:
+
+1. What type of environment is this? (convenience store, gas station, restaurant,
+   clothing store, home, party, street, etc.)
+
+2. What brands or corporations are most likely present based on:
+   - Store layout and shelving style
+   - Color palette and signage design language
+   - Architectural elements and flooring
+   - Product category mix visible
+   - Any partially visible logos or text
+
+3. For each likely brand: confidence level and reasoning
+
+Return JSON only:
+{
+  "environment_type": string,
+  "likely_brands": [
+    {
+      "brand": string,
+      "confidence": "high" | "medium" | "low",
+      "reasoning": string
+    }
+  ]
+}
+
+Example reasoning: "Red and yellow chevron signage visible, fuel pumps through
+window, fountain drink station layout matches Speedway convenience store design"`;
+
+/** @param {string} text */
+function parseSceneContextJson(text) {
+  const trimmed = text?.trim?.() || '';
+  let slice = trimmed;
+  const fence = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/);
+  if (fence) slice = fence[1].trim();
+  try {
+    const obj = JSON.parse(slice);
+    return {
+      environment_type: typeof obj.environment_type === 'string' ? obj.environment_type : '',
+      likely_brands: Array.isArray(obj.likely_brands) ? obj.likely_brands : [],
+    };
+  } catch {
+    return { environment_type: '', likely_brands: [] };
+  }
+}
+
+/**
+ * Second pass: environment / chain inference from full scene.
+ * @param {string} imageBase64
+ */
+export async function inferSceneContext(imageBase64) {
+  const message = await client.messages.create({
+    model: VISION_MODEL,
+    max_tokens: 1200,
+    messages: [
+      {
+        role: 'user',
+        content: [
+          {
+            type: 'image',
+            source: {
+              type: 'base64',
+              media_type: 'image/jpeg',
+              data: imageBase64,
+            },
+          },
+          { type: 'text', text: SCENE_CONTEXT_PROMPT },
+        ],
+      },
+    ],
+  });
+  const textBlock = message.content.find((b) => b.type === 'text');
+  const text = textBlock?.type === 'text' ? textBlock.text : '';
+  return parseSceneContextJson(text);
+}
+
+/** @param {object} id normalized identification */
+function mergeSceneInference(id, scene) {
+  if (!scene?.likely_brands?.length) return id;
+  const high = scene.likely_brands.find((b) => b.confidence === 'high');
+  if (!high?.brand) return id;
+  const weakBrand = !id.brand || id.identification_method === 'scene_inference';
+  if (!weakBrand) return id;
+  const reason = typeof high.reasoning === 'string' ? high.reasoning : '';
+  const env = scene.environment_type ? String(scene.environment_type) : '';
+  return {
+    ...id,
+    brand: high.brand,
+    corporate_parent: id.corporate_parent || high.brand,
+    object: id.object && id.object !== 'Unknown object' ? id.object : high.brand,
+    identification_method: 'scene_inference',
+    scene_context: id.scene_context || reason || (env ? `Environment: ${env}` : null),
+    confidence: Math.max(id.confidence, 0.55),
+    confidence_notes:
+      id.confidence_notes ||
+      [env && `Environment: ${env}`, reason && `Scene inference: ${reason}`].filter(Boolean).join(' · ') ||
+      'Inferred from scene context.',
+  };
+}
+
 /**
  * @param {string} imageBase64 — raw base64 JPEG (no data URL prefix)
  * @param {number} tapX
@@ -218,6 +318,16 @@ export async function identifyObject(imageBase64, tapX, tapY) {
 
   const textBlock = message.content.find((b) => b.type === 'text');
   const text = textBlock?.type === 'text' ? textBlock.text : '';
-  const parsed = parseIdentificationJson(text);
-  return { ...parsed, crop_base64: cropBase64 };
+  let merged = parseIdentificationJson(text);
+
+  if (merged.identification_method === 'scene_inference' || merged.confidence < 0.6) {
+    try {
+      const scene = await inferSceneContext(imageBase64);
+      merged = mergeSceneInference(merged, scene);
+    } catch (e) {
+      console.warn('inferSceneContext failed', e?.message || e);
+    }
+  }
+
+  return { ...merged, crop_base64: cropBase64 };
 }
