@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import SeverityMeter from './SeverityMeter';
+import Timeline from './Timeline';
 import {
   TaxIcon,
   LegalIcon,
@@ -164,6 +165,8 @@ export default function InvestigationCard({ investigation, identification }) {
                 </div>
               ))}
             </div>
+
+            <Timeline events={investigation.timeline} />
           </div>
 
           <div className="investigation-card__sections">

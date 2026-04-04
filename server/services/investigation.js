@@ -106,10 +106,25 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
     ? parsed.overall_concern_level
     : 'unknown';
 
+  let timeline = Array.isArray(parsed?.timeline)
+    ? parsed.timeline
+        .filter((e) => e && Number.isInteger(e.year))
+        .map((e) => ({
+          year: e.year,
+          month: e.month != null && Number.isInteger(e.month) ? e.month : null,
+          event: typeof e.event === 'string' ? e.event : '',
+          category: typeof e.category === 'string' ? e.category : '',
+          severity: typeof e.severity === 'string' ? e.severity : 'moderate',
+          source_url: typeof e.source_url === 'string' ? e.source_url : '',
+        }))
+        .sort((a, b) => a.year - b.year || (a.month || 0) - (b.month || 0))
+    : [];
+
   const inv = {
     brand,
     parent: parent ?? null,
     subsidiaries: Array.isArray(parsed?.subsidiaries) ? parsed.subsidiaries.map(String) : emptyArr(),
+    timeline,
 
     tax_summary: parsed?.tax_summary ?? null,
     tax_flags: Array.isArray(parsed?.tax_flags) ? parsed.tax_flags.map(String) : emptyArr(),
@@ -234,8 +249,41 @@ Return ONLY valid JSON (no markdown). Shape:
   "executive_summary": string | null,
   "executive_sources": string[],
   "overall_concern_level": "significant" | "moderate" | "minor" | "clean" | "unknown",
-  "verdict_tags": string[]
+  "verdict_tags": string[],
+  "timeline": [
+    {
+      "year": number,
+      "month": number | null,
+      "event": string,
+      "category": "legal" | "labor" | "tax" | "environmental" | "political" | "product" | "executive",
+      "severity": "critical" | "significant" | "moderate" | "minor",
+      "source_url": string
+    }
+  ]
 }
+
+Also return a "timeline" array with all documented events in the corporate
+record listed in chronological order (oldest first).
+
+Each timeline event:
+{
+  "year": number (required — the year the event occurred),
+  "month": number | null (1-12 if known),
+  "event": string (1-2 sentences, specific: include dollar amounts, case names, outcomes),
+  "category": "legal" | "labor" | "tax" | "environmental" | "political" | "product" | "executive",
+  "severity": "critical" | "significant" | "moderate" | "minor",
+  "source_url": string (primary source URL — DOJ, FTC, NLRB, EPA, court, established news)
+}
+
+Timeline rules:
+- Only include documented, sourced events. Never fabricate.
+- Minimum 5 events for well-known companies.
+- Maximum 30 events.
+- Order by year ascending. If only year is known, month may be null.
+- critical = criminal conviction, >$1B settlement, deaths
+- significant = major settlement, regulatory action, documented pattern
+- moderate = minor settlement, citation
+- minor = investigation opened, allegation filed
 
 Rules:
 - Neutral tone. Cite primary sources as URLs in the *_sources arrays.
