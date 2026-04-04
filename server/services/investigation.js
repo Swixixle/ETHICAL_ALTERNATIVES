@@ -715,6 +715,108 @@ async function runInvestigationAnthropicTurn(userPrompt, tools) {
   return { message: lastResponse, citationUrls };
 }
 
+function nonEmptySummaryField(val) {
+  if (val == null) return false;
+  if (typeof val === 'string') return val.trim().length > 0;
+  if (typeof val === 'object' && typeof val.summary === 'string') return val.summary.trim().length > 0;
+  return false;
+}
+
+/** True when tax/legal summaries or overall_concern_level are missing (matches schema legal_summary / tax_summary). */
+function realtimeParsedIsIncomplete(parsed) {
+  if (!parsed || typeof parsed !== 'object') return true;
+  const legal = parsed.legal_summary ?? (parsed.legal && parsed.legal.summary);
+  const tax = parsed.tax_summary ?? (parsed.tax && parsed.tax.summary);
+  const hasLegal = nonEmptySummaryField(legal);
+  const hasTax = nonEmptySummaryField(tax);
+  const concern = parsed.overall_concern_level;
+  const hasConcern = typeof concern === 'string' && concern.trim().length > 0;
+  return !hasLegal || !hasTax || !hasConcern;
+}
+
+function mergeRealtimeParsed(primary, secondary) {
+  if (!primary) return secondary;
+  if (!secondary) return primary;
+  const out = { ...primary, ...secondary };
+  if (!nonEmptySummaryField(primary.tax_summary) && nonEmptySummaryField(secondary.tax_summary)) {
+    out.tax_summary = secondary.tax_summary;
+  }
+  if (!nonEmptySummaryField(primary.legal_summary) && nonEmptySummaryField(secondary.legal_summary)) {
+    out.legal_summary = secondary.legal_summary;
+  }
+  if (
+    !(typeof primary.overall_concern_level === 'string' && primary.overall_concern_level.trim()) &&
+    typeof secondary.overall_concern_level === 'string' &&
+    secondary.overall_concern_level.trim()
+  ) {
+    out.overall_concern_level = secondary.overall_concern_level;
+  }
+  return out;
+}
+
+/** @param {unknown} msg — Anthropic Messages API response message */
+async function extractParsedFromAssistantMessage(msg, brandLabel) {
+  console.log('[investigation] realtime: extracting assistant text for JSON parse');
+  const text = extractText(msg);
+  console.log(
+    `[investigation] realtime: text length=${text?.length ?? 0} preview=${String(text).slice(0, 160).replace(/\s+/g, ' ')}`
+  );
+
+  let parsed = parseInvestigationJson(text);
+  console.log(`[investigation] realtime: parseInvestigationJson ${parsed ? 'success' : 'miss'}`);
+
+  if (!parsed && text?.trim()) {
+    try {
+      console.log('[investigation] realtime: repairInvestigationJson…');
+      parsed = await repairInvestigationJson(brandLabel, text);
+      console.log(`[investigation] realtime: repair ${parsed ? 'success' : 'still null'}`);
+    } catch (e) {
+      console.warn('[investigation] realtime: repair failed:', e?.message || e);
+    }
+  }
+
+  return { text, parsed };
+}
+
+/** Parse-fallback shape when the model returns no JSON — not the same as API-failure emergency profile. */
+function buildUnparseableRealtimeStub(brandName, corporateParent, healthFlag, text) {
+  const label = brandName || corporateParent || 'This entity';
+  const tail = text?.trim()
+    ? `\n\n— Raw assistant output (trimmed):\n${String(text).trim().slice(0, 2800)}`
+    : '';
+  return {
+    brand: brandName || label,
+    parent: corporateParent ?? null,
+    subsidiaries: [],
+    overall_concern_level: 'moderate',
+    verdict_tags: ['sparse_public_record'],
+    executive_summary: `Realtime research finished, but we could not obtain structured JSON for "${label}". Try again or verify primary sources.${tail}`,
+    generated_headline: `${label} — Public Record Scan`,
+    timeline: [],
+    tax_summary:
+      'No structured tax section was captured from the model output in this session — retry for a full tax summary.',
+    tax_flags: [],
+    tax_sources: [],
+    legal_summary:
+      'No structured legal section was captured from the model output in this session — retry for a full legal summary.',
+    legal_flags: [],
+    legal_sources: [],
+    labor_summary: null,
+    labor_flags: [],
+    labor_sources: [],
+    environmental_summary: null,
+    environmental_flags: [],
+    environmental_sources: [],
+    political_summary: null,
+    political_sources: [],
+    executive_sources: [],
+    product_health: healthFlag
+      ? 'No structured product_health in this response — retry or check labeling and local sources.'
+      : null,
+    product_health_sources: [],
+  };
+}
+
 async function realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory) {
   console.log(
     `[investigation] realtimeInvestigation start brand=${brandName || '∅'} parent=${corporateParent || '∅'} category=${productCategory || '∅'}`
@@ -729,6 +831,8 @@ async function realtimeInvestigation(brandName, corporateParent, healthFlag, pro
     const inv = normalizeInvestigation(parsed, brandName, corporateParent, healthFlag);
     return finalizeInvestigation(inv, 'realtime_search');
   };
+
+  const brandLabel = brandName || corporateParent || 'Brand';
 
   let msg;
   let citationUrls = [];
@@ -754,62 +858,39 @@ If web search is unavailable, use only well-established public knowledge. Use ov
     }
   }
 
-  console.log('[investigation] realtime: extracting assistant text for JSON parse');
-  const text = extractText(msg);
-  console.log(
-    `[investigation] realtime: text length=${text?.length ?? 0} preview=${String(text).slice(0, 160).replace(/\s+/g, ' ')}`
-  );
+  let { text, parsed } = await extractParsedFromAssistantMessage(msg, brandLabel);
 
-  let parsed = parseInvestigationJson(text);
-  console.log(`[investigation] realtime: parseInvestigationJson ${parsed ? 'success' : 'miss'}`);
+  if (!parsed || realtimeParsedIsIncomplete(parsed)) {
+    const reason = !parsed ? 'no parseable JSON' : 'incomplete legal/tax/concern fields';
+    console.log(`[investigation] realtime: ${reason} — running one completion turn with full-schema prompt`);
+    const labelForPrompt = brandName || corporateParent || 'this brand';
+    const completionPrompt = `Your previous response was incomplete. Please provide the full investigation JSON for ${labelForPrompt} including all seven sections (tax, legal, labor, environmental, political, product_health, executive) with substantive tax_summary and legal_summary strings, overall_concern_level set, and remaining sections as required by the schema. Return ONLY valid JSON — no markdown fences, no commentary.`;
 
-  if (!parsed && text?.trim()) {
     try {
-      console.log('[investigation] realtime: repairInvestigationJson…');
-      parsed = await repairInvestigationJson(brandName || corporateParent || 'Brand', text);
-      console.log(`[investigation] realtime: repair ${parsed ? 'success' : 'still null'}`);
+      const second = await runInvestigationAnthropicTurn(completionPrompt, tools);
+      citationUrls = [...citationUrls, ...second.citationUrls];
+      const secondExtract = await extractParsedFromAssistantMessage(second.message, brandLabel);
+      if (secondExtract.parsed) {
+        parsed = mergeRealtimeParsed(parsed, secondExtract.parsed);
+      }
+      if (!text && secondExtract.text) text = secondExtract.text;
     } catch (e) {
-      console.warn('[investigation] realtime: repair failed:', e?.message || e);
+      console.error('[investigation] realtime: completion Anthropic turn threw', e);
+      return buildRealtimeEmergencyProfile(
+        brandName,
+        corporateParent,
+        healthFlag,
+        productCategory,
+        e?.message || 'API error on completion turn'
+      );
     }
   }
 
   if (!parsed) {
     console.log(
-      '[investigation] realtime: synthesizing in-band profile from non-JSON output (not treating as API failure)'
+      '[investigation] realtime: still no parseable JSON after completion turn — using thin stub (API did not throw)'
     );
-    const label = brandName || corporateParent || 'This entity';
-    const tail = text?.trim()
-      ? `\n\n— Raw assistant output (trimmed):\n${String(text).trim().slice(0, 2800)}`
-      : '';
-    parsed = {
-      brand: brandName || label,
-      parent: corporateParent ?? null,
-      subsidiaries: [],
-      overall_concern_level: 'moderate',
-      verdict_tags: ['sparse_public_record'],
-      executive_summary: `Realtime web search completed, but the model did not return parseable JSON for "${label}". This is a valid outcome for obscure brands — try again, or treat the raw excerpt below as ad hoc notes. Thin or absent indexed record is not proof of misconduct.${tail}`,
-      generated_headline: `${label} — Public Record Scan`,
-      timeline: [],
-      tax_summary: null,
-      tax_flags: [],
-      tax_sources: [],
-      legal_summary: null,
-      legal_flags: [],
-      legal_sources: [],
-      labor_summary: null,
-      labor_flags: [],
-      labor_sources: [],
-      environmental_summary: null,
-      environmental_flags: [],
-      environmental_sources: [],
-      political_summary: null,
-      political_sources: [],
-      executive_sources: [],
-      product_health: healthFlag
-        ? 'No structured product_health in this response — retry or check labeling and local sources.'
-        : null,
-      product_health_sources: [],
-    };
+    parsed = buildUnparseableRealtimeStub(brandName, corporateParent, healthFlag, text);
   }
 
   console.log('[investigation] realtime: finalize + return');
