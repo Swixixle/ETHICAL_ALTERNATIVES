@@ -87,6 +87,76 @@ function EvidenceBadge({ grade }) {
   );
 }
 
+/** @param {unknown} notable */
+function notableMentionsHasContent(notable) {
+  if (!notable || typeof notable !== 'object') return false;
+  const awards = Array.isArray(notable.awards) ? notable.awards : [];
+  const press = Array.isArray(notable.press) ? notable.press : [];
+  const knownFor = typeof notable.known_for === 'string' ? notable.known_for.trim() : '';
+  return awards.some((a) => String(a).trim()) || press.some((p) => String(p).trim()) || Boolean(knownFor);
+}
+
+/** @param {{ notable: Record<string, unknown> }} props */
+function NotableMentionsCallout({ notable }) {
+  if (!notable || typeof notable !== 'object') return null;
+  const awards = Array.isArray(notable.awards) ? notable.awards.map(String).filter(Boolean) : [];
+  const press = Array.isArray(notable.press) ? notable.press.map(String).filter(Boolean) : [];
+  const knownFor =
+    typeof notable.known_for === 'string' && notable.known_for.trim()
+      ? notable.known_for.trim()
+      : '';
+  if (!awards.length && !press.length && !knownFor) return null;
+
+  const lineStyle = {
+    fontFamily: "'Crimson Pro', serif",
+    fontSize: 14,
+    fontStyle: 'italic',
+    color: '#a8c4d8',
+    lineHeight: 1.55,
+    margin: '0 0 8px',
+  };
+
+  return (
+    <div
+      style={{
+        border: '1px solid rgba(240, 168, 32, 0.65)',
+        borderRadius: 4,
+        padding: '12px 14px 14px',
+        margin: '0 1rem 16px',
+        background: 'rgba(240, 168, 32, 0.05)',
+      }}
+    >
+      <div
+        style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: 10,
+          letterSpacing: 2.5,
+          textTransform: 'uppercase',
+          color: '#f0a820',
+          marginBottom: 10,
+        }}
+      >
+        NOTABLE
+      </div>
+      {knownFor ? <p style={{ ...lineStyle, marginBottom: awards.length || press.length ? 10 : 0 }}>{knownFor}</p> : null}
+      {awards.length ? (
+        <ul style={{ ...lineStyle, margin: '0 0 8px', paddingLeft: 18, listStyle: 'disc' }}>
+          {awards.map((a) => (
+            <li key={a}>{a}</li>
+          ))}
+        </ul>
+      ) : null}
+      {press.length ? (
+        <ul style={{ ...lineStyle, margin: 0, paddingLeft: 18, listStyle: 'disc' }}>
+          {press.map((p) => (
+            <li key={p}>{p}</li>
+          ))}
+        </ul>
+      ) : null}
+    </div>
+  );
+}
+
 const SECTION_ICONS = {
   tax: TaxIcon,
   legal: LegalIcon,
@@ -173,8 +243,13 @@ export default function InvestigationCard({ investigation, onShare }) {
   const uniqueTags = [...new Set([...verdictTags, ...concernFlags])];
   const grouped = groupTags(uniqueTags);
 
+  const notableRaw = investigation.notable_mentions;
+  const showNotable =
+    profileType === 'realtime_search' && notableMentionsHasContent(notableRaw);
+
   return (
     <section className="investigation-card">
+      {showNotable ? <NotableMentionsCallout notable={notableRaw} /> : null}
       {profileType === 'realtime_search' ? (
         <p className="investigation-card__disclaimer">Live research — verify sources</p>
       ) : null}

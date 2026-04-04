@@ -133,6 +133,30 @@ function resolveCategoryHint(productCategory) {
   return CATEGORY_HINTS[hintKey] || CATEGORY_HINTS.default;
 }
 
+/** Vision food / café categories — realtime prompt adds notable_mentions for these only. */
+function shouldIncludeNotableMentions(productCategory) {
+  const k = typeof productCategory === 'string' ? productCategory.toLowerCase().trim() : '';
+  return k === 'food' || k === 'coffee';
+}
+
+/** @param {unknown} raw */
+function normalizeNotableMentions(raw) {
+  if (raw == null) return null;
+  if (typeof raw !== 'object' || Array.isArray(raw)) return null;
+  const awardsList = Array.isArray(raw.awards)
+    ? raw.awards.map(String).filter((s) => s.trim())
+    : [];
+  const pressList = Array.isArray(raw.press)
+    ? raw.press.map(String).filter((s) => s.trim())
+    : [];
+  const known_for =
+    typeof raw.known_for === 'string' && raw.known_for.trim() ? raw.known_for.trim() : null;
+  const awards = awardsList.length ? awardsList : null;
+  const press = pressList.length ? pressList : null;
+  if (!awards && !press && !known_for) return null;
+  return { awards, press, known_for };
+}
+
 function normalizeCommunityImpact(raw) {
   if (!raw || typeof raw !== 'object') return null;
 
@@ -356,6 +380,7 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
     generated_headline: normalizeGeneratedHeadline(parsed?.generated_headline),
     community_impact: normalizeCommunityImpact(parsed?.community_impact),
     cost_absorption: normalizeCostAbsorption(parsed?.cost_absorption),
+    notable_mentions: normalizeNotableMentions(parsed?.notable_mentions),
   };
 
   if (!healthFlag) {
@@ -613,6 +638,19 @@ Rules:
 - verdict_tags: snake_case e.g. tax_avoidance, labor_violations, bribery, clean_record.
 - generated_headline: follow the headline rules above; null only when there is no substantive record to summarize.
 ${healthFlag ? '- product_health must summarize documented health implications for this product category, with sources.' : '- Set product_health and product_health_sources to null and [].'}
+${
+  shouldIncludeNotableMentions(productCategory)
+    ? `
+
+If this is a restaurant, food business, or hospitality venue (or the tapped subject is clearly one), also return:
+"notable_mentions": {
+  "awards": string[] | null,
+  "press": string[] | null,
+  "known_for": string | null
+}
+where awards covers Michelin stars, James Beard nominations, and recognized local awards; press covers notable reviews or press mentions; known_for is one sentence on what the place is known for. Use null for each field when unknown. If the subject is not a restaurant or food venue, set notable_mentions to null.`
+    : ''
+}
 
 Do not include profile_type or last_updated in the JSON.`;
 }
@@ -630,7 +668,7 @@ async function repairInvestigationJson(brandName, contaminated) {
     messages: [
       {
         role: 'user',
-        content: `Extract ONE valid JSON object for a corporate investigation of "${brandName}" from the text below. The JSON must match the investigation schema (brand, parent, subsidiaries, summaries, flags, sources, overall_concern_level, verdict_tags, timeline, community_impact, generated_headline, product_health fields). Output ONLY the JSON — no markdown, no commentary. If a value is missing use null or [].
+        content: `Extract ONE valid JSON object for a corporate investigation of "${brandName}" from the text below. The JSON must match the investigation schema (brand, parent, subsidiaries, summaries, flags, sources, overall_concern_level, verdict_tags, timeline, community_impact, generated_headline, product_health fields, and notable_mentions when present for restaurants). Output ONLY the JSON — no markdown, no commentary. If a value is missing use null or [].
 
 --- begin ---
 ${slice}
@@ -865,7 +903,11 @@ If web search is unavailable, use only well-established public knowledge. Use ov
     const reason = !parsed ? 'no parseable JSON' : 'incomplete legal/tax/concern fields';
     console.log(`[investigation] realtime: ${reason} — running one completion turn with full-schema prompt`);
     const labelForPrompt = brandName || corporateParent || 'this brand';
-    const completionPrompt = `Your previous response was incomplete. Please provide the full investigation JSON for ${labelForPrompt} including all seven sections (tax, legal, labor, environmental, political, product_health, executive) with substantive tax_summary and legal_summary strings, overall_concern_level set, and remaining sections as required by the schema. Return ONLY valid JSON — no markdown fences, no commentary.`;
+    const completionPrompt = `Your previous response was incomplete. Please provide the full investigation JSON for ${labelForPrompt} including all seven sections (tax, legal, labor, environmental, political, product_health, executive) with substantive tax_summary and legal_summary strings, overall_concern_level set, and remaining sections as required by the schema.${
+      shouldIncludeNotableMentions(productCategory)
+        ? ' For a restaurant or food venue, include notable_mentions (awards, press, known_for) when known.'
+        : ''
+    } Return ONLY valid JSON — no markdown fences, no commentary.`;
 
     try {
       const second = await runInvestigationAnthropicTurn(completionPrompt, tools);

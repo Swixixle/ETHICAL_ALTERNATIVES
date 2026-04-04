@@ -1,3 +1,18 @@
+import { getGoogleMapsUrl } from '../utils/localBusinessMaps.js';
+
+const directionsLinkStyle = {
+  fontFamily: "'Space Mono', monospace",
+  fontSize: 9,
+  color: '#f0a820',
+  textDecoration: 'none',
+  background: 'none',
+  border: 'none',
+  cursor: 'pointer',
+  fontWeight: 700,
+  padding: 0,
+  whiteSpace: 'nowrap',
+};
+
 /**
  * @param {{
  *   registryResults?: Array<Record<string, unknown>>;
@@ -7,6 +22,7 @@
 export default function QuickAlternatives({ registryResults, localResults }) {
   const reg = Array.isArray(registryResults) ? registryResults : [];
   const loc = Array.isArray(localResults) ? localResults : [];
+  /** @type {Array<Record<string, unknown>>} */
   const picks = [];
 
   for (const s of reg) {
@@ -21,7 +37,15 @@ export default function QuickAlternatives({ registryResults, localResults }) {
       s.distance_miles != null && Number.isFinite(Number(s.distance_miles))
         ? `${Number(s.distance_miles).toFixed(1)} mi`
         : null;
-    picks.push({ name, href, dist, kind: 'registry' });
+    const addrParts = [s.address, s.city, s.state_province].filter(Boolean).map(String);
+    const mapsPlace = {
+      name,
+      lat: s.lat,
+      lng: s.lng,
+      address: addrParts.length ? addrParts.join(', ') : null,
+      street_address_line: s.street_address_line ? String(s.street_address_line) : null,
+    };
+    picks.push({ name, href, dist, kind: 'registry', mapsPlace });
   }
 
   for (const p of loc) {
@@ -33,7 +57,7 @@ export default function QuickAlternatives({ registryResults, localResults }) {
       p.distance_miles != null && Number.isFinite(Number(p.distance_miles))
         ? `${Number(p.distance_miles).toFixed(1)} mi`
         : null;
-    picks.push({ name, href, dist, kind: 'local' });
+    picks.push({ name, href, dist, kind: 'local', mapsPlace: p });
   }
 
   if (!picks.length) return null;
@@ -60,80 +84,91 @@ export default function QuickAlternatives({ registryResults, localResults }) {
           overflow: 'hidden',
         }}
       >
-        {picks.map((item, idx) => (
-          <div
-            key={`${item.kind}-${idx}-${item.name}`}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: 12,
-              padding: '12px 14px',
-              borderBottom: idx < picks.length - 1 ? '1px solid #283648' : 'none',
-            }}
-          >
-            <div style={{ minWidth: 0, flex: 1 }}>
-              <div
-                style={{
-                  fontFamily: "'Bebas Neue', sans-serif",
-                  fontSize: 17,
-                  letterSpacing: 1,
-                  color: 'var(--color-text, #f0e8d0)',
-                  lineHeight: 1.15,
-                }}
-              >
-                {item.name}
-              </div>
-              {item.dist ? (
+        {picks.map((item, idx) => {
+          const mapsHref = getGoogleMapsUrl(item.mapsPlace);
+          return (
+            <div
+              key={`${item.kind}-${idx}-${item.name}`}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: 12,
+                padding: '12px 14px',
+                borderBottom: idx < picks.length - 1 ? '1px solid #283648' : 'none',
+              }}
+            >
+              <div style={{ minWidth: 0, flex: 1 }}>
                 <div
                   style={{
-                    fontFamily: "'Space Mono', monospace",
-                    fontSize: 11,
-                    color: 'var(--color-accent, #f0a820)',
-                    textTransform: 'uppercase',
+                    fontFamily: "'Bebas Neue', sans-serif",
+                    fontSize: 17,
                     letterSpacing: 1,
-                    marginTop: 4,
+                    color: 'var(--color-text, #f0e8d0)',
+                    lineHeight: 1.15,
                   }}
                 >
-                  {item.dist}
+                  {item.name}
                 </div>
-              ) : null}
+                {item.dist ? (
+                  <div
+                    style={{
+                      fontFamily: "'Space Mono', monospace",
+                      fontSize: 11,
+                      color: 'var(--color-accent, #f0a820)',
+                      textTransform: 'uppercase',
+                      letterSpacing: 1,
+                      marginTop: 4,
+                    }}
+                  >
+                    {item.dist}
+                  </div>
+                ) : null}
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'center', justifyContent: 'flex-end' }}>
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      fontFamily: "'Space Mono', monospace",
+                      fontSize: 11,
+                      letterSpacing: 1,
+                      textTransform: 'uppercase',
+                      color: '#0f1520',
+                      background: '#f0a820',
+                      padding: '8px 14px',
+                      borderRadius: 2,
+                      textDecoration: 'none',
+                      fontWeight: 700,
+                      flexShrink: 0,
+                    }}
+                  >
+                    Visit ↗
+                  </a>
+                ) : null}
+                {mapsHref ? (
+                  <a href={mapsHref} target="_blank" rel="noreferrer" style={directionsLinkStyle}>
+                    GET DIRECTIONS ↗
+                  </a>
+                ) : null}
+                {!item.href && !mapsHref ? (
+                  <span
+                    style={{
+                      fontFamily: "'Space Mono', monospace",
+                      fontSize: 11,
+                      color: 'var(--color-text-muted, #6a8a9a)',
+                      flexShrink: 0,
+                    }}
+                  >
+                    —
+                  </span>
+                ) : null}
+              </div>
             </div>
-            {item.href ? (
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noreferrer"
-                style={{
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 11,
-                  letterSpacing: 1,
-                  textTransform: 'uppercase',
-                  color: '#0f1520',
-                  background: '#f0a820',
-                  padding: '8px 14px',
-                  borderRadius: 2,
-                  textDecoration: 'none',
-                  fontWeight: 700,
-                  flexShrink: 0,
-                }}
-              >
-                Visit ↗
-              </a>
-            ) : (
-              <span
-                style={{
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 11,
-                  color: 'var(--color-text-muted, #6a8a9a)',
-                  flexShrink: 0,
-                }}
-              >
-                Maps
-              </span>
-            )}
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

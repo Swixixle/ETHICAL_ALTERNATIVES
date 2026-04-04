@@ -1,55 +1,41 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import './PhotoCapture.css';
 
 const MAX_DIMENSION = 1200;
 const JPEG_QUALITY = 0.82;
 
-/** @param {HTMLImageElement | HTMLVideoElement} source */
-function drawToJpegBase64(source, maxDim = MAX_DIMENSION, quality = JPEG_QUALITY) {
-  const sw = source.naturalWidth || source.videoWidth;
-  const sh = source.naturalHeight || source.videoHeight;
-  if (!sw || !sh) {
-    throw new Error('Image has no dimensions');
-  }
-  const scale = Math.min(maxDim / sw, maxDim / sh, 1);
-  const w = Math.round(sw * scale);
-  const h = Math.round(sh * scale);
-  const canvas = document.createElement('canvas');
-  canvas.width = w;
-  canvas.height = h;
-  const ctx = canvas.getContext('2d');
-  if (!ctx) throw new Error('Canvas unsupported');
-  ctx.drawImage(source, 0, 0, w, h);
-  const dataUrl = canvas.toDataURL('image/jpeg', quality);
-  const base64 = dataUrl.replace(/^data:image\/jpeg;base64,/, '');
-  return { base64, dataUrl };
-}
-
 /**
- * Resize file uploads before base64 encode — full-res decode is too heavy on mobile.
  * @param {File} file
- * @param {number} [maxDimension]
- * @returns {Promise<string>} JPEG base64 (no data-URL prefix)
+ * @returns {Promise<{ base64: string; dataUrl: string }>}
  */
-function resizeImageForUpload(file, maxDimension = 1200) {
+function fileToResizedJpegBase64(file) {
   return new Promise((resolve, reject) => {
     const img = new Image();
     const url = URL.createObjectURL(file);
     img.onload = () => {
       try {
-        const scale = Math.min(1, maxDimension / Math.max(img.width, img.height));
+        const sw = img.width;
+        const sh = img.height;
+        if (!sw || !sh) {
+          reject(new Error('Invalid image'));
+          return;
+        }
+        const scale = Math.min(1, MAX_DIMENSION / Math.max(sw, sh));
+        const w = Math.round(sw * scale);
+        const h = Math.round(sh * scale);
         const canvas = document.createElement('canvas');
-        canvas.width = Math.round(img.width * scale);
-        canvas.height = Math.round(img.height * scale);
+        canvas.width = w;
+        canvas.height = h;
         const ctx = canvas.getContext('2d');
         if (!ctx) {
           reject(new Error('Canvas unsupported'));
           return;
         }
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        resolve(canvas.toDataURL('image/jpeg', 0.82).split(',')[1]);
-      } catch (err) {
-        reject(err instanceof Error ? err : new Error('Could not process image'));
+        ctx.drawImage(img, 0, 0, w, h);
+        const dataUrl = canvas.toDataURL('image/jpeg', JPEG_QUALITY);
+        const base64 = dataUrl.replace(/^data:image\/jpeg;base64,/, '');
+        resolve({ base64, dataUrl });
+      } catch (e) {
+        reject(e instanceof Error ? e : new Error('Could not process image'));
       } finally {
         URL.revokeObjectURL(url);
       }
@@ -62,131 +48,49 @@ function resizeImageForUpload(file, maxDimension = 1200) {
   });
 }
 
-function isIOS() {
-  if (typeof navigator === 'undefined') return false;
-  return (
-    /iPad|iPhone|iPod/i.test(navigator.userAgent) ||
-    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
-  );
-}
-
-/**
- * iOS sometimes exposes non-zero video dimensions but paints black — sample one frame.
- * @param {HTMLVideoElement} video
- */
-function isVideoFrameLikelyBlack(video) {
-  const w = video.videoWidth;
-  const h = video.videoHeight;
-  if (!w || !h) return true;
-  const sw = Math.min(64, w);
-  const sh = Math.min(64, h);
-  const canvas = document.createElement('canvas');
-  canvas.width = sw;
-  canvas.height = sh;
-  const ctx = canvas.getContext('2d');
-  if (!ctx) return false;
-  try {
-    ctx.drawImage(video, 0, 0, sw, sh);
-    const data = ctx.getImageData(0, 0, sw, sh).data;
-    let sum = 0;
-    for (let i = 0; i < data.length; i += 4) {
-      sum += data[i] + data[i + 1] + data[i + 2];
-    }
-    const denom = (data.length / 4) * 3;
-    const avg = sum / denom;
-    return avg < 10;
-  } catch {
-    return false;
-  }
-}
-
-/** Live stream on iOS sometimes resolves but never paints frames — detect near-zero dimensions. */
-async function waitForVideoFrame(video, maxMs = 2000) {
-  const start = typeof performance !== 'undefined' ? performance.now() : Date.now();
-  while (true) {
-    const elapsed =
-      (typeof performance !== 'undefined' ? performance.now() : Date.now()) - start;
-    if (elapsed > maxMs) {
-      return video.videoWidth > 2 && video.videoHeight > 2;
-    }
-    if (video.videoWidth > 2 && video.videoHeight > 2) {
-      return true;
-    }
-    await new Promise((r) => setTimeout(r, 80));
-  }
-}
-
 /**
  * @param {object} props
  * @param {(base64: string) => void} props.onImageSelected — JPEG base64 only (no data URL prefix)
- * @param {boolean} [props.loading] — parent-driven: analyzing / waiting on API
+ * @param {boolean} [props.loading]
  */
 export default function PhotoCapture({ onImageSelected, loading = false }) {
   const videoRef = useRef(null);
   const streamRef = useRef(null);
 
-  const [mode, setMode] = useState('idle');
   const [previewDataUrl, setPreviewDataUrl] = useState(null);
-  const [preparing, setPreparing] = useState(false);
-  const [dragActive, setDragActive] = useState(false);
-  const [error, setError] = useState(null);
-
-  const canLivePreview =
-    typeof navigator !== 'undefined' && Boolean(navigator.mediaDevices?.getUserMedia);
+  const [busy, setBusy] = useState(false);
+  const [cameraMode, setCameraMode] = useState(false);
+  const [showCameraCta, setShowCameraCta] = useState(
+    () => typeof navigator !== 'undefined' && Boolean(navigator.mediaDevices?.getUserMedia)
+  );
 
   const stopCamera = useCallback(() => {
-    const v = videoRef.current;
-    if (v) {
-      v.srcObject = null;
-    }
+    if (videoRef.current) videoRef.current.srcObject = null;
     streamRef.current?.getTracks().forEach((t) => t.stop());
     streamRef.current = null;
   }, []);
 
+  useEffect(() => () => stopCamera(), [stopCamera]);
+
   useEffect(() => {
-    return () => stopCamera();
-  }, [stopCamera]);
+    if (!cameraMode) return;
+    const video = videoRef.current;
+    const stream = streamRef.current;
+    if (!video || !stream) return;
+    video.srcObject = stream;
+    void video.play().catch(() => {});
+  }, [cameraMode]);
 
-  const finalizeImage = useCallback(
-    async (source) => {
-      setError(null);
-      setPreparing(true);
-      try {
-        const { base64, dataUrl } = drawToJpegBase64(source);
-        setPreviewDataUrl(dataUrl);
-        onImageSelected(base64);
-        setMode('preview');
-      } catch (e) {
-        setError(e instanceof Error ? e.message : 'Could not process image');
-        setMode('idle');
-        setPreviewDataUrl(null);
-      } finally {
-        setPreparing(false);
-      }
-    },
-    [onImageSelected]
-  );
-
-  const processFile = useCallback(
+  const emitFile = useCallback(
     async (file) => {
-      if (!file || !file.type.startsWith('image/')) {
-        setError('Please choose an image file');
-        return;
-      }
-      setError(null);
-      setPreparing(true);
+      if (!file || !file.type.startsWith('image/')) return;
+      setBusy(true);
       try {
-        const base64 = await resizeImageForUpload(file, MAX_DIMENSION);
-        const dataUrl = `data:image/jpeg;base64,${base64}`;
+        const { base64, dataUrl } = await fileToResizedJpegBase64(file);
         setPreviewDataUrl(dataUrl);
         onImageSelected(base64);
-        setMode('preview');
-      } catch (e) {
-        setError(e instanceof Error ? e.message : 'Could not load image');
-        setMode('idle');
-        setPreviewDataUrl(null);
       } finally {
-        setPreparing(false);
+        setBusy(false);
       }
     },
     [onImageSelected]
@@ -195,87 +99,133 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
   const handleFileChange = (e) => {
     const file = e.target.files?.[0];
     e.target.value = '';
-    if (file) void processFile(file);
+    if (file) void emitFile(file);
   };
 
-  const onDrop = (e) => {
-    e.preventDefault();
-    setDragActive(false);
-    const file = e.dataTransfer.files?.[0];
-    if (file) processFile(file);
-  };
+  const finishFromVideo = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const sw = video.videoWidth;
+    const sh = video.videoHeight;
+    if (!sw || !sh) return;
+    const scale = Math.min(1, MAX_DIMENSION / Math.max(sw, sh));
+    const w = Math.round(sw * scale);
+    const h = Math.round(sh * scale);
+    const canvas = document.createElement('canvas');
+    canvas.width = w;
+    canvas.height = h;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    ctx.drawImage(video, 0, 0, w, h);
+    const dataUrl = canvas.toDataURL('image/jpeg', JPEG_QUALITY);
+    const base64 = dataUrl.replace(/^data:image\/jpeg;base64,/, '');
+    setPreviewDataUrl(dataUrl);
+    onImageSelected(base64);
+    stopCamera();
+    setCameraMode(false);
+  }, [onImageSelected, stopCamera]);
 
-  /** Silent fallback to file input on any failure, black stream, or iOS zero-dimension preview. */
-  const startCamera = async () => {
-    if (!canLivePreview) return;
+  const openLiveCamera = async () => {
+    if (!navigator.mediaDevices?.getUserMedia) {
+      setShowCameraCta(false);
+      return;
+    }
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
         video: { facingMode: { ideal: 'environment' } },
         audio: false,
       });
       streamRef.current = stream;
-      const video = videoRef.current;
-      if (!video) {
-        stopCamera();
-        return;
-      }
-      video.srcObject = stream;
-      await video.play().catch(() => {});
-      const ok = await waitForVideoFrame(video, 2000);
-      if (!ok) {
-        stopCamera();
-        setMode('idle');
-        return;
-      }
-      if (isIOS() && isVideoFrameLikelyBlack(video)) {
-        stopCamera();
-        setMode('idle');
-        return;
-      }
-      setMode('camera');
+      setCameraMode(true);
     } catch {
-      stopCamera();
-      setMode('idle');
+      setShowCameraCta(false);
+      streamRef.current?.getTracks().forEach((t) => t.stop());
+      streamRef.current = null;
     }
-  };
-
-  const captureFrame = async () => {
-    const video = videoRef.current;
-    if (!video || video.readyState < 2) return;
-    await finalizeImage(video);
-    stopCamera();
   };
 
   const cancelCamera = () => {
     stopCamera();
-    setMode('idle');
+    setCameraMode(false);
   };
 
-  const changePhoto = () => {
+  const clearPreview = () => {
     setPreviewDataUrl(null);
-    setMode('idle');
-    setError(null);
   };
 
-  const showAnalyzingOverlay = loading && mode === 'preview' && previewDataUrl;
-  const showIdlePreparing = preparing && mode === 'idle';
+  const shellStyle = {
+    background: '#0f1520',
+    color: '#f0e8d0',
+    minHeight: 'min(70vh, 520px)',
+    border: '1px solid #2a3f52',
+    borderRadius: 4,
+    overflow: 'hidden',
+    position: 'relative',
+    boxSizing: 'border-box',
+  };
 
-  if (mode === 'camera') {
+  const btnBase = {
+    fontFamily: "'Space Mono', monospace",
+    fontSize: 11,
+    letterSpacing: 1,
+    textTransform: 'uppercase',
+    padding: '10px 16px',
+    borderRadius: 2,
+    cursor: 'pointer',
+  };
+
+  if (cameraMode) {
     return (
-      <div className="photo-capture">
-        <div className="photo-capture__camera">
-          <div className="photo-capture__status-bar">
-            <p className="photo-capture__hint" style={{ margin: 0, fontSize: '0.72rem' }}>
-              Camera active
-            </p>
-          </div>
-          <video ref={videoRef} className="photo-capture__video" playsInline muted autoPlay />
-          <div className="photo-capture__camera-bar">
-            <button type="button" className="photo-capture__btn" onClick={cancelCamera}>
+      <div style={shellStyle}>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            minHeight: 'min(70vh, 520px)',
+            background: '#000',
+          }}
+        >
+          <video
+            ref={videoRef}
+            playsInline
+            muted
+            autoPlay
+            style={{ flex: 1, width: '100%', objectFit: 'cover', minHeight: 260 }}
+          />
+          <div
+            style={{
+              display: 'flex',
+              gap: 12,
+              justifyContent: 'center',
+              padding: 16,
+              background: '#0f1520',
+              borderTop: '1px solid #2a3f52',
+            }}
+          >
+            <button
+              type="button"
+              onClick={cancelCamera}
+              style={{
+                ...btnBase,
+                border: '1px solid #f0a820',
+                background: 'transparent',
+                color: '#f0e8d0',
+              }}
+            >
               Cancel
             </button>
-            <button type="button" className="photo-capture__btn photo-capture__btn--primary" onClick={captureFrame}>
-              Capture
+            <button
+              type="button"
+              onClick={finishFromVideo}
+              style={{
+                ...btnBase,
+                border: 'none',
+                background: '#f0a820',
+                color: '#0f1520',
+                fontWeight: 700,
+              }}
+            >
+              Use photo
             </button>
           </div>
         </div>
@@ -283,24 +233,61 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
     );
   }
 
-  if (mode === 'preview' && previewDataUrl) {
+  if (previewDataUrl) {
     return (
-      <div className="photo-capture">
-        <div className="photo-capture__stage">
-          <div className="photo-capture__toolbar">
-            <button type="button" className="photo-capture__btn" onClick={changePhoto}>
-              New photo
-            </button>
-          </div>
-          <div className="photo-capture__image-shell">
-            <img className="photo-capture__img" src={previewDataUrl} alt="Selected for analysis" />
-          </div>
-          <p className="photo-capture__instruction">
-            Then use Tap or Circle it on the next screen — point at what you mean
-          </p>
-          {showAnalyzingOverlay ? (
-            <div className="photo-capture__skeleton" aria-busy="true">
-              <span className="photo-capture__skeleton-label">Analyzing</span>
+      <div style={shellStyle}>
+        <div
+          style={{
+            position: 'relative',
+            minHeight: 'min(70vh, 520px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: '#0a0e14',
+          }}
+        >
+          <button
+            type="button"
+            onClick={clearPreview}
+            style={{
+              position: 'absolute',
+              top: 12,
+              right: 12,
+              zIndex: 2,
+              ...btnBase,
+              border: '1px solid #2a3f52',
+              background: 'rgba(15, 21, 32, 0.88)',
+              color: '#f0e8d0',
+            }}
+          >
+            New photo
+          </button>
+          <img
+            src={previewDataUrl}
+            alt="Selected for analysis"
+            style={{
+              maxWidth: '100%',
+              maxHeight: 'min(70vh, 640px)',
+              objectFit: 'contain',
+            }}
+          />
+          {loading ? (
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'rgba(15, 21, 32, 0.72)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 11,
+                letterSpacing: 2,
+                textTransform: 'uppercase',
+                color: '#f0e8d0',
+              }}
+            >
+              Analyzing…
             </div>
           ) : null}
         </div>
@@ -309,81 +296,101 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
   }
 
   return (
-    <div className="photo-capture">
-      <div
-        className={`photo-capture__idle ${dragActive ? 'photo-capture__idle--drag' : ''}`}
-        onDragEnter={(e) => {
-          e.preventDefault();
-          setDragActive(true);
+    <div
+      style={{
+        ...shellStyle,
+        display: 'flex',
+        flexDirection: 'column',
+        padding: '1.25rem',
+        gap: 0,
+      }}
+    >
+      <label
+        htmlFor="ea-photo-file"
+        style={{
+          display: 'flex',
+          width: '100%',
+          flex: 1,
+          minHeight: 200,
+          background: '#162030',
+          border: '2px dashed #344d62',
+          borderRadius: 4,
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: busy ? 'wait' : 'pointer',
+          padding: 32,
+          boxSizing: 'border-box',
         }}
-        onDragLeave={(e) => {
-          if (!e.currentTarget.contains(e.relatedTarget)) setDragActive(false);
-        }}
-        onDragOver={(e) => e.preventDefault()}
-        onDrop={onDrop}
       >
-        <label
-          htmlFor="photo-upload"
+        <span
           style={{
-            display: 'flex',
-            width: '100%',
-            minHeight: 200,
-            background: dragActive ? 'rgba(240, 168, 32, 0.14)' : '#162030',
-            border: dragActive ? '2px dashed #f0a820' : '2px dashed #344d62',
-            borderRadius: 4,
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            padding: 32,
-            boxSizing: 'border-box',
+            fontFamily: "'Space Mono', monospace",
+            fontSize: 11,
+            letterSpacing: 2,
+            textTransform: 'uppercase',
+            color: '#f0a820',
+            textAlign: 'center',
           }}
         >
-          <div
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: 11,
-              letterSpacing: 2,
-              textTransform: 'uppercase',
-              color: '#f0a820',
-              marginTop: 0,
-              textAlign: 'center',
-            }}
-          >
-            Tap to choose a photo
-          </div>
-          <div
-            style={{
-              fontFamily: "'Crimson Pro', serif",
-              fontSize: 14,
-              color: '#6a8a9a',
-              marginTop: 6,
-              textAlign: 'center',
-            }}
-          >
-            Opens camera or photo library
-          </div>
-          <input
-            id="photo-upload"
-            type="file"
-            accept="image/*"
-            style={{ display: 'none' }}
-            aria-label="Choose photo from camera or library"
-            onChange={handleFileChange}
-          />
-        </label>
+          Tap to choose a photo
+        </span>
+        <span
+          style={{
+            fontFamily: "'Crimson Pro', serif",
+            fontSize: 14,
+            color: '#6a8a9a',
+            marginTop: 8,
+            textAlign: 'center',
+          }}
+        >
+          Opens your photo library
+        </span>
+        <input
+          id="ea-photo-file"
+          type="file"
+          accept="image/*"
+          style={{ display: 'none' }}
+          aria-label="Choose a photo"
+          onChange={handleFileChange}
+          disabled={busy}
+        />
+      </label>
 
-        {canLivePreview ? (
-          <div className="photo-capture__live-wrap">
-            <button type="button" className="photo-capture__live-camera" onClick={startCamera}>
-              Use live camera
-            </button>
-          </div>
-        ) : null}
+      {showCameraCta ? (
+        <button
+          type="button"
+          onClick={() => void openLiveCamera()}
+          disabled={busy}
+          style={{
+            marginTop: 14,
+            alignSelf: 'center',
+            background: 'none',
+            border: 'none',
+            color: '#a8c4d8',
+            fontFamily: "'Crimson Pro', serif",
+            fontSize: 15,
+            textDecoration: 'underline',
+            textUnderlineOffset: 3,
+            cursor: busy ? 'default' : 'pointer',
+            padding: 8,
+          }}
+        >
+          Use live camera
+        </button>
+      ) : null}
 
-        {error ? <p className="photo-capture__error">{error}</p> : null}
-        {showIdlePreparing ? <div className="photo-capture__idle-skeleton" aria-busy="true" /> : null}
-      </div>
+      {busy ? (
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'rgba(22, 32, 48, 0.4)',
+            pointerEvents: 'none',
+          }}
+          aria-busy="true"
+        />
+      ) : null}
     </div>
   );
 }
