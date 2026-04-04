@@ -2,6 +2,7 @@ import './env.js';
 import cors from 'cors';
 import express from 'express';
 import tapRouter from './routes/tap.js';
+import sellersRouter from './routes/sellers.js';
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.get('/health', (_req, res) => {
 });
 
 app.use('/api', tapRouter);
+app.use('/api/sellers', sellersRouter);
 
 const PORT = Number(process.env.PORT) || 3001;
 app.listen(PORT, () => {

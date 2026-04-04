@@ -50,3 +50,52 @@ CREATE TABLE IF NOT EXISTS incumbent_profiles (
 
 CREATE INDEX IF NOT EXISTS idx_incumbent_profiles_slug ON incumbent_profiles (brand_slug);
 CREATE INDEX IF NOT EXISTS idx_incumbent_profiles_verdict ON incumbent_profiles USING GIN (verdict_tags);
+
+-- Community-maintained independent seller listings (ethical alternatives).
+CREATE TABLE IF NOT EXISTS seller_registry (
+  id              SERIAL PRIMARY KEY,
+  created_at      TIMESTAMPTZ DEFAULT NOW(),
+  updated_at      TIMESTAMPTZ DEFAULT NOW(),
+
+  seller_name     TEXT NOT NULL,
+  description     TEXT,
+  tagline         TEXT,
+
+  website_url     TEXT,
+  etsy_url        TEXT,
+  instagram_url   TEXT,
+  email           TEXT,
+  other_url       TEXT,
+  other_url_label TEXT,
+
+  city            TEXT,
+  state_province  TEXT,
+  country         TEXT DEFAULT 'US',
+  lat             NUMERIC(9, 6),
+  lng             NUMERIC(9, 6),
+  ships_nationally BOOLEAN DEFAULT false,
+  ships_worldwide  BOOLEAN DEFAULT false,
+  in_person_only   BOOLEAN DEFAULT false,
+
+  categories      TEXT[],
+  keywords        TEXT[],
+  product_description TEXT,
+
+  verified        BOOLEAN DEFAULT false,
+  verification_note TEXT,
+  active          BOOLEAN DEFAULT true,
+
+  submission_method TEXT DEFAULT 'app',
+
+  is_worker_owned BOOLEAN DEFAULT false,
+  is_bcorp        BOOLEAN DEFAULT false,
+  is_fair_trade   BOOLEAN DEFAULT false,
+  certifications  TEXT[]
+);
+
+CREATE INDEX IF NOT EXISTS seller_registry_lat_lng_idx
+  ON seller_registry (lat, lng)
+  WHERE lat IS NOT NULL AND lng IS NOT NULL;
+CREATE INDEX IF NOT EXISTS seller_registry_categories_gin ON seller_registry USING GIN (categories);
+CREATE INDEX IF NOT EXISTS seller_registry_keywords_gin ON seller_registry USING GIN (keywords);
+CREATE INDEX IF NOT EXISTS seller_registry_active ON seller_registry (active) WHERE active = true;

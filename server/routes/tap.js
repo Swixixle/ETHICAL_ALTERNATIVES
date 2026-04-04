@@ -8,6 +8,7 @@ import { getInvestigationProfile } from '../services/investigation.js';
 import { queryLocalBusinesses } from '../services/overpass.js';
 import { CATEGORY_TO_SHOP_TYPES, DEFAULT_SHOP_TYPES } from '../services/categoryShopTypes.js';
 import { validateImagePayload } from '../utils/imageUtils.js';
+import { findLocalSellers } from '../services/sellerRegistry.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -189,10 +190,23 @@ router.post('/tap', async (req, res) => {
       })
     : Promise.resolve([]);
 
+  const registryPromise = findLocalSellers({
+    lat: hasGeo ? lat : null,
+    lng: hasGeo ? lng : null,
+    category: finalIdentification.category,
+    keywords: finalIdentification.search_keywords,
+    radiusMiles: 50,
+  });
+
   let etsyResults = [];
   let localResults = [];
+  let registryResults = [];
   try {
-    [etsyResults, localResults] = await Promise.all([etsyPromise, localPromise]);
+    [etsyResults, localResults, registryResults] = await Promise.all([
+      etsyPromise,
+      localPromise,
+      registryPromise,
+    ]);
   } catch (e) {
     console.error('Parallel search error', e);
   }
@@ -205,23 +219,26 @@ router.post('/tap', async (req, res) => {
       object: finalIdentification.object,
       results_etsy: etsyResults.length,
       results_local: localResults.length,
+      results_registry: registryResults.length,
       has_investigation: Boolean(investigation),
       ms: response_ms,
     })
   );
 
-  const searched_sources = ['etsy'];
+  const searched_sources = ['etsy', 'seller_registry'];
   if (investigation) searched_sources.push('investigation');
   if (hasGeo) searched_sources.push('overpass');
 
   const empty_sources = [];
   if (!etsyResults.length) empty_sources.push('etsy');
+  if (!registryResults.length) empty_sources.push('seller_registry');
   if (hasGeo && !localResults.length) empty_sources.push('overpass');
 
   res.json({
     identification: finalIdentification,
     identification_tier,
     results: etsyResults,
+    registry_results: registryResults,
     local_results: localResults,
     investigation,
     scene_inventory: sceneInventory,
