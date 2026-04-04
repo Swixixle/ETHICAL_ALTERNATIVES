@@ -9,6 +9,7 @@ import shareCardRouter from './routes/shareCard.js';
 import geocodeRouter from './routes/geocode.js';
 import communityBoardRouter from './routes/communityBoard.js';
 import territoryRouter from './routes/territory.js';
+import localEventsRouter from './routes/localEvents.js';
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.use('/api/share-card', shareCardRouter);
 app.use('/api/geocode', geocodeRouter);
 app.use('/api/board', communityBoardRouter);
 app.use('/api/territory', territoryRouter);
+app.use('/api/events', localEventsRouter);
 
 const PORT = Number(process.env.PORT) || 3001;
 app.listen(PORT, () => {

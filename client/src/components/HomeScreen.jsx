@@ -10,6 +10,7 @@ import { dailyChainShuffle, dailyFeedShuffle, utcDateKey } from '../utils/dailyS
 import TrustStrip from './TrustStrip.jsx';
 import ListYourShop from './ListYourShop.jsx';
 import CommunityBoard from './CommunityBoard.jsx';
+import EventsFeed from './EventsFeed.jsx';
 import TerritoryCard from './TerritoryCard.jsx';
 import {
   lookupCurrentTerritory,
@@ -150,6 +151,7 @@ const CATEGORIES = [
   { value: 'clothing', label: 'Clothing' },
   { value: 'repair', label: 'Repair' },
   { value: 'art', label: 'Art' },
+  { value: 'tonight', label: 'Tonight' },
   { value: 'stay', label: 'Stay' },
 ];
 
@@ -875,6 +877,7 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
   const [travelStayActive, setTravelStayActive] = useState(false);
   const [travelStayFeed, setTravelStayFeed] = useState([]);
   const [travelStayChain, setTravelStayChain] = useState([]);
+  const [eventsPayload, setEventsPayload] = useState(null);
   const lastTerritoryCountyRef = useRef(null);
 
   const fetchFeed = useCallback(async (lat, lng, cat, opts = {}) => {
@@ -1002,7 +1005,7 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
 
   useEffect(() => {
     if (!travelStayActive || phase !== 'ready') return;
-    if (category === 'stay') return;
+    if (category === 'stay' || category === 'tonight') return;
     if (!Number.isFinite(location?.lat) || !Number.isFinite(location?.lng)) return;
     let cancelled = false;
     (async () => {
@@ -1093,6 +1096,31 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
   async function handleCategoryChange(cat) {
     setCategory(cat);
     if (!location?.lat || !location?.lng) return;
+    if (cat === 'tonight') {
+      setEventsPayload(null);
+      setLoadingFeed(true);
+      try {
+        const p = new URLSearchParams({
+          lat: String(location.lat),
+          lng: String(location.lng),
+          date: utcDateKey(),
+          city: location.city || '',
+          state: location.state || '',
+        });
+        const res = await fetch(`${apiPrefix()}/api/events?${p}`);
+        setEventsPayload(await res.json());
+      } catch {
+        setEventsPayload({
+          mode: 'links',
+          curated_links: [],
+          fetch_error: true,
+        });
+      } finally {
+        setLoadingFeed(false);
+      }
+      return;
+    }
+    setEventsPayload(null);
     const pack = await fetchFeed(location.lat, location.lng, cat);
     const dateKey = utcDateKey();
     const shuffleOpts = { dateKey, city: location.city, state: location.state };
@@ -1331,7 +1359,10 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
       ) : null}
 
       <div style={{ paddingTop: 16, paddingBottom: 32 }}>
-        {phase === 'ready' && travelStayActive && category !== 'stay' ? (
+        {phase === 'ready' &&
+        travelStayActive &&
+        category !== 'stay' &&
+        category !== 'tonight' ? (
           <div
             style={{
               marginBottom: 8,
@@ -1394,104 +1425,127 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
           </div>
         ) : null}
 
-        {loadingFeed ? (
-          <div
-            style={{
-              textAlign: 'center',
-              padding: '40px 24px',
-              fontFamily: "'Space Mono', monospace",
-              fontSize: 11,
-              letterSpacing: 2,
-              color: '#6a8a9a',
-              textTransform: 'uppercase',
-            }}
-          >
-            Loading local independents...
-          </div>
-        ) : null}
-
-        {!loadingFeed && feed.length === 0 && chainResults.length === 0 ? (
-
-          <div
-            style={{
-              padding: '32px 24px',
-              fontFamily: "'Crimson Pro', serif",
-              fontSize: 20,
-              color: '#6a8a9a',
-              lineHeight: 1.7,
-              textAlign: 'center',
-            }}
-          >
-            No independent businesses found in this category near you yet.
-            <br />
-            <br />
-            Know one that should be here?
-            <div style={{ marginTop: 20, display: 'flex', justifyContent: 'center' }}>
-              <ListYourShop />
-            </div>
-          </div>
-        ) : null}
-
-        {!loadingFeed && feed.length > 0 ? (
+        {category === 'tonight' ? (
           <>
-            <div
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 11,
-                letterSpacing: 2,
-                textTransform: 'uppercase',
-                color: '#6a8a9a',
-                padding: '0 24px 12px',
-              }}
-            >
-              {feed.length} near you
-            </div>
-            {feed.map((business) => (
-              <FeedCard key={business.id} business={business} />
-            ))}
+            {loadingFeed ? (
+              <div
+                style={{
+                  textAlign: 'center',
+                  padding: '40px 24px',
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 11,
+                  letterSpacing: 2,
+                  color: '#6a8a9a',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Loading what&apos;s on…
+              </div>
+            ) : (
+              <EventsFeed payload={eventsPayload} location={location} />
+            )}
           </>
-        ) : null}
+        ) : (
+          <>
+            {loadingFeed ? (
+              <div
+                style={{
+                  textAlign: 'center',
+                  padding: '40px 24px',
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 11,
+                  letterSpacing: 2,
+                  color: '#6a8a9a',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Loading local independents...
+              </div>
+            ) : null}
 
-        {!loadingFeed && feed.length === 0 && chainResults.length > 0 ? (
-          <p
-            style={{
-              fontFamily: "'Crimson Pro', serif",
-              fontSize: 18,
-              color: '#6a8a9a',
-              lineHeight: 1.65,
-              textAlign: 'center',
-              padding: '8px 24px 20px',
-              margin: 0,
-            }}
-          >
-            No independent listings in this filter. Below are nearby chain locations for reference
-            only — not recommendations.
-          </p>
-        ) : null}
+            {!loadingFeed && feed.length === 0 && chainResults.length === 0 ? (
+              <div
+                style={{
+                  padding: '32px 24px',
+                  fontFamily: "'Crimson Pro', serif",
+                  fontSize: 20,
+                  color: '#6a8a9a',
+                  lineHeight: 1.7,
+                  textAlign: 'center',
+                }}
+              >
+                No independent businesses found in this category near you yet.
+                <br />
+                <br />
+                Know one that should be here?
+                <div style={{ marginTop: 20, display: 'flex', justifyContent: 'center' }}>
+                  <ListYourShop />
+                </div>
+              </div>
+            ) : null}
 
-        {!loadingFeed && chainResults.length > 0 ? (
-          <div style={{ marginTop: 28, paddingTop: 20, borderTop: '1px solid #1e3044' }}>
-            <div
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 11,
-                letterSpacing: 2,
-                textTransform: 'uppercase',
-                color: '#6a8a9a',
-                padding: '0 24px 12px',
-              }}
-            >
-              Chain locations (reference only)
-            </div>
-            {chainResults.map((business) => (
-              <FeedCard key={`chain-${business.id}`} business={business} chainFootnote />
-            ))}
-          </div>
-        ) : null}
+            {!loadingFeed && feed.length > 0 ? (
+              <>
+                <div
+                  style={{
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: 11,
+                    letterSpacing: 2,
+                    textTransform: 'uppercase',
+                    color: '#6a8a9a',
+                    padding: '0 24px 12px',
+                  }}
+                >
+                  {feed.length} near you
+                </div>
+                {feed.map((business) => (
+                  <FeedCard key={business.id} business={business} />
+                ))}
+              </>
+            ) : null}
 
-        {!loadingFeed && phase === 'ready' && category === 'stay' ? (
-          <BookIndependentStayLinks city={location?.city} state={location?.state} />
-        ) : null}
+            {!loadingFeed && feed.length === 0 && chainResults.length > 0 ? (
+              <p
+                style={{
+                  fontFamily: "'Crimson Pro', serif",
+                  fontSize: 18,
+                  color: '#6a8a9a',
+                  lineHeight: 1.65,
+                  textAlign: 'center',
+                  padding: '8px 24px 20px',
+                  margin: 0,
+                }}
+              >
+                No independent listings in this filter. Below are nearby chain locations for
+                reference only — not recommendations.
+              </p>
+            ) : null}
+
+            {!loadingFeed && chainResults.length > 0 ? (
+              <div style={{ marginTop: 28, paddingTop: 20, borderTop: '1px solid #1e3044' }}>
+                <div
+                  style={{
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: 11,
+                    letterSpacing: 2,
+                    textTransform: 'uppercase',
+                    color: '#6a8a9a',
+                    padding: '0 24px 12px',
+                  }}
+                >
+                  Chain locations (reference only)
+                </div>
+                {chainResults.map((business) => (
+                  <FeedCard key={`chain-${business.id}`} business={business} chainFootnote />
+                ))}
+              </div>
+            ) : null}
+
+            {!loadingFeed && phase === 'ready' && category === 'stay' ? (
+              <BookIndependentStayLinks city={location?.city} state={location?.state} />
+            ) : null}
+          </>
+        )}
 
         {phase === 'ready' ? (
           <>
