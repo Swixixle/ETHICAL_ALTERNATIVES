@@ -396,20 +396,26 @@ export function buildLimited(brandName, corporateParent, healthFlag) {
 }
 
 function buildResearchPrompt(brandName, corporateParent, healthFlag, productCategory) {
-  const query = `${brandName || ''} ${corporateParent || ''} legal violations lawsuit settlement tax OSHA EPA lobbying political donations`
+  const primary = [brandName, corporateParent].filter(Boolean).join(' / ') || 'unknown entity';
+  const query = `${brandName || ''} ${corporateParent || ''} news reviews complaints lawsuit registration owner BBB OSHA EPA`
     .trim()
     .replace(/\s+/g, ' ');
 
   const categoryHint = resolveCategoryHint(productCategory);
 
-  return `You are a neutral research assistant. Use web search when available to verify the public record.
+  return `You are a neutral research assistant. Use web search aggressively for every request.
 
-Company / brand: ${brandName || 'unknown'}
-Corporate parent: ${corporateParent || 'unknown'}
+Research the public record for ${primary}. This could be a large corporation, a small local business, an independent brand, or anything in between — anywhere in the world. Search for whatever exists: business registration, news coverage, reviews, complaints, legal records, labor practices, environmental mentions, ownership structure, trademarks, and social/local press.
 
-Prioritize queries like: ${query}
+If very little exists, say so honestly in the summaries and return what you found. If nothing substantive exists at all, return a profile that treats the absence of indexed public record as a finding in itself (moderate concern level, clear language, empty or minimal timeline — do not invent events).
 
-This is a ${categoryHint}. Tailor the community_impact section specifically to the documented patterns for this type of business.
+Distinct entity hints from the tap:
+- Brand / label: ${brandName || 'unknown'}
+- Corporate parent (if any): ${corporateParent || 'unknown'}
+
+Example search directions (adapt liberally): ${query}
+
+This is broadly a ${categoryHint}. Tailor the community_impact section to the documented patterns for this type of business at scale (category language only there — never name this specific brand inside community_impact).
 
 Return ONLY valid JSON (no markdown). Shape:
 {
@@ -484,7 +490,8 @@ Each timeline event:
 
 Timeline rules:
 - Only include documented, sourced events. Never fabricate.
-- Minimum 5 events for well-known companies.
+- For obscure or hyper-local brands, an empty timeline [] is acceptable.
+- For well-known companies with dense records, prefer at least 3–5 sourced events when they exist.
 - Maximum 30 events.
 - Order by year ascending. If only year is known, month may be null.
 - critical = criminal conviction, >$1B settlement, deaths
@@ -556,7 +563,8 @@ ${slice}
 }
 
 /**
- * Run Claude with optional web search; resumes pause_turn until the model finishes (server-side tool loop).
+ * Multi-turn Claude call: web search often yields `pause_turn`; client `tool_use` needs tool_result replies.
+ * Loops until `end_turn` (or `max_tokens`), logging each step for Render.
  * @param {string} userPrompt
  * @param {object[] | null} tools
  */
@@ -564,10 +572,14 @@ async function runInvestigationAnthropicTurn(userPrompt, tools) {
   const userMessage = { role: 'user', content: userPrompt };
   let messages = [userMessage];
   let citationUrls = [];
-  const maxPasses = 12;
+  const maxSteps = 24;
   let lastResponse = null;
 
-  for (let pass = 0; pass < maxPasses; pass++) {
+  for (let step = 0; step < maxSteps; step++) {
+    console.log(
+      `[investigation] realtime: anthropic step ${step + 1}/${maxSteps} (messages=${messages.length})`
+    );
+
     const params = {
       model: MODEL,
       max_tokens: 6000,
@@ -578,26 +590,61 @@ async function runInvestigationAnthropicTurn(userPrompt, tools) {
     lastResponse = await client.messages.create(params);
     citationUrls = [...citationUrls, ...collectCitationUrls(lastResponse)];
 
-    if (lastResponse.stop_reason !== 'pause_turn') {
+    const blockTypes = (lastResponse.content || []).map((b) => b.type).join(', ');
+    console.log(
+      `[investigation] realtime: step ${step + 1} done stop_reason=${lastResponse.stop_reason} blocks=[${blockTypes}]`
+    );
+
+    const sr = lastResponse.stop_reason;
+    if (sr === 'end_turn' || sr === 'max_tokens') {
+      console.log(`[investigation] realtime: conversation end (${sr})`);
       break;
     }
 
-    messages = [userMessage, { role: 'assistant', content: lastResponse.content }];
+    if (sr === 'pause_turn') {
+      messages.push({ role: 'assistant', content: lastResponse.content });
+      continue;
+    }
+
+    if (sr === 'tool_use') {
+      messages.push({ role: 'assistant', content: lastResponse.content });
+      const toolResults = [];
+      for (const block of lastResponse.content || []) {
+        if (block.type === 'tool_use') {
+          toolResults.push({
+            type: 'tool_result',
+            tool_use_id: block.id,
+            content:
+              'No local execution — rely on web search and prior context. Produce the final investigation JSON in one object.',
+          });
+        }
+      }
+      if (toolResults.length) {
+        messages.push({ role: 'user', content: toolResults });
+      } else {
+        messages.push({
+          role: 'user',
+          content: 'Continue and return the investigation as a single JSON object per the schema.',
+        });
+      }
+      continue;
+    }
+
+    console.warn(`[investigation] realtime: unhandled stop_reason=${sr} — exiting loop`);
+    break;
   }
 
   return { message: lastResponse, citationUrls };
 }
 
 async function realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory) {
+  console.log(
+    `[investigation] realtimeInvestigation start brand=${brandName || '∅'} parent=${corporateParent || '∅'} category=${productCategory || '∅'}`
+  );
+
   const userPrompt = buildResearchPrompt(brandName, corporateParent, healthFlag, productCategory);
 
-  const tools = [
-    {
-      type: 'web_search_20250305',
-      name: 'web_search',
-      max_uses: 8,
-    },
-  ];
+  const tools = [{ type: 'web_search_20250305', name: 'web_search', max_uses: 10 }];
 
   const finalizeFromParsed = (parsed, citationUrls) => {
     mergeSourcesWithCitations(parsed, citationUrls);
@@ -611,14 +658,14 @@ async function realtimeInvestigation(brandName, corporateParent, healthFlag, pro
   try {
     ({ message: msg, citationUrls } = await runInvestigationAnthropicTurn(userPrompt, tools));
   } catch (e) {
-    console.warn('Investigation web search path failed, retrying without tools:', e?.message || e);
+    console.warn('[investigation] realtime: web search path threw, retrying without tools:', e?.message || e);
     try {
       const fallbackPrompt = `${userPrompt}
 
-If web search is unavailable, use only well-established public knowledge. Use overall_concern_level "moderate" when evidence is thin; explain gaps in executive_summary — never use "unknown" as the concern level.`;
+If web search is unavailable, use only well-established public knowledge. Use overall_concern_level "moderate" when evidence is thin; explain gaps in executive_summary. Still output valid JSON.`;
       ({ message: msg, citationUrls } = await runInvestigationAnthropicTurn(fallbackPrompt, null));
     } catch (e2) {
-      console.error('Investigation request failed', e2);
+      console.error('[investigation] realtime: investigation request failed after retry', e2);
       return buildRealtimeEmergencyProfile(
         brandName,
         corporateParent,
@@ -629,27 +676,65 @@ If web search is unavailable, use only well-established public knowledge. Use ov
     }
   }
 
+  console.log('[investigation] realtime: extracting assistant text for JSON parse');
   const text = extractText(msg);
+  console.log(
+    `[investigation] realtime: text length=${text?.length ?? 0} preview=${String(text).slice(0, 160).replace(/\s+/g, ' ')}`
+  );
+
   let parsed = parseInvestigationJson(text);
+  console.log(`[investigation] realtime: parseInvestigationJson ${parsed ? 'success' : 'miss'}`);
 
   if (!parsed && text?.trim()) {
     try {
+      console.log('[investigation] realtime: repairInvestigationJson…');
       parsed = await repairInvestigationJson(brandName || corporateParent || 'Brand', text);
+      console.log(`[investigation] realtime: repair ${parsed ? 'success' : 'still null'}`);
     } catch (e) {
-      console.warn('JSON repair pass failed:', e?.message || e);
+      console.warn('[investigation] realtime: repair failed:', e?.message || e);
     }
   }
 
   if (!parsed) {
-    return buildRealtimeEmergencyProfile(
-      brandName,
-      corporateParent,
-      healthFlag,
-      productCategory,
-      'non-JSON model response'
+    console.log(
+      '[investigation] realtime: synthesizing in-band profile from non-JSON output (not treating as API failure)'
     );
+    const label = brandName || corporateParent || 'This entity';
+    const tail = text?.trim()
+      ? `\n\n— Raw assistant output (trimmed):\n${String(text).trim().slice(0, 2800)}`
+      : '';
+    parsed = {
+      brand: brandName || label,
+      parent: corporateParent ?? null,
+      subsidiaries: [],
+      overall_concern_level: 'moderate',
+      verdict_tags: ['sparse_public_record'],
+      executive_summary: `Realtime web search completed, but the model did not return parseable JSON for "${label}". This is a valid outcome for obscure brands — try again, or treat the raw excerpt below as ad hoc notes. Thin or absent indexed record is not proof of misconduct.${tail}`,
+      generated_headline: `${label} — Public Record Scan`,
+      timeline: [],
+      tax_summary: null,
+      tax_flags: [],
+      tax_sources: [],
+      legal_summary: null,
+      legal_flags: [],
+      legal_sources: [],
+      labor_summary: null,
+      labor_flags: [],
+      labor_sources: [],
+      environmental_summary: null,
+      environmental_flags: [],
+      environmental_sources: [],
+      political_summary: null,
+      political_sources: [],
+      executive_sources: [],
+      product_health: healthFlag
+        ? 'No structured product_health in this response — retry or check labeling and local sources.'
+        : null,
+      product_health_sources: [],
+    };
   }
 
+  console.log('[investigation] realtime: finalize + return');
   return finalizeFromParsed(parsed, citationUrls);
 }
 
