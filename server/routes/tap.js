@@ -60,9 +60,13 @@ router.post('/tap', async (req, res) => {
 
   if (req.body?.preview_only === true) {
     const response_ms = Date.now() - t0;
+    const crop_base64 =
+      typeof identification?.crop_base64 === 'string' ? identification.crop_base64 : null;
     return res.json({
       identification,
       identification_tier,
+      /** Redundant copy: some clients lose nested base64 on identification; use for ConfirmTap. */
+      crop_base64,
       preview_only: true,
       version: 'v1',
       response_ms,

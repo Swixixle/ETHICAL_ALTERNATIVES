@@ -136,11 +136,6 @@ export default function App() {
         {image && pendingConfirmation && !result ? (
           <div className="app__panel">
             <ConfirmTap
-              cropDataUrl={
-                pendingConfirmation.identification?.crop_base64
-                  ? `data:image/jpeg;base64,${pendingConfirmation.identification.crop_base64}`
-                  : null
-              }
               identification={pendingConfirmation.identification}
               identificationTier={pendingConfirmation.identification_tier}
               loading={loading}

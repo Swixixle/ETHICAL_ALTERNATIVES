@@ -96,16 +96,20 @@ export function useTapAnalysis() {
           return;
         }
 
-        const id = preview.data.identification;
-        const conf = typeof id?.confidence === 'number' ? id.confidence : 0;
+        const idRaw = preview.data.identification || {};
+        const conf = typeof idRaw?.confidence === 'number' ? idRaw.confidence : 0;
 
         if (conf >= CONFIRM_THRESHOLD) {
           await runFullPipeline(tapX, tapY);
           return;
         }
 
+        const crop =
+          (typeof idRaw.crop_base64 === 'string' && idRaw.crop_base64) ||
+          (typeof preview.data.crop_base64 === 'string' && preview.data.crop_base64) ||
+          null;
         setPendingConfirmation({
-          identification: preview.data.identification,
+          identification: crop ? { ...idRaw, crop_base64: crop } : { ...idRaw },
           identification_tier: preview.data.identification_tier,
           response_ms: preview.data.response_ms,
         });
