@@ -1,4 +1,5 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { haptic } from '../utils/haptics.js';
 
 const apiBase = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
 
@@ -57,6 +58,18 @@ export function useTapAnalysis() {
   /** @type {React.MutableRefObject<{ x: number; y: number; width: number; height: number } | null>} */
   const selectionBoxRef = useRef(null);
   const [activeSelectionBox, setActiveSelectionBox] = useState(null);
+  const errorHapticFired = useRef(false);
+
+  useEffect(() => {
+    if (error) {
+      if (!errorHapticFired.current) {
+        haptic('error');
+        errorHapticFired.current = true;
+      }
+    } else {
+      errorHapticFired.current = false;
+    }
+  }, [error]);
 
   const captureGeoOnce = useCallback(() => {
     if (geo !== null || typeof navigator === 'undefined' || !navigator.geolocation) return;
@@ -220,6 +233,7 @@ export function useTapAnalysis() {
       setTapPosition({ x: tapX, y: tapY });
       setActiveSelectionBox(selBox);
       setLoading(true);
+      haptic('scan');
       setError(null);
       setResult(null);
       setPendingConfirmation(null);
@@ -349,6 +363,7 @@ export function useTapAnalysis() {
       return;
     }
     setLoading(true);
+    haptic('scan');
     setError(null);
     setResult(null);
     setImage(null);

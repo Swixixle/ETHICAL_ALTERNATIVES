@@ -1,4 +1,6 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { haptic } from '../utils/haptics.js';
+import { playTap } from '../utils/sounds.js';
 
 /**
  * @param {{
@@ -17,6 +19,7 @@ export default function TapOverlay({
   const ref = useRef(null);
   /** Skip synthetic click right after touchstart (mobile double invoke). */
   const suppressClickUntil = useRef(0);
+  const [ripple, setRipple] = useState(null);
 
   function coordsFromEvent(e) {
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
@@ -35,6 +38,11 @@ export default function TapOverlay({
     if (w <= 0 || h <= 0) return;
     const x = (clientX - rect.left) / w;
     const y = (clientY - rect.top) / h;
+
+    setRipple({ x, y, id: Date.now() });
+    window.setTimeout(() => setRipple(null), 500);
+    playTap();
+    haptic('tap');
     onTap(x, y);
   }
 
@@ -60,11 +68,29 @@ export default function TapOverlay({
         display: 'inline-block',
         width: '100%',
         touchAction: 'none',
+        overflow: 'hidden',
       }}
       onClick={interactionDisabled ? undefined : onClick}
       onTouchStart={interactionDisabled ? undefined : onTouchStart}
     >
       <img className="app__photo" src={imageUrl} style={{ width: '100%', display: 'block' }} alt="" />
+      {ripple ? (
+        <div
+          key={ripple.id}
+          style={{
+            position: 'absolute',
+            left: `${ripple.x * 100}%`,
+            top: `${ripple.y * 100}%`,
+            transform: 'translate(-50%, -50%)',
+            width: 80,
+            height: 80,
+            borderRadius: '50%',
+            border: '2px solid #f0a820',
+            animation: 'tapRipple 0.4s ease-out forwards',
+            pointerEvents: 'none',
+          }}
+        />
+      ) : null}
       {marker &&
       typeof marker.x === 'number' &&
       typeof marker.y === 'number' &&

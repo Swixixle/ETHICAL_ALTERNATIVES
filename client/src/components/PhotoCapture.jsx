@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { playShutter } from '../utils/sounds.js';
 
 const MAX_DIMENSION = 1200;
 const JPEG_QUALITY = 0.82;
@@ -88,6 +89,7 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
       try {
         const { base64, dataUrl } = await fileToResizedJpegBase64(file);
         setPreviewDataUrl(dataUrl);
+        playShutter();
         onImageSelected(base64);
       } finally {
         setBusy(false);
@@ -120,6 +122,7 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
     const dataUrl = canvas.toDataURL('image/jpeg', JPEG_QUALITY);
     const base64 = dataUrl.replace(/^data:image\/jpeg;base64,/, '');
     setPreviewDataUrl(dataUrl);
+    playShutter();
     onImageSelected(base64);
     stopCamera();
     setCameraMode(false);

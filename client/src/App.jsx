@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import PhotoCapture from './components/PhotoCapture.jsx';
 import TapOverlay from './components/TapOverlay.jsx';
 import ConfirmTap from './components/ConfirmTap.jsx';
@@ -14,6 +14,8 @@ import HistoryScreen from './components/HistoryScreen.jsx';
 import ShareCard from './components/ShareCard.jsx';
 import CommunityImpact from './components/CommunityImpact.jsx';
 import { useTapAnalysis } from './hooks/useTapAnalysis.js';
+import { haptic } from './utils/haptics.js';
+import { playReveal } from './utils/sounds.js';
 import './App.css';
 
 function investigationHeadline(identification, investigation) {
@@ -78,6 +80,19 @@ export default function App() {
   useEffect(() => {
     if (!result) setShowShare(false);
   }, [result]);
+
+  const investigationShownRef = useRef(false);
+  useEffect(() => {
+    if (result?.investigation) {
+      if (!investigationShownRef.current) {
+        playReveal();
+        haptic('success');
+        investigationShownRef.current = true;
+      }
+    } else {
+      investigationShownRef.current = false;
+    }
+  }, [result?.investigation]);
 
   const dataUrl = image ? `data:image/jpeg;base64,${image}` : null;
 
@@ -268,16 +283,26 @@ export default function App() {
           <button
             type="button"
             className="app__btn app__btn--share"
-            onClick={() => setShowShare(true)}
+            onClick={() => {
+              haptic('confirm');
+              setShowShare(true);
+            }}
           >
             Share This Record
           </button>
         ) : null}
         <HealthCallout investigation={result.investigation} />
-        <InvestigationCard
-          investigation={result.investigation}
-          onShare={result.investigation ? () => setShowShare(true) : undefined}
-        />
+        {result.investigation ? (
+          <div key={`investigation-${tapSession}`} className="investigation-card-enter">
+            <InvestigationCard
+              investigation={result.investigation}
+              onShare={() => {
+                haptic('confirm');
+                setShowShare(true);
+              }}
+            />
+          </div>
+        ) : null}
       </div>
     ) : null;
 
