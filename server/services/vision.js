@@ -83,6 +83,9 @@ Identify at maximum specificity:
 - Product line if visible (Doritos Cool Ranch, Adidas Trefoil, etc.)
 - If a logo is partially visible, reason about brand from visible elements:
   colors, shapes, typography, partial text
+- Read any TEXT printed on packaging in the crop (spellings, slogans, flavor names).
+  Use readable package text to identify the product BEFORE relying on logo shape alone.
+  Prioritize text-based identification when words clearly name a brand or product (e.g. GOLDFISH, OREO).
 - If no clear product/brand is in the crop, infer from SCENE CONTEXT:
   store layout, shelving, signage style, color palette, architectural elements
 
@@ -99,7 +102,9 @@ Return JSON only (no markdown, no prose):
   "confidence_notes": string,
   "health_flag": boolean,
   "identification_method": "direct_logo" | "partial_logo" | "product_recognition" | "scene_inference",
-  "scene_context": string | null
+  "scene_context": string | null,
+  "visible_text": string | null,
+  "text_based_identification": boolean
 }
 
 identification_method values:
@@ -136,6 +141,10 @@ function normalizeIdentification(obj) {
   const scene_context =
     obj.scene_context == null || obj.scene_context === '' ? null : String(obj.scene_context);
 
+  const visible_text =
+    obj.visible_text == null || obj.visible_text === '' ? null : String(obj.visible_text);
+  const text_based_identification = Boolean(obj.text_based_identification);
+
   return {
     object: typeof obj.object === 'string' ? obj.object : 'Unknown object',
     brand: obj.brand == null || obj.brand === '' ? null : String(obj.brand),
@@ -153,6 +162,8 @@ function normalizeIdentification(obj) {
     health_flag: Boolean(obj.health_flag),
     identification_method,
     scene_context,
+    visible_text,
+    text_based_identification,
   };
 }
 
@@ -173,6 +184,8 @@ function salvageIdentification(text) {
     health_flag: cat === 'tobacco',
     identification_method: 'partial_logo',
     scene_context: null,
+    visible_text: null,
+    text_based_identification: false,
   };
 }
 
