@@ -162,11 +162,15 @@ export default function App() {
             className="app__btn app__btn--share"
             onClick={() => setShowShare(true)}
           >
-            Share this record
+            Share This Record
           </button>
         ) : null}
         <HealthCallout investigation={result.investigation} />
-        <InvestigationCard investigation={result.investigation} identification={id} />
+        <InvestigationCard
+          investigation={result.investigation}
+          identification={id}
+          onShare={result.investigation ? () => setShowShare(true) : undefined}
+        />
       </div>
     ) : null;
 

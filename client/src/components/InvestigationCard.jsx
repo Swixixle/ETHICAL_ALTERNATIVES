@@ -159,9 +159,13 @@ const SECTIONS = [
 ];
 
 /**
- * @param {{ investigation: Record<string, unknown>; identification?: Record<string, unknown> | null }} props
+ * @param {{
+ *   investigation: Record<string, unknown>;
+ *   identification?: Record<string, unknown> | null;
+ *   onShare?: () => void;
+ * }} props
  */
-export default function InvestigationCard({ investigation, identification }) {
+export default function InvestigationCard({ investigation, identification, onShare }) {
   const [open, setOpen] = useState({});
   const [expanded, setExpanded] = useState(false);
 
@@ -350,6 +354,19 @@ export default function InvestigationCard({ investigation, identification }) {
             <div className="investigation-card__subs">
               <span className="investigation-card__subs-label">Related brands / units</span>
               <p>{investigation.subsidiaries.join(' · ')}</p>
+            </div>
+          ) : null}
+
+          {typeof onShare === 'function' ? (
+            <div style={{ padding: '24px 1rem 8px' }}>
+              <button
+                type="button"
+                className="app__btn app__btn--share"
+                onClick={onShare}
+                style={{ width: '100%', maxWidth: 420 }}
+              >
+                Share This Record ↑
+              </button>
             </div>
           ) : null}
         </>

@@ -30,8 +30,8 @@ function geolocationFailureHint(err) {
   };
 }
 
-/** @param {{ onSearch: (q: string) => void }} props */
-function SearchBar({ onSearch }) {
+/** @param {{ onSearch: (q: string) => void; onStartSnap: () => void }} props */
+function SearchBar({ onSearch, onStartSnap }) {
   const [query, setQuery] = useState('');
 
   function handleSubmit(e) {
@@ -44,10 +44,12 @@ function SearchBar({ onSearch }) {
       onSubmit={handleSubmit}
       style={{
         display: 'flex',
+        flexWrap: 'wrap',
         gap: 8,
         padding: '16px 24px',
         borderBottom: '1px solid #2a3f52',
         background: '#0f1520',
+        alignItems: 'stretch',
       }}
     >
       <input
@@ -58,7 +60,8 @@ function SearchBar({ onSearch }) {
         placeholder="Search any company, brand, or CEO..."
         enterKeyHint="search"
         style={{
-          flex: 1,
+          flex: '1 1 180px',
+          minWidth: 0,
           background: '#162030',
           border: '1px solid #2a3f52',
           borderRadius: 2,
@@ -86,7 +89,27 @@ function SearchBar({ onSearch }) {
           flexShrink: 0,
         }}
       >
-        Investigate →
+        Investigate
+      </button>
+      <button
+        type="button"
+        onClick={() => onStartSnap()}
+        style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: 10,
+          letterSpacing: 2,
+          textTransform: 'uppercase',
+          background: '#0f1520',
+          color: '#e8a020',
+          border: '1px solid #e8a020',
+          padding: '10px 16px',
+          borderRadius: 2,
+          cursor: 'pointer',
+          fontWeight: 700,
+          flexShrink: 0,
+        }}
+      >
+        📷 Snap
       </button>
     </form>
   );
@@ -108,10 +131,8 @@ function apiPrefix() {
 function initialPhase() {
   if (typeof window === 'undefined') return 'prompt';
   if (sessionStorage.getItem(ONBOARD_KEY) === 'skipped') return 'skipped';
-  if (sessionStorage.getItem(ONBOARD_KEY) === 'granted') {
-    const c = readCachedLocation();
-    if (c && Number.isFinite(c.lat) && Number.isFinite(c.lng)) return 'loading';
-  }
+  // Once GPS or manual city succeeded, never show the location prompt again this session.
+  if (sessionStorage.getItem(ONBOARD_KEY) === 'granted') return 'loading';
   return 'prompt';
 }
 
@@ -627,7 +648,7 @@ function FeedCard({ business, chainFootnote = false }) {
  * @param {{ onStartSnap: () => void }} props
  */
 export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
-  const [phase, setPhase] = useState(initialPhase);
+  const [phase, setPhase] = useState(() => initialPhase());
   const [location, setLocation] = useState(() => readCachedLocation());
   const [identity, setIdentity] = useState(null);
   const [feed, setFeed] = useState([]);
@@ -662,37 +683,60 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
 
   useEffect(() => {
     if (phase !== 'loading') return;
-    if (!location || !Number.isFinite(location.lat) || !Number.isFinite(location.lng)) {
+
+    let loc = location;
+    if (!loc || !Number.isFinite(loc.lat) || !Number.isFinite(loc.lng)) {
+      const cached = readCachedLocation();
+      if (cached && Number.isFinite(cached.lat) && Number.isFinite(cached.lng)) {
+        setLocation(cached);
+        return;
+      }
+      if (sessionStorage.getItem(ONBOARD_KEY) === 'granted') {
+        setPhase('ready');
+        setIdentity(null);
+        setFeed([]);
+        setChainResults([]);
+        return;
+      }
       setPhase('prompt');
       return;
     }
+
     let cancelled = false;
     (async () => {
       try {
         const [identityData, pack] = await Promise.all([
-          getCityIdentity(location.city, location.state, location.country),
-          fetchFeed(location.lat, location.lng, 'all'),
+          getCityIdentity(loc.city, loc.state, loc.country),
+          fetchFeed(loc.lat, loc.lng, 'all'),
         ]);
         if (cancelled) return;
         setIdentity(identityData);
         const dateKey = utcDateKey();
         const shuffleOpts = {
           dateKey,
-          city: location.city,
-          state: location.state,
+          city: loc.city,
+          state: loc.state,
         };
         setFeed(dailyFeedShuffle(pack.feed, shuffleOpts));
         setChainResults(dailyChainShuffle(pack.chain_results, shuffleOpts));
         setCategory('all');
+        sessionStorage.setItem(ONBOARD_KEY, 'granted');
         setPhase('ready');
       } catch (e) {
         if (!cancelled) {
           console.error('[home] identity/feed load failed', e);
-          setPhase('prompt');
-          setGeoHint(
-            'Could not load your city feed. Check your connection or try entering your city again.'
-          );
-          setManualCityVisible(true);
+          if (sessionStorage.getItem(ONBOARD_KEY) === 'granted') {
+            setPhase('ready');
+            setGeoHint(
+              'Could not refresh your city feed. Check your connection — your location is still saved for this session.'
+            );
+          } else {
+            setPhase('prompt');
+            setGeoHint(
+              'Could not load your city feed. Check your connection or try entering your city again.'
+            );
+            setManualCityVisible(true);
+          }
         }
       }
     })();
@@ -735,6 +779,7 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
       setLocation(loc);
       sessionStorage.setItem(ONBOARD_KEY, 'granted');
       setManualCityVisible(false);
+      setGeoHint(null);
     } catch (err) {
       console.error('[home] manual city failed', err);
       setGeoHint(err.message || 'Could not find that city.');
@@ -873,9 +918,6 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
           background: '#0f1520',
           borderBottom: '1px solid #2a3f52',
           padding: '12px 24px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
           zIndex: 100,
         }}
       >
@@ -889,31 +931,12 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
         >
           ETHICALALT
         </div>
-        <button
-          type="button"
-          onClick={onStartSnap}
-          style={{
-            fontFamily: "'Space Mono', monospace",
-            fontSize: 10,
-            letterSpacing: 2,
-            textTransform: 'uppercase',
-            background: '#e8a020',
-            color: '#0f1520',
-            border: 'none',
-            padding: '8px 18px',
-            borderRadius: 2,
-            cursor: 'pointer',
-            fontWeight: 700,
-          }}
-        >
-          Snap
-        </button>
       </div>
 
       <CityCard identity={identity} city={location?.city} state={location?.state} />
 
       {typeof onSearchInvestigate === 'function' ? (
-        <SearchBar onSearch={onSearchInvestigate} />
+        <SearchBar onSearch={onSearchInvestigate} onStartSnap={onStartSnap} />
       ) : null}
 
       <div
