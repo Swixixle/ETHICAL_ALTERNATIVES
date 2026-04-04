@@ -1,0 +1,86 @@
+{
+  "default": [
+    {
+      "agency": "FTC",
+      "name": "Federal Trade Commission",
+      "description": "Report deceptive business practices, consumer fraud, and antitrust violations",
+      "url": "https://reportfraud.ftc.gov/",
+      "twitter": "@FTC",
+      "applies_to": ["consumer_fraud", "antitrust", "deceptive_advertising", "privacy"]
+    },
+    {
+      "agency": "SEC",
+      "name": "Securities and Exchange Commission",
+      "description": "Report securities fraud, corporate misconduct, accounting fraud",
+      "url": "https://www.sec.gov/tcr",
+      "twitter": "@SEC_Enforcement",
+      "applies_to": ["securities_fraud", "accounting_fraud", "insider_trading", "disclosure_violations"]
+    }
+  ],
+  "tax": [
+    {
+      "agency": "IRS",
+      "name": "IRS Whistleblower Office",
+      "description": "Report significant federal tax underpayment, evasion, or fraud involving substantial amounts",
+      "url": "https://www.irs.gov/compliance/whistleblower-office",
+      "twitter": "@IRSnews",
+      "applies_to": ["tax_avoidance", "offshore_structure", "offshore_profit_shifting", "government_subsidies"]
+    }
+  ],
+  "environmental": [
+    {
+      "agency": "EPA",
+      "name": "Environmental Protection Agency",
+      "description": "Report environmental violations, pollution, illegal dumping",
+      "url": "https://echo.epa.gov/resources/echo-toolkit/report-a-violation",
+      "twitter": "@EPA",
+      "applies_to": ["environmental_violations", "pollution", "water_pollution", "air_quality", "greenwashing", "deforestation_supply_chain", "epa_enforcement"]
+    }
+  ],
+  "labor": [
+    {
+      "agency": "NLRB",
+      "name": "National Labor Relations Board",
+      "description": "Report union suppression, illegal labor practices, worker retaliation",
+      "url": "https://www.nlrb.gov/reports-and-case-decisions/file-charge",
+      "twitter": "@NLRB",
+      "applies_to": ["union_suppression", "labor_violations", "worker_retaliation", "racial_discrimination"]
+    },
+    {
+      "agency": "DOL",
+      "name": "Department of Labor — Wage and Hour",
+      "description": "Report wage theft, overtime violations, child labor",
+      "url": "https://www.dol.gov/agencies/whd/contact/complaints",
+      "twitter": "@WHD_DOL",
+      "applies_to": ["wage_theft", "labor_violations", "child_labor"]
+    },
+    {
+      "agency": "OSHA",
+      "name": "Occupational Safety and Health Administration",
+      "description": "Report workplace safety violations and worker hazards",
+      "url": "https://www.osha.gov/workers/file-complaint",
+      "twitter": "@OSHA_DOL",
+      "applies_to": ["worker_safety", "osha_violations", "osha"]
+    }
+  ],
+  "financial": [
+    {
+      "agency": "DOJ",
+      "name": "Department of Justice",
+      "description": "Report criminal corporate conduct, bribery, corruption",
+      "url": "https://www.justice.gov/report-a-crime",
+      "twitter": "@TheJusticeDept",
+      "applies_to": ["bribery", "corruption", "criminal_charges", "sanctions_violations", "rico_conviction", "settlements"]
+    }
+  ],
+  "food_safety": [
+    {
+      "agency": "FDA",
+      "name": "Food and Drug Administration",
+      "description": "Report food safety issues, product contamination, labeling fraud",
+      "url": "https://www.fda.gov/safety/report-problem-fda",
+      "twitter": "@US_FDA",
+      "applies_to": ["health_concerns", "product_safety_issues", "food_safety"]
+    }
+  ]
+}

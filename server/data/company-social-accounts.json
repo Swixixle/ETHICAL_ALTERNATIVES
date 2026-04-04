@@ -1,0 +1,232 @@
+{
+  "mcdonalds": {
+    "twitter": "@McDonalds",
+    "twitter_url": "https://twitter.com/McDonalds",
+    "facebook": "McDonalds",
+    "facebook_url": "https://www.facebook.com/McDonalds",
+    "instagram": "@mcdonalds",
+    "instagram_url": "https://www.instagram.com/mcdonalds",
+    "tiktok": "@mcdonalds",
+    "youtube": "McDonalds"
+  },
+  "mcdonald-s": {
+    "twitter": "@McDonalds",
+    "twitter_url": "https://twitter.com/McDonalds",
+    "facebook": "McDonalds",
+    "facebook_url": "https://www.facebook.com/McDonalds",
+    "instagram": "@mcdonalds",
+    "instagram_url": "https://www.instagram.com/mcdonalds",
+    "tiktok": "@mcdonalds"
+  },
+  "starbucks": {
+    "twitter": "@Starbucks",
+    "twitter_url": "https://twitter.com/Starbucks",
+    "facebook": "Starbucks",
+    "facebook_url": "https://www.facebook.com/Starbucks",
+    "instagram": "@starbucks",
+    "instagram_url": "https://www.instagram.com/starbucks",
+    "tiktok": "@starbucks"
+  },
+  "nike": {
+    "twitter": "@Nike",
+    "twitter_url": "https://twitter.com/Nike",
+    "facebook": "nike",
+    "facebook_url": "https://www.facebook.com/nike",
+    "instagram": "@nike",
+    "instagram_url": "https://www.instagram.com/nike",
+    "tiktok": "@nike"
+  },
+  "amazon": {
+    "twitter": "@amazon",
+    "twitter_url": "https://twitter.com/amazon",
+    "facebook": "Amazon",
+    "facebook_url": "https://www.facebook.com/Amazon",
+    "instagram": "@amazon",
+    "instagram_url": "https://www.instagram.com/amazon",
+    "tiktok": "@amazon"
+  },
+  "apple": {
+    "twitter": "@Apple",
+    "twitter_url": "https://twitter.com/Apple",
+    "instagram": "@apple",
+    "instagram_url": "https://www.instagram.com/apple"
+  },
+  "walmart": {
+    "twitter": "@Walmart",
+    "twitter_url": "https://twitter.com/Walmart",
+    "facebook": "walmart",
+    "facebook_url": "https://www.facebook.com/walmart",
+    "instagram": "@walmart",
+    "instagram_url": "https://www.instagram.com/walmart",
+    "tiktok": "@walmart"
+  },
+  "coca-cola": {
+    "twitter": "@CocaCola",
+    "twitter_url": "https://twitter.com/CocaCola",
+    "facebook": "coca-cola",
+    "facebook_url": "https://www.facebook.com/coca-cola",
+    "instagram": "@cocacola",
+    "instagram_url": "https://www.instagram.com/cocacola",
+    "tiktok": "@cocacola"
+  },
+  "nestle": {
+    "twitter": "@Nestle",
+    "twitter_url": "https://twitter.com/Nestle",
+    "facebook": "Nestle",
+    "facebook_url": "https://www.facebook.com/Nestle",
+    "instagram": "@nestle",
+    "instagram_url": "https://www.instagram.com/nestle"
+  },
+  "meta": {
+    "twitter": "@Meta",
+    "twitter_url": "https://twitter.com/Meta",
+    "facebook": "Meta",
+    "facebook_url": "https://www.facebook.com/Meta",
+    "instagram": "@meta",
+    "instagram_url": "https://www.instagram.com/meta",
+    "tiktok": "@meta"
+  },
+  "google": {
+    "twitter": "@Google",
+    "twitter_url": "https://twitter.com/Google",
+    "facebook": "Google",
+    "facebook_url": "https://www.facebook.com/Google",
+    "instagram": "@google",
+    "instagram_url": "https://www.instagram.com/google",
+    "tiktok": "@google",
+    "youtube": "Google"
+  },
+  "microsoft": {
+    "twitter": "@Microsoft",
+    "twitter_url": "https://twitter.com/Microsoft",
+    "facebook": "Microsoft",
+    "facebook_url": "https://www.facebook.com/Microsoft",
+    "instagram": "@microsoft",
+    "instagram_url": "https://www.instagram.com/microsoft",
+    "tiktok": "@microsoft"
+  },
+  "tesla": {
+    "twitter": "@Tesla",
+    "twitter_url": "https://twitter.com/Tesla",
+    "instagram": "@teslamotors",
+    "instagram_url": "https://www.instagram.com/teslamotors",
+    "tiktok": "@tesla"
+  },
+  "exxonmobil": {
+    "twitter": "@ExxonMobil",
+    "twitter_url": "https://twitter.com/ExxonMobil",
+    "facebook": "ExxonMobil",
+    "facebook_url": "https://www.facebook.com/ExxonMobil",
+    "instagram": "@exxonmobil",
+    "instagram_url": "https://www.instagram.com/exxonmobil"
+  },
+  "tyson-foods": {
+    "twitter": "@TysonFoods",
+    "twitter_url": "https://twitter.com/TysonFoods",
+    "facebook": "TysonFoods",
+    "facebook_url": "https://www.facebook.com/TysonFoods",
+    "instagram": "@tysonfoodsofficial",
+    "instagram_url": "https://www.instagram.com/tysonfoodsofficial"
+  },
+  "pepsico": {
+    "twitter": "@PepsiCo",
+    "twitter_url": "https://twitter.com/PepsiCo",
+    "facebook": "pepsico",
+    "facebook_url": "https://www.facebook.com/pepsico",
+    "instagram": "@pepsico",
+    "instagram_url": "https://www.instagram.com/pepsico"
+  },
+  "johnson-johnson": {
+    "twitter": "@JNJNews",
+    "twitter_url": "https://twitter.com/JNJNews",
+    "facebook": "JohnsonandJohnson",
+    "facebook_url": "https://www.facebook.com/JohnsonandJohnson",
+    "instagram": "@johnsonandjohnson",
+    "instagram_url": "https://www.instagram.com/johnsonandjohnson"
+  },
+  "procter-gamble": {
+    "twitter": "@ProcterGamble",
+    "twitter_url": "https://twitter.com/ProcterGamble",
+    "facebook": "ProcterGamble",
+    "facebook_url": "https://www.facebook.com/ProcterGamble",
+    "instagram": "@procterandgamble",
+    "instagram_url": "https://www.instagram.com/procterandgamble"
+  },
+  "unilever": {
+    "twitter": "@Unilever",
+    "twitter_url": "https://twitter.com/Unilever",
+    "facebook": "Unilever",
+    "facebook_url": "https://www.facebook.com/Unilever",
+    "instagram": "@unilever",
+    "instagram_url": "https://www.instagram.com/unilever"
+  },
+  "lvmh": {
+    "twitter": "@LVMH",
+    "twitter_url": "https://twitter.com/LVMH",
+    "facebook": "LVMH",
+    "facebook_url": "https://www.facebook.com/LVMH",
+    "instagram": "@lvmh",
+    "instagram_url": "https://www.instagram.com/lvmh"
+  },
+  "gap": {
+    "twitter": "@Gap",
+    "twitter_url": "https://twitter.com/Gap",
+    "facebook": "gap",
+    "facebook_url": "https://www.facebook.com/gap",
+    "instagram": "@gap",
+    "instagram_url": "https://www.instagram.com/gap",
+    "tiktok": "@gap"
+  },
+  "hm": {
+    "twitter": "@hm",
+    "twitter_url": "https://twitter.com/hm",
+    "facebook": "hm",
+    "facebook_url": "https://www.facebook.com/hm",
+    "instagram": "@hm",
+    "instagram_url": "https://www.instagram.com/hm",
+    "tiktok": "@hm"
+  },
+  "shein": {
+    "twitter": "@SHEIN_official",
+    "twitter_url": "https://twitter.com/SHEIN_official",
+    "facebook": "SHEIN",
+    "facebook_url": "https://www.facebook.com/SHEIN",
+    "instagram": "@sheinofficial",
+    "instagram_url": "https://www.instagram.com/sheinofficial",
+    "tiktok": "@shein_official"
+  },
+  "dollar-general": {
+    "twitter": "@DollarGeneral",
+    "twitter_url": "https://twitter.com/DollarGeneral",
+    "facebook": "DollarGeneral",
+    "facebook_url": "https://www.facebook.com/DollarGeneral",
+    "instagram": "@dollargeneral",
+    "instagram_url": "https://www.instagram.com/dollargeneral",
+    "tiktok": "@dollargeneral"
+  },
+  "kraft-heinz": {
+    "twitter": "@KraftHeinzCo",
+    "twitter_url": "https://twitter.com/KraftHeinzCo",
+    "facebook": "kraftheinzcompany",
+    "facebook_url": "https://www.facebook.com/kraftheinzcompany",
+    "instagram": "@kraftheinzco",
+    "instagram_url": "https://www.instagram.com/kraftheinzco"
+  },
+  "bayer-monsanto": {
+    "twitter": "@Bayer4Crops",
+    "twitter_url": "https://twitter.com/Bayer4Crops",
+    "facebook": "BayerAG",
+    "facebook_url": "https://www.facebook.com/BayerAG",
+    "instagram": "@bayerag",
+    "instagram_url": "https://www.instagram.com/bayerag"
+  },
+  "target": {
+    "twitter": "@Target",
+    "twitter_url": "https://twitter.com/Target",
+    "facebook": "Target",
+    "facebook_url": "https://www.facebook.com/Target",
+    "instagram": "@target",
+    "instagram_url": "https://www.instagram.com/target",
+    "tiktok": "@target"
+  }
+}
