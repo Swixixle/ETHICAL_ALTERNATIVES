@@ -1,12 +1,33 @@
 import React from "react";
 
-const levelMap  = { SIGNIFICANT: 4, MODERATE: 3, MINOR: 2, CLEAN: 1 };
-const colorMap  = { SIGNIFICANT: "#c8370a", MODERATE: "#bea028", MINOR: "#50a064", CLEAN: "#3c82c8" };
+const levelMap = {
+  SIGNIFICANT: 4,
+  MODERATE: 3,
+  MINOR: 2,
+  CLEAN: 1,
+  UNKNOWN: 1,
+};
+
+const colorMap = {
+  SIGNIFICANT: "#ff6b6b",
+  MODERATE: "#ffb347",
+  MINOR: "#6aaa8a",
+  CLEAN: "#5a9fd4",
+  UNKNOWN: "#4a6478",
+};
+
+const labelColorMap = {
+  SIGNIFICANT: "#ff6b6b",
+  MODERATE: "#ffb347",
+  MINOR: "#6aaa8a",
+  CLEAN: "#5a9fd4",
+  UNKNOWN: "#4a6478",
+};
 
 export default function SeverityMeter({ concernLevel }) {
-  const upper       = (concernLevel || "CLEAN").toUpperCase();
-  const level       = levelMap[upper] ?? 1;
-  const filledColor = colorMap[upper];
+  const upper = (concernLevel || "CLEAN").toUpperCase();
+  const level = levelMap[upper] ?? 1;
+  const filledColor = colorMap[upper] ?? colorMap.UNKNOWN;
 
   return (
     <div style={{ display: "flex", alignItems: "center", margin: "6px 0 12px" }}>
@@ -15,7 +36,7 @@ export default function SeverityMeter({ concernLevel }) {
           <div key={n} style={{
             flex: 1,
             borderRadius: 2,
-            backgroundColor: level >= n ? filledColor : "#2a2720"
+            backgroundColor: level >= n ? filledColor : "#1c2a3a"
           }} />
         ))}
       </div>
@@ -25,7 +46,7 @@ export default function SeverityMeter({ concernLevel }) {
         fontSize: 11,
         letterSpacing: 2,
         textTransform: "uppercase",
-        color: "#c9bfa8"
+        color: labelColorMap[upper] || "#4a6478"
       }}>
         {upper}
       </span>

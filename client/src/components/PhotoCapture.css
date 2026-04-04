@@ -1,8 +1,8 @@
 .photo-capture {
-  --bg: #0f0e0a;
-  --cream: #e8e0cc;
-  --accent: #c8370a;
-  --border: #2a2720;
+  --bg: #0f1520;
+  --cream: #e8dfc8;
+  --accent: #e8a020;
+  --border: #2a3f52;
 
   background: var(--bg);
   color: var(--cream);
@@ -29,7 +29,7 @@
   width: 100%;
   max-width: 420px;
   min-height: 200px;
-  border: 2px dashed var(--accent);
+  border: 2px dashed var(--border);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -39,12 +39,14 @@
   padding: 1.5rem;
   cursor: pointer;
   transition: background 0.15s ease, border-color 0.15s ease;
+  background: var(--color-surface, #1c2a3a);
+  color: var(--color-text-muted, #8fa8bc);
 }
 
 .photo-capture__dropzone:hover,
 .photo-capture__dropzone--active {
-  background: rgba(200, 55, 10, 0.08);
-  border-color: #e04a1a;
+  background: rgba(232, 160, 32, 0.12);
+  border-color: var(--accent);
 }
 
 .photo-capture__dropzone kbd {
@@ -85,16 +87,18 @@
 
 .photo-capture__btn:hover {
   background: var(--accent);
-  color: var(--bg);
+  color: #0f1520;
 }
 
 .photo-capture__btn--primary {
   background: var(--accent);
-  color: var(--bg);
+  color: #0f1520;
+  font-weight: 700;
 }
 
 .photo-capture__btn--primary:hover {
-  filter: brightness(1.08);
+  background: #f0b030;
+  border-color: #f0b030;
 }
 
 .photo-capture__hidden-input {
@@ -135,7 +139,7 @@
 .photo-capture__stage {
   position: relative;
   min-height: min(70vh, 520px);
-  background: #080706;
+  background: #0a0e14;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,7 +168,7 @@
   left: 0;
   right: 0;
   padding: 0.75rem 1rem;
-  background: linear-gradient(to top, rgba(15, 14, 10, 0.95), transparent);
+  background: linear-gradient(to top, rgba(15, 21, 32, 0.95), transparent);
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -185,13 +189,13 @@
 .photo-capture__toolbar .photo-capture__btn {
   padding: 0.45rem 0.65rem;
   font-size: 0.65rem;
-  background: rgba(15, 14, 10, 0.88);
+  background: rgba(15, 21, 32, 0.88);
   color: var(--cream);
 }
 
 .photo-capture__toolbar .photo-capture__btn:hover {
   background: var(--accent);
-  color: var(--bg);
+  color: #0f1520;
 }
 
 .photo-capture__skeleton {
@@ -199,9 +203,9 @@
   inset: 0;
   background: linear-gradient(
     105deg,
-    rgba(42, 39, 32, 0.6) 0%,
-    rgba(58, 54, 46, 0.85) 45%,
-    rgba(42, 39, 32, 0.6) 90%
+    rgba(42, 63, 82, 0.5) 0%,
+    rgba(28, 42, 58, 0.85) 45%,
+    rgba(42, 63, 82, 0.5) 90%
   );
   background-size: 200% 100%;
   animation: photo-capture-shimmer 1.2s ease-in-out infinite;
@@ -225,9 +229,9 @@
   border-radius: 4px;
   background: linear-gradient(
     105deg,
-    rgba(42, 39, 32, 0.4) 0%,
-    rgba(58, 54, 46, 0.55) 45%,
-    rgba(42, 39, 32, 0.4) 90%
+    rgba(42, 63, 82, 0.35) 0%,
+    rgba(28, 42, 58, 0.5) 45%,
+    rgba(42, 63, 82, 0.35) 90%
   );
   background-size: 200% 100%;
   animation: photo-capture-shimmer 1.2s ease-in-out infinite;
@@ -245,7 +249,7 @@
 
 .photo-capture__error {
   font-size: 0.75rem;
-  color: #ff8a65;
+  color: #ff6b6b;
   max-width: 360px;
   margin: 0;
   text-align: center;

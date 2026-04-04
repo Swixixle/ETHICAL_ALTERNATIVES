@@ -22,10 +22,10 @@
   font-size: 0.7rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #e8e0cc;
+  color: #e8dfc8;
   text-shadow:
-    0 0 12px #0f0e0a,
-    0 0 24px #0f0e0a;
+    0 0 12px #0f1520,
+    0 0 24px #0f1520;
   pointer-events: none;
   animation: tap-overlay-hint-pulse 2.2s ease-in-out infinite;
 }
@@ -64,8 +64,8 @@
 
 .tap-overlay__crosshair-line {
   position: absolute;
-  background: #c8370a;
-  box-shadow: 0 0 8px rgba(200, 55, 10, 0.5);
+  background: #e8a020;
+  box-shadow: 0 0 8px rgba(232, 160, 32, 0.55);
 }
 
 .tap-overlay__crosshair-line--h {
@@ -94,9 +94,9 @@
   height: 40px;
   margin-left: -20px;
   margin-top: -20px;
-  border: 2px solid #c8370a;
+  border: 2px solid #e8a020;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(200, 55, 10, 0.4);
+  box-shadow: 0 0 10px rgba(232, 160, 32, 0.45);
   animation: tap-overlay-ring-pulse 1s ease-out forwards;
 }
 
@@ -121,12 +121,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(15, 14, 10, 0.72);
+  background: rgba(15, 21, 32, 0.72);
   font-family: 'Space Mono', ui-monospace, monospace;
   font-size: 0.72rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #e8e0cc;
+  color: #e8dfc8;
   pointer-events: none;
   z-index: 4;
 }
@@ -137,12 +137,12 @@
   width: 4px;
   height: 4px;
   margin-left: 6px;
-  background: #c8370a;
+  background: #e8a020;
   border-radius: 50%;
   animation: tap-overlay-dot 0.9s ease-in-out infinite;
   box-shadow:
-    8px 0 0 #c8370a,
-    16px 0 0 #c8370a;
+    8px 0 0 #e8a020,
+    16px 0 0 #e8a020;
 }
 
 @keyframes tap-overlay-dot {

@@ -2,10 +2,11 @@
 
 .investigation-card {
   margin: 1.25rem 0;
-  border: 1px solid #2a2720;
+  border: 1px solid var(--color-border, #2a3f52);
+  border-top: 3px solid var(--color-accent, #e8a020);
   border-radius: 4px;
-  background: #141210;
-  color: #e8e0cc;
+  background: var(--color-paper, #162030);
+  color: var(--color-text-main, #e8dfc8);
   text-align: left;
 }
 
@@ -15,9 +16,9 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.85rem 1rem;
-  background: transparent;
+  background: var(--color-surface, #1c2a3a);
   border: none;
-  border-bottom: 1px solid #2a2720;
+  border-bottom: 1px solid var(--color-border, #2a3f52);
   cursor: pointer;
   color: inherit;
   font: inherit;
@@ -30,6 +31,7 @@
   text-transform: uppercase;
   flex: 1;
   text-align: left;
+  color: var(--color-accent, #e8a020);
 }
 
 .investigation-card__concern {
@@ -42,24 +44,29 @@
 }
 
 .investigation-card__concern--high {
-  background: rgba(200, 55, 10, 0.25);
-  color: #ff8a65;
+  background: var(--color-significant-bg, #8b1a1a);
+  color: var(--color-significant-text, #ffd4d4);
+  border: 1px solid #c0302a;
 }
 .investigation-card__concern--med {
-  background: rgba(190, 160, 40, 0.2);
-  color: #bea028;
+  background: var(--color-moderate-bg, #7a5500);
+  color: var(--color-moderate-text, #ffe9a0);
+  border: 1px solid #b07800;
 }
 .investigation-card__concern--low {
-  background: rgba(232, 224, 204, 0.08);
-  color: #e8e0cc;
+  background: var(--color-minor-bg, #1a4a2a);
+  color: var(--color-minor-text, #a8f0c0);
+  border: 1px solid #2a7040;
 }
 .investigation-card__concern--clean {
-  background: rgba(80, 160, 100, 0.18);
-  color: #7ddf9a;
+  background: var(--color-clean-bg, #1a3a6a);
+  color: var(--color-clean-text, #a0c8ff);
+  border: 1px solid #2a5090;
 }
 .investigation-card__concern--unk {
-  background: rgba(232, 224, 204, 0.06);
-  color: #a8a095;
+  background: var(--color-border, #2a3f52);
+  color: var(--color-text-muted, #8fa8bc);
+  border: 1px solid var(--color-border, #2a3f52);
 }
 
 .investigation-card__chev {
@@ -70,20 +77,20 @@
 .investigation-card__disclaimer {
   font-family: 'Space Mono', monospace;
   font-size: 0.62rem;
-  color: #c8370a;
+  color: var(--color-accent, #e8a020);
   margin: 0;
   padding: 0.65rem 1rem 0;
 }
 
 .investigation-card__disclaimer--muted {
-  color: #8a8275;
+  color: var(--color-text-muted, #8fa8bc);
 }
 
 .investigation-card__clean-card {
   font-family: 'Space Mono', monospace;
   font-size: 0.62rem;
   letter-spacing: 0.06em;
-  color: #7ddf9a;
+  color: var(--color-minor-text, #a8f0c0);
   margin: 0;
   padding: 0.5rem 1rem 0;
   opacity: 0.92;
@@ -103,19 +110,21 @@
   text-transform: uppercase;
   padding: 0.2rem 0.45rem;
   border-radius: 999px;
-  border: 1px solid #2a2720;
+  border: 1px solid var(--color-border, #2a3f52);
 }
 
 .investigation-card__flag--neg {
-  border-color: rgba(200, 55, 10, 0.45);
-  color: #ffb4a8;
+  border-color: #c0302a;
+  color: var(--color-significant-text, #ffd4d4);
+  background: rgba(139, 26, 26, 0.35);
 }
 .investigation-card__flag--pos {
-  border-color: rgba(80, 160, 100, 0.4);
-  color: #7ddf9a;
+  border-color: #2a7040;
+  color: var(--color-minor-text, #a8f0c0);
+  background: rgba(26, 74, 42, 0.35);
 }
 .investigation-card__flag--neu {
-  color: #c9c2b5;
+  color: var(--color-text-muted, #8fa8bc);
 }
 
 .investigation-card__sections {
@@ -123,7 +132,7 @@
 }
 
 .investigation-card__section {
-  border-top: 1px solid #2a2720;
+  border-top: 1px solid var(--color-border, #2a3f52);
 }
 
 .investigation-card__section-head {
@@ -135,7 +144,7 @@
   padding: 0.65rem 1rem;
   background: transparent;
   border: none;
-  color: #bea028;
+  color: var(--color-accent, #e8a020);
   font: inherit;
   cursor: pointer;
   text-align: left;
@@ -149,7 +158,7 @@
   flex-shrink: 0;
   font-family: 'Space Mono', monospace;
   font-size: 0.85rem;
-  color: #bea028;
+  color: var(--color-accent, #e8a020);
   margin-top: 0.5rem;
 }
 
@@ -162,14 +171,14 @@
   font-size: 0.92rem;
   line-height: 1.45;
   margin: 0 0 0.5rem;
-  color: #e8e0cc;
+  color: var(--color-text-main, #e8dfc8);
 }
 
 .investigation-card__list {
   font-family: 'Space Mono', monospace;
   font-size: 0.65rem;
   margin: 0 0 0.5rem 1rem;
-  color: #d5cdc0;
+  color: var(--color-text-muted, #8fa8bc);
   line-height: 1.4;
 }
 
@@ -185,17 +194,17 @@
 .investigation-card__sources a {
   font-family: 'Space Mono', monospace;
   font-size: 0.6rem;
-  color: #7eb8ff;
+  color: var(--color-accent, #e8a020);
   word-break: break-all;
 }
 
 .investigation-card__subs {
   padding: 0.75rem 1rem 1rem;
-  border-top: 1px solid #2a2720;
+  border-top: 1px solid var(--color-border, #2a3f52);
   font-family: 'Space Mono', monospace;
   font-size: 0.62rem;
   line-height: 1.45;
-  color: #a8a095;
+  color: var(--color-text-muted, #8fa8bc);
 }
 
 .investigation-card__subs-label {
@@ -203,5 +212,5 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 0.35rem;
-  color: #bea028;
+  color: var(--color-accent, #e8a020);
 }

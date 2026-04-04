@@ -4,7 +4,7 @@
 
 .region-select__hint {
   font-size: 0.85rem;
-  color: #c8c2b0;
+  color: var(--color-text-main, #e8dfc8);
   margin: 0 0 0.75rem;
 }
 
@@ -12,7 +12,7 @@
   position: relative;
   touch-action: none;
   cursor: crosshair;
-  border: 1px solid #2a2720;
+  border: 1px solid var(--color-border, #2a3f52);
   border-radius: 4px;
   overflow: hidden;
   max-height: min(70vh, 480px);
@@ -29,7 +29,7 @@
 
 .region-select__box {
   position: absolute;
-  border: 2px solid #7ddf9a;
+  border: 2px solid var(--color-minor-text, #a8f0c0);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5) inset;
   pointer-events: none;
   box-sizing: border-box;

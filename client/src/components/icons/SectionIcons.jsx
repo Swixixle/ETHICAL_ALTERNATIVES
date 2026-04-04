@@ -1,6 +1,6 @@
 import React from "react";
 
-const stroke = { stroke: "#c8370a", strokeWidth: 1.5, fill: "none" };
+const stroke = { stroke: "#e8a020", strokeWidth: 1.5, fill: "none" };
 
 export function TaxIcon() {
   return (
@@ -78,7 +78,7 @@ export function HealthIcon() {
       <g {...stroke}>
         <path d="M10 4 L18 16 L2 16 Z" />
         <line x1="10" y1="9"  x2="10" y2="12" />
-        <circle cx="10" cy="14" r="0.5" fill="#c8370a" />
+        <circle cx="10" cy="14" r="0.5" fill="#e8a020" />
       </g>
     </svg>
   );

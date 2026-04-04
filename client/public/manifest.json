@@ -4,7 +4,7 @@
   "description": "Tap any object — find independent alternatives",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f0e0a",
-  "theme_color": "#0f0e0a",
+  "background_color": "#0f1520",
+  "theme_color": "#0f1520",
   "icons": []
 }

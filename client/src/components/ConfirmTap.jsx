@@ -78,7 +78,7 @@ export default function ConfirmTap({
               fontSize: 9,
               letterSpacing: 2,
               textTransform: 'uppercase',
-              color: '#6a6050',
+              color: 'var(--color-text-dim)',
               marginBottom: 8,
             }}
           >
@@ -90,13 +90,11 @@ export default function ConfirmTap({
                 type="button"
                 key={idx}
                 onClick={() => onSelectAlternativeBrand && onSelectAlternativeBrand(item)}
+                className="alt-brand-button"
                 style={{
                   fontFamily: "'Space Mono', monospace",
                   fontSize: 9,
                   letterSpacing: 1,
-                  color: '#c9bfa8',
-                  background: 'transparent',
-                  border: '1px solid #3a3228',
                   padding: '4px 10px',
                   borderRadius: 999,
                   cursor: 'pointer',

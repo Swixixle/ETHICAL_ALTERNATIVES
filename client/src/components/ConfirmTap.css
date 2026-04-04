@@ -7,14 +7,14 @@
 .confirm-tap__prompt {
   font-size: 0.95rem;
   margin: 0 0 0.75rem;
-  color: #e8e0cc;
+  color: var(--color-text-main, #e8dfc8);
 }
 
 .confirm-tap__zoom {
-  border: 1px solid #2a2720;
+  border: 1px solid var(--color-border, #2a3f52);
   border-radius: 4px;
   overflow: hidden;
-  background: #0c0b09;
+  background: var(--color-bg, #0f1520);
   aspect-ratio: 1;
   max-height: 240px;
   margin-bottom: 0.75rem;
@@ -32,14 +32,14 @@
   align-items: center;
   justify-content: center;
   height: 160px;
-  color: #8a8275;
+  color: var(--color-text-muted, #8fa8bc);
   font-size: 0.8rem;
 }
 
 .confirm-tap__guess {
   margin: 0 0 0.35rem;
   font-size: 0.9rem;
-  color: #c8c2b0;
+  color: var(--color-text-main, #e8dfc8);
 }
 
 .confirm-tap__tier {
@@ -48,13 +48,13 @@
   font-size: 0.68rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #bea028;
+  color: var(--color-accent, #e8a020);
 }
 
 .confirm-tap__notes {
   margin: 0 0 1rem;
   font-size: 0.78rem;
-  color: #8a8275;
+  color: var(--color-text-muted, #8fa8bc);
   line-height: 1.4;
 }
 

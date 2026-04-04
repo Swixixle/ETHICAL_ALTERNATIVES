@@ -155,7 +155,7 @@ export default function InvestigationCard({ investigation, identification }) {
                 style={{
                   fontFamily: "'Space Mono', monospace",
                   fontSize: 10,
-                  color: '#6a6050',
+                  color: 'var(--color-text-dim)',
                   letterSpacing: 1,
                   margin: '4px 0',
                 }}
@@ -172,7 +172,7 @@ export default function InvestigationCard({ investigation, identification }) {
                   fontFamily: "'Crimson Pro', serif",
                   fontSize: 13,
                   fontStyle: 'italic',
-                  color: '#8f8573',
+                  color: 'var(--color-text-muted)',
                   marginBottom: 12,
                 }}
               >
