@@ -4,10 +4,12 @@ import { fileURLToPath } from 'node:url';
 import { Router } from 'express';
 import { queryLocalFeedPlaces } from '../services/overpass.js';
 import { findLocalSellers } from '../services/sellerRegistry.js';
-import { getIncumbentProfilesMatchData } from '../services/incumbentBrandNeedles.js';
-import { nameMatchesChain, nameMatchesIncumbentProfiles, normalizeChainNeedles } from '../utils/chainMatch.js';
+import { nameMatchesChain, normalizeChainNeedles } from '../utils/chainMatch.js';
 
-/** Exclusion-list check uses {@link nameMatchesChain}: lowercase, accent-folded, substring of chain-exclusions needles only. */
+/**
+ * Inclusion-first: only `chain-exclusions.json` (plus hotel list for stay) can exclude.
+ * Substring / accent-folded match via {@link nameMatchesChain}. No DB, no fuzzy logic.
+ */
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -97,60 +99,41 @@ router.get('/', async (req, res) => {
   const registryNameNeedles = catLower === 'stay' ? stayListNeedles : chainNeedles;
 
   try {
-    const [{ places: osmPlaces, chainPlaces: osmExcludedByList }, registryResults, incumbentMatch] =
-      await Promise.all([
-        queryLocalFeedPlaces({
-          lat,
-          lng,
-          radiusMeters,
-          category,
-          excludeNameSubstrings: excludeForOsm,
-        }),
-        findLocalSellers({
-          lat,
-          lng,
-          category,
-          keywords: [],
-          radiusMiles,
-        }),
-        getIncumbentProfilesMatchData(),
-      ]);
+    const [{ places: osmPlaces, chainPlaces: osmExcludedByList }, registryResults] = await Promise.all([
+      queryLocalFeedPlaces({
+        lat,
+        lng,
+        radiusMeters,
+        category,
+        excludeNameSubstrings: excludeForOsm,
+      }),
+      findLocalSellers({
+        lat,
+        lng,
+        category,
+        keywords: [],
+        radiusMiles,
+      }),
+    ]);
 
     const registryFeed = [];
     const registryChain = [];
     for (const s of registryResults) {
       const item = mapRegistryItem(s);
-      const onExclusionList = nameMatchesChain(item.name, registryNameNeedles);
-      const incumbentHit = nameMatchesIncumbentProfiles(item.name, incumbentMatch);
-      if (onExclusionList || incumbentHit) {
-        if (incumbentHit && !onExclusionList) {
-          console.log(`[local-feed] registry → chain (incumbent slug/similarity): ${item.name}`);
-        }
+      if (nameMatchesChain(item.name, registryNameNeedles)) {
         registryChain.push(item);
       } else {
         registryFeed.push(item);
       }
     }
 
-    const osmIncumbentChain = [];
-    const mainOsm = [];
-    for (const b of osmPlaces) {
-      if (nameMatchesIncumbentProfiles(b.name, incumbentMatch)) {
-        console.log(`[local-feed] OSM → chain (incumbent slug/similarity): ${b.name}`);
-        osmIncumbentChain.push(b);
-      } else {
-        mainOsm.push(b);
-      }
-    }
-
-    const feed = [...registryFeed, ...mainOsm.map((b) => mapOsmRow(b, 'local'))].sort(sortFeed);
+    const feed = [...registryFeed, ...osmPlaces.map((b) => mapOsmRow(b, 'local'))].sort(sortFeed);
 
     const not_verified_independent = [];
 
     const chain_results = [
       ...registryChain,
       ...osmExcludedByList.map((b) => mapOsmRow(b, 'chain')),
-      ...osmIncumbentChain.map((b) => mapOsmRow(b, 'chain')),
     ].sort(sortFeed);
 
     res.json({
