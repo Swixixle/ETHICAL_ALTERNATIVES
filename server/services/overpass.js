@@ -30,6 +30,16 @@ function buildAddress(tags) {
   return '';
 }
 
+/** Street + city line for cards (housenumber, street, city only). */
+function buildStreetCityLine(tags) {
+  const hn = tags['addr:housenumber'];
+  const st = tags['addr:street'];
+  const city = tags['addr:city'];
+  const streetPart = [hn, st].filter(Boolean).join(' ');
+  const line = [streetPart, city].filter(Boolean).join(', ');
+  return line || '';
+}
+
 /**
  * @param {object} opts
  * @param {number} opts.lat
@@ -81,11 +91,13 @@ out body;`;
       const name = tags.name || tags['name:en'] || 'Local business';
       if (nameMatchesChain(name, needles)) continue;
 
+      const streetLine = buildStreetCityLine(tags);
       out.push({
         type: 'local',
         osm_id: String(el.id),
         name,
         address: buildAddress(tags) || `${el.lat.toFixed(4)}, ${el.lon.toFixed(4)}`,
+        street_address_line: streetLine || null,
         lat: el.lat,
         lng: el.lon,
         distance_miles: haversineMiles(lat, lng, el.lat, el.lon),
@@ -228,11 +240,13 @@ out body;`;
           typeof tags.description === 'string' && tags.description.trim()
             ? tags.description.trim().slice(0, 140)
             : labelKey;
+        const streetLine = buildStreetCityLine(tags);
         const row = {
           type: 'local',
           osm_id: id,
           name,
           address: buildAddress(tags) || `${el.lat.toFixed(4)}, ${el.lon.toFixed(4)}`,
+          street_address_line: streetLine || null,
           lat: el.lat,
           lng: el.lon,
           distance_miles: haversineMiles(lat, lng, el.lat, el.lon),
@@ -379,11 +393,13 @@ out body;`;
           ? tags.description.trim().slice(0, 140)
           : FEED_PLACE_LABELS[labelKey] || 'Independent business';
 
+      const streetLine = buildStreetCityLine(tags);
       const row = {
         type: 'local',
         osm_id: id,
         name,
         address: buildAddress(tags) || `${el.lat.toFixed(4)}, ${el.lon.toFixed(4)}`,
+        street_address_line: streetLine || null,
         lat: el.lat,
         lng: el.lon,
         distance_miles: haversineMiles(lat, lng, el.lat, el.lon),

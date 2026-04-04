@@ -54,8 +54,10 @@ function mapRegistryItem(s) {
   };
 }
 
-/** @param {{ osm_id: string, name: string, tagline?: string | null, distance_miles?: number, website?: string | null, phone?: string | null, address?: string | null }} b @param {'local' | 'verified_independent' | 'chain' | 'chain_candidate'} trust */
+/** @param {{ osm_id: string, name: string, tagline?: string | null, distance_miles?: number, website?: string | null, phone?: string | null, address?: string | null, street_address_line?: string | null, lat?: number, lng?: number }} b @param {'local' | 'verified_independent' | 'chain' | 'chain_candidate'} trust */
 function mapOsmRow(b, trust) {
+  const latN = typeof b.lat === 'number' ? b.lat : b.lat != null ? Number(b.lat) : NaN;
+  const lngN = typeof b.lng === 'number' ? b.lng : b.lng != null ? Number(b.lng) : NaN;
   return {
     type: 'osm',
     id: `osm-${b.osm_id}`,
@@ -66,6 +68,9 @@ function mapOsmRow(b, trust) {
     phone: b.phone ? String(b.phone) : null,
     city: null,
     address: b.address || null,
+    street_address_line: b.street_address_line ? String(b.street_address_line) : null,
+    lat: Number.isFinite(latN) ? latN : null,
+    lng: Number.isFinite(lngN) ? lngN : null,
     verified: false,
     trust_tier: trust,
     ethics_badges: [],

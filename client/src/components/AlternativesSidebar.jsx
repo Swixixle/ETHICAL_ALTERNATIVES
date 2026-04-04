@@ -3,6 +3,7 @@ import TrustStrip from './TrustStrip.jsx';
 import ListYourShop from './ListYourShop.jsx';
 import SecondhandLinks from './SecondhandLinks.jsx';
 import DiySection from './DiySection.jsx';
+import { getGoogleMapsUrl, getStreetAddressLine } from '../utils/localBusinessMaps.js';
 
 function SectionLabel({ children }) {
   return (
@@ -33,6 +34,10 @@ function LocalCard({ place }) {
   const website = place.website ? String(place.website) : null;
   const phone = place.phone ? String(place.phone) : null;
   const addr = place.address ? String(place.address) : '';
+  const streetLine = getStreetAddressLine(place);
+  const coordishAddr = /^-?\d+\.?\d*,\s*-?\d+\.?\d*$/.test(addr.trim());
+  const displayAddr = streetLine || (!coordishAddr && addr.trim() ? addr.trim() : '');
+  const mapsHref = getGoogleMapsUrl(place);
   const distance_mi =
     typeof place.distance_miles === 'number' ? place.distance_miles.toFixed(1) : null;
 
@@ -41,6 +46,19 @@ function LocalCard({ place }) {
       ? website
       : `https://${website}`
     : null;
+
+  const directionsLinkStyle = {
+    fontFamily: "'Space Mono', monospace",
+    fontSize: 9,
+    color: '#f0a820',
+    textDecoration: 'none',
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    fontWeight: 700,
+    padding: 0,
+    whiteSpace: 'nowrap',
+  };
 
   return (
     <div
@@ -80,7 +98,7 @@ function LocalCard({ place }) {
         </div>
       ) : null}
 
-      {addr ? (
+      {displayAddr ? (
         <div
           style={{
             fontFamily: "'Crimson Pro', serif",
@@ -89,11 +107,11 @@ function LocalCard({ place }) {
             marginBottom: 6,
           }}
         >
-          {addr}
+          {displayAddr}
         </div>
       ) : null}
 
-      <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', alignItems: 'center' }}>
         {website ? (
           <a
             href={websiteHref}
@@ -115,6 +133,11 @@ function LocalCard({ place }) {
             Visit ↗
           </a>
         ) : null}
+        {mapsHref ? (
+          <a href={mapsHref} target="_blank" rel="noreferrer" style={directionsLinkStyle}>
+            GET DIRECTIONS ↗
+          </a>
+        ) : null}
         {phone ? (
           <a
             href={`tel:${phone}`}
@@ -131,26 +154,6 @@ function LocalCard({ place }) {
             }}
           >
             Call
-          </a>
-        ) : null}
-        {!website && !phone ? (
-          <a
-            href={`https://www.google.com/maps/search/${encodeURIComponent(`${name} ${addr}`)}`}
-            target="_blank"
-            rel="noreferrer"
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: 11,
-              letterSpacing: 1,
-              textTransform: 'uppercase',
-              color: '#6a8a9a',
-              border: '1px solid #2a3f52',
-              padding: '4px 10px',
-              borderRadius: 2,
-              textDecoration: 'none',
-            }}
-          >
-            Find on Maps ↗
           </a>
         ) : null}
       </div>

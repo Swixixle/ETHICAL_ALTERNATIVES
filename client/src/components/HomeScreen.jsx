@@ -19,6 +19,7 @@ import {
   startTravelTracking,
   stopTravelTracking,
 } from '../services/travelTracker.js';
+import { getGoogleMapsUrl, getStreetAddressLine } from '../utils/localBusinessMaps.js';
 
 const ONBOARD_KEY = 'ea_geo_onboard';
 
@@ -694,8 +695,21 @@ function FeedCard({ business, chainFootnote = false }) {
   const hasBadges = business.ethics_badges?.length > 0;
   const visitHref =
     website && (website.startsWith('http') ? website : `https://${website}`);
+  const streetLine = getStreetAddressLine(business);
+  const mapsHref = getGoogleMapsUrl(business);
 
-  const mapQuery = [business.name, business.address, business.city].filter(Boolean).join(' ');
+  const directionsLinkStyle = {
+    fontFamily: "'Space Mono', monospace",
+    fontSize: 9,
+    color: '#f0a820',
+    textDecoration: 'none',
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    fontWeight: 700,
+    padding: 0,
+    whiteSpace: 'nowrap',
+  };
 
   const cardStyle = chainFootnote
     ? {
@@ -755,11 +769,24 @@ function FeedCard({ business, chainFootnote = false }) {
                 letterSpacing: 1.5,
                 textTransform: 'uppercase',
                 color: chainFootnote ? '#6a8a9a' : '#f0a820',
-                marginBottom: hasBadges ? 8 : 0,
+                marginBottom: streetLine || hasBadges ? 8 : 0,
               }}
             >
               {business.distance_mi} mi away
-              {business.address ? ` · ${business.address}` : ''}
+            </div>
+          ) : null}
+
+          {streetLine ? (
+            <div
+              style={{
+                fontFamily: "'Crimson Pro', serif",
+                fontSize: 14,
+                color: chainFootnote ? '#6a8a9a' : '#a8c4d8',
+                lineHeight: 1.45,
+                marginBottom: hasBadges ? 8 : 0,
+              }}
+            >
+              {streetLine}
             </div>
           ) : null}
 
@@ -786,72 +813,64 @@ function FeedCard({ business, chainFootnote = false }) {
           ) : null}
         </div>
 
-        {website ? (
-          <a
-            href={visitHref}
-            target="_blank"
-            rel="noreferrer"
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: 11,
-              letterSpacing: 1,
-              textTransform: 'uppercase',
-              color: '#0f1520',
-              background: '#f0a820',
-              padding: '6px 12px',
-              borderRadius: 2,
-              textDecoration: 'none',
-              fontWeight: 700,
-              flexShrink: 0,
-              marginLeft: 12,
-              alignSelf: 'flex-start',
-            }}
-          >
-            Visit ↗
-          </a>
-        ) : null}
-        {!website && business.phone ? (
-          <a
-            href={`tel:${business.phone}`}
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: 11,
-              letterSpacing: 1,
-              textTransform: 'uppercase',
-              color: '#a8c4d8',
-              border: '1px solid #2a3f52',
-              padding: '6px 12px',
-              borderRadius: 2,
-              textDecoration: 'none',
-              flexShrink: 0,
-              marginLeft: 12,
-            }}
-          >
-            Call
-          </a>
-        ) : null}
-        {!website && !business.phone ? (
-          <a
-            href={`https://www.google.com/maps/search/${encodeURIComponent(mapQuery || business.name)}`}
-            target="_blank"
-            rel="noreferrer"
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: 11,
-              letterSpacing: 1,
-              textTransform: 'uppercase',
-              color: '#6a8a9a',
-              border: '1px solid #2a3f52',
-              padding: '6px 12px',
-              borderRadius: 2,
-              textDecoration: 'none',
-              flexShrink: 0,
-              marginLeft: 12,
-            }}
-          >
-            Map ↗
-          </a>
-        ) : null}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            gap: 8,
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            flexShrink: 0,
+            marginLeft: 12,
+            alignSelf: 'flex-start',
+          }}
+        >
+          {website ? (
+            <a
+              href={visitHref}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 11,
+                letterSpacing: 1,
+                textTransform: 'uppercase',
+                color: '#0f1520',
+                background: '#f0a820',
+                padding: '6px 12px',
+                borderRadius: 2,
+                textDecoration: 'none',
+                fontWeight: 700,
+              }}
+            >
+              Visit ↗
+            </a>
+          ) : null}
+          {mapsHref ? (
+            <a href={mapsHref} target="_blank" rel="noreferrer" style={directionsLinkStyle}>
+              GET DIRECTIONS ↗
+            </a>
+          ) : null}
+          {!website && business.phone ? (
+            <a
+              href={`tel:${business.phone}`}
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 11,
+                letterSpacing: 1,
+                textTransform: 'uppercase',
+                color: '#a8c4d8',
+                border: '1px solid #2a3f52',
+                padding: '6px 12px',
+                borderRadius: 2,
+                textDecoration: 'none',
+              }}
+            >
+              Call
+            </a>
+          ) : null}
+        </div>
       </div>
     </div>
   );
