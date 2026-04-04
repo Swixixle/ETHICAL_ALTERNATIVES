@@ -63,29 +63,22 @@ function worstEvidenceGrade(inv) {
 }
 
 /** @param {Record<string, unknown> | null | undefined} id */
-function identificationPhrase(id) {
-  if (!id || typeof id !== 'object') return 'Identification pending';
+function matchMethodLabel(id) {
+  if (!id || typeof id !== 'object') return 'Match pending';
   const m = id.identification_method;
-  if (m === 'text_search') return 'Typed search — investigate from home';
-  if (m === 'direct_logo') return 'Logo confirmed from photo';
-  if (m === 'partial_logo') return 'Brand identified from partial logo';
-  if (m === 'product_recognition') return 'Product identified from packaging';
-  if (m === 'scene_inference') return 'Brand inferred from scene context';
+  if (m === 'text_search') return 'Text Search';
+  if (m === 'direct_logo') return 'Logo Confirmed';
+  if (m === 'partial_logo') return 'Logo Inferred';
+  if (m === 'product_recognition') return 'Logo Inferred';
+  if (m === 'scene_inference') return 'Scene Context';
   return 'Uncertain — verify';
 }
 
-function humanizeTag(tag) {
-  return String(tag)
-    .replace(/_/g, ' ')
-    .replace(/\b\w/g, (c) => c.toUpperCase());
-}
-
-function profileLabel(inv) {
+function profileTypeLabel(inv) {
   const p = String(inv?.profile_type || '').toLowerCase();
-  if (p === 'realtime_search') return 'Live research profile';
-  if (p === 'limited') return 'Preliminary realtime profile';
-  if (p === 'database') return 'Database-backed profile';
-  return 'Investigation profile';
+  if (p === 'database') return 'Verified Profile';
+  if (p === 'realtime_search' || p === 'limited') return 'Live Research';
+  return 'Live Research';
 }
 
 /**
@@ -101,16 +94,12 @@ export default function ProofBlock({ investigation, identification, result }) {
   const inv = investigation;
   const id = identification || {};
   const srcCount = countSectionSources(inv);
-  const extraSearch =
-    Array.isArray(result?.searched_sources) ? result.searched_sources.length : 0;
+  const extraSearch = Array.isArray(result?.searched_sources) ? result.searched_sources.length : 0;
   const totalSources = srcCount + extraSearch;
 
   const grade = worstEvidenceGrade(inv);
   const gradeLevel = grade && typeof grade.level === 'string' ? grade.level.toLowerCase() : '';
   const gColors = GRADE_COLORS[gradeLevel] || GRADE_COLORS.limited;
-
-  const verdictTags = Array.isArray(inv.verdict_tags) ? inv.verdict_tags.map(String) : [];
-  const topTags = verdictTags.slice(0, 3);
 
   return (
     <div
@@ -122,14 +111,14 @@ export default function ProofBlock({ investigation, identification, result }) {
         borderRadius: 4,
       }}
     >
-      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: '12px 20px' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', gap: '14px 24px' }}>
         <div>
           <div
             style={{
               fontFamily: "'Bebas Neue', sans-serif",
-              fontSize: 'clamp(2rem, 5vw, 2.75rem)',
+              fontSize: 'clamp(2.25rem, 6vw, 3rem)',
               letterSpacing: 2,
-              color: 'var(--color-text, #f0e8d0)',
+              color: '#f0a820',
               lineHeight: 1,
             }}
           >
@@ -142,15 +131,15 @@ export default function ProofBlock({ investigation, identification, result }) {
               letterSpacing: 2,
               textTransform: 'uppercase',
               color: 'var(--color-text-muted, #6a8a9a)',
-              marginTop: 4,
+              marginTop: 6,
             }}
           >
             Sources indexed
           </div>
         </div>
 
-        {gradeLevel ? (
-          <div>
+        <div style={{ flex: '1 1 160px', minWidth: 0 }}>
+          {gradeLevel ? (
             <div
               title={typeof grade.note === 'string' ? grade.note : undefined}
               style={{
@@ -164,70 +153,37 @@ export default function ProofBlock({ investigation, identification, result }) {
                 background: gColors.bg,
                 color: gColors.text,
                 display: 'inline-block',
+                marginBottom: 8,
               }}
             >
               Evidence · {gradeLevel}
             </div>
-            <div
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 11,
-                color: 'var(--color-text-dim, #a8c4d8)',
-                letterSpacing: 1,
-                marginTop: 6,
-              }}
-            >
-              {profileLabel(inv)}
-            </div>
-          </div>
-        ) : (
+          ) : null}
           <div
             style={{
               fontFamily: "'Space Mono', monospace",
               fontSize: 11,
               letterSpacing: 1,
               color: 'var(--color-text-dim, #a8c4d8)',
+              lineHeight: 1.5,
             }}
           >
-            {profileLabel(inv)}
+            <strong>Profile:</strong> {profileTypeLabel(inv)}
           </div>
-        )}
-      </div>
-
-      <p
-        style={{
-          fontFamily: "'Space Mono', monospace",
-          fontSize: 12,
-          letterSpacing: 0.5,
-          color: 'var(--color-text-muted, #a8c4d8)',
-          margin: '12px 0 8px',
-          lineHeight: 1.5,
-        }}
-      >
-        Identified: {identificationPhrase(id)}
-      </p>
-
-      {topTags.length > 0 ? (
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 4 }}>
-          {topTags.map((t) => (
-            <span
-              key={t}
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 11,
-                letterSpacing: 1,
-                textTransform: 'uppercase',
-                color: 'var(--color-accent, #f0a820)',
-                border: '1px solid rgba(240,168,32,0.35)',
-                borderRadius: 999,
-                padding: '4px 10px',
-              }}
-            >
-              {humanizeTag(t)}
-            </span>
-          ))}
+          <div
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 11,
+              letterSpacing: 1,
+              color: 'var(--color-text-dim, #a8c4d8)',
+              lineHeight: 1.5,
+              marginTop: 4,
+            }}
+          >
+            <strong>Match:</strong> {matchMethodLabel(id)}
+          </div>
         </div>
-      ) : null}
+      </div>
 
       {typeof result?.response_ms === 'number' || extraSearch > 0 ? (
         <p
@@ -235,16 +191,14 @@ export default function ProofBlock({ investigation, identification, result }) {
             fontFamily: "'Space Mono', monospace",
             fontSize: 11,
             color: 'var(--color-text-muted, #6a8a9a)',
-            margin: '10px 0 0',
+            margin: '12px 0 0',
             letterSpacing: 0.5,
           }}
         >
           {typeof result?.response_ms === 'number' ? `${result.response_ms} ms` : ''}
-          {typeof result?.response_ms === 'number' && Array.isArray(result?.searched_sources)
-            ? ' · '
-            : ''}
+          {typeof result?.response_ms === 'number' && Array.isArray(result?.searched_sources) ? ' · ' : ''}
           {Array.isArray(result?.searched_sources)
-            ? `Search coverage: ${result.searched_sources.join(', ')}`
+            ? `Coverage: ${result.searched_sources.join(', ')}`
             : null}
         </p>
       ) : null}

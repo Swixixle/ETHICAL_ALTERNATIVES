@@ -183,6 +183,7 @@ function EtsyCard({ listing }) {
         textDecoration: 'none',
       }}
     >
+      <TrustStrip trustTier="not_verified" />
       <div
         style={{
           fontFamily: "'Crimson Pro', serif",

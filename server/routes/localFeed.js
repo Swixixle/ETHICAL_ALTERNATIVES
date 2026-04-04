@@ -8,6 +8,8 @@ import { getIncumbentBrandNeedles } from '../services/incumbentBrandNeedles.js';
 import { nameMatchesChain, normalizeChainNeedles } from '../utils/chainMatch.js';
 import { classifyIndependentCandidates } from '../services/chainClassification.js';
 
+/** Chain name checks use {@link nameMatchesChain}: lowercase, accent-folded, substring match. */
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const chainExclusionsRaw = JSON.parse(
@@ -121,7 +123,12 @@ router.get('/', async (req, res) => {
     const registryChain = [];
     for (const s of registryResults) {
       const item = mapRegistryItem(s);
-      if (nameMatchesChain(item.name, registryNameNeedles) || nameMatchesChain(item.name, dbNeedles)) {
+      const pass1List = nameMatchesChain(item.name, registryNameNeedles);
+      const pass2Incumbent = nameMatchesChain(item.name, dbNeedles);
+      if (pass1List || pass2Incumbent) {
+        if (pass2Incumbent && !pass1List) {
+          console.log(`[local-feed] registry → chain (incumbent_profiles/subsidiaries): ${item.name}`);
+        }
         registryChain.push(item);
       } else {
         registryFeed.push(item);
@@ -131,7 +138,9 @@ router.get('/', async (req, res) => {
     const osmDbChain = [];
     const osmForClassification = [];
     for (const b of osmPlaces) {
-      if (nameMatchesChain(b.name, dbNeedles)) {
+      const pass2Db = nameMatchesChain(b.name, dbNeedles);
+      if (pass2Db) {
+        console.log(`[local-feed] OSM → chain (incumbent_profiles/subsidiaries): ${b.name}`);
         osmDbChain.push(b);
       } else {
         osmForClassification.push(b);

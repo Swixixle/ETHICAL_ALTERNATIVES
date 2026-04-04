@@ -47,62 +47,58 @@ export default function QuickAlternatives({ registryResults, localResults }) {
           letterSpacing: 2,
           textTransform: 'uppercase',
           color: 'var(--color-text-muted, #6a8a9a)',
-          marginBottom: 10,
+          marginBottom: 6,
         }}
       >
         Alternatives near you
       </div>
       <div
         style={{
-          display: 'flex',
-          gap: 10,
-          overflowX: 'auto',
-          paddingBottom: 4,
-          WebkitOverflowScrolling: 'touch',
+          border: '1px solid var(--color-border, #2a3f52)',
+          borderRadius: 4,
+          background: 'var(--color-panel-bg, #121a24)',
+          overflow: 'hidden',
         }}
       >
         {picks.map((item, idx) => (
           <div
             key={`${item.kind}-${idx}-${item.name}`}
             style={{
-              flex: '0 0 min(200px, 42vw)',
-              background: 'var(--color-panel-bg, #162030)',
-              border: '1px solid var(--color-border, #2a3f52)',
-              borderRadius: 4,
-              padding: '12px 14px',
-              minHeight: 88,
               display: 'flex',
-              flexDirection: 'column',
+              alignItems: 'center',
               justifyContent: 'space-between',
+              gap: 12,
+              padding: '12px 14px',
+              borderBottom: idx < picks.length - 1 ? '1px solid #283648' : 'none',
             }}
           >
-            <div
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: 18,
-                letterSpacing: 1,
-                color: 'var(--color-text, #f0e8d0)',
-                lineHeight: 1.1,
-              }}
-            >
-              {item.name}
-            </div>
-            {item.dist ? (
+            <div style={{ minWidth: 0, flex: 1 }}>
               <div
                 style={{
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 11,
-                  color: 'var(--color-accent, #f0a820)',
-                  textTransform: 'uppercase',
+                  fontFamily: "'Bebas Neue', sans-serif",
+                  fontSize: 17,
                   letterSpacing: 1,
-                  marginTop: 6,
+                  color: 'var(--color-text, #f0e8d0)',
+                  lineHeight: 1.15,
                 }}
               >
-                {item.dist}
+                {item.name}
               </div>
-            ) : (
-              <div style={{ marginTop: 6 }} />
-            )}
+              {item.dist ? (
+                <div
+                  style={{
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: 11,
+                    color: 'var(--color-accent, #f0a820)',
+                    textTransform: 'uppercase',
+                    letterSpacing: 1,
+                    marginTop: 4,
+                  }}
+                >
+                  {item.dist}
+                </div>
+              ) : null}
+            </div>
             {item.href ? (
               <a
                 href={item.href}
@@ -115,15 +111,14 @@ export default function QuickAlternatives({ registryResults, localResults }) {
                   textTransform: 'uppercase',
                   color: '#0f1520',
                   background: '#f0a820',
-                  padding: '5px 10px',
+                  padding: '8px 14px',
                   borderRadius: 2,
                   textDecoration: 'none',
                   fontWeight: 700,
-                  marginTop: 10,
-                  alignSelf: 'flex-start',
+                  flexShrink: 0,
                 }}
               >
-                Open ↗
+                Visit ↗
               </a>
             ) : (
               <span
@@ -131,10 +126,10 @@ export default function QuickAlternatives({ registryResults, localResults }) {
                   fontFamily: "'Space Mono', monospace",
                   fontSize: 11,
                   color: 'var(--color-text-muted, #6a8a9a)',
-                  marginTop: 10,
+                  flexShrink: 0,
                 }}
               >
-                Maps search only
+                Maps
               </span>
             )}
           </div>

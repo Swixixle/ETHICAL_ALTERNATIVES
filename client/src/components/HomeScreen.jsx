@@ -54,41 +54,71 @@ function SearchBar({ onSearch, onStartSnap }) {
     if (query.trim()) onSearch(query.trim());
   }
 
+  const inputStyle = {
+    width: '100%',
+    minHeight: 48,
+    boxSizing: 'border-box',
+    background: '#162030',
+    border: '1px solid #2a3f52',
+    borderRadius: 2,
+    padding: '0 16px',
+    fontFamily: "'Crimson Pro', serif",
+    fontSize: 17,
+    color: '#f0e8d0',
+    outline: 'none',
+  };
+
   return (
     <form
       onSubmit={handleSubmit}
       style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: 10,
-        padding: '16px 24px',
+        padding: '14px 16px 16px',
         borderBottom: '1px solid #2a3f52',
         background: '#0f1520',
-        alignItems: 'stretch',
       }}
     >
-      <input
-        type="search"
-        name="investigate"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search any company, brand, or CEO..."
-        enterKeyHint="search"
+      <div
         style={{
-          flex: '1 1 180px',
-          minWidth: 0,
-          minHeight: 48,
-          boxSizing: 'border-box',
-          background: '#162030',
-          border: '1px solid #2a3f52',
-          borderRadius: 2,
-          padding: '0 16px',
-          fontFamily: "'Crimson Pro', serif",
-          fontSize: 17,
-          color: '#f0e8d0',
-          outline: 'none',
+          display: 'flex',
+          gap: 10,
+          alignItems: 'stretch',
+          marginBottom: 10,
         }}
-      />
+      >
+        <input
+          type="search"
+          name="investigate"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search any company, brand, or CEO..."
+          enterKeyHint="search"
+          style={{ ...inputStyle, flex: '1 1 auto', minWidth: 0 }}
+        />
+        <button
+          type="button"
+          onClick={() => onStartSnap()}
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontSize: 12,
+            letterSpacing: 2,
+            textTransform: 'uppercase',
+            background: '#f0a820',
+            color: '#0f1520',
+            border: 'none',
+            minHeight: 48,
+            minWidth: 112,
+            padding: '0 20px',
+            borderRadius: 2,
+            cursor: 'pointer',
+            fontWeight: 800,
+            flexShrink: 0,
+            boxSizing: 'border-box',
+            boxShadow: '0 0 0 1px rgba(240,168,32,0.35)',
+          }}
+        >
+          📷 Snap
+        </button>
+      </div>
       <button
         type="submit"
         style={{
@@ -96,41 +126,19 @@ function SearchBar({ onSearch, onStartSnap }) {
           fontSize: 11,
           letterSpacing: 2,
           textTransform: 'uppercase',
-          background: '#f0a820',
-          color: '#0f1520',
-          border: 'none',
+          width: '100%',
           minHeight: 48,
+          boxSizing: 'border-box',
+          background: '#121a28',
+          color: '#f0a820',
+          border: '1px solid #3d4f62',
           padding: '0 22px',
           borderRadius: 2,
           cursor: 'pointer',
           fontWeight: 700,
-          flexShrink: 0,
-          boxSizing: 'border-box',
         }}
       >
         Investigate
-      </button>
-      <button
-        type="button"
-        onClick={() => onStartSnap()}
-        style={{
-          fontFamily: "'Space Mono', monospace",
-          fontSize: 11,
-          letterSpacing: 2,
-          textTransform: 'uppercase',
-          background: '#0f1520',
-          color: '#f0a820',
-          border: '1px solid #f0a820',
-          minHeight: 48,
-          padding: '0 20px',
-          borderRadius: 2,
-          cursor: 'pointer',
-          fontWeight: 700,
-          flexShrink: 0,
-          boxSizing: 'border-box',
-        }}
-      >
-        📷 Snap
       </button>
     </form>
   );
@@ -523,7 +531,7 @@ function CityCard({ identity, city, state }) {
 
   const cityPart = [city, state].filter(Boolean).join(', ');
   const headline = typeof identity.headline === 'string' ? identity.headline.trim() : '';
-  const amberLine = [headline, cityPart].filter(Boolean).join(' · ').toUpperCase();
+  const amberLine = [headline, cityPart].filter(Boolean).join(' · ');
 
   if (!open) {
     return (
@@ -534,7 +542,7 @@ function CityCard({ identity, city, state }) {
           display: 'block',
           width: '100%',
           textAlign: 'left',
-          padding: '14px 24px',
+          padding: '12px 24px',
           border: 'none',
           borderBottom: '1px solid #2a3f52',
           background: '#0f1520',
@@ -544,14 +552,13 @@ function CityCard({ identity, city, state }) {
         <span
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 11,
-            letterSpacing: 2,
-            textTransform: 'uppercase',
+            fontSize: 9,
+            letterSpacing: 1,
             color: '#f0a820',
             lineHeight: 1.45,
           }}
         >
-          {amberLine || cityPart.toUpperCase()}
+          {amberLine || cityPart}
         </span>
       </button>
     );
@@ -1326,7 +1333,7 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
         </div>
       ) : null}
 
-      <div style={{ paddingTop: 16, paddingBottom: 100 }}>
+      <div style={{ paddingTop: 16, paddingBottom: 32 }}>
         {phase === 'ready' && travelStayActive && category !== 'stay' ? (
           <div
             style={{
@@ -1552,33 +1559,52 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
         {!loadingFeed && phase === 'ready' && category === 'stay' ? (
           <BookIndependentStayLinks city={location?.city} state={location?.state} />
         ) : null}
-      </div>
 
-      <div style={{ padding: '24px 24px 48px', borderTop: '1px solid #1e3044' }}>
-        <button
-          type="button"
-          onClick={() => setCommunityBoardOpen((o) => !o)}
-          style={{
-            fontFamily: "'Space Mono', monospace",
-            fontSize: 11,
-            letterSpacing: 2,
-            textTransform: 'uppercase',
-            color: '#f0a820',
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            padding: 0,
-            textDecoration: 'underline',
-            textUnderlineOffset: 4,
-          }}
-        >
-          Community board {communityBoardOpen ? '▾' : '→'}
-        </button>
-        {communityBoardOpen ? (
-          <div style={{ marginTop: 20 }}>
-            <CommunityBoard location={location} />
-          </div>
+        {phase === 'ready' ? (
+          <>
+            <div
+              style={{
+                margin: '28px 16px 0',
+                padding: 18,
+                border: '1px solid #2a3f52',
+                borderRadius: 4,
+                background: '#121820',
+              }}
+            >
+              <button
+                type="button"
+                onClick={() => setCommunityBoardOpen((o) => !o)}
+                style={{
+                  display: 'flex',
+                  width: '100%',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: 12,
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 11,
+                  letterSpacing: 2,
+                  textTransform: 'uppercase',
+                  color: '#f0a820',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: 0,
+                  textAlign: 'left',
+                }}
+              >
+                <span>Community Board →</span>
+                <span aria-hidden="true">{communityBoardOpen ? '▾' : '▸'}</span>
+              </button>
+            </div>
+            {communityBoardOpen ? (
+              <div style={{ margin: '16px 16px 0' }}>
+                <CommunityBoard location={location} />
+              </div>
+            ) : null}
+          </>
         ) : null}
+
+        <div style={{ paddingBottom: 56 }} aria-hidden />
       </div>
     </div>
   );
