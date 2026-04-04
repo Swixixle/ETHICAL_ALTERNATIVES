@@ -194,6 +194,23 @@ export default function App() {
       </aside>
     ) : null;
 
+  const tapPhotoToolbar =
+    image && result && dataUrl ? (
+      <>
+        <div className="app__image-shell app__image-shell--compact">
+          <img className="app__photo" src={dataUrl} alt="Your capture" />
+        </div>
+        <div className="app__toolbar">
+          <button type="button" className="app__btn app__btn--ghost" onClick={() => clearResult()}>
+            Try another object
+          </button>
+          <button type="button" className="app__btn app__btn--ghost" onClick={() => reset()}>
+            New photo
+          </button>
+        </div>
+      </>
+    ) : null;
+
   const deepResultsSection =
     mode === 'deep' && result ? (
       <div className="app__results-root app__results-root--deep">
@@ -239,28 +256,21 @@ export default function App() {
   const tapResultsSection =
     image && result ? (
       <div className="app__results-root">
-        <div className="app__results-top">
-          <div className="app__image-shell app__image-shell--compact">
-            <img className="app__photo" src={dataUrl} alt="Your capture" />
-          </div>
-          <div className="app__toolbar">
-            <button
-              type="button"
-              className="app__btn app__btn--ghost"
-              onClick={() => clearResult()}
-            >
-              Try another object
-            </button>
-            <button type="button" className="app__btn app__btn--ghost" onClick={() => reset()}>
-              New photo
-            </button>
-          </div>
-        </div>
+        {!isDesktop ? <div className="app__results-top">{tapPhotoToolbar}</div> : null}
 
         {isDesktop ? (
-          <div className="app__results-grid">
-            {alternativesAside}
-            <div className="app__results-main">{identificationBlock}</div>
+          <div className="app__results-grid app__results-grid--tap">
+            <aside className="app__results-sidebar app__results-sidebar--tap" aria-label="Alternatives">
+              <div className="app__results-sidebar-head">{tapPhotoToolbar}</div>
+              <AlternativesSidebar
+                registryResults={result.registry_results}
+                localResults={result.local_results}
+                etsyResults={result.results}
+                identification={id}
+                investigation={result.investigation}
+              />
+            </aside>
+            <div className="app__results-main app__results-main--tap-pair">{identificationBlock}</div>
           </div>
         ) : (
           <div className="app__results-stack">

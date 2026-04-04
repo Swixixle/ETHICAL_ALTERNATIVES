@@ -241,13 +241,14 @@ function normalizeCostAbsorption(raw) {
   return { who_benefited, who_paid, the_gap };
 }
 
-/** Newspaper-style headline; max 10 words; null if empty. */
+/** Newspaper-style headline; max 15 words; null if empty. */
 function normalizeGeneratedHeadline(raw) {
   if (raw == null) return null;
   const s = String(raw).trim();
   if (!s) return null;
   const words = s.replace(/\s+/g, ' ').split(' ');
-  if (words.length > 10) return words.slice(0, 10).join(' ');
+  const cap = 15;
+  if (words.length > cap) return words.slice(0, cap).join(' ');
   return s;
 }
 
@@ -553,7 +554,7 @@ Timeline rules:
 - minor = investigation opened, allegation filed
 
 generated_headline:
-- At most 10 words. A short, punchy NEWSPAPER headline summarizing the single most significant finding or defining characteristic of THIS company's documented public record — as a front-page editor would write after reading the investigation.
+- At most 15 words. A short, punchy NEWSPAPER headline summarizing the single most significant finding or defining characteristic of THIS company's documented public record — as a front-page editor would write after reading the investigation.
 - Must reflect what the record reveals, NOT a description of a product, package, or photo. Never restate the user's tap or object label.
 - You MAY name the company when it sharpens the story (e.g. notable legal case, labor pattern).
 - If overall_concern_level is "clean" or clean_card is true, use a celebratory headline (the company's positive or distinctive record).

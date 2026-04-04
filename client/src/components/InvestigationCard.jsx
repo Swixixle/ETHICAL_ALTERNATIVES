@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SeverityMeter from './SeverityMeter';
 import Timeline from './Timeline';
 import CommunityImpact from './CommunityImpact';
@@ -172,7 +172,12 @@ function initialSectionOpenState() {
  */
 export default function InvestigationCard({ investigation, identification, onShare }) {
   const [open, setOpen] = useState(initialSectionOpenState);
-  const [expanded, setExpanded] = useState(false);
+  /** Open by default so Tax/Legal/… sections render without an extra click. */
+  const [expanded, setExpanded] = useState(true);
+
+  useEffect(() => {
+    console.log('[InvestigationCard] investigation payload', investigation);
+  }, [investigation]);
 
   if (!investigation) return null;
 

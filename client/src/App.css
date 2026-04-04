@@ -282,8 +282,32 @@ body,
   display: grid;
   grid-template-columns: minmax(280px, 350px) minmax(0, 1fr);
   gap: 0;
-  align-items: stretch;
+  align-items: start;
   min-height: calc(100vh - 8rem);
+}
+
+/* Tap flow: photo shares left column with alternatives; investigation flush to top of right column */
+.app__results-grid--tap {
+  align-items: start;
+  min-height: auto;
+}
+
+.app__results-sidebar--tap {
+  padding: 0 1.25rem 2.5rem;
+}
+
+.app__results-sidebar-head {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.app__results-main--tap-pair {
+  align-self: start;
+  padding-top: 0;
+  padding-bottom: 3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .app__results-sidebar {
