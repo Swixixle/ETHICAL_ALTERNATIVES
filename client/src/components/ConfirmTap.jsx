@@ -25,6 +25,8 @@ export default function ConfirmTap({
   onConfirm,
   onRetap,
   onBackgroundMode,
+  sceneInventory = null,
+  onSelectAlternativeBrand,
 }) {
   const cropSrc = identificationCropSrc(identification);
 
@@ -68,6 +70,44 @@ export default function ConfirmTap({
           It&apos;s in the background
         </button>
       </div>
+      {sceneInventory && sceneInventory.length > 0 && (
+        <div style={{ marginTop: 16 }}>
+          <div
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 9,
+              letterSpacing: 2,
+              textTransform: 'uppercase',
+              color: '#6a6050',
+              marginBottom: 8,
+            }}
+          >
+            Also detected in this image:
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+            {sceneInventory.slice(0, 6).map((item, idx) => (
+              <button
+                type="button"
+                key={idx}
+                onClick={() => onSelectAlternativeBrand && onSelectAlternativeBrand(item)}
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 9,
+                  letterSpacing: 1,
+                  color: '#c9bfa8',
+                  background: 'transparent',
+                  border: '1px solid #3a3228',
+                  padding: '4px 10px',
+                  borderRadius: 999,
+                  cursor: 'pointer',
+                }}
+              >
+                {item.brand} · {Math.round(Number(item.confidence ?? 0) * 100)}%
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

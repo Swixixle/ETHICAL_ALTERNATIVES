@@ -78,6 +78,7 @@ export default function App() {
     clearResult,
     captureGeoOnce,
     tapSession,
+    selectAlternativeBrand,
   } = useTapAnalysis();
 
   const dataUrl = image ? `data:image/jpeg;base64,${image}` : null;
@@ -142,6 +143,8 @@ export default function App() {
               onConfirm={() => confirmPendingIdentification()}
               onRetap={() => cancelPendingConfirmation()}
               onBackgroundMode={() => startBackgroundReselect()}
+              sceneInventory={pendingConfirmation.scene_inventory}
+              onSelectAlternativeBrand={selectAlternativeBrand}
             />
             {error ? (
               <ErrorState message={error} onRetry={() => cancelPendingConfirmation()} />

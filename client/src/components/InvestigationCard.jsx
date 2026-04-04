@@ -150,6 +150,35 @@ export default function InvestigationCard({ investigation, identification }) {
               Brand detected: <strong>{brandShown || 'Unknown'}</strong>
             </p>
             <SeverityMeter concernLevel={investigation.overall_concern_level} />
+            {identification?.identification_method ? (
+              <p
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 10,
+                  color: '#6a6050',
+                  letterSpacing: 1,
+                  margin: '4px 0',
+                }}
+              >
+                {identification.identification_method === 'direct_logo' && 'Logo confirmed'}
+                {identification.identification_method === 'partial_logo' && 'Brand identified from partial logo'}
+                {identification.identification_method === 'product_recognition' && 'Product identified from packaging'}
+                {identification.identification_method === 'scene_inference' && 'Brand inferred from scene context'}
+              </p>
+            ) : null}
+            {identification?.identification_method === 'scene_inference' && identification?.confidence_notes ? (
+              <p
+                style={{
+                  fontFamily: "'Crimson Pro', serif",
+                  fontSize: 13,
+                  fontStyle: 'italic',
+                  color: '#8f8573',
+                  marginBottom: 12,
+                }}
+              >
+                {identification.confidence_notes}
+              </p>
+            ) : null}
 
             <div className="verdict-tags-section">
               {Object.entries(grouped).map(([category, tags]) => (

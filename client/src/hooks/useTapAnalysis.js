@@ -112,6 +112,9 @@ export function useTapAnalysis() {
           identification: crop ? { ...idRaw, crop_base64: crop } : { ...idRaw },
           identification_tier: preview.data.identification_tier,
           response_ms: preview.data.response_ms,
+          scene_inventory: Array.isArray(preview.data.scene_inventory)
+            ? preview.data.scene_inventory
+            : null,
         });
       } catch (e) {
         setError(e instanceof Error ? e.message : 'Network error');
@@ -183,6 +186,16 @@ export function useTapAnalysis() {
     setTapSession((s) => s + 1);
   }, []);
 
+  const selectAlternativeBrand = useCallback(
+    (item) => {
+      const xp = Number(item?.approximate_x_percent);
+      const yp = Number(item?.approximate_y_percent);
+      if (!Number.isFinite(xp) || !Number.isFinite(yp)) return;
+      analyzeTap(xp / 100, yp / 100);
+    },
+    [analyzeTap]
+  );
+
   return {
     image,
     tapPosition,
@@ -202,5 +215,6 @@ export function useTapAnalysis() {
     clearResult,
     captureGeoOnce,
     tapSession,
+    selectAlternativeBrand,
   };
 }

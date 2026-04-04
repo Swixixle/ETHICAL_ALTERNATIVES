@@ -115,7 +115,94 @@ identification_method values:
 
 category must be exactly one of: clothing, food, coffee, books, home_goods, personal_care, electronics, tobacco, tools, other.
 search_keywords: short phrase (4–8 words) for marketplace search — NO brand names or trademarked product names.
-confidence is 0..1.`;
+confidence is 0..1.
+
+STREET AND SCENE IDENTIFICATION RULES:
+
+When the image contains a busy scene, street, mall, grocery store, or any
+environment with multiple brands:
+
+1. SHOPPING BAGS: Identify from color, handle style, logo shape.
+   Use the shopping bag color guide: Tiffany=robin's egg blue, Hermès=orange,
+   Whole Foods=dark green, Target=red, Apple=white, Louis Vuitton=brown LV monogram.
+
+2. STOREFRONTS: Identify from signage color, font, logo fragment, storefront
+   design. Use: McDonald's=red+yellow arches, Starbucks=green siren,
+   Walmart=blue+yellow spark, Apple=minimalist all-glass, CVS=red pharmacy.
+
+3. CLOTHING ON PEOPLE: Look for logos at chest, sleeve, waistband.
+   Nike=swoosh (curved checkmark), Adidas=three stripes OR trefoil,
+   Ralph Lauren=polo player on horse, Supreme=red box with white text,
+   Lacoste=small green crocodile, Gucci=interlocking GG, North Face=arc logo.
+
+4. GAS STATIONS: Speedway=red+yellow chevron, Shell=yellow+red scallop,
+   BP=green+yellow sunburst, Chevron=blue+red V, Exxon=red+blue oval.
+
+5. PARTIAL SIGNAGE: If only part of a sign is visible, reason from color
+   palette, letter forms, and adjacent context (drive-through=fast food,
+   fuel pumps=gas station, pharmacy cross=CVS/Walgreens).
+
+6. CORPORATE BUILDINGS: Apple stores are all-glass minimalist.
+   McDonald's has red/yellow exterior. Starbucks has green awning.
+
+7. PRODUCTS AT DISTANCE: Identify from packaging color+shape even if text
+   is unreadable: Tide=orange, Coca-Cola=red can/bottle, Pepsi=blue+red,
+   Heinz=red with label, Doritos=distinctive triangle bag.
+
+For any scene-inferred identification:
+- Set identification_method: "scene_inference" or "partial_logo"
+- Set confidence accurately
+- Explain reasoning in confidence_notes`;
+}
+
+/**
+ * Full-scene brand / logo inventory for low-confidence taps.
+ * @param {string} imageBase64 — raw base64 JPEG (no data URL prefix)
+ */
+export async function inventoryScene(imageBase64) {
+  const prompt = `Analyze this image. List every identifiable brand, product, logo, or corporate entity visible anywhere in the image.
+
+Return ONLY a valid JSON array. No comments, no markdown.
+
+Each item:
+{
+  "brand": string,
+  "location_description": string (e.g. "top-left", "center", "background-right"),
+  "approximate_x_percent": number (0-100),
+  "approximate_y_percent": number (0-100),
+  "confidence": number (0-1),
+  "identification_basis": "direct logo" | "partial logo" | "color+context" | "architecture"
+}
+
+Include sightings with confidence above 0.3. This is a discovery pass — find everything.`;
+
+  try {
+    const response = await client.messages.create({
+      model: VISION_MODEL,
+      max_tokens: 1000,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            {
+              type: 'image',
+              source: { type: 'base64', media_type: 'image/jpeg', data: imageBase64 },
+            },
+            { type: 'text', text: prompt },
+          ],
+        },
+      ],
+    });
+
+    const textBlock = response.content.find((b) => b.type === 'text');
+    const text = textBlock?.type === 'text' ? textBlock.text : '[]';
+    const clean = text.replace(/```json|```/g, '').trim();
+    const parsed = JSON.parse(clean);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (err) {
+    console.error('inventoryScene error:', err.message);
+    return [];
+  }
 }
 
 /** @param {string} text */

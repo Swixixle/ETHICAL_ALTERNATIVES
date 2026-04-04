@@ -1,0 +1,46 @@
+{
+  "shopping_bags": [
+    { "brand": "tiffany", "slug": "tiffany", "parent_slug": "lvmh", "color_primary": "#0ABAB5", "color_secondary": "white", "notes": "Robin's egg blue, white ribbon" },
+    { "brand": "hermes", "slug": "hermes", "color_primary": "#F17922", "color_secondary": "#8B5E3C", "notes": "Orange with brown handles" },
+    { "brand": "louis-vuitton", "slug": "lvmh", "color_primary": "#8B6914", "color_secondary": "#F5E6C8", "notes": "Brown with LV monogram pattern" },
+    { "brand": "apple", "slug": "apple", "color_primary": "white", "color_secondary": "#555555", "notes": "White with Apple logo" },
+    { "brand": "whole-foods", "slug": "amazon", "color_primary": "#00674B", "color_secondary": "white", "notes": "Dark green" },
+    { "brand": "target", "slug": "target", "color_primary": "#CC0000", "color_secondary": "white", "notes": "Red with bullseye" },
+    { "brand": "bloomingdales", "slug": "bloomingdales", "color_primary": "#8B4513", "color_secondary": "white", "notes": "Brown medium bag" },
+    { "brand": "nordstrom", "slug": "nordstrom", "color_primary": "black", "color_secondary": "white", "notes": "Black with white Nordstrom text" },
+    { "brand": "nike", "slug": "nike", "color_primary": "black", "color_secondary": "white", "notes": "Black with white swoosh" },
+    { "brand": "supreme", "slug": "supreme", "color_primary": "#FF0000", "color_secondary": "white", "notes": "Red bag with Supreme box logo" }
+  ],
+  "store_colors": [
+    { "brand": "starbucks", "slug": "starbucks", "color_primary": "#00704A", "color_secondary": "white", "notes": "Green with siren logo" },
+    { "brand": "mcdonalds", "slug": "mcdonalds", "color_primary": "#FFC72C", "color_secondary": "#DA291C", "notes": "Yellow arches on red background" },
+    { "brand": "walmart", "slug": "walmart", "color_primary": "#0071CE", "color_secondary": "#FFC220", "notes": "Blue with yellow spark" },
+    { "brand": "target", "slug": "target", "color_primary": "#CC0000", "color_secondary": "white", "notes": "Red bullseye" },
+    { "brand": "whole-foods", "slug": "amazon", "color_primary": "#00674B", "notes": "Dark green with white text" },
+    { "brand": "apple", "slug": "apple", "color_primary": "#f5f5f7", "notes": "Clean white/light gray minimalist glass storefront" },
+    { "brand": "cvs", "slug": "cvs", "color_primary": "#CC0000", "color_secondary": "white", "notes": "Red CVS pharmacy logo" },
+    { "brand": "walgreens", "slug": "walgreens", "color_primary": "#E4002B", "color_secondary": "white", "notes": "Red with white W" },
+    { "brand": "7-eleven", "slug": "7-eleven", "color_primary": "#FF6600", "color_secondary": "#00703C", "notes": "Orange and green 7-Eleven" },
+    { "brand": "speedway", "slug": "speedway", "color_primary": "#CC0000", "color_secondary": "#FFCC00", "notes": "Red with yellow Speedway chevron" },
+    { "brand": "shell", "slug": "shell", "color_primary": "#FFCC00", "color_secondary": "#CC0000", "notes": "Yellow and red scallop shell" },
+    { "brand": "bp", "slug": "bp", "color_primary": "#009900", "color_secondary": "#FFCC00", "notes": "Green and yellow sunburst" }
+  ],
+  "clothing_logos": [
+    { "brand": "nike", "slug": "nike", "identifier": "swoosh — single curved checkmark shape", "placement": "chest, heel, sleeve, shoe side" },
+    { "brand": "adidas", "slug": "adidas", "identifier": "three parallel diagonal stripes OR trefoil (three-leaf clover with stem)", "placement": "chest, sleeve, shoe side, waistband" },
+    { "brand": "ralph-lauren", "slug": "pvh-corp", "identifier": "small polo player on horseback", "placement": "left chest, cuff" },
+    { "brand": "supreme", "slug": "supreme", "identifier": "red rectangle with white Futura Heavy Oblique text reading SUPREME", "placement": "chest, accessories, box" },
+    { "brand": "lacoste", "slug": "lacoste", "identifier": "small green crocodile facing right", "placement": "left chest" },
+    { "brand": "tommy-hilfiger", "slug": "pvh-corp", "identifier": "red, white, and blue flag or color block with Tommy Hilfiger text", "placement": "chest, waistband" },
+    { "brand": "calvin-klein", "slug": "pvh-corp", "identifier": "CK initials or Calvin Klein text, minimalist sans-serif", "placement": "waistband, chest" },
+    { "brand": "champion", "slug": "hanesbrands", "identifier": "C logo in athletic script", "placement": "chest, sleeve" },
+    { "brand": "north-face", "slug": "vf-corp", "identifier": "half-dome arc logo", "placement": "chest, back, sleeve" },
+    { "brand": "gucci", "slug": "gucci", "identifier": "interlocking GG monogram or red and green stripe", "placement": "belt, bag, chest" },
+    { "brand": "louis-vuitton", "slug": "lvmh", "identifier": "LV monogram pattern on canvas, brown with golden beige", "placement": "bags, belts, accessories" }
+  ],
+  "architecture": [
+    { "brand": "apple", "slug": "apple", "notes": "Glass cube or cylindrical flagship; minimalist, all-glass with clean white interior visible" },
+    { "brand": "mcdonalds", "slug": "mcdonalds", "notes": "Red and yellow exterior, drive-through window, golden arches on building or sign" },
+    { "brand": "starbucks", "slug": "starbucks", "notes": "Green awning or signage, often with siren logo on building exterior" }
+  ]
+}

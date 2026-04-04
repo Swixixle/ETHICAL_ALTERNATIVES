@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { Router } from 'express';
-import { identifyObject } from '../services/vision.js';
+import { identifyObject, inventoryScene, inferSceneContext } from '../services/vision.js';
 import { searchEtsy } from '../services/etsy.js';
 import { getInvestigationProfile } from '../services/investigation.js';
 import { queryLocalBusinesses } from '../services/overpass.js';
@@ -33,6 +33,78 @@ export function getIdentificationTier(identification) {
 
 const router = Router();
 
+/** @param {unknown[]} inventory @param {number} tapX @param {number} tapY */
+function findClosestToTap(inventory, tapX, tapY) {
+  if (!inventory || inventory.length === 0) return null;
+  let closest = null;
+  let minDist = Infinity;
+  for (const item of inventory) {
+    if (!item || typeof item !== 'object') continue;
+    const xp = Number(item.approximate_x_percent);
+    const yp = Number(item.approximate_y_percent);
+    if (!Number.isFinite(xp) || !Number.isFinite(yp)) continue;
+    const dx = xp / 100 - tapX;
+    const dy = yp / 100 - tapY;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    if (dist < minDist) {
+      minDist = dist;
+      closest = item;
+    }
+  }
+  return closest;
+}
+
+/**
+ * Low-confidence taps: full-scene inventory + scene context when vision confidence is below 0.7.
+ * @param {string} base64
+ * @param {number} tapX
+ * @param {number} tapY
+ * @param {Record<string, unknown>} identification
+ */
+async function enhanceIdentificationWithScene(base64, tapX, tapY, identification) {
+  let finalIdentification = { ...identification };
+  let sceneInventory = null;
+  const conf = typeof identification?.confidence === 'number' ? identification.confidence : 0;
+  if (conf < 0.7) {
+    const [inventory, sceneContext] = await Promise.all([
+      inventoryScene(base64),
+      inferSceneContext(base64),
+    ]);
+    sceneInventory = inventory;
+
+    const closest = findClosestToTap(inventory, tapX, tapY);
+    const closestConf = closest && typeof closest.confidence === 'number' ? closest.confidence : 0;
+    if (closest && closestConf > conf) {
+      const basis = String(closest.identification_basis || '');
+      finalIdentification = {
+        ...finalIdentification,
+        brand: closest.brand != null ? String(closest.brand) : finalIdentification.brand,
+        confidence: closestConf,
+        identification_method:
+          basis === 'direct logo' ? 'direct_logo' : basis === 'partial logo' ? 'partial_logo' : 'scene_inference',
+        confidence_notes: `Inventory-adjusted: ${basis} near tap coordinates`,
+      };
+    }
+
+    const firstLikely = sceneContext?.likely_brands?.[0];
+    if (
+      !finalIdentification.brand &&
+      firstLikely &&
+      firstLikely.confidence === 'high' &&
+      firstLikely.brand
+    ) {
+      finalIdentification = {
+        ...finalIdentification,
+        brand: String(firstLikely.brand),
+        identification_method: 'scene_inference',
+        confidence_notes:
+          typeof firstLikely.reasoning === 'string' ? firstLikely.reasoning : String(finalIdentification.confidence_notes || ''),
+      };
+    }
+  }
+  return { finalIdentification, sceneInventory };
+}
+
 router.post('/tap', async (req, res) => {
   const t0 = Date.now();
   const { image_base64, tap_x, tap_y, user_lat, user_lng } = req.body || {};
@@ -56,17 +128,25 @@ router.post('/tap', async (req, res) => {
     return res.status(500).json({ error: 'Vision service unavailable' });
   }
 
-  const identification_tier = getIdentificationTier(identification);
+  const { finalIdentification, sceneInventory } = await enhanceIdentificationWithScene(
+    validated.base64,
+    tx,
+    ty,
+    identification
+  );
+
+  const identification_tier = getIdentificationTier(finalIdentification);
 
   if (req.body?.preview_only === true) {
     const response_ms = Date.now() - t0;
     const crop_base64 =
-      typeof identification?.crop_base64 === 'string' ? identification.crop_base64 : null;
+      typeof finalIdentification?.crop_base64 === 'string' ? finalIdentification.crop_base64 : null;
     return res.json({
-      identification,
+      identification: finalIdentification,
       identification_tier,
       /** Redundant copy: some clients lose nested base64 on identification; use for ConfirmTap. */
       crop_base64,
+      scene_inventory: sceneInventory,
       preview_only: true,
       version: 'v1',
       response_ms,
@@ -74,29 +154,29 @@ router.post('/tap', async (req, res) => {
   }
 
   let investigation = null;
-  if (identification.brand || identification.corporate_parent) {
+  if (finalIdentification.brand || finalIdentification.corporate_parent) {
     try {
-      investigation = await getInvestigationProfile(identification.brand, identification.corporate_parent, {
-        healthFlag: identification.health_flag,
+      investigation = await getInvestigationProfile(finalIdentification.brand, finalIdentification.corporate_parent, {
+        healthFlag: finalIdentification.health_flag,
       });
     } catch (e) {
       console.error('Investigation error', e);
     }
   }
 
-  const keywords = identification.search_keywords || identification.object || 'handmade';
+  const keywords = finalIdentification.search_keywords || finalIdentification.object || 'handmade';
 
   const etsyPromise = searchEtsy({
     keywords,
     limit: 10,
-    category: identification.category,
+    category: finalIdentification.category,
   });
 
   const lat = Number(user_lat);
   const lng = Number(user_lng);
   const hasGeo = Number.isFinite(lat) && Number.isFinite(lng);
 
-  const shopTypes = CATEGORY_TO_SHOP_TYPES[identification.category] || DEFAULT_SHOP_TYPES;
+  const shopTypes = CATEGORY_TO_SHOP_TYPES[finalIdentification.category] || DEFAULT_SHOP_TYPES;
 
   const localPromise = hasGeo
     ? queryLocalBusinesses({
@@ -121,7 +201,7 @@ router.post('/tap', async (req, res) => {
   console.log(
     JSON.stringify({
       event: 'tap',
-      object: identification.object,
+      object: finalIdentification.object,
       results_etsy: etsyResults.length,
       results_local: localResults.length,
       has_investigation: Boolean(investigation),
@@ -138,11 +218,12 @@ router.post('/tap', async (req, res) => {
   if (hasGeo && !localResults.length) empty_sources.push('overpass');
 
   res.json({
-    identification,
+    identification: finalIdentification,
     identification_tier,
     results: etsyResults,
     local_results: localResults,
     investigation,
+    scene_inventory: sceneInventory,
     searched_sources,
     empty_sources,
     version: 'v1',
