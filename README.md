@@ -4,13 +4,19 @@
 
 **Tap anything. Know everything. Find the independent version.**
 
-[Live App](#) · [Investigation Database](#investigation-database) · [Chain Exclusion List](#chain-exclusion-list) · [Add Your Shop](#add-your-shop)
+[Live App](#) · [Constitution](CONSTITUTION.md) · [Investigation Database](#investigation-database) · [Chain Exclusion List](#chain-exclusion-list) · [Add Your Shop](#add-your-shop)
 
 ---
 
 *Photo → Tap → Corporate investigation → Real independent alternatives*
 
 </div>
+
+---
+
+## Constitution
+
+This repository follows **[CONSTITUTION.md](CONSTITUTION.md)** — the Nikodemus Systems governing document for voice, epistemic commitments, and how claim layers relate to verdict layers. Everyone contributing copy, prompts, or investigations should read it. Engineers and contributors should treat its **Governing rules for Cursor and Claude** as the default standard for generated text.
 
 ---
 
@@ -232,6 +238,8 @@ Submit a PR with additions. One chain per line. Lowercase. Global or country-sco
 ---
 
 ## What We Will Never Do
+
+Standards in **[CONSTITUTION.md](CONSTITUTION.md)** apply here: claims separable from verdicts, confidence stated, absence labeled, primary sources or explicit uncertainty.
 
 - No advertising or sponsored results
 - No fabricated investigation data — every claim has a primary source URL
