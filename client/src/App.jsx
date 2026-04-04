@@ -17,6 +17,27 @@ function confidenceLabel(c) {
   return 'Low — verify';
 }
 
+/** Honesty layer: how the model identified the tap (see vision identification_method + tiers). */
+function IdentificationMethodBadge({ id, tier }) {
+  if (tier === 'ambiguous') {
+    return <span className="app__method-badge app__method-badge--red">Uncertain — verify</span>;
+  }
+  const m = id?.identification_method;
+  if (m === 'direct_logo') {
+    return <span className="app__method-badge app__method-badge--green">Logo confirmed</span>;
+  }
+  if (m === 'partial_logo') {
+    return <span className="app__method-badge app__method-badge--yellow">Logo inferred</span>;
+  }
+  if (m === 'product_recognition') {
+    return <span className="app__method-badge app__method-badge--green">Product identified</span>;
+  }
+  if (m === 'scene_inference') {
+    return <span className="app__method-badge app__method-badge--orange">Inferred from scene</span>;
+  }
+  return <span className="app__method-badge app__method-badge--red">Uncertain — verify</span>;
+}
+
 function LocalPlaceCard({ place }) {
   return (
     <article className="app__local-card">
@@ -178,6 +199,14 @@ export default function App() {
                 {id ? (
                   <>
                     <h2 className="app__headline">{id.object}</h2>
+                    <div className="app__method-row">
+                      <IdentificationMethodBadge id={id} tier={result.identification_tier} />
+                      {id.text_based_identification && id.visible_text ? (
+                        <span className="app__visible-text-note" title={id.visible_text}>
+                          From package text
+                        </span>
+                      ) : null}
+                    </div>
                     {id.brand ? (
                       <p className="app__meta">
                         Brand detected: <strong>{id.brand}</strong>
