@@ -208,6 +208,18 @@ function normalizeCommunityImpact(raw) {
   return hasAny ? out : null;
 }
 
+const EVIDENCE_LEVELS = new Set(['established', 'strong', 'moderate', 'limited', 'alleged']);
+
+/** @param {unknown} raw */
+function normalizeEvidenceGrade(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const levelRaw = typeof raw.level === 'string' ? raw.level.trim().toLowerCase() : '';
+  const level = EVIDENCE_LEVELS.has(levelRaw) ? levelRaw : 'limited';
+  const source_types = Array.isArray(raw.source_types) ? raw.source_types.map(String) : [];
+  const note = typeof raw.note === 'string' && raw.note.trim() ? raw.note.trim() : null;
+  return { level, source_types, note };
+}
+
 /** Newspaper-style headline; max 10 words; null if empty. */
 function normalizeGeneratedHeadline(raw) {
   if (raw == null) return null;
@@ -304,6 +316,13 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
       ? parsed.product_health_sources.map(String)
       : emptyArr(),
 
+    tax_evidence_grade: normalizeEvidenceGrade(parsed?.tax_evidence_grade),
+    legal_evidence_grade: normalizeEvidenceGrade(parsed?.legal_evidence_grade),
+    labor_evidence_grade: normalizeEvidenceGrade(parsed?.labor_evidence_grade),
+    environmental_evidence_grade: normalizeEvidenceGrade(parsed?.environmental_evidence_grade),
+    political_evidence_grade: normalizeEvidenceGrade(parsed?.political_evidence_grade),
+    product_health_evidence_grade: normalizeEvidenceGrade(parsed?.product_health_evidence_grade),
+
     executive_summary,
     executive_sources: Array.isArray(parsed?.executive_sources)
       ? parsed.executive_sources.map(String)
@@ -319,6 +338,7 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
   if (!healthFlag) {
     inv.product_health = null;
     inv.product_health_sources = [];
+    inv.product_health_evidence_grade = null;
   }
 
   return inv;
@@ -438,6 +458,12 @@ Return ONLY valid JSON (no markdown). Shape:
   "political_sources": string[],
   "product_health": string | null,
   "product_health_sources": string[],
+  "tax_evidence_grade": { "level": "established"|"strong"|"moderate"|"limited"|"alleged", "source_types": string[], "note": string | null },
+  "legal_evidence_grade": { "level": "...", "source_types": string[], "note": string | null },
+  "labor_evidence_grade": { "level": "...", "source_types": string[], "note": string | null },
+  "environmental_evidence_grade": { "level": "...", "source_types": string[], "note": string | null },
+  "political_evidence_grade": { "level": "...", "source_types": string[], "note": string | null },
+  "product_health_evidence_grade": { "level": "...", "source_types": string[], "note": string | null } | null,
   "executive_summary": string | null,
   "executive_sources": string[],
   "overall_concern_level": "significant" | "moderate" | "minor" | "clean",
@@ -527,6 +553,20 @@ community_impact rules:
 - Plain language. Smart reader, not an economist.
 - Use "typically", "research suggests", "economic studies show" where appropriate.
 - Keep each section tight (sidebar, not a report). Explanatory, not accusatory.
+
+Evidence grading — include tax_evidence_grade, legal_evidence_grade, labor_evidence_grade, environmental_evidence_grade, political_evidence_grade, and product_health_evidence_grade (null when product_health is null). Each object:
+{
+  "level": "established" | "strong" | "moderate" | "limited" | "alleged",
+  "source_types": ["court_ruling", "regulatory_action", "peer_reviewed_research", "investigative_journalism", "company_self_reporting", "government_database", "unresolved_allegation", ...],
+  "note": string | null
+}
+Definitions:
+- established: Court ruling, criminal conviction, or regulatory finding with no successful appeal. This happened.
+- strong: Multiple independent credible sources, documented evidence, strong consensus.
+- moderate: Credible reporting or documentation with some dispute or ambiguity.
+- limited: Single source, older data, or incomplete documentation.
+- alleged: Filed allegation or claim not yet resolved.
+Always be honest about the grade. A settlement without admission of guilt should be "strong" not "established." An OSHA citation that was contested should be "moderate."
 
 Rules:
 - Neutral tone. Cite primary sources as URLs in the *_sources arrays.

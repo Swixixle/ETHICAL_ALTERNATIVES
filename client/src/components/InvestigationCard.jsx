@@ -51,6 +51,42 @@ function groupTags(tags) {
   }, {});
 }
 
+const GRADE_COLORS = {
+  established: { bg: 'rgba(106,170,138,0.15)', text: '#6aaa8a', border: '#6aaa8a' },
+  strong: { bg: 'rgba(232,160,32,0.1)', text: '#e8a020', border: '#e8a020' },
+  moderate: { bg: 'rgba(143,168,188,0.1)', text: '#8fa8bc', border: '#4a6478' },
+  limited: { bg: 'rgba(74,100,120,0.1)', text: '#4a6478', border: '#2a3f52' },
+  alleged: { bg: 'rgba(255,107,107,0.1)', text: '#ff6b6b', border: '#ff6b6b' },
+};
+
+/** @param {{ grade: Record<string, unknown> | null | undefined }} props */
+function EvidenceBadge({ grade }) {
+  if (!grade || typeof grade !== 'object') return null;
+  const raw = typeof grade.level === 'string' ? grade.level.toLowerCase() : '';
+  if (!raw) return null;
+  const colors = GRADE_COLORS[raw] || GRADE_COLORS.limited;
+  return (
+    <span
+      title={typeof grade.note === 'string' ? grade.note : undefined}
+      style={{
+        fontFamily: "'Space Mono', monospace",
+        fontSize: 8,
+        letterSpacing: 1.5,
+        textTransform: 'uppercase',
+        padding: '2px 8px',
+        borderRadius: 999,
+        border: `1px solid ${colors.border}`,
+        background: colors.bg,
+        color: colors.text,
+        marginLeft: 8,
+        flexShrink: 0,
+      }}
+    >
+      {raw}
+    </span>
+  );
+}
+
 const SECTION_ICONS = {
   tax: TaxIcon,
   legal: LegalIcon,
@@ -62,15 +98,37 @@ const SECTION_ICONS = {
 };
 
 const SECTIONS = [
-  { key: 'tax', title: 'Tax', summaryKey: 'tax_summary', flagsKey: 'tax_flags', sourcesKey: 'tax_sources' },
-  { key: 'legal', title: 'Legal', summaryKey: 'legal_summary', flagsKey: 'legal_flags', sourcesKey: 'legal_sources' },
-  { key: 'labor', title: 'Labor', summaryKey: 'labor_summary', flagsKey: 'labor_flags', sourcesKey: 'labor_sources' },
+  {
+    key: 'tax',
+    title: 'Tax',
+    summaryKey: 'tax_summary',
+    flagsKey: 'tax_flags',
+    sourcesKey: 'tax_sources',
+    evidenceGradeKey: 'tax_evidence_grade',
+  },
+  {
+    key: 'legal',
+    title: 'Legal',
+    summaryKey: 'legal_summary',
+    flagsKey: 'legal_flags',
+    sourcesKey: 'legal_sources',
+    evidenceGradeKey: 'legal_evidence_grade',
+  },
+  {
+    key: 'labor',
+    title: 'Labor',
+    summaryKey: 'labor_summary',
+    flagsKey: 'labor_flags',
+    sourcesKey: 'labor_sources',
+    evidenceGradeKey: 'labor_evidence_grade',
+  },
   {
     key: 'environmental',
     title: 'Environment',
     summaryKey: 'environmental_summary',
     flagsKey: 'environmental_flags',
     sourcesKey: 'environmental_sources',
+    evidenceGradeKey: 'environmental_evidence_grade',
   },
   {
     key: 'political',
@@ -78,6 +136,7 @@ const SECTIONS = [
     summaryKey: 'political_summary',
     flagsKey: null,
     sourcesKey: 'political_sources',
+    evidenceGradeKey: 'political_evidence_grade',
   },
   {
     key: 'product_health',
@@ -85,6 +144,7 @@ const SECTIONS = [
     summaryKey: 'product_health',
     flagsKey: null,
     sourcesKey: 'product_health_sources',
+    evidenceGradeKey: 'product_health_evidence_grade',
   },
   {
     key: 'executive',
@@ -92,6 +152,7 @@ const SECTIONS = [
     summaryKey: 'executive_summary',
     flagsKey: null,
     sourcesKey: 'executive_sources',
+    evidenceGradeKey: null,
   },
 ];
 
@@ -223,12 +284,28 @@ export default function InvestigationCard({ investigation, identification }) {
 
               const isOpen = open[s.key];
               const Icon = SECTION_ICONS[s.key];
+              const evGrade =
+                s.evidenceGradeKey && investigation[s.evidenceGradeKey]
+                  ? investigation[s.evidenceGradeKey]
+                  : null;
               return (
                 <div key={s.key} className="investigation-card__section">
                   <button type="button" className="investigation-card__section-head" onClick={() => toggle(s.key)}>
-                    <h2 className="section-header" style={{ flex: 1, margin: '12px 0 0', textAlign: 'left' }}>
+                    <h2
+                      className="section-header"
+                      style={{
+                        flex: 1,
+                        margin: '12px 0 0',
+                        textAlign: 'left',
+                        display: 'flex',
+                        alignItems: 'center',
+                        flexWrap: 'wrap',
+                        gap: 4,
+                      }}
+                    >
                       {Icon ? <Icon /> : null}
                       {s.title}
+                      <EvidenceBadge grade={evGrade} />
                     </h2>
                     <span className="investigation-card__section-chev">{isOpen ? '−' : '+'}</span>
                   </button>
