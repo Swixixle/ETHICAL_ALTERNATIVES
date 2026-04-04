@@ -158,6 +158,7 @@ router.post('/tap', async (req, res) => {
     try {
       investigation = await getInvestigationProfile(finalIdentification.brand, finalIdentification.corporate_parent, {
         healthFlag: finalIdentification.health_flag,
+        productCategory: finalIdentification.category,
       });
     } catch (e) {
       console.error('Investigation error', e);

@@ -94,6 +94,122 @@ function mergeSourcesWithCitations(parsed, citationUrls) {
 
 const CONCERN_LEVELS = new Set(['significant', 'moderate', 'minor', 'clean', 'unknown']);
 
+const CATEGORY_HINTS = {
+  fast_food: 'fast food chain',
+  coffee: 'national coffee chain',
+  clothing: 'fast fashion or retail clothing chain',
+  outdoor: 'outdoor apparel and gear retailer',
+  big_box: 'big box retailer',
+  grocery: 'national grocery chain',
+  pharmacy: 'national pharmacy chain',
+  tech_platform: 'social media or technology platform',
+  search: 'search engine and advertising platform',
+  oil_gas: 'fossil fuel company',
+  tobacco: 'tobacco company',
+  streaming: 'media streaming platform',
+  auto: 'automotive manufacturer',
+  electronics: 'consumer electronics manufacturer',
+  food_processing: 'industrial food processing company',
+  agribusiness: 'agricultural conglomerate',
+  financial: 'large financial institution',
+  default: 'large multinational corporation',
+};
+
+/** Vision `identification.category` → CATEGORY_HINTS key */
+const VISION_CATEGORY_TO_HINT = {
+  coffee: 'coffee',
+  clothing: 'clothing',
+  food: 'fast_food',
+  electronics: 'electronics',
+  tobacco: 'tobacco',
+  home_goods: 'big_box',
+  personal_care: 'pharmacy',
+  books: 'default',
+  tools: 'default',
+  other: 'default',
+};
+
+function resolveCategoryHint(productCategory) {
+  const key = typeof productCategory === 'string' ? productCategory.toLowerCase().trim() : '';
+  const hintKey = VISION_CATEGORY_TO_HINT[key] || 'default';
+  return CATEGORY_HINTS[hintKey] || CATEGORY_HINTS.default;
+}
+
+function normalizeCommunityImpact(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+
+  const displacementRaw = raw.displacement_effect && typeof raw.displacement_effect === 'object'
+    ? raw.displacement_effect
+    : null;
+  const displacement_effect = displacementRaw
+    ? {
+        summary: typeof displacementRaw.summary === 'string' ? displacementRaw.summary : null,
+        specifics: Array.isArray(displacementRaw.specifics) ? displacementRaw.specifics.map(String) : null,
+      }
+    : null;
+
+  const priceRaw = raw.price_illusion && typeof raw.price_illusion === 'object' ? raw.price_illusion : null;
+  const price_illusion = priceRaw
+    ? {
+        summary: typeof priceRaw.summary === 'string' ? priceRaw.summary : null,
+        mechanisms: Array.isArray(priceRaw.mechanisms) ? priceRaw.mechanisms.map(String) : null,
+      }
+    : null;
+
+  const taxRaw = raw.tax_math && typeof raw.tax_math === 'object' ? raw.tax_math : null;
+  const tax_math = taxRaw
+    ? {
+        summary: typeof taxRaw.summary === 'string' ? taxRaw.summary : null,
+        who_pays: typeof taxRaw.who_pays === 'string' ? taxRaw.who_pays : null,
+        what_disappears: typeof taxRaw.what_disappears === 'string' ? taxRaw.what_disappears : null,
+      }
+    : null;
+
+  const wvRaw = raw.wealth_velocity && typeof raw.wealth_velocity === 'object' ? raw.wealth_velocity : null;
+  const wealth_velocity = wvRaw
+    ? {
+        summary: typeof wvRaw.summary === 'string' ? wvRaw.summary : null,
+      }
+    : null;
+
+  const the_real_math = typeof raw.the_real_math === 'string' ? raw.the_real_math : null;
+  const category_label =
+    typeof raw.category_label === 'string' && raw.category_label.trim() ? raw.category_label.trim() : null;
+
+  let de = displacement_effect;
+  if (de && !de.summary && !(de.specifics && de.specifics.length)) de = null;
+
+  let pe = price_illusion;
+  if (pe && !pe.summary && !(pe.mechanisms && pe.mechanisms.length)) pe = null;
+
+  let tm = tax_math;
+  if (tm && !tm.summary && !tm.who_pays && !tm.what_disappears) tm = null;
+
+  let wv = wealth_velocity;
+  if (wv && !wv.summary) wv = null;
+
+  const trm = the_real_math && the_real_math.trim() ? the_real_math : null;
+
+  const out = {
+    category_label,
+    displacement_effect: de,
+    price_illusion: pe,
+    tax_math: tm,
+    wealth_velocity: wv,
+    the_real_math: trm,
+  };
+
+  const hasAny =
+    out.category_label ||
+    out.displacement_effect ||
+    out.price_illusion ||
+    out.tax_math ||
+    out.wealth_velocity ||
+    out.the_real_math;
+
+  return hasAny ? out : null;
+}
+
 function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) {
   const brand = typeof parsed?.brand === 'string' ? parsed.brand : brandName || 'Unknown';
   const parent =
@@ -168,6 +284,7 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
     overall_concern_level: overall,
     verdict_tags: Array.isArray(parsed?.verdict_tags) ? parsed.verdict_tags.map(String) : emptyArr(),
     clean_card: Boolean(parsed?.clean_card),
+    community_impact: normalizeCommunityImpact(parsed?.community_impact),
   };
 
   if (!healthFlag) {
@@ -213,10 +330,12 @@ export function buildLimited(brandName, corporateParent, healthFlag) {
   return finalizeInvestigation(inv, 'limited');
 }
 
-function buildResearchPrompt(brandName, corporateParent, healthFlag) {
+function buildResearchPrompt(brandName, corporateParent, healthFlag, productCategory) {
   const query = `${brandName || ''} ${corporateParent || ''} legal violations lawsuit settlement tax OSHA EPA lobbying political donations`
     .trim()
     .replace(/\s+/g, ' ');
+
+  const categoryHint = resolveCategoryHint(productCategory);
 
   return `You are a neutral research assistant. Use web search when available to verify the public record.
 
@@ -224,6 +343,8 @@ Company / brand: ${brandName || 'unknown'}
 Corporate parent: ${corporateParent || 'unknown'}
 
 Prioritize queries like: ${query}
+
+This is a ${categoryHint}. Tailor the community_impact section specifically to the documented patterns for this type of business.
 
 Return ONLY valid JSON (no markdown). Shape:
 {
@@ -250,6 +371,26 @@ Return ONLY valid JSON (no markdown). Shape:
   "executive_sources": string[],
   "overall_concern_level": "significant" | "moderate" | "minor" | "clean" | "unknown",
   "verdict_tags": string[],
+  "community_impact": {
+    "category_label": string,
+    "displacement_effect": {
+      "summary": string,
+      "specifics": string[]
+    },
+    "price_illusion": {
+      "summary": string,
+      "mechanisms": string[]
+    },
+    "tax_math": {
+      "summary": string,
+      "who_pays": string,
+      "what_disappears": string
+    },
+    "wealth_velocity": {
+      "summary": string
+    },
+    "the_real_math": string
+  },
   "timeline": [
     {
       "year": number,
@@ -285,6 +426,27 @@ Timeline rules:
 - moderate = minor settlement, citation
 - minor = investigation opened, allegation filed
 
+Also return a "community_impact" object.
+
+This is NOT about this specific company's documented record.
+It is about what this CATEGORY of business does to communities at scale.
+Never name the specific company. Speak in category terms:
+"fast food chains", "big box retailers", "social media platforms", etc.
+
+community_impact fields:
+- category_label: short label (e.g. "Fast Food Chain", "Big Box Retailer").
+- displacement_effect: summary (2-3 sentences) + specifics (3-5 short bullet strings; patterns for this category).
+- price_illusion: summary + mechanisms (3-4 plain-language pricing mechanism strings).
+- tax_math: summary + who_pays (1-2 sentences on who bears shifted burden) + what_disappears (1-2 sentences on underfunded public goods).
+- wealth_velocity: summary (2-3 sentences; local vs chain money flow, velocity, absentee ownership).
+- the_real_math: one short paragraph synthesizing community-level math if spending shifts; plain, not moralistic; end with reflection not guilt.
+
+community_impact rules:
+- NEVER name specific companies in community_impact. Category language only.
+- Plain language. Smart reader, not an economist.
+- Use "typically", "research suggests", "economic studies show" where appropriate.
+- Keep each section tight (sidebar, not a report). Explanatory, not accusatory.
+
 Rules:
 - Neutral tone. Cite primary sources as URLs in the *_sources arrays.
 - If insufficient evidence, use null summaries and "unknown" concern level.
@@ -294,8 +456,8 @@ ${healthFlag ? '- product_health must summarize documented health implications f
 Do not include profile_type or last_updated in the JSON.`;
 }
 
-async function realtimeInvestigation(brandName, corporateParent, healthFlag) {
-  const userPrompt = buildResearchPrompt(brandName, corporateParent, healthFlag);
+async function realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory) {
+  const userPrompt = buildResearchPrompt(brandName, corporateParent, healthFlag, productCategory);
 
   const tools = [
     {
@@ -352,10 +514,11 @@ If web search is unavailable, use only well-established public knowledge and cle
 /**
  * @param {string | null} brandName
  * @param {string | null} corporateParent
- * @param {{ healthFlag?: boolean }} [options]
+ * @param {{ healthFlag?: boolean; productCategory?: string }} [options]
  */
 export async function getInvestigationProfile(brandName, corporateParent, options = {}) {
   const healthFlag = Boolean(options.healthFlag);
+  const productCategory = options.productCategory;
   const primaryBrand = brandName || corporateParent;
 
   if (!primaryBrand) {
@@ -399,5 +562,5 @@ export async function getInvestigationProfile(brandName, corporateParent, option
     }
   }
 
-  return realtimeInvestigation(brandName, corporateParent, healthFlag);
+  return realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory);
 }
