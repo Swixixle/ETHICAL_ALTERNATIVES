@@ -1,6 +1,8 @@
 import { pool } from '../db/pool.js';
+import { brandSlugForMatch, foldAccentsForMatch } from '../utils/chainMatch.js';
 
 let cache = { needles: [], at: 0 };
+let matchCache = { data: /** @type {{ slugs: Set<string>; compareNames: string[] } | null} */ (null), at: 0 };
 const TTL_MS = 5 * 60 * 1000;
 
 /**
@@ -44,5 +46,69 @@ export async function getIncumbentBrandNeedles() {
   } catch (e) {
     console.error('getIncumbentBrandNeedles:', e?.message || e);
     return cache.needles.length ? cache.needles : [];
+  }
+}
+
+/**
+ * Data for strict incumbent matching: exact `brand_slug` / slugified subsidiaries only, plus
+ * ≥80% name similarity in {@link nameMatchesIncumbentProfiles} — no substring needle list.
+ */
+export async function getIncumbentProfilesMatchData() {
+  if (!pool) return { slugs: new Set(), compareNames: [] };
+
+  const now = Date.now();
+  if (matchCache.data && now - matchCache.at < TTL_MS) {
+    return matchCache.data;
+  }
+
+  try {
+    const { rows } = await pool.query(`
+      SELECT brand_slug,
+             brand_name,
+             parent_company,
+             ultimate_parent,
+             known_subsidiaries
+      FROM incumbent_profiles
+    `);
+
+    const slugs = new Set();
+    const nameSet = new Set();
+
+    const pushCompare = (raw) => {
+      const t = foldAccentsForMatch(raw);
+      if (t.length >= 4) nameSet.add(t);
+    };
+
+    for (const r of rows) {
+      if (r.brand_slug) {
+        const raw = String(r.brand_slug).toLowerCase().trim();
+        if (raw) slugs.add(raw);
+      }
+      if (r.brand_name) {
+        pushCompare(r.brand_name);
+        const fromName = brandSlugForMatch(r.brand_name);
+        if (fromName) slugs.add(fromName);
+      }
+      pushCompare(r.parent_company);
+      pushCompare(r.ultimate_parent);
+
+      const subs = r.known_subsidiaries;
+      if (Array.isArray(subs)) {
+        for (const sub of subs) {
+          if (sub == null || sub === '') continue;
+          pushCompare(sub);
+          const subSlug = brandSlugForMatch(sub);
+          if (subSlug) slugs.add(subSlug);
+        }
+      }
+    }
+
+    const data = { slugs, compareNames: [...nameSet] };
+    matchCache = { data, at: now };
+    return data;
+  } catch (e) {
+    console.error('getIncumbentProfilesMatchData:', e?.message || e);
+    const fallback = matchCache.data || { slugs: new Set(), compareNames: [] };
+    return fallback;
   }
 }

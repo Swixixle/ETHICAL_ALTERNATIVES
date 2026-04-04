@@ -28,7 +28,7 @@ function LocalCard({ place }) {
   const trustTier =
     typeof place.trust_tier === 'string' && place.trust_tier.trim()
       ? place.trust_tier.trim()
-      : 'local_unvetted';
+      : 'local';
   const name = place.name || 'Independent Business';
   const website = place.website ? String(place.website) : null;
   const phone = place.phone ? String(place.phone) : null;
@@ -183,7 +183,7 @@ function EtsyCard({ listing }) {
         textDecoration: 'none',
       }}
     >
-      <TrustStrip trustTier="not_verified" />
+      <TrustStrip trustTier="local" />
       <div
         style={{
           fontFamily: "'Crimson Pro', serif",

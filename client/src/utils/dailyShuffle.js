@@ -60,12 +60,3 @@ export function dailyChainShuffle(chainFeed, { dateKey, city, state }) {
   return copy;
 }
 
-/** @param {object[]} rows */
-export function dailyNotVerifiedShuffle(rows, { dateKey, city, state }) {
-  if (!Array.isArray(rows) || rows.length < 2) return [...rows];
-  const seed = hashStringToUint32(`${dateKey}|not_verified|${city || ''}|${state || ''}`);
-  const rng = mulberry32(seed);
-  const copy = [...rows];
-  shuffleInPlace(copy, rng);
-  return copy;
-}

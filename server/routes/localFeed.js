@@ -4,11 +4,10 @@ import { fileURLToPath } from 'node:url';
 import { Router } from 'express';
 import { queryLocalFeedPlaces } from '../services/overpass.js';
 import { findLocalSellers } from '../services/sellerRegistry.js';
-import { getIncumbentBrandNeedles } from '../services/incumbentBrandNeedles.js';
-import { nameMatchesChain, normalizeChainNeedles } from '../utils/chainMatch.js';
-import { classifyIndependentCandidates } from '../services/chainClassification.js';
+import { getIncumbentProfilesMatchData } from '../services/incumbentBrandNeedles.js';
+import { nameMatchesChain, nameMatchesIncumbentProfiles, normalizeChainNeedles } from '../utils/chainMatch.js';
 
-/** Chain name checks use {@link nameMatchesChain}: lowercase, accent-folded, substring match. */
+/** Exclusion-list check uses {@link nameMatchesChain}: lowercase, accent-folded, substring of chain-exclusions needles only. */
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -53,7 +52,7 @@ function mapRegistryItem(s) {
   };
 }
 
-/** @param {{ osm_id: string, name: string, tagline?: string | null, distance_miles?: number, website?: string | null, phone?: string | null, address?: string | null }} b @param {'local_unvetted' | 'not_verified' | 'chain' | 'chain_candidate'} trust */
+/** @param {{ osm_id: string, name: string, tagline?: string | null, distance_miles?: number, website?: string | null, phone?: string | null, address?: string | null }} b @param {'local' | 'verified_independent' | 'chain' | 'chain_candidate'} trust */
 function mapOsmRow(b, trust) {
   return {
     type: 'osm',
@@ -98,7 +97,7 @@ router.get('/', async (req, res) => {
   const registryNameNeedles = catLower === 'stay' ? stayListNeedles : chainNeedles;
 
   try {
-    const [{ places: osmPlaces, chainPlaces: osmExcludedByList }, registryResults, dbNeedlesRaw] =
+    const [{ places: osmPlaces, chainPlaces: osmExcludedByList }, registryResults, incumbentMatch] =
       await Promise.all([
         queryLocalFeedPlaces({
           lat,
@@ -114,20 +113,18 @@ router.get('/', async (req, res) => {
           keywords: [],
           radiusMiles,
         }),
-        getIncumbentBrandNeedles(),
+        getIncumbentProfilesMatchData(),
       ]);
-
-    const dbNeedles = normalizeChainNeedles(dbNeedlesRaw);
 
     const registryFeed = [];
     const registryChain = [];
     for (const s of registryResults) {
       const item = mapRegistryItem(s);
-      const pass1List = nameMatchesChain(item.name, registryNameNeedles);
-      const pass2Incumbent = nameMatchesChain(item.name, dbNeedles);
-      if (pass1List || pass2Incumbent) {
-        if (pass2Incumbent && !pass1List) {
-          console.log(`[local-feed] registry → chain (incumbent_profiles/subsidiaries): ${item.name}`);
+      const onExclusionList = nameMatchesChain(item.name, registryNameNeedles);
+      const incumbentHit = nameMatchesIncumbentProfiles(item.name, incumbentMatch);
+      if (onExclusionList || incumbentHit) {
+        if (incumbentHit && !onExclusionList) {
+          console.log(`[local-feed] registry → chain (incumbent slug/similarity): ${item.name}`);
         }
         registryChain.push(item);
       } else {
@@ -135,51 +132,25 @@ router.get('/', async (req, res) => {
       }
     }
 
-    const osmDbChain = [];
-    const osmForClassification = [];
-    for (const b of osmPlaces) {
-      const pass2Db = nameMatchesChain(b.name, dbNeedles);
-      if (pass2Db) {
-        console.log(`[local-feed] OSM → chain (incumbent_profiles/subsidiaries): ${b.name}`);
-        osmDbChain.push(b);
-      } else {
-        osmForClassification.push(b);
-      }
-    }
-
-    const classified = await classifyIndependentCandidates(osmForClassification.map((x) => x.name));
-
+    const osmIncumbentChain = [];
     const mainOsm = [];
-    const unverifiedOsm = [];
-    const claudeChainOsm = [];
-
-    for (const b of osmForClassification) {
-      const c = classified.get(b.name);
-      if (!c) {
-        unverifiedOsm.push(b);
-        continue;
-      }
-      if (c.is_chain && c.confidence > 0.7) {
-        claudeChainOsm.push(b);
-      } else if (!c.is_chain && c.confidence >= 0.45) {
-        mainOsm.push(b);
+    for (const b of osmPlaces) {
+      if (nameMatchesIncumbentProfiles(b.name, incumbentMatch)) {
+        console.log(`[local-feed] OSM → chain (incumbent slug/similarity): ${b.name}`);
+        osmIncumbentChain.push(b);
       } else {
-        unverifiedOsm.push(b);
+        mainOsm.push(b);
       }
     }
 
-    const feed = [
-      ...registryFeed,
-      ...mainOsm.map((b) => mapOsmRow(b, 'local_unvetted')),
-    ].sort(sortFeed);
+    const feed = [...registryFeed, ...mainOsm.map((b) => mapOsmRow(b, 'local'))].sort(sortFeed);
 
-    const not_verified_independent = unverifiedOsm.map((b) => mapOsmRow(b, 'not_verified')).sort(sortFeed);
+    const not_verified_independent = [];
 
     const chain_results = [
       ...registryChain,
       ...osmExcludedByList.map((b) => mapOsmRow(b, 'chain')),
-      ...osmDbChain.map((b) => mapOsmRow(b, 'chain')),
-      ...claudeChainOsm.map((b) => mapOsmRow(b, 'chain')),
+      ...osmIncumbentChain.map((b) => mapOsmRow(b, 'chain')),
     ].sort(sortFeed);
 
     res.json({
@@ -188,7 +159,7 @@ router.get('/', async (req, res) => {
       chain_results,
       count: feed.length,
       chain_count: chain_results.length,
-      not_verified_count: not_verified_independent.length,
+      not_verified_count: 0,
     });
   } catch (err) {
     console.error('Local feed error:', err?.message || err);

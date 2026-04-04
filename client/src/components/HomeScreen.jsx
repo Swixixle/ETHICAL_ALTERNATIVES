@@ -6,7 +6,7 @@ import {
   reverseGeocode,
 } from '../services/location.js';
 import { getCityIdentity } from '../services/cityIdentity.js';
-import { dailyChainShuffle, dailyFeedShuffle, dailyNotVerifiedShuffle, utcDateKey } from '../utils/dailyShuffle.js';
+import { dailyChainShuffle, dailyFeedShuffle, utcDateKey } from '../utils/dailyShuffle.js';
 import TrustStrip from './TrustStrip.jsx';
 import ListYourShop from './ListYourShop.jsx';
 import CommunityBoard from './CommunityBoard.jsx';
@@ -687,7 +687,7 @@ function CityCard({ identity, city, state }) {
   );
 }
 
-function FeedCard({ business, chainFootnote = false, mutedSection = false }) {
+function FeedCard({ business, chainFootnote = false }) {
   const website = business.website;
   const hasBadges = business.ethics_badges?.length > 0;
   const visitHref =
@@ -704,24 +704,15 @@ function FeedCard({ business, chainFootnote = false, mutedSection = false }) {
         margin: '0 16px 10px',
         opacity: 0.5,
       }
-    : mutedSection
-      ? {
-          background: '#101820',
-          border: '1px solid #283648',
-          borderRadius: 4,
-          padding: '14px 16px',
-          margin: '0 16px 10px',
-          opacity: 0.72,
-        }
-      : {
-          background: '#162030',
-          border: '1px solid #2a3f52',
-          borderRadius: 4,
-          padding: '14px 16px',
-          margin: '0 16px 10px',
-        };
+    : {
+        background: '#162030',
+        border: '1px solid #2a3f52',
+        borderRadius: 4,
+        padding: '14px 16px',
+        margin: '0 16px 10px',
+      };
 
-  const trustTier = business.trust_tier ? String(business.trust_tier) : 'local_unvetted';
+  const trustTier = business.trust_tier ? String(business.trust_tier) : 'local';
 
   return (
     <div style={cardStyle}>
@@ -733,7 +724,7 @@ function FeedCard({ business, chainFootnote = false, mutedSection = false }) {
               fontFamily: "'Bebas Neue', sans-serif",
               fontSize: 22,
               letterSpacing: 1.5,
-              color: chainFootnote || mutedSection ? '#6b7a88' : '#f0e8d0',
+              color: chainFootnote ? '#6b7a88' : '#f0e8d0',
               marginBottom: 2,
             }}
           >
@@ -745,7 +736,7 @@ function FeedCard({ business, chainFootnote = false, mutedSection = false }) {
               style={{
                 fontFamily: "'Crimson Pro', serif",
                 fontSize: 16,
-                color: chainFootnote || mutedSection ? '#6a8a9a' : '#a8c4d8',
+                color: chainFootnote ? '#6a8a9a' : '#a8c4d8',
                 lineHeight: 1.4,
                 marginBottom: 6,
               }}
@@ -761,7 +752,7 @@ function FeedCard({ business, chainFootnote = false, mutedSection = false }) {
                 fontSize: 11,
                 letterSpacing: 1.5,
                 textTransform: 'uppercase',
-                color: chainFootnote || mutedSection ? '#6a8a9a' : '#f0a820',
+                color: chainFootnote ? '#6a8a9a' : '#f0a820',
                 marginBottom: hasBadges ? 8 : 0,
               }}
             >
@@ -872,7 +863,6 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
   const [location, setLocation] = useState(() => readCachedLocation());
   const [identity, setIdentity] = useState(null);
   const [feed, setFeed] = useState([]);
-  const [notVerifiedIndependent, setNotVerifiedIndependent] = useState([]);
   const [chainResults, setChainResults] = useState([]);
   const [category, setCategory] = useState('all');
   const [loadingFeed, setLoadingFeed] = useState(false);
@@ -884,7 +874,6 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
   const [communityBoardOpen, setCommunityBoardOpen] = useState(false);
   const [travelStayActive, setTravelStayActive] = useState(false);
   const [travelStayFeed, setTravelStayFeed] = useState([]);
-  const [travelStayNotVerified, setTravelStayNotVerified] = useState([]);
   const [travelStayChain, setTravelStayChain] = useState([]);
   const lastTerritoryCountyRef = useRef(null);
 
@@ -903,12 +892,9 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
       return {
         feed: Array.isArray(data.feed) ? data.feed : [],
         chain_results: Array.isArray(data.chain_results) ? data.chain_results : [],
-        not_verified_independent: Array.isArray(data.not_verified_independent)
-          ? data.not_verified_independent
-          : [],
       };
     } catch {
-      return { feed: [], chain_results: [], not_verified_independent: [] };
+      return { feed: [], chain_results: [] };
     } finally {
       if (!silent) setLoadingFeed(false);
     }
@@ -928,7 +914,6 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
         setPhase('ready');
         setIdentity(null);
         setFeed([]);
-        setNotVerifiedIndependent([]);
         setChainResults([]);
         return;
       }
@@ -952,7 +937,6 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
           state: loc.state,
         };
         setFeed(dailyFeedShuffle(pack.feed, shuffleOpts));
-        setNotVerifiedIndependent(dailyNotVerifiedShuffle(pack.not_verified_independent, shuffleOpts));
         setChainResults(dailyChainShuffle(pack.chain_results, shuffleOpts));
         setCategory('all');
         sessionStorage.setItem(ONBOARD_KEY, 'granted');
@@ -1030,7 +1014,6 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
         state: location.state,
       };
       setTravelStayFeed(dailyFeedShuffle(pack.feed, shuffleOpts));
-      setTravelStayNotVerified(dailyNotVerifiedShuffle(pack.not_verified_independent, shuffleOpts));
       setTravelStayChain(dailyChainShuffle(pack.chain_results, shuffleOpts));
     })();
     return () => {
@@ -1114,7 +1097,6 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
     const dateKey = utcDateKey();
     const shuffleOpts = { dateKey, city: location.city, state: location.state };
     setFeed(dailyFeedShuffle(pack.feed, shuffleOpts));
-    setNotVerifiedIndependent(dailyNotVerifiedShuffle(pack.not_verified_independent, shuffleOpts));
     setChainResults(dailyChainShuffle(pack.chain_results, shuffleOpts));
   }
 
@@ -1376,25 +1358,6 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
                 ))}
               </>
             ) : null}
-            {!loadingFeed && travelStayNotVerified.length > 0 ? (
-              <div style={{ marginTop: 16 }}>
-                <div
-                  style={{
-                    fontFamily: "'Space Mono', monospace",
-                    fontSize: 11,
-                    letterSpacing: 2,
-                    textTransform: 'uppercase',
-                    color: '#6a8a9a',
-                    padding: '0 24px 8px',
-                  }}
-                >
-                  Also nearby · not verified (travel)
-                </div>
-                {travelStayNotVerified.map((business) => (
-                  <FeedCard key={`travel-nv-${business.id}`} business={business} mutedSection />
-                ))}
-              </div>
-            ) : null}
             {!loadingFeed && travelStayChain.length > 0 ? (
               <div style={{ marginTop: 16, opacity: 0.85 }}>
                 <div
@@ -1414,10 +1377,7 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
                 ))}
               </div>
             ) : null}
-            {!loadingFeed &&
-            travelStayFeed.length === 0 &&
-            travelStayNotVerified.length === 0 &&
-            travelStayChain.length === 0 ? (
+            {!loadingFeed && travelStayFeed.length === 0 && travelStayChain.length === 0 ? (
               <p
                 style={{
                   fontFamily: "'Crimson Pro', serif",
@@ -1450,10 +1410,8 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
           </div>
         ) : null}
 
-        {!loadingFeed &&
-        feed.length === 0 &&
-        chainResults.length === 0 &&
-        notVerifiedIndependent.length === 0 ? (
+        {!loadingFeed && feed.length === 0 && chainResults.length === 0 ? (
+
           <div
             style={{
               padding: '32px 24px',
@@ -1492,46 +1450,6 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
               <FeedCard key={business.id} business={business} />
             ))}
           </>
-        ) : null}
-
-        {!loadingFeed && notVerifiedIndependent.length > 0 ? (
-          <div
-            style={{
-              marginTop: 28,
-              paddingTop: 24,
-              borderTop: '1px solid #1e3044',
-            }}
-          >
-            <div
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 11,
-                letterSpacing: 2,
-                textTransform: 'uppercase',
-                color: '#6a8a9a',
-                padding: '0 24px 8px',
-              }}
-            >
-              Also nearby — not verified independent
-            </div>
-            <p
-              style={{
-                fontFamily: "'Crimson Pro', serif",
-                fontSize: 14,
-                color: '#5a6a78',
-                lineHeight: 1.55,
-                padding: '0 24px 14px',
-                margin: 0,
-              }}
-            >
-              These places passed our map filter but could not be confirmed independent (missing
-              classification, low confidence, or ambiguous name). Shown for discovery only — not
-              endorsed as local independents.
-            </p>
-            {notVerifiedIndependent.map((business) => (
-              <FeedCard key={`nv-${business.id}`} business={business} mutedSection />
-            ))}
-          </div>
         ) : null}
 
         {!loadingFeed && feed.length === 0 && chainResults.length > 0 ? (
