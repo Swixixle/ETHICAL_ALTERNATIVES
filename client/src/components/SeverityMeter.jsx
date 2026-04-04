@@ -5,7 +5,7 @@ const levelMap = {
   MODERATE: 3,
   MINOR: 2,
   CLEAN: 1,
-  UNKNOWN: 1,
+  UNKNOWN: 2,
 };
 
 const colorMap = {
@@ -25,9 +25,9 @@ const labelColorMap = {
 };
 
 export default function SeverityMeter({ concernLevel }) {
-  const upper = (concernLevel || "CLEAN").toUpperCase();
-  const level = levelMap[upper] ?? 1;
-  const filledColor = colorMap[upper] ?? colorMap.UNKNOWN;
+  const raw = String(concernLevel || "CLEAN").toUpperCase();
+  const level = levelMap[raw] ?? levelMap.MODERATE;
+  const filledColor = colorMap[raw] ?? colorMap.MODERATE;
 
   return (
     <div style={{ display: "flex", alignItems: "center", margin: "6px 0 12px" }}>
@@ -46,9 +46,9 @@ export default function SeverityMeter({ concernLevel }) {
         fontSize: 11,
         letterSpacing: 2,
         textTransform: "uppercase",
-        color: labelColorMap[upper] || "#4a6478"
+        color: labelColorMap[raw] || "#ffb347"
       }}>
-        {upper}
+        {raw}
       </span>
     </div>
   );

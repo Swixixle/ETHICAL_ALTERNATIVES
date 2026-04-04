@@ -92,8 +92,6 @@ function mergeSourcesWithCitations(parsed, citationUrls) {
   }
 }
 
-const CONCERN_LEVELS = new Set(['significant', 'moderate', 'minor', 'clean', 'unknown']);
-
 const CATEGORY_HINTS = {
   fast_food: 'fast food chain',
   coffee: 'national coffee chain',
@@ -228,9 +226,25 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
       : parsed.parent;
 
   const emptyArr = () => [];
-  const overall = CONCERN_LEVELS.has(parsed?.overall_concern_level)
-    ? parsed.overall_concern_level
-    : 'unknown';
+  const rawConcern =
+    typeof parsed?.overall_concern_level === 'string'
+      ? parsed.overall_concern_level.trim().toLowerCase()
+      : '';
+  const ALLOWED_CONCERN = new Set(['significant', 'moderate', 'minor', 'clean', 'unknown']);
+  let overall = ALLOWED_CONCERN.has(rawConcern) ? rawConcern : 'moderate';
+  const concernWasIndeterminate = !ALLOWED_CONCERN.has(rawConcern);
+
+  let executiveSummaryBase =
+    typeof parsed?.executive_summary === 'string' && parsed.executive_summary.trim()
+      ? parsed.executive_summary.trim()
+      : null;
+  const preliminaryNote =
+    'Preliminary assessment: the concern meter defaults to moderate when the record is thin, ambiguous, or still being retrieved — verify every claim against primary public sources.';
+  const executive_summary = concernWasIndeterminate
+    ? executiveSummaryBase
+      ? `${executiveSummaryBase}\n\n— ${preliminaryNote}`
+      : preliminaryNote
+    : executiveSummaryBase;
 
   let timeline = Array.isArray(parsed?.timeline)
     ? parsed.timeline
@@ -249,7 +263,11 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
   const inv = {
     brand,
     parent: parent ?? null,
-    subsidiaries: Array.isArray(parsed?.subsidiaries) ? parsed.subsidiaries.map(String) : emptyArr(),
+    subsidiaries: Array.isArray(parsed?.subsidiaries)
+      ? parsed.subsidiaries.map(String)
+      : Array.isArray(parsed?.subsidaries)
+        ? parsed.subsidaries.map(String)
+        : emptyArr(),
     timeline,
 
     tax_summary: parsed?.tax_summary ?? null,
@@ -286,7 +304,7 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
       ? parsed.product_health_sources.map(String)
       : emptyArr(),
 
-    executive_summary: parsed?.executive_summary ?? null,
+    executive_summary,
     executive_sources: Array.isArray(parsed?.executive_sources)
       ? parsed.executive_sources.map(String)
       : emptyArr(),
@@ -324,21 +342,57 @@ function finalizeInvestigation(inv, profileType) {
   };
 }
 
-export function buildLimited(brandName, corporateParent, healthFlag) {
+/**
+ * Last-resort realtime-shaped profile: full card shape with "Research pending" sections (never empty / broken).
+ * @param {string} reason — short internal reason for logging
+ */
+function buildRealtimeEmergencyProfile(brandName, corporateParent, healthFlag, productCategory, reason) {
+  const safeReason = String(reason || 'research incomplete').slice(0, 200);
+  const label = typeof brandName === 'string' && brandName.trim() ? brandName.trim() : 'This brand';
   const inv = normalizeInvestigation(
     {
       brand: brandName || 'Unknown',
-      parent: corporateParent,
-      overall_concern_level: 'unknown',
+      parent: corporateParent ?? null,
+      subsidiaries: [],
+      overall_concern_level: 'moderate',
       verdict_tags: [],
-      product_health: healthFlag ? 'No structured investigation available yet for this item.' : null,
+      executive_summary: `Realtime research for ${label} encountered an issue (${safeReason}). The brand is identified but its full public record could not be retrieved in this session. Try tapping again.`,
+      generated_headline: `${label} — Public Record Under Review`,
+      timeline: [],
+      tax_summary: 'Research pending.',
+      tax_flags: [],
+      tax_sources: [],
+      legal_summary: 'Research pending.',
+      legal_flags: [],
+      legal_sources: [],
+      labor_summary: 'Research pending.',
+      labor_flags: [],
+      labor_sources: [],
+      environmental_summary: 'Research pending.',
+      environmental_flags: [],
+      environmental_sources: [],
+      political_summary: 'Research pending.',
+      political_sources: [],
+      executive_sources: [],
+      product_health: healthFlag ? 'Research pending.' : null,
       product_health_sources: [],
     },
     brandName,
     corporateParent,
     healthFlag
   );
-  return finalizeInvestigation(inv, 'limited');
+  return finalizeInvestigation(inv, 'realtime_search');
+}
+
+/** @deprecated Prefer full realtime path; still returns realtime_search shape for compatibility */
+export function buildLimited(brandName, corporateParent, healthFlag) {
+  return buildRealtimeEmergencyProfile(
+    brandName,
+    corporateParent,
+    healthFlag,
+    'other',
+    'legacy limited stub'
+  );
 }
 
 function buildResearchPrompt(brandName, corporateParent, healthFlag, productCategory) {
@@ -380,7 +434,7 @@ Return ONLY valid JSON (no markdown). Shape:
   "product_health_sources": string[],
   "executive_summary": string | null,
   "executive_sources": string[],
-  "overall_concern_level": "significant" | "moderate" | "minor" | "clean" | "unknown",
+  "overall_concern_level": "significant" | "moderate" | "minor" | "clean",
   "verdict_tags": string[],
   "generated_headline": string | null,
   "community_impact": {
@@ -469,12 +523,69 @@ community_impact rules:
 
 Rules:
 - Neutral tone. Cite primary sources as URLs in the *_sources arrays.
-- If insufficient evidence, use null summaries and "unknown" concern level.
+- If insufficient evidence, use null summaries, empty flags, and overall_concern_level "moderate" (never "unknown").
 - verdict_tags: snake_case e.g. tax_avoidance, labor_violations, bribery, clean_record.
 - generated_headline: follow the headline rules above; null only when there is no substantive record to summarize.
 ${healthFlag ? '- product_health must summarize documented health implications for this product category, with sources.' : '- Set product_health and product_health_sources to null and [].'}
 
 Do not include profile_type or last_updated in the JSON.`;
+}
+
+/**
+ * Model sometimes wraps JSON in prose; ask for a strict extract.
+ * @param {string} brandName
+ * @param {string} contaminated
+ */
+async function repairInvestigationJson(brandName, contaminated) {
+  const slice = String(contaminated || '').slice(0, 14_000);
+  const msg = await client.messages.create({
+    model: MODEL,
+    max_tokens: 6000,
+    messages: [
+      {
+        role: 'user',
+        content: `Extract ONE valid JSON object for a corporate investigation of "${brandName}" from the text below. The JSON must match the investigation schema (brand, parent, subsidiaries, summaries, flags, sources, overall_concern_level, verdict_tags, timeline, community_impact, generated_headline, product_health fields). Output ONLY the JSON — no markdown, no commentary. If a value is missing use null or [].
+
+--- begin ---
+${slice}
+--- end ---`,
+      },
+    ],
+  });
+  return parseInvestigationJson(extractText(msg));
+}
+
+/**
+ * Run Claude with optional web search; resumes pause_turn until the model finishes (server-side tool loop).
+ * @param {string} userPrompt
+ * @param {object[] | null} tools
+ */
+async function runInvestigationAnthropicTurn(userPrompt, tools) {
+  const userMessage = { role: 'user', content: userPrompt };
+  let messages = [userMessage];
+  let citationUrls = [];
+  const maxPasses = 12;
+  let lastResponse = null;
+
+  for (let pass = 0; pass < maxPasses; pass++) {
+    const params = {
+      model: MODEL,
+      max_tokens: 6000,
+      messages,
+    };
+    if (tools?.length) params.tools = tools;
+
+    lastResponse = await client.messages.create(params);
+    citationUrls = [...citationUrls, ...collectCitationUrls(lastResponse)];
+
+    if (lastResponse.stop_reason !== 'pause_turn') {
+      break;
+    }
+
+    messages = [userMessage, { role: 'assistant', content: lastResponse.content }];
+  }
+
+  return { message: lastResponse, citationUrls };
 }
 
 async function realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory) {
@@ -484,52 +595,62 @@ async function realtimeInvestigation(brandName, corporateParent, healthFlag, pro
     {
       type: 'web_search_20250305',
       name: 'web_search',
-      max_uses: 6,
+      max_uses: 8,
     },
   ];
 
-  try {
-    const msg = await client.messages.create({
-      model: MODEL,
-      max_tokens: 6000,
-      messages: [{ role: 'user', content: userPrompt }],
-      tools,
-    });
-
-    const text = extractText(msg);
-    const citations = collectCitationUrls(msg);
-    let parsed = parseInvestigationJson(text);
-    if (!parsed) {
-      return buildLimited(brandName, corporateParent, healthFlag);
-    }
-    mergeSourcesWithCitations(parsed, citations);
+  const finalizeFromParsed = (parsed, citationUrls) => {
+    mergeSourcesWithCitations(parsed, citationUrls);
     const inv = normalizeInvestigation(parsed, brandName, corporateParent, healthFlag);
     return finalizeInvestigation(inv, 'realtime_search');
+  };
+
+  let msg;
+  let citationUrls = [];
+
+  try {
+    ({ message: msg, citationUrls } = await runInvestigationAnthropicTurn(userPrompt, tools));
   } catch (e) {
     console.warn('Investigation web search path failed, retrying without tools:', e?.message || e);
     try {
-      const msg = await client.messages.create({
-        model: MODEL,
-        max_tokens: 4096,
-        messages: [
-          {
-            role: 'user',
-            content: `${userPrompt}
+      const fallbackPrompt = `${userPrompt}
 
-If web search is unavailable, use only well-established public knowledge and clearly mark gaps with "unknown".`,
-          },
-        ],
-      });
-      const text = extractText(msg);
-      let parsed = parseInvestigationJson(text);
-      if (!parsed) return buildLimited(brandName, corporateParent, healthFlag);
-      const inv = normalizeInvestigation(parsed, brandName, corporateParent, healthFlag);
-      return finalizeInvestigation(inv, 'realtime_search');
+If web search is unavailable, use only well-established public knowledge. Use overall_concern_level "moderate" when evidence is thin; explain gaps in executive_summary — never use "unknown" as the concern level.`;
+      ({ message: msg, citationUrls } = await runInvestigationAnthropicTurn(fallbackPrompt, null));
     } catch (e2) {
-      console.error('Investigation fallback failed', e2);
-      return buildLimited(brandName, corporateParent, healthFlag);
+      console.error('Investigation request failed', e2);
+      return buildRealtimeEmergencyProfile(
+        brandName,
+        corporateParent,
+        healthFlag,
+        productCategory,
+        e2?.message || 'API error'
+      );
     }
   }
+
+  const text = extractText(msg);
+  let parsed = parseInvestigationJson(text);
+
+  if (!parsed && text?.trim()) {
+    try {
+      parsed = await repairInvestigationJson(brandName || corporateParent || 'Brand', text);
+    } catch (e) {
+      console.warn('JSON repair pass failed:', e?.message || e);
+    }
+  }
+
+  if (!parsed) {
+    return buildRealtimeEmergencyProfile(
+      brandName,
+      corporateParent,
+      healthFlag,
+      productCategory,
+      'non-JSON model response'
+    );
+  }
+
+  return finalizeFromParsed(parsed, citationUrls);
 }
 
 /**
@@ -583,5 +704,20 @@ export async function getInvestigationProfile(brandName, corporateParent, option
     }
   }
 
-  return realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory);
+  console.log(
+    `[investigation] No DB profile for "${primaryBrand}" — running realtime research`
+  );
+
+  try {
+    return await realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory);
+  } catch (e) {
+    console.error('getInvestigationProfile realtime failed', e);
+    return buildRealtimeEmergencyProfile(
+      brandName,
+      corporateParent,
+      healthFlag,
+      productCategory,
+      e?.message || 'unexpected error'
+    );
+  }
 }
