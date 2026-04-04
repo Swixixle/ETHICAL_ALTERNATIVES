@@ -7,7 +7,8 @@ import {
   reverseGeocode,
 } from '../services/location.js';
 import { getCityIdentity } from '../services/cityIdentity.js';
-import { dailyChainShuffle, dailyFeedShuffle, utcDateKey } from '../utils/dailyShuffle.js';
+import { dailyChainShuffle, dailyFeedShuffle, dailyNotVerifiedShuffle, utcDateKey } from '../utils/dailyShuffle.js';
+import TrustStrip from './TrustStrip.jsx';
 import ListYourShop from './ListYourShop.jsx';
 import CommunityBoard from './CommunityBoard.jsx';
 import TerritoryCard from './TerritoryCard.jsx';
@@ -59,7 +60,7 @@ function SearchBar({ onSearch, onStartSnap }) {
       style={{
         display: 'flex',
         flexWrap: 'wrap',
-        gap: 8,
+        gap: 10,
         padding: '16px 24px',
         borderBottom: '1px solid #2a3f52',
         background: '#0f1520',
@@ -76,12 +77,14 @@ function SearchBar({ onSearch, onStartSnap }) {
         style={{
           flex: '1 1 180px',
           minWidth: 0,
+          minHeight: 48,
+          boxSizing: 'border-box',
           background: '#162030',
           border: '1px solid #2a3f52',
           borderRadius: 2,
-          padding: '10px 14px',
+          padding: '0 16px',
           fontFamily: "'Crimson Pro', serif",
-          fontSize: 18,
+          fontSize: 17,
           color: '#f0e8d0',
           outline: 'none',
         }}
@@ -96,11 +99,13 @@ function SearchBar({ onSearch, onStartSnap }) {
           background: '#f0a820',
           color: '#0f1520',
           border: 'none',
-          padding: '10px 18px',
+          minHeight: 48,
+          padding: '0 22px',
           borderRadius: 2,
           cursor: 'pointer',
           fontWeight: 700,
           flexShrink: 0,
+          boxSizing: 'border-box',
         }}
       >
         Investigate
@@ -116,11 +121,13 @@ function SearchBar({ onSearch, onStartSnap }) {
           background: '#0f1520',
           color: '#f0a820',
           border: '1px solid #f0a820',
-          padding: '10px 16px',
+          minHeight: 48,
+          padding: '0 20px',
           borderRadius: 2,
           cursor: 'pointer',
           fontWeight: 700,
           flexShrink: 0,
+          boxSizing: 'border-box',
         }}
       >
         📷 Snap
@@ -373,16 +380,71 @@ function LocationPrompt({
 }
 
 function CityCard({ identity, city, state }) {
+  const [open, setOpen] = useState(false);
   if (!identity) return null;
+
+  const cityPart = [city, state].filter(Boolean).join(', ');
+  const headline = typeof identity.headline === 'string' ? identity.headline.trim() : '';
+  const amberLine = [headline, cityPart].filter(Boolean).join(' · ').toUpperCase();
+
+  if (!open) {
+    return (
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        style={{
+          display: 'block',
+          width: '100%',
+          textAlign: 'left',
+          padding: '14px 24px',
+          border: 'none',
+          borderBottom: '1px solid #2a3f52',
+          background: '#0f1520',
+          cursor: 'pointer',
+        }}
+      >
+        <span
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontSize: 11,
+            letterSpacing: 2,
+            textTransform: 'uppercase',
+            color: '#f0a820',
+            lineHeight: 1.45,
+          }}
+        >
+          {amberLine || cityPart.toUpperCase()}
+        </span>
+      </button>
+    );
+  }
 
   return (
     <div
       style={{
-        padding: '32px 24px 24px',
+        padding: '24px 24px 20px',
         borderBottom: '1px solid #2a3f52',
-        marginBottom: 8,
+        marginBottom: 0,
+        background: '#0f1520',
       }}
     >
+      <button
+        type="button"
+        onClick={() => setOpen(false)}
+        style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: 10,
+          letterSpacing: 2,
+          textTransform: 'uppercase',
+          color: '#6a8a9a',
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          padding: '0 0 12px',
+        }}
+      >
+        ← Collapse city story
+      </button>
       <div
         style={{
           fontFamily: "'Space Mono', monospace",
@@ -393,7 +455,7 @@ function CityCard({ identity, city, state }) {
           marginBottom: 8,
         }}
       >
-        {[city, state].filter(Boolean).join(', ')}
+        {cityPart}
       </div>
 
       {identity.daily_rotation?.rotation_theme ? (
@@ -416,7 +478,7 @@ function CityCard({ identity, city, state }) {
       <div
         style={{
           fontFamily: "'Bebas Neue', sans-serif",
-          fontSize: 'clamp(36px, 7vw, 64px)',
+          fontSize: 'clamp(32px, 6vw, 56px)',
           letterSpacing: 2,
           color: '#f0e8d0',
           lineHeight: 0.95,
@@ -430,9 +492,9 @@ function CityCard({ identity, city, state }) {
       <p
         style={{
           fontFamily: "'Crimson Pro', serif",
-          fontSize: 20,
+          fontSize: 18,
           color: '#a8c4d8',
-          lineHeight: 1.7,
+          lineHeight: 1.65,
           margin: '0 0 16px',
         }}
       >
@@ -466,7 +528,7 @@ function CityCard({ identity, city, state }) {
         <p
           style={{
             fontFamily: "'Crimson Pro', serif",
-            fontSize: 18,
+            fontSize: 17,
             fontStyle: 'italic',
             color: '#6a8a9a',
             margin: 0,
@@ -479,7 +541,7 @@ function CityCard({ identity, city, state }) {
   );
 }
 
-function FeedCard({ business, chainFootnote = false }) {
+function FeedCard({ business, chainFootnote = false, mutedSection = false }) {
   const website = business.website;
   const hasBadges = business.ethics_badges?.length > 0;
   const visitHref =
@@ -496,38 +558,36 @@ function FeedCard({ business, chainFootnote = false }) {
         margin: '0 16px 10px',
         opacity: 0.5,
       }
-    : {
-        background: '#162030',
-        border: '1px solid #2a3f52',
-        borderRadius: 4,
-        padding: '14px 16px',
-        margin: '0 16px 10px',
-      };
+    : mutedSection
+      ? {
+          background: '#101820',
+          border: '1px solid #283648',
+          borderRadius: 4,
+          padding: '14px 16px',
+          margin: '0 16px 10px',
+          opacity: 0.72,
+        }
+      : {
+          background: '#162030',
+          border: '1px solid #2a3f52',
+          borderRadius: 4,
+          padding: '14px 16px',
+          margin: '0 16px 10px',
+        };
+
+  const trustTier = business.trust_tier ? String(business.trust_tier) : 'local_unvetted';
 
   return (
     <div style={cardStyle}>
+      <TrustStrip trustTier={trustTier} chainFootnote={chainFootnote} />
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <div style={{ flex: 1, minWidth: 0 }}>
-          {chainFootnote ? (
-            <div
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 11,
-                letterSpacing: 2,
-                color: '#ff6b6b',
-                textTransform: 'uppercase',
-                marginBottom: 6,
-              }}
-            >
-              Chain
-            </div>
-          ) : null}
           <div
             style={{
               fontFamily: "'Bebas Neue', sans-serif",
               fontSize: 22,
               letterSpacing: 1.5,
-              color: chainFootnote ? '#6b7a88' : '#f0e8d0',
+              color: chainFootnote || mutedSection ? '#6b7a88' : '#f0e8d0',
               marginBottom: 2,
             }}
           >
@@ -539,7 +599,7 @@ function FeedCard({ business, chainFootnote = false }) {
               style={{
                 fontFamily: "'Crimson Pro', serif",
                 fontSize: 16,
-                color: chainFootnote ? '#6a8a9a' : '#a8c4d8',
+                color: chainFootnote || mutedSection ? '#6a8a9a' : '#a8c4d8',
                 lineHeight: 1.4,
                 marginBottom: 6,
               }}
@@ -555,7 +615,7 @@ function FeedCard({ business, chainFootnote = false }) {
                 fontSize: 11,
                 letterSpacing: 1.5,
                 textTransform: 'uppercase',
-                color: chainFootnote ? '#6a8a9a' : '#f0a820',
+                color: chainFootnote || mutedSection ? '#6a8a9a' : '#f0a820',
                 marginBottom: hasBadges ? 8 : 0,
               }}
             >
@@ -666,6 +726,7 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
   const [location, setLocation] = useState(() => readCachedLocation());
   const [identity, setIdentity] = useState(null);
   const [feed, setFeed] = useState([]);
+  const [notVerifiedIndependent, setNotVerifiedIndependent] = useState([]);
   const [chainResults, setChainResults] = useState([]);
   const [category, setCategory] = useState('all');
   const [loadingFeed, setLoadingFeed] = useState(false);
@@ -673,7 +734,8 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
   const [manualCityVisible, setManualCityVisible] = useState(false);
   const [manualCityBusy, setManualCityBusy] = useState(false);
   const [territoryData, setTerritoryData] = useState(null);
-  const [showTerritory, setShowTerritory] = useState(false);
+  const [territoryOverlayOpen, setTerritoryOverlayOpen] = useState(false);
+  const [communityBoardOpen, setCommunityBoardOpen] = useState(false);
 
   const fetchFeed = useCallback(async (lat, lng, cat) => {
     setLoadingFeed(true);
@@ -689,9 +751,12 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
       return {
         feed: Array.isArray(data.feed) ? data.feed : [],
         chain_results: Array.isArray(data.chain_results) ? data.chain_results : [],
+        not_verified_independent: Array.isArray(data.not_verified_independent)
+          ? data.not_verified_independent
+          : [],
       };
     } catch {
-      return { feed: [], chain_results: [] };
+      return { feed: [], chain_results: [], not_verified_independent: [] };
     } finally {
       setLoadingFeed(false);
     }
@@ -711,6 +776,7 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
         setPhase('ready');
         setIdentity(null);
         setFeed([]);
+        setNotVerifiedIndependent([]);
         setChainResults([]);
         return;
       }
@@ -734,6 +800,7 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
           state: loc.state,
         };
         setFeed(dailyFeedShuffle(pack.feed, shuffleOpts));
+        setNotVerifiedIndependent(dailyNotVerifiedShuffle(pack.not_verified_independent, shuffleOpts));
         setChainResults(dailyChainShuffle(pack.chain_results, shuffleOpts));
         setCategory('all');
         sessionStorage.setItem(ONBOARD_KEY, 'granted');
@@ -775,7 +842,6 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
       .then((data) => {
         if (cancelled || !data?.history) return;
         setTerritoryData(data);
-        setShowTerritory(true);
         primeTravelTracker(location.lat, location.lng, data.county || null);
       })
       .catch((err) => console.warn('[territory]', err?.message || err));
@@ -783,7 +849,6 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
     startTravelTracking(apiBase, (newData) => {
       if (cancelled || !newData?.history) return;
       setTerritoryData(newData);
-      setShowTerritory(true);
     });
 
     return () => {
@@ -854,6 +919,7 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
     const dateKey = utcDateKey();
     const shuffleOpts = { dateKey, city: location.city, state: location.state };
     setFeed(dailyFeedShuffle(pack.feed, shuffleOpts));
+    setNotVerifiedIndependent(dailyNotVerifiedShuffle(pack.not_verified_independent, shuffleOpts));
     setChainResults(dailyChainShuffle(pack.chain_results, shuffleOpts));
   }
 
@@ -969,16 +1035,17 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
           top: 0,
           background: '#0f1520',
           borderBottom: '1px solid #2a3f52',
-          padding: '12px 24px',
+          padding: '8px 24px',
           zIndex: 100,
         }}
       >
         <div
           style={{
             fontFamily: "'Bebas Neue', sans-serif",
-            fontSize: 22,
+            fontSize: 28,
             letterSpacing: 2,
             color: '#f0e8d0',
+            lineHeight: 1,
           }}
         >
           ETHICALALT
@@ -995,13 +1062,14 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
         style={{
           display: 'flex',
           gap: 8,
-          padding: '16px 24px',
+          padding: '12px 24px',
           overflowX: 'auto',
           borderBottom: '1px solid #2a3f52',
           position: 'sticky',
-          top: 57,
+          top: 48,
           background: '#0f1520',
           zIndex: 99,
+          alignItems: 'center',
         }}
       >
         {CATEGORIES.map((cat) => (
@@ -1027,10 +1095,62 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
             {cat.label}
           </button>
         ))}
+        <button
+          type="button"
+          onClick={() => territoryData?.history && setTerritoryOverlayOpen(true)}
+          disabled={!territoryData?.history}
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontSize: 11,
+            letterSpacing: 1.5,
+            textTransform: 'uppercase',
+            padding: '6px 14px',
+            borderRadius: 999,
+            border: '1px solid #344d62',
+            background: territoryData?.history ? 'rgba(168,196,216,0.08)' : 'transparent',
+            color: territoryData?.history ? '#a8c4d8' : '#4a5a68',
+            cursor: territoryData?.history ? 'pointer' : 'default',
+            whiteSpace: 'nowrap',
+            flexShrink: 0,
+            marginLeft: 4,
+          }}
+        >
+          You are here →
+        </button>
       </div>
 
-      {showTerritory && territoryData ? (
-        <TerritoryCard data={territoryData} onDismiss={() => setShowTerritory(false)} />
+      {territoryOverlayOpen && territoryData ? (
+        <div
+          role="presentation"
+          tabIndex={-1}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: 'rgba(5, 10, 18, 0.85)',
+            zIndex: 300,
+            display: 'flex',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            padding: 'max(24px, env(safe-area-inset-top)) 16px 32px',
+            overflowY: 'auto',
+          }}
+          onClick={() => setTerritoryOverlayOpen(false)}
+          onKeyDown={(e) => {
+            if (e.key === 'Escape') setTerritoryOverlayOpen(false);
+          }}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            style={{ width: '100%', maxWidth: 520, marginTop: 12 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <TerritoryCard
+              data={territoryData}
+              onDismiss={() => setTerritoryOverlayOpen(false)}
+            />
+          </div>
+        </div>
       ) : null}
 
       <div style={{ paddingTop: 16, paddingBottom: 100 }}>
@@ -1050,7 +1170,10 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
           </div>
         ) : null}
 
-        {!loadingFeed && feed.length === 0 && chainResults.length === 0 ? (
+        {!loadingFeed &&
+        feed.length === 0 &&
+        chainResults.length === 0 &&
+        notVerifiedIndependent.length === 0 ? (
           <div
             style={{
               padding: '32px 24px',
@@ -1091,6 +1214,46 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
           </>
         ) : null}
 
+        {!loadingFeed && notVerifiedIndependent.length > 0 ? (
+          <div
+            style={{
+              marginTop: 28,
+              paddingTop: 24,
+              borderTop: '1px solid #1e3044',
+            }}
+          >
+            <div
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 11,
+                letterSpacing: 2,
+                textTransform: 'uppercase',
+                color: '#6a8a9a',
+                padding: '0 24px 8px',
+              }}
+            >
+              Also nearby — not verified independent
+            </div>
+            <p
+              style={{
+                fontFamily: "'Crimson Pro', serif",
+                fontSize: 14,
+                color: '#5a6a78',
+                lineHeight: 1.55,
+                padding: '0 24px 14px',
+                margin: 0,
+              }}
+            >
+              These places passed our map filter but could not be confirmed independent (missing
+              classification, low confidence, or ambiguous name). Shown for discovery only — not
+              endorsed as local independents.
+            </p>
+            {notVerifiedIndependent.map((business) => (
+              <FeedCard key={`nv-${business.id}`} business={business} mutedSection />
+            ))}
+          </div>
+        ) : null}
+
         {!loadingFeed && feed.length === 0 && chainResults.length > 0 ? (
           <p
             style={{
@@ -1129,7 +1292,32 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
         ) : null}
       </div>
 
-      <CommunityBoard location={location} />
+      <div style={{ padding: '24px 24px 48px', borderTop: '1px solid #1e3044' }}>
+        <button
+          type="button"
+          onClick={() => setCommunityBoardOpen((o) => !o)}
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontSize: 11,
+            letterSpacing: 2,
+            textTransform: 'uppercase',
+            color: '#f0a820',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: 0,
+            textDecoration: 'underline',
+            textUnderlineOffset: 4,
+          }}
+        >
+          Community board {communityBoardOpen ? '▾' : '→'}
+        </button>
+        {communityBoardOpen ? (
+          <div style={{ marginTop: 20 }}>
+            <CommunityBoard location={location} />
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }
