@@ -6,6 +6,10 @@ function tapUrl() {
   return apiBase ? `${apiBase}/api/tap` : '/api/tap';
 }
 
+function investigateUrl() {
+  return apiBase ? `${apiBase}/api/investigate` : '/api/investigate';
+}
+
 const CONFIRM_THRESHOLD = 0.75;
 
 export function useTapAnalysis() {
@@ -165,6 +169,39 @@ export function useTapAnalysis() {
     setTapSession((s) => s + 1);
   }, []);
 
+  const investigateByBrand = useCallback(async (brand) => {
+    const q = String(brand || '').trim();
+    if (!q) {
+      setError('Enter a company or brand name');
+      return;
+    }
+    setLoading(true);
+    setError(null);
+    setResult(null);
+    setImage(null);
+    setTapPosition(null);
+    setPendingConfirmation(null);
+    setRegionSelectActive(false);
+    setTapSession((s) => s + 1);
+    try {
+      const res = await fetch(investigateUrl(), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ brand: q }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setError(data.error || `Request failed (${res.status})`);
+        return;
+      }
+      setResult(data);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Network error');
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
   const reset = useCallback(() => {
     setImage(null);
     setTapPosition(null);
@@ -216,5 +253,6 @@ export function useTapAnalysis() {
     captureGeoOnce,
     tapSession,
     selectAlternativeBrand,
+    investigateByBrand,
   };
 }

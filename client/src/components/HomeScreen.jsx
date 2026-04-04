@@ -30,6 +30,68 @@ function geolocationFailureHint(err) {
   };
 }
 
+/** @param {{ onSearch: (q: string) => void }} props */
+function SearchBar({ onSearch }) {
+  const [query, setQuery] = useState('');
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (query.trim()) onSearch(query.trim());
+  }
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        display: 'flex',
+        gap: 8,
+        padding: '16px 24px',
+        borderBottom: '1px solid #2a3f52',
+        background: '#0f1520',
+      }}
+    >
+      <input
+        type="search"
+        name="investigate"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search any company, brand, or CEO..."
+        enterKeyHint="search"
+        style={{
+          flex: 1,
+          background: '#162030',
+          border: '1px solid #2a3f52',
+          borderRadius: 2,
+          padding: '10px 14px',
+          fontFamily: "'Crimson Pro', serif",
+          fontSize: 16,
+          color: '#e8dfc8',
+          outline: 'none',
+        }}
+      />
+      <button
+        type="submit"
+        style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: 10,
+          letterSpacing: 2,
+          textTransform: 'uppercase',
+          background: '#e8a020',
+          color: '#0f1520',
+          border: 'none',
+          padding: '10px 18px',
+          borderRadius: 2,
+          cursor: 'pointer',
+          fontWeight: 700,
+          flexShrink: 0,
+        }}
+      >
+        Investigate →
+      </button>
+    </form>
+  );
+}
+
 const CATEGORIES = [
   { value: 'all', label: 'All' },
   { value: 'food', label: 'Food' },
@@ -564,7 +626,7 @@ function FeedCard({ business, chainFootnote = false }) {
 /**
  * @param {{ onStartSnap: () => void }} props
  */
-export default function HomeScreen({ onStartSnap }) {
+export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
   const [phase, setPhase] = useState(initialPhase);
   const [location, setLocation] = useState(() => readCachedLocation());
   const [identity, setIdentity] = useState(null);
@@ -849,6 +911,10 @@ export default function HomeScreen({ onStartSnap }) {
       </div>
 
       <CityCard identity={identity} city={location?.city} state={location?.state} />
+
+      {typeof onSearchInvestigate === 'function' ? (
+        <SearchBar onSearch={onSearchInvestigate} />
+      ) : null}
 
       <div
         style={{

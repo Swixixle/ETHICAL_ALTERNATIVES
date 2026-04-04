@@ -18,8 +18,11 @@ const chainExclusions = JSON.parse(
 
 /** @param {Record<string, unknown>} identification */
 export function getIdentificationTier(identification) {
-  const conf = typeof identification?.confidence === 'number' ? identification.confidence : 0;
   const method = String(identification?.identification_method || '');
+  if (method === 'text_search') {
+    return 'confirmed';
+  }
+  const conf = typeof identification?.confidence === 'number' ? identification.confidence : 0;
   if (conf >= 0.8 && method === 'direct_logo') {
     return 'confirmed';
   }
@@ -247,6 +250,53 @@ router.post('/tap', async (req, res) => {
     version: 'v1',
     response_ms,
   });
+});
+
+/** POST /api/investigate — typed brand/topic search, no image (rabbit hole / Deep mode). */
+router.post('/investigate', async (req, res) => {
+  const t0 = Date.now();
+  const raw = req.body?.brand;
+  const brand = typeof raw === 'string' ? raw.trim() : '';
+  if (!brand) {
+    return res.status(400).json({ error: 'brand required' });
+  }
+
+  try {
+    const investigation = await getInvestigationProfile(brand, null, {
+      healthFlag: false,
+      productCategory: 'search',
+    });
+
+    const identification = {
+      object: brand,
+      brand,
+      corporate_parent: null,
+      category: 'search',
+      confidence: 1,
+      identification_method: 'text_search',
+      search_keywords: brand,
+    };
+
+    const identification_tier = getIdentificationTier(identification);
+    const response_ms = Date.now() - t0;
+
+    res.json({
+      identification,
+      identification_tier,
+      investigation,
+      results: [],
+      registry_results: [],
+      local_results: [],
+      scene_inventory: null,
+      searched_sources: investigation ? ['investigation'] : [],
+      empty_sources: [],
+      version: 'v1',
+      response_ms,
+    });
+  } catch (err) {
+    console.error('/api/investigate', err);
+    res.status(500).json({ error: err?.message || 'investigation failed' });
+  }
 });
 
 export default router;

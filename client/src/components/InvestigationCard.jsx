@@ -169,6 +169,7 @@ export default function InvestigationCard({ investigation, identification }) {
                   margin: '4px 0',
                 }}
               >
+                {identification.identification_method === 'text_search' && 'Typed search — investigate from home'}
                 {identification.identification_method === 'direct_logo' && 'Logo confirmed'}
                 {identification.identification_method === 'partial_logo' && 'Brand identified from partial logo'}
                 {identification.identification_method === 'product_recognition' && 'Product identified from packaging'}

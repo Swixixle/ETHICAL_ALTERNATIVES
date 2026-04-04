@@ -27,6 +27,9 @@ function IdentificationMethodBadge({ id, tier }) {
     return <span className="app__method-badge app__method-badge--red">Uncertain — verify</span>;
   }
   const m = id?.identification_method;
+  if (m === 'text_search') {
+    return <span className="app__method-badge app__method-badge--green">Typed search</span>;
+  }
   if (m === 'direct_logo') {
     return <span className="app__method-badge app__method-badge--green">Logo confirmed</span>;
   }
@@ -43,7 +46,8 @@ function IdentificationMethodBadge({ id, tier }) {
 }
 
 export default function App() {
-  const [screen, setScreen] = useState('home');
+  /** home — feed; snap — photo tap (Quick); deep — typed investigation (rabbit hole) */
+  const [mode, setMode] = useState('home');
 
   const {
     image,
@@ -65,6 +69,7 @@ export default function App() {
     captureGeoOnce,
     tapSession,
     selectAlternativeBrand,
+    investigateByBrand,
   } = useTapAnalysis();
 
   const [showShare, setShowShare] = useState(false);
@@ -97,19 +102,29 @@ export default function App() {
 
   const goHome = () => {
     reset();
-    setScreen('home');
+    setMode('home');
   };
 
-  if (screen === 'home') {
+  if (mode === 'home') {
     return (
       <div className="app app--home">
-        <HomeScreen onStartSnap={() => setScreen('snap')} />
+        <HomeScreen
+          onStartSnap={() => {
+            reset();
+            setMode('snap');
+          }}
+          onSearchInvestigate={async (q) => {
+            reset();
+            setMode('deep');
+            await investigateByBrand(q);
+          }}
+        />
       </div>
     );
   }
 
   const identificationBlock =
-    image && result ? (
+    result ? (
       <div className="app__id-block">
         {id ? (
           <>
@@ -156,7 +171,7 @@ export default function App() {
     ) : null;
 
   const alternativesAside =
-    image && result ? (
+    result ? (
       <aside
         className={
           isDesktop ? 'app__results-sidebar' : 'app__results-sidebar app__results-sidebar--stacked'
@@ -171,6 +186,48 @@ export default function App() {
           investigation={result.investigation}
         />
       </aside>
+    ) : null;
+
+  const deepResultsSection =
+    mode === 'deep' && result ? (
+      <div className="app__results-root app__results-root--deep">
+        <div
+          className="app__deep-toolbar"
+          style={{
+            padding: '12px 24px',
+            borderBottom: '1px solid var(--color-border, #2a3f52)',
+            display: 'flex',
+            gap: 12,
+            flexWrap: 'wrap',
+            alignItems: 'center',
+          }}
+        >
+          <button type="button" className="app__btn app__btn--ghost" onClick={goHome}>
+            ← Home
+          </button>
+          <span
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 10,
+              color: 'var(--color-text-dim, #8fa8bc)',
+              letterSpacing: 1,
+            }}
+          >
+            Deep investigation · no photo
+          </span>
+        </div>
+        {isDesktop ? (
+          <div className="app__results-grid">
+            {alternativesAside}
+            <div className="app__results-main">{identificationBlock}</div>
+          </div>
+        ) : (
+          <div className="app__results-stack">
+            <div className="app__results-main app__results-main--stacked">{identificationBlock}</div>
+            {alternativesAside}
+          </div>
+        )}
+      </div>
     ) : null;
 
   const tapResultsSection =
@@ -223,13 +280,27 @@ export default function App() {
       </header>
 
       <main className="app__main">
-        {!image ? (
+        {mode === 'deep' && loading ? (
+          <div className="app__panel" style={{ padding: '3rem 1.5rem' }}>
+            <LoadingState />
+          </div>
+        ) : null}
+
+        {mode === 'deep' && error && !result ? (
+          <div className="app__panel">
+            <ErrorState message={error} onRetry={goHome} />
+          </div>
+        ) : null}
+
+        {deepResultsSection}
+
+        {mode === 'snap' && !image ? (
           <div className="app__panel">
             <PhotoCapture onImageSelected={onImageSelected} loading={false} />
           </div>
         ) : null}
 
-        {tapPhase ? (
+        {mode === 'snap' && tapPhase ? (
           <div className="app__panel">
             <div className="app__image-shell">
               <img className="app__photo" src={dataUrl} alt="Your capture" />
@@ -256,7 +327,7 @@ export default function App() {
           </div>
         ) : null}
 
-        {image && pendingConfirmation && !result ? (
+        {mode === 'snap' && image && pendingConfirmation && !result ? (
           <div className="app__panel">
             <ConfirmTap
               identification={pendingConfirmation.identification}
@@ -279,7 +350,7 @@ export default function App() {
           </div>
         ) : null}
 
-        {image && regionSelectActive && !result ? (
+        {mode === 'snap' && image && regionSelectActive && !result ? (
           <div className="app__panel">
             <RegionSelectOverlay
               imageSrc={dataUrl}
