@@ -69,7 +69,7 @@ export default function WealthChart() {
         chartsRef.current = [];
 
         const Chart = window.Chart;
-        const axisColor = '#4a6478';
+        const axisColor = '#6a8a9a';
         const gridColor = '#1c2a3a';
 
         if (canvasCeoRef.current) {
@@ -128,8 +128,8 @@ export default function WealthChart() {
                 {
                   label: 'Top 1% income share',
                   data: TOP_1_PCT_INCOME.map((d) => d.share),
-                  borderColor: '#e8a020',
-                  backgroundColor: 'rgba(232,160,32,0.08)',
+                  borderColor: '#f0a820',
+                  backgroundColor: 'rgba(240, 168, 32, 0.08)',
                   borderWidth: 2,
                   pointRadius: 2,
                   tension: 0.3,
@@ -188,10 +188,10 @@ export default function WealthChart() {
       <div
         style={{
           fontFamily: "'Space Mono', monospace",
-          fontSize: 9,
+          fontSize: 12,
           letterSpacing: 3,
           textTransform: 'uppercase',
-          color: '#e8a020',
+          color: '#f0a820',
           borderBottom: '1px solid #2a3f52',
           paddingBottom: 8,
           marginBottom: 16,
@@ -207,8 +207,8 @@ export default function WealthChart() {
       <div
         style={{
           fontFamily: "'Crimson Pro', serif",
-          fontSize: 13,
-          color: '#4a6478',
+          fontSize: 16,
+          color: '#6a8a9a',
           marginTop: 10,
           lineHeight: 1.5,
         }}
@@ -222,10 +222,10 @@ export default function WealthChart() {
         <div
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 9,
+            fontSize: 12,
             letterSpacing: 3,
             textTransform: 'uppercase',
-            color: '#e8a020',
+            color: '#f0a820',
             borderBottom: '1px solid #2a3f52',
             paddingBottom: 8,
             marginBottom: 16,
@@ -241,8 +241,8 @@ export default function WealthChart() {
         <div
           style={{
             fontFamily: "'Crimson Pro', serif",
-            fontSize: 15,
-            color: '#8fa8bc',
+            fontSize: 18,
+            color: '#a8c4d8',
             lineHeight: 1.7,
             marginTop: 12,
           }}
@@ -255,9 +255,9 @@ export default function WealthChart() {
 
       <div
         style={{
-          background: 'rgba(232,160,32,0.07)',
-          border: '1px solid rgba(232,160,32,0.2)',
-          borderLeft: '3px solid #e8a020',
+          background: 'rgba(240, 168, 32, 0.07)',
+          border: '1px solid rgba(240, 168, 32, 0.2)',
+          borderLeft: '3px solid #f0a820',
           padding: '14px 18px',
           marginTop: 16,
           borderRadius: '0 4px 4px 0',
@@ -266,10 +266,10 @@ export default function WealthChart() {
         <div
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 8,
+            fontSize: 11,
             letterSpacing: 2,
             textTransform: 'uppercase',
-            color: '#e8a020',
+            color: '#f0a820',
             marginBottom: 6,
           }}
         >
@@ -278,8 +278,8 @@ export default function WealthChart() {
         <p
           style={{
             fontFamily: "'Crimson Pro', serif",
-            fontSize: 15,
-            color: '#e8dfc8',
+            fontSize: 20,
+            color: '#f0e8d0',
             lineHeight: 1.7,
             margin: 0,
           }}

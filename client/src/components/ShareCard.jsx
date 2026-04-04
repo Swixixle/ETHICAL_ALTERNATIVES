@@ -9,7 +9,7 @@ const CONCERN_COLORS = {
   moderate: { bg: '#7a5500', text: '#ffe9a0', label: 'MODERATE CONCERN' },
   minor: { bg: '#1a4a2a', text: '#a8f0c0', label: 'MINOR CONCERN' },
   clean: { bg: '#1a3a6a', text: '#a0c8ff', label: 'CLEAN RECORD' },
-  unknown: { bg: '#2a3f52', text: '#8fa8bc', label: 'RECORD' },
+  unknown: { bg: '#2a3f52', text: '#a8c4d8', label: 'RECORD' },
 };
 
 function ShareCardVisual({ cardData }) {
@@ -34,7 +34,7 @@ function ShareCardVisual({ cardData }) {
           background: concern.bg,
           color: concern.text,
           fontFamily: "'Space Mono', monospace",
-          fontSize: 9,
+          fontSize: 11,
           letterSpacing: 2,
           textTransform: 'uppercase',
           padding: '4px 12px',
@@ -50,10 +50,10 @@ function ShareCardVisual({ cardData }) {
         <div
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 10,
+            fontSize: 11,
             letterSpacing: 3,
             textTransform: 'uppercase',
-            color: '#e8a020',
+            color: '#f0a820',
             marginBottom: 8,
           }}
         >
@@ -66,7 +66,7 @@ function ShareCardVisual({ cardData }) {
           fontFamily: "'Bebas Neue', sans-serif",
           fontSize: 'clamp(32px, 8vw, 58px)',
           letterSpacing: 2,
-          color: '#e8dfc8',
+          color: '#f0e8d0',
           lineHeight: 0.95,
           textTransform: 'uppercase',
           marginBottom: 18,
@@ -81,10 +81,10 @@ function ShareCardVisual({ cardData }) {
             key={i}
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 8,
+              fontSize: 11,
               letterSpacing: 1.5,
               textTransform: 'uppercase',
-              color: '#8fa8bc',
+              color: '#a8c4d8',
               border: '1px solid #2a3f52',
               borderRadius: 999,
               padding: '3px 8px',
@@ -100,12 +100,12 @@ function ShareCardVisual({ cardData }) {
           style={{
             margin: '0 0 16px',
             padding: '12px 14px 12px 16px',
-            borderLeft: '4px solid #e8a020',
-            background: 'rgba(232, 160, 32, 0.06)',
+            borderLeft: '4px solid #f0a820',
+            background: 'rgba(240, 168, 32, 0.06)',
             fontFamily: "'Crimson Pro', serif",
             fontSize: 17,
             lineHeight: 1.55,
-            color: '#e8dfc8',
+            color: '#f0e8d0',
             fontStyle: 'italic',
           }}
         >
@@ -115,10 +115,10 @@ function ShareCardVisual({ cardData }) {
               style={{
                 marginTop: 10,
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 8,
+                fontSize: 11,
                 letterSpacing: 1,
                 fontStyle: 'normal',
-                color: '#4a6478',
+                color: '#6a8a9a',
                 wordBreak: 'break-all',
               }}
             >
@@ -132,9 +132,9 @@ function ShareCardVisual({ cardData }) {
         <div
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 8,
+            fontSize: 11,
             letterSpacing: 1,
-            color: '#4a6478',
+            color: '#6a8a9a',
             marginBottom: 12,
           }}
         >
@@ -145,9 +145,9 @@ function ShareCardVisual({ cardData }) {
       <div
         style={{
           fontFamily: "'Space Mono', monospace",
-          fontSize: 8,
+          fontSize: 11,
           letterSpacing: 2,
-          color: '#e8a020',
+          color: '#f0a820',
           textTransform: 'uppercase',
           borderTop: '1px solid #2a3f52',
           paddingTop: 10,
@@ -420,10 +420,10 @@ export default function ShareCard({ investigation, identification, onClose }) {
           <p
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 9,
+              fontSize: 11,
               letterSpacing: 2,
               textTransform: 'uppercase',
-              color: '#4a6478',
+              color: '#6a8a9a',
               textAlign: 'center',
               marginBottom: 28,
             }}
@@ -440,7 +440,7 @@ export default function ShareCard({ investigation, identification, onClose }) {
                   gap: 12,
                   fontFamily: "'Crimson Pro', serif",
                   fontSize: 16,
-                  color: '#e8dfc8',
+                  color: '#f0e8d0',
                   lineHeight: 1.45,
                   marginBottom: 14,
                 }}
@@ -460,7 +460,7 @@ export default function ShareCard({ investigation, identification, onClose }) {
               letterSpacing: 2,
               textTransform: 'uppercase',
               color: '#0f1520',
-              background: '#e8a020',
+              background: '#f0a820',
               border: 'none',
               padding: '14px 20px',
               borderRadius: 3,
@@ -503,7 +503,7 @@ export default function ShareCard({ investigation, identification, onClose }) {
               fontFamily: "'Bebas Neue', sans-serif",
               fontSize: 24,
               letterSpacing: 2,
-              color: '#e8dfc8',
+              color: '#f0e8d0',
             }}
           >
             Send This Record
@@ -513,8 +513,8 @@ export default function ShareCard({ investigation, identification, onClose }) {
             onClick={onClose}
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 10,
-              color: '#4a6478',
+              fontSize: 11,
+              color: '#6a8a9a',
               background: 'transparent',
               border: '1px solid #2a3f52',
               padding: '6px 12px',
@@ -532,8 +532,8 @@ export default function ShareCard({ investigation, identification, onClose }) {
               textAlign: 'center',
               padding: 20,
               fontFamily: "'Space Mono', monospace",
-              fontSize: 9,
-              color: '#4a6478',
+              fontSize: 11,
+              color: '#6a8a9a',
               letterSpacing: 2,
               textTransform: 'uppercase',
             }}
@@ -553,10 +553,10 @@ export default function ShareCard({ investigation, identification, onClose }) {
             <p
               style={{
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 9,
+                fontSize: 11,
                 letterSpacing: 2,
                 textTransform: 'uppercase',
-                color: '#4a6478',
+                color: '#6a8a9a',
                 marginBottom: 12,
               }}
             >
@@ -566,7 +566,7 @@ export default function ShareCard({ investigation, identification, onClose }) {
               style={{
                 fontFamily: "'Crimson Pro', serif",
                 fontSize: 14,
-                color: '#8fa8bc',
+                color: '#a8c4d8',
                 lineHeight: 1.55,
                 marginBottom: 18,
               }}
@@ -587,7 +587,7 @@ export default function ShareCard({ investigation, identification, onClose }) {
                       width: 18,
                       height: 18,
                       marginTop: 2,
-                      accentColor: '#e8a020',
+                      accentColor: '#f0a820',
                       cursor: 'pointer',
                       flexShrink: 0,
                     }}
@@ -596,10 +596,10 @@ export default function ShareCard({ investigation, identification, onClose }) {
                     <div
                       style={{
                         fontFamily: "'Space Mono', monospace",
-                        fontSize: 10,
+                        fontSize: 11,
                         letterSpacing: 0.8,
                         textTransform: 'uppercase',
-                        color: '#e8dfc8',
+                        color: '#f0e8d0',
                         marginBottom: 4,
                         lineHeight: 1.35,
                       }}
@@ -610,7 +610,7 @@ export default function ShareCard({ investigation, identification, onClose }) {
                       style={{
                         fontFamily: "'Crimson Pro', serif",
                         fontSize: 13,
-                        color: '#4a6478',
+                        color: '#6a8a9a',
                         lineHeight: 1.45,
                       }}
                     >
@@ -625,7 +625,7 @@ export default function ShareCard({ investigation, identification, onClose }) {
               <p
                 style={{
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: 9,
+                  fontSize: 11,
                   letterSpacing: 1,
                   color: '#6aaa8a',
                   textAlign: 'center',
@@ -646,8 +646,8 @@ export default function ShareCard({ investigation, identification, onClose }) {
                 fontSize: 11,
                 letterSpacing: 2,
                 textTransform: 'uppercase',
-                color: !anyChecked || sending ? '#4a6478' : '#0f1520',
-                background: !anyChecked || sending ? '#2a3f52' : '#e8a020',
+                color: !anyChecked || sending ? '#6a8a9a' : '#0f1520',
+                background: !anyChecked || sending ? '#2a3f52' : '#f0a820',
                 border: 'none',
                 padding: '16px 20px',
                 borderRadius: 3,
@@ -669,7 +669,7 @@ export default function ShareCard({ investigation, identification, onClose }) {
             fontFamily: "'Crimson Pro', serif",
             fontSize: 13,
             fontStyle: 'italic',
-            color: '#4a6478',
+            color: '#6a8a9a',
             lineHeight: 1.65,
           }}
         >

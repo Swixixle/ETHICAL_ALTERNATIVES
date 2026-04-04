@@ -4,14 +4,14 @@ const severityColor = {
   critical:    "#ff6b6b",
   significant: "#ffb347",
   moderate:    "#6aaa8a",
-  minor:       "#4a6478",
+  minor:       "#6a8a9a",
 };
 
 const severityBorder = {
   critical:    "3px solid #ff6b6b",
   significant: "3px solid #ffb347",
   moderate:    "3px solid #6aaa8a",
-  minor:       "3px solid #4a6478",
+  minor:       "3px solid #6a8a9a",
 };
 
 export default function Timeline({ events }) {
@@ -27,12 +27,12 @@ export default function Timeline({ events }) {
           top: 0,
           bottom: 0,
           width: 2,
-          backgroundColor: "#2a3f52"
+          backgroundColor: "var(--color-border-investigation, #344d62)"
         }} />
 
         {events.map((e, idx) => {
-          const dotColor    = severityColor[e.severity]  || "#4a6478";
-          const borderColor = severityBorder[e.severity] || "3px solid #4a6478";
+          const dotColor    = severityColor[e.severity]  || "#6a8a9a";
+          const borderColor = severityBorder[e.severity] || "3px solid #6a8a9a";
 
           return (
             <div key={idx} style={{ position: "relative", marginBottom: 28 }}>
@@ -50,9 +50,9 @@ export default function Timeline({ events }) {
               <div>
                 <div style={{
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: 10,
+                  fontSize: 12,
                   letterSpacing: 2,
-                  color: "#e8a020",
+                  color: "var(--color-accent, #f0a820)",
                   textTransform: "uppercase",
                   marginBottom: 4,
                   display: "flex",
@@ -64,21 +64,21 @@ export default function Timeline({ events }) {
                     <span className="timeline-category-badge" style={{
                       padding: "2px 6px",
                       borderRadius: 999,
-                      fontSize: 8
+                      fontSize: 12
                     }}>
                       {e.category.toUpperCase()}
                     </span>
                   )}
                   {e.severity === "critical" && (
-                    <span style={{ color: "#ff6b6b", fontSize: 8 }}>● CRITICAL</span>
+                    <span style={{ color: "#ff6b6b", fontSize: 12 }}>● CRITICAL</span>
                   )}
                 </div>
 
                 <div style={{
                   fontFamily: "'Crimson Pro', Georgia, serif",
-                  fontSize: 16,
+                  fontSize: 18,
                   lineHeight: 1.6,
-                  color: "#e8dfc8",
+                  color: "var(--color-text-main, #f0e8d0)",
                   paddingLeft: 6,
                   borderLeft: borderColor,
                   marginBottom: 4
@@ -93,8 +93,8 @@ export default function Timeline({ events }) {
                     rel="noreferrer"
                     style={{
                       fontFamily: "'Space Mono', monospace",
-                      fontSize: 9,
-                      color: "#4a6478",
+                      fontSize: 12,
+                      color: "var(--color-text-dim, #6a8a9a)",
                       textDecoration: "underline",
                       display: "inline-block",
                       marginTop: 2

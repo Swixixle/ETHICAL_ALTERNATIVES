@@ -13,7 +13,7 @@ export default function CostAbsorption({ data }) {
       style={{
         background: '#162030',
         border: '1px solid #2a3f52',
-        borderTop: '2px solid #e8a020',
+        borderTop: '2px solid #f0a820',
         padding: '20px 24px',
         margin: '32px 0',
       }}
@@ -21,10 +21,10 @@ export default function CostAbsorption({ data }) {
       <div
         style={{
           fontFamily: "'Space Mono', monospace",
-          fontSize: 9,
+          fontSize: 12,
           letterSpacing: 3,
           textTransform: 'uppercase',
-          color: '#e8a020',
+          color: '#f0a820',
           marginBottom: 16,
         }}
       >
@@ -42,7 +42,7 @@ export default function CostAbsorption({ data }) {
           <div
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 8,
+              fontSize: 11,
               letterSpacing: 2,
               textTransform: 'uppercase',
               color: '#6aaa8a',
@@ -56,8 +56,8 @@ export default function CostAbsorption({ data }) {
               <div
                 style={{
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: 9,
-                  color: '#e8dfc8',
+                  fontSize: 11,
+                  color: '#f0e8d0',
                   marginBottom: 3,
                 }}
               >
@@ -66,8 +66,8 @@ export default function CostAbsorption({ data }) {
               <div
                 style={{
                   fontFamily: "'Crimson Pro', serif",
-                  fontSize: 13,
-                  color: '#8fa8bc',
+                  fontSize: 16,
+                  color: '#a8c4d8',
                   lineHeight: 1.5,
                 }}
               >
@@ -81,7 +81,7 @@ export default function CostAbsorption({ data }) {
           <div
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 8,
+              fontSize: 11,
               letterSpacing: 2,
               textTransform: 'uppercase',
               color: '#ff6b6b',
@@ -95,8 +95,8 @@ export default function CostAbsorption({ data }) {
               <div
                 style={{
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: 9,
-                  color: '#e8dfc8',
+                  fontSize: 11,
+                  color: '#f0e8d0',
                   marginBottom: 3,
                 }}
               >
@@ -105,8 +105,8 @@ export default function CostAbsorption({ data }) {
               <div
                 style={{
                   fontFamily: "'Crimson Pro', serif",
-                  fontSize: 13,
-                  color: '#8fa8bc',
+                  fontSize: 16,
+                  color: '#a8c4d8',
                   lineHeight: 1.5,
                 }}
               >
@@ -126,7 +126,7 @@ export default function CostAbsorption({ data }) {
             fontFamily: "'Crimson Pro', serif",
             fontSize: 16,
             fontStyle: 'italic',
-            color: '#e8dfc8',
+            color: '#f0e8d0',
             lineHeight: 1.6,
           }}
         >

@@ -212,8 +212,8 @@ export default function App() {
           <span
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 10,
-              color: 'var(--color-text-dim, #8fa8bc)',
+              fontSize: 11,
+              color: 'var(--color-text-dim, #a8c4d8)',
               letterSpacing: 1,
             }}
           >

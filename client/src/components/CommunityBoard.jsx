@@ -36,7 +36,7 @@ function BoardPost({ post }) {
       style={{
         background: '#162030',
         border: '1px solid #2a3f52',
-        borderLeft: post.post_type === 'offer' ? '3px solid #6aaa8a' : '3px solid #e8a020',
+        borderLeft: post.post_type === 'offer' ? '3px solid #6aaa8a' : '3px solid #f0a820',
         borderRadius: '0 4px 4px 0',
         padding: '14px 16px',
         marginBottom: 10,
@@ -47,10 +47,10 @@ function BoardPost({ post }) {
           <div
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 8,
+              fontSize: 11,
               letterSpacing: 2,
               textTransform: 'uppercase',
-              color: post.post_type === 'offer' ? '#6aaa8a' : '#e8a020',
+              color: post.post_type === 'offer' ? '#6aaa8a' : '#f0a820',
               marginBottom: 4,
             }}
           >
@@ -65,7 +65,7 @@ function BoardPost({ post }) {
               fontFamily: "'Bebas Neue', sans-serif",
               fontSize: 18,
               letterSpacing: 1,
-              color: '#e8dfc8',
+              color: '#f0e8d0',
               marginBottom: 4,
             }}
           >
@@ -76,8 +76,8 @@ function BoardPost({ post }) {
             <div
               style={{
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 10,
-                color: '#8fa8bc',
+                fontSize: 11,
+                color: '#a8c4d8',
                 marginBottom: 6,
               }}
             >
@@ -89,7 +89,7 @@ function BoardPost({ post }) {
                     href={
                       isEmail ? `mailto:${contact}` : `tel:${contact.replace(/[^\d+]/g, '')}`
                     }
-                    style={{ color: '#e8a020' }}
+                    style={{ color: '#f0a820' }}
                   >
                     {contact}
                   </a>
@@ -103,7 +103,7 @@ function BoardPost({ post }) {
               style={{
                 fontFamily: "'Crimson Pro', serif",
                 fontSize: 14,
-                color: '#8fa8bc',
+                color: '#a8c4d8',
                 lineHeight: 1.5,
                 marginBottom: 6,
               }}
@@ -119,10 +119,10 @@ function BoardPost({ post }) {
                   key={i}
                   style={{
                     fontFamily: "'Space Mono', monospace",
-                    fontSize: 8,
+                    fontSize: 11,
                     letterSpacing: 1,
                     textTransform: 'uppercase',
-                    color: '#4a6478',
+                    color: '#6a8a9a',
                     border: '1px solid #2a3f52',
                     borderRadius: 999,
                     padding: '2px 6px',
@@ -137,8 +137,8 @@ function BoardPost({ post }) {
             <div
               style={{
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 10,
-                color: '#e8a020',
+                fontSize: 11,
+                color: '#f0a820',
                 letterSpacing: 1,
               }}
             >
@@ -151,8 +151,8 @@ function BoardPost({ post }) {
           <div
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 9,
-              color: '#4a6478',
+              fontSize: 11,
+              color: '#6a8a9a',
               letterSpacing: 1,
               textTransform: 'uppercase',
               marginLeft: 12,
@@ -239,17 +239,17 @@ function PostForm({ onSubmit, location }) {
     padding: '8px 12px',
     fontFamily: "'Crimson Pro', serif",
     fontSize: 16,
-    color: '#e8dfc8',
+    color: '#f0e8d0',
     boxSizing: 'border-box',
     outline: 'none',
     marginBottom: 12,
   };
   const labelStyle = {
     fontFamily: "'Space Mono', monospace",
-    fontSize: 9,
+    fontSize: 11,
     letterSpacing: 1.5,
     textTransform: 'uppercase',
-    color: '#4a6478',
+    color: '#6a8a9a',
     display: 'block',
     marginBottom: 4,
   };
@@ -276,7 +276,7 @@ function PostForm({ onSubmit, location }) {
         >
           You&apos;re on the board.
         </div>
-        <p style={{ fontFamily: "'Crimson Pro', serif", fontSize: 15, color: '#8fa8bc', margin: 0 }}>{done}</p>
+        <p style={{ fontFamily: "'Crimson Pro', serif", fontSize: 18, color: '#a8c4d8', margin: 0 }}>{done}</p>
       </div>
     );
   }
@@ -295,15 +295,15 @@ function PostForm({ onSubmit, location }) {
             style={{
               flex: 1,
               fontFamily: "'Space Mono', monospace",
-              fontSize: 9,
+              fontSize: 11,
               letterSpacing: 1.5,
               textTransform: 'uppercase',
               padding: '10px 8px',
               borderRadius: 2,
               cursor: 'pointer',
-              border: type === opt.value ? '1px solid #e8a020' : '1px solid #2a3f52',
-              background: type === opt.value ? 'rgba(232,160,32,0.1)' : 'transparent',
-              color: type === opt.value ? '#e8a020' : '#4a6478',
+              border: type === opt.value ? '1px solid #f0a820' : '1px solid #2a3f52',
+              background: type === opt.value ? 'rgba(240, 168, 32,0.1)' : 'transparent',
+              color: type === opt.value ? '#f0a820' : '#6a8a9a',
             }}
           >
             {opt.label}
@@ -368,15 +368,15 @@ function PostForm({ onSubmit, location }) {
             onClick={() => toggleSkill(skill)}
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 8,
+              fontSize: 11,
               letterSpacing: 1,
               textTransform: 'uppercase',
               padding: '4px 8px',
               borderRadius: 999,
               cursor: 'pointer',
-              border: selectedSkills.includes(skill) ? '1px solid #e8a020' : '1px solid #2a3f52',
-              background: selectedSkills.includes(skill) ? 'rgba(232,160,32,0.1)' : 'transparent',
-              color: selectedSkills.includes(skill) ? '#e8a020' : '#4a6478',
+              border: selectedSkills.includes(skill) ? '1px solid #f0a820' : '1px solid #2a3f52',
+              background: selectedSkills.includes(skill) ? 'rgba(240, 168, 32,0.1)' : 'transparent',
+              color: selectedSkills.includes(skill) ? '#f0a820' : '#6a8a9a',
             }}
           >
             {skill}
@@ -414,7 +414,7 @@ function PostForm({ onSubmit, location }) {
         <p
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 10,
+            fontSize: 11,
             color: '#ff6b6b',
             marginBottom: 12,
           }}
@@ -433,7 +433,7 @@ function PostForm({ onSubmit, location }) {
           fontSize: 11,
           letterSpacing: 2,
           textTransform: 'uppercase',
-          background: '#e8a020',
+          background: '#f0a820',
           color: '#0f1520',
           border: 'none',
           padding: '12px',
@@ -502,13 +502,13 @@ export default function CommunityBoard({ location }) {
 
   return (
     <div style={{ padding: '0 16px 40px' }}>
-      <div style={{ borderBottom: '2px solid #e8a020', paddingBottom: 8, marginBottom: 20 }}>
+      <div style={{ borderBottom: '2px solid #f0a820', paddingBottom: 8, marginBottom: 20 }}>
         <div
           style={{
             fontFamily: "'Bebas Neue', sans-serif",
             fontSize: 28,
             letterSpacing: 3,
-            color: '#e8a020',
+            color: '#f0a820',
             textTransform: 'uppercase',
           }}
         >
@@ -517,9 +517,9 @@ export default function CommunityBoard({ location }) {
         <div
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 9,
+            fontSize: 11,
             letterSpacing: 2,
-            color: '#4a6478',
+            color: '#6a8a9a',
             textTransform: 'uppercase',
           }}
         >
@@ -530,8 +530,8 @@ export default function CommunityBoard({ location }) {
       <p
         style={{
           fontFamily: "'Crimson Pro', serif",
-          fontSize: 15,
-          color: '#8fa8bc',
+          fontSize: 18,
+          color: '#a8c4d8',
           lineHeight: 1.7,
           marginBottom: 20,
         }}
@@ -547,15 +547,15 @@ export default function CommunityBoard({ location }) {
           style={{
             flex: 1,
             fontFamily: "'Space Mono', monospace",
-            fontSize: 9,
+            fontSize: 11,
             letterSpacing: 1.5,
             textTransform: 'uppercase',
             padding: '8px',
             borderRadius: 2,
             cursor: 'pointer',
-            border: view === 'board' ? '1px solid #e8a020' : '1px solid #2a3f52',
-            background: view === 'board' ? 'rgba(232,160,32,0.1)' : 'transparent',
-            color: view === 'board' ? '#e8a020' : '#4a6478',
+            border: view === 'board' ? '1px solid #f0a820' : '1px solid #2a3f52',
+            background: view === 'board' ? 'rgba(240, 168, 32,0.1)' : 'transparent',
+            color: view === 'board' ? '#f0a820' : '#6a8a9a',
           }}
         >
           Today&apos;s Board
@@ -566,15 +566,15 @@ export default function CommunityBoard({ location }) {
           style={{
             flex: 1,
             fontFamily: "'Space Mono', monospace",
-            fontSize: 9,
+            fontSize: 11,
             letterSpacing: 1.5,
             textTransform: 'uppercase',
             padding: '8px',
             borderRadius: 2,
             cursor: 'pointer',
-            border: view === 'post' ? '1px solid #e8a020' : '1px solid #2a3f52',
-            background: view === 'post' ? 'rgba(232,160,32,0.1)' : 'transparent',
-            color: view === 'post' ? '#e8a020' : '#4a6478',
+            border: view === 'post' ? '1px solid #f0a820' : '1px solid #2a3f52',
+            background: view === 'post' ? 'rgba(240, 168, 32,0.1)' : 'transparent',
+            color: view === 'post' ? '#f0a820' : '#6a8a9a',
           }}
         >
           + Post to Board
@@ -589,9 +589,9 @@ export default function CommunityBoard({ location }) {
                 textAlign: 'center',
                 padding: '32px 0',
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 9,
+                fontSize: 11,
                 letterSpacing: 2,
-                color: '#4a6478',
+                color: '#6a8a9a',
                 textTransform: 'uppercase',
               }}
             >
@@ -604,7 +604,7 @@ export default function CommunityBoard({ location }) {
               style={{
                 fontFamily: "'Crimson Pro', serif",
                 fontSize: 16,
-                color: '#4a6478',
+                color: '#6a8a9a',
                 lineHeight: 1.7,
                 textAlign: 'center',
                 padding: '32px 0',
@@ -620,12 +620,12 @@ export default function CommunityBoard({ location }) {
                 onClick={() => setView('post')}
                 style={{
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: 9,
+                  fontSize: 11,
                   letterSpacing: 1.5,
                   textTransform: 'uppercase',
-                  color: '#e8a020',
+                  color: '#f0a820',
                   background: 'transparent',
-                  border: '1px solid #e8a020',
+                  border: '1px solid #f0a820',
                   padding: '8px 16px',
                   borderRadius: 2,
                   cursor: 'pointer',
@@ -641,7 +641,7 @@ export default function CommunityBoard({ location }) {
               <div
                 style={{
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: 9,
+                  fontSize: 11,
                   letterSpacing: 2,
                   textTransform: 'uppercase',
                   color: '#6aaa8a',
@@ -661,10 +661,10 @@ export default function CommunityBoard({ location }) {
               <div
                 style={{
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: 9,
+                  fontSize: 11,
                   letterSpacing: 2,
                   textTransform: 'uppercase',
-                  color: '#e8a020',
+                  color: '#f0a820',
                   marginBottom: 10,
                   marginTop: 20,
                 }}

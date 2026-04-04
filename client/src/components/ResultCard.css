@@ -2,8 +2,8 @@
 
 .result-card {
   --bg: var(--color-surface, #1c2a3a);
-  --cream: var(--color-text-main, #e8dfc8);
-  --gold: var(--color-accent, #e8a020);
+  --cream: var(--color-text-main, #f0e8d0);
+  --gold: var(--color-accent, #f0a820);
   --border: var(--color-border, #2a3f52);
 
   background: var(--bg);
@@ -18,7 +18,7 @@
 
 .result-card:hover {
   background: var(--color-paper, #162030);
-  border-color: var(--color-accent, #e8a020);
+  border-color: var(--color-accent, #f0a820);
 }
 
 .result-card__media {
@@ -50,7 +50,7 @@
 .result-card__pill {
   align-self: flex-start;
   font-family: 'Space Mono', monospace;
-  font-size: 0.58rem;
+  font-size: 11px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 0.2rem 0.45rem;
@@ -62,7 +62,7 @@
 
 .result-card__title {
   font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 1rem;
+  font-size: 22px;
   font-weight: 600;
   line-height: 1.25;
   color: var(--cream);
@@ -71,22 +71,22 @@
 
 .result-card__price {
   font-family: 'Space Mono', monospace;
-  font-size: 0.78rem;
+  font-size: 12px;
   color: var(--gold);
   margin: 0;
 }
 
 .result-card__shop {
   font-family: 'Space Mono', monospace;
-  font-size: 0.68rem;
-  color: var(--color-text-muted, #8fa8bc);
+  font-size: 16px;
+  color: var(--color-text-muted, #a8c4d8);
   margin: 0;
 }
 
 .result-card__loc {
   font-family: 'Space Mono', monospace;
-  font-size: 0.62rem;
-  color: var(--color-text-muted, #8fa8bc);
+  font-size: 16px;
+  color: var(--color-text-muted, #a8c4d8);
   margin: 0;
   opacity: 0.85;
 }
@@ -95,7 +95,7 @@
   margin-top: auto;
   padding-top: 0.5rem;
   font-family: 'Space Mono', monospace;
-  font-size: 0.68rem;
+  font-size: 12px;
   color: var(--gold);
   text-decoration: none;
 }

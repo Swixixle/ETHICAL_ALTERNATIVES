@@ -266,10 +266,10 @@ function ResourceLink({ item }) {
           <div
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 10,
+              fontSize: 11,
               letterSpacing: 1,
               textTransform: 'uppercase',
-              color: '#e8dfc8',
+              color: '#f0e8d0',
               marginBottom: 3,
             }}
           >
@@ -280,7 +280,7 @@ function ResourceLink({ item }) {
               style={{
                 fontFamily: "'Crimson Pro', serif",
                 fontSize: 13,
-                color: '#4a6478',
+                color: '#6a8a9a',
                 lineHeight: 1.4,
               }}
             >
@@ -288,7 +288,7 @@ function ResourceLink({ item }) {
             </div>
           ) : null}
         </div>
-        <span style={{ color: '#e8a020', fontSize: 14, marginLeft: 10, flexShrink: 0 }}>↗</span>
+        <span style={{ color: '#f0a820', fontSize: 14, marginLeft: 10, flexShrink: 0 }}>↗</span>
       </div>
     </a>
   );
@@ -299,10 +299,10 @@ function SubLabel({ children }) {
     <div
       style={{
         fontFamily: "'Space Mono', monospace",
-        fontSize: 8,
+        fontSize: 11,
         letterSpacing: 2,
         textTransform: 'uppercase',
-        color: '#4a6478',
+        color: '#6a8a9a',
         marginBottom: 8,
         marginTop: 16,
       }}
@@ -344,10 +344,10 @@ export default function DiySection({ object, category, keywords, investigation }
           style={{
             flex: 1,
             fontFamily: "'Space Mono', monospace",
-            fontSize: 9,
+            fontSize: 11,
             letterSpacing: 1.5,
             textTransform: 'uppercase',
-            color: '#e8dfc8',
+            color: '#f0e8d0',
             background: '#1c2a3a',
             border: '1px solid #2a3f52',
             borderRadius: 4,
@@ -365,10 +365,10 @@ export default function DiySection({ object, category, keywords, investigation }
           style={{
             flex: 1,
             fontFamily: "'Space Mono', monospace",
-            fontSize: 9,
+            fontSize: 11,
             letterSpacing: 1.5,
             textTransform: 'uppercase',
-            color: '#e8dfc8',
+            color: '#f0e8d0',
             background: '#1c2a3a',
             border: '1px solid #2a3f52',
             borderRadius: 4,
@@ -387,9 +387,9 @@ export default function DiySection({ object, category, keywords, investigation }
         rel="noreferrer"
         style={{
           display: 'block',
-          background: 'rgba(232, 160, 32, 0.07)',
-          border: '1px solid rgba(232, 160, 32, 0.25)',
-          borderLeft: '3px solid #e8a020',
+          background: 'rgba(240, 168, 32, 0.07)',
+          border: '1px solid rgba(240, 168, 32, 0.25)',
+          borderLeft: '3px solid #f0a820',
           borderRadius: '0 4px 4px 0',
           padding: '10px 14px',
           marginBottom: 16,
@@ -399,10 +399,10 @@ export default function DiySection({ object, category, keywords, investigation }
         <div
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 10,
+            fontSize: 11,
             letterSpacing: 1.5,
             textTransform: 'uppercase',
-            color: '#e8a020',
+            color: '#f0a820',
           }}
         >
           iFixit — Repair Guide ↗
@@ -411,7 +411,7 @@ export default function DiySection({ object, category, keywords, investigation }
           style={{
             fontFamily: "'Crimson Pro', serif",
             fontSize: 13,
-            color: '#8fa8bc',
+            color: '#a8c4d8',
             marginTop: 3,
           }}
         >

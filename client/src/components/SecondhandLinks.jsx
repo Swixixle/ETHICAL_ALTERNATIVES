@@ -52,10 +52,10 @@ export default function SecondhandLinks({ keywords, object }) {
             <div
               style={{
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 10,
+                fontSize: 11,
                 letterSpacing: 1.5,
                 textTransform: 'uppercase',
-                color: '#e8dfc8',
+                color: '#f0e8d0',
               }}
             >
               {link.name}
@@ -64,14 +64,14 @@ export default function SecondhandLinks({ keywords, object }) {
               style={{
                 fontFamily: "'Crimson Pro', serif",
                 fontSize: 13,
-                color: '#4a6478',
+                color: '#6a8a9a',
                 marginTop: 2,
               }}
             >
               {link.description}
             </div>
           </div>
-          <span style={{ color: '#e8a020', fontSize: 14 }}>↗</span>
+          <span style={{ color: '#f0a820', fontSize: 14 }}>↗</span>
         </a>
       ))}
     </div>

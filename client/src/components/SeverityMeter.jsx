@@ -13,7 +13,7 @@ const colorMap = {
   MODERATE: "#ffb347",
   MINOR: "#6aaa8a",
   CLEAN: "#5a9fd4",
-  UNKNOWN: "#4a6478",
+  UNKNOWN: "#6a8a9a",
 };
 
 const labelColorMap = {
@@ -21,7 +21,7 @@ const labelColorMap = {
   MODERATE: "#ffb347",
   MINOR: "#6aaa8a",
   CLEAN: "#5a9fd4",
-  UNKNOWN: "#4a6478",
+  UNKNOWN: "#6a8a9a",
 };
 
 export default function SeverityMeter({ concernLevel }) {

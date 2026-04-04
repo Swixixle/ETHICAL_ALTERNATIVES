@@ -67,8 +67,8 @@ function SearchBar({ onSearch, onStartSnap }) {
           borderRadius: 2,
           padding: '10px 14px',
           fontFamily: "'Crimson Pro', serif",
-          fontSize: 16,
-          color: '#e8dfc8',
+          fontSize: 18,
+          color: '#f0e8d0',
           outline: 'none',
         }}
       />
@@ -76,10 +76,10 @@ function SearchBar({ onSearch, onStartSnap }) {
         type="submit"
         style={{
           fontFamily: "'Space Mono', monospace",
-          fontSize: 10,
+          fontSize: 11,
           letterSpacing: 2,
           textTransform: 'uppercase',
-          background: '#e8a020',
+          background: '#f0a820',
           color: '#0f1520',
           border: 'none',
           padding: '10px 18px',
@@ -96,12 +96,12 @@ function SearchBar({ onSearch, onStartSnap }) {
         onClick={() => onStartSnap()}
         style={{
           fontFamily: "'Space Mono', monospace",
-          fontSize: 10,
+          fontSize: 11,
           letterSpacing: 2,
           textTransform: 'uppercase',
           background: '#0f1520',
-          color: '#e8a020',
-          border: '1px solid #e8a020',
+          color: '#f0a820',
+          border: '1px solid #f0a820',
           padding: '10px 16px',
           borderRadius: 2,
           cursor: 'pointer',
@@ -174,7 +174,7 @@ function LocationPrompt({
           fontFamily: "'Bebas Neue', sans-serif",
           fontSize: 'clamp(36px, 7vw, 64px)',
           letterSpacing: 3,
-          color: '#e8dfc8',
+          color: '#f0e8d0',
           lineHeight: 0.95,
           marginBottom: 24,
         }}
@@ -186,7 +186,7 @@ function LocationPrompt({
         style={{
           fontFamily: "'Crimson Pro', serif",
           fontSize: 20,
-          color: '#8fa8bc',
+          color: '#a8c4d8',
           lineHeight: 1.7,
           maxWidth: 380,
           marginBottom: 32,
@@ -200,8 +200,8 @@ function LocationPrompt({
         <div
           style={{
             fontFamily: "'Crimson Pro', serif",
-            fontSize: 16,
-            color: '#d4a574',
+          fontSize: 18,
+          color: '#d4a574',
             lineHeight: 1.6,
             maxWidth: 380,
             marginBottom: 20,
@@ -219,7 +219,7 @@ function LocationPrompt({
           fontSize: 11,
           letterSpacing: 2,
           textTransform: 'uppercase',
-          background: '#e8a020',
+          background: '#f0a820',
           color: '#0f1520',
           border: 'none',
           padding: '14px 32px',
@@ -239,11 +239,11 @@ function LocationPrompt({
         onClick={onSkip}
         style={{
           fontFamily: "'Space Mono', monospace",
-          fontSize: 10,
+          fontSize: 11,
           letterSpacing: 1.5,
           textTransform: 'uppercase',
           background: 'transparent',
-          color: '#8fa8bc',
+          color: '#a8c4d8',
           border: '1px solid #2a3f52',
           padding: '10px 24px',
           borderRadius: 2,
@@ -272,10 +272,10 @@ function LocationPrompt({
             htmlFor="ea-manual-city"
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 9,
+              fontSize: 12,
               letterSpacing: 1.5,
               textTransform: 'uppercase',
-              color: '#8fa8bc',
+              color: '#a8c4d8',
             }}
           >
             Your city
@@ -292,12 +292,12 @@ function LocationPrompt({
             disabled={manualBusy}
             style={{
               fontFamily: "'Crimson Pro', serif",
-              fontSize: 17,
+              fontSize: 18,
               padding: '12px 14px',
               borderRadius: 2,
               border: '1px solid #2a3f52',
               background: '#0a1018',
-              color: '#e8dfc8',
+              color: '#f0e8d0',
               width: '100%',
               boxSizing: 'border-box',
             }}
@@ -307,11 +307,11 @@ function LocationPrompt({
             disabled={manualBusy || !manualCity.trim()}
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 10,
+              fontSize: 11,
               letterSpacing: 2,
               textTransform: 'uppercase',
               background: manualBusy || !manualCity.trim() ? '#3d4f62' : '#2a4a30',
-              color: '#e8dfc8',
+              color: '#f0e8d0',
               border: '1px solid #3d5c44',
               padding: '12px 24px',
               borderRadius: 2,
@@ -328,7 +328,7 @@ function LocationPrompt({
           onClick={onOpenManualEntry}
           style={{
             fontFamily: "'Crimson Pro', serif",
-            fontSize: 15,
+            fontSize: 18,
             color: '#6b8aa3',
             background: 'none',
             border: 'none',
@@ -345,8 +345,8 @@ function LocationPrompt({
       <div
         style={{
           fontFamily: "'Crimson Pro', serif",
-          fontSize: 13,
-          color: '#4a6478',
+          fontSize: 16,
+          color: '#6a8a9a',
           marginTop: 20,
           maxWidth: 360,
           lineHeight: 1.5,
@@ -372,10 +372,10 @@ function CityCard({ identity, city, state }) {
       <div
         style={{
           fontFamily: "'Space Mono', monospace",
-          fontSize: 9,
+          fontSize: 12,
           letterSpacing: 3,
           textTransform: 'uppercase',
-          color: '#e8a020',
+          color: '#f0a820',
           marginBottom: 8,
         }}
       >
@@ -386,10 +386,10 @@ function CityCard({ identity, city, state }) {
         <div
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 7,
+            fontSize: 11,
             letterSpacing: 2,
             textTransform: 'uppercase',
-            color: '#4a6478',
+            color: '#6a8a9a',
             marginBottom: 14,
             maxWidth: 420,
             lineHeight: 1.45,
@@ -402,9 +402,9 @@ function CityCard({ identity, city, state }) {
       <div
         style={{
           fontFamily: "'Bebas Neue', sans-serif",
-          fontSize: 'clamp(32px, 6vw, 56px)',
+          fontSize: 'clamp(36px, 7vw, 64px)',
           letterSpacing: 2,
-          color: '#e8dfc8',
+          color: '#f0e8d0',
           lineHeight: 0.95,
           marginBottom: 16,
           textTransform: 'uppercase',
@@ -416,8 +416,8 @@ function CityCard({ identity, city, state }) {
       <p
         style={{
           fontFamily: "'Crimson Pro', serif",
-          fontSize: 17,
-          color: '#8fa8bc',
+          fontSize: 20,
+          color: '#a8c4d8',
           lineHeight: 1.7,
           margin: '0 0 16px',
         }}
@@ -432,14 +432,14 @@ function CityCard({ identity, city, state }) {
               key={i}
               style={{
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 9,
+                fontSize: 11,
                 letterSpacing: 1,
                 textTransform: 'uppercase',
-                color: '#e8a020',
-                border: '1px solid rgba(232,160,32,0.3)',
+                color: '#f0a820',
+                border: '1px solid rgba(240,168,32,0.3)',
                 borderRadius: 999,
                 padding: '3px 10px',
-                background: 'rgba(232,160,32,0.07)',
+                background: 'rgba(240,168,32,0.07)',
               }}
             >
               {item}
@@ -452,9 +452,9 @@ function CityCard({ identity, city, state }) {
         <p
           style={{
             fontFamily: "'Crimson Pro', serif",
-            fontSize: 14,
+            fontSize: 18,
             fontStyle: 'italic',
-            color: '#4a6478',
+            color: '#6a8a9a',
             margin: 0,
           }}
         >
@@ -498,7 +498,7 @@ function FeedCard({ business, chainFootnote = false }) {
             <div
               style={{
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 8,
+                fontSize: 11,
                 letterSpacing: 2,
                 color: '#ff6b6b',
                 textTransform: 'uppercase',
@@ -511,9 +511,9 @@ function FeedCard({ business, chainFootnote = false }) {
           <div
             style={{
               fontFamily: "'Bebas Neue', sans-serif",
-              fontSize: 20,
+              fontSize: 22,
               letterSpacing: 1.5,
-              color: chainFootnote ? '#6b7a88' : '#e8dfc8',
+              color: chainFootnote ? '#6b7a88' : '#f0e8d0',
               marginBottom: 2,
             }}
           >
@@ -524,8 +524,8 @@ function FeedCard({ business, chainFootnote = false }) {
             <div
               style={{
                 fontFamily: "'Crimson Pro', serif",
-                fontSize: 14,
-                color: chainFootnote ? '#4a6478' : '#8fa8bc',
+                fontSize: 16,
+                color: chainFootnote ? '#6a8a9a' : '#a8c4d8',
                 lineHeight: 1.4,
                 marginBottom: 6,
               }}
@@ -538,10 +538,10 @@ function FeedCard({ business, chainFootnote = false }) {
             <div
               style={{
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 9,
+                fontSize: 11,
                 letterSpacing: 1.5,
                 textTransform: 'uppercase',
-                color: chainFootnote ? '#4a6478' : '#e8a020',
+                color: chainFootnote ? '#6a8a9a' : '#f0a820',
                 marginBottom: hasBadges ? 8 : 0,
               }}
             >
@@ -557,7 +557,7 @@ function FeedCard({ business, chainFootnote = false }) {
                   key={i}
                   style={{
                     fontFamily: "'Space Mono', monospace",
-                    fontSize: 7,
+                    fontSize: 11,
                     letterSpacing: 1,
                     textTransform: 'uppercase',
                     color: '#6aaa8a',
@@ -580,11 +580,11 @@ function FeedCard({ business, chainFootnote = false }) {
             rel="noreferrer"
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 9,
+              fontSize: 11,
               letterSpacing: 1,
               textTransform: 'uppercase',
               color: '#0f1520',
-              background: '#e8a020',
+              background: '#f0a820',
               padding: '6px 12px',
               borderRadius: 2,
               textDecoration: 'none',
@@ -602,10 +602,10 @@ function FeedCard({ business, chainFootnote = false }) {
             href={`tel:${business.phone}`}
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 9,
+              fontSize: 11,
               letterSpacing: 1,
               textTransform: 'uppercase',
-              color: '#8fa8bc',
+              color: '#a8c4d8',
               border: '1px solid #2a3f52',
               padding: '6px 12px',
               borderRadius: 2,
@@ -624,10 +624,10 @@ function FeedCard({ business, chainFootnote = false }) {
             rel="noreferrer"
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 9,
+              fontSize: 11,
               letterSpacing: 1,
               textTransform: 'uppercase',
-              color: '#4a6478',
+              color: '#6a8a9a',
               border: '1px solid #2a3f52',
               padding: '6px 12px',
               borderRadius: 2,
@@ -835,10 +835,10 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
         <div
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 10,
+            fontSize: 11,
             letterSpacing: 3,
             textTransform: 'uppercase',
-            color: '#e8a020',
+            color: '#f0a820',
           }}
         >
           Finding your independents...
@@ -866,7 +866,7 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
             fontFamily: "'Bebas Neue', sans-serif",
             fontSize: 'clamp(40px, 8vw, 80px)',
             letterSpacing: 3,
-            color: '#e8dfc8',
+            color: '#f0e8d0',
             lineHeight: 0.9,
             marginBottom: 24,
             textTransform: 'uppercase',
@@ -877,10 +877,10 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
         <div
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 10,
+            fontSize: 11,
             letterSpacing: 2,
             textTransform: 'uppercase',
-            color: '#4a6478',
+            color: '#6a8a9a',
             marginBottom: 32,
           }}
         >
@@ -894,7 +894,7 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
             fontSize: 11,
             letterSpacing: 2,
             textTransform: 'uppercase',
-            background: '#e8a020',
+            background: '#f0a820',
             color: '#0f1520',
             border: 'none',
             padding: '14px 32px',
@@ -926,7 +926,7 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
             fontFamily: "'Bebas Neue', sans-serif",
             fontSize: 22,
             letterSpacing: 2,
-            color: '#e8dfc8',
+            color: '#f0e8d0',
           }}
         >
           ETHICALALT
@@ -959,14 +959,14 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
             onClick={() => handleCategoryChange(cat.value)}
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 9,
+              fontSize: 11,
               letterSpacing: 1.5,
               textTransform: 'uppercase',
               padding: '6px 14px',
               borderRadius: 999,
-              border: category === cat.value ? '1px solid #e8a020' : '1px solid #2a3f52',
-              background: category === cat.value ? 'rgba(232,160,32,0.12)' : 'transparent',
-              color: category === cat.value ? '#e8a020' : '#4a6478',
+              border: category === cat.value ? '1px solid #f0a820' : '1px solid #2a3f52',
+              background: category === cat.value ? 'rgba(240,168,32,0.12)' : 'transparent',
+              color: category === cat.value ? '#f0a820' : '#6a8a9a',
               cursor: 'pointer',
               whiteSpace: 'nowrap',
               flexShrink: 0,
@@ -984,9 +984,9 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
               textAlign: 'center',
               padding: '40px 24px',
               fontFamily: "'Space Mono', monospace",
-              fontSize: 9,
+              fontSize: 11,
               letterSpacing: 2,
-              color: '#4a6478',
+              color: '#6a8a9a',
               textTransform: 'uppercase',
             }}
           >
@@ -999,8 +999,8 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
             style={{
               padding: '32px 24px',
               fontFamily: "'Crimson Pro', serif",
-              fontSize: 17,
-              color: '#4a6478',
+              fontSize: 20,
+              color: '#6a8a9a',
               lineHeight: 1.7,
               textAlign: 'center',
             }}
@@ -1020,10 +1020,10 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
             <div
               style={{
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 8,
+                fontSize: 11,
                 letterSpacing: 2,
                 textTransform: 'uppercase',
-                color: '#4a6478',
+                color: '#6a8a9a',
                 padding: '0 24px 12px',
               }}
             >
@@ -1039,8 +1039,8 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
           <p
             style={{
               fontFamily: "'Crimson Pro', serif",
-              fontSize: 15,
-              color: '#4a6478',
+              fontSize: 18,
+              color: '#6a8a9a',
               lineHeight: 1.65,
               textAlign: 'center',
               padding: '8px 24px 20px',
@@ -1057,10 +1057,10 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
             <div
               style={{
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 8,
+                fontSize: 11,
                 letterSpacing: 2,
                 textTransform: 'uppercase',
-                color: '#3d4f5c',
+                color: '#6a8a9a',
                 padding: '0 24px 12px',
               }}
             >

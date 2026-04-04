@@ -2,11 +2,11 @@
 
 .investigation-card {
   margin: 1.25rem 0;
-  border: 1px solid var(--color-border, #2a3f52);
-  border-top: 3px solid var(--color-accent, #e8a020);
+  border: 1px solid var(--color-border-investigation, #344d62);
+  border-top: 3px solid var(--color-accent, #f0a820);
   border-radius: 4px;
   background: var(--color-paper, #162030);
-  color: var(--color-text-main, #e8dfc8);
+  color: var(--color-text-main, #f0e8d0);
   text-align: left;
 }
 
@@ -18,7 +18,7 @@
   padding: 0.85rem 1rem;
   background: var(--color-surface, #1c2a3a);
   border: none;
-  border-bottom: 1px solid var(--color-border, #2a3f52);
+  border-bottom: 1px solid var(--color-border-investigation, #344d62);
   cursor: pointer;
   color: inherit;
   font: inherit;
@@ -26,17 +26,17 @@
 
 .investigation-card__title {
   font-family: 'Space Mono', monospace;
-  font-size: 0.72rem;
+  font-size: 14px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   flex: 1;
   text-align: left;
-  color: var(--color-accent, #e8a020);
+  color: var(--color-accent, #f0a820);
 }
 
 .investigation-card__concern {
   font-family: 'Space Mono', monospace;
-  font-size: 0.62rem;
+  font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 0.15rem 0.45rem;
@@ -65,7 +65,7 @@
 }
 .investigation-card__concern--unk {
   background: var(--color-border, #2a3f52);
-  color: var(--color-text-muted, #8fa8bc);
+  color: var(--color-text-muted, #a8c4d8);
   border: 1px solid var(--color-border, #2a3f52);
 }
 
@@ -76,19 +76,19 @@
 
 .investigation-card__disclaimer {
   font-family: 'Space Mono', monospace;
-  font-size: 0.62rem;
-  color: var(--color-accent, #e8a020);
+  font-size: 12px;
+  color: var(--color-accent, #f0a820);
   margin: 0;
   padding: 0.65rem 1rem 0;
 }
 
 .investigation-card__disclaimer--muted {
-  color: var(--color-text-muted, #8fa8bc);
+  color: var(--color-text-muted, #a8c4d8);
 }
 
 .investigation-card__clean-card {
   font-family: 'Space Mono', monospace;
-  font-size: 0.62rem;
+  font-size: 12px;
   letter-spacing: 0.06em;
   color: var(--color-minor-text, #a8f0c0);
   margin: 0;
@@ -105,7 +105,7 @@
 
 .investigation-card__flag {
   font-family: 'Space Mono', monospace;
-  font-size: 0.58rem;
+  font-size: 11px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 0.2rem 0.45rem;
@@ -124,7 +124,7 @@
   background: rgba(26, 74, 42, 0.35);
 }
 .investigation-card__flag--neu {
-  color: var(--color-text-muted, #8fa8bc);
+  color: var(--color-text-muted, #a8c4d8);
 }
 
 .investigation-card__sections {
@@ -132,7 +132,7 @@
 }
 
 .investigation-card__section {
-  border-top: 1px solid var(--color-border, #2a3f52);
+  border-top: 1px solid var(--color-border-investigation, #344d62);
 }
 
 .investigation-card__section-head {
@@ -144,7 +144,7 @@
   padding: 0.65rem 1rem;
   background: transparent;
   border: none;
-  color: var(--color-accent, #e8a020);
+  color: var(--color-accent, #f0a820);
   font: inherit;
   cursor: pointer;
   text-align: left;
@@ -158,7 +158,7 @@
   flex-shrink: 0;
   font-family: 'Space Mono', monospace;
   font-size: 0.85rem;
-  color: var(--color-accent, #e8a020);
+  color: var(--color-accent, #f0a820);
   margin-top: 0.5rem;
 }
 
@@ -168,17 +168,17 @@
 
 .investigation-card__summary {
   font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 0.92rem;
+  font-size: 20px;
   line-height: 1.45;
   margin: 0 0 0.5rem;
-  color: var(--color-text-main, #e8dfc8);
+  color: var(--color-text-main, #f0e8d0);
 }
 
 .investigation-card__list {
   font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 11px;
   margin: 0 0 0.5rem 1rem;
-  color: var(--color-text-muted, #8fa8bc);
+  color: var(--color-text-muted, #a8c4d8);
   line-height: 1.4;
 }
 
@@ -193,18 +193,18 @@
 
 .investigation-card__sources a {
   font-family: 'Space Mono', monospace;
-  font-size: 0.6rem;
-  color: var(--color-accent, #e8a020);
+  font-size: 12px;
+  color: var(--color-accent, #f0a820);
   word-break: break-all;
 }
 
 .investigation-card__subs {
   padding: 0.75rem 1rem 1rem;
-  border-top: 1px solid var(--color-border, #2a3f52);
+  border-top: 1px solid var(--color-border-investigation, #344d62);
   font-family: 'Space Mono', monospace;
-  font-size: 0.62rem;
+  font-size: 12px;
   line-height: 1.45;
-  color: var(--color-text-muted, #8fa8bc);
+  color: var(--color-text-muted, #a8c4d8);
 }
 
 .investigation-card__subs-label {
@@ -212,5 +212,5 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 0.35rem;
-  color: var(--color-accent, #e8a020);
+  color: var(--color-accent, #f0a820);
 }

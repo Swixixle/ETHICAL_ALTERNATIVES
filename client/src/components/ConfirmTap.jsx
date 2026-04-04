@@ -75,7 +75,7 @@ export default function ConfirmTap({
           <div
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 9,
+              fontSize: 11,
               letterSpacing: 2,
               textTransform: 'uppercase',
               color: 'var(--color-text-dim)',
@@ -93,7 +93,7 @@ export default function ConfirmTap({
                 className="alt-brand-button"
                 style={{
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: 9,
+                  fontSize: 11,
                   letterSpacing: 1,
                   padding: '4px 10px',
                   borderRadius: 999,

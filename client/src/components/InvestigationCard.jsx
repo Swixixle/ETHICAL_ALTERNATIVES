@@ -55,9 +55,9 @@ function groupTags(tags) {
 
 const GRADE_COLORS = {
   established: { bg: 'rgba(106,170,138,0.15)', text: '#6aaa8a', border: '#6aaa8a' },
-  strong: { bg: 'rgba(232,160,32,0.1)', text: '#e8a020', border: '#e8a020' },
-  moderate: { bg: 'rgba(143,168,188,0.1)', text: '#8fa8bc', border: '#4a6478' },
-  limited: { bg: 'rgba(74,100,120,0.1)', text: '#4a6478', border: '#2a3f52' },
+  strong: { bg: 'rgba(240,168,32,0.1)', text: '#f0a820', border: '#f0a820' },
+  moderate: { bg: 'rgba(168,196,216,0.12)', text: '#a8c4d8', border: '#6a8a9a' },
+  limited: { bg: 'rgba(106,138,154,0.12)', text: '#6a8a9a', border: '#344d62' },
   alleged: { bg: 'rgba(255,107,107,0.1)', text: '#ff6b6b', border: '#ff6b6b' },
 };
 
@@ -72,7 +72,7 @@ function EvidenceBadge({ grade }) {
       title={typeof grade.note === 'string' ? grade.note : undefined}
       style={{
         fontFamily: "'Space Mono', monospace",
-        fontSize: 8,
+        fontSize: 10,
         letterSpacing: 1.5,
         textTransform: 'uppercase',
         padding: '2px 8px',
@@ -230,7 +230,7 @@ export default function InvestigationCard({ investigation, identification, onSha
               <p
                 style={{
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: 10,
+                  fontSize: 12,
                   color: 'var(--color-text-dim)',
                   letterSpacing: 1,
                   margin: '4px 0',
@@ -247,7 +247,7 @@ export default function InvestigationCard({ investigation, identification, onSha
               <p
                 style={{
                   fontFamily: "'Crimson Pro', serif",
-                  fontSize: 13,
+                  fontSize: 18,
                   fontStyle: 'italic',
                   color: 'var(--color-text-muted)',
                   marginBottom: 12,

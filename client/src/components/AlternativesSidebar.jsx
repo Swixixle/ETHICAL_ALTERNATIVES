@@ -8,10 +8,10 @@ function SectionLabel({ children }) {
     <div
       style={{
         fontFamily: "'Space Mono', monospace",
-        fontSize: 9,
+        fontSize: 11,
         letterSpacing: 3,
         textTransform: 'uppercase',
-        color: '#e8a020',
+        color: '#f0a820',
         borderBottom: '1px solid #2a3f52',
         paddingBottom: 6,
         marginBottom: 14,
@@ -52,7 +52,7 @@ function LocalCard({ place }) {
           fontFamily: "'Bebas Neue', sans-serif",
           fontSize: 18,
           letterSpacing: 1,
-          color: '#e8dfc8',
+          color: '#f0e8d0',
           marginBottom: 2,
         }}
       >
@@ -63,9 +63,9 @@ function LocalCard({ place }) {
         <div
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 9,
+            fontSize: 11,
             letterSpacing: 1.5,
-            color: '#e8a020',
+            color: '#f0a820',
             textTransform: 'uppercase',
             marginBottom: 6,
           }}
@@ -79,7 +79,7 @@ function LocalCard({ place }) {
           style={{
             fontFamily: "'Crimson Pro', serif",
             fontSize: 14,
-            color: '#4a6478',
+            color: '#6a8a9a',
             marginBottom: 6,
           }}
         >
@@ -95,11 +95,11 @@ function LocalCard({ place }) {
             rel="noreferrer"
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 9,
+              fontSize: 11,
               letterSpacing: 1,
               textTransform: 'uppercase',
               color: '#0f1520',
-              background: '#e8a020',
+              background: '#f0a820',
               padding: '4px 10px',
               borderRadius: 2,
               textDecoration: 'none',
@@ -114,10 +114,10 @@ function LocalCard({ place }) {
             href={`tel:${phone}`}
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 9,
+              fontSize: 11,
               letterSpacing: 1,
               textTransform: 'uppercase',
-              color: '#8fa8bc',
+              color: '#a8c4d8',
               border: '1px solid #2a3f52',
               padding: '4px 10px',
               borderRadius: 2,
@@ -134,10 +134,10 @@ function LocalCard({ place }) {
             rel="noreferrer"
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 9,
+              fontSize: 11,
               letterSpacing: 1,
               textTransform: 'uppercase',
-              color: '#4a6478',
+              color: '#6a8a9a',
               border: '1px solid #2a3f52',
               padding: '4px 10px',
               borderRadius: 2,
@@ -181,7 +181,7 @@ function EtsyCard({ listing }) {
         style={{
           fontFamily: "'Crimson Pro', serif",
           fontSize: 15,
-          color: '#e8dfc8',
+          color: '#f0e8d0',
           lineHeight: 1.4,
           marginBottom: 4,
         }}
@@ -192,9 +192,9 @@ function EtsyCard({ listing }) {
         <div
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 9,
+            fontSize: 11,
             letterSpacing: 1,
-            color: '#e8a020',
+            color: '#f0a820',
             textTransform: 'uppercase',
             marginBottom: 4,
           }}
@@ -207,7 +207,7 @@ function EtsyCard({ listing }) {
           style={{
             fontFamily: "'Space Mono', monospace",
             fontSize: 11,
-            color: '#8fa8bc',
+            color: '#a8c4d8',
           }}
         >
           {price}
@@ -248,7 +248,7 @@ export default function AlternativesSidebar({
           fontFamily: "'Bebas Neue', sans-serif",
           fontSize: 26,
           letterSpacing: 3,
-          color: '#e8dfc8',
+          color: '#f0e8d0',
           textTransform: 'uppercase',
           marginBottom: 4,
         }}
@@ -259,7 +259,7 @@ export default function AlternativesSidebar({
         style={{
           fontFamily: "'Crimson Pro', serif",
           fontSize: 14,
-          color: '#4a6478',
+          color: '#6a8a9a',
           lineHeight: 1.5,
           marginBottom: 20,
         }}
@@ -310,7 +310,7 @@ export default function AlternativesSidebar({
           style={{
             fontFamily: "'Crimson Pro', serif",
             fontSize: 15,
-            color: '#4a6478',
+            color: '#6a8a9a',
             lineHeight: 1.7,
             padding: '16px 0',
           }}

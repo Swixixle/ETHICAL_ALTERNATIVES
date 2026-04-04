@@ -6,17 +6,18 @@
   --color-paper: #162030;
   --color-surface: #1c2a3a;
   --color-border: #2a3f52;
+  --color-border-investigation: #344d62;
   --color-border-dim: #1e3044;
 
   /* Text */
-  --color-text-main: #e8dfc8;
-  --color-text-muted: #8fa8bc;
-  --color-text-dim: #4a6478;
+  --color-text-main: #f0e8d0;
+  --color-text-muted: #a8c4d8;
+  --color-text-dim: #6a8a9a;
 
   /* Accent — amber/gold */
-  --color-accent: #e8a020;
-  --color-accent-dim: #7a5510;
-  --color-accent-bg: rgba(232, 160, 32, 0.12);
+  --color-accent: #f0a820;
+  --color-accent-dim: #8a6210;
+  --color-accent-bg: rgba(240, 168, 32, 0.12);
 
   /* Concern levels */
   --color-significant-bg: #8b1a1a;
@@ -32,13 +33,13 @@
   --color-critical: #ff6b6b;
   --color-significant-dot: #ffb347;
   --color-moderate-dot: #6aaa8a;
-  --color-minor-dot: #4a6478;
+  --color-minor-dot: #6a8a9a;
 
-  --color-section-header: #e8a020;
-  --color-section-border: #e8a020;
+  --color-section-header: #f0a820;
+  --color-section-border: #f0a820;
 
   --color-tag-border: #2a3f52;
-  --color-tag-text: #8fa8bc;
+  --color-tag-text: #a8c4d8;
   --color-tag-bg: #162030;
 }
 
@@ -86,14 +87,14 @@ body,
 .investigation-body {
   font-family: "Crimson Pro", Georgia, serif;
   max-width: 680px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.8;
   color: var(--color-text-main);
 }
 
 .investigation-body a {
   font-family: "Space Mono", ui-monospace, monospace;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--color-text-dim);
   text-decoration: none;
 }
@@ -161,7 +162,7 @@ body,
 
 .verdict-category-label {
   font-family: "Space Mono", ui-monospace, monospace;
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 2px;
   color: var(--color-text-dim);
   text-transform: uppercase;
@@ -176,7 +177,7 @@ body,
 
 .verdict-tag {
   font-family: "Space Mono", ui-monospace, monospace;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   padding: 5px 10px;
@@ -191,7 +192,7 @@ body,
   border: 1px solid var(--color-accent-dim);
   color: var(--color-accent);
   font-family: "Space Mono", monospace;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 1.5px;
   padding: 4px 10px;
   border-radius: 999px;
@@ -255,7 +256,7 @@ body,
 
 .app__tagline {
   font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-accent);
@@ -381,7 +382,7 @@ body,
 
 .app__btn {
   font-family: 'Space Mono', monospace;
-  font-size: 0.68rem;
+  font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 0.55rem 0.9rem;
@@ -449,7 +450,7 @@ body,
 
 .app__method-badge {
   font-family: 'Space Mono', monospace;
-  font-size: 0.58rem;
+  font-size: 11px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   padding: 0.2rem 0.45rem;
@@ -483,14 +484,14 @@ body,
 
 .app__visible-text-note {
   font-family: 'Space Mono', monospace;
-  font-size: 0.58rem;
+  font-size: 11px;
   color: var(--color-text-muted);
   letter-spacing: 0.04em;
 }
 
 .app__meta {
   font-family: 'Space Mono', monospace;
-  font-size: 0.72rem;
+  font-size: 12px;
   line-height: 1.55;
   margin: 0.25rem 0;
   color: var(--color-text-muted);
@@ -501,7 +502,7 @@ body,
   margin-left: 0.35rem;
   padding: 0.12rem 0.4rem;
   border-radius: 999px;
-  font-size: 0.58rem;
+  font-size: 11px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   background: var(--color-accent-bg);
@@ -529,7 +530,7 @@ body,
 
 .app__section-title {
   font-family: 'Space Mono', monospace;
-  font-size: 0.68rem;
+  font-size: 14px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-accent);
@@ -563,14 +564,14 @@ body,
 
 .app__local-card h4 {
   font-family: 'Crimson Pro', serif;
-  font-size: 1rem;
+  font-size: 22px;
   margin: 0 0 0.35rem;
   color: var(--color-text-main);
 }
 
 .app__local-card p {
   font-family: 'Space Mono', monospace;
-  font-size: 0.62rem;
+  font-size: 16px;
   margin: 0.15rem 0;
   color: var(--color-text-muted);
   line-height: 1.4;
@@ -578,7 +579,7 @@ body,
 
 .app__local-card a {
   font-family: 'Space Mono', monospace;
-  font-size: 0.62rem;
+  font-size: 16px;
   color: var(--color-accent);
 }
 
@@ -586,7 +587,7 @@ body,
   display: inline-block;
   margin-top: 0.35rem;
   font-family: 'Space Mono', monospace;
-  font-size: 0.55rem;
+  font-size: 11px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   background: var(--color-minor-bg);
@@ -598,7 +599,7 @@ body,
 
 .app__footnote {
   font-family: 'Space Mono', monospace;
-  font-size: 0.58rem;
+  font-size: 11px;
   color: var(--color-text-dim);
   margin: 1.25rem 0 0;
 }

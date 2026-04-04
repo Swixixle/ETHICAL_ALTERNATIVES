@@ -12,7 +12,7 @@
   background: linear-gradient(
     90deg,
     rgba(42, 63, 82, 0.6),
-    rgba(232, 160, 32, 0.35),
+    rgba(240, 168, 32, 0.35),
     rgba(42, 63, 82, 0.6)
   );
   background-size: 200% 100%;
@@ -33,10 +33,10 @@
 
 .loading-state__caption {
   font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #e8dfc8;
+  color: #f0e8d0;
   opacity: 0.65;
   margin: 0.25rem 0 0;
 }

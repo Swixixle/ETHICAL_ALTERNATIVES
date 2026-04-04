@@ -3,7 +3,7 @@ function EthicsBadge({ label }) {
     <span
       style={{
         fontFamily: "'Space Mono', monospace",
-        fontSize: 8,
+        fontSize: 11,
         letterSpacing: 1.5,
         textTransform: 'uppercase',
         padding: '2px 8px',
@@ -84,9 +84,9 @@ export default function RegistryCard({ seller }) {
             top: 12,
             right: 14,
             fontFamily: "'Space Mono', monospace",
-            fontSize: 8,
+            fontSize: 11,
             letterSpacing: 1,
-            color: '#e8a020',
+            color: '#f0a820',
             textTransform: 'uppercase',
           }}
         >
@@ -99,7 +99,7 @@ export default function RegistryCard({ seller }) {
           fontFamily: "'Bebas Neue', sans-serif",
           fontSize: 20,
           letterSpacing: 1.5,
-          color: '#e8dfc8',
+          color: '#f0e8d0',
           marginBottom: 2,
         }}
       >
@@ -111,7 +111,7 @@ export default function RegistryCard({ seller }) {
           style={{
             fontFamily: "'Crimson Pro', serif",
             fontSize: 15,
-            color: '#8fa8bc',
+            color: '#a8c4d8',
             lineHeight: 1.5,
             marginBottom: 8,
           }}
@@ -124,9 +124,9 @@ export default function RegistryCard({ seller }) {
         <div
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 9,
+            fontSize: 11,
             letterSpacing: 1.5,
-            color: '#e8a020',
+            color: '#f0a820',
             textTransform: 'uppercase',
             marginBottom: 8,
           }}
@@ -151,11 +151,11 @@ export default function RegistryCard({ seller }) {
             rel="noreferrer"
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 10,
+              fontSize: 11,
               letterSpacing: 1.5,
               textTransform: 'uppercase',
               color: '#0f1520',
-              background: '#e8a020',
+              background: '#f0a820',
               padding: '6px 14px',
               borderRadius: 2,
               textDecoration: 'none',
@@ -172,10 +172,10 @@ export default function RegistryCard({ seller }) {
             rel="noreferrer"
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 10,
+              fontSize: 11,
               letterSpacing: 1.5,
               textTransform: 'uppercase',
-              color: '#8fa8bc',
+              color: '#a8c4d8',
               border: '1px solid #2a3f52',
               padding: '6px 14px',
               borderRadius: 2,
@@ -192,10 +192,10 @@ export default function RegistryCard({ seller }) {
             rel="noreferrer"
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 10,
+              fontSize: 11,
               letterSpacing: 1.5,
               textTransform: 'uppercase',
-              color: '#8fa8bc',
+              color: '#a8c4d8',
               border: '1px solid #2a3f52',
               padding: '6px 14px',
               borderRadius: 2,

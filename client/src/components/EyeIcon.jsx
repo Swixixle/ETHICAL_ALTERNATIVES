@@ -56,7 +56,7 @@ export default function EyeIcon({ open = false, size = 120 }) {
         rx={rx}
         ry={animOpen ? ryOpen : ryClosed}
         fill="none"
-        stroke="#e8a020"
+        stroke="#f0a820"
         strokeWidth="1.5"
         style={{
           transition: animOpen ? `ry ${openEase}` : `ry ${closeEase}`,
@@ -69,14 +69,14 @@ export default function EyeIcon({ open = false, size = 120 }) {
           cy={cy}
           r={h * 0.28}
           fill="#1c2a3a"
-          stroke="#e8a020"
+          stroke="#f0a820"
           strokeWidth="1"
         />
         <circle
           cx={cx}
           cy={cy}
           r={h * 0.14}
-          fill="#e8a020"
+          fill="#f0a820"
           opacity={animOpen ? 1 : 0}
           style={{ transition: 'opacity 0.2s ease 0.2s' }}
         />
@@ -101,7 +101,7 @@ export default function EyeIcon({ open = false, size = 120 }) {
                 y1={topY}
                 x2={x}
                 y2={topY - h * 0.08}
-                stroke="#e8a020"
+                stroke="#f0a820"
                 strokeWidth="1"
                 opacity="0.5"
               />

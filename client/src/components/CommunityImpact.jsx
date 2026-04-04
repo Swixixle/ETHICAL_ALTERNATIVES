@@ -3,7 +3,7 @@ import { useState } from 'react';
 /* ── Section icons (inline SVG, amber stroke) ── */
 function BarChartIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#e8a020" strokeWidth="1.5">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#f0a820" strokeWidth="1.5">
       <rect x="3" y="10" width="4" height="7" />
       <rect x="8" y="7" width="4" height="10" />
       <rect x="13" y="4" width="4" height="13" />
@@ -14,7 +14,7 @@ function BarChartIcon() {
 
 function DollarIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#e8a020" strokeWidth="1.5">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#f0a820" strokeWidth="1.5">
       <circle cx="10" cy="10" r="7" />
       <line x1="10" y1="5.5" x2="10" y2="7" />
       <line x1="10" y1="13" x2="10" y2="14.5" />
@@ -25,17 +25,17 @@ function DollarIcon() {
 
 function TriangleIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#e8a020" strokeWidth="1.5">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#f0a820" strokeWidth="1.5">
       <path d="M10 3 L18 17 L2 17 Z" />
       <line x1="10" y1="9" x2="10" y2="13" />
-      <circle cx="10" cy="15" r="0.8" fill="#e8a020" stroke="none" />
+      <circle cx="10" cy="15" r="0.8" fill="#f0a820" stroke="none" />
     </svg>
   );
 }
 
 function FlowIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#e8a020" strokeWidth="1.5">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#f0a820" strokeWidth="1.5">
       <circle cx="5" cy="15" r="2" />
       <circle cx="15" cy="5" r="2" />
       <path d="M6.4 13.6 C9 10 11 10 13.6 6.4" />
@@ -62,10 +62,10 @@ function SubSection({ icon, title, children }) {
         <span
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 10,
+            fontSize: 12,
             letterSpacing: 2,
             textTransform: 'uppercase',
-            color: '#e8a020',
+            color: '#f0a820',
           }}
         >
           {title}
@@ -82,9 +82,9 @@ function Body({ children, muted }) {
     <p
       style={{
         fontFamily: "'Crimson Pro', Georgia, serif",
-        fontSize: 17,
+        fontSize: 20,
         lineHeight: 1.8,
-        color: muted ? '#8fa8bc' : '#e8dfc8',
+        color: muted ? '#a8c4d8' : '#f0e8d0',
         margin: '0 0 10px',
       }}
     >
@@ -109,7 +109,7 @@ function Bullets({ items }) {
         >
           <span
             style={{
-              color: '#e8a020',
+              color: '#f0a820',
               flexShrink: 0,
               fontFamily: "'Space Mono', monospace",
               fontSize: 12,
@@ -123,7 +123,7 @@ function Bullets({ items }) {
               fontFamily: "'Crimson Pro', Georgia, serif",
               fontSize: 16,
               lineHeight: 1.65,
-              color: '#8fa8bc',
+              color: '#a8c4d8',
             }}
           >
             {item}
@@ -139,9 +139,9 @@ function Callout({ label, children }) {
   return (
     <div
       style={{
-        background: 'rgba(232, 160, 32, 0.07)',
-        border: '1px solid rgba(232, 160, 32, 0.2)',
-        borderLeft: '3px solid #e8a020',
+        background: 'rgba(240, 168, 32, 0.07)',
+        border: '1px solid rgba(240, 168, 32, 0.2)',
+        borderLeft: '3px solid #f0a820',
         borderRadius: '0 4px 4px 0',
         padding: '14px 18px',
         marginTop: 6,
@@ -152,10 +152,10 @@ function Callout({ label, children }) {
         <div
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 8,
+            fontSize: 11,
             letterSpacing: 2,
             textTransform: 'uppercase',
-            color: '#e8a020',
+            color: '#f0a820',
             marginBottom: 6,
           }}
         >
@@ -165,9 +165,9 @@ function Callout({ label, children }) {
       <p
         style={{
           fontFamily: "'Crimson Pro', Georgia, serif",
-          fontSize: 16,
+          fontSize: 20,
           lineHeight: 1.75,
-          color: '#e8dfc8',
+          color: '#f0e8d0',
           margin: 0,
         }}
       >
@@ -206,7 +206,7 @@ export default function CommunityImpact({ data }) {
           justifyContent: 'space-between',
           width: '100%',
           cursor: 'pointer',
-          borderBottom: '2px solid #e8a020',
+          borderBottom: '2px solid #f0a820',
           paddingBottom: 6,
           marginBottom: open ? 28 : 0,
           userSelect: 'none',
@@ -225,7 +225,7 @@ export default function CommunityImpact({ data }) {
             fontFamily: "'Bebas Neue', sans-serif",
             fontSize: 28,
             letterSpacing: 3,
-            color: '#e8a020',
+            color: '#f0a820',
             textTransform: 'uppercase',
             margin: 0,
           }}
@@ -238,10 +238,10 @@ export default function CommunityImpact({ data }) {
             <span
               style={{
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 8,
+                fontSize: 12,
                 letterSpacing: 1.5,
                 textTransform: 'uppercase',
-                color: '#4a6478',
+                color: '#6a8a9a',
                 border: '1px solid #2a3f52',
                 borderRadius: 999,
                 padding: '3px 10px',
@@ -252,7 +252,7 @@ export default function CommunityImpact({ data }) {
           ) : null}
           <span
             style={{
-              color: '#4a6478',
+              color: '#6a8a9a',
               fontSize: 16,
               display: 'inline-block',
               transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
@@ -300,9 +300,9 @@ export default function CommunityImpact({ data }) {
           {data.the_real_math ? (
             <div
               style={{
-                background: 'rgba(232, 160, 32, 0.05)',
-                border: '1px solid rgba(232, 160, 32, 0.3)',
-                borderTop: '2px solid #e8a020',
+                background: 'rgba(240, 168, 32, 0.05)',
+                border: '1px solid rgba(240, 168, 32, 0.3)',
+                borderTop: '2px solid #f0a820',
                 padding: '20px 24px',
                 marginTop: 8,
               }}
@@ -310,10 +310,10 @@ export default function CommunityImpact({ data }) {
               <div
                 style={{
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: 9,
+                  fontSize: 12,
                   letterSpacing: 2,
                   textTransform: 'uppercase',
-                  color: '#e8a020',
+                  color: '#f0a820',
                   marginBottom: 10,
                 }}
               >
@@ -322,9 +322,9 @@ export default function CommunityImpact({ data }) {
               <p
                 style={{
                   fontFamily: "'Crimson Pro', Georgia, serif",
-                  fontSize: 18,
+                  fontSize: 20,
                   lineHeight: 1.8,
-                  color: '#e8dfc8',
+                  color: '#f0e8d0',
                   margin: 0,
                 }}
               >

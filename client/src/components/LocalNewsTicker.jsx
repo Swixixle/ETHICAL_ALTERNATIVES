@@ -46,7 +46,7 @@ export default function LocalNewsTicker({ apiBase, city, state }) {
           style={{
             color: 'inherit',
             textDecoration: 'underline',
-            textDecorationColor: 'rgba(232, 160, 32, 0.45)',
+            textDecorationColor: 'rgba(240, 168, 32, 0.45)',
             textUnderlineOffset: 3,
           }}
         >
@@ -61,10 +61,10 @@ export default function LocalNewsTicker({ apiBase, city, state }) {
 
   const bandStyle = {
     fontFamily: "'Space Mono', ui-monospace, monospace",
-    fontSize: 9,
+    fontSize: 11,
     letterSpacing: '0.12em',
     textTransform: 'uppercase',
-    color: '#e8a020',
+    color: '#f0a820',
     paddingRight: 48,
     whiteSpace: 'nowrap',
     display: 'inline-block',

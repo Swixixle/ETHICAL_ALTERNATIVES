@@ -21,7 +21,7 @@ export default function HealthCallout({ investigation }) {
         style={{
           fontFamily: "'Crimson Pro', serif",
           fontSize: 15,
-          color: '#e8dfc8',
+          color: '#f0e8d0',
           lineHeight: 1.65,
           margin: '0 0 10px 0',
         }}
@@ -35,10 +35,10 @@ export default function HealthCallout({ investigation }) {
         rel="noreferrer"
         style={{
           fontFamily: "'Space Mono', monospace",
-          fontSize: 10,
+          fontSize: 11,
           letterSpacing: 1.2,
           textTransform: 'uppercase',
-          color: '#e8a020',
+          color: '#f0a820',
           textDecoration: 'none',
         }}
       >

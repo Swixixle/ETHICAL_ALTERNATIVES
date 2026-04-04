@@ -28,10 +28,10 @@ const CATEGORIES = [
 function labelStyle(required) {
   return {
     fontFamily: "'Space Mono', monospace",
-    fontSize: 9,
+    fontSize: 11,
     letterSpacing: 1.5,
     textTransform: 'uppercase',
-    color: required ? '#e8a020' : '#4a6478',
+    color: required ? '#f0a820' : '#6a8a9a',
     display: 'block',
     marginBottom: 4,
     marginTop: 16,
@@ -46,7 +46,7 @@ const input = {
   padding: '8px 12px',
   fontFamily: "'Crimson Pro', serif",
   fontSize: 16,
-  color: '#e8dfc8',
+  color: '#f0e8d0',
   boxSizing: 'border-box',
   outline: 'none',
 };
@@ -152,7 +152,7 @@ export default function ListYourShop() {
           style={{
             fontFamily: "'Crimson Pro', serif",
             fontSize: 16,
-            color: '#8fa8bc',
+            color: '#a8c4d8',
             margin: 0,
           }}
         >
@@ -169,12 +169,12 @@ export default function ListYourShop() {
         onClick={() => setOpen((o) => !o)}
         style={{
           fontFamily: "'Space Mono', monospace",
-          fontSize: 10,
+          fontSize: 11,
           letterSpacing: 2,
           textTransform: 'uppercase',
-          color: '#e8a020',
+          color: '#f0a820',
           background: 'transparent',
-          border: '1px solid #e8a020',
+          border: '1px solid #f0a820',
           borderRadius: 2,
           padding: '8px 18px',
           cursor: 'pointer',
@@ -191,7 +191,7 @@ export default function ListYourShop() {
           style={{
             background: '#162030',
             border: '1px solid #2a3f52',
-            borderTop: '2px solid #e8a020',
+            borderTop: '2px solid #f0a820',
             padding: '24px',
             marginTop: 12,
             borderRadius: '0 0 4px 4px',
@@ -201,7 +201,7 @@ export default function ListYourShop() {
             style={{
               fontFamily: "'Crimson Pro', serif",
               fontSize: 15,
-              color: '#8fa8bc',
+              color: '#a8c4d8',
               margin: '0 0 20px',
               lineHeight: 1.6,
             }}
@@ -245,14 +245,14 @@ export default function ListYourShop() {
                   onClick={() => toggleCategory(cat.value)}
                   style={{
                     fontFamily: "'Space Mono', monospace",
-                    fontSize: 9,
+                    fontSize: 11,
                     letterSpacing: 1,
                     textTransform: 'uppercase',
                     padding: '5px 10px',
                     borderRadius: 999,
-                    border: selected ? '1px solid #e8a020' : '1px solid #2a3f52',
-                    background: selected ? 'rgba(232,160,32,0.12)' : 'transparent',
-                    color: selected ? '#e8a020' : '#4a6478',
+                    border: selected ? '1px solid #f0a820' : '1px solid #2a3f52',
+                    background: selected ? 'rgba(240, 168, 32,0.12)' : 'transparent',
+                    color: selected ? '#f0a820' : '#6a8a9a',
                     cursor: 'pointer',
                   }}
                 >
@@ -326,10 +326,10 @@ export default function ListYourShop() {
                   alignItems: 'center',
                   gap: 10,
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: 9,
+                  fontSize: 11,
                   letterSpacing: 1.5,
                   textTransform: 'uppercase',
-                  color: '#4a6478',
+                  color: '#6a8a9a',
                   cursor: 'pointer',
                 }}
               >
@@ -337,7 +337,7 @@ export default function ListYourShop() {
                   type="checkbox"
                   checked={Boolean(form[key])}
                   onChange={(e) => set(key, e.target.checked)}
-                  style={{ accentColor: '#e8a020' }}
+                  style={{ accentColor: '#f0a820' }}
                 />
                 {label}
               </label>
@@ -348,7 +348,7 @@ export default function ListYourShop() {
             <p
               style={{
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 10,
+                fontSize: 11,
                 color: '#ff6b6b',
                 marginTop: 12,
               }}
@@ -364,10 +364,10 @@ export default function ListYourShop() {
             style={{
               marginTop: 20,
               fontFamily: "'Space Mono', monospace",
-              fontSize: 10,
+              fontSize: 11,
               letterSpacing: 2,
               textTransform: 'uppercase',
-              background: '#e8a020',
+              background: '#f0a820',
               color: '#0f1520',
               border: 'none',
               padding: '10px 24px',
@@ -384,7 +384,7 @@ export default function ListYourShop() {
             style={{
               fontFamily: "'Crimson Pro', serif",
               fontSize: 13,
-              color: '#4a6478',
+              color: '#6a8a9a',
               marginTop: 10,
               marginBottom: 0,
             }}
