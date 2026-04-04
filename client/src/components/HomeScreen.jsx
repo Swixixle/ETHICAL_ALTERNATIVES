@@ -3,7 +3,6 @@ import { getUserLocation, locationFromManualCity, readCachedLocation } from '../
 import { getCityIdentity } from '../services/cityIdentity.js';
 import { dailyChainShuffle, dailyFeedShuffle, utcDateKey } from '../utils/dailyShuffle.js';
 import ListYourShop from './ListYourShop.jsx';
-import LocalNewsTicker from './LocalNewsTicker.jsx';
 import CommunityBoard from './CommunityBoard.jsx';
 
 const ONBOARD_KEY = 'ea_geo_onboard';
@@ -986,8 +985,6 @@ export default function HomeScreen({ onStartSnap }) {
       </div>
 
       <CommunityBoard location={location} />
-
-      <LocalNewsTicker apiBase={apiPrefix()} city={location?.city} state={location?.state} />
     </div>
   );
 }
