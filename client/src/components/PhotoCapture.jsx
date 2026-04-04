@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useId, useRef, useState } from 'react';
+import EyeIcon from './EyeIcon.jsx';
 import './PhotoCapture.css';
 
 const MAX_DIMENSION = 800;
@@ -41,8 +42,8 @@ function loadImageFromFile(file) {
   });
 }
 
-/** Live stream on iOS sometimes resolves but never paints frames — detect zero dimensions. */
-async function waitForVideoFrame(video, maxMs = 1400) {
+/** Live stream on iOS sometimes resolves but never paints frames — detect near-zero dimensions. */
+async function waitForVideoFrame(video, maxMs = 2000) {
   const start = typeof performance !== 'undefined' ? performance.now() : Date.now();
   while (true) {
     const elapsed =
@@ -75,8 +76,7 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
   const [error, setError] = useState(null);
 
   const canLivePreview =
-    typeof navigator !== 'undefined' &&
-    Boolean(navigator.mediaDevices?.getUserMedia);
+    typeof navigator !== 'undefined' && Boolean(navigator.mediaDevices?.getUserMedia);
 
   const stopCamera = useCallback(() => {
     const v = videoRef.current;
@@ -131,8 +131,6 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
     [finalizeImage]
   );
 
-  const pickFile = () => fileInputRef.current?.click();
-
   const onFileInputChange = (e) => {
     const file = e.target.files?.[0];
     e.target.value = '';
@@ -146,12 +144,9 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
     if (file) processFile(file);
   };
 
+  /** Silent fallback to file input on any failure, black stream, or iOS zero-dimension preview. */
   const startCamera = async () => {
-    setError(null);
-    if (!canLivePreview) {
-      pickFile();
-      return;
-    }
+    if (!canLivePreview) return;
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
         video: { facingMode: { ideal: 'environment' } },
@@ -161,24 +156,20 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
       const video = videoRef.current;
       if (!video) {
         stopCamera();
-        setError('Camera could not start. Use “Take or choose photo”.');
         return;
       }
       video.srcObject = stream;
       await video.play().catch(() => {});
-      const ok = await waitForVideoFrame(video, 1400);
+      const ok = await waitForVideoFrame(video, 2000);
       if (!ok) {
         stopCamera();
         setMode('idle');
-        setError(
-          'Live camera did not show a picture on this device. Use “Take or choose photo” — it works on all phones.'
-        );
         return;
       }
       setMode('camera');
     } catch {
+      stopCamera();
       setMode('idle');
-      setError('Camera permission denied or unavailable. Use “Take or choose photo” below.');
     }
   };
 
@@ -207,6 +198,12 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
     return (
       <div className="photo-capture">
         <div className="photo-capture__camera">
+          <div className="photo-capture__eye-bar" aria-hidden>
+            <EyeIcon open size={88} />
+            <p className="photo-capture__hint" style={{ margin: '4px 0 0', fontSize: '0.72rem' }}>
+              Camera active
+            </p>
+          </div>
           <video ref={videoRef} className="photo-capture__video" playsInline muted autoPlay />
           <div className="photo-capture__camera-bar">
             <button type="button" className="photo-capture__btn" onClick={cancelCamera}>
@@ -217,7 +214,6 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
             </button>
           </div>
         </div>
-        {error ? <p className="photo-capture__error">{error}</p> : null}
       </div>
     );
   }
@@ -230,6 +226,9 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
             <button type="button" className="photo-capture__btn" onClick={changePhoto}>
               New photo
             </button>
+          </div>
+          <div className="photo-capture__eye-preview" aria-hidden>
+            <EyeIcon open size={96} />
           </div>
           <div className="photo-capture__image-shell">
             <img className="photo-capture__img" src={previewDataUrl} alt="Selected for analysis" />
@@ -248,7 +247,7 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
   return (
     <div className="photo-capture">
       <div
-        className="photo-capture__idle"
+        className={`photo-capture__idle ${dragActive ? 'photo-capture__idle--drag' : ''}`}
         onDragEnter={(e) => {
           e.preventDefault();
           setDragActive(true);
@@ -270,30 +269,22 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
           onChange={onFileInputChange}
         />
 
-        <label htmlFor={fileInputId} className="photo-capture__primary-file-label">
-          <span className="photo-capture__primary-file-title">Take or choose photo</span>
-          <span className="photo-capture__primary-file-sub">
-            Opens your camera or photo library — most reliable on phones
+        <label htmlFor={fileInputId} className="photo-capture__main-upload">
+          <EyeIcon open={false} size={100} />
+          <span className="photo-capture__main-upload-title">Take or choose photo</span>
+          <span className="photo-capture__main-upload-sub">Camera or library — works on iPhone, Android, and desktop</span>
+          <span className="photo-capture__main-upload-hint">
+            Tap to photograph or drop an image — then tap any object after you capture
           </span>
         </label>
 
-        <button
-          type="button"
-          className={`photo-capture__dropzone photo-capture__dropzone--btn ${dragActive ? 'photo-capture__dropzone--active' : ''}`}
-          onClick={pickFile}
-        >
-          <span className="photo-capture__dropzone-text">Or drop an image here · tap to browse</span>
-        </button>
-
-        <p className="photo-capture__hint">Tap any object in the photo after you capture</p>
-
-        <div className="photo-capture__actions">
-          {canLivePreview ? (
-            <button type="button" className="photo-capture__btn photo-capture__btn--secondary" onClick={startCamera}>
+        {canLivePreview ? (
+          <div className="photo-capture__live-wrap">
+            <button type="button" className="photo-capture__live-camera" onClick={startCamera}>
               Use live camera
             </button>
-          ) : null}
-        </div>
+          </div>
+        ) : null}
 
         {error ? <p className="photo-capture__error">{error}</p> : null}
         {showIdlePreparing ? <div className="photo-capture__idle-skeleton" aria-busy="true" /> : null}
