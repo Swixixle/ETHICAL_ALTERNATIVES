@@ -10,7 +10,9 @@ import QuickAlternatives from './components/QuickAlternatives.jsx';
 import HealthCallout from './components/HealthCallout.jsx';
 import AlternativesSidebar from './components/AlternativesSidebar.jsx';
 import HomeScreen from './components/HomeScreen.jsx';
+import HistoryScreen from './components/HistoryScreen.jsx';
 import ShareCard from './components/ShareCard.jsx';
+import CommunityImpact from './components/CommunityImpact.jsx';
 import { useTapAnalysis } from './hooks/useTapAnalysis.js';
 import './App.css';
 
@@ -35,7 +37,7 @@ function confidenceLabel(c) {
 }
 
 export default function App() {
-  /** home — feed; snap — photo tap (Quick); deep — typed investigation (rabbit hole) */
+  /** home — feed; snap — photo tap (Quick); deep — typed investigation (rabbit hole); history — saved taps */
   const [mode, setMode] = useState('home');
 
   const {
@@ -43,6 +45,7 @@ export default function App() {
     loading,
     result,
     error,
+    tapPosition,
     setImage,
     analyzeTap,
     confirmPendingIdentification,
@@ -101,6 +104,7 @@ export default function App() {
             reset();
             setMode('snap');
           }}
+          onOpenHistory={() => setMode('history')}
           onSearchInvestigate={async (q) => {
             reset();
             setMode('deep');
@@ -111,22 +115,42 @@ export default function App() {
     );
   }
 
+  if (mode === 'history') {
+    return (
+      <div className="app app--home">
+        <HistoryScreen
+          onBack={() => {
+            setMode('home');
+          }}
+        />
+      </div>
+    );
+  }
+
+  const dbPreview = result?.db_preview;
+  const dbTags =
+    dbPreview && Array.isArray(dbPreview.verdict_tags) ? dbPreview.verdict_tags : [];
+  const dbConcern =
+    dbPreview && typeof dbPreview.overall_concern_level === 'string'
+      ? dbPreview.overall_concern_level
+      : null;
+  const dbCommunity =
+    dbPreview &&
+    dbPreview.community_impact &&
+    typeof dbPreview.community_impact === 'object' &&
+    dbPreview.community_impact !== null
+      ? dbPreview.community_impact
+      : null;
+  const showResearchBanner = Boolean(result?.research_loading);
+  const hasAlt =
+    result &&
+    ((Array.isArray(result.registry_results) && result.registry_results.length > 0) ||
+      (Array.isArray(result.local_results) && result.local_results.length > 0));
+
   const identificationBlock =
     result ? (
       <div className="app__id-block">
         <h2 className="app__headline">{investigationHeadline(id, result.investigation)}</h2>
-
-        {result.investigation ? (
-          <ProofBlock investigation={result.investigation} identification={id} result={result} />
-        ) : null}
-
-        {(Array.isArray(result.registry_results) && result.registry_results.length > 0) ||
-        (Array.isArray(result.local_results) && result.local_results.length > 0) ? (
-          <QuickAlternatives
-            registryResults={result.registry_results}
-            localResults={result.local_results}
-          />
-        ) : null}
 
         {id ? (
           <>
@@ -135,10 +159,18 @@ export default function App() {
                 From package text
               </p>
             ) : null}
+            {id.object ? (
+              <p className="app__meta" style={{ marginTop: 6 }}>
+                Object: {id.object}
+              </p>
+            ) : null}
             {id.brand && id.corporate_parent ? (
               <p className="app__meta">
                 Made by {id.brand} ({id.corporate_parent})
               </p>
+            ) : null}
+            {id.brand && !id.corporate_parent ? (
+              <p className="app__meta">Brand: {id.brand}</p>
             ) : null}
             {!id.brand && id.corporate_parent ? (
               <p className="app__meta">Corporate parent: {id.corporate_parent}</p>
@@ -146,15 +178,90 @@ export default function App() {
             <p className="app__meta meta-space" style={{ fontSize: 11, marginTop: 8 }}>
               Match: <span className="app__badge">{confidenceLabel(id.confidence)}</span>
             </p>
-            {result.investigation ? null : (
-              <p className="app__footnote">
-                {typeof result.response_ms === 'number' ? `${result.response_ms} ms · ` : ''}
-                {Array.isArray(result.searched_sources)
-                  ? `Sources: ${result.searched_sources.join(', ')}`
-                  : null}
-              </p>
-            )}
           </>
+        ) : null}
+
+        {((dbConcern && dbConcern.trim()) || dbTags.length > 0) && !result.investigation ? (
+          <div
+            style={{
+              marginTop: 14,
+              padding: '10px 12px',
+              border: '1px solid #344d62',
+              borderRadius: 4,
+              background: 'rgba(22,32,48,0.5)',
+            }}
+          >
+            {dbConcern && dbConcern.trim() ? (
+              <p
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 10,
+                  letterSpacing: 1.5,
+                  textTransform: 'uppercase',
+                  color: '#f0a820',
+                  margin: '0 0 8px',
+                }}
+              >
+                Database profile · concern: {dbConcern}
+              </p>
+            ) : null}
+            {dbTags.length > 0 ? (
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                {dbTags.slice(0, 12).map((t) => (
+                  <span
+                    key={String(t)}
+                    style={{
+                      fontFamily: "'Space Mono', monospace",
+                      fontSize: 10,
+                      letterSpacing: 0.75,
+                      textTransform: 'uppercase',
+                      color: '#6aaa8a',
+                      border: '1px solid rgba(106,170,138,0.35)',
+                      borderRadius: 999,
+                      padding: '2px 8px',
+                    }}
+                  >
+                    {String(t).replace(/_/g, ' ')}
+                  </span>
+                ))}
+              </div>
+            ) : null}
+          </div>
+        ) : null}
+
+        {dbCommunity && !result.investigation ? (
+          <div style={{ marginTop: 16 }}>
+            <CommunityImpact data={dbCommunity} />
+          </div>
+        ) : null}
+
+        {showResearchBanner ? (
+          <p
+            className="app__text-loader"
+            style={{ marginTop: 16, marginBottom: 4, textAlign: 'left' }}
+            role="status"
+            aria-busy="true"
+          >
+            Researching full record…
+          </p>
+        ) : null}
+
+        {hasAlt ? (
+          <QuickAlternatives
+            registryResults={result.registry_results}
+            localResults={result.local_results}
+          />
+        ) : null}
+
+        {result.investigation ? (
+          <ProofBlock investigation={result.investigation} identification={id} result={result} />
+        ) : null}
+
+        {id && !result.investigation && !showResearchBanner ? (
+          <p className="app__footnote">
+            {typeof result.response_ms === 'number' ? `${result.response_ms} ms · ` : ''}
+            {Array.isArray(result.searched_sources) ? `Sources: ${result.searched_sources.join(', ')}` : null}
+          </p>
         ) : null}
 
         {result.investigation ? (
@@ -195,8 +302,27 @@ export default function App() {
   const tapPhotoToolbar =
     image && result && dataUrl ? (
       <>
-        <div className="app__image-shell app__image-shell--compact">
+        <div className="app__image-shell app__image-shell--compact" style={{ position: 'relative' }}>
           <img className="app__photo" src={dataUrl} alt="Your capture" />
+          {tapPosition &&
+          typeof tapPosition.x === 'number' &&
+          typeof tapPosition.y === 'number' ? (
+            <span
+              aria-hidden
+              style={{
+                position: 'absolute',
+                left: `${tapPosition.x * 100}%`,
+                top: `${tapPosition.y * 100}%`,
+                transform: 'translate(-50%, -50%)',
+                width: 12,
+                height: 12,
+                borderRadius: '50%',
+                background: '#f0a820',
+                border: '2px solid #0f1520',
+                pointerEvents: 'none',
+              }}
+            />
+          ) : null}
         </div>
         <div className="app__toolbar">
           <button type="button" className="app__btn app__btn--ghost" onClick={() => clearResult()}>
@@ -339,16 +465,18 @@ export default function App() {
                 Tap your capture to point at it
               </span>
             </div>
-            <div className="app__image-shell">
+            <div className="app__image-shell" style={{ position: 'relative' }}>
               <TapOverlay
                 key={tapSession}
                 imageUrl={dataUrl || ''}
                 onTap={(x, y) => analyzeTap(x, y, null)}
+                marker={loading && tapPosition ? tapPosition : null}
+                interactionDisabled={loading}
               />
             </div>
             {loading ? (
               <div className="app__loader-panel" role="status" aria-busy="true">
-                <p className="app__text-loader">Analyzing...</p>
+                <p className="app__text-loader">Analyzing…</p>
               </div>
             ) : null}
             {error ? (

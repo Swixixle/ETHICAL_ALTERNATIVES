@@ -9,6 +9,9 @@ import { queryLocalBusinesses } from '../services/overpass.js';
 import { CATEGORY_TO_SHOP_TYPES, DEFAULT_SHOP_TYPES } from '../services/categoryShopTypes.js';
 import { validateImagePayload } from '../utils/imageUtils.js';
 import { findLocalSellers } from '../services/sellerRegistry.js';
+import { pool } from '../db/pool.js';
+import { getIncumbentDbPreview } from '../services/incumbentPreview.js';
+import { saveTapHistoryAsync } from '../services/tapHistory.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -116,80 +119,22 @@ async function enhanceIdentificationWithScene(base64, tapX, tapY, identification
         brand: String(firstLikely.brand),
         identification_method: 'scene_inference',
         confidence_notes:
-          typeof firstLikely.reasoning === 'string' ? firstLikely.reasoning : String(finalIdentification.confidence_notes || ''),
+          typeof firstLikely.reasoning === 'string'
+            ? firstLikely.reasoning
+            : String(finalIdentification.confidence_notes || ''),
       };
     }
   }
   return { finalIdentification, sceneInventory };
 }
 
-router.post('/tap', async (req, res) => {
-  const t0 = Date.now();
-  const { image_base64, tap_x, tap_y, user_lat, user_lng, selection_box } = req.body || {};
-
-  const validated = validateImagePayload(image_base64);
-  if (!validated.ok) {
-    return res.status(400).json({ error: validated.error });
-  }
-
-  const tx = Number(tap_x);
-  const ty = Number(tap_y);
-  if (!Number.isFinite(tx) || !Number.isFinite(ty) || tx < 0 || tx > 1 || ty < 0 || ty > 1) {
-    return res.status(400).json({ error: 'tap_x and tap_y must be between 0 and 1' });
-  }
-
-  const selBox = parseSelectionBox(selection_box);
-  if (selection_box != null && !selBox) {
-    return res.status(400).json({
-      error: 'selection_box must be { x, y, width, height } in 0–1 with x+width,y+height ≤ 1',
-    });
-  }
-
-  let identification;
-  try {
-    identification = await identifyObject(validated.base64, tx, ty, selBox);
-  } catch (e) {
-    console.error('Vision error', e);
-    return res.status(500).json({ error: 'Vision service unavailable' });
-  }
-
-  const { finalIdentification, sceneInventory } = await enhanceIdentificationWithScene(
-    validated.base64,
-    tx,
-    ty,
-    identification
-  );
-
-  const identification_tier = getIdentificationTier(finalIdentification);
-
-  if (req.body?.preview_only === true) {
-    const response_ms = Date.now() - t0;
-    const crop_base64 =
-      typeof finalIdentification?.crop_base64 === 'string' ? finalIdentification.crop_base64 : null;
-    return res.json({
-      identification: finalIdentification,
-      identification_tier,
-      /** Redundant copy: some clients lose nested base64 on identification; use for ConfirmTap. */
-      crop_base64,
-      scene_inventory: sceneInventory,
-      preview_only: true,
-      version: 'v1',
-      response_ms,
-    });
-  }
-
-  let investigation = null;
-  if (finalIdentification.brand || finalIdentification.corporate_parent) {
-    try {
-      investigation = await getInvestigationProfile(finalIdentification.brand, finalIdentification.corporate_parent, {
-        healthFlag: finalIdentification.health_flag,
-        productCategory: finalIdentification.category,
-      });
-    } catch (e) {
-      console.error('Investigation error', e);
-    }
-  }
-
+/**
+ * Etsy + Overpass + seller registry for a finalized identification.
+ * @param {Record<string, unknown>} finalIdentification
+ * @param {unknown} user_lat
+ * @param {unknown} user_lng
+ */
+async function loadAlternativesBundle(finalIdentification, user_lat, user_lng) {
   const keywords = finalIdentification.search_keywords || finalIdentification.object || 'handmade';
 
   const etsyPromise = searchEtsy({
@@ -235,6 +180,104 @@ router.post('/tap', async (req, res) => {
     console.error('Parallel search error', e);
   }
 
+  const empty_sources = [];
+  if (!etsyResults.length) empty_sources.push('etsy');
+  if (!registryResults.length) empty_sources.push('seller_registry');
+  if (hasGeo && !localResults.length) empty_sources.push('overpass');
+
+  return {
+    results: etsyResults,
+    registry_results: registryResults,
+    local_results: localResults,
+    hasGeo,
+    empty_sources,
+  };
+}
+
+router.post('/tap', async (req, res) => {
+  const t0 = Date.now();
+  const { image_base64, tap_x, tap_y, user_lat, user_lng, selection_box } = req.body || {};
+
+  const validated = validateImagePayload(image_base64);
+  if (!validated.ok) {
+    return res.status(400).json({ error: validated.error });
+  }
+
+  const tx = Number(tap_x);
+  const ty = Number(tap_y);
+  if (!Number.isFinite(tx) || !Number.isFinite(ty) || tx < 0 || tx > 1 || ty < 0 || ty > 1) {
+    return res.status(400).json({ error: 'tap_x and tap_y must be between 0 and 1' });
+  }
+
+  const selBox = parseSelectionBox(selection_box);
+  if (selection_box != null && !selBox) {
+    return res.status(400).json({
+      error: 'selection_box must be { x, y, width, height } in 0–1 with x+width,y+height ≤ 1',
+    });
+  }
+
+  let identification;
+  try {
+    identification = await identifyObject(validated.base64, tx, ty, selBox);
+  } catch (e) {
+    console.error('Vision error', e);
+    return res.status(500).json({ error: 'Vision service unavailable' });
+  }
+
+  const { finalIdentification, sceneInventory } = await enhanceIdentificationWithScene(
+    validated.base64,
+    tx,
+    ty,
+    identification
+  );
+
+  const identification_tier = getIdentificationTier(finalIdentification);
+
+  if (req.body?.preview_only === true) {
+    const response_ms = Date.now() - t0;
+    const crop_base64 =
+      typeof finalIdentification?.crop_base64 === 'string' ? finalIdentification.crop_base64 : null;
+    let db_preview = null;
+    if (finalIdentification.brand || finalIdentification.corporate_parent) {
+      db_preview = await getIncumbentDbPreview(
+        finalIdentification.brand,
+        finalIdentification.corporate_parent
+      );
+    }
+    return res.json({
+      identification: finalIdentification,
+      identification_tier,
+      crop_base64,
+      scene_inventory: sceneInventory,
+      db_preview,
+      preview_only: true,
+      version: 'v1',
+      response_ms,
+    });
+  }
+
+  const session_id = typeof req.body?.session_id === 'string' ? req.body.session_id.trim() : null;
+
+  const invPromise =
+    finalIdentification.brand || finalIdentification.corporate_parent
+      ? getInvestigationProfile(
+          finalIdentification.brand,
+          finalIdentification.corporate_parent,
+          {
+            healthFlag: finalIdentification.health_flag,
+            productCategory: finalIdentification.category,
+          }
+        ).catch((e) => {
+          console.error('Investigation error', e);
+          return null;
+        })
+      : Promise.resolve(null);
+
+  const altPromise = loadAlternativesBundle(finalIdentification, user_lat, user_lng);
+
+  const [investigation, alt] = await Promise.all([invPromise, altPromise]);
+  const { results: etsyResults, registry_results: registryResults, local_results: localResults, hasGeo, empty_sources } = alt;
+
   const response_ms = Date.now() - t0;
 
   console.log(
@@ -253,10 +296,13 @@ router.post('/tap', async (req, res) => {
   if (investigation) searched_sources.push('investigation');
   if (hasGeo) searched_sources.push('overpass');
 
-  const empty_sources = [];
-  if (!etsyResults.length) empty_sources.push('etsy');
-  if (!registryResults.length) empty_sources.push('seller_registry');
-  if (hasGeo && !localResults.length) empty_sources.push('overpass');
+  saveTapHistoryAsync({
+    session_id,
+    identification: finalIdentification,
+    investigation,
+    user_lat: Number(user_lat),
+    user_lng: Number(user_lng),
+  });
 
   res.json({
     identification: finalIdentification,
@@ -273,6 +319,143 @@ router.post('/tap', async (req, res) => {
   });
 });
 
+/** POST /api/tap/sourcing — alternatives only (progressive loading). */
+router.post('/tap/sourcing', async (req, res) => {
+  const t0 = Date.now();
+  const { identification, user_lat, user_lng } = req.body || {};
+
+  if (!identification || typeof identification !== 'object') {
+    return res.status(400).json({ error: 'identification required' });
+  }
+
+  try {
+    const alt = await loadAlternativesBundle(identification, user_lat, user_lng);
+    const searched_sources = ['etsy', 'seller_registry'];
+    if (alt.hasGeo) searched_sources.push('overpass');
+
+    res.json({
+      results: alt.results,
+      registry_results: alt.registry_results,
+      local_results: alt.local_results,
+      searched_sources,
+      empty_sources: alt.empty_sources,
+      response_ms: Date.now() - t0,
+      version: 'v1',
+    });
+  } catch (e) {
+    console.error('/tap/sourcing', e);
+    res.status(500).json({ error: e?.message || 'sourcing failed' });
+  }
+});
+
+/** POST /api/tap/investigation — deep research only (progressive loading). */
+router.post('/tap/investigation', async (req, res) => {
+  const t0 = Date.now();
+  const { identification, session_id, user_lat, user_lng } = req.body || {};
+
+  if (!identification || typeof identification !== 'object') {
+    return res.status(400).json({ error: 'identification required' });
+  }
+
+  let investigation = null;
+  if (identification.brand || identification.corporate_parent) {
+    try {
+      investigation = await getInvestigationProfile(identification.brand, identification.corporate_parent, {
+        healthFlag: identification.health_flag,
+        productCategory: identification.category,
+      });
+    } catch (e) {
+      console.error('Investigation error', e);
+    }
+  }
+
+  const sid = typeof session_id === 'string' ? session_id.trim() : null;
+  saveTapHistoryAsync({
+    session_id: sid,
+    identification,
+    investigation,
+    user_lat: user_lat != null ? Number(user_lat) : null,
+    user_lng: user_lng != null ? Number(user_lng) : null,
+  });
+
+  res.json({
+    investigation,
+    searched_sources: investigation ? ['investigation'] : [],
+    response_ms: Date.now() - t0,
+    version: 'v1',
+  });
+});
+
+/** GET /api/history — list recent taps for a session. */
+router.get('/history', async (req, res) => {
+  const session_id = typeof req.query.session_id === 'string' ? req.query.session_id.trim() : '';
+  if (!session_id || !pool) {
+    return res.json({ items: [] });
+  }
+
+  try {
+    const { rows } = await pool.query(
+      `SELECT id, created_at, brand_name, object_name, generated_headline, overall_concern_level, verdict_tags, city
+       FROM tap_history
+       WHERE session_id = $1
+       ORDER BY created_at DESC
+       LIMIT 20`,
+      [session_id]
+    );
+    const items = rows.map((r) => ({
+      id: r.id,
+      created_at: r.created_at instanceof Date ? r.created_at.toISOString() : String(r.created_at),
+      brand_name: r.brand_name,
+      object_name: r.object_name,
+      generated_headline: r.generated_headline,
+      overall_concern_level: r.overall_concern_level,
+      verdict_tags: r.verdict_tags,
+      city: r.city,
+    }));
+    res.json({ items });
+  } catch (e) {
+    console.error('GET /history', e);
+    res.status(500).json({ error: 'history failed' });
+  }
+});
+
+/** GET /api/history/:id — full saved investigation (session-scoped). */
+router.get('/history/:id', async (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  const session_id = typeof req.query.session_id === 'string' ? req.query.session_id.trim() : '';
+
+  if (!Number.isFinite(id) || !session_id || !pool) {
+    return res.status(400).json({ error: 'invalid request' });
+  }
+
+  try {
+    const { rows } = await pool.query(
+      `SELECT id, created_at, session_id, investigation_json, identification_json, brand_name, object_name, city
+       FROM tap_history
+       WHERE id = $1 AND session_id = $2
+       LIMIT 1`,
+      [id, session_id]
+    );
+    const row = rows[0];
+    if (!row) {
+      return res.status(404).json({ error: 'not found' });
+    }
+
+    res.json({
+      id: row.id,
+      created_at: row.created_at instanceof Date ? row.created_at.toISOString() : String(row.created_at),
+      investigation: row.investigation_json,
+      identification: row.identification_json,
+      brand_name: row.brand_name,
+      object_name: row.object_name,
+      city: row.city,
+    });
+  } catch (e) {
+    console.error('GET /history/:id', e);
+    res.status(500).json({ error: 'history detail failed' });
+  }
+});
+
 /** POST /api/investigate — typed brand/topic search, no image (rabbit hole / Deep mode). */
 router.post('/investigate', async (req, res) => {
   const t0 = Date.now();
@@ -281,6 +464,8 @@ router.post('/investigate', async (req, res) => {
   if (!brand) {
     return res.status(400).json({ error: 'brand required' });
   }
+
+  const session_id = typeof req.body?.session_id === 'string' ? req.body.session_id.trim() : null;
 
   try {
     const investigation = await getInvestigationProfile(brand, null, {
@@ -300,6 +485,14 @@ router.post('/investigate', async (req, res) => {
 
     const identification_tier = getIdentificationTier(identification);
     const response_ms = Date.now() - t0;
+
+    saveTapHistoryAsync({
+      session_id,
+      identification,
+      investigation,
+      user_lat: null,
+      user_lng: null,
+    });
 
     res.json({
       identification,

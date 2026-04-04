@@ -51,6 +51,28 @@ CREATE TABLE IF NOT EXISTS incumbent_profiles (
 CREATE INDEX IF NOT EXISTS idx_incumbent_profiles_slug ON incumbent_profiles (brand_slug);
 CREATE INDEX IF NOT EXISTS idx_incumbent_profiles_verdict ON incumbent_profiles USING GIN (verdict_tags);
 
+-- Saved tap / investigation sessions (client session_id in sessionStorage).
+CREATE TABLE IF NOT EXISTS tap_history (
+  id              SERIAL PRIMARY KEY,
+  created_at      TIMESTAMPTZ DEFAULT NOW(),
+  session_id      TEXT,
+  brand_name      TEXT,
+  brand_slug      TEXT,
+  object_name     TEXT,
+  generated_headline TEXT,
+  overall_concern_level TEXT,
+  verdict_tags    TEXT[],
+  investigation_json JSONB,
+  identification_json JSONB,
+  user_lat        NUMERIC(9, 6),
+  user_lng        NUMERIC(9, 6),
+  city            TEXT,
+  share_count     INTEGER DEFAULT 0
+);
+
+CREATE INDEX IF NOT EXISTS tap_history_session ON tap_history (session_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS tap_history_brand ON tap_history (brand_slug);
+
 -- Community-maintained independent seller listings (ethical alternatives).
 CREATE TABLE IF NOT EXISTS seller_registry (
   id              SERIAL PRIMARY KEY,

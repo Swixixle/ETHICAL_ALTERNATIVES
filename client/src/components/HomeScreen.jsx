@@ -879,7 +879,7 @@ function FeedCard({ business, chainFootnote = false }) {
 /**
  * @param {{ onStartSnap: () => void }} props
  */
-export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
+export default function HomeScreen({ onStartSnap, onSearchInvestigate, onOpenHistory }) {
   const [phase, setPhase] = useState(() => initialPhase());
   const [location, setLocation] = useState(() => readCachedLocation());
   const [identity, setIdentity] = useState(null);
@@ -1261,6 +1261,10 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
           borderBottom: '1px solid #2a3f52',
           padding: '8px 24px',
           zIndex: 100,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 12,
         }}
       >
         <div
@@ -1274,6 +1278,27 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate }) {
         >
           ETHICALALT
         </div>
+        {typeof onOpenHistory === 'function' ? (
+          <button
+            type="button"
+            onClick={() => onOpenHistory()}
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 10,
+              letterSpacing: 2,
+              textTransform: 'uppercase',
+              background: 'transparent',
+              border: '1px solid #f0a820',
+              color: '#f0a820',
+              padding: '6px 12px',
+              borderRadius: 2,
+              cursor: 'pointer',
+              flexShrink: 0,
+            }}
+          >
+            History
+          </button>
+        ) : null}
       </div>
 
       <CityCard identity={identity} city={location?.city} state={location?.state} />

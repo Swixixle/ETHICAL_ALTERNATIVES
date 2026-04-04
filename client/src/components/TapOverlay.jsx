@@ -1,10 +1,19 @@
 import { useRef } from 'react';
 
 /**
- * Minimal tap target over the capture — image + normalized tap coords only.
- * @param {{ imageUrl: string; onTap: (x: number, y: number) => void }} props
+ * @param {{
+ *   imageUrl: string;
+ *   onTap: (x: number, y: number) => void;
+ *   marker?: { x: number; y: number } | null;
+ *   interactionDisabled?: boolean;
+ * }} props
  */
-export default function TapOverlay({ imageUrl, onTap }) {
+export default function TapOverlay({
+  imageUrl,
+  onTap,
+  marker = null,
+  interactionDisabled = false,
+}) {
   const ref = useRef(null);
   /** Skip synthetic click right after touchstart (mobile double invoke). */
   const suppressClickUntil = useRef(0);
@@ -16,6 +25,7 @@ export default function TapOverlay({ imageUrl, onTap }) {
   }
 
   function applyTap(e) {
+    if (interactionDisabled) return;
     const el = ref.current;
     if (!el || typeof onTap !== 'function') return;
     const rect = el.getBoundingClientRect();
@@ -51,10 +61,32 @@ export default function TapOverlay({ imageUrl, onTap }) {
         width: '100%',
         touchAction: 'none',
       }}
-      onClick={onClick}
-      onTouchStart={onTouchStart}
+      onClick={interactionDisabled ? undefined : onClick}
+      onTouchStart={interactionDisabled ? undefined : onTouchStart}
     >
       <img className="app__photo" src={imageUrl} style={{ width: '100%', display: 'block' }} alt="" />
+      {marker &&
+      typeof marker.x === 'number' &&
+      typeof marker.y === 'number' &&
+      Number.isFinite(marker.x) &&
+      Number.isFinite(marker.y) ? (
+        <span
+          aria-hidden
+          style={{
+            position: 'absolute',
+            left: `${marker.x * 100}%`,
+            top: `${marker.y * 100}%`,
+            transform: 'translate(-50%, -50%)',
+            width: 14,
+            height: 14,
+            borderRadius: '50%',
+            background: '#f0a820',
+            border: '2px solid #0f1520',
+            boxShadow: '0 0 0 2px rgba(240,168,32,0.45)',
+            pointerEvents: 'none',
+          }}
+        />
+      ) : null}
     </div>
   );
 }

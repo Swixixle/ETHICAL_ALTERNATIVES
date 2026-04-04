@@ -6,8 +6,39 @@ function tapUrl() {
   return apiBase ? `${apiBase}/api/tap` : '/api/tap';
 }
 
+function tapSourcingUrl() {
+  return apiBase ? `${apiBase}/api/tap/sourcing` : '/api/tap/sourcing';
+}
+
+function tapInvestigationUrl() {
+  return apiBase ? `${apiBase}/api/tap/investigation` : '/api/tap/investigation';
+}
+
 function investigateUrl() {
   return apiBase ? `${apiBase}/api/investigate` : '/api/investigate';
+}
+
+function getSessionId() {
+  if (typeof sessionStorage === 'undefined') return null;
+  try {
+    let id = sessionStorage.getItem('ea_session_id');
+    if (!id) {
+      id =
+        typeof crypto !== 'undefined' && crypto.randomUUID
+          ? crypto.randomUUID()
+          : `ea-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+      sessionStorage.setItem('ea_session_id', id);
+    }
+    return id;
+  } catch {
+    return null;
+  }
+}
+
+/** @param {unknown} a @param {unknown} b */
+function mergeSources(a, b) {
+  const s = new Set([...(Array.isArray(a) ? a : []), ...(Array.isArray(b) ? b : [])]);
+  return [...s];
 }
 
 const CONFIRM_THRESHOLD = 0.75;
@@ -20,12 +51,11 @@ export function useTapAnalysis() {
   const [error, setError] = useState(null);
   const [geo, setGeo] = useState(null);
   const [tapSession, setTapSession] = useState(0);
-  /** @type {null | { identification: object, identification_tier: string, response_ms?: number }} */
+  /** @type {null | { identification: object, identification_tier: string, response_ms?: number, scene_inventory?: unknown, db_preview?: unknown }} */
   const [pendingConfirmation, setPendingConfirmation] = useState(null);
   const [regionSelectActive, setRegionSelectActive] = useState(false);
   /** @type {React.MutableRefObject<{ x: number; y: number; width: number; height: number } | null>} */
   const selectionBoxRef = useRef(null);
-  /** Normalized selection rect for loading UI (lasso / box) */
   const [activeSelectionBox, setActiveSelectionBox] = useState(null);
 
   const captureGeoOnce = useCallback(() => {
@@ -49,6 +79,7 @@ export function useTapAnalysis() {
         tap_x: tapX,
         tap_y: tapY,
         preview_only,
+        session_id: getSessionId(),
       };
       if (selection_box && typeof selection_box === 'object') {
         body.selection_box = {
@@ -77,23 +108,91 @@ export function useTapAnalysis() {
     return { ok: res.ok, data, status: res.status };
   }, [buildBody]);
 
-  const runFullPipeline = useCallback(
-    async (tapX, tapY, selBox = null) => {
-      const { ok, data } = await fetchTap(tapX, tapY, {
-        preview_only: false,
-        selection_box: selBox,
-      });
-      if (!ok) {
-        setError(data.error || `Request failed`);
-        return;
+  const runResearchPhase = useCallback(
+    (identification) => {
+      const session_id = getSessionId();
+      const sourcingBody = {
+        identification,
+        session_id,
+      };
+      if (geo && typeof geo === 'object' && Number.isFinite(geo.lat) && Number.isFinite(geo.lng)) {
+        sourcingBody.user_lat = geo.lat;
+        sourcingBody.user_lng = geo.lng;
       }
-      setResult(data);
-      setPendingConfirmation(null);
+      const invBody = {
+        identification,
+        session_id,
+        user_lat: sourcingBody.user_lat,
+        user_lng: sourcingBody.user_lng,
+      };
+
+      void (async () => {
+        try {
+          const sRes = await fetch(tapSourcingUrl(), {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(sourcingBody),
+          });
+          const sData = await sRes.json().catch(() => ({}));
+          if (sRes.ok) {
+            setResult((prev) => {
+              if (!prev) return prev;
+              return {
+                ...prev,
+                results: Array.isArray(sData.results) ? sData.results : prev.results,
+                registry_results: Array.isArray(sData.registry_results)
+                  ? sData.registry_results
+                  : prev.registry_results,
+                local_results: Array.isArray(sData.local_results)
+                  ? sData.local_results
+                  : prev.local_results,
+                empty_sources: sData.empty_sources ?? prev.empty_sources,
+                searched_sources: mergeSources(prev.searched_sources, sData.searched_sources),
+                sourcing_complete: true,
+              };
+            });
+          }
+        } catch (e) {
+          console.error('[sourcing]', e);
+        }
+      })();
+
+      void (async () => {
+        try {
+          if (!identification.brand && !identification.corporate_parent) {
+            setResult((prev) => (prev ? { ...prev, research_loading: false } : prev));
+            return;
+          }
+          const iRes = await fetch(tapInvestigationUrl(), {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(invBody),
+          });
+          const iData = await iRes.json().catch(() => ({}));
+          if (iRes.ok) {
+            setResult((prev) => {
+              if (!prev) return prev;
+              const inv = iData.investigation ?? null;
+              return {
+                ...prev,
+                investigation: inv,
+                research_loading: false,
+                searched_sources: mergeSources(prev.searched_sources, iData.searched_sources),
+              };
+            });
+          } else {
+            setResult((prev) => (prev ? { ...prev, research_loading: false } : prev));
+          }
+        } catch (e) {
+          console.error('[investigation]', e);
+          setResult((prev) => (prev ? { ...prev, research_loading: false } : prev));
+        }
+      })();
     },
-    [fetchTap]
+    [geo]
   );
 
-  /** Single tap: preview first; high confidence runs full pipeline immediately (second request). */
+  /** Single tap: preview; high confidence → partial result + parallel research/alternatives. */
   const analyzeTap = useCallback(
     async (tapX, tapY, selectionBox = null) => {
       if (!image) {
@@ -139,23 +238,43 @@ export function useTapAnalysis() {
         const idRaw = preview.data.identification || {};
         const conf = typeof idRaw?.confidence === 'number' ? idRaw.confidence : 0;
 
-        if (conf >= CONFIRM_THRESHOLD) {
-          await runFullPipeline(tapX, tapY, selBox);
-          return;
-        }
-
         const crop =
           (typeof idRaw.crop_base64 === 'string' && idRaw.crop_base64) ||
           (typeof preview.data.crop_base64 === 'string' && preview.data.crop_base64) ||
           null;
-        setPendingConfirmation({
-          identification: crop ? { ...idRaw, crop_base64: crop } : { ...idRaw },
+
+        const db_preview = preview.data.db_preview ?? null;
+
+        if (conf < CONFIRM_THRESHOLD) {
+          setPendingConfirmation({
+            identification: crop ? { ...idRaw, crop_base64: crop } : { ...idRaw },
+            identification_tier: preview.data.identification_tier,
+            response_ms: preview.data.response_ms,
+            scene_inventory: Array.isArray(preview.data.scene_inventory)
+              ? preview.data.scene_inventory
+              : null,
+            db_preview,
+          });
+          return;
+        }
+
+        setResult({
+          identification: idRaw,
           identification_tier: preview.data.identification_tier,
+          db_preview,
+          scene_inventory: preview.data.scene_inventory,
+          investigation: null,
+          results: [],
+          registry_results: [],
+          local_results: [],
           response_ms: preview.data.response_ms,
-          scene_inventory: Array.isArray(preview.data.scene_inventory)
-            ? preview.data.scene_inventory
-            : null,
+          version: 'v1',
+          research_loading: Boolean(idRaw.brand || idRaw.corporate_parent),
+          searched_sources: [],
+          empty_sources: [],
+          sourcing_complete: false,
         });
+        runResearchPhase(idRaw);
       } catch (e) {
         setError(e instanceof Error ? e.message : 'Network error');
       } finally {
@@ -163,24 +282,34 @@ export function useTapAnalysis() {
         setActiveSelectionBox(null);
       }
     },
-    [image, fetchTap, runFullPipeline]
+    [image, fetchTap, runResearchPhase]
   );
 
-  const confirmPendingIdentification = useCallback(async () => {
-    if (!image || !tapPosition) return;
-    setLoading(true);
+  const confirmPendingIdentification = useCallback(() => {
+    if (!pendingConfirmation) return;
+    const pc = pendingConfirmation;
+    const id = pc.identification;
     setError(null);
-    const sel = selectionBoxRef.current;
-    if (sel) setActiveSelectionBox(sel);
-    try {
-      await runFullPipeline(tapPosition.x, tapPosition.y, sel);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : 'Network error');
-    } finally {
-      setLoading(false);
-      setActiveSelectionBox(null);
-    }
-  }, [image, tapPosition, runFullPipeline]);
+    setPendingConfirmation(null);
+
+    setResult({
+      identification: id,
+      identification_tier: pc.identification_tier,
+      db_preview: pc.db_preview ?? null,
+      scene_inventory: pc.scene_inventory,
+      investigation: null,
+      results: [],
+      registry_results: [],
+      local_results: [],
+      response_ms: pc.response_ms,
+      version: 'v1',
+      research_loading: Boolean(id.brand || id.corporate_parent),
+      searched_sources: [],
+      empty_sources: [],
+      sourcing_complete: false,
+    });
+    runResearchPhase(id);
+  }, [pendingConfirmation, runResearchPhase]);
 
   const cancelPendingConfirmation = useCallback(() => {
     setPendingConfirmation(null);
@@ -233,14 +362,18 @@ export function useTapAnalysis() {
       const res = await fetch(investigateUrl(), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ brand: q }),
+        body: JSON.stringify({ brand: q, session_id: getSessionId() }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
         setError(data.error || `Request failed (${res.status})`);
         return;
       }
-      setResult(data);
+      setResult({
+        ...data,
+        research_loading: false,
+        sourcing_complete: true,
+      });
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Network error');
     } finally {
