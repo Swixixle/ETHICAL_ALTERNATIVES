@@ -2,6 +2,7 @@ import { useState } from 'react';
 import SeverityMeter from './SeverityMeter';
 import Timeline from './Timeline';
 import CommunityImpact from './CommunityImpact';
+import CostAbsorption from './CostAbsorption.jsx';
 import {
   TaxIcon,
   LegalIcon,
@@ -267,8 +268,6 @@ export default function InvestigationCard({ investigation, identification }) {
             </div>
 
             <Timeline events={investigation.timeline} />
-
-            <CommunityImpact data={investigation.community_impact} />
           </div>
 
           <div className="investigation-card__sections">
@@ -336,6 +335,11 @@ export default function InvestigationCard({ investigation, identification }) {
                 </div>
               );
             })}
+          </div>
+
+          <div style={{ padding: '0 1rem' }}>
+            <CostAbsorption data={investigation.cost_absorption} />
+            <CommunityImpact data={investigation.community_impact} />
           </div>
 
           {Array.isArray(investigation.subsidiaries) && investigation.subsidiaries.length ? (

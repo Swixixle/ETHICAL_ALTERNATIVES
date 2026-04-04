@@ -220,6 +220,27 @@ function normalizeEvidenceGrade(raw) {
   return { level, source_types, note };
 }
 
+/** @param {unknown} raw */
+function normalizeCostAbsorption(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const row = (x) =>
+    x && typeof x === 'object'
+      ? {
+          group: typeof x.group === 'string' ? x.group : '',
+          how: typeof x.how === 'string' ? x.how : '',
+        }
+      : null;
+  const who_benefited = Array.isArray(raw.who_benefited)
+    ? raw.who_benefited.map(row).filter((x) => x && (x.group || x.how))
+    : [];
+  const who_paid = Array.isArray(raw.who_paid)
+    ? raw.who_paid.map(row).filter((x) => x && (x.group || x.how))
+    : [];
+  const the_gap = typeof raw.the_gap === 'string' && raw.the_gap.trim() ? raw.the_gap.trim() : null;
+  if (!who_benefited.length && !who_paid.length && !the_gap) return null;
+  return { who_benefited, who_paid, the_gap };
+}
+
 /** Newspaper-style headline; max 10 words; null if empty. */
 function normalizeGeneratedHeadline(raw) {
   if (raw == null) return null;
@@ -333,6 +354,7 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
     clean_card: Boolean(parsed?.clean_card),
     generated_headline: normalizeGeneratedHeadline(parsed?.generated_headline),
     community_impact: normalizeCommunityImpact(parsed?.community_impact),
+    cost_absorption: normalizeCostAbsorption(parsed?.cost_absorption),
   };
 
   if (!healthFlag) {
@@ -498,7 +520,12 @@ Return ONLY valid JSON (no markdown). Shape:
       "severity": "critical" | "significant" | "moderate" | "minor",
       "source_url": string
     }
-  ]
+  ],
+  "cost_absorption": {
+    "who_benefited": [{ "group": string, "how": string }],
+    "who_paid": [{ "group": string, "how": string }],
+    "the_gap": string
+  }
 }
 
 Also return a "timeline" array with all documented events in the corporate
@@ -567,6 +594,17 @@ Definitions:
 - limited: Single source, older data, or incomplete documentation.
 - alleged: Filed allegation or claim not yet resolved.
 Always be honest about the grade. A settlement without admission of guilt should be "strong" not "established." An OSHA citation that was contested should be "moderate."
+
+Cost absorption synthesis — include "cost_absorption" object:
+{
+  "who_benefited": [{ "group": string, "how": string }],
+  "who_paid": [{ "group": string, "how": string }],
+  "the_gap": string
+}
+who_benefited: executives, shareholders, franchise owners, investors, etc.
+who_paid: workers, local communities, taxpayers, suppliers, competitors, environment, future generations.
+the_gap: one sentence connecting the two — what transferred from one group to the other.
+Keep each item to 1–2 sentences. Be specific where the record supports it.
 
 Rules:
 - Neutral tone. Cite primary sources as URLs in the *_sources arrays.
