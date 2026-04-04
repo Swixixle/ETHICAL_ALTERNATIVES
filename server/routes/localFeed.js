@@ -4,12 +4,14 @@ import { fileURLToPath } from 'node:url';
 import { Router } from 'express';
 import { queryLocalFeedPlaces } from '../services/overpass.js';
 import { findLocalSellers } from '../services/sellerRegistry.js';
+import { nameMatchesChain, normalizeChainNeedles } from '../utils/chainMatch.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const chainExclusions = JSON.parse(
+const chainExclusionsRaw = JSON.parse(
   readFileSync(join(__dirname, '../data/chain-exclusions.json'), 'utf8')
 );
+const chainNeedles = normalizeChainNeedles(chainExclusionsRaw);
 
 const router = Router();
 
@@ -20,6 +22,52 @@ function pickSellerWebsite(s) {
   if (s.other_url) return String(s.other_url);
   return null;
 }
+
+function mapRegistryItem(s) {
+  return {
+    type: 'registry',
+    id: `registry-${s.id}`,
+    name: s.seller_name,
+    tagline: s.tagline || s.product_description || s.description || null,
+    distance_mi: s.distance_miles != null ? Number(s.distance_miles) : null,
+    website: pickSellerWebsite(s),
+    phone: null,
+    city: s.city,
+    state: s.state_province,
+    address: null,
+    verified: s.verified,
+    ethics_badges: [
+      s.is_worker_owned ? 'Worker-owned' : null,
+      s.is_bcorp ? 'B-Corp' : null,
+      s.is_fair_trade ? 'Fair trade' : null,
+    ].filter(Boolean),
+  };
+}
+
+function mapOsmRow(b) {
+  return {
+    type: 'osm',
+    id: `osm-${b.osm_id}`,
+    name: b.name,
+    tagline: b.tagline || null,
+    distance_mi: b.distance_miles != null ? Number(Number(b.distance_miles).toFixed(1)) : null,
+    website: b.website ? String(b.website) : null,
+    phone: b.phone ? String(b.phone) : null,
+    city: null,
+    address: b.address || null,
+    verified: false,
+    ethics_badges: [],
+  };
+}
+
+const sortFeed = (a, b) => {
+  const ra = a.type === 'registry' ? 0 : 1;
+  const rb = b.type === 'registry' ? 0 : 1;
+  if (ra !== rb) return ra - rb;
+  const da = a.distance_mi ?? 9999;
+  const db = b.distance_mi ?? 9999;
+  return da - db;
+};
 
 /** GET /api/local-feed?lat=&lng=&category=&radius= */
 router.get('/', async (req, res) => {
@@ -35,13 +83,13 @@ router.get('/', async (req, res) => {
   const radiusMeters = Math.round(radiusMiles * 1609.34);
 
   try {
-    const [osmResults, registryResults] = await Promise.all([
+    const [{ places: osmPlaces, chainPlaces: osmChainRaw }, registryResults] = await Promise.all([
       queryLocalFeedPlaces({
         lat,
         lng,
         radiusMeters,
         category,
-        excludeNameSubstrings: chainExclusions,
+        excludeNameSubstrings: chainExclusionsRaw,
       }),
       findLocalSellers({
         lat,
@@ -52,48 +100,29 @@ router.get('/', async (req, res) => {
       }),
     ]);
 
-    const registryItems = registryResults.map((s) => ({
-      type: 'registry',
-      id: `registry-${s.id}`,
-      name: s.seller_name,
-      tagline: s.tagline || s.product_description || s.description || null,
-      distance_mi: s.distance_miles != null ? Number(s.distance_miles) : null,
-      website: pickSellerWebsite(s),
-      phone: null,
-      city: s.city,
-      state: s.state_province,
-      verified: s.verified,
-      ethics_badges: [
-        s.is_worker_owned ? 'Worker-owned' : null,
-        s.is_bcorp ? 'B-Corp' : null,
-        s.is_fair_trade ? 'Fair trade' : null,
-      ].filter(Boolean),
-    }));
+    const registryFeed = [];
+    const registryChain = [];
+    for (const s of registryResults) {
+      const item = mapRegistryItem(s);
+      if (nameMatchesChain(item.name, chainNeedles)) {
+        registryChain.push(item);
+      } else {
+        registryFeed.push(item);
+      }
+    }
 
-    const osmItems = osmResults.map((b) => ({
-      type: 'osm',
-      id: `osm-${b.osm_id}`,
-      name: b.name,
-      tagline: b.tagline || null,
-      distance_mi: b.distance_miles != null ? Number(Number(b.distance_miles).toFixed(1)) : null,
-      website: b.website ? String(b.website) : null,
-      phone: b.phone ? String(b.phone) : null,
-      city: null,
-      address: b.address || null,
-      verified: false,
-      ethics_badges: [],
-    }));
+    const osmItems = osmPlaces.map((b) => mapOsmRow(b));
+    const osmChainItems = osmChainRaw.map((b) => mapOsmRow(b));
 
-    const feed = [...registryItems, ...osmItems].sort((a, b) => {
-      const ra = a.type === 'registry' ? 0 : 1;
-      const rb = b.type === 'registry' ? 0 : 1;
-      if (ra !== rb) return ra - rb;
-      const da = a.distance_mi ?? 9999;
-      const db = b.distance_mi ?? 9999;
-      return da - db;
+    const feed = [...registryFeed, ...osmItems].sort(sortFeed);
+    const chain_results = [...registryChain, ...osmChainItems].sort(sortFeed);
+
+    res.json({
+      feed,
+      chain_results,
+      count: feed.length,
+      chain_count: chain_results.length,
     });
-
-    res.json({ feed, count: feed.length });
   } catch (err) {
     console.error('Local feed error:', err?.message || err);
     res.status(500).json({ error: err?.message || 'local feed failed' });

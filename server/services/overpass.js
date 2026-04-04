@@ -1,3 +1,5 @@
+import { nameMatchesChain, normalizeChainNeedles } from '../utils/chainMatch.js';
+
 const OVERPASS_URL = 'https://overpass-api.de/api/interpreter';
 
 function haversineMiles(lat1, lon1, lat2, lon2) {
@@ -34,7 +36,7 @@ function buildAddress(tags) {
  * @param {number} opts.lng
  * @param {number} [opts.radiusMeters] default 25000
  * @param {string[]} opts.shopTypes
- * @param {string[]} [opts.excludeNameSubstrings] lowercase chain needles
+ * @param {string[]} [opts.excludeNameSubstrings] chain needles (matched case-insensitively)
  */
 export async function queryLocalBusinesses({
   lat,
@@ -70,15 +72,14 @@ out body;`;
     const data = await res.json();
     const elements = Array.isArray(data?.elements) ? data.elements : [];
 
-    const needles = excludeNameSubstrings.map((s) => String(s).toLowerCase());
+    const needles = normalizeChainNeedles(excludeNameSubstrings);
 
     const out = [];
     for (const el of elements) {
       if (el.type !== 'node' || !Number.isFinite(el.lat) || !Number.isFinite(el.lon)) continue;
       const tags = el.tags || {};
       const name = tags.name || tags['name:en'] || 'Local business';
-      const lower = name.toLowerCase();
-      if (needles.some((n) => n && lower.includes(n))) continue;
+      if (nameMatchesChain(name, needles)) continue;
 
       out.push({
         type: 'local',
@@ -152,12 +153,14 @@ const FEED_PLACE_LABELS = {
 
 /**
  * OSM shop=* and amenity=* nodes for the home local feed (home screen).
+ * Known chains go to `chainPlaces` (footnote), not `places`.
  * @param {object} opts
  * @param {number} opts.lat
  * @param {number} opts.lng
  * @param {number} [opts.radiusMeters]
  * @param {string} [opts.category] all|food|coffee|clothing|repair|art
  * @param {string[]} [opts.excludeNameSubstrings]
+ * @returns {Promise<{ places: object[]; chainPlaces: object[] }>}
  */
 export async function queryLocalFeedPlaces({
   lat,
@@ -167,7 +170,7 @@ export async function queryLocalFeedPlaces({
   excludeNameSubstrings = [],
 }) {
   if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
-    return [];
+    return { places: [], chainPlaces: [] };
   }
 
   const cat = typeof category === 'string' ? category.trim().toLowerCase() : 'all';
@@ -252,7 +255,7 @@ export async function queryLocalFeedPlaces({
   if (amenityPat) {
     lines.push(`  node["amenity"~"^(${amenityPat})$",i](around:${radiusMeters},${lat},${lng});`);
   }
-  if (!lines.length) return [];
+  if (!lines.length) return { places: [], chainPlaces: [] };
 
   const query = `[out:json][timeout:25];
 (
@@ -269,21 +272,20 @@ out body;`;
 
     if (!res.ok) {
       console.error('Overpass feed HTTP', res.status);
-      return [];
+      return { places: [], chainPlaces: [] };
     }
 
     const data = await res.json();
     const elements = Array.isArray(data?.elements) ? data.elements : [];
-    const needles = excludeNameSubstrings.map((s) => String(s).toLowerCase());
+    const needles = normalizeChainNeedles(excludeNameSubstrings);
 
     const out = [];
+    const chainOut = [];
     const seen = new Set();
     for (const el of elements) {
       if (el.type !== 'node' || !Number.isFinite(el.lat) || !Number.isFinite(el.lon)) continue;
       const tags = el.tags || {};
       const name = tags.name || tags['name:en'] || 'Independent business';
-      const lower = name.toLowerCase();
-      if (needles.some((n) => n && lower.includes(n))) continue;
       const id = String(el.id);
       if (seen.has(id)) continue;
       seen.add(id);
@@ -296,7 +298,7 @@ out body;`;
           ? tags.description.trim().slice(0, 140)
           : FEED_PLACE_LABELS[labelKey] || 'Independent business';
 
-      out.push({
+      const row = {
         type: 'local',
         osm_id: id,
         name,
@@ -308,13 +310,20 @@ out body;`;
         website: tags.website || tags['contact:website'] || null,
         tagline,
         provenance_label: 'Local Unvetted',
-      });
+      };
+
+      if (nameMatchesChain(name, needles)) {
+        chainOut.push(row);
+      } else {
+        out.push(row);
+      }
     }
 
     out.sort((a, b) => a.distance_miles - b.distance_miles);
-    return out.slice(0, 80);
+    chainOut.sort((a, b) => a.distance_miles - b.distance_miles);
+    return { places: out.slice(0, 80), chainPlaces: chainOut.slice(0, 40) };
   } catch (e) {
     console.error('Overpass feed error', e);
-    return [];
+    return { places: [], chainPlaces: [] };
   }
 }

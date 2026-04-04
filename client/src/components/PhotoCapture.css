@@ -101,7 +101,7 @@
   border-color: #f0b030;
 }
 
-.photo-capture__hidden-input {
+.photo-capture__visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -109,7 +109,71 @@
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
   border: 0;
+}
+
+.photo-capture__primary-file-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 420px;
+  padding: 1.1rem 1.25rem;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #0f1520;
+  cursor: pointer;
+  text-align: center;
+  border: 2px solid var(--accent);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.photo-capture__primary-file-label:hover {
+  background: #f0b030;
+  border-color: #f0b030;
+}
+
+.photo-capture__primary-file-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.photo-capture__primary-file-sub {
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  opacity: 0.92;
+}
+
+.photo-capture__dropzone--btn {
+  font: inherit;
+  max-width: 420px;
+  cursor: pointer;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.photo-capture__dropzone-text {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+
+.photo-capture__btn--secondary {
+  background: transparent;
+  color: var(--cream);
+  border-color: var(--border);
+}
+
+.photo-capture__btn--secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: transparent;
 }
 
 .photo-capture__camera {

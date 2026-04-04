@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import './PhotoCapture.css';
 
 const MAX_DIMENSION = 800;
@@ -41,12 +41,29 @@ function loadImageFromFile(file) {
   });
 }
 
+/** Live stream on iOS sometimes resolves but never paints frames — detect zero dimensions. */
+async function waitForVideoFrame(video, maxMs = 1400) {
+  const start = typeof performance !== 'undefined' ? performance.now() : Date.now();
+  while (true) {
+    const elapsed =
+      (typeof performance !== 'undefined' ? performance.now() : Date.now()) - start;
+    if (elapsed > maxMs) {
+      return video.videoWidth > 2 && video.videoHeight > 2;
+    }
+    if (video.videoWidth > 2 && video.videoHeight > 2) {
+      return true;
+    }
+    await new Promise((r) => setTimeout(r, 80));
+  }
+}
+
 /**
  * @param {object} props
  * @param {(base64: string) => void} props.onImageSelected — JPEG base64 only (no data URL prefix)
  * @param {boolean} [props.loading] — parent-driven: analyzing / waiting on API
  */
 export default function PhotoCapture({ onImageSelected, loading = false }) {
+  const fileInputId = useId();
   const fileInputRef = useRef(null);
   const videoRef = useRef(null);
   const streamRef = useRef(null);
@@ -142,13 +159,26 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
       });
       streamRef.current = stream;
       const video = videoRef.current;
-      if (video) {
-        video.srcObject = stream;
-        await video.play();
+      if (!video) {
+        stopCamera();
+        setError('Camera could not start. Use “Take or choose photo”.');
+        return;
+      }
+      video.srcObject = stream;
+      await video.play().catch(() => {});
+      const ok = await waitForVideoFrame(video, 1400);
+      if (!ok) {
+        stopCamera();
+        setMode('idle');
+        setError(
+          'Live camera did not show a picture on this device. Use “Take or choose photo” — it works on all phones.'
+        );
+        return;
       }
       setMode('camera');
     } catch {
-      setError('Camera unavailable — try upload instead');
+      setMode('idle');
+      setError('Camera permission denied or unavailable. Use “Take or choose photo” below.');
     }
   };
 
@@ -230,32 +260,41 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
         onDrop={onDrop}
       >
         <input
+          id={fileInputId}
           ref={fileInputRef}
           type="file"
           accept="image/*"
           capture="environment"
-          className="photo-capture__hidden-input"
-          aria-label="Upload or capture photo"
+          className="photo-capture__visually-hidden"
+          aria-label="Take or choose photo from camera or library"
           onChange={onFileInputChange}
         />
+
+        <label htmlFor={fileInputId} className="photo-capture__primary-file-label">
+          <span className="photo-capture__primary-file-title">Take or choose photo</span>
+          <span className="photo-capture__primary-file-sub">
+            Opens your camera or photo library — most reliable on phones
+          </span>
+        </label>
+
         <button
           type="button"
-          className={`photo-capture__dropzone ${dragActive ? 'photo-capture__dropzone--active' : ''}`}
+          className={`photo-capture__dropzone photo-capture__dropzone--btn ${dragActive ? 'photo-capture__dropzone--active' : ''}`}
           onClick={pickFile}
         >
-          <span className="photo-capture__hint">Drop an image here or tap to choose</span>
-          <span>
-            <kbd>Mobile</kbd> opens camera when supported
-          </span>
+          <span className="photo-capture__dropzone-text">Or drop an image here · tap to browse</span>
         </button>
-        <p className="photo-capture__hint">Tap any object in the photo</p>
+
+        <p className="photo-capture__hint">Tap any object in the photo after you capture</p>
+
         <div className="photo-capture__actions">
           {canLivePreview ? (
-            <button type="button" className="photo-capture__btn photo-capture__btn--primary" onClick={startCamera}>
+            <button type="button" className="photo-capture__btn photo-capture__btn--secondary" onClick={startCamera}>
               Use live camera
             </button>
           ) : null}
         </div>
+
         {error ? <p className="photo-capture__error">{error}</p> : null}
         {showIdlePreparing ? <div className="photo-capture__idle-skeleton" aria-busy="true" /> : null}
       </div>

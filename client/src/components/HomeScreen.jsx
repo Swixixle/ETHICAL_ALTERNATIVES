@@ -219,7 +219,7 @@ function CityCard({ identity, city, state }) {
   );
 }
 
-function FeedCard({ business }) {
+function FeedCard({ business, chainFootnote = false }) {
   const website = business.website;
   const hasBadges = business.ethics_badges?.length > 0;
   const visitHref =
@@ -227,24 +227,47 @@ function FeedCard({ business }) {
 
   const mapQuery = [business.name, business.address, business.city].filter(Boolean).join(' ');
 
-  return (
-    <div
-      style={{
+  const cardStyle = chainFootnote
+    ? {
+        background: '#121820',
+        border: '1px solid #2a3f52',
+        borderRadius: 4,
+        padding: '14px 16px',
+        margin: '0 16px 10px',
+        opacity: 0.5,
+      }
+    : {
         background: '#162030',
         border: '1px solid #2a3f52',
         borderRadius: 4,
         padding: '14px 16px',
         margin: '0 16px 10px',
-      }}
-    >
+      };
+
+  return (
+    <div style={cardStyle}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <div style={{ flex: 1, minWidth: 0 }}>
+          {chainFootnote ? (
+            <div
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 8,
+                letterSpacing: 2,
+                color: '#ff6b6b',
+                textTransform: 'uppercase',
+                marginBottom: 6,
+              }}
+            >
+              Chain
+            </div>
+          ) : null}
           <div
             style={{
               fontFamily: "'Bebas Neue', sans-serif",
               fontSize: 20,
               letterSpacing: 1.5,
-              color: '#e8dfc8',
+              color: chainFootnote ? '#6b7a88' : '#e8dfc8',
               marginBottom: 2,
             }}
           >
@@ -256,7 +279,7 @@ function FeedCard({ business }) {
               style={{
                 fontFamily: "'Crimson Pro', serif",
                 fontSize: 14,
-                color: '#8fa8bc',
+                color: chainFootnote ? '#4a6478' : '#8fa8bc',
                 lineHeight: 1.4,
                 marginBottom: 6,
               }}
@@ -272,7 +295,7 @@ function FeedCard({ business }) {
                 fontSize: 9,
                 letterSpacing: 1.5,
                 textTransform: 'uppercase',
-                color: '#e8a020',
+                color: chainFootnote ? '#4a6478' : '#e8a020',
                 marginBottom: hasBadges ? 8 : 0,
               }}
             >
@@ -383,6 +406,7 @@ export default function HomeScreen({ onStartSnap }) {
   const [location, setLocation] = useState(() => readCachedLocation());
   const [identity, setIdentity] = useState(null);
   const [feed, setFeed] = useState([]);
+  const [chainResults, setChainResults] = useState([]);
   const [category, setCategory] = useState('all');
   const [loadingFeed, setLoadingFeed] = useState(false);
 
@@ -397,9 +421,12 @@ export default function HomeScreen({ onStartSnap }) {
       });
       const res = await fetch(`${apiPrefix()}/api/local-feed?${p}`);
       const data = await res.json();
-      return Array.isArray(data.feed) ? data.feed : [];
+      return {
+        feed: Array.isArray(data.feed) ? data.feed : [],
+        chain_results: Array.isArray(data.chain_results) ? data.chain_results : [],
+      };
     } catch {
-      return [];
+      return { feed: [], chain_results: [] };
     } finally {
       setLoadingFeed(false);
     }
@@ -414,13 +441,14 @@ export default function HomeScreen({ onStartSnap }) {
     let cancelled = false;
     (async () => {
       try {
-        const [identityData, feedData] = await Promise.all([
+        const [identityData, pack] = await Promise.all([
           getCityIdentity(location.city, location.state, location.country),
           fetchFeed(location.lat, location.lng, 'all'),
         ]);
         if (cancelled) return;
         setIdentity(identityData);
-        setFeed(feedData);
+        setFeed(pack.feed);
+        setChainResults(pack.chain_results);
         setCategory('all');
         setPhase('ready');
       } catch {
@@ -451,8 +479,9 @@ export default function HomeScreen({ onStartSnap }) {
   async function handleCategoryChange(cat) {
     setCategory(cat);
     if (!location?.lat || !location?.lng) return;
-    const rows = await fetchFeed(location.lat, location.lng, cat);
-    setFeed(rows);
+    const pack = await fetchFeed(location.lat, location.lng, cat);
+    setFeed(pack.feed);
+    setChainResults(pack.chain_results);
   }
 
   if (phase === 'prompt') {
@@ -650,7 +679,9 @@ export default function HomeScreen({ onStartSnap }) {
           >
             Loading local independents...
           </div>
-        ) : feed.length === 0 ? (
+        ) : null}
+
+        {!loadingFeed && feed.length === 0 && chainResults.length === 0 ? (
           <div
             style={{
               padding: '32px 24px',
@@ -669,7 +700,9 @@ export default function HomeScreen({ onStartSnap }) {
               <ListYourShop />
             </div>
           </div>
-        ) : (
+        ) : null}
+
+        {!loadingFeed && feed.length > 0 ? (
           <>
             <div
               style={{
@@ -687,7 +720,44 @@ export default function HomeScreen({ onStartSnap }) {
               <FeedCard key={business.id} business={business} />
             ))}
           </>
-        )}
+        ) : null}
+
+        {!loadingFeed && feed.length === 0 && chainResults.length > 0 ? (
+          <p
+            style={{
+              fontFamily: "'Crimson Pro', serif",
+              fontSize: 15,
+              color: '#4a6478',
+              lineHeight: 1.65,
+              textAlign: 'center',
+              padding: '8px 24px 20px',
+              margin: 0,
+            }}
+          >
+            No independent listings in this filter. Below are nearby chain locations for reference
+            only — not recommendations.
+          </p>
+        ) : null}
+
+        {!loadingFeed && chainResults.length > 0 ? (
+          <div style={{ marginTop: 28, paddingTop: 20, borderTop: '1px solid #1e3044' }}>
+            <div
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 8,
+                letterSpacing: 2,
+                textTransform: 'uppercase',
+                color: '#3d4f5c',
+                padding: '0 24px 12px',
+              }}
+            >
+              Chain locations (reference only)
+            </div>
+            {chainResults.map((business) => (
+              <FeedCard key={`chain-${business.id}`} business={business} chainFootnote />
+            ))}
+          </div>
+        ) : null}
       </div>
     </div>
   );
