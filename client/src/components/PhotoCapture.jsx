@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import EyeIcon from './EyeIcon.jsx';
 import './PhotoCapture.css';
 
 const MAX_DIMENSION = 1200;
@@ -265,9 +264,8 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
     return (
       <div className="photo-capture">
         <div className="photo-capture__camera">
-          <div className="photo-capture__eye-bar" aria-hidden>
-            <EyeIcon open size={88} />
-            <p className="photo-capture__hint" style={{ margin: '4px 0 0', fontSize: '0.72rem' }}>
+          <div className="photo-capture__status-bar">
+            <p className="photo-capture__hint" style={{ margin: 0, fontSize: '0.72rem' }}>
               Camera active
             </p>
           </div>
@@ -293,9 +291,6 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
             <button type="button" className="photo-capture__btn" onClick={changePhoto}>
               New photo
             </button>
-          </div>
-          <div className="photo-capture__eye-preview" aria-hidden>
-            <EyeIcon open size={96} />
           </div>
           <div className="photo-capture__image-shell">
             <img className="photo-capture__img" src={previewDataUrl} alt="Selected for analysis" />
@@ -344,7 +339,6 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
             boxSizing: 'border-box',
           }}
         >
-          <EyeIcon open={false} size={80} />
           <div
             style={{
               fontFamily: "'Space Mono', monospace",
@@ -352,7 +346,7 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
               letterSpacing: 2,
               textTransform: 'uppercase',
               color: '#f0a820',
-              marginTop: 16,
+              marginTop: 0,
               textAlign: 'center',
             }}
           >

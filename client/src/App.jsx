@@ -3,7 +3,6 @@ import PhotoCapture from './components/PhotoCapture.jsx';
 import TapOverlay from './components/TapOverlay.jsx';
 import ConfirmTap from './components/ConfirmTap.jsx';
 import RegionSelectOverlay from './components/RegionSelectOverlay.jsx';
-import EyeGridLoader from './components/EyeGridLoader.jsx';
 import ErrorState from './components/ErrorState.jsx';
 import InvestigationCard from './components/InvestigationCard.jsx';
 import ProofBlock from './components/ProofBlock.jsx';
@@ -296,8 +295,8 @@ export default function App() {
 
       <main className="app__main">
         {mode === 'deep' && loading ? (
-          <div className="app__panel app__panel--eye-loader">
-            <EyeGridLoader message="Researching..." />
+          <div className="app__panel app__loader-panel" role="status" aria-busy="true">
+            <p className="app__text-loader">Researching...</p>
           </div>
         ) : null}
 
@@ -348,8 +347,8 @@ export default function App() {
               />
             </div>
             {loading ? (
-              <div className="app__loader-host">
-                <EyeGridLoader message="Analyzing..." />
+              <div className="app__loader-panel" role="status" aria-busy="true">
+                <p className="app__text-loader">Analyzing...</p>
               </div>
             ) : null}
             {error ? (
@@ -376,8 +375,8 @@ export default function App() {
               onSelectAlternativeBrand={selectAlternativeBrand}
             />
             {loading ? (
-              <div className="app__loader-host">
-                <EyeGridLoader message="Analyzing..." />
+              <div className="app__loader-panel" role="status" aria-busy="true">
+                <p className="app__text-loader">Analyzing...</p>
               </div>
             ) : null}
             {error ? (

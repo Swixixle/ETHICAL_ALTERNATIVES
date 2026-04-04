@@ -164,7 +164,7 @@
   flex-direction: column;
 }
 
-.photo-capture__eye-bar {
+.photo-capture__status-bar {
   flex-shrink: 0;
   padding: 0.65rem 1rem 0.35rem;
   background: var(--bg);
@@ -172,15 +172,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.photo-capture__eye-preview {
-  position: absolute;
-  top: 3.35rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  pointer-events: none;
 }
 
 .photo-capture__video {
