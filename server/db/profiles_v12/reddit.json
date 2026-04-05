@@ -1,0 +1,193 @@
+{
+  "brand_name": "Reddit",
+  "brand_slug": "reddit",
+  "parent_company": "Reddit Inc.",
+  "ultimate_parent": "Advance Publications (majority owner)",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "REDDIT CHARGED AI COMPANIES $60 MILLION TO ACCESS USER CONTENT, THEN WENT PUBLIC — THE USERS WHO CREATED THAT CONTENT GOT NOTHING",
+  "executive_summary": "Reddit is a social news aggregation and discussion platform with 97+ million daily active users. In 2023 Reddit dramatically raised API access prices — from effectively free to up to $12,000 per 50 million API requests — specifically targeting AI companies training on Reddit data and third-party apps that enhanced Reddit's experience. The move triggered the largest user protest in Reddit's history: over 8,000 subreddits went dark in a coordinated blackout. Reddit CEO Steve Huffman dismissed moderators who protested, compared himself to Elon Musk, and called the protest ineffective. Reddit subsequently signed a $60 million annual data licensing deal with Google AI and went public on the NYSE in March 2024 at a $6.4 billion valuation. The users who created the content that made that data worth $60 million per year received nothing.",
+  "verdict_tags": [
+    "api_pricing_user_revolt",
+    "8000_subreddit_blackout",
+    "60m_google_ai_deal",
+    "ipo_6_4b_valuation",
+    "moderator_dismissal",
+    "user_content_monetized_without_compensation"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": false,
+    "tax": false,
+    "health": false,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Reddit Inc. went public in March 2024, creating public disclosure obligations. The company operated at a loss for most of its history. Post-IPO the company's tax structure is standard Delaware corporation. The $60M Google data licensing deal represents significant new revenue that will appear in public filings.",
+    "flags": [
+      "delaware_corporation",
+      "historical_operating_losses",
+      "60m_data_licensing_revenue"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
+  },
+  "legal": {
+    "summary": "Reddit faces ongoing litigation over its content moderation decisions and the liability of platform operators for user-generated content. The API pricing change triggered legal scrutiny regarding whether Reddit's terms of service allowed retroactive price changes on developers who had built applications in good faith under previous terms. Apollo app developer Christian Selig documented alleged Reddit executive misrepresentations about the pricing negotiation. Reddit denied the allegations. Apollo shut down as a result of the pricing change.",
+    "flags": [
+      "api_terms_retroactive_change",
+      "apollo_executive_misrepresentation_alleged",
+      "section_230_ongoing_litigation"
+    ],
+    "sources": []
+  },
+  "labor": {
+    "summary": "Reddit's platform runs substantially on volunteer moderator labor — users who spend significant hours managing communities, developing rules, removing harmful content, and maintaining the infrastructure of discussion. These moderators receive no compensation. When they organized the 2023 blackout protest, Reddit threatened to remove moderators from communities they had built and maintained for years. Reddit CEO Steve Huffman told NPR he was 'not going to let the inmates run the asylum' when referring to protesting moderators.",
+    "flags": [
+      "volunteer_moderator_uncompensated_labor",
+      "moderator_removal_threats",
+      "huffman_inmates_asylum_comment"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Standard data center and CDN energy footprint for a platform of Reddit's scale. No specific documented environmental violations.",
+    "flags": [
+      "data_center_energy_footprint"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Reddit has been a significant force in political organizing — from grassroots movements to documented coordinated manipulation campaigns. The platform's anonymous and pseudonymous culture has made it a vector for political astroturfing. Reddit banned several political manipulation subreddits in 2020. The platform's relationship with free speech is central to its culture — creating tension between moderation and harmful content.",
+    "flags": [
+      "political_organizing_vector",
+      "astroturfing_documented",
+      "free_speech_moderation_tension"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Steve Huffman co-founded Reddit in 2005 and returned as CEO in 2015 after Ellen Pao's tumultuous tenure. During the 2023 API crisis, Huffman compared himself to Elon Musk implementing necessary unpopular changes, called protesting moderators 'inmates,' and dismissed the blackout as ineffective. He received substantial equity as part of the 2024 IPO. Reddit co-founder Alexis Ohanian departed and has become a prominent venture capitalist. Original Reddit co-founder Aaron Swartz faced federal prosecution and died by suicide in 2013 before trial.",
+    "flags": [
+      "huffman_musk_comparison_self",
+      "huffman_inmates_comment",
+      "swartz_prosecution_death",
+      "ipo_equity_huffman"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Reddit's $60 million annual data licensing deal with Google directly benefits Google's AI training operations. The content Reddit sold was created by millions of unpaid users over 18 years. Reddit also has data licensing arrangements with other AI companies. The platform's content moderation relies on volunteer moderators who perform what would otherwise be expensive paid labor. Apollo, the most popular third-party Reddit app, shut down after the API price changes — eliminating an accessible interface built by a solo developer.",
+    "flags": [
+      "google_ai_60m_deal_user_content",
+      "ai_data_licensing_multiple_companies",
+      "apollo_shutdown_solo_developer",
+      "volunteer_labor_platform_value"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Apollo developer Christian Selig released call recordings he alleged showed Reddit executive Vijay De Silva misrepresented the pricing negotiation — claiming publicly that Apollo had not been given adequate notice or reasonable terms when Selig alleged the opposite was true. Reddit denied the characterization. Moderators alleged Reddit manipulated subreddit statistics to make the blackout appear less impactful than it was. Users alleged Reddit's API changes were specifically designed to prevent third-party clients from offering a better experience than Reddit's own app, which has been widely criticized as inferior.",
+    "flags": [
+      "de_silva_misrepresentation_alleged_recording",
+      "blackout_statistics_manipulation_alleged",
+      "anti_competitive_app_suppression_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Reddit communities have been documented vectors for eating disorder content, self-harm communities, and radicalization pathways. The platform banned several pro-eating-disorder and self-harm subreddits after years of hosting them. Reddit's anonymous culture creates both mental health support communities (many of which are genuinely valuable) and harmful content communities. The platform's volunteer moderators are the primary line of defense against harmful content — and they are uncompensated.",
+    "flags": [
+      "eating_disorder_communities_hosted_years",
+      "self_harm_communities_documented",
+      "radicalization_pathways",
+      "volunteer_moderation_mental_health_content"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Lemmy — open source, federated Reddit alternative; decentralized, no corporate ownership",
+      "Kbin — federated alternative, ActivityPub compatible",
+      "Old Reddit (old.reddit.com) — the classic interface still works and is less data-collection optimized"
+    ],
+    "healthier": [
+      "Lemmy or Kbin — decentralized alternatives without engagement-optimization algorithms",
+      "Specific forums and Discord communities for your interests — without the Reddit platform intermediary",
+      "RSS feeds for topics you follow on Reddit — the content without the algorithmic curation"
+    ],
+    "diy": [
+      "Reddit sold your posts and comments to Google for $60 million per year — you created that content, you received nothing",
+      "The volunteer moderators who built Reddit's communities were threatened with removal when they protested; they receive no compensation",
+      "Apollo — the best Reddit app — shut down because Reddit's API pricing made it nonviable; Reddit's own app is widely considered inferior"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2005,
+      "event": "Reddit founded by Steve Huffman and Alexis Ohanian",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2013,
+      "event": "Aaron Swartz, Reddit co-founder, dies by suicide during federal prosecution",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2015,
+      "event": "Ellen Pao resigns as CEO amid user revolt; Steve Huffman returns",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "API pricing raised dramatically; 8,000+ subreddits blackout in protest; Apollo and other third-party apps shut down; Huffman dismisses moderators as 'inmates'",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "$60 million annual Google AI data licensing deal announced; Reddit IPO at $6.4B valuation on NYSE in March",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "IPO prospectus reveals Reddit has relied on volunteer moderator labor for platform operation throughout its history",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Reddit Inc. and Steve Huffman",
+        "how": "$60M annual Google data deal; $6.4B IPO valuation; equity from going public"
+      },
+      {
+        "group": "Google",
+        "how": "$60M/year for training AI on 18 years of human-generated content"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Reddit users who created the content",
+        "how": "18 years of posts and comments sold to Google for $60M/year; users received nothing"
+      },
+      {
+        "group": "Volunteer moderators",
+        "how": "Uncompensated labor managing communities; threatened with removal when they protested"
+      },
+      {
+        "group": "Apollo developer and users",
+        "how": "Best third-party Reddit app shut down after API pricing change made it nonviable"
+      }
+    ],
+    "the_gap": "Reddit users created 18 years of content. Reddit sold access to that content to Google for $60 million per year. The users received nothing. The volunteer moderators who kept the communities functional were called 'inmates' when they protested. Reddit went public at a $6.4 billion valuation."
+  }
+}

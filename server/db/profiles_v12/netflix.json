@@ -1,0 +1,225 @@
+{
+  "brand_name": "Netflix",
+  "brand_slug": "netflix",
+  "parent_company": "Netflix Inc.",
+  "ultimate_parent": "Netflix Inc.",
+  "subsidiaries": [
+    "Netflix Studios",
+    "Netflix Animation",
+    "Netflix Games"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "NETFLIX TWEETED 'LOVE IS SHARING A PASSWORD' IN 2017 AND BANNED PASSWORD SHARING IN 2023 TO EXTRACT MORE REVENUE FROM THE SAME USERS",
+  "executive_summary": "Netflix is the world's largest subscription video streaming service with 282+ million paid subscribers and annual revenues exceeding $36 billion. The company built its dominance partly by tolerating password sharing among households — explicitly endorsing it publicly in 2017 — then reversed course in 2023, banning the practice and forcing an estimated 100 million shared-account users to pay separately or be cut off. The crackdown generated significant short-term subscriber gains while extracting substantially more money from the same user base. Netflix has simultaneously raised prices multiple times, added an advertising tier it previously said it would never introduce, and canceled popular shows mid-arc to cut costs. The company's labor practices were central to the 2023 Hollywood writers' and actors' strikes.",
+  "verdict_tags": [
+    "password_sharing_reversal",
+    "price_hikes_multiple",
+    "ads_tier_after_promising_none",
+    "wga_sag_strike_cause",
+    "show_cancellation_pattern",
+    "data_collection_viewing"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": false,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Netflix uses Irish and Dutch holding structures to minimize U.S. tax obligations on international streaming revenue. The company's international content licensing arrangements route profits through lower-tax jurisdictions. Netflix has faced criticism from European governments for extracting subscription revenue while paying minimal local tax. The company's effective global tax rate has been well below U.S. statutory rates.",
+    "flags": [
+      "irish_dutch_holding_structures",
+      "international_licensing_tax_routing",
+      "european_tax_criticism"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
+  },
+  "legal": {
+    "summary": "Netflix has faced multiple class action lawsuits related to its password sharing crackdown — plaintiffs alleging deceptive practices given the company's years of public statements endorsing sharing. The 2023 WGA writers' strike and SAG-AFTRA actors' strike were directly caused by streaming platforms including Netflix refusing to share streaming viewership data with guilds, making it impossible to calculate residual payments. Netflix settled with guilds after the strike ended. The company has also faced lawsuits over sudden show cancellations that leave contracted creators without promised compensation.",
+    "flags": [
+      "password_sharing_deception_lawsuits",
+      "wga_sagaftra_strike_cause",
+      "residual_payment_dispute",
+      "show_cancellation_contract_disputes"
+    ],
+    "sources": [
+      "https://www.cnbc.com/2023/06/09/netflix-subscriptions-rise-password-sharing-crackdown.html"
+    ]
+  },
+  "labor": {
+    "summary": "Netflix was a central target of the 2023 WGA writers' strike (148 days) and SAG-AFTRA actors' strike (118 days) — the longest simultaneous strikes in Hollywood history. The core dispute: streaming platforms including Netflix refused to share viewership data that would allow writers and actors to calculate residual payments on streaming content, effectively gutting the residual system that sustained middle-class entertainment industry workers. Netflix also uses a 'galaxy-brained' content strategy that cancels shows after 1-2 seasons regardless of quality to avoid paying back-end residuals to writers and directors who earn them based on show longevity.",
+    "flags": [
+      "wga_148_day_strike",
+      "sagaftra_118_day_strike",
+      "viewership_data_withheld",
+      "residual_system_gutted",
+      "cancellation_pattern_avoids_residuals"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Netflix's global streaming infrastructure — servers, content delivery networks, and data centers — represents a significant and growing energy footprint. Video streaming is among the most energy-intensive digital activities. Netflix has made renewable energy commitments but its absolute energy consumption continues to grow with subscriber count.",
+    "flags": [
+      "global_streaming_energy_footprint",
+      "video_streaming_high_energy"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Netflix has generally avoided explicit political positioning but has faced criticism from both directions — conservative complaints about progressive content and progressive complaints about platforming content from figures like Dave Chappelle whose specials generated substantial controversy over transgender jokes. The company's relationship with governments globally is politically complex as it navigates content censorship requirements in authoritarian markets.",
+    "flags": [
+      "chappelle_content_controversy",
+      "authoritarian_market_censorship_navigation"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Co-CEOs Greg Peters and Ted Sarandos received $34 million and $50 million respectively in total compensation in 2023. Co-founder Reed Hastings stepped back to Executive Chairman. Executive compensation is tied primarily to stock performance rather than content quality metrics. The company's strategy of canceling shows before they generate residuals is directly profitable for executives whose compensation is equity-linked.",
+    "flags": [
+      "sarandos_50m_compensation",
+      "peters_34m_compensation",
+      "equity_compensation_cancellation_incentive"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
+  },
+  "connections": {
+    "summary": "Netflix shares major institutional investors with Disney, Warner Bros. Discovery, Apple, and Amazon — creating aligned incentives across the streaming industry against labor organizing and for data opacity. The streaming industry's collective refusal to share viewership data with guilds was coordinated through industry association lobbying. Netflix's content deals with major studios and production companies create complex relationships across the entertainment supply chain.",
+    "flags": [
+      "streaming_industry_labor_coordination",
+      "guild_data_opacity_industry_pattern"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Writers' guild representatives alleged during the 2023 strike that Netflix and other streaming platforms deliberately structured contracts to minimize residual exposure — specifically by canceling shows before the longevity thresholds that trigger meaningful residual payments. Former Netflix content executives have alleged that the company's 'data-driven' content decisions masked an underlying strategy of minimizing long-term financial obligations to creative workers. Privacy researchers have alleged that Netflix's viewing data collection — which the company refuses to share with guilds — is used for remarkably detailed behavioral profiling of subscribers.",
+    "flags": [
+      "cancellation_residual_avoidance_alleged",
+      "data_collection_behavioral_profiling_alleged",
+      "contract_structuring_minimize_residuals_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Netflix's algorithmic content recommendation system is designed to maximize viewing time — the same engagement-optimization approach documented to increase sedentary behavior and disrupt sleep patterns in heavy users. Netflix's 'post-play' feature (automatically playing the next episode) and its early adoption of full-season drops rather than weekly releases are design choices that facilitate binge-watching patterns associated with sleep deprivation and reduced physical activity.",
+    "flags": [
+      "engagement_maximization_design",
+      "autoplay_binge_facilitation",
+      "sleep_disruption_documented"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Library card — free access to physical DVDs, streaming services (Kanopy, Hoopla), and e-books",
+      "Kanopy — free through most public libraries, extensive film library including documentaries and classics",
+      "Tubi — free ad-supported streaming with substantial catalog"
+    ],
+    "healthier": [
+      "Public library systems — same entertainment value, civic institution supported by tax dollars, no algorithmic manipulation",
+      "Criterion Channel — curated film streaming without engagement-maximization design",
+      "Local independent cinema — supports local business, community experience"
+    ],
+    "diy": [
+      "Netflix's 2017 tweet saying 'Love is sharing a password' is still findable — they meant it until they didn't",
+      "Most libraries offer Kanopy free — stream the Criterion Collection, documentaries, and foreign films at no cost",
+      "If you're paying for Netflix, Hulu, Max, Disney+, and Apple TV+ simultaneously — that's $80+/month; rotate subscriptions one at a time instead"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1997,
+      "event": "Netflix founded as DVD mail rental service",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2013,
+      "event": "House of Cards launches — Netflix becomes original content producer",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "Netflix tweets 'Love is sharing a password' — explicitly endorsing account sharing",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Netflix announces it will crack down on password sharing; also announces advertising tier it previously said it would never introduce",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "May: Password sharing ban enforced in US — 100 million affected households forced to pay or leave",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "May-November: WGA writers' strike (148 days) — Netflix central target for viewership data opacity",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "July-November: SAG-AFTRA actors' strike (118 days) — longest in Hollywood history",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "Multiple price hikes; premium plan reaches $22.99/month",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "282.7 million subscribers; executives receive $50M+ in combined compensation",
+      "severity": "moderate",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Netflix's dominance of streaming and its content cancellation pattern has disrupted the Hollywood middle class — writers, directors, and actors who previously sustained careers through network television residuals have seen that income stream gutted by the streaming model's data opacity. Independent video stores were eliminated by Netflix's DVD model; local cinema attendance has been affected by streaming convenience.",
+    "price_illusion": "Netflix's price has risen from $7.99/month (2011) to $22.99/month (2024) for the premium plan — a 188% increase. The 2017 'Love is sharing a password' endorsement was a growth strategy that has been reversed as a revenue extraction strategy. The product did not change; the company's relationship to its users changed when growth slowed.",
+    "tax_math": "Netflix routes significant international revenue through Irish and Dutch subsidiaries. The company's global subscriber base generates billions in revenue that is taxed at rates below the statutory rate in the markets where subscribers live.",
+    "wealth_velocity": "Netflix's subscription revenue — $36 billion annually — flows to shareholders and to executive compensation. The writers and actors whose creative work generates that value received a fraction of it, fought for two years through strikes, and won incremental improvements. The co-CEO who oversaw the policy that caused the strike received $50 million in the year it occurred."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Netflix shareholders and executives",
+        "how": "$36B revenue; password crackdown added millions of new paid subscribers and higher ARPU"
+      },
+      {
+        "group": "Wall Street analysts",
+        "how": "Subscriber growth metrics validated by password crackdown; stock performance improved"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Hollywood writers and actors",
+        "how": "148 and 118 day strikes over residual payments gutted by streaming data opacity; lost income during strike"
+      },
+      {
+        "group": "100 million shared-account users",
+        "how": "Forced to pay separately for a service they were previously told was available to share — after explicit company endorsement of sharing"
+      },
+      {
+        "group": "Entertainment industry middle class",
+        "how": "Residual income that sustained careers eliminated by streaming model; guild wins in 2023 restored some but not all"
+      }
+    ],
+    "the_gap": "Netflix tweeted 'Love is sharing a password' in 2017. They used password sharing to build to 282 million subscribers. Then they banned it. The same year they paid their co-CEO $50 million while writers walked picket lines for 148 days over residuals on the content that built those 282 million subscribers."
+  }
+}

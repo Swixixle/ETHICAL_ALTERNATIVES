@@ -5,7 +5,7 @@
 **Photograph anything. Tap any object. Get the full corporate record.**
 
 [![Live](https://img.shields.io/badge/Live-ethicalalt--client.onrender.com-D4A017?style=flat-square&labelColor=0A1F3D)](https://ethicalalt-client.onrender.com)
-[![Profiles](https://img.shields.io/badge/Profiles-82%2B_companies-A8C4D8?style=flat-square&labelColor=0A1F3D)](#investigation-database)
+[![Profiles](https://img.shields.io/badge/Profiles-92%2B_companies-A8C4D8?style=flat-square&labelColor=0A1F3D)](#investigation-database)
 [![License](https://img.shields.io/badge/License-MIT-6A8A9A?style=flat-square&labelColor=0A1F3D)](LICENSE)
 
 </div>
@@ -54,7 +54,7 @@ PHOTOGRAPH → TAP → INVESTIGATE → ACT
 
 ## Investigation Database
 
-82+ company profiles across 10 sectors. Every profile built from public primary records.
+92+ company profiles across 10 sectors. Every profile built from public primary records.
 
 | Sector | Coverage |
 |--------|----------|
@@ -64,6 +64,7 @@ PHOTOGRAPH → TAP → INVESTIGATE → ACT
 | Healthcare | UnitedHealth, HCA, Cigna, CVS Health, McKesson, DaVita, Steward, Tenet, Ascension, Cardinal Health |
 | Pharma | Pfizer, Merck, Eli Lilly, Bayer/Monsanto |
 | Tech | Meta, Google, Microsoft, Tesla, Samsung, TikTok/ByteDance |
+| Streaming & social | Disney, LinkedIn, Netflix, Pinterest, Reddit, Snapchat, Spotify, Twitch, X (Twitter), YouTube |
 | Retail | Walmart, Target, Kroger, Dollar General |
 | Auto | Toyota, General Motors, Ford |
 | Gambling | MGM Resorts, Caesars Entertainment, DraftKings, FanDuel, Las Vegas Sands, Penn Entertainment |

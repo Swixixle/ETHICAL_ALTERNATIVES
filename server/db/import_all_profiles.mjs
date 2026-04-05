@@ -23,7 +23,7 @@ async function importBatch(batchDir) {
 
 async function main() {
   let total = 0;
-  for (const batch of ['profiles_v3','profiles_v4','profiles_v5','profiles_v6','profiles_v7','profiles_v8','profiles_v9','profiles_v10','profiles_v11']) {
+  for (const batch of ['profiles_v3','profiles_v4','profiles_v5','profiles_v6','profiles_v7','profiles_v8','profiles_v9','profiles_v10','profiles_v11','profiles_v12']) {
     console.log(`\nImporting ${batch}...`);
     total += await importBatch(join(__dirname, batch));
   }

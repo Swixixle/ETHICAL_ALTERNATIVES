@@ -1,0 +1,224 @@
+{
+  "brand_name": "Spotify",
+  "brand_slug": "spotify",
+  "parent_company": "Spotify Technology S.A.",
+  "ultimate_parent": "Spotify Technology S.A.",
+  "subsidiaries": [
+    "Spotify AB",
+    "Spotify USA Inc.",
+    "Megaphone (podcasts)",
+    "Anchor (podcast creation)"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "SPOTIFY PAYS ARTISTS AN AVERAGE OF $0.003 PER STREAM AND PAID JOE ROGAN $200 MILLION FOR A PODCAST",
+  "executive_summary": "Spotify is the world's largest music streaming platform with 600+ million monthly active users and revenues exceeding $15 billion annually. The company pays artists an average of $0.003 to $0.005 per stream — meaning an artist needs approximately 300,000 streams per month to earn minimum wage. Spotify simultaneously paid Joe Rogan an estimated $200-250 million for an exclusive podcast deal. The platform has been accused of manipulating its own charts, paying fake artists to populate playlists (avoiding royalties), and failing to accurately account for and pay royalties to independent artists. Rogan's podcast generated controversy for hosting COVID-19 misinformation and promoting guests with documented racist views.",
+  "verdict_tags": [
+    "0003_per_stream_artist_pay",
+    "rogan_200m_deal",
+    "fake_artist_playlist_manipulation",
+    "royalty_accounting_failures",
+    "covid_misinformation_platform",
+    "songwriter_class_action"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": false,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Spotify is incorporated in Luxembourg with its primary operating subsidiaries in Sweden and the United States. The Luxembourg holding structure minimizes tax on global streaming revenue. The company has used transfer pricing between its Swedish and Luxembourg entities to reduce taxable income in higher-rate jurisdictions. Despite generating $15 billion in revenue, Spotify reported its first full-year profit only in 2024.",
+    "flags": [
+      "luxembourg_holding_structure",
+      "transfer_pricing_sweden_luxembourg",
+      "first_profit_2024"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
+  },
+  "legal": {
+    "summary": "2023: Spotify settled a class action lawsuit with the National Music Publishers Association (NMPA) over unpaid mechanical royalties — estimated at $112 million — for failing to properly license and pay songwriters for reproduced recordings. The company has faced multiple additional royalty accounting disputes. In 2022, more than 200 artists and musicians signed an open letter to Spotify demanding COVID misinformation be removed from Joe Rogan's podcast. Spotify received significant regulatory scrutiny in the EU over market dominance in music streaming.",
+    "flags": [
+      "nmpa_royalty_settlement_112m",
+      "covid_misinformation_open_letter",
+      "songwriter_mechanical_royalty_failures",
+      "eu_market_dominance_scrutiny"
+    ],
+    "sources": []
+  },
+  "labor": {
+    "summary": "Spotify pays artists an average of $0.003-$0.005 per stream — one of the lowest rates in the industry. An artist needs approximately 300,000 monthly streams to earn minimum wage from Spotify alone. The platform simultaneously invested $200-250 million in Joe Rogan and hundreds of millions more in exclusive podcast deals. Spotify conducted multiple rounds of layoffs in 2023-2024, eliminating approximately 17% of its workforce while paying its CEO Daniel Ek $550 million in compensation through equity over the past decade. The company has been accused of using playlists populated with fake 'ghost artists' — instrumental music recorded cheaply — to fill curated playlists and avoid paying royalties to established artists who would otherwise appear.",
+    "flags": [
+      "0003_per_stream_minimum_wage_gap",
+      "rogan_200m_vs_artist_pay",
+      "17pct_workforce_layoffs",
+      "ghost_artist_playlists_alleged",
+      "ek_550m_decade_compensation"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Spotify's streaming infrastructure represents significant energy consumption. The company has committed to net-zero emissions but relies heavily on streaming delivery networks whose carbon footprint is substantial. Digital streaming has replaced physical music formats, eliminating manufacturing emissions while creating server infrastructure emissions.",
+    "flags": [
+      "streaming_infrastructure_energy",
+      "net_zero_commitment"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Spotify's decision to keep Joe Rogan's podcast despite COVID-19 misinformation — which prompted prominent musicians including Neil Young and Joni Mitchell to remove their music from the platform — was explicitly a financial decision, not a content decision. CEO Daniel Ek stated that Rogan's content did not violate company policy. Rogan has since moved to a non-exclusive arrangement. Spotify has faced pressure from EU regulators over market dominance and from Apple over its App Store payment practices — which Spotify successfully challenged, leading to new EU rules.",
+    "flags": [
+      "rogan_covid_misinformation_kept",
+      "neil_young_joni_mitchell_withdrawal",
+      "eu_app_store_challenge"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Daniel Ek received approximately $550 million in equity compensation over the past decade — an extraordinary figure for a company that only achieved its first full-year profit in 2024. Ek has publicly stated his belief that musicians need to release more content to make money in streaming — widely interpreted as placing the burden of streaming's structural underpayment on artists rather than the platform.",
+    "flags": [
+      "ek_550m_compensation",
+      "ek_artists_need_more_content_comment",
+      "first_profit_2024_ceo_already_paid"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
+  },
+  "connections": {
+    "summary": "Spotify's dominance in music streaming gives it extraordinary leverage over record labels, independent artists, and podcast creators. The platform's playlist curation system is a critical revenue driver for artists — inclusion in algorithmic playlists can make or break a release. This creates structural power that Spotify has been accused of using to extract favorable terms. Apple's App Store dispute — which Spotify won in the EU — has implications for all app developers.",
+    "flags": [
+      "playlist_power_artist_revenue",
+      "label_leverage",
+      "eu_app_store_ruling_precedent"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Music industry researchers and journalists have documented allegations that Spotify populated its own curated playlists with cheap instrumental music from 'ghost artists' — studio musicians or AI-generated tracks credited to generic artist names — to avoid paying royalties to established artists who would normally appear in those genres. Spotify has denied intentionally using fake artists. Independent artists have alleged that Spotify's royalty accounting system contains systematic errors that underpay smaller artists who lack the resources to audit their statements. Music journalists have documented that Spotify's algorithmic recommendation system favors artists who negotiate favorable playlist placement terms.",
+    "flags": [
+      "ghost_artist_playlists_denied_but_documented",
+      "royalty_accounting_errors_systematic_alleged",
+      "playlist_placement_negotiation_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Spotify's platform served as the primary distribution vehicle for Joe Rogan's COVID-19 misinformation during the pandemic — including episodes promoting vaccine skepticism and unproven treatments. Over 200 scientists, doctors, and healthcare professionals signed an open letter in 2022 documenting the documented harm of misinformation spread through Rogan's podcast. Spotify kept the content, citing its content policy. Separately, Spotify's algorithmic music recommendation system is designed to maximize listening time — an engagement optimization approach similar to the social media patterns documented to affect mental health.",
+    "flags": [
+      "rogan_covid_misinformation_platform",
+      "200_scientists_open_letter",
+      "engagement_maximization_design"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Bandcamp — purchase music directly from artists; Bandcamp Fridays return 100% of sales to artists",
+      "YouTube Music — free tier available; Google-owned so data concerns persist",
+      "SoundCloud — independent artist focused, free tier available"
+    ],
+    "healthier": [
+      "Bandcamp — artists receive approximately 80-85% of revenue vs Spotify's $0.003/stream",
+      "Tidal — higher per-stream royalties than Spotify; co-owned by artists including Jack Dorsey",
+      "Direct artist purchase — Bandcamp, artist websites, Patreon — money goes directly to the creator"
+    ],
+    "diy": [
+      "Bandcamp Fridays — first Friday of each month, Bandcamp waives its revenue share and 100% goes to artists",
+      "Streaming on Spotify earns an artist $0.003/stream — buying one album at $10 earns the same as 3,333 streams",
+      "Most artists prefer YouTube over Spotify for royalty purposes — the per-view rate is higher for smaller artists"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2006,
+      "event": "Spotify founded in Stockholm by Daniel Ek and Martin Lorentzon",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "Spotify signs Joe Rogan to exclusive deal — eventually valued at $200-250 million",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "Allegations emerge that Spotify uses fake 'ghost artists' to populate playlists and reduce royalty obligations",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "200+ scientists and doctors open letter demands removal of Rogan COVID misinformation; Neil Young and Joni Mitchell remove music",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Spotify keeps Rogan content; pays $0.003/stream to artists while Rogan receives $200M+ deal",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "$112M NMPA settlement for unpaid songwriter mechanical royalties",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "17% workforce layoffs while CEO compensation exceeds $550M over decade",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "First full-year profit; Rogan moves to non-exclusive arrangement; EU App Store ruling in Spotify's favor",
+      "severity": "moderate",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Spotify's streaming model has effectively eliminated the mid-level artist income tier — artists who previously sustained careers through album sales, radio royalties, and live performance now find streaming income insufficient to offset the collapse of album sales. The artists who can survive streaming are those who can sell out arenas; the middle class of musicians has been significantly compressed.",
+    "price_illusion": "Spotify's $10.99/month subscription sounds cheap. An artist receives $0.003/stream from it. The subscription fee that feels reasonable to the consumer generates almost nothing for the creator. The money concentrates at the label level and the platform level. The artist at the end of the chain receives a fraction of a cent.",
+    "tax_math": "Spotify routes global streaming revenue through Luxembourg, minimizing tax obligations in the countries where subscribers live and where the music was created. Swedish tax authorities receive less revenue from a Swedish company's global operations than the company's size would suggest.",
+    "wealth_velocity": "Spotify's revenue — generated from 600 million users listening to artists — flows primarily to major record labels (who own most of the catalog), to Spotify's shareholders, and to Spotify's CEO. The artists whose work generates that listening receive $0.003 per stream. Daniel Ek received $550 million in equity over a decade from a company that only turned its first annual profit in 2024."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Spotify shareholders and Daniel Ek",
+        "how": "600M users, $15B revenue, first profit 2024; Ek $550M in equity"
+      },
+      {
+        "group": "Joe Rogan",
+        "how": "$200-250M deal for exclusive podcast rights"
+      },
+      {
+        "group": "Major record labels",
+        "how": "Catalog licensing deals give labels a larger share of streaming royalties than independent artists receive"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Independent musicians",
+        "how": "$0.003/stream; need 300,000 streams/month to earn minimum wage; cannot audit royalty statements"
+      },
+      {
+        "group": "Songwriters",
+        "how": "$112M in unpaid mechanical royalties recovered through lawsuit — how much was never recovered?"
+      },
+      {
+        "group": "Public health during COVID",
+        "how": "Rogan's misinformation platform reached 11 million listeners per episode while Spotify kept it despite documented harm"
+      }
+    ],
+    "the_gap": "Spotify paid Joe Rogan $200 million. It pays musicians $0.003 per stream. An artist needs 300,000 streams per month to earn minimum wage. Daniel Ek has received $550 million in equity. The company's first profitable year was 2024. The math is not a coincidence."
+  }
+}

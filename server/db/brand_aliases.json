@@ -50,14 +50,12 @@
   "whatsapp": "meta",
   "facebook": "meta",
   "oculus": "meta",
-  "youtube": "google",
   "android": "google",
   "gmail": "google",
   "chrome": "google",
   "pixel": "google",
   "nest": "google",
   "xbox": "microsoft",
-  "linkedin": "microsoft",
   "github": "microsoft",
   "bing": "microsoft",
   "surface": "microsoft",
@@ -160,5 +158,8 @@
   "spark": "walmart",
   "spark-driver": "walmart",
   "hire-direct": "doordash",
-  "gig-work": "doordash"
+  "gig-work": "doordash",
+  "twitter": "twitter-x",
+  "x": "twitter-x",
+  "x-dot-com": "twitter-x"
 }

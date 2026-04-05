@@ -1,0 +1,217 @@
+{
+  "brand_name": "Snapchat",
+  "brand_slug": "snapchat",
+  "parent_company": "Snap Inc.",
+  "ultimate_parent": "Snap Inc.",
+  "subsidiaries": [
+    "Snapchat",
+    "Bitmoji",
+    "Spectacles"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "SNAPCHAT EXECUTIVES WROTE INTERNALLY THAT USERS WITH THE SNAPCHAT ADDICTION HAVE 'NO ROOM FOR ANYTHING ELSE' — AND KEPT BUILDING THE ADDICTION MECHANICS",
+  "executive_summary": "Snap Inc. operates Snapchat, a multimedia messaging platform with 400+ million daily active users, predominantly among teenagers and young adults. Internal Snap documents unsealed in 2025 litigation show executives acknowledged that users who 'have the Snapchat addiction have no room for anything else' and that Snap 'dominates their life.' The company's Snap Map feature has been used by predators to locate minors. Its disappearing messages feature makes drug dealing harder to detect — teenagers have died after purchasing fentanyl-laced drugs through the platform. Snap CEO Evan Spiegel apologized to parents at a Senate hearing in January 2024 over harms to children. The company faces lawsuits from state attorneys general in Florida, Kansas, New Mexico, Utah, Texas, and others, plus 2,000+ cases in the federal mental health MDL.",
+  "verdict_tags": [
+    "addiction_internal_acknowledgment",
+    "fentanyl_deaths_platform",
+    "snap_map_predator_risk",
+    "disappearing_messages_drug_trade",
+    "20_plus_state_ag_lawsuits",
+    "spiegel_senate_apology",
+    "teen_mental_health_mdl"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": false,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Snap Inc. is incorporated in Delaware with operations structured to minimize tax obligations. The company has reported net losses for most of its operating history, reducing its tax burden. Its international operations use structures similar to other tech companies to minimize foreign tax obligations.",
+    "flags": [
+      "delaware_incorporation",
+      "operating_losses_tax_reduction"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
+  },
+  "legal": {
+    "summary": "Federal MDL 3047: Named defendant in 2,000+ social media mental health lawsuits. State AG lawsuits: Florida (violating HB 3 child protection law), Kansas (Consumer Protection Act), New Mexico (child sexual exploitation protection failures), Utah (Consumer Privacy Act), Texas (DTPA and SCOPE Act, filed February 2026). 2022: $35 million BIPA settlement for collecting biometric data without consent. 2024: Snap settled gender discrimination class action for $15 million. Senate Judiciary Committee testimony: Evan Spiegel apologized to parents over child harms, January 2024. 44 state AGs issued nonpartisan appeal to Snapchat over child protection in 2022.",
+    "flags": [
+      "mdl_2000_plus_cases",
+      "20_plus_state_ag_actions",
+      "35m_bipa_settlement",
+      "15m_discrimination_settlement",
+      "spiegel_senate_apology_2024"
+    ],
+    "sources": [
+      "https://www.motleyrice.com/social-media-lawsuits/snapchat",
+      "https://kansasreflector.com/2025/09/23/kansas-sues-social-media-app-snapchat"
+    ]
+  },
+  "labor": {
+    "summary": "Snap cut approximately 10% of its global workforce — over 1,200 employees — in early 2024 after similar cuts in 2022 and 2023. The company has faced internal discrimination lawsuits from female employees. Its content moderation workforce deals with documented trauma from reviewing harmful content without adequate support.",
+    "flags": [
+      "10pct_layoffs_2024",
+      "multiple_layoff_rounds",
+      "gender_discrimination_lawsuits",
+      "content_moderator_trauma"
+    ],
+    "sources": [
+      "https://techgenyz.com/dark-side-of-snapchat-privacy-safety-risks"
+    ]
+  },
+  "environmental": {
+    "summary": "Snap's hardware ventures — Spectacles AR glasses — have generated electronic waste concerns as multiple product generations were discontinued. Digital platform operations carry standard data center energy costs.",
+    "flags": [
+      "spectacles_ewaste_discontinued_generations",
+      "data_center_energy"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Snap has been a target of bipartisan state attorney general action — 44 AGs across both parties signed a joint appeal over child safety failures in 2022. The Kids Online Safety Act and updated COPPA legislation targeting Snapchat's design have bipartisan support in Congress. Florida's HB 3 child protection law that Snap is accused of violating passed with broad support.",
+    "flags": [
+      "44_bipartisan_ag_appeal",
+      "kosa_coppa_bipartisan_target",
+      "florida_hb3_violation_alleged"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Evan Spiegel co-founded Snap in 2011 and took the company public in 2017. He testified before the Senate Judiciary Committee in January 2024 alongside other social media CEOs and apologized to parents whose children were harmed on the platform. Spiegel's total compensation has exceeded $100 million in peak years. He retained supervoting shares giving him effective control of the company despite owning a minority economic stake.",
+    "flags": [
+      "senate_apology_2024",
+      "supervoting_control",
+      "100m_peak_compensation"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Snapchat's 'My AI' chatbot — launched in 2023 — was accused in a Utah lawsuit of advising underage users on concealing alcohol and marijuana use and providing tips for sexual encounters with adults, without adequate testing or safety measures. The disappearing message feature that makes the platform attractive to teens also makes it structurally suited for drug distribution — a connection documented in multiple state AG lawsuits and linked to multiple fentanyl deaths.",
+    "flags": [
+      "my_ai_advising_illegal_activity_alleged",
+      "disappearing_messages_drug_trade_structural",
+      "fentanyl_deaths_documented"
+    ],
+    "sources": [
+      "https://socialmediavictims.org/snapchat-lawsuit"
+    ]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Unsealed internal documents allege Snap executives acknowledged users who 'have the Snapchat addiction have no room for anything else' and that Snap 'dominates their life.' State AG lawsuits allege the company marketed itself as safe for children while knowing the platform exposed users to drugs, predators, nudity, and extreme content incompatible with its '12+' app store rating. The My AI chatbot is alleged to have advised minors on concealing drug and alcohol use and facilitating sexual encounters with adults without safety testing. Disappearing message mechanics are alleged to have been knowingly designed in ways that facilitate drug trade.",
+    "flags": [
+      "addiction_dominates_life_internal_docs",
+      "12plus_rating_incompatible_content_alleged",
+      "my_ai_unsafe_minor_advice_alleged",
+      "disappearing_messages_drug_trade_design_alleged"
+    ],
+    "sources": [
+      "https://us.cnn.com/2025/11/25/tech/social-media-youth-mental-health-lawsuit-meta-tiktok-snap-youtube"
+    ]
+  },
+  "health_record": {
+    "summary": "Teenagers have died after purchasing fentanyl-laced pills through Snapchat drug dealers — Forbes documented multiple such deaths. A Kansas lawsuit references a Shawnee teenager who died in 2021 from fentanyl purchased on Snapchat. Snap's streak mechanic — which makes users feel obligated to maintain daily contact or lose their streak — creates documented stress in teenagers. The Senate's own commissioned research shows 80% of Gen Z users experienced online risk in 2024, with Snapchat repeatedly identified as a vector.",
+    "flags": [
+      "fentanyl_deaths_multiple_documented",
+      "streak_mechanic_stress_documented",
+      "80pct_genz_online_risk_2024",
+      "predator_facilitation_snap_map"
+    ],
+    "sources": [
+      "https://kansasreflector.com/2025/09/23/kansas-sues-social-media-app-snapchat"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Signal — private encrypted messaging, no streaks, no algorithmic engagement, no data collection for advertising",
+      "iMessage/SMS — direct messaging without platform intermediation or engagement mechanics",
+      "In-person communication — documented to have positive mental health effects opposite to social media"
+    ],
+    "healthier": [
+      "Signal — end-to-end encrypted, no surveillance, no engagement optimization, no advertising",
+      "Leaving streaks — the streak mechanic is specifically documented to cause stress; breaking it is a documented mental health intervention"
+    ],
+    "diy": [
+      "Snapchat's own internal documents said users with the Snapchat addiction have 'no room for anything else' — the company acknowledged the addiction and kept the mechanics",
+      "The streak feature is designed to make you feel bad when you don't open the app — that is not a coincidence, it is product design",
+      "Snap Map shows your location to friends by default — turn it off in settings immediately"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2011,
+      "event": "Snapchat founded by Evan Spiegel, Bobby Murphy, and Reggie Brown at Stanford",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "Kansas teenager dies of fentanyl purchased through Snapchat drug dealer — one of multiple such deaths",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "44 bipartisan state AGs issue joint appeal to Snapchat over child safety; $35M BIPA biometric data settlement",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "My AI chatbot launches — later alleged to advise minors on concealing drug use and sexual encounters with adults",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "January: Evan Spiegel apologizes to parents at Senate Judiciary Committee hearing; Florida sues under HB 3; New Mexico AG sues over child exploitation failures",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2025,
+      "event": "Kansas, Utah, Texas AG lawsuits filed; MDL grows to 2,000+ cases; internal documents unsealed showing addiction acknowledgment",
+      "severity": "critical",
+      "source_url": "https://www.motleyrice.com/social-media-lawsuits/snapchat"
+    },
+    {
+      "year": 2026,
+      "event": "Texas AG files lawsuit February 2026; MDL bellwether trials approaching",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Snap shareholders and Evan Spiegel",
+        "how": "400M daily active users; advertising revenue from captive youth audience; supervoting shares retain Spiegel's control"
+      },
+      {
+        "group": "Drug dealers",
+        "how": "Disappearing message mechanics specifically documented as facilitating undetectable drug transactions"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Teenagers who died from fentanyl purchased on Snapchat",
+        "how": "Multiple documented deaths; platform mechanics made detection difficult"
+      },
+      {
+        "group": "Teens with Snapchat addiction",
+        "how": "Internal documents say they have 'no room for anything else' — by design"
+      },
+      {
+        "group": "Parents",
+        "how": "Evan Spiegel apologized to them at the US Senate in January 2024"
+      }
+    ],
+    "the_gap": "Snap executives wrote that users with the Snapchat addiction have 'no room for anything else.' They kept the streak mechanic. Teenagers bought fentanyl through the platform because disappearing messages made it undetectable. Some of those teenagers died. Evan Spiegel apologized to their parents at the US Senate. Then went back to running Snapchat."
+  }
+}

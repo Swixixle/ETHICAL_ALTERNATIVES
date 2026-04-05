@@ -1,0 +1,195 @@
+{
+  "brand_name": "Twitch",
+  "brand_slug": "twitch",
+  "parent_company": "Twitch Interactive Inc.",
+  "ultimate_parent": "Amazon.com Inc.",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "AMAZON'S TWITCH CUT STREAMER REVENUE SHARE, BANNED GAMBLING STREAMS AFTER A CREATOR SUICIDE, AND LAID OFF 35% OF STAFF IN TWO YEARS",
+  "executive_summary": "Twitch is the dominant live-streaming platform with 140+ million monthly active users, owned by Amazon since 2014. The platform has cut creator revenue multiple times — reducing the standard affiliate revenue split from 70/30 (streamer/Twitch) to 50/50 for all but top partners in 2023. Gambling streams — where streamers played high-stakes casino games with sponsored money — proliferated on the platform and were linked to a creator's suicide in 2022 before Twitch finally banned them. Twitch conducted massive layoffs in 2023 (400 employees, 35% of staff) and 2024 (500 employees), while parent company Amazon has aggressively cut revenue sharing. The platform faces increasing competition from YouTube Live and Kick — the latter founded specifically by gambling interests that Twitch banned.",
+  "verdict_tags": [
+    "revenue_share_cut_70_30_to_50_50",
+    "gambling_streams_creator_suicide",
+    "35pct_staff_layoffs",
+    "amazon_extraction_model",
+    "kick_gambling_competitor"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": false,
+    "tax": false,
+    "health": true,
+    "legal": false
+  },
+  "tax": {
+    "summary": "Twitch's financials are consolidated within Amazon's overall reporting. Amazon uses extensive international tax optimization structures. Twitch itself does not file separate public financial statements.",
+    "flags": [
+      "consolidated_amazon_reporting",
+      "amazon_international_tax_structures"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
+  },
+  "legal": {
+    "summary": "Twitch has faced multiple DMCA takedown waves that deleted years of streamer content with minimal notice — treating creator libraries as disposable. The platform has faced criticism for inconsistent content moderation that bans smaller streamers for minor violations while allowing larger streamers to operate differently. Twitch settled a class action over the 2021 data breach that exposed user data including source code and creator payout information.",
+    "flags": [
+      "dmca_mass_deletions",
+      "inconsistent_moderation_size_bias",
+      "2021_data_breach_settlement"
+    ],
+    "sources": []
+  },
+  "labor": {
+    "summary": "Twitch laid off 400 employees (35% of staff) in January 2023 and 500 more employees in January 2024. The 2023 layoffs came despite the platform being profitable — Amazon extracted more value by cutting costs. Content creators who built audiences on Twitch receive 50% of subscription revenue after the 2023 policy change — down from 70% which had been the standard for smaller streamers. Top-tier partners still receive 70% but the threshold requires exclusive contracts.",
+    "flags": [
+      "400_layoffs_2023_35pct",
+      "500_layoffs_2024",
+      "revenue_share_cut_creators",
+      "exclusive_contract_70pct_threshold"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Twitch's live video streaming infrastructure represents significant energy consumption as part of Amazon's broader cloud and content delivery network.",
+    "flags": [
+      "live_streaming_energy_consumption",
+      "amazon_aws_infrastructure"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Twitch's gambling stream ban came after significant political and public pressure following documented harms. The ban was widely seen as years overdue. The platform's content moderation policies have been criticized as inconsistently applied — with documented examples of identical behavior receiving different consequences based on streamer size.",
+    "flags": [
+      "gambling_ban_pressure_driven",
+      "inconsistent_moderation_political_criticism"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Dan Clancy became CEO in 2023 after Emmett Shear departed. Shear's departure came as Twitch faced significant creator backlash over revenue share changes. Amazon CEO Andy Jassy oversees Twitch's parent company strategy. The revenue share reduction and layoffs reflect Amazon's broader approach of extracting maximum value from acquired platforms.",
+    "flags": [
+      "clancy_ceo_post_revenue_controversy",
+      "amazon_extraction_strategy"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Kick — the competing streaming platform that launched in 2023 with a 95/5 creator-favorable revenue split — was co-founded by gambling interests specifically as a platform that would allow the gambling content Twitch banned. Multiple major Twitch streamers who relied on gambling sponsorships moved to Kick after the Twitch ban. This creates a documented pattern: Twitch bans harmful content, gambling industry funds a competitor that allows it, creators seeking gambling revenue migrate.",
+    "flags": [
+      "kick_gambling_competitor_response",
+      "gambling_streamer_migration_kick",
+      "95_5_kick_revenue_split"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Creators and observers have alleged that Twitch's revenue share reduction was primarily about Amazon extracting more value from an acquired platform rather than any business necessity — pointing to the platform's profitability. Gambling stream critics alleged that Twitch allowed gambling content for years because it drove engagement metrics even after documented harms to viewers who developed gambling addictions watching sponsored gambling streams. Smaller streamers have alleged that Twitch's content moderation is systematically biased toward protecting revenue from large streamers over applying rules consistently.",
+    "flags": [
+      "amazon_extraction_alleged",
+      "gambling_engagement_over_harm_alleged",
+      "moderation_size_bias_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Gambling streams on Twitch were linked to documented viewer gambling addiction — streamers playing with sponsored casino money at high stakes for entertainment created aspirational gambling content. In September 2022, streamer ItsSliker admitted to scamming fellow streamers and fans out of hundreds of thousands of dollars to fund a gambling addiction he said started from watching Twitch gambling streams. The same month, a smaller creator died by suicide — the death was publicly connected to gambling addiction by those close to them. Twitch banned gambling streams weeks later after pressure from major creators. The ban came after years of allowing the content despite documented harm.",
+    "flags": [
+      "gambling_addiction_viewer_documented",
+      "itssliker_gambling_scam_admission",
+      "creator_suicide_gambling_addiction",
+      "ban_years_after_documented_harm"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "YouTube Live — Google-owned with similar concerns but better creator tools and library integration",
+      "Kick — 95/5 revenue split but co-founded by gambling interests and allows gambling content",
+      "Rumble — alternative platform with different political associations"
+    ],
+    "healthier": [
+      "Direct support via Patreon or creator memberships — cuts out platform entirely, creators receive 88-95% of revenue",
+      "YouTube Live with channel memberships — higher revenue share than Twitch for most creators",
+      "Discord communities — direct relationship with creator audience without live-streaming platform intermediation"
+    ],
+    "diy": [
+      "Twitch takes 50% of your subscription to a streamer — Patreon gives them 88-95%",
+      "If you want to support a creator, direct payment via their Patreon, Ko-fi, or donation link reaches them more efficiently than Twitch subscriptions",
+      "Twitch's exclusive partner contracts prevent top streamers from streaming elsewhere — the platform uses revenue to extract exclusivity"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2011,
+      "event": "Twitch founded as Justin.tv spin-off focused on gaming",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2014,
+      "event": "Amazon acquires Twitch for $970 million",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "Major data breach exposes source code, creator payout data, internal tools",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "September: ItsSliker admits scamming fans for gambling addiction funds from watching Twitch gambling streams; creator dies by suicide linked to gambling addiction; major streamers demand ban",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "October: Twitch bans gambling streams — years after first documented harms",
+      "severity": "moderate",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "January: 400 layoffs (35% of staff); revenue share cut from 70/30 to 50/50 for most creators",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "January: 500 additional layoffs",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Amazon shareholders",
+        "how": "Revenue share extraction from creators; reduced staffing costs while maintaining platform revenue"
+      },
+      {
+        "group": "Gambling industry via Kick",
+        "how": "Twitch's gambling ban drove gambling-sponsored creators to Kick, which gambling interests co-founded"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Twitch creators",
+        "how": "Revenue share cut from 70% to 50% — a 29% income reduction from existing subscriber base"
+      },
+      {
+        "group": "900 laid-off employees",
+        "how": "Jobs eliminated in two rounds despite platform profitability"
+      },
+      {
+        "group": "Viewers who developed gambling addictions",
+        "how": "Gambling content was allowed for years despite documented addiction pathways"
+      }
+    ],
+    "the_gap": "Twitch allowed gambling streams for years. A creator died. Amazon cut creator revenue to extract more from an already profitable platform. 900 employees were laid off. The gambling industry founded Kick specifically to host the content Twitch banned. The creators Twitch cut revenue from moved there. Amazon owns Twitch. You pay for Amazon Prime."
+  }
+}

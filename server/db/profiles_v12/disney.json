@@ -1,0 +1,211 @@
+{
+  "brand_name": "Disney",
+  "brand_slug": "disney",
+  "parent_company": "The Walt Disney Company",
+  "ultimate_parent": "The Walt Disney Company",
+  "subsidiaries": [
+    "Disney+",
+    "Hulu",
+    "ESPN",
+    "ABC",
+    "Marvel Studios",
+    "Lucasfilm",
+    "Pixar",
+    "20th Century Studios",
+    "Disney Parks"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "DISNEY LOST $4 BILLION ON STREAMING IN ONE YEAR, CUT 7,000 JOBS, AND CHARGED $6 FOR A CHURRO AT ITS THEME PARKS",
+  "executive_summary": "The Walt Disney Company is the world's largest entertainment conglomerate with revenues exceeding $88 billion. Under CEO Bob Iger — who returned in 2022 after his hand-picked successor Bob Chapek failed — Disney cut 7,000 jobs to reduce costs by $5.5 billion while its streaming division Disney+ had lost over $4 billion in a single fiscal year. The company's theme park division has implemented dramatic price increases: a single-day Magic Kingdom ticket can exceed $189, annual passes have been discontinued and reintroduced at higher prices, and food items like churros that cost $4 in 2019 now cost $6-7. Disney's ESPN division faces an existential crisis as cable cord-cutting accelerates. The company faces labor actions from theme park workers alleging failure to pay living wages.",
+  "verdict_tags": [
+    "7000_job_cuts",
+    "4b_streaming_losses",
+    "theme_park_price_gouging",
+    "espn_existential_crisis",
+    "labor_wage_disputes",
+    "content_franchise_overreliance"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Disney uses complex international structures to minimize tax obligations on global content licensing. Its acquisition of 21st Century Fox created additional offshore holding structures. The company's effective tax rate has been well below the US statutory rate through use of content production tax credits and international structure optimization.",
+    "flags": [
+      "international_content_licensing_structures",
+      "fox_acquisition_offshore_holdings",
+      "below_statutory_effective_rate"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
+  },
+  "legal": {
+    "summary": "Disney faced a high-profile contract dispute with Scarlett Johansson over Black Widow streaming release that reduced her backend compensation — settled confidentially in 2021. Theme park workers organized and sued over living wage commitments in Florida. Disney's political dispute with Florida Governor DeSantis over the Don't Say Gay bill resulted in Disney losing its special Reedy Creek Improvement District self-governance status — later partially restored after litigation. The company has faced lawsuits over alleged gender pay gaps.",
+    "flags": [
+      "johansson_streaming_contract_settlement",
+      "florida_reedy_creek_political_dispute",
+      "gender_pay_gap_lawsuits",
+      "theme_park_labor_actions"
+    ],
+    "sources": []
+  },
+  "labor": {
+    "summary": "Disney cut 7,000 positions in 2023 across ESPN, Disney Parks, and corporate roles. Theme park workers at Disneyland and Walt Disney World have organized and struck over wages — a union representing over 9,000 Disney World workers reached agreements after disputes. Workers allege Disney pays wages insufficient to afford housing near its Florida and California theme parks. ESPN has conducted multiple rounds of layoffs eliminating high-profile on-air talent.",
+    "flags": [
+      "7000_job_cuts_2023",
+      "theme_park_worker_wage_disputes",
+      "espn_talent_layoffs_multiple_rounds",
+      "housing_affordability_near_parks"
+    ],
+    "sources": [
+      "https://www.subscriptioninsider.com/article-type/news/disneys-latest-layoffs-reflect-streaming-shift"
+    ]
+  },
+  "environmental": {
+    "summary": "Disney has made public commitments to net-zero emissions and has renewable energy installations at its theme parks. The company's cruise ship fleet and theme park operations represent significant carbon footprints. Disney has received criticism for environmental impact of development around its Florida properties.",
+    "flags": [
+      "cruise_fleet_emissions",
+      "theme_park_development_impact",
+      "net_zero_commitments"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Disney's 2022 opposition to Florida's Parental Rights in Education Act (dubbed 'Don't Say Gay') triggered a political war with Governor Ron DeSantis who dissolved Disney's 55-year-old Reedy Creek special district. Disney sued DeSantis alleging unconstitutional retaliation — the dispute was settled in 2023 with Disney retaining development rights. Bob Iger told advertisers at the DealBook Summit that he was 'disgusted' by Musk's antisemitic post on X after Disney pulled advertising. Disney's CEO has become a political lightning rod for both sides.",
+    "flags": [
+      "desantis_reedy_creek_dispute",
+      "dont_say_gay_opposition",
+      "disney_x_advertising_pull",
+      "iger_political_lightning_rod"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Bob Iger returned as CEO in November 2022 at a base salary of $1 million with total compensation exceeding $31 million in fiscal 2023. Iger's compensation package was criticized given the 7,000 layoffs he oversaw. His original tenure saw Disney's stock rise dramatically; his second tenure has been marked by streaming losses, proxy fights from activist investors, and succession uncertainty.",
+    "flags": [
+      "iger_31m_compensation_layoff_year",
+      "succession_uncertainty",
+      "activist_investor_proxy_fight"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
+  },
+  "connections": {
+    "summary": "Disney owns ABC News, giving it direct control over a major news organization while also being a subject of news coverage. Its ownership of ESPN gives it control over sports broadcasting rights. The company's relationship with Florida state government — given its massive economic footprint in the state — creates permanent political entanglement. Disney's theatrical and streaming content influences culture globally.",
+    "flags": [
+      "abc_news_ownership_conflict",
+      "espn_sports_broadcasting_control",
+      "florida_economic_entanglement"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former employees and content creators have alleged that Disney's content decisions are driven by franchise IP considerations rather than creative merit — resulting in formulaic sequels and diminishing returns. Theme park workers have alleged that Disney management retaliates against workers who organize. Former Imagineers have alleged that cost-cutting has reduced the quality and maintenance of theme park attractions. The company's practice of releasing films simultaneously to theaters and Disney+ has been alleged to systematically undercut backend compensation for talent.",
+    "flags": [
+      "franchise_formula_creative_suppression_alleged",
+      "union_retaliation_alleged",
+      "theme_park_maintenance_decline_alleged",
+      "simultaneous_release_compensation_undercut"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Disney's theme parks have been criticized for accessibility issues for guests with disabilities following the replacement of the Disability Access Service with a paid Lightning Lane system. Food prices and overall park costs have increased to levels that price out middle-class families who represent Disney's historical core audience.",
+    "flags": [
+      "disability_access_service_paid_replacement",
+      "middle_class_pricing_out"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Public parks and state/national parks — free to low-cost outdoor experiences",
+      "Regional amusement parks — Cedar Fair and Six Flags properties offer comparable rides at significantly lower prices",
+      "Library card — Disney films are available through Hoopla and Kanopy at many public libraries"
+    ],
+    "healthier": [
+      "National and state parks — outdoor recreation without algorithmic engagement optimization",
+      "Local community events and festivals — civic gathering without corporate intermediation"
+    ],
+    "diy": [
+      "Disney+ is $13.99/month with ads or $22.99 without — that is $168-276 per year for content Disney produced partly by eliminating 7,000 jobs",
+      "A single-day Magic Kingdom ticket exceeds $189 in peak season — a family of four spends $750+ before food and merchandise",
+      "Disney's animated classics are available at most public libraries on DVD"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1923,
+      "event": "Walt Disney Company founded",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "Disney+ launches at $6.99/month",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Disney+ streaming losses reach $4 billion for the fiscal year; Bob Chapek fired, Bob Iger returns",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Florida Reedy Creek district dissolved by DeSantis after Disney opposes Don't Say Gay bill",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "7,000 job cuts announced to reduce costs by $5.5 billion",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "Disney+ raises price to $13.99/month with ads; $22.99 without",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "Streaming division reaches profitability; ESPN begins direct-to-consumer transition",
+      "severity": "moderate",
+      "source_url": ""
+    }
+  ],
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Disney shareholders and Bob Iger",
+        "how": "7,000 layoffs reduced costs by $5.5B; streaming profitability achieved; Iger paid $31M in layoff year"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "7,000 laid-off employees",
+        "how": "Jobs eliminated across ESPN, parks, and corporate"
+      },
+      {
+        "group": "Middle-class families",
+        "how": "Theme park prices have increased beyond reach of the demographic Disney built its brand serving"
+      },
+      {
+        "group": "Talent",
+        "how": "Simultaneous streaming releases reduced backend compensation; Scarlett Johansson sued"
+      }
+    ],
+    "the_gap": "Disney cut 7,000 jobs. Its CEO received $31 million. A churro at the Magic Kingdom costs $6.75. A single-day ticket for a family of four exceeds $750 before food. The company that made its brand on making magic accessible built a business model that prices out the families it built that brand with."
+  }
+}

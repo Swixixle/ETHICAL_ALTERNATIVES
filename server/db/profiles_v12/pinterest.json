@@ -1,0 +1,191 @@
+{
+  "brand_name": "Pinterest",
+  "brand_slug": "pinterest",
+  "parent_company": "Pinterest Inc.",
+  "ultimate_parent": "Pinterest Inc.",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "PINTEREST HOSTED PRO-EATING-DISORDER CONTENT FOR YEARS WHILE KNOWING IT WAS HARMING TEEN GIRLS — RESEARCHERS CALLED IT THE MOST DANGEROUS PLATFORM FOR BODY IMAGE",
+  "executive_summary": "Pinterest is an image-based social platform with 520+ million monthly active users. Researchers and health professionals have identified Pinterest as particularly dangerous for teen girls' body image and eating disorder development — the platform's visual, aspirational format combined with its algorithm's tendency to serve increasingly extreme thinness content creates a documented pathway into disordered eating. Pinterest has been named in the same federal MDL as Meta, YouTube, TikTok, and Snapchat for youth mental health harms. The company has implemented some safeguards — removing certain search terms related to eating disorders and adding crisis resources — but researchers have documented that harmful content continues to circulate through adjacent search terms and recommended pins.",
+  "verdict_tags": [
+    "eating_disorder_content_documented",
+    "body_image_harm_documented",
+    "teen_girls_primary_demographic",
+    "mdl_3047_named_defendant",
+    "aspirational_harm_algorithm"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": false,
+    "tax": false,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Pinterest Inc. is incorporated in Delaware and uses standard tech company international structures. The company reached profitability in 2023 after years of losses.",
+    "flags": [
+      "delaware_incorporation",
+      "standard_international_structures"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
+  },
+  "legal": {
+    "summary": "Pinterest is a named defendant in MDL 3047 — the federal social media mental health multidistrict litigation involving 2,000+ cases from school districts, state AGs, and families. The platform has been specifically identified in litigation for its role in eating disorder content promotion. Pinterest has faced FTC scrutiny over data privacy practices including data sharing with third parties.",
+    "flags": [
+      "mdl_3047_named_defendant",
+      "eating_disorder_content_litigation",
+      "ftc_data_privacy_scrutiny"
+    ],
+    "sources": [
+      "https://trulaw.com/social-media-mental-health-lawsuit"
+    ]
+  },
+  "labor": {
+    "summary": "Pinterest conducted significant layoffs in 2022, eliminating approximately 150 positions. The company has faced gender and race discrimination lawsuits from former executives — former COO Françoise Brougher sued Pinterest for gender discrimination and retaliation in 2020, settling confidentially. The lawsuit and its settlement drew significant attention to workplace culture issues at the company.",
+    "flags": [
+      "brougher_gender_discrimination_lawsuit",
+      "2022_layoffs",
+      "executive_discrimination_settlement"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Standard image and video hosting energy footprint. Pinterest has made sustainability commitments. No specific documented environmental violations.",
+    "flags": [
+      "hosting_energy_footprint"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Pinterest has been less politically visible than other platforms but has faced criticism for inconsistent content moderation — removing some political content while allowing other harmful content to persist. The platform's primarily female user base and its role in health and beauty content makes it particularly relevant to body image and health policy debates.",
+    "flags": [
+      "inconsistent_content_moderation",
+      "female_demographic_health_policy_relevance"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Bill Ready joined Pinterest in 2022, replacing Ben Silbermann who co-founded the company and became Executive Chairman. The 2020 discrimination lawsuit against Pinterest named former COO Brougher and alleged a pattern of gender discrimination in executive ranks. The settlement amount was not disclosed.",
+    "flags": [
+      "silbermann_executive_chairman",
+      "brougher_discrimination_settlement_undisclosed"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Pinterest's business model is advertising-based, with advertisers targeting users based on their 'interest graphs' — the detailed picture of interests built from saved pins. This means advertisers in fashion, beauty, and diet industries can precisely target users who have demonstrated interest in body image-related content. The intersection of advertising targeting and eating disorder content creates a documented pathway where harmful content attracts advertising revenue.",
+    "flags": [
+      "interest_graph_advertising_targeting",
+      "diet_beauty_advertising_intersection",
+      "advertising_revenue_harmful_content_intersection"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Body image researchers and eating disorder advocacy organizations have documented that Pinterest's algorithm serves increasingly extreme thinness content to users who engage with weight loss or fitness content — creating a documented pathway into eating disorder content regardless of whether users search for it explicitly. When Pinterest blocked certain search terms (like 'thinspiration'), researchers documented users circumventing the blocks through adjacent terms. Plaintiffs in the mental health MDL allege Pinterest knew its recommendation algorithm was serving harmful body image content to teenage girls and prioritized engagement over safety.",
+    "flags": [
+      "algorithm_extreme_thinness_escalation_documented",
+      "search_term_blocks_circumvented_documented",
+      "teen_girls_harmful_content_algorithm_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Pinterest has been identified by eating disorder researchers as one of the most dangerous social platforms for body image and eating disorder development. The platform's visual format — large images of bodies, food, and lifestyle — combined with its aspirational framing and recommendation algorithm creates documented pathways into disordered eating content. A 2021 study found that even brief exposure to fitspiration content on Pinterest was associated with negative mood and body dissatisfaction in young women. Pinterest has implemented some protections including blocking certain search terms and adding crisis resources, but researchers document continued exposure through recommendation pathways.",
+    "flags": [
+      "most_dangerous_body_image_platform_research",
+      "fitspiration_negative_mood_study",
+      "algorithm_eating_disorder_pathway",
+      "crisis_resources_added_insufficient"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Are.na — collections and bookmarking platform without engagement-optimization algorithms",
+      "Notion or personal wikis — private inspiration boards without algorithmic serving",
+      "Physical mood boards — cut and paste, no algorithm, no ads, no data collection"
+    ],
+    "healthier": [
+      "Are.na — no advertising, no engagement optimization, subscription-funded",
+      "Local library's design and recipe books — inspiration without algorithmic escalation",
+      "Specific newsletters and blogs from creators you choose — without algorithmic curation driving toward extreme content"
+    ],
+    "diy": [
+      "Pinterest's algorithm is designed to keep you engaged — it serves increasingly extreme content in whatever direction you move; this is especially documented for body image content",
+      "If you use Pinterest for recipes or crafts, search for specific things rather than browsing recommendations — reduces algorithmic escalation",
+      "Pinterest's interest graph is sold to advertisers — every pin you save builds a detailed profile used to target you with diet and beauty advertising"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2010,
+      "event": "Pinterest founded by Ben Silbermann, Paul Sciarra, and Evan Sharp",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2012,
+      "event": "Researchers first document Pinterest's role in spreading pro-eating-disorder content",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "Pinterest blocks searches for eating disorder terms; researchers document circumvention through adjacent terms",
+      "severity": "moderate",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "COO Françoise Brougher sues Pinterest for gender discrimination and retaliation; case settles confidentially",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "Study finds brief Pinterest fitspiration exposure associated with negative mood and body dissatisfaction",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "Named in MDL 3047 federal social media mental health litigation",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "MDL negligence claims allowed to proceed; Pinterest among defendants",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Pinterest shareholders",
+        "how": "Advertising revenue from interest-graph targeting including diet and beauty advertisers"
+      },
+      {
+        "group": "Diet and beauty advertisers",
+        "how": "Precise targeting of users demonstrating body image engagement"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Teen girls with eating disorders",
+        "how": "Algorithm documented to escalate toward extreme thinness content; platform identified as most dangerous for body image"
+      },
+      {
+        "group": "Parents and healthcare systems",
+        "how": "Eating disorder treatment costs; 46% of teens report social media makes them feel worse about their bodies"
+      }
+    ],
+    "the_gap": "Pinterest makes money by showing you ads targeted to your interests. Your interest in fitness content generates diet advertising revenue. The algorithm that drives that advertising also escalates toward increasingly extreme body content. Researchers called it one of the most dangerous platforms for teen girls' body image. The advertising revenue and the eating disorder pathway are the same system."
+  }
+}

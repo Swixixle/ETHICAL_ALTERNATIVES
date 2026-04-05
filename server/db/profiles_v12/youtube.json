@@ -1,0 +1,204 @@
+{
+  "brand_name": "YouTube",
+  "brand_slug": "youtube",
+  "parent_company": "Google LLC",
+  "ultimate_parent": "Alphabet Inc.",
+  "subsidiaries": [
+    "YouTube Premium",
+    "YouTube Music",
+    "YouTube TV",
+    "YouTube Kids"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "YOUTUBE KNEW SHORT-FORM VIDEOS TRIGGER AN ADDICTION CYCLE AND LAUNCHED SHORTS ANYWAY — NOW IT FACES 2,000+ LAWSUITS OVER TEEN MENTAL HEALTH",
+  "executive_summary": "YouTube is the world's largest video platform with over 2.7 billion monthly logged-in users and annual revenues exceeding $34 billion. Internal documents unsealed in 2025 litigation show YouTube employees recognized that short-form video creates an 'addiction cycle' and that driving 'more frequent daily usage was not well-aligned' with user wellbeing — and launched YouTube Shorts anyway. YouTube is a named defendant in 2,000+ social media mental health lawsuits including a federal multidistrict litigation involving school districts, state attorneys general, and families. The FTC fined YouTube $170 million in 2019 for COPPA violations — illegally collecting data on children — and federal courts have found Google collected protected children's data without permission.",
+  "verdict_tags": [
+    "addiction_cycle_internal_docs",
+    "2000_plus_mental_health_lawsuits",
+    "ftc_170m_coppa_fine",
+    "children_data_collection_without_consent",
+    "school_districts_suing",
+    "shorts_addiction_design"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": false,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "YouTube's revenue flows through Google LLC which uses complex Irish and Dutch structures to minimize global tax obligations. Google has faced multi-billion dollar EU tax disputes over transfer pricing. The company's effective global tax rate has been substantially below US statutory rates through decades of international tax planning.",
+    "flags": [
+      "irish_dutch_tax_structures",
+      "eu_tax_disputes",
+      "below_statutory_effective_rate"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
+  },
+  "legal": {
+    "summary": "2019: FTC fines YouTube $170 million for COPPA violations — collecting children's data without parental consent. 2024: Federal Magistrate Judge finds Google collected protected children's viewing data without permission in separate class action. MDL 3047: 2,000+ social media mental health lawsuits naming YouTube as defendant; Judge Gonzalez Rogers ruled negligence and failure-to-warn claims can proceed in October 2024. School districts suing YouTube for educational disruption costs from youth mental health crisis. White Mountain Apache Tribe sued YouTube under RICO for contributing to youth mental health crisis.",
+    "flags": [
+      "ftc_170m_coppa_2019",
+      "children_data_collection_court_finding",
+      "mdl_3047_2000_lawsuits",
+      "school_districts_suing",
+      "rico_lawsuit_tribe"
+    ],
+    "sources": [
+      "https://www.motleyrice.com/social-media-lawsuits/youtube"
+    ]
+  },
+  "labor": {
+    "summary": "YouTube relies heavily on a content moderation workforce of contract workers — not direct Google employees — who review graphic violence, child exploitation material, and other harmful content. These workers have documented severe psychological trauma from prolonged exposure to disturbing content without adequate mental health support. In 2019, a group of YouTube content moderators in Austin, Texas reached a settlement with Google over working conditions.",
+    "flags": [
+      "contract_moderator_psychological_trauma",
+      "austin_moderator_settlement",
+      "indirect_employment_model"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "YouTube's global video streaming infrastructure represents one of the largest energy footprints in the digital economy. Google has made renewable energy commitments for its data center operations but absolute energy consumption continues to grow with platform scale.",
+    "flags": [
+      "massive_streaming_energy_footprint",
+      "data_center_growth"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "YouTube has been criticized from both ends of the political spectrum — conservatives allege systematic suppression of right-wing content, progressives allege the platform amplifies misinformation and extremism. YouTube's content moderation decisions — made by a private company — have direct effects on political discourse globally. The platform has been used to radicalize users toward extremist content through its recommendation algorithm.",
+    "flags": [
+      "recommendation_algorithm_radicalization_documented",
+      "content_moderation_political_controversy",
+      "global_political_discourse_influence"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "YouTube CEO Neal Mohan took over from Susan Wojcicki in 2023. Wojcicki led YouTube through its growth period and its COPPA violation. Alphabet CEO Sundar Pichai oversees YouTube as part of Google. Executive compensation at Alphabet is among the highest in the technology industry.",
+    "flags": [
+      "mohan_ceo_post_coppa_era",
+      "alphabet_executive_compensation"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "YouTube's parent Alphabet also owns Google Search, Google Ads, Android, Chrome, and Gmail — giving it a uniquely comprehensive view of user behavior across devices and platforms. The recommendation algorithm that courts have found harmful to teens is trained on behavioral data from across this ecosystem. Edelson PC — which won the $24.9M High 5 Games social casino verdict — is simultaneously pursuing Google and Apple for their role as payment processors in illegal social casino apps.",
+    "flags": [
+      "alphabet_cross_platform_data",
+      "edelson_litigation_google_app_store"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Internal YouTube documents cited in litigation alleged that employees recognized short-form video Shorts created an addiction cycle and that driving frequent usage was 'not well-aligned' with user wellbeing — and launched the product anyway. School districts allege YouTube's design has reduced student attention spans and increased mental health costs requiring intervention. The White Mountain Apache Tribe's RICO lawsuit alleges YouTube's algorithmic amplification of harmful content constitutes an organized pattern of illegal activity causing documented harm to tribal youth.",
+    "flags": [
+      "addiction_cycle_internal_docs_shorts_launch",
+      "student_attention_span_reduction_alleged",
+      "rico_pattern_harmful_content_alleged"
+    ],
+    "sources": [
+      "https://us.cnn.com/2025/11/25/tech/social-media-youth-mental-health-lawsuit-meta-tiktok-snap-youtube"
+    ]
+  },
+  "health_record": {
+    "summary": "Internal YouTube documents unsealed in 2025 litigation showed employees knew the platform's short-form video recommendation system created an addiction cycle and that frequent usage promotion was misaligned with wellbeing — and launched YouTube Shorts anyway. Research cited in MDL 3047 shows 46% of adolescents ages 13-17 say social media makes them feel worse about their body image. A one-week social media pause study published in JAMA Network Open showed significant reductions in depression, anxiety, and insomnia in young adults.",
+    "flags": [
+      "addiction_cycle_internal_acknowledgment",
+      "46pct_teens_body_image_worse",
+      "jama_one_week_break_depression_reduction",
+      "shorts_design_misaligned_wellbeing_internal"
+    ],
+    "sources": [
+      "https://trulaw.com/social-media-mental-health-lawsuit"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Vimeo — creator-focused platform with less algorithmic manipulation",
+      "Public library DVD collection — films and documentaries without recommendation algorithms",
+      "PBS and NPR streaming — publicly funded, free, no engagement-optimization"
+    ],
+    "healthier": [
+      "Nebula — creator-owned streaming platform, no algorithmic recommendations, subscription-funded",
+      "Physical media — DVDs and Blu-rays don't autoplay the next thing",
+      "Read — documented to have opposite effects on attention span from short-form video consumption"
+    ],
+    "diy": [
+      "YouTube's own internal documents said driving frequent daily usage was not aligned with user wellbeing — the algorithm is designed to keep you watching, not to serve your interests",
+      "Browser extensions like DF YouTube and Unhook remove the recommendation sidebar and autoplay",
+      "YouTube Vanced (third-party) blocks ads and autoplay without paying for Premium"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2005,
+      "event": "YouTube founded; acquired by Google for $1.65B in 2006",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "FTC fines YouTube $170 million for COPPA violations — collecting children's data without parental consent",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "YouTube Shorts launches globally — internal documents show employees knew it created addiction cycle",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "MDL 3047 consolidated social media mental health lawsuit grows rapidly; YouTube named as defendant",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "October: Judge rules negligence and failure-to-warn claims proceed; school districts join MDL; federal court finds Google collected protected children's data without permission",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2025,
+      "event": "MDL grows to 2,000+ cases; internal documents unsealed showing addiction cycle acknowledgment; RICO lawsuit filed by White Mountain Apache Tribe",
+      "severity": "critical",
+      "source_url": "https://www.motleyrice.com/social-media-lawsuits/youtube"
+    }
+  ],
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Alphabet/Google shareholders",
+        "how": "$34B YouTube revenue; advertising dominance; Shorts driving engagement growth"
+      },
+      {
+        "group": "Advertisers",
+        "how": "Captive youth audience with documented addiction mechanics"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Teenagers with mental health crises",
+        "how": "2,000+ lawsuits allege documented harm; 46% report worse body image"
+      },
+      {
+        "group": "School districts",
+        "how": "Suing YouTube for increased mental health intervention costs"
+      },
+      {
+        "group": "Children whose data was collected illegally",
+        "how": "$170M FTC fine settled COPPA violations — children's data was collected and monetized"
+      }
+    ],
+    "the_gap": "YouTube employees wrote internally that driving frequent daily usage was 'not well-aligned' with user wellbeing. They launched YouTube Shorts anyway. 2,000+ lawsuits say children were harmed. A federal judge ruled those claims can proceed. YouTube generated $34 billion in revenue last year."
+  }
+}
