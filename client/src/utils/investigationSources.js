@@ -1,0 +1,81 @@
+const FLAT_SOURCE_KEYS = [
+  'tax_sources',
+  'legal_sources',
+  'labor_sources',
+  'environmental_sources',
+  'political_sources',
+  'product_health_sources',
+  'executive_sources',
+];
+
+const NESTED_SOURCE_KEYS = ['connections', 'allegations', 'health_record'];
+
+/** @param {Record<string, unknown> | null | undefined} inv */
+/** @param {Record<string, unknown> | null | undefined} result */
+export function countIndexedSources(inv, result) {
+  if (!inv || typeof inv !== 'object') {
+    const extra = Array.isArray(result?.searched_sources) ? result.searched_sources.length : 0;
+    return extra;
+  }
+  let n = 0;
+  for (const k of FLAT_SOURCE_KEYS) {
+    const arr = inv[k];
+    if (Array.isArray(arr)) n += arr.length;
+  }
+  for (const k of NESTED_SOURCE_KEYS) {
+    const block = inv[k];
+    if (block && typeof block === 'object' && Array.isArray(block.sources)) n += block.sources.length;
+  }
+  const extra = Array.isArray(result?.searched_sources) ? result.searched_sources.length : 0;
+  return n + extra;
+}
+
+/** @param {string} raw */
+function hostLabel(raw) {
+  try {
+    const u = new URL(raw);
+    return u.hostname.replace(/^www\./, '') || raw;
+  } catch {
+    return raw.slice(0, 48);
+  }
+}
+
+/**
+ * Unique URLs with display metadata for the sources ledger card.
+ * @param {Record<string, unknown> | null | undefined} inv
+ * @param {Record<string, unknown> | null | undefined} result
+ */
+export function collectSourceLedgerRows(inv, result) {
+  const seen = new Set();
+  /** @type {{ url: string; name: string }[]} */
+  const rows = [];
+  const push = (u) => {
+    const url = String(u).trim();
+    if (!url || seen.has(url)) return;
+    seen.add(url);
+    rows.push({ url, name: hostLabel(url) });
+  };
+
+  if (inv && typeof inv === 'object') {
+    for (const k of FLAT_SOURCE_KEYS) {
+      const arr = inv[k];
+      if (Array.isArray(arr)) arr.forEach((x) => push(x));
+    }
+    for (const k of NESTED_SOURCE_KEYS) {
+      const block = inv[k];
+      if (block && typeof block === 'object' && Array.isArray(block.sources)) {
+        block.sources.forEach((x) => push(x));
+      }
+    }
+    const hr = inv.health_record;
+    if (hr && typeof hr === 'object' && Array.isArray(hr.studies)) {
+      for (const st of hr.studies) {
+        if (st && typeof st === 'object' && st.url) push(st.url);
+      }
+    }
+  }
+  if (result && typeof result === 'object' && Array.isArray(result.searched_sources)) {
+    result.searched_sources.forEach((x) => push(typeof x === 'string' ? x : String(x)));
+  }
+  return rows;
+}

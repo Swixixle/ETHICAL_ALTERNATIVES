@@ -12,23 +12,24 @@ export default function CostAbsorption({ data }) {
     <div
       style={{
         background: '#162030',
-        border: '1px solid #2a3f52',
-        borderTop: '2px solid #f0a820',
+        border: 'none',
+        borderLeft: '3px solid #d4a017',
         padding: '20px 24px',
-        margin: '32px 0',
+        margin: '24px 0',
       }}
     >
       <div
         style={{
           fontFamily: "'Space Mono', monospace",
-          fontSize: 12,
-          letterSpacing: 3,
+          fontSize: 11,
+          letterSpacing: 1.5,
           textTransform: 'uppercase',
-          color: '#f0a820',
+          color: '#a8c4d8',
+          fontWeight: 600,
           marginBottom: 16,
         }}
       >
-        Who Absorbs the Cost
+        Who absorbs the cost
       </div>
 
       <div
@@ -43,13 +44,14 @@ export default function CostAbsorption({ data }) {
             style={{
               fontFamily: "'Space Mono', monospace",
               fontSize: 11,
-              letterSpacing: 2,
+              letterSpacing: 1.5,
               textTransform: 'uppercase',
               color: '#6aaa8a',
+              fontWeight: 600,
               marginBottom: 10,
             }}
           >
-            Who Benefited
+            Who benefited
           </div>
           {benefited.map((item, i) => (
             <div key={i} style={{ marginBottom: 10 }}>
@@ -59,6 +61,7 @@ export default function CostAbsorption({ data }) {
                   fontSize: 11,
                   color: '#f0e8d0',
                   marginBottom: 3,
+                  textTransform: 'none',
                 }}
               >
                 {item.group}
@@ -66,9 +69,9 @@ export default function CostAbsorption({ data }) {
               <div
                 style={{
                   fontFamily: "'Crimson Pro', serif",
-                  fontSize: 18,
-                  color: '#a8c4d8',
-                  lineHeight: 1.5,
+                  fontSize: 14,
+                  color: '#e0e0e0',
+                  lineHeight: 1.65,
                 }}
               >
                 {item.how}
@@ -82,13 +85,14 @@ export default function CostAbsorption({ data }) {
             style={{
               fontFamily: "'Space Mono', monospace",
               fontSize: 11,
-              letterSpacing: 2,
+              letterSpacing: 1.5,
               textTransform: 'uppercase',
               color: '#ff6b6b',
+              fontWeight: 600,
               marginBottom: 10,
             }}
           >
-            Who Paid
+            Who paid
           </div>
           {paid.map((item, i) => (
             <div key={i} style={{ marginBottom: 10 }}>
@@ -98,6 +102,7 @@ export default function CostAbsorption({ data }) {
                   fontSize: 11,
                   color: '#f0e8d0',
                   marginBottom: 3,
+                  textTransform: 'none',
                 }}
               >
                 {item.group}
@@ -105,9 +110,9 @@ export default function CostAbsorption({ data }) {
               <div
                 style={{
                   fontFamily: "'Crimson Pro', serif",
-                  fontSize: 18,
-                  color: '#a8c4d8',
-                  lineHeight: 1.5,
+                  fontSize: 14,
+                  color: '#e0e0e0',
+                  lineHeight: 1.65,
                 }}
               >
                 {item.how}
@@ -120,14 +125,15 @@ export default function CostAbsorption({ data }) {
       {gap ? (
         <div
           style={{
-            borderTop: '1px solid #2a3f52',
-            paddingTop: 14,
+            borderTop: 'none',
+            borderLeft: '3px solid #d4a017',
+            padding: '14px 0 0 14px',
             marginTop: 14,
             fontFamily: "'Crimson Pro', serif",
-            fontSize: 18,
+            fontSize: 15,
             fontStyle: 'italic',
-            color: '#f0e8d0',
-            lineHeight: 1.6,
+            color: '#e0e0e0',
+            lineHeight: 1.65,
           }}
         >
           {gap}

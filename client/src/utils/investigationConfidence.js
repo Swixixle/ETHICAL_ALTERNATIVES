@@ -1,3 +1,43 @@
+import { countIndexedSources } from './investigationSources.js';
+
+/**
+ * @typedef {'verified_record' | 'partial_record' | 'inferred' | 'limited_profile' | 'no_public_record'} ConfidenceBadgeKey
+ */
+
+/**
+ * Five-state confidence badge (Instruction 2). Verified only for database profiles.
+ * @param {Record<string, unknown> | null | undefined} investigation
+ * @param {Record<string, unknown> | null | undefined} identification
+ * @param {Record<string, unknown> | null | undefined} result
+ * @returns {{ key: ConfidenceBadgeKey; label: string; tooltip: string }}
+ */
+export function getConfidenceBadgePresentation(investigation, identification, result) {
+  const tooltip =
+    'This rating reflects the depth of public documentation, not a moral verdict.';
+  if (!investigation || typeof investigation !== 'object') {
+    return { key: 'no_public_record', label: 'NO PUBLIC RECORD', tooltip };
+  }
+  const pt = String(investigation.profile_type || '').toLowerCase();
+  if (pt === 'database') {
+    return { key: 'verified_record', label: 'VERIFIED RECORD', tooltip };
+  }
+  const method =
+    identification && typeof identification === 'object'
+      ? identification.identification_method
+      : null;
+  if (method === 'scene_inference') {
+    return { key: 'inferred', label: 'INFERRED', tooltip };
+  }
+  const n = countIndexedSources(investigation, result);
+  if (n < 3) {
+    return { key: 'limited_profile', label: 'LIMITED PROFILE', tooltip };
+  }
+  if (n <= 6) {
+    return { key: 'partial_record', label: 'PARTIAL RECORD', tooltip };
+  }
+  return { key: 'partial_record', label: 'PARTIAL RECORD', tooltip };
+}
+
 /**
  * Visual / copy treatment for investigation vs identification state (designed, never blank).
  * @param {Record<string, unknown> | null | undefined} identification

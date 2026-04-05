@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import InvestigationCard from './InvestigationCard.jsx';
 import HealthCallout from './HealthCallout.jsx';
-import ProofBlock from './ProofBlock.jsx';
 import ShareCard from './ShareCard.jsx';
+import { getInvestigationRecordPresentation } from '../utils/investigationConfidence.js';
 import QuickAlternatives from './QuickAlternatives.jsx';
 
 const apiBase = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
@@ -172,43 +172,16 @@ export default function HistoryScreen({ onBack }) {
             <p style={{ fontFamily: "'Crimson Pro', serif", color: '#6a8a9a' }}>Loading…</p>
           ) : investigation && identification ? (
             <>
-              <h1
-                style={{
-                  fontFamily: "'Bebas Neue', sans-serif",
-                  fontSize: 32,
-                  letterSpacing: 2,
-                  margin: '0 0 16px',
-                  lineHeight: 1.05,
-                }}
-              >
-                {headline}
-              </h1>
-              <ProofBlock investigation={investigation} identification={identification} result={null} />
               <QuickAlternatives registryResults={[]} localResults={[]} />
-              <button
-                type="button"
-                onClick={() => setShowShare(true)}
-                style={{
-                  marginTop: 16,
-                  width: '100%',
-                  maxWidth: 420,
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 11,
-                  letterSpacing: 1,
-                  textTransform: 'uppercase',
-                  padding: '12px 18px',
-                  background: '#f0a820',
-                  color: '#0f1520',
-                  border: 'none',
-                  borderRadius: 2,
-                  cursor: 'pointer',
-                  fontWeight: 700,
-                }}
-              >
-                Share This Record
-              </button>
               <HealthCallout investigation={investigation} />
-              <InvestigationCard investigation={investigation} onShare={() => setShowShare(true)} />
+              <InvestigationCard
+                investigation={investigation}
+                identification={identification}
+                result={null}
+                recordPresentation={getInvestigationRecordPresentation(identification, investigation, {})}
+                headline={headline}
+                onShare={() => setShowShare(true)}
+              />
             </>
           ) : (
             <p style={{ fontFamily: "'Crimson Pro', serif", color: '#6a8a9a' }}>

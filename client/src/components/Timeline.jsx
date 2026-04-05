@@ -18,8 +18,22 @@ export default function Timeline({ events }) {
   if (!events || events.length === 0) return null;
 
   return (
-    <section style={{ margin: "32px 0 24px" }}>
-      <h2 className="section-header section-header--informational">TIMELINE</h2>
+    <section style={{ margin: "20px 0 16px" }}>
+      <h2
+        style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: 11,
+          letterSpacing: "1.5px",
+          textTransform: "uppercase",
+          color: "#a8c4d8",
+          fontWeight: 600,
+          margin: "0 0 12px",
+          border: "none",
+          padding: 0,
+        }}
+      >
+        Timeline
+      </h2>
       <div style={{ position: "relative", paddingLeft: 44 }}>
         <div style={{
           position: "absolute",
@@ -51,34 +65,36 @@ export default function Timeline({ events }) {
                 <div style={{
                   fontFamily: "'Space Mono', monospace",
                   fontSize: 12,
-                  letterSpacing: 2,
-                  color: "#a8c4d8",
-                  textTransform: "uppercase",
+                  letterSpacing: 1,
+                  color: "#6a8a9a",
+                  textTransform: "none",
                   marginBottom: 4,
                   display: "flex",
                   gap: 8,
-                  alignItems: "baseline"
+                  alignItems: "baseline",
+                  flexWrap: "wrap",
                 }}>
                   <span>{e.year}</span>
                   {e.category && (
                     <span className="timeline-category-badge" style={{
                       padding: "2px 6px",
                       borderRadius: 999,
-                      fontSize: 12
+                      fontSize: 11,
+                      textTransform: "none",
                     }}>
-                      {e.category.toUpperCase()}
+                      {e.category}
                     </span>
                   )}
                   {e.severity === "critical" && (
-                    <span style={{ color: "#ff6b6b", fontSize: 12 }}>● CRITICAL</span>
+                    <span style={{ color: "#ff6b6b", fontSize: 11 }}>● Critical</span>
                   )}
                 </div>
 
                 <div style={{
                   fontFamily: "'Crimson Pro', Georgia, serif",
-                  fontSize: 18,
-                  lineHeight: 1.6,
-                  color: "var(--color-text-main, #f0e8d0)",
+                  fontSize: 14,
+                  lineHeight: 1.65,
+                  color: "#e0e0e0",
                   paddingLeft: 6,
                   borderLeft: borderColor,
                   marginBottom: 4
@@ -93,8 +109,8 @@ export default function Timeline({ events }) {
                     rel="noreferrer"
                     style={{
                       fontFamily: "'Space Mono', monospace",
-                      fontSize: 18,
-                      color: "var(--color-text-dim, #6a8a9a)",
+                      fontSize: 12,
+                      color: "#a8c4d8",
                       textDecoration: "underline",
                       display: "inline-block",
                       marginTop: 2

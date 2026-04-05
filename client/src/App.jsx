@@ -4,8 +4,6 @@ import TapOverlay from './components/TapOverlay.jsx';
 import ConfirmTap from './components/ConfirmTap.jsx';
 import RegionSelectOverlay from './components/RegionSelectOverlay.jsx';
 import ErrorState from './components/ErrorState.jsx';
-import InvestigationCard from './components/InvestigationCard.jsx';
-import ProofBlock from './components/ProofBlock.jsx';
 import QuickAlternatives from './components/QuickAlternatives.jsx';
 import HealthCallout from './components/HealthCallout.jsx';
 import AlternativesSidebar from './components/AlternativesSidebar.jsx';
@@ -13,10 +11,15 @@ import HomeScreen from './components/HomeScreen.jsx';
 import HistoryScreen from './components/HistoryScreen.jsx';
 import LocalCommercial from './components/LocalCommercial.jsx';
 import ShareCard from './components/ShareCard.jsx';
+import ConfidenceBadge from './components/ConfidenceBadge.jsx';
+import InvestigationCard, { NoRecordCompactModule } from './components/InvestigationCard.jsx';
 import { readCachedLocation } from './services/location.js';
 import CommunityImpact from './components/CommunityImpact.jsx';
 import { useTapAnalysis } from './hooks/useTapAnalysis.js';
-import { getInvestigationRecordPresentation } from './utils/investigationConfidence.js';
+import {
+  getInvestigationRecordPresentation,
+  getConfidenceBadgePresentation,
+} from './utils/investigationConfidence.js';
 import { haptic } from './utils/haptics.js';
 import { playReveal } from './utils/sounds.js';
 import './App.css';
@@ -188,12 +191,19 @@ export default function App() {
     ((Array.isArray(result.registry_results) && result.registry_results.length > 0) ||
       (Array.isArray(result.local_results) && result.local_results.length > 0));
 
+  const headerBadgePresentation =
+    result?.investigation && id
+      ? getConfidenceBadgePresentation(result.investigation, id, result)
+      : null;
+
   const identificationBlock =
     result ? (
-      <div className="app__id-block">
-        <h2 className="app__headline">{investigationHeadline(id, result.investigation)}</h2>
+      <div className="app__id-block app__id-block--results">
+        {!result.investigation ? (
+          <h2 className="app__headline">{investigationHeadline(id, result.investigation)}</h2>
+        ) : null}
 
-        {id ? (
+        {id && !result.investigation ? (
           <>
             {id.text_based_identification && id.visible_text ? (
               <p className="app__visible-text-note" style={{ marginTop: 0 }} title={id.visible_text}>
@@ -294,81 +304,45 @@ export default function App() {
           />
         ) : null}
 
-        {result.investigation ? (
-          <ProofBlock
-            investigation={result.investigation}
-            identification={id}
-            result={result}
-            recordPresentation={recordPresentation}
-          />
-        ) : null}
-
         {id &&
         recordPresentation &&
         recordPresentation.variant === 'no_record' &&
         !showResearchBanner ? (
-          <div
-            style={{
-              marginTop: 16,
-              padding: '12px 14px 14px 16px',
-              borderLeft:
-                typeof recordPresentation.borderLeft === 'string'
-                  ? recordPresentation.borderLeft
-                  : '3px solid #6a8a9a',
-              background: 'rgba(22, 32, 48, 0.55)',
-              borderRadius: 2,
+          <NoRecordCompactModule
+            onRunLiveInvestigation={() => {
+              const b =
+                id && typeof id.brand === 'string' && id.brand.trim()
+                  ? id.brand.trim()
+                  : id && typeof id.object === 'string' && id.object.trim()
+                    ? id.object.trim()
+                    : '';
+              if (b) void investigateByBrand(b);
             }}
-          >
-            <span
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 10,
-                letterSpacing: 2,
-                textTransform: 'uppercase',
-                color: recordPresentation.badgeColor || '#a8c4d8',
-                background: recordPresentation.badgeBg || 'rgba(106,138,154,0.2)',
-                padding: '4px 10px',
-                borderRadius: 2,
-                display: 'inline-block',
-              }}
-            >
-              {recordPresentation.badge}
-            </span>
-            <p
-              style={{
-                fontFamily: "'Crimson Pro', serif",
-                fontSize: 15,
-                color: '#a8c4d8',
-                lineHeight: 1.5,
-                margin: '10px 0 0',
-              }}
-            >
-              {recordPresentation.sentence}
-            </p>
-          </div>
+          />
         ) : null}
 
-        {result.investigation ? (
-          <button
-            type="button"
-            className="app__btn app__btn--share"
-            onClick={() => {
-              haptic('confirm');
-              setShowShare(true);
-            }}
-          >
-            Share This Record
-          </button>
-        ) : null}
         <HealthCallout investigation={result.investigation} />
         {result.investigation ? (
-          <div key={`investigation-${tapSession}`} className="investigation-card-enter">
+          <div
+            key={`investigation-${tapSession}`}
+            className="app__investigation-wrap investigation-card-enter"
+          >
             <InvestigationCard
               investigation={result.investigation}
+              identification={id}
+              result={result}
               recordPresentation={recordPresentation}
+              headline={investigationHeadline(id, result.investigation)}
               onShare={() => {
                 haptic('confirm');
                 setShowShare(true);
+              }}
+              onRunLiveInvestigation={() => {
+                const b =
+                  id && typeof id.brand === 'string' && id.brand.trim()
+                    ? id.brand.trim()
+                    : '';
+                if (b) void investigateByBrand(b);
               }}
             />
           </div>
@@ -420,9 +394,6 @@ export default function App() {
           ) : null}
         </div>
         <div className="app__toolbar">
-          <button type="button" className="app__btn app__btn--ghost" onClick={() => clearResult()}>
-            Try another object
-          </button>
           <button type="button" className="app__btn app__btn--ghost" onClick={() => reset()}>
             New photo
           </button>
@@ -500,21 +471,37 @@ export default function App() {
       </div>
     ) : null;
 
+  const showResultsNav = Boolean(
+    (mode === 'snap' && image && result) || (mode === 'deep' && result?.investigation)
+  );
+
   return (
     <div className="app">
-      <header className="app__header">
-        <div className="app__header-inner">
-          <div>
-            <h1 className="app__logo">ETHICALALT</h1>
-            <p className="app__tagline">Tap anything · Find independent alternatives</p>
+      <header
+        className={`app__header${result?.investigation ? ' app__header--minimal' : ''}`}
+      >
+        <div
+          className={`app__header-inner${result?.investigation ? ' app__header-inner--minimal' : ''}`}
+        >
+          <div className="app__header-left">
+            <button type="button" className="app__logo-wrap" onClick={goHome} title="Home">
+              <span className="app__logo">ETHICALALT</span>
+            </button>
+            {!result?.investigation ? (
+              <p className="app__tagline">Tap anything · Find independent alternatives</p>
+            ) : null}
           </div>
-          <button type="button" className="app__btn app__btn--ghost app__btn--header" onClick={goHome}>
-            ← Home
-          </button>
+          {result?.investigation && headerBadgePresentation ? (
+            <ConfidenceBadge presentation={headerBadgePresentation} compact />
+          ) : (
+            <button type="button" className="app__btn app__btn--ghost app__btn--header" onClick={goHome}>
+              ← Home
+            </button>
+          )}
         </div>
       </header>
 
-      <main className="app__main">
+      <main className={`app__main${showResultsNav ? ' app__main--with-bottom-nav' : ''}`}>
         {mode === 'deep' && loading ? (
           <div className="app__panel app__loader-panel" role="status" aria-busy="true">
             <p className="app__text-loader">Researching...</p>
@@ -649,6 +636,60 @@ export default function App() {
           onExploreCity={() => setResearchCommercialOn(false)}
           autoLoad
         />
+      ) : null}
+
+      {showResultsNav ? (
+        <>
+          <button
+            type="button"
+            className="app__fab-scan"
+            aria-label="New scan"
+            onClick={() => {
+              reset();
+              setMode('snap');
+              haptic('tap');
+            }}
+          />
+          <nav className="app__bottom-nav" aria-label="Primary navigation">
+            <button
+              type="button"
+              className="app__bottom-nav__item"
+              onClick={() => setMode('history')}
+            >
+              <span className="app__bottom-nav__icon" aria-hidden>
+                ◷
+              </span>
+              <span className="app__bottom-nav__label">History</span>
+            </button>
+            <button
+              type="button"
+              className="app__bottom-nav__item app__bottom-nav__item--scan"
+              onClick={() => {
+                reset();
+                setMode('snap');
+                haptic('tap');
+              }}
+            >
+              <span className="app__bottom-nav__icon app__bottom-nav__icon--scan" aria-hidden>
+                ◉
+              </span>
+              <span className="app__bottom-nav__label">Scan</span>
+            </button>
+            <button
+              type="button"
+              className="app__bottom-nav__item"
+              onClick={() => {
+                reset();
+                setMode('home');
+              }}
+            >
+              <span className="app__bottom-nav__icon" aria-hidden>
+                ⌖
+              </span>
+              <span className="app__bottom-nav__label">Local</span>
+            </button>
+          </nav>
+        </>
       ) : null}
     </div>
   );

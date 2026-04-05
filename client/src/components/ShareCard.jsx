@@ -4,162 +4,6 @@ function apiPrefix() {
   return (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
 }
 
-const CONCERN_COLORS = {
-  significant: { bg: '#8b1a1a', text: '#ffd4d4', label: 'SIGNIFICANT CONCERN' },
-  moderate: { bg: '#7a5500', text: '#ffe9a0', label: 'MODERATE CONCERN' },
-  minor: { bg: '#1a4a2a', text: '#a8f0c0', label: 'MINOR CONCERN' },
-  clean: { bg: '#1a3a6a', text: '#a0c8ff', label: 'CLEAN RECORD' },
-  unknown: { bg: '#2a3f52', text: '#a8c4d8', label: 'RECORD' },
-};
-
-function ShareCardVisual({ cardData }) {
-  if (!cardData) return null;
-  const concern = CONCERN_COLORS[cardData.concern_level] || CONCERN_COLORS.unknown;
-  const pq = cardData.pull_quote;
-
-  return (
-    <div
-      style={{
-        background: '#0f1520',
-        border: `2px solid ${concern.bg}`,
-        borderRadius: 8,
-        padding: 24,
-        marginBottom: 20,
-        position: 'relative',
-        overflow: 'hidden',
-      }}
-    >
-      <div
-        style={{
-          background: concern.bg,
-          color: concern.text,
-          fontFamily: "'Space Mono', monospace",
-          fontSize: 11,
-          letterSpacing: 2,
-          textTransform: 'uppercase',
-          padding: '4px 12px',
-          display: 'inline-block',
-          borderRadius: 2,
-          marginBottom: 12,
-        }}
-      >
-        {concern.label}
-      </div>
-
-      {cardData.brand_name ? (
-        <div
-          style={{
-            fontFamily: "'Space Mono', monospace",
-            fontSize: 11,
-            letterSpacing: 3,
-            textTransform: 'uppercase',
-            color: '#a8c4d8',
-            marginBottom: 8,
-          }}
-        >
-          {cardData.brand_name}
-        </div>
-      ) : null}
-
-      <div
-        style={{
-          fontFamily: "'Bebas Neue', sans-serif",
-          fontSize: 'clamp(32px, 8vw, 58px)',
-          letterSpacing: 2,
-          color: '#f0e8d0',
-          lineHeight: 0.95,
-          textTransform: 'uppercase',
-          marginBottom: 18,
-        }}
-      >
-        {cardData.headline}
-      </div>
-
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 16 }}>
-        {(cardData.top_tags || []).map((tag, i) => (
-          <span
-            key={i}
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: 11,
-              letterSpacing: 1.5,
-              textTransform: 'uppercase',
-              color: '#a8c4d8',
-              background: 'rgba(42, 63, 82, 0.45)',
-              borderRadius: 999,
-              padding: '3px 8px',
-            }}
-          >
-            {String(tag).replace(/_/g, ' ')}
-          </span>
-        ))}
-      </div>
-
-      {pq?.text ? (
-        <blockquote
-          style={{
-            margin: '0 0 16px',
-            padding: '12px 14px 12px 16px',
-            borderLeft: '4px solid #f0a820',
-            background: 'rgba(240, 168, 32, 0.06)',
-            fontFamily: "'Crimson Pro', serif",
-            fontSize: 17,
-            lineHeight: 1.55,
-            color: '#f0e8d0',
-            fontStyle: 'italic',
-          }}
-        >
-          {pq.text}
-          {pq.source_url ? (
-            <footer
-              style={{
-                marginTop: 10,
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 11,
-                letterSpacing: 1,
-                fontStyle: 'normal',
-                color: '#6a8a9a',
-                wordBreak: 'break-all',
-              }}
-            >
-              Source: {pq.source_url}
-            </footer>
-          ) : null}
-        </blockquote>
-      ) : null}
-
-      {cardData.source_count > 0 ? (
-        <div
-          style={{
-            fontFamily: "'Space Mono', monospace",
-            fontSize: 11,
-            letterSpacing: 1,
-            color: '#6a8a9a',
-            marginBottom: 12,
-          }}
-        >
-          {cardData.source_count} PRIMARY SOURCE{cardData.source_count !== 1 ? 'S' : ''} · PUBLIC RECORD
-        </div>
-      ) : null}
-
-      <div
-        style={{
-          fontFamily: "'Space Mono', monospace",
-          fontSize: 11,
-          letterSpacing: 2,
-          color: '#6a8a9a',
-          textTransform: 'uppercase',
-          borderTop: '1px solid #2a3f52',
-          paddingTop: 10,
-          marginTop: 4,
-        }}
-      >
-        ETHICALALT · TAP ANYTHING · FIND INDEPENDENT ALTERNATIVES
-      </div>
-    </div>
-  );
-}
-
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
@@ -202,7 +46,7 @@ export default function ShareCard({ investigation, identification, onClose }) {
   const [toast, setToast] = useState(null);
   const [showSentConfirm, setShowSentConfirm] = useState(false);
   const [sentItems, setSentItems] = useState([]);
-  const [shareHelpOpen, setShareHelpOpen] = useState(false);
+  const [infoModalOpen, setInfoModalOpen] = useState(false);
 
   const loadShareData = useCallback(async () => {
     setLoading(true);
@@ -357,21 +201,6 @@ export default function ShareCard({ investigation, identification, onClose }) {
       primary: checklistLabelForRegulator(reg),
     })) || [];
 
-  const rowStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 14,
-    width: '100%',
-    padding: '12px 12px',
-    marginBottom: 8,
-    background: '#162030',
-    border: 'none',
-    borderRadius: 4,
-    cursor: 'pointer',
-    textAlign: 'left',
-    boxSizing: 'border-box',
-  };
-
   if (showSentConfirm) {
     return (
       <div
@@ -458,110 +287,228 @@ export default function ShareCard({ investigation, identification, onClose }) {
     );
   }
 
+  const rowStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 12,
+    width: '100%',
+    padding: '10px 0',
+    margin: 0,
+    background: 'transparent',
+    border: 'none',
+    borderRadius: 0,
+    cursor: 'pointer',
+    textAlign: 'left',
+    boxSizing: 'border-box',
+  };
+
+  const cd = shareData?.card_data;
+
   return (
     <div
       style={{
         position: 'fixed',
         inset: 0,
-        background: 'rgba(15, 21, 32, 0.96)',
+        background: 'rgba(15, 21, 32, 0.97)',
         zIndex: 1000,
-        overflowY: 'auto',
-        padding: '24px 20px 48px',
+        display: 'flex',
+        flexDirection: 'column',
+        maxHeight: '100vh',
       }}
       role="dialog"
       aria-modal="true"
       aria-label="Send this record"
     >
-      <div style={{ maxWidth: 520, margin: '0 auto' }}>
+      <div
+        style={{
+          flex: '0 0 auto',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 12,
+          padding: '12px 18px 10px',
+          minHeight: 44,
+          boxSizing: 'border-box',
+        }}
+      >
         <div
           style={{
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontSize: 20,
+            letterSpacing: 1,
+            color: '#f0e8d0',
+          }}
+        >
+          Send
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+          <button
+            type="button"
+            aria-label="About sending"
+            onClick={() => setInfoModalOpen(true)}
+            style={{
+              fontFamily: 'system-ui, sans-serif',
+              fontSize: 15,
+              fontWeight: 600,
+              lineHeight: 1,
+              color: '#a8c4d8',
+              background: 'transparent',
+              border: 'none',
+              width: 32,
+              height: 32,
+              borderRadius: 999,
+              cursor: 'pointer',
+              padding: 0,
+            }}
+          >
+            ⓘ
+          </button>
+          <button
+            type="button"
+            onClick={onClose}
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 11,
+              color: '#6a8a9a',
+              background: 'transparent',
+              border: 'none',
+              padding: '6px 10px',
+              borderRadius: 2,
+              cursor: 'pointer',
+            }}
+          >
+            Close
+          </button>
+        </div>
+      </div>
+
+      {infoModalOpen ? (
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: 'rgba(10, 15, 25, 0.85)',
+            zIndex: 1002,
             display: 'flex',
-            justifyContent: 'space-between',
             alignItems: 'center',
-            marginBottom: 20,
-            gap: 12,
+            justifyContent: 'center',
+            padding: 24,
+          }}
+          role="presentation"
+          onClick={() => setInfoModalOpen(false)}
+        >
+          <div
+            role="document"
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              maxWidth: 400,
+              background: '#1c2a3a',
+              border: '1px solid #344d62',
+              borderRadius: 6,
+              padding: '20px 22px',
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "'Crimson Pro', serif",
+                fontSize: 15,
+                color: '#e0e0e0',
+                lineHeight: 1.6,
+                margin: 0,
+              }}
+            >
+              When you send, EthicalAlt opens the platforms and regulators you selected. Some steps copy text to
+              your clipboard to paste into Instagram or TikTok. Nothing is posted automatically — you confirm each
+              destination in its own app or site.
+            </p>
+            <button
+              type="button"
+              onClick={() => setInfoModalOpen(false)}
+              style={{
+                marginTop: 16,
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 11,
+                color: '#0a1f3d',
+                background: '#d4a017',
+                border: 'none',
+                padding: '10px 18px',
+                borderRadius: 4,
+                cursor: 'pointer',
+                fontWeight: 700,
+              }}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      ) : null}
+
+      {cd && !loading ? (
+        <div
+          style={{
+            flex: '0 0 120px',
+            margin: '0 18px 12px',
+            padding: '12px 14px',
+            background: '#121a24',
+            borderRadius: 4,
+            boxSizing: 'border-box',
+            overflow: 'hidden',
           }}
         >
           <div
             style={{
               fontFamily: "'Bebas Neue', sans-serif",
-              fontSize: 24,
-              letterSpacing: 2,
-              color: '#f0e8d0',
+              fontSize: 17,
+              letterSpacing: 0.5,
+              color: '#fff',
+              lineHeight: 1.1,
+              maxHeight: 48,
+              overflow: 'hidden',
             }}
           >
-            Send This Record
+            {cd.headline}
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <button
-              type="button"
-              aria-label="Help sending this record"
-              aria-expanded={shareHelpOpen}
-              onClick={() => setShareHelpOpen((v) => !v)}
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 13,
-                fontWeight: 700,
-                lineHeight: 1,
-                color: '#a8c4d8',
-                background: 'rgba(106, 138, 154, 0.2)',
-                border: 'none',
-                width: 28,
-                height: 28,
-                borderRadius: 999,
-                cursor: 'pointer',
-                padding: 0,
-              }}
-            >
-              ?
-            </button>
-            <button
-              type="button"
-              onClick={onClose}
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 11,
-                color: '#6a8a9a',
-                background: 'transparent',
-                border: 'none',
-                padding: '6px 12px',
-                borderRadius: 2,
-                cursor: 'pointer',
-              }}
-            >
-              Close
-            </button>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 10 }}>
+            {(cd.top_tags || []).slice(0, 3).map((tag, i) => (
+              <span
+                key={i}
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 10,
+                  letterSpacing: 0.5,
+                  color: '#d4a017',
+                  background: 'rgba(212,160,23,0.12)',
+                  borderRadius: 999,
+                  padding: '3px 8px',
+                  textTransform: 'none',
+                }}
+              >
+                {String(tag).replace(/_/g, ' ')}
+              </span>
+            ))}
           </div>
         </div>
+      ) : null}
 
-        {shareHelpOpen ? (
-          <p
-            style={{
-              fontFamily: "'Crimson Pro', serif",
-              fontSize: 14,
-              color: '#a8c4d8',
-              lineHeight: 1.45,
-              margin: '0 0 16px',
-            }}
-          >
-            Choose destinations, then tap the button. Selected items open in new tabs or copy text to your
-            clipboard where needed.
-          </p>
-        ) : null}
-
+      <div
+        style={{
+          flex: '1 1 auto',
+          overflowY: 'auto',
+          padding: '0 18px 12px',
+          WebkitOverflowScrolling: 'touch',
+        }}
+      >
         {loading ? (
           <div
             style={{
               textAlign: 'center',
-              padding: 20,
+              padding: 24,
               fontFamily: "'Space Mono', monospace",
               fontSize: 11,
               color: '#6a8a9a',
-              letterSpacing: 2,
-              textTransform: 'uppercase',
             }}
           >
-            Building share card...
+            Building share card…
           </div>
         ) : null}
 
@@ -569,96 +516,88 @@ export default function ShareCard({ investigation, identification, onClose }) {
           <p style={{ color: '#ff6b6b', fontFamily: "'Crimson Pro', serif", marginBottom: 16 }}>{err}</p>
         ) : null}
 
-        {shareData ? <ShareCardVisual cardData={shareData.card_data} /> : null}
-
         {shareData && !loading ? (
-          <>
-            <p
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 11,
-                letterSpacing: 2,
-                textTransform: 'uppercase',
-                color: '#6a8a9a',
-                marginBottom: 12,
-              }}
-            >
-              Destinations
-            </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {[...staticRows, ...regRows].map((row) => (
+              <label key={row.id} style={rowStyle}>
+                <input
+                  type="checkbox"
+                  checked={Boolean(selected[row.id])}
+                  onChange={() => toggle(row.id)}
+                  style={{
+                    width: 18,
+                    height: 18,
+                    accentColor: '#d4a017',
+                    cursor: 'pointer',
+                    flexShrink: 0,
+                  }}
+                />
+                <div
+                  style={{
+                    fontFamily: "'Crimson Pro', serif",
+                    fontSize: 14,
+                    color: '#e0e0e0',
+                    lineHeight: 1.35,
+                    flex: 1,
+                    minWidth: 0,
+                  }}
+                >
+                  {row.primary}
+                </div>
+                <span style={{ color: '#6a8a9a', fontSize: 14 }} aria-hidden>
+                  ›
+                </span>
+              </label>
+            ))}
+          </div>
+        ) : null}
 
-            <div style={{ marginBottom: 24 }}>
-              {[...staticRows, ...regRows].map((row) => (
-                <label key={row.id} style={rowStyle}>
-                  <input
-                    type="checkbox"
-                    checked={Boolean(selected[row.id])}
-                    onChange={() => toggle(row.id)}
-                    style={{
-                      width: 18,
-                      height: 18,
-                      accentColor: '#f0a820',
-                      cursor: 'pointer',
-                      flexShrink: 0,
-                    }}
-                  />
-                  <div
-                    style={{
-                      fontFamily: "'Space Mono', monospace",
-                      fontSize: 11,
-                      letterSpacing: 0.8,
-                      textTransform: 'uppercase',
-                      color: '#f0e8d0',
-                      lineHeight: 1.35,
-                      flex: 1,
-                      minWidth: 0,
-                    }}
-                  >
-                    {row.primary}
-                  </div>
-                </label>
-              ))}
-            </div>
-
-            {toast ? (
-              <p
-                style={{
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 11,
-                  letterSpacing: 1,
-                  color: '#6aaa8a',
-                  textAlign: 'center',
-                  marginBottom: 12,
-                }}
-              >
-                {toast}
-              </p>
-            ) : null}
-
-            <button
-              type="button"
-              disabled={!anyChecked || sending}
-              onClick={handleSendAll}
-              style={{
-                width: '100%',
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 11,
-                letterSpacing: 2,
-                textTransform: 'uppercase',
-                color: !anyChecked || sending ? '#6a8a9a' : '#0f1520',
-                background: !anyChecked || sending ? '#2a3f52' : '#f0a820',
-                border: 'none',
-                padding: '16px 20px',
-                borderRadius: 3,
-                cursor: !anyChecked || sending ? 'not-allowed' : 'pointer',
-                fontWeight: 700,
-                marginBottom: 24,
-              }}
-            >
-              {sending ? 'SENDING…' : 'SEND TO ALL SELECTED'}
-            </button>
-          </>
+        {toast ? (
+          <p
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 11,
+              color: '#6aaa8a',
+              textAlign: 'center',
+              marginTop: 12,
+            }}
+          >
+            {toast}
+          </p>
         ) : null}
       </div>
+
+      {shareData && !loading ? (
+        <div
+          style={{
+            flex: '0 0 auto',
+            padding: '12px 18px calc(12px + env(safe-area-inset-bottom, 0px))',
+            background: 'linear-gradient(180deg, transparent 0%, #0f1520 18%)',
+          }}
+        >
+          <button
+            type="button"
+            disabled={!anyChecked || sending}
+            onClick={handleSendAll}
+            style={{
+              width: '100%',
+              height: 52,
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 12,
+              letterSpacing: 1,
+              textTransform: 'uppercase',
+              color: !anyChecked || sending ? '#6a8a9a' : '#0a1f3d',
+              background: !anyChecked || sending ? '#2a3f52' : '#d4a017',
+              border: 'none',
+              borderRadius: 4,
+              cursor: !anyChecked || sending ? 'not-allowed' : 'pointer',
+              fontWeight: 700,
+            }}
+          >
+            {sending ? 'Sending…' : 'Send to all selected'}
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 }

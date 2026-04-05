@@ -1,12 +1,4 @@
-const SOURCE_KEYS = [
-  'tax_sources',
-  'legal_sources',
-  'labor_sources',
-  'environmental_sources',
-  'political_sources',
-  'product_health_sources',
-  'executive_sources',
-];
+import { countIndexedSources } from '../utils/investigationSources.js';
 
 const GRADE_KEYS = [
   'tax_evidence_grade',
@@ -32,17 +24,6 @@ const GRADE_COLORS = {
   limited: { bg: 'rgba(106,138,154,0.12)', text: '#6a8a9a', border: '#344d62' },
   alleged: { bg: 'rgba(255,107,107,0.1)', text: '#ff6b6b', border: '#ff6b6b' },
 };
-
-/** @param {Record<string, unknown> | null | undefined} inv */
-function countSectionSources(inv) {
-  if (!inv || typeof inv !== 'object') return 0;
-  let n = 0;
-  for (const k of SOURCE_KEYS) {
-    const arr = inv[k];
-    if (Array.isArray(arr)) n += arr.length;
-  }
-  return n;
-}
 
 /** @param {Record<string, unknown> | null | undefined} inv */
 function worstEvidenceGrade(inv) {
@@ -76,9 +57,9 @@ function matchMethodLabel(id) {
 
 function profileTypeLabel(inv) {
   const p = String(inv?.profile_type || '').toLowerCase();
-  if (p === 'database') return 'Verified Profile';
-  if (p === 'realtime_search' || p === 'limited') return 'Live Research';
-  return 'Live Research';
+  if (p === 'database') return 'Verified profile';
+  if (p === 'realtime_search' || p === 'limited') return 'Live research';
+  return 'Live research';
 }
 
 /**
@@ -87,16 +68,22 @@ function profileTypeLabel(inv) {
  *   identification?: Record<string, unknown> | null;
  *   result?: Record<string, unknown> | null;
  *   recordPresentation?: Record<string, unknown> | null;
+ *   suppressRecordBadge?: boolean;
  * }} props
  */
-export default function ProofBlock({ investigation, identification, result, recordPresentation }) {
+export default function ProofBlock({
+  investigation,
+  identification,
+  result,
+  recordPresentation,
+  suppressRecordBadge = false,
+}) {
   if (!investigation) return null;
 
   const inv = investigation;
   const id = identification || {};
-  const srcCount = countSectionSources(inv);
+  const totalSources = countIndexedSources(inv, result);
   const extraSearch = Array.isArray(result?.searched_sources) ? result.searched_sources.length : 0;
-  const totalSources = srcCount + extraSearch;
 
   const grade = worstEvidenceGrade(inv);
   const gradeLevel = grade && typeof grade.level === 'string' ? grade.level.toLowerCase() : '';
@@ -108,7 +95,11 @@ export default function ProofBlock({ investigation, identification, result, reco
       ? pres.borderLeft
       : '3px solid rgba(106, 138, 154, 0.5)';
   const showPresHeader =
-    pres && pres.variant !== 'loading' && typeof pres.badge === 'string' && pres.badge;
+    !suppressRecordBadge &&
+    pres &&
+    pres.variant !== 'loading' &&
+    typeof pres.badge === 'string' &&
+    pres.badge;
   const presSentence = pres && typeof pres.sentence === 'string' ? pres.sentence : null;
   const badgeBg = pres && typeof pres.badgeBg === 'string' ? pres.badgeBg : 'rgba(106,138,154,0.2)';
   const badgeColor = pres && typeof pres.badgeColor === 'string' ? pres.badgeColor : '#a8c4d8';
@@ -173,8 +164,8 @@ export default function ProofBlock({ investigation, identification, result, reco
             style={{
               fontFamily: "'Space Mono', monospace",
               fontSize: 11,
-              letterSpacing: 2,
-              textTransform: 'uppercase',
+              letterSpacing: 1,
+              textTransform: 'none',
               color: 'var(--color-text-muted, #6a8a9a)',
               marginTop: 6,
             }}
@@ -190,8 +181,8 @@ export default function ProofBlock({ investigation, identification, result, reco
               style={{
                 fontFamily: "'Space Mono', monospace",
                 fontSize: 11,
-                letterSpacing: 2,
-                textTransform: 'uppercase',
+                letterSpacing: 1,
+                textTransform: 'none',
                 padding: '6px 12px',
                 borderRadius: 999,
                 border: 'none',
@@ -201,7 +192,7 @@ export default function ProofBlock({ investigation, identification, result, reco
                 marginBottom: 8,
               }}
             >
-              Evidence · {gradeLevel}
+              Evidence: {gradeLevel}
             </div>
           ) : null}
           {!showPresHeader ? (
