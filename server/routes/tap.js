@@ -4,7 +4,11 @@ import { dirname, join } from 'node:path';
 import { Router } from 'express';
 import { identifyObject, inventoryScene, inferSceneContext } from '../services/vision.js';
 import { searchEtsy } from '../services/etsy.js';
-import { getInvestigationProfile } from '../services/investigation.js';
+import {
+  getInvestigationProfile,
+  isIncumbentSlugKnown,
+  resolveIncumbentSlug,
+} from '../services/investigation.js';
 import { queryLocalBusinesses } from '../services/overpass.js';
 import { CATEGORY_TO_SHOP_TYPES, DEFAULT_SHOP_TYPES } from '../services/categoryShopTypes.js';
 import { validateImagePayload } from '../utils/imageUtils.js';
@@ -225,12 +229,20 @@ router.post('/tap', async (req, res) => {
     return res.status(500).json({ error: 'Vision service unavailable' });
   }
 
-  const { finalIdentification, sceneInventory } = await enhanceIdentificationWithScene(
+  let { finalIdentification, sceneInventory } = await enhanceIdentificationWithScene(
     validated.base64,
     tx,
     ty,
     identification
   );
+
+  const resolvedSlug = resolveIncumbentSlug(finalIdentification.brand, finalIdentification.corporate_parent);
+  const slugKnownInSystem = await isIncumbentSlugKnown(resolvedSlug);
+  finalIdentification = {
+    ...finalIdentification,
+    resolved_incumbent_slug: resolvedSlug,
+    slug_known_in_system: slugKnownInSystem,
+  };
 
   const identification_tier = getIdentificationTier(finalIdentification);
 

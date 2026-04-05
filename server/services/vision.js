@@ -1,5 +1,10 @@
 import Anthropic from '@anthropic-ai/sdk';
 import sharp from 'sharp';
+import {
+  geminiVisionCompletion,
+  recordProviderFailure,
+  recordProviderSuccess,
+} from './aiProvider.js';
 
 const client = new Anthropic();
 
@@ -439,40 +444,59 @@ export async function identifyObject(imageBase64, tapX, tapY, selectionBox = nul
       })
     : await generateTapCrop(imageBase64, tapX, tapY);
 
-  const message = await client.messages.create({
-    model: VISION_MODEL,
-    max_tokens: 1600,
-    messages: [
-      {
-        role: 'user',
-        content: [
-          {
-            type: 'image',
-            source: {
-              type: 'base64',
-              media_type: 'image/jpeg',
-              data: imageBase64,
-            },
-          },
-          {
-            type: 'image',
-            source: {
-              type: 'base64',
-              media_type: 'image/jpeg',
-              data: cropBase64,
-            },
-          },
-          {
-            type: 'text',
-            text: buildVisionPrompt(tapX, tapY, Boolean(hasBox)),
-          },
-        ],
-      },
-    ],
-  });
+  const promptText = buildVisionPrompt(tapX, tapY, Boolean(hasBox));
+  let text = '';
+  let visionProvider = 'claude';
 
-  const textBlock = message.content.find((b) => b.type === 'text');
-  const text = textBlock?.type === 'text' ? textBlock.text : '';
+  try {
+    const message = await client.messages.create({
+      model: VISION_MODEL,
+      max_tokens: 1600,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            {
+              type: 'image',
+              source: {
+                type: 'base64',
+                media_type: 'image/jpeg',
+                data: imageBase64,
+              },
+            },
+            {
+              type: 'image',
+              source: {
+                type: 'base64',
+                media_type: 'image/jpeg',
+                data: cropBase64,
+              },
+            },
+            {
+              type: 'text',
+              text: promptText,
+            },
+          ],
+        },
+      ],
+    });
+
+    const textBlock = message.content.find((b) => b.type === 'text');
+    text = textBlock?.type === 'text' ? textBlock.text : '';
+    recordProviderSuccess('claude');
+  } catch (e) {
+    console.warn('[vision] Claude vision failed, trying Gemini:', e?.message || e);
+    recordProviderFailure('claude');
+    visionProvider = 'gemini';
+    try {
+      text = await geminiVisionCompletion(imageBase64, cropBase64, promptText);
+    } catch (e2) {
+      console.error('[vision] Gemini vision failed:', e2?.message || e2);
+      recordProviderFailure('gemini');
+      throw e2;
+    }
+  }
+
   let merged = parseIdentificationJson(text);
 
   if (merged.identification_method === 'scene_inference' || merged.confidence < 0.6) {
@@ -484,5 +508,5 @@ export async function identifyObject(imageBase64, tapX, tapY, selectionBox = nul
     }
   }
 
-  return { ...merged, crop_base64: cropBase64 };
+  return { ...merged, crop_base64: cropBase64, vision_provider: visionProvider };
 }

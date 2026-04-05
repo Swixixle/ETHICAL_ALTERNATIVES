@@ -44,8 +44,8 @@ function investigationHeadline(identification, investigation) {
 function confidenceLabel(c) {
   const n = Number(c);
   if (!Number.isFinite(n)) return 'Low — verify';
-  if (n >= 0.75) return 'High confidence';
-  if (n >= 0.45) return 'Medium';
+  if (n >= 0.85) return 'High confidence';
+  if (n >= 0.6) return 'Medium — verify if unsure';
   return 'Low — verify';
 }
 
@@ -510,6 +510,10 @@ export default function App() {
               recordPresentation={recordPresentation}
               headline={investigationHeadline(id, result.investigation)}
               onHireDirectShareFootnote={setHireDirectShareFootnote}
+              onWrongBrand={() => {
+                reset();
+                setMode('snap');
+              }}
               onShare={() => {
                 haptic('confirm');
                 setShowShare(true);

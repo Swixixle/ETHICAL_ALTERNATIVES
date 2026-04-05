@@ -42,7 +42,8 @@ function mergeSources(a, b) {
   return [...s];
 }
 
-const CONFIRM_THRESHOLD = 0.75;
+/** Below this → confirm / disambiguation flow; 0.60–0.84 still loads the card with an on-card accuracy hint. */
+const CONFIRM_THRESHOLD = 0.6;
 
 export function useTapAnalysis() {
   const [image, setImage] = useState(null);

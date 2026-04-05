@@ -5,6 +5,11 @@ import Anthropic from '@anthropic-ai/sdk';
 import { relationalRowToParsed } from '../db/mapIncumbentProfile.js';
 import { pool } from '../db/pool.js';
 import { getPressOutletsForSlug } from './pressOutletsCatalog.js';
+import {
+  recordProviderFailure,
+  recordProviderSuccess,
+  runInvestigationTextFallbackChain,
+} from './aiProvider.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -45,6 +50,30 @@ export function resolveIncumbentSlug(brandName, corporateParent) {
     return map[s] || null;
   };
   return apply(brandName) || apply(corporateParent) || brandSlug(brandName || corporateParent);
+}
+
+/**
+ * True when `slug` appears in brand_aliases (key or canonical value) or exists in incumbent_profiles.
+ * @param {string | null | undefined} slug
+ */
+export async function isIncumbentSlugKnown(slug) {
+  const s = slug != null && String(slug).trim() ? String(slug).trim() : '';
+  if (!s) return false;
+  const map = loadBrandAliases();
+  if (Object.prototype.hasOwnProperty.call(map, s)) return true;
+  for (const v of Object.values(map)) {
+    if (v === s) return true;
+  }
+  if (!pool) return false;
+  try {
+    const { rows } = await pool.query(
+      'SELECT 1 FROM incumbent_profiles WHERE brand_slug = $1 LIMIT 1',
+      [s]
+    );
+    return rows.length > 0;
+  } catch {
+    return false;
+  }
 }
 
 function extractText(message) {
@@ -604,8 +633,16 @@ function finalizeInvestigation(inv, profileType) {
 /**
  * Last-resort realtime-shaped profile: full card shape with "Research pending" sections (never empty / broken).
  * @param {string} reason — short internal reason for logging
+ * @param {boolean} [markLiveFailed=true] — set live_investigation_failed when APIs could not produce live research
  */
-function buildRealtimeEmergencyProfile(brandName, corporateParent, healthFlag, productCategory, reason) {
+function buildRealtimeEmergencyProfile(
+  brandName,
+  corporateParent,
+  healthFlag,
+  _productCategory,
+  reason,
+  markLiveFailed = true
+) {
   const safeReason = String(reason || 'research incomplete').slice(0, 200);
   const label = typeof brandName === 'string' && brandName.trim() ? brandName.trim() : 'This brand';
   const inv = normalizeInvestigation(
@@ -640,7 +677,8 @@ function buildRealtimeEmergencyProfile(brandName, corporateParent, healthFlag, p
     corporateParent,
     healthFlag
   );
-  return finalizeInvestigation(inv, 'realtime_search');
+  const finalized = finalizeInvestigation(inv, 'realtime_search');
+  return markLiveFailed ? { ...finalized, live_investigation_failed: true } : finalized;
 }
 
 /** @deprecated Prefer full realtime path; still returns realtime_search shape for compatibility */
@@ -650,7 +688,77 @@ export function buildLimited(brandName, corporateParent, healthFlag) {
     corporateParent,
     healthFlag,
     'other',
-    'legacy limited stub'
+    'legacy limited stub',
+    false
+  );
+}
+
+/**
+ * @param {import('pg').QueryResultRow} row
+ */
+function incumbentRowToInvestigation(row, brandName, corporateParent, healthFlag) {
+  let inv;
+  if (row.profile_json) {
+    let data =
+      typeof row.profile_json === 'string' ? JSON.parse(row.profile_json) : row.profile_json;
+    data = flattenNestedProfileJson(data);
+    inv = normalizeInvestigation(data, brandName, corporateParent, healthFlag);
+  } else {
+    const parsed = relationalRowToParsed(row);
+    inv = normalizeInvestigation(parsed, brandName, corporateParent, healthFlag);
+  }
+  const finalized = finalizeInvestigation(inv, 'database');
+  const lr = row.last_researched;
+  finalized.last_updated =
+    lr instanceof Date ? lr.toISOString().slice(0, 10) : lr ? String(lr).slice(0, 10) : finalized.last_updated;
+  if (!healthFlag) {
+    finalized.product_health = null;
+    finalized.product_health_sources = [];
+  }
+  return finalized;
+}
+
+/**
+ * When live investigation fails, serve incumbent_profiles row for the resolved slug with a degraded banner.
+ * @param {string | null | undefined} reason
+ */
+async function fetchDegradedCachedInvestigation(brandName, corporateParent, healthFlag, reason) {
+  if (!pool) return null;
+  const slug = resolveIncumbentSlug(brandName, corporateParent);
+  try {
+    const { rows } = await pool.query(
+      `SELECT *
+       FROM incumbent_profiles
+       WHERE brand_slug = $1
+       LIMIT 1`,
+      [slug]
+    );
+    const row = rows[0];
+    if (!row) return null;
+    const inv = incumbentRowToInvestigation(row, brandName, corporateParent, healthFlag);
+    const tail =
+      typeof reason === 'string' && reason.trim()
+        ? ` (${String(reason).slice(0, 160)})`
+        : '';
+    return {
+      ...inv,
+      service_degraded: true,
+      degraded_message: `Live research was unavailable${tail}. Showing the indexed public record on file for this brand.`,
+    };
+  } catch (e) {
+    console.warn('[investigation] degraded cache lookup failed', e?.message || e);
+    return null;
+  }
+}
+
+async function realtimeEmergencyOrDegraded(brandName, corporateParent, healthFlag, productCategory, reason) {
+  const cached = await fetchDegradedCachedInvestigation(brandName, corporateParent, healthFlag, reason);
+  if (cached) {
+    return wrapRealtimeInvestigationResult(cached, null);
+  }
+  return wrapRealtimeInvestigationResult(
+    buildRealtimeEmergencyProfile(brandName, corporateParent, healthFlag, productCategory, reason),
+    null
   );
 }
 
@@ -1047,6 +1155,59 @@ function buildUnparseableRealtimeStub(brandName, corporateParent, healthFlag, te
   };
 }
 
+async function extractParsedFromPlainText(text, brandLabel) {
+  let parsed = parseInvestigationJson(text);
+  if (!parsed && text?.trim()) {
+    try {
+      parsed = await repairInvestigationJson(brandLabel, text);
+    } catch (err) {
+      console.warn('[investigation] realtime: plain-text repair failed:', err?.message || err);
+    }
+  }
+  return parsed;
+}
+
+/**
+ * @param {Record<string, unknown>} parsed
+ * @param {string[]} citationUrls
+ * @param {string | null | undefined} investigationProvider — claude | perplexity | gemini
+ */
+function finalizeRealtimeFromParsed(
+  parsed,
+  citationUrls,
+  brandName,
+  corporateParent,
+  healthFlag,
+  investigationProvider
+) {
+  console.log('[investigation] realtime: finalize + return');
+  mergeSourcesWithCitations(parsed, citationUrls);
+  const inv = normalizeInvestigation(parsed, brandName, corporateParent, healthFlag);
+  const investigation = finalizeInvestigation(inv, 'realtime_search');
+  const provider = investigationProvider || 'claude';
+  investigation.investigation_provider = provider;
+  if (provider === 'claude') {
+    recordProviderSuccess('claude');
+  }
+
+  const slugForDb = investigation.brand_slug;
+  const parentCo = investigation.parent ?? null;
+  const profileJsonForDb = {
+    ...parsed,
+    brand_slug: slugForDb,
+    brand_name: investigation.brand,
+    parent_company: parentCo,
+    ultimate_parent:
+      typeof parsed.ultimate_parent === 'string' && parsed.ultimate_parent.trim()
+        ? parsed.ultimate_parent.trim()
+        : parentCo != null
+          ? String(parentCo)
+          : null,
+    profile_type: 'database',
+  };
+  return wrapRealtimeInvestigationResult(investigation, profileJsonForDb);
+}
+
 async function realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory) {
   console.log(
     `[investigation] realtimeInvestigation start brand=${brandName || '∅'} parent=${corporateParent || '∅'} category=${productCategory || '∅'}`
@@ -1072,15 +1233,27 @@ If web search is unavailable, use only well-established public knowledge. Use ov
       ({ message: msg, citationUrls } = await runInvestigationAnthropicTurn(fallbackPrompt, null));
     } catch (e2) {
       console.error('[investigation] realtime: investigation request failed after retry', e2);
-      return wrapRealtimeInvestigationResult(
-        buildRealtimeEmergencyProfile(
-          brandName,
-          corporateParent,
-          healthFlag,
-          productCategory,
-          e2?.message || 'API error'
-        ),
-        null
+      recordProviderFailure('claude');
+      const fb = await runInvestigationTextFallbackChain(userPrompt);
+      if (fb) {
+        const p = await extractParsedFromPlainText(fb.text, brandLabel);
+        if (p) {
+          return finalizeRealtimeFromParsed(
+            p,
+            citationUrls,
+            brandName,
+            corporateParent,
+            healthFlag,
+            fb.provider
+          );
+        }
+      }
+      return realtimeEmergencyOrDegraded(
+        brandName,
+        corporateParent,
+        healthFlag,
+        productCategory,
+        e2?.message || 'API error'
       );
     }
   }
@@ -1107,46 +1280,44 @@ If web search is unavailable, use only well-established public knowledge. Use ov
       if (!text && secondExtract.text) text = secondExtract.text;
     } catch (e) {
       console.error('[investigation] realtime: completion Anthropic turn threw', e);
-      return wrapRealtimeInvestigationResult(
-        buildRealtimeEmergencyProfile(
+      recordProviderFailure('claude');
+      const fb = await runInvestigationTextFallbackChain(userPrompt);
+      if (fb) {
+        const p = await extractParsedFromPlainText(fb.text, brandLabel);
+        if (p) {
+          parsed = mergeRealtimeParsed(parsed, p);
+        }
+      }
+      if (!parsed || realtimeParsedIsIncomplete(parsed)) {
+        return realtimeEmergencyOrDegraded(
           brandName,
           corporateParent,
           healthFlag,
           productCategory,
           e?.message || 'API error on completion turn'
-        ),
-        null
-      );
+        );
+      }
+    }
+  }
+
+  if (!parsed || realtimeParsedIsIncomplete(parsed)) {
+    const fb = await runInvestigationTextFallbackChain(userPrompt);
+    if (fb) {
+      const p = await extractParsedFromPlainText(fb.text, brandLabel);
+      if (p) {
+        parsed = mergeRealtimeParsed(parsed, p);
+      }
     }
   }
 
   if (!parsed) {
     console.log(
-      '[investigation] realtime: still no parseable JSON after completion turn — using thin stub (API did not throw)'
+      '[investigation] realtime: still no parseable JSON after fallback — using thin stub (API did not throw)'
     );
     parsed = buildUnparseableRealtimeStub(brandName, corporateParent, healthFlag, text);
   }
 
-  console.log('[investigation] realtime: finalize + return');
-  mergeSourcesWithCitations(parsed, citationUrls);
-  const inv = normalizeInvestigation(parsed, brandName, corporateParent, healthFlag);
-  const investigation = finalizeInvestigation(inv, 'realtime_search');
-  const slugForDb = investigation.brand_slug;
-  const parentCo = investigation.parent ?? null;
-  const profileJsonForDb = {
-    ...parsed,
-    brand_slug: slugForDb,
-    brand_name: investigation.brand,
-    parent_company: parentCo,
-    ultimate_parent:
-      typeof parsed.ultimate_parent === 'string' && parsed.ultimate_parent.trim()
-        ? parsed.ultimate_parent.trim()
-        : parentCo != null
-          ? String(parentCo)
-          : null,
-    profile_type: 'database',
-  };
-  return wrapRealtimeInvestigationResult(investigation, profileJsonForDb);
+  return finalizeRealtimeFromParsed(parsed, citationUrls, brandName, corporateParent, healthFlag, 'claude');
 }
 
 /** Structured completion log for debugging thin / missing profiles. */
@@ -1362,24 +1533,7 @@ export async function getInvestigationProfile(brandName, corporateParent, option
         }
 
         console.log('[investigation] getInvestigationProfile:route', { slug, source: 'database' });
-        let inv;
-        if (row.profile_json) {
-          let data =
-            typeof row.profile_json === 'string' ? JSON.parse(row.profile_json) : row.profile_json;
-          data = flattenNestedProfileJson(data);
-          inv = normalizeInvestigation(data, brandName, corporateParent, healthFlag);
-        } else {
-          const parsed = relationalRowToParsed(row);
-          inv = normalizeInvestigation(parsed, brandName, corporateParent, healthFlag);
-        }
-        const finalized = finalizeInvestigation(inv, 'database');
-        const lr = row.last_researched;
-        finalized.last_updated =
-          lr instanceof Date ? lr.toISOString().slice(0, 10) : lr ? String(lr).slice(0, 10) : finalized.last_updated;
-        if (!healthFlag) {
-          finalized.product_health = null;
-          finalized.product_health_sources = [];
-        }
+        const finalized = incumbentRowToInvestigation(row, brandName, corporateParent, healthFlag);
         logInvestigationProfileEnd('database', finalized);
         return finalized;
       }
@@ -1401,6 +1555,16 @@ export async function getInvestigationProfile(brandName, corporateParent, option
     return inv;
   } catch (e) {
     console.error('getInvestigationProfile realtime failed', e);
+    const degraded = await fetchDegradedCachedInvestigation(
+      brandName,
+      corporateParent,
+      healthFlag,
+      e?.message || 'unexpected error'
+    );
+    if (degraded) {
+      logInvestigationProfileEnd('realtime_degraded_cache', degraded);
+      return degraded;
+    }
     const emergency = buildRealtimeEmergencyProfile(
       brandName,
       corporateParent,

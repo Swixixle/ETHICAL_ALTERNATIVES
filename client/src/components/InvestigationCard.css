@@ -65,6 +65,46 @@
   line-height: 1.5;
 }
 
+.investigation-card__service-degraded {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: 4px;
+  border-left: 4px solid #d4a017;
+  background: rgba(212, 160, 23, 0.12);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-main, #e0e0e0);
+}
+
+.investigation-card__id-accuracy-hint {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: 4px;
+  border-left: 4px solid rgba(240, 168, 32, 0.85);
+  background: rgba(240, 168, 32, 0.1);
+}
+
+.investigation-card__id-accuracy-hint p {
+  margin: 0 0 10px;
+}
+
+.investigation-card__wrong-brand-link {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #f0a820;
+  font: inherit;
+  font-size: 13px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.investigation-card__wrong-brand-link:hover {
+  color: #ffc040;
+}
+
 /* Verdict block (medium card) */
 .investigation-card__verdict-block {
   background: var(--color-paper, #162030);

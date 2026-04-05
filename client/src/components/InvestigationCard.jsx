@@ -343,8 +343,8 @@ export function NoRecordCompactModule({ onRunLiveInvestigation }) {
 function confidenceLabelFromId(c) {
   const n = Number(c);
   if (!Number.isFinite(n)) return 'Low — verify';
-  if (n >= 0.75) return 'High confidence';
-  if (n >= 0.45) return 'Medium';
+  if (n >= 0.85) return 'High confidence';
+  if (n >= 0.6) return 'Medium — verify if unsure';
   return 'Low — verify';
 }
 
@@ -359,6 +359,7 @@ function confidenceLabelFromId(c) {
  *   onRunLiveInvestigation?: () => void;
  *   showNoRecordModule?: boolean;
  *   onHireDirectShareFootnote?: (footnote: string) => void;
+ *   onWrongBrand?: () => void;
  * }} props
  */
 export default function InvestigationCard({
@@ -371,6 +372,7 @@ export default function InvestigationCard({
   onRunLiveInvestigation,
   showNoRecordModule = false,
   onHireDirectShareFootnote,
+  onWrongBrand,
 }) {
   const [openSection, setOpenSection] = useState(/** @type {string | null} */ (null));
   const verdictRef = useRef(null);
@@ -678,8 +680,35 @@ export default function InvestigationCard({
             ? 'Scene context'
             : 'Verify match';
 
+  const idConf = typeof id.confidence === 'number' ? id.confidence : NaN;
+  const showIdentificationAccuracyHint =
+    Number.isFinite(idConf) && idConf >= 0.6 && idConf < 0.85;
+  const serviceDegraded = Boolean(investigation.service_degraded);
+  const degradedMessage =
+    typeof investigation.degraded_message === 'string' && investigation.degraded_message.trim()
+      ? investigation.degraded_message.trim()
+      : null;
+
   return (
     <section className={`investigation-card investigation-card--bento${variantClass}`}>
+      {serviceDegraded && degradedMessage ? (
+        <div className="investigation-card__service-degraded" role="status">
+          {degradedMessage}
+        </div>
+      ) : null}
+      {showIdentificationAccuracyHint ? (
+        <div className="investigation-card__id-accuracy-hint" role="note">
+          <p className="investigation-card__body">
+            Lower confidence on the brand match — does this look right? The record below is from public filings
+            and news; it does not depend on the photo.
+          </p>
+          {typeof onWrongBrand === 'function' ? (
+            <button type="button" className="investigation-card__wrong-brand-link" onClick={onWrongBrand}>
+              Wrong brand?
+            </button>
+          ) : null}
+        </div>
+      ) : null}
       {showNotable ? <NotableMentionsCallout notable={notableRaw} /> : null}
       {investigation.clean_card ? (
         <p className="investigation-card__clean-card investigation-card__body">

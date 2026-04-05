@@ -15,6 +15,7 @@ import localCommercialRouter from './routes/localCommercial.js';
 import witnessRouter from './routes/witness.js';
 import documentaryRouter from './routes/documentary.js';
 import workersRouter from './routes/workers.js';
+import { getProviderHealthSnapshot } from './services/aiProvider.js';
 
 const app = express();
 
@@ -33,6 +34,10 @@ app.use(registryHeaders);
 
 app.get('/health', (_req, res) => {
   res.json({ ok: true });
+});
+
+app.get('/api/health/providers', (_req, res) => {
+  res.json(getProviderHealthSnapshot());
 });
 
 app.use('/api/workers', workersRouter);
