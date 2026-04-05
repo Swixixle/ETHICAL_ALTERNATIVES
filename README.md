@@ -2,309 +2,192 @@
 
 # ETHICALALT
 
-**Tap anything. Know everything. Find the independent version.**
+**Photograph anything. Tap any object. Get the full corporate record.**
 
-[Live App](https://ethicalalt-client.onrender.com) · [Investigation Database](#investigation-database) · [Chain Exclusion List](#chain-exclusion-list) · [Add Your Shop](#add-your-shop)
-
----
-
-*Photo → Tap → Corporate investigation → Real independent alternatives*
+[![Live](https://img.shields.io/badge/Live-ethicalalt--client.onrender.com-D4A017?style=flat-square&labelColor=0A1F3D)](https://ethicalalt-client.onrender.com)
+[![Profiles](https://img.shields.io/badge/Profiles-82%2B_companies-A8C4D8?style=flat-square&labelColor=0A1F3D)](#investigation-database)
+[![License](https://img.shields.io/badge/License-MIT-6A8A9A?style=flat-square&labelColor=0A1F3D)](LICENSE)
 
 </div>
 
 ---
 
+## What It Does
 
+EthicalAlt is a mobile-first investigative shopping lens. You photograph your environment — a store shelf, a logo on a cup, a brand on someone's shirt — tap any object, and receive two things:
 
----
+**The record.** A full corporate investigation sourced to public primary documents: EPA enforcement actions, DOJ settlements, NLRB complaints, FEC filings, SEC EDGAR, OSHA violations, congressional testimony. Tax exposure, legal history, labor violations, environmental penalties, political spend, documented health impacts, and the executives who run it.
 
-## What This Is
+**The alternatives.** Independent local businesses near you, CSA farms, Etsy sellers, and secondhand options matched to what you actually tapped. Not generic alternatives — the closest independent equivalent.
 
-EthicalAlt is a visual ethical shopping lens. You photograph your surroundings — a party, a hotel lobby, a store, a street corner — tap any object in the photo, and receive two things:
-
-**The record.** Everything documented in the public record about the company behind what you tapped. Tax strategies, court cases, corruption charges, labor violations, environmental enforcement actions, health implications, executive ownership web. Sourced to primary documents.
-
-**The alternatives.** Real independent sellers matched to what you actually tapped. If it's a Levi's 501 in raw indigo, we find you the closest ethical equivalent at that specification level — not just "some jeans." Independent shops near you on a map. Global fair trade artisans. Worker-owned alternatives. Pre-populated secondhand searches.
-
-No barcode required. No product in hand. Any photograph of anything.
+No barcode required. Any photograph of anything.
 
 ---
 
-## The Problem
-
-
-Google Lens and Amazon Lens solved visual identification and immediately used it to route you back to Amazon and corporate commerce. The technology exists. The ethical application of it didn't.
-
-EthicalAlt is the visual identification layer pointed in the opposite direction.
-
----
-
-## How It Works
+## Flow
 
 ```
-SNAP → TAP → KNOW → FIND
+PHOTOGRAPH → TAP → INVESTIGATE → ACT
 ```
 
-1. **SNAP** — photograph anything. No barcode. No specific framing. Any photo.
+1. **Photograph** your surroundings. No barcode, no specific framing.
 
-2. **TAP** — tap any object. The app attempts maximum-precision identification:
-   not just "jeans" but "Levi's 501, straight fit, raw indigo." Not just "coffee"
-   but "Starbucks Pike Place, paper cup with plastic lid."
+2. **Tap** any object. Claude Vision identifies it with maximum precision — brand, parent company, product category.
 
-3. **KNOW** — the investigation card fires:
-   - Corporate parent chain (brand → parent → conglomerate)
-   - Tax record (effective rate, offshore structures, government subsidies)
-   - Legal record (court cases, settlements, criminal charges)
-   - Labor record (OSHA violations, wage theft, union suppression)
-   - Environmental record (EPA enforcement, penalties)
-   - Political (lobbying spend, PAC donations, revolving door)
-   - Product health (category-specific implications)
-   - Executive ownership web (other businesses, documented concerns)
+3. **Investigate** — the card loads:
+   - Five-state confidence badge: `VERIFIED RECORD` (from indexed database) down to `NO PUBLIC RECORD`
+   - Generated headline from documented facts
+   - Verdict tags sourced to primary records
+   - Collapsible sections: Tax · Legal · Labor · Environmental · Political · Executives · Connections · Allegations · Health Record
+   - Cost absorption breakdown: who benefited, who paid, the gap
+   - Timeline of documented events
+   - Sources ledger with provenance
 
-4. **FIND** — alternatives grid, ordered by proximity:
-   - 📍 Near you (OSM Overpass + GPS, chain-filtered)
-   - 🏙️ Nearest city ring (50mi radius from your nearest major city)
-   - 📦 Ships to you (Etsy indie sellers, geocoded)
-   - 🌍 Global artisans (NOVICA, WFTO verified, fair trade)
-   - ♻️ Secondhand (pre-populated Depop, Vinted, Poshmark searches)
+4. **Act:**
+   - **Find local alternatives** — OSM-sourced independents, Etsy sellers, CSA farms near you
+   - **Share to regulators** — FTC, SEC, NLRB, EPA, DOL, OSHA, FDA, plus your state AG
+   - **Share to press** — pre-mapped journalists who cover that company
+   - **Share to institutional actors** — ESG raters, pension funds, union locals, investor relations
+   - **Register as a civic witness** — opt-in public attestation that you reviewed this record
 
 ---
 
 ## Investigation Database
 
-35+ corporate profiles built from public records. Every claim has a primary source URL.
+82+ company profiles across 10 sectors. Every profile built from public primary records.
 
-Sources queried per profile:
+| Sector | Coverage |
+|--------|----------|
+| Consumer Goods | Coca-Cola, Nike, H&M, Nestlé, Shein, P&G, Unilever, LVMH, Philip Morris, Altria, Starbucks, McDonald's, Amazon, Apple |
+| Finance | Goldman Sachs, JPMorgan Chase, Wells Fargo, Bank of America, Koch Industries |
+| Energy | ExxonMobil, Chevron, Shell, BP, Koch Industries |
+| Healthcare | UnitedHealth, HCA, Cigna, CVS Health, McKesson, DaVita, Steward, Tenet, Ascension, Cardinal Health |
+| Pharma | Pfizer, Merck, Eli Lilly, Bayer/Monsanto |
+| Tech | Meta, Google, Microsoft, Tesla, Samsung, TikTok/ByteDance |
+| Retail | Walmart, Target, Kroger, Dollar General |
+| Auto | Toyota, General Motors, Ford |
+| Gambling | MGM Resorts, Caesars Entertainment, DraftKings, FanDuel, Las Vegas Sands, Penn Entertainment |
+| Sweepstakes Casinos | VGW/Chumba Casino, High 5 Games, Stake.us, Pulsz, sector overview |
+| Food/Agri | Tyson Foods, Cargill, Kraft Heinz, Mars, PepsiCo, Sysco |
+| Telecom | Comcast, AT&T, Verizon |
+| Positive profiles | Patagonia, REI, Ben & Jerry's, Cotopaxi, Eileen Fisher |
+
+**Sources queried per profile:**
+
 | Source | Data |
 |--------|------|
 | [EPA ECHO](https://echo.epa.gov) | Environmental violations, penalties |
+| [DOJ Press Releases](https://www.justice.gov/news) | Criminal charges, settlements |
 | [FEC API](https://api.open.fec.gov) | Political donations, PAC activity |
 | [CourtListener](https://www.courtlistener.com) | Federal court cases |
-| [OSHA Data](https://www.osha.gov/pls/imis/establishment.html) | Worker safety violations |
-| [DOL WHISARD](https://www.dol.gov/agencies/whd/data) | Wage theft cases |
-| [NLRB Case DB](https://www.nlrb.gov/cases-decisions) | Labor dispute cases |
-| [OpenSecrets](https://www.opensecrets.org) | Lobbying expenditures |
+| [NLRB Case DB](https://www.nlrb.gov) | Labor dispute cases |
+| [OSHA](https://www.osha.gov) | Worker safety violations |
 | [SEC EDGAR](https://www.sec.gov/edgar) | Corporate filings |
-| [Good On You](https://goodonyou.eco) | Fashion brand ethics ratings |
-| [ProPublica Nonprofit Explorer](https://projects.propublica.org/nonprofits/) | IRS 990s |
-
-Volume 1 (16 profiles): Starbucks, Nike, H&M, Apple, Amazon, Nestlé, Shein,
-Philip Morris, Altria, Coca-Cola, McDonald's, P&G, Unilever, Gap, J&J, LVMH
-
-Volume 2 (20 profiles): ExxonMobil, Tyson Foods, Bayer/Monsanto, PepsiCo,
-Meta, Google, Microsoft, Tesla, Reynolds American, Kraft Heinz, Mars,
-PVH Corp, Dollar General, Target, Sysco + 5 positive profiles
-(Ben & Jerry's, Patagonia, REI, Cotopaxi, Eileen Fisher)
-
-[→ See all profiles](server/db/profiles_v1/) · [→ Contribute a profile](#contributing)
+| [Senate LDA](https://lda.senate.gov) | Lobbying disclosures |
+| [OpenSecrets](https://www.opensecrets.org) | Lobbying expenditures |
 
 ---
 
-## Chain Exclusion List
+## Civic Witness Registry
 
-The local business layer (OpenStreetMap) excludes known chains.
-This list is open source and maintained by the community.
+When sharing an investigation, users can opt in to add their name to a public ledger:
 
-[→ server/data/chain-exclusions.json](server/data/chain-exclusions.json)
+> *"I have reviewed this documented investigation and choose to be on record as having seen it."*
 
-Submit additions via pull request. See [CONTRIBUTING.md](.github/CONTRIBUTING.md).
+This is not a legal filing. It is a public attestation — a ledger of named people who have documented their review of corporate conduct. The registry is public at `/witnesses`, sortable by witness count per company, and shareable as a press-ready record.
 
----
-
-## Architecture
-
-```
-Client (React PWA → React Native + Expo)
-    │
-    └─ POST /api/tap { image_base64, tap_x, tap_y, user_lat, user_lng }
-         │
-    ┌────▼────────────────────────────────────────┐
-    │            API GATEWAY (Express)            │
-    │         Auth · Rate Limiting · Sessions     │
-    └────┬────────────────────────┬───────────────┘
-         │                        │
-    ┌────▼────────┐     ┌─────────▼──────────────┐
-    │   VISION    │     │   SEARCH ORCHESTRATOR  │
-    │   Claude    │     │   Parallel fan-out     │
-    │   Sonnet    │     │   Result normalization │
-    │   Object ID │     │   Chain exclusion      │
-    │   Exact spec│     │   Ethics scoring       │
-    └────┬────────┘     └─────────┬──────────────┘
-         │                        │
-    ┌────▼────────────────────────▼──────────────┐
-    │              DATA LAYER                    │
-    ├──────────────┬──────────────┬──────────────┤
-    │  Etsy API v3 │ OSM Overpass │  Postgres    │
-    │  Visual Index│ Chain Excl.  │  pgvector    │
-    │  Ximilar /   │  Nominatim   │  Profiles DB │
-    │  Imagga      │  GeoNames    │  Hobbyist DB │
-    └──────────────┴──────────────┴──────────────┘
-```
-
-**Stack:**
-- Backend: Node.js / Express
-- Database: PostgreSQL + pgvector extension
-- Queue: BullMQ / Redis
-- Vision: Claude Sonnet (`claude-sonnet-4-6`)
-- Visual similarity: Ximilar (fashion) + Imagga (general)
-- Geocoding: Nominatim (OSM, free)
-- Local discovery: OpenStreetMap Overpass API (free)
-- Deploy: Render
-- Mobile (v1): React Native + Expo
+Rate limited. Abuse controlled. Legal notice on every surface.
 
 ---
 
-## Live App
+## Share System
 
-**[ethicalalt-client.onrender.com](https://ethicalalt-client.onrender.com)**
+Every investigation card routes to:
 
-Tap anything. The full investigation and independent alternatives load in real time.
+- **Press** — journalists pre-mapped to each company by beat (ProPublica, The Markup, STAT News, ICIJ, The Guardian, Reuters, and 30+ others)
+- **Federal regulators** — FTC, SEC, IRS, NLRB, DOL, OSHA, EPA, FDA
+- **State AG** — geolocated to the user's state, all 50 mapped
+- **Institutional** — MSCI ESG, Sustainalytics, CDP, ISS, CalPERS, TIAA, NYC Pension Funds
+- **Labor** — UFCW, UAW, CWA, SEIU, AFL-CIO, mapped by brand category
+- **Investor Relations** — direct IR contact for 16 major companies
 
 ---
 
-## Deploy Your Own
+## Hire Direct *(in development)*
 
-EthicalAlt deploys to Render in about 30 minutes.
+Post-investigation, users can connect with local workers who do what the corporation does — directly, at their own rates, keeping everything they earn.
 
-### 1. Fork the repo
+Someone reads a DoorDash investigation. The card surfaces local independent couriers near them. One tap. Direct contact. No platform cut.
 
-Fork `Swixixle/ETHICAL_ALTERNATIVES` on GitHub.
+Worker profiles include a **Corporate Alternatives** section: which companies they left, when, and why. Civic Verified badge for workers with 2+ witness attestations.
 
-### 2. Create a Render Web Service (server)
+Zero platform fee. No ratings at MVP. Trust through transparency and civic attestation.
 
-- Root Directory: `server`
-- Build Command: `npm install`
-- Start Command: `node index.js`
-- Environment variables:
+---
 
-```env
-ANTHROPIC_API_KEY=        # console.anthropic.com
-DATABASE_URL=             # Render PostgreSQL URL
-CORS_ORIGIN=              # your client URL
-PUBLIC_SITE_URL=          # your client URL
+## Stack
+
 ```
-
-### 3. Create a Render Static Site (client)
-
-- Root Directory: `client`
-- Build Command: `npm install && npm run build`
-- Publish Directory: `dist`
-- Environment variables:
-
-```env
-VITE_API_URL=             # your server URL (no trailing slash)
+Client          React · Vite · PWA
+Server          Node.js · Express
+Database        PostgreSQL (Render)
+Queue           BullMQ · Redis
+Vision          Claude Vision (Anthropic)
+Investigation   Claude Sonnet
+Local data      OpenStreetMap Overpass API
+Sellers         Etsy API
 ```
-
-### 4. Create a Render PostgreSQL database
-
-Copy the Internal Database URL into `DATABASE_URL` on the server service.
-
-### 5. Seed the database
-
-```bash
-DATABASE_URL="your-render-postgres-url" node server/db/import_profiles_v1.mjs
-DATABASE_URL="your-render-postgres-url" node server/db/import_profiles_v2.mjs
-```
-
-### 6. Deploy
-
-Push to main. Render auto-deploys on every push.
 
 ---
 
 ## Running Locally
 
-### Prerequisites
-- Node.js 18+
-- PostgreSQL 14+ with pgvector extension
-- Redis
-- API keys: Anthropic, Etsy
-
-### Setup
-
 ```bash
-# Clone
-git clone https://github.com/Swixixle/ETHICAL_ALTERNATIVES.git
+git clone https://github.com/Swixixle/ETHICAL_ALTERNATIVES
 cd ETHICAL_ALTERNATIVES
 
-# Install dependencies
+# Server
+cd server
 npm install
-cd client && npm install && cd ..
-cd server && npm install && cd ..
+cp .env.example .env   # add ANTHROPIC_API_KEY, DATABASE_URL
+npm run dev
 
-# Environment
-cp server/.env.example server/.env
-# Edit server/.env — add ANTHROPIC_API_KEY and ETSY_API_KEY
-
-# Database
-psql "$DATABASE_URL" -f server/db/schema.sql
-cd server && npm run db:import:v1 && npm run db:import:v2
-
-# Start
+# Client
+cd ../client
+npm install
 npm run dev
 ```
 
-Open `http://localhost:5173`
+The app runs at `localhost:5173`. Server at `localhost:3001`.
 
-### Environment Variables
-
-```env
-# Required
-ANTHROPIC_API_KEY=        # console.anthropic.com
-ETSY_API_KEY=             # developer.etsy.com
-
-# Optional (enables full features)
-DATABASE_URL=             # PostgreSQL connection string
-REDIS_URL=                # Redis connection string
-CORS_ORIGIN=              # Production frontend URL
-```
+For the full investigation pipeline you need an Anthropic API key. For local business data, the OSM Overpass API requires no key.
 
 ---
 
-## Add Your Shop
+## Architecture Notes
 
-Independent maker? Local artisan? Worker-owned business?
+**Profile lookup:** Incoming brand slugs query `incumbent_profiles` first. If a profile exists with more than 5,000 characters, it returns immediately as `VERIFIED RECORD`. If the profile is a stub (under 5,000 chars) or missing, the live investigation pipeline runs, the result is upserted back to the database, and the upgraded profile is returned — the database self-heals on first access.
 
-EthicalAlt surfaces independent sellers to users who are looking for exactly what you make.
-Listing is free during beta.
+**Confidence system:** Five states driven by source depth and profile origin. `VERIFIED RECORD` requires `profile_type = 'database'` with a full indexed profile. Realtime investigation results are capped at `PARTIAL RECORD` regardless of source count.
 
-[→ Submit your listing](.github/ISSUE_TEMPLATE/seller_listing.md)
-
-We verify every submission. Listing is free. Requirements:
-- Independent — no corporate parent,
-- Makes or sources what you sell
-- Has a way for people to buy from you (Etsy, website, Instagram, farmers market)
+**Share routing:** State AG URLs are mapped for all 50 states. ESG rater and pension fund contacts are static. Union routing uses a brand slug → union category map. Press routing uses a per-company journalist mapping built from documented beat coverage.
 
 ---
 
 ## Contributing
 
-Contributions welcome in three areas:
+**Profiles** — each profile is a JSON document in `server/db/profiles_v*/`. If you have documented primary-source information that updates or adds to an existing profile, open a PR. Every claim requires a source URL to a primary document (EPA, DOJ, NLRB, FEC, SEC, OSHA).
 
-**1. Investigation profiles** — research and submit a corporate profile
-for a brand not yet in the database. [Template](.github/ISSUE_TEMPLATE/investigation_profile.md)
+**Local business exclusions** — the OSM layer filters known chains. If a chain is missing from the exclusion list, open an issue.
 
-**2. Chain exclusion list** — add chains missing from the local business filter.
-[→ chain-exclusions.json](server/data/chain-exclusions.json)
-Submit a PR with additions. One chain per line. Lowercase. Global or country-scoped.
-
-**3. Code** — see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
-
-
+**Bug reports** — open an issue with the brand you tapped, what was expected, and what happened.
 
 ---
 
-## License
+## Built By
 
-MIT for the application code.
+Alex Maksimovich · Indianapolis · [Nikodemus Systems](https://github.com/Swixixle)
 
-Investigation profile data is sourced from public records and is freely usable
-with attribution. See [LICENSE](LICENSE).
+Self-taught. Respiratory therapist background. AI-assisted development: Claude for architecture, Cursor for implementation.
 
----
-
-<div align="center">
-
-*Nikodemus Systems · Indianapolis · 2026*
-
-</div>
+> *If something happened, it should be verifiable. If something is claimed, there should be a receipt.*
