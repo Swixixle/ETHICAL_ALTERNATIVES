@@ -1,0 +1,93 @@
+{
+  "brand_name": "Ascension",
+  "brand_slug": "ascension",
+  "parent_company": "Ascension Health",
+  "ultimate_parent": "Ascension Health",
+  "subsidiaries": ["Ascension Medical Group", "Ascension Saint Thomas", "Ascension Providence", "Ascension Seton"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "RANSOMWARE ATTACK DIVERTED AMBULANCES, DISRUPTED SURGERY, AND EXPOSED 5.6 MILLION PATIENT RECORDS",
+  "executive_summary": "Ascension is the largest Catholic and largest non-profit hospital system in the United States, operating 142 hospitals across 19 states with approximately $28 billion in annual revenue. Despite its non-profit status and Catholic mission, Ascension has faced sustained criticism for aggressive patient debt collection practices that have forced low-income patients into medical debt and bankruptcy, closures of service lines serving unprofitable populations, and — most recently — a catastrophic cybersecurity failure. In May 2024, a ransomware attack by the Russian cybercriminal group Black Basta disrupted clinical operations at all 142 hospitals for weeks, diverted ambulances, forced cancellation of elective procedures, and exposed the sensitive health data of 5.6 million patients. Ascension reported a $1.8 billion operating loss for fiscal 2024.",
+  "verdict_tags": ["ransomware_attack_5_6m_patients", "patient_debt_collection", "service_line_closures", "non_profit_status_vs_practices", "ambulance_diversion", "cybersecurity_failure"],
+  "concern_flags": {"labor": true, "environmental": false, "political": false, "tax": true, "health": true, "legal": true},
+  "tax": {
+    "summary": "Ascension's non-profit status exempts it from federal income tax and most state and local property taxes. Hospital property tax exemption alone represents hundreds of millions in annual tax benefit. Non-profit hospitals are required to provide 'community benefit' in exchange for their tax exemptions — including charity care, community health programs, and subsidized services. Multiple studies have found that Ascension and other major non-profit hospital systems receive far more in tax benefits than they provide in measurable community benefit. Ascension's aggressive debt collection against low-income patients has been specifically cited as contradicting its charitable mission and tax-exempt rationale.",
+    "flags": ["non_profit_tax_exemption_vs_community_benefit", "debt_collection_vs_charitable_mission", "property_tax_exemption_scale"],
+    "sources": ["https://www.kff.org", "https://www.propublica.org"]
+  },
+  "legal": {
+    "summary": "Ascension has faced legal action for patient debt collection practices — suing patients for unpaid medical bills and garnishing wages, including patients who qualified for charity care they were not informed about. Multiple states have investigated Ascension for debt collection practices inconsistent with its charitable tax-exempt status. The 2024 ransomware attack generated multiple class action lawsuits for inadequate data security and breach notification. A second data breach in December 2024 through a third-party vendor exposed additional patient records. Ascension has also been named in lawsuits for failures of care at specific facilities.",
+    "flags": ["patient_debt_collection_lawsuits", "charity_care_non_disclosure", "ransomware_breach_class_actions", "second_breach_december_2024"],
+    "sources": []
+  },
+  "labor": {
+    "summary": "Ascension employs approximately 134,000 associates. Nursing staff at Ascension facilities have organized union campaigns in multiple states, citing staffing ratios, working conditions, and the impact of the ransomware attack on clinical staff who had to revert to paper-based systems for weeks. The ransomware attack created significant stress and additional workload for clinical staff managing paper processes during system downtime. Ascension's restructuring — including closure of specific service lines — has generated workforce disruptions.",
+    "flags": ["nurse_union_organizing", "ransomware_staff_burden", "service_line_closure_workforce_impact"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Ascension's hospitals generate significant medical waste and energy consumption. As the largest non-profit hospital system, its environmental footprint is commensurate with its scale. The system has made some sustainability commitments.",
+    "flags": ["medical_waste_scale", "energy_consumption_142_hospitals"],
+    "sources": []
+  },
+  "political": {
+    "summary": "As a Catholic health system, Ascension restricts certain reproductive health services — including abortion, contraception counseling, and tubal ligation — at its hospitals based on Catholic health directives. This religious restriction affects healthcare access for patients in communities where Ascension is the primary or only hospital. When Ascension acquires a previously secular hospital, these restrictions are imposed on the community's only healthcare facility. This has generated significant political and legal debate in multiple states.",
+    "flags": ["catholic_reproductive_health_restrictions", "secular_hospital_acquisition_restriction_imposition", "community_only_hospital_religious_restrictions"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Joseph Impicciche received approximately $13 million in total compensation in 2023. Non-profit hospital executive compensation has been a consistent source of criticism — Ascension's senior executives receive compensation comparable to for-profit hospital CEOs while the system claims charitable mission and tax exemption. Ascension's reported $1.8 billion operating loss in fiscal 2024 from the ransomware attack demonstrates the financial consequence of inadequate cybersecurity investment.",
+    "flags": ["non_profit_executive_pay_vs_mission", "1_8b_ransomware_operating_loss"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "connections": {
+    "summary": "Ascension is the dominant hospital system in multiple markets including Wisconsin, Indiana, Michigan, and Texas. Its acquisition of hospitals — often the only facility in a community — imposes Catholic health directives on populations that did not choose a Catholic healthcare provider. Ascension's financial relationships with other Catholic health systems through the Catholic Health Association coordinate lobbying and policy positions. The ransomware attack was connected to the same Black Basta group that attacked other major healthcare systems, highlighting the shared cybersecurity vulnerability across the sector.",
+    "flags": ["market_dominance_multiple_states", "catholic_health_association_coordination", "black_basta_ransomware_sector_wide"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "ProPublica and other investigative outlets have documented Ascension suing patients for medical debt while the system simultaneously received billions in tax benefits under its non-profit charitable mission. Former employees have alleged that Ascension's charity care eligibility processes were deliberately opaque — failing to inform low-income patients they qualified for free or reduced-cost care before sending their accounts to collections. Patient advocates in Wisconsin have alleged that Ascension's dominant market position and Catholic health restrictions have left patients in some communities with no access to reproductive healthcare services within a reasonable distance.",
+    "flags": ["charity_care_non_disclosure_alleged", "debt_collection_while_claiming_charity_alleged", "reproductive_care_access_denial_market_dominance_alleged"],
+    "sources": ["https://www.propublica.org"]
+  },
+  "health_record": {
+    "summary": "The May 2024 ransomware attack directly endangered patient safety: ambulances were diverted from Ascension emergency departments, elective procedures were cancelled, and clinical staff lost access to electronic medical records for weeks. Research on health IT outages finds that in 53% of reviewed cases, IT problems were linked to patient harm or death. Ascension's clinical operations in all 142 hospitals were disrupted simultaneously. The 5.6 million patients whose data was exposed face long-term risks including identity theft, insurance fraud, and discrimination based on exposed health conditions. Catholic health directives restrict reproductive health services — affecting obstetric care, contraception, and related services at Ascension facilities.",
+    "flags": ["ambulance_diversion_patient_safety", "clinical_operations_all_hospitals_disrupted", "5_6m_patient_records_exposed", "reproductive_health_restriction_patient_harm"],
+    "sources": ["https://onerep.com/blog/ascension-data-breach-explained-what-to-know", "https://www.provendata.com/blog/ascension-cyberattack"]
+  },
+  "alternatives": {
+    "cheaper": ["If Ascension is your only local hospital for emergencies, know your rights: request charity care screening before paying bills; federal law requires non-profit hospitals to have financial assistance programs", "FQHCs for primary care — comprehensive services at sliding-scale cost, no religious restrictions on services"],
+    "healthier": ["For reproductive health services restricted at Ascension: Planned Parenthood, Title X-funded clinics, secular community health centers", "Non-Catholic hospital systems where available — secular non-profits and academic medical centers provide unrestricted reproductive healthcare"],
+    "diy": ["Know before you go: identify which hospitals in your area have religious restrictions on services before a health crisis", "Apply for charity care BEFORE your bill goes to collections — Ascension and other non-profits are required to have financial assistance programs", "Report inadequate cybersecurity practices to HHS OCR (Office for Civil Rights) — HIPAA enforcement applies to breaches caused by inadequate security"]
+  },
+  "timeline": [
+    {"year": 1999, "event": "Ascension Health formed from merger of Daughters of Charity National Health System and Sisters of St. Joseph Health System", "severity": "neutral", "source_url": ""},
+    {"year": 2011, "event": "ProPublica begins documenting Ascension patient debt collection lawsuits against low-income patients", "severity": "high", "source_url": ""},
+    {"year": 2019, "event": "Multiple states open investigations into Ascension debt collection practices", "severity": "high", "source_url": ""},
+    {"year": 2024, "event": "February 29: Black Basta ransomware group begins infiltrating Ascension network", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "May 8: Ransomware attack detected; all 142 hospitals lose electronic systems; ambulances diverted", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "December 2024: Second breach through third-party vendor Cleo — additional patient records exposed", "severity": "critical", "source_url": ""},
+    {"year": 2025, "event": "Investigation concludes: 5.6 million patients affected; Ascension reports $1.8B operating loss from attack", "severity": "critical", "source_url": "https://onerep.com/blog/ascension-data-breach-explained-what-to-know"},
+    {"year": 2025, "event": "Multiple class action lawsuits filed for inadequate cybersecurity and breach notification", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "In communities where Ascension is the dominant or only hospital system, its Catholic health directives restrict access to reproductive healthcare services. Patients requiring these services must travel to other facilities — a significant barrier for low-income patients without transportation. When Ascension acquires a previously secular hospital, these restrictions are retroactively imposed on communities that did not choose a Catholic healthcare provider.",
+    "price_illusion": "Non-profit hospital status implies charitable mission. Ascension's patient debt collection practices — suing patients who qualify for charity care — represent the gap between the charitable mission claimed for tax-exempt purposes and the financial practices implemented. The tax exemption is the price society pays for the charitable mission; aggressive debt collection is what some patients experience instead.",
+    "tax_math": "Ascension's non-profit status generates tax exemptions worth hundreds of millions annually. Studies have found that Ascension and similar large non-profit systems provide less in charity care and community benefit than they receive in tax exemptions. The debt collection against low-income patients who qualify for charity care represents the clearest evidence of this gap.",
+    "wealth_velocity": "As a non-profit, Ascension does not distribute profits to shareholders. However, executive compensation, facility investments, and system expansion absorb the surplus that would otherwise fund charity care and community benefit. The non-profit structure provides tax benefits without requiring the community benefit that is supposed to justify them."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Ascension executives", "how": "Compensation comparable to for-profit hospital executives despite non-profit status and charitable mission"},
+      {"group": "Ascension system expansion", "how": "Tax savings from non-profit status fund acquisition of hospitals, imposing Catholic restrictions in new markets"}
+    ],
+    "who_paid": [
+      {"group": "5.6 million patients whose data was exposed", "how": "Medical records, SSNs, financial data, insurance information breached by ransomware — identity theft risk for years"},
+      {"group": "Low-income patients sued for medical debt", "how": "Sued for bills they would have been forgiven under charity care programs they were not told about"},
+      {"group": "Patients requiring reproductive health services", "how": "Denied services at the only hospital in their community due to religious directives"},
+      {"group": "All Ascension patients during ransomware", "how": "Diverted ambulances, cancelled procedures, clinical staff operating blind without medical records"}
+    ],
+    "the_gap": "Ascension is exempt from taxes because it is a charity. It sued patients who qualified for its charity care program without telling them they qualified. It had 142 hospitals disrupted simultaneously by a ransomware attack it was not prepared to stop. The $1.8 billion loss from the attack was not a cybersecurity budget line that got cut — it was the cost of not building adequate security in the first place."
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "brand_name": "Cigna",
+  "brand_slug": "cigna",
+  "parent_company": "The Cigna Group",
+  "ultimate_parent": "The Cigna Group",
+  "subsidiaries": ["Express Scripts", "Evernorth Health Services", "Cigna Healthcare"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "ALGORITHM AUTO-DENIED 300,000 CLAIMS AND DOCTORS CONFIRMED THEM WITHOUT READING PATIENT FILES",
+  "executive_summary": "Cigna is one of the largest health insurance and pharmacy benefit management companies in the United States, serving over 180 million customers globally through its insurance and Evernorth/Express Scripts subsidiaries. A 2023 ProPublica investigation revealed that Cigna's automated claim denial system — PxDx — allowed physicians to deny claims at a rate of 50 cases per hour, spending an average of 1.2 seconds per review, without looking at patient records. Express Scripts, Cigna's pharmacy benefit manager, reached an FTC settlement in February 2026 for artificially inflating insulin prices through anticompetitive rebate practices. The DOJ filed a $1.4 billion Medicare Advantage fraud lawsuit against Cigna in 2020. Cigna paid $172 million to settle Medicare upcoding allegations in 2023.",
+  "verdict_tags": ["automated_claim_denial", "medicare_fraud_upcoding", "insulin_price_fixing", "prior_authorization_abuse", "pbm_anticompetitive", "patient_harm"],
+  "concern_flags": {"labor": false, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
+  "tax": {
+    "summary": "The Cigna Group is incorporated in Delaware with significant offshore operations. Express Scripts has historically used complex transfer pricing between its subsidiary structures. Cigna's 2018 acquisition of Express Scripts for $67 billion created significant goodwill and amortization deductions that reduced taxable income for years. The company's effective tax rate has run below statutory rates.",
+    "flags": ["delaware_incorporation", "express_scripts_goodwill_deductions", "offshore_subsidiary_structures"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "legal": {
+    "summary": "October 2023: Cigna paid $172 million to settle DOJ False Claims Act allegations for submitting inaccurate diagnosis codes to Medicare Advantage to inflate payments — upcoding conditions patients did not have, including through home visit assessments not supported by clinical evidence. The DOJ's original 2020 lawsuit alleged $1.4 billion in Medicare Advantage fraud. Express Scripts: FTC filed suit in September 2024 alleging anticompetitive insulin pricing through rebate manipulation; Express Scripts reached a settlement in February 2026. ProPublica's 2023 investigation documented Cigna's PxDx automated denial system processing claims at 1.2 seconds each without clinical review.",
+    "flags": ["172m_medicare_upcoding_settlement", "doj_1_4b_fraud_lawsuit", "ftc_insulin_pricing_settlement", "pxdx_automated_denial_documented"],
+    "sources": ["https://www.justice.gov", "https://www.propublica.org", "https://www.bloomberg.com/news/articles/2026-02-04/express-scripts-reaches-ftc-settlement-in-insulin-case"]
+  },
+  "labor": {
+    "summary": "Cigna employs approximately 70,000 people. The company's medical reviewers who confirmed automated PxDx denials — spending seconds per case — were operating in a system where the volume of cases made genuine clinical review structurally impossible. Former employees have raised concerns about metrics-driven denial targets. Cigna's multiple rounds of restructuring have generated workforce reductions.",
+    "flags": ["medical_reviewer_impossible_caseload", "metrics_driven_denial_targets_alleged"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Cigna's environmental footprint is primarily administrative — office buildings and data centers. No major environmental enforcement actions documented.",
+    "flags": ["data_center_energy"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Cigna spent $8.4 million on federal lobbying in 2023. The company has opposed prior authorization reform legislation and has lobbied against regulations that would constrain PBM pricing practices. Express Scripts' insulin pricing practices — now the subject of FTC enforcement — persisted through years of lobbying against PBM transparency regulations. Cigna contributes to both parties with concentration among healthcare committee members.",
+    "flags": ["prior_auth_reform_opposition", "pbm_transparency_opposition_lobbying", "insulin_pricing_lobbying"],
+    "sources": ["https://www.opensecrets.org"]
+  },
+  "executives": {
+    "summary": "CEO David Cordani received $21.4 million in total compensation in 2023. Cordani has been CEO since 2009, overseeing the development of the PxDx automated denial system and the $67 billion Express Scripts acquisition. His compensation has increased through the period in which the Medicare upcoding fraud was occurring and the automated denial system was operating.",
+    "flags": ["ceo_compensation_through_fraud_period", "express_scripts_acquisition_architect"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "connections": {
+    "summary": "Cigna's Express Scripts PBM controls access to drug coverage for tens of millions of Americans. Together with CVS Caremark and OptumRx, it forms the 'Big Three' PBM oligopoly controlling approximately 80% of the prescription drug market — now the subject of coordinated FTC enforcement. Cigna shares major institutional shareholders with UnitedHealth Group, Elevance Health, and Humana. The shared investor structure creates aligned incentives across competing insurers against regulatory reform. The PxDx automated denial system — documented by ProPublica — was later revealed to be used by multiple insurers using similar algorithmic approaches.",
+    "flags": ["big_three_pbm_oligopoly_ftc", "cross_insurer_shared_investors", "algorithmic_denial_industry_pattern"],
+    "sources": ["https://www.ftc.gov", "https://www.propublica.org"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "ProPublica's investigation found Cigna's PxDx system processed 300,000 claims in two months with physicians spending an average of 1.2 seconds per case — a rate making any genuine clinical review impossible. Former Cigna medical directors alleged the system was designed to deny claims at scale with minimal physician involvement to create legal cover. The DOJ's upcoding allegations — paying vendors to enter patient homes and document diagnoses not supported by clinical evidence — suggest a deliberate system for inflating payments while simultaneously denying coverage claims.",
+    "flags": ["1_2_seconds_per_claim_documented", "medical_director_cover_alleged", "home_visit_upcoding_deliberate_alleged"],
+    "sources": ["https://www.propublica.org", "https://www.justice.gov"]
+  },
+  "health_record": {
+    "summary": "Cigna's PxDx automated denial system denied claims for medications and treatments ordered by treating physicians based on algorithmic review without clinical evaluation of individual patient circumstances. The class action lawsuits allege patients were denied medically necessary care. Express Scripts' insulin pricing manipulation — keeping high-list-price insulins on formulary while excluding lower-cost alternatives — directly harmed diabetic patients who could not afford co-pays calculated against inflated list prices. The FTC estimated the settlement will save Americans up to $7 billion in out-of-pocket costs over 10 years.",
+    "flags": ["algorithmic_denial_medically_necessary_care", "insulin_pricing_diabetic_patient_harm", "7b_patient_cost_savings_from_settlement"],
+    "sources": ["https://www.propublica.org", "https://www.statnews.com/pharmalot/2026/03/24"]
+  },
+  "alternatives": {
+    "cheaper": ["ACA marketplace plans — compare all insurers including regional non-profits during open enrollment", "Medicaid if income-eligible — comprehensive coverage with no premium", "Direct Primary Care for routine care — flat monthly fee bypasses insurance for most primary care needs"],
+    "healthier": ["Non-profit regional health plans with documented lower denial rates — Kaiser Permanente, Group Health, regional BCBS plans", "Mark Cuban's Cost Plus Drugs — bypasses PBM pricing entirely for generic medications"],
+    "diy": ["Appeal every denied claim — Cigna and other insurers reverse denials on appeal at significant rates when patients persist", "Request the clinical criteria used to deny your claim — you are legally entitled to this information", "File complaints with your state insurance commissioner for inappropriate denials — regulators do take action"]
+  },
+  "timeline": [
+    {"year": 1982, "event": "CIGNA Corporation formed from Connecticut General and INA Corporation merger", "severity": "neutral", "source_url": ""},
+    {"year": 2017, "event": "DOJ whistleblower lawsuit filed alleging Medicare Advantage upcoding; Cigna declines to intervene initially", "severity": "high", "source_url": ""},
+    {"year": 2018, "event": "$67B acquisition of Express Scripts — one of the largest healthcare mergers in history", "severity": "high", "source_url": ""},
+    {"year": 2020, "event": "DOJ joins and expands upcoding lawsuit; alleges $1.4B in Medicare fraud", "severity": "critical", "source_url": ""},
+    {"year": 2023, "event": "ProPublica investigation: PxDx system processed 300,000 claims at 1.2 seconds per case without clinical review", "severity": "critical", "source_url": "https://www.propublica.org"},
+    {"year": 2023, "event": "$172M settlement for Medicare Advantage upcoding fraud; 5-year HHS oversight agreement", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "Class action filed alleging PxDx auto-denied 300,000 claims without individual review", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "FTC sues Express Scripts, CVS Caremark, and OptumRx for anticompetitive insulin pricing", "severity": "critical", "source_url": ""},
+    {"year": 2026, "event": "Express Scripts reaches FTC settlement on insulin pricing; changes to rebate structure required", "severity": "high", "source_url": "https://www.bloomberg.com/news/articles/2026-02-04/express-scripts-reaches-ftc-settlement-in-insulin-case"}
+  ],
+  "community_impact": {
+    "displacement": "Automated claim denials disproportionately affect patients with complex chronic conditions who generate the most claims. These patients — cancer, autoimmune disease, psychiatric conditions — are the most vulnerable and have the least capacity to navigate appeals processes.",
+    "price_illusion": "Health insurance premiums appear to purchase healthcare access. The PxDx system demonstrates that Cigna's medical management infrastructure is designed to deny access systematically with algorithmic efficiency. The premium paid does not guarantee the care ordered.",
+    "tax_math": "Cigna's Medicare Advantage upcoding fraud extracted payments from Medicare by making enrolled patients appear sicker than they were. This inflated Cigna's per-member-per-month payments. The $172 million settlement represents a fraction of the excess payments received.",
+    "wealth_velocity": "Insurance premiums collected from millions of Americans flow through Cigna to shareholders. The PxDx denial system maximizes the gap between premiums collected and care paid — every denied claim is revenue retained."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Cigna shareholders", "how": "Revenue from systematic upcoding and algorithmic denial maximized profit margins"},
+      {"group": "Express Scripts", "how": "Rebate revenue from preferring high-list-price insulin products on formulary"},
+      {"group": "David Cordani", "how": "$21.4M annual compensation; architect of both the Express Scripts acquisition and the PxDx system period"}
+    ],
+    "who_paid": [
+      {"group": "Patients denied claims", "how": "300,000 claims auto-denied at 1.2 seconds per case; medically necessary care withheld"},
+      {"group": "Diabetic patients", "how": "Paid inflated insulin costs because low-cost alternatives excluded from formulary for rebate revenue"},
+      {"group": "Medicare taxpayers", "how": "Upcoding fraud inflated Medicare payments for conditions patients did not have"}
+    ],
+    "the_gap": "1.2 seconds per claim. 300,000 claims denied. A physician rubber-stamping algorithmic decisions without reading a single patient file. This is the insurance company's medical review process."
+  }
+}

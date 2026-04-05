@@ -92,5 +92,16 @@
   "respironics": "philips-healthcare",
   "philips-respironics": "philips-healthcare",
   "davita": "davita",
-  "mckesson": "mckesson"
+  "mckesson": "mckesson",
+  "cigna": "cigna",
+  "cvs": "cvs-health",
+  "cvs-health": "cvs-health",
+  "cvs-pharmacy": "cvs-health",
+  "caremark": "cvs-health",
+  "aetna": "cvs-health",
+  "cardinal-health": "cardinal-health",
+  "cardinal": "cardinal-health",
+  "community-health-systems": "community-health-systems",
+  "chs": "community-health-systems",
+  "ascension": "ascension"
 }
