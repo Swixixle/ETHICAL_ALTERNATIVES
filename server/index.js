@@ -10,6 +10,7 @@ import geocodeRouter from './routes/geocode.js';
 import communityBoardRouter from './routes/communityBoard.js';
 import territoryRouter from './routes/territory.js';
 import localEventsRouter from './routes/localEvents.js';
+import localCommercialRouter from './routes/localCommercial.js';
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.use('/api/geocode', geocodeRouter);
 app.use('/api/board', communityBoardRouter);
 app.use('/api/territory', territoryRouter);
 app.use('/api/events', localEventsRouter);
+app.use('/api/local-commercial', localCommercialRouter);
 
 const PORT = Number(process.env.PORT) || 3001;
 app.listen(PORT, () => {
