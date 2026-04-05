@@ -32,7 +32,6 @@ No barcode required. No product in hand. Any photograph of anything.
 
 ## The Problem
 
-Every tool that tried this before — Buycott (2012, peaked at 1M users, died 2016) — was limited to barcode scanning. You could not scan a storefront, clothing someone was wearing, a photo from last week, or anything handmade. The entire barcode-era ethical shopping space was frozen at the checkout counter.
 
 Google Lens and Amazon Lens solved visual identification and immediately used it to route you back to Amazon and corporate commerce. The technology exists. The ethical application of it didn't.
 
