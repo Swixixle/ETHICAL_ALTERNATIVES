@@ -1,0 +1,97 @@
+{
+  "brand_name": "Koch Industries",
+  "brand_slug": "koch-industries",
+  "parent_company": "Koch Industries Inc.",
+  "ultimate_parent": "Charles Koch (84% ownership)",
+  "subsidiaries": ["Georgia-Pacific", "Molex", "Flint Hills Resources", "Koch Fertilizer", "Invista (Lycra)", "Guardian Industries", "Koch Ag & Energy Solutions"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "KOCH INDUSTRIES SPENT $127 MILLION FUNDING CLIMATE DENIAL WHILE OPERATING OIL REFINERIES RESPONSIBLE FOR BILLIONS IN POLLUTION",
+  "executive_summary": "Koch Industries is the second-largest privately held company in the United States with estimated annual revenue exceeding $115 billion, owned 84% by Charles Koch. Its businesses span oil refining, chemicals, paper products (Georgia-Pacific), fertilizers, and synthetic fibers (Lycra/Invista). Koch Industries and its owners have funded the most extensive private climate change denial network in history — over $127 million to 84 denial front groups since 1997, more than ExxonMobil spent by a factor of three. The Koch political network has spent over $900 million in single election cycles, built Americans for Prosperity into a nationwide political machine, and was described by Greenpeace as the 'kingpin of climate science denial.' Koch companies have simultaneously accumulated over $400 million in EPA and environmental violation fines.",
+  "verdict_tags": ["climate_denial_kingpin", "127m_denial_funding", "environmental_violations", "dark_money_network", "union_suppression", "political_influence_900m", "oil_spills"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "tax": {
+    "summary": "As a private company, Koch Industries does not disclose its finances. However, the company has lobbied aggressively against corporate taxes, supported the 2017 Tax Cuts and Jobs Act (which its political network spent $20M+ to pass), and uses complex partnership and pass-through structures. The private structure allows Koch to avoid public disclosure requirements that apply to publicly traded competitors. Koch's political network has spent hundreds of millions opposing estate taxes that would affect Charles Koch's wealth transfer.",
+    "flags": ["private_no_disclosure", "tcja_lobbying_beneficiary", "estate_tax_opposition", "pass_through_structures"],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Koch Industries and its subsidiaries have paid over $400 million in fines and settlements for environmental violations. 2000: Koch Pipeline paid $35 million — the largest penalty in history for oil spills at the time — for 300 oil spills across Texas and 5 other states, dumping 3 million gallons of crude oil into waterways. Koch also paid $8 million in a criminal plea for a Texas refinery benzene emissions cover-up. 1999: Koch Industries paid $10 million to settle DOJ claims of stealing oil from federal and Native American lands through systematic meter manipulation — approximately 300 million gallons stolen over three years. Additional environmental settlements span EPA, state environmental agencies, and community plaintiffs across multiple decades.",
+    "flags": ["35m_oil_spill_record_fine_2000", "oil_theft_native_american_federal_lands", "benzene_criminal_plea", "400m_total_environmental_violations"],
+    "sources": ["https://violationtracker.goodjobsfirst.org", "https://www.epa.gov"]
+  },
+  "labor": {
+    "summary": "Koch Industries is one of the most significant funders of union suppression in American history. Americans for Prosperity — the Koch-funded political group — has spent tens of millions fighting collective bargaining rights in Wisconsin, Michigan, and other states. Koch companies have been subject to OSHA enforcement actions for worker safety violations across their industrial operations. The company's 'Market-Based Management' ideology — its internal management philosophy — has been described by former employees as a system for minimizing worker compensation.",
+    "flags": ["systematic_union_suppression_funding", "afp_collective_bargaining_attacks", "osha_violations_industrial_facilities", "wage_minimization_philosophy"],
+    "sources": ["https://www.nlrb.gov", "https://www.osha.gov"]
+  },
+  "environmental": {
+    "summary": "Koch Industries' environmental record is among the worst of any major U.S. industrial company. The 300 oil spills across 6 states dumped 3 million gallons of crude oil. Koch's Flint Hills Resources refineries have been major sources of air pollution in Texas and Minnesota. Georgia-Pacific's paper mills have generated significant water pollution. Koch's fertilizer operations create nitrous oxide emissions and water contamination. Koch's PFAS and benzene releases have contaminated groundwater near multiple facilities. Simultaneously, Koch's political network has spent over $127 million to prevent the climate regulations that would limit its environmental damage.",
+    "flags": ["3m_gallons_oil_spilled", "flint_hills_refinery_air_pollution", "georgia_pacific_water_pollution", "pfas_groundwater_contamination", "denial_while_polluting"],
+    "sources": ["https://echo.epa.gov", "https://www.epa.gov"]
+  },
+  "political": {
+    "summary": "The Koch political network is the most extensively documented private political influence operation in U.S. history. Americans for Prosperity — founded and funded by the late David Koch — has branches in 35+ states and has spent hundreds of millions on elections and lobbying. The Koch network spent $889 million in the 2016 election cycle. Over 400 members of Congress signed an AFP pledge to oppose greenhouse gas legislation. The network funds ALEC, the Cato Institute, Heritage Foundation, Heartland Institute, Manhattan Institute, and dozens of other organizations that produce coordinated policy positions. Kert Davies of Climate Investigations Center: 'you'd have a carbon tax today if not for the Kochs.'",
+    "flags": ["889m_single_election_cycle", "400_congress_members_pledge_signed", "alec_cato_heritage_heartland_funded", "climate_policy_block_documented"],
+    "sources": ["https://www.greenpeace.org/usa/climate/climate-deniers/koch-industries", "https://www.sourcewatch.org"]
+  },
+  "executives": {
+    "summary": "Charles Koch, 89, controls approximately 84% of Koch Industries. His net worth exceeds $60 billion. His brother David Koch, who co-owned the company, died in 2019. Charles Koch has led the company since 1967 and built the political network over four decades. He has written extensively on 'Market-Based Management' and libertarian economics. The company's political spending — which directly benefits its own bottom line by blocking environmental and labor regulations — represents one of the clearest documented examples of regulatory capture investment.",
+    "flags": ["60b_net_worth_charles_koch", "political_network_direct_business_benefit", "regulatory_capture_investment_documented"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The Koch network's reach is documented across American conservatism: Cato Institute (Charles Koch co-founder), Americans for Prosperity, Heritage Foundation, ALEC, Heartland Institute, Club for Growth, and hundreds of state-level organizations. Koch money flows through Donors Trust and Donors Capital Fund — identity-laundering vehicles that allow wealthy donors to give to front groups without public disclosure. The network influences judicial appointments through the Federalist Society, which Koch has funded. The $127 million in documented climate denial funding is separate from the hundreds of millions in political spending that blocks climate legislation.",
+    "flags": ["donors_trust_identity_laundering", "federalist_society_judicial_influence", "cato_co_founder", "alec_funder", "coordinated_denial_network"],
+    "sources": ["https://www.greenpeace.org/usa/climate/climate-deniers/koch-industries", "https://en.wikipedia.org/wiki/Koch_network"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Senate investigators have alleged that Koch Industries' oil meter manipulation — stealing oil from federal and Native American lands — was systematic and conducted with executive knowledge over multiple years. Environmental researchers have alleged that Koch's political network deliberately modeled its climate denial strategy on the tobacco industry's doubt-manufacturing playbook, using the same public relations firms and tactics. Former Koch employees have alleged that the company's internal culture explicitly connects political activity to business benefit — that employees are expected to view political spending as an investment in regulatory outcomes.",
+    "flags": ["oil_theft_executive_knowledge_alleged", "tobacco_denial_playbook_documented", "political_spending_as_business_investment_culture"],
+    "sources": ["https://www.whistleblower.org", "https://insideclimatenews.org"]
+  },
+  "health_record": {
+    "summary": "Koch's oil spills contaminated waterways across 6 states, affecting drinking water and aquatic ecosystems used by communities. Koch's benzene emissions — which generated the criminal plea — are a documented carcinogen affecting refinery workers and nearby communities. The climate denial network Koch funded has directly impeded climate action, contributing to ongoing emissions that drive heat deaths, extreme weather, air quality deterioration, and vector-borne disease expansion. Koch fertilizer operations contribute to nitrogen pollution in waterways including the Gulf of Mexico dead zone.",
+    "flags": ["oil_spill_drinking_water_contamination", "benzene_carcinogen_criminal_plea", "climate_denial_public_health_consequences", "gulf_dead_zone_fertilizer_contribution"],
+    "sources": ["https://www.epa.gov", "https://www.ncbi.nlm.nih.gov"]
+  },
+  "alternatives": {
+    "cheaper": ["Koch's consumer brands include Georgia-Pacific products (Brawny, Quilted Northern, Dixie, Angel Soft, Sparkle) — alternatives include Seventh Generation, Who Gives A Crap, recycled-content store brands", "Lycra/Invista synthetic fibers — alternatives include natural fibers (cotton, wool, linen) or recycled synthetic fibers from non-Koch manufacturers"],
+    "healthier": ["Natural fiber clothing — cotton, wool, linen — avoids synthetic fiber manufacturing pollution", "Recycled paper products — reduces virgin timber demand and associated water pollution from Georgia-Pacific mills"],
+    "diy": ["Washable cloths replace paper towels (Brawny/Sparkle) — eliminates ongoing purchase and reduces waste", "Identify Koch brands at KochBrands.com or through consumer apps — making informed purchasing decisions is the direct action available"]
+  },
+  "timeline": [
+    {"year": 1940, "event": "Fred Koch founds Wood River Oil and Refining Company; builds refineries for Stalin's Soviet Union and Hitler's Germany", "severity": "high", "source_url": ""},
+    {"year": 1967, "event": "Charles Koch takes control of company; begins systematic expansion", "severity": "neutral", "source_url": ""},
+    {"year": 1980, "event": "David Koch runs for Vice President on Libertarian ticket; begins political network development", "severity": "neutral", "source_url": ""},
+    {"year": 1997, "event": "Greenpeace identifies Koch as largest corporate funder of climate denial — outspending ExxonMobil 3:1", "severity": "critical", "source_url": ""},
+    {"year": 1999, "event": "$10M settlement: stealing oil from Native American and federal lands through meter manipulation over 3 years", "severity": "critical", "source_url": ""},
+    {"year": 2000, "event": "$35M record oil spill settlement: 300 spills, 3 million gallons; $8M criminal plea for benzene emissions cover-up", "severity": "critical", "source_url": ""},
+    {"year": 2004, "event": "Americans for Prosperity formally established by David Koch; becomes primary political vehicle", "severity": "high", "source_url": ""},
+    {"year": 2010, "event": "Citizens United decision; Koch network dramatically expands political spending", "severity": "high", "source_url": ""},
+    {"year": 2016, "event": "Koch network pledges $889M for election cycle — rivaling the Republican National Committee in scale", "severity": "critical", "source_url": ""},
+    {"year": 2019, "event": "David Koch dies; Charles continues network; Koch network pivots from Trump toward institutional conservatism", "severity": "moderate", "source_url": ""},
+    {"year": 2022, "event": "Total documented climate denial funding exceeds $127M to 84 organizations since 1997", "severity": "critical", "source_url": "https://www.greenpeace.org/usa/climate/climate-deniers/koch-industries"}
+  ],
+  "community_impact": {
+    "displacement": "Communities near Koch refineries in Texas, Minnesota, and other states bear disproportionate air quality impacts. The 300 oil spills contaminated waterways in communities that relied on them for drinking water, fishing, and recreation. Native American communities whose lands were targeted for oil theft had no recourse for the stolen resources beyond the eventual DOJ settlement.",
+    "price_illusion": "Koch Industries' products — paper towels, toilet paper, synthetic fibers, fertilizer, oil — are priced without accounting for the externalized costs of pollution, climate damage, and political spending to prevent accountability. The price at the checkout does not include the cost of the oil spills, the benzene cancer, or the climate action blocked.",
+    "tax_math": "Koch's political network spent $20M+ lobbying for the 2017 Tax Cuts and Jobs Act, which benefited the company through reduced corporate rates and pass-through provisions. The return on that $20M political investment — in reduced tax liability on $100B+ in annual revenue — is enormous. This is regulatory capture as explicit financial strategy.",
+    "wealth_velocity": "Charles Koch's $60B+ fortune is concentrated in a private company with no disclosure requirements. The political network that protects that fortune operates through untraceable dark money channels. The profits of Koch's industrial operations — generated through environmental violations and denial of climate regulation — flow to one of the wealthiest individuals on earth."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Charles and David Koch", "how": "$60B+ fortune built on fossil fuels, paper, and chemicals while blocking the regulations that would have increased costs"},
+      {"group": "Koch political network beneficiaries", "how": "Conservative movement funded at $889M per election cycle; judicial appointments shaped; climate legislation blocked"},
+      {"group": "Koch's industrial competitors", "how": "By opposing environmental regulations, Koch leveled the playing field at the lowest compliance standard"}
+    ],
+    "who_paid": [
+      {"group": "Communities near Koch facilities", "how": "Air pollution, benzene contamination, oil spills in waterways, water contamination"},
+      {"group": "Native American communities", "how": "300 million gallons of oil stolen from tribal lands over 3 years"},
+      {"group": "Future generations", "how": "Climate action delayed by decades by the most well-funded private denial network in history"},
+      {"group": "Workers whose unions were targeted", "how": "AFP campaigns in Wisconsin, Michigan, and elsewhere attacked collective bargaining rights"}
+    ],
+    "the_gap": "The same company that paid $35 million for 300 oil spills spent $127 million telling the public that environmental science is fraudulent. The spills are documented. The funding is documented. The blocked climate legislation is documented. Charles Koch's $60 billion is documented."
+  }
+}

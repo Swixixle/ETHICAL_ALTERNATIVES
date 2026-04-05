@@ -1,0 +1,96 @@
+{
+  "brand_name": "Samsung",
+  "brand_slug": "samsung",
+  "parent_company": "Samsung Electronics Co. Ltd.",
+  "ultimate_parent": "Samsung Group (Lee family)",
+  "subsidiaries": ["Samsung Display", "Samsung Semiconductor", "Samsung SDI", "Samsung SDS", "Samsung Heavy Industries"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "SAMSUNG'S CHAIRMAN WAS CONVICTED OF BRIBERY AND SENT TO PRISON — THEN PARDONED AND PUT BACK IN CHARGE",
+  "executive_summary": "Samsung is South Korea's largest conglomerate and the world's largest manufacturer of smartphones, semiconductors, and consumer electronics, with annual revenue exceeding $200 billion. Samsung Group companies account for approximately 20% of South Korea's total exports. Lee Jae-yong, Samsung's de facto chairman, was convicted of bribery in connection with South Korea's 2016 corruption scandal involving President Park Geun-hye — he paid bribes to the president's confidante to secure government support for a merger. He was imprisoned twice, released on parole, and received a presidential pardon in 2022 — returning to lead Samsung despite his criminal conviction. Samsung has also faced documented labor violations, union suppression, and environmental contamination at semiconductor facilities.",
+  "verdict_tags": ["chairman_bribery_conviction", "presidential_corruption_scandal", "pardon_return_to_power", "union_suppression", "labor_violations", "semiconductor_contamination"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "tax": {
+    "summary": "Samsung uses complex intercompany transactions among its numerous subsidiaries to minimize tax obligations. South Korea's chaebol structure — family-controlled conglomerates with complex cross-ownership — allows significant wealth transfer between generations through opaque mechanisms. The Lee family controls Samsung through a web of cross-shareholdings with relatively small direct ownership. Samsung Electronics has been cited for transfer pricing arrangements and has faced tax authority challenges in multiple countries.",
+    "flags": ["chaebol_cross_ownership_structure", "transfer_pricing_international", "family_control_complex_shareholding"],
+    "sources": []
+  },
+  "legal": {
+    "summary": "2017: Lee Jae-yong convicted of bribery and embezzlement in connection with the 'Choi gate' scandal — bribing then-President Park Geun-hye's confidante Choi Soon-sil with 8.6 billion won ($7.4 million) to secure government support for a Samsung merger. Lee was sentenced to 5 years, had the sentence reduced to 2.5 years, was released on parole after 1 year, then re-arrested in 2021 and sentenced to 30 months, paroled in August 2022, and received a full presidential pardon from President Yoon Suk-yeol in August 2022. Samsung has been repeatedly fined and cited by Korean labor authorities for union suppression. The company has faced multiple NLRB-equivalent actions for systematic anti-union activities.",
+    "flags": ["bribery_conviction_criminal", "double_imprisonment_double_release", "presidential_pardon_return_to_control", "systematic_union_suppression"],
+    "sources": []
+  },
+  "labor": {
+    "summary": "Samsung has operated a documented 'no union' policy for most of its history. The company deployed a dedicated internal team to monitor and suppress union organizing — a practice documented by Korean labor authorities and human rights organizations. In 2020, Samsung's new chairman Lee Jae-yong publicly apologized for the company's anti-union practices and pledged to allow unionization — the first acknowledgment in the company's history. Despite the apology, union suppression complaints have continued at various Samsung facilities. Workers at Samsung semiconductor facilities in South Korea have raised documented concerns about occupational cancer rates linked to chemical exposure.",
+    "flags": ["decades_no_union_policy", "dedicated_union_suppression_team", "semiconductor_worker_occupational_cancer", "2020_apology_insufficient"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Samsung's semiconductor manufacturing involves extensive use of toxic chemicals including hydrofluoric acid, arsenic, and various solvents. Workers at Samsung's semiconductor plants in South Korea have developed occupational cancers — leukemia, lymphoma, and brain tumors — at rates that have been documented in research and litigation. Samsung initially denied any connection between its chemicals and worker health outcomes. An advocacy group called SHARPS (Supporters for Health and Rights of People in the Semiconductor Industry) has documented over 200 cases of cancer and other serious diseases among Samsung semiconductor workers. The company eventually established a compensation program. Samsung's massive electronics manufacturing generates significant e-waste globally.",
+    "flags": ["semiconductor_chemical_toxicity", "200_worker_cancer_cases_documented", "occupational_disease_denial_then_settlement", "e_waste_scale"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Samsung's bribery scandal exposed the fundamental relationship between South Korea's chaebol conglomerates and political power. The Lee family's payment to President Park's confidante was for government support of a Samsung merger — a transaction that would benefit the Lee family's control of Samsung Group. This type of transactional relationship between chaebols and Korean political power has been documented across multiple conglomerates. In the United States, Samsung has lobbied extensively on trade policy, semiconductor subsidies (CHIPS Act), and patent law.",
+    "flags": ["chaebol_political_corruption_system", "park_geun_hye_scandal_link", "us_chips_act_lobbying", "trade_policy_lobbying"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Lee Jae-yong — pardoned chairman — controls Samsung through the family's cross-shareholding structure. His father Lee Kun-hee, who died in 2020, had also been convicted of tax evasion and received a presidential pardon. The pattern of criminal conviction and presidential pardon is documented across two generations of Samsung leadership. The Korean government's dependence on Samsung — which represents 20% of national exports — creates structural pressure to pardon Samsung executives rather than allow criminal consequences to stand.",
+    "flags": ["two_generation_pardon_pattern", "father_also_convicted_pardoned", "national_export_dependence_creates_pardon_pressure"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Samsung Group operates through approximately 60 affiliated companies in areas including electronics, insurance, construction, and theme parks. This conglomerate structure — common among Korean chaebols — creates interconnections between Samsung Electronics (which consumers know) and the broader business empire. Samsung's semiconductor manufacturing connects it to every major technology company — Apple, Qualcomm, NVIDIA, and others rely on Samsung chips. This dependency gives Samsung leverage in its business relationships. Samsung's political connections extend through its relationship with South Korean government economic policy.",
+    "flags": ["60_affiliated_companies", "semiconductor_supply_critical_dependency", "apple_qualcomm_nvidia_supply_dependence"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "SHARPS and Korean labor researchers have alleged that Samsung's internal health monitoring of semiconductor workers was designed to minimize documentation of chemical exposures rather than protect worker health — creating a record that would be difficult to use in occupational disease litigation. Former Samsung managers have alleged that the company's internal epidemiological studies showing elevated cancer rates among semiconductor workers were suppressed rather than disclosed to workers or regulators. Labor rights researchers have alleged that Samsung's 2020 anti-union apology was strategic rather than sincere — that anti-union monitoring continued through different organizational structures.",
+    "flags": ["health_monitoring_suppression_alleged", "cancer_study_suppression_alleged", "continued_union_monitoring_post_apology_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Samsung semiconductor facilities' chemical environment has been linked to elevated rates of occupational cancer among workers. SHARPS documented over 200 cases of serious disease — leukemia, lymphoma, brain tumors, multiple sclerosis — among Samsung semiconductor workers and their family members. Samsung denied for years that working conditions caused these outcomes. The company eventually established a compensation program, paying settlements to affected workers and families. The semiconductor industry's occupational disease risk is not unique to Samsung, but Samsung's denial and suppression of health concerns is documented.",
+    "flags": ["200_documented_cancer_cases", "leukemia_lymphoma_brain_tumor_pattern", "denial_then_compensation_program", "family_member_impacts"],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": ["Refurbished smartphones — dramatically lower cost, reduces e-waste, avoids full manufacturing chain", "Google Pixel phones — different manufacturer, competitive pricing", "OnePlus, Motorola — often 50-60% lower price than flagship Samsung with comparable features"],
+    "healthier": ["Extended product lifecycles — keeping phones 3-4 years instead of 2 reduces total manufacturing demand", "Right-to-repair advocacy — Samsung has opposed right-to-repair legislation that would allow independent repair and extend device life"],
+    "diy": ["Phone repair services for cracked screens and battery replacements dramatically extend device life — Samsung has opposed making this easier", "Second-hand electronics markets — extends useful life of existing devices before entering waste stream", "Buying one generation old models at 30-40% discount — same hardware, fraction of the price"]
+  },
+  "timeline": [
+    {"year": 1938, "event": "Samsung founded by Lee Byung-chul as a trading company in Korea", "severity": "neutral", "source_url": ""},
+    {"year": 1969, "event": "Samsung Electronics established; begins consumer electronics manufacturing", "severity": "neutral", "source_url": ""},
+    {"year": 1996, "event": "Samsung chairman Lee Kun-hee (Lee Jae-yong's father) convicted of bribery — first generation conviction", "severity": "high", "source_url": ""},
+    {"year": 2008, "event": "Lee Kun-hee receives presidential pardon — first generation pardon", "severity": "high", "source_url": ""},
+    {"year": 2007, "event": "SHARPS begins documenting semiconductor worker cancers; Samsung denies connection", "severity": "critical", "source_url": ""},
+    {"year": 2016, "event": "South Korea 'Choi gate' scandal; Lee Jae-yong implicated in presidential bribery", "severity": "critical", "source_url": ""},
+    {"year": 2017, "event": "Lee Jae-yong arrested and convicted of bribery; sentenced to 5 years", "severity": "critical", "source_url": ""},
+    {"year": 2018, "event": "Sentence reduced; paroled after 1 year; returns to control Samsung", "severity": "high", "source_url": ""},
+    {"year": 2020, "event": "Lee publicly apologizes for anti-union practices; pledges to allow unionization", "severity": "moderate", "source_url": ""},
+    {"year": 2021, "event": "Re-arrested; sentenced to 30 months for additional bribery charges", "severity": "critical", "source_url": ""},
+    {"year": 2022, "event": "Paroled August 2022; full presidential pardon from President Yoon; returns to lead Samsung", "severity": "critical", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Samsung's dominance of South Korea's economy creates a 'too big to fail' dynamic that enables executive criminal conduct to be pardoned rather than penalized. The Lee family's accumulation of control through the chaebol structure has been documented to concentrate South Korea's economic power in a single family in ways that distort competitive markets.",
+    "price_illusion": "Samsung smartphones are priced as premium consumer products. The price does not include the occupational disease costs of semiconductor workers, the environmental cost of rare earth mining, or the political corruption cost of maintaining the Lee family's control through government bribery.",
+    "tax_math": "The chaebol structure allows the Lee family to maintain control of Samsung through complex cross-shareholdings while minimizing the inheritance taxes that would apply to direct ownership transfer. Lee Kun-hee's heirs paid approximately $11 billion in inheritance taxes in 2021 — significant but a fraction of what direct ownership transfer would have required.",
+    "wealth_velocity": "Samsung's global consumer electronics revenue — generated from hundreds of millions of devices sold globally — concentrates in the Lee family's control through the chaebol cross-ownership structure. The presidential pardons that return Lee Jae-yong to power ensure this concentration continues."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Lee family", "how": "Control of Samsung Group despite criminal convictions; two presidential pardons across two generations"},
+      {"group": "Korean government (transactional)", "how": "Bribery payments enabled government officials to fund personal enrichment"},
+      {"group": "Samsung shareholders globally", "how": "Stock value maintained through continuity of Lee family control despite criminal conduct"}
+    ],
+    "who_paid": [
+      {"group": "Semiconductor workers with occupational cancer", "how": "200+ documented cases of leukemia, lymphoma, brain tumors; Samsung denied connection for years"},
+      {"group": "Samsung workers denied unionization", "how": "Decades of suppressed collective bargaining rights; lower wages and worse conditions than unionized peers"},
+      {"group": "South Korean democratic institutions", "how": "Presidential corruption enabled by chaebol bribery culture; Park Geun-hye imprisoned; entire political system destabilized"}
+    ],
+    "the_gap": "Lee Jae-yong's father was convicted and pardoned. Lee Jae-yong was convicted twice and pardoned. The next generation will likely be convicted and pardoned. This is not corruption as exception — it is the operating system."
+  }
+}

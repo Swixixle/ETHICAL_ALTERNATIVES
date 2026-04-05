@@ -103,5 +103,16 @@
   "cardinal": "cardinal-health",
   "community-health-systems": "community-health-systems",
   "chs": "community-health-systems",
-  "ascension": "ascension"
+  "ascension": "ascension",
+  "goldman-sachs": "goldman-sachs",
+  "goldman": "goldman-sachs",
+  "gs": "goldman-sachs",
+  "koch-industries": "koch-industries",
+  "koch": "koch-industries",
+  "shell": "shell",
+  "samsung": "samsung",
+  "galaxy": "samsung",
+  "tiktok": "tiktok-bytedance",
+  "tiktok-bytedance": "tiktok-bytedance",
+  "bytedance": "tiktok-bytedance"
 }

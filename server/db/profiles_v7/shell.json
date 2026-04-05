@@ -1,0 +1,95 @@
+{
+  "brand_name": "Shell",
+  "brand_slug": "shell",
+  "parent_company": "Shell PLC",
+  "ultimate_parent": "Shell PLC",
+  "subsidiaries": ["Shell Chemicals", "Shell Energy", "Shell Trading", "Raízen (biofuels JV)"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "SHELL KNEW ABOUT CLIMATE CHANGE IN 1986 AND SPENT THE NEXT 40 YEARS DENYING IT WHILE OPERATING IN THE NIGER DELTA",
+  "executive_summary": "Shell PLC is the second-largest oil company in Europe and one of the largest corporations on earth, with annual revenues exceeding $280 billion. Internal Shell documents from 1986 — revealed in investigative reporting — show the company had detailed scientific understanding of climate change and its own contribution to it. Rather than disclose this knowledge, Shell funded or participated in climate denial organizations and lobbied against climate regulations for four decades. Simultaneously, Shell's operations in Nigeria's Niger Delta have caused decades of oil contamination across millions of acres, affecting communities that have received little compensation or remediation. A Dutch court in 2021 ordered Shell to cut emissions 45% by 2030 — Shell appealed and won a partial reversal in 2024.",
+  "verdict_tags": ["climate_denial_internal_knowledge", "niger_delta_contamination", "court_ordered_emissions_cut", "human_rights_violations", "greenwashing", "political_influence"],
+  "concern_flags": {"labor": false, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "tax": {
+    "summary": "Shell has used complex international holding structures, transfer pricing between subsidiaries in different tax jurisdictions, and commodity trading arrangements to minimize global tax obligations. The company's trading arm in Singapore and Switzerland routes significant profit through low-tax jurisdictions. Shell has received substantial government subsidies globally through fossil fuel support programs. In multiple countries Shell has paid effective tax rates well below statutory rates.",
+    "flags": ["transfer_pricing_singapore_switzerland", "fossil_fuel_subsidies_global", "below_statutory_effective_rates"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "legal": {
+    "summary": "2021: A Dutch District Court ordered Shell to cut its global carbon emissions 45% by 2030 compared to 2019 levels — the first court ruling globally to order a private company to align with the Paris Agreement. Shell appealed; a Dutch appeals court in 2024 overturned the hard 45% target while affirming Shell has a duty to reduce emissions. Multiple Nigerian courts have ordered Shell to clean up Niger Delta oil contamination; Shell has paid partial settlements while contamination continues. Shell paid $84 million to Nigerian Ogoni communities in 2015 after a 13-year lawsuit over contamination from oil spills. In 1995, Shell's Nigerian subsidiary was implicated in the execution of Ken Saro-Wiwa and eight other Ogoni activists by the Nigerian military government — Shell denied requesting the executions but paid $15.5 million to settle a U.S. lawsuit brought by the activists' families.",
+    "flags": ["dutch_court_emissions_order", "niger_delta_contamination_courts", "ken_saro_wiwa_execution_settlement", "15_5m_activists_settlement"],
+    "sources": ["https://www.courtlistener.com", "https://amnesty.org"]
+  },
+  "labor": {
+    "summary": "Shell employs approximately 90,000 people globally. The company has made multiple rounds of workforce reductions in its 'energy transition' restructuring. Shell's operations in Nigeria, the Philippines, and other developing countries have employed workers under documented conditions that have been criticized by labor rights organizations. The company's shift toward renewable energy — while maintaining offshore oil drilling — has created workforce uncertainty.",
+    "flags": ["developing_country_labor_standards", "energy_transition_layoffs", "workforce_uncertainty"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Shell's operations in Nigeria's Niger Delta since the 1950s have caused what Amnesty International has called one of the world's worst ongoing environmental disasters. Decades of pipeline leaks and spills have contaminated 2,000-3,000 square kilometers of land and 70 years of oil production have left communities without clean water, destroyed fishing economies, and contaminated food sources. Shell has settled multiple lawsuits while contamination continues. Separately, Shell's global operations contribute approximately 2% of global greenhouse gas emissions annually. The 1986 internal documents showed Shell understood its products were the primary driver of climate change.",
+    "flags": ["niger_delta_worst_environmental_disaster", "2000_sq_km_contamination", "internal_climate_knowledge_1986", "2pct_global_emissions"],
+    "sources": ["https://www.amnesty.org", "https://www.theguardian.com"]
+  },
+  "political": {
+    "summary": "Shell has been documented funding climate denial organizations while publicly stating it supports climate action. The company was a member of the Global Climate Coalition — an industry group that downplayed climate science — until the coalition dissolved in 2002. Shell funds ALEC in the United States. The company has lobbied against climate regulations in the EU, UK, US, and internationally through trade associations. In the Netherlands, Shell successfully lobbied for years against the regulatory framework that ultimately led to the court order against it.",
+    "flags": ["global_climate_coalition_membership", "alec_funding", "multi_jurisdiction_climate_lobbying", "public_support_vs_private_denial"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Wael Sawan received $9.7 million in total compensation in 2023. Shell's executive compensation is tied to production metrics and financial performance, creating incentives that conflict with the emissions reduction the company publicly supports. Sawan, who took over in 2023, signaled a pivot away from some renewable energy commitments, reducing targets in favor of higher short-term fossil fuel returns.",
+    "flags": ["production_tied_compensation", "renewable_energy_retreat_under_sawan"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "connections": {
+    "summary": "Shell shares major institutional investors with BP, TotalEnergies, and ExxonMobil — creating aligned incentives across the major oil companies against aggressive climate regulation. Shell's membership in trade associations including the American Petroleum Institute, International Association of Oil & Gas Producers, and the Oil and Gas Climate Initiative connects it to industry-wide lobbying coordination. Shell's Nigerian operations were conducted through Shell Petroleum Development Company — a joint venture with the Nigerian government — creating a documented relationship between Shell's operations and the Nigerian military government implicated in human rights abuses.",
+    "flags": ["cross_oil_company_investor_alignment", "api_industry_lobbying_coordination", "nigerian_military_joint_venture"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Amnesty International and Nigerian civil society organizations have alleged that Shell knew about specific pipeline spills in the Niger Delta for years before undertaking any remediation, and that the company's internal leak reports significantly undercounted the actual volume of contamination. Investigative reporting by the Guardian in 2023 revealed Shell's internal 1986 and 1988 documents showing sophisticated understanding of climate change — and documented that Shell continued funding denial organizations with this knowledge. Environmental lawyers have alleged that Shell's claims about source of Nigeria spills — attributing contamination to 'oil theft' and 'sabotage' rather than company negligence — are used systematically to avoid remediation liability.",
+    "flags": ["niger_delta_spill_underreporting_alleged", "1986_climate_knowledge_denial_documented", "oil_theft_sabotage_liability_avoidance_alleged"],
+    "sources": ["https://www.theguardian.com", "https://www.amnesty.org"]
+  },
+  "health_record": {
+    "summary": "Communities in Nigeria's Niger Delta experience some of the worst documented environmental health impacts of any oil-producing region. Studies of Ogoni communities — where Shell operations were most concentrated — have found elevated cancer rates, respiratory disease, and maternal health complications associated with contaminated water and air. Fish and crops in contaminated areas have been found to contain hydrocarbon levels far above safe consumption thresholds, destroying the food security of fishing communities. Shell's global emissions contribute to climate-driven heat deaths, extreme weather, and disease pattern shifts affecting billions globally.",
+    "flags": ["ogoni_cancer_respiratory_rates", "food_source_hydrocarbon_contamination", "fishing_economy_destruction", "global_emissions_health_impacts"],
+    "sources": ["https://www.amnesty.org", "https://www.ncbi.nlm.nih.gov"]
+  },
+  "alternatives": {
+    "cheaper": ["Electric vehicles + home solar eliminate gasoline dependency on Shell entirely over time", "Public transit — collective transport dramatically reduces per-person fuel consumption", "E-bikes for urban commuting — zero fuel cost, zero emissions"],
+    "healthier": ["Community solar and wind programs — electricity that doesn't require burning hydrocarbons", "Heat pumps replacing gas heating — more efficient and decouples home energy from fossil fuels"],
+    "diy": ["Boycott Shell specifically at the pump — Mobil, BP, Chevron remain problematic but Shell's Nigeria record makes it a distinct choice", "Reduce home natural gas use through weatherization and electrification", "Vote for candidates who support carbon pricing — the structural solution that changes Shell's business model"]
+  },
+  "timeline": [
+    {"year": 1907, "event": "Royal Dutch Shell formed from merger of Royal Dutch Petroleum and Shell Transport and Trading", "severity": "neutral", "source_url": ""},
+    {"year": 1950, "event": "Shell begins oil extraction in Nigeria's Niger Delta (1950s onward)", "severity": "neutral", "source_url": ""},
+    {"year": 1986, "event": "Internal Shell report documents detailed understanding of climate change — never disclosed publicly", "severity": "critical", "source_url": ""},
+    {"year": 1995, "event": "Ken Saro-Wiwa and eight Ogoni activists executed by Nigerian military; Shell implicated in facilitating the action", "severity": "critical", "source_url": ""},
+    {"year": 2009, "event": "$15.5M settlement with families of Saro-Wiwa and other executed activists — no admission of wrongdoing", "severity": "high", "source_url": ""},
+    {"year": 2015, "event": "$84M settlement with Ogoni communities for Niger Delta contamination after 13-year lawsuit", "severity": "high", "source_url": ""},
+    {"year": 2021, "event": "Dutch court orders Shell to cut global emissions 45% by 2030 — first such corporate climate ruling globally", "severity": "critical", "source_url": ""},
+    {"year": 2023, "event": "Guardian investigation publishes Shell's 1986 internal climate documents showing decades-long denial with internal knowledge", "severity": "critical", "source_url": "https://www.theguardian.com"},
+    {"year": 2024, "event": "Dutch appeals court partially overturns 45% emissions target; Shell retreats from renewable energy commitments", "severity": "high", "source_url": ""},
+    {"year": 2024, "event": "CEO announces shift toward higher fossil fuel returns; renewable energy spending reduced", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Shell's Niger Delta operations have made large areas of the Ogoni territory — and broader Niger Delta communities — uninhabitable for traditional fishing and agricultural economies. Communities that subsisted on fishing and farming for generations have lost their livelihoods to oil contamination. The political repression that accompanied Shell's operations — culminating in the execution of activists — displaced community leadership.",
+    "price_illusion": "Gasoline prices at Shell stations do not include the cost of Niger Delta contamination remediation, climate change damage, or the public health impacts of fossil fuel combustion. The price is artificially low because these costs are externalized to Nigerian communities, to the global atmosphere, and to future generations.",
+    "tax_math": "Shell receives fossil fuel subsidies globally estimated in the billions annually. The company's tax arrangements in trading hubs like Singapore and Switzerland reduce tax obligations in the operating countries where environmental damage occurs — Nigeria, for example, receives less in Shell tax revenue than it bears in environmental cost.",
+    "wealth_velocity": "Shell's profits flow to institutional shareholders globally — predominantly in the United Kingdom, Netherlands, and the United States. The Niger Delta communities where the oil is extracted see environmental destruction. The financial returns accrue to shareholders on three continents."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Shell shareholders globally", "how": "Seven decades of oil profits from Nigerian extraction; ongoing global fossil fuel revenue"},
+      {"group": "Nigerian government (partial)", "how": "Royalties and taxes from oil production — though far less than the environmental liability externalized to communities"},
+      {"group": "Consumer economies", "how": "Cheap oil priced without environmental externalities"}
+    ],
+    "who_paid": [
+      {"group": "Ogoni and Niger Delta communities", "how": "70 years of contamination; destroyed fishing and agricultural economies; Ken Saro-Wiwa and eight others executed"},
+      {"group": "Global climate", "how": "40 years of climate denial with internal knowledge; 2% of global emissions annually"},
+      {"group": "Future generations", "how": "Climate damage from emissions locked in by decades of denial-funded inaction"}
+    ],
+    "the_gap": "Shell knew in 1986. They funded denial for 40 more years. The Ogoni knew the entire time — they were living in it. Saro-Wiwa was executed for saying so. Shell paid $15.5 million to his family and admitted nothing."
+  }
+}
