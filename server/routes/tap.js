@@ -239,6 +239,7 @@ router.post('/tap', async (req, res) => {
       typeof finalIdentification?.crop_base64 === 'string' ? finalIdentification.crop_base64 : null;
     let db_preview = null;
     if (finalIdentification.brand || finalIdentification.corporate_parent) {
+      // Same alias → canonical slug resolution as full tap (getIncumbentDbPreview → resolveIncumbentSlug).
       db_preview = await getIncumbentDbPreview(
         finalIdentification.brand,
         finalIdentification.corporate_parent
@@ -258,6 +259,8 @@ router.post('/tap', async (req, res) => {
 
   const session_id = typeof req.body?.session_id === 'string' ? req.body.session_id.trim() : null;
 
+  // incumbent_profiles queries use resolveIncumbentSlug() (investigation.js), which reads
+  // server/db/brand_aliases.json — e.g. venetian → las-vegas-sands, mgm → mgm-resorts.
   const invPromise =
     finalIdentification.brand || finalIdentification.corporate_parent
       ? getInvestigationProfile(
