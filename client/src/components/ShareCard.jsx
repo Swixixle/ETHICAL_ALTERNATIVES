@@ -30,6 +30,45 @@ function checklistLabelForRegulator(reg) {
   return `${reg.agency} — ${action}`;
 }
 
+function pressRowId(handle) {
+  const h = String(handle || '').replace(/^@+/, '');
+  return `press_${h}`;
+}
+
+/**
+ * @param {Record<string, unknown>} shareData
+ * @param {{ handle: string }[]} outlets
+ * @param {'feed' | 'company'} variant
+ */
+function composeTwitterWithPress(shareData, outlets, variant) {
+  const cd = shareData.card_data || {};
+  const concern = String(cd.concern_level || 'unknown');
+  const emoji =
+    { significant: '🔴', moderate: '🟡', minor: '🟢', clean: '✅' }[concern] || '⚪';
+  const topTags = (cd.top_tags || [])
+    .slice(0, 3)
+    .map((t) => String(t).replace(/_/g, ' ').toUpperCase());
+  const site =
+    typeof shareData.share_url === 'string' && shareData.share_url
+      ? shareData.share_url
+      : 'https://ethicalalt-client.onrender.com';
+  const companyTag = typeof shareData.company_tag === 'string' ? shareData.company_tag : '';
+  const brandName =
+    typeof shareData.brand_name === 'string' && shareData.brand_name.trim()
+      ? shareData.brand_name.trim()
+      : 'Company';
+  const headline = String(cd.headline || brandName)
+    .replace(/\s+/g, ' ')
+    .trim();
+  const excerpt = headline.length > 200 ? `${headline.slice(0, 200)}…` : headline;
+  const tagStr = outlets.map((o) => o.handle).join(' ');
+  const intro = `${emoji} Investigated ${brandName}. ${excerpt}${tagStr ? `. ${tagStr}` : ''}`;
+  if (variant === 'company') {
+    return `${intro}\n\n${topTags.join(' · ')}\n\n${companyTag} — documented public record (primary sources in thread context).\n\n#EthicalAlt\n${site}`;
+  }
+  return `${intro}\n\n${topTags.join(' · ')}\n\nSourced public record · #EthicalAlt\n${companyTag}\n\n${site}`;
+}
+
 /**
  * @param {{
  *   investigation: Record<string, unknown> | null;
@@ -86,6 +125,9 @@ export default function ShareCard({ investigation, identification, onClose }) {
     for (const reg of shareData.relevant_regulators || []) {
       next[`reg_${reg.agency}`] = true;
     }
+    for (const o of shareData.press_outlets || []) {
+      next[pressRowId(o.handle)] = true;
+    }
     setSelected(next);
     setShowSentConfirm(false);
     setSentItems([]);
@@ -99,6 +141,9 @@ export default function ShareCard({ investigation, identification, onClose }) {
     ? (() => {
         const s = selected;
         if (s.twitter_feed || s.twitter_tag || s.instagram || s.tiktok || s.facebook) return true;
+        for (const o of shareData.press_outlets || []) {
+          if (s[pressRowId(o.handle)]) return true;
+        }
         for (const reg of shareData.relevant_regulators || []) {
           if (s[`reg_${reg.agency}`]) return true;
         }
@@ -116,13 +161,21 @@ export default function ShareCard({ investigation, identification, onClose }) {
     const site = typeof s.share_url === 'string' && s.share_url ? s.share_url : 'https://ethicalalt-client.onrender.com';
 
     try {
+      const pressPicked = (s.press_outlets || []).filter((o) => sel[pressRowId(o.handle)]);
+      const twitterFeedText =
+        pressPicked.length > 0 ? composeTwitterWithPress(s, pressPicked, 'feed') : s.share_texts.twitter;
+      const twitterCompanyText =
+        pressPicked.length > 0
+          ? composeTwitterWithPress(s, pressPicked, 'company')
+          : s.share_texts.twitter_company;
+
       if (sel.twitter_feed) {
-        window.open(tweetUrl(s.share_texts.twitter), '_blank', 'noopener,noreferrer');
+        window.open(tweetUrl(twitterFeedText), '_blank', 'noopener,noreferrer');
         completed.push({ id: 'twitter_feed', label: 'X / Twitter — Post to my feed' });
       }
       if (sel.twitter_tag) {
         await sleep(sel.twitter_feed ? 500 : 0);
-        window.open(tweetUrl(s.share_texts.twitter_company), '_blank', 'noopener,noreferrer');
+        window.open(tweetUrl(twitterCompanyText), '_blank', 'noopener,noreferrer');
         completed.push({
           id: 'twitter_tag',
           label: `X / Twitter — Tag the company (${s.company_tag})`,
@@ -302,7 +355,18 @@ export default function ShareCard({ investigation, identification, onClose }) {
     boxSizing: 'border-box',
   };
 
+  const sectionHeaderStyle = {
+    fontFamily: "'Space Mono', monospace",
+    fontSize: 10,
+    letterSpacing: 1.5,
+    textTransform: 'uppercase',
+    color: '#a8c4d8',
+    marginTop: 12,
+    marginBottom: 4,
+  };
+
   const cd = shareData?.card_data;
+  const pressOutlets = shareData?.press_outlets || [];
 
   return (
     <div
@@ -518,7 +582,8 @@ export default function ShareCard({ investigation, identification, onClose }) {
 
         {shareData && !loading ? (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            {[...staticRows, ...regRows].map((row) => (
+            <div style={{ ...sectionHeaderStyle, marginTop: 4 }}>Social</div>
+            {staticRows.map((row) => (
               <label key={row.id} style={rowStyle}>
                 <input
                   type="checkbox"
@@ -549,6 +614,110 @@ export default function ShareCard({ investigation, identification, onClose }) {
                 </span>
               </label>
             ))}
+
+            {pressOutlets.length > 0 ? (
+              <>
+                <div style={sectionHeaderStyle}>Press — outlets that cover this company</div>
+                {pressOutlets.map((o) => {
+                  const pid = pressRowId(o.handle);
+                  return (
+                    <label
+                      key={pid}
+                      style={{
+                        ...rowStyle,
+                        borderBottom: '0.5px solid rgba(255,255,255,0.08)',
+                      }}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={Boolean(selected[pid])}
+                        onChange={() => toggle(pid)}
+                        style={{
+                          width: 18,
+                          height: 18,
+                          accentColor: '#d4a017',
+                          cursor: 'pointer',
+                          flexShrink: 0,
+                        }}
+                      />
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div
+                          style={{
+                            fontFamily: "'Crimson Pro', serif",
+                            fontSize: 14,
+                            color: '#e0e0e0',
+                            lineHeight: 1.35,
+                          }}
+                        >
+                          {o.name}
+                        </div>
+                        <div
+                          style={{
+                            fontFamily: "'Crimson Pro', serif",
+                            fontSize: 11,
+                            color: '#6a8a9a',
+                            lineHeight: 1.35,
+                            marginTop: 2,
+                          }}
+                        >
+                          {o.beat}
+                        </div>
+                      </div>
+                      <span
+                        style={{
+                          fontFamily: "'Space Mono', monospace",
+                          fontSize: 11,
+                          color: '#a8c4d8',
+                          flexShrink: 0,
+                        }}
+                      >
+                        {o.handle}
+                      </span>
+                      <span style={{ color: '#6a8a9a', fontSize: 14 }} aria-hidden>
+                        ›
+                      </span>
+                    </label>
+                  );
+                })}
+              </>
+            ) : null}
+
+            {regRows.length > 0 ? (
+              <>
+                <div style={sectionHeaderStyle}>Regulators</div>
+                {regRows.map((row) => (
+                  <label key={row.id} style={rowStyle}>
+                    <input
+                      type="checkbox"
+                      checked={Boolean(selected[row.id])}
+                      onChange={() => toggle(row.id)}
+                      style={{
+                        width: 18,
+                        height: 18,
+                        accentColor: '#d4a017',
+                        cursor: 'pointer',
+                        flexShrink: 0,
+                      }}
+                    />
+                    <div
+                      style={{
+                        fontFamily: "'Crimson Pro', serif",
+                        fontSize: 14,
+                        color: '#e0e0e0',
+                        lineHeight: 1.35,
+                        flex: 1,
+                        minWidth: 0,
+                      }}
+                    >
+                      {row.primary}
+                    </div>
+                    <span style={{ color: '#6a8a9a', fontSize: 14 }} aria-hidden>
+                      ›
+                    </span>
+                  </label>
+                ))}
+              </>
+            ) : null}
           </div>
         ) : null}
 

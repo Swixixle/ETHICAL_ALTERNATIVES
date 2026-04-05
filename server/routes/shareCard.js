@@ -3,6 +3,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Router } from 'express';
 import { resolveIncumbentSlug } from '../services/investigation.js';
+import { getPressOutletsForSlug } from '../services/pressOutletsCatalog.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -185,11 +186,30 @@ router.post('/', (req, res) => {
 
     const relevantRegulators = collectVerdictMatchedShareRegulators(verdictTags);
 
+    let pressOutlets =
+      Array.isArray(investigation.press_outlets) && investigation.press_outlets.length
+        ? investigation.press_outlets.map((o) => ({
+            name: String(o?.name || '').trim(),
+            handle: String(o?.handle || '').trim().startsWith('@')
+              ? String(o?.handle || '').trim()
+              : `@${String(o?.handle || '').replace(/^@+/, '').trim()}`,
+            beat: String(o?.beat || '').trim(),
+          })).filter((o) => o.name && o.handle)
+        : getPressOutletsForSlug(brandSlug);
+
+    const seenPress = new Set();
+    pressOutlets = pressOutlets.filter((o) => {
+      if (seenPress.has(o.handle)) return false;
+      seenPress.add(o.handle);
+      return true;
+    });
+
     res.json({
       brand_name: brandName,
       brand_slug: brandSlug,
       company_accounts: accounts,
       company_tag: companyTag,
+      press_outlets: pressOutlets,
       relevant_regulators: relevantRegulators,
       share_url: siteUrl,
       share_texts: shareTexts,

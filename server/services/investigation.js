@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import Anthropic from '@anthropic-ai/sdk';
 import { relationalRowToParsed } from '../db/mapIncumbentProfile.js';
 import { pool } from '../db/pool.js';
+import { getPressOutletsForSlug } from './pressOutletsCatalog.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -434,6 +435,24 @@ function normalizeAlternativesBlock(raw) {
   return { cheaper, healthier, diy };
 }
 
+/** @param {unknown} raw */
+function normalizePressOutletsFromParsed(raw) {
+  if (!Array.isArray(raw)) return [];
+  const out = [];
+  const seen = new Set();
+  for (const o of raw) {
+    if (!o || typeof o !== 'object') continue;
+    const name = String(o.name || '').trim();
+    let handle = String(o.handle || '').trim();
+    if (handle && !handle.startsWith('@')) handle = `@${handle.replace(/^@+/, '')}`;
+    const beat = String(o.beat || '').trim();
+    if (!name || !handle || seen.has(handle)) continue;
+    seen.add(handle);
+    out.push({ name, handle, beat });
+  }
+  return out;
+}
+
 function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) {
   const brand = typeof parsed?.brand === 'string' ? parsed.brand : brandName || 'Unknown';
   const parent =
@@ -544,6 +563,8 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
     allegations: normalizeAllegationsBlock(parsed?.allegations),
     health_record: normalizeHealthRecordBlock(parsed?.health_record, parsed?.overall_concern_level),
     alternatives: normalizeAlternativesBlock(parsed?.alternatives),
+
+    press_outlets: normalizePressOutletsFromParsed(parsed?.press_outlets),
   };
 
   if (!healthFlag) {
@@ -565,8 +586,14 @@ function deriveConcernFlags(inv) {
 }
 
 function finalizeInvestigation(inv, profileType) {
+  let press_outlets = Array.isArray(inv.press_outlets) ? inv.press_outlets : [];
+  if (!press_outlets.length) {
+    const slug = resolveIncumbentSlug(inv.brand, inv.parent);
+    press_outlets = getPressOutletsForSlug(slug);
+  }
   return {
     ...inv,
+    press_outlets,
     concern_flags: deriveConcernFlags(inv),
     profile_type: profileType,
     last_updated: new Date().toISOString().slice(0, 10),
