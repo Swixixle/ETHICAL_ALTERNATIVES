@@ -81,5 +81,16 @@
   "dior": "lvmh",
   "hennessy": "lvmh",
   "mo-t": "lvmh",
-  "moet": "lvmh"
+  "moet": "lvmh",
+  "hca": "hca-healthcare",
+  "hca-healthcare": "hca-healthcare",
+  "steward": "steward-health-care",
+  "steward-health": "steward-health-care",
+  "steward-health-care": "steward-health-care",
+  "philips": "philips-healthcare",
+  "philips-healthcare": "philips-healthcare",
+  "respironics": "philips-healthcare",
+  "philips-respironics": "philips-healthcare",
+  "davita": "davita",
+  "mckesson": "mckesson"
 }

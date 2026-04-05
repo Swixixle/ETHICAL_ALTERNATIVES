@@ -1,0 +1,95 @@
+{
+  "brand_name": "McKesson",
+  "brand_slug": "mckesson",
+  "parent_company": "McKesson Corporation",
+  "ultimate_parent": "McKesson Corporation",
+  "subsidiaries": ["CoverMyMeds", "Ontada", "McKesson Specialty Health", "RxO"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "MCKESSON DISTRIBUTED 14.6 BILLION OPIOID PILLS AND PAID $8.9 BILLION — THE LARGEST DRUG COMPANY SETTLEMENT IN HISTORY",
+  "executive_summary": "McKesson Corporation is one of the three dominant pharmaceutical distributors in the United States — along with Cencora and Cardinal Health — collectively controlling approximately 85-90% of all drug distribution in the country. McKesson distributed billions of opioid pills to pharmacies across the United States during the peak of the opioid crisis, generating billions in revenue while allegedly failing to implement legally required anti-diversion controls. In 2022, McKesson, AmerisourceBergen (now Cencora), and Cardinal Health agreed to a combined $21 billion settlement with states, counties, and municipalities — the largest settlement in the history of the U.S. pharmaceutical industry. McKesson's share is $8.9 billion, to be paid over 18 years.",
+  "verdict_tags": ["opioid_distribution", "anti_diversion_failure", "8_9b_settlement", "medicare_fraud", "distribution_monopoly", "public_health_crisis"],
+  "concern_flags": {"labor": false, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
+  "tax": {
+    "summary": "McKesson uses a headquarters structure in Texas with significant operations routed through international subsidiaries. The company has benefited substantially from tax provisions related to settlement payments — opioid settlement payments may be partially tax-deductible as business expenses, effectively reducing the net cost of the settlement to McKesson and transferring a portion of the cost to federal taxpayers. McKesson's effective tax rate has consistently run below statutory rates.",
+    "flags": ["settlement_payment_tax_deductibility", "international_subsidiary_structures"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "legal": {
+    "summary": "In 2022, McKesson agreed to pay $8.9 billion over 18 years as its share of a three-distributor $21 billion opioid settlement — the largest pharmaceutical settlement in U.S. history. The settlement resolves claims that McKesson failed to detect, investigate, and report suspicious opioid orders as required by the Controlled Substances Act. McKesson previously paid $150 million in 2017 for DEA violations related to opioid anti-diversion failures. The company also paid $175 million in 2021 to settle opioid claims from West Virginia. McKesson has faced additional criminal referrals from the DEA. The company has never admitted wrongdoing.",
+    "flags": ["8_9b_opioid_settlement_largest_pharma", "dea_violations_150m_2017", "controlled_substances_act_failures", "no_admission_wrongdoing"],
+    "sources": ["https://www.justice.gov", "https://violationtracker.goodjobsfirst.org"]
+  },
+  "labor": {
+    "summary": "McKesson employs approximately 50,000 people. The company has faced EEOC complaints for age and race discrimination. McKesson's distribution center workers have been subject to intensive productivity monitoring and demanding physical work conditions. The company has conducted multiple rounds of layoffs as it restructures following opioid-related legal costs and shifts in its business mix.",
+    "flags": ["discrimination_complaints", "distribution_worker_conditions", "restructuring_layoffs"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "McKesson's pharmaceutical distribution network involves cold-chain logistics with significant refrigeration and transportation energy consumption. Pharmaceutical packaging waste — drug returns, expired medications, cold-pack materials — represents a documented disposal challenge. McKesson has been cited for improper pharmaceutical waste disposal at distribution centers.",
+    "flags": ["pharmaceutical_waste_disposal", "cold_chain_energy_footprint"],
+    "sources": ["https://echo.epa.gov"]
+  },
+  "political": {
+    "summary": "McKesson spent $4.8 million on federal lobbying in 2023. The company, along with the other major distributors, was a major political contributor during the period it was distributing billions of opioid pills. McKesson has lobbied against DEA enforcement authority and against state-level drug monitoring programs that would have flagged suspicious orders. The distribution industry's lobbying against the HALT Act — legislation that would have strengthened DEA authority over suspicious orders — was documented in the New York Times and DEA whistleblower accounts.",
+    "flags": ["dea_authority_opposition", "halt_act_opposition", "monitoring_program_opposition"],
+    "sources": ["https://www.opensecrets.org", "https://www.nytimes.com"]
+  },
+  "executives": {
+    "summary": "CEO Brian Tyler received $22.5 million in total compensation in 2023. Former CEO John Hammergren, who led McKesson from 2001-2019 — the peak opioid crisis years — accumulated a pension package worth approximately $159 million and total compensation exceeding $700 million over his tenure. Hammergren's tenure encompassed both the massive opioid distribution growth and the DEA violations. He left with full compensation and no criminal charges.",
+    "flags": ["hammergren_700m_compensation_during_crisis", "159m_pension_package", "no_criminal_charges_executives"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "connections": {
+    "summary": "McKesson, Cencora (formerly AmerisourceBergen), and Cardinal Health together control approximately 85-90% of U.S. drug distribution — an oligopoly over the entire pharmaceutical supply chain. All three companies are defendants in the $21 billion opioid settlement. All three lobbied against stronger DEA oversight of suspicious orders. The distributor oligopoly gives these companies extraordinary leverage over the pharmaceutical supply chain — and extraordinary responsibility for anti-diversion they allegedly did not exercise. McKesson's relationships with opioid manufacturers like Purdue Pharma and Johnson & Johnson connected it to the entire opioid supply chain.",
+    "flags": ["drug_distribution_oligopoly", "purdue_pharma_supply_relationship", "industry_wide_dea_lobbying_against_oversight"],
+    "sources": ["https://www.dea.gov", "https://www.justice.gov"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "DEA whistleblowers have alleged that McKesson's suspicious order monitoring system was deliberately designed to be ineffective — flagging orders as suspicious and then shipping them anyway without reporting to DEA, in direct violation of legal requirements. Congressional investigators have alleged that McKesson executives were aware of the opioid diversion problem and prioritized distribution volume over compliance. West Virginia Attorney General's filings alleged that McKesson shipped 106 million oxycodone and hydrocodone pills to West Virginia in six years — a state with approximately 1.8 million people.",
+    "flags": ["monitoring_system_deliberate_ineffectiveness_alleged", "106m_pills_west_virginia_alleged", "executive_awareness_volume_over_compliance_alleged"],
+    "sources": ["https://www.dea.gov", "https://www.washingtonpost.com"]
+  },
+  "health_record": {
+    "summary": "The opioid crisis killed approximately 500,000 Americans between 1999 and 2019 from prescription opioid, heroin, and synthetic opioid overdoses. McKesson's distribution of billions of opioid pills — including to pharmacies in communities with documented prescription fraud and diversion — is a direct contributor to this public health catastrophe. West Virginia, which received 106 million pills for a population of 1.8 million people, has the highest opioid death rate of any state. McKesson distributed 14.6 billion oxycodone and hydrocodone pills between 2006 and 2012 alone, per DEA data. The company received revenue on every pill distributed.",
+    "flags": ["500000_overdose_deaths_opioid_crisis", "14_6b_opioid_pills_2006_2012", "west_virginia_highest_death_rate", "revenue_per_pill_distributed"],
+    "sources": ["https://www.cdc.gov", "https://www.dea.gov"]
+  },
+  "alternatives": {
+    "cheaper": ["Pharmaceutical distribution is infrastructure — consumers do not directly choose their drug distributor. The alternative is systemic reform: stronger DEA oversight, mandatory suspicious order reporting with real consequences, and breaking up the distribution oligopoly"],
+    "healthier": ["Non-opioid pain management: physical therapy, regional anesthesia, NSAIDs, cognitive behavioral therapy for pain — documented alternatives to opioid prescribing for many conditions", "Naloxone (Narcan) availability — everyone in a community affected by opioids should have access to this overdose reversal medication"],
+    "diy": ["SAMHSA National Helpline: 1-800-662-4357 for substance use disorder treatment referral", "Advocate for medication-assisted treatment (MAT) programs in your community — buprenorphine and methadone are evidence-based opioid use disorder treatments that remain underfunded", "Support harm reduction programs — needle exchanges, naloxone distribution — which save lives without requiring abstinence"]
+  },
+  "timeline": [
+    {"year": 1828, "event": "McKesson founded in New York as pharmaceutical wholesaler", "severity": "neutral", "source_url": ""},
+    {"year": 1999, "event": "OxyContin mass marketing begins; opioid prescribing increases dramatically; distributors' revenue grows", "severity": "neutral", "source_url": ""},
+    {"year": 2006, "event": "DEA internal reports flag suspicious opioid order patterns at major distributors; no significant action taken", "severity": "high", "source_url": ""},
+    {"year": 2008, "event": "McKesson pays $13.25M to settle DEA claims for anti-diversion failures", "severity": "high", "source_url": ""},
+    {"year": 2012, "event": "Peak: McKesson distributes billions of opioid pills annually; opioid deaths at record levels", "severity": "critical", "source_url": ""},
+    {"year": 2017, "event": "DEA: $150M settlement for controlled substances anti-diversion violations — largest DEA settlement at the time", "severity": "critical", "source_url": ""},
+    {"year": 2021, "event": "$175M West Virginia settlement for opioid distribution failures", "severity": "high", "source_url": ""},
+    {"year": 2022, "event": "$8.9B settlement agreed — McKesson's share of $21B three-distributor deal; largest pharma settlement in U.S. history", "severity": "critical", "source_url": "https://www.justice.gov"},
+    {"year": 2022, "event": "Payments begin — $8.9B spread over 18 years; no admission of wrongdoing", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Communities devastated by opioid addiction — particularly Appalachian, rural, and Native American communities — experienced the destruction of workforce capacity, family stability, and community cohesion. The economic cost of the opioid crisis is estimated at $1.5 trillion annually. McKesson's $8.9 billion settlement, paid over 18 years, is a fraction of the damage caused.",
+    "price_illusion": "Pharmaceutical distributors earn a small margin per pill — making their profit model dependent on volume. The financial incentive structure rewarded high-volume distribution. Anti-diversion controls that would have reduced suspicious orders would have directly reduced revenue. The settlement payments, spread over 18 years and partially tax-deductible, may not represent a net negative for McKesson given the revenues earned during the crisis period.",
+    "tax_math": "The opioid settlement may be partially tax-deductible as a business settlement — meaning federal taxpayers effectively subsidize a portion of McKesson's penalty through reduced tax revenue. The public healthcare costs of opioid addiction treatment, emergency response, foster care for children of addicted parents, and incarceration dwarf the settlement amount.",
+    "wealth_velocity": "McKesson's distribution revenue during the opioid crisis flowed to shareholders. CEO Hammergren accumulated $700 million in compensation during the peak opioid years. The cost of the crisis — medical treatment, social services, lost productivity, deaths — was distributed across the communities where the pills were delivered."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "McKesson shareholders", "how": "Revenue from distributing billions of pills; settlement paid over 18 years from future earnings"},
+      {"group": "CEO John Hammergren", "how": "$700M in compensation during peak opioid distribution years; $159M pension; no criminal charges"},
+      {"group": "Opioid manufacturers", "how": "Distribution network enabled mass market reach of highly addictive products"}
+    ],
+    "who_paid": [
+      {"group": "500,000 Americans who died", "how": "Opioid overdose deaths directly connected to prescription pill saturation of communities"},
+      {"group": "Families of people with opioid use disorder", "how": "Medical costs, lost income, family disruption, foster care, incarceration"},
+      {"group": "States, counties, municipalities", "how": "$21B settlement represents partial recovery of public costs of treating the crisis"},
+      {"group": "Native American and rural communities", "how": "Disproportionate per-capita pill volumes; disproportionate death rates"}
+    ],
+    "the_gap": "McKesson distributed 14.6 billion opioid pills in six years. The CEO made $700 million. 500,000 people died. The settlement is $8.9 billion over 18 years. No McKesson executive has been criminally charged."
+  }
+}

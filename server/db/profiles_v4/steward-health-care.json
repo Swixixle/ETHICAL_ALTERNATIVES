@@ -1,0 +1,96 @@
+{
+  "brand_name": "Steward Health Care",
+  "brand_slug": "steward-health-care",
+  "parent_company": "Steward Health Care LLC (bankrupt)",
+  "ultimate_parent": "Cerberus Capital Management (former PE owner)",
+  "subsidiaries": ["IASIS Healthcare"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "PRIVATE EQUITY EXTRACTED $1.3 BILLION FROM STEWARD HOSPITALS WHILE A PATIENT DIED BECAUSE A MONITOR WASN'T CHECKED",
+  "executive_summary": "Steward Health Care was the largest private for-profit hospital system in the United States before filing for Chapter 11 bankruptcy in May 2024 — one of the largest hospital bankruptcies in decades — with over $9 billion in liabilities. The company was acquired by private equity firm Cerberus Capital Management in 2010 for $900 million. Over the following decade, Cerberus and CEO Ralph de la Torre extracted approximately $1.3 billion through dividends, management fees, and real estate transactions while hospitals accumulated $6.6 billion in lease obligations, went without essential equipment, left staff unpaid, and documented more than 650 instances of deficient patient care across 31 hospitals. Five hospitals permanently closed following bankruptcy. A new mother died from internal bleeding because the hospital equipment needed to detect it had been repossessed for unpaid bills.",
+  "verdict_tags": ["private_equity_extraction", "patient_harm", "hospital_closures", "unpaid_wages", "deficient_care", "congressional_contempt", "bankruptcy_fraud_concerns"],
+  "concern_flags": {"labor": true, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
+  "tax": {
+    "summary": "Steward's sale-leaseback transaction with Medical Properties Trust in 2016 — selling hospital real estate and leasing it back — generated immediate cash for dividends to investors while creating $6.6 billion in long-term lease obligations that contributed directly to the bankruptcy. This structure, common in private equity healthcare, converts owned assets into rental obligations while generating immediate profit distributions. The structure also created tax benefits through rental deductions.",
+    "flags": ["sale_leaseback_tax_engineering", "mpt_lease_structure_bankruptcy_contributor"],
+    "sources": ["https://pestakeholder.org"]
+  },
+  "legal": {
+    "summary": "Steward CEO Ralph de la Torre was held in criminal contempt by the U.S. Senate in September 2024 after defying a congressional subpoena to testify about the company's management practices. His attorney argued the testimony would conflict with bankruptcy proceedings. The bankruptcy filing reported $290 million in unpaid employee wages and benefits — a potential violation of labor law. More than 650 documented instances of deficient care at Steward hospitals have been identified across eight states. A patient died after a cardiac monitor malfunctioned and nurses did not check — the hospital was subsequently fined $1,750, which bounced when Steward's check was returned for insufficient funds.",
+    "flags": ["congressional_contempt_ceo", "unpaid_wages_290m", "650_deficient_care_incidents", "bounced_penalty_check"],
+    "sources": ["https://www.occrp.org/en/investigation/how-private-equity-and-an-ambitious-landlord", "https://pestakeholder.org"]
+  },
+  "labor": {
+    "summary": "Steward's bankruptcy revealed $290 million in unpaid employee wages and benefits owed to approximately 30,000 workers. Staff at Steward hospitals documented working without adequate supplies, equipment, and support staff. Nurses at Massachusetts Steward facilities reported conditions including: shortage of basic medical supplies, equipment repossession for unpaid vendor bills, and staffing levels that endangered patients. At least 2,650 workers were laid off following hospital closures. The Massachusetts Nurses Association warned that the Healey administration's response might accept some hospital closures as 'acceptable collateral damage.'",
+    "flags": ["290m_unpaid_wages", "supply_shortage_documented", "equipment_repossession", "2650_layoffs"],
+    "sources": ["https://pestakeholder.org", "https://www.healthcare-brew.com"]
+  },
+  "environmental": {
+    "summary": "Steward's physical infrastructure deteriorated significantly in the years before bankruptcy due to deferred maintenance. Facilities in multiple states were cited for health and safety violations including at St. Luke's Behavioral Health in Arizona — shut down by the state health department for a broken air conditioning system and other violations. Deferred maintenance at hospital facilities creates environmental health risks for patients and staff.",
+    "flags": ["deferred_infrastructure_maintenance", "facility_health_safety_violations"],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Steward collapse triggered significant congressional action. Senate HELP Committee Chairman Bernie Sanders held hearings on PE in healthcare and issued a subpoena to CEO de la Torre. Senators Elizabeth Warren and Edward Markey introduced the Corporate Crimes Against Health Care Act of 2024 in response to Steward. Massachusetts Governor Maura Healey issued a formal ultimatum to Steward demanding financial disclosure. The case became the central exhibit in the national debate over private equity ownership of hospitals.",
+    "flags": ["congressional_hearings_triggered", "new_legislation_proposed", "state_regulatory_failure_documented"],
+    "sources": ["https://communitycatalyst.org", "https://www.brookings.edu"]
+  },
+  "executives": {
+    "summary": "CEO Ralph de la Torre, a Harvard/MIT-educated cardiac surgeon who founded Steward, received $4.2 million in salary in the year before bankruptcy while hospitals went without equipment and staff went unpaid. He owned two luxury yachts — one valued at approximately $40 million — purchased as the health system was deteriorating. He defied a Senate subpoena to testify. Cerberus Capital Management extracted over $800 million during its decade of ownership. When Cerberus exited in 2020, the company paid a $111 million dividend to investors including de la Torre.",
+    "flags": ["40m_yacht_while_patients_harmed", "800m_cerberus_extraction", "111m_exit_dividend", "senate_subpoena_defied"],
+    "sources": ["https://www.occrp.org/en/investigation/how-private-equity-and-an-ambitious-landlord", "https://pestakeholder.org"]
+  },
+  "connections": {
+    "summary": "Steward's story connects three types of financial actors: private equity (Cerberus Capital), a real estate investment trust (Medical Properties Trust), and hospital management. This structure — PE buys hospital, sells real estate to REIT, leases it back, extracts dividends, exits — is documented as a pattern across healthcare private equity. Prospect Medical Holdings underwent a parallel collapse in Connecticut and Pennsylvania simultaneously. Nine PE-owned healthcare companies declared bankruptcy in the first six months of 2024. The pattern is structural, not isolated.",
+    "flags": ["pe_reit_hospital_extraction_pattern", "prospect_medical_parallel_collapse", "nine_pe_healthcare_bankruptcies_2024"],
+    "sources": ["https://pestakeholder.org", "https://communitycatalyst.org"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "OCCRP's investigation of nearly 300,000 internal Steward documents alleged that Medical Properties Trust withheld information from investors about Steward's true financial condition while portraying the relationship as profitable. Congressional investigators have alleged that de la Torre and other executives were aware of the patient safety deterioration documented in state health inspections and chose not to address it. Former staff have alleged that supply shortages at Steward hospitals were so severe that nurses brought their own supplies from home for patient care.",
+    "flags": ["mpt_investor_concealment_alleged", "executive_patient_safety_awareness_alleged", "nurses_supplying_own_materials_alleged"],
+    "sources": ["https://www.occrp.org/en/investigation/how-private-equity-and-an-ambitious-landlord"]
+  },
+  "health_record": {
+    "summary": "Brookings Institution documented more than 650 instances of deficient care at Steward hospitals across eight states. A patient at Glenwood Regional Medical Center died after a cardiac monitor showed an abnormal rhythm and nurses were not alerted because electrodes had come loose — no one checked for 20 minutes until a granddaughter arrived and found her grandmother without a pulse. Equipment at Steward hospitals had been repossessed for unpaid bills — including equipment a new mother needed after delivery. Boston EMS reported a 20% increase in transport times after Carney Hospital closed. Nearby EMS services were pushed 'to the verge of collapse.' 661 deaths have been linked to Steward facility conditions in congressional and investigative reporting.",
+    "flags": ["patient_death_cardiac_monitor", "equipment_repossession_maternal_death", "20pct_transport_time_increase", "650_deficient_care_incidents"],
+    "sources": ["https://www.brookings.edu/articles/lessons-from-the-collapse-of-steward", "https://www.healthcare-brew.com"]
+  },
+  "alternatives": {
+    "cheaper": ["Non-profit community hospitals — in markets where Steward closed facilities, state health systems and academic medical centers are filling the gap", "FQHCs for primary care — free or sliding scale, comprehensive services not dependent on PE ownership"],
+    "healthier": ["Non-profit hospital systems have documented better outcomes on quality metrics — lower mortality rates, lower readmission rates, better staffing ratios", "Academic medical centers — research mission aligns with evidence-based practice rather than billing optimization"],
+    "diy": ["Advocate for state legislation requiring PE healthcare acquisitions to disclose debt levels, executive compensation, and financial health — Massachusetts passed such legislation after Steward", "Know your hospital's ownership before a health emergency — look up your local hospital's ownership structure at your state health department"]
+  },
+  "timeline": [
+    {"year": 2010, "event": "Cerberus Capital buys Caritas Christi Catholic hospital system for ~$900M; renamed Steward Health Care", "severity": "neutral", "source_url": ""},
+    {"year": 2016, "event": "Steward sells hospital real estate to Medical Properties Trust for $1.3B; leases it back at inflated rates", "severity": "high", "source_url": ""},
+    {"year": 2016, "event": "Cerberus, de la Torre receive $111M dividend from sale-leaseback proceeds", "severity": "high", "source_url": ""},
+    {"year": 2020, "event": "Cerberus exits; total extraction during PE ownership approximately $800-$1.3B", "severity": "high", "source_url": ""},
+    {"year": 2022, "event": "Patient dies at Glenwood Regional after cardiac monitor not checked; equipment repossessed at other facilities", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "New mother dies after internal bleeding not detected — equipment had been repossessed for unpaid bills", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "May: Chapter 11 bankruptcy; $9B+ liabilities including $290M unpaid employee wages", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "Senate HELP Committee holds hearing; de la Torre defies subpoena; held in criminal contempt", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "August: Carney Hospital and Nashoba Valley Medical Center permanently close; EMS transport times increase 20%", "severity": "critical", "source_url": "https://pestakeholder.org"},
+    {"year": 2024, "event": "Total five hospitals permanently closed; 2,650+ workers laid off; dozens of lawsuits from vendors", "severity": "critical", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "The closure of Carney Hospital in Dorchester — a neighborhood with a large immigrant and minority population — eliminated the primary acute care option for tens of thousands of residents. Boston EMS transport times increased 20% immediately after closure. Nearby emergency departments became overcrowded. Nashoba Valley's closure created what fire chiefs described as a 'crisis situation' for regional emergency services.",
+    "price_illusion": "The private equity hospital model presents itself as bringing 'operational efficiency' to struggling hospitals. In Steward's case, the efficiency was the extraction of $1.3 billion while deferring maintenance, understaffing units, and allowing patient safety to deteriorate. The 'savings' flowed to investors. The costs fell on patients.",
+    "tax_math": "The sale-leaseback structure with Medical Properties Trust generated tax benefits for both entities while creating the lease obligations that contributed to bankruptcy. Steward's employees are owed $290 million in unpaid wages — these workers will receive pennies on the dollar in bankruptcy proceedings while PE investors had already extracted their returns.",
+    "wealth_velocity": "Cerberus Capital extracted approximately $800 million from a Catholic hospital system serving low-income Massachusetts communities. That capital flowed to institutional investors globally. The communities were left with closed hospitals and degraded emergency response."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Cerberus Capital Management", "how": "~$800M extracted through dividends, management fees, and sale-leaseback over decade of ownership"},
+      {"group": "Ralph de la Torre", "how": "$111M in dividends; $4.2M salary in final year; two luxury yachts; no consequences"},
+      {"group": "Medical Properties Trust", "how": "Inflated lease payments representing $6.6B in long-term obligations; MPT portrayed Steward as healthy to investors"}
+    ],
+    "who_paid": [
+      {"group": "30,000 Steward employees", "how": "$290M in unpaid wages; thousands laid off when hospitals closed"},
+      {"group": "Patients who died or were harmed", "how": "650+ documented deficient care incidents; at least two deaths directly linked to equipment unavailability"},
+      {"group": "Communities with closed hospitals", "how": "20% longer EMS transport times; EMS 'verge of collapse'; loss of OB, behavioral health, cancer services"},
+      {"group": "Vendors and suppliers", "how": "Nearly $1B in unpaid bills; hundreds of lawsuits pending in bankruptcy"}
+    ],
+    "the_gap": "A patient died because a hospital monitor wasn't checked. The equipment needed to save a new mother had been repossessed. The CEO bought a $40 million yacht. The private equity firm extracted $800 million. The Senate cited the CEO for contempt. No one went to prison."
+  }
+}
