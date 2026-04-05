@@ -16,6 +16,7 @@ import {
   ExecutivesIcon,
   HealthIcon,
 } from './icons/SectionIcons';
+import HireDirectInvestigationBlock from './HireDirectInvestigationBlock.jsx';
 import './InvestigationCard.css';
 
 const PLACEHOLDER_EMPTY_NORM = 'no indexed public material in this category';
@@ -357,6 +358,7 @@ function confidenceLabelFromId(c) {
  *   onShare?: () => void;
  *   onRunLiveInvestigation?: () => void;
  *   showNoRecordModule?: boolean;
+ *   onHireDirectShareFootnote?: (footnote: string) => void;
  * }} props
  */
 export default function InvestigationCard({
@@ -368,6 +370,7 @@ export default function InvestigationCard({
   onShare,
   onRunLiveInvestigation,
   showNoRecordModule = false,
+  onHireDirectShareFootnote,
 }) {
   const [openSection, setOpenSection] = useState(/** @type {string | null} */ (null));
   const verdictRef = useRef(null);
@@ -732,6 +735,13 @@ export default function InvestigationCard({
           suppressRecordBadge
         />
       </div>
+
+      {Array.isArray(investigation.hire_direct_categories) && investigation.hire_direct_categories.length > 0 ? (
+        <HireDirectInvestigationBlock
+          hireDirectCategories={investigation.hire_direct_categories.map(String)}
+          onShareFootnoteChange={onHireDirectShareFootnote}
+        />
+      ) : null}
 
       <div style={{ padding: '0 0 12px' }}>
         <Timeline events={investigation.timeline} />

@@ -152,5 +152,13 @@
   "sands": "las-vegas-sands",
   "penn-entertainment": "penn-entertainment",
   "penn-national": "penn-entertainment",
-  "penn": "penn-entertainment"
+  "penn": "penn-entertainment",
+  "door-dash": "doordash",
+  "grubhub": "doordash",
+  "postmates": "uber",
+  "shipt": "target",
+  "spark": "walmart",
+  "spark-driver": "walmart",
+  "hire-direct": "doordash",
+  "gig-work": "doordash"
 }

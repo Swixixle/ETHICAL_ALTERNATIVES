@@ -191,7 +191,7 @@ const DEFAULT_OPEN = {
  *   onClose: () => void;
  * }} props
  */
-export default function ShareCard({ investigation, identification, onClose }) {
+export default function ShareCard({ investigation, identification, onClose, hireDirectShareFooter }) {
   const [witnessStep, setWitnessStep] = useState('prompt');
   const [witnessName, setWitnessName] = useState('');
   const [witnessCity, setWitnessCity] = useState('');
@@ -438,12 +438,17 @@ export default function ShareCard({ investigation, identification, onClose }) {
 
     try {
       const pressPicked = (s.press_outlets || []).filter((o) => sel[pressRowId(o.handle)]);
+      const hireDirectFoot =
+        typeof hireDirectShareFooter === 'string' && hireDirectShareFooter.trim()
+          ? `\n\n${hireDirectShareFooter.trim()}`
+          : '';
       const twitterFeedText =
-        pressPicked.length > 0 ? composeTwitterWithPress(s, pressPicked, 'feed') : s.share_texts.twitter;
+        (pressPicked.length > 0 ? composeTwitterWithPress(s, pressPicked, 'feed') : s.share_texts.twitter) +
+        hireDirectFoot;
       const twitterCompanyText =
-        pressPicked.length > 0
+        (pressPicked.length > 0
           ? composeTwitterWithPress(s, pressPicked, 'company')
-          : s.share_texts.twitter_company;
+          : s.share_texts.twitter_company) + hireDirectFoot;
 
       if (sel.twitter_feed) {
         window.open(tweetUrl(twitterFeedText), '_blank', 'noopener,noreferrer');

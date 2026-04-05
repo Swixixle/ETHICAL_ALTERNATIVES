@@ -3,71 +3,167 @@
   "brand_slug": "pulsz",
   "parent_company": "Yellow Social Interactive Ltd.",
   "ultimate_parent": "Yellow Social Interactive Ltd.",
-  "subsidiaries": ["Pulsz.com", "Pulsz Bingo"],
+  "subsidiaries": [
+    "Pulsz.com",
+    "Pulsz Bingo"
+  ],
   "overall_concern_level": "significant",
   "profile_type": "database",
   "generated_headline": "PULSZ SETTLED ILLEGAL GAMBLING LAWSUITS TWICE IN KENTUCKY IN THE SAME YEAR — AND KEPT OPERATING",
   "executive_summary": "Pulsz Casino is a sweepstakes casino operated by Yellow Social Interactive Ltd., a company incorporated in Israel with operations targeting the U.S. market. Pulsz offers slot machine and casino-style games using the standard dual-currency sweepstakes model — Gold Coins purchased with real money, Sweeps Coins redeemable for cash prizes. Pulsz is notable for its rapid settlement pattern: it paid $1.32 million to settle a Kentucky class action in November 2023, then paid a second $3.6 million settlement in April 2024 to resolve additional Kentucky claims from the same period. Two settlements in the same state within six months, for the same conduct, without stopping operations. The platform continued operating in most U.S. states throughout the enforcement wave that saw competitors banned in California, New York, and four other states.",
-  "verdict_tags": ["double_settlement_same_state_six_months", "israel_incorporated_us_targeting", "continued_operating_post_settlement", "sweepstakes_loophole", "illegal_gambling_alleged"],
-  "concern_flags": {"labor": false, "environmental": false, "political": false, "tax": true, "health": true, "legal": true},
+  "verdict_tags": [
+    "double_settlement_same_state_six_months",
+    "israel_incorporated_us_targeting",
+    "continued_operating_post_settlement",
+    "sweepstakes_loophole",
+    "illegal_gambling_alleged"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": false,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
   "tax": {
     "summary": "Yellow Social Interactive Ltd. is incorporated in Israel with operations targeting the U.S. market. This structure routes U.S. gambling revenue offshore, avoiding U.S. state gaming taxes. The Israeli corporate structure provides limited disclosure requirements for U.S. regulatory purposes. No U.S. gaming taxes are paid on sweepstakes casino revenue.",
-    "flags": ["israel_incorporation_us_revenue", "no_us_gaming_taxes", "offshore_routing"],
+    "flags": [
+      "israel_incorporation_us_revenue",
+      "no_us_gaming_taxes",
+      "offshore_routing"
+    ],
     "sources": []
   },
   "legal": {
     "summary": "Kentucky November 2023: $1.32 million class action settlement for illegal gambling operations — Pulsz paid without admitting wrongdoing. Kentucky April 2024: Additional $3.6 million class action settlement for the same conduct during the same period — total Kentucky settlements of $4.92 million. Continued operations in most U.S. states throughout 2024 and 2025 despite settlements. New York: Named in AG Letitia James' 2025 enforcement wave — Pulsz blocked New York players. California: Blocked California players following AB 831 signing October 2025. Additional class action investigations ongoing in multiple states.",
-    "flags": ["1_32m_kentucky_settlement_2023", "3_6m_kentucky_settlement_2024", "4_92m_total_kentucky", "continued_operating_post_settlement", "ny_ag_named", "california_blocked"],
-    "sources": ["https://www.lexology.com/library/detail.aspx?g=49c941ea-6e07-44a7-ba2a-91f699d5b938", "https://socialcasinosweeps.com/article/risks"]
+    "flags": [
+      "1_32m_kentucky_settlement_2023",
+      "3_6m_kentucky_settlement_2024",
+      "4_92m_total_kentucky",
+      "continued_operating_post_settlement",
+      "ny_ag_named",
+      "california_blocked"
+    ],
+    "sources": [
+      "https://www.lexology.com/library/detail.aspx?g=49c941ea-6e07-44a7-ba2a-91f699d5b938",
+      "https://socialcasinosweeps.com/article/risks"
+    ]
   },
   "labor": {
     "summary": "Yellow Social Interactive operates with a small disclosed team, primarily based in Israel. The company's U.S.-facing sweepstakes operation has minimal disclosed staffing. Customer support and VIP management functions target U.S. users from offshore.",
-    "flags": ["israel_based_us_targeting", "offshore_customer_management"],
+    "flags": [
+      "israel_based_us_targeting",
+      "offshore_customer_management"
+    ],
     "sources": []
   },
   "environmental": {
     "summary": "Digital-only operations with no significant environmental footprint beyond server infrastructure.",
-    "flags": ["digital_only"],
+    "flags": [
+      "digital_only"
+    ],
     "sources": []
   },
   "political": {
     "summary": "Pulsz's double settlement in Kentucky without stopping operations is a documented example of the settlement-as-cost-of-business model that regulators have criticized across the sweepstakes casino sector. The company's continued operation after paying $4.92 million in settlements demonstrates that regulatory action without market exit has limited deterrent effect. Pulsz's eventual exit from New York and California followed the legislative bans rather than the enforcement actions.",
-    "flags": ["settlement_cost_of_business_model", "voluntary_exit_only_after_ban", "enforcement_without_exit_pattern"],
+    "flags": [
+      "settlement_cost_of_business_model",
+      "voluntary_exit_only_after_ban",
+      "enforcement_without_exit_pattern"
+    ],
     "sources": []
   },
   "executives": {
     "summary": "Yellow Social Interactive Ltd. does not publicly disclose its leadership team or executive compensation. The company is incorporated in Israel and operates its U.S. sweepstakes business with minimal public-facing corporate disclosure. The double settlement pattern — paying $1.32M and $3.6M in Kentucky within six months without admitting wrongdoing or exiting the market — reflects a management decision to treat regulatory settlements as a business cost.",
-    "flags": ["no_public_leadership_disclosure", "settlement_without_exit_decision", "israel_corporate_opacity"],
+    "flags": [
+      "no_public_leadership_disclosure",
+      "settlement_without_exit_decision",
+      "israel_corporate_opacity"
+    ],
     "sources": []
   },
   "connections": {
     "summary": "Pulsz occupies a mid-tier position in the sweepstakes casino sector — smaller than VGW (Chumba/LuckyLand), similar in scale to McLuck and WOW Vegas. The double-settlement pattern it established in Kentucky mirrors the broader industry pattern of paying settlements without admitting wrongdoing or changing operations, then waiting for regulatory pressure to force market exits. Apple and Google processed Pulsz's in-app purchases and took 30% commission throughout the settlement period.",
-    "flags": ["mid_tier_sweepstakes_operator", "apple_google_commission_during_settlement_period", "settlement_without_change_pattern"],
+    "flags": [
+      "mid_tier_sweepstakes_operator",
+      "apple_google_commission_during_settlement_period",
+      "settlement_without_change_pattern"
+    ],
     "sources": []
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
     "summary": "The Kentucky class actions that generated both settlements alleged that Pulsz violated Kentucky gambling laws by selling in-game currency that allowed players to gamble — that the 'no purchase necessary' alternative entry was insufficient to break the legal link between payment and prize. Pulsz settled both cases without admitting this characterization was correct while also not changing its operations in states where bans had not been enacted. Players have alleged that Pulsz's promotional structure — particularly its new-user bonuses and loyalty rewards — is specifically designed to hook players during an initial low-cost or free play period before transitioning them to paid Gold Coin purchases.",
-    "flags": ["kentucky_illegal_gambling_characterization_settled", "promotional_hook_transition_alleged", "no_purchase_necessary_insufficient_alleged"],
-    "sources": ["https://www.lexology.com/library/detail.aspx?g=49c941ea-6e07-44a7-ba2a-91f699d5b938"]
+    "flags": [
+      "kentucky_illegal_gambling_characterization_settled",
+      "promotional_hook_transition_alleged",
+      "no_purchase_necessary_insufficient_alleged"
+    ],
+    "sources": [
+      "https://www.lexology.com/library/detail.aspx?g=49c941ea-6e07-44a7-ba2a-91f699d5b938"
+    ]
   },
   "health_record": {
     "summary": "Pulsz operates with the same absence of responsible gambling protections as other sweepstakes casino operators — no regulated age verification, no self-exclusion, no spending limits. The Kentucky settlements documented that players lost real money on Pulsz's platform in amounts that constituted illegal gambling under state law. No clinical research on Pulsz-specific addiction rates exists because the company operates outside the regulated framework that would require such disclosure.",
-    "flags": ["no_responsible_gambling_requirements", "documented_player_losses_kentucky", "no_addiction_disclosure_required"],
+    "flags": [
+      "no_responsible_gambling_requirements",
+      "documented_player_losses_kentucky",
+      "no_addiction_disclosure_required"
+    ],
     "sources": []
   },
   "alternatives": {
-    "cheaper": ["Kentucky's licensed gaming options — the Kentucky Lottery — operates under state regulatory oversight with consumer protections Pulsz lacks", "Free gaming apps without in-app purchases"],
-    "healthier": ["Fixed-cost entertainment without variable loss potential", "National Problem Gambling Helpline: 1-800-522-4700"],
-    "diy": ["Pulsz's dual settlement in Kentucky without admitting wrongdoing means it accepted financial liability while disputing legal classification — this is the legal equivalent of paying a ticket without admitting you ran the red light, then driving through more red lights", "If you lost money on Pulsz in Kentucky, contact the class action firms involved in the settlements to determine if you are a class member"]
+    "cheaper": [
+      "Kentucky's licensed gaming options — the Kentucky Lottery — operates under state regulatory oversight with consumer protections Pulsz lacks",
+      "Free gaming apps without in-app purchases"
+    ],
+    "healthier": [
+      "Fixed-cost entertainment without variable loss potential",
+      "National Problem Gambling Helpline: 1-800-522-4700"
+    ],
+    "diy": [
+      "Pulsz's dual settlement in Kentucky without admitting wrongdoing means it accepted financial liability while disputing legal classification — this is the legal equivalent of paying a ticket without admitting you ran the red light, then driving through more red lights",
+      "If you lost money on Pulsz in Kentucky, contact the class action firms involved in the settlements to determine if you are a class member"
+    ]
   },
   "timeline": [
-    {"year": 2020, "event": "Pulsz Casino launches under Yellow Social Interactive Ltd.", "severity": "neutral", "source_url": ""},
-    {"year": 2022, "event": "Kentucky class action filed alleging illegal gambling operations", "severity": "high", "source_url": ""},
-    {"year": 2023, "event": "November: First Kentucky settlement — $1.32 million; Pulsz continues operating", "severity": "critical", "source_url": ""},
-    {"year": 2024, "event": "April: Second Kentucky settlement — $3.6 million for same conduct; total $4.92M in Kentucky alone", "severity": "critical", "source_url": "https://www.lexology.com/library/detail.aspx?g=49c941ea-6e07-44a7-ba2a-91f699d5b938"},
-    {"year": 2025, "event": "NY AG enforcement; Pulsz blocks New York players. California AB 831; Pulsz blocks California players.", "severity": "high", "source_url": ""},
-    {"year": 2026, "event": "Continues operating in states without explicit bans; additional class action investigations ongoing", "severity": "moderate", "source_url": ""}
+    {
+      "year": 2020,
+      "event": "Pulsz Casino launches under Yellow Social Interactive Ltd.",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Kentucky class action filed alleging illegal gambling operations",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "November: First Kentucky settlement — $1.32 million; Pulsz continues operating",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "April: Second Kentucky settlement — $3.6 million for same conduct; total $4.92M in Kentucky alone",
+      "severity": "critical",
+      "source_url": "https://www.lexology.com/library/detail.aspx?g=49c941ea-6e07-44a7-ba2a-91f699d5b938"
+    },
+    {
+      "year": 2025,
+      "event": "NY AG enforcement; Pulsz blocks New York players. California AB 831; Pulsz blocks California players.",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2026,
+      "event": "Continues operating in states without explicit bans; additional class action investigations ongoing",
+      "severity": "moderate",
+      "source_url": ""
+    }
   ],
   "community_impact": {
     "displacement": "Pulsz operated in Kentucky — which has had no legal online casino gambling — for years, bringing casino-style slot machines into homes without the regulatory protections required of licensed gambling operators. The settlement money returned a fraction of documented losses to Kentucky players while the platform continued operating in their state.",
@@ -77,12 +173,24 @@
   },
   "cost_absorption": {
     "who_benefited": [
-      {"group": "Yellow Social Interactive / Pulsz owners", "how": "U.S. sweepstakes revenue from multiple states; settlements as fraction of total revenue extracted"},
-      {"group": "Apple and Google", "how": "30% commission on Pulsz in-app purchases throughout settlement period"}
+      {
+        "group": "Yellow Social Interactive / Pulsz owners",
+        "how": "U.S. sweepstakes revenue from multiple states; settlements as fraction of total revenue extracted"
+      },
+      {
+        "group": "Apple and Google",
+        "how": "30% commission on Pulsz in-app purchases throughout settlement period"
+      }
     ],
     "who_paid": [
-      {"group": "Kentucky Pulsz players", "how": "Documented losses on an illegal gambling platform; two class action settlements recovered partial amounts"},
-      {"group": "Kentucky communities", "how": "No gaming tax revenue from Pulsz operations; addiction costs without corresponding treatment funding"}
+      {
+        "group": "Kentucky Pulsz players",
+        "how": "Documented losses on an illegal gambling platform; two class action settlements recovered partial amounts"
+      },
+      {
+        "group": "Kentucky communities",
+        "how": "No gaming tax revenue from Pulsz operations; addiction costs without corresponding treatment funding"
+      }
     ],
     "the_gap": "Pulsz paid $1.32 million in November 2023 for illegal gambling in Kentucky. Then paid $3.6 million more in April 2024 for the same illegal gambling in Kentucky. Then kept operating in Kentucky. The settlements were cheaper than stopping."
   }

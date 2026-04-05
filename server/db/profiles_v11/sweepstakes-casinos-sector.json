@@ -3,73 +3,209 @@
   "brand_slug": "sweepstakes-casinos-sector",
   "parent_company": "Multiple operators",
   "ultimate_parent": "Multiple operators",
-  "subsidiaries": ["Chumba Casino", "LuckyLand Slots", "Global Poker", "Pulsz", "Stake.us", "High 5 Casino", "McLuck", "WOW Vegas", "Zula Casino", "Crown Coins"],
+  "subsidiaries": [
+    "Chumba Casino",
+    "LuckyLand Slots",
+    "Global Poker",
+    "Pulsz",
+    "Stake.us",
+    "High 5 Casino",
+    "McLuck",
+    "WOW Vegas",
+    "Zula Casino",
+    "Crown Coins"
+  ],
   "overall_concern_level": "significant",
   "profile_type": "database",
   "generated_headline": "SWEEPSTAKES CASINOS MADE $11 BILLION IN 2024 BY PRETENDING THEY AREN'T CASINOS — SIX STATES HAVE NOW BANNED THEM",
   "executive_summary": "Sweepstakes casinos are online gambling platforms operating in states where real-money online gambling is illegal by exploiting a loophole in sweepstakes law. They offer two currencies: Gold Coins (purchased with real money, no cash value, used to play) and Sweeps Coins (obtained free or as a bonus, redeemable for real money prizes). The legal argument is that because there is an alternative free entry method — typically a cumbersome mail-in request — there is no 'consideration,' meaning it isn't technically gambling. Courts, regulators, and now six state legislatures have concluded otherwise. The industry generated $11 billion in revenue in 2025 with 85% compound annual growth since 2019. In 2025: California and New York enacted complete bans (together representing ~35% of revenue), Montana, Connecticut, New Jersey, and Nevada followed, more than 100 cease-and-desist orders were issued, and over 100 class action lawsuits were filed. Apple, Google, Amazon, and Meta have been named as co-defendants for taking 30% commission as payment processors — what one law firm called acting as 'bookies.'",
-  "verdict_tags": ["11b_revenue_legal_loophole", "six_state_bans_2025", "100_plus_lawsuits", "no_purchase_necessary_fiction", "650m_industry_settlements", "big_tech_30pct_commission", "no_age_verification", "no_self_exclusion"],
-  "concern_flags": {"labor": false, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
+  "verdict_tags": [
+    "11b_revenue_legal_loophole",
+    "six_state_bans_2025",
+    "100_plus_lawsuits",
+    "no_purchase_necessary_fiction",
+    "650m_industry_settlements",
+    "big_tech_30pct_commission",
+    "no_age_verification",
+    "no_self_exclusion"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
   "tax": {
     "summary": "Sweepstakes casino operators are predominantly headquartered offshore — Australia (VGW), Malta, Cyprus, Isle of Man — to minimize U.S. tax obligations while targeting the U.S. market. Because they operate in a legal gray zone, many do not pay state gaming taxes that licensed casinos pay — an estimated $17 billion in lost U.S. tax revenue annually according to the American Gaming Association. The industry lobbying group has argued for regulation and taxation; the offshore operators lobby for continued ambiguity.",
-    "flags": ["offshore_headquarters_us_revenue", "17b_estimated_lost_tax_revenue", "no_gaming_tax_obligations", "malta_australia_cyprus_structures"],
-    "sources": ["https://igamingbusiness.com/legal-compliance/2025-sweepstakes-casinos-year-in-review"]
+    "flags": [
+      "offshore_headquarters_us_revenue",
+      "17b_estimated_lost_tax_revenue",
+      "no_gaming_tax_obligations",
+      "malta_australia_cyprus_structures"
+    ],
+    "sources": [
+      "https://igamingbusiness.com/legal-compliance/2025-sweepstakes-casinos-year-in-review"
+    ]
   },
   "legal": {
     "summary": "2025 bans: California (signed October 2025, effective January 2026 — ~20% of sector revenue), New York (signed December 2025 — ~7% of revenue), Montana, Connecticut, New Jersey, Nevada. Over 100 class action lawsuits filed against sweepstakes operators in 2025 alone. High 5 Games: first-ever jury verdict against social casino — $24.9 million in Washington state, February 2025. VGW Holdings (Chumba/LuckyLand/Global Poker): most heavily litigated operator, 20+ active lawsuits, $11.75 million Kentucky settlement. Pulsz: $4.92 million in combined Kentucky settlements. Over $650 million in total industry class action settlements to date. 40 cease-and-desist orders from Louisiana alone in June 2025. 47 subpoenas from West Virginia AG. Michigan, Delaware, Maryland cease-and-desist waves. New York AG sent cease-and-desist letters to 26 operators.",
-    "flags": ["california_new_york_banned", "24_9m_high_5_verdict_first_ever", "650m_total_industry_settlements", "100_lawsuits_2025", "no_purchase_necessary_courts_rejecting"],
-    "sources": ["https://socialcasinosweeps.com/article/risks", "https://edelson.com/jury-returns-first-ever-class-action-verdict"]
+    "flags": [
+      "california_new_york_banned",
+      "24_9m_high_5_verdict_first_ever",
+      "650m_total_industry_settlements",
+      "100_lawsuits_2025",
+      "no_purchase_necessary_courts_rejecting"
+    ],
+    "sources": [
+      "https://socialcasinosweeps.com/article/risks",
+      "https://edelson.com/jury-returns-first-ever-class-action-verdict"
+    ]
   },
   "labor": {
     "summary": "Sweepstakes casino operators employ VIP host teams that perform the same function documented in DraftKings and FanDuel lawsuits — identifying high-loss users and providing personalized outreach to keep them playing. High 5 Games employees internally referred to high-risk problem gamblers as 'whales' and targeted them with promotions rather than intervention. One documented case: a user who told High 5 she had a gambling addiction and needed her account shut down was instead given free tokens as an inducement to continue.",
-    "flags": ["vip_whale_targeting_documented", "addiction_disclosure_ignored_free_tokens", "no_self_exclusion_enforcement"],
-    "sources": ["https://casinobeats.com/2025/02/11/washington-jury-orders-high-5-games-to-pay-24-9m"]
+    "flags": [
+      "vip_whale_targeting_documented",
+      "addiction_disclosure_ignored_free_tokens",
+      "no_self_exclusion_enforcement"
+    ],
+    "sources": [
+      "https://casinobeats.com/2025/02/11/washington-jury-orders-high-5-games-to-pay-24-9m"
+    ]
   },
   "environmental": {
     "summary": "Sweepstakes casinos are digital-only operations with no physical footprint beyond server infrastructure.",
-    "flags": ["digital_only_server_footprint"],
+    "flags": [
+      "digital_only_server_footprint"
+    ],
     "sources": []
   },
   "political": {
     "summary": "The Social and Promotional Gaming Association (SPGA) was formed in 2024 specifically to lobby against sweepstakes bans and for regulation that would legitimize the model. The industry spent significant sums on lobbying in California and New York before both states enacted bans — both bills passed their respective legislatures unanimously or near-unanimously. The American Gaming Association (representing traditional licensed casinos) has been the industry's most powerful opponent, arguing sweepstakes casinos undermine regulated gambling and cost states $17 billion in lost tax revenue annually.",
-    "flags": ["spga_formed_to_lobby_2024", "california_ny_unanimous_bans", "aga_opponent_17b_tax_revenue_argument"],
-    "sources": ["https://igamingbusiness.com/legal-compliance/2025-sweepstakes-casinos-year-in-review"]
+    "flags": [
+      "spga_formed_to_lobby_2024",
+      "california_ny_unanimous_bans",
+      "aga_opponent_17b_tax_revenue_argument"
+    ],
+    "sources": [
+      "https://igamingbusiness.com/legal-compliance/2025-sweepstakes-casinos-year-in-review"
+    ]
   },
   "executives": {
     "summary": "The sweepstakes casino sector is predominantly private or offshore-owned, meaning founder and executive wealth is largely opaque. VGW Holdings founder Laurence Escalante built a company doing nearly $5 billion in revenue that was the sixth largest private company in Australia by 2023. He has publicly described the sweepstakes model as legal and legitimate while simultaneously watching 20+ lawsuits pile up against his company. The industry's rapid expansion from $3.1 billion (2022) to $11 billion (2025) made founders extraordinarily wealthy while the legal framework enabling their wealth was being dismantled.",
-    "flags": ["offshore_founder_wealth_opaque", "vgw_escalante_5b_revenue_australia", "expansion_while_bans_enacted"],
-    "sources": ["https://sbo.financial/blog/financial-teardowns/laurence-escalantes-5b-gambling-empire-a-financial-teardown"]
+    "flags": [
+      "offshore_founder_wealth_opaque",
+      "vgw_escalante_5b_revenue_australia",
+      "expansion_while_bans_enacted"
+    ],
+    "sources": [
+      "https://sbo.financial/blog/financial-teardowns/laurence-escalantes-5b-gambling-empire-a-financial-teardown"
+    ]
   },
   "connections": {
     "summary": "Apple and Google app stores have taken approximately 30% commission on all in-app purchases at sweepstakes casinos — functioning as financial intermediaries in what courts have ruled is illegal gambling in multiple states. Amazon and Meta have similarly profited through advertising and payment processing. Edelson PC — the same firm pursuing social casino operators — is simultaneously pursuing class actions against Amazon, Meta, Google, and Apple for their 'bookie' role. The sweepstakes model itself was pioneered by VGW's Chumba Casino, whose loophole structure was subsequently adopted by dozens of competitors. McDonald's Monopoly game uses the same legal structure — the 'no purchase necessary' alternative entry that creates legal cover.",
-    "flags": ["apple_google_30pct_commission_bookie_role", "amazon_meta_advertising_revenue", "edelson_big_tech_lawsuits", "mcdonalds_monopoly_same_structure"],
-    "sources": ["https://edelson.com/jury-returns-first-ever-class-action-verdict"]
+    "flags": [
+      "apple_google_30pct_commission_bookie_role",
+      "amazon_meta_advertising_revenue",
+      "edelson_big_tech_lawsuits",
+      "mcdonalds_monopoly_same_structure"
+    ],
+    "sources": [
+      "https://edelson.com/jury-returns-first-ever-class-action-verdict"
+    ]
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
     "summary": "The core allegation — upheld by multiple courts — is that the 'no purchase necessary' alternative entry method is a legal fiction deliberately designed to be inaccessible. Plaintiffs allege the mail-in process is so cumbersome that virtually no users employ it, meaning the 'free' entry is not a genuine alternative. Courts in Washington and other states have found that the 'consideration' element of gambling is met because players must buy tokens to continue playing, regardless of the nominal free option. Lawmakers in six states have now agreed with this analysis. The AGA study found that sweepstakes users describe the platforms as 'gambling' at near-identical rates to how licensed casino users describe their platforms.",
-    "flags": ["no_purchase_necessary_legal_fiction_upheld_courts", "mail_in_deliberately_inaccessible", "consideration_element_met_multiple_rulings"],
-    "sources": ["https://marvn.ai/discover/guides/why-sweepstakes-casinos-are-legal-where-online-gambling-isnt"]
+    "flags": [
+      "no_purchase_necessary_legal_fiction_upheld_courts",
+      "mail_in_deliberately_inaccessible",
+      "consideration_element_met_multiple_rulings"
+    ],
+    "sources": [
+      "https://marvn.ai/discover/guides/why-sweepstakes-casinos-are-legal-where-online-gambling-isnt"
+    ]
   },
   "health_record": {
     "summary": "Sweepstakes casinos operate with no mandatory age verification, no self-exclusion programs, and no responsible gambling requirements — the exact protections that regulated gambling must provide. The AGA study found sweepstakes users exhibit problem gambling behaviors at rates comparable to licensed casino users. High 5 Games targeted users identified as problem gamblers with promotions rather than intervention. Players at industry operators have documented losses of hundreds of thousands to millions of dollars. The industry acquired new customers at three times the rate of licensed online casinos from July-December 2024 — raising documented public health concerns about the speed of addiction formation.",
-    "flags": ["no_age_verification", "no_self_exclusion", "no_responsible_gambling_requirements", "3x_customer_acquisition_rate_licensed_casinos", "problem_gambling_rates_comparable_licensed"],
-    "sources": ["https://socialcasinosweeps.com/article/risks", "https://sbcamericas.com/2025/02/10/high-5-games-damages-casino-verdict"]
+    "flags": [
+      "no_age_verification",
+      "no_self_exclusion",
+      "no_responsible_gambling_requirements",
+      "3x_customer_acquisition_rate_licensed_casinos",
+      "problem_gambling_rates_comparable_licensed"
+    ],
+    "sources": [
+      "https://socialcasinosweeps.com/article/risks",
+      "https://sbcamericas.com/2025/02/10/high-5-games-damages-casino-verdict"
+    ]
   },
   "alternatives": {
-    "cheaper": ["Free-to-play mobile games without real money purchases — Candy Crush, Wordle, crossword apps provide gaming engagement without financial risk", "Free poker apps that do not allow real money purchase of chips", "Social gaming with friends — board games, card games, fantasy leagues without money stakes"],
-    "healthier": ["Any entertainment with a fixed, known cost — movies, streaming, concerts — rather than variable loss potential", "Gaming without in-app purchase mechanics — Nintendo Switch, PlayStation, PC games with one-time purchase cost"],
-    "diy": ["The 'no purchase necessary' mail-in option is legally required to be available — you can participate in any sweepstakes casino for free by mailing in your request. If you're spending real money, you are using the gambling mechanic, not the sweepstakes mechanic.", "National Problem Gambling Helpline: 1-800-522-4700", "Self-exclusion: sweepstakes casinos do not have regulated self-exclusion programs — the only reliable exclusion is deleting the account and blocking the website"]
+    "cheaper": [
+      "Free-to-play mobile games without real money purchases — Candy Crush, Wordle, crossword apps provide gaming engagement without financial risk",
+      "Free poker apps that do not allow real money purchase of chips",
+      "Social gaming with friends — board games, card games, fantasy leagues without money stakes"
+    ],
+    "healthier": [
+      "Any entertainment with a fixed, known cost — movies, streaming, concerts — rather than variable loss potential",
+      "Gaming without in-app purchase mechanics — Nintendo Switch, PlayStation, PC games with one-time purchase cost"
+    ],
+    "diy": [
+      "The 'no purchase necessary' mail-in option is legally required to be available — you can participate in any sweepstakes casino for free by mailing in your request. If you're spending real money, you are using the gambling mechanic, not the sweepstakes mechanic.",
+      "National Problem Gambling Helpline: 1-800-522-4700",
+      "Self-exclusion: sweepstakes casinos do not have regulated self-exclusion programs — the only reliable exclusion is deleting the account and blocking the website"
+    ]
   },
   "timeline": [
-    {"year": 2010, "event": "VGW Holdings founded in Perth, Australia; pioneers the sweepstakes dual-currency model for online casino games", "severity": "neutral", "source_url": ""},
-    {"year": 2013, "event": "Chumba Casino launches; sweepstakes model begins attracting imitators", "severity": "neutral", "source_url": ""},
-    {"year": 2019, "event": "Sector revenue: $3.1B; 85% compound annual growth begins", "severity": "moderate", "source_url": ""},
-    {"year": 2022, "event": "Sector revenue: $5.6B; first class action settlements begin", "severity": "high", "source_url": ""},
-    {"year": 2023, "event": "VGW $11.75M Kentucky settlement; Pulsz $1.32M Kentucky settlement; cease-and-desist orders begin in multiple states", "severity": "high", "source_url": ""},
-    {"year": 2024, "event": "AGA calls for state investigations; Washington court finds High 5 violated gambling law; 100+ lawsuits filed; sector revenue reaches $10B", "severity": "critical", "source_url": ""},
-    {"year": 2025, "event": "February: First jury verdict — High 5 Games pays $24.9M. October: California bans sweepstakes casinos (20% of revenue). December: New York bans. Montana, Connecticut, NJ, Nevada also ban. 100+ cease-and-desist orders. Sector revenue $11B.", "severity": "critical", "source_url": "https://socialcasinosweeps.com/article/risks"},
-    {"year": 2026, "event": "California and New York bans take effect January 1; more states introducing legislation; Big Tech lawsuits advancing", "severity": "critical", "source_url": ""}
+    {
+      "year": 2010,
+      "event": "VGW Holdings founded in Perth, Australia; pioneers the sweepstakes dual-currency model for online casino games",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2013,
+      "event": "Chumba Casino launches; sweepstakes model begins attracting imitators",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "Sector revenue: $3.1B; 85% compound annual growth begins",
+      "severity": "moderate",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Sector revenue: $5.6B; first class action settlements begin",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "VGW $11.75M Kentucky settlement; Pulsz $1.32M Kentucky settlement; cease-and-desist orders begin in multiple states",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "AGA calls for state investigations; Washington court finds High 5 violated gambling law; 100+ lawsuits filed; sector revenue reaches $10B",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2025,
+      "event": "February: First jury verdict — High 5 Games pays $24.9M. October: California bans sweepstakes casinos (20% of revenue). December: New York bans. Montana, Connecticut, NJ, Nevada also ban. 100+ cease-and-desist orders. Sector revenue $11B.",
+      "severity": "critical",
+      "source_url": "https://socialcasinosweeps.com/article/risks"
+    },
+    {
+      "year": 2026,
+      "event": "California and New York bans take effect January 1; more states introducing legislation; Big Tech lawsuits advancing",
+      "severity": "critical",
+      "source_url": ""
+    }
   ],
   "community_impact": {
     "displacement": "Sweepstakes casinos are explicitly designed to operate in states where gambling is illegal — bringing casino-style addiction mechanics into communities that have legislatively chosen not to allow casinos. The 85% annual growth rate means the industry expanded into the homes of millions of Americans in states that voted or legislated against gambling, using a legal fiction to circumvent those community decisions.",
@@ -79,14 +215,32 @@
   },
   "cost_absorption": {
     "who_benefited": [
-      {"group": "Sweepstakes casino founders and operators", "how": "$11B in annual revenue; offshore ownership avoids gaming taxes; 85% annual growth for 6 years"},
-      {"group": "Apple and Google", "how": "30% commission on all in-app purchases — named as co-defendants by Edelson PC as 'bookies' profiting from illegal gambling"},
-      {"group": "Amazon and Meta", "how": "Advertising revenue and payment processing fees from an industry courts have found operates illegally"}
+      {
+        "group": "Sweepstakes casino founders and operators",
+        "how": "$11B in annual revenue; offshore ownership avoids gaming taxes; 85% annual growth for 6 years"
+      },
+      {
+        "group": "Apple and Google",
+        "how": "30% commission on all in-app purchases — named as co-defendants by Edelson PC as 'bookies' profiting from illegal gambling"
+      },
+      {
+        "group": "Amazon and Meta",
+        "how": "Advertising revenue and payment processing fees from an industry courts have found operates illegally"
+      }
     ],
     "who_paid": [
-      {"group": "Problem gamblers in states where gambling is illegal", "how": "Documented losses of hundreds of thousands to millions of dollars with no responsible gambling protections"},
-      {"group": "States and communities", "how": "$17B in lost gaming tax revenue; addiction costs with no casino tax funding for treatment"},
-      {"group": "User who told High 5 she was addicted", "how": "Asked for account restrictions; received free tokens instead; continued to lose money"}
+      {
+        "group": "Problem gamblers in states where gambling is illegal",
+        "how": "Documented losses of hundreds of thousands to millions of dollars with no responsible gambling protections"
+      },
+      {
+        "group": "States and communities",
+        "how": "$17B in lost gaming tax revenue; addiction costs with no casino tax funding for treatment"
+      },
+      {
+        "group": "User who told High 5 she was addicted",
+        "how": "Asked for account restrictions; received free tokens instead; continued to lose money"
+      }
     ],
     "the_gap": "The sweepstakes casino industry made $11 billion in 2025 by arguing its 'no purchase necessary' alternative entry method made it legally distinct from gambling. California passed the ban 63-0. New York passed it unanimously. The free mail-in option exists on paper. Almost no one uses it. That's the point."
   }

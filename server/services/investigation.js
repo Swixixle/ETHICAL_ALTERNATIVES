@@ -1056,12 +1056,6 @@ async function realtimeInvestigation(brandName, corporateParent, healthFlag, pro
 
   const tools = [{ type: 'web_search_20250305', name: 'web_search', max_uses: 10 }];
 
-  const finalizeFromParsed = (parsed, citationUrls) => {
-    mergeSourcesWithCitations(parsed, citationUrls);
-    const inv = normalizeInvestigation(parsed, brandName, corporateParent, healthFlag);
-    return finalizeInvestigation(inv, 'realtime_search');
-  };
-
   const brandLabel = brandName || corporateParent || 'Brand';
 
   let msg;
@@ -1078,12 +1072,15 @@ If web search is unavailable, use only well-established public knowledge. Use ov
       ({ message: msg, citationUrls } = await runInvestigationAnthropicTurn(fallbackPrompt, null));
     } catch (e2) {
       console.error('[investigation] realtime: investigation request failed after retry', e2);
-      return buildRealtimeEmergencyProfile(
-        brandName,
-        corporateParent,
-        healthFlag,
-        productCategory,
-        e2?.message || 'API error'
+      return wrapRealtimeInvestigationResult(
+        buildRealtimeEmergencyProfile(
+          brandName,
+          corporateParent,
+          healthFlag,
+          productCategory,
+          e2?.message || 'API error'
+        ),
+        null
       );
     }
   }
@@ -1110,12 +1107,15 @@ If web search is unavailable, use only well-established public knowledge. Use ov
       if (!text && secondExtract.text) text = secondExtract.text;
     } catch (e) {
       console.error('[investigation] realtime: completion Anthropic turn threw', e);
-      return buildRealtimeEmergencyProfile(
-        brandName,
-        corporateParent,
-        healthFlag,
-        productCategory,
-        e?.message || 'API error on completion turn'
+      return wrapRealtimeInvestigationResult(
+        buildRealtimeEmergencyProfile(
+          brandName,
+          corporateParent,
+          healthFlag,
+          productCategory,
+          e?.message || 'API error on completion turn'
+        ),
+        null
       );
     }
   }
@@ -1128,7 +1128,25 @@ If web search is unavailable, use only well-established public knowledge. Use ov
   }
 
   console.log('[investigation] realtime: finalize + return');
-  return finalizeFromParsed(parsed, citationUrls);
+  mergeSourcesWithCitations(parsed, citationUrls);
+  const inv = normalizeInvestigation(parsed, brandName, corporateParent, healthFlag);
+  const investigation = finalizeInvestigation(inv, 'realtime_search');
+  const slugForDb = investigation.brand_slug;
+  const parentCo = investigation.parent ?? null;
+  const profileJsonForDb = {
+    ...parsed,
+    brand_slug: slugForDb,
+    brand_name: investigation.brand,
+    parent_company: parentCo,
+    ultimate_parent:
+      typeof parsed.ultimate_parent === 'string' && parsed.ultimate_parent.trim()
+        ? parsed.ultimate_parent.trim()
+        : parentCo != null
+          ? String(parentCo)
+          : null,
+    profile_type: 'database',
+  };
+  return wrapRealtimeInvestigationResult(investigation, profileJsonForDb);
 }
 
 /** Structured completion log for debugging thin / missing profiles. */
@@ -1143,6 +1161,130 @@ function logInvestigationProfileEnd(route, profile) {
     overall_concern_level: profile.overall_concern_level ?? null,
     timeline_entries: tl,
   });
+}
+
+/** Mirrors PostgreSQL `length(profile_json::text)` closely enough for stub detection (see STUB_PROFILE_JSON_MAX_CHARS). */
+function incumbentProfileJsonCharLength(profileJson) {
+  if (profileJson == null) return 0;
+  if (typeof profileJson === 'string') return profileJson.length;
+  try {
+    return JSON.stringify(profileJson).length;
+  } catch {
+    return 0;
+  }
+}
+
+const STUB_PROFILE_JSON_MAX_CHARS = 5000;
+
+/** URLs to persist on stub upgrade (nested v3 sections + flat realtime schema). */
+function collectPrimarySourcesForStorage(rec) {
+  if (!rec || typeof rec !== 'object') return [];
+  const urls = [];
+  const nestedKeys = [
+    'tax',
+    'legal',
+    'labor',
+    'environmental',
+    'political',
+    'executives',
+    'connections',
+    'allegations',
+    'health_record',
+  ];
+  for (const k of nestedKeys) {
+    const block = rec[k];
+    if (block && typeof block === 'object' && Array.isArray(block.sources)) {
+      urls.push(...block.sources.map(String));
+    }
+  }
+  const flatKeys = [
+    'tax_sources',
+    'legal_sources',
+    'labor_sources',
+    'environmental_sources',
+    'political_sources',
+    'executive_sources',
+    'product_health_sources',
+  ];
+  for (const k of flatKeys) {
+    if (Array.isArray(rec[k])) urls.push(...rec[k].map(String));
+  }
+  if (Array.isArray(rec.primary_sources)) urls.push(...rec.primary_sources.map(String));
+  return [...new Set(urls.filter(Boolean))];
+}
+
+/**
+ * Persist live investigation output over a thin DB row (organic cache warming).
+ * @param {string} slug
+ * @param {Record<string, unknown>} profileJsonForDb
+ * @param {Record<string, unknown>} investigation
+ */
+async function upsertIncumbentAfterStubUpgrade(slug, profileJsonForDb, investigation) {
+  if (!pool) return;
+  const verdict_tags = Array.isArray(investigation.verdict_tags)
+    ? investigation.verdict_tags.map(String)
+    : [];
+  const overall =
+    typeof investigation.overall_concern_level === 'string'
+      ? investigation.overall_concern_level
+      : null;
+  const summary =
+    typeof investigation.executive_summary === 'string' ? investigation.executive_summary : null;
+  const primary = collectPrimarySourcesForStorage(profileJsonForDb);
+  const brand_name =
+    (typeof investigation.brand === 'string' && investigation.brand.trim()) ||
+    (typeof profileJsonForDb.brand_name === 'string' && profileJsonForDb.brand_name.trim()) ||
+    slug;
+  const parent =
+    investigation.parent != null
+      ? investigation.parent
+      : profileJsonForDb.parent_company ?? profileJsonForDb.parent ?? null;
+  const ultimate =
+    typeof profileJsonForDb.ultimate_parent === 'string'
+      ? profileJsonForDb.ultimate_parent
+      : parent != null
+        ? String(parent)
+        : null;
+  const subs = Array.isArray(investigation.subsidiaries)
+    ? investigation.subsidiaries.map(String)
+    : Array.isArray(profileJsonForDb.subsidiaries)
+      ? profileJsonForDb.subsidiaries.map(String)
+      : null;
+
+  await pool.query(
+    `UPDATE incumbent_profiles SET
+       brand_name = COALESCE($2, brand_name),
+       parent_company = $3,
+       ultimate_parent = $4,
+       known_subsidiaries = $5,
+       profile_json = $6::jsonb,
+       verdict_tags = $7,
+       overall_concern_level = $8,
+       investigation_summary = $9,
+       primary_sources = $10,
+       last_researched = CURRENT_DATE,
+       research_confidence = $11,
+       updated_at = NOW(),
+       profile_type = 'database'
+     WHERE brand_slug = $1`,
+    [
+      slug,
+      brand_name,
+      parent != null ? String(parent) : null,
+      ultimate,
+      subs,
+      JSON.stringify(profileJsonForDb),
+      verdict_tags,
+      overall,
+      summary,
+      primary,
+      'high',
+    ]
+  );
+}
+
+function wrapRealtimeInvestigationResult(investigation, profileJsonForDb) {
+  return { investigation, profileJsonForDb: profileJsonForDb ?? null };
 }
 
 /**
@@ -1183,6 +1325,42 @@ export async function getInvestigationProfile(brandName, corporateParent, option
       );
       const row = rows[0];
       if (row) {
+        const profileJsonChars = incumbentProfileJsonCharLength(row.profile_json);
+        if (profileJsonChars < STUB_PROFILE_JSON_MAX_CHARS) {
+          console.log('[STUB UPGRADE]', slug);
+          try {
+            const rt = await realtimeInvestigation(
+              brandName,
+              corporateParent,
+              healthFlag,
+              productCategory
+            );
+            const upgraded = rt.investigation ?? rt;
+            let stubPersisted = false;
+            if (rt.profileJsonForDb && pool) {
+              try {
+                await upsertIncumbentAfterStubUpgrade(slug, rt.profileJsonForDb, upgraded);
+                stubPersisted = true;
+              } catch (upErr) {
+                console.error('[STUB UPGRADE] upsert failed', slug, upErr);
+              }
+            }
+            if (!healthFlag) {
+              upgraded.product_health = null;
+              upgraded.product_health_sources = [];
+            }
+            const today = new Date().toISOString().slice(0, 10);
+            const out = stubPersisted
+              ? { ...upgraded, profile_type: 'database', last_updated: today }
+              : upgraded;
+            logInvestigationProfileEnd(stubPersisted ? 'database_stub_upgrade' : 'stub_upgrade_realtime_only', out);
+            return out;
+          } catch (e) {
+            console.error('[STUB UPGRADE] realtime failed', slug, e);
+            /* fall through: return thin DB row */
+          }
+        }
+
         console.log('[investigation] getInvestigationProfile:route', { slug, source: 'database' });
         let inv;
         if (row.profile_json) {
@@ -1218,8 +1396,9 @@ export async function getInvestigationProfile(brandName, corporateParent, option
 
   try {
     const rt = await realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory);
-    logInvestigationProfileEnd('realtime', rt);
-    return rt;
+    const inv = rt.investigation ?? rt;
+    logInvestigationProfileEnd('realtime', inv);
+    return inv;
   } catch (e) {
     console.error('getInvestigationProfile realtime failed', e);
     const emergency = buildRealtimeEmergencyProfile(

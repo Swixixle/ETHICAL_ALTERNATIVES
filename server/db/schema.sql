@@ -48,6 +48,9 @@ CREATE TABLE IF NOT EXISTS incumbent_profiles (
   updated_at TIMESTAMPTZ DEFAULT now()
 );
 
+-- Added for imports / stub self-healing (safe on existing DBs)
+ALTER TABLE incumbent_profiles ADD COLUMN IF NOT EXISTS profile_type TEXT;
+
 CREATE INDEX IF NOT EXISTS idx_incumbent_profiles_slug ON incumbent_profiles (brand_slug);
 CREATE INDEX IF NOT EXISTS idx_incumbent_profiles_verdict ON incumbent_profiles USING GIN (verdict_tags);
 
@@ -207,3 +210,43 @@ CREATE TABLE IF NOT EXISTS civic_witnesses (
 
 CREATE INDEX IF NOT EXISTS idx_witnesses_brand ON civic_witnesses (brand_slug);
 CREATE INDEX IF NOT EXISTS idx_witnesses_state ON civic_witnesses (state_code);
+
+-- Hire Direct — local worker marketplace (direct economic connections, zero platform fee).
+CREATE TABLE IF NOT EXISTS local_workers (
+  id SERIAL PRIMARY KEY,
+  display_name TEXT NOT NULL,
+  slug TEXT UNIQUE NOT NULL,
+  city TEXT NOT NULL,
+  state_code TEXT NOT NULL,
+  lat NUMERIC(9, 6),
+  lng NUMERIC(9, 6),
+  category TEXT NOT NULL,
+  tagline TEXT NOT NULL,
+  bio TEXT,
+  rate TEXT,
+  availability TEXT DEFAULT 'available',
+  contact_method TEXT NOT NULL,
+  contact_value TEXT NOT NULL,
+  corporate_alternatives JSONB DEFAULT '[]',
+  civic_witness_count INTEGER DEFAULT 0,
+  is_civic_verified BOOLEAN DEFAULT FALSE,
+  union_affiliation TEXT,
+  profile_photo_url TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  is_active BOOLEAN DEFAULT TRUE
+);
+
+CREATE INDEX IF NOT EXISTS idx_workers_category ON local_workers (category);
+CREATE INDEX IF NOT EXISTS idx_workers_city_state ON local_workers (city, state_code);
+CREATE INDEX IF NOT EXISTS idx_workers_location ON local_workers (lat, lng);
+
+CREATE TABLE IF NOT EXISTS worker_messages (
+  id SERIAL PRIMARY KEY,
+  worker_id INTEGER REFERENCES local_workers (id),
+  sender_session TEXT NOT NULL,
+  message TEXT NOT NULL,
+  sender_city TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  is_read BOOLEAN DEFAULT FALSE
+);

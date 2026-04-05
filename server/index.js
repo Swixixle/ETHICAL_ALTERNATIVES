@@ -13,6 +13,8 @@ import territoryRouter from './routes/territory.js';
 import localEventsRouter from './routes/localEvents.js';
 import localCommercialRouter from './routes/localCommercial.js';
 import witnessRouter from './routes/witness.js';
+import documentaryRouter from './routes/documentary.js';
+import workersRouter from './routes/workers.js';
 
 const app = express();
 
@@ -33,6 +35,7 @@ app.get('/health', (_req, res) => {
   res.json({ ok: true });
 });
 
+app.use('/api/workers', workersRouter);
 app.use('/api', tapRouter);
 app.use('/api/sellers', sellersRouter);
 app.use('/api/city-identity', cityIdentityRouter);
@@ -44,6 +47,7 @@ app.use('/api/territory', territoryRouter);
 app.use('/api/events', localEventsRouter);
 app.use('/api/local-commercial', localCommercialRouter);
 app.use('/api/witness', witnessRouter);
+app.use('/api/documentary', documentaryRouter);
 
 const PORT = Number(process.env.PORT) || 3001;
 app.listen(PORT, () => {

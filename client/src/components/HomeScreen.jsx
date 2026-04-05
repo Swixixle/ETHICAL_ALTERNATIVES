@@ -8,6 +8,7 @@ import {
 import { getCityIdentity } from '../services/cityIdentity.js';
 import { dailyChainShuffle, dailyFeedShuffle, utcDateKey } from '../utils/dailyShuffle.js';
 import LocalCommercial from './LocalCommercial.jsx';
+import HireDirectLocalSection from './HireDirectLocalSection.jsx';
 import TrustStrip from './TrustStrip.jsx';
 import ListYourShop from './ListYourShop.jsx';
 import CommunityBoard from './CommunityBoard.jsx';
@@ -909,13 +910,14 @@ function FeedCard({ business, chainFootnote = false }) {
 }
 
 /**
- * @param {{ onStartSnap: () => void }} props
+ * @param {{ onStartSnap: () => void; onOpenWorkerProfile?: (slug: string) => void }} props
  */
 export default function HomeScreen({
   onStartSnap,
   onSearchInvestigate,
   onOpenHistory,
   onOpenWitnesses,
+  onOpenWorkerProfile,
 }) {
   const [phase, setPhase] = useState(() => initialPhase());
   const [location, setLocation] = useState(() => readCachedLocation());
@@ -1658,6 +1660,14 @@ export default function HomeScreen({
 
         {phase === 'ready' ? (
           <>
+            {typeof onOpenWorkerProfile === 'function' ? (
+              <HireDirectLocalSection
+                lat={typeof location?.lat === 'number' ? location.lat : null}
+                lng={typeof location?.lng === 'number' ? location.lng : null}
+                onWorkerProfile={onOpenWorkerProfile}
+              />
+            ) : null}
+
             <div
               style={{
                 margin: '28px 16px 0',

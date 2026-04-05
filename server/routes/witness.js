@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { pool } from '../db/pool.js';
 import { WITNESS_LEGAL_NOTICE } from '../constants/witnessLegal.js';
 import { validateWitnessPost, consumeWitnessRateSlot } from '../middleware/witnessValidation.js';
+import { refreshWorkerCivicStatsForWitness } from '../services/workerCivicSync.js';
 
 const router = Router();
 
@@ -65,6 +66,7 @@ router.post('/', validateWitnessPost, async (req, res) => {
       [sid, safeName, slug, bname, head, safeCity, st, ctry, safeMsg]
     );
     consumeWitnessRateSlot(req.witness_ip_hash);
+    void refreshWorkerCivicStatsForWitness(safeName, safeCity);
     console.log('[witness] registered', {
       id: result.rows[0].id,
       brand_slug: slug,

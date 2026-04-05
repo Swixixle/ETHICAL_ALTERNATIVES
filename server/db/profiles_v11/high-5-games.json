@@ -3,71 +3,177 @@
   "brand_slug": "high-5-games",
   "parent_company": "High 5 Games LLC",
   "ultimate_parent": "High 5 Games LLC",
-  "subsidiaries": ["High 5 Casino", "High 5 Vegas"],
+  "subsidiaries": [
+    "High 5 Casino",
+    "High 5 Vegas"
+  ],
   "overall_concern_level": "significant",
   "profile_type": "database",
   "generated_headline": "HIGH 5 GAMES CALLED PROBLEM GAMBLERS 'WHALES,' GAVE ONE WOMAN FREE TOKENS AFTER SHE ASKED THEM TO SHUT HER ACCOUNT, AND PAID $25 MILLION",
   "executive_summary": "High 5 Games is a New York-based social casino operator whose High 5 Casino and High 5 Vegas apps simulated slot machine gameplay using virtual chips purchased with real money. In February 2025, a Washington state jury delivered the first-ever jury verdict against an online social casino — ordering High 5 to pay $24.94 million in damages to a class of Washington consumers. The verdict followed a June 2024 court ruling that found High 5's apps constituted illegal gambling under Washington law. Evidence presented at trial documented that High 5 employees referred to high-risk problem gamblers as 'whales' and targeted them with promotions to increase their gambling, rather than referring them to help. One documented case: a woman who told High 5 she had developed a gambling addiction and needed her account shut down was instead offered free tokens as an inducement to continue playing.",
-  "verdict_tags": ["first_jury_verdict_social_casino", "24_9m_damages", "whales_internal_terminology", "addiction_disclosure_free_tokens", "illegal_gambling_washington", "big_tech_next_target"],
-  "concern_flags": {"labor": true, "environmental": false, "political": false, "tax": false, "health": true, "legal": true},
+  "verdict_tags": [
+    "first_jury_verdict_social_casino",
+    "24_9m_damages",
+    "whales_internal_terminology",
+    "addiction_disclosure_free_tokens",
+    "illegal_gambling_washington",
+    "big_tech_next_target"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": false,
+    "tax": false,
+    "health": true,
+    "legal": true
+  },
   "tax": {
     "summary": "High 5 Games is a private company and does not disclose its financials or tax arrangements. As a New York LLC, it is subject to U.S. tax obligations, making it more domestically exposed than offshore operators like VGW. The $24.94 million judgment represents a significant liability for a private company of its scale.",
-    "flags": ["private_no_disclosure", "ny_llc_domestic_exposure"],
-    "sources": ["https://www.sec.gov"]
+    "flags": [
+      "private_no_disclosure",
+      "ny_llc_domestic_exposure"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
   },
   "legal": {
     "summary": "June 2024: U.S. District Court Judge Tiffany Cartwright rules that High 5 Casino and High 5 Vegas constitute illegal gambling under Washington's Consumer Protection Act and Recovery of Money Lost at Gambling Act. February 7, 2025: Jury verdict — $24,940,366.15 in damages — the first jury verdict ever against an online social casino. Breakdown: $17.7 million in actual damages (money lost by class members) plus $7.2 million in enhanced statutory damages. Trial evidence showed High 5 targeted Washington users with documented gambling addiction by offering promotions to increase their play rather than honoring self-exclusion requests. Class members lost hundreds of thousands of dollars each; at least one lost over $1 million. The verdict is expected to influence litigation against Amazon, Meta, Google, and Apple for their role as payment processors taking 30% commission on High 5 purchases.",
-    "flags": ["first_jury_verdict_social_casino_history", "24_9m_damages_february_2025", "illegal_gambling_ruled_washington", "addiction_targeting_trial_evidence", "big_tech_next_target_edelson"],
-    "sources": ["https://edelson.com/jury-returns-first-ever-class-action-verdict", "https://sbcamericas.com/2025/02/10/high-5-games-damages-casino-verdict"]
+    "flags": [
+      "first_jury_verdict_social_casino_history",
+      "24_9m_damages_february_2025",
+      "illegal_gambling_ruled_washington",
+      "addiction_targeting_trial_evidence",
+      "big_tech_next_target_edelson"
+    ],
+    "sources": [
+      "https://edelson.com/jury-returns-first-ever-class-action-verdict",
+      "https://sbcamericas.com/2025/02/10/high-5-games-damages-casino-verdict"
+    ]
   },
   "labor": {
     "summary": "High 5 Games' customer engagement staff — who maintained contact with high-value players — were shown at trial to have internally classified high-risk problem gamblers as 'whales' and used that classification to target them with promotional offers designed to increase betting rather than protect them. This is the identical VIP management pattern documented in DraftKings and FanDuel lawsuits. The business model required employees to maximize revenue from the most vulnerable users rather than enforce responsible gambling.",
-    "flags": ["whale_internal_terminology_trial_evidence", "addiction_targeting_job_function", "no_responsible_gambling_enforcement"],
-    "sources": ["https://casinobeats.com/2025/02/11/washington-jury-orders-high-5-games-to-pay-24-9m"]
+    "flags": [
+      "whale_internal_terminology_trial_evidence",
+      "addiction_targeting_job_function",
+      "no_responsible_gambling_enforcement"
+    ],
+    "sources": [
+      "https://casinobeats.com/2025/02/11/washington-jury-orders-high-5-games-to-pay-24-9m"
+    ]
   },
   "environmental": {
     "summary": "Digital-only operations. No significant environmental footprint beyond server infrastructure.",
-    "flags": ["digital_only"],
+    "flags": [
+      "digital_only"
+    ],
     "sources": []
   },
   "political": {
     "summary": "High 5 Games' $24.9 million jury verdict has become a centerpiece in the legislative campaign against sweepstakes casinos. The verdict was cited in California's AB 831 debate and in New York's Senate Bill 5935 proceedings. The Edelson PC law firm — which won the verdict — is now advancing litigation against Amazon, Meta, Google, and Apple for their 'bookie' role in processing High 5 payments.",
-    "flags": ["verdict_cited_california_new_york_legislation", "edelson_big_tech_litigation_following"],
-    "sources": ["https://igamingbusiness.com/legal-compliance/2025-sweepstakes-casinos-year-in-review"]
+    "flags": [
+      "verdict_cited_california_new_york_legislation",
+      "edelson_big_tech_litigation_following"
+    ],
+    "sources": [
+      "https://igamingbusiness.com/legal-compliance/2025-sweepstakes-casinos-year-in-review"
+    ]
   },
   "executives": {
     "summary": "High 5 Games is a private company that does not disclose executive information publicly. The company argued to the jury that it 'believed it had done nothing wrong' — a position the jury rejected. The company has not made public statements about whether it will appeal the $24.94 million verdict.",
-    "flags": ["private_no_disclosure", "jury_rejected_no_wrongdoing_argument"],
+    "flags": [
+      "private_no_disclosure",
+      "jury_rejected_no_wrongdoing_argument"
+    ],
     "sources": []
   },
   "connections": {
     "summary": "High 5 Games expanded into West Virginia in July 2024 — four months after the same month a court found its Washington operations illegal. Amazon, Meta, Google, and Apple are named in subsequent litigation for processing High 5 payments and taking 30% commission on each transaction — functioning as financial intermediaries in what the court found to be illegal gambling. Edelson PC, which won the High 5 verdict, is simultaneously leading multidistrict litigation against all four tech giants for their role across the social casino industry.",
-    "flags": ["expanded_west_virginia_while_under_judgment", "amazon_meta_google_apple_payment_processors", "edelson_mdl_big_tech"],
-    "sources": ["https://edelson.com/jury-returns-first-ever-class-action-verdict"]
+    "flags": [
+      "expanded_west_virginia_while_under_judgment",
+      "amazon_meta_google_apple_payment_processors",
+      "edelson_mdl_big_tech"
+    ],
+    "sources": [
+      "https://edelson.com/jury-returns-first-ever-class-action-verdict"
+    ]
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
     "summary": "Trial evidence — presented to the jury and accepted as supporting the verdict — showed that High 5's business model specifically targeted users exhibiting problem gambling behavior with retention promotions rather than intervention. One documented case presented at trial: a woman disclosed her gambling addiction to High 5 and requested account restriction; High 5's response was to provide her with free tokens, effectively using her disclosed addiction as a trigger for re-engagement rather than self-exclusion. Edelson PC alleged that High 5 'deliberately targeted state residents who were addicted to high-stakes gambling by luring them back to the social casino gaming through incentives.'",
-    "flags": ["addiction_disclosure_free_tokens_trial_evidence", "deliberate_targeting_addicts_trial_evidence_accepted", "whale_targeting_documented_trial"],
-    "sources": ["https://casinobeats.com/2025/02/11/washington-jury-orders-high-5-games-to-pay-24-9m"]
+    "flags": [
+      "addiction_disclosure_free_tokens_trial_evidence",
+      "deliberate_targeting_addicts_trial_evidence_accepted",
+      "whale_targeting_documented_trial"
+    ],
+    "sources": [
+      "https://casinobeats.com/2025/02/11/washington-jury-orders-high-5-games-to-pay-24-9m"
+    ]
   },
   "health_record": {
     "summary": "The High 5 Games trial produced the most detailed documented record of social casino health harm in any court proceeding to date. Class members lost hundreds of thousands of dollars each on High 5's platforms. At least one player lost over $1 million. The case documented the targeting of users with identified gambling addiction as a business strategy — not an oversight. Players were required to buy chips to continue playing; despite the nominal 'free-to-play' framing, no one can continue playing High 5 Casino after exhausting their free chips without purchasing more. The jury accepted that this constituted illegal gambling causing real financial harm.",
-    "flags": ["class_members_hundreds_thousands_lost", "one_million_dollar_loss_documented", "addiction_targeting_business_strategy", "financial_harm_jury_accepted"],
-    "sources": ["https://edelson.com/jury-returns-first-ever-class-action-verdict", "https://sbcamericas.com/2025/02/10/high-5-games-damages-casino-verdict"]
+    "flags": [
+      "class_members_hundreds_thousands_lost",
+      "one_million_dollar_loss_documented",
+      "addiction_targeting_business_strategy",
+      "financial_harm_jury_accepted"
+    ],
+    "sources": [
+      "https://edelson.com/jury-returns-first-ever-class-action-verdict",
+      "https://sbcamericas.com/2025/02/10/high-5-games-damages-casino-verdict"
+    ]
   },
   "alternatives": {
-    "cheaper": ["Free mobile gaming without in-app purchases — most major game studios offer genuine free-to-play titles where the base game requires no purchase", "Washington's licensed gambling options — tribal casinos and the state lottery — operate under responsible gambling requirements High 5 did not"],
-    "healthier": ["Any gaming with a fixed, known cost — subscription gaming services, one-time purchase games — eliminate the variable loss dynamic of social casinos", "Washington State Problem Gambling Helpline: 1-800-547-6133"],
-    "diy": ["If you are in Washington state and lost money on High 5 Casino or High 5 Vegas, contact Edelson PC or Tousley Brain Stephens — class members in the Washington case may be eligible for recovery", "National Problem Gambling Helpline: 1-800-522-4700"]
+    "cheaper": [
+      "Free mobile gaming without in-app purchases — most major game studios offer genuine free-to-play titles where the base game requires no purchase",
+      "Washington's licensed gambling options — tribal casinos and the state lottery — operate under responsible gambling requirements High 5 did not"
+    ],
+    "healthier": [
+      "Any gaming with a fixed, known cost — subscription gaming services, one-time purchase games — eliminate the variable loss dynamic of social casinos",
+      "Washington State Problem Gambling Helpline: 1-800-547-6133"
+    ],
+    "diy": [
+      "If you are in Washington state and lost money on High 5 Casino or High 5 Vegas, contact Edelson PC or Tousley Brain Stephens — class members in the Washington case may be eligible for recovery",
+      "National Problem Gambling Helpline: 1-800-522-4700"
+    ]
   },
   "timeline": [
-    {"year": 2013, "event": "High 5 Games launches social casino apps; offers slot-style games with virtual chip purchases", "severity": "neutral", "source_url": ""},
-    {"year": 2018, "event": "Rick Larsen files first lawsuit against High 5 in Washington state; seven-year litigation begins", "severity": "high", "source_url": ""},
-    {"year": 2024, "event": "June: Judge Cartwright rules High 5 Casino and High 5 Vegas constitute illegal gambling under Washington CPA and RMLGA", "severity": "critical", "source_url": ""},
-    {"year": 2024, "event": "July: High 5 Games expands into West Virginia — four months after its Washington operations were ruled illegal", "severity": "high", "source_url": ""},
-    {"year": 2025, "event": "February 7: Jury verdict — $24,940,366.15 in damages. First-ever jury verdict against a social casino operator. Evidence presented: 'whale' targeting, addiction disclosure ignored.", "severity": "critical", "source_url": "https://edelson.com/jury-returns-first-ever-class-action-verdict"},
-    {"year": 2025, "event": "Edelson PC announces next target: Amazon, Meta, Google, Apple for 30% commission on High 5 purchases", "severity": "critical", "source_url": ""}
+    {
+      "year": 2013,
+      "event": "High 5 Games launches social casino apps; offers slot-style games with virtual chip purchases",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "Rick Larsen files first lawsuit against High 5 in Washington state; seven-year litigation begins",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "June: Judge Cartwright rules High 5 Casino and High 5 Vegas constitute illegal gambling under Washington CPA and RMLGA",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "July: High 5 Games expands into West Virginia — four months after its Washington operations were ruled illegal",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2025,
+      "event": "February 7: Jury verdict — $24,940,366.15 in damages. First-ever jury verdict against a social casino operator. Evidence presented: 'whale' targeting, addiction disclosure ignored.",
+      "severity": "critical",
+      "source_url": "https://edelson.com/jury-returns-first-ever-class-action-verdict"
+    },
+    {
+      "year": 2025,
+      "event": "Edelson PC announces next target: Amazon, Meta, Google, Apple for 30% commission on High 5 purchases",
+      "severity": "critical",
+      "source_url": ""
+    }
   ],
   "community_impact": {
     "displacement": "High 5 Games operated in Washington state — where online gambling is illegal — for years before courts found its operations violated state law. The community's decision to restrict gambling was circumvented by the social casino model. Players who developed gambling addictions had no access to the self-exclusion programs that licensed Washington tribal casinos must maintain.",
@@ -77,14 +183,32 @@
   },
   "cost_absorption": {
     "who_benefited": [
-      {"group": "High 5 Games / owners", "how": "Years of revenue from illegal gambling operations in Washington and other states"},
-      {"group": "Apple and Google", "how": "30% commission on all High 5 in-app purchases; now named in Edelson litigation as co-profiteers"},
-      {"group": "West Virginia", "how": "High 5 expanded there in 2024, bringing the same model to a new state after Washington found it illegal"}
+      {
+        "group": "High 5 Games / owners",
+        "how": "Years of revenue from illegal gambling operations in Washington and other states"
+      },
+      {
+        "group": "Apple and Google",
+        "how": "30% commission on all High 5 in-app purchases; now named in Edelson litigation as co-profiteers"
+      },
+      {
+        "group": "West Virginia",
+        "how": "High 5 expanded there in 2024, bringing the same model to a new state after Washington found it illegal"
+      }
     ],
     "who_paid": [
-      {"group": "Washington class members", "how": "$17.7M in actual losses; hundreds of thousands each; at least one over $1 million"},
-      {"group": "Woman who disclosed her addiction", "how": "Told High 5 she was addicted and needed her account shut down. Received free tokens instead."},
-      {"group": "Washington's addiction treatment infrastructure", "how": "High 5 paid no gaming taxes to fund the state programs that treat the addiction it caused"}
+      {
+        "group": "Washington class members",
+        "how": "$17.7M in actual losses; hundreds of thousands each; at least one over $1 million"
+      },
+      {
+        "group": "Woman who disclosed her addiction",
+        "how": "Told High 5 she was addicted and needed her account shut down. Received free tokens instead."
+      },
+      {
+        "group": "Washington's addiction treatment infrastructure",
+        "how": "High 5 paid no gaming taxes to fund the state programs that treat the addiction it caused"
+      }
     ],
     "the_gap": "She told them she was addicted. She asked them to shut her account. They gave her free tokens. This was the business model, not an error. The jury heard the evidence and awarded $24.9 million. It was the first time a jury had ever heard it."
   }

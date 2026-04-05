@@ -12,9 +12,10 @@ import HistoryScreen from './components/HistoryScreen.jsx';
 import LocalCommercial from './components/LocalCommercial.jsx';
 import ShareCard from './components/ShareCard.jsx';
 import WitnessRegistry from './components/WitnessRegistry.jsx';
+import WorkerProfilePage from './components/WorkerProfilePage.jsx';
 import ConfidenceBadge from './components/ConfidenceBadge.jsx';
 import InvestigationCard, { NoRecordCompactModule } from './components/InvestigationCard.jsx';
-import { readCachedLocation } from './services/location.js';
+import { persistLocation, readCachedLocation, readUserCityState } from './services/location.js';
 import CommunityImpact from './components/CommunityImpact.jsx';
 import { useTapAnalysis } from './hooks/useTapAnalysis.js';
 import {
@@ -23,6 +24,9 @@ import {
 } from './utils/investigationConfidence.js';
 import { haptic } from './utils/haptics.js';
 import { playReveal } from './utils/sounds.js';
+import { slugifyBrandName } from './utils/brandSlug.js';
+import LocalDocumentary from './components/LocalDocumentary.jsx';
+import LocationCitySheet from './components/LocationCitySheet.jsx';
 import './App.css';
 
 function investigationHeadline(identification, investigation) {
@@ -49,6 +53,8 @@ export default function App() {
   /** home — feed; snap — photo tap (Quick); deep — typed investigation (rabbit hole); history — saved taps; witnesses — civic registry */
   const [mode, setMode] = useState('home');
   const [witnessReturnMode, setWitnessReturnMode] = useState('home');
+  const [workerProfileSlug, setWorkerProfileSlug] = useState(/** @type {string | null} */ (null));
+  const [hireDirectShareFootnote, setHireDirectShareFootnote] = useState('');
 
   const {
     image,
@@ -76,6 +82,14 @@ export default function App() {
   const [showShare, setShowShare] = useState(false);
   const [researchCommercialOn, setResearchCommercialOn] = useState(false);
 
+  /** Local documentary overlay during async investigation */
+  const [docRun, setDocRun] = useState(null);
+  const [deepBrand, setDeepBrand] = useState(null);
+  const [cityGateOpen, setCityGateOpen] = useState(false);
+  const [cityGateChecked, setCityGateChecked] = useState(false);
+
+  const releaseDocumentary = useCallback(() => setDocRun(null), []);
+
   const [isDesktop, setIsDesktop] = useState(
     () => typeof window !== 'undefined' && window.innerWidth >= 768
   );
@@ -96,17 +110,130 @@ export default function App() {
     setMode('witnesses');
   }, [mode]);
 
-  useEffect(() => {
-    const path = (window.location.pathname || '/').replace(/\/$/, '') || '/';
-    if (path === '/witnesses') {
-      setWitnessReturnMode('home');
-      setMode('witnesses');
+  const openWorkerProfile = useCallback((slug) => {
+    const s = String(slug || '').trim();
+    if (!s) return;
+    setWorkerProfileSlug(s);
+    try {
+      window.history.pushState({}, '', `/workers/${encodeURIComponent(s)}`);
+    } catch {
+      /* ignore */
     }
+    setMode('worker-profile');
   }, []);
+
+  const closeWorkerProfile = useCallback(() => {
+    setWorkerProfileSlug(null);
+    try {
+      window.history.replaceState({}, '', '/');
+    } catch {
+      /* ignore */
+    }
+    setMode('home');
+  }, []);
+
+  useEffect(() => {
+    const syncPath = () => {
+      const path = (window.location.pathname || '/').replace(/\/$/, '') || '/';
+      if (path === '/witnesses') {
+        setWitnessReturnMode('home');
+        setMode('witnesses');
+        return;
+      }
+      const wm = path.match(/^\/workers\/([^/]+)$/);
+      if (wm) {
+        setWorkerProfileSlug(decodeURIComponent(wm[1]));
+        setMode('worker-profile');
+        return;
+      }
+      setWorkerProfileSlug(null);
+      setMode((prev) => (prev === 'worker-profile' ? 'home' : prev));
+    };
+    syncPath();
+    window.addEventListener('popstate', syncPath);
+    return () => window.removeEventListener('popstate', syncPath);
+  }, []);
+
+  useEffect(() => {
+    const loc = readCachedLocation();
+    if (loc?.city) {
+      persistLocation(loc);
+      setCityGateOpen(false);
+    } else {
+      try {
+        setCityGateOpen(!sessionStorage.getItem('ea_user_city'));
+      } catch {
+        setCityGateOpen(true);
+      }
+    }
+    setCityGateChecked(true);
+  }, []);
+
+  useEffect(() => {
+    if (mode === 'witnesses' || !cityGateChecked) return;
+    const loc = readCachedLocation();
+    try {
+      if (loc?.city || sessionStorage.getItem('ea_user_city')) setCityGateOpen(false);
+    } catch {
+      /* ignore */
+    }
+  }, [mode, cityGateChecked]);
+
+  useEffect(() => {
+    if (mode !== 'snap') return;
+    if (result?.research_loading && !result?.investigation) {
+      const id = result.identification;
+      const brand =
+        (id?.brand && String(id.brand).trim()) ||
+        (id?.corporate_parent && String(id.corporate_parent).trim()) ||
+        (id?.object && String(id.object).trim()) ||
+        'Unknown';
+      setDocRun({
+        key: `tap-${tapSession}-${brand}`,
+        brandName: brand,
+        brandSlug: slugifyBrandName(brand),
+      });
+    }
+  }, [mode, result?.research_loading, result?.investigation, result?.identification, tapSession]);
+
+  useEffect(() => {
+    if (mode !== 'deep') return;
+    if (loading && deepBrand) {
+      setDocRun({
+        key: `deep-${tapSession}-${deepBrand}`,
+        brandName: deepBrand,
+        brandSlug: slugifyBrandName(deepBrand),
+      });
+    }
+  }, [mode, loading, deepBrand, tapSession]);
+
+  useEffect(() => {
+    if (result && result.research_loading === false && !result.investigation && docRun) {
+      setDocRun(null);
+    }
+  }, [result?.research_loading, result?.investigation, result, docRun]);
+
+  useEffect(() => {
+    if (mode === 'deep' && error && !loading) {
+      setDocRun(null);
+      setDeepBrand(null);
+    }
+  }, [mode, error, loading]);
+
+  useEffect(() => {
+    if (mode === 'home' && !loading) {
+      setDocRun(null);
+      setDeepBrand(null);
+    }
+  }, [mode, loading]);
 
   useEffect(() => {
     if (!result) setShowShare(false);
   }, [result]);
+
+  useEffect(() => {
+    setHireDirectShareFootnote('');
+  }, [tapSession]);
 
   const investigationShownRef = useRef(false);
   useEffect(() => {
@@ -152,6 +279,14 @@ export default function App() {
 
   const researchBackdropLoc = researchCommercialOn ? readCachedLocation() : null;
 
+  if (mode === 'worker-profile' && workerProfileSlug) {
+    return (
+      <div className="app">
+        <WorkerProfilePage slug={workerProfileSlug} onBack={closeWorkerProfile} />
+      </div>
+    );
+  }
+
   if (mode === 'witnesses') {
     return (
       <div className="app">
@@ -179,10 +314,13 @@ export default function App() {
           }}
           onOpenHistory={() => setMode('history')}
           onOpenWitnesses={openWitnessRegistry}
+          onOpenWorkerProfile={openWorkerProfile}
           onSearchInvestigate={async (q) => {
+            const trimmed = String(q || '').trim();
+            setDeepBrand(trimmed);
             reset();
             setMode('deep');
-            await investigateByBrand(q);
+            await investigateByBrand(trimmed);
           }}
         />
       </div>
@@ -215,7 +353,7 @@ export default function App() {
     dbPreview.community_impact !== null
       ? dbPreview.community_impact
       : null;
-  const showResearchBanner = Boolean(result?.research_loading);
+  const showResearchBanner = Boolean(result?.research_loading) && !docRun;
 
   const recordPresentation = result
     ? getInvestigationRecordPresentation(id, result.investigation, {
@@ -371,6 +509,7 @@ export default function App() {
               result={result}
               recordPresentation={recordPresentation}
               headline={investigationHeadline(id, result.investigation)}
+              onHireDirectShareFootnote={setHireDirectShareFootnote}
               onShare={() => {
                 haptic('confirm');
                 setShowShare(true);
@@ -513,6 +652,11 @@ export default function App() {
     (mode === 'snap' && image && result) || (mode === 'deep' && result?.investigation)
   );
 
+  const docLoc = readUserCityState();
+  const docFallback = readCachedLocation();
+  const documentaryCity = docLoc.city || docFallback?.city || 'your area';
+  const documentaryState = docLoc.state || docFallback?.state || '';
+
   return (
     <div className="app">
       <header
@@ -540,7 +684,7 @@ export default function App() {
       </header>
 
       <main className={`app__main${showResultsNav ? ' app__main--with-bottom-nav' : ''}`}>
-        {mode === 'deep' && loading ? (
+        {mode === 'deep' && loading && !docRun ? (
           <div className="app__panel app__loader-panel" role="status" aria-busy="true">
             <p className="app__text-loader">Researching...</p>
           </div>
@@ -660,7 +804,30 @@ export default function App() {
         <ShareCard
           investigation={result.investigation}
           identification={id}
+          hireDirectShareFooter={hireDirectShareFootnote}
           onClose={() => setShowShare(false)}
+        />
+      ) : null}
+
+      {cityGateChecked && cityGateOpen && mode !== 'witnesses' ? (
+        <LocationCitySheet
+          onResolved={() => {
+            setCityGateOpen(false);
+          }}
+        />
+      ) : null}
+
+      {docRun && (mode === 'snap' || mode === 'deep') ? (
+        <LocalDocumentary
+          runKey={docRun.key}
+          city={documentaryCity}
+          state={documentaryState}
+          brandName={docRun.brandName}
+          brandSlug={docRun.brandSlug}
+          investigationReady={
+            mode === 'deep' ? !loading && Boolean(result?.investigation) : Boolean(result?.investigation)
+          }
+          onRelease={releaseDocumentary}
         />
       ) : null}
 

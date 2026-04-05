@@ -20,9 +20,34 @@ export function readCachedLocation() {
   }
 }
 
+/** City/state used for local documentary and session UI (see cursor-local-documentary spec). */
+export function readUserCityState() {
+  if (typeof sessionStorage === 'undefined') return { city: '', state: '' };
+  try {
+    const c = sessionStorage.getItem('ea_user_city');
+    const s = sessionStorage.getItem('ea_user_state');
+    if (c) return { city: c, state: s || '' };
+  } catch {
+    /* ignore */
+  }
+  const loc = readCachedLocation();
+  if (loc?.city) return { city: String(loc.city), state: loc?.state ? String(loc.state) : '' };
+  return { city: '', state: '' };
+}
+
 export function persistLocation(loc) {
   if (typeof sessionStorage === 'undefined') return;
   sessionStorage.setItem(CACHE_KEY, JSON.stringify(loc));
+  try {
+    if (loc && typeof loc.city === 'string' && loc.city.trim()) {
+      sessionStorage.setItem('ea_user_city', loc.city.trim());
+    }
+    if (loc && loc.state != null && String(loc.state).trim()) {
+      sessionStorage.setItem('ea_user_state', String(loc.state).trim());
+    }
+  } catch {
+    /* ignore */
+  }
 }
 
 export async function reverseGeocode(lat, lng) {

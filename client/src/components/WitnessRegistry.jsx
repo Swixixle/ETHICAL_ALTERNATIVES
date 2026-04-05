@@ -20,6 +20,7 @@ function formatDate(iso) {
  */
 export default function WitnessRegistry({ onBack }) {
   const [data, setData] = useState(null);
+  const [localWorkers, setLocalWorkers] = useState(/** @type {unknown[] | null} */ (null));
   const [err, setErr] = useState(null);
   const [loading, setLoading] = useState(true);
   const [expandedSlug, setExpandedSlug] = useState(null);
@@ -30,13 +31,23 @@ export default function WitnessRegistry({ onBack }) {
     setLoading(true);
     setErr(null);
     try {
-      const res = await fetch(`${apiPrefix()}/api/witness/summary`);
-      if (!res.ok) throw new Error('summary_http');
-      const d = await res.json();
+      const [sumRes, wRes] = await Promise.all([
+        fetch(`${apiPrefix()}/api/witness/summary`),
+        fetch(`${apiPrefix()}/api/workers/registry`),
+      ]);
+      if (!sumRes.ok) throw new Error('summary_http');
+      const d = await sumRes.json();
       setData(d);
+      if (wRes.ok) {
+        const w = await wRes.json();
+        setLocalWorkers(Array.isArray(w.workers) ? w.workers : []);
+      } else {
+        setLocalWorkers([]);
+      }
     } catch {
       setErr('Could not load the registry. Try again later.');
       setData(null);
+      setLocalWorkers([]);
     } finally {
       setLoading(false);
     }
@@ -163,6 +174,68 @@ export default function WitnessRegistry({ onBack }) {
           Public ledger of people who voluntarily opted in to say they reviewed an EthicalAlt investigation
           record. Not a legal filing — see notice below.
         </p>
+
+        {!loading && localWorkers && localWorkers.length > 0 ? (
+          <div style={{ marginBottom: 28, paddingBottom: 20, borderBottom: '1px solid #283648' }}>
+            <div
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 11,
+                letterSpacing: 2,
+                color: '#D4A017',
+                marginBottom: 12,
+                textTransform: 'uppercase',
+              }}
+            >
+              Local workers
+            </div>
+            <p style={{ fontSize: 13, color: '#6a8a9a', margin: '0 0 12px', lineHeight: 1.5 }}>
+              Hire Direct profiles sorted by civic attestations. Open a profile from the Local tab for full
+              details.
+            </p>
+            <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+              {localWorkers.map((raw, i) => {
+                const w = raw && typeof raw === 'object' ? /** @type {Record<string, unknown>} */ (raw) : {};
+                const slug = String(w.slug || '');
+                const href = slug ? `${typeof window !== 'undefined' ? window.location.origin : ''}/workers/${encodeURIComponent(slug)}` : '';
+                const cnt = Number(w.civic_witness_count) || 0;
+                return (
+                  <li
+                    key={slug || i}
+                    style={{
+                      padding: '10px 0',
+                      borderBottom: '1px solid rgba(255,255,255,0.06)',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      gap: 10,
+                      alignItems: 'center',
+                    }}
+                  >
+                    <div>
+                      <div style={{ fontWeight: 600 }}>{String(w.display_name || '')}</div>
+                      <div style={{ fontSize: 12, color: '#7a9aaa' }}>
+                        {String(w.city || '')} · {String(w.category || '').replace(/_/g, ' ')}
+                      </div>
+                      {typeof w.tagline === 'string' && w.tagline ? (
+                        <div style={{ fontSize: 12, color: '#8a9aaa', marginTop: 4, fontStyle: 'italic' }}>
+                          {w.tagline}
+                        </div>
+                      ) : null}
+                    </div>
+                    <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                      <div style={{ fontSize: 11, color: '#D4A017' }}>{cnt} civic</div>
+                      {href ? (
+                        <a href={href} style={{ fontSize: 11, color: '#f0a820' }}>
+                          Profile ›
+                        </a>
+                      ) : null}
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ) : null}
 
         {loading ? (
           <p style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, color: '#6a8a9a' }}>Loading…</p>

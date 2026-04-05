@@ -12,6 +12,7 @@ import { findLocalSellers } from '../services/sellerRegistry.js';
 import { pool } from '../db/pool.js';
 import { getIncumbentDbPreview } from '../services/incumbentPreview.js';
 import { saveTapHistoryAsync } from '../services/tapHistory.js';
+import { attachHireDirectCategories } from '../services/hireDirectCategories.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -278,7 +279,8 @@ router.post('/tap', async (req, res) => {
 
   const altPromise = loadAlternativesBundle(finalIdentification, user_lat, user_lng);
 
-  const [investigation, alt] = await Promise.all([invPromise, altPromise]);
+  const [investigationRaw, alt] = await Promise.all([invPromise, altPromise]);
+  const investigation = attachHireDirectCategories(investigationRaw);
   const { results: etsyResults, registry_results: registryResults, local_results: localResults, hasGeo, empty_sources } = alt;
 
   const response_ms = Date.now() - t0;
@@ -363,10 +365,12 @@ router.post('/tap/investigation', async (req, res) => {
   let investigation = null;
   if (identification.brand || identification.corporate_parent) {
     try {
-      investigation = await getInvestigationProfile(identification.brand, identification.corporate_parent, {
-        healthFlag: identification.health_flag,
-        productCategory: identification.category,
-      });
+      investigation = attachHireDirectCategories(
+        await getInvestigationProfile(identification.brand, identification.corporate_parent, {
+          healthFlag: identification.health_flag,
+          productCategory: identification.category,
+        })
+      );
     } catch (e) {
       console.error('Investigation error', e);
     }
@@ -471,10 +475,12 @@ router.post('/investigate', async (req, res) => {
   const session_id = typeof req.body?.session_id === 'string' ? req.body.session_id.trim() : null;
 
   try {
-    const investigation = await getInvestigationProfile(brand, null, {
-      healthFlag: false,
-      productCategory: 'search',
-    });
+    const investigation = attachHireDirectCategories(
+      await getInvestigationProfile(brand, null, {
+        healthFlag: false,
+        productCategory: 'search',
+      })
+    );
 
     const identification = {
       object: brand,
