@@ -3,75 +3,204 @@
   "brand_slug": "bank-of-america",
   "parent_company": "Bank of America Corporation",
   "ultimate_parent": "Bank of America Corporation",
-  "subsidiaries": ["Merrill Lynch", "BofA Securities", "Bank of America Private Bank", "Countrywide (acquired 2008)"],
+  "subsidiaries": [
+    "Merrill Lynch",
+    "BofA Securities",
+    "Bank of America Private Bank",
+    "Countrywide (acquired 2008)"
+  ],
   "overall_concern_level": "significant",
   "profile_type": "database",
   "generated_headline": "BANK OF AMERICA PAID $17 BILLION FOR FRAUDULENT MORTGAGES AND STILL DISCRIMINATED AGAINST BLACK AND HISPANIC BORROWERS",
   "executive_summary": "Bank of America is the second-largest bank in the United States with approximately $3.3 trillion in assets. The bank's acquisition of Countrywide Financial in 2008 — at the height of the subprime mortgage crisis — saddled it with the liabilities of the most predatory mortgage lender in American history. BofA subsequently paid $17 billion to the DOJ in 2014 — the largest civil settlement with a single entity in U.S. history at the time — for Countrywide's fraudulent mortgage practices. The bank has also paid billions more for its own mortgage violations, systematic overdraft fee extraction, unlawful debt collection, and documented racial discrimination in lending. The CFPB has repeatedly cited Bank of America for consumer protection violations.",
-  "verdict_tags": ["countrywide_17b_settlement", "racial_discrimination_lending", "overdraft_fee_extraction", "mortgage_fraud", "consumer_protection_violations", "unlawful_debt_collection"],
-  "concern_flags": {"labor": false, "environmental": true, "political": true, "tax": true, "health": false, "legal": true},
+  "verdict_tags": [
+    "countrywide_17b_settlement",
+    "racial_discrimination_lending",
+    "overdraft_fee_extraction",
+    "mortgage_fraud",
+    "consumer_protection_violations",
+    "unlawful_debt_collection"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
   "tax": {
     "summary": "Bank of America uses offshore subsidiaries in the Cayman Islands, Ireland, and other jurisdictions to minimize tax obligations. The bank benefited significantly from the 2017 Tax Cuts and Jobs Act. BofA has been cited for aggressive transfer pricing between its international subsidiaries. The bank holds significant deferred tax assets from losses during the financial crisis — reducing its effective tax rate for years.",
-    "flags": ["cayman_offshore_structures", "tcja_windfall", "crisis_era_deferred_tax_assets"],
-    "sources": ["https://www.sec.gov"]
+    "flags": [
+      "cayman_offshore_structures",
+      "tcja_windfall",
+      "crisis_era_deferred_tax_assets"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
   },
   "legal": {
     "summary": "2014: $17 billion DOJ settlement — largest civil settlement with a single entity at the time — for Countrywide's fraudulent mortgage-backed securities. 2011: $8.5 billion settlement with investors for mortgage securities fraud. 2013: $1.7 billion FHA mortgage settlement. CFPB actions: 2022, BofA paid $225 million for botched pandemic unemployment benefit payments; 2023, $250 million for junk fees, withholding credit card rewards, and opening fake accounts. DOJ: $335 million for racial discrimination against Black and Hispanic borrowers (2011). Multiple state settlements for unlawful debt collection. FTC: settlements for student loan and debt collection abuses. Total regulatory penalty payments since 2010 approach $80 billion.",
-    "flags": ["17b_doj_settlement_countrywide", "225m_pandemic_benefits_botch", "250m_cfpb_junk_fees_fake_accounts", "335m_racial_lending_discrimination", "80b_total_penalties"],
-    "sources": ["https://www.justice.gov", "https://www.consumerfinance.gov"]
+    "flags": [
+      "17b_doj_settlement_countrywide",
+      "225m_pandemic_benefits_botch",
+      "250m_cfpb_junk_fees_fake_accounts",
+      "335m_racial_lending_discrimination",
+      "80b_total_penalties"
+    ],
+    "sources": [
+      "https://www.justice.gov",
+      "https://www.consumerfinance.gov"
+    ]
   },
   "labor": {
     "summary": "Bank of America employs approximately 213,000 people. The bank has conducted multiple rounds of layoffs during economic downturns while maintaining executive compensation. BofA has been subject to NLRB complaints for workplace violations. The bank's call center and branch workforce has faced high-pressure sales metrics — a documented pattern across large banks following the Wells Fargo fake account scandal.",
-    "flags": ["high_pressure_sales_metrics", "layoff_cycles_vs_executive_pay", "nlrb_complaints"],
+    "flags": [
+      "high_pressure_sales_metrics",
+      "layoff_cycles_vs_executive_pay",
+      "nlrb_complaints"
+    ],
     "sources": []
   },
   "environmental": {
     "summary": "Bank of America has made significant renewable energy commitments and is considered relatively progressive among major banks on climate finance. However, the bank continues to finance fossil fuel extraction projects and has been named in shareholder resolutions challenging the gap between its commitments and its financing. BofA provided approximately $198 billion in fossil fuel financing between 2016 and 2022.",
-    "flags": ["fossil_fuel_financing_198b", "climate_commitment_gap"],
-    "sources": ["https://www.banktrack.org"]
+    "flags": [
+      "fossil_fuel_financing_198b",
+      "climate_commitment_gap"
+    ],
+    "sources": [
+      "https://www.banktrack.org"
+    ]
   },
   "political": {
     "summary": "Bank of America spent $4.9 million on federal lobbying in 2023. The bank has lobbied against CFPB oversight authority, overdraft fee regulation, and debt collection restrictions. The revolving door between BofA's government affairs team and Treasury, SEC, and CFPB is documented. BofA's PAC contributes to both parties with concentration among banking committee members.",
-    "flags": ["cfpb_oversight_opposition", "overdraft_regulation_opposition", "revolving_door_treasury_cfpb"],
-    "sources": ["https://www.opensecrets.org"]
+    "flags": [
+      "cfpb_oversight_opposition",
+      "overdraft_regulation_opposition",
+      "revolving_door_treasury_cfpb"
+    ],
+    "sources": [
+      "https://www.opensecrets.org"
+    ]
   },
   "executives": {
     "summary": "CEO Brian Moynihan received $29.5 million in total compensation in 2023. Moynihan has led BofA since 2010 and has presided over the resolution of Countrywide liabilities while building the bank back to profitability. Countrywide founder Angelo Mozilo — whose predatory lending practices generated BofA's largest liabilities — settled SEC charges for $67.5 million and avoided criminal prosecution despite documenting his own concern about Countrywide's practices in emails that later emerged in discovery.",
-    "flags": ["mozilo_67_5m_personal_settlement_no_criminal", "moynihan_29_5m_post_countrywide"],
-    "sources": ["https://www.sec.gov"]
+    "flags": [
+      "mozilo_67_5m_personal_settlement_no_criminal",
+      "moynihan_29_5m_post_countrywide"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
   },
   "connections": {
     "summary": "Bank of America shares major institutional investors with JPMorgan Chase, Wells Fargo, and Citigroup — creating aligned incentives across the four largest U.S. banks. BofA's Merrill Lynch acquisition gave it access to wealth management and investment banking, creating conflicts of interest between retail banking clients and institutional trading clients. The Countrywide acquisition — driven by then-CEO Ken Lewis's desire for market share — created the liability that required $17 billion in settlements paid by BofA shareholders, not the Countrywide executives who designed the predatory lending.",
-    "flags": ["big_four_bank_shared_investor_alignment", "countrywide_liability_shareholder_bore", "merrill_lynch_retail_institutional_conflict"],
+    "flags": [
+      "big_four_bank_shared_investor_alignment",
+      "countrywide_liability_shareholder_bore",
+      "merrill_lynch_retail_institutional_conflict"
+    ],
     "sources": []
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
     "summary": "The CFPB's 2023 enforcement action found that BofA opened fake accounts and credit cards in customers' names without consent — a practice nearly identical to the Wells Fargo scandal. Former BofA employees alleged that sales pressure created an environment where unauthorized account opening was the path of least resistance. Bloomberg reporting in 2022 documented that BofA's algorithm for pandemic unemployment benefits wrongfully froze hundreds of thousands of accounts — affecting some of the most vulnerable Americans at their most desperate moment — without adequate review.",
-    "flags": ["fake_accounts_similar_to_wells_fargo_alleged", "pandemic_benefit_algorithm_wrongful_freezes_documented"],
-    "sources": ["https://www.consumerfinance.gov", "https://www.bloomberg.com"]
+    "flags": [
+      "fake_accounts_similar_to_wells_fargo_alleged",
+      "pandemic_benefit_algorithm_wrongful_freezes_documented"
+    ],
+    "sources": [
+      "https://www.consumerfinance.gov",
+      "https://www.bloomberg.com"
+    ]
   },
   "health_record": {
     "summary": "Bank of America's predatory mortgage lending — through Countrywide — contributed to the foreclosure crisis that generated documented health consequences including increased suicide rates, stress-related disease, and housing instability. Black and Hispanic borrowers were disproportionately steered into subprime mortgages, generating the racial discrimination settlement — and the wealth destruction from foreclosures fell disproportionately on communities of color, with documented generational health consequences. The pandemic benefits botch — wrongfully freezing accounts of vulnerable workers — caused direct economic harm during a public health emergency.",
-    "flags": ["foreclosure_crisis_health_impacts", "racial_discrimination_wealth_health_consequences", "pandemic_benefits_wrongful_freeze_harm"],
+    "flags": [
+      "foreclosure_crisis_health_impacts",
+      "racial_discrimination_wealth_health_consequences",
+      "pandemic_benefits_wrongful_freeze_harm"
+    ],
     "sources": []
   },
   "alternatives": {
-    "cheaper": ["Credit unions — member-owned, lower fees, no shareholder profit extraction, NCUA insured", "Online banks (Ally, Marcus, Discover) — higher savings rates, lower fees, no overdraft fee traps", "Local community banks — relationship banking, profits stay local"],
-    "healthier": ["Credit unions have documented better customer satisfaction and lower fee structures than Bank of America", "Community Development Financial Institutions for underserved borrowers — mission-driven lending without predatory terms"],
-    "diy": ["Switch banks — moving a checking account takes 30 minutes and the impact of reducing deposits at BofA is real", "Opt out of overdraft 'protection' — BofA's overdraft fee product is a high-interest loan masquerading as a feature", "File CFPB complaints for any fee or account issue — the CFPB database is public and enforcement is driven by complaint volume"]
+    "cheaper": [
+      "Credit unions — member-owned, lower fees, no shareholder profit extraction, NCUA insured",
+      "Online banks (Ally, Marcus, Discover) — higher savings rates, lower fees, no overdraft fee traps",
+      "Local community banks — relationship banking, profits stay local"
+    ],
+    "healthier": [
+      "Credit unions have documented better customer satisfaction and lower fee structures than Bank of America",
+      "Community Development Financial Institutions for underserved borrowers — mission-driven lending without predatory terms"
+    ],
+    "diy": [
+      "Switch banks — moving a checking account takes 30 minutes and the impact of reducing deposits at BofA is real",
+      "Opt out of overdraft 'protection' — BofA's overdraft fee product is a high-interest loan masquerading as a feature",
+      "File CFPB complaints for any fee or account issue — the CFPB database is public and enforcement is driven by complaint volume"
+    ]
   },
   "timeline": [
-    {"year": 1904, "event": "Bank of Italy founded in San Francisco; later renamed Bank of America", "severity": "neutral", "source_url": ""},
-    {"year": 1998, "event": "NationsBank acquires Bank of America; takes the Bank of America name", "severity": "neutral", "source_url": ""},
-    {"year": 2008, "event": "Acquires Countrywide Financial — the most predatory mortgage lender in U.S. history — as housing market collapses", "severity": "critical", "source_url": ""},
-    {"year": 2008, "event": "Acquires Merrill Lynch during financial crisis; takes on additional mortgage liability", "severity": "high", "source_url": ""},
-    {"year": 2010, "event": "Receives $45B in TARP bailout funds; CEO Ken Lewis departs", "severity": "high", "source_url": ""},
-    {"year": 2011, "event": "$335M DOJ settlement for racial discrimination in lending against Black and Hispanic borrowers", "severity": "critical", "source_url": ""},
-    {"year": 2011, "event": "$8.5B investor settlement for mortgage securities fraud", "severity": "critical", "source_url": ""},
-    {"year": 2014, "event": "$17B DOJ settlement for Countrywide mortgage fraud — largest civil DOJ settlement in U.S. history at time", "severity": "critical", "source_url": "https://www.justice.gov"},
-    {"year": 2022, "event": "CFPB: $225M for botching pandemic unemployment benefit payments; wrongful account freezes", "severity": "critical", "source_url": "https://www.consumerfinance.gov"},
-    {"year": 2023, "event": "CFPB: $250M for junk fees, withholding credit card rewards, opening fake accounts without consent", "severity": "critical", "source_url": "https://www.consumerfinance.gov"}
+    {
+      "year": 1904,
+      "event": "Bank of Italy founded in San Francisco; later renamed Bank of America",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1998,
+      "event": "NationsBank acquires Bank of America; takes the Bank of America name",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2008,
+      "event": "Acquires Countrywide Financial — the most predatory mortgage lender in U.S. history — as housing market collapses",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2008,
+      "event": "Acquires Merrill Lynch during financial crisis; takes on additional mortgage liability",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2010,
+      "event": "Receives $45B in TARP bailout funds; CEO Ken Lewis departs",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2011,
+      "event": "$335M DOJ settlement for racial discrimination in lending against Black and Hispanic borrowers",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2011,
+      "event": "$8.5B investor settlement for mortgage securities fraud",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2014,
+      "event": "$17B DOJ settlement for Countrywide mortgage fraud — largest civil DOJ settlement in U.S. history at time",
+      "severity": "critical",
+      "source_url": "https://www.justice.gov"
+    },
+    {
+      "year": 2022,
+      "event": "CFPB: $225M for botching pandemic unemployment benefit payments; wrongful account freezes",
+      "severity": "critical",
+      "source_url": "https://www.consumerfinance.gov"
+    },
+    {
+      "year": 2023,
+      "event": "CFPB: $250M for junk fees, withholding credit card rewards, opening fake accounts without consent",
+      "severity": "critical",
+      "source_url": "https://www.consumerfinance.gov"
+    }
   ],
   "community_impact": {
     "displacement": "Countrywide's predatory lending — which BofA inherited — specifically targeted Black and Hispanic communities with subprime mortgages that were designed to fail. The resulting foreclosures destroyed generational wealth in communities of color. Neighborhoods with high foreclosure concentrations experienced documented increases in crime, decreased property values, and population loss that have not recovered.",
@@ -81,15 +210,36 @@
   },
   "cost_absorption": {
     "who_benefited": [
-      {"group": "Countrywide executives (pre-acquisition)", "how": "Angelo Mozilo's $470M in compensation during predatory lending period; $67.5M personal settlement — no criminal charges"},
-      {"group": "BofA shareholders (long-term)", "how": "Bank returned to profitability after absorbing crisis liabilities; bailout backstopped the downside"},
-      {"group": "Brian Moynihan", "how": "$29.5M in 2023 compensation for managing crisis aftermath"}
+      {
+        "group": "Countrywide executives (pre-acquisition)",
+        "how": "Angelo Mozilo's $470M in compensation during predatory lending period; $67.5M personal settlement — no criminal charges"
+      },
+      {
+        "group": "BofA shareholders (long-term)",
+        "how": "Bank returned to profitability after absorbing crisis liabilities; bailout backstopped the downside"
+      },
+      {
+        "group": "Brian Moynihan",
+        "how": "$29.5M in 2023 compensation for managing crisis aftermath"
+      }
     ],
     "who_paid": [
-      {"group": "Black and Hispanic mortgage borrowers", "how": "Steered into predatory subprime loans; $335M discrimination settlement represents partial acknowledgment"},
-      {"group": "All BofA retail customers", "how": "Junk fees, withheld rewards, overdraft extraction; CFPB settlements represent documented pattern"},
-      {"group": "U.S. taxpayers", "how": "$45B TARP backstop for crisis created by predatory practices"},
-      {"group": "Pandemic unemployment recipients", "how": "Wrongful account freezes during economic emergency; $225M settlement"}
+      {
+        "group": "Black and Hispanic mortgage borrowers",
+        "how": "Steered into predatory subprime loans; $335M discrimination settlement represents partial acknowledgment"
+      },
+      {
+        "group": "All BofA retail customers",
+        "how": "Junk fees, withheld rewards, overdraft extraction; CFPB settlements represent documented pattern"
+      },
+      {
+        "group": "U.S. taxpayers",
+        "how": "$45B TARP backstop for crisis created by predatory practices"
+      },
+      {
+        "group": "Pandemic unemployment recipients",
+        "how": "Wrongful account freezes during economic emergency; $225M settlement"
+      }
     ],
     "the_gap": "Countrywide targeted Black and Hispanic homeowners with predatory loans that were designed to fail. BofA bought Countrywide, paid $17 billion to settle, and Angelo Mozilo avoided prison. The wealth that was destroyed in those communities has not returned."
   }

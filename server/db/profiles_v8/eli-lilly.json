@@ -3,76 +3,215 @@
   "brand_slug": "eli-lilly",
   "parent_company": "Eli Lilly and Company",
   "ultimate_parent": "Eli Lilly and Company",
-  "subsidiaries": ["Lilly USA", "Lilly Oncology", "Lilly Diabetes", "Alnylam (partner)"],
+  "subsidiaries": [
+    "Lilly USA",
+    "Lilly Oncology",
+    "Lilly Diabetes",
+    "Alnylam (partner)"
+  ],
   "overall_concern_level": "significant",
   "profile_type": "database",
   "generated_headline": "ELI LILLY RAISED INSULIN PRICES 1,000% OVER 20 YEARS ON A DRUG DISCOVERED IN 1921 AND DONATED TO HUMANITY",
   "executive_summary": "Eli Lilly is one of the three dominant insulin manufacturers in the United States — alongside Novo Nordisk and Sanofi — collectively controlling 99% of the insulin market by value. Insulin was discovered in 1921 by Frederick Banting and Charles Best, who sold the patent to the University of Toronto for $1 each, explicitly so the drug would remain affordable. Over the following century, Eli Lilly and its competitors raised insulin prices by over 1,000% — turning a drug that costs approximately $2-6 to manufacture into a product priced at $274-530 per vial. Over 8 million Americans require insulin to survive. People have died rationing insulin due to cost. Lilly has faced lawsuits from over 20 state attorneys general, hundreds of municipalities, and federal regulators. The company has also made enormous profit from Mounjaro/Zepbound (tirzepatide) for diabetes and weight loss, raising new pricing concerns.",
-  "verdict_tags": ["insulin_price_gouging_1000pct", "price_fixing_pbm_coordination", "state_ag_lawsuits_20_plus", "rationing_deaths", "patent_abuse_evergreening", "lobbying_against_price_regulation"],
-  "concern_flags": {"labor": false, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
+  "verdict_tags": [
+    "insulin_price_gouging_1000pct",
+    "price_fixing_pbm_coordination",
+    "state_ag_lawsuits_20_plus",
+    "rationing_deaths",
+    "patent_abuse_evergreening",
+    "lobbying_against_price_regulation"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
   "tax": {
     "summary": "Eli Lilly is headquartered in Indianapolis but uses Irish and other international subsidiary structures to minimize U.S. tax obligations on global pharmaceutical profits. The company's Puerto Rico manufacturing operations benefit from pharmaceutical-specific tax provisions. Lilly spent $395 million on insulin R&D between 2014 and 2018 while spending $1.5 billion on insulin sales and marketing over the same period — generating $22.4 billion in insulin revenue. The R&D deduction justification for high insulin prices does not hold up against these ratios.",
-    "flags": ["irish_subsidiary_structures", "puerto_rico_tax_provisions", "marketing_exceeds_r_and_d_documented"],
-    "sources": ["https://www.sec.gov"]
+    "flags": [
+      "irish_subsidiary_structures",
+      "puerto_rico_tax_provisions",
+      "marketing_exceeds_r_and_d_documented"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
   },
   "legal": {
     "summary": "MDL 3080 — In re Insulin Pricing Litigation — consolidates hundreds of lawsuits from state attorneys general and municipalities alleging that Eli Lilly, Novo Nordisk, Sanofi, and the Big Three PBMs coordinated to artificially inflate insulin prices. As of April 2026, over 416 cases are pending. Minnesota settlement (February 2024): Eli Lilly agreed to cap insulin prices at $35/month for all Minnesotans for 5 years. Prior class action settlement: $13.5 million to resolve consumer claims, contested by 9 state AGs as insufficient. Senate Finance Committee investigations documented how Lilly's list price increases for Humalog (its primary insulin) far outpaced inflation and manufacturing cost increases. DOJ has investigated Lilly for anti-competitive pricing tactics.",
-    "flags": ["416_pending_lawsuits_mld_3080", "20_plus_state_ag_actions", "senate_investigation_documented", "minnesota_35_settlement"],
-    "sources": ["https://www.ag.state.mn.us/Office/Communications/2024/02/07_EliLilly.asp", "https://levinlaw.com/insulin-overpricing-lawsuit"]
+    "flags": [
+      "416_pending_lawsuits_mld_3080",
+      "20_plus_state_ag_actions",
+      "senate_investigation_documented",
+      "minnesota_35_settlement"
+    ],
+    "sources": [
+      "https://www.ag.state.mn.us/Office/Communications/2024/02/07_EliLilly.asp",
+      "https://levinlaw.com/insulin-overpricing-lawsuit"
+    ]
   },
   "labor": {
     "summary": "Eli Lilly employs approximately 43,000 people. The company has conducted workforce reductions while maintaining executive compensation and investing in new product marketing. Lilly's manufacturing workforce in Indianapolis has been stable relative to its growth. The company's marketing force — which spent $1.5 billion marketing insulin in four years — significantly outnumbers its research workforce.",
-    "flags": ["marketing_workforce_exceeds_research_proportion", "executive_compensation_maintained_through_pricing_controversy"],
+    "flags": [
+      "marketing_workforce_exceeds_research_proportion",
+      "executive_compensation_maintained_through_pricing_controversy"
+    ],
     "sources": []
   },
   "environmental": {
     "summary": "Eli Lilly's pharmaceutical manufacturing generates chemical waste streams requiring specialized handling. The company has faced EPA enforcement actions at manufacturing facilities. Pharmaceutical pollution from manufacturing discharge — including active pharmaceutical ingredients in wastewater — is a documented environmental concern at Lilly's global facilities.",
-    "flags": ["pharmaceutical_manufacturing_waste", "api_wastewater_discharge"],
-    "sources": ["https://echo.epa.gov"]
+    "flags": [
+      "pharmaceutical_manufacturing_waste",
+      "api_wastewater_discharge"
+    ],
+    "sources": [
+      "https://echo.epa.gov"
+    ]
   },
   "political": {
     "summary": "Eli Lilly spent $10.2 million on federal lobbying in 2023. The company has consistently opposed legislation that would allow Medicare to negotiate drug prices — insulin negotiation specifically. Lilly lobbied against the Inflation Reduction Act's drug pricing provisions while simultaneously making public announcements of voluntary price caps ($35/month) that generated positive press. The Senate Finance Committee investigation documented the gap between Lilly's public statements about affordability and its actual pricing practices. Lilly's PAC contributes to members of both parties on healthcare committees.",
-    "flags": ["ira_drug_pricing_opposition", "medicare_negotiation_opposition", "voluntary_caps_vs_lobbying_contradiction"],
-    "sources": ["https://www.opensecrets.org"]
+    "flags": [
+      "ira_drug_pricing_opposition",
+      "medicare_negotiation_opposition",
+      "voluntary_caps_vs_lobbying_contradiction"
+    ],
+    "sources": [
+      "https://www.opensecrets.org"
+    ]
   },
   "executives": {
     "summary": "CEO David Ricks received $25.3 million in total compensation in 2023. Ricks has presided over both the insulin pricing controversy and the dramatic rise of Lilly's GLP-1 drug tirzepatide (Mounjaro/Zepbound), which has driven Lilly's market capitalization above $700 billion. The company's stock performance — driven by tirzepatide — has enriched executives and shareholders while insulin pricing lawsuits continue. Lilly's response to the insulin pricing crisis has been to announce voluntary price caps while simultaneously lobbying against mandatory price regulation.",
-    "flags": ["25m_ceo_compensation_during_pricing_crisis", "tirzepatide_windfall_vs_insulin_lawsuits", "voluntary_caps_lobbying_against_mandatory"],
-    "sources": ["https://www.sec.gov"]
+    "flags": [
+      "25m_ceo_compensation_during_pricing_crisis",
+      "tirzepatide_windfall_vs_insulin_lawsuits",
+      "voluntary_caps_lobbying_against_mandatory"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
   },
   "connections": {
     "summary": "Eli Lilly's insulin pricing is inseparable from the PBM pricing system — Lilly, Novo Nordisk, and Sanofi raised list prices primarily to fund PBM rebates, which are calculated as a percentage of list price. The higher the list price, the larger the rebate a PBM can claim. This rebate system — which the FTC's 2024 lawsuit against the Big Three PBMs addresses — means Lilly's list price increases and PBM pricing practices are a coordinated system. Lilly shares major institutional investors with Pfizer, AbbVie, and other pharma companies, creating aligned incentives against drug price regulation across the sector.",
-    "flags": ["pbm_rebate_list_price_coordination", "three_insulin_manufacturers_99pct_market_control", "cross_pharma_shared_investor_alignment"],
-    "sources": ["https://www.ftc.gov"]
+    "flags": [
+      "pbm_rebate_list_price_coordination",
+      "three_insulin_manufacturers_99pct_market_control",
+      "cross_pharma_shared_investor_alignment"
+    ],
+    "sources": [
+      "https://www.ftc.gov"
+    ]
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
     "summary": "State attorneys general have alleged that Lilly's 'evergreening' strategy — making minor reformulations to reset patent clocks and delay generic competition — was a deliberate tactic to maintain monopoly pricing on insulin products for which the underlying patents had expired. Advocacy groups have documented deaths of diabetic patients who rationed insulin due to cost, including Josh Wilkerson (26), Alec Raeshawn Smith (26), and Shane Patrick Boyle (48) — individuals who could not afford their insulin. Lilly has described its pricing as a 'complex system' while simultaneously claiming its insulin remains affordable — a characterization contradicted by the documented deaths and rationing behavior.",
-    "flags": ["evergreening_patent_extension_alleged", "rationing_deaths_documented_named_individuals", "affordability_claim_contradicted_by_deaths"],
-    "sources": ["https://www.acpjournals.org"]
+    "flags": [
+      "evergreening_patent_extension_alleged",
+      "rationing_deaths_documented_named_individuals",
+      "affordability_claim_contradicted_by_deaths"
+    ],
+    "sources": [
+      "https://www.acpjournals.org"
+    ]
   },
   "health_record": {
     "summary": "Insulin is not optional for Type 1 diabetics — they die within days without it. The 1,000% price increase over 20 years has documented consequences: people rationing doses, skipping injections, developing complications from under-treatment, and dying. The American Diabetes Association documented that 1 in 4 insulin users report rationing doses due to cost. Documented deaths from insulin rationing include multiple named individuals whose families have testified before Congress. Meanwhile, Lilly's Humalog — a biologic insulin first approved in 1996 — costs approximately $35 in Canada for the same product that costs $274-530 in the United States.",
-    "flags": ["1_in_4_rationing_documented_aha", "named_deaths_congressional_testimony", "35_canada_vs_274_530_us_identical_product"],
-    "sources": ["https://www.diabetes.org", "https://www.acpjournals.org"]
+    "flags": [
+      "1_in_4_rationing_documented_aha",
+      "named_deaths_congressional_testimony",
+      "35_canada_vs_274_530_us_identical_product"
+    ],
+    "sources": [
+      "https://www.diabetes.org",
+      "https://www.acpjournals.org"
+    ]
   },
   "alternatives": {
-    "cheaper": ["Mark Cuban's Cost Plus Drugs — offers insulin at dramatically reduced prices; Eli Lilly's Basaglar at $33/vial vs $280+ list price", "Canadian pharmacies by mail — legally accessible for personal use; prices 70-90% lower for identical products", "Walmart's ReliOn insulin — OTC insulin at $25/vial (older formulation, less effective for some diabetics, consult physician)", "Eli Lilly's Insulin Value Program — caps out-of-pocket at $35/month for commercially insured patients"],
-    "healthier": ["Biosimilar insulins — when patent protections expire, generic equivalents become available at lower prices; Civica Rx is developing affordable biosimilar insulin", "Patient advocacy groups can assist with manufacturer patient assistance programs for those below income thresholds"],
-    "diy": ["State attorney general complaints — most state AGs have active insulin pricing investigations; reporting your experience contributes to enforcement record", "Advocacy for Medicare drug price negotiation — the single policy change most likely to reduce insulin prices across the board", "Insulin rationing is medically dangerous — if rationing, contact your local FQHC, free clinic, or state pharmaceutical assistance program for emergency access"]
+    "cheaper": [
+      "Mark Cuban's Cost Plus Drugs — offers insulin at dramatically reduced prices; Eli Lilly's Basaglar at $33/vial vs $280+ list price",
+      "Canadian pharmacies by mail — legally accessible for personal use; prices 70-90% lower for identical products",
+      "Walmart's ReliOn insulin — OTC insulin at $25/vial (older formulation, less effective for some diabetics, consult physician)",
+      "Eli Lilly's Insulin Value Program — caps out-of-pocket at $35/month for commercially insured patients"
+    ],
+    "healthier": [
+      "Biosimilar insulins — when patent protections expire, generic equivalents become available at lower prices; Civica Rx is developing affordable biosimilar insulin",
+      "Patient advocacy groups can assist with manufacturer patient assistance programs for those below income thresholds"
+    ],
+    "diy": [
+      "State attorney general complaints — most state AGs have active insulin pricing investigations; reporting your experience contributes to enforcement record",
+      "Advocacy for Medicare drug price negotiation — the single policy change most likely to reduce insulin prices across the board",
+      "Insulin rationing is medically dangerous — if rationing, contact your local FQHC, free clinic, or state pharmaceutical assistance program for emergency access"
+    ]
   },
   "timeline": [
-    {"year": 1921, "event": "Insulin discovered by Banting and Best; patent sold to University of Toronto for $1 each to ensure affordability", "severity": "neutral", "source_url": ""},
-    {"year": 1923, "event": "Eli Lilly licenses insulin; begins commercial production", "severity": "neutral", "source_url": ""},
-    {"year": 1996, "event": "Humalog (insulin lispro) approved — one of Lilly's core insulin products; list price ~$21/vial", "severity": "neutral", "source_url": ""},
-    {"year": 2010, "event": "Humalog list price reaches $93/vial; 4x increase over 14 years", "severity": "high", "source_url": ""},
-    {"year": 2017, "event": "Alec Raeshawn Smith, 26, dies rationing insulin after aging off parents' insurance; case becomes national symbol", "severity": "critical", "source_url": ""},
-    {"year": 2018, "event": "Humalog list price reaches $274/vial; Senate Finance Committee opens investigation", "severity": "critical", "source_url": ""},
-    {"year": 2018, "event": "Minnesota AG files first major state lawsuit against insulin manufacturers", "severity": "high", "source_url": ""},
-    {"year": 2023, "event": "Lilly announces voluntary 70% price cut on most-used insulins; expands $35/month cap program", "severity": "moderate", "source_url": ""},
-    {"year": 2023, "event": "MDL 3080 created: 416+ lawsuits consolidated in NJ federal court against insulin manufacturers and PBMs", "severity": "critical", "source_url": ""},
-    {"year": 2024, "event": "Minnesota settlement: Lilly caps insulin at $35/month for all Minnesotans for 5 years", "severity": "moderate", "source_url": "https://www.ag.state.mn.us/Office/Communications/2024/02/07_EliLilly.asp"},
-    {"year": 2026, "event": "416 lawsuits pending; Lilly's market cap exceeds $700B driven by tirzepatide weight loss drug", "severity": "moderate", "source_url": ""}
+    {
+      "year": 1921,
+      "event": "Insulin discovered by Banting and Best; patent sold to University of Toronto for $1 each to ensure affordability",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1923,
+      "event": "Eli Lilly licenses insulin; begins commercial production",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1996,
+      "event": "Humalog (insulin lispro) approved — one of Lilly's core insulin products; list price ~$21/vial",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2010,
+      "event": "Humalog list price reaches $93/vial; 4x increase over 14 years",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "Alec Raeshawn Smith, 26, dies rationing insulin after aging off parents' insurance; case becomes national symbol",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "Humalog list price reaches $274/vial; Senate Finance Committee opens investigation",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "Minnesota AG files first major state lawsuit against insulin manufacturers",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "Lilly announces voluntary 70% price cut on most-used insulins; expands $35/month cap program",
+      "severity": "moderate",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "MDL 3080 created: 416+ lawsuits consolidated in NJ federal court against insulin manufacturers and PBMs",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "Minnesota settlement: Lilly caps insulin at $35/month for all Minnesotans for 5 years",
+      "severity": "moderate",
+      "source_url": "https://www.ag.state.mn.us/Office/Communications/2024/02/07_EliLilly.asp"
+    },
+    {
+      "year": 2026,
+      "event": "416 lawsuits pending; Lilly's market cap exceeds $700B driven by tirzepatide weight loss drug",
+      "severity": "moderate",
+      "source_url": ""
+    }
   ],
   "community_impact": {
     "displacement": "The insulin pricing crisis has hit uninsured, underinsured, and lower-income diabetics hardest. People who lose employer-sponsored insurance face sudden exposure to list prices — the transition between jobs, the loss of a job, or the failure of the ACA marketplace can mean the difference between $35/month and $530/vial. Rural communities with higher rates of uninsured patients bear disproportionate exposure.",
@@ -82,15 +221,36 @@
   },
   "cost_absorption": {
     "who_benefited": [
-      {"group": "Eli Lilly shareholders", "how": "$700B+ market cap; insulin pricing generated enormous returns"},
-      {"group": "PBMs (CVS Caremark, Express Scripts, OptumRx)", "how": "Rebates calculated on list prices; higher list prices = larger rebates"},
-      {"group": "CEO David Ricks and executives", "how": "$25.3M annual compensation from pricing system that causes rationing"}
+      {
+        "group": "Eli Lilly shareholders",
+        "how": "$700B+ market cap; insulin pricing generated enormous returns"
+      },
+      {
+        "group": "PBMs (CVS Caremark, Express Scripts, OptumRx)",
+        "how": "Rebates calculated on list prices; higher list prices = larger rebates"
+      },
+      {
+        "group": "CEO David Ricks and executives",
+        "how": "$25.3M annual compensation from pricing system that causes rationing"
+      }
     ],
     "who_paid": [
-      {"group": "Uninsured and underinsured diabetics", "how": "1 in 4 reported rationing; named deaths including Alec Raeshawn Smith, Josh Wilkerson, Shane Patrick Boyle"},
-      {"group": "Employers and insurers", "how": "Health plan costs driven by inflated insulin prices; now suing in MDL 3080"},
-      {"group": "Medicare and Medicaid", "how": "Government programs paid inflated prices for decades before IRA negotiation authority"},
-      {"group": "Banting and Best's legacy", "how": "Sold the patent for $1 to ensure affordability; Lilly raised the price 1,000% in 100 years"}
+      {
+        "group": "Uninsured and underinsured diabetics",
+        "how": "1 in 4 reported rationing; named deaths including Alec Raeshawn Smith, Josh Wilkerson, Shane Patrick Boyle"
+      },
+      {
+        "group": "Employers and insurers",
+        "how": "Health plan costs driven by inflated insulin prices; now suing in MDL 3080"
+      },
+      {
+        "group": "Medicare and Medicaid",
+        "how": "Government programs paid inflated prices for decades before IRA negotiation authority"
+      },
+      {
+        "group": "Banting and Best's legacy",
+        "how": "Sold the patent for $1 to ensure affordability; Lilly raised the price 1,000% in 100 years"
+      }
     ],
     "the_gap": "Frederick Banting sold the insulin patent for $1 so no one would die from diabetes because they couldn't afford treatment. Alec Raeshawn Smith was 26 years old and died rationing it. Lilly's CEO made $25 million last year."
   }

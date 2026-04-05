@@ -1,0 +1,236 @@
+{
+  "brand_name": "MGM Resorts",
+  "brand_slug": "mgm-resorts",
+  "parent_company": "MGM Resorts International",
+  "ultimate_parent": "MGM Resorts International",
+  "subsidiaries": [
+    "Bellagio",
+    "MGM Grand",
+    "Mandalay Bay",
+    "The Cosmopolitan",
+    "Aria",
+    "Vdara",
+    "BetMGM (50%)"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "MGM GOT HACKED TWICE IN FOUR YEARS AND EXPOSED 37 MILLION GUESTS' DATA — INCLUDING SOCIAL SECURITY NUMBERS",
+  "executive_summary": "MGM Resorts International is one of the world's largest casino and hospitality operators, running 21 resort hotels with revenues exceeding $16 billion annually. The company suffered two major data breaches — in 2019 and 2023 — that together compromised the personal information of approximately 37 million guests, including names, Social Security numbers, passport numbers, driver's license numbers, and military ID numbers. The 2023 ransomware attack, executed by the Scattered Spider criminal group through basic social engineering of an IT help desk employee, shut down MGM's casino and hotel operations for ten days — costing $100 million in lost revenue. MGM paid $45 million in a class action settlement in 2025. The company's response to the first 2019 breach — which should have triggered enhanced security — clearly failed, as the 2023 attack succeeded through a technique any security professional could have anticipated.",
+  "verdict_tags": [
+    "data_breach_37m_guests",
+    "ransomware_100m_loss",
+    "social_security_numbers_exposed",
+    "repeat_breach_failure",
+    "cybersecurity_negligence",
+    "gambling_addiction_facilitation"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "MGM Resorts uses complex real estate structures including its MGM Growth Properties REIT — which holds casino real estate and leases it back to MGM operations — to minimize taxable income. The company has operations in multiple states and jurisdictions with different tax treatment. MGM's Macau operations (through MGM China) use offshore structures. The company received significant COVID-era government support.",
+    "flags": [
+      "reit_sale_leaseback_structure",
+      "macau_offshore_operations",
+      "covid_government_support"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
+  },
+  "legal": {
+    "summary": "2019 breach: Hackers stole data of 10.6 million guests; data appeared on dark web forums for sale. 2023 breach: Scattered Spider gained access through social engineering of IT help desk; ransomware deployed by ALPHV/BlackCat; ten days of operational disruption; $100 million in losses; 37 million total customers affected across both breaches. Class action consolidated into MDL in Nevada federal court. $45 million settlement approved June 2025; payments began December 2025. FTC opened investigation into MGM's cybersecurity practices — ultimately settled separately. MGM has also faced labor disputes and NLRB complaints at multiple properties.",
+    "flags": [
+      "45m_class_action_settlement",
+      "37m_records_exposed",
+      "ftc_investigation",
+      "repeat_breach_mdl"
+    ],
+    "sources": [
+      "https://www.mgmdatasettlement.com",
+      "https://www.cohenmilstein.com/mgm-agrees-to-pay-45-million"
+    ]
+  },
+  "labor": {
+    "summary": "MGM employs approximately 77,000 people. The company has faced union disputes with UNITE HERE, which represents hotel and casino workers. In 2023, UNITE HERE locals reached contracts after extended negotiations. MGM's tipped worker model — where servers, bartenders, and dealers rely on tips for most of their income — creates documented wage instability. The ransomware attack caused significant disruption for workers who had to revert to manual processes while systems were down.",
+    "flags": [
+      "tipped_worker_wage_instability",
+      "unite_here_disputes",
+      "ransomware_worker_disruption"
+    ],
+    "sources": [
+      "https://www.nlrb.gov"
+    ]
+  },
+  "environmental": {
+    "summary": "MGM's resort properties are among the largest energy consumers in Nevada. The company has made renewable energy commitments including solar installations at some properties. Water use in the desert environment — pools, fountains, landscaping — represents a documented environmental concern in a water-scarce region.",
+    "flags": [
+      "desert_water_consumption",
+      "energy_consumption_scale"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "MGM has been one of the largest political donors in Nevada for decades. The company's lobbying focuses on gaming regulation, taxation rates on casino revenue, and sports betting expansion. MGM's BetMGM joint venture with Entain connects it to the online gambling industry's lobbying against consumer protection regulations. MGM's political relationships with Nevada state government have been documented as central to the regulatory environment in which it operates.",
+    "flags": [
+      "nevada_gaming_regulation_lobbying",
+      "betmgm_online_gambling_lobbying",
+      "sports_betting_expansion"
+    ],
+    "sources": [
+      "https://www.opensecrets.org"
+    ]
+  },
+  "executives": {
+    "summary": "CEO Bill Hornbuckle received $13.4 million in total compensation in 2023. The company's cybersecurity leadership was effectively overruled by an entry-level social engineering attack — a 17-year-old UK teenager was among those arrested for the 2023 hack. MGM's decision not to pay the ransom (unlike Caesars, which paid $15 million) cost the company $100 million but followed FBI guidelines. The company's post-breach promise to invest $40 million in cybersecurity improvements represents an admission that prior investment was insufficient.",
+    "flags": [
+      "17_year_old_hacker_breached_systems",
+      "100m_cost_vs_pay_ransom_decision",
+      "40m_post_breach_security_investment"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
+  },
+  "connections": {
+    "summary": "MGM's BetMGM — a 50/50 joint venture with UK gambling company Entain — connects it to the online sports betting industry and its documented addiction and predatory design concerns. Both MGM and Caesars were attacked by the same criminal group (Scattered Spider / ALPHV-BlackCat) within weeks of each other in 2023, raising questions about industry-wide cybersecurity practices. MGM shares institutional investors with Caesars, Wynn, and other major casino operators through overlapping institutional holdings.",
+    "flags": [
+      "betmgm_entain_online_gambling",
+      "caesars_simultaneous_hack_pattern",
+      "casino_industry_investor_overlap"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The class action lawsuits alleged that MGM was negligent in failing to prevent the 2023 attack through basic social engineering — specifically that industry-standard multi-factor authentication and help desk verification protocols were not in place. Plaintiffs alleged that the 2019 breach should have prompted MGM to implement the exact controls that would have prevented the 2023 social engineering attack, and that MGM's failure to do so constitutes gross negligence. Former MGM IT employees have alleged in various proceedings that security budget requests were consistently deprioritized relative to revenue-generating technology spending.",
+    "flags": [
+      "gross_negligence_post_2019_failure_alleged",
+      "security_budget_deprioritized_alleged",
+      "help_desk_verification_failure"
+    ],
+    "sources": [
+      "https://www.mgmdatasettlement.com"
+    ]
+  },
+  "health_record": {
+    "summary": "MGM's primary documented health concern is the gambling addiction facilitated by its casino operations — MGM is the largest casino operator in the United States. Problem gambling affects an estimated 2-3% of the population with severe documented consequences including financial ruin, family breakdown, bankruptcy, and suicide. MGM's loyalty program — the database stolen in both breaches — is specifically designed to identify high-value gamblers and maximize their time and money spent on property. The same data used to identify VIP gamblers was the data stolen in the ransomware attack.",
+    "flags": [
+      "gambling_addiction_business_model",
+      "loyalty_program_high_value_gambler_targeting",
+      "stolen_data_was_addiction_targeting_data"
+    ],
+    "sources": [
+      "https://www.ncpgambling.org"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Independent hotels near casino areas — often dramatically lower prices without the gambling subsidy model",
+      "Airbnb and VRBO in Las Vegas — genuine alternatives at often 50-70% lower nightly rates",
+      "Smaller regional casinos with lower overhead and more personal service"
+    ],
+    "healthier": [
+      "Non-casino resorts — destinations built around wellness, nature, or culture rather than gambling",
+      "State and national parks as vacation alternatives — Nevada has extraordinary natural beauty beyond the Strip",
+      "Travel that does not require exchanging money for odds weighted against you"
+    ],
+    "diy": [
+      "If gambling: set a hard loss limit before entering any casino and leave when you hit it",
+      "National Problem Gambling Helpline: 1-800-522-4700",
+      "Self-exclusion programs — every state with legal gambling has a self-exclusion registry that casinos are legally required to honor"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1986,
+      "event": "MGM Grand Hotel founded in Las Vegas",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2000,
+      "event": "MGM acquires Mirage Resorts; begins building dominant Las Vegas Strip position",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "July: Hackers steal data of 10.6 million guests; data later appears for sale on dark web",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "COVID-19 forces extended casino closures; significant workforce reductions",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "BetMGM data breach discovered (separate incident); online gambling division also compromised",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "September: Scattered Spider social engineers IT help desk; ransomware deployed; 10 days of disruption; $100M loss; 37M total records compromised",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "FTC investigates cybersecurity practices; federal criminal charges filed against Scattered Spider members",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2025,
+      "event": "June: $45M class action settlement approved; December: payments distributed — $20-$75 per victim",
+      "severity": "high",
+      "source_url": "https://www.mgmdatasettlement.com"
+    }
+  ],
+  "community_impact": {
+    "displacement": "MGM's dominance of the Las Vegas Strip has contributed to the consolidation of casino hospitality into a handful of mega-operators, reducing competition and diversity. The company's labor practices affect tens of thousands of workers in a city where casino employment is the dominant industry.",
+    "price_illusion": "MGM's hotel pricing is subsidized by gambling losses — the business model requires that gamblers lose money to keep room rates competitive. The data collected through loyalty programs — the same data stolen in the breach — is specifically designed to maximize gambling behavior.",
+    "tax_math": "Nevada's gaming tax rates are among the lowest in the country — a regulatory environment MGM has lobbied to maintain. The REIT structure reduces corporate taxes on the most valuable assets. Tax rates calibrated to protect MGM's margins are calibrated against the public interest in adequate state revenue.",
+    "wealth_velocity": "Casino profits flow to MGM shareholders globally. The workers who serve gamblers — tipped employees dependent on visitor generosity — capture a small portion of the value they create. The Bellagio's fountain is not subsidized by visitor joy; it is subsidized by losing gamblers."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "MGM shareholders",
+        "how": "$16B+ annual revenue from casino operations; breach costs partially covered by insurance"
+      },
+      {
+        "group": "Scattered Spider criminal group",
+        "how": "Did not receive ransom from MGM but attacked Caesars simultaneously and received $15M"
+      },
+      {
+        "group": "MGM executives",
+        "how": "CEO received $13.4M in 2023 — breach year; cybersecurity underinvestment enabled by budget prioritization decisions"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "37 million guests",
+        "how": "Social Security numbers, passport numbers, driver's licenses exposed; $20-$75 per person in settlement"
+      },
+      {
+        "group": "MGM workers",
+        "how": "Ten days operating manually; customer-facing staff dealt with chaos from non-functioning systems"
+      },
+      {
+        "group": "MGM shareholders",
+        "how": "4% stock drop; $100M Q3 loss; $45M settlement; $40M security investment"
+      }
+    ],
+    "the_gap": "MGM was hacked in 2019. They knew the playbook. A teenager called the IT help desk, pretended to be an employee, and got login credentials. Four years and $100 million later. The 37 million victims got $20-$75 each."
+  }
+}

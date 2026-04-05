@@ -3,75 +3,208 @@
   "brand_slug": "merck",
   "parent_company": "Merck & Co. Inc.",
   "ultimate_parent": "Merck & Co. Inc.",
-  "subsidiaries": ["MSD (outside North America)", "Organon (spun off)", "Prometheus Biosciences (acquired)"],
+  "subsidiaries": [
+    "MSD (outside North America)",
+    "Organon (spun off)",
+    "Prometheus Biosciences (acquired)"
+  ],
   "overall_concern_level": "significant",
   "profile_type": "database",
   "generated_headline": "MERCK CONCEALED VIOXX'S HEART ATTACK RISK FOR YEARS — THE DRUG KILLED AN ESTIMATED 50,000 PEOPLE",
   "executive_summary": "Merck is one of the largest pharmaceutical companies in the world, with annual revenues exceeding $58 billion. The company's Vioxx (rofecoxib) scandal is among the most consequential pharmaceutical safety failures in history. Merck launched Vioxx in 1999 as a revolutionary painkiller, generating $2.5 billion in annual sales. Internal documents — revealed in litigation — showed Merck had data demonstrating elevated cardiovascular risk before the drug launched and actively concealed this information from physicians, patients, and the FDA. Vioxx was withdrawn in 2004 after a clinical trial confirmed the cardiovascular risk. Epidemiologists estimated Vioxx caused 88,000-140,000 heart attacks, killing approximately 50,000 people. Merck paid $4.85 billion to settle approximately 27,000 personal injury lawsuits.",
-  "verdict_tags": ["vioxx_50000_deaths_estimated", "cardiovascular_risk_concealment", "4_85b_settlement", "fda_misleading", "clinical_trial_manipulation", "price_gouging_patent_abuse"],
-  "concern_flags": {"labor": false, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
+  "verdict_tags": [
+    "vioxx_50000_deaths_estimated",
+    "cardiovascular_risk_concealment",
+    "4_85b_settlement",
+    "fda_misleading",
+    "clinical_trial_manipulation",
+    "price_gouging_patent_abuse"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
   "tax": {
     "summary": "Merck is incorporated in New Jersey but uses complex subsidiary structures in Ireland, Singapore, and other jurisdictions to minimize U.S. tax obligations on global pharmaceutical profits. The company's effective tax rate has consistently run below statutory rates. Merck has used transfer pricing between its domestic and international operations, including patent holding companies in low-tax jurisdictions. The company's 2021 acquisition of Acceleron Pharma for $11.5 billion generated goodwill deductions.",
-    "flags": ["irish_subsidiary_structures", "patent_holding_tax_havens", "transfer_pricing_international"],
-    "sources": ["https://www.sec.gov"]
+    "flags": [
+      "irish_subsidiary_structures",
+      "patent_holding_tax_havens",
+      "transfer_pricing_international"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
   },
   "legal": {
     "summary": "Vioxx: Merck paid $4.85 billion in 2007 to settle approximately 27,000 personal injury claims. This did not include wrongful death claims, government health program claims, or non-U.S. claims. The FDA filed a warning letter in 2001 after Merck submitted a misleading promotional piece claiming Vioxx was safer than competing painkillers. Internal Merck documents revealed in litigation included a training guide teaching sales representatives how to avoid discussing cardiovascular risk with physicians — later called the 'Dodge Ball Vioxx' document. Criminal referrals were made but no Merck executives were criminally prosecuted. Merck also paid $650 million in 2009 to settle allegations of illegal marketing of its drugs to Medicaid.",
-    "flags": ["4_85b_vioxx_settlement", "dodge_ball_training_document", "fda_warning_misleading_promotion", "650m_medicaid_marketing_settlement", "no_criminal_prosecutions"],
-    "sources": ["https://www.justice.gov"]
+    "flags": [
+      "4_85b_vioxx_settlement",
+      "dodge_ball_training_document",
+      "fda_warning_misleading_promotion",
+      "650m_medicaid_marketing_settlement",
+      "no_criminal_prosecutions"
+    ],
+    "sources": [
+      "https://www.justice.gov"
+    ]
   },
   "labor": {
     "summary": "Merck employs approximately 64,000 people. The company has conducted multiple workforce reductions following major drug patent expirations and restructurings. Following the Vioxx withdrawal, Merck eliminated approximately 7,000 positions. The company's research workforce is bifurcated between well-compensated scientists and lower-paid support staff at manufacturing facilities.",
-    "flags": ["post_vioxx_7000_layoffs", "restructuring_workforce_reductions"],
+    "flags": [
+      "post_vioxx_7000_layoffs",
+      "restructuring_workforce_reductions"
+    ],
     "sources": []
   },
   "environmental": {
     "summary": "Merck's pharmaceutical manufacturing generates chemical waste streams requiring specialized disposal. The company has received EPA enforcement citations for wastewater treatment violations and pharmaceutical waste disposal at manufacturing facilities. Merck's manufacturing facilities have been cited for air quality emissions in New Jersey and other states.",
-    "flags": ["pharmaceutical_manufacturing_waste", "epa_enforcement_wastewater", "manufacturing_air_emissions"],
-    "sources": ["https://echo.epa.gov"]
+    "flags": [
+      "pharmaceutical_manufacturing_waste",
+      "epa_enforcement_wastewater",
+      "manufacturing_air_emissions"
+    ],
+    "sources": [
+      "https://echo.epa.gov"
+    ]
   },
   "political": {
     "summary": "Merck spent $9.4 million on federal lobbying in 2023. The company has opposed Medicare drug price negotiation authority — fighting against the IRA's negotiation provisions that apply to its drugs including Keytruda, the world's best-selling cancer drug. Merck has lobbied against PBM reform, generic drug facilitation, and drug pricing transparency. The revolving door between Merck's government affairs team and FDA, HHS, and congressional health committees is documented.",
-    "flags": ["ira_negotiation_opposition_keytruda", "generic_drug_opposition", "revolving_door_fda_hhs"],
-    "sources": ["https://www.opensecrets.org"]
+    "flags": [
+      "ira_negotiation_opposition_keytruda",
+      "generic_drug_opposition",
+      "revolving_door_fda_hhs"
+    ],
+    "sources": [
+      "https://www.opensecrets.org"
+    ]
   },
   "executives": {
     "summary": "CEO Robert Davis received $19.4 million in total compensation in 2023. Former CEO Raymond Gilmartin led the company during the Vioxx period — he resigned following the drug's withdrawal but retained his pension and left with approximately $37 million in retirement benefits. No Merck executives faced criminal charges for the concealment of Vioxx's cardiovascular risk, despite internal documents showing awareness predating the drug's launch.",
-    "flags": ["gilmartin_37m_departure_no_charges", "no_criminal_prosecutions_concealment", "davis_19_4m_compensation"],
-    "sources": ["https://www.sec.gov"]
+    "flags": [
+      "gilmartin_37m_departure_no_charges",
+      "no_criminal_prosecutions_concealment",
+      "davis_19_4m_compensation"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
   },
   "connections": {
     "summary": "Merck's experience with Vioxx set off a broader conversation about pharmaceutical safety culture that remains ongoing. The drug's success — $2.5 billion annually — created financial pressure to protect it even as cardiovascular risk data accumulated. Merck shares major institutional investors with Pfizer, Johnson & Johnson, and other pharmaceutical companies, creating aligned incentives against drug pricing reform and stronger FDA oversight. Merck's Keytruda (pembrolizumab) — the world's best-selling drug — now generates $21+ billion annually, creating similar 'protect the franchise' incentives.",
-    "flags": ["vioxx_financial_pressure_concealment", "cross_pharma_shared_investors_against_reform", "keytruda_new_protect_the_franchise_concern"],
+    "flags": [
+      "vioxx_financial_pressure_concealment",
+      "cross_pharma_shared_investors_against_reform",
+      "keytruda_new_protect_the_franchise_concern"
+    ],
     "sources": []
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
     "summary": "The 'Dodge Ball Vioxx' internal training document — which taught sales reps to avoid cardiovascular questions by 'dodge, duck, dip, dive, and dodge' — was presented in litigation as evidence of deliberate strategy to prevent physicians from learning about risk. Former Merck scientists have alleged that internal statistical analyses showing cardiovascular risk were not shared with the FDA or published in medical literature as required. A 2005 New England Journal of Medicine editorial concluded that Merck 'misrepresented' Vioxx data in its own published clinical trial reports. The FDA's own review found Merck had data available 4 years before withdrawal that showed elevated cardiovascular risk.",
-    "flags": ["dodge_ball_document_deliberate_strategy", "fda_risk_data_4_years_early_alleged", "nejm_misrepresentation_editorial"],
-    "sources": ["https://www.nejm.org"]
+    "flags": [
+      "dodge_ball_document_deliberate_strategy",
+      "fda_risk_data_4_years_early_alleged",
+      "nejm_misrepresentation_editorial"
+    ],
+    "sources": [
+      "https://www.nejm.org"
+    ]
   },
   "health_record": {
     "summary": "Vioxx (rofecoxib) was estimated by epidemiologists at the FDA and academic institutions to have caused 88,000-140,000 serious cardiovascular events (heart attacks and strokes), with approximately 50,000 deaths. The drug was on the market from 1999-2004 — five years during which the cardiovascular risk was known internally and withheld. Merck's own data from the VIGOR trial in 2000 showed a 5-fold increase in heart attack rate — this data was published but characterized by Merck as a protective effect of the comparison drug (naproxen) rather than as harm from Vioxx. Subsequent analysis found this characterization was false.",
-    "flags": ["50000_deaths_estimated", "88000_140000_serious_cardiovascular_events", "vigor_trial_data_mischaracterized", "5_fold_heart_attack_increase"],
-    "sources": ["https://www.ncbi.nlm.nih.gov", "https://www.nejm.org"]
+    "flags": [
+      "50000_deaths_estimated",
+      "88000_140000_serious_cardiovascular_events",
+      "vigor_trial_data_mischaracterized",
+      "5_fold_heart_attack_increase"
+    ],
+    "sources": [
+      "https://www.ncbi.nlm.nih.gov",
+      "https://www.nejm.org"
+    ]
   },
   "alternatives": {
-    "cheaper": ["Generic ibuprofen and naproxen — the drugs Vioxx was positioned to replace; available for pennies per dose", "Acetaminophen — effective for many pain types without cardiovascular risk", "Topical NSAIDs — effective for localized pain with lower systemic risk"],
-    "healthier": ["Physical therapy for chronic pain — documented effectiveness with no drug-related cardiovascular risk", "Acupuncture for certain pain conditions — evidence base exists for specific indications", "Exercise-based pain management — documented effectiveness for osteoarthritis and back pain"],
-    "diy": ["Ask your physician about drug cardiovascular risk for any NSAID before starting long-term use", "Search ClinicalTrials.gov and Drugs@FDA for primary trial data on any medication you're prescribed", "Report adverse drug events to FDA MedWatch — your report contributes to post-market safety surveillance"]
+    "cheaper": [
+      "Generic ibuprofen and naproxen — the drugs Vioxx was positioned to replace; available for pennies per dose",
+      "Acetaminophen — effective for many pain types without cardiovascular risk",
+      "Topical NSAIDs — effective for localized pain with lower systemic risk"
+    ],
+    "healthier": [
+      "Physical therapy for chronic pain — documented effectiveness with no drug-related cardiovascular risk",
+      "Acupuncture for certain pain conditions — evidence base exists for specific indications",
+      "Exercise-based pain management — documented effectiveness for osteoarthritis and back pain"
+    ],
+    "diy": [
+      "Ask your physician about drug cardiovascular risk for any NSAID before starting long-term use",
+      "Search ClinicalTrials.gov and Drugs@FDA for primary trial data on any medication you're prescribed",
+      "Report adverse drug events to FDA MedWatch — your report contributes to post-market safety surveillance"
+    ]
   },
   "timeline": [
-    {"year": 1891, "event": "Merck & Co. established as U.S. subsidiary of German Merck KGaA", "severity": "neutral", "source_url": ""},
-    {"year": 1996, "event": "Merck's internal trials show COX-2 inhibitors (Vioxx precursors) elevate cardiovascular risk", "severity": "critical", "source_url": ""},
-    {"year": 1999, "event": "Vioxx approved by FDA; launched with aggressive direct-to-consumer marketing; $2.5B annual sales", "severity": "neutral", "source_url": ""},
-    {"year": 2000, "event": "VIGOR trial: 5-fold heart attack increase documented in Vioxx vs naproxen; Merck characterizes as naproxen protection", "severity": "critical", "source_url": ""},
-    {"year": 2001, "event": "FDA sends warning letter for misleading Vioxx promotional piece; 'Dodge Ball' training document exists", "severity": "critical", "source_url": ""},
-    {"year": 2004, "event": "APPROVe trial confirms cardiovascular risk; Merck voluntarily withdraws Vioxx from market", "severity": "critical", "source_url": ""},
-    {"year": 2005, "event": "FDA and epidemiologists estimate 88,000-140,000 serious cardiovascular events; ~50,000 deaths", "severity": "critical", "source_url": ""},
-    {"year": 2007, "event": "$4.85B settlement with ~27,000 personal injury claimants; no criminal prosecutions of executives", "severity": "critical", "source_url": ""},
-    {"year": 2009, "event": "$650M settlement for illegal Medicaid drug marketing", "severity": "high", "source_url": ""},
-    {"year": 2023, "event": "Merck sues U.S. government over IRA drug price negotiation — Keytruda generates $21B+ annually", "severity": "high", "source_url": ""}
+    {
+      "year": 1891,
+      "event": "Merck & Co. established as U.S. subsidiary of German Merck KGaA",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1996,
+      "event": "Merck's internal trials show COX-2 inhibitors (Vioxx precursors) elevate cardiovascular risk",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1999,
+      "event": "Vioxx approved by FDA; launched with aggressive direct-to-consumer marketing; $2.5B annual sales",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2000,
+      "event": "VIGOR trial: 5-fold heart attack increase documented in Vioxx vs naproxen; Merck characterizes as naproxen protection",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2001,
+      "event": "FDA sends warning letter for misleading Vioxx promotional piece; 'Dodge Ball' training document exists",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2004,
+      "event": "APPROVe trial confirms cardiovascular risk; Merck voluntarily withdraws Vioxx from market",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2005,
+      "event": "FDA and epidemiologists estimate 88,000-140,000 serious cardiovascular events; ~50,000 deaths",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2007,
+      "event": "$4.85B settlement with ~27,000 personal injury claimants; no criminal prosecutions of executives",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2009,
+      "event": "$650M settlement for illegal Medicaid drug marketing",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "Merck sues U.S. government over IRA drug price negotiation — Keytruda generates $21B+ annually",
+      "severity": "high",
+      "source_url": ""
+    }
   ],
   "community_impact": {
     "displacement": "Vioxx was disproportionately prescribed to older patients with arthritis — the demographic with highest cardiovascular risk. The 50,000 estimated deaths represented primarily the elderly population, whose deaths may have received less public attention than deaths of younger people. These were people's grandparents, parents, and spouses.",
@@ -81,15 +214,36 @@
   },
   "cost_absorption": {
     "who_benefited": [
-      {"group": "Merck shareholders 1999-2004", "how": "$12.5B in Vioxx revenue during 5-year market period; cardiovascular risk concealed to protect sales"},
-      {"group": "Raymond Gilmartin (departed CEO)", "how": "~$37M in retirement benefits; led company through Vioxx period; no criminal charges"},
-      {"group": "Merck sales force", "how": "Commission on $2.5B annual drug sales; trained to avoid cardiovascular questions"}
+      {
+        "group": "Merck shareholders 1999-2004",
+        "how": "$12.5B in Vioxx revenue during 5-year market period; cardiovascular risk concealed to protect sales"
+      },
+      {
+        "group": "Raymond Gilmartin (departed CEO)",
+        "how": "~$37M in retirement benefits; led company through Vioxx period; no criminal charges"
+      },
+      {
+        "group": "Merck sales force",
+        "how": "Commission on $2.5B annual drug sales; trained to avoid cardiovascular questions"
+      }
     ],
     "who_paid": [
-      {"group": "~50,000 people who died", "how": "Heart attacks and strokes from a drug whose risk Merck documented and concealed"},
-      {"group": "Surviving victims and families", "how": "$4.85B spread across 27,000 claimants — average $180K per claim for a heart attack or death"},
-      {"group": "Physicians who prescribed Vioxx", "how": "Made prescribing decisions based on information Merck withheld; loss of patient trust"},
-      {"group": "Medicare and Medicaid", "how": "Paid for a drug whose true risk profile was concealed; additional $650M marketing fraud settlement"}
+      {
+        "group": "~50,000 people who died",
+        "how": "Heart attacks and strokes from a drug whose risk Merck documented and concealed"
+      },
+      {
+        "group": "Surviving victims and families",
+        "how": "$4.85B spread across 27,000 claimants — average $180K per claim for a heart attack or death"
+      },
+      {
+        "group": "Physicians who prescribed Vioxx",
+        "how": "Made prescribing decisions based on information Merck withheld; loss of patient trust"
+      },
+      {
+        "group": "Medicare and Medicaid",
+        "how": "Paid for a drug whose true risk profile was concealed; additional $650M marketing fraud settlement"
+      }
     ],
     "the_gap": "Merck had data showing a 5-fold heart attack increase in 2000. They trained their sales force to dodge the question. They kept selling for four more years. 50,000 people died. Raymond Gilmartin retired with $37 million. No one went to prison."
   }

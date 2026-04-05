@@ -3,75 +3,209 @@
   "brand_slug": "tiktok-bytedance",
   "parent_company": "ByteDance Ltd.",
   "ultimate_parent": "ByteDance Ltd. (Zhang Yiming, founder)",
-  "subsidiaries": ["TikTok", "Douyin (China)", "CapCut", "Lemon8", "Pico (VR)"],
+  "subsidiaries": [
+    "TikTok",
+    "Douyin (China)",
+    "CapCut",
+    "Lemon8",
+    "Pico (VR)"
+  ],
   "overall_concern_level": "significant",
   "profile_type": "database",
   "generated_headline": "TIKTOK COLLECTED U.S. USER DATA, ROUTED IT TO CHINA, AND PAID $92 MILLION FOR SPYING ON CHILDREN",
   "executive_summary": "TikTok is the most-downloaded app in the world with approximately 1.7 billion users globally and 170 million in the United States. ByteDance, the Chinese parent company, is one of the most valuable private companies on earth. TikTok has been the subject of sustained national security concerns from the U.S. government based on: its Chinese ownership, the potential for ByteDance to share U.S. user data with the Chinese government under China's National Intelligence Law, documented cases of ByteDance employees accessing U.S. user data from China, and TikTok's algorithm potentially being used to influence information environments. TikTok paid $92 million in 2021 to settle federal class action lawsuits for illegally collecting biometric data from minors. The U.S. passed legislation requiring ByteDance to divest TikTok or face a ban — ByteDance appealed and continues operating.",
-  "verdict_tags": ["child_data_collection", "biometric_data_92m_settlement", "national_security_concerns", "chinese_data_access_documented", "algorithm_manipulation_alleged", "congressional_ban_legislation"],
-  "concern_flags": {"labor": false, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
+  "verdict_tags": [
+    "child_data_collection",
+    "biometric_data_92m_settlement",
+    "national_security_concerns",
+    "chinese_data_access_documented",
+    "algorithm_manipulation_alleged",
+    "congressional_ban_legislation"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
   "tax": {
     "summary": "ByteDance uses a Cayman Islands holding structure with operating subsidiaries in Singapore and China. This variable interest entity (VIE) structure — common for Chinese companies listing internationally — creates complex ownership arrangements designed to circumvent Chinese restrictions on foreign ownership of internet companies. TikTok's U.S. revenues — estimated at $16 billion in 2023 — are routed through this structure in ways that minimize U.S. tax obligations. ByteDance's effective global tax rate has been examined by tax authorities in multiple jurisdictions.",
-    "flags": ["cayman_islands_holding", "vie_structure_opacity", "us_revenue_offshore_routing"],
-    "sources": ["https://www.sec.gov"]
+    "flags": [
+      "cayman_islands_holding",
+      "vie_structure_opacity",
+      "us_revenue_offshore_routing"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
   },
   "legal": {
     "summary": "2021: TikTok paid $92 million to settle a federal class action lawsuit for illegally collecting biometric data — including faceprints and voiceprints — from minors under BIPA (Illinois Biometric Information Privacy Act) without consent. 2023: FTC referred ByteDance/TikTok to DOJ for violations of COPPA (Children's Online Privacy Protection Act) — the same violations TikTok had previously settled for $5.7 million in 2019. The FTC found ongoing violations after the initial settlement. U.S. Congress passed legislation in 2024 requiring ByteDance to divest TikTok within 9 months or face a ban — ByteDance appealed to the Supreme Court; the Court unanimously upheld the law. TikTok continued operating under Biden administration forbearance and Trump administration negotiations.",
-    "flags": ["92m_biometric_data_settlement", "coppa_violations_ftc_doj_referral", "repeat_child_privacy_violations", "divestiture_law_supreme_court_upheld"],
-    "sources": ["https://www.ftc.gov", "https://www.justice.gov"]
+    "flags": [
+      "92m_biometric_data_settlement",
+      "coppa_violations_ftc_doj_referral",
+      "repeat_child_privacy_violations",
+      "divestiture_law_supreme_court_upheld"
+    ],
+    "sources": [
+      "https://www.ftc.gov",
+      "https://www.justice.gov"
+    ]
   },
   "labor": {
     "summary": "TikTok employs approximately 7,000 people in the United States. The company has conducted multiple rounds of layoffs globally as it manages the uncertainty of its U.S. operational future. Content moderators at TikTok — including contractors — have reported significant psychological harm from exposure to violent, abusive, and disturbing content required for moderation review. ByteDance's workforce in China operates under the labor conditions common to Chinese technology companies, including documented pressure cultures.",
-    "flags": ["content_moderator_psychological_harm", "workforce_uncertainty_layoffs", "chinese_labor_conditions"],
+    "flags": [
+      "content_moderator_psychological_harm",
+      "workforce_uncertainty_layoffs",
+      "chinese_labor_conditions"
+    ],
     "sources": []
   },
   "environmental": {
     "summary": "TikTok's server infrastructure and global data centers represent a significant and growing energy consumption footprint. The video streaming model — short-form video requires more data per viewing minute than other content types — generates substantial energy use. ByteDance's data centers in China rely heavily on coal-powered electricity. The company's environmental commitments lag well behind its global peers.",
-    "flags": ["data_center_coal_energy_china", "video_streaming_energy_intensity", "environmental_commitment_gap"],
+    "flags": [
+      "data_center_coal_energy_china",
+      "video_streaming_energy_intensity",
+      "environmental_commitment_gap"
+    ],
     "sources": []
   },
   "political": {
     "summary": "The national security concern about TikTok is not primarily about what ByteDance has done — it is about what China's National Intelligence Law could require ByteDance to do: share user data, manipulate the algorithm for propaganda purposes, or conduct surveillance of specific individuals. Documented cases include: ByteDance employees in China accessing U.S. user data without authorization (admitted by ByteDance); TikTok executives stating that China-based employees can access global user data; and a ByteDance employee surveilling a Forbes reporter's TikTok data to identify their sources. TikTok's lobbying operation — including hiring dozens of former congressional staffers and spending $8.7 million in 2023 — is among the most aggressive of any technology company.",
-    "flags": ["china_national_intelligence_law_obligation", "us_user_data_china_access_admitted", "reporter_surveillance_documented", "aggressive_lobbying_post_threat"],
-    "sources": ["https://www.forbes.com"]
+    "flags": [
+      "china_national_intelligence_law_obligation",
+      "us_user_data_china_access_admitted",
+      "reporter_surveillance_documented",
+      "aggressive_lobbying_post_threat"
+    ],
+    "sources": [
+      "https://www.forbes.com"
+    ]
   },
   "executives": {
     "summary": "TikTok CEO Shou Zi Chew testified before Congress in 2023 in a hearing that became one of the most-watched congressional testimonions in recent history. He denied that TikTok was a national security threat while unable to guarantee that ByteDance would never share U.S. user data with the Chinese government. ByteDance founder Zhang Yiming stepped down as CEO in 2021 while remaining a major shareholder. The company's leadership is predominantly Chinese nationals, raising questions — which ByteDance disputes — about the practical separation between ByteDance and Chinese government influence.",
-    "flags": ["shou_zi_chew_congressional_testimony", "unable_guarantee_data_protection", "chinese_national_leadership"],
+    "flags": [
+      "shou_zi_chew_congressional_testimony",
+      "unable_guarantee_data_protection",
+      "chinese_national_leadership"
+    ],
     "sources": []
   },
   "connections": {
     "summary": "ByteDance's major investors include Sequoia Capital, SoftBank, Susquehanna International Group, and KKR — major U.S. and international investors with significant financial interest in TikTok's continued operation. These investors have lobbied against the divestiture requirement. TikTok's algorithm — which ByteDance has said is proprietary and cannot be divested with the platform — is the core product that makes TikTok valuable. The algorithm determines what 1.7 billion users see, creating an extraordinary information influence capability. ByteDance's Douyin — the Chinese version of TikTok — operates under Chinese content censorship rules while TikTok claims editorial independence.",
-    "flags": ["sequoia_kkr_softbank_investors_lobby_against_divestiture", "algorithm_information_control_1_7b_users", "douyin_censorship_tiktok_claimed_independence_contradiction"],
+    "flags": [
+      "sequoia_kkr_softbank_investors_lobby_against_divestiture",
+      "algorithm_information_control_1_7b_users",
+      "douyin_censorship_tiktok_claimed_independence_contradiction"
+    ],
     "sources": []
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
     "summary": "Former TikTok employees have alleged that the company maintained a shadow list of content to suppress — boosting certain political content while demoting other content — in ways not disclosed to users or researchers. Senate Intelligence Committee documents have alleged that ByteDance has provided the Chinese Communist Party with non-public data about U.S. users. Child safety researchers have alleged that TikTok's algorithm actively recommends harmful content — eating disorder content, self-harm content, and extremist content — to teenagers in ways that compound mental health risks. The Wall Street Journal's 2021 investigation documented that TikTok's algorithm fed increasingly extreme content to test accounts set up to appear as depressed or suicidal teenagers.",
-    "flags": ["shadow_content_suppression_alleged", "ccp_data_sharing_senate_alleged", "harmful_content_algorithm_documented", "wsj_teen_mental_health_investigation"],
-    "sources": ["https://www.wsj.com"]
+    "flags": [
+      "shadow_content_suppression_alleged",
+      "ccp_data_sharing_senate_alleged",
+      "harmful_content_algorithm_documented",
+      "wsj_teen_mental_health_investigation"
+    ],
+    "sources": [
+      "https://www.wsj.com"
+    ]
   },
   "health_record": {
     "summary": "TikTok's algorithmic amplification of harmful content to minors is the most documented health concern. The Wall Street Journal investigation in 2021 found that TikTok's algorithm served increasingly extreme content to accounts exhibiting signs of depression or suicidal ideation — compounding rather than interrupting mental health crises. The American Psychological Association has documented associations between short-form video use and decreased attention span, sleep disruption, and increased anxiety in adolescents. Multiple states have filed lawsuits against TikTok for deliberately designing features that maximize addiction in minors. The biometric data collection — paying $92 million to settle — involved collecting data from children without consent.",
-    "flags": ["algorithm_serves_harmful_content_to_depressed_teens", "apa_adolescent_mental_health_documented", "state_lawsuits_addiction_by_design", "child_biometric_collection"],
-    "sources": ["https://www.wsj.com", "https://www.apa.org"]
+    "flags": [
+      "algorithm_serves_harmful_content_to_depressed_teens",
+      "apa_adolescent_mental_health_documented",
+      "state_lawsuits_addiction_by_design",
+      "child_biometric_collection"
+    ],
+    "sources": [
+      "https://www.wsj.com",
+      "https://www.apa.org"
+    ]
   },
   "alternatives": {
-    "cheaper": ["YouTube Shorts — same short-form video format, U.S.-headquartered, no ByteDance data concerns", "Instagram Reels — Meta-owned, same format; Meta has documented data issues but different national security profile", "Pinterest — lower engagement-optimization, less documented harm to teen mental health"],
-    "healthier": ["Digital time limits — iOS Screen Time and Android Digital Wellbeing allow hard limits on TikTok use", "Grayscale mode reduces dopamine response to the app — built into both iOS and Android settings", "Following accounts that promote healthy content rather than relying on TikTok's algorithm to curate"],
-    "diy": ["TikTok's algorithm is driven by engagement — liking, sharing, and commenting trains it toward your actual interests rather than addictive content", "Parents: TikTok Family Pairing allows monitoring of teen accounts, but the algorithm still operates", "Advocacy for algorithmic transparency legislation — requiring platforms to disclose how content is recommended and give users meaningful control"]
+    "cheaper": [
+      "YouTube Shorts — same short-form video format, U.S.-headquartered, no ByteDance data concerns",
+      "Instagram Reels — Meta-owned, same format; Meta has documented data issues but different national security profile",
+      "Pinterest — lower engagement-optimization, less documented harm to teen mental health"
+    ],
+    "healthier": [
+      "Digital time limits — iOS Screen Time and Android Digital Wellbeing allow hard limits on TikTok use",
+      "Grayscale mode reduces dopamine response to the app — built into both iOS and Android settings",
+      "Following accounts that promote healthy content rather than relying on TikTok's algorithm to curate"
+    ],
+    "diy": [
+      "TikTok's algorithm is driven by engagement — liking, sharing, and commenting trains it toward your actual interests rather than addictive content",
+      "Parents: TikTok Family Pairing allows monitoring of teen accounts, but the algorithm still operates",
+      "Advocacy for algorithmic transparency legislation — requiring platforms to disclose how content is recommended and give users meaningful control"
+    ]
   },
   "timeline": [
-    {"year": 2012, "event": "ByteDance founded by Zhang Yiming in Beijing", "severity": "neutral", "source_url": ""},
-    {"year": 2017, "event": "TikTok launched internationally; ByteDance acquires Musical.ly and merges it into TikTok", "severity": "neutral", "source_url": ""},
-    {"year": 2019, "event": "FTC: $5.7M settlement for COPPA violations — illegally collecting data from children under 13", "severity": "high", "source_url": ""},
-    {"year": 2020, "event": "Trump administration attempts to ban TikTok; courts block; ByteDance negotiations with Oracle and Walmart fail", "severity": "high", "source_url": ""},
-    {"year": 2021, "event": "$92M settlement for BIPA biometric data violations — collecting faceprints and voiceprints from minors", "severity": "critical", "source_url": ""},
-    {"year": 2021, "event": "WSJ investigation documents TikTok algorithm serving harmful content to simulated depressed teen accounts", "severity": "critical", "source_url": ""},
-    {"year": 2022, "event": "ByteDance employee surveils Forbes journalist's TikTok data to identify sources — admitted and employee fired", "severity": "critical", "source_url": ""},
-    {"year": 2023, "event": "Shou Zi Chew testifies before Congress; FTC refers case to DOJ for COPPA violations — second COPPA action", "severity": "critical", "source_url": ""},
-    {"year": 2024, "event": "U.S. law passed requiring ByteDance divestiture or ban; Supreme Court upholds unanimously; TikTok continues operating", "severity": "critical", "source_url": ""},
-    {"year": 2025, "event": "Trump administration grants extensions; negotiations with various buyers continue; status unresolved", "severity": "high", "source_url": ""}
+    {
+      "year": 2012,
+      "event": "ByteDance founded by Zhang Yiming in Beijing",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "TikTok launched internationally; ByteDance acquires Musical.ly and merges it into TikTok",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "FTC: $5.7M settlement for COPPA violations — illegally collecting data from children under 13",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "Trump administration attempts to ban TikTok; courts block; ByteDance negotiations with Oracle and Walmart fail",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "$92M settlement for BIPA biometric data violations — collecting faceprints and voiceprints from minors",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "WSJ investigation documents TikTok algorithm serving harmful content to simulated depressed teen accounts",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "ByteDance employee surveils Forbes journalist's TikTok data to identify sources — admitted and employee fired",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "Shou Zi Chew testifies before Congress; FTC refers case to DOJ for COPPA violations — second COPPA action",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "U.S. law passed requiring ByteDance divestiture or ban; Supreme Court upholds unanimously; TikTok continues operating",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2025,
+      "event": "Trump administration grants extensions; negotiations with various buyers continue; status unresolved",
+      "severity": "high",
+      "source_url": ""
+    }
   ],
   "community_impact": {
     "displacement": "TikTok's business model — maximizing engagement time — has displaced other activities, particularly among teenagers. Research documents decreased reading, face-to-face social interaction, sleep, and physical activity among heavy TikTok users. The platform has also displaced other social media and content platforms by capturing attention share.",
@@ -81,15 +215,36 @@
   },
   "cost_absorption": {
     "who_benefited": [
-      {"group": "ByteDance / Zhang Yiming", "how": "$40B+ net worth; most downloaded app in history; advertising revenue from 1.7B global users"},
-      {"group": "ByteDance investors (Sequoia, SoftBank, KKR)", "how": "Investment in highest-valued private tech company; financial interest in blocking divestiture"},
-      {"group": "Advertisers", "how": "Unprecedented engagement rates from addictive algorithm allow highly targeted advertising"}
+      {
+        "group": "ByteDance / Zhang Yiming",
+        "how": "$40B+ net worth; most downloaded app in history; advertising revenue from 1.7B global users"
+      },
+      {
+        "group": "ByteDance investors (Sequoia, SoftBank, KKR)",
+        "how": "Investment in highest-valued private tech company; financial interest in blocking divestiture"
+      },
+      {
+        "group": "Advertisers",
+        "how": "Unprecedented engagement rates from addictive algorithm allow highly targeted advertising"
+      }
     ],
     "who_paid": [
-      {"group": "Teenagers with mental health impacts", "how": "Algorithm-driven harmful content exposure; attention and sleep disruption; anxiety amplification"},
-      {"group": "Children whose biometric data was collected", "how": "Faceprints and voiceprints collected without consent; settled for $92M"},
-      {"group": "U.S. national security interests", "how": "Potential Chinese government access to data on 170 million Americans; admitted China-based employee data access"},
-      {"group": "Forbes journalist and sources", "how": "Surveilled through their TikTok data by ByteDance employee seeking to identify journalist's sources"}
+      {
+        "group": "Teenagers with mental health impacts",
+        "how": "Algorithm-driven harmful content exposure; attention and sleep disruption; anxiety amplification"
+      },
+      {
+        "group": "Children whose biometric data was collected",
+        "how": "Faceprints and voiceprints collected without consent; settled for $92M"
+      },
+      {
+        "group": "U.S. national security interests",
+        "how": "Potential Chinese government access to data on 170 million Americans; admitted China-based employee data access"
+      },
+      {
+        "group": "Forbes journalist and sources",
+        "how": "Surveilled through their TikTok data by ByteDance employee seeking to identify journalist's sources"
+      }
     ],
     "the_gap": "ByteDance admitted its employees in China accessed U.S. user data. China's National Intelligence Law requires Chinese companies to cooperate with intelligence requests. There are 170 million American users. The Supreme Court unanimously upheld the divestiture law. TikTok is still operating."
   }

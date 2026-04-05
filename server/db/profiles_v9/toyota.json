@@ -3,75 +3,206 @@
   "brand_slug": "toyota",
   "parent_company": "Toyota Motor Corporation",
   "ultimate_parent": "Toyota Motor Corporation",
-  "subsidiaries": ["Lexus", "Toyota Financial Services", "Toyota Industries", "Daihatsu", "Hino Motors"],
+  "subsidiaries": [
+    "Lexus",
+    "Toyota Financial Services",
+    "Toyota Industries",
+    "Daihatsu",
+    "Hino Motors"
+  ],
   "overall_concern_level": "significant",
   "profile_type": "database",
   "generated_headline": "TOYOTA TREATED A DEADLY SAFETY EMERGENCY AS A PUBLIC RELATIONS PROBLEM AND PAID $1.2 BILLION FOR IT",
   "executive_summary": "Toyota is the world's largest automaker by volume, producing approximately 10 million vehicles annually with revenues exceeding $250 billion. The company built its global reputation on quality and reliability. That reputation was shattered when federal prosecutors revealed that Toyota had known about unintended acceleration defects in its vehicles — defects linked to at least 5 deaths — and chose to conceal and minimize the problem rather than recall the vehicles. Attorney General Eric Holder called Toyota's conduct 'shameful': it 'confronted a public safety emergency as if it were simply a public relations problem.' Toyota paid $1.2 billion — the largest criminal penalty against a car company in U.S. history — in a 2014 DOJ settlement. In 2024, Toyota's Industries subsidiary admitted to falsifying emissions test data for forklift engines, part of a broader Japanese auto industry testing scandal.",
-  "verdict_tags": ["unintended_acceleration_concealment", "1_2b_criminal_penalty", "safety_emergency_as_pr_problem", "emissions_falsification_2024", "takata_airbag_recall", "clean_air_act_violations"],
-  "concern_flags": {"labor": false, "environmental": true, "political": false, "tax": true, "health": true, "legal": true},
+  "verdict_tags": [
+    "unintended_acceleration_concealment",
+    "1_2b_criminal_penalty",
+    "safety_emergency_as_pr_problem",
+    "emissions_falsification_2024",
+    "takata_airbag_recall",
+    "clean_air_act_violations"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": true,
+    "political": false,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
   "tax": {
     "summary": "Toyota uses its complex international corporate structure — with major manufacturing and financing operations across the U.S., Europe, and Asia — to minimize tax obligations in each jurisdiction. Toyota Financial Services provides financing arrangements that generate tax benefits. The company's Japanese headquarters benefits from Japan's territorial tax system. Toyota has received significant state-level subsidies for its U.S. manufacturing facilities in states including Kentucky, Indiana, and Texas.",
-    "flags": ["international_tax_minimization", "state_manufacturing_subsidies", "toyota_financial_services_tax_structures"],
-    "sources": ["https://www.sec.gov"]
+    "flags": [
+      "international_tax_minimization",
+      "state_manufacturing_subsidies",
+      "toyota_financial_services_tax_structures"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
   },
   "legal": {
     "summary": "2014: $1.2 billion DOJ settlement — the largest criminal penalty against a car company in U.S. history — for concealing unintended acceleration defects linked to at least 5 deaths. Toyota admitted it misled U.S. consumers, NHTSA, and Congress about two separate acceleration defects. The DOJ charged Toyota with wire fraud. Toyota had internally boasted about saving $100 million by avoiding a full safety recall. Prior fines: 2010-2012, $66 million in NHTSA fines for delayed reporting. 2021: $180 million DOJ/EPA settlement for decade-long Clean Air Act reporting violations covering 2.2+ million vehicles. 2024: Toyota Industries admitted falsifying emissions data for forklift engines; class action suits filed. Toyota also participated in the Takata airbag recall — the largest auto safety recall in U.S. history — affecting millions of Toyota and Lexus vehicles.",
-    "flags": ["1_2b_doj_wire_fraud_settlement", "admitted_concealment_congress_and_nhtsa", "180m_clean_air_act_settlement", "2024_forklift_emissions_falsification", "takata_recall_millions_vehicles"],
-    "sources": ["https://www.justice.gov/archives/opa/pr/toyota-motor-company-pay-180-million-settlement"]
+    "flags": [
+      "1_2b_doj_wire_fraud_settlement",
+      "admitted_concealment_congress_and_nhtsa",
+      "180m_clean_air_act_settlement",
+      "2024_forklift_emissions_falsification",
+      "takata_recall_millions_vehicles"
+    ],
+    "sources": [
+      "https://www.justice.gov/archives/opa/pr/toyota-motor-company-pay-180-million-settlement"
+    ]
   },
   "labor": {
     "summary": "Toyota employs approximately 375,000 people globally. The company's manufacturing workforce has benefited from Toyota's generally stable production model. Toyota has faced criticism in the United States for locating new manufacturing plants in non-union southern states, avoiding UAW organization. Toyota's subsidiary Hino Motors was involved in a separate engines fraud scandal in Japan, resulting in workforce disruption.",
-    "flags": ["non_union_southern_plant_strategy", "hino_engines_fraud_subsidiary"],
+    "flags": [
+      "non_union_southern_plant_strategy",
+      "hino_engines_fraud_subsidiary"
+    ],
     "sources": []
   },
   "environmental": {
     "summary": "Toyota's Clean Air Act violations — covered by the $180 million settlement — involved systematic failure to report emissions defects in 2.2 million vehicles over a decade. The 2024 forklift engine emissions falsification — involving software manipulation and engine switching during tests — revealed a broader culture of emissions testing misconduct within the Toyota corporate family. Toyota's Japanese parent also faced simultaneous investigations of Daihatsu and Hino for separate falsification scandals. Toyota's hybrid technology is a genuine environmental contribution, but these systematic emissions violations undermine the company's environmental credibility.",
-    "flags": ["systematic_emissions_noncompliance_2_2m_vehicles", "forklift_software_manipulation", "daihatsu_hino_related_scandals"],
-    "sources": ["https://www.epa.gov", "https://www.justice.gov/archives/opa/pr/toyota-motor-company-pay-180-million-settlement"]
+    "flags": [
+      "systematic_emissions_noncompliance_2_2m_vehicles",
+      "forklift_software_manipulation",
+      "daihatsu_hino_related_scandals"
+    ],
+    "sources": [
+      "https://www.epa.gov",
+      "https://www.justice.gov/archives/opa/pr/toyota-motor-company-pay-180-million-settlement"
+    ]
   },
   "political": {
     "summary": "Toyota is a major U.S. employer — with manufacturing in Kentucky, Indiana, Alabama, Texas, and Mississippi — which gives the company significant political leverage in the states where it operates. The company has used this leverage to resist unionization and to shape state-level regulatory environments. Toyota lobbies on fuel economy standards, EV incentive policies, and trade regulations. The company's concealment of safety defects from NHTSA and Congress represents a documented case of regulatory deception.",
-    "flags": ["employer_leverage_anti_union", "nhtsa_concealment_regulatory_deception", "cafe_standards_lobbying"],
+    "flags": [
+      "employer_leverage_anti_union",
+      "nhtsa_concealment_regulatory_deception",
+      "cafe_standards_lobbying"
+    ],
     "sources": []
   },
   "executives": {
     "summary": "President and CEO Koji Sato received approximately $3.7 million in compensation in 2023 — significantly lower than U.S. auto CEO counterparts due to Japanese corporate norms. During the unintended acceleration crisis, CEO Akio Toyoda (grandson of the founder) testified before Congress and publicly apologized — rare for Japanese corporate leadership. No Toyota executives faced personal criminal charges for the concealment. In 2024, Toyota Industries CEO Koichi Ito resigned following the forklift emissions falsification.",
-    "flags": ["no_executive_criminal_charges_for_concealment", "toyota_industries_ceo_resigned_falsification", "akio_toyoda_congress_testimony"],
+    "flags": [
+      "no_executive_criminal_charges_for_concealment",
+      "toyota_industries_ceo_resigned_falsification",
+      "akio_toyoda_congress_testimony"
+    ],
     "sources": []
   },
   "connections": {
     "summary": "Toyota's corporate family includes Toyota Industries (forklifts), Daihatsu (small cars), and Hino (trucks) — each of which has faced separate safety or emissions falsification scandals in recent years, suggesting a pattern of testing culture issues across the Toyota group. The Japanese auto industry's broader emissions testing scandal — which also affected Honda, Mazda, and others — was triggered in part by investigations of Toyota subsidiaries. Toyota shares major institutional investors with Honda, Nissan, and Hyundai through Japanese and international institutional holdings.",
-    "flags": ["toyota_group_multiple_falsification_scandals", "japanese_auto_industry_testing_culture", "daihatsu_hino_related"],
+    "flags": [
+      "toyota_group_multiple_falsification_scandals",
+      "japanese_auto_industry_testing_culture",
+      "daihatsu_hino_related"
+    ],
     "sources": []
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
     "summary": "DOJ prosecutors revealed that Toyota internally boasted about saving $100 million by convincing regulators to accept a limited recall rather than a full safety recall — a figure that demonstrates the cost-benefit calculation was explicit. Former Toyota employees have alleged that the acceleration issue was known to the company as early as 2007, and that internal decisions prioritizing brand protection over safety disclosure were made at senior levels. Consumer safety advocates have alleged that the death toll from Toyota's unintended acceleration was significantly higher than the 5 deaths acknowledged in the settlement, with some estimates exceeding 90 deaths.",
-    "flags": ["100m_savings_boast_documented", "2007_internal_awareness_alleged", "death_toll_undercount_alleged"],
-    "sources": ["https://aublr.org/2014/03/when-corporate-fraud-kills", "https://abcnews.go.com/Blotter/toyota-pay-12b-hiding-deadly-unintended-acceleration"]
+    "flags": [
+      "100m_savings_boast_documented",
+      "2007_internal_awareness_alleged",
+      "death_toll_undercount_alleged"
+    ],
+    "sources": [
+      "https://aublr.org/2014/03/when-corporate-fraud-kills",
+      "https://abcnews.go.com/Blotter/toyota-pay-12b-hiding-deadly-unintended-acceleration"
+    ]
   },
   "health_record": {
     "summary": "Toyota's concealed unintended acceleration defects are documented to have caused at least 5 deaths and scores of injuries. The Takata airbag recall — affecting Toyota and Lexus vehicles among many others — involved inflators that could fire metal fragments at vehicle occupants; this defect has been linked to deaths and injuries across multiple manufacturers. Toyota's Clean Air Act violations — failing to report emissions defects — meant that millions of vehicles operated with higher-than-legal emissions for years, contributing to air quality impacts.",
-    "flags": ["5_documented_acceleration_deaths", "takata_metal_fragment_deaths", "emissions_noncompliance_air_quality"],
-    "sources": ["https://www.nhtsa.gov"]
+    "flags": [
+      "5_documented_acceleration_deaths",
+      "takata_metal_fragment_deaths",
+      "emissions_noncompliance_air_quality"
+    ],
+    "sources": [
+      "https://www.nhtsa.gov"
+    ]
   },
   "alternatives": {
-    "cheaper": ["Honda — comparable reliability reputation, competitive pricing, strong fuel economy options", "Mazda — consistently rated for value and reliability; typically lower pricing than Toyota", "Used vehicles — 2-3 year old models from any reliable manufacturer offer best value"],
-    "healthier": ["Toyota's own hybrid lineup (Prius, RAV4 Hybrid) genuinely reduces emissions relative to comparable combustion vehicles", "Honda hybrid lineup — similar environmental performance", "BEV options from multiple manufacturers — eliminate tailpipe emissions entirely"],
-    "diy": ["Check your specific Toyota/Lexus VIN for any open recalls at NHTSA.gov — Takata airbag replacements are still being completed", "Toyota's reputation for reliability is genuine at the vehicle level — this profile addresses corporate conduct, not vehicle quality", "Regular maintenance extends vehicle life and reduces need to purchase new vehicles"]
+    "cheaper": [
+      "Honda — comparable reliability reputation, competitive pricing, strong fuel economy options",
+      "Mazda — consistently rated for value and reliability; typically lower pricing than Toyota",
+      "Used vehicles — 2-3 year old models from any reliable manufacturer offer best value"
+    ],
+    "healthier": [
+      "Toyota's own hybrid lineup (Prius, RAV4 Hybrid) genuinely reduces emissions relative to comparable combustion vehicles",
+      "Honda hybrid lineup — similar environmental performance",
+      "BEV options from multiple manufacturers — eliminate tailpipe emissions entirely"
+    ],
+    "diy": [
+      "Check your specific Toyota/Lexus VIN for any open recalls at NHTSA.gov — Takata airbag replacements are still being completed",
+      "Toyota's reputation for reliability is genuine at the vehicle level — this profile addresses corporate conduct, not vehicle quality",
+      "Regular maintenance extends vehicle life and reduces need to purchase new vehicles"
+    ]
   },
   "timeline": [
-    {"year": 1937, "event": "Toyota Motor Corporation founded in Japan by Kiichiro Toyoda", "severity": "neutral", "source_url": ""},
-    {"year": 2007, "event": "Toyota internally identifies unintended acceleration defects; concealment begins per DOJ investigation", "severity": "critical", "source_url": ""},
-    {"year": 2009, "event": "California Highway Patrol officer Mark Saylor and family die in Lexus with stuck accelerator; recorded 911 call made public", "severity": "critical", "source_url": ""},
-    {"year": 2009, "event": "Toyota initiates massive recalls of 10+ million vehicles; continues denying full scope of problem", "severity": "critical", "source_url": ""},
-    {"year": 2010, "event": "CEO Akio Toyoda testifies before Congress; apologizes publicly", "severity": "high", "source_url": ""},
-    {"year": 2010, "event": "NHTSA fines begin: $16.375M; additional fines follow through 2012 totaling $66M for reporting delays", "severity": "high", "source_url": ""},
-    {"year": 2014, "event": "$1.2B DOJ settlement: wire fraud charge; largest criminal auto penalty in U.S. history; Toyota admits concealment from NHTSA and Congress", "severity": "critical", "source_url": "https://www.justice.gov"},
-    {"year": 2021, "event": "$180M DOJ/EPA settlement: decade-long failure to report emissions defects in 2.2M vehicles", "severity": "critical", "source_url": "https://www.justice.gov/archives/opa/pr/toyota-motor-company-pay-180-million-settlement"},
-    {"year": 2024, "event": "Toyota Industries admits falsifying emissions test data for forklift engines; CEO resigns; class action filed", "severity": "critical", "source_url": ""},
-    {"year": 2024, "event": "Toyota also facing Daihatsu and Hino subsidiary scandals simultaneously — pattern of testing culture concerns across corporate group", "severity": "high", "source_url": ""}
+    {
+      "year": 1937,
+      "event": "Toyota Motor Corporation founded in Japan by Kiichiro Toyoda",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2007,
+      "event": "Toyota internally identifies unintended acceleration defects; concealment begins per DOJ investigation",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2009,
+      "event": "California Highway Patrol officer Mark Saylor and family die in Lexus with stuck accelerator; recorded 911 call made public",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2009,
+      "event": "Toyota initiates massive recalls of 10+ million vehicles; continues denying full scope of problem",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2010,
+      "event": "CEO Akio Toyoda testifies before Congress; apologizes publicly",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2010,
+      "event": "NHTSA fines begin: $16.375M; additional fines follow through 2012 totaling $66M for reporting delays",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2014,
+      "event": "$1.2B DOJ settlement: wire fraud charge; largest criminal auto penalty in U.S. history; Toyota admits concealment from NHTSA and Congress",
+      "severity": "critical",
+      "source_url": "https://www.justice.gov"
+    },
+    {
+      "year": 2021,
+      "event": "$180M DOJ/EPA settlement: decade-long failure to report emissions defects in 2.2M vehicles",
+      "severity": "critical",
+      "source_url": "https://www.justice.gov/archives/opa/pr/toyota-motor-company-pay-180-million-settlement"
+    },
+    {
+      "year": 2024,
+      "event": "Toyota Industries admits falsifying emissions test data for forklift engines; CEO resigns; class action filed",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "Toyota also facing Daihatsu and Hino subsidiary scandals simultaneously — pattern of testing culture concerns across corporate group",
+      "severity": "high",
+      "source_url": ""
+    }
   ],
   "community_impact": {
     "displacement": "Toyota's strategy of opening non-union plants in southern states — Kentucky, Alabama, Mississippi, Texas, Indiana — provides employment but with lower wages and benefits than comparable unionized auto work. This strategy has contributed to the decline of union density in manufacturing and the weakening of collective bargaining in the auto sector.",
@@ -81,13 +212,28 @@
   },
   "cost_absorption": {
     "who_benefited": [
-      {"group": "Toyota's brand managers", "how": "Avoided $100M in recall costs by concealing defect scope; maintained brand reputation through concealment period"},
-      {"group": "Toyota shareholders", "how": "Maintained stock value and sales volume through period when full disclosure would have forced larger recall"}
+      {
+        "group": "Toyota's brand managers",
+        "how": "Avoided $100M in recall costs by concealing defect scope; maintained brand reputation through concealment period"
+      },
+      {
+        "group": "Toyota shareholders",
+        "how": "Maintained stock value and sales volume through period when full disclosure would have forced larger recall"
+      }
     ],
     "who_paid": [
-      {"group": "Acceleration victims and families", "how": "At least 5 documented deaths; scores of injuries; Toyota's internal documents show it knew"},
-      {"group": "NHTSA and Congress", "how": "Misled by Toyota's deceptive statements during official investigations"},
-      {"group": "Toyota's customers", "how": "Drove vehicles with known defects while Toyota managed the PR problem"}
+      {
+        "group": "Acceleration victims and families",
+        "how": "At least 5 documented deaths; scores of injuries; Toyota's internal documents show it knew"
+      },
+      {
+        "group": "NHTSA and Congress",
+        "how": "Misled by Toyota's deceptive statements during official investigations"
+      },
+      {
+        "group": "Toyota's customers",
+        "how": "Drove vehicles with known defects while Toyota managed the PR problem"
+      }
     ],
     "the_gap": "Toyota internally boasted about saving $100 million by avoiding a full recall. The DOJ fine was $1.2 billion. At least 5 people died. Toyota told Congress it had 'absolutely not minimized public awareness of any defect.' That was a lie. The AG said so."
   }

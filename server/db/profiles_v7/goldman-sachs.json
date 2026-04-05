@@ -3,75 +3,211 @@
   "brand_slug": "goldman-sachs",
   "parent_company": "The Goldman Sachs Group Inc.",
   "ultimate_parent": "The Goldman Sachs Group Inc.",
-  "subsidiaries": ["Goldman Sachs Bank USA", "Goldman Sachs Asset Management", "Marcus by Goldman Sachs", "Ayco"],
+  "subsidiaries": [
+    "Goldman Sachs Bank USA",
+    "Goldman Sachs Asset Management",
+    "Marcus by Goldman Sachs",
+    "Ayco"
+  ],
   "overall_concern_level": "significant",
   "profile_type": "database",
   "generated_headline": "GOLDMAN SACHS PAID $1.6 BILLION IN BRIBES TO STEAL FROM A MALAYSIAN DEVELOPMENT FUND AND CALLED IT BANKING",
   "executive_summary": "Goldman Sachs is one of the most powerful investment banks on earth, generating over $47 billion in net revenue in 2024. The bank pleaded guilty — through its Malaysian subsidiary — to conspiracy to violate the Foreign Corrupt Practices Act in 2020, paying a combined $5.1 billion to settle with the U.S. DOJ, SEC, Malaysian government, and international regulators. The 1MDB scandal involved paying $1.6 billion in bribes to Malaysian and Abu Dhabi officials to secure Goldman's role as underwriter of $6.5 billion in bonds for a Malaysian development fund — from which $4.5 billion was subsequently stolen. It is the largest FCPA settlement in history. Goldman's record also includes its central role in the 2008 financial crisis, where it simultaneously sold mortgage-backed securities to clients while betting against them.",
-  "verdict_tags": ["bribery_1_6b", "1mdb_criminal_guilty_plea", "mortgage_crisis_role", "sec_fraud", "conflict_of_interest", "inequality_engine"],
-  "concern_flags": {"labor": false, "environmental": true, "political": true, "tax": true, "health": false, "legal": true},
+  "verdict_tags": [
+    "bribery_1_6b",
+    "1mdb_criminal_guilty_plea",
+    "mortgage_crisis_role",
+    "sec_fraud",
+    "conflict_of_interest",
+    "inequality_engine"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
   "tax": {
     "summary": "Goldman Sachs uses offshore structures in the Cayman Islands, Ireland, and other jurisdictions to minimize U.S. tax exposure on international operations. The company received significant benefits from the 2017 Tax Cuts and Jobs Act. Goldman has marketed aggressive tax shelter strategies to corporate clients — some of which have been challenged by the IRS. The bank's partnership structure historically allowed partners to receive compensation in ways that minimized payroll tax exposure.",
-    "flags": ["offshore_cayman_structures", "tax_shelter_client_marketing", "tcja_windfall"],
-    "sources": ["https://www.sec.gov"]
+    "flags": [
+      "offshore_cayman_structures",
+      "tax_shelter_client_marketing",
+      "tcja_windfall"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
   },
   "legal": {
     "summary": "1MDB (2020): Goldman's Malaysian subsidiary pleaded guilty; parent company entered Deferred Prosecution Agreement; combined $5.1 billion in settlements with DOJ, SEC, Malaysian government, UK FCA, Singapore, and Hong Kong regulators — the largest FCPA settlement in history. The scheme involved paying $1.6 billion in bribes to secure underwriting of $6.5 billion in bonds, generating $600 million in fees for Goldman while $4.5 billion was stolen from the fund. 2016 Mortgage Crisis Settlement: Goldman paid $5 billion to resolve DOJ claims for selling toxic mortgage-backed securities while its own traders bet against them. 2012: Goldman paid $22 million to settle SEC charges for giving hedge fund clients advance notice of analyst downgrades. Goldman has a documented history of conflict of interest settlements.",
-    "flags": ["1mdb_5_1b_fcpa_record", "malaysian_subsidiary_guilty_plea", "5b_mortgage_crisis_settlement", "advance_notice_analyst_downgrades"],
-    "sources": ["https://www.justice.gov", "https://www.sec.gov"]
+    "flags": [
+      "1mdb_5_1b_fcpa_record",
+      "malaysian_subsidiary_guilty_plea",
+      "5b_mortgage_crisis_settlement",
+      "advance_notice_analyst_downgrades"
+    ],
+    "sources": [
+      "https://www.justice.gov",
+      "https://www.sec.gov"
+    ]
   },
   "labor": {
     "summary": "Goldman Sachs employs approximately 46,000 people. The bank's internal culture — detailed in Greg Smith's 2012 New York Times resignation letter and subsequent book — described a client-hostile environment where employees called clients 'muppets' and revenue extraction was the explicit goal. Goldman's workforce is bifurcated between extremely well-compensated managing directors and partners, and lower-paid support and operational staff. The bank has conducted multiple rounds of layoffs during market downturns while maintaining executive compensation.",
-    "flags": ["client_hostile_culture_documented", "muppet_culture_resignation_letter", "layoff_vs_executive_pay_pattern"],
-    "sources": ["https://www.nytimes.com"]
+    "flags": [
+      "client_hostile_culture_documented",
+      "muppet_culture_resignation_letter",
+      "layoff_vs_executive_pay_pattern"
+    ],
+    "sources": [
+      "https://www.nytimes.com"
+    ]
   },
   "environmental": {
     "summary": "Goldman Sachs has been among the largest financiers of fossil fuel projects globally, providing hundreds of billions in lending and underwriting to oil, gas, and coal companies. The bank has made net-zero commitments while continuing to finance fossil fuel expansion. Goldman's Lee Raymond — former ExxonMobil CEO and the corporate leader most associated with climate denial — served on Goldman's board of directors for years. The bank has faced criticism from shareholders for the gap between its climate commitments and its fossil fuel financing.",
-    "flags": ["fossil_fuel_financing_scale", "lee_raymond_board_connection", "net_zero_commitment_gap"],
-    "sources": ["https://www.banktrack.org"]
+    "flags": [
+      "fossil_fuel_financing_scale",
+      "lee_raymond_board_connection",
+      "net_zero_commitment_gap"
+    ],
+    "sources": [
+      "https://www.banktrack.org"
+    ]
   },
   "political": {
     "summary": "Goldman Sachs spent $5.8 million on federal lobbying in 2023. The bank has produced more senior U.S. government officials than virtually any other institution — Henry Paulson (Treasury Secretary), Robert Rubin (Treasury Secretary), Steve Mnuchin (Treasury Secretary), Gary Cohn (National Economic Council Director). This revolving door gives Goldman extraordinary access to financial regulation. Goldman alumni hold positions across the Federal Reserve, SEC, CFTC, and Treasury at any given time.",
-    "flags": ["revolving_door_treasury_multiple_secretaries", "sec_cftc_fed_alumni_penetration", "regulatory_access_unmatched"],
-    "sources": ["https://www.opensecrets.org"]
+    "flags": [
+      "revolving_door_treasury_multiple_secretaries",
+      "sec_cftc_fed_alumni_penetration",
+      "regulatory_access_unmatched"
+    ],
+    "sources": [
+      "https://www.opensecrets.org"
+    ]
   },
   "executives": {
     "summary": "CEO David Solomon received $39 million in total compensation in 2024 — among the highest of any U.S. bank CEO. Former CEO Lloyd Blankfein, who oversaw the 1MDB and mortgage crisis periods, famously said Goldman was 'doing God's work.' Tim Leissner, the Goldman partner at the center of the 1MDB scheme, has pleaded guilty and cooperated with prosecutors. Roger Ng, Goldman's former Malaysia head, was sentenced to 10 years in prison — one of the few Goldman employees to face meaningful criminal consequences.",
-    "flags": ["doing_gods_work_blankfein", "leissner_guilty_plea", "ng_10_year_sentence", "solomon_39m_compensation"],
-    "sources": ["https://www.justice.gov", "https://www.sec.gov"]
+    "flags": [
+      "doing_gods_work_blankfein",
+      "leissner_guilty_plea",
+      "ng_10_year_sentence",
+      "solomon_39m_compensation"
+    ],
+    "sources": [
+      "https://www.justice.gov",
+      "https://www.sec.gov"
+    ]
   },
   "connections": {
     "summary": "Goldman Sachs' alumni network in government — sometimes called 'Government Sachs' — is the most documented corporate-to-government revolving door in the United States. Multiple Treasury Secretaries, Fed governors, and regulatory commissioners have come directly from or returned to Goldman. The bank's underwriting relationships connect it to virtually every major corporation's capital structure. Goldman's role in the 1MDB scandal connected it to Malaysian Prime Minister Najib Razak (now imprisoned), fugitive financier Jho Low (connected to The Wolf of Wall Street film), and Abu Dhabi sovereign wealth funds.",
-    "flags": ["government_sachs_revolving_door_documented", "najib_razak_prison_connected", "jho_low_fugitive_connected"],
-    "sources": ["https://www.icij.org/inside-icij/2020/11/goldman-sachs-1mdb-settlement"]
+    "flags": [
+      "government_sachs_revolving_door_documented",
+      "najib_razak_prison_connected",
+      "jho_low_fugitive_connected"
+    ],
+    "sources": [
+      "https://www.icij.org/inside-icij/2020/11/goldman-sachs-1mdb-settlement"
+    ]
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
     "summary": "During the 2008 financial crisis, Goldman simultaneously sold mortgage-backed securities to clients — recommending them as sound investments — while its own proprietary trading desk was shorting the same securities. This 'Abacus' transaction, settled with the SEC for $550 million, has been alleged by regulators and researchers to represent a systemic conflict of interest that was not isolated to one transaction. Former Goldman employees have alleged that the bank's culture explicitly prioritized extracting maximum fees from clients over serving their interests — contradicting Goldman's public positioning as a trusted advisor.",
-    "flags": ["abacus_short_while_selling_alleged", "systematic_client_conflict_alleged", "fee_extraction_culture_documented"],
-    "sources": ["https://www.sec.gov"]
+    "flags": [
+      "abacus_short_while_selling_alleged",
+      "systematic_client_conflict_alleged",
+      "fee_extraction_culture_documented"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
   },
   "health_record": {
     "summary": "Goldman's financing of fossil fuels contributes to climate change with documented public health consequences. The bank's role in the 2008 financial crisis — packaging and selling toxic mortgage securities — contributed to the foreclosure crisis that caused documented health impacts: increased suicide rates, stress-related health deterioration, and loss of housing stability for millions of Americans. Goldman's private equity investments in healthcare have included strategies that reduced clinical staffing to maximize profit margins.",
-    "flags": ["fossil_fuel_financing_health", "foreclosure_crisis_health_impacts", "healthcare_pe_staffing_reduction"],
+    "flags": [
+      "fossil_fuel_financing_health",
+      "foreclosure_crisis_health_impacts",
+      "healthcare_pe_staffing_reduction"
+    ],
     "sources": []
   },
   "alternatives": {
-    "cheaper": ["Credit unions — member-owned, FDIC/NCUA insured, lower fees, profits stay with members", "Community banks — local ownership, no investment banking conflicts, relationship lending", "Online banks (including Goldman's own Marcus) — for savings, Marcus actually offers competitive rates"],
-    "healthier": ["Community Development Financial Institutions — mission-driven lending to underserved communities", "Cooperative banks — democratic member governance"],
-    "diy": ["Understanding that Goldman and other investment banks are not neutral advisors — they earn fees on transactions they recommend", "Index funds — the best evidence suggests most actively managed funds underperform index funds after fees; Goldman charges fees on active management", "Divesting retirement accounts from bank stocks with documented harm records"]
+    "cheaper": [
+      "Credit unions — member-owned, FDIC/NCUA insured, lower fees, profits stay with members",
+      "Community banks — local ownership, no investment banking conflicts, relationship lending",
+      "Online banks (including Goldman's own Marcus) — for savings, Marcus actually offers competitive rates"
+    ],
+    "healthier": [
+      "Community Development Financial Institutions — mission-driven lending to underserved communities",
+      "Cooperative banks — democratic member governance"
+    ],
+    "diy": [
+      "Understanding that Goldman and other investment banks are not neutral advisors — they earn fees on transactions they recommend",
+      "Index funds — the best evidence suggests most actively managed funds underperform index funds after fees; Goldman charges fees on active management",
+      "Divesting retirement accounts from bank stocks with documented harm records"
+    ]
   },
   "timeline": [
-    {"year": 1869, "event": "Marcus Goldman founds Goldman Sachs in New York", "severity": "neutral", "source_url": ""},
-    {"year": 1999, "event": "Goldman IPO; partners become billionaires; shift from partnership to public corporation changes incentive structure", "severity": "neutral", "source_url": ""},
-    {"year": 2007, "event": "Goldman bets against mortgage market while selling mortgage securities to clients — 'Abacus' transactions", "severity": "critical", "source_url": ""},
-    {"year": 2008, "event": "Financial crisis; Goldman receives $10B TARP bailout and $12.9B indirectly through AIG bailout", "severity": "critical", "source_url": ""},
-    {"year": 2010, "event": "SEC charges Goldman for Abacus CDO fraud; $550M settlement — largest SEC penalty for a Wall Street firm at time", "severity": "critical", "source_url": ""},
-    {"year": 2012, "event": "$22M settlement for giving hedge funds advance analyst downgrade information", "severity": "high", "source_url": ""},
-    {"year": 2012, "event": "Greg Smith's NYT op-ed resignation documents 'muppet' culture and client hostility", "severity": "high", "source_url": ""},
-    {"year": 2016, "event": "$5B mortgage crisis settlement with DOJ for selling toxic securities", "severity": "critical", "source_url": ""},
-    {"year": 2020, "event": "$5.1B total 1MDB settlements across DOJ, SEC, Malaysia, UK, Singapore, Hong Kong — largest FCPA settlement in history; Malaysian subsidiary guilty plea", "severity": "critical", "source_url": "https://www.justice.gov"},
-    {"year": 2022, "event": "Consumer banking unit Marcus winds down after $3B+ in losses — Goldman's failed attempt at retail banking", "severity": "moderate", "source_url": ""}
+    {
+      "year": 1869,
+      "event": "Marcus Goldman founds Goldman Sachs in New York",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1999,
+      "event": "Goldman IPO; partners become billionaires; shift from partnership to public corporation changes incentive structure",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2007,
+      "event": "Goldman bets against mortgage market while selling mortgage securities to clients — 'Abacus' transactions",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2008,
+      "event": "Financial crisis; Goldman receives $10B TARP bailout and $12.9B indirectly through AIG bailout",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2010,
+      "event": "SEC charges Goldman for Abacus CDO fraud; $550M settlement — largest SEC penalty for a Wall Street firm at time",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2012,
+      "event": "$22M settlement for giving hedge funds advance analyst downgrade information",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2012,
+      "event": "Greg Smith's NYT op-ed resignation documents 'muppet' culture and client hostility",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2016,
+      "event": "$5B mortgage crisis settlement with DOJ for selling toxic securities",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "$5.1B total 1MDB settlements across DOJ, SEC, Malaysia, UK, Singapore, Hong Kong — largest FCPA settlement in history; Malaysian subsidiary guilty plea",
+      "severity": "critical",
+      "source_url": "https://www.justice.gov"
+    },
+    {
+      "year": 2022,
+      "event": "Consumer banking unit Marcus winds down after $3B+ in losses — Goldman's failed attempt at retail banking",
+      "severity": "moderate",
+      "source_url": ""
+    }
   ],
   "community_impact": {
     "displacement": "Goldman's mortgage crisis role — packaging and selling securities that Goldman's own traders knew were likely to fail — contributed to a foreclosure crisis that displaced millions of American families from their homes. Black and Latino homeowners who were disproportionately targeted with subprime mortgages lost wealth that has not recovered.",
@@ -81,14 +217,32 @@
   },
   "cost_absorption": {
     "who_benefited": [
-      {"group": "Goldman partners and shareholders", "how": "$600M in 1MDB fees; billions in mortgage crisis profits while clients lost money"},
-      {"group": "Tim Leissner (cooperation deal)", "how": "Pleaded guilty; years of delay before sentencing; reportedly free on $20M bail"},
-      {"group": "Malaysian officials and Jho Low", "how": "$4.5B stolen from 1MDB with Goldman's facilitation"}
+      {
+        "group": "Goldman partners and shareholders",
+        "how": "$600M in 1MDB fees; billions in mortgage crisis profits while clients lost money"
+      },
+      {
+        "group": "Tim Leissner (cooperation deal)",
+        "how": "Pleaded guilty; years of delay before sentencing; reportedly free on $20M bail"
+      },
+      {
+        "group": "Malaysian officials and Jho Low",
+        "how": "$4.5B stolen from 1MDB with Goldman's facilitation"
+      }
     ],
     "who_paid": [
-      {"group": "Malaysian people", "how": "$4.5B stolen from national development fund; Najib Razak government fell; country still pursuing full recovery"},
-      {"group": "Goldman's institutional clients in mortgage crisis", "how": "Bought securities Goldman was simultaneously betting against"},
-      {"group": "U.S. taxpayers", "how": "$22.9B in direct and indirect bailout funds; crisis costs borne broadly by the economy"}
+      {
+        "group": "Malaysian people",
+        "how": "$4.5B stolen from national development fund; Najib Razak government fell; country still pursuing full recovery"
+      },
+      {
+        "group": "Goldman's institutional clients in mortgage crisis",
+        "how": "Bought securities Goldman was simultaneously betting against"
+      },
+      {
+        "group": "U.S. taxpayers",
+        "how": "$22.9B in direct and indirect bailout funds; crisis costs borne broadly by the economy"
+      }
     ],
     "the_gap": "Goldman earned $600 million underwriting bonds for a fund from which $4.5 billion was stolen. Goldman paid $5.1 billion in settlements. One banker went to prison. The CEO said the firm was doing God's work."
   }

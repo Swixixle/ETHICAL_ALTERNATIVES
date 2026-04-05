@@ -3,75 +3,210 @@
   "brand_slug": "ford",
   "parent_company": "Ford Motor Company",
   "ultimate_parent": "Ford Motor Company",
-  "subsidiaries": ["Ford Pro", "Ford Blue", "Ford Model e", "Lincoln", "Ford Credit"],
+  "subsidiaries": [
+    "Ford Pro",
+    "Ford Blue",
+    "Ford Model e",
+    "Lincoln",
+    "Ford Credit"
+  ],
   "overall_concern_level": "significant",
   "profile_type": "database",
   "generated_headline": "FORD KNEW THE PINTO GAS TANK WOULD KILL PEOPLE AND CALCULATED IT WAS CHEAPER TO PAY SETTLEMENTS THAN FIX IT",
   "executive_summary": "Ford Motor Company is the second-largest U.S. automaker with annual revenues exceeding $185 billion. Ford's corporate history includes the most documented case of deliberate cost-benefit analysis used to justify knowingly selling a dangerous product: the 1970s Pinto, whose rear-mounted gas tank Ford knew would rupture in rear-end collisions, causing fatal fires. Internal Ford documents — obtained in litigation — showed the company calculated that paying injury and death settlements would be cheaper than redesigning the tank. In more recent history, Ford's Explorer rollover problem, multiple recall failures, emissions testing manipulation, and labor violations have continued a pattern of prioritizing financial outcomes over safety and accountability.",
-  "verdict_tags": ["pinto_knowingly_dangerous", "cost_benefit_death_calculation", "explorer_rollover_deaths", "emissions_cheating", "recall_failures", "labor_violations"],
-  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "verdict_tags": [
+    "pinto_knowingly_dangerous",
+    "cost_benefit_death_calculation",
+    "explorer_rollover_deaths",
+    "emissions_cheating",
+    "recall_failures",
+    "labor_violations"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
   "tax": {
     "summary": "Ford uses complex international subsidiary structures across its global manufacturing and sales operations to minimize tax obligations. The company has significant operations in Ireland, Germany, and other lower-tax jurisdictions for European operations. Ford Credit — its financing arm — uses additional tax structures. Ford has received significant government subsidies for EV manufacturing through the Inflation Reduction Act and state-level manufacturing incentives.",
-    "flags": ["international_subsidiary_structures", "ev_manufacturing_subsidies", "ford_credit_tax_structures"],
-    "sources": ["https://www.sec.gov"]
+    "flags": [
+      "international_subsidiary_structures",
+      "ev_manufacturing_subsidies",
+      "ford_credit_tax_structures"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
   },
   "legal": {
     "summary": "Pinto (1970s): Ford's internal documents — revealed in the Grimshaw v. Ford case — showed the company calculated paying injury/death costs at $49.5M would be cheaper than the $137M cost to fix the gas tank. Ford paid $100+ million in Pinto settlements. Explorer/Firestone (2000s): Ford's Explorer had documented rollover risk with Firestone tires — 271 people died; Ford paid $300M+ in settlements. Emissions (2014-present): Ford settled EPA and California air board investigations for emissions testing irregularities. Recall failures: Ford has been involved in multiple large recalls including the Takata airbag recall (affecting millions of vehicles) and multiple powertrain recalls. NHTSA has investigated Ford for recall timeliness failures.",
-    "flags": ["pinto_cost_benefit_death_documented", "explorer_271_deaths", "emissions_testing_irregularities", "takata_airbag_recall", "nhtsa_recall_timeliness"],
-    "sources": ["https://www.nhtsa.gov"]
+    "flags": [
+      "pinto_cost_benefit_death_documented",
+      "explorer_271_deaths",
+      "emissions_testing_irregularities",
+      "takata_airbag_recall",
+      "nhtsa_recall_timeliness"
+    ],
+    "sources": [
+      "https://www.nhtsa.gov"
+    ]
   },
   "labor": {
     "summary": "Ford employs approximately 175,000 people globally. The UAW's 2023 strike against Ford, GM, and Stellantis — the first simultaneous strike against all three — resulted in significant wage increases after Ford had proposed smaller increases despite record profits. Ford has also faced NLRB complaints for union-related conduct. The company's shift toward EV manufacturing has created significant uncertainty for workers at traditional combustion engine plants, with documented cases of plant closures in communities built around Ford manufacturing.",
-    "flags": ["uaw_2023_strike_record_profits_vs_wage_offers", "ev_transition_worker_uncertainty", "plant_closure_community_impact"],
-    "sources": ["https://www.nlrb.gov"]
+    "flags": [
+      "uaw_2023_strike_record_profits_vs_wage_offers",
+      "ev_transition_worker_uncertainty",
+      "plant_closure_community_impact"
+    ],
+    "sources": [
+      "https://www.nlrb.gov"
+    ]
   },
   "environmental": {
     "summary": "Ford has faced EPA enforcement for emissions violations across multiple vehicle lines. The company's F-150 — the best-selling vehicle in America — is a major source of tailpipe emissions. Ford's emissions testing irregularities, investigated by the EPA, involved testing under conditions that did not represent real-world driving. Ford has been cited by CARB (California Air Resources Board) for failing to comply with California emissions standards for specific models.",
-    "flags": ["emissions_testing_irregularities", "f150_emissions_scale", "carb_violations"],
-    "sources": ["https://www.epa.gov"]
+    "flags": [
+      "emissions_testing_irregularities",
+      "f150_emissions_scale",
+      "carb_violations"
+    ],
+    "sources": [
+      "https://www.epa.gov"
+    ]
   },
   "political": {
     "summary": "Ford spent $5.8 million on federal lobbying in 2023. The company has lobbied on fuel economy standards, emissions regulations, EV incentive structures, and trade policy. Ford has been a beneficiary of the Inflation Reduction Act's EV manufacturing credits while simultaneously lobbying on implementation details. The company's UAW relationship is politically complex — Ford maintains cooperative relationships with union leadership while its operational decisions periodically create conflicts.",
-    "flags": ["cafe_standards_lobbying", "ira_beneficiary_while_lobbying_implementation", "trade_policy_lobbying"],
-    "sources": ["https://www.opensecrets.org"]
+    "flags": [
+      "cafe_standards_lobbying",
+      "ira_beneficiary_while_lobbying_implementation",
+      "trade_policy_lobbying"
+    ],
+    "sources": [
+      "https://www.opensecrets.org"
+    ]
   },
   "executives": {
     "summary": "CEO Jim Farley received $26.8 million in total compensation in 2023. Executive Chair Bill Ford — great-grandson of Henry Ford — received $14.9 million. Ford's executive compensation significantly outpaced the wage increases offered to UAW workers before the 2023 strike, which became a central union talking point. Ford's transition to EV manufacturing has been accompanied by significant losses in the Model e division — $4.7 billion in 2023 alone — while the F-150 combustion truck line continues to generate most of the company's profit.",
-    "flags": ["executive_pay_vs_uaw_wage_offer_contrast", "4_7b_ev_division_losses", "f150_profit_dependence"],
-    "sources": ["https://www.sec.gov"]
+    "flags": [
+      "executive_pay_vs_uaw_wage_offer_contrast",
+      "4_7b_ev_division_losses",
+      "f150_profit_dependence"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
   },
   "connections": {
     "summary": "Ford shares major institutional investors with GM, Stellantis, and Toyota — creating some aligned incentives on regulatory issues. Ford's relationship with Firestone/Bridgestone during the Explorer crisis revealed how supplier relationships can distribute liability while obscuring responsibility. Ford's BlueOval City battery plant in Tennessee — a $5.6 billion investment with SK Innovation — connects it to Korean battery supply chains with documented labor concerns. The auto industry's trade associations coordinate lobbying against emissions and fuel economy regulations.",
-    "flags": ["firestone_distributed_liability", "blueoval_city_korean_battery_supply_labor", "auto_industry_emissions_lobbying_coordination"],
+    "flags": [
+      "firestone_distributed_liability",
+      "blueoval_city_korean_battery_supply_labor",
+      "auto_industry_emissions_lobbying_coordination"
+    ],
     "sources": []
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
     "summary": "Former Ford engineers have alleged that the Pinto's design flaws were known before production and that the decision not to fix them was made at executive levels with awareness of the risk. NHTSA investigators have alleged that Ford's response to early Explorer rollover complaints was to dispute the data rather than investigate the safety concern — a pattern that delayed recall action and contributed to additional deaths. Environmental researchers have alleged that Ford's real-world emissions from its truck and SUV fleet — which dominate U.S. sales — significantly exceed the numbers reported in fuel economy testing.",
-    "flags": ["pinto_executive_awareness_alleged", "explorer_data_dispute_delay_alleged", "real_world_truck_emissions_gap_alleged"],
+    "flags": [
+      "pinto_executive_awareness_alleged",
+      "explorer_data_dispute_delay_alleged",
+      "real_world_truck_emissions_gap_alleged"
+    ],
     "sources": []
   },
   "health_record": {
     "summary": "The Pinto gas tank defect killed an estimated 27 people in fuel-fed fires in rear-end collisions — deaths Ford's internal documents show the company anticipated. The Explorer/Firestone rollover problem killed 271 people. Takata airbag failures — affecting millions of Ford vehicles — have been linked to deaths and injuries. Tailpipe emissions from Ford's dominant truck and SUV fleet contribute to air quality degradation and related respiratory and cardiovascular disease in communities near high-traffic areas.",
-    "flags": ["pinto_27_documented_fire_deaths", "explorer_firestone_271_deaths", "takata_airbag_deaths", "truck_suv_fleet_air_quality_impact"],
-    "sources": ["https://www.nhtsa.gov"]
+    "flags": [
+      "pinto_27_documented_fire_deaths",
+      "explorer_firestone_271_deaths",
+      "takata_airbag_deaths",
+      "truck_suv_fleet_air_quality_impact"
+    ],
+    "sources": [
+      "https://www.nhtsa.gov"
+    ]
   },
   "alternatives": {
-    "cheaper": ["Used vehicles — buying 2-3 year old vehicles avoids the steepest depreciation curve regardless of brand", "Public transit in urban areas — often dramatically cheaper than vehicle ownership when all costs are counted", "Toyota — generally better reliability ratings; Honda — comparable pricing"],
-    "healthier": ["Electric vehicles from any manufacturer eliminate tailpipe emissions entirely", "Toyota hybrids — significantly better fuel economy than Ford's truck-dominant lineup", "Walking, cycling, and transit for daily commuting — eliminates vehicle ownership costs and emissions"],
-    "diy": ["VIN check for recalls at NHTSA.gov before purchasing any vehicle — including Ford vehicles with outstanding Takata airbag or other recalls", "Vehicle maintenance extends life and reduces need to buy new — Ford's reliability varies significantly by model", "Checking crash test ratings at IIHS.org before purchase"]
+    "cheaper": [
+      "Used vehicles — buying 2-3 year old vehicles avoids the steepest depreciation curve regardless of brand",
+      "Public transit in urban areas — often dramatically cheaper than vehicle ownership when all costs are counted",
+      "Toyota — generally better reliability ratings; Honda — comparable pricing"
+    ],
+    "healthier": [
+      "Electric vehicles from any manufacturer eliminate tailpipe emissions entirely",
+      "Toyota hybrids — significantly better fuel economy than Ford's truck-dominant lineup",
+      "Walking, cycling, and transit for daily commuting — eliminates vehicle ownership costs and emissions"
+    ],
+    "diy": [
+      "VIN check for recalls at NHTSA.gov before purchasing any vehicle — including Ford vehicles with outstanding Takata airbag or other recalls",
+      "Vehicle maintenance extends life and reduces need to buy new — Ford's reliability varies significantly by model",
+      "Checking crash test ratings at IIHS.org before purchase"
+    ]
   },
   "timeline": [
-    {"year": 1903, "event": "Ford Motor Company founded by Henry Ford", "severity": "neutral", "source_url": ""},
-    {"year": 1970, "event": "Pinto introduced; Ford engineers document gas tank vulnerability; company chooses not to redesign", "severity": "critical", "source_url": ""},
-    {"year": 1977, "event": "Mother Jones investigation reveals Ford's internal cost-benefit analysis valuing lives at $200,000 each", "severity": "critical", "source_url": ""},
-    {"year": 1978, "event": "NHTSA orders Pinto recall; Ford recalled 1.5 million vehicles", "severity": "high", "source_url": ""},
-    {"year": 1980, "event": "Indiana jury finds Ford not guilty of reckless homicide; civil settlements continue", "severity": "high", "source_url": ""},
-    {"year": 2000, "event": "Firestone recall: 6.5 million tires on Ford Explorer; 271 deaths attributed to rollover crashes", "severity": "critical", "source_url": ""},
-    {"year": 2001, "event": "Ford recalls 13 million Explorer tires; relationship with Firestone ends; $300M+ in settlements", "severity": "high", "source_url": ""},
-    {"year": 2014, "event": "Takata airbag recall begins; affects millions of Ford vehicles; inflators can fire shrapnel", "severity": "critical", "source_url": ""},
-    {"year": 2023, "event": "UAW strike: Ford offers 23% wage increase after union demands highlight gap with executive compensation", "severity": "high", "source_url": ""},
-    {"year": 2023, "event": "Model e EV division loses $4.7B; F-150 combustion sales carry company profitability", "severity": "moderate", "source_url": ""}
+    {
+      "year": 1903,
+      "event": "Ford Motor Company founded by Henry Ford",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1970,
+      "event": "Pinto introduced; Ford engineers document gas tank vulnerability; company chooses not to redesign",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1977,
+      "event": "Mother Jones investigation reveals Ford's internal cost-benefit analysis valuing lives at $200,000 each",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1978,
+      "event": "NHTSA orders Pinto recall; Ford recalled 1.5 million vehicles",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 1980,
+      "event": "Indiana jury finds Ford not guilty of reckless homicide; civil settlements continue",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2000,
+      "event": "Firestone recall: 6.5 million tires on Ford Explorer; 271 deaths attributed to rollover crashes",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2001,
+      "event": "Ford recalls 13 million Explorer tires; relationship with Firestone ends; $300M+ in settlements",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2014,
+      "event": "Takata airbag recall begins; affects millions of Ford vehicles; inflators can fire shrapnel",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "UAW strike: Ford offers 23% wage increase after union demands highlight gap with executive compensation",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "Model e EV division loses $4.7B; F-150 combustion sales carry company profitability",
+      "severity": "moderate",
+      "source_url": ""
+    }
   ],
   "community_impact": {
     "displacement": "Ford plant closures and transitions — including the announced closure of the Avon Lake, Ohio stamping plant as EV transition proceeds — devastate communities built around auto manufacturing. These communities often have limited economic alternatives. The UAW's concern about the EV transition is specifically about the displacement of well-paying union jobs with lower-wage battery manufacturing positions.",
@@ -81,15 +216,36 @@
   },
   "cost_absorption": {
     "who_benefited": [
-      {"group": "Ford shareholders and Ford family", "how": "Decades of profit while Pinto fire settlements were cheaper than the fix"},
-      {"group": "Ford executives", "how": "Jim Farley: $26.8M in 2023; Bill Ford: $14.9M; paid while UAW workers were on strike for wage increases"},
-      {"group": "F-150 buyers", "how": "Truck subsidized by not paying full externalized cost of emissions and fuel consumption"}
+      {
+        "group": "Ford shareholders and Ford family",
+        "how": "Decades of profit while Pinto fire settlements were cheaper than the fix"
+      },
+      {
+        "group": "Ford executives",
+        "how": "Jim Farley: $26.8M in 2023; Bill Ford: $14.9M; paid while UAW workers were on strike for wage increases"
+      },
+      {
+        "group": "F-150 buyers",
+        "how": "Truck subsidized by not paying full externalized cost of emissions and fuel consumption"
+      }
     ],
     "who_paid": [
-      {"group": "Pinto fire victims and families", "how": "27+ deaths from a defect Ford knew about and calculated it was cheaper to settle than fix"},
-      {"group": "Explorer rollover victims", "how": "271 deaths; Ford disputed data rather than investigate early warning signs"},
-      {"group": "UAW workers", "how": "Real wages below executive compensation growth; plant closure risk from EV transition"},
-      {"group": "Communities with air quality impacts", "how": "Ford's truck-dominant fleet is a major tailpipe emissions source; companies in emissions-heavy corridors"}
+      {
+        "group": "Pinto fire victims and families",
+        "how": "27+ deaths from a defect Ford knew about and calculated it was cheaper to settle than fix"
+      },
+      {
+        "group": "Explorer rollover victims",
+        "how": "271 deaths; Ford disputed data rather than investigate early warning signs"
+      },
+      {
+        "group": "UAW workers",
+        "how": "Real wages below executive compensation growth; plant closure risk from EV transition"
+      },
+      {
+        "group": "Communities with air quality impacts",
+        "how": "Ford's truck-dominant fleet is a major tailpipe emissions source; companies in emissions-heavy corridors"
+      }
     ],
     "the_gap": "Ford calculated that it would cost $137 million to fix the Pinto gas tank and $49.5 million to pay injury and death settlements. They chose the settlements. The memo was called the 'Ford Pinto Memo.' They put a dollar value on your life and it came out cheaper than the fix."
   }
