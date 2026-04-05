@@ -586,13 +586,14 @@ function deriveConcernFlags(inv) {
 }
 
 function finalizeInvestigation(inv, profileType) {
+  const brand_slug = resolveIncumbentSlug(inv.brand, inv.parent);
   let press_outlets = Array.isArray(inv.press_outlets) ? inv.press_outlets : [];
   if (!press_outlets.length) {
-    const slug = resolveIncumbentSlug(inv.brand, inv.parent);
-    press_outlets = getPressOutletsForSlug(slug);
+    press_outlets = getPressOutletsForSlug(brand_slug);
   }
   return {
     ...inv,
+    brand_slug,
     press_outlets,
     concern_flags: deriveConcernFlags(inv),
     profile_type: profileType,

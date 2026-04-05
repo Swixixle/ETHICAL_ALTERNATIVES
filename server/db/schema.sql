@@ -188,3 +188,22 @@ CREATE TABLE IF NOT EXISTS chain_classifications (
   confidence      REAL NOT NULL,
   updated_at      TIMESTAMPTZ DEFAULT now()
 );
+
+-- Civic Witness Registry — voluntary public ledger of reviewers (not legal filings).
+CREATE TABLE IF NOT EXISTS civic_witnesses (
+  id SERIAL PRIMARY KEY,
+  session_id TEXT NOT NULL,
+  display_name TEXT NOT NULL,
+  brand_slug TEXT NOT NULL,
+  brand_name TEXT NOT NULL,
+  investigation_headline TEXT,
+  city TEXT,
+  state_code TEXT,
+  country TEXT DEFAULT 'US',
+  witnessed_at TIMESTAMPTZ DEFAULT NOW(),
+  public_message TEXT,
+  is_public BOOLEAN DEFAULT TRUE
+);
+
+CREATE INDEX IF NOT EXISTS idx_witnesses_brand ON civic_witnesses (brand_slug);
+CREATE INDEX IF NOT EXISTS idx_witnesses_state ON civic_witnesses (state_code);

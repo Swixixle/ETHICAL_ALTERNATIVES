@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { Router } from 'express';
 import { resolveIncumbentSlug } from '../services/investigation.js';
 import { getPressOutletsForSlug } from '../services/pressOutletsCatalog.js';
+import { WITNESS_LEGAL_NOTICE } from '../constants/witnessLegal.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -12,6 +13,9 @@ const companyAccounts = JSON.parse(
 );
 const regulatorData = JSON.parse(
   readFileSync(join(__dirname, '../data/regulator-endpoints.json'), 'utf8')
+);
+const shareDestinations = JSON.parse(
+  readFileSync(join(__dirname, '../data/share-destinations.json'), 'utf8')
 );
 
 function pickCompanyAccounts(map, slug) {
@@ -96,7 +100,42 @@ function buildRegulatorPackText(inv, brandName, sources) {
 }
 
 /** Agencies surfaced in the unified “send to all” checklist (fixed order). */
-const SHARE_REGULATOR_ORDER = ['FTC', 'SEC', 'IRS', 'NLRB', 'OSHA', 'EPA'];
+const SHARE_REGULATOR_ORDER = ['FTC', 'SEC', 'IRS', 'NLRB', 'DOL', 'OSHA', 'EPA', 'FDA'];
+
+function resolveStateAG(stateCode) {
+  const raw = typeof stateCode === 'string' ? stateCode.trim().toUpperCase() : '';
+  const code = raw.length === 2 ? raw : '';
+  if (!code || !shareDestinations.stateAGs?.[code]) return null;
+  const row = shareDestinations.stateAGs[code];
+  return { state_code: code, name: row.name, url: row.url };
+}
+
+function resolveUnionForSlug(slug) {
+  const s = typeof slug === 'string' && slug.trim() ? slug.trim() : '';
+  const u = shareDestinations.unions || {};
+  return u[s] || u._default || null;
+}
+
+function resolveIrContact(slug) {
+  const s = typeof slug === 'string' && slug.trim() ? slug.trim() : '';
+  const url = shareDestinations.irContacts?.[s];
+  return typeof url === 'string' && url ? { url } : null;
+}
+
+function buildInvestigationEmailPack(brandName, headline, inv, siteUrl, verdictTags, sourceCount) {
+  const subj = `Documented corporate investigation: ${brandName}`;
+  const tags = (verdictTags || []).slice(0, 3).map(String).join(', ');
+  const summary = buildInvestigationSummary(inv);
+  const summaryClip = summary.length > 1000 ? `${summary.slice(0, 1000)}…` : summary;
+  const body = `${headline}\n\nKey issues: ${tags || '(see record)'}\n\n${summaryClip}\n\nIndexed primary sources in dossier: ${sourceCount}\n\nLive record: ${siteUrl}\n\n---\nCompiled from publicly available records. Verify primary sources; this email is not a legal filing.`;
+  const max = 1900;
+  const clipped = body.length > max ? `${body.slice(0, max)}…` : body;
+  return {
+    subject: subj,
+    body: clipped,
+    mailto: `mailto:?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(clipped)}`,
+  };
+}
 
 /**
  * Regulators whose applies_to intersects investigation verdict_tags only (no default list).
@@ -134,10 +173,25 @@ router.post('/', (req, res) => {
       'Company';
 
     const slugFromBody = typeof body.brand_slug === 'string' ? body.brand_slug.trim() : '';
+    const invSlug =
+      typeof investigation.brand_slug === 'string' && investigation.brand_slug.trim()
+        ? investigation.brand_slug.trim()
+        : '';
     const brandSlug =
       slugFromBody ||
+      invSlug ||
       resolveIncumbentSlug(identification.brand, identification.corporate_parent) ||
       resolveIncumbentSlug(investigation.brand, identification.corporate_parent);
+
+    const userStateRaw = typeof body.user_state === 'string' ? body.user_state.trim().toUpperCase() : '';
+    const userState = userStateRaw.length === 2 ? userStateRaw : '';
+    const stateAG = userState ? resolveStateAG(userState) : null;
+    const unionContact = resolveUnionForSlug(brandSlug);
+    const irContact = resolveIrContact(brandSlug);
+    const esgRaters = Array.isArray(shareDestinations.esgRaters) ? shareDestinations.esgRaters : [];
+    const pensionFunds = Array.isArray(shareDestinations.pensionFunds)
+      ? shareDestinations.pensionFunds
+      : [];
 
     const verdictTags = Array.isArray(investigation.verdict_tags)
       ? investigation.verdict_tags.map(String)
@@ -172,6 +226,15 @@ router.post('/', (req, res) => {
       ? accounts.twitter
       : `#${brandName.replace(/\s+/g, '')}`;
 
+    const emailPack = buildInvestigationEmailPack(
+      brandName,
+      headline,
+      investigation,
+      siteUrl,
+      verdictTags,
+      primarySources.length
+    );
+
     const shareTexts = {
       twitter: `${concernEmoji} ${headline}\n\n${topTagsDisplay.join(' · ')}\n\nSourced public record · #EthicalAlt\n${companyTag}\n\n${siteUrl}`,
 
@@ -182,6 +245,9 @@ router.post('/', (req, res) => {
       general: `${headline}\n\n${topTagsDisplay.join(' · ')}\n\n${invSummary || ''}\n\nPrimary sources: government filings, courts, and established journalism — see EthicalAlt for links.\n\n${siteUrl}`,
 
       regulator_pack: regulatorPack,
+
+      email_subject: emailPack.subject,
+      email_body: emailPack.body,
     };
 
     const relevantRegulators = collectVerdictMatchedShareRegulators(verdictTags);
@@ -211,6 +277,13 @@ router.post('/', (req, res) => {
       company_tag: companyTag,
       press_outlets: pressOutlets,
       relevant_regulators: relevantRegulators,
+      state_ag: stateAG,
+      user_state: userState || null,
+      esg_raters: esgRaters,
+      pension_funds: pensionFunds,
+      union: unionContact,
+      ir_contact: irContact,
+      email_mailto: emailPack.mailto,
       share_url: siteUrl,
       share_texts: shareTexts,
       card_data: {
@@ -225,6 +298,7 @@ router.post('/', (req, res) => {
       },
       disclaimer:
         'All shared content uses only documented public record claims with primary source URLs. Nothing fabricated. The record speaks.',
+      legal_notice: WITNESS_LEGAL_NOTICE,
     });
   } catch (err) {
     console.error('share-card error:', err?.message || err);

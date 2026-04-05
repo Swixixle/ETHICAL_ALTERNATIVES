@@ -1,4 +1,9 @@
+import { useEffect, useState } from 'react';
 import { countIndexedSources } from '../utils/investigationSources.js';
+
+function apiPrefix() {
+  return (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+}
 
 const GRADE_KEYS = [
   'tax_evidence_grade',
@@ -78,6 +83,33 @@ export default function ProofBlock({
   recordPresentation,
   suppressRecordBadge = false,
 }) {
+  const [witnessCount, setWitnessCount] = useState(null);
+
+  useEffect(() => {
+    const slug =
+      investigation && typeof investigation.brand_slug === 'string'
+        ? investigation.brand_slug.trim()
+        : '';
+    if (!slug) {
+      setWitnessCount(null);
+      return;
+    }
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch(`${apiPrefix()}/api/witness/brand/${encodeURIComponent(slug)}`);
+        if (!res.ok) return;
+        const d = await res.json();
+        if (!cancelled && typeof d.count === 'number') setWitnessCount(d.count);
+      } catch {
+        if (!cancelled) setWitnessCount(null);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [investigation?.brand_slug]);
+
   if (!investigation) return null;
 
   const inv = investigation;
@@ -220,6 +252,21 @@ export default function ProofBlock({
           >
             <strong>Match:</strong> {matchMethodLabel(id)}
           </div>
+          {witnessCount != null && witnessCount > 0 ? (
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 6,
+                fontSize: 11,
+                color: '#a8c4d8',
+                marginTop: 8,
+              }}
+            >
+              <span style={{ color: '#d4a017', fontWeight: 700 }}>{witnessCount}</span>
+              <span>civic {witnessCount === 1 ? 'witness' : 'witnesses'} on this record</span>
+            </div>
+          ) : null}
         </div>
       </div>
 

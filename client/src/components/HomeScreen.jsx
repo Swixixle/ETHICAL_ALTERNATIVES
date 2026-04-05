@@ -911,7 +911,12 @@ function FeedCard({ business, chainFootnote = false }) {
 /**
  * @param {{ onStartSnap: () => void }} props
  */
-export default function HomeScreen({ onStartSnap, onSearchInvestigate, onOpenHistory }) {
+export default function HomeScreen({
+  onStartSnap,
+  onSearchInvestigate,
+  onOpenHistory,
+  onOpenWitnesses,
+}) {
   const [phase, setPhase] = useState(() => initialPhase());
   const [location, setLocation] = useState(() => readCachedLocation());
   const [identity, setIdentity] = useState(null);
@@ -1311,27 +1316,50 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate, onOpenHis
         >
           ETHICALALT
         </div>
-        {typeof onOpenHistory === 'function' ? (
-          <button
-            type="button"
-            onClick={() => onOpenHistory()}
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: 10,
-              letterSpacing: 2,
-              textTransform: 'uppercase',
-              background: 'transparent',
-              border: '1px solid #f0a820',
-              color: '#f0a820',
-              padding: '6px 12px',
-              borderRadius: 2,
-              cursor: 'pointer',
-              flexShrink: 0,
-            }}
-          >
-            History
-          </button>
-        ) : null}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          {typeof onOpenWitnesses === 'function' ? (
+            <button
+              type="button"
+              onClick={() => onOpenWitnesses()}
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 10,
+                letterSpacing: 2,
+                textTransform: 'uppercase',
+                background: 'transparent',
+                border: '1px solid #6aaa8a',
+                color: '#6aaa8a',
+                padding: '6px 12px',
+                borderRadius: 2,
+                cursor: 'pointer',
+                flexShrink: 0,
+              }}
+            >
+              Registry
+            </button>
+          ) : null}
+          {typeof onOpenHistory === 'function' ? (
+            <button
+              type="button"
+              onClick={() => onOpenHistory()}
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 10,
+                letterSpacing: 2,
+                textTransform: 'uppercase',
+                background: 'transparent',
+                border: '1px solid #f0a820',
+                color: '#f0a820',
+                padding: '6px 12px',
+                borderRadius: 2,
+                cursor: 'pointer',
+                flexShrink: 0,
+              }}
+            >
+              History
+            </button>
+          ) : null}
+        </div>
       </div>
 
       <CityCard identity={identity} city={location?.city} state={location?.state} />

@@ -1,6 +1,7 @@
 import './env.js';
 import cors from 'cors';
 import express from 'express';
+import { registryHeaders } from './middleware/registryHeaders.js';
 import tapRouter from './routes/tap.js';
 import sellersRouter from './routes/sellers.js';
 import cityIdentityRouter from './routes/cityIdentity.js';
@@ -11,6 +12,7 @@ import communityBoardRouter from './routes/communityBoard.js';
 import territoryRouter from './routes/territory.js';
 import localEventsRouter from './routes/localEvents.js';
 import localCommercialRouter from './routes/localCommercial.js';
+import witnessRouter from './routes/witness.js';
 
 const app = express();
 
@@ -25,6 +27,7 @@ app.use(
   })
 );
 app.use(express.json({ limit: '10mb' }));
+app.use(registryHeaders);
 
 app.get('/health', (_req, res) => {
   res.json({ ok: true });
@@ -40,6 +43,7 @@ app.use('/api/board', communityBoardRouter);
 app.use('/api/territory', territoryRouter);
 app.use('/api/events', localEventsRouter);
 app.use('/api/local-commercial', localCommercialRouter);
+app.use('/api/witness', witnessRouter);
 
 const PORT = Number(process.env.PORT) || 3001;
 app.listen(PORT, () => {

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import PhotoCapture from './components/PhotoCapture.jsx';
 import TapOverlay from './components/TapOverlay.jsx';
 import ConfirmTap from './components/ConfirmTap.jsx';
@@ -11,6 +11,7 @@ import HomeScreen from './components/HomeScreen.jsx';
 import HistoryScreen from './components/HistoryScreen.jsx';
 import LocalCommercial from './components/LocalCommercial.jsx';
 import ShareCard from './components/ShareCard.jsx';
+import WitnessRegistry from './components/WitnessRegistry.jsx';
 import ConfidenceBadge from './components/ConfidenceBadge.jsx';
 import InvestigationCard, { NoRecordCompactModule } from './components/InvestigationCard.jsx';
 import { readCachedLocation } from './services/location.js';
@@ -45,8 +46,9 @@ function confidenceLabel(c) {
 }
 
 export default function App() {
-  /** home — feed; snap — photo tap (Quick); deep — typed investigation (rabbit hole); history — saved taps */
+  /** home — feed; snap — photo tap (Quick); deep — typed investigation (rabbit hole); history — saved taps; witnesses — civic registry */
   const [mode, setMode] = useState('home');
+  const [witnessReturnMode, setWitnessReturnMode] = useState('home');
 
   const {
     image,
@@ -82,6 +84,24 @@ export default function App() {
     const onResize = () => setIsDesktop(window.innerWidth >= 768);
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  const openWitnessRegistry = useCallback(() => {
+    setWitnessReturnMode(mode);
+    try {
+      window.history.pushState({}, '', '/witnesses');
+    } catch {
+      /* ignore */
+    }
+    setMode('witnesses');
+  }, [mode]);
+
+  useEffect(() => {
+    const path = (window.location.pathname || '/').replace(/\/$/, '') || '/';
+    if (path === '/witnesses') {
+      setWitnessReturnMode('home');
+      setMode('witnesses');
+    }
   }, []);
 
   useEffect(() => {
@@ -132,6 +152,23 @@ export default function App() {
 
   const researchBackdropLoc = researchCommercialOn ? readCachedLocation() : null;
 
+  if (mode === 'witnesses') {
+    return (
+      <div className="app">
+        <WitnessRegistry
+          onBack={() => {
+            try {
+              window.history.replaceState({}, '', '/');
+            } catch {
+              /* ignore */
+            }
+            setMode(witnessReturnMode);
+          }}
+        />
+      </div>
+    );
+  }
+
   if (mode === 'home') {
     return (
       <div className="app app--home">
@@ -141,6 +178,7 @@ export default function App() {
             setMode('snap');
           }}
           onOpenHistory={() => setMode('history')}
+          onOpenWitnesses={openWitnessRegistry}
           onSearchInvestigate={async (q) => {
             reset();
             setMode('deep');
@@ -687,6 +725,12 @@ export default function App() {
                 ⌖
               </span>
               <span className="app__bottom-nav__label">Local</span>
+            </button>
+            <button type="button" className="app__bottom-nav__item" onClick={openWitnessRegistry}>
+              <span className="app__bottom-nav__icon" aria-hidden>
+                ✧
+              </span>
+              <span className="app__bottom-nav__label">Registry</span>
             </button>
           </nav>
         </>
