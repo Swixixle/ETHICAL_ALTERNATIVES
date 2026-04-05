@@ -345,6 +345,286 @@ export default function InvestigationCard({ investigation, onShare, recordPresen
     );
   }
 
+  const connections = investigation.connections;
+  const allegations = investigation.allegations;
+  const healthRecord = investigation.health_record;
+  const alternatives = investigation.alternatives;
+
+  const extendedSectionNodes = [];
+
+  if (connections && typeof connections === 'object') {
+    const cSummary = typeof connections.summary === 'string' ? connections.summary.trim() : '';
+    const cFlags = Array.isArray(connections.flags) ? connections.flags : [];
+    const cSources = Array.isArray(connections.sources) ? connections.sources : [];
+    if (cSummary || cFlags.length || cSources.length) {
+      extendedSectionNodes.push(
+        <div key="connections" className="investigation-card__section investigation-card__section--connections">
+          <div className="investigation-card__section-head investigation-card__section-head--static">
+            <h2
+              className="section-header investigation-card__section-title investigation-card__section-title--sourced"
+              style={{
+                flex: 1,
+                margin: '12px 0 0',
+                textAlign: 'left',
+                display: 'flex',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: 4,
+              }}
+            >
+              <PoliticalIcon />
+              CONNECTIONS
+            </h2>
+          </div>
+          <div className="investigation-card__section-body investigation-body body-crimson">
+            {cSummary ? <p className="investigation-card__section-summary">{cSummary}</p> : null}
+            {cFlags.length ? (
+              <ul className="investigation-card__list" style={{ listStyle: 'disc' }}>
+                {cFlags.map((item) => (
+                  <li key={String(item)}>{String(item).replace(/_/g, ' ')}</li>
+                ))}
+              </ul>
+            ) : null}
+            {cSources.length ? (
+              <ul className="investigation-card__sources investigation-card__sources--blocks">
+                {cSources.map((url) => {
+                  const href = String(url);
+                  return (
+                    <li key={href} className="investigation-card__source-li">
+                      <a href={href} target="_blank" rel="noreferrer" className="investigation-card__source-block">
+                        <span className="investigation-card__source-kicker">SOURCE</span>
+                        <span className="investigation-card__source-url">{href}</span>
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : null}
+          </div>
+        </div>
+      );
+    }
+  }
+
+  if (allegations && typeof allegations === 'object') {
+    const aSummary = typeof allegations.summary === 'string' ? allegations.summary.trim() : '';
+    const aDisclaimer =
+      typeof allegations.disclaimer === 'string' && allegations.disclaimer.trim()
+        ? allegations.disclaimer.trim()
+        : 'The following are allegations and unproven claims. They are documented in credible sources but have not been adjudicated.';
+    const aFlags = Array.isArray(allegations.flags) ? allegations.flags : [];
+    const aSources = Array.isArray(allegations.sources) ? allegations.sources : [];
+    if (aSummary || aFlags.length || aSources.length) {
+      extendedSectionNodes.push(
+        <div key="allegations" className="investigation-card__section investigation-card__section--allegations">
+          <div className="investigation-card__section-head investigation-card__section-head--static">
+            <h2
+              className="section-header investigation-card__section-title investigation-card__section-title--sourced"
+              style={{
+                flex: 1,
+                margin: '12px 0 0',
+                textAlign: 'left',
+                display: 'flex',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: 4,
+              }}
+            >
+              <LegalIcon />
+              ALLEGATIONS
+            </h2>
+          </div>
+          <div className="investigation-card__section-body investigation-body body-crimson">
+            <p className="investigation-card__allegations-disclaimer">{aDisclaimer}</p>
+            {aSummary ? <p className="investigation-card__section-summary">{aSummary}</p> : null}
+            {aFlags.length ? (
+              <ul className="investigation-card__list" style={{ listStyle: 'disc' }}>
+                {aFlags.map((item) => (
+                  <li key={String(item)}>{String(item).replace(/_/g, ' ')}</li>
+                ))}
+              </ul>
+            ) : null}
+            {aSources.length ? (
+              <ul className="investigation-card__sources investigation-card__sources--blocks">
+                {aSources.map((url) => {
+                  const href = String(url);
+                  return (
+                    <li key={href} className="investigation-card__source-li">
+                      <a href={href} target="_blank" rel="noreferrer" className="investigation-card__source-block">
+                        <span className="investigation-card__source-kicker">SOURCE</span>
+                        <span className="investigation-card__source-url">{href}</span>
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : null}
+          </div>
+        </div>
+      );
+    }
+  }
+
+  const HEALTH_SEVERITY_META = {
+    minimal: { border: '#6aaa8a', accent: '#6aaa8a' },
+    low: { border: '#7ab892', accent: '#7ab892' },
+    moderate: { border: '#e8b84a', accent: '#e8b84a' },
+    high: { border: '#e07040', accent: '#e07040' },
+    critical: { border: '#c0302a', accent: '#ff6b6b' },
+  };
+
+  if (healthRecord && typeof healthRecord === 'object') {
+    const hSummary = typeof healthRecord.summary === 'string' ? healthRecord.summary.trim() : '';
+    const hFlags = Array.isArray(healthRecord.flags) ? healthRecord.flags : [];
+    const hSources = Array.isArray(healthRecord.sources) ? healthRecord.sources : [];
+    const hStudies = Array.isArray(healthRecord.studies) ? healthRecord.studies : [];
+    const sevRaw = typeof healthRecord.severity === 'string' ? healthRecord.severity.trim().toLowerCase() : 'moderate';
+    const sev = HEALTH_SEVERITY_META[sevRaw] ? sevRaw : 'moderate';
+    const sevStyle = HEALTH_SEVERITY_META[sev];
+    if (hSummary || hFlags.length || hSources.length || hStudies.length) {
+      extendedSectionNodes.push(
+        <div
+          key="health_record"
+          className="investigation-card__section investigation-card__section--health-record"
+          style={{ borderLeft: `3px solid ${sevStyle.border}` }}
+        >
+          <div className="investigation-card__section-head investigation-card__section-head--static">
+            <h2
+              className="section-header investigation-card__section-title investigation-card__section-title--sourced"
+              style={{
+                flex: 1,
+                margin: '12px 0 0',
+                textAlign: 'left',
+                display: 'flex',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: 4,
+              }}
+            >
+              <HealthIcon />
+              HEALTH RECORD
+              <span
+                className="investigation-card__health-severity-pill"
+                style={{ color: sevStyle.accent, borderColor: sevStyle.border }}
+              >
+                {sev.toUpperCase()}
+              </span>
+            </h2>
+          </div>
+          <div className="investigation-card__section-body investigation-body body-crimson">
+            {hSummary ? <p className="investigation-card__section-summary">{hSummary}</p> : null}
+            {hStudies.length ? (
+              <div className="investigation-card__studies">
+                <div className="investigation-card__studies-label">Research &amp; studies</div>
+                <ul className="investigation-card__list" style={{ listStyle: 'disc' }}>
+                  {hStudies.map((st, i) => {
+                    const title = st && typeof st === 'object' && st.title ? String(st.title) : '';
+                    const url = st && typeof st === 'object' && st.url ? String(st.url) : '';
+                    if (!url && !title) return null;
+                    return (
+                      <li key={`${url}-${i}`}>
+                        {url ? (
+                          <a href={url} target="_blank" rel="noreferrer" className="investigation-card__study-link">
+                            {title || url}
+                          </a>
+                        ) : (
+                          title
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ) : null}
+            {hFlags.length ? (
+              <ul className="investigation-card__list" style={{ listStyle: 'disc' }}>
+                {hFlags.map((item) => (
+                  <li key={String(item)}>{String(item).replace(/_/g, ' ')}</li>
+                ))}
+              </ul>
+            ) : null}
+            {hSources.length ? (
+              <ul className="investigation-card__sources investigation-card__sources--blocks">
+                {hSources.map((url) => {
+                  const href = String(url);
+                  return (
+                    <li key={href} className="investigation-card__source-li">
+                      <a href={href} target="_blank" rel="noreferrer" className="investigation-card__source-block">
+                        <span className="investigation-card__source-kicker">SOURCE</span>
+                        <span className="investigation-card__source-url">{href}</span>
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : null}
+          </div>
+        </div>
+      );
+    }
+  }
+
+  if (alternatives && typeof alternatives === 'object') {
+    const cheaper = Array.isArray(alternatives.cheaper) ? alternatives.cheaper : [];
+    const healthier = Array.isArray(alternatives.healthier) ? alternatives.healthier : [];
+    const diy = Array.isArray(alternatives.diy) ? alternatives.diy : [];
+    if (cheaper.length || healthier.length || diy.length) {
+      extendedSectionNodes.push(
+        <div key="alternatives" className="investigation-card__section investigation-card__section--alternatives">
+          <div className="investigation-card__section-head investigation-card__section-head--static">
+            <h2
+              className="section-header investigation-card__section-title investigation-card__section-title--sourced"
+              style={{
+                flex: 1,
+                margin: '12px 0 0',
+                textAlign: 'left',
+                display: 'flex',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: 4,
+              }}
+            >
+              <EnvironmentIcon />
+              ALTERNATIVES
+            </h2>
+          </div>
+          <div className="investigation-card__section-body investigation-body body-crimson">
+            {cheaper.length ? (
+              <div className="investigation-card__alt-block">
+                <h3 className="investigation-card__alt-sub">CHEAPER</h3>
+                <ul className="investigation-card__list" style={{ listStyle: 'disc' }}>
+                  {cheaper.map((line) => (
+                    <li key={String(line)}>{String(line)}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+            {healthier.length ? (
+              <div className="investigation-card__alt-block">
+                <h3 className="investigation-card__alt-sub">HEALTHIER</h3>
+                <ul className="investigation-card__list" style={{ listStyle: 'disc' }}>
+                  {healthier.map((line) => (
+                    <li key={String(line)}>{String(line)}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+            {diy.length ? (
+              <div className="investigation-card__alt-block">
+                <h3 className="investigation-card__alt-sub">DIY</h3>
+                <ul className="investigation-card__list" style={{ listStyle: 'disc' }}>
+                  {diy.map((line) => (
+                    <li key={String(line)}>{String(line)}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
+        </div>
+      );
+    }
+  }
+
   const variantClass =
     recordPresentation && typeof recordPresentation.variant === 'string'
       ? ` investigation-card--${recordPresentation.variant}`
@@ -382,6 +662,7 @@ export default function InvestigationCard({ investigation, onShare, recordPresen
 
       <div className="investigation-card__sections">
         {sectionNodes}
+        {extendedSectionNodes}
         {emptySectionLabels.length > 0 ? (
           <div className="investigation-card__empty-row">
             <div className="investigation-card__empty-pills">

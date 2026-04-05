@@ -1,0 +1,103 @@
+{
+  "brand_name": "Walmart",
+  "brand_slug": "walmart",
+  "parent_company": "Walmart Inc.",
+  "ultimate_parent": "Walmart Inc.",
+  "subsidiaries": ["Sam's Club", "Walmart Neighborhood Market", "Walmart Supercenter", "Flipkart", "Jet.com", "Bonobos", "Moosejaw"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "WALMART PAID $640M IN WAGE THEFT WHILE THE WALTON FAMILY BECAME THE RICHEST IN AMERICA",
+  "executive_summary": "Walmart is the largest private employer in the United States with 1.6 million workers and the largest corporation by revenue on earth. Its business model — extreme price suppression across the supply chain, outsourced logistics, minimal wages — has been documented to hollow out local retail ecosystems, suppress wages across entire regional economies, and extract subsidies from the taxpayers of the communities it enters. The Walton family fortune exceeds the combined wealth of the bottom 40% of Americans.",
+  "verdict_tags": ["wage_theft", "labor_violations", "union_suppression", "tax_avoidance", "government_subsidies", "antitrust_concerns", "supply_chain_abuses", "environmental_violations", "worker_safety"],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Walmart has received over $1.2 billion in government subsidies across state and local jurisdictions according to Good Jobs First's Subsidy Tracker. The company employs aggressive offshore profit shifting through subsidiaries in Luxembourg, the Netherlands, and other low-tax jurisdictions. A 2014 Americans for Tax Fairness report found Walmart's tax avoidance strategies cost U.S. taxpayers approximately $1 billion annually. Walmart also benefits from public assistance programs used by its own employees — a 2013 study found Wisconsin Walmart employees received $900,000 per year in public benefits due to insufficient wages.",
+    "flags": ["offshore_profit_shifting", "government_subsidy_dependence", "employee_public_benefit_burden"],
+    "sources": ["https://goodjobsfirst.org/violation-tracker", "https://americansfortaxfairness.org/walmart"]
+  },
+  "legal": {
+    "summary": "Walmart paid over $640 million to resolve dozens of wage-and-hour class action lawsuits between 2005 and 2020, representing the largest aggregate wage theft settlement in U.S. retail history. In 2024, Walmart paid $35 million to settle California wage statement violations affecting tens of thousands of workers. A $2.5 million settlement in 2024 covered 81,000 Arizona workers denied pay for mandatory COVID-19 screenings. The company settled a $282 million foreign bribery case with the DOJ in 2019 related to violations of the Foreign Corrupt Practices Act in Mexico, Brazil, China, and India. Walmart paid $65 million to settle a disability discrimination lawsuit in 2020.",
+    "flags": ["wage_theft", "foreign_bribery", "disability_discrimination", "class_action_history"],
+    "sources": ["https://www.justice.gov", "https://violationtracker.goodjobsfirst.org/parent/walmart"]
+  },
+  "labor": {
+    "summary": "Walmart is the largest employer in the United States and among the most aggressive opponents of unionization in American corporate history. Not a single U.S. Walmart store has successfully unionized. When a butcher department in a Texas store voted to unionize in 2000, Walmart converted all meat departments nationwide to pre-packaged meat within weeks. The company uses 'Walmart People Lead' teams — formerly 'Labor Relations' — to identify and neutralize organizing activity. Workers earn a starting wage of $14/hour nationally, below a living wage in most U.S. markets. A 2022 Oxfam report ranked Walmart last among major food and agriculture companies on worker rights. The company's scheduling software produces erratic, unpredictable shifts that make second jobs and childcare planning nearly impossible.",
+    "flags": ["union_suppression", "wage_suppression", "erratic_scheduling", "worker_surveillance"],
+    "sources": ["https://www.nlrb.gov", "https://oxfam.org/walmart-report", "https://www.nelp.org"]
+  },
+  "environmental": {
+    "summary": "Walmart has received over 4,500 environmental violations according to EPA ECHO records, making it one of the most cited retailers in the database. A 2013 DOJ settlement required Walmart to pay $82 million for Clean Water Act violations — illegally handling and disposing of hazardous materials including pesticides, fertilizers, and automotive products at stores nationwide. In 2010, California fined Walmart $1 million for illegally dumping hazardous waste. The company's logistics network — 10,000+ trucks traveling billions of miles annually — is a significant carbon source. Walmart's private label sourcing from Bangladeshi and Chinese factories with documented environmental violations transfers pollution offshore.",
+    "flags": ["hazardous_waste_violations", "clean_water_act_violations", "supply_chain_pollution"],
+    "sources": ["https://echo.epa.gov", "https://www.justice.gov/opa/pr/walmart-pay-82-million"]
+  },
+  "political": {
+    "summary": "The Walton Family Foundation has spent over $1 billion on school privatization and charter school expansion. Walmart's PAC donated to 356 congressional candidates in the 2022 election cycle. The company spent $5.3 million on federal lobbying in 2023, focusing on labor law, trade policy, and minimum wage legislation. Walmart has consistently opposed minimum wage increases at the federal level while publicly announcing company minimum wages in response to PR pressure. The revolving door between Walmart and government is documented: multiple former Walmart lobbyists have held positions at USDA, FTC, and the Commerce Department.",
+    "flags": ["minimum_wage_opposition", "school_privatization_funding", "revolving_door_government"],
+    "sources": ["https://www.opensecrets.org/orgs/walmart", "https://www.fec.gov"]
+  },
+  "executives": {
+    "summary": "CEO Doug McMillon received $25.7 million in total compensation in fiscal year 2024. The median Walmart worker earns approximately $27,438 annually. The CEO-to-worker pay ratio is approximately 935:1. The Walton family — descendants of founder Sam Walton — collectively own approximately 46% of Walmart stock, representing a fortune exceeding $300 billion. Alice Walton's fortune alone exceeds $70 billion. The family has never worked in a Walmart store.",
+    "flags": ["extreme_ceo_pay_ratio", "founder_family_wealth_concentration"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=WMT"]
+  },
+  "connections": {
+    "summary": "Walmart's board has included directors who simultaneously serve on boards of Goldman Sachs, Procter & Gamble, and major pharmaceutical companies. The company shares major institutional shareholders with Amazon, Target, and Costco — BlackRock and Vanguard are top holders of all four. The Walton Family Foundation funds the same school privatization networks supported by the DeVos family and Koch network. Walmart's supply chain connects it directly to factories used by Nike, H&M, Gap, and other profiled brands. Walmart and Amazon have engaged in documented price coordination research — both companies use algorithmic pricing that has been studied for potential collusion effects. Former Walmart executive Bill Simon joined the board of Dollar General in 2015, connecting the two largest low-price retailers.",
+    "flags": ["board_interlocks", "shared_institutional_investors", "political_funding_network", "algorithmic_pricing_concerns"],
+    "sources": ["https://www.sec.gov", "https://www.opensecrets.org"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Investigative reports from ProPublica and the New York Times have documented Walmart's systematic use of data collected from employee surveillance — including monitoring of bathroom break frequency — to manage and discipline workers. Former employees have alleged that store managers were pressured to falsify safety records to avoid OSHA penalties. A 2012 New York Times investigation alleged Walmart executives in Bentonville knew of widespread bribery in Mexico and worked to suppress the internal investigation. The DOJ's subsequent FCPA investigation substantiated the core findings. Walmart has been accused by multiple suppliers of retroactively changing payment terms after goods are delivered, a practice described as 'vendor abuse' in trade publications. The company has been alleged to use its pricing power to force suppliers to move production to lower-wage countries.",
+    "flags": ["employee_surveillance", "safety_record_falsification_alleged", "supplier_payment_abuse_alleged"],
+    "sources": ["https://www.propublica.org", "https://www.nytimes.com/2012/04/22/business/walmart-bribery-investigation"]
+  },
+  "health_record": {
+    "summary": "Walmart's food business — it is the largest grocery retailer in America — has been the subject of multiple food safety enforcement actions. The company's store-brand products have been recalled at rates consistent with industry averages. A 2015 study in the American Journal of Agricultural Economics found that Walmart entry into local food markets correlated with increased rates of obesity in surrounding communities, attributed to displacement of fresh food retailers and increased availability of ultra-processed foods. Walmart's pharmacy division has been named in litigation related to opioid dispensing practices — the company paid $3.1 billion in 2022 to settle opioid-related claims brought by states and municipalities.",
+    "flags": ["opioid_settlement", "food_environment_impact", "pharmacy_dispensing_practices"],
+    "sources": ["https://www.fda.gov", "https://www.ajae.org"]
+  },
+  "alternatives": {
+    "cheaper": ["Local discount grocery stores often match or beat Walmart prices on staples when factoring out processed foods", "Aldi and Lidl — European-owned but with smaller footprints and stronger labor records than Walmart", "Restaurant Depot for bulk purchases — open to small businesses and sometimes individuals", "Costco — unionized warehouse model, higher wages, better labor record"],
+    "healthier": ["Local farmers markets — often comparable prices on produce, direct relationship with grower", "Community-supported agriculture (CSA) boxes — weekly produce from local farms", "Food co-ops — member-owned, democratic governance, typically source locally", "Grocery stores with union representation — typically safer, better-staffed, better food handling"],
+    "diy": ["Buy Nothing groups for household goods", "Tool libraries for equipment you need occasionally", "Community gardens for produce", "Bulk buying clubs organized through mutual aid networks", "Grow your own: a 4x8 raised bed produces hundreds of dollars of vegetables annually"]
+  },
+  "timeline": [
+    {"year": 1962, "event": "Sam Walton opens first Walmart in Rogers, Arkansas", "severity": "neutral", "source_url": ""},
+    {"year": 1992, "event": "Sam Walton dies; Walton family retains controlling interest", "severity": "neutral", "source_url": ""},
+    {"year": 2000, "event": "Walmart converts all meat departments to pre-packaged nationwide within weeks of Texas store butchers voting to unionize", "severity": "high", "source_url": "https://www.nlrb.gov"},
+    {"year": 2005, "event": "Class action wage theft lawsuits begin consolidating; will eventually total $640M in settlements", "severity": "high", "source_url": ""},
+    {"year": 2005, "event": "Internal Walmart memo surfaces recommending hiring more part-time workers to reduce benefits costs", "severity": "high", "source_url": "https://www.nytimes.com"},
+    {"year": 2012, "event": "New York Times investigation reveals Walmart executives knew of Mexico bribery and suppressed internal investigation", "severity": "critical", "source_url": "https://www.nytimes.com/2012/04/22/business/walmart-bribery-investigation"},
+    {"year": 2013, "event": "DOJ settlement: $82M for Clean Water Act hazardous materials violations at stores nationwide", "severity": "high", "source_url": "https://www.justice.gov"},
+    {"year": 2019, "event": "DOJ/SEC FCPA settlement: $282M for bribery in Mexico, Brazil, China, and India", "severity": "critical", "source_url": "https://www.justice.gov"},
+    {"year": 2022, "event": "$3.1 billion opioid settlement with states and municipalities over pharmacy dispensing practices", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "$35M California wage statement settlement; $2.5M Arizona COVID screening settlement", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Studies by economists David Neumark, Junfu Zhang, and Stephen Ciccarella found that each Walmart supercenter opening eliminates approximately 150 retail jobs in the surrounding area on net. A 2005 study found Walmart entry reduced average retail wages in a county by 0.5-0.9%. The 'Walmart Effect' on Main Street is documented in hundreds of small American towns where downtown commercial districts collapsed within a decade of a Walmart opening.",
+    "price_illusion": "Walmart's price advantage is partially offset by: reduced product quality in private label goods, the elimination of local competitors who provided alternative goods, the economic suppression of surrounding wages reducing overall purchasing power, and the public costs of employee dependence on government assistance programs. The 'everyday low price' is not calculated against the total economic cost to the community.",
+    "tax_math": "Good Jobs First documents over $1.2 billion in public subsidies to Walmart. When Walmart employees use food stamps, Medicaid, and housing assistance due to insufficient wages, those costs are borne by taxpayers. One Wisconsin Walmart location cost state taxpayers $900,000 in public benefits annually — effectively a public subsidy of Walmart's labor model.",
+    "wealth_velocity": "Studies consistently show that locally-owned retailers recirculate 45-55% of revenue locally; national chains recirculate 13-18%. Walmart's revenue, profit, and executive compensation flow to Bentonville, Arkansas and to institutional shareholders globally. The Walton family's $300B+ fortune represents an extraction of value from millions of communities over six decades."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Walton family shareholders", "how": "Family fortune exceeds $300 billion, built on 60 years of wage suppression and subsidy extraction"},
+      {"group": "Institutional investors (BlackRock, Vanguard)", "how": "Consistent dividend payments and share buybacks funded by labor cost minimization"},
+      {"group": "Executive leadership", "how": "CEO compensation of $25.7M annually while median worker earns $27,438"}
+    ],
+    "who_paid": [
+      {"group": "Walmart workers", "how": "Wages insufficient for basic living costs in most U.S. markets; erratic scheduling prevents second employment"},
+      {"group": "Local taxpayers", "how": "$1.2B+ in subsidies; additional billions in public assistance for Walmart employees"},
+      {"group": "Former employees of displaced local retailers", "how": "Documented job losses of ~150 per supercenter opening"},
+      {"group": "Supplier workers globally", "how": "Walmart's price-down pressure transfers to wages and conditions in supply chain factories"}
+    ],
+    "the_gap": "The Walton family's fortune — the largest in the United States — was built by systematically ensuring that the workers who created it could not share in it."
+  }
+}

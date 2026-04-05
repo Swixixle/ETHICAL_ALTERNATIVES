@@ -326,3 +326,88 @@
   margin-bottom: 0.35rem;
   color: var(--color-text-dim, #a8c4d8);
 }
+
+/* Extended profile sections (v3+) */
+.investigation-card__section--connections {
+  margin-top: 1rem;
+  padding-left: 12px;
+  margin-left: 0;
+  border-left: 3px solid #f0a820;
+}
+
+.investigation-card__section--allegations {
+  margin-top: 1rem;
+  padding-left: 12px;
+  border-left: 3px solid #e07040;
+}
+
+.investigation-card__section--health-record {
+  margin-top: 1rem;
+  padding-left: 12px;
+}
+
+.investigation-card__section--alternatives {
+  margin-top: 1rem;
+  padding-left: 12px;
+  border-left: 3px solid #6a8a9a;
+}
+
+.investigation-card__allegations-disclaimer {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 14px;
+  font-style: italic;
+  color: #a8c4d8;
+  line-height: 1.5;
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  background: rgba(224, 112, 64, 0.08);
+  border-radius: 2px;
+}
+
+.investigation-card__health-severity-pill {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid;
+  background: rgba(15, 21, 32, 0.6);
+  margin-left: 6px;
+}
+
+.investigation-card__studies {
+  margin: 0 0 12px;
+}
+
+.investigation-card__studies-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6a8a9a;
+  margin-bottom: 6px;
+}
+
+.investigation-card__study-link {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  color: #a8c4d8;
+}
+
+.investigation-card__alt-block {
+  margin-bottom: 1.1rem;
+}
+
+.investigation-card__alt-block:last-child {
+  margin-bottom: 0;
+}
+
+.investigation-card__alt-sub {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent, #f0a820);
+  margin: 0 0 8px;
+}

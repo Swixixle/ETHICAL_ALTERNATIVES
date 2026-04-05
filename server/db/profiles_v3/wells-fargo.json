@@ -1,0 +1,103 @@
+{
+  "brand_name": "Wells Fargo",
+  "brand_slug": "wells-fargo",
+  "parent_company": "Wells Fargo & Company",
+  "ultimate_parent": "Wells Fargo & Company",
+  "subsidiaries": ["Wells Fargo Bank", "Wells Fargo Home Mortgage", "Wells Fargo Auto", "Wells Fargo Advisors", "Wachovia (acquired 2008)"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "WELLS FARGO CREATED 3.5 MILLION FAKE ACCOUNTS AND CALLED IT A SALES CULTURE",
+  "executive_summary": "Wells Fargo is the fourth-largest bank in the United States with over $1.9 trillion in assets. Between 2002 and 2016, bank employees opened approximately 3.5 million fraudulent savings, checking, and credit card accounts in customers' names without their knowledge or consent. The scheme was driven by aggressive internal sales quotas and a culture of retaliation against employees who refused to participate or reported the fraud. Total settlements have exceeded $7 billion. The Federal Reserve imposed an unprecedented asset cap on the bank in 2018 that remains partially in effect.",
+  "verdict_tags": ["consumer_fraud", "securities_fraud", "wage_theft", "employee_retaliation", "regulatory_violations", "opioid_facilitation", "mortgage_fraud", "auto_loan_fraud"],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Wells Fargo has used offshore structures in the Cayman Islands, Ireland, and Luxembourg to minimize U.S. tax exposure on international operations. The company received significant tax benefits from the 2017 Tax Cuts and Jobs Act, booking a one-time $3.4 billion gain while simultaneously announcing layoffs of thousands of workers. Wells Fargo has been cited by tax researchers for aggressive transfer pricing arrangements between domestic and international subsidiaries.",
+    "flags": ["offshore_structures", "transfer_pricing", "tax_cuts_benefit_without_worker_sharing"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "legal": {
+    "summary": "Wells Fargo's legal record since 2016 represents the most comprehensive regulatory enforcement action against a U.S. bank in modern history. The DOJ and SEC extracted a $3 billion settlement in 2020 for the fake accounts scandal. The CFPB levied a $3.7 billion settlement in 2022 covering abuses across 16 million accounts including unauthorized accounts, illegal auto repossessions, incorrect mortgage denials, and improper overdraft fees. The OCC fined CEO John Stumpf $17.5 million personally — the largest individual OCC fine ever — and issued a lifetime banking ban. The Federal Reserve's 2018 asset cap preventing Wells Fargo from growing beyond $1.95 trillion in assets remained in effect for over five years. Wells Fargo paid $1 billion to settle auto loan and mortgage abuses in 2018.",
+    "flags": ["consumer_fraud", "securities_fraud", "mortgage_fraud", "auto_loan_fraud", "federal_asset_cap"],
+    "sources": ["https://www.justice.gov/opa/pr/wells-fargo-agrees-pay-3-billion", "https://www.sec.gov/newsroom/press-releases/2020-38", "https://www.consumerfinance.gov"]
+  },
+  "labor": {
+    "summary": "Wells Fargo fired approximately 5,300 employees for creating fake accounts — employees who were responding to management pressure and unrealistic quotas. Whistleblowers who reported the fraud to internal ethics hotlines were systematically retaliated against, demoted, or fired. The bank rehired approximately 1,000 employees after admitting wrongful termination. Employees described extreme stress conditions: 'frequent crying, levels of stress that led to vomiting, and severe panic attacks' according to documented congressional testimony. Wells Fargo paid $35.3 million in 2020 to settle claims from employees who were wrongfully fired for refusing to engage in fraudulent practices.",
+    "flags": ["whistleblower_retaliation", "wrongful_termination", "employee_abuse", "unrealistic_quotas"],
+    "sources": ["https://www.nlrb.gov", "https://www.dol.gov"]
+  },
+  "environmental": {
+    "summary": "Wells Fargo has faced criticism for continued financing of fossil fuel extraction projects including Arctic drilling, pipeline construction, and coal expansion after making public commitments to reduce climate financing. A 2023 BankTrack report found Wells Fargo provided $190 billion in fossil fuel financing between 2016 and 2022, ranking it among the top fossil fuel financiers globally. The bank has been named in litigation by environmental groups for financing projects connected to Indigenous land rights violations.",
+    "flags": ["fossil_fuel_financing", "climate_commitment_gap", "indigenous_land_financing"],
+    "sources": ["https://www.banktrack.org"]
+  },
+  "political": {
+    "summary": "Wells Fargo's PAC contributed $2.1 million to congressional candidates in the 2022 election cycle. The company spent $5.3 million on federal lobbying in 2023, focused on banking regulation, consumer protection rules, and cryptocurrency policy. The revolving door is well-documented: multiple former OCC and Federal Reserve officials have joined Wells Fargo in regulatory affairs roles. Wells Fargo has opposed CFPB oversight authority and funded litigation challenging the agency's funding structure.",
+    "flags": ["revolving_door_regulators", "cfpb_opposition", "campaign_finance"],
+    "sources": ["https://www.opensecrets.org/orgs/wells-fargo"]
+  },
+  "executives": {
+    "summary": "CEO Charles Scharf received $24.5 million in total compensation in 2023. Under his predecessor John Stumpf — who oversaw the fake accounts scandal — the bank's fraudulent sales drove stock price increases that made executives extremely wealthy before the fraud was exposed. Stumpf was fined $17.5 million personally but kept compensation earned during the fraud period. Former head of retail banking Carrie Tolstedt, whose division executed the fake account scheme, received a $125 million retirement package before being clawed back partially.",
+    "flags": ["executive_fraud_compensation", "clawback_insufficient", "stumpf_fine"],
+    "sources": ["https://www.sec.gov", "https://www.occ.gov"]
+  },
+  "connections": {
+    "summary": "Wells Fargo shares major institutional shareholders with JPMorgan Chase, Bank of America, and Citigroup — all are top holdings of BlackRock and Vanguard, creating shared incentive structures across the largest U.S. banks. Board members have simultaneously served on boards of Chevron, Johnson & Johnson, and major technology companies. The bank's political donations connect it to the same congressional members who oversee its regulation. Wells Fargo was Wachovia's acquirer in 2008 — Wachovia itself had been implicated in facilitating $378 billion in drug cartel money laundering through its Mexican currency exchange operations.",
+    "flags": ["wachovia_cartel_laundering_connection", "cross_bank_shareholder_overlap", "regulatory_capture_concerns"],
+    "sources": ["https://www.sec.gov", "https://www.justice.gov"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former Wells Fargo employees have alleged in whistleblower filings that the bank's investment advisory division systematically steered customers toward higher-fee products regardless of suitability. Investigative reporting by Reuters in 2023 identified over 40 cases of mysterious accounts opened at Wells Fargo in customers' names who had never banked with Wells Fargo — suggesting ongoing account fraud or severe security failures years after the 2016 scandal. Congressional investigators alleged that regulators at the OCC had advance knowledge of the fake account practices and failed to act, questions that have not been fully resolved. Former employees have alleged that the bank's anti-money-laundering systems were deliberately understaffed to avoid detecting suspicious transactions.",
+    "flags": ["ongoing_account_fraud_alleged", "aml_understaffing_alleged", "regulator_complicity_alleged"],
+    "sources": ["https://www.reuters.com", "https://www.nbcnews.com"]
+  },
+  "health_record": {
+    "summary": "Wells Fargo's opioid-era financing of distributors and pharmacy benefit managers has been examined in litigation. The bank provided credit facilities to McKesson, AmerisourceBergen, and Cardinal Health — the three largest opioid distributors — during the peak years of the crisis. While no direct liability has been established, banking relationships with documented bad actors during the opioid crisis have been scrutinized in state litigation. The fraudulent account practices directly damaged the credit scores of affected customers, with documented impacts on housing applications, employment background checks, and loan access.",
+    "flags": ["opioid_distributor_financing", "credit_damage_to_consumers"],
+    "sources": ["https://www.courtlistener.com"]
+  },
+  "alternatives": {
+    "cheaper": ["Credit unions — member-owned, typically lower fees, no shareholder pressure to extract profit from account holders", "Online banks (Ally, Marcus by Goldman Sachs, Discover) — lower fees, higher interest rates on deposits", "Community Development Financial Institutions (CDFIs) — mission-driven lenders serving underbanked communities"],
+    "healthier": ["Local community banks — FDIC insured, profit stays in community, no too-big-to-fail risk", "Cooperative banks — democratic governance, member ownership", "Postal banking (proposed) — basic financial services through USPS"],
+    "diy": ["Credit unions require joining but are not-for-profit and member-controlled", "Cash management for everyday expenses eliminates bank fee extraction", "Prepaid debit cards for those excluded from traditional banking — avoid bank overdraft fee traps"]
+  },
+  "timeline": [
+    {"year": 2002, "event": "Internal Wells Fargo documents show fake account creation begins, per Sales Practices Investigation Report", "severity": "critical", "source_url": ""},
+    {"year": 2008, "event": "Wells Fargo acquires Wachovia, whose Mexican currency exchange had facilitated $378B in drug cartel transactions", "severity": "high", "source_url": ""},
+    {"year": 2011, "event": "Los Angeles city attorney begins investigating Wells Fargo fake account practices", "severity": "high", "source_url": ""},
+    {"year": 2016, "event": "CFPB and OCC fine Wells Fargo $185M — largest CFPB fine at the time; 3.5M fake accounts disclosed", "severity": "critical", "source_url": "https://www.consumerfinance.gov"},
+    {"year": 2016, "event": "CEO John Stumpf resigns following Senate Banking Committee hearings", "severity": "critical", "source_url": ""},
+    {"year": 2017, "event": "Bank admits charging 570,000 customers for unwanted auto insurance; 20,000 may have had cars repossessed as result", "severity": "critical", "source_url": ""},
+    {"year": 2018, "event": "Federal Reserve imposes unprecedented asset cap; bank cannot grow beyond $1.95T", "severity": "critical", "source_url": "https://www.federalreserve.gov"},
+    {"year": 2018, "event": "CFPB/OCC: $1B settlement for auto loan and mortgage abuses", "severity": "high", "source_url": ""},
+    {"year": 2020, "event": "DOJ/SEC: $3B settlement for fake accounts criminal and civil violations", "severity": "critical", "source_url": "https://www.justice.gov"},
+    {"year": 2022, "event": "CFPB: $3.7B settlement for abuses across 16 million accounts — largest CFPB action in history", "severity": "critical", "source_url": "https://www.consumerfinance.gov"}
+  ],
+  "community_impact": {
+    "displacement": "The fake account scandal damaged the credit scores of millions of Americans. Customers with fraudulently opened accounts faced fee charges, credit inquiries, and derogatory marks that affected their ability to rent housing, secure employment, and access other financial products. Low-income customers were disproportionately affected because they were less likely to notice unauthorized accounts.",
+    "price_illusion": "Wells Fargo's fee structure — overdraft fees, monthly maintenance fees, wire transfer fees — extracts billions from account holders annually. A Federal Reserve study found that overdraft fees disproportionately fall on low-income account holders, often the same customers who can least afford them.",
+    "tax_math": "Wells Fargo received a $3.4 billion one-time tax gain from the 2017 Tax Cuts and Jobs Act. The bank announced employee layoffs in the same period. The tax benefit flowed to shareholders and executive compensation, not to the workforce.",
+    "wealth_velocity": "Banking fees extracted from millions of ordinary account holders flow to executive compensation and shareholder dividends. The geographic distribution of Wells Fargo's physical branch closures — disproportionately in low-income and minority neighborhoods — has reduced banking access while maintaining fee extraction through digital platforms."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Executive leadership during fraud period", "how": "Stock price inflation from fraudulent cross-sell metrics drove compensation; Carrie Tolstedt received $125M retirement package"},
+      {"group": "Institutional shareholders", "how": "Fraudulent metrics maintained stock price through period of actual business stagnation"},
+      {"group": "Current executives", "how": "CEO Scharf received $24.5M in 2023 while managing aftermath of predecessor's fraud"}
+    ],
+    "who_paid": [
+      {"group": "3.5 million customers", "how": "Unauthorized accounts, fee charges, credit score damage, loan denials"},
+      {"group": "5,300 fired employees", "how": "Lost jobs for following management pressure; many were low-income workers"},
+      {"group": "Whistleblowers", "how": "Systematic retaliation, demotion, termination for reporting fraud"},
+      {"group": "Taxpayers", "how": "Regulatory enforcement costs; Federal Reserve asset cap enforcement; ongoing monitoring costs"}
+    ],
+    "the_gap": "The executives who designed the sales culture that made the fraud inevitable walked away with hundreds of millions; the branch employees who executed it under threat of termination were fired and in some cases prosecuted."
+  }
+}

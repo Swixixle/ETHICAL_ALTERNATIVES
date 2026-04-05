@@ -1,0 +1,103 @@
+{
+  "brand_name": "Chevron",
+  "brand_slug": "chevron",
+  "parent_company": "Chevron Corporation",
+  "ultimate_parent": "Chevron Corporation",
+  "subsidiaries": ["Texaco", "Caltex", "Chevron Phillips Chemical", "Chevron Oronite", "CPLG"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "CHEVRON SPENT $30 BILLION FIGHTING A POLLUTION VERDICT WHILE CONTAMINATING THE AMAZON FOR 50 YEARS",
+  "executive_summary": "Chevron is the second-largest U.S. oil company and one of the largest corporations on earth, with annual revenue exceeding $200 billion. Its predecessor Texaco contaminated 1,700 square miles of Ecuadorian Amazon rainforest with 18 billion gallons of toxic waste between 1964 and 1992 — one of the largest environmental disasters in history. When Ecuadorian courts ordered Chevron to pay $9.5 billion in damages, the company mounted a decades-long legal counterattack rather than clean up the contamination. Chevron's internal documents show it knew about climate change in the 1980s and funded denial campaigns.",
+  "verdict_tags": ["environmental_contamination", "climate_denial_funding", "legal_obstruction", "tax_avoidance", "worker_safety_violations", "political_influence", "indigenous_rights_violations"],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Chevron uses transfer pricing between its international subsidiaries to minimize U.S. tax obligations. The company received over $3 billion in U.S. government subsidies annually through depletion allowances, intangible drilling cost deductions, and other oil industry tax preferences. The IRS has challenged Chevron's transfer pricing arrangements, with the company disputing a $4.4 billion tax assessment. Chevron received a windfall from the 2017 Tax Cuts and Jobs Act while simultaneously reducing its workforce.",
+    "flags": ["oil_depletion_allowances", "transfer_pricing_dispute", "irs_4_4b_assessment"],
+    "sources": ["https://www.sec.gov", "https://goodjobsfirst.org"]
+  },
+  "legal": {
+    "summary": "The Ecuador contamination case is the most consequential environmental lawsuit in history. Texaco operated in Ecuador's Lago Agrio region from 1964-1992, dumping 18 billion gallons of toxic waste into open pits and waterways. Chevron acquired Texaco in 2001. Ecuadorian courts awarded $9.5 billion against Chevron in 2011. Chevron refused to pay and instead sued the plaintiffs' attorney Steven Donziger under RICO — a case widely criticized by legal scholars as an abuse of the legal system. Donziger was imprisoned for over 800 days, more time than any other American attorney in contempt proceedings. Amnesty International declared Donziger a prisoner of conscience. Chevron has simultaneously claimed sovereign immunity in the U.S. to avoid enforcement of the Ecuadorian judgment.",
+    "flags": ["amazon_contamination_9_5b_judgment", "donziger_imprisonment", "judgment_evasion", "sovereign_immunity_claim"],
+    "sources": ["https://www.courtlistener.com", "https://www.amnesty.org"]
+  },
+  "labor": {
+    "summary": "Chevron has faced OSHA enforcement actions at refineries across the United States. A 2012 fire at Chevron's Richmond, California refinery sent 15,000 residents to hospitals for treatment of respiratory issues. OSHA cited Chevron for safety violations and proposed $1 million in penalties. The company has reduced its U.S. workforce while maintaining executive compensation and dividends. Chevron's contract workforce — used extensively in operations — often lacks the safety training and protections of direct employees.",
+    "flags": ["refinery_safety_violations", "richmond_fire_community_harm", "contract_workforce_exposure"],
+    "sources": ["https://www.osha.gov", "https://echo.epa.gov"]
+  },
+  "environmental": {
+    "summary": "Beyond Ecuador, Chevron has faced EPA enforcement at dozens of U.S. facilities. The company's Pascagoula, Mississippi refinery was one of the largest sources of air pollution in the state. Chevron's operations in Nigeria's Niger Delta have been linked to oil spills and gas flaring affecting communities for decades. The company's Richmond, California refinery is a chronic source of air pollution in one of the Bay Area's most economically disadvantaged communities. Chevron has spent hundreds of millions funding climate denial organizations while knowing since the 1980s that its products drive catastrophic climate change.",
+    "flags": ["amazon_contamination", "niger_delta_spills", "richmond_air_pollution", "climate_denial_funding"],
+    "sources": ["https://echo.epa.gov", "https://www.epa.gov"]
+  },
+  "political": {
+    "summary": "Chevron spent $9.6 million on federal lobbying in 2023. The company's PAC contributed $3.2 million to congressional candidates in 2022. Chevron has been a major funder of climate denial organizations including the American Legislative Exchange Council (ALEC), the Heartland Institute, and the Global Climate Coalition — which disbanded in 2002 after its own scientific documents were revealed showing internal acknowledgment of climate science. Chevron has used the U.S. State Department and trade representatives to pressure Ecuador and other countries in its litigation.",
+    "flags": ["climate_denial_funding", "state_dept_pressure_ecuador", "alec_funding", "heartland_funding"],
+    "sources": ["https://www.opensecrets.org/orgs/chevron", "https://www.climatefiles.com"]
+  },
+  "executives": {
+    "summary": "CEO Mike Wirth received $23.6 million in total compensation in 2023. Chevron's executive compensation is tied to metrics that include production volume — creating direct financial incentive to maximize extraction regardless of environmental consequences. The company's board has included directors with connections to the fossil fuel industry, Republican political networks, and financial institutions with major fossil fuel exposure.",
+    "flags": ["production_tied_compensation", "industry_board_interlocks"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "connections": {
+    "summary": "Chevron shares major shareholders with ExxonMobil, Shell, and BP — BlackRock and Vanguard are top institutional holders of all four major oil companies, creating aligned incentives against rapid decarbonization. The American Petroleum Institute — funded by all major oil companies — has coordinated climate denial messaging and lobbying. Chevron's board has connections to financial institutions (Goldman Sachs directors have served) and the U.S. military-industrial complex. The company's legal counterattack against Ecuador plaintiffs involved law firms with extensive Republican political connections.",
+    "flags": ["cross_oil_company_shareholder_overlap", "api_climate_coordination", "military_industrial_connections"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Internal Chevron documents revealed in litigation show the company's scientists understood climate change was caused by fossil fuel combustion in the early 1980s — the same period the company began funding organizations denying this science. Investigative reporting by the Guardian found Chevron's Richmond refinery has documented racial disparities in pollution exposure — communities of color in Richmond bear disproportionate air quality impacts. Former Chevron contractors in Nigeria have alleged that the company was aware of systematic oil theft from its pipelines by criminal organizations but failed to address it for years because addressing it would reduce throughput.",
+    "flags": ["internal_climate_knowledge_vs_denial", "richmond_environmental_racism_alleged", "nigeria_theft_awareness_alleged"],
+    "sources": ["https://www.theguardian.com", "https://www.climatefiles.com"]
+  },
+  "health_record": {
+    "summary": "The Ecuadorian contamination zone has documented elevated cancer rates, birth defects, and miscarriages in affected Indigenous and mestizo communities. A 2011 epidemiological study found cancer mortality rates 130% higher in contaminated areas than in unaffected communities. The 2012 Richmond refinery fire caused respiratory illness in 15,000 residents. Communities near Chevron refineries in the United States have documented elevated rates of asthma, cancer, and cardiovascular disease. Benzene and other carcinogens are released from refinery operations.",
+    "flags": ["ecuador_cancer_cluster", "richmond_respiratory_harm", "refinery_carcinogen_exposure"],
+    "sources": ["https://www.ncbi.nlm.nih.gov", "https://www.osha.gov"]
+  },
+  "alternatives": {
+    "cheaper": ["Public transit — the cheapest way to reduce dependence on oil", "Used EVs — Tesla, Nissan Leaf, Chevy Bolt available under $20,000; eliminates gasoline costs entirely", "Carpooling — reduces per-person fuel cost to near zero"],
+    "healthier": ["E-bikes for urban commuting — zero emissions, exercise, no fuel cost", "Remote work where possible — eliminates commuting fuel use entirely", "Local food sourcing reduces food transport fuel consumption"],
+    "diy": ["Home solar installation eliminates utility dependence and can power an EV", "Weatherization reduces heating oil or natural gas consumption significantly", "Community solar programs allow participation without rooftop installation", "Bicycle maintenance skills eliminate transportation fuel costs for short distances"]
+  },
+  "timeline": [
+    {"year": 1964, "event": "Texaco begins oil extraction in Ecuador's Lago Agrio region in the Amazon", "severity": "neutral", "source_url": ""},
+    {"year": 1972, "event": "Texaco begins dumping toxic waste into open pits and waterways in Ecuador", "severity": "critical", "source_url": ""},
+    {"year": 1992, "event": "Texaco withdraws from Ecuador, leaving 18 billion gallons of toxic waste in 1,700 sq miles", "severity": "critical", "source_url": ""},
+    {"year": 2001, "event": "Chevron acquires Texaco, inheriting Ecuador contamination liability", "severity": "high", "source_url": ""},
+    {"year": 2011, "event": "Ecuador court awards $9.5B against Chevron for Amazon contamination", "severity": "critical", "source_url": ""},
+    {"year": 2012, "event": "Richmond, CA refinery fire sends 15,000 residents to hospitals", "severity": "critical", "source_url": "https://www.osha.gov"},
+    {"year": 2014, "event": "U.S. federal court finds plaintiffs' attorney Donziger liable under RICO; widely criticized as abuse of legal system", "severity": "high", "source_url": ""},
+    {"year": 2021, "event": "Donziger imprisoned for 800+ days; Amnesty International declares him prisoner of conscience", "severity": "critical", "source_url": ""},
+    {"year": 2022, "event": "Internal Chevron documents revealed showing company knew about climate change in 1980s", "severity": "critical", "source_url": ""},
+    {"year": 2023, "event": "Chevron spends $9.6M on lobbying; PAC contributes $3.2M to candidates", "severity": "moderate", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "The Ecuador contamination rendered large areas of Indigenous territory uninhabitable. Families that had lived in the Lago Agrio region for generations lost access to clean water, forest resources, and agricultural land. Cancer rates in the contamination zone have been documented to be dramatically elevated compared to uncontaminated regions.",
+    "price_illusion": "Gasoline prices at the pump do not include the externalized costs of oil extraction: climate damage, contamination cleanup, health impacts from air pollution, military costs to secure oil supply chains, or subsidies. The true cost of a gallon of gasoline has been estimated by economists to be two to four times the pump price.",
+    "tax_math": "U.S. oil companies receive approximately $20 billion annually in federal tax subsidies through depletion allowances and other preferences. These subsidies are paid by all taxpayers while profits flow to shareholders.",
+    "wealth_velocity": "Oil revenue extracted from communities — including Indigenous communities in Ecuador, Nigeria, and the U.S. — flows primarily to institutional investors and executive compensation. Local communities bear the pollution and infrastructure costs while revenue exits to financial centers."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Chevron shareholders", "how": "Decades of oil extraction profits; company now worth over $300B"},
+      {"group": "Texaco executives (pre-acquisition)", "how": "Profits from 28 years of extraction with externalized cleanup costs"},
+      {"group": "U.S. taxpayers (indirectly)", "how": "Cheap oil during Cold War era enabled U.S. economic growth at Ecuador's expense"}
+    ],
+    "who_paid": [
+      {"group": "Ecuadorian Indigenous communities", "how": "Contaminated water, elevated cancer, displaced territory — $9.5B judgment never paid"},
+      {"group": "Steven Donziger", "how": "Imprisoned 800+ days for representing contamination plaintiffs"},
+      {"group": "Richmond, California residents", "how": "15,000 hospitalized in refinery fire; chronic air quality impacts in low-income community"},
+      {"group": "Global climate", "how": "Emissions from Chevron operations are among the largest of any single corporate entity in history"}
+    ],
+    "the_gap": "The contamination happened. The judgment was issued. The money was never paid. Chevron's legal counterattack cost more than the cleanup would have."
+  }
+}

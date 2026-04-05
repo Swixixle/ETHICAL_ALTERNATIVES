@@ -276,6 +276,164 @@ function normalizeGeneratedHeadline(raw) {
   return s;
 }
 
+/** True when profile_json uses nested { tax: { summary, flags, sources }, ... } (v3 exports). */
+function isNestedV3ProfileShape(parsed) {
+  return Boolean(
+    parsed &&
+      typeof parsed === 'object' &&
+      parsed.tax &&
+      typeof parsed.tax === 'object' &&
+      'summary' in parsed.tax
+  );
+}
+
+function tripletFromSection(sec) {
+  if (!sec || typeof sec !== 'object') {
+    return { summary: null, flags: [], sources: [] };
+  }
+  return {
+    summary: typeof sec.summary === 'string' ? sec.summary : null,
+    flags: Array.isArray(sec.flags) ? sec.flags.map(String) : [],
+    sources: Array.isArray(sec.sources) ? sec.sources.map(String) : [],
+  };
+}
+
+/**
+ * Flatten v3 nested section objects into the shape {@link normalizeInvestigation} expects.
+ * @param {Record<string, unknown>} parsed
+ */
+function flattenNestedProfileJson(parsed) {
+  if (!isNestedV3ProfileShape(parsed)) return parsed;
+  const tax = tripletFromSection(parsed.tax);
+  const legal = tripletFromSection(parsed.legal);
+  const labor = tripletFromSection(parsed.labor);
+  const env = tripletFromSection(parsed.environmental);
+  const pol = tripletFromSection(parsed.political);
+  const exec = tripletFromSection(parsed.executives);
+  const rootExecSummary =
+    typeof parsed.executive_summary === 'string' && parsed.executive_summary.trim()
+      ? parsed.executive_summary.trim()
+      : null;
+  return {
+    brand: parsed.brand_name || parsed.brand || 'Unknown',
+    parent: parsed.parent_company || parsed.ultimate_parent || parsed.parent || null,
+    subsidiaries: Array.isArray(parsed.subsidiaries) ? parsed.subsidiaries.map(String) : [],
+    generated_headline: parsed.generated_headline ?? null,
+    executive_summary: rootExecSummary || exec.summary,
+    tax_summary: tax.summary,
+    tax_flags: tax.flags,
+    tax_sources: tax.sources,
+    legal_summary: legal.summary,
+    legal_flags: legal.flags,
+    legal_sources: legal.sources,
+    labor_summary: labor.summary,
+    labor_flags: labor.flags,
+    labor_sources: labor.sources,
+    environmental_summary: env.summary,
+    environmental_flags: env.flags,
+    environmental_sources: env.sources,
+    political_summary: pol.summary,
+    political_sources: pol.sources,
+    executive_sources: exec.sources,
+    product_health:
+      typeof parsed.product_health === 'string' && parsed.product_health.trim()
+        ? parsed.product_health.trim()
+        : null,
+    product_health_sources: Array.isArray(parsed.product_health_sources)
+      ? parsed.product_health_sources.map(String)
+      : [],
+    tax_evidence_grade: parsed.tax_evidence_grade,
+    legal_evidence_grade: parsed.legal_evidence_grade,
+    labor_evidence_grade: parsed.labor_evidence_grade,
+    environmental_evidence_grade: parsed.environmental_evidence_grade,
+    political_evidence_grade: parsed.political_evidence_grade,
+    product_health_evidence_grade: parsed.product_health_evidence_grade,
+    timeline: parsed.timeline,
+    community_impact: parsed.community_impact,
+    cost_absorption: parsed.cost_absorption,
+    overall_concern_level: parsed.overall_concern_level,
+    verdict_tags: Array.isArray(parsed.verdict_tags) ? parsed.verdict_tags.map(String) : [],
+    clean_card: parsed.clean_card,
+    connections: parsed.connections,
+    allegations: parsed.allegations,
+    health_record: parsed.health_record,
+    alternatives: parsed.alternatives,
+  };
+}
+
+const DEFAULT_ALLEGATIONS_DISCLAIMER =
+  'The following are allegations and unproven claims. They are documented in credible sources but have not been adjudicated.';
+
+const HEALTH_RECORD_SEVERITIES = new Set(['minimal', 'low', 'moderate', 'high', 'critical']);
+
+/** @param {unknown} raw */
+function normalizeConnectionsBlock(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const summary = typeof raw.summary === 'string' && raw.summary.trim() ? raw.summary.trim() : null;
+  const flags = Array.isArray(raw.flags) ? raw.flags.map(String) : [];
+  const sources = Array.isArray(raw.sources) ? raw.sources.map(String) : [];
+  if (!summary && !flags.length && !sources.length) return null;
+  return { summary, flags, sources };
+}
+
+/** @param {unknown} raw */
+function normalizeAllegationsBlock(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const summary = typeof raw.summary === 'string' && raw.summary.trim() ? raw.summary.trim() : null;
+  const disclaimer =
+    typeof raw.disclaimer === 'string' && raw.disclaimer.trim()
+      ? raw.disclaimer.trim()
+      : DEFAULT_ALLEGATIONS_DISCLAIMER;
+  const flags = Array.isArray(raw.flags) ? raw.flags.map(String) : [];
+  const sources = Array.isArray(raw.sources) ? raw.sources.map(String) : [];
+  if (!summary && !flags.length && !sources.length) return null;
+  return { disclaimer, summary, flags, sources };
+}
+
+function inferHealthSeverityFromConcern(overall) {
+  const o = String(overall || '').toLowerCase();
+  if (o === 'significant') return 'high';
+  if (o === 'moderate') return 'moderate';
+  if (o === 'minor') return 'low';
+  if (o === 'clean') return 'minimal';
+  return 'moderate';
+}
+
+/** @param {unknown} raw @param {unknown} overallConcern */
+function normalizeHealthRecordBlock(raw, overallConcern) {
+  if (!raw || typeof raw !== 'object') return null;
+  const summary = typeof raw.summary === 'string' && raw.summary.trim() ? raw.summary.trim() : null;
+  const flags = Array.isArray(raw.flags) ? raw.flags.map(String) : [];
+  const sources = Array.isArray(raw.sources) ? raw.sources.map(String) : [];
+  let severity = typeof raw.severity === 'string' ? raw.severity.trim().toLowerCase() : '';
+  if (!HEALTH_RECORD_SEVERITIES.has(severity)) severity = inferHealthSeverityFromConcern(overallConcern);
+  const studies = Array.isArray(raw.studies)
+    ? raw.studies
+        .map((s) => {
+          if (s && typeof s === 'object') {
+            const title = typeof s.title === 'string' ? s.title : '';
+            const url = typeof s.url === 'string' ? s.url : '';
+            return title || url ? { title, url } : null;
+          }
+          if (typeof s === 'string' && s.trim()) return { title: '', url: s.trim() };
+          return null;
+        })
+        .filter(Boolean)
+    : [];
+  if (!summary && !flags.length && !sources.length && !studies.length) return null;
+  return { summary, severity, flags, sources, studies };
+}
+
+/** @param {unknown} raw */
+function normalizeAlternativesBlock(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const cheaper = Array.isArray(raw.cheaper) ? raw.cheaper.map(String) : [];
+  const healthier = Array.isArray(raw.healthier) ? raw.healthier.map(String) : [];
+  const diy = Array.isArray(raw.diy) ? raw.diy.map(String) : [];
+  if (!cheaper.length && !healthier.length && !diy.length) return null;
+  return { cheaper, healthier, diy };
+}
+
 function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) {
   const brand = typeof parsed?.brand === 'string' ? parsed.brand : brandName || 'Unknown';
   const parent =
@@ -381,6 +539,11 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
     community_impact: normalizeCommunityImpact(parsed?.community_impact),
     cost_absorption: normalizeCostAbsorption(parsed?.cost_absorption),
     notable_mentions: normalizeNotableMentions(parsed?.notable_mentions),
+
+    connections: normalizeConnectionsBlock(parsed?.connections),
+    allegations: normalizeAllegationsBlock(parsed?.allegations),
+    health_record: normalizeHealthRecordBlock(parsed?.health_record, parsed?.overall_concern_level),
+    alternatives: normalizeAlternativesBlock(parsed?.alternatives),
   };
 
   if (!healthFlag) {
@@ -995,8 +1158,9 @@ export async function getInvestigationProfile(brandName, corporateParent, option
         console.log('[investigation] getInvestigationProfile:route', { slug, source: 'database' });
         let inv;
         if (row.profile_json) {
-          const data =
+          let data =
             typeof row.profile_json === 'string' ? JSON.parse(row.profile_json) : row.profile_json;
+          data = flattenNestedProfileJson(data);
           inv = normalizeInvestigation(data, brandName, corporateParent, healthFlag);
         } else {
           const parsed = relationalRowToParsed(row);

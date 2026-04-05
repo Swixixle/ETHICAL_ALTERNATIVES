@@ -1,0 +1,104 @@
+{
+  "brand_name": "Uber",
+  "brand_slug": "uber",
+  "parent_company": "Uber Technologies Inc.",
+  "ultimate_parent": "Uber Technologies Inc.",
+  "subsidiaries": ["Uber Eats", "Uber Freight", "Drizly (sold 2024)", "Careem (Middle East)"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "UBER CLASSIFIED A MILLION WORKERS AS CONTRACTORS TO AVOID PAYING BENEFITS THEN LOBBIED TO MAKE IT LEGAL",
+  "executive_summary": "Uber operates in 70+ countries as the dominant ride-hailing platform, employing a business model built on classifying workers as independent contractors rather than employees — avoiding minimum wage, overtime, benefits, and workers' compensation obligations. The company lost $31 billion in its first decade of operation while subsidizing below-cost rides with investor capital to destroy taxi competitors, then raised prices once competition was eliminated. Uber has faced regulatory action in dozens of jurisdictions, documented sexual assault failures, algorithmic wage manipulation, and a secret program to obstruct government investigations.",
+  "verdict_tags": ["worker_misclassification", "wage_theft", "regulatory_evasion", "sexual_assault_facilitation", "algorithmic_manipulation", "tax_avoidance", "government_obstruction"],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Uber routes substantial profits through Netherlands, Bermuda, and Singapore subsidiaries to minimize tax obligations in operating countries. The company's intellectual property is held in low-tax jurisdictions while local operating companies in high-tax countries record losses. California's Proposition 22 — which Uber spent $200M to pass — was structured partly to create contractor relationships that reduce payroll tax obligations. Uber has faced tax authority investigations in the UK, France, Netherlands, and Australia for transfer pricing and corporate structure.",
+    "flags": ["dutch_profit_routing", "ip_tax_haven", "payroll_tax_avoidance_through_misclassification"],
+    "sources": ["https://www.sec.gov", "https://www.icij.org/investigations/uber-files"]
+  },
+  "legal": {
+    "summary": "Uber paid $148 million in 2018 to settle a data breach that exposed 57 million user and driver records — and which the company initially concealed and paid hackers to delete the stolen data. Uber paid $4.4 million to the EEOC in 2018 to settle sexual harassment claims within the company. The company has faced regulatory fines in dozens of jurisdictions for operating without licenses. California's AB5 classified Uber drivers as employees; Uber spent $200 million on Proposition 22 to overturn it. UK courts ruled Uber drivers are workers entitled to minimum wage and benefits in 2021. Massachusetts settled with Uber for $175 million for misclassifying drivers in 2024. Uber's former CEO Travis Kalanick was pushed out following documented sexual harassment culture and a federal investigation into the 'Greyball' program used to obstruct government oversight.",
+    "flags": ["data_breach_concealment", "regulatory_evasion_program", "worker_misclassification_settlements", "ceo_ousted_harassment"],
+    "sources": ["https://www.ftc.gov", "https://www.justice.gov", "https://www.sec.gov"]
+  },
+  "labor": {
+    "summary": "Uber's core business model depends on worker misclassification. Approximately 5 million drivers worldwide are classified as independent contractors, denying them minimum wage guarantees, overtime pay, workers' compensation, unemployment insurance, health benefits, and the right to organize. Studies in multiple cities have found that after accounting for vehicle costs, insurance, maintenance, and waiting time, many Uber drivers earn below minimum wage. Uber's algorithmic systems dynamically set driver pay in ways that drivers cannot see or contest. The company has been documented to 'deactivate' (fire) drivers using opaque algorithmic criteria with no appeal process. Driver protests and organizing attempts have occurred on every inhabited continent.",
+    "flags": ["systematic_misclassification", "below_minimum_wage_documented", "algorithmic_wage_suppression", "no_appeal_termination"],
+    "sources": ["https://www.nlrb.gov", "https://www.epi.org"]
+  },
+  "environmental": {
+    "summary": "Studies by the Union of Concerned Scientists and UC Davis have found that Uber and Lyft add more vehicle miles traveled to urban road networks than they remove, increasing congestion, emissions, and road wear. A 2020 UC Davis study found that ride-hailing services generate 69% more emissions than the trips they replace due to deadhead miles (driving without passengers). Uber has made EV transition commitments but the vast majority of the fleet remains gasoline-powered.",
+    "flags": ["net_emissions_increase", "congestion_contribution", "ev_commitment_gap"],
+    "sources": ["https://www.ucsusa.org", "https://itspubs.ucdavis.edu"]
+  },
+  "political": {
+    "summary": "Uber spent $200 million on California's Proposition 22 in 2020 — the largest ballot measure campaign in California history — to overturn a worker classification law. The company has lobbied in every state legislature and dozens of countries to create special contractor exemptions for gig platforms. Uber's political contributions connect it to both parties. The company hired former Obama and Bush administration officials for its government affairs team. In countries where Uber could not influence legislation, it operated illegally and accepted fines as a cost of market entry.",
+    "flags": ["record_ballot_spending", "illegal_market_entry_strategy", "bipartisan_influence_buying"],
+    "sources": ["https://www.opensecrets.org/orgs/uber", "https://www.icij.org/investigations/uber-files"]
+  },
+  "executives": {
+    "summary": "CEO Dara Khosrowshahi received $24.3 million in total compensation in 2023. Founder and former CEO Travis Kalanick was worth $6 billion at Uber's IPO before leaving following documented sexual harassment culture. Kalanick sold $2.5 billion in Uber stock following the IPO. The Uber Files — a 2022 ICIJ investigation — revealed that under Kalanick, the company secretly lobbied world leaders, concealed a government obstruction program, and strategized about weaponizing violence against drivers to generate media coverage favorable to Uber.",
+    "flags": ["kalanick_harassment_culture", "uber_files_obstruction", "violence_media_strategy_alleged"],
+    "sources": ["https://www.icij.org/investigations/uber-files", "https://www.sec.gov"]
+  },
+  "connections": {
+    "summary": "Uber shares major investors with Lyft — SoftBank, Benchmark, and mutual funds hold significant stakes in both companies, reducing competitive incentive. The company's largest investor, SoftBank Vision Fund, also holds stakes in Grab (Southeast Asia), Ola (India), Didi (China), and 99 (Brazil) — creating a global ride-hailing cartel with shared ownership. Uber's board has included former political officials from multiple countries. The Uber Files revealed that Emmanuel Macron — then France's Economy Minister — secretly helped Uber gain access to the French market while it was operating illegally.",
+    "flags": ["softbank_global_ridehail_cartel", "macron_france_lobbying", "lyft_shared_investor"],
+    "sources": ["https://www.icij.org/investigations/uber-files"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "A 2022 CNN investigation found that Uber received 3,824 sexual assault reports from U.S. rides between 2017 and 2020. Advocates have alleged that Uber's background check system — which does not use fingerprinting — allows previously convicted individuals to become drivers. The Uber Files revealed internal strategy documents discussing using violence against drivers during strikes as a media opportunity. Former employees have alleged that Uber's 'surge pricing' algorithm was designed not only to balance supply and demand but to maximize extraction from users during events when demand was inelastic. Uber has been alleged to have used its data on politicians' travel patterns as leverage in lobbying conversations.",
+    "flags": ["sexual_assault_volume_alleged", "background_check_inadequacy", "politician_data_leverage_alleged", "surge_exploitation_alleged"],
+    "sources": ["https://www.cnn.com/2022/05/19/business/uber-sexual-assault-report-invs", "https://www.icij.org/investigations/uber-files"]
+  },
+  "health_record": {
+    "summary": "Uber's 2019 and 2021 US Safety Reports documented 3,824 sexual assault incidents across its platform between 2017 and 2020, including 141 rape reports. The company acknowledges these are likely undercounts due to reporting barriers. Driver health has been documented as suffering from the gig model: no workers' compensation means injured drivers have no income replacement; no health insurance means medical costs fall entirely on drivers. A 2021 study in JAMA Internal Medicine found ride-hailing expansion correlated with increased fatal crash rates in cities, attributed to more vehicles on roads and driver fatigue from pressure to maximize hours.",
+    "flags": ["sexual_assault_volume", "driver_health_insurance_gap", "fatal_crash_correlation"],
+    "sources": ["https://www.uber.com/us/en/safety/report/", "https://jamanetwork.com"]
+  },
+  "alternatives": {
+    "cheaper": ["Local taxi companies — regulated, licensed, drivers have workers' protections and you can negotiate flat rates", "Lyft — same model but smaller; not meaningfully better on labor", "Via — pooled rides, slightly better environmental profile", "Public transit — dramatically cheaper for regular urban commuting"],
+    "healthier": ["Walking and cycling for distances under 3 miles — free, healthy, zero emissions", "Electric scooter and bike share programs in most major cities", "Car sharing (Zipcar, Turo) for occasional car needs without ownership"],
+    "diy": ["Carpooling apps (Waze Carpool, Scoop) connect commuters for cost sharing without platform extraction", "Community ride boards for rural areas", "Municipal transit advocacy — better public transit reduces dependence on all gig platforms", "Bicycle ownership — a $500 bike replaces hundreds of dollars of annual Uber spending in most urban environments"]
+  },
+  "timeline": [
+    {"year": 2010, "event": "Uber founded in San Francisco; begins operating as unlicensed taxi service", "severity": "moderate", "source_url": ""},
+    {"year": 2014, "event": "Uber documents strategy to hire private investigators to dig up dirt on journalists covering the company", "severity": "high", "source_url": ""},
+    {"year": 2014, "event": "Greyball program created — software to deceive government investigators attempting to enforce regulations", "severity": "critical", "source_url": ""},
+    {"year": 2017, "event": "Susan Fowler's blog post documents systematic sexual harassment at Uber; 215 HR complaints revealed", "severity": "critical", "source_url": ""},
+    {"year": 2017, "event": "CEO Travis Kalanick forced to resign; valued at $6B at time of IPO", "severity": "high", "source_url": ""},
+    {"year": 2018, "event": "$148M settlement for concealing 2016 data breach affecting 57M users and drivers", "severity": "critical", "source_url": ""},
+    {"year": 2019, "event": "Uber IPO; company had lost $31B over its first decade of operation", "severity": "moderate", "source_url": ""},
+    {"year": 2020, "event": "Uber spends $200M on Proposition 22 — largest ballot campaign in California history — to exempt gig workers from employee status", "severity": "critical", "source_url": ""},
+    {"year": 2021, "event": "UK Supreme Court rules Uber drivers are workers entitled to minimum wage and holiday pay", "severity": "high", "source_url": ""},
+    {"year": 2022, "event": "Uber Files: ICIJ investigation of 124,000 leaked documents reveals lobbying of world leaders, government obstruction, violence strategy", "severity": "critical", "source_url": "https://www.icij.org/investigations/uber-files"},
+    {"year": 2024, "event": "Massachusetts $175M settlement for driver misclassification", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Uber's entry into markets was documented to destroy taxi industries. In New York City, yellow cab medallion values fell from $1.3 million in 2014 to $75,000 in 2018. Multiple taxi drivers died by suicide citing financial devastation. The elimination of regulated taxi industries removed workers' compensation protections, unionized jobs, and regulatory accountability from urban transportation.",
+    "price_illusion": "Uber's below-cost fares during the market entry phase were subsidized by over $25 billion in investor capital. Once competitors were destroyed, prices rose. The 'cheap ride' was a predatory pricing strategy, not sustainable economics.",
+    "tax_math": "By classifying 5 million workers as contractors, Uber avoids payroll taxes on the full cost of its workforce. The workers who lack employer-provided health insurance use emergency rooms and public health programs at higher rates, transferring costs to taxpayers.",
+    "wealth_velocity": "Uber's model extracts a fee from every transaction between driver and rider. In a regulated taxi market, that extraction is partially offset by driver ownership of their vehicle and labor. In the Uber model, the platform captures the margin and the driver absorbs all costs."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "SoftBank and early investors", "how": "Billions in capital gains on IPO after decade of below-cost market subsidization"},
+      {"group": "Urban riders during subsidized phase", "how": "Artificially cheap rides funded by investor capital during competition-destruction phase"},
+      {"group": "Executive leadership", "how": "Kalanick: $6B at IPO; Khosrowshahi: $24M annual compensation"}
+    ],
+    "who_paid": [
+      {"group": "Taxi drivers globally", "how": "Destroyed industry; NYC medallion values fell 94%; multiple suicides documented"},
+      {"group": "5 million Uber drivers", "how": "No minimum wage guarantee, no benefits, no workers' comp, subject to algorithmic control"},
+      {"group": "Sexual assault survivors", "how": "3,824 documented incidents; platform accountability limited by arbitration clauses"},
+      {"group": "Taxpayers", "how": "Uninsured gig workers use public health programs; road wear from increased vehicle miles not paid by platform"}
+    ],
+    "the_gap": "Uber destroyed a regulated industry with investor-subsidized below-cost pricing, then replaced it with an unregulated workforce that has no floor on exploitation. The savings went to shareholders. The costs went to drivers, riders who were later price-gouged, and the public who absorbed the externalities."
+  }
+}
