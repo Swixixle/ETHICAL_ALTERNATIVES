@@ -60,6 +60,7 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
 
   const [previewDataUrl, setPreviewDataUrl] = useState(null);
   const [busy, setBusy] = useState(false);
+  const [dragActive, setDragActive] = useState(false);
   const [cameraMode, setCameraMode] = useState(false);
   const [showCameraCta, setShowCameraCta] = useState(
     () => typeof navigator !== 'undefined' && Boolean(navigator.mediaDevices?.getUserMedia)
@@ -100,9 +101,28 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
 
   const handleFileChange = (e) => {
     const file = e.target.files?.[0];
-    e.target.value = '';
+    if (e.target && 'value' in e.target && typeof e.target.value === 'string') {
+      e.target.value = '';
+    }
     if (file) void emitFile(file);
   };
+
+  function handleDrag(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.type === 'dragenter' || e.type === 'dragover') setDragActive(true);
+    if (e.type === 'dragleave') setDragActive(false);
+  }
+
+  function handleDrop(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+    const file = e.dataTransfer.files?.[0];
+    if (file && file.type.startsWith('image/')) {
+      handleFileChange({ target: { files: [file] } });
+    }
+  }
 
   const finishFromVideo = useCallback(() => {
     const video = videoRef.current;
@@ -310,13 +330,17 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
     >
       <label
         htmlFor="ea-photo-file"
+        onDragEnter={handleDrag}
+        onDragOver={handleDrag}
+        onDragLeave={handleDrag}
+        onDrop={handleDrop}
         style={{
           display: 'flex',
           width: '100%',
           flex: 1,
           minHeight: 200,
-          background: '#162030',
-          border: '2px dashed #344d62',
+          background: dragActive ? 'rgba(240,168,32,0.08)' : '#162030',
+          border: dragActive ? '2px dashed #f0a820' : '2px dashed #344d62',
           borderRadius: 4,
           flexDirection: 'column',
           alignItems: 'center',
@@ -336,7 +360,7 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
             textAlign: 'center',
           }}
         >
-          Tap to choose a photo
+          {dragActive ? 'Drop to analyze' : 'Tap to choose a photo'}
         </span>
         <span
           style={{
