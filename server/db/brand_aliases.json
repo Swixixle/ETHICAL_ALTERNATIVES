@@ -138,5 +138,19 @@
   "ralphs": "kroger",
   "merck": "merck",
   "msd": "merck",
-  "cargill": "cargill"
+  "cargill": "cargill",
+  "mgm": "mgm-resorts",
+  "mgm-grand": "mgm-resorts",
+  "bellagio": "mgm-resorts",
+  "cosmopolitan-las-vegas": "mgm-resorts",
+  "caesars": "caesars-entertainment",
+  "harrah-s": "caesars-entertainment",
+  "draftkings": "draftkings",
+  "fanduel": "fanduel",
+  "las-vegas-sands": "las-vegas-sands",
+  "venetian": "las-vegas-sands",
+  "sands": "las-vegas-sands",
+  "penn-entertainment": "penn-entertainment",
+  "penn-national": "penn-entertainment",
+  "penn": "penn-entertainment"
 }

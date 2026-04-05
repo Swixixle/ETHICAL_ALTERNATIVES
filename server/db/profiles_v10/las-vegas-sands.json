@@ -3,210 +3,75 @@
   "brand_slug": "las-vegas-sands",
   "parent_company": "Las Vegas Sands Corp.",
   "ultimate_parent": "Adelson Family (primary shareholders)",
-  "subsidiaries": [
-    "The Venetian Las Vegas",
-    "Palazzo",
-    "Sands Expo",
-    "Marina Bay Sands (Singapore)",
-    "Sands Macao (sold 2021)"
-  ],
+  "subsidiaries": ["The Venetian Las Vegas", "Palazzo", "Sands Expo", "Marina Bay Sands (Singapore)", "Sands Macao (sold 2021)"],
   "overall_concern_level": "significant",
   "profile_type": "database",
   "generated_headline": "IRAN HACKED LAS VEGAS SANDS IN RETALIATION FOR SHELDON ADELSON'S POLITICAL COMMENTS — AND ADELSON SPENT $200 MILLION INFLUENCING U.S. ELECTIONS",
   "executive_summary": "Las Vegas Sands was built by the late Sheldon Adelson into one of the world's largest casino companies, with properties in Las Vegas, Singapore, and — until 2021 — Macau. Adelson was simultaneously one of the most influential political donors in American history, spending an estimated $200+ million on U.S. elections primarily to benefit Republican candidates and Israel-aligned policies. In 2014, Iran conducted a state-sponsored cyberattack on Las Vegas Sands — wiping 75% of its Vegas servers and costing $40 million — in retaliation for public statements Adelson made suggesting the U.S. should detonate a nuclear bomb in the Iranian desert. The company has also faced documented bribery and corruption investigations related to its Macau operations, a DOJ investigation into its relationship with a Chinese government official, and ongoing questions about money laundering through casino operations.",
-  "verdict_tags": [
-    "iran_state_cyberattack",
-    "adelson_200m_political_spending",
-    "macau_corruption_investigation",
-    "doj_bribery_probe",
-    "money_laundering_concerns",
-    "nuclear_comment_retaliation"
-  ],
-  "concern_flags": {
-    "labor": true,
-    "environmental": false,
-    "political": true,
-    "tax": true,
-    "health": true,
-    "legal": true
-  },
+  "verdict_tags": ["iran_state_cyberattack", "adelson_200m_political_spending", "macau_corruption_investigation", "doj_bribery_probe", "money_laundering_concerns", "nuclear_comment_retaliation"],
+  "concern_flags": {"labor": true, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
   "tax": {
     "summary": "Las Vegas Sands uses offshore structures in Singapore and historically in Macau to route profits from its Asian operations through lower-tax jurisdictions. The company's Macau operations — sold in 2021 — were structured through complex Cayman Islands and Hong Kong holding companies. Singapore's Marina Bay Sands operates under a government concession with specific tax arrangements. Following Adelson's death, the family's inheritance of substantial LVS shares raised estate tax questions.",
-    "flags": [
-      "singapore_concession_tax_arrangements",
-      "macau_offshore_structures_historically",
-      "adelson_estate_tax_family_inheritance"
-    ],
-    "sources": [
-      "https://www.sec.gov"
-    ]
+    "flags": ["singapore_concession_tax_arrangements", "macau_offshore_structures_historically", "adelson_estate_tax_family_inheritance"],
+    "sources": ["https://www.sec.gov"]
   },
   "legal": {
     "summary": "2014 Iran cyberattack: state-sponsored hackers destroyed 75% of Las Vegas Sands' Vegas servers in retaliation for Adelson's public nuclear comments; $40 million in equipment costs and data recovery. DOJ investigation: Las Vegas Sands faced a years-long DOJ investigation into potential bribery related to its Macau operations and a specific relationship with a Chinese government official — the investigation generated settlements and significant legal costs without criminal charges against the company. Money laundering: Nevada gaming regulators have repeatedly cited Las Vegas Sands for failing to implement adequate anti-money-laundering controls — the company paid $47 million in AML settlement with Nevada in 2013. Singapore regulatory investigations into Marina Bay Sands AML compliance.",
-    "flags": [
-      "47m_aml_settlement_nevada_2013",
-      "doj_bribery_investigation_macau",
-      "iran_cyberattack_state_sponsored",
-      "singapore_aml_investigations"
-    ],
-    "sources": [
-      "https://www.justice.gov",
-      "https://www.casino.org/news/las-vegas-casino-cyberattacks-a-timeline"
-    ]
+    "flags": ["47m_aml_settlement_nevada_2013", "doj_bribery_investigation_macau", "iran_cyberattack_state_sponsored", "singapore_aml_investigations"],
+    "sources": ["https://www.justice.gov", "https://www.casino.org/news/las-vegas-casino-cyberattacks-a-timeline"]
   },
   "labor": {
     "summary": "Las Vegas Sands employs approximately 45,000 people globally. The Venetian Las Vegas has been operated as a non-union property — Adelson was famously resistant to union organization and the Venetian has faced sustained NLRB complaints and union organizing campaigns. Workers at Venetian/Palazzo earn lower wages than workers at competing unionized Strip properties. The company's Macau operations employed workers under Macau's regulatory framework.",
-    "flags": [
-      "venetian_non_union_strategy",
-      "nlrb_complaints_union_campaigns",
-      "lower_wages_vs_unionized_strip"
-    ],
-    "sources": [
-      "https://www.nlrb.gov"
-    ]
+    "flags": ["venetian_non_union_strategy", "nlrb_complaints_union_campaigns", "lower_wages_vs_unionized_strip"],
+    "sources": ["https://www.nlrb.gov"]
   },
   "environmental": {
     "summary": "Las Vegas Sands operates several of the largest buildings on the Las Vegas Strip — massive energy consumers in a desert climate. Marina Bay Sands in Singapore is one of the largest integrated resorts in the world. The company has made some sustainability commitments but the scale of its operations represents enormous energy and water consumption.",
-    "flags": [
-      "desert_energy_consumption_scale",
-      "marina_bay_sands_global_scale"
-    ],
+    "flags": ["desert_energy_consumption_scale", "marina_bay_sands_global_scale"],
     "sources": []
   },
   "political": {
     "summary": "Sheldon Adelson was the most consequential individual political donor in modern American history. He spent an estimated $100 million in the 2012 election cycle, $150+ million in 2016, and $200+ million in subsequent cycles — primarily to Republican candidates and Israel-aligned causes. Adelson's political influence shaped Republican Party policy on Israel, Iran, and casino regulation. His public suggestion in 2013 that the U.S. should detonate a nuclear weapon in the Iranian desert directly triggered a state-sponsored cyberattack on his own company. Las Vegas Sands has lobbied extensively against online gambling legalization — a position that directly protects its physical casino business from competition.",
-    "flags": [
-      "200m_political_spending_estimated",
-      "nuclear_comment_triggered_attack",
-      "online_gambling_opposition_protects_physical_casinos",
-      "israel_policy_influence"
-    ],
-    "sources": [
-      "https://www.opensecrets.org"
-    ]
+    "flags": ["200m_political_spending_estimated", "nuclear_comment_triggered_attack", "online_gambling_opposition_protects_physical_casinos", "israel_policy_influence"],
+    "sources": ["https://www.opensecrets.org"]
   },
   "executives": {
     "summary": "Sheldon Adelson died in January 2021; his widow Miriam Adelson and family control the company. Miriam Adelson received the Presidential Medal of Freedom from Donald Trump in 2018. The Adelson family's net worth exceeded $30 billion at Sheldon's death. CEO Rob Goldstein has led the company since Adelson's death, focusing on domestic expansion plans — Las Vegas Sands is pursuing a New York casino license and has announced interest in Texas market development.",
-    "flags": [
-      "adelson_30b_net_worth",
-      "miriam_adelson_presidential_medal_trump",
-      "ny_texas_expansion_political_context",
-      "political_donor_receiving_honors"
-    ],
-    "sources": [
-      "https://www.sec.gov"
-    ]
+    "flags": ["adelson_30b_net_worth", "miriam_adelson_presidential_medal_trump", "ny_texas_expansion_political_context", "political_donor_receiving_honors"],
+    "sources": ["https://www.sec.gov"]
   },
   "connections": {
     "summary": "Las Vegas Sands' political spending connected Sheldon Adelson to virtually every major Republican political figure of the past two decades. The company's Macau operations connected it to Chinese government officials in ways that generated the DOJ investigation. Iran's decision to conduct a state-sponsored cyberattack on a private American corporation — in retaliation for one executive's public comments — demonstrates the real-world consequences of the intersection between gambling money, political influence, and geopolitics. Las Vegas Sands' opposition to online gambling directly protects its physical casino business while shaping national policy.",
-    "flags": [
-      "republican_political_network_connected",
-      "macau_chinese_government_official_connection",
-      "iran_geopolitical_retaliation",
-      "online_gambling_policy_influence"
-    ],
-    "sources": [
-      "https://www.casino.org/news/las-vegas-casino-cyberattacks-a-timeline"
-    ]
+    "flags": ["republican_political_network_connected", "macau_chinese_government_official_connection", "iran_geopolitical_retaliation", "online_gambling_policy_influence"],
+    "sources": ["https://www.casino.org/news/las-vegas-casino-cyberattacks-a-timeline"]
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
     "summary": "Nevada gaming regulators and DOJ investigators have documented concerns about Las Vegas Sands' Macau operations and the relationship between its casino business and Chinese government officials — without resulting in criminal charges against the company. Casino industry researchers have alleged that large-scale cash gambling at properties like Marina Bay Sands provides money laundering opportunities that are difficult to detect and that Las Vegas Sands' AML controls have historically been insufficient to address. The 2013 Nevada AML settlement — $47 million — addressed documented failures in cash transaction reporting that regulators alleged enabled suspicious activity.",
-    "flags": [
-      "macau_government_official_relationship_investigated",
-      "money_laundering_opportunity_allegations",
-      "aml_controls_historically_insufficient"
-    ],
+    "flags": ["macau_government_official_relationship_investigated", "money_laundering_opportunity_allegations", "aml_controls_historically_insufficient"],
     "sources": []
   },
   "health_record": {
     "summary": "Las Vegas Sands operates some of the largest physical casino facilities in the world — Marina Bay Sands in Singapore draws visitors from across Asia into an environment designed to maximize gambling time and spending. The company's VIP gambling operations in Macau and Singapore — where high-stakes gamblers from mainland China wagered enormous sums — have been associated with documented financial ruin and family consequences in Chinese media. Physical casino operations generate the same addiction profiles as online platforms, with the social intensity of the casino environment adding additional psychological pressure. Problem gambling rates are documented to be higher in communities with casino access.",
-    "flags": [
-      "physical_casino_addiction_profiles",
-      "vip_gambling_macau_singapore_documented_harm",
-      "problem_gambling_community_proximity"
-    ],
-    "sources": [
-      "https://www.ncpgambling.org"
-    ]
+    "flags": ["physical_casino_addiction_profiles", "vip_gambling_macau_singapore_documented_harm", "problem_gambling_community_proximity"],
+    "sources": ["https://www.ncpgambling.org"]
   },
   "alternatives": {
-    "cheaper": [
-      "Independent Las Vegas hotels — off-Strip properties at 50-80% lower rates",
-      "Vegas neighborhood hotels — same proximity to Strip at dramatically lower cost",
-      "Travel to non-gambling resort destinations — comparable luxury at comparable or lower prices"
-    ],
-    "healthier": [
-      "Singapore's non-casino attractions — Gardens by the Bay, hawker centers, cultural districts — represent Singapore's actual extraordinary culture without entering Marina Bay Sands",
-      "Las Vegas' natural surroundings — Red Rock Canyon, Hoover Dam, Valley of Fire — accessible from the city"
-    ],
-    "diy": [
-      "Las Vegas Sands' Venetian specifically operates non-union — workers there earn demonstrably less than union workers at MGM, Caesars, and Wynn properties",
-      "National Problem Gambling Helpline: 1-800-522-4700",
-      "Singapore operates a national self-exclusion registry (National Council on Problem Gambling) that all casinos including Marina Bay Sands must honor"
-    ]
+    "cheaper": ["Independent Las Vegas hotels — off-Strip properties at 50-80% lower rates", "Vegas neighborhood hotels — same proximity to Strip at dramatically lower cost", "Travel to non-gambling resort destinations — comparable luxury at comparable or lower prices"],
+    "healthier": ["Singapore's non-casino attractions — Gardens by the Bay, hawker centers, cultural districts — represent Singapore's actual extraordinary culture without entering Marina Bay Sands", "Las Vegas' natural surroundings — Red Rock Canyon, Hoover Dam, Valley of Fire — accessible from the city"],
+    "diy": ["Las Vegas Sands' Venetian specifically operates non-union — workers there earn demonstrably less than union workers at MGM, Caesars, and Wynn properties", "National Problem Gambling Helpline: 1-800-522-4700", "Singapore operates a national self-exclusion registry (National Council on Problem Gambling) that all casinos including Marina Bay Sands must honor"]
   },
   "timeline": [
-    {
-      "year": 1989,
-      "event": "Sheldon Adelson acquires the Sands Hotel site; begins building Las Vegas casino empire",
-      "severity": "neutral",
-      "source_url": ""
-    },
-    {
-      "year": 1999,
-      "event": "The Venetian opens — Adelson's flagship Las Vegas property, operated non-union",
-      "severity": "neutral",
-      "source_url": ""
-    },
-    {
-      "year": 2003,
-      "event": "Sands Macau opens; LVS becomes major force in Macau gambling market",
-      "severity": "neutral",
-      "source_url": ""
-    },
-    {
-      "year": 2010,
-      "event": "Marina Bay Sands opens in Singapore; becomes one of most profitable casinos in world",
-      "severity": "neutral",
-      "source_url": ""
-    },
-    {
-      "year": 2012,
-      "event": "Adelson spends ~$100M on U.S. elections including support for Mitt Romney; DOJ investigation into Macau operations begins",
-      "severity": "high",
-      "source_url": ""
-    },
-    {
-      "year": 2013,
-      "event": "Adelson suggests U.S. should detonate nuclear weapon in Iranian desert at public event; $47M AML settlement with Nevada",
-      "severity": "critical",
-      "source_url": ""
-    },
-    {
-      "year": 2014,
-      "event": "Iran conducts state-sponsored cyberattack on Las Vegas Sands; 75% of Vegas servers destroyed; $40M in damage",
-      "severity": "critical",
-      "source_url": "https://www.casino.org/news/las-vegas-casino-cyberattacks-a-timeline"
-    },
-    {
-      "year": 2016,
-      "event": "Adelson spends ~$150M on U.S. elections; major influence on Trump campaign and administration",
-      "severity": "high",
-      "source_url": ""
-    },
-    {
-      "year": 2018,
-      "event": "Trump awards Miriam Adelson the Presidential Medal of Freedom",
-      "severity": "high",
-      "source_url": ""
-    },
-    {
-      "year": 2021,
-      "event": "Adelson dies; LVS sells Macau and Vegas Strip properties; family retains Marina Bay Sands; pursues NY license",
-      "severity": "moderate",
-      "source_url": ""
-    }
+    {"year": 1989, "event": "Sheldon Adelson acquires the Sands Hotel site; begins building Las Vegas casino empire", "severity": "neutral", "source_url": ""},
+    {"year": 1999, "event": "The Venetian opens — Adelson's flagship Las Vegas property, operated non-union", "severity": "neutral", "source_url": ""},
+    {"year": 2003, "event": "Sands Macau opens; LVS becomes major force in Macau gambling market", "severity": "neutral", "source_url": ""},
+    {"year": 2010, "event": "Marina Bay Sands opens in Singapore; becomes one of most profitable casinos in world", "severity": "neutral", "source_url": ""},
+    {"year": 2012, "event": "Adelson spends ~$100M on U.S. elections including support for Mitt Romney; DOJ investigation into Macau operations begins", "severity": "high", "source_url": ""},
+    {"year": 2013, "event": "Adelson suggests U.S. should detonate nuclear weapon in Iranian desert at public event; $47M AML settlement with Nevada", "severity": "critical", "source_url": ""},
+    {"year": 2014, "event": "Iran conducts state-sponsored cyberattack on Las Vegas Sands; 75% of Vegas servers destroyed; $40M in damage", "severity": "critical", "source_url": "https://www.casino.org/news/las-vegas-casino-cyberattacks-a-timeline"},
+    {"year": 2016, "event": "Adelson spends ~$150M on U.S. elections; major influence on Trump campaign and administration", "severity": "high", "source_url": ""},
+    {"year": 2018, "event": "Trump awards Miriam Adelson the Presidential Medal of Freedom", "severity": "high", "source_url": ""},
+    {"year": 2021, "event": "Adelson dies; LVS sells Macau and Vegas Strip properties; family retains Marina Bay Sands; pursues NY license", "severity": "moderate", "source_url": ""}
   ],
   "community_impact": {
     "displacement": "Las Vegas Sands' political spending — concentrated in advancing specific foreign policy positions and protecting the physical casino business from online competition — used gambling profits to shape U.S. policy in ways that served Adelson's personal and business interests rather than broader public interests. The company's opposition to online gambling has kept gambling concentrated in physical properties, limiting consumer choice while protecting the Venetian's market.",
@@ -216,36 +81,15 @@
   },
   "cost_absorption": {
     "who_benefited": [
-      {
-        "group": "Sheldon and Miriam Adelson / family",
-        "how": "$30B+ fortune; political influence equivalent to a small nation's lobbying budget; Presidential Medal of Freedom"
-      },
-      {
-        "group": "Republican candidates supported by Adelson",
-        "how": "$200M+ in election spending; policy positions aligned with donor preferences"
-      },
-      {
-        "group": "Israel-aligned political causes",
-        "how": "Specific foreign policy outcomes funded by gambling profits"
-      }
+      {"group": "Sheldon and Miriam Adelson / family", "how": "$30B+ fortune; political influence equivalent to a small nation's lobbying budget; Presidential Medal of Freedom"},
+      {"group": "Republican candidates supported by Adelson", "how": "$200M+ in election spending; policy positions aligned with donor preferences"},
+      {"group": "Israel-aligned political causes", "how": "Specific foreign policy outcomes funded by gambling profits"}
     ],
     "who_paid": [
-      {
-        "group": "Casino gamblers globally",
-        "how": "House edge accumulated over decades funded Adelson's $30B fortune and $200M in political spending"
-      },
-      {
-        "group": "Non-union Venetian workers",
-        "how": "Lower wages than unionized Strip competitors; NLRB complaints; Adelson's explicit anti-union position"
-      },
-      {
-        "group": "U.S. foreign policy (consequential)",
-        "how": "Adelson's nuclear comment triggered a state-sponsored cyberattack on a U.S. corporation; his political spending shaped Iran policy"
-      },
-      {
-        "group": "Las Vegas Sands data breach victims",
-        "how": "75% of Vegas servers destroyed by Iranian hackers; data exposure consequences for affected staff and guests"
-      }
+      {"group": "Casino gamblers globally", "how": "House edge accumulated over decades funded Adelson's $30B fortune and $200M in political spending"},
+      {"group": "Non-union Venetian workers", "how": "Lower wages than unionized Strip competitors; NLRB complaints; Adelson's explicit anti-union position"},
+      {"group": "U.S. foreign policy (consequential)", "how": "Adelson's nuclear comment triggered a state-sponsored cyberattack on a U.S. corporation; his political spending shaped Iran policy"},
+      {"group": "Las Vegas Sands data breach victims", "how": "75% of Vegas servers destroyed by Iranian hackers; data exposure consequences for affected staff and guests"}
     ],
     "the_gap": "Sheldon Adelson suggested nuking the Iranian desert. Iran hacked his casino and wiped 75% of his servers. He spent $200 million on elections funded by casino profits. His wife received the Presidential Medal of Freedom. The Venetian workers who built his fortune are non-union. This is what happens when gambling money meets geopolitics."
   }

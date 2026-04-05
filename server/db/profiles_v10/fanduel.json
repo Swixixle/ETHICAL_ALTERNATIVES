@@ -3,198 +3,73 @@
   "brand_slug": "fanduel",
   "parent_company": "Flutter Entertainment PLC",
   "ultimate_parent": "Flutter Entertainment PLC",
-  "subsidiaries": [
-    "FanDuel Sportsbook",
-    "FanDuel Casino",
-    "FanDuel Racing",
-    "TVG",
-    "PokerStars US"
-  ],
+  "subsidiaries": ["FanDuel Sportsbook", "FanDuel Casino", "FanDuel Racing", "TVG", "PokerStars US"],
   "overall_concern_level": "significant",
   "profile_type": "database",
   "generated_headline": "FANDUEL'S VIP MANAGER TEXTED A PROBLEM GAMBLER HUNDREDS OF TIMES PRETENDING TO BE HIS FRIEND WHILE HE LOST MILLIONS",
   "executive_summary": "FanDuel is the largest online sports betting platform in the United States by market share, operating as a subsidiary of Flutter Entertainment PLC — an Irish gambling conglomerate that also owns PokerStars, Paddy Power, and Betfair. Together with DraftKings, FanDuel controls approximately 70% of the U.S. online sports betting market. FanDuel's documented practices include assigning VIP managers to problem gamblers who are trained to build false personal relationships with users in order to maximize betting volume, offering deceptive promotional structures, targeting users with detected addiction patterns rather than referring them to help, and partnering with the NFL to normalize sports betting for the broadest possible audience. A documented FanDuel VIP manager named Morgan messaged a problem gambler hundreds of times — discussing restaurants, vacations, and children — while providing Super Bowl tickets and field access as inducements to continue gambling. This user lost millions.",
-  "verdict_tags": [
-    "vip_false_relationship_documented",
-    "nfl_partnership_normalization",
-    "addiction_algorithm_targeting",
-    "deceptive_promotions",
-    "flutter_ireland_offshore",
-    "baltimore_lawsuit",
-    "phai_tobacco_lawyer_case"
-  ],
-  "concern_flags": {
-    "labor": false,
-    "environmental": false,
-    "political": true,
-    "tax": true,
-    "health": true,
-    "legal": true
-  },
+  "verdict_tags": ["vip_false_relationship_documented", "nfl_partnership_normalization", "addiction_algorithm_targeting", "deceptive_promotions", "flutter_ireland_offshore", "baltimore_lawsuit", "phai_tobacco_lawyer_case"],
+  "concern_flags": {"labor": false, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
   "tax": {
     "summary": "FanDuel operates as a U.S. subsidiary of Flutter Entertainment PLC, an Irish company incorporated in Dublin. This structure routes profits through Ireland — with a 12.5% corporate tax rate versus 21% in the United States — minimizing tax obligations on FanDuel's U.S. gambling revenue. The Irish parent company structure also means FanDuel's US revenue is subject to transfer pricing between the US operating subsidiary and the Irish parent. Flutter is listed on the New York Stock Exchange and London Stock Exchange.",
-    "flags": [
-      "irish_parent_12_5pct_tax_rate",
-      "transfer_pricing_us_to_ireland",
-      "profit_routing_offshore"
-    ],
-    "sources": [
-      "https://www.sec.gov"
-    ]
+    "flags": ["irish_parent_12_5pct_tax_rate", "transfer_pricing_us_to_ireland", "profit_routing_offshore"],
+    "sources": ["https://www.sec.gov"]
   },
   "legal": {
     "summary": "2025 (April): City of Baltimore sues FanDuel and DraftKings for violations of consumer protection ordinance; algorithmic targeting of addiction patterns; deceptive 'bonus bet' promotions. 2025: PHAI (Public Health Advocacy Institute) lawsuit led by Richard Daynard — tobacco settlement attorney — alleges FanDuel uses 'predictive algorithms to generate bets optimized to stimulate compulsive gambling.' The PHAI Pennsylvania lawsuit names FanDuel, DraftKings, the NFL, and data company Genius Sports. Federal class action (E.D. Pa.) includes FanDuel as defendant for deceptive promotional practices and self-exclusion failures. Multiple state attorney general investigations into advertising practices. FanDuel's parent Flutter has faced regulatory sanctions in the UK for failure to implement responsible gambling protections for identified problem gamblers.",
-    "flags": [
-      "baltimore_city_lawsuit",
-      "phai_tobacco_lawyer_case",
-      "nfl_genius_sports_named",
-      "flutter_uk_regulatory_sanctions",
-      "self_exclusion_failures"
-    ],
-    "sources": [
-      "https://www.aboutlawsuits.com/sports-betting-addiction-lawsuit",
-      "https://www.espn.com/espn/betting/story/_/id/48312490"
-    ]
+    "flags": ["baltimore_city_lawsuit", "phai_tobacco_lawyer_case", "nfl_genius_sports_named", "flutter_uk_regulatory_sanctions", "self_exclusion_failures"],
+    "sources": ["https://www.aboutlawsuits.com/sports-betting-addiction-lawsuit", "https://www.espn.com/espn/betting/story/_/id/48312490"]
   },
   "labor": {
     "summary": "FanDuel employs approximately 3,000 people in the United States. The company's VIP host workforce — documented in PHAI and other litigation — is specifically trained and incentivized to maximize betting volume from high-risk users. The documented case of a FanDuel VIP manager named Morgan, who built a false personal relationship with a problem gambler over hundreds of messages while providing Super Bowl tickets and field access, illustrates how VIP labor is deployed as an addiction management tool rather than a customer service function.",
-    "flags": [
-      "vip_host_addiction_management_incentive",
-      "morgan_vip_false_relationship_documented"
-    ],
-    "sources": [
-      "https://popular.info/p/new-lawsuit-alleges-draftkings-and"
-    ]
+    "flags": ["vip_host_addiction_management_incentive", "morgan_vip_false_relationship_documented"],
+    "sources": ["https://popular.info/p/new-lawsuit-alleges-draftkings-and"]
   },
   "environmental": {
     "summary": "FanDuel's digital-only operations have limited direct environmental footprint. Flutter Entertainment's global data infrastructure represents the primary environmental impact.",
-    "flags": [
-      "digital_operations_data_centers"
-    ],
+    "flags": ["digital_operations_data_centers"],
     "sources": []
   },
   "political": {
     "summary": "FanDuel/Flutter has been a primary lobbying force for sports betting legalization across U.S. states since the 2018 Supreme Court ruling. The company has lobbied against mandatory spending limits, advertising restrictions, and VIP program regulations that would directly reduce problem gambling. FanDuel's NFL partnership — which integrates FanDuel branding and betting odds into NFL broadcasts, apps, and stadium experiences — represents a coordinated political and commercial strategy to normalize sports betting for the largest American sports audience. FanDuel has opposed regulations requiring platforms to intervene when users display problem gambling behavior.",
-    "flags": [
-      "sports_betting_legalization_lobbying",
-      "nfl_broadcast_integration",
-      "problem_gambling_intervention_opposition",
-      "advertising_restriction_opposition"
-    ],
-    "sources": [
-      "https://www.opensecrets.org"
-    ]
+    "flags": ["sports_betting_legalization_lobbying", "nfl_broadcast_integration", "problem_gambling_intervention_opposition", "advertising_restriction_opposition"],
+    "sources": ["https://www.opensecrets.org"]
   },
   "executives": {
     "summary": "FanDuel CEO Amy Howe received $7.4 million in compensation in 2023. Flutter Entertainment Group CEO Peter Jackson received £5.8 million. Flutter's PHAI executives have publicly described responsible gambling as a 'strategic priority' while the company has simultaneously faced UK regulatory sanctions for failing to implement basic responsible gambling protections for identified problem gamblers — demonstrating the gap between stated commitments and documented practice.",
-    "flags": [
-      "uk_sanctions_vs_responsible_gambling_statements",
-      "flutter_ceo_public_responsible_gambling_claims"
-    ],
-    "sources": [
-      "https://www.sec.gov"
-    ]
+    "flags": ["uk_sanctions_vs_responsible_gambling_statements", "flutter_ceo_public_responsible_gambling_claims"],
+    "sources": ["https://www.sec.gov"]
   },
   "connections": {
     "summary": "FanDuel's NFL partnership — formalized as an 'Official Sports Betting Partner of the NFL' — creates a revenue relationship where the NFL profits from FanDuel's gambling revenue while simultaneously promoting gambling to its audience of 100+ million viewers. The partnership includes in-broadcast betting odds, FanDuel-branded segments, and stadium activation. The same NFL that conducts player mental health programs receives revenue from a platform documented to cause mental health crises in its users. Genius Sports — the data company named in the PHAI lawsuit alongside FanDuel and DraftKings — provides real-time game data that enables in-play betting, the highest-risk betting format.",
-    "flags": [
-      "nfl_official_partnership_conflict",
-      "genius_sports_real_time_data_enabler",
-      "in_play_betting_highest_risk_format"
-    ],
+    "flags": ["nfl_official_partnership_conflict", "genius_sports_real_time_data_enabler", "in_play_betting_highest_risk_format"],
     "sources": []
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
     "summary": "The PHAI lawsuit includes documentary evidence of a FanDuel VIP manager — identified as Morgan — who maintained hundreds of personal text messages with a problem gambler over multiple years. Morgan discussed restaurants, bars, vacations, and children while simultaneously working to ensure the user continued gambling. In 2022, Morgan provided the user and his son Super Bowl tickets, hotel accommodations, and on-field access before the game. The lawsuit alleges this was documented FanDuel strategy — not an aberration. Plaintiffs also allege that FanDuel's algorithm specifically identified winning players and removed them from VIP programs — the VIP program was exclusively for losing players, with 'VIP' being a mechanism for maximizing losses from addicted users. Former FanDuel employees have alleged that VIP managers were explicitly evaluated on the volume of bets placed by their assigned users, not on user satisfaction or responsible gambling metrics.",
-    "flags": [
-      "morgan_vip_super_bowl_inducement_documented",
-      "winners_excluded_vip_program_losing_only",
-      "vip_evaluated_on_betting_volume_not_welfare"
-    ],
-    "sources": [
-      "https://popular.info/p/new-lawsuit-alleges-draftkings-and"
-    ]
+    "flags": ["morgan_vip_super_bowl_inducement_documented", "winners_excluded_vip_program_losing_only", "vip_evaluated_on_betting_volume_not_welfare"],
+    "sources": ["https://popular.info/p/new-lawsuit-alleges-draftkings-and"]
   },
   "health_record": {
     "summary": "FanDuel's documented health record tracks closely with DraftKings — they share the same industry, the same practices, and are named in the same lawsuits. Cases in litigation include: a man who began using FanDuel casually and wagered nearly $200,000 in the first year (2x his pre-tax income), $1.3 million in the second year, and $1.5 million in the third year before leaving his job. Another plaintiff wagered $183,000 on FanDuel plus $4 million on DraftKings. The Harris Poll found that 33% of adults aged 21-44 had placed sports bets before age 21. Problem gambling is associated with elevated rates of depression, anxiety, bankruptcy, domestic violence, and suicide.",
-    "flags": [
-      "200k_first_year_2x_income_documented",
-      "1_3m_second_year_escalation",
-      "underage_gambling_33pct",
-      "suicide_domestic_violence_associated"
-    ],
-    "sources": [
-      "https://www.aboutlawsuits.com/sports-betting-addiction-lawsuit",
-      "https://www.espn.com/espn/betting/story/_/id/48312490"
-    ]
+    "flags": ["200k_first_year_2x_income_documented", "1_3m_second_year_escalation", "underage_gambling_33pct", "suicide_domestic_violence_associated"],
+    "sources": ["https://www.aboutlawsuits.com/sports-betting-addiction-lawsuit", "https://www.espn.com/espn/betting/story/_/id/48312490"]
   },
   "alternatives": {
-    "cheaper": [
-      "Free fantasy sports (ESPN, Yahoo, Sleeper) — full sports engagement without wagering",
-      "Sports betting with friends at fixed low stakes — removes corporate algorithmic targeting",
-      "Sports subscription streaming — watch the same games without a financial stake"
-    ],
-    "healthier": [
-      "Blocking apps: Gamban and BetBlocker are free and prevent access to betting platforms across devices",
-      "Self-exclusion registry: contact your state gaming commission to register; FanDuel is legally required to block you",
-      "National Problem Gambling Helpline: 1-800-522-4700"
-    ],
-    "diy": [
-      "If FanDuel has assigned you a VIP manager, you have been identified as a high-value losing customer — that is the only qualification",
-      "Deposit limits are available in account settings; set them before placing any bet",
-      "FanDuel's promotional terms include rollover requirements that make 'bonus' bets extremely difficult to withdraw — read every promotion's fine print"
-    ]
+    "cheaper": ["Free fantasy sports (ESPN, Yahoo, Sleeper) — full sports engagement without wagering", "Sports betting with friends at fixed low stakes — removes corporate algorithmic targeting", "Sports subscription streaming — watch the same games without a financial stake"],
+    "healthier": ["Blocking apps: Gamban and BetBlocker are free and prevent access to betting platforms across devices", "Self-exclusion registry: contact your state gaming commission to register; FanDuel is legally required to block you", "National Problem Gambling Helpline: 1-800-522-4700"],
+    "diy": ["If FanDuel has assigned you a VIP manager, you have been identified as a high-value losing customer — that is the only qualification", "Deposit limits are available in account settings; set them before placing any bet", "FanDuel's promotional terms include rollover requirements that make 'bonus' bets extremely difficult to withdraw — read every promotion's fine print"]
   },
   "timeline": [
-    {
-      "year": 2009,
-      "event": "FanDuel founded as daily fantasy sports platform in New York",
-      "severity": "neutral",
-      "source_url": ""
-    },
-    {
-      "year": 2018,
-      "event": "Flutter Entertainment acquires FanDuel majority stake following Supreme Court sports betting ruling",
-      "severity": "neutral",
-      "source_url": ""
-    },
-    {
-      "year": 2019,
-      "event": "Flutter acquires full control of FanDuel; begins U.S. sportsbook expansion",
-      "severity": "neutral",
-      "source_url": ""
-    },
-    {
-      "year": 2021,
-      "event": "FanDuel becomes Official Sports Betting Partner of the NFL; betting odds integrated into broadcasts",
-      "severity": "high",
-      "source_url": ""
-    },
-    {
-      "year": 2022,
-      "event": "VIP manager Morgan provides Super Bowl tickets and field access to documented problem gambler",
-      "severity": "critical",
-      "source_url": ""
-    },
-    {
-      "year": 2024,
-      "event": "FanDuel's UK parent Flutter faces UK regulatory sanctions for responsible gambling failures",
-      "severity": "high",
-      "source_url": ""
-    },
-    {
-      "year": 2025,
-      "event": "Baltimore lawsuit; PHAI tobacco-lawyer case naming FanDuel, DraftKings, NFL, Genius Sports; federal class action",
-      "severity": "critical",
-      "source_url": "https://www.aboutlawsuits.com/sports-betting-addiction-lawsuit"
-    },
-    {
-      "year": 2025,
-      "event": "FanDuel holds ~35% US sports betting market share; Flutter reports $14B+ global revenue",
-      "severity": "moderate",
-      "source_url": ""
-    }
+    {"year": 2009, "event": "FanDuel founded as daily fantasy sports platform in New York", "severity": "neutral", "source_url": ""},
+    {"year": 2018, "event": "Flutter Entertainment acquires FanDuel majority stake following Supreme Court sports betting ruling", "severity": "neutral", "source_url": ""},
+    {"year": 2019, "event": "Flutter acquires full control of FanDuel; begins U.S. sportsbook expansion", "severity": "neutral", "source_url": ""},
+    {"year": 2021, "event": "FanDuel becomes Official Sports Betting Partner of the NFL; betting odds integrated into broadcasts", "severity": "high", "source_url": ""},
+    {"year": 2022, "event": "VIP manager Morgan provides Super Bowl tickets and field access to documented problem gambler", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "FanDuel's UK parent Flutter faces UK regulatory sanctions for responsible gambling failures", "severity": "high", "source_url": ""},
+    {"year": 2025, "event": "Baltimore lawsuit; PHAI tobacco-lawyer case naming FanDuel, DraftKings, NFL, Genius Sports; federal class action", "severity": "critical", "source_url": "https://www.aboutlawsuits.com/sports-betting-addiction-lawsuit"},
+    {"year": 2025, "event": "FanDuel holds ~35% US sports betting market share; Flutter reports $14B+ global revenue", "severity": "moderate", "source_url": ""}
   ],
   "community_impact": {
     "displacement": "FanDuel's market penetration — combined with the NFL's broadcast integration — has displaced recreational sports viewing with financially-stakes viewing for tens of millions of Americans. The psychological shift from rooting for a team to managing a financial position in a game changes the nature of sports fandom in documented ways.",
@@ -204,36 +79,15 @@
   },
   "cost_absorption": {
     "who_benefited": [
-      {
-        "group": "Flutter Entertainment shareholders",
-        "how": "$14B+ global revenue; dominant U.S. market position"
-      },
-      {
-        "group": "NFL",
-        "how": "Revenue from Official Betting Partner arrangements; gambling drives viewer engagement metrics"
-      },
-      {
-        "group": "Media companies",
-        "how": "FanDuel advertising revenue; betting odds integration fees"
-      }
+      {"group": "Flutter Entertainment shareholders", "how": "$14B+ global revenue; dominant U.S. market position"},
+      {"group": "NFL", "how": "Revenue from Official Betting Partner arrangements; gambling drives viewer engagement metrics"},
+      {"group": "Media companies", "how": "FanDuel advertising revenue; betting odds integration fees"}
     ],
     "who_paid": [
-      {
-        "group": "Problem gamblers",
-        "how": "Financial ruin documented in litigation; VIP programs designed to maximize their losses"
-      },
-      {
-        "group": "Man assigned VIP manager Morgan",
-        "how": "Millions in gambling losses while Morgan sent hundreds of personal messages and provided Super Bowl access"
-      },
-      {
-        "group": "Families",
-        "how": "Financial consequences of household gambling losses; mental health consequences documented in lawsuits"
-      },
-      {
-        "group": "U.S. taxpayers",
-        "how": "Public health costs of gambling addiction; Flutter pays Irish not American tax rates on U.S. profits"
-      }
+      {"group": "Problem gamblers", "how": "Financial ruin documented in litigation; VIP programs designed to maximize their losses"},
+      {"group": "Man assigned VIP manager Morgan", "how": "Millions in gambling losses while Morgan sent hundreds of personal messages and provided Super Bowl access"},
+      {"group": "Families", "how": "Financial consequences of household gambling losses; mental health consequences documented in lawsuits"},
+      {"group": "U.S. taxpayers", "how": "Public health costs of gambling addiction; Flutter pays Irish not American tax rates on U.S. profits"}
     ],
     "the_gap": "Morgan built a friendship with a man over years of texts about restaurants and vacations and his kids. She gave him Super Bowl tickets. Her job was to make sure he kept losing money. He wagered millions. FanDuel calls this VIP service. The tobacco lawyer calls it a defective product."
   }

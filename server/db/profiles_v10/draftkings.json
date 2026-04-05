@@ -3,205 +3,74 @@
   "brand_slug": "draftkings",
   "parent_company": "DraftKings Inc.",
   "ultimate_parent": "DraftKings Inc.",
-  "subsidiaries": [
-    "DraftKings Sportsbook",
-    "DraftKings Casino",
-    "Golden Nugget Online Gaming (acquired)",
-    "Jackpot (lottery)"
-  ],
+  "subsidiaries": ["DraftKings Sportsbook", "DraftKings Casino", "Golden Nugget Online Gaming (acquired)", "Jackpot (lottery)"],
   "overall_concern_level": "significant",
   "profile_type": "database",
   "generated_headline": "DRAFTKINGS OFFERS 517 BETS PER NFL GAME, ASSIGNS VIP MANAGERS TO DETECTED PROBLEM GAMBLERS, AND CALLS IT ENTERTAINMENT",
   "executive_summary": "DraftKings is one of the two dominant online sports betting and daily fantasy sports platforms in the United States, generating approximately $4.8 billion in annual revenue. The platform operates in 25+ states and has become the primary vector through which sports gambling addiction enters American homes. Unlike traditional casinos — which require physical travel — DraftKings is available 24 hours a day on every smartphone. The platform offers an average of 517 different betting markets per NFL game, including real-time in-play bets on individual plays. Internal documents and lawsuits reveal that DraftKings' algorithms identify problem gambling behavior — loss chasing, late-night sessions, escalating bet sizes — and respond by assigning personal VIP managers to increase engagement rather than intervening. The same lawyer who won the $206 billion tobacco industry settlement is now leading lawsuits against DraftKings and FanDuel.",
-  "verdict_tags": [
-    "vip_managers_assigned_to_problem_gamblers",
-    "517_bets_per_game",
-    "addiction_by_design",
-    "tobacco_lawyer_lawsuits",
-    "ohio_settlement_prohibited_bets",
-    "deceptive_risk_free_promotions",
-    "underage_gambling"
-  ],
-  "concern_flags": {
-    "labor": false,
-    "environmental": false,
-    "political": true,
-    "tax": true,
-    "health": true,
-    "legal": true
-  },
+  "verdict_tags": ["vip_managers_assigned_to_problem_gamblers", "517_bets_per_game", "addiction_by_design", "tobacco_lawyer_lawsuits", "ohio_settlement_prohibited_bets", "deceptive_risk_free_promotions", "underage_gambling"],
+  "concern_flags": {"labor": false, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
   "tax": {
     "summary": "DraftKings is incorporated in Nevada and headquartered in Boston, using a corporate structure that minimizes state tax obligations across its 25+ operating states. The company has carried significant net operating losses during its growth phase — generating tax loss carryforwards that reduce future obligations. DraftKings went public through a SPAC in 2020, a structure that raised questions about disclosure standards. The company's effective tax rate has been near zero during its loss-generating growth phase.",
-    "flags": [
-      "nevada_incorporation",
-      "nol_carryforwards_zero_effective_rate",
-      "spac_disclosure_concerns"
-    ],
-    "sources": [
-      "https://www.sec.gov"
-    ]
+    "flags": ["nevada_incorporation", "nol_carryforwards_zero_effective_rate", "spac_disclosure_concerns"],
+    "sources": ["https://www.sec.gov"]
   },
   "legal": {
     "summary": "2024 (November): Ohio Casino Control Commission $425,000 settlement for offering prohibited wagers including certain college player props and allowing unapproved funding methods. 2025 (April): City of Baltimore sues DraftKings (and FanDuel) alleging unfair practices, deceptive 'bonus bet' promotions, and algorithmic targeting that exacerbates addiction — framed as a public health and consumer protection action. 2025 (July): Federal class action Macek et al. v. DraftKings (E.D. Pa.) alleges misleading 'No Sweat/risk-free' promotions, manipulative design, and self-exclusion failures. 2025: PHAI (Public Health Advocacy Institute) lawsuit led by Richard Daynard — the attorney who secured the $206B tobacco settlement — alleges DraftKings is a defective product that 'captures every aspect of a customer's interaction through automated analytical tools and predictive algorithms to generate bets optimized to stimulate compulsive gambling.' Multiple states investigating deceptive advertising.",
-    "flags": [
-      "ohio_425k_prohibited_bets",
-      "baltimore_city_lawsuit_addiction",
-      "phai_tobacco_lawyer_lawsuit",
-      "federal_class_action_deceptive_promotions",
-      "self_exclusion_failures"
-    ],
-    "sources": [
-      "https://www.espn.com/espn/betting/story/_/id/48312490",
-      "https://www.aboutlawsuits.com/sports-betting-addiction-lawsuit"
-    ]
+    "flags": ["ohio_425k_prohibited_bets", "baltimore_city_lawsuit_addiction", "phai_tobacco_lawyer_lawsuit", "federal_class_action_deceptive_promotions", "self_exclusion_failures"],
+    "sources": ["https://www.espn.com/espn/betting/story/_/id/48312490", "https://www.aboutlawsuits.com/sports-betting-addiction-lawsuit"]
   },
   "labor": {
     "summary": "DraftKings employs approximately 5,200 people. The company's VIP host workforce — personal managers assigned to high-value (and high-risk) gamblers — has been specifically documented in litigation. VIP managers are trained and incentivized to maximize betting volume from their assigned users, including users who have exhibited problem gambling behavior. The incentive structure of VIP management directly conflicts with responsible gambling.",
-    "flags": [
-      "vip_manager_incentive_conflict",
-      "gambling_harm_facilitation_workforce"
-    ],
+    "flags": ["vip_manager_incentive_conflict", "gambling_harm_facilitation_workforce"],
     "sources": []
   },
   "environmental": {
     "summary": "DraftKings' digital-only operations have a smaller direct environmental footprint than physical casino operators. Server infrastructure and data center energy consumption represent the primary environmental impact.",
-    "flags": [
-      "data_center_energy_consumption"
-    ],
+    "flags": ["data_center_energy_consumption"],
     "sources": []
   },
   "political": {
     "summary": "DraftKings spent $6.2 million on federal and state lobbying in 2023. The company has been a primary driver of sports betting legalization across states following the 2018 Supreme Court ruling in Murphy v. NCAA. DraftKings lobbied against New York's proposed advertising restrictions on gambling — including restrictions on 'risk-free bet' language later found by NY regulators to be deceptive. The company has lobbied against consumer protection measures including mandatory spending limits, self-exclusion enforcement requirements, and VIP program restrictions that would directly address the documented harms in its lawsuits.",
-    "flags": [
-      "anti_consumer_protection_lobbying",
-      "risk_free_advertising_deception_lobbying",
-      "vip_program_restriction_opposition"
-    ],
-    "sources": [
-      "https://www.opensecrets.org"
-    ]
+    "flags": ["anti_consumer_protection_lobbying", "risk_free_advertising_deception_lobbying", "vip_program_restriction_opposition"],
+    "sources": ["https://www.opensecrets.org"]
   },
   "executives": {
     "summary": "CEO Jason Robins received $35.3 million in total compensation in 2023 — the highest of any CEO in the gambling industry and among the highest of any CEO in any industry relative to company revenue. Robins co-founded DraftKings in 2012 as a daily fantasy sports company, pivoted to sports betting after the Supreme Court ruling, and built it into a $20+ billion market cap company. The company's growth has been built on marketing spend that rivals pharmaceutical companies — estimated at $1.3 billion in 2023 — targeting new bettors through every media channel including sports broadcasts, social media, and influencer marketing.",
-    "flags": [
-      "35_3m_ceo_compensation",
-      "1_3b_marketing_spend_2023",
-      "sports_broadcast_saturation_marketing"
-    ],
-    "sources": [
-      "https://www.sec.gov"
-    ]
+    "flags": ["35_3m_ceo_compensation", "1_3b_marketing_spend_2023", "sports_broadcast_saturation_marketing"],
+    "sources": ["https://www.sec.gov"]
   },
   "connections": {
     "summary": "DraftKings' NFL partnership — the NFL receives a share of revenue from DraftKings and other sportsbooks — creates a documented conflict where the NFL simultaneously markets gambling to its audience while claiming to support responsible gambling. The 2024 Connecticut study found that less than 2% of sports bettors are problem gamblers but that 2% accounts for 51% of sports betting revenue — a figure DraftKings' algorithms are designed to maximize. DraftKings and FanDuel together control approximately 70% of the U.S. online sports betting market, creating a near-duopoly that limits competitive pressure toward consumer protection.",
-    "flags": [
-      "nfl_revenue_sharing_conflict",
-      "2pct_problem_gamblers_51pct_revenue",
-      "duopoly_with_fanduel",
-      "connecticut_study_documented"
-    ],
-    "sources": [
-      "https://popular.info/p/new-lawsuit-alleges-draftkings-and"
-    ]
+    "flags": ["nfl_revenue_sharing_conflict", "2pct_problem_gamblers_51pct_revenue", "duopoly_with_fanduel", "connecticut_study_documented"],
+    "sources": ["https://popular.info/p/new-lawsuit-alleges-draftkings-and"]
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
     "summary": "The PHAI lawsuit alleges DraftKings trained its internal sales team using language similar to the Merck Vioxx 'Dodge Ball' document — an internal training called 'Dodge, Duck, Dip, Dive, and Dodge' that instructed VIP managers to avoid directly addressing customer questions about gambling addiction. One lawsuit documents a DraftKings VIP manager named Morgan who messaged a problem gambler 'hundreds of times' portraying herself as a friend while her job was to maximize his losses — ultimately providing him and his son Super Bowl tickets and on-field access while he wagered millions. Plaintiffs allege that DraftKings' winning players are kicked out of VIP programs — only losing players are given VIP treatment — making the VIP program explicitly a mechanism for maximizing losses from addicted users.",
-    "flags": [
-      "dodge_ball_training_document_alleged",
-      "vip_manager_false_friendship_manipulation",
-      "winners_excluded_losers_vip_targeted"
-    ],
-    "sources": [
-      "https://popular.info/p/new-lawsuit-alleges-draftkings-and",
-      "https://www.espn.com/espn/betting/story/_/id/48312490"
-    ]
+    "flags": ["dodge_ball_training_document_alleged", "vip_manager_false_friendship_manipulation", "winners_excluded_losers_vip_targeted"],
+    "sources": ["https://popular.info/p/new-lawsuit-alleges-draftkings-and", "https://www.espn.com/espn/betting/story/_/id/48312490"]
   },
   "health_record": {
     "summary": "The public health case against DraftKings is among the most documented of any consumer product currently in litigation. A 2024 Connecticut study found the top 2% of bettors — identified as problem gamblers — account for 51% of sports betting revenue. DraftKings' business model structurally depends on this concentration. Documented cases in litigation include: a man who wagered $5 million primarily on DraftKings and left his job to gamble full-time; a man who wagered $1.3 million in a single year — 15x his annual income — after being assigned a VIP manager; a man who had never gambled before downloading the app and subsequently wagered $4+ million. The Harris Poll found that 33% of respondents aged 21-44 had placed sports bets before turning 21. Suicides and mental health crises linked to gambling addiction have been documented in litigation.",
-    "flags": [
-      "2pct_gamblers_51pct_revenue_documented",
-      "vip_escalation_million_dollar_losses",
-      "underage_gambling_33pct_before_21",
-      "suicide_mental_health_documented_litigation"
-    ],
-    "sources": [
-      "https://www.aboutlawsuits.com/sports-betting-addiction-lawsuit",
-      "https://www.espn.com/espn/betting/story/_/id/48312490"
-    ]
+    "flags": ["2pct_gamblers_51pct_revenue_documented", "vip_escalation_million_dollar_losses", "underage_gambling_33pct_before_21", "suicide_mental_health_documented_litigation"],
+    "sources": ["https://www.aboutlawsuits.com/sports-betting-addiction-lawsuit", "https://www.espn.com/espn/betting/story/_/id/48312490"]
   },
   "alternatives": {
-    "cheaper": [
-      "Fantasy sports leagues without money — free platforms including ESPN, Yahoo, and Sleeper allow full fantasy sports engagement without wagering",
-      "Sports betting with friends at fixed low stakes — removes algorithmic targeting and VIP manipulation from the equation",
-      "Sports viewing without betting — the game is the same without a wager"
-    ],
-    "healthier": [
-      "Blocking apps (Gamban, BetBlocker) — prevent access to betting platforms on your devices; free",
-      "Self-exclusion: every state with legal sports betting has a self-exclusion registry; DraftKings is legally required to honor it — visit your state gaming commission website",
-      "National Problem Gambling Helpline: 1-800-522-4700 (24/7, free, confidential)"
-    ],
-    "diy": [
-      "DraftKings' 'risk-free' and 'no sweat' promotions are not free — read the rollover requirements before depositing",
-      "Deposit limits: you can set them in your DraftKings account — do this before placing a single bet",
-      "If DraftKings has assigned you a VIP manager, that means their algorithm has identified you as a high-risk, high-value target"
-    ]
+    "cheaper": ["Fantasy sports leagues without money — free platforms including ESPN, Yahoo, and Sleeper allow full fantasy sports engagement without wagering", "Sports betting with friends at fixed low stakes — removes algorithmic targeting and VIP manipulation from the equation", "Sports viewing without betting — the game is the same without a wager"],
+    "healthier": ["Blocking apps (Gamban, BetBlocker) — prevent access to betting platforms on your devices; free", "Self-exclusion: every state with legal sports betting has a self-exclusion registry; DraftKings is legally required to honor it — visit your state gaming commission website", "National Problem Gambling Helpline: 1-800-522-4700 (24/7, free, confidential)"],
+    "diy": ["DraftKings' 'risk-free' and 'no sweat' promotions are not free — read the rollover requirements before depositing", "Deposit limits: you can set them in your DraftKings account — do this before placing a single bet", "If DraftKings has assigned you a VIP manager, that means their algorithm has identified you as a high-risk, high-value target"]
   },
   "timeline": [
-    {
-      "year": 2012,
-      "event": "DraftKings founded in Boston as daily fantasy sports platform",
-      "severity": "neutral",
-      "source_url": ""
-    },
-    {
-      "year": 2018,
-      "event": "Supreme Court strikes down federal sports betting prohibition; DraftKings pivots to sportsbook",
-      "severity": "neutral",
-      "source_url": ""
-    },
-    {
-      "year": 2020,
-      "event": "DraftKings goes public via SPAC at $3.3B valuation; expands rapidly across states",
-      "severity": "neutral",
-      "source_url": ""
-    },
-    {
-      "year": 2023,
-      "event": "NBA Lakers-Nuggets game: DraftKings voids winning bets day after game citing 'error'; lawsuit filed",
-      "severity": "high",
-      "source_url": ""
-    },
-    {
-      "year": 2023,
-      "event": "NY regulators formally restrict 'risk-free bet' language as deceptive; DraftKings had lobbied against restriction",
-      "severity": "high",
-      "source_url": ""
-    },
-    {
-      "year": 2024,
-      "event": "Connecticut study: 2% of bettors (problem gamblers) = 51% of sports betting revenue",
-      "severity": "critical",
-      "source_url": ""
-    },
-    {
-      "year": 2024,
-      "event": "Ohio: $425,000 settlement for prohibited wagers and unapproved funding methods",
-      "severity": "high",
-      "source_url": ""
-    },
-    {
-      "year": 2025,
-      "event": "Baltimore sues DraftKings and FanDuel for public health harms; PHAI tobacco-lawyer lawsuit filed; federal class action filed",
-      "severity": "critical",
-      "source_url": "https://www.aboutlawsuits.com/sports-betting-addiction-lawsuit"
-    },
-    {
-      "year": 2025,
-      "event": "DraftKings generates $4.8B revenue; CEO receives $35.3M compensation; marketing spend $1.3B+",
-      "severity": "moderate",
-      "source_url": ""
-    }
+    {"year": 2012, "event": "DraftKings founded in Boston as daily fantasy sports platform", "severity": "neutral", "source_url": ""},
+    {"year": 2018, "event": "Supreme Court strikes down federal sports betting prohibition; DraftKings pivots to sportsbook", "severity": "neutral", "source_url": ""},
+    {"year": 2020, "event": "DraftKings goes public via SPAC at $3.3B valuation; expands rapidly across states", "severity": "neutral", "source_url": ""},
+    {"year": 2023, "event": "NBA Lakers-Nuggets game: DraftKings voids winning bets day after game citing 'error'; lawsuit filed", "severity": "high", "source_url": ""},
+    {"year": 2023, "event": "NY regulators formally restrict 'risk-free bet' language as deceptive; DraftKings had lobbied against restriction", "severity": "high", "source_url": ""},
+    {"year": 2024, "event": "Connecticut study: 2% of bettors (problem gamblers) = 51% of sports betting revenue", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "Ohio: $425,000 settlement for prohibited wagers and unapproved funding methods", "severity": "high", "source_url": ""},
+    {"year": 2025, "event": "Baltimore sues DraftKings and FanDuel for public health harms; PHAI tobacco-lawyer lawsuit filed; federal class action filed", "severity": "critical", "source_url": "https://www.aboutlawsuits.com/sports-betting-addiction-lawsuit"},
+    {"year": 2025, "event": "DraftKings generates $4.8B revenue; CEO receives $35.3M compensation; marketing spend $1.3B+", "severity": "moderate", "source_url": ""}
   ],
   "community_impact": {
     "displacement": "Online sports betting has displaced recreational gambling from physical casinos — where social friction and cash limits provide some natural brakes — into a frictionless 24/7 smartphone environment. Communities that have legalized sports betting report increased calls to gambling addiction helplines, bankruptcy filings, and domestic violence incidents linked to gambling losses.",
@@ -211,36 +80,15 @@
   },
   "cost_absorption": {
     "who_benefited": [
-      {
-        "group": "DraftKings shareholders and Jason Robins",
-        "how": "$4.8B revenue; $20B+ market cap; $35M CEO compensation"
-      },
-      {
-        "group": "NFL and sports leagues",
-        "how": "Revenue sharing from DraftKings partnership; gambling drives viewership and engagement"
-      },
-      {
-        "group": "Media companies",
-        "how": "$1.3B in DraftKings advertising revenue; betting odds integrated into broadcasts"
-      }
+      {"group": "DraftKings shareholders and Jason Robins", "how": "$4.8B revenue; $20B+ market cap; $35M CEO compensation"},
+      {"group": "NFL and sports leagues", "how": "Revenue sharing from DraftKings partnership; gambling drives viewership and engagement"},
+      {"group": "Media companies", "how": "$1.3B in DraftKings advertising revenue; betting odds integrated into broadcasts"}
     ],
     "who_paid": [
-      {
-        "group": "Problem gamblers (2% of users, 51% of revenue)",
-        "how": "Financial ruin, job loss, family breakdown, suicide — documented in litigation"
-      },
-      {
-        "group": "Underage users",
-        "how": "33% of 21-44 year olds gambled before legal age; inadequate age verification documented"
-      },
-      {
-        "group": "Families of addicted gamblers",
-        "how": "Financial consequences of household gambling losses; documented in lawsuits"
-      },
-      {
-        "group": "Cities and states",
-        "how": "Baltimore lawsuit documents public health costs of gambling addiction including emergency services"
-      }
+      {"group": "Problem gamblers (2% of users, 51% of revenue)", "how": "Financial ruin, job loss, family breakdown, suicide — documented in litigation"},
+      {"group": "Underage users", "how": "33% of 21-44 year olds gambled before legal age; inadequate age verification documented"},
+      {"group": "Families of addicted gamblers", "how": "Financial consequences of household gambling losses; documented in lawsuits"},
+      {"group": "Cities and states", "how": "Baltimore lawsuit documents public health costs of gambling addiction including emergency services"}
     ],
     "the_gap": "The tobacco industry took 40 years and $206 billion to be held accountable. Richard Daynard won that case. He just filed against DraftKings. The internal DraftKings training document is called 'Dodge, Duck, Dip, Dive, and Dodge.' Merck's was called 'Dodge Ball.' DraftKings offers 517 bets per NFL game. The tobacco industry sold you one cigarette at a time."
   }

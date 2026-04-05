@@ -3,192 +3,73 @@
   "brand_slug": "caesars-entertainment",
   "parent_company": "Caesars Entertainment Inc.",
   "ultimate_parent": "Caesars Entertainment Inc.",
-  "subsidiaries": [
-    "Caesars Palace",
-    "Harrah's",
-    "Horseshoe",
-    "Paris Las Vegas",
-    "Bally's (some)",
-    "Caesars Sportsbook"
-  ],
+  "subsidiaries": ["Caesars Palace", "Harrah's", "Horseshoe", "Paris Las Vegas", "Bally's (some)", "Caesars Sportsbook"],
   "overall_concern_level": "significant",
   "profile_type": "database",
   "generated_headline": "CAESARS PAID HACKERS $15 MILLION IN RANSOM AND TOLD NO ONE UNTIL THE SEC MADE THEM",
   "executive_summary": "Caesars Entertainment operates more than 50 gaming and resort properties across the United States, with annual revenues exceeding $11 billion. In August 2023, the same criminal group that attacked MGM — Scattered Spider — breached Caesars through a social engineering attack on a third-party IT vendor. Unlike MGM, Caesars paid approximately $15 million in ransom (negotiated down from $30 million) to prevent the hackers from releasing stolen customer data. The company did not publicly disclose the breach or the ransom payment until forced to file with the SEC under new cybersecurity disclosure rules. Caesars also carries approximately $13 billion in debt from its 2020 merger between Eldorado Resorts and the original Caesars, creating a financial structure that resembles the PE-debt-loading patterns seen in other distressed industries.",
-  "verdict_tags": [
-    "ransom_payment_15m",
-    "hack_concealment",
-    "loyalty_database_stolen",
-    "13b_debt_load",
-    "problem_gambling_facilitation",
-    "sec_disclosure_required"
-  ],
-  "concern_flags": {
-    "labor": true,
-    "environmental": false,
-    "political": true,
-    "tax": true,
-    "health": true,
-    "legal": true
-  },
+  "verdict_tags": ["ransom_payment_15m", "hack_concealment", "loyalty_database_stolen", "13b_debt_load", "problem_gambling_facilitation", "sec_disclosure_required"],
+  "concern_flags": {"labor": true, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
   "tax": {
     "summary": "Caesars carries approximately $13 billion in long-term debt from the 2020 Eldorado-Caesars merger — a leveraged transaction that generates substantial interest deductions reducing taxable income. The company's gaming operations are taxed at state-level gaming tax rates, which vary significantly across its 50+ properties. Caesars has also used REIT structures for some property assets.",
-    "flags": [
-      "13b_debt_interest_deductions",
-      "leveraged_merger_tax_structure",
-      "state_gaming_tax_variation"
-    ],
-    "sources": [
-      "https://www.sec.gov"
-    ]
+    "flags": ["13b_debt_interest_deductions", "leveraged_merger_tax_structure", "state_gaming_tax_variation"],
+    "sources": ["https://www.sec.gov"]
   },
   "legal": {
     "summary": "August 2023: Scattered Spider breached Caesars through social engineering of an IT vendor; customer loyalty database stolen including Social Security and driver's license numbers. Caesars paid approximately $15 million in ransom — negotiated from an initial $30 million demand. The company made no public disclosure until the SEC mandated cybersecurity reporting rules forced a filing in September 2023. Multiple class action lawsuits filed — including one consolidated with the MGM Resorts MDL in Nevada. Caesars stated it 'took steps to ensure the stolen data is deleted by the unauthorized actor, although we cannot guarantee this result' — widely understood as confirmation of ransom payment without explicit admission. The company's prior history includes the original Caesars bankruptcy in 2015 — when Caesar's predecessor company filed for one of the largest casino bankruptcies in history after being taken private by Apollo and TPG in a $30 billion leveraged buyout.",
-    "flags": [
-      "15m_ransom_paid_concealed",
-      "sec_disclosure_forced",
-      "class_action_loyalty_database",
-      "apollo_tpg_2015_bankruptcy"
-    ],
-    "sources": [
-      "https://www.sec.gov",
-      "https://cybernews.com"
-    ]
+    "flags": ["15m_ransom_paid_concealed", "sec_disclosure_forced", "class_action_loyalty_database", "apollo_tpg_2015_bankruptcy"],
+    "sources": ["https://www.sec.gov", "https://cybernews.com"]
   },
   "labor": {
     "summary": "Caesars employs approximately 65,000 people. The company's 2020 merger with Eldorado Resorts resulted in significant workforce consolidation and layoffs. UNITE HERE represents workers at multiple Caesars properties. The company's debt load creates ongoing pressure to minimize labor costs — a documented pattern in PE-backed hospitality operators.",
-    "flags": [
-      "merger_workforce_consolidation",
-      "unite_here_labor_relations",
-      "debt_driven_cost_pressure"
-    ],
+    "flags": ["merger_workforce_consolidation", "unite_here_labor_relations", "debt_driven_cost_pressure"],
     "sources": []
   },
   "environmental": {
     "summary": "Caesars' resort properties are significant energy and water consumers, particularly in desert markets like Las Vegas. The company has made sustainability commitments including energy efficiency programs. Water use for pools, cooling systems, and landscaping in the Nevada desert represents a documented environmental tension.",
-    "flags": [
-      "desert_water_consumption",
-      "energy_consumption_50_properties"
-    ],
+    "flags": ["desert_water_consumption", "energy_consumption_50_properties"],
     "sources": []
   },
   "political": {
     "summary": "Caesars has been one of the largest gaming industry political donors in the United States. The company lobbies on gaming tax rates, sports betting regulation, and online gambling expansion. Its Caesars Sportsbook operations connect it to the online gambling industry's lobbying against consumer protection regulations. The original Caesars Entertainment's 2015 bankruptcy — following Apollo and TPG's leveraged buyout — became a case study in private equity extraction from gaming assets.",
-    "flags": [
-      "gaming_tax_rate_lobbying",
-      "online_gambling_lobbying",
-      "apollo_tpg_pe_extraction_history"
-    ],
-    "sources": [
-      "https://www.opensecrets.org"
-    ]
+    "flags": ["gaming_tax_rate_lobbying", "online_gambling_lobbying", "apollo_tpg_pe_extraction_history"],
+    "sources": ["https://www.opensecrets.org"]
   },
   "executives": {
     "summary": "CEO Tom Reeg received $17.8 million in total compensation in 2023. Reeg engineered the Eldorado-Caesars merger and has focused on debt reduction since. The decision to pay the $15 million ransom was made at the executive level — the company argued it was cheaper than the operational disruption MGM experienced by not paying. The ransom payment was routed through normal business channels without public disclosure until SEC rules forced it.",
-    "flags": [
-      "ransom_payment_executive_decision",
-      "sec_disclosure_concealment_until_required",
-      "reeg_17_8m_compensation"
-    ],
-    "sources": [
-      "https://www.sec.gov"
-    ]
+    "flags": ["ransom_payment_executive_decision", "sec_disclosure_concealment_until_required", "reeg_17_8m_compensation"],
+    "sources": ["https://www.sec.gov"]
   },
   "connections": {
     "summary": "Caesars and MGM were attacked by the same criminal group within weeks of each other — demonstrating a systematic vulnerability in the casino industry's IT infrastructure. The Scattered Spider group specifically targeted casino loyalty databases because they contain high-value personal and financial data. Caesars' history under Apollo and TPG private equity ownership — which loaded it with debt, drove it into bankruptcy in 2015, and extracted billions in fees — mirrors the Steward Health Care pattern of PE extraction preceding collapse.",
-    "flags": [
-      "same_attacker_as_mgm",
-      "apollo_tpg_pe_debt_extraction_pattern",
-      "loyalty_database_systematic_target"
-    ],
+    "flags": ["same_attacker_as_mgm", "apollo_tpg_pe_debt_extraction_pattern", "loyalty_database_systematic_target"],
     "sources": []
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
     "summary": "Consumer advocates have alleged that Caesars' ransom payment — and its initial concealment — sets a dangerous precedent that encourages criminal groups to target casinos knowing they will be paid. Security researchers have alleged that paying the ransom does not guarantee data deletion — criminal groups routinely retain stolen data for future use regardless of payment. Former Caesars IT employees have alleged that third-party vendor security requirements were insufficient and not adequately audited before the breach.",
-    "flags": [
-      "ransom_payment_precedent_concerns",
-      "data_deletion_guarantee_unreliable_alleged",
-      "third_party_vendor_oversight_failure_alleged"
-    ],
+    "flags": ["ransom_payment_precedent_concerns", "data_deletion_guarantee_unreliable_alleged", "third_party_vendor_oversight_failure_alleged"],
     "sources": []
   },
   "health_record": {
     "summary": "Caesars' casino operations are a primary driver of problem gambling across its 50+ properties. The company's Total Rewards (now Caesars Rewards) loyalty program — the database stolen in the 2023 breach — is specifically designed to identify high-frequency gamblers and maximize their on-property time through comps, offers, and VIP services. Problem gambling represents 2-3% of the population but an estimated 20-40% of casino revenue, creating a business model that depends on addicted gamblers for profitability. The stolen loyalty database contained precisely the personal information needed to target these high-risk individuals.",
-    "flags": [
-      "gambling_addiction_dependency",
-      "loyalty_program_vip_targeting_problem_gamblers",
-      "stolen_data_was_gambler_targeting_data"
-    ],
-    "sources": [
-      "https://www.ncpgambling.org"
-    ]
+    "flags": ["gambling_addiction_dependency", "loyalty_program_vip_targeting_problem_gamblers", "stolen_data_was_gambler_targeting_data"],
+    "sources": ["https://www.ncpgambling.org"]
   },
   "alternatives": {
-    "cheaper": [
-      "Independent hotels and resorts without casino operations — pricing reflects actual hospitality costs, not gambling subsidies",
-      "Short-term rentals in resort areas — Airbnb and VRBO in Las Vegas often dramatically cheaper",
-      "Non-gaming resorts in comparable destinations — Palm Springs, Sedona, Scottsdale offer comparable experiences"
-    ],
-    "healthier": [
-      "Destinations built around outdoor activity, culture, or wellness rather than gambling",
-      "The Nevada desert itself — Red Rock Canyon, Valley of Fire, Lake Mead offer extraordinary experiences without casino infrastructure"
-    ],
-    "diy": [
-      "If you're staying at Caesars for a concert or show — the entertainment can be excellent independent of gambling",
-      "Gambling budget rules: bring only cash in the exact amount you're willing to lose; leave cards at the hotel",
-      "National Problem Gambling Helpline: 1-800-522-4700"
-    ]
+    "cheaper": ["Independent hotels and resorts without casino operations — pricing reflects actual hospitality costs, not gambling subsidies", "Short-term rentals in resort areas — Airbnb and VRBO in Las Vegas often dramatically cheaper", "Non-gaming resorts in comparable destinations — Palm Springs, Sedona, Scottsdale offer comparable experiences"],
+    "healthier": ["Destinations built around outdoor activity, culture, or wellness rather than gambling", "The Nevada desert itself — Red Rock Canyon, Valley of Fire, Lake Mead offer extraordinary experiences without casino infrastructure"],
+    "diy": ["If you're staying at Caesars for a concert or show — the entertainment can be excellent independent of gambling", "Gambling budget rules: bring only cash in the exact amount you're willing to lose; leave cards at the hotel", "National Problem Gambling Helpline: 1-800-522-4700"]
   },
   "timeline": [
-    {
-      "year": 1966,
-      "event": "Caesars Palace opens on the Las Vegas Strip",
-      "severity": "neutral",
-      "source_url": ""
-    },
-    {
-      "year": 2008,
-      "event": "Apollo Global Management and TPG Capital take Caesars private in $30B leveraged buyout",
-      "severity": "high",
-      "source_url": ""
-    },
-    {
-      "year": 2015,
-      "event": "Caesars Entertainment Operating Company files for bankruptcy — one of largest casino bankruptcies in history — under $18B debt load",
-      "severity": "critical",
-      "source_url": ""
-    },
-    {
-      "year": 2020,
-      "event": "Eldorado Resorts acquires Caesars for $17B; new combined company takes Caesars name",
-      "severity": "high",
-      "source_url": ""
-    },
-    {
-      "year": 2023,
-      "event": "August: Scattered Spider breaches Caesars through IT vendor; loyalty database stolen",
-      "severity": "critical",
-      "source_url": ""
-    },
-    {
-      "year": 2023,
-      "event": "August: Caesars pays ~$15M ransom (negotiated from $30M); no public disclosure",
-      "severity": "critical",
-      "source_url": ""
-    },
-    {
-      "year": 2023,
-      "event": "September: SEC cybersecurity disclosure rules force public filing; ransom payment confirmed indirectly",
-      "severity": "critical",
-      "source_url": "https://www.sec.gov"
-    },
-    {
-      "year": 2024,
-      "event": "Class action lawsuits consolidated with MGM breach MDL in Nevada federal court",
-      "severity": "high",
-      "source_url": ""
-    }
+    {"year": 1966, "event": "Caesars Palace opens on the Las Vegas Strip", "severity": "neutral", "source_url": ""},
+    {"year": 2008, "event": "Apollo Global Management and TPG Capital take Caesars private in $30B leveraged buyout", "severity": "high", "source_url": ""},
+    {"year": 2015, "event": "Caesars Entertainment Operating Company files for bankruptcy — one of largest casino bankruptcies in history — under $18B debt load", "severity": "critical", "source_url": ""},
+    {"year": 2020, "event": "Eldorado Resorts acquires Caesars for $17B; new combined company takes Caesars name", "severity": "high", "source_url": ""},
+    {"year": 2023, "event": "August: Scattered Spider breaches Caesars through IT vendor; loyalty database stolen", "severity": "critical", "source_url": ""},
+    {"year": 2023, "event": "August: Caesars pays ~$15M ransom (negotiated from $30M); no public disclosure", "severity": "critical", "source_url": ""},
+    {"year": 2023, "event": "September: SEC cybersecurity disclosure rules force public filing; ransom payment confirmed indirectly", "severity": "critical", "source_url": "https://www.sec.gov"},
+    {"year": 2024, "event": "Class action lawsuits consolidated with MGM breach MDL in Nevada federal court", "severity": "high", "source_url": ""}
   ],
   "community_impact": {
     "displacement": "Caesars' dominance in multiple gaming markets — Las Vegas, Atlantic City, regional markets — contributes to the consolidation of gaming into a few mega-operators at the expense of local and regional casino operators. The company's debt load creates financial fragility that affects workers and communities when properties underperform.",
@@ -198,32 +79,14 @@
   },
   "cost_absorption": {
     "who_benefited": [
-      {
-        "group": "Scattered Spider criminal group",
-        "how": "$15M ransom payment; short-term operational stability for Caesars vs MGM's $100M loss"
-      },
-      {
-        "group": "Caesars management",
-        "how": "Avoided MGM-scale operational disruption by paying ransom; maintained reputation until SEC forced disclosure"
-      },
-      {
-        "group": "Apollo / TPG (historically)",
-        "how": "Extracted billions in fees during PE ownership period before 2015 bankruptcy"
-      }
+      {"group": "Scattered Spider criminal group", "how": "$15M ransom payment; short-term operational stability for Caesars vs MGM's $100M loss"},
+      {"group": "Caesars management", "how": "Avoided MGM-scale operational disruption by paying ransom; maintained reputation until SEC forced disclosure"},
+      {"group": "Apollo / TPG (historically)", "how": "Extracted billions in fees during PE ownership period before 2015 bankruptcy"}
     ],
     "who_paid": [
-      {
-        "group": "Caesars loyalty program members",
-        "how": "Social Security numbers, driver's licenses, and personal data stolen and 'deleted' by criminals — with no guarantee"
-      },
-      {
-        "group": "Caesars shareholders",
-        "how": "$15M ransom; ongoing class action litigation costs"
-      },
-      {
-        "group": "Workers in 2015 bankruptcy period",
-        "how": "PE debt loading caused bankruptcy; workforce uncertainty during restructuring"
-      }
+      {"group": "Caesars loyalty program members", "how": "Social Security numbers, driver's licenses, and personal data stolen and 'deleted' by criminals — with no guarantee"},
+      {"group": "Caesars shareholders", "how": "$15M ransom; ongoing class action litigation costs"},
+      {"group": "Workers in 2015 bankruptcy period", "how": "PE debt loading caused bankruptcy; workforce uncertainty during restructuring"}
     ],
     "the_gap": "Caesars paid criminals $15 million to maybe delete stolen customer data and told no one. The SEC rule changes are the only reason you know this happened. Before those rules, the ransom payment would have stayed secret. How many times has this happened before without disclosure?"
   }

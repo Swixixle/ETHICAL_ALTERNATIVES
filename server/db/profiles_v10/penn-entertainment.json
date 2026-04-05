@@ -3,188 +3,73 @@
   "brand_slug": "penn-entertainment",
   "parent_company": "Penn Entertainment Inc.",
   "ultimate_parent": "Penn Entertainment Inc.",
-  "subsidiaries": [
-    "Hollywood Casino",
-    "Barstool Sportsbook (sold back)",
-    "ESPN Bet (partnership)",
-    "myPrize",
-    "theScore Bet"
-  ],
+  "subsidiaries": ["Hollywood Casino", "Barstool Sportsbook (sold back)", "ESPN Bet (partnership)", "myPrize", "theScore Bet"],
   "overall_concern_level": "significant",
   "profile_type": "database",
   "generated_headline": "PENN BOUGHT BARSTOOL SPORTS TO SELL GAMBLING TO YOUNG MEN, LOST $2 BILLION, THEN SOLD IT BACK FOR $1",
   "executive_summary": "Penn Entertainment is one of the largest regional casino operators in the United States, operating 43 properties across 20 states under brands including Hollywood Casino and L'Auberge. The company made one of the most publicized and expensive strategic miscalculations in gambling industry history: purchasing Barstool Sports for $388 million between 2020 and 2023 to build a sports betting brand targeting young male sports fans, then writing off $2.1 billion in losses and selling Barstool back to its founder Dave Portnoy for $1 in 2023. Penn subsequently announced a partnership with ESPN — paying $1.5 billion over 10 years for the ESPN Bet brand. Penn's regional casino portfolio serves predominantly working-class and rural communities, where problem gambling rates and the impact of casino proximity on household finances are documented by research.",
-  "verdict_tags": [
-    "barstool_2b_write_off",
-    "young_male_gambling_targeting",
-    "regional_casino_working_class_communities",
-    "espn_bet_1_5b_deal",
-    "problem_gambling_adjacency"
-  ],
-  "concern_flags": {
-    "labor": true,
-    "environmental": false,
-    "political": true,
-    "tax": true,
-    "health": true,
-    "legal": true
-  },
+  "verdict_tags": ["barstool_2b_write_off", "young_male_gambling_targeting", "regional_casino_working_class_communities", "espn_bet_1_5b_deal", "problem_gambling_adjacency"],
+  "concern_flags": {"labor": true, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
   "tax": {
     "summary": "Penn Entertainment carries approximately $2.7 billion in long-term debt. The company's real estate assets are held through a REIT structure (Gaming and Leisure Properties, from which Penn spun off its real estate in 2013) — creating a sale-leaseback arrangement that generates lease deductions reducing taxable income. The $2.1 billion Barstool write-off generated significant tax losses that reduce future obligations. Penn has operations across 20 states with varying gaming tax regimes.",
-    "flags": [
-      "glpi_reit_sale_leaseback",
-      "barstool_write_off_tax_losses",
-      "2_7b_debt_interest_deductions"
-    ],
-    "sources": [
-      "https://www.sec.gov"
-    ]
+    "flags": ["glpi_reit_sale_leaseback", "barstool_write_off_tax_losses", "2_7b_debt_interest_deductions"],
+    "sources": ["https://www.sec.gov"]
   },
   "legal": {
     "summary": "Penn's legal record is primarily regulatory — gaming regulators across 20 states require ongoing compliance with licensing conditions. The company has faced specific enforcement actions in multiple states for regulatory violations. The Barstool Sports acquisition brought Penn into proximity with Barstool's documented history of workplace misconduct, racial harassment, and hostile work environment allegations — a culture directly at odds with gaming regulators' suitability requirements. Dave Portnoy, Barstool's founder, was named in sexual misconduct allegations documented by Insider investigative reporting in 2021, creating regulatory complications for Penn.",
-    "flags": [
-      "barstool_culture_regulatory_complications",
-      "portnoy_misconduct_allegations",
-      "state_gaming_regulatory_violations",
-      "gaming_license_suitability_concerns"
-    ],
-    "sources": [
-      "https://www.sec.gov"
-    ]
+    "flags": ["barstool_culture_regulatory_complications", "portnoy_misconduct_allegations", "state_gaming_regulatory_violations", "gaming_license_suitability_concerns"],
+    "sources": ["https://www.sec.gov"]
   },
   "labor": {
     "summary": "Penn employs approximately 20,000 people across its 43 properties. The company's regional casino workforce earns significantly less than Las Vegas Strip casino workers — regional markets lack the tourist premium that subsidizes Strip wages. UNITE HERE represents workers at some Penn properties. Penn's continuous acquisition and divestiture of casino properties creates ongoing workforce disruption.",
-    "flags": [
-      "regional_casino_lower_wages",
-      "workforce_disruption_acquisitions_divestitures",
-      "unite_here_some_properties"
-    ],
+    "flags": ["regional_casino_lower_wages", "workforce_disruption_acquisitions_divestitures", "unite_here_some_properties"],
     "sources": []
   },
   "environmental": {
     "summary": "Penn's 43 properties across 20 states represent significant energy consumers. Regional casinos — many operating 24/7 — have large lighting, HVAC, and gaming system energy demands. The company has made limited public sustainability commitments relative to its operational footprint.",
-    "flags": [
-      "43_property_energy_footprint",
-      "24_7_regional_casino_energy"
-    ],
+    "flags": ["43_property_energy_footprint", "24_7_regional_casino_energy"],
     "sources": []
   },
   "political": {
     "summary": "Penn has lobbied for sports betting legalization across states, for favorable gaming tax rates, and against regulations that would restrict casino marketing to problem gamblers. The Barstool acquisition was partly a political strategy — Barstool's audience of predominantly young conservative men represented a market that overlapped with Republican voter demographics, creating potential political complications for gaming regulators who evaluate applicant suitability.",
-    "flags": [
-      "sports_betting_state_lobbying",
-      "barstool_political_demographic_overlap",
-      "gaming_tax_rate_lobbying"
-    ],
-    "sources": [
-      "https://www.opensecrets.org"
-    ]
+    "flags": ["sports_betting_state_lobbying", "barstool_political_demographic_overlap", "gaming_tax_rate_lobbying"],
+    "sources": ["https://www.opensecrets.org"]
   },
   "executives": {
     "summary": "CEO Jay Snowden received $11.2 million in total compensation in 2023 — the year Penn wrote off $2.1 billion from the Barstool acquisition and sold it back for $1. The Barstool acquisition was Snowden's signature strategic move, approved by the board, and resulted in one of the largest single-acquisition write-offs in recent gambling industry history. Dave Portnoy — who sold Barstool to Penn for $388 million and received it back for $1 — is currently pursuing new media and sports betting ventures.",
-    "flags": [
-      "2_1b_write_off_ceo_compensation_year",
-      "portnoy_sold_388m_bought_back_1_dollar",
-      "board_approved_strategic_miscalculation"
-    ],
-    "sources": [
-      "https://www.sec.gov"
-    ]
+    "flags": ["2_1b_write_off_ceo_compensation_year", "portnoy_sold_388m_bought_back_1_dollar", "board_approved_strategic_miscalculation"],
+    "sources": ["https://www.sec.gov"]
   },
   "connections": {
     "summary": "Penn's ESPN Bet partnership — $1.5 billion over 10 years for the right to use ESPN's brand — connects the nation's largest sports media company to a casino operator's gambling product. ESPN's audience of sports fans now receives gambling promotions under the ESPN brand — a brand built on sports journalism credibility being used to normalize sports betting. This mirrors the FanDuel-NFL partnership in using trusted sports institutions to reach gambling audiences. Barstool Sports under Portnoy has continued to promote sports gambling to its audience, now without Penn's gaming regulatory constraints.",
-    "flags": [
-      "espn_brand_gambling_normalization",
-      "sports_media_gambling_pipeline",
-      "barstool_continued_gambling_promotion"
-    ],
+    "flags": ["espn_brand_gambling_normalization", "sports_media_gambling_pipeline", "barstool_continued_gambling_promotion"],
     "sources": []
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
     "summary": "Gaming regulators in several states raised suitability concerns about the Barstool acquisition based on documented workplace misconduct at Barstool — including allegations of a hostile work environment, racial harassment, and sexual misconduct by senior Barstool figures including Portnoy. Former Barstool employees have alleged that the company's sports betting promotions to its young male audience deliberately targeted men who exhibited early signs of problem gambling behavior — treating gambling losses as content rather than harm.",
-    "flags": [
-      "gaming_suitability_barstool_culture_concerns",
-      "barstool_gambling_targeting_young_men_alleged",
-      "portnoy_sexual_misconduct_allegations_insider"
-    ],
+    "flags": ["gaming_suitability_barstool_culture_concerns", "barstool_gambling_targeting_young_men_alleged", "portnoy_sexual_misconduct_allegations_insider"],
     "sources": []
   },
   "health_record": {
     "summary": "Penn's regional casino portfolio is concentrated in communities where casino proximity is associated with elevated problem gambling rates. Research consistently finds that living within 10 miles of a casino is associated with increased rates of problem gambling, bankruptcy, and related financial distress. Penn's 43 properties in 20 states — targeting markets with lower casino saturation and less competition — serve communities with limited alternatives and potentially less access to gambling addiction resources. The Barstool acquisition was an explicit attempt to reach younger men with gambling products — a demographic at elevated risk for developing gambling problems.",
-    "flags": [
-      "regional_casino_proximity_problem_gambling_research",
-      "working_class_community_targeting",
-      "young_male_targeting_via_barstool"
-    ],
-    "sources": [
-      "https://www.ncpgambling.org"
-    ]
+    "flags": ["regional_casino_proximity_problem_gambling_research", "working_class_community_targeting", "young_male_targeting_via_barstool"],
+    "sources": ["https://www.ncpgambling.org"]
   },
   "alternatives": {
-    "cheaper": [
-      "Movie theaters, bowling alleys, and entertainment venues provide social entertainment at defined costs without financial risk",
-      "Free or low-cost community entertainment — parks, local sports, events — replaces casino social function without gambling exposure"
-    ],
-    "healthier": [
-      "For entertainment: any fixed-cost leisure activity where the amount spent is known in advance",
-      "For sports betting: free fantasy sports leagues on ESPN, Yahoo, or Sleeper"
-    ],
-    "diy": [
-      "Penn's Hollywood Casino properties are documented regional problem gambling attractors — proximity matters",
-      "National Problem Gambling Helpline: 1-800-522-4700",
-      "ESPN Bet promotions carry Penn Entertainment's casino infrastructure — the ESPN brand does not change the underlying product"
-    ]
+    "cheaper": ["Movie theaters, bowling alleys, and entertainment venues provide social entertainment at defined costs without financial risk", "Free or low-cost community entertainment — parks, local sports, events — replaces casino social function without gambling exposure"],
+    "healthier": ["For entertainment: any fixed-cost leisure activity where the amount spent is known in advance", "For sports betting: free fantasy sports leagues on ESPN, Yahoo, or Sleeper"],
+    "diy": ["Penn's Hollywood Casino properties are documented regional problem gambling attractors — proximity matters", "National Problem Gambling Helpline: 1-800-522-4700", "ESPN Bet promotions carry Penn Entertainment's casino infrastructure — the ESPN brand does not change the underlying product"]
   },
   "timeline": [
-    {
-      "year": 1994,
-      "event": "Penn National Gaming founded; begins acquiring regional casinos",
-      "severity": "neutral",
-      "source_url": ""
-    },
-    {
-      "year": 2013,
-      "event": "Penn spins off real estate into Gaming and Leisure Properties REIT; retains operating assets",
-      "severity": "neutral",
-      "source_url": ""
-    },
-    {
-      "year": 2020,
-      "event": "Penn acquires 36% of Barstool Sports for $163M; partnership to create Barstool Sportsbook",
-      "severity": "high",
-      "source_url": ""
-    },
-    {
-      "year": 2021,
-      "event": "Insider investigation documents Dave Portnoy sexual misconduct allegations; gaming regulatory suitability questions emerge",
-      "severity": "high",
-      "source_url": ""
-    },
-    {
-      "year": 2023,
-      "event": "Penn acquires full Barstool ownership for $388M total; announces ESPN Bet deal at $1.5B over 10 years",
-      "severity": "high",
-      "source_url": ""
-    },
-    {
-      "year": 2023,
-      "event": "Penn writes off $2.1B on Barstool; sells it back to Portnoy for $1; rebrands to Penn Entertainment",
-      "severity": "critical",
-      "source_url": ""
-    },
-    {
-      "year": 2024,
-      "event": "ESPN Bet launches; performance underwhelms versus DraftKings and FanDuel market share",
-      "severity": "moderate",
-      "source_url": ""
-    },
-    {
-      "year": 2025,
-      "event": "Penn carries $2.7B debt; operates 43 properties; continues regional casino expansion",
-      "severity": "moderate",
-      "source_url": ""
-    }
+    {"year": 1994, "event": "Penn National Gaming founded; begins acquiring regional casinos", "severity": "neutral", "source_url": ""},
+    {"year": 2013, "event": "Penn spins off real estate into Gaming and Leisure Properties REIT; retains operating assets", "severity": "neutral", "source_url": ""},
+    {"year": 2020, "event": "Penn acquires 36% of Barstool Sports for $163M; partnership to create Barstool Sportsbook", "severity": "high", "source_url": ""},
+    {"year": 2021, "event": "Insider investigation documents Dave Portnoy sexual misconduct allegations; gaming regulatory suitability questions emerge", "severity": "high", "source_url": ""},
+    {"year": 2023, "event": "Penn acquires full Barstool ownership for $388M total; announces ESPN Bet deal at $1.5B over 10 years", "severity": "high", "source_url": ""},
+    {"year": 2023, "event": "Penn writes off $2.1B on Barstool; sells it back to Portnoy for $1; rebrands to Penn Entertainment", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "ESPN Bet launches; performance underwhelms versus DraftKings and FanDuel market share", "severity": "moderate", "source_url": ""},
+    {"year": 2025, "event": "Penn carries $2.7B debt; operates 43 properties; continues regional casino expansion", "severity": "moderate", "source_url": ""}
   ],
   "community_impact": {
     "displacement": "Penn's regional casino strategy places gambling facilities in mid-size and rural markets that previously had no casino access. Research documents that casino entry into new markets increases problem gambling rates in the surrounding community — Penn's 43-property footprint represents 43 new or expanded gambling epicenters in communities that often lack corresponding addiction treatment infrastructure.",
@@ -194,32 +79,14 @@
   },
   "cost_absorption": {
     "who_benefited": [
-      {
-        "group": "Dave Portnoy",
-        "how": "Sold Barstool for $388 million; received it back for $1; retained the asset with no further obligation"
-      },
-      {
-        "group": "Gaming and Leisure Properties (REIT)",
-        "how": "Collects rent from Penn on casino properties it spun off; low-risk landlord position"
-      },
-      {
-        "group": "ESPN",
-        "how": "$1.5B over 10 years for brand licensing; gambling association risk transferred to Penn"
-      }
+      {"group": "Dave Portnoy", "how": "Sold Barstool for $388 million; received it back for $1; retained the asset with no further obligation"},
+      {"group": "Gaming and Leisure Properties (REIT)", "how": "Collects rent from Penn on casino properties it spun off; low-risk landlord position"},
+      {"group": "ESPN", "how": "$1.5B over 10 years for brand licensing; gambling association risk transferred to Penn"}
     ],
     "who_paid": [
-      {
-        "group": "Penn shareholders",
-        "how": "$2.1B Barstool write-off; ongoing ESPN Bet investment at below-market share performance"
-      },
-      {
-        "group": "Regional casino communities",
-        "how": "43 gambling facilities in 20 states; documented problem gambling rate increases near casino openings"
-      },
-      {
-        "group": "Barstool's young male audience",
-        "how": "Specifically targeted for gambling acquisition through a media brand they trusted"
-      }
+      {"group": "Penn shareholders", "how": "$2.1B Barstool write-off; ongoing ESPN Bet investment at below-market share performance"},
+      {"group": "Regional casino communities", "how": "43 gambling facilities in 20 states; documented problem gambling rate increases near casino openings"},
+      {"group": "Barstool's young male audience", "how": "Specifically targeted for gambling acquisition through a media brand they trusted"}
     ],
     "the_gap": "Penn paid $388 million for Barstool Sports to reach young men with gambling. It wrote off $2.1 billion. It sold Barstool back for $1. Dave Portnoy kept the $388 million. Penn then paid ESPN $1.5 billion for a new brand. The money comes from regional casino gamblers in 20 states. The house always wins — but sometimes the house loses the side bets."
   }
