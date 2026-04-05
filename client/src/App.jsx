@@ -11,7 +11,9 @@ import HealthCallout from './components/HealthCallout.jsx';
 import AlternativesSidebar from './components/AlternativesSidebar.jsx';
 import HomeScreen from './components/HomeScreen.jsx';
 import HistoryScreen from './components/HistoryScreen.jsx';
+import LocalCommercial from './components/LocalCommercial.jsx';
 import ShareCard from './components/ShareCard.jsx';
+import { readCachedLocation } from './services/location.js';
 import CommunityImpact from './components/CommunityImpact.jsx';
 import { useTapAnalysis } from './hooks/useTapAnalysis.js';
 import { getInvestigationRecordPresentation } from './utils/investigationConfidence.js';
@@ -67,6 +69,7 @@ export default function App() {
   } = useTapAnalysis();
 
   const [showShare, setShowShare] = useState(false);
+  const [researchCommercialOn, setResearchCommercialOn] = useState(false);
 
   const [isDesktop, setIsDesktop] = useState(
     () => typeof window !== 'undefined' && window.innerWidth >= 768
@@ -95,6 +98,18 @@ export default function App() {
     }
   }, [result?.investigation]);
 
+  useEffect(() => {
+    if (!result?.research_loading) {
+      setResearchCommercialOn(false);
+      return undefined;
+    }
+    const timer = window.setTimeout(() => {
+      const loc = readCachedLocation();
+      if (loc?.city) setResearchCommercialOn(true);
+    }, 8000);
+    return () => window.clearTimeout(timer);
+  }, [result?.research_loading]);
+
   const dataUrl = image ? `data:image/jpeg;base64,${image}` : null;
 
   const onImageSelected = (b64) => {
@@ -111,6 +126,8 @@ export default function App() {
     reset();
     setMode('home');
   };
+
+  const researchBackdropLoc = researchCommercialOn ? readCachedLocation() : null;
 
   if (mode === 'home') {
     return (
@@ -619,6 +636,18 @@ export default function App() {
           investigation={result.investigation}
           identification={id}
           onClose={() => setShowShare(false)}
+        />
+      ) : null}
+
+      {researchCommercialOn && researchBackdropLoc?.city ? (
+        <LocalCommercial
+          city={researchBackdropLoc.city}
+          state={researchBackdropLoc.state ?? null}
+          lat={typeof researchBackdropLoc.lat === 'number' ? researchBackdropLoc.lat : null}
+          lng={typeof researchBackdropLoc.lng === 'number' ? researchBackdropLoc.lng : null}
+          onClose={() => setResearchCommercialOn(false)}
+          onExploreCity={() => setResearchCommercialOn(false)}
+          autoLoad
         />
       ) : null}
     </div>

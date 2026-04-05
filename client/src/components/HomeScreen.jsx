@@ -7,6 +7,7 @@ import {
 } from '../services/location.js';
 import { getCityIdentity } from '../services/cityIdentity.js';
 import { dailyChainShuffle, dailyFeedShuffle, utcDateKey } from '../utils/dailyShuffle.js';
+import LocalCommercial from './LocalCommercial.jsx';
 import TrustStrip from './TrustStrip.jsx';
 import ListYourShop from './ListYourShop.jsx';
 import CommunityBoard from './CommunityBoard.jsx';
@@ -46,8 +47,8 @@ function geolocationFailureHint(err) {
   };
 }
 
-/** @param {{ onSearch: (q: string) => void; onStartSnap: () => void }} props */
-function SearchBar({ onSearch, onStartSnap }) {
+/** @param {{ onSearch: (q: string) => void; onStartSnap: () => void; onLocalStory?: () => void }} props */
+function SearchBar({ onSearch, onStartSnap, onLocalStory }) {
   const [query, setQuery] = useState('');
 
   function handleSubmit(e) {
@@ -81,6 +82,7 @@ function SearchBar({ onSearch, onStartSnap }) {
       <div
         style={{
           display: 'flex',
+          flexWrap: 'wrap',
           gap: 10,
           alignItems: 'stretch',
           marginBottom: 10,
@@ -93,7 +95,7 @@ function SearchBar({ onSearch, onStartSnap }) {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search any company, brand, or CEO..."
           enterKeyHint="search"
-          style={{ ...inputStyle, flex: '1 1 auto', minWidth: 0 }}
+          style={{ ...inputStyle, flex: '1 1 220px', minWidth: 0 }}
         />
         <button
           type="button"
@@ -118,6 +120,28 @@ function SearchBar({ onSearch, onStartSnap }) {
           }}
         >
           📷 Snap
+        </button>
+        <button
+          type="button"
+          onClick={() => onLocalStory?.()}
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontSize: 11,
+            letterSpacing: 1.5,
+            textTransform: 'uppercase',
+            background: 'transparent',
+            color: '#f0a820',
+            border: '1px solid #f0a820',
+            minHeight: 48,
+            padding: '0 16px',
+            borderRadius: 2,
+            cursor: 'pointer',
+            fontWeight: 700,
+            flexShrink: 0,
+            boxSizing: 'border-box',
+          }}
+        >
+          ▶ Local Story
         </button>
       </div>
       <button
@@ -905,6 +929,7 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate, onOpenHis
   const [travelStayFeed, setTravelStayFeed] = useState([]);
   const [travelStayChain, setTravelStayChain] = useState([]);
   const [eventsPayload, setEventsPayload] = useState(null);
+  const [localCommercialOpen, setLocalCommercialOpen] = useState(false);
   const lastTerritoryCountyRef = useRef(null);
 
   const fetchFeed = useCallback(async (lat, lng, cat, opts = {}) => {
@@ -1312,7 +1337,11 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate, onOpenHis
       <CityCard identity={identity} city={location?.city} state={location?.state} />
 
       {typeof onSearchInvestigate === 'function' ? (
-        <SearchBar onSearch={onSearchInvestigate} onStartSnap={onStartSnap} />
+        <SearchBar
+          onSearch={onSearchInvestigate}
+          onStartSnap={onStartSnap}
+          onLocalStory={() => setLocalCommercialOpen(true)}
+        />
       ) : null}
 
       <div
@@ -1645,6 +1674,17 @@ export default function HomeScreen({ onStartSnap, onSearchInvestigate, onOpenHis
 
         <div style={{ paddingBottom: 56 }} aria-hidden />
       </div>
+
+      {localCommercialOpen ? (
+        <LocalCommercial
+          city={location?.city}
+          state={location?.state ?? null}
+          lat={typeof location?.lat === 'number' ? location.lat : null}
+          lng={typeof location?.lng === 'number' ? location.lng : null}
+          onClose={() => setLocalCommercialOpen(false)}
+          onExploreCity={() => setLocalCommercialOpen(false)}
+        />
+      ) : null}
     </div>
   );
 }
