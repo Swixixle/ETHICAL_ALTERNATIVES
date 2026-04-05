@@ -1,0 +1,95 @@
+{
+  "brand_name": "Cargill",
+  "brand_slug": "cargill",
+  "parent_company": "Cargill Incorporated",
+  "ultimate_parent": "Cargill Family (75% ownership)",
+  "subsidiaries": ["Cargill Protein", "Cargill Grain", "Cargill Salt", "Cargill Agriculture Supply Chain", "Sterling Sugars", "Provimi"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "CARGILL IS THE LARGEST PRIVATE COMPANY IN AMERICA — IT CONTROLS THE GLOBAL FOOD SUPPLY AND ANSWERS TO NO ONE",
+  "executive_summary": "Cargill is the largest privately held company in the United States with annual revenues exceeding $177 billion — it is also one of the largest corporations on earth. Because it is private, Cargill is not required to disclose financial details, lobbying expenditures, or executive compensation that public companies must report. Cargill handles approximately 25% of all U.S. grain exports, is one of the world's largest agricultural commodity traders, and controls significant portions of the global supply chains for corn, soy, wheat, palm oil, beef, and poultry. The company has been documented to source from suppliers that drive Amazon deforestation, use child and forced labor in cocoa supply chains, engage in price manipulation of agricultural commodities, and systematically avoid regulatory scrutiny through its private structure.",
+  "verdict_tags": ["amazon_deforestation_sourcing", "cocoa_child_labor", "grain_price_manipulation", "private_no_disclosure", "antitrust_concerns", "environmental_contamination"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": false, "legal": true},
+  "tax": {
+    "summary": "As a private company, Cargill does not disclose its tax arrangements. The company is known to use extensive offshore structures — with significant operations in Switzerland, Singapore, and other jurisdictions — for its commodity trading operations. Cargill's private structure means no public disclosure of its effective tax rate, offshore holdings, or tax arrangements with any jurisdiction. The Cargill family's ownership structure — through a complex system of trusts and holding companies — minimizes estate tax obligations across generations.",
+    "flags": ["private_no_disclosure", "swiss_singapore_trading_structures", "family_trust_estate_tax_minimization"],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Cargill has faced multiple significant legal actions across its operations. 2015: Cargill paid $11.5 million to settle CFTC charges for manipulating wheat futures — cornering the futures market. 2002: Cargill paid $25 million to settle antitrust charges for lysine price-fixing. Cargill has been sued by environmental groups for sourcing soy and beef from suppliers connected to Amazon deforestation in Brazil. Cargill has been named in child labor lawsuits related to its cocoa sourcing from West African farms — the Supreme Court ruled in 2021 that the case could not proceed in U.S. courts on jurisdictional grounds, not merits. Cargill's beef processing facilities have faced multiple OSHA enforcement actions for worker safety violations.",
+    "flags": ["11_5m_wheat_futures_manipulation", "25m_lysine_price_fixing", "amazon_deforestation_sourcing_lawsuits", "child_labor_cocoa_supreme_court", "osha_beef_processing_violations"],
+    "sources": ["https://www.cftc.gov", "https://www.justice.gov"]
+  },
+  "labor": {
+    "summary": "Cargill employs approximately 155,000 people globally. The company's U.S. meatpacking and processing operations — which employ significant immigrant and refugee workforces — have faced OSHA enforcement for workplace injuries. During COVID-19, Cargill's meat processing plants became major outbreak sites; a Cargill plant in High River, Alberta contributed to one of Canada's deadliest workplace COVID outbreaks. The company's global supply chain involves cocoa farmers in West Africa — where child labor on cocoa farms has been documented by the U.S. Department of Labor and multiple investigative reports.",
+    "flags": ["meatpacking_osha_violations", "covid_high_river_outbreak", "cocoa_child_labor_supply_chain", "immigrant_workforce_conditions"],
+    "sources": ["https://www.osha.gov", "https://www.dol.gov"]
+  },
+  "environmental": {
+    "summary": "Cargill is one of the primary drivers of Amazon deforestation through its soy and beef sourcing in Brazil. Greenpeace and others have documented Cargill-linked suppliers clearing Amazon rainforest for soy cultivation — soy that is then exported as animal feed. Cargill made a 2006 moratorium commitment not to source from recently deforested areas; environmental groups have documented ongoing violations of this commitment. Cargill's fertilizer and chemical operations generate significant environmental impacts. The company's nitrogen fertilizer use contributes to the Gulf of Mexico dead zone — a hypoxic zone of depleted oxygen caused by nitrogen runoff from midwestern agriculture.",
+    "flags": ["amazon_deforestation_primary_driver", "soy_moratorium_violations", "gulf_dead_zone_contribution", "nitrogen_runoff_agriculture"],
+    "sources": ["https://www.greenpeace.org", "https://www.ran.org"]
+  },
+  "political": {
+    "summary": "As a private company, Cargill's lobbying expenditures are not fully disclosed. The company participates in agricultural trade associations — including the U.S. Grains Council, American Farm Bureau, and Grocery Manufacturers Association — that coordinate lobbying on commodity pricing, agricultural subsidies, trade policy, and food safety regulations. Cargill has lobbied against country-of-origin labeling for meat — a transparency measure that would allow consumers to know where their beef comes from. The company's global scale gives it leverage in negotiations with developing country governments over land rights and agricultural policy.",
+    "flags": ["private_lobbying_not_disclosed", "country_of_origin_labeling_opposition", "developing_country_government_leverage"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Brian Sikes took over in 2023. Cargill does not disclose executive compensation as a private company — one of the few major corporate decisions that private status genuinely enables. The Cargill and MacMillan families — descendants of the founder — collectively own approximately 90% of the company. Their combined wealth is estimated to exceed $50 billion. Cargill has approximately 14 family shareholders who represent one of the most concentrated private fortunes in American history built on commodity trading.",
+    "flags": ["no_executive_pay_disclosure_private", "family_50b_wealth_commodity_trading", "14_family_shareholders"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Cargill, Archer-Daniels-Midland (ADM), Bunge, and Louis Dreyfus together are known as the 'ABCD' companies — four trading companies that collectively control the majority of global grain trading. This oligopoly over the food system's most critical infrastructure — grain trading, storage, and transport — gives these four companies enormous leverage over global food prices and food security. The ABCD companies' concentration is particularly significant in developing countries, where they effectively set commodity prices that determine farmer income and food costs for billions of people.",
+    "flags": ["abcd_grain_oligopoly", "global_food_price_control", "developing_country_food_security_leverage"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Environmental investigations by Greenpeace and other organizations have alleged that Cargill continues to source from farms connected to recent Amazon deforestation despite its stated moratorium — using the complexity of Brazilian supply chains and soy trading to obscure the connection. Investigative reporting by The Guardian and others has documented Cargill-linked suppliers clearing areas that satellite data shows were recently forested. Former commodity traders have alleged that the ABCD companies' collective market positions in futures markets create opportunities for information asymmetry that benefits their trading desks at the expense of farmers and consumers. The private structure makes these allegations very difficult to verify.",
+    "flags": ["amazon_moratorium_violations_documented_by_satellites", "futures_market_information_asymmetry_alleged", "private_structure_verification_barrier"],
+    "sources": ["https://www.theguardian.com", "https://www.greenpeace.org"]
+  },
+  "health_record": {
+    "summary": "Cargill's role in the global food system has direct public health implications. The company's palm oil sourcing contributes to deforestation that affects climate and regional health. Cargill's meatpacking operations — particularly during COVID-19 — exposed thousands of workers to infection risk; the High River, Alberta Cargill facility had over 900 COVID cases in a single outbreak. The USDA has issued beef recalls for Cargill-produced products for E. coli contamination multiple times. The company's nitrogen fertilizer distribution contributes to the agricultural runoff that creates the Gulf of Mexico dead zone, affecting the health of the Gulf ecosystem and the communities that depend on it.",
+    "flags": ["covid_high_river_900_cases", "beef_ecoli_recalls", "gulf_dead_zone_health_ecosystem"],
+    "sources": ["https://www.usda.gov"]
+  },
+  "alternatives": {
+    "cheaper": ["Buying direct from farmers at farmers markets eliminates commodity trader margin entirely", "Food co-ops — cooperative purchasing reduces dependence on Cargill-linked supply chains", "Growing your own staple crops where possible — even small gardens reduce commodity dependence"],
+    "healthier": ["Direct-to-farm beef and grain purchases — know your source, bypass ABCD trading companies", "Reduced meat consumption — lowers dependence on Cargill's beef and poultry processing", "Organic certified products — supply chain traceability requirements reduce deforestation-linked sourcing risk"],
+    "diy": ["Cargill products enter your food supply through many channels — processed foods, grain-fed meat, and cooking oils are primary vectors", "Consumer pressure on food brands to disclose their commodity sourcing creates pressure up the supply chain to Cargill", "Support mandatory country-of-origin labeling and supply chain disclosure legislation"]
+  },
+  "timeline": [
+    {"year": 1865, "event": "Cargill founded by W.W. Cargill in Conover, Iowa as a grain warehousing operation", "severity": "neutral", "source_url": ""},
+    {"year": 1972, "event": "Cargill facilitates the 'Great Grain Robbery' — massive Soviet grain purchase that contributed to U.S. food price spike", "severity": "high", "source_url": ""},
+    {"year": 1996, "event": "ADM lysine price-fixing scandal; Cargill also implicated and pays $25M in antitrust settlement", "severity": "high", "source_url": ""},
+    {"year": 2006, "event": "Cargill agrees to Amazon soy moratorium following Greenpeace campaign; violations documented subsequently", "severity": "moderate", "source_url": ""},
+    {"year": 2015, "event": "CFTC: $11.5M settlement for wheat futures market manipulation", "severity": "high", "source_url": "https://www.cftc.gov"},
+    {"year": 2020, "event": "COVID: Cargill High River, Alberta plant — 900+ cases, 3 deaths; becomes one of Canada's deadliest workplace outbreaks", "severity": "critical", "source_url": ""},
+    {"year": 2021, "event": "Supreme Court rules cocoa child labor case cannot proceed in U.S. courts — not on merits but jurisdiction", "severity": "high", "source_url": ""},
+    {"year": 2023, "event": "Satellite analysis continues documenting Amazon deforestation in Cargill-linked supply chains despite moratorium", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "Cargill revenues exceed $177B — larger than most countries' GDPs; continues operating without public disclosure requirements", "severity": "moderate", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Cargill's soy sourcing in Brazil has contributed to the displacement of Indigenous communities and traditional farmers from Amazon territories converted to soy monoculture. The Amazon deforestation accelerated by Cargill-linked supply chains destroys biodiversity, disrupts rainfall patterns affecting agriculture across South America, and eliminates the land rights of communities that have lived there for generations.",
+    "price_illusion": "Commodity prices set by ABCD trading companies reflect their market power rather than pure supply and demand. Farmers in developing countries receive prices determined in part by the oligopoly's trading positions. Consumers in wealthy countries pay prices that externalize the cost of deforestation, child labor, and environmental damage into the price of food.",
+    "tax_math": "Cargill's private status and Swiss/Singapore trading operations allow it to minimize tax obligations across jurisdictions while operating at $177 billion in revenue. The true tax rate is unknown. Agricultural subsidies — which benefit Cargill's U.S. farmer suppliers — represent public support for the supply chain that Cargill profits from without proportionate public accountability.",
+    "wealth_velocity": "Cargill's $177 billion revenue flows primarily to approximately 14 Cargill and MacMillan family members and a small number of other investors. This concentration of agricultural trading profit in one American family — while controlling food supply chains that affect billions of people — is one of the most extreme examples of wealth concentration in the global food system."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Cargill and MacMillan families", "how": "$50B+ estimated fortune; private structure avoids disclosure of exact wealth or compensation"},
+      {"group": "Industrial agriculture system", "how": "Cargill's infrastructure enables industrial-scale commodity farming that generates margins for large operations while squeezing small farmers"},
+      {"group": "Global food manufacturing", "how": "Access to commodity inputs at trading company prices that small competitors cannot match"}
+    ],
+    "who_paid": [
+      {"group": "Amazon Indigenous communities", "how": "Land cleared for soy monoculture; documented displacement in Cargill-linked supply chains"},
+      {"group": "Cocoa child laborers", "how": "Child labor on West African cocoa farms in Cargill-linked supply chains; Supreme Court blocked U.S. jurisdiction"},
+      {"group": "High River Cargill workers", "how": "900 COVID cases, 3 deaths in one plant; inadequate protection during pandemic"},
+      {"group": "Small farmers globally", "how": "Commodity prices set by ABCD oligopoly; no negotiating power against $177B company"}
+    ],
+    "the_gap": "Cargill handles 25% of all U.S. grain exports and is larger than most countries' GDPs. It is privately held and discloses almost nothing. Its supply chains involve documented child labor and Amazon deforestation. The Cargill family is worth $50 billion. Your food goes through them."
+  }
+}

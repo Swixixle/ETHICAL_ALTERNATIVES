@@ -124,5 +124,19 @@
   "bac": "bank-of-america",
   "ford": "ford",
   "ford-motor": "ford",
-  "verizon": "verizon"
+  "verizon": "verizon",
+  "toyota": "toyota",
+  "lexus": "toyota",
+  "general-motors": "general-motors",
+  "chevrolet": "general-motors",
+  "chevy": "general-motors",
+  "gmc": "general-motors",
+  "cadillac": "general-motors",
+  "buick": "general-motors",
+  "kroger": "kroger",
+  "fred-meyer": "kroger",
+  "ralphs": "kroger",
+  "merck": "merck",
+  "msd": "merck",
+  "cargill": "cargill"
 }

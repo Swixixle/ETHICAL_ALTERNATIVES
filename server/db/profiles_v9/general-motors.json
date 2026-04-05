@@ -1,0 +1,96 @@
+{
+  "brand_name": "General Motors",
+  "brand_slug": "general-motors",
+  "parent_company": "General Motors Company",
+  "ultimate_parent": "General Motors Company",
+  "subsidiaries": ["Chevrolet", "GMC", "Buick", "Cadillac", "GM Financial", "OnStar", "Cruise (autonomous)"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "GM KNEW THE IGNITION SWITCH KILLED PEOPLE FOR 13 YEARS AND KEPT MAKING THE PART",
+  "executive_summary": "General Motors is the largest U.S. automaker by revenue, generating approximately $185 billion annually. For 13 years, GM knew that a faulty ignition switch in millions of Chevrolet Cobalts and other vehicles could inadvertently cut engine power, disabling power steering and airbags mid-drive. The defect has been linked to at least 124 deaths and 275 injuries. GM knew — internal documents prove awareness as early as 2001 — and chose not to recall the vehicles, in part because the fix cost 57 cents per vehicle. GM paid $900 million in a DOJ settlement in 2015 and $120 million in victim compensation. GM also benefited from a $49.5 billion government bailout in 2009 that effectively wiped out its pre-bankruptcy liabilities including the ignition switch claims — creating a legal shield its attorneys later exploited.",
+  "verdict_tags": ["ignition_switch_13_year_concealment", "124_deaths", "57_cent_fix_13_years", "doj_900m_settlement", "bankruptcy_bailout_liability_shield", "safety_concealment"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "tax": {
+    "summary": "GM's 2009 bankruptcy created a 'new GM' that shed pre-bankruptcy liabilities while retaining pre-bankruptcy assets — a structure that generated significant tax benefits including $45.4 billion in net operating loss carryforwards. The bailout and bankruptcy effectively gave GM a tax shield that new companies would not receive. GM has also used offshore manufacturing and financing subsidiaries to minimize tax obligations on global operations.",
+    "flags": ["45_4b_nol_carryforward_bankruptcy", "new_gm_liability_asset_split", "offshore_subsidiary_structures"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "legal": {
+    "summary": "Ignition switch: 2015 DOJ settlement of $900 million for concealing the ignition switch defect. GM admitted making false statements to NHTSA. Criminal charges were avoided through a Deferred Prosecution Agreement. GM's independent victim compensation fund — administered by Kenneth Feinberg — paid approximately $595 million to 399 claimants. Critical legal issue: 'New GM' (post-bankruptcy) argued it did not inherit liabilities from 'Old GM,' attempting to shield itself from ignition switch claims despite knowing about the defect during the bankruptcy. U.S. Supreme Court ultimately ruled against GM's most aggressive liability shield arguments. NHTSA fines: $35 million (maximum allowed) for recall failures. Total GM recall costs 2014-2016 exceeded $4 billion.",
+    "flags": ["900m_doj_concealment_settlement", "admitted_false_statements_nhtsa", "new_gm_liability_shield_attempt", "35m_nhtsa_max_fine_inadequate"],
+    "sources": ["https://www.justice.gov"]
+  },
+  "labor": {
+    "summary": "GM employs approximately 163,000 people globally. The 2019 UAW strike — 40 days, 46,000 workers — was the longest GM strike since 1970, triggered by disputes over wages, healthcare, temporary workers, and plant closures. GM had announced the closure of five North American plants as part of a restructuring that eliminated 14,000 jobs while simultaneously investing billions in overseas production. The plant closures became a major political issue in 2018-2019. The UAW's 2023 strike resulted in significant wage increases from GM, Ford, and Stellantis.",
+    "flags": ["2019_uaw_40_day_strike", "5_plant_closures_vs_overseas_investment", "2023_strike_wage_gains"],
+    "sources": ["https://www.nlrb.gov"]
+  },
+  "environmental": {
+    "summary": "GM's vehicle fleet — dominated by trucks and SUVs — is a major source of U.S. transportation emissions. The company's Cruise autonomous vehicle subsidiary has faced serious safety scrutiny after a robotaxi struck and dragged a pedestrian in San Francisco in 2023 — GM concealed the full extent of the incident from regulators and Cruise's operating permit was suspended. GM has made EV commitments but its truck-dominant lineup continues to account for most revenue.",
+    "flags": ["truck_suv_fleet_emissions", "cruise_pedestrian_dragging_incident", "cruise_permit_revocation", "ev_commitment_vs_truck_revenue"],
+    "sources": []
+  },
+  "political": {
+    "summary": "GM received a $49.5 billion government bailout in 2009 — the largest auto industry bailout in history. The company subsequently closed plants in politically significant states while expanding overseas manufacturing. GM has lobbied on CAFE fuel economy standards, EV policy, autonomous vehicle regulations, and trade policy. The Cruise robotaxi scandal — where GM concealed full incident details from California regulators — represents a documented case of regulatory deception.",
+    "flags": ["49_5b_government_bailout", "post_bailout_plant_closures_political", "cruise_regulator_concealment"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Mary Barra received $29 million in total compensation in 2023. Barra became CEO in January 2014 — just weeks before the ignition switch scandal became public. Her handling of the scandal — including creating the victim compensation fund — was generally praised, though critics noted GM avoided criminal prosecution. The executives who knowingly concealed the ignition switch defect for 13 years were fired but faced no criminal charges. GM's internal investigation named 15 employees as primarily responsible; none were prosecuted.",
+    "flags": ["15_employees_responsible_zero_prosecuted", "no_criminal_charges_13_year_concealment", "barra_29m_compensation"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "connections": {
+    "summary": "GM shares major institutional investors with Ford, Stellantis, and Toyota. The auto industry's trade associations — Alliance for Automotive Innovation, formerly Alliance of Automobile Manufacturers — coordinate lobbying against fuel economy standards and emissions regulations. GM's 2009 bankruptcy was politically managed through the U.S. Treasury, creating ongoing political connections that have influenced the company's regulatory treatment. Cruise autonomous vehicles involves a partnership with Honda, connecting GM's autonomous strategy to a major competitor.",
+    "flags": ["auto_industry_emissions_lobbying_coordination", "treasury_political_management_post_bailout", "honda_cruise_partnership"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Congressional investigators found that GM's engineers and lawyers knew about the ignition switch defect for years and specifically chose not to classify it as a safety defect — because the internal 'star' rating system GM used didn't technically require recall at that level of risk. This categorical manipulation allowed GM to internally document awareness while officially claiming it had no safety-defect knowledge. Consumer safety advocates have alleged that the $595 million victim compensation fund — which required claimants to waive GM from liability — was structured to minimize GM's legal exposure rather than fairly compensate victims. Cruise's concealment of the pedestrian dragging incident involved allegedly providing regulators with an incomplete video that cut before showing the vehicle dragged the person.",
+    "flags": ["internal_star_system_manipulation_alleged", "compensation_fund_liability_waiver_structure", "cruise_incomplete_video_regulators_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "GM's ignition switch defect has been linked to at least 124 deaths and 275 injuries. The defect caused the engine to cut out at highway speed, disabling power steering and crucially disabling airbags — meaning vehicles in high-speed crashes had no airbag protection. The switch cost 57 cents to fix. GM knew about the defect from 2001. The Cruise autonomous vehicle pedestrian dragging incident caused severe injuries to the victim — the vehicle's sensor detected the person had been hit but the vehicle drove forward, pinning the pedestrian under the vehicle.",
+    "flags": ["124_deaths_ignition_switch", "airbags_disabled_high_speed_crashes", "57_cent_fix_over_13_years", "cruise_pedestrian_severe_injuries"],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": ["Ford — comparable pricing, U.S. manufacturer, different safety record profile", "Honda and Toyota — both have had safety scandals but generally stronger reliability reputations", "Used vehicles from any manufacturer — avoiding newest model years reduces exposure to undiscovered defects"],
+    "healthier": ["Toyota hybrids and Honda hybrids — significantly better fuel economy than GM's truck-dominant lineup", "Chevrolet Bolt EV — GM's legitimate EV contribution, though the platform has faced its own battery fire recall issues", "Public transit for urban commuting eliminates vehicle ownership costs and emissions entirely"],
+    "diy": ["Check your GM vehicle for open recalls at NHTSA.gov — enter your VIN; ignition switch recall is complete but other open recalls may apply", "GM's OnStar data collection — understand what data is shared and with whom; OnStar collects vehicle telematics and location data", "Advocate for stronger NHTSA recall enforcement authority — the $35M maximum fine that GM paid is clearly insufficient deterrent"]
+  },
+  "timeline": [
+    {"year": 1908, "event": "General Motors Company founded by William Durant", "severity": "neutral", "source_url": ""},
+    {"year": 2001, "event": "GM engineers first identify ignition switch defect; internal documentation begins", "severity": "critical", "source_url": ""},
+    {"year": 2003, "event": "GM decides not to fix ignition switch defect — engineers document decision not to recall", "severity": "critical", "source_url": ""},
+    {"year": 2009, "event": "$49.5B government bailout; GM files bankruptcy; 'New GM' structure potentially shields ignition switch liability", "severity": "high", "source_url": ""},
+    {"year": 2014, "event": "Ignition switch scandal goes public; new CEO Mary Barra takes over; massive recalls begin", "severity": "critical", "source_url": ""},
+    {"year": 2014, "event": "Congressional hearings document 13-year concealment; GM fires 15 employees; NHTSA fines $35M maximum", "severity": "critical", "source_url": ""},
+    {"year": 2015, "event": "$900M DOJ settlement; Deferred Prosecution Agreement; admitted false statements to NHTSA", "severity": "critical", "source_url": "https://www.justice.gov"},
+    {"year": 2015, "event": "Victim compensation fund pays ~$595M to 399 claimants; waiver of GM liability required", "severity": "high", "source_url": ""},
+    {"year": 2019, "event": "UAW strike: 46,000 workers, 40 days; GM had announced 14,000 job cuts and 5 plant closures", "severity": "high", "source_url": ""},
+    {"year": 2023, "event": "Cruise robotaxi strikes and drags pedestrian in San Francisco; GM conceals full incident from regulators; Cruise permit suspended", "severity": "critical", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "GM's 2018-2019 plant closures — Lordstown, Ohio; Detroit-Hamtramck, Michigan; Oshawa, Ontario; Warren, Michigan; Baltimore, Maryland — devastated communities built around auto manufacturing. Lordstown, Ohio, a town of approximately 3,500 people, lost its primary economic engine. These closures occurred while GM was expanding overseas manufacturing.",
+    "price_illusion": "GM's vehicle prices reflect the cost of manufacturing but not the externalized costs of the ignition switch deaths, the bailout, or the environmental impact of a truck-and-SUV-dominant fleet. The $49.5 billion bailout was largely repaid, but taxpayers lost approximately $11.2 billion on the GM bailout overall.",
+    "tax_math": "GM's $45.4 billion in net operating loss carryforwards from the 2009 bankruptcy — created by the government-managed restructuring — gave the company a tax shield that private companies emerging from bankruptcy would not typically receive. This reduced GM's tax obligations for years following the bailout.",
+    "wealth_velocity": "GM's profits from truck and SUV sales — generated from American drivers — flow to institutional shareholders globally. The Lordstown, Ohio, community received nothing when the plant closed; the capital was redeployed to overseas manufacturing."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "GM management 2001-2014", "how": "Avoided recall costs; maintained profitability; no criminal consequences; most fired but not prosecuted"},
+      {"group": "GM shareholders (pre-recall)", "how": "Profit margins maintained through concealment period; recall costs socialized through victim compensation fund"},
+      {"group": "U.S. government (partial)", "how": "Bailout repaid with interest; however taxpayers lost ~$11.2B overall on GM rescue"}
+    ],
+    "who_paid": [
+      {"group": "124 people killed", "how": "Died in crashes where airbags didn't deploy due to a defect GM knew about and chose not to fix for 57 cents"},
+      {"group": "Ignition switch injury victims", "how": "275 documented injuries; compensation fund required liability waiver"},
+      {"group": "Lordstown, Warren, Baltimore, Oshawa workers", "how": "14,000 job cuts; plant closures; communities decimated"},
+      {"group": "Cruise pedestrian victim", "how": "Struck, then dragged by robotaxi; GM concealed full incident from regulators"}
+    ],
+    "the_gap": "The fix cost 57 cents. GM knew for 13 years. 124 people died. Airbags that would have saved their lives were disabled by a faulty switch. GM paid $900 million. No one went to prison."
+  }
+}
