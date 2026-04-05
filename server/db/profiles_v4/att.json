@@ -1,0 +1,86 @@
+{
+  "brand_name": "AT&T",
+  "brand_slug": "att",
+  "parent_company": "AT&T Inc.",
+  "ultimate_parent": "AT&T Inc.",
+  "subsidiaries": ["Cricket Wireless"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "SOLD CUSTOMERS' REAL-TIME LOCATION DATA TO BOUNTY HUNTERS AND THROTTLED FIRST RESPONDERS DURING WILDFIRES",
+  "executive_summary": "AT&T is one of the two dominant nationwide wireless carriers with legacy long-distance and fiber assets. FCC enforcement and journalism documented commercial sale of subscriber location data through third-party aggregators that reached bounty hunters and other unvetted buyers — leading to fines and consent decrees. During the 2018 Mendocino Complex fire, Santa Clara County firefighters publicly alleged Verizon/AT&T throttling on 'unlimited' plans hindered emergency coordination; the episode crystallized net-neutrality and public-safety arguments about traffic management policies.",
+  "verdict_tags": ["privacy_state", "labor_violations", "political_influence", "consumer_harm", "environmental_violations"],
+  "tax": {
+    "summary": "Post-Time Warner transaction unwind and fiber capex cycles move effective rates; verify 10-K annually. Historic state incentive battles for call centers and towers continue.",
+    "flags": ["capex_driven_rate_moves"],
+    "sources": ["https://www.sec.gov/edgar/browse/?company=AT%26T"]
+  },
+  "legal": {
+    "summary": "FCC imposed fines tied to location-data sales/tracing failures after reporting revealed sensitive realtime CPNI reached gray-market buyers. Net-neutrality and throttling policies drew FTC/FCC attention across administrations. Routine tower siting and environmental reviews affect local litigation.",
+    "flags": ["fcc_location_consent_decrees", "throttling_public_safety"],
+    "sources": ["https://www.fcc.gov", "https://www.ftc.gov"]
+  },
+  "labor": {
+    "summary": "Wireless retail and field tech roles are mixed union/non-union; CWA represents segments of wireline and wireless workforces — strike and contract headlines recur.",
+    "flags": ["cwu_union_segments", "contract_cycles"],
+    "sources": ["https://www.nlrb.gov"]
+  },
+  "environmental": {
+    "summary": "Lead-sheathed telecom cables and pole wood treatment historically pose soil/groundwater issues in investigative reporting; modern fiber build energy use and fleet fuel appear in sustainability reporting.",
+    "flags": ["legacy_lead_sheath_reporting", "buildout_energy"],
+    "sources": ["https://www.epa.gov"]
+  },
+  "political": {
+    "summary": "AT&T is a perennial top federal lobbying spender on spectrum auctions, Huawei/Section 889 supply-chain rules, privacy preemption, and merger retrospectives — state capitals see franchise and small-cell preemption fights.",
+    "flags": ["spectrum_policy_lobbying", "state_preemption"],
+    "sources": ["https://www.opensecrets.org/orgs/AT%26T"]
+  },
+  "executives": {
+    "summary": "Leadership transitions after WarnerMedia spin reflect portfolio refocus on connectivity; compensation remains large relative to retail-sales hourly workers.",
+    "flags": ["portfolio_pivot_pay"],
+    "sources": ["https://www.sec.gov/edgar/browse/?company=AT%26T"]
+  },
+  "connections": {
+    "summary": "AT&T shares top institutional holders with Verizon and T-Mobile — convergent policy preferences on privacy federalization. Vendor ecosystems (Ericsson/Nokia gear cycles) tie carriers to defense-adjacent supply chains. Historic aggregator partnerships linked mobile carriers to data brokers later sanctioned.",
+    "flags": ["triopoly_shared_holders", "data_broker_channel", "vendor_geopolitics"],
+    "sources": ["https://www.fcc.gov", "https://www.sec.gov"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims. They are documented in credible sources but have not been adjudicated.",
+    "summary": "Some legislators alleged under-compliance with spirit of CPNI rules prior to headline fines. Community groups alleged digital redlining in fiber prioritization; investigate per city datasets.",
+    "flags": ["cpni_spirit_alleged", "fiber_redlining_alleged"],
+    "sources": ["https://www.congress.gov"]
+  },
+  "health_record": {
+    "severity": "high",
+    "summary": "Throttling emergency responder data during wildfire operations — as alleged in sworn public agency statements — can impair coordination latency in acute public-health emergencies. Chronic exposure to misleading 'unlimited' marketing intersects stress and financial strain when households overbuy capacity.",
+    "flags": ["emergency_communications_risk", "marketing_stress"],
+    "sources": ["https://www.fcc.gov/document/fcc-fines-wireless-carriers-location-data-issues"]
+  },
+  "alternatives": {
+    "cheaper": ["MVNOs on AT&T/Verizon/T-Mobile radios with clear deprioritization disclosures", "Municipal open-access fiber where deployed — separate ISP retail from dark fiber", "Wi‑Fi‑first plans for homebound users"],
+    "healthier": ["Support public-safety priority policies codifying no-throttle classes for verified first-responder APNs", "Advocate stronger data-broker elimination at network edge"],
+    "diy": ["Faraday pouches for paranoia-grade location privacy; VPN does not fix carrier-grade SIM leakage", "Mesh community networks where spectrum/legal", "Lobby state AGs on location-data civil penalties"]
+  },
+  "timeline": [
+    { "year": 2014, "event": "DIRECTV acquisition era begins (later unwound/spun — verify current portfolio)", "severity": "moderate", "source_url": "" },
+    { "year": 2018, "event": "Mendocino Complex fire — Santa Clara County Fire public throttling complaint gains national attention", "severity": "critical", "source_url": "https://www.fcc.gov" },
+    { "year": 2020, "event": "FCC fines major carriers on location-data chain failures after investigative reporting", "severity": "high", "source_url": "https://www.fcc.gov" }
+  ],
+  "community_impact": {
+    "displacement": "Store closures and digital shift hollow out mall-anchor retail jobs.",
+    "price_illusion": "Bundled wireless-TV promotions mask equipment installment locks.",
+    "tax_math": "Small-cell siting deals trade ROW fees for coverage promises.",
+    "wealth_velocity": "Spectrum rents and subscriber ARPU accrue to Dallas HQ and indexed holders."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      { "group": "Institutional shareholders", "how": "Dividend-focused telecom investor base historically rewarded AT&T yield" },
+      { "group": "Data brokers (historically)", "how": "Low-friction resale of subscriber traces until enforcement closed lanes" }
+    ],
+    "who_paid": [
+      { "group": "Abuse survivors tracked by bounty hunters via location data", "how": "Human harm documented in investigative reporting" },
+      { "group": "Rural first responders", "how": "Throttling risk during disasters where microwave backhaul is thin" }
+    ],
+    "the_gap": "The tower flashes green — the map pin should never have been for sale."
+  }
+}

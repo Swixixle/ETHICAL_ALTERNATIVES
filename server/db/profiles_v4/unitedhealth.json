@@ -1,0 +1,87 @@
+{
+  "brand_name": "UnitedHealth Group",
+  "brand_slug": "unitedhealth",
+  "parent_company": "UnitedHealth Group Incorporated",
+  "ultimate_parent": "UnitedHealth Group Incorporated",
+  "subsidiaries": ["UnitedHealthcare", "Optum", "OptumRx"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "CONTROLS DATA FOR HALF OF ALL AMERICANS, DENIED MILLIONS OF CLAIMS WITH AI, THEN GOT HACKED",
+  "executive_summary": "UnitedHealth Group is the largest U.S. health insurer and a vertically integrated services conglomerate through Optum — combining insurance, pharmacy benefit management, physician staffing, analytics, and data brokerage. Investigative reporting has documented automated and algorithm-driven claim denials affecting large patient populations. In 2024, the Change Healthcare cyberattack disrupted payments and exposed one of the largest healthcare data breaches in U.S. history, with public reporting citing on the order of roughly 190 million affected records and a multimillion-dollar ransom payment acknowledged in company disclosures — verify final figures in HHS/OCR and SEC filings.",
+  "verdict_tags": ["health_concerns", "privacy_state", "labor_violations", "political_influence", "accounting_fraud", "product_safety_issues"],
+  "tax": {
+    "summary": "Managed-care and services profitability is sensitive to MLR rules, tax treatment of reinsurance captives, and offshore captive arrangements common across large insurers — verify annual 10-K effective rate.",
+    "flags": ["mlr_regulatory_risk", "multinational_services_booking"],
+    "sources": ["https://www.sec.gov/edgar/browse/?company=unitedhealth"]
+  },
+  "legal": {
+    "summary": "Class actions and state AG investigations have targeted claim-practice algorithms, behavioral-health parity failures, broker steering, and PBM rebate transparency post-OptumRx consolidation. OCR/HHS breach investigations following Change Healthcare follow standard breach timelines.",
+    "flags": ["algorithmic_denial_litigation", "breach_investigations", "pbm_scrutiny"],
+    "sources": ["https://www.hhs.gov/ocr", "https://www.courtlistener.com"]
+  },
+  "labor": {
+    "summary": "Optum-employed clinicians and UnitedHealthcare call-center workflows face productivity metrics; union drives have emerged among some clinical staffing lines.",
+    "flags": ["clinical_metrics", "call_center_intensity"],
+    "sources": ["https://www.nlrb.gov"]
+  },
+  "environmental": {
+    "summary": "Data-center and clinic footprint energy use and pharmaceutical logistics emissions appear in ESG disclosures — secondary to care-access debates but rising in institutional investor questionnaires.",
+    "flags": ["datacenter_energy"],
+    "sources": ["https://www.unitedhealthgroup.com"]
+  },
+  "political": {
+    "summary": "UnitedHealth is a top health-sector lobbying spender — Medicare Advantage payment rules, site-neutral payments, PBM reform, and antitrust reviews of vertical combinations are recurrent legislative flashpoints.",
+    "flags": ["medicare_advantage_lobbying", "vertical_integration_policy"],
+    "sources": ["https://www.opensecrets.org/orgs/unitedhealth+group"]
+  },
+  "executives": {
+    "summary": "CEO and Optum leadership compensation packages rank among the highest in healthcare services; median employee pay ratios are extreme relative to front-line nursing and claims roles.",
+    "flags": ["high_pay_ratio"],
+    "sources": ["https://www.sec.gov/edgar/browse/?company=unitedhealth"]
+  },
+  "connections": {
+    "summary": "Optum owns or partners with large physician employers while UnitedHealthcare adjudicates claims against the same care system — creating incentive conflicts scrutinized by antitrust enforcers. Institutional investors cross-hold UnitedHealth with CVS, Cigna, and Humana. Change Healthcare sat at payment clearing chokepoints for vast shares of U.S. claims before disruption.",
+    "flags": ["vertical_physician_conflict", "clearinghouse_concentration", "cross_holdings_managed_care"],
+    "sources": ["https://www.ftc.gov", "https://www.justice.gov/atr"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims. They are documented in credible sources but have not been adjudicated.",
+    "summary": "ProPublica and partner reporting alleged systematic claim denials driven by algorithms without adequate clinical review — defendants dispute characterization; litigation ongoing. Some security researchers alleged slow patching prior to Change Healthcare intrusion timelines as described in trade press — verify against forensic reports.",
+    "flags": ["denial_algorithm_alleged", "security_posture_alleged"],
+    "sources": ["https://www.propublica.org"]
+  },
+  "health_record": {
+    "severity": "critical",
+    "summary": "Beyond insurance mechanics, delayed or denied authorizations correlate in clinician surveys with adverse events — ecological evidence, not product-ingredient toxicity. The Change breach exposed sensitive diagnoses and payment data at massive scale, elevating identity-theft and care-disruption risks documented in OCR guidance.",
+    "flags": ["authorization_delays", "mega_breach_health_data"],
+    "sources": ["https://www.hhs.gov/ocr", "https://www.cisa.gov"],
+    "studies": [{ "title": "Financial toxicity and care delays — health services research literature", "url": "https://pubmed.ncbi.nlm.nih.gov" }]
+  },
+  "alternatives": {
+    "cheaper": ["Traditional Medicare where eligible — often lower administrative friction than MA narrow networks", "State-marketplace plans with nonprofit CO-OP remnants where still operating", "FSA/HSA disciplined spending to avoid surprise out-of-network bills"],
+    "healthier": ["Direct primary care practices with transparent monthly fees", "Community health centers (HRSA) for sliding-scale access", "Employer plans that carve out PBM to fiduciaries with audited pass-through rebates"],
+    "diy": ["File external reviews on denials; use state insurance departments", "Maintain encrypted personal health records offline backup post-breach cycles", "Support public-option legislation reducing payer concentration"]
+  },
+  "timeline": [
+    { "year": 2015, "event": "Optum expansion accelerates vertical integration strategy", "severity": "moderate", "source_url": "" },
+    { "year": 2022, "event": "DOJ and state enforcers increase scrutiny of healthcare vertical deals involving Optum/United combinations", "severity": "high", "source_url": "https://www.justice.gov/atr" },
+    { "year": 2024, "event": "Change Healthcare ransomware incident disrupts national claims and exposes massive PHI dataset (verify HHS tallies)", "severity": "critical", "source_url": "https://www.hhs.gov/ocr" }
+  ],
+  "community_impact": {
+    "displacement": "MA network narrowing pushes patients out of longstanding community providers.",
+    "price_illusion": "Low-premium MA ads mask prior-auth burdens and formulary restrictions.",
+    "tax_math": "Medicare Advantage risk-adjustment debates relocate public dollars across insurers.",
+    "wealth_velocity": "Optum services capture margin from clinicians while United books float on delayed claims."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      { "group": "Top executives and large shareholders", "how": "Share price growth through integrated margin stacking" },
+      { "group": "Employers buying administrative services", "how": "One-throat-to-choke vendor simplicity" }
+    ],
+    "who_paid": [
+      { "group": "Patients facing denials and retroactive recoupment", "how": "Care delays and surprise billing edge cases" },
+      { "group": "Smaller providers", "how": "Cash-flow squeeze when clearinghouses fail" }
+    ],
+    "the_gap": "Half the country’s charts feed one ecosystem — when it blinked, the IV pumps kept running but the claims didn’t."
+  }
+}

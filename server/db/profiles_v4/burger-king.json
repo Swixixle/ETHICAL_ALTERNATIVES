@@ -1,0 +1,90 @@
+{
+  "brand_name": "Burger King",
+  "brand_slug": "burger-king",
+  "parent_company": "Restaurant Brands International Inc.",
+  "ultimate_parent": "Restaurant Brands International Inc.",
+  "subsidiaries": ["Tim Hortons", "Popeyes", "Firehouse Subs"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "BURGER KING FRANCHISES USED PRISON LABOR AND CHILD LABOR WHILE BLOCKING WORKERS FROM COMPETING FOR BETTER WAGES",
+  "executive_summary": "Burger King operates one of the largest quick-service franchised footprints in the United States. Public enforcement records, civil litigation, and labor reporting have documented recurring wage-and-hour disputes, franchisee-driven labor precarity, and use of severely disadvantaged labor pools — including incarcerated workers and minors working unlawful hours. Franchise no-poach and non-compete provisions have historically restricted low-wage counter workers from moving to higher-paying fast-food jobs nearby.",
+  "verdict_tags": ["labor_violations", "wage_theft", "child_labor", "forced_labor_risk", "union_suppression", "antitrust_concerns", "supply_chain_abuses"],
+  "tax": {
+    "summary": "Parent Restaurant Brands International is a Canadian-domiciled multinational; U.S. Burger King operations are heavily franchised, pushing income recognition and tax planning complexity across hundreds of franchise entities and supply arrangements. Franchise structures routinely shift profit to franchisors through royalties, advertising levies, and supply rebates — verify entity-by-entity U.S. effective rates in SEC and IFRS disclosures rather than inferring from any single brand line.",
+    "flags": ["franchise_profit_shifting", "multinational_routing"],
+    "sources": ["https://www.sec.gov/edgar/browse/?company=restaurant+brands"]
+  },
+  "legal": {
+    "summary": "In 2023, litigation framed as a class action raised claims that Alabama incarcerated workers were leased to Burger King restaurants at compensation below applicable minimum-wage standards — the dispute ties together corrections labor programs and QSR staffing. Wisconsin enforcement actions have documented large-scale child-labor violations affecting many franchised locations; regulators described violations numbering in the thousands across a multi-year sweep (verify final disposition and counts in state filings). Franchise no-poach agreements historically attracted DOJ scrutiny across fast food for labor-market allocation.",
+    "flags": ["prison_labor_class_action", "child_labor_enforcement", "no_poach_history"],
+    "sources": ["https://www.justice.gov/atr", "https://www.dol.gov/agencies/whd"]
+  },
+  "labor": {
+    "summary": "Franchise models concentrate wage and scheduling decisions at independent operators while brand standards dictate throughput, hours, and equipment — a structure that can leave workers without a single clear employer-of-record for accountability. Crew wages remain at the low end of food service; reporting has tied QSR employment to unpredictable scheduling and difficulty securing full-time hours. Where no-poach clauses applied, workers could be barred from taking a better-paid job at another franchise of the same chain.",
+    "flags": ["franchise_labor_fragmentation", "low_wage_model", "scheduling_precarity"],
+    "sources": ["https://www.nlrb.gov", "https://www.nelp.org"]
+  },
+  "environmental": {
+    "summary": "Beef-heavy menus carry outsized greenhouse-gas and land-use footprint relative to plant-forward alternatives. Disposable packaging and grease handling create recurring waste-compliance issues at local stores, visible in municipal enforcement data when reported.",
+    "flags": ["high_carbon_menu", "packaging_waste"],
+    "sources": ["https://www.epa.gov"]
+  },
+  "political": {
+    "summary": "The fast-food sector lobbies heavily on minimum wage, joint-employer definitions, scheduling overtime rules, and franchise regulation — outcomes that directly affect Burger King and RBI economics. Trade associations coordinate messaging across brands with aligned shareholders.",
+    "flags": ["sector_lobbying", "joint_employer_politics"],
+    "sources": ["https://www.opensecrets.org"]
+  },
+  "executives": {
+    "summary": "RBI executive compensation and royalty treatment sit above franchisees and crew economics — executive pay ratios versus median line-worker pay are characteristic of franchised QSR.",
+    "flags": ["executive_franchise_gap"],
+    "sources": ["https://www.sec.gov/edgar/browse/?company=restaurant+brands"]
+  },
+  "connections": {
+    "summary": "Restaurant Brands International ties Burger King to Tim Hortons, Popeyes, and Firehouse Subs under shared financing, supply programs, and institutional investors. Major asset managers hold parallel stakes across McDonald's, Yum!, Wendy’s, and RBI — aligning incentives on labor rulemaking and menu economics. Burger King franchisees share soft-drink and distribution relationships with global bottlers tied to wider beverage conglomerates.",
+    "flags": ["shared_investors_with_peers", "multi_brand_parent", "bottler_supply_overlap"],
+    "sources": ["https://www.sec.gov", "https://www.opensecrets.org/industry/food"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims. They are documented in credible sources but have not been adjudicated.",
+    "summary": "Labor advocates have alleged that franchise disclosure documents obscure true labor compliance risk for buyers entering Burger King systems. Press and court filings in corrections-labor disputes allege states and operators benefited from wages that would be unlawful outside carceral settings. Some former workers have alleged retaliation for wage complaints within franchise organizations; verify in dockets.",
+    "flags": ["franchise_disclosure_alleged", "retaliation_alleged"],
+    "sources": ["https://www.documentcloud.org", "https://www.reuters.com"]
+  },
+  "health_record": {
+    "severity": "high",
+    "summary": "Frequent consumption of ultra-processed fast-food menus is associated in epidemiologic literature with higher obesity, cardiovascular risk, and sodium intake; causal attribution to any single brand is not implied. Deep-fry oil degradation and food-handling variance across franchised sites produce occasional health-inspection violations documented in local open data.",
+    "flags": ["ultraprocessed_menu", "local_inspection_variance"],
+    "sources": ["https://www.fda.gov/food", "https://pubmed.ncbi.nlm.nih.gov"],
+    "studies": [{ "title": "Ultra-processed foods and health outcomes (review landscape)", "url": "https://pubmed.ncbi.nlm.nih.gov" }]
+  },
+  "alternatives": {
+    "cheaper": ["Regional burger joints with higher wages and shorter menus — often similar ticket if skipping combo upsells", "Grocery store hot bars and rotisserie chicken — meal cost frequently below branded QSR combos", "Meal-prep at home with frozen patties from unionized plants when available in your market"],
+    "healthier": ["Independent restaurants sourcing local beef with known handling standards", "Mediterranean / salad-forward fast casual with vegetable-forward plates", "Homemade bean burgers and grain bowls — low cost per serving"],
+    "diy": ["Cast-iron smash burgers at home with bulk-ground chuck", "Bread makers and air fryers to replicate nuggets without daily drive-through spend", "Batch-cooked burritos to replace breakfast sandwiches"]
+  },
+  "timeline": [
+    { "year": 1954, "event": "Burger King brand founded (Insta-Burger King) in Florida", "severity": "neutral", "source_url": "" },
+    { "year": 2014, "event": "Tim Hortons merger creates predecessor to Restaurant Brands International", "severity": "neutral", "source_url": "" },
+    { "year": 2018, "event": "DOJ fast-food no-poach investigations reshape franchise agreements sector-wide", "severity": "high", "source_url": "https://www.justice.gov/atr" },
+    { "year": 2023, "event": "Class action litigation publicized re: incarcerated workers and QSR staffing compensation in Alabama program", "severity": "critical", "source_url": "" },
+    { "year": 2024, "event": "Wisconsin regulators announce large franchise child-labor sweep affecting 100+ locations (verify docketed counts)", "severity": "critical", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "National QSR chains suppress independent diner wages within trade areas by anchoring a low reservation wage for food-service labor.",
+    "price_illusion": "Promotional combo pricing masks add-ons; franchise fees and supply rebates can leave local operators financially stressed while the brand extracts royalties.",
+    "tax_math": "Franchise-driven property improvement incentives sometimes transfer public dollars to pad sites while jobs remain low-wage.",
+    "wealth_velocity": "Royalties and supply margins flow to RBI and institutional holders; local franchise profit is thin for many operators while crew wages stay compressed."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      { "group": "Restaurant Brands International shareholders", "how": "Royalty stream from U.S. franchise network and global brand portfolio" },
+      { "group": "High-volume franchisees in affluent zip codes", "how": "Store-level cash flow where labor compliance costs are deferred or minimized" }
+    ],
+    "who_paid": [
+      { "group": "Crew and shift leads", "how": "Low base wages, volatile hours, and legal risk when operators cut corners" },
+      { "group": "Incarcerated workers in disputed programs", "how": "Below-market compensation claims in active or historical litigation" },
+      { "group": "Host municipalities", "how": "Externalized health and traffic costs near highway interchanges" }
+    ],
+    "the_gap": "The logo sells a flame-broiled bargain; the balance sheet often leaves the smallest stakeholders holding the grease trap."
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "brand_name": "JPMorgan Chase",
+  "brand_slug": "jpmorgan-chase",
+  "parent_company": "JPMorgan Chase & Co.",
+  "ultimate_parent": "JPMorgan Chase & Co.",
+  "subsidiaries": ["Chase Bank", "J.P. Morgan", "One Equity Partners"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "$37 BILLION IN FINES SINCE 2000 AND STILL THE LARGEST BANK IN AMERICA",
+  "executive_summary": "JPMorgan Chase is the largest U.S. bank by assets with a global trading, advisory, retail, and payments footprint. Since 2000, regulatory and criminal resolutions have aggregated to tens of billions of dollars across mortgage enforcement, foreign-exchange manipulation, precious-metals spoofing, Swiss tax-evasion facilitation, Epstein-related civil settlements, and recurring anti-money-laundering scrutiny. Criminal guilty pleas in forex and metals desks represent organizational felony history — not only civil settlements.",
+  "verdict_tags": ["criminal_charges", "settlements", "accounting_fraud", "sanctions_violations", "political_influence", "labor_violations"],
+  "tax": {
+    "summary": "Large-bank effective rates reflect trading losses, credit provisions, and international booking locations; verify 10-K rate reconciliation annually. Historical Swiss private-banking chapter involved U.S. tax evasion facilitation enforcement.",
+    "flags": ["historical_tax_evasion_facilitation", "multinational_booking"],
+    "sources": ["https://www.sec.gov/edgar/browse/?company=jpmorgan+chase"]
+  },
+  "legal": {
+    "summary": "DOJ secured guilty pleas from JPMorgan entities in connection with criminal antitrust and commodities conduct in FX and precious-metals markets — traders were prosecuted and the firm paid criminal fines and entered resolutions. The bank reached large civil settlements tied to Jeffrey Epstein client relationships after his death, resolving claims the firm ignored red flags for years. Mortgage-backed securities and ‘London Whale’ episodes produced multi-billion-dollar resolutions earlier in the decade.",
+    "flags": ["fx_guilty_plea", "precious_metals_spoofing", "epstein_related_settlements", "london_whale", "mbs_legacy"],
+    "sources": ["https://www.justice.gov", "https://violationtracker.goodjobsfirst.org"]
+  },
+  "labor": {
+    "summary": "Branch and operations workforces are partially non-union; tech and operations center roles have seen outsourcing and contractor mixes. Whistleblower retaliation claims periodically surface in banking enforcement narratives.",
+    "flags": ["outsourcing_pressure"],
+    "sources": ["https://www.osha.gov", "https://www.nlrb.gov"]
+  },
+  "environmental": {
+    "summary": "As a top fossil-finance bank (per NGO league tables), JPMorgan faces climate protest and shareholder pressure on exploration and midstream lending — verify against annual climate reports and transition plans.",
+    "flags": ["fossil_finance_exposure"],
+    "sources": ["https://www.jpmorganchase.com"]
+  },
+  "political": {
+    "summary": "Bipartisan revolving door: former regulators join the bank; bank alumni join Treasury and Fed advisory structures. PAC and soft-money ecosystem aligns with other money-center peers on regulatory capital and merger policy.",
+    "flags": ["revolving_door", "heavy_lobbying"],
+    "sources": ["https://www.opensecrets.org/orgs/jpmorgan+chase"]
+  },
+  "executives": {
+    "summary": "Jamie Dimon’s tenure spans the post-crisis settlement era and multiple criminal resolutions — compensation has remained among the sector’s highest while branch workers earn low five figures in many markets.",
+    "flags": ["long_tenure_high_pay"],
+    "sources": ["https://www.sec.gov/edgar/browse/?company=jpmorgan+chase"]
+  },
+  "connections": {
+    "summary": "JPMorgan sits at the node of Fed primary-dealer status, clearing, custody, and corporate advisory — the same asset managers (BlackRock, Vanguard, State Street) dominate top-holder lists for all money-center banks. Board networks overlap with industrial and tech firms the bank also finances, creating evergreen conflict-of-interest scrutiny in fairness opinions and lending.",
+    "flags": ["systemic_node", "shared_institutional_owners", "issuer_lender_overlap"],
+    "sources": ["https://www.newyorkfed.org", "https://www.sec.gov"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims. They are documented in credible sources but have not been adjudicated.",
+    "summary": "Journalism and plaintiff filings have alleged additional Epstein-era compliance lapses beyond settled claims. Some traders and officials alleged pressure on compliance to prioritize revenue; verify in specific dockets.",
+    "flags": ["aml_watchlist_alleged", "internal_pressure_alleged"],
+    "sources": ["https://www.nytimes.com", "https://www.wsj.com"]
+  },
+  "health_record": {
+    "severity": "moderate",
+    "summary": "No pharmaceutical product line — population health relevance is indirect: medical debt, credit-score impairment from collections, and branch closures in banking deserts interact with chronic stress and care access documented in public-health literature on financial toxicity.",
+    "flags": ["medical_debt_collections_context", "branch_deserts"],
+    "sources": ["https://www.cfpb.gov"]
+  },
+  "alternatives": {
+    "cheaper": ["Credit unions and member-owned banks — often lower fee stacks and better small-loan APR caps", "Online challenger banks with NCUA/FDIC insurance and transparent fee tables", "CDFIs for community-tied lending"],
+    "healthier": ["Postal banking advocacy and public options reduce payday spillover harms", "Employer-sponsored EWA programs with strong disclosures versus overdraft cycles"],
+    "diy": ["Switch to cash-flow-only budgeting tools; keep two small accounts to avoid systemic single-point-of-failure", "Participate in mutual aid circles for short bridges versus high-fee overdrafts"]
+  },
+  "timeline": [
+    { "year": 2008, "event": "Bear Stearns / crisis-era integration path; later mortgage enforcement wave", "severity": "critical", "source_url": "https://www.federalreserve.gov" },
+    { "year": 2012, "event": "London Whale derivatives loss shakes risk-management credibility", "severity": "high", "source_url": "https://www.sec.gov" },
+    { "year": 2015, "event": "FX criminal antitrust resolution cycle implicates major banks including JPMorgan", "severity": "critical", "source_url": "https://www.justice.gov" },
+    { "year": 2020, "event": "Precious-metals spoofing guilty plea to criminal antitrust charges — traders sentenced", "severity": "critical", "source_url": "https://www.justice.gov" },
+    { "year": 2023, "event": "Epstein-related bilateral civil settlements publicized at headline amounts", "severity": "critical", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "Branch consolidations shift low-income neighborhoods to digital channels without equivalent ATM density.",
+    "price_illusion": "‘Free’ checking cross-subsidized by high NSF/OD fees historically — CFPB scrutiny.",
+    "tax_math": "Too-big-to-fail subsidy debates — funding cost advantages versus regional banks.",
+    "wealth_velocity": "Trading winnings and IB fees accrue to global holders; local deposits re-lend into securities portfolios."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      { "group": "Top shareholders and senior management", "how": "Margins restored post-crisis while fines amortize across years" },
+      { "group": "Corporate clients", "how": "Balance-sheet depth for M&A and bond issuance" }
+    ],
+    "who_paid": [
+      { "group": "Retail customers in fee-heavy product mixes", "how": "Overdraft and card fee stacks before regulatory caps" },
+      { "group": "Municipalities and pension funds", "how": "When underlying misconduct distorted market integrity in FX and metals" }
+    ],
+    "the_gap": "Guilty pleas on trading desks did not unseat the balance sheet — scale became its own regulator."
+  }
+}

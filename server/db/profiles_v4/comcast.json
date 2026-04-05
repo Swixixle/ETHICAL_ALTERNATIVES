@@ -1,0 +1,87 @@
+{
+  "brand_name": "Comcast",
+  "brand_slug": "comcast",
+  "parent_company": "Comcast Corporation",
+  "ultimate_parent": "Comcast Corporation",
+  "subsidiaries": ["NBCUniversal", "Sky", "Xfinity"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "COMCAST RANKED WORST COMPANY IN AMERICA WHILE CHARGING MONOPOLY PRICES TO 32 MILLION CAPTIVE CUSTOMERS",
+  "executive_summary": "Comcast is the largest residential broadband provider in the United States and controls NBCUniversal — coupling pipe and programming in ways regulators have long scrutinized for foreclosure and market power. Customer satisfaction surveys have repeatedly ranked Comcast among the least-loved large corporations while millions of households face limited wireline alternatives. Dual-class stock concentrates voting power with the Roberts family while economic ownership is far thinner — insulating management from shareholder challengers.",
+  "verdict_tags": ["antitrust", "political_influence", "lobbying", "consumer_harm", "privacy_state", "labor_violations"],
+  "tax": {
+    "summary": "Comcast uses standard multinational IP, debt, and acquisition structures; verify year-by-year effective tax rate in SEC 10-K relative to statutory 21%. State and local incentives for cable plant and studio facilities have been documented in municipal reporting.",
+    "flags": ["effective_rate_scrutiny", "incentives"],
+    "sources": ["https://www.sec.gov/edgar/browse/?company=comcast"]
+  },
+  "legal": {
+    "summary": "Antitrust and consumer-protection cases have targeted broadband equipment rental practices, data-cap designs, interconnection disputes, and vertical issues with NBCUniversal. Municipal franchise negotiations routinely produce litigation over public-right-of-way fees and build-out obligations.",
+    "flags": ["consumer_class_actions", "vertical_integration_risk", "franchise_disputes"],
+    "sources": ["https://www.ftc.gov", "https://www.fcc.gov"]
+  },
+  "labor": {
+    "summary": "Field technician and call-center workforces face performance metrics, contracting layers, and geographic restructuring typical of telecom carriers — union density varies heavily by region.",
+    "flags": ["contractor_layers", "metrics_pressure"],
+    "sources": ["https://www.nlrb.gov"]
+  },
+  "environmental": {
+    "summary": "Data centers, cable headends, and fleet fuel contribute to emissions inventories disclosed in sustainability reporting; verify Scope 3 methodology against peer telcos.",
+    "flags": ["energy_intensive_network"],
+    "sources": ["https://corporate.comcast.com"]
+  },
+  "political": {
+    "summary": "Comcast is consistently among the top corporate spenders on federal lobbying — telecommunications law, merger review, copyright, and media ownership caps. The Roberts family voting control through Class B shares affects governance responsiveness to ordinary shareholders.",
+    "flags": ["dual_class_control", "heavy_federal_lobbying"],
+    "sources": ["https://www.opensecrets.org/orgs/comcast-corp", "https://www.sec.gov/edgar/browse/?company=comcast"]
+  },
+  "executives": {
+    "summary": "Brian L. Roberts leads both operations and, via dual-class structure, voting outcomes disproportionate to economic stake — a governance arrangement that has drawn investor-governance critiques across media.",
+    "flags": ["dual_class_governance", "insider_control"],
+    "sources": ["https://www.sec.gov/edgar/browse/?company=comcast"]
+  },
+  "connections": {
+    "summary": "Comcast/NBCUniversal overlaps vertically with programmers, regional sports networks, theme parks, and film studios — joint ownership ties content, distribution, ad tech, and peering. Institutional investors cross-hold AT&T (historic DirecTV), Charter, and Disney, aligning incentives on spectrum and copyright. Trade associations align cable operators on net neutrality and privacy federal preemption.",
+    "flags": ["vertical_integration", "cross_holdings_programmers", "trade_assoc_coordination"],
+    "sources": ["https://www.fcc.gov", "https://www.sec.gov"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims. They are documented in credible sources but have not been adjudicated.",
+    "summary": "Consumer advocates have alleged strategic data-cap rollouts function to protect video revenue from streaming competitors — behavior characterized as exclusionary in press and some regulatory filings, though outcomes vary by proceeding. Some municipalities have alleged franchise violation patterns; verify per docket.",
+    "flags": ["data_cap_motive_alleged", "local_franchise_alleged"],
+    "sources": ["https://www.fcc.gov/ecfs"]
+  },
+  "health_record": {
+    "severity": "moderate",
+    "summary": "Sedentary screen-heavy bundles paired with junk-food advertising through NBCUniversal properties intersect public-health debates about marketing to children — not a clinical product-toxicity record, but documented policy friction (FTC/FCC history on food ads to kids is extensive). Mental-health correlates of aggressive billing and service downtime are discussed in consumer reporting but are not medical claims here.",
+    "flags": ["kids_advertising_friction", "service_reliability_stress"],
+    "sources": ["https://www.ftc.gov"]
+  },
+  "alternatives": {
+    "cheaper": ["T-Mobile and other carriers’ fixed-wireless home internet where spectrum allows", "MVNOs and resellers on fiber where the underlying network is open", "Municipal or public-utility fiber — often lower long-run cost per Mbps after build-out"],
+    "healthier": ["Advocate for municipal broadband or open-access middle-mile to break last-mile oligopoly — civic health as anti-monopoly health", "Libraries and schools as low-cost connectivity access points"],
+    "diy": ["Line-of-sight wireless between neighbors where legal; rooftop mesh community nets in some cities", "Lobby elected officials for franchise agreement transparency and build-out penalties", "Antenna + local broadcaster apps to reduce bloated cable bundles"]
+  },
+  "timeline": [
+    { "year": 2011, "event": "Comcast completes NBCUniversal acquisition — major vertical integration milestone", "severity": "high", "source_url": "https://www.justice.gov/atr" },
+    { "year": 2015, "event": "Charter-TWC merger reshapes competitive field Comcast operates within", "severity": "moderate", "source_url": "https://www.fcc.gov" },
+    { "year": 2017, "event": "Net neutrality repeal cycle — Comcast among major ISPs on policy front lines", "severity": "high", "source_url": "https://www.fcc.gov" },
+    { "year": 2020, "event": "COVID-era broadband affordability programs — visibility into bill shock and digital divide", "severity": "moderate", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "High last-mile prices divert household budgets from local retail and services in underserved neighborhoods.",
+    "price_illusion": "Promotional rates expire; equipment fees and caps rebuild ARPU.",
+    "tax_math": "Franchise fees and ROW access are negotiated with cities — sometimes pitting municipal cash needs against consumer rates.",
+    "wealth_velocity": "Programming and broadband rents flow to Philadelphia HQ and concentrated holders — neighborhoods without fiber compete for satellite and LTE."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      { "group": "Roberts family and dual-class holders", "how": "Governance insulation plus media/cable cash flows" },
+      { "group": "Institutional asset managers", "how": "Dividends and buybacks from quasi-utility broadband economics" }
+    ],
+    "who_paid": [
+      { "group": "Captive wireline households", "how": "Limited competitive choice in many census tracts" },
+      { "group": "Small video programmers", "how": "Carriage disputes and scaled distribution gatekeeping" }
+    ],
+    "the_gap": "One logo sits on the remote — two classes of shares decide who changes the channel."
+  }
+}
