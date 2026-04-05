@@ -114,5 +114,15 @@
   "galaxy": "samsung",
   "tiktok": "tiktok-bytedance",
   "tiktok-bytedance": "tiktok-bytedance",
-  "bytedance": "tiktok-bytedance"
+  "bytedance": "tiktok-bytedance",
+  "bp": "bp",
+  "british-petroleum": "bp",
+  "eli-lilly": "eli-lilly",
+  "lilly": "eli-lilly",
+  "bank-of-america": "bank-of-america",
+  "bofa": "bank-of-america",
+  "bac": "bank-of-america",
+  "ford": "ford",
+  "ford-motor": "ford",
+  "verizon": "verizon"
 }

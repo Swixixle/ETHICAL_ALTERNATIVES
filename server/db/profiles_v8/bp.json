@@ -1,0 +1,96 @@
+{
+  "brand_name": "BP",
+  "brand_slug": "bp",
+  "parent_company": "BP PLC",
+  "ultimate_parent": "BP PLC",
+  "subsidiaries": ["BP America", "BP Castrol", "BP Solar (sold)", "TravelCenters of America (partial)"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "BP KILLED 11 WORKERS, SPILLED 4.9 MILLION BARRELS OF OIL, AND PAID $65 BILLION — THE MOST EXPENSIVE CORPORATE ACCIDENT IN HISTORY",
+  "executive_summary": "BP is the fourth-largest oil company in the world, with annual revenues exceeding $200 billion. On April 20, 2010, the Deepwater Horizon drilling platform — leased by BP and operated in the Gulf of Mexico — exploded, killing 11 workers and triggering the largest marine oil spill in U.S. history. An estimated 4.9 million barrels of oil flowed into the Gulf over 87 days. BP's total financial liability exceeded $65 billion — the largest environmental settlement in history. Federal investigations found a pattern of cost-cutting decisions that directly caused the blowout. BP also has a documented history of prior catastrophic safety failures: the 2005 Texas City refinery explosion killed 15 workers. BP's 'Beyond Petroleum' rebranding — launched in 2000 — was widely criticized as greenwashing that preceded the worst oil spill in American history.",
+  "verdict_tags": ["deepwater_horizon_11_deaths", "4_9m_barrels_spilled", "65b_total_liability", "criminal_guilty_plea_14_felonies", "cost_cutting_safety_failures", "greenwashing", "texas_city_explosion"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "tax": {
+    "summary": "BP uses offshore structures and transfer pricing to minimize global tax obligations. The company's exploration and production operations in multiple jurisdictions are structured to maximize deductible costs. Settlement payments — including portions of the $65 billion Deepwater Horizon liability — may be partially tax-deductible as business expenses. BP has received significant government subsidies for offshore drilling in the United States through depletion allowances and favorable lease terms.",
+    "flags": ["settlement_partial_deductibility", "offshore_structures", "drilling_subsidies"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "legal": {
+    "summary": "Deepwater Horizon (2010-2015): 11 felony manslaughter counts resolved through $4.5 billion in criminal penalties — the largest criminal fine in U.S. history at the time. Civil settlement: $20.8 billion — the largest DOJ settlement with a single entity in history. Total financial liability including cleanup, compensation, and penalties exceeded $65 billion. BP pleaded guilty to 14 felony counts related to the deaths of 11 workers and subsequent misconduct. Texas City (2005): BP paid $50 million in criminal fines and $21 million in OSHA fines for the refinery explosion that killed 15 workers — the largest OSHA fine in history at the time. Prudhoe Bay (2006): BP paid $20 million for a pipeline rupture that spilled 267,000 gallons in Alaska, the largest North Slope spill in history.",
+    "flags": ["deepwater_14_felony_guilty_plea", "20_8b_largest_doj_single_entity", "65b_total_liability", "texas_city_15_deaths", "prudhoe_bay_alaska_spill"],
+    "sources": ["https://www.justice.gov/archives/opa/pr/us-and-five-gulf-states-reach-historic-settlement-bp-resolve-civil-lawsuit-over-deepwater"]
+  },
+  "labor": {
+    "summary": "BP has a documented history of worker safety failures. The 2005 Texas City explosion — caused by cost-cutting on safety systems — killed 15 workers and injured 180. Internal BP documents revealed a pattern of deferred maintenance and safety investment at Texas City. The Deepwater Horizon explosion killed 11 platform workers. Federal investigations found BP pressured contractors to proceed despite documented safety concerns on the day of the blowout. BP's pattern of cost-cutting on safety — documented across Texas City, Deepwater Horizon, and Prudhoe Bay — reflects systematic prioritization of financial targets over worker safety.",
+    "flags": ["systematic_cost_cutting_worker_safety", "texas_city_15_deaths", "deepwater_11_deaths", "safety_concern_pressure_to_proceed"],
+    "sources": ["https://www.osha.gov", "https://www.csb.gov"]
+  },
+  "environmental": {
+    "summary": "The Deepwater Horizon spill released 4.9 million barrels of oil into the Gulf of Mexico over 87 days — contaminating 1,000+ miles of Gulf coastline, killing an estimated 1 million seabirds, 5,000 marine mammals, and causing documented damage to Gulf fisheries that continues. BP's Prudhoe Bay pipeline rupture (2006) caused the largest oil spill in North Slope history. BP has received EPA enforcement citations at multiple U.S. facilities. The company's 'Beyond Petroleum' rebranding — which presented BP as a clean energy pioneer — was launched in 2000, a decade before the worst oil spill in American history.",
+    "flags": ["4_9m_barrels_gulf_spill", "1000_miles_coastline_contaminated", "1m_seabirds_5000_mammals_killed", "beyond_petroleum_greenwashing"],
+    "sources": ["https://www.epa.gov", "https://www.noaa.gov/explainers/deepwater-horizon-oil-spill-settlements-where-money-went"]
+  },
+  "political": {
+    "summary": "BP spent $13.5 million on federal lobbying in 2010 — the year of Deepwater Horizon. The company has been a consistent opponent of offshore drilling safety regulations, arguing that industry self-regulation was sufficient. BP funded climate-friendly political messaging through its 'Beyond Petroleum' campaign while lobbying against climate regulations through industry trade associations. The revolving door between BP's government affairs team and federal regulatory agencies overseeing offshore drilling has been documented.",
+    "flags": ["offshore_safety_regulation_opposition", "beyond_petroleum_vs_lobbying_contradiction", "revolving_door_offshore_regulators"],
+    "sources": ["https://www.opensecrets.org"]
+  },
+  "executives": {
+    "summary": "CEO Tony Hayward, who led BP during the Deepwater Horizon disaster, became infamous for statements including 'I'd like my life back' — said while cleanup workers were still dying from exposure. Hayward stepped down in 2010 with a $1.6 million pension and 600,000 shares of BP stock. Current CEO Murray Auchincloss received £8.7 million in total compensation in 2023. No BP executive was criminally convicted for the deaths of 11 workers — two BP employees faced manslaughter charges that were eventually dismissed.",
+    "flags": ["hayward_i_want_my_life_back", "hayward_1_6m_pension_departure", "no_executive_criminal_conviction_11_deaths"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "connections": {
+    "summary": "BP shares major institutional investors with Shell, TotalEnergies, and ExxonMobil, creating aligned incentives against safety regulation and climate action. The Deepwater Horizon platform was owned by Transocean and the well was cemented by Halliburton — distributing legal and financial responsibility across multiple companies. This distributed supply chain of offshore drilling creates accountability gaps that BP exploited in initial liability defenses. BP's connections to the UK government — through its position as a major employer and pension fund holding — created political pressure for lenient treatment that played out in the settlement timeline.",
+    "flags": ["cross_oil_company_investor_alignment", "transocean_halliburton_distributed_liability", "uk_government_pension_fund_pressure"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The Chemical Safety Board investigation found that BP's Texas City disaster was predictable and resulted from a pattern of cost-cutting decisions by senior management. Former BP employees have alleged that the pressure to reduce costs — including safety costs — was explicit and came from senior UK leadership. Congressional investigators documented that BP's Deepwater Horizon blowout was caused in part by a decision to use fewer centralizers (equipment that centers the wellbore casing) than recommended by its own contractors — a decision that saved approximately $10,000. BP's internal investigation found misconduct that it reported partially to the DOJ while retaining documents, which generated subsequent legal action.",
+    "flags": ["10000_decision_caused_billions_in_damage", "centralized_cost_cutting_uk_leadership_alleged", "selective_disclosure_investigation_alleged"],
+    "sources": ["https://www.csb.gov"]
+  },
+  "health_record": {
+    "summary": "The Deepwater Horizon disaster caused direct health impacts to cleanup workers — tens of thousands of workers were exposed to crude oil and Corexit dispersant with documented respiratory, neurological, and dermatological health consequences. Studies have found elevated cancer rates, chronic respiratory conditions, and mental health disorders among Gulf cleanup workers. Gulf fishing communities experienced economic devastation and associated health impacts. Marine ecosystem disruption affected seafood safety for years. The Texas City explosion caused immediate deaths and long-term health impacts for survivors and nearby community members exposed to toxic chemicals.",
+    "flags": ["cleanup_worker_corexit_exposure", "elevated_cancer_rates_cleanup_workers", "gulf_seafood_safety_impacts", "texas_city_toxic_chemical_exposure"],
+    "sources": ["https://www.ncbi.nlm.nih.gov"]
+  },
+  "alternatives": {
+    "cheaper": ["Public transit eliminates gasoline purchase from all sources including BP", "Electric vehicles — removes gasoline dependency entirely; charging at home is significantly cheaper than gasoline", "E-bikes for urban distances — zero fuel cost"],
+    "healthier": ["Community solar and wind power eliminates home energy dependence on fossil fuels", "Heat pumps replace gas heating — more efficient and decouples home from natural gas supply chains"],
+    "diy": ["Avoid BP stations specifically — Shell, Chevron, and ExxonMobil are all problematic but BP's worker safety record makes it a distinct choice", "Advocate for stronger offshore drilling safety regulation — the regulations that would have required additional safety systems on Deepwater Horizon", "Support Gulf Coast fishing community organizations still affected by the 2010 spill"]
+  },
+  "timeline": [
+    {"year": 1908, "event": "Anglo-Persian Oil Company founded; predecessor to BP; first major Middle East oil discovery", "severity": "neutral", "source_url": ""},
+    {"year": 2000, "event": "'Beyond Petroleum' rebranding launched; BP presents itself as transitioning to clean energy", "severity": "moderate", "source_url": ""},
+    {"year": 2005, "event": "Texas City refinery explosion: 15 killed, 180 injured; $50M criminal fine, $21M OSHA fine (record)", "severity": "critical", "source_url": "https://www.csb.gov"},
+    {"year": 2006, "event": "Prudhoe Bay pipeline rupture: 267,000 gallons spilled; largest North Slope spill in history", "severity": "high", "source_url": ""},
+    {"year": 2010, "event": "April 20: Deepwater Horizon explosion; 11 workers killed; largest marine oil spill in U.S. history begins", "severity": "critical", "source_url": ""},
+    {"year": 2010, "event": "87 days: 4.9 million barrels spill; CEO Hayward says 'I'd like my life back'; steps down with $1.6M pension", "severity": "critical", "source_url": ""},
+    {"year": 2012, "event": "$4.5B criminal settlement; 14 felony guilty pleas; largest criminal fine in U.S. history at time", "severity": "critical", "source_url": "https://www.justice.gov"},
+    {"year": 2015, "event": "$20.8B civil settlement — largest DOJ settlement with single entity in U.S. history", "severity": "critical", "source_url": "https://www.justice.gov/archives/opa/pr/us-and-five-gulf-states-reach-historic-settlement-bp-resolve-civil-lawsuit-over-deepwater"},
+    {"year": 2018, "event": "Total financial liability from Deepwater Horizon exceeds $65B", "severity": "critical", "source_url": ""},
+    {"year": 2023, "event": "BP retreats from renewable energy targets; announces plans to increase oil and gas output", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Gulf Coast fishing communities — particularly in Louisiana, Mississippi, Alabama, and Florida — lost years of fishing income from contaminated waters. Vietnamese-American fishing communities in Louisiana were disproportionately affected and faced language barriers in accessing compensation. Tourism-dependent communities along 1,000 miles of coastline experienced economic devastation. Restoration of Gulf ecosystems continues more than a decade after the spill.",
+    "price_illusion": "BP's gasoline prices do not include the cost of the $65 billion Deepwater Horizon liability, the Gulf ecosystem damage, the deaths of 11 workers, or the ongoing health impacts on cleanup workers. The 'Beyond Petroleum' branding that preceded the disaster was a communications investment, not a business strategy.",
+    "tax_math": "BP's settlement payments may be partially tax-deductible as ordinary business expenses — effectively subsidizing the penalty through reduced U.S. tax obligations. The $65 billion total liability, while historic, represents a fraction of the economic damage to Gulf communities, estimated by researchers at approximately $144 billion.",
+    "wealth_velocity": "BP's profits — generated from oil extraction globally — flow to institutional shareholders in the UK, US, and internationally. The Gulf Coast communities that bore the environmental and economic damage of the Deepwater Horizon disaster receive settlement distributions but the ongoing economic damage exceeds any compensated amount."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "BP shareholders prior to spill", "how": "Decades of offshore drilling profits generated without adequate safety investment"},
+      {"group": "Tony Hayward", "how": "$1.6M pension and 600,000 shares at departure; said 'I'd like my life back' while cleanup workers were dying"},
+      {"group": "Contractors (Transocean, Halliburton)", "how": "Distributed liability reduced individual accountability for contributing factors"}
+    ],
+    "who_paid": [
+      {"group": "11 killed workers and their families", "how": "Deaths caused by documented cost-cutting decisions; no executive criminally convicted"},
+      {"group": "Cleanup workers", "how": "Exposure to crude oil and Corexit; documented cancer and chronic health consequences"},
+      {"group": "Gulf Coast communities", "how": "Economic devastation of fishing and tourism industries; ongoing ecosystem damage"},
+      {"group": "Gulf ecosystem", "how": "1 million seabirds, 5,000 marine mammals, 4.9 million barrels of crude oil contamination"}
+    ],
+    "the_gap": "BP saved $10,000 by using fewer centralizers than its own contractors recommended. The blowout cost $65 billion and 11 lives. The CEO got a $1.6 million pension. No executive went to prison. The Gulf is still recovering."
+  }
+}

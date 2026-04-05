@@ -1,0 +1,95 @@
+{
+  "brand_name": "Verizon",
+  "brand_slug": "verizon",
+  "parent_company": "Verizon Communications Inc.",
+  "ultimate_parent": "Verizon Communications Inc.",
+  "subsidiaries": ["Verizon Wireless", "Fios", "Yahoo (Oath/Verizon Media)", "Visible", "TracFone"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "VERIZON SOLD REAL-TIME LOCATION DATA TO BOUNTY HUNTERS AND COOPERATED WITH WARRANTLESS NSA MASS SURVEILLANCE",
+  "executive_summary": "Verizon is the largest wireless carrier in the United States with approximately 143 million wireless subscribers and annual revenues exceeding $134 billion. The company has a documented history of selling customer location data to third parties without consent, cooperating with NSA mass surveillance programs, throttling network speeds for emergency responders, and systematic consumer deception through hidden fees and misleading pricing. The FCC has proposed $57 million in fines for Verizon's location data sales to bounty hunters. Edward Snowden's leaked NSA documents revealed Verizon as a primary partner in the PRISM mass surveillance program, providing the government with bulk metadata on millions of Americans without individual warrants.",
+  "verdict_tags": ["location_data_sale_bounty_hunters", "nsa_prism_surveillance", "emergency_responder_throttling", "deceptive_pricing", "fcc_fines", "data_privacy_violations"],
+  "concern_flags": {"labor": false, "environmental": false, "political": true, "tax": true, "health": false, "legal": true},
+  "tax": {
+    "summary": "Verizon has used complex depreciation schedules and offshore structures to minimize U.S. tax obligations. The company received approximately $3 billion in tax benefits from the 2017 Tax Cuts and Jobs Act. Verizon's international operations route profits through Ireland and Luxembourg. The company has been cited for aggressive transfer pricing between its domestic and international subsidiaries.",
+    "flags": ["tcja_3b_windfall", "ireland_luxembourg_structures", "aggressive_depreciation_schedules"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "legal": {
+    "summary": "Location data (2020): FCC proposed $57.3 million in fines for selling customers' real-time location data to third-party aggregators who resold it to bounty hunters, bail bond companies, and other parties without customer consent — despite Verizon's promises to stop. The FCC found Verizon violated CPNI (Customer Proprietary Network Information) rules. NSA cooperation (2013): Snowden documents revealed Verizon provided bulk telephone metadata to NSA under a classified FISA court order — affecting millions of customers who had no knowledge of the program. Multiple state attorney general investigations for deceptive advertising of network speeds. FTC and state AG investigations for hidden fees and misleading promotional pricing.",
+    "flags": ["57m_fcc_location_data_fine_proposed", "nsa_bulk_metadata_collection_documented", "deceptive_advertising_investigations", "hidden_fee_pattern"],
+    "sources": ["https://www.fcc.gov"]
+  },
+  "labor": {
+    "summary": "Verizon employs approximately 105,000 people. CWA (Communications Workers of America) represents approximately 25,000 Verizon employees. The 2016 CWA strike — 39,000 workers for 45 days — was one of the largest U.S. strikes in years, citing forced overtime, offshoring of call center jobs, and benefit reductions. The company has systematically moved call center jobs offshore and to non-union contractors. Verizon's workforce reductions have been conducted while executive compensation has grown.",
+    "flags": ["2016_cwa_39000_worker_strike", "offshore_call_center_movement", "workforce_reduction_vs_executive_pay"],
+    "sources": ["https://www.cwa-union.org"]
+  },
+  "environmental": {
+    "summary": "Verizon's network infrastructure — millions of cell towers, data centers, and cable installations — is a significant energy consumer. The company has made renewable energy commitments but its actual carbon footprint from network operations remains substantial. Verizon's data centers and cell tower infrastructure generate significant electronic waste.",
+    "flags": ["data_center_tower_energy_consumption", "e_waste_infrastructure"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Verizon spent $12.3 million on federal lobbying in 2023 — among the highest of any U.S. company. The company has been a primary opponent of net neutrality regulations, lobbied successfully for the 2017 FCC repeal of net neutrality rules, and challenged the FCC's 2024 attempt to restore them. The revolving door between Verizon, the FCC, and Congress is extensively documented. Verizon's former general counsel Randal Milch joined the Trump campaign; former FCC Chairman Ajit Pai joined Verizon-backed Searchlight Capital. Verizon's NSA cooperation — providing bulk metadata under secret FISA orders — represented a documented government-private surveillance partnership.",
+    "flags": ["net_neutrality_repeal_primary_lobbyist", "revolving_door_fcc", "ajit_pai_verizon_backed_firm", "nsa_surveillance_partner"],
+    "sources": ["https://www.opensecrets.org", "https://theintercept.com"]
+  },
+  "executives": {
+    "summary": "CEO Hans Vestberg received $20.3 million in total compensation in 2023. Verizon's executive compensation has grown through the period of its location data sales controversy and net neutrality lobbying. The company's executive leadership has maintained close relationships with FCC commissioners — a revolving door that critics argue enabled the net neutrality repeal and limited FCC enforcement against location data violations.",
+    "flags": ["executive_pay_through_location_data_controversy", "fcc_revolving_door_executive_relationships"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "connections": {
+    "summary": "Verizon shares major institutional investors with AT&T, T-Mobile, and Comcast — creating aligned incentives across the telecom industry against net neutrality and consumer privacy regulations. Verizon's NSA cooperation connects it to the U.S. intelligence apparatus in ways that are structurally similar to AT&T's documented surveillance relationship. Verizon's location data sales connected it to a network of data brokers, bounty hunters, and bail bond companies whose operations have been documented to endanger domestic violence survivors and witness protection participants.",
+    "flags": ["telecom_shared_investor_alignment", "nsa_surveillance_parallel_att", "location_data_broker_network_danger"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Civil liberties researchers have alleged that Verizon's cooperation with NSA surveillance went beyond the FISA court order revealed in 2013 — that the company provided additional access through cooperative relationships not covered by court orders. Net neutrality advocates have alleged that Verizon's throttling of Netflix and other streaming services — which it throttled until confronted in 2018 — was a deliberate strategy to disadvantage competitors to its own streaming offerings. Former Verizon sales employees have alleged that pressure to add unauthorized services to customer accounts was a documented practice in some call centers.",
+    "flags": ["nsa_cooperation_beyond_court_order_alleged", "netflix_throttling_competitive_strategy_alleged", "unauthorized_service_addition_alleged"],
+    "sources": ["https://theintercept.com"]
+  },
+  "health_record": {
+    "summary": "Verizon's throttling of Santa Clara Fire Department communications during the 2018 Mendocino Complex wildfire — which AT&T also did — demonstrated how carrier throttling can directly impair life-safety emergency response. The location data sales to bounty hunters created documented risk for domestic violence survivors, stalking victims, and witness protection participants — individuals for whom real-time location disclosure can be life-threatening. Verizon's resistance to net neutrality has implications for telemedicine access — where throttling could slow or degrade remote healthcare services.",
+    "flags": ["emergency_responder_throttling_life_safety", "location_data_domestic_violence_risk", "net_neutrality_telemedicine_implications"],
+    "sources": ["https://www.fcc.gov"]
+  },
+  "alternatives": {
+    "cheaper": ["T-Mobile — consistently lower prices than Verizon and AT&T; comparable coverage in most markets", "Mint Mobile — MVNO on T-Mobile network; $15-30/month vs Verizon's $80+ for similar service", "Visible — Verizon MVNO at $25-45/month; uses Verizon network without supporting Verizon directly", "Consumer Cellular — lower prices, AARP-affiliated, good customer service"],
+    "healthier": ["MVNOs (Mobile Virtual Network Operators) use Verizon's infrastructure without supporting its data sales and lobbying directly", "Encrypted messaging (Signal) reduces the value of any communication data collected", "VPN services reduce ISP monitoring of browsing activity"],
+    "diy": ["Opt out of Verizon's Custom Experience program in your account settings — limits data sharing for targeted advertising", "Check your account regularly for unauthorized service additions", "File FCC complaints for throttling or data sharing concerns — the FCC database is a public record"]
+  },
+  "timeline": [
+    {"year": 2000, "event": "Verizon Communications formed from Bell Atlantic and GTE merger", "severity": "neutral", "source_url": ""},
+    {"year": 2006, "event": "USA Today reports NSA secretly collecting phone records from tens of millions of Americans via Verizon and others", "severity": "critical", "source_url": ""},
+    {"year": 2013, "event": "Snowden documents confirm Verizon FISA order — NSA collecting bulk metadata on all Verizon customers", "severity": "critical", "source_url": ""},
+    {"year": 2017, "event": "FCC repeals net neutrality; Verizon primary corporate beneficiary and lobbying force behind repeal", "severity": "critical", "source_url": ""},
+    {"year": 2018, "event": "Verizon caught throttling Santa Clara Fire Department during Mendocino Complex wildfire emergency", "severity": "critical", "source_url": ""},
+    {"year": 2018, "event": "Vice/Motherboard investigation documents Verizon location data sale to bounty hunters via third-party aggregators", "severity": "critical", "source_url": ""},
+    {"year": 2020, "event": "FCC proposes $57.3M in fines for location data violations; Verizon disputes and appeals", "severity": "high", "source_url": "https://www.fcc.gov"},
+    {"year": 2023, "event": "Verizon spends $12.3M on lobbying — among highest of any U.S. company", "severity": "moderate", "source_url": ""},
+    {"year": 2024, "event": "Major AT&T data breach affecting 110M customers; Verizon's data practices face increased scrutiny", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Verizon's net neutrality lobbying — if successful — enables tiered internet access that disproportionately affects low-income communities dependent on mobile internet as their primary connection. Communities where Verizon is the dominant carrier have limited competitive alternatives, making Verizon's pricing and data practices impossible to escape through market choice.",
+    "price_illusion": "Verizon's advertised plan prices consistently exclude 'administrative fees,' 'network access charges,' and various other fees that add $10-20/month to bills. The FCC has investigated Verizon's pricing disclosures. The total cost of a Verizon plan is consistently 20-30% higher than the advertised price.",
+    "tax_math": "Verizon received $3 billion in TCJA tax benefits. The company's location data sales — now subject to $57M in proposed FCC fines — generated revenue from selling customers' private data without consent, while the company paid no compensation to the customers whose data was sold.",
+    "wealth_velocity": "Monthly phone bills from 143 million wireless subscribers — a near-necessity in modern American life — flow to Verizon shareholders globally. In many markets, Verizon and AT&T effectively operate as a duopoly, limiting competitive pressure on prices."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Verizon shareholders", "how": "Monopoly-adjacent pricing power; data sale revenue; net neutrality repeal enables future revenue from tiered access"},
+      {"group": "NSA surveillance apparatus", "how": "Bulk metadata access to all Verizon customer communications"},
+      {"group": "Bounty hunters and bail bond companies", "how": "Real-time location data for tracking individuals — purchased through aggregators from Verizon without customer knowledge"}
+    ],
+    "who_paid": [
+      {"group": "Domestic violence survivors", "how": "Real-time location data could be accessed by abusers through aggregator network"},
+      {"group": "Santa Clara firefighters", "how": "Emergency communications throttled during active wildfire for nonpayment of plan upgrade"},
+      {"group": "143 million Verizon customers", "how": "Location data sold without consent; communications metadata collected by NSA; hidden fees"},
+      {"group": "Net neutrality advocates", "how": "Open internet protections stripped through Verizon-funded lobbying"}
+    ],
+    "the_gap": "Verizon sold your location to people who needed to find you — without telling you. During an active wildfire, it throttled the firefighters' data connection. Then it spent $12 million lobbying to stay unregulated. The $57 million fine is still proposed — not paid."
+  }
+}
