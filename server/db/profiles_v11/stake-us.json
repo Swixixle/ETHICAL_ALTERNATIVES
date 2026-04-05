@@ -1,0 +1,92 @@
+{
+  "brand_name": "Stake.us",
+  "brand_slug": "stake-us",
+  "parent_company": "Sweepstakes Limited",
+  "ultimate_parent": "Stake.com (offshore)",
+  "subsidiaries": ["Stake.us", "Stake.com (offshore real-money casino)"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "STAKE IS A REAL-MONEY OFFSHORE CASINO RUNNING A SWEEPSTAKES FRONT IN THE U.S. — ITS U.S. COINS REDEEM FOR CRYPTO",
+  "executive_summary": "Stake.us is the U.S.-facing sweepstakes casino arm of Stake.com — one of the world's largest offshore real-money gambling platforms operating outside U.S. jurisdiction. Stake.com processes billions in cryptocurrency gambling annually, is sponsored by UFC and the UFC's parent organization, and has partnerships with music artists including Drake, who has publicly wagered and lost tens of millions through the platform. Stake.us, its U.S. sweepstakes operation, is distinct from Stake.com but runs the same slot and casino games under the sweepstakes loophole — with Sweeps Coins redeemable for cryptocurrency rather than cash. By 2025, Stake.us faced six class action lawsuits alleging it preys on Americans with problem gambling and operates as an illegal online casino. Michigan's Gaming Control Board issued a cease-and-desist ordering Stake.us to stop operating in Michigan. The platform's connection to Stake.com's offshore real-money gambling operation raises concerns about the blurring of the sweepstakes legal fiction with actual offshore gambling.",
+  "verdict_tags": ["offshore_casino_sweepstakes_front", "crypto_redemption", "ufc_partnership", "drake_connection", "michigan_cease_desist", "six_lawsuits_2025", "preys_problem_gamblers_alleged"],
+  "concern_flags": {"labor": false, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
+  "tax": {
+    "summary": "Stake.com is operated by Medium Rare NV and is incorporated in Curaçao — a notorious offshore gambling jurisdiction with minimal regulatory oversight. Stake.us is operated by Sweepstakes Limited, a separate U.S.-facing entity, but the relationship between the two operations — which share branding, design, and games — is opaque. The cryptocurrency redemption model for Stake.us Sweeps Coins adds an additional layer of financial opacity. No U.S. gaming taxes are paid by either entity.",
+    "flags": ["curacao_offshore_incorporation", "cryptocurrency_redemption_financial_opacity", "no_us_gaming_taxes", "medium_rare_nv_operator"],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Michigan: Gaming Control Board issued cease-and-desist ordering Stake.us to cease operating in Michigan. 2025: Six class action lawsuits filed against Stake.us across multiple states — all alleging it operates as an illegal online casino and preys on Americans with problem gambling. The lawsuits allege Stake.us uses a deceptive and predatory business model to circumvent U.S. gambling law. Separate from Stake.us, the parent Stake.com has faced regulatory actions in multiple countries for its offshore real-money gambling operations. Google and Apple have also been named in lawsuits for hosting and processing payments for Stake.us apps.",
+    "flags": ["michigan_cease_desist", "six_lawsuits_2025", "illegal_casino_alleged", "google_apple_named_co_defendants"],
+    "sources": ["https://gamblingharm.org/stake-us-lawsuits-in-multiple-states-over-alleged-illegal-online-casino"]
+  },
+  "labor": {
+    "summary": "Stake.com is staffed globally with a focus on cryptocurrency gambling operations. Its U.S. sweepstakes operation (Stake.us) is run with minimal disclosed staffing. The shared branding and game library between Stake.com and Stake.us suggests operational overlap that may violate the legal separation required for the sweepstakes model to be valid.",
+    "flags": ["operational_overlap_offshore_us_operation", "minimal_us_staffing_disclosure"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Stake.com's cryptocurrency gambling operations — which process enormous transaction volumes in Bitcoin and Ethereum — contribute to cryptocurrency energy consumption. The environmental footprint of proof-of-work cryptocurrency gambling is documented to be significantly higher than fiat currency gambling.",
+    "flags": ["cryptocurrency_energy_consumption", "bitcoin_ethereum_gambling_volumes"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Stake.com has been politically visible through high-profile celebrity partnerships. Drake — whose public gambling losses through Stake.com have approached $800 million cumulatively — has been its most documented celebrity promoter. Stake.com sponsored UFC events through a deal that connected its branding to one of the most widely watched combat sports organizations in the United States. The UFC partnership gave Stake.us implicit credibility with a U.S. audience while its offshore parent operates outside U.S. gambling law.",
+    "flags": ["drake_celebrity_partnership_800m_losses", "ufc_official_sponsorship", "celebrity_credibility_offshore_operation"],
+    "sources": ["https://gamblingharm.org/stake-us-lawsuits-in-multiple-states-over-alleged-illegal-online-casino"]
+  },
+  "executives": {
+    "summary": "Stake.com was co-founded by Ed Craven and Bijan Tehrani, both Australians. Craven — at one point the youngest billionaire in Australia — built Stake.com into one of the world's largest cryptocurrency casinos. The U.S. Stake.us operation is managed through Sweepstakes Limited, a separate entity with its own management structure. Neither Craven nor the Stake.us management team has faced personal legal consequences for the documented cease-and-desist orders and lawsuits.",
+    "flags": ["ed_craven_youngest_australian_billionaire", "cryptocurrency_casino_billionaire", "no_personal_legal_consequences_us_enforcement"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Stake.com's relationship with Drake generated one of the most documented celebrity gambling loss records in history — Drake publicly wagered and lost amounts approaching $800 million through the platform, using his celebrity status to normalize gambling for his audience. The UFC sponsorship connected Stake's brand to an organization claiming 700 million fans globally. Stake.us shares game titles, visual design, and the Stake brand with Stake.com — the sweepstakes separation between the two is primarily legal rather than operational. Lawsuits against Google and Apple for hosting Stake.us apps and processing payments connect the litigation to broader Big Tech accountability for social casino operations.",
+    "flags": ["drake_800m_documented_losses_platform", "ufc_700m_fans_brand_reach", "operational_integration_with_offshore_casino", "google_apple_app_store_liability"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The six class action lawsuits filed in 2025 allege that Stake.us circumvents U.S. gambling law through a deceptive and predatory business model, that the sweepstakes legal structure is a fiction given the operational integration with Stake.com's real-money offshore casino, and that the cryptocurrency redemption model for Sweeps Coins makes the platform functionally equivalent to an illegal real-money online casino. Plaintiffs allege Stake.us 'actively preys on Americans with problem gambling.' The Michigan Gaming Control Board, in its cease-and-desist, characterized Stake.us as offering internet gambling without a Michigan license. The shared branding between Stake.com and Stake.us is alleged to deliberately blur the distinction between legal sweepstakes and illegal gambling to attract users familiar with the offshore casino.",
+    "flags": ["deceptive_predatory_model_alleged", "operational_integration_legal_fiction_alleged", "crypto_redemption_real_money_equivalent_alleged", "michigan_unlicensed_gambling_characterization"],
+    "sources": ["https://gamblingharm.org/stake-us-lawsuits-in-multiple-states-over-alleged-illegal-online-casino"]
+  },
+  "health_record": {
+    "summary": "Stake.us operates with no mandatory responsible gambling protections — no age verification requirements beyond self-attestation, no self-exclusion system, no spending limits. The cryptocurrency redemption model for Sweeps Coins adds a layer of financial dissociation — casino chips to virtual coins to cryptocurrency — that research consistently associates with increased gambling risk. Drake's publicized multi-million dollar losses through Stake.com normalized extreme gambling for a young male audience. The six 2025 lawsuits specifically allege that Stake.us 'preys on Americans with problem gambling.'",
+    "flags": ["no_responsible_gambling_requirements", "crypto_dissociation_increased_risk", "drake_normalization_young_audience", "preys_problem_gamblers_alleged_lawsuits"],
+    "sources": ["https://gamblingharm.org/stake-us-lawsuits-in-multiple-states-over-alleged-illegal-online-casino"]
+  },
+  "alternatives": {
+    "cheaper": ["Legal licensed online casinos in the states where they operate — New Jersey, Michigan, Pennsylvania, Delaware — with regulated responsible gambling protections", "Free social poker apps without cryptocurrency redemption"],
+    "healthier": ["Cryptocurrency without gambling — buying and holding crypto directly eliminates the casino house edge while retaining crypto exposure for those interested", "National Problem Gambling Helpline: 1-800-522-4700"],
+    "diy": ["Stake.us Sweeps Coins redeem for cryptocurrency — this means your winnings are subject to cryptocurrency volatility after withdrawal, adding a second layer of financial risk beyond the casino games themselves", "If you are in Michigan, Stake.us has been ordered to stop operating — cease-and-desist means the platform's operation in your state has been found unlicensed"]
+  },
+  "timeline": [
+    {"year": 2017, "event": "Stake.com founded by Ed Craven and Bijan Tehrani as a cryptocurrency online casino", "severity": "neutral", "source_url": ""},
+    {"year": 2020, "event": "Stake.com becomes one of the world's largest cryptocurrency casinos; Drake partnership begins", "severity": "neutral", "source_url": ""},
+    {"year": 2021, "event": "Stake.us launches as U.S. sweepstakes version; UFC sponsorship announced", "severity": "neutral", "source_url": ""},
+    {"year": 2023, "event": "Michigan Gaming Control Board issues cease-and-desist to Stake.us", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "Drake loses $1M Super Bowl bet through Stake; cumulative documented losses approach $800M; lifetime Stake losses visible", "severity": "high", "source_url": ""},
+    {"year": 2025, "event": "Six class action lawsuits filed alleging illegal casino operations and predatory targeting of problem gamblers", "severity": "critical", "source_url": "https://gamblingharm.org/stake-us-lawsuits-in-multiple-states-over-alleged-illegal-online-casino"},
+    {"year": 2025, "event": "Google and Apple named as co-defendants in Stake.us-related social casino litigation for app store commission role", "severity": "critical", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Stake.us brings an offshore cryptocurrency casino brand — with its associated extreme gambling normalization — into U.S. communities where the offshore parent cannot legally operate. The UFC partnership and Drake celebrity connection give a brand built on offshore cryptocurrency gambling credibility with American sports audiences.",
+    "price_illusion": "Stake.us games are identical in design and function to Stake.com's offshore real-money casino. The sweepstakes label — and the Sweeps Coin to cryptocurrency redemption chain — creates a legal distinction that is functionally invisible to users playing the same slot games with the same visual interface.",
+    "tax_math": "Stake.com's cryptocurrency gambling revenues flow to Curaçao and Australian holding structures. Stake.us pays no U.S. gaming taxes. Ed Craven's fortune was built on an offshore casino operating outside the regulatory frameworks of every country whose citizens use it. The sweepstakes front is the U.S. tax and regulatory arbitrage mechanism.",
+    "wealth_velocity": "Ed Craven's billionaire status was built on cryptocurrency gambling losses — primarily from users in countries where Stake.com cannot legally operate as a licensed casino. Drake's publicized losses generated brand awareness that attracted more users. Celebrity gambling normalization is a documented marketing strategy."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Ed Craven / Stake.com", "how": "Australian billionaire fortune built on offshore cryptocurrency gambling; U.S. sweepstakes extension with no gaming tax obligations"},
+      {"group": "Drake (short-term)", "how": "Promotional fees and partnership value from Stake.com; gambling losses offset by endorsement income"},
+      {"group": "UFC", "how": "Sponsorship revenue from Stake.com; brand association with gambling platform targeting UFC's young male audience"}
+    ],
+    "who_paid": [
+      {"group": "Stake.us problem gamblers", "how": "Six lawsuits allege predatory targeting; no responsible gambling protections; cryptocurrency losses on top of gambling losses"},
+      {"group": "Drake (gambling losses)", "how": "Publicly documented losses approaching $800M through Stake.com — used as marketing while normalizing extreme gambling"},
+      {"group": "Michigan residents", "how": "Michigan Gaming Control Board found Stake.us operating unlicensed gambling in the state; cease-and-desist issued"}
+    ],
+    "the_gap": "Stake.com is an offshore cryptocurrency casino. Stake.us is its American sweepstakes front. They run the same games with the same brand. Six lawsuits say it's illegal gambling. Michigan's gaming board agreed. Drake lost hundreds of millions through the platform and became its most visible advertisement."
+  }
+}
