@@ -3,13 +3,13 @@
 **Hand-authored batch folders** (for `import_all_profiles.mjs` / `import_profiles_from_dir.mjs`): see `server/db/profileBatchManifest.mjs`.
 
 ## Last updated: April 6, 2026
-## Total profiles complete: 145 | Remaining: ~397+
+## Total profiles complete: 155 | Remaining: ~387+
 
 Legend: ✅ = profile complete | ⬜ = not yet done
 
 ---
 
-## COMPLETE (145)
+## COMPLETE (155)
 
 From existing DB (pre-today):
 7-eleven ✅ | alphabet/google ✅ | altria ✅ | amazon ✅ | apple ✅ | ascension ✅ | att ✅ | bank-of-america ✅ | bat-reynolds ✅ | bayer-monsanto ✅ | ben-jerrys ✅ | bp ✅ | burger-king ✅ | caesars-entertainment ✅ | cardinal-health ✅ | cargill ✅ | chevron ✅ | chipotle ✅ | cigna ✅ | circle-k ✅ | coca-cola ✅ | comcast ✅ | community-health-systems ✅ | cotopaxi ✅ | cvs-health ✅ | darden-restaurants ✅ | davita ✅ | disney ✅ | dollar-general ✅ | dominos ✅ | draftkings ✅ | eileen-fisher ✅ | eli-lilly ✅ | exxonmobil ✅ | fanduel ✅ | ford ✅ | gap ✅ | general-motors ✅ | goldman-sachs ✅ | hca-healthcare ✅ | high-5-games ✅ | jpmorgan-chase ✅ | koch-industries ✅ | kraft-heinz ✅ | kroger ✅ | las-vegas-sands ✅ | linkedin ✅ | lvmh ✅ | mars ✅ | mcdonalds ✅ | mckesson ✅ | merck ✅ | meta ✅ | mgm-resorts ✅ | microsoft ✅ | netflix ✅ | nike ✅ | patagonia ✅ | penn-entertainment ✅ | pfizer ✅ | philip-morris ✅ | philips-healthcare ✅ | pilot-flying-j ✅ | pinterest ✅ | pvh-corp ✅ | reddit ✅ | rei ✅ | shein ✅ | shell ✅ | snapchat ✅ | spotify ✅ | stake-us ✅ | starbucks ✅ | steward-health-care ✅ | subway ✅ | sweepstakes-casinos-sector ✅ | sysco ✅ | target ✅ | tesla ✅ | tiktok-bytedance ✅ | toyota ✅ | twitch ✅ | twitter-x ✅ | uber ✅ | unilever ✅ | unitedhealth ✅ | verizon ✅ | vgw-holdings ✅ | waffle-house ✅ | wells-fargo ✅ | wendys ✅ | youtube ✅ | yum-brands ✅
@@ -31,6 +31,9 @@ volkswagen-group ✅ | hsbc ✅ | deutsche-bank ✅ | airbnb ✅ | cencora ✅ |
 
 Batch 07 (Apr 6):
 3m ✅ | purdue-pharma ✅ | glencore ✅ | ikea ✅ | lactalis ✅ | medtronic ✅ | rio-tinto ✅ | mondelez-international ✅ | sanofi ✅ | diageo ✅
+
+Batch 08 (Apr 6):
+costco ✅ | home-depot ✅ | bridgestone ✅ | michelin ✅ | lowes ✅ | petrobras ✅ | grupo-bimbo ✅ | tsmc ✅ | roche ✅ | citigroup ✅
 
 **Importer:** Canonical folder list for hand-authored batches is `server/db/profileBatchManifest.mjs` (keep this doc aligned). `import_all_profiles.mjs` imports legacy `profiles_v*` then every folder in that manifest.
 
@@ -99,7 +102,6 @@ Batch 07 (Apr 6):
 ⬜ belling
 ⬜ bershka (Inditex) — use inditex profile
 ⬜ best-buy
-⬜ bimbo-grupo-bimbo
 ⬜ birchbox
 ⬜ black-sheep-coffee
 ⬜ blancpain (Swatch)
@@ -114,7 +116,6 @@ Batch 07 (Apr 6):
 ⬜ bottega-veneta (Kering)
 ⬜ braun (P&G) — use procter-and-gamble profile
 ⬜ breguet (Swatch)
-⬜ bridgestone
 ⬜ brilliance-auto
 ⬜ brioni
 ⬜ bristol-myers-squibb
@@ -138,7 +139,6 @@ Batch 07 (Apr 6):
 ⬜ chery
 ⬜ chevron-phillips-chemical
 ⬜ cif (Unilever)
-⬜ citigroup
 ⬜ cloetta
 ⬜ co-op
 ⬜ commonwealth-spirit (CommonSpirit Health)
@@ -147,7 +147,6 @@ Batch 07 (Apr 6):
 ⬜ continental
 ⬜ cooper-tires
 ⬜ costa-coffee (Coca-Cola)
-⬜ costco
 ⬜ danone
 ⬜ day-lewis
 ⬜ diesel
@@ -175,10 +174,8 @@ Batch 07 (Apr 6):
 ⬜ godiva (Yildiz)
 ⬜ great-wall-motors
 ⬜ gree
-⬜ grupo-bimbo
 ⬜ hankook
 ⬜ haribo
-⬜ home-depot
 ⬜ honor (Huawei spinoff) — use huawei profile
 ⬜ hugo-boss
 ⬜ humana
@@ -205,7 +202,6 @@ Batch 07 (Apr 6):
 ⬜ lidl (Schwarz Group)
 ⬜ lifepoint-health
 ⬜ loblaw
-⬜ lowe's
 ⬜ lush
 ⬜ macys
 ⬜ mango
@@ -213,7 +209,6 @@ Batch 07 (Apr 6):
 ⬜ mediatek
 ⬜ meijer
 ⬜ mercado-libre
-⬜ michelin
 ⬜ midea
 ⬜ miele
 ⬜ moderna
@@ -228,7 +223,6 @@ Batch 07 (Apr 6):
 ⬜ oppo
 ⬜ patek-philippe (Patek Philippe)
 ⬜ pegatron
-⬜ petrobras
 ⬜ pirelli
 ⬜ polestar (Geely)
 ⬜ pret-a-manger
@@ -239,7 +233,6 @@ Batch 07 (Apr 6):
 ⬜ rewe
 ⬜ ritter-sport
 ⬜ river-island
-⬜ roche
 ⬜ rolex
 ⬜ rolls-royce-motor-cars (BMW)
 ⬜ ross-stores
@@ -264,7 +257,6 @@ Batch 07 (Apr 6):
 ⬜ tjx-companies
 ⬜ tp-link
 ⬜ trinity-health
-⬜ tsmc
 ⬜ twinings (ABF) — use primark/abf profile context
 ⬜ ubs
 ⬜ valero
@@ -302,3 +294,6 @@ Some master list entries are brands, not companies — they should resolve to a 
 - Post-it, Filtrete → 3m ✅
 - Purdue, OxyContin, Sackler (as entity tap) → purdue-pharma ✅
 - Guinness, Smirnoff, Johnnie Walker… → diageo ✅
+- Thomas' / Arnold / Sara Lee / Entenmann's / Ball Park Buns (US) → grupo-bimbo ✅
+- Citi / Citibank → citigroup ✅
+- Firestone tires → bridgestone ✅

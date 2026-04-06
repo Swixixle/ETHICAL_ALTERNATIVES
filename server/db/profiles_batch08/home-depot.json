@@ -1,0 +1,89 @@
+{
+  "brand_name": "Home Depot",
+  "brand_slug": "home-depot",
+  "parent_company": "The Home Depot, Inc.",
+  "ultimate_parent": "The Home Depot, Inc.",
+  "subsidiaries": ["Home Depot Pro (professional division)", "HD Supply (sold 2020)", "The Company Store"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "HOME DEPOT PAID $17.5 MILLION FOR A DATA BREACH THAT EXPOSED 56 MILLION CREDIT CARDS — AND ITS CONTRACTOR NETWORK HAS DOCUMENTED WAGE THEFT AND IMMIGRATION VIOLATIONS IT DENIES RESPONSIBILITY FOR",
+  "executive_summary": "The Home Depot, Inc. is the world's largest home improvement retailer, operating over 2,300 stores across North America. In 2014, Home Depot experienced one of the largest data breaches in retail history — hackers compromised its point-of-sale systems using credentials stolen from a third-party vendor, exposing approximately 56 million credit and debit card numbers and 53 million email addresses. Home Depot settled state attorney general investigations for $17.5 million and paid approximately $25 million in additional settlements to financial institutions. Home Depot's contractor referral and installation network has been subject to documented investigations for wage theft, immigration violations, and worker misclassification — with Home Depot's structure allowing it to benefit from these networks while denying employer responsibility. Home Depot is also a major purchaser of lumber from supply chains with documented deforestation concerns.",
+  "verdict_tags": ["56_million_cards_data_breach_2014", "17_5m_attorney_general_settlement", "contractor_network_wage_theft_documented", "worker_misclassification_employer_responsibility_denial", "lumber_supply_chain_deforestation"],
+  "concern_flags": {"labor": true, "environmental": true, "political": false, "tax": false, "health": false, "legal": true},
+  "labor": {
+    "summary": "Home Depot's contractor referral and installation programs — through which customers hire contractors for flooring, kitchen, and other installations — have generated documented cases of wage theft, immigration violations, and worker misclassification. Investigations in multiple states found contractors working in Home Depot's referral network had violated minimum wage and overtime laws, with Home Depot maintaining it bears no employer responsibility for independent contractors it referred. OSHA has cited Home Depot stores for workplace safety violations including forklift safety and egress issues across multiple locations.",
+    "flags": ["contractor_network_wage_theft_multiple_states", "immigration_violations_referral_network", "employer_responsibility_denial_contractor_structure", "osha_forklift_egress_multiple_locations"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Home Depot is one of the world's largest purchasers of lumber and wood products — its purchasing decisions have significant implications for global forest management. The company has made commitments to responsible forestry sourcing. Rainforest Action Network and other organizations have documented that Home Depot has sourced wood from suppliers connected to old-growth forest logging in Chile, Canada, and elsewhere. The company's large physical retail footprint — 2,300+ stores — represents significant energy consumption and impervious surface area in communities across North America.",
+    "flags": ["largest_global_lumber_purchasers", "old_growth_sourcing_documented_ran", "chile_canada_logging_concerns", "retail_footprint_energy_impervious_surface"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Home Depot was co-founded by Bernie Marcus and Arthur Blank — Marcus has been one of the most significant donors to Republican political causes and explicitly linked Home Depot's founding to the deregulatory political environment. Marcus's political giving — documented at tens of millions to Republican causes and candidates — has generated periodic consumer boycott calls. Home Depot the company's lobbying focuses on construction, housing, and retail regulation.",
+    "flags": ["marcus_cofounder_major_republican_donor", "political_giving_linked_founding_explicitly", "consumer_boycott_calls_marcus_donations"],
+    "sources": []
+  },
+  "legal": {
+    "summary": "The 2014 data breach: Home Depot settled state attorney general investigations for $17.5 million covering 46 states; paid approximately $25 million to banks and credit unions to cover card reissuance and fraud costs; settled a consumer class action for $13 million. Total breach-related costs exceeded $200 million including remediation. The breach resulted from Home Depot's failure to upgrade its payment processing systems to chip-and-PIN technology before the breach — competitors had already implemented the upgrade. OSHA: Home Depot paid $115,000 in OSHA penalties in a 2020 egregious citation case at its East Point, Georgia store for exposing workers to forklift hazards after prior warnings.",
+    "flags": ["17_5m_state_ag_settlement_46_states", "25m_financial_institution_settlement", "chip_and_pin_delay_allowed_breach", "osha_egregious_citation_east_point_georgia"],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Home Depot is a US-headquartered company paying US corporate taxes. The company has benefited from the 2017 Tax Cuts and Jobs Act. Its accelerated store construction depreciation and supply chain structures are standard large retail provisions. No major offshore tax enforcement or documented aggressive tax avoidance has been identified as a primary concern.",
+    "flags": ["tcja_corporate_tax_benefit", "construction_depreciation_provisions"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Ted Decker leads Home Depot. Co-founder Bernie Marcus (retired) has remained publicly active as a major political donor. Former CEO Bob Nardelli's tenure (2000-2007) was marked by a documented compensation controversy — he received $210 million in total compensation including a $20 million severance package despite Home Depot's stock declining approximately 8% during his tenure, while competitor Lowe's stock rose significantly. The compensation arrangement generated significant shareholder opposition.",
+    "flags": ["nardelli_210m_compensation_declining_stock", "marcus_political_activity_post_retirement", "shareholder_opposition_documented"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Home Depot's contractor network — which connects customers to third-party installers — creates a documented accountability gap where Home Depot benefits commercially from the referral relationship while denying employer responsibility for the labor practices of those contractors. This structure parallels the gig economy model used by Lyft and Uber — commercial benefit without employment obligation. Home Depot's lumber purchasing power gives it significant leverage over timber suppliers globally — a power that its responsible sourcing commitments have been criticized for not fully utilizing.",
+    "flags": ["contractor_accountability_gap_gig_model_parallel", "lumber_purchasing_power_underutilized_responsible_sourcing"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "State labor departments and worker advocacy organizations have alleged that Home Depot's contractor referral network systematically benefits from wage theft and immigration violations by contractors whose below-market labor costs are embedded in the prices Home Depot can offer for installation services. Cybersecurity researchers alleged that Home Depot's payment systems were known to be vulnerable before the 2014 breach — and that the delay in upgrading to chip-and-PIN was a cost-cutting decision rather than a technical limitation.",
+    "flags": ["contractor_wage_theft_benefit_systematic_alleged", "payment_system_vulnerability_known_pre_breach_alleged", "chip_pin_delay_cost_cutting_not_technical_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Home Depot sells products with documented hazardous material exposure risks — paints, solvents, pesticides, and building materials — and has faced OSHA citations for worker safety at specific stores. The data breach health dimension is financial — 56 million exposed card numbers led to documented fraud and identity theft affecting consumers. Contractor workers in the referral network performing installation work face occupational hazards without the employer protections that a direct employment relationship would provide.",
+    "flags": ["hazardous_material_retail_exposure", "data_breach_financial_fraud_identity_theft_consumers", "contractor_worker_occupational_hazard_no_employer_protection"],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": ["Lowe's — primary competitor with similar pricing and different documented history; also has supply chain concerns but different specific record", "Local hardware stores and lumber yards — often price-competitive on specific items; money stays local; more direct supplier relationships"],
+    "healthier": ["For lumber: Forest Stewardship Council (FSC) certified lumber — independently verified sustainable sourcing; ask specifically for FSC certification", "Local lumber yards with documented regional sourcing — shorter supply chain, more traceable provenance"],
+    "diy": ["For contractor installation services: verify any Home Depot-referred contractor's license and insurance independently before hiring — do not assume Home Depot's referral implies vetting of labor practices", "Check your state's contractor license verification database; verify workers' compensation coverage independently"]
+  },
+  "timeline": [
+    {"year": 1978, "event": "Bernie Marcus and Arthur Blank found Home Depot in Atlanta; first stores open 1979", "severity": "neutral", "source_url": ""},
+    {"year": 2000, "event": "Bob Nardelli appointed CEO; compensation arrangements later generate major shareholder controversy", "severity": "neutral", "source_url": ""},
+    {"year": 2007, "event": "Nardelli forced out after $210M total compensation despite stock decline; receives $20M severance", "severity": "high", "source_url": ""},
+    {"year": 2014, "event": "September: Data breach announced; 56 million credit/debit cards and 53 million emails compromised through POS system hack", "severity": "critical", "source_url": ""},
+    {"year": 2017, "event": "$17.5M state attorney general settlement; $25M financial institution settlements; total costs exceed $200M", "severity": "high", "source_url": ""},
+    {"year": 2020, "event": "OSHA egregious citation at East Point, Georgia store; $115,000 penalty for forklift worker exposure after prior warnings", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "The 2014 data breach displaced consumers into identity theft and fraud resolution — a documented time and financial burden with lasting credit implications for those whose information was fraudulently used. Contractor workers in Home Depot's referral network performing below-minimum-wage work are economically displaced without the safety net of workers' compensation or employment protections.",
+    "price_illusion": "Home Depot's installation service pricing — which is competitive — embeds the cost of contractor networks whose below-market labor costs may include wage theft and immigration violations that Home Depot's structure denies responsibility for. The apparent competitiveness of Home Depot installation pricing is partly a function of cost externalization onto workers through the contractor structure.",
+    "tax_math": "Home Depot pays standard US corporate taxes. The primary tax-adjacent concern is the contractor misclassification issue — contractors not classified as employees means Home Depot avoids employer-side payroll taxes (FICA, FUTA) on the labor that performs its installation services. The workers performing installations pay both sides of self-employment tax while lacking employment protections.",
+    "wealth_velocity": "Home Depot is publicly traded with broad institutional shareholder ownership. Co-founder Bernie Marcus's political contributions — documented as tens of millions to Republican causes — represent wealth generated from Home Depot's retail operation being deployed in political activity that affects regulation of the industries Home Depot operates in."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Home Depot shareholders", "how": "Installation network revenue without employer cost obligations; contractor structure reduces labor compliance liability"},
+      {"group": "Bernie Marcus and political recipients of his donations", "how": "Tens of millions in political contributions from Home Depot co-founder wealth to Republican political causes"}
+    ],
+    "who_paid": [
+      {"group": "56 million consumers whose cards were exposed", "how": "Identity theft exposure, fraud risk, time spent resolving compromised accounts from a breach enabled by delayed chip-and-PIN upgrade"},
+      {"group": "Contractor workers in referral network", "how": "Documented wage theft and immigration violations in contractors receiving Home Depot customer referrals; Home Depot denies employer responsibility"}
+    ],
+    "the_gap": "Home Depot knew their payment systems needed upgrading before the 2014 breach. Competitors had already done it. 56 million cards were exposed. They paid $17.5 million. Their contractor network has documented wage theft and immigration violations. Home Depot says those contractors aren't their employees. The customers who hired them through Home Depot thought they were dealing with Home Depot."
+  }
+}

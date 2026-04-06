@@ -1,0 +1,89 @@
+{
+  "brand_name": "Grupo Bimbo",
+  "brand_slug": "grupo-bimbo",
+  "parent_company": "Grupo Bimbo, S.A.B. de C.V.",
+  "ultimate_parent": "Servitje family (controlling shareholder)",
+  "subsidiaries": ["Bimbo Bakeries USA", "Barcel", "Marinela", "Ricolino", "Thomas' English Muffins", "Arnold Bread", "Ball Park Buns", "Sara Lee Bread", "Entenmann's"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "GRUPO BIMBO CONTROLS 33% OF GLOBAL BREAD — ITS MEXICAN WHEAT SUPPLY CHAIN HAS DOCUMENTED CHILD LABOR AND ITS ANTI-UNION HISTORY RUNS ACROSS THREE COUNTRIES",
+  "executive_summary": "Grupo Bimbo S.A.B. de C.V. is the world's largest baking company, headquartered in Mexico City and controlling approximately 33% of the global packaged bread market through over 100 brands across 34 countries. In the United States, Grupo Bimbo owns Thomas' English Muffins, Arnold, Ball Park Buns, Sara Lee Bread, and Entenmann's — brands that most American consumers do not associate with a Mexican corporation. Grupo Bimbo's wheat supply chain in Mexico has been documented by the US Department of Labor and investigative journalists to involve child labor in wheat fields — children as young as 7 working in harvests in Sinaloa and other wheat-producing states. The company has a documented history of anti-union practices across Mexico, the United States, and other markets — including documented cases of dismissing workers who organize and structuring contracts to minimize unionization exposure.",
+  "verdict_tags": ["33pct_global_bread_market", "mexican_wheat_child_labor_dol_documented", "anti_union_practices_three_countries", "thomas_arnold_sara_lee_unknown_mexican_ownership", "servitje_family_control"],
+  "concern_flags": {"labor": true, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "The US Department of Labor's List of Goods Produced by Child Labor includes wheat from Mexico — a direct input into Grupo Bimbo's core production. Investigative journalists have documented children as young as 7 working in Mexican wheat harvests in states including Sinaloa, participating in harvests that supply the grain processing chain that includes Bimbo suppliers. Grupo Bimbo's anti-union record: in Mexico, the company has been documented using company-controlled 'protection unions' (sindicatos de protección) — unions formed by employers rather than workers that sign collective agreements suppressing independent organizing. In the US, Bimbo Bakeries USA has faced NLRB complaints at multiple facilities.",
+    "flags": ["dol_wheat_mexico_child_labor_list", "children_7_years_sinaloa_wheat_harvest_documented", "protection_unions_mexico_employer_controlled", "nlrb_complaints_bimbo_bakeries_usa"],
+    "sources": ["https://www.dol.gov/agencies/ilab/our-work/reports/child-labor/list-of-goods"]
+  },
+  "environmental": {
+    "summary": "Grupo Bimbo's industrial baking operations generate significant food packaging waste — the company is among the world's largest producers of single-use plastic bread packaging. The company has made commitments to sustainable packaging. Its wheat supply chain has standard industrial agriculture environmental concerns. No major documented environmental enforcement actions have been identified as a primary concern.",
+    "flags": ["largest_bread_packaging_plastic_volume", "wheat_supply_chain_industrial_agriculture"],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Servitje family — which controls Grupo Bimbo through a family holding structure — is one of Mexico's most politically influential business dynasties. The family has historically been close to Mexico's PAN (National Action Party) — the center-right party associated with Mexico's Catholic business elite. Grupo Bimbo's market dominance has attracted competition authority attention in multiple Latin American markets. The company's protection union model in Mexico is a documented corporate strategy to preempt genuine labor organizing through employer-controlled union structures.",
+    "flags": ["servitje_family_pan_political_connections", "competition_authority_attention_latin_america", "protection_union_corporate_strategy_documented"],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Grupo Bimbo and its US subsidiary Bimbo Bakeries USA have faced NLRB complaints for unfair labor practices at multiple US bakery facilities — including allegations of retaliating against workers who engaged in organizing activities. The company settled an NLRB case in 2018 covering Bimbo Bakeries workers in Maryland who alleged retaliation for union activity. Mexican competition authorities (COFECE) have investigated Grupo Bimbo for potential market dominance abuse in the Mexican bread market. No major criminal enforcement actions at the scale of some peers have been documented.",
+    "flags": ["nlrb_complaints_multiple_facilities_us", "2018_nlrb_maryland_retaliation_settlement", "cofece_market_dominance_investigation_mexico"],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Grupo Bimbo is listed on the Mexican Stock Exchange (BMV) and pays Mexican corporate taxes. The Servitje family controls the company through a family holding structure with dual-class share arrangements. The company's international expansion — including its acquisition of US brands Sara Lee, Arnold, and Entenmann's — has involved significant cross-border tax planning. No major criminal tax enforcement actions have been identified.",
+    "flags": ["servitje_family_dual_class_share_structure", "us_brand_acquisition_cross_border_tax_planning"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Daniel Servitje Montull — grandson of founder Lorenzo Servitje — leads the company. The founding family's Catholic, conservative values have shaped Grupo Bimbo's corporate culture — including a documented tradition of charitable giving and worker welfare programs that coexist with the protection union model and supply chain child labor documentation. This combination — genuine corporate paternalism alongside documented labor control mechanisms — is characteristic of certain Mexican industrial family capitalism.",
+    "flags": ["servitje_family_ceo_third_generation", "catholic_conservative_paternalism_labor_control_combination"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Grupo Bimbo's US brand portfolio — Thomas', Arnold, Ball Park, Sara Lee, Entenmann's — is almost entirely invisible as Mexican-owned to American consumers. This represents a significant brand perception gap where products carrying American regional heritage associations are produced and controlled by a Mexican conglomerate with documented labor practices in Mexico that US consumers would likely assess differently if they knew the ownership structure. The company's dominance — 33% of global packaged bread — gives it pricing power that is exerted across consumer markets globally.",
+    "flags": ["us_brand_portfolio_unknown_mexican_ownership", "consumer_brand_perception_ownership_gap", "33pct_market_pricing_power"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Mexican labor law researchers and worker advocacy organizations have alleged that Grupo Bimbo's protection union model — where union contracts are signed between the company and employer-created unions before workers are hired, with workers never having the opportunity to choose their representation — violates Mexico's constitutional labor rights and the USMCA labor chapter's requirements for genuine collective bargaining. NLRB investigators have alleged that Bimbo Bakeries USA's anti-union responses at US facilities included surveilling worker organizers and threatening to close facilities if unions were formed.",
+    "flags": ["protection_union_mexico_constitutional_violation_alleged", "usmca_labor_chapter_compliance_alleged", "nlrb_surveillance_facility_closure_threat_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Grupo Bimbo's product portfolio — packaged bread, pastries, snack cakes, and baked goods — consists primarily of ultra-processed foods associated in population research with elevated rates of chronic disease. The NOVA food classification system categorizes most Bimbo products as Class 4 ultra-processed. The child labor in Mexican wheat harvests involves hazardous agricultural work — pesticide exposure, physical labor in harsh conditions, interruption of education. No major food safety enforcement actions have been documented at the scale of some peers.",
+    "flags": ["ultra_processed_food_chronic_disease_nova_4", "child_agricultural_labor_pesticide_physical_hazard", "education_interruption_wheat_harvest_children"],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": ["Local bakeries — in most urban markets; often competitive on staple bread prices; money stays local", "Store brand bread — often produced by Bimbo Bakeries under private label contracts; check the label"],
+    "healthier": ["Local artisan bakeries using regional grain sourcing — more transparent supply chains; short fermentation breads have documented digestive benefits", "Dave's Killer Bread (Flowers Foods) — US-made, B Corp certified, employs previously incarcerated workers"],
+    "diy": ["Thomas' English Muffins, Arnold bread, Ball Park buns, Sara Lee bread, and Entenmann's are all Grupo Bimbo brands — if you are avoiding supporting the company, check labels for these names", "The DOL List of Goods Produced by Child Labor lists Mexican wheat — this is relevant to all large bread brands sourcing from Mexico, not only Bimbo"]
+  },
+  "timeline": [
+    {"year": 1945, "event": "Lorenzo Servitje founds Bimbo bakery in Mexico City; brand named after a bear-shaped shortbread biscuit", "severity": "neutral", "source_url": ""},
+    {"year": 1998, "event": "Bimbo expands to United States through acquisition of bakery operations", "severity": "neutral", "source_url": ""},
+    {"year": 2011, "event": "Grupo Bimbo acquires Sara Lee's North American fresh bakery business — Thomas', Arnold, Ball Park, Entenmann's — for $959M", "severity": "neutral", "source_url": ""},
+    {"year": 2018, "event": "NLRB case settled covering Bimbo Bakeries USA worker retaliation in Maryland", "severity": "high", "source_url": ""},
+    {"year": 2020, "event": "USMCA labor chapter takes effect; Mexico's labor reform requires elimination of protection union model; implementation contested", "severity": "high", "source_url": ""},
+    {"year": 2024, "event": "Grupo Bimbo recognized as world's largest baking company; approximately 33% global packaged bread market", "severity": "neutral", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Mexican agricultural communities where child labor in wheat harvests is documented face economic conditions where family income requires child participation in harvest work, interrupting education and exposing children to agricultural hazards. US communities where Bimbo Bakeries has faced organizing drives — and NLRB complaints — have workers whose collective bargaining rights were allegedly suppressed through retaliatory conduct.",
+    "price_illusion": "Thomas' English Muffins and Sara Lee bread carry American heritage brand associations that most consumers attribute to US-owned companies. These brands are controlled by a Mexican family dynasty with documented child labor in its supply chain and protection union history. The brand's perceived origin does not match its ownership or supply chain geography.",
+    "tax_math": "Grupo Bimbo's acquisition of US brands (Sara Lee, Arnold, Thomas') created cross-border tax planning considerations where intellectual property, royalties, and profits are allocated between Mexican holding structures and US operating subsidiaries. No specific enforcement has been documented, but the structure is standard for large cross-border consumer goods acquisitions.",
+    "wealth_velocity": "The Servitje family — through dual-class shares and family holding structures — controls one-third of the global packaged bread market. Revenue from Thomas' English Muffins sold to American consumers funds a Mexican family dynasty's wealth and their philanthropic and political activities in Mexico. Mexican wheat harvest workers and their children who participate in the supply chain receive wages at the bottom of this chain."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Servitje family", "how": "Control of 33% global packaged bread market through family holding structure; US brand portfolio acquired from American consumers' trust in heritage brands"},
+      {"group": "Grupo Bimbo shareholders", "how": "Market dominance across 34 countries; supply chain labor costs reduced by child labor in agricultural inputs and protection union model suppressing wage demands"}
+    ],
+    "who_paid": [
+      {"group": "Children in Mexican wheat harvests", "how": "Agricultural child labor documented in wheat supply chain; hazardous conditions, education interruption, pesticide exposure"},
+      {"group": "US bakery workers facing anti-union retaliation", "how": "NLRB complaints and settlements documenting retaliatory conduct against workers attempting to organize"}
+    ],
+    "the_gap": "Thomas' English Muffins, Arnold Bread, Sara Lee, Entenmann's, Ball Park Buns — these are Grupo Bimbo. The company that makes them controls 33% of the world's packaged bread. The US Department of Labor lists Mexican wheat — Bimbo's core ingredient — as produced with child labor. Children as young as 7 work wheat harvests in Sinaloa. The company uses employer-controlled unions in Mexico. Its American workers have NLRB complaints pending. Most Americans think they are buying American brands."
+  }
+}

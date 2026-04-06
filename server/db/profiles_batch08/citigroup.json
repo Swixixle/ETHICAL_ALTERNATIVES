@@ -1,0 +1,90 @@
+{
+  "brand_name": "Citigroup",
+  "brand_slug": "citigroup",
+  "parent_company": "Citigroup Inc.",
+  "ultimate_parent": "Citigroup Inc.",
+  "subsidiaries": ["Citibank", "Citi Private Bank", "Citi Commercial Bank", "Banamex (sold 2024)"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "CITI ACCIDENTALLY WIRED $900 MILLION TO REVLON'S LENDERS AND A JUDGE SAID THEY COULD KEEP IT — THEN THE OCC ISSUED A $400 MILLION FINE FOR RISK MANAGEMENT SO BAD IT WAS CALLED 'UNSAFE AND UNSOUND'",
+  "executive_summary": "Citigroup Inc. is one of the world's largest financial institutions — the third-largest US bank by assets. In August 2020, Citibank accidentally wired approximately $900 million of its own funds to Revlon's lenders while intending to send an $8 million interest payment — one of the largest operational errors in banking history. A federal judge initially ruled the lenders could keep approximately $500 million they had not returned, though an appeals court later reversed this. In October 2020, the Office of the Comptroller of the Currency and the Federal Reserve issued a combined $400 million fine against Citigroup for persistent risk management failures — the OCC's order described Citi's data management as 'unsafe and unsound.' Citigroup has also settled multiple major discrimination lawsuits including a $75 million settlement in 2023 for discriminating against Armenian Americans in credit card applications, and faces ongoing regulatory pressure over a years-long failure to upgrade its risk and compliance infrastructure.",
+  "verdict_tags": ["900m_accidental_revlon_wire", "400m_occ_fed_risk_management_fine", "unsafe_and_unsound_occ_designation", "75m_armenian_american_discrimination", "years_long_risk_infrastructure_failure", "2020_bailout_recipient"],
+  "concern_flags": {"labor": false, "environmental": true, "political": true, "tax": true, "health": false, "legal": true},
+  "labor": {
+    "summary": "Citigroup employs approximately 240,000 people globally and has committed to equity pay audits. The bank became notable in 2021 for publishing its adjusted pay equity data showing Black employees earned 97 cents for every dollar white employees earned — one of the first major US banks to publish this data. However, Citigroup has also conducted significant workforce reductions through its multi-year 'transformation' program. The Armenian American discrimination settlement covered credit card application denials.",
+    "flags": ["pay_equity_audit_published_97_cents_black_employees", "workforce_reductions_transformation_program", "armenian_american_credit_card_discrimination_75m"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Citigroup is among the largest financiers of fossil fuel projects globally — Rainforest Action Network's Banking on Climate Chaos report has ranked Citi as the largest fossil fuel financier among US banks in multiple years, providing approximately $285 billion in fossil fuel financing from 2016-2023. The bank has set net zero commitments but continues to finance new fossil fuel extraction and infrastructure. Citi has committed to $1 trillion in sustainable finance by 2030.",
+    "flags": ["largest_us_fossil_fuel_financier_multiple_years_ran", "285b_fossil_fuel_financing_2016_2023", "net_zero_commitment_while_financing_new_extraction"],
+    "sources": ["https://www.ran.org/bankingonclimatchaos2024/"]
+  },
+  "political": {
+    "summary": "Citigroup's political influence operates through multiple channels: lobbying on financial regulation, the revolving door between Citi and the US Treasury Department (Robert Rubin moved from Treasury Secretary to Citigroup; multiple Citi executives have held senior government positions), and its systemic importance that effectively guaranteed federal rescue during the 2008 financial crisis. Citi received approximately $476 billion in financial support during 2008-2009 — the largest government rescue of any bank in US history — and has spent significantly lobbying against post-crisis regulatory reforms.",
+    "flags": ["476b_2008_crisis_rescue_largest_bank_rescue", "rubin_treasury_to_citi_revolving_door", "post_crisis_regulatory_reform_opposition"],
+    "sources": []
+  },
+  "legal": {
+    "summary": "August 2020: Citibank accidentally wires $900 million to Revlon's lenders while attempting to route $8 million in interest; lenders refused to return approximately $500 million; federal judge initially ruled they could keep it (reversed on appeal). October 2020: OCC and Federal Reserve jointly fine Citigroup $400 million for persistent and wide-ranging deficiencies in risk management, data governance, and internal controls — the OCC found the bank's condition 'unsafe and unsound.' Citigroup has been under a consent order since 2020 requiring fundamental transformation of its risk infrastructure, which remains incomplete years later. 2023: $75 million settlement for discriminating against Armenian Americans in credit card applications — the CFPB found Citi had systematically denied credit to applicants with Armenian surnames.",
+    "flags": ["900m_accidental_wire_largest_operational_error", "400m_occ_fed_fine_unsafe_unsound", "consent_order_2020_ongoing_incomplete", "75m_armenian_discrimination_cfpb"],
+    "sources": ["https://www.occ.gov/news-issuances/news-releases/2020/nr-occ-2020-132.html", "https://www.consumerfinance.gov/about-us/newsroom/cfpb-orders-citibank-to-pay-25-7-million-for-illegal-discrimination-against-armenian-american-credit-card-applicants/"]
+  },
+  "tax": {
+    "summary": "Citigroup has historically used complex international structures — particularly its large emerging markets footprint — to manage global tax obligations. The bank has deferred tax assets from its massive 2008-era losses that have provided ongoing tax advantages. Citigroup's Banamex subsidiary in Mexico — sold in 2024 — involved complex cross-border tax considerations. No major criminal tax enforcement actions have been documented against Citigroup.",
+    "flags": ["deferred_tax_assets_2008_losses_ongoing", "international_emerging_markets_tax_structures", "banamex_cross_border_tax_considerations"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Jane Fraser — the first woman to lead a major US bank — has overseen the bank's 'transformation' program including the consent order remediation. The $900 million wire error occurred under her predecessor Michael Corbat. The OCC consent order issued under Corbat was explicitly about risk management failures that had persisted for years before his tenure. The board and executive compensation at Citigroup were scrutinized following the $400 million fine — a fine of that magnitude for a US bank for risk management (not fraud) was unprecedented.",
+    "flags": ["fraser_first_woman_major_us_bank_ceo", "corbat_era_risk_failures_wire_error", "unprecedented_400m_risk_management_fine"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Citigroup's systemic importance — one of eight US Global Systemically Important Banks (G-SIBs) — means its risk management failures have documented implications for the broader financial system. The OCC's 'unsafe and unsound' finding on data governance is particularly significant because data quality is foundational to risk measurement across all of Citi's global operations. The $900 million wire error — which resulted from inadequate internal controls on a routine operation — illustrates how the same structural failures that generated the OCC fine manifest in operational reality.",
+    "flags": ["g-sib_systemic_importance_amplifies_risk", "data_governance_foundational_risk_measurement", "900m_error_operational_manifestation_structural_failure"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former Citi employees and regulatory observers have alleged that the bank's risk management transformation has been repeatedly announced and repeatedly failed to reach completion — with each regulatory deadline generating new promises rather than resolved deficiencies. Consumer advocates have alleged that Citi's discriminatory credit card practices against Armenian Americans were not isolated to name-based screening — that the bank's credit decisioning systems incorporated proxy variables that systematically disadvantaged minority applicants in ways that went beyond the specific CFPB findings.",
+    "flags": ["transformation_repeated_deadline_failures_alleged", "discriminatory_credit_decisioning_broader_than_cfpb_finding_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Citigroup's primary documented concerns are financial and governance rather than direct health. The fossil fuel financing — $285 billion since the Paris Agreement — contributes to climate change that WHO documents as among the most significant global health threats. The discrimination against Armenian American credit card applicants represents economic harm to a community — denial of credit access has documented downstream health and economic consequences for affected families.",
+    "flags": ["285b_fossil_fuel_climate_health_impact", "armenian_credit_denial_economic_health_consequences"],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": ["Credit unions for personal banking — member-owned, FDIC-insured equivalent through NCUA, documented better rates on deposits and loans", "Community Development Financial Institutions (CDFIs) for small business and community lending — mission-driven, no G-SIB systemic risk profile"],
+    "healthier": ["For fossil fuel financing concerns: Amalgamated Bank, Beneficial State Bank — banks with documented fossil fuel exclusion policies", "Credit unions in your area: MyCreditUnion.gov to find local options"],
+    "diy": ["Check whether your Citibank credit card application was affected by Armenian discrimination: the CFPB settlement includes a process for affected consumers", "Citigroup's fossil fuel financing policy commitments are tracked by ShareAction and Rainforest Action Network — compare stated commitments against actual financing annually"]
+  },
+  "timeline": [
+    {"year": 1998, "event": "Citicorp and Travelers Group merge; creates Citigroup — largest financial services company at the time; requires Glass-Steagall repeal", "severity": "neutral", "source_url": ""},
+    {"year": 2008, "event": "$476B in federal rescue support — largest bank rescue in US history; Citi essentially insolvent without government intervention", "severity": "critical", "source_url": ""},
+    {"year": 2020, "event": "August: $900M accidental Revlon wire — largest operational error in banking history; lenders initially allowed to keep funds", "severity": "critical", "source_url": ""},
+    {"year": 2020, "event": "October: $400M OCC and Federal Reserve fine for 'unsafe and unsound' risk management; consent order issued requiring transformation", "severity": "critical", "source_url": "https://www.occ.gov/news-issuances/news-releases/2020/nr-occ-2020-132.html"},
+    {"year": 2021, "event": "Jane Fraser becomes CEO — first woman to lead a major US bank; inherits consent order and transformation program", "severity": "neutral", "source_url": ""},
+    {"year": 2023, "event": "CFPB: $75M settlement for discriminating against Armenian Americans in credit card applications based on surname screening", "severity": "critical", "source_url": "https://www.consumerfinance.gov/about-us/newsroom/cfpb-orders-citibank-to-pay-25-7-million-for-illegal-discrimination-against-armenian-american-credit-card-applicants/"},
+    {"year": 2024, "event": "Consent order remediation ongoing; regulators impose additional restrictions; Citi sells Banamex; transformation deadline extended again", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Armenian American families and businesses systematically denied credit based on their names experienced economic displacement — denial of small business loans, credit cards, and financing that affects economic participation. Communities near fossil fuel projects financed by Citi's $285 billion in energy lending absorb environmental and health impacts from extraction and combustion.",
+    "price_illusion": "Citibank presents itself as a global financial institution with sophisticated risk management. The OCC's finding of 'unsafe and unsound' conditions is a regulatory characterization of the opposite. The $400 million fine for risk management failures — not fraud — is the largest OCC fine of its type for structural deficiencies rather than specific misconduct.",
+    "tax_math": "Citigroup's $476 billion in 2008 federal rescue generated deferred tax assets that have provided ongoing tax advantages for years. The bank's international structure manages global tax obligations across 160+ countries. The net tax benefit from the crisis-era losses — absorbed by US taxpayers through the rescue — has been partially returned through subsequent profitable operations and tax payments, but the structure of the rescue itself was extraordinarily taxpayer-favorable for Citi.",
+    "wealth_velocity": "Citigroup's institutional and retail shareholder base is broadly distributed. The 2008 crisis rescue — funded by US taxpayers — preserved these shareholder interests when Citi was effectively insolvent. Armenian American applicants denied credit on the basis of their names did not participate in the economic activity that credit access enables."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Citigroup shareholders", "how": "2008 rescue preserved equity when the bank was insolvent; subsequent recovery delivered returns on rescued equity"},
+      {"group": "Revlon lenders who initially kept $500M", "how": "Kept Citi's accidental wire pending legal resolution; appeals court ultimately ordered return"}
+    ],
+    "who_paid": [
+      {"group": "US taxpayers", "how": "$476B rescue in 2008; bank was effectively insolvent; taxpayers backstopped the failure of one of the world's largest financial institutions"},
+      {"group": "Armenian American credit applicants", "how": "Denied credit on the basis of surname; economic harm from credit denial; $75M settlement"}
+    ],
+    "the_gap": "Citi accidentally sent $900 million to the wrong people. Their systems were so bad a judge said the recipients could keep it. The OCC called their risk management 'unsafe and unsound' and fined them $400 million. They denied credit to people because their names sounded Armenian. In 2008 they needed $476 billion in government support to survive. The consent order from 2020 is still not complete."
+  }
+}

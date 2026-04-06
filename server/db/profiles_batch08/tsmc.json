@@ -1,0 +1,91 @@
+{
+  "brand_name": "TSMC",
+  "brand_slug": "tsmc",
+  "parent_company": "Taiwan Semiconductor Manufacturing Company Limited",
+  "ultimate_parent": "Taiwan Semiconductor Manufacturing Company Limited",
+  "subsidiaries": ["TSMC Arizona", "TSMC Japan (JASM)", "TSMC Europe (Dresden)", "WaferTech (Washington state)"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "TSMC MAKES 90% OF THE WORLD'S MOST ADVANCED CHIPS AND RECEIVED $6.6 BILLION IN US TAXPAYER CHIPS ACT FUNDING — ITS ARIZONA CONSTRUCTION WORKERS SAY THEY WERE TREATED LIKE SECOND-CLASS EMPLOYEES",
+  "executive_summary": "Taiwan Semiconductor Manufacturing Company (TSMC) is the world's largest contract semiconductor manufacturer, producing approximately 90% of the world's most advanced chips (below 7nm process node) for clients including Apple, NVIDIA, AMD, Qualcomm, and virtually every major semiconductor designer. TSMC received $6.6 billion in US CHIPS Act grants and $5 billion in loans — the largest CHIPS Act award — for its Arizona semiconductor fabrication facilities under construction. Construction of the Arizona fabs generated a documented labor dispute: American construction unions and workers alleged that TSMC imported hundreds of Taiwanese workers under visa arrangements that bypassed US prevailing wage requirements, while US construction workers claimed they were treated as less skilled and less trusted than their Taiwanese counterparts. TSMC subsequently committed to hiring more American workers. Taiwan's geographic concentration of semiconductor manufacturing — which TSMC represents — is itself a documented geopolitical risk that the CHIPS Act was designed to address.",
+  "verdict_tags": ["90pct_advanced_chip_manufacturing_concentration", "6_6b_chips_act_grant_largest_award", "arizona_construction_taiwanese_workers_us_worker_displacement", "prevailing_wage_visa_bypass_documented", "apple_nvidia_amd_qualcomm_sole_supplier"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": false, "health": false, "legal": false},
+  "labor": {
+    "summary": "Construction of TSMC's Arizona fab facilities generated documented labor disputes. Arizona construction workers and the International Brotherhood of Electrical Workers alleged that TSMC imported Taiwanese workers under B-1 visa classifications — typically for business visitors — to perform skilled construction work that US workers would have performed under prevailing wage requirements. TSMC disputed the characterization, stating the Taiwanese workers were trainers and supervisors. The Arizona AFL-CIO filed formal complaints. TSMC subsequently committed to Project Labor Agreements requiring US union labor for the next construction phase. In Taiwan, TSMC engineers are documented to work under the '36 system' — 3 weeks on, 6 days off — and face competitive performance pressure.",
+    "flags": ["b1_visa_worker_classification_dispute", "arizona_prevailing_wage_bypass_alleged", "ibew_afl_cio_complaints_filed", "taiwan_36_system_engineer_overwork", "project_labor_agreement_subsequently_committed"],
+    "sources": ["https://www.reuters.com/technology/tsmc-arizona-fab-construction-worker-dispute-2022-11-22/"]
+  },
+  "environmental": {
+    "summary": "Semiconductor manufacturing is one of the most water and energy-intensive industrial processes. TSMC's Taiwan fabrication facilities consume approximately 156 million metric tons of water annually — a significant share of Taiwan's available freshwater resources in a region facing documented water stress from climate change. The Arizona facility will similarly require significant water in a desert environment where water is already constrained. TSMC has committed to renewable energy and water recycling targets. Semiconductor manufacturing uses perfluorocompounds (PFCs) — potent greenhouse gases — that require specialized treatment.",
+    "flags": ["156m_metric_tons_water_taiwan_annually", "arizona_desert_water_consumption_constrained_region", "pfc_greenhouse_gas_semiconductor_manufacturing", "water_stress_climate_change_taiwan"],
+    "sources": []
+  },
+  "political": {
+    "summary": "TSMC's concentration in Taiwan creates what US national security officials describe as the 'silicon shield' — Taiwan's value as a semiconductor manufacturer is so high that an attack on Taiwan would be economically catastrophic globally, providing a form of deterrence. The US CHIPS Act's $6.6 billion award to TSMC is explicitly designed to reduce this concentration risk by building domestic manufacturing capacity. TSMC's founder Morris Chang has been candid that CHIPS Act manufacturing economics are inferior to Taiwan — manufacturing in the US costs significantly more than manufacturing in Taiwan — raising questions about long-term sustainability of the US subsidized facilities without ongoing government support.",
+    "flags": ["silicon_shield_geopolitical_deterrence_concept", "chips_act_designed_reduce_taiwan_concentration", "morris_chang_us_manufacturing_economics_inferior_candid", "subsidy_dependence_long_term_sustainability_question"],
+    "sources": []
+  },
+  "legal": {
+    "summary": "No major criminal or regulatory enforcement actions against TSMC have been documented. The labor disputes at the Arizona construction site were addressed through regulatory complaints and subsequent negotiated agreements rather than formal legal proceedings. TSMC has committed to Department of Labor prevailing wage compliance in subsequent construction phases through Project Labor Agreements. The company faces potential export control compliance obligations given that its chips are subject to US export control regulations when produced for certain customers or destined for certain end users.",
+    "flags": ["arizona_labor_dispute_resolved_pla", "export_control_compliance_obligations", "no_major_criminal_enforcement"],
+    "sources": []
+  },
+  "tax": {
+    "summary": "TSMC is listed on the Taiwan Stock Exchange and New York Stock Exchange (ADR). It pays Taiwanese corporate taxes on its Taiwanese operations and US corporate taxes on its US operations. The CHIPS Act funding — $6.6 billion in grants and $5 billion in loans — is explicitly public subsidy for private semiconductor manufacturing. The economic analysis of whether US taxpayers benefit from this subsidy through domestic manufacturing, national security, and employment depends on assumptions about long-term facility operation that are not yet validated.",
+    "flags": ["6_6b_grant_5b_loan_public_subsidy", "chips_act_taxpayer_benefit_assumption_unvalidated", "taiwanese_us_corporate_tax_dual_structure"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO C.C. Wei leads TSMC. Founder Morris Chang — who built TSMC from a 1987 startup into the world's most important semiconductor company — retired in 2018 but remains an influential public voice on industry policy. Chang's candid 2022 speech at the CHIPS Act chip ceremony — noting that US semiconductor manufacturing would be 'a very expensive exercise' — captured the tension between national security objectives and economic efficiency that the CHIPS Act embodies.",
+    "flags": ["chang_expensive_exercise_candid_chips_act_ceremony", "wei_ceo", "1987_founding_to_most_important_semiconductor_company"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "TSMC's client list — Apple, NVIDIA, AMD, Qualcomm, Broadcom, MediaTek — represents virtually every major semiconductor brand. Its manufacturing represents a single point of failure for the global technology supply chain: military systems, consumer electronics, automotive, telecommunications, and medical devices all depend on TSMC production continuity. The geopolitical risk of this concentration — with Taiwan in a contested relationship with China — is the explicit motivation for the CHIPS Act.",
+    "flags": ["single_point_failure_global_technology_supply_chain", "military_consumer_automotive_telecom_medical_all_depend", "china_taiwan_geopolitical_motivation_chips_act"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Arizona construction workers and IBEW representatives alleged that TSMC's use of Taiwanese workers created a dual-track workforce where American workers were assigned secondary roles and denied the technical knowledge transfer they expected from the project — reducing the domestic skill-building benefit that the CHIPS Act investment was designed to generate. Some workers alleged they were told by TSMC management that Taiwanese workers were 'more experienced' in ways they experienced as culturally dismissive rather than technically accurate.",
+    "flags": ["secondary_role_assignment_american_workers_alleged", "knowledge_transfer_denied_chips_act_intent_undermined_alleged", "cultural_dismissiveness_taiwanese_more_experienced_alleged"],
+    "sources": ["https://www.reuters.com/technology/tsmc-arizona-fab-construction-worker-dispute-2022-11-22/"]
+  },
+  "health_record": {
+    "summary": "Semiconductor manufacturing workers face exposure to chemical hazards including solvents, acids, and PFCs in cleanroom environments. TSMC's Taiwan operations have documented occupational health protocols. The Arizona construction workforce dispute does not involve direct health concerns — it is a labor classification and compensation issue. Taiwan's tech industry culture — including TSMC's engineering workforce — has documented rates of work-related stress and overwork that have been the subject of labor reform advocacy.",
+    "flags": ["cleanroom_chemical_hazard_exposure", "taiwan_tech_overwork_labor_advocacy", "pfc_worker_exposure_manufacturing"],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": ["There is no cost-competitive alternative to TSMC for advanced chip manufacturing below 5nm — Intel Foundry Services and Samsung Foundry are the only other options at advanced nodes and both have documented yield and capacity gaps relative to TSMC. This is the core geopolitical problem the CHIPS Act is trying to solve."],
+    "healthier": ["Samsung Foundry (South Korea) — geographically diversified from Taiwan; different geopolitical risk profile; less advanced at most cutting-edge nodes than TSMC", "Intel Foundry Services — US-owned; CHIPS Act recipient; developing advanced node capability; currently trails TSMC technically"],
+    "diy": ["The CHIPS Act's $52 billion in semiconductor manufacturing and research subsidies is a major public investment — the congressional tracking of how these funds are deployed (including TSMC's $6.6B award) is publicly available through the Department of Commerce", "If you own TSMC stock (including through broad index funds): the Taiwan political risk is the primary investment risk factor — follow cross-strait relations as the primary indicator"]
+  },
+  "timeline": [
+    {"year": 1987, "event": "Morris Chang founds TSMC in Hsinchu, Taiwan with support from Taiwan's government; invents the pure-play foundry model", "severity": "neutral", "source_url": ""},
+    {"year": 2020, "event": "TSMC announces Arizona fab construction; first non-Taiwan facility for advanced chip production", "severity": "neutral", "source_url": ""},
+    {"year": 2022, "event": "November: Arizona construction worker dispute emerges; IBEW and AFL-CIO file complaints over Taiwanese worker visa classifications", "severity": "critical", "source_url": "https://www.reuters.com/technology/tsmc-arizona-fab-construction-worker-dispute-2022-11-22/"},
+    {"year": 2022, "event": "December: CHIPS Act ceremony; Morris Chang calls US manufacturing 'a very expensive exercise'", "severity": "high", "source_url": ""},
+    {"year": 2023, "event": "TSMC awarded $6.6B grant + $5B loan under CHIPS Act — largest award in the program", "severity": "high", "source_url": ""},
+    {"year": 2023, "event": "TSMC commits to Project Labor Agreements for subsequent Arizona construction phases; resolves labor dispute", "severity": "moderate", "source_url": ""},
+    {"year": 2025, "event": "First Arizona fab begins production; 2nm fab construction underway; US semiconductor supply chain begins partial domestication", "severity": "neutral", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Arizona construction workers who anticipated skill-building work on a national security semiconductor project — funded by US taxpayers — alleged they were assigned secondary roles while Taiwanese workers performed the technically skilled work. The knowledge transfer that was supposed to be a benefit of domestic investment was, they alleged, not occurring. The CHIPS Act's domestic skill-building rationale depends on this knowledge transfer actually happening.",
+    "price_illusion": "The CHIPS Act's $52 billion in subsidies is presented as an investment in domestic semiconductor security. The economics are genuinely challenging — TSMC's founder said so publicly at the program's own ceremony. The $6.6 billion grant to TSMC subsidizes manufacturing that is more expensive than equivalent Taiwanese production, with the security premium borne by taxpayers now and in future subsidy dependency.",
+    "tax_math": "US taxpayers fund $6.6 billion in grants and $5 billion in loans to TSMC — a Taiwanese company. The Arizona facilities, if successful, generate US corporate tax revenue, US employment, and US national security benefit that is intended to justify the subsidy. Whether the long-term economics are net positive for US taxpayers depends on manufacturing cost trajectories and geopolitical developments that are genuinely uncertain.",
+    "wealth_velocity": "TSMC's market capitalization — approximately $600 billion — concentrates value for Taiwanese institutional shareholders and global index fund holders. The $6.6 billion in US taxpayer grants will support operations that generate returns for these shareholders. US construction workers building the facility, if their allegations were accurate, participated in a nation-building project as secondary labor while the primary skilled work was performed by imported workers."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "TSMC shareholders", "how": "$6.6B in US grants and $5B in loans reducing the cost of Arizona facility construction; US operations diversify geopolitical risk at taxpayer expense"},
+      {"group": "Apple, NVIDIA, AMD, Qualcomm", "how": "Supply chain security through US-based TSMC capacity reducing Taiwan dependency risk"},
+      {"group": "Taiwanese workers imported to Arizona", "how": "Employment at TSMC Arizona construction without competing through US prevailing wage requirements"}
+    ],
+    "who_paid": [
+      {"group": "US taxpayers", "how": "$6.6B grant + $5B loan; manufacturing that TSMC's own founder said is uneconomical without subsidy"},
+      {"group": "Arizona construction workers", "how": "Secondary roles on a taxpayer-funded national security project while imported workers performed primary skilled work per their allegations"}
+    ],
+    "the_gap": "TSMC received $6.6 billion in US taxpayer grants — the largest CHIPS Act award — to build fabs in Arizona. Their own founder said US manufacturing is 'a very expensive exercise.' American union construction workers filed complaints saying Taiwanese workers were brought in under visitor visas to do the skilled work. TSMC makes 90% of the world's most advanced chips. If Taiwan stops operating, the global economy stops functioning. That is the leverage."
+  }
+}

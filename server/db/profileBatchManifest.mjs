@@ -13,4 +13,5 @@ export const HAND_AUTHORED_PROFILE_BATCH_DIRS = [
   'profiles_batch05',
   'profiles_batch06',
   'profiles_batch07',
+  'profiles_batch08',
 ];

@@ -1,0 +1,89 @@
+{
+  "brand_name": "Costco",
+  "brand_slug": "costco",
+  "parent_company": "Costco Wholesale Corporation",
+  "ultimate_parent": "Costco Wholesale Corporation",
+  "subsidiaries": ["Costco Travel", "Costco Auto Program", "Costco Pharmacy"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "THE AP INVESTIGATION FOUND SLAVE LABOR IN COSTCO'S SHRIMP SUPPLY CHAIN — COSTCO WAS THE ONLY RETAILER THAT SAID THEY KNEW THEY COULDN'T GUARANTEE IT WAS CLEAN",
+  "executive_summary": "Costco Wholesale Corporation is the world's second-largest retailer by revenue, operating approximately 870 membership warehouse clubs globally. In 2015, an Associated Press investigation documented that Thai shrimp processed by workers in conditions of forced labor — including workers held on boats against their will, denied wages, and subjected to violence — entered the supply chains of major US retailers and restaurant chains. Costco was notable in the AP investigation for being the only retailer to acknowledge it could not guarantee its shrimp was free of forced labor. Costco's seafood supply chain was specifically documented in subsequent lawsuits — a California class action alleged consumers had been misled about Costco's 'responsible sourcing' claims. Costco has also faced significant labor disputes and OSHA citations at multiple distribution centers, and is among the largest buyers of single-use plastic packaging in the US retail sector.",
+  "verdict_tags": ["ap_thai_shrimp_forced_labor_supply_chain", "only_retailer_admitted_cannot_guarantee_clean", "california_class_action_responsible_sourcing_claims", "costco_seafood_supply_chain_documented"],
+  "concern_flags": {"labor": true, "environmental": true, "political": false, "tax": false, "health": false, "legal": true},
+  "labor": {
+    "summary": "Costco is widely documented as one of the better US retail employers — paying above-average wages (minimum $20/hour in 2024), providing healthcare benefits, and maintaining lower employee turnover than peers. This profile is genuinely more positive than most retail counterparts. However, the AP investigation's documentation of forced labor in Costco's Thai shrimp supply chain represents a significant supply chain labor failure. The class action alleged consumers paid a premium for 'responsible sourcing' commitments that the supply chain did not support. Costco's seafood supplier Charoen Pokphand Foods (CP Foods) was specifically named in the AP investigation.",
+    "flags": ["thai_shrimp_forced_labor_ap_investigation", "cp_foods_supplier_named", "responsible_sourcing_class_action", "above_average_direct_employee_wages_positive"],
+    "sources": ["https://apnews.com/article/8f1df77b3f4a408a83c81e78e71c2d12"]
+  },
+  "environmental": {
+    "summary": "Costco is among the largest purchasers of single-use plastic packaging in US retail. Its Kirkland Signature private label generates significant plastic packaging volume. Costco has made commitments to reduce packaging and increase recycled content but has been criticized for slow progress relative to its purchasing volume. The rotisserie chicken supply chain — where Costco controversially built its own chicken farm in Nebraska — has drawn environmental concerns about concentrated animal feeding operation (CAFO) practices.",
+    "flags": ["largest_us_single_use_plastic_buyers", "kirkland_packaging_volume", "nebraska_chicken_cafo_concerns"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Costco's political profile is relatively low-key compared to its retail peers. The company has not been a major political lobbying presence and does not have a documented anti-union campaign history comparable to Walmart or Amazon — though it also does not have significant US union membership. Costco's membership model insulates it from some forms of political pressure that affect publicly-accessible retailers.",
+    "flags": ["lower_political_profile_than_retail_peers"],
+    "sources": []
+  },
+  "legal": {
+    "summary": "California class action: filed following the AP forced labor investigation, alleging Costco's responsible sourcing marketing was misleading given documented forced labor in its Thai shrimp supply chain. Costco settled the class action. OSHA citations: multiple Costco warehouses have received OSHA citations for forklift safety, egress, and workplace hazard violations — none at the scale of Dollar Tree's historic settlement but representing a documented pattern across its distribution network. Costco faced a $3.2 million OSHA fine at its Mira Loma, California distribution center in 2022 for ergonomic hazards.",
+    "flags": ["thai_shrimp_class_action_settled", "osha_forklift_egress_citations_multiple", "3_2m_mira_loma_ergonomic_osha_2022"],
+    "sources": ["https://apnews.com/article/8f1df77b3f4a408a83c81e78e71c2d12"]
+  },
+  "tax": {
+    "summary": "Costco is a US-headquartered company paying US corporate taxes. The company's international operations — including in Canada, UK, Japan, South Korea, and Australia — are taxed in their respective jurisdictions. No major offshore tax enforcement actions or documented tax avoidance structures comparable to peers have been identified. Tax is not a primary documented concern for Costco.",
+    "flags": [],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Ron Vachris succeeded Craig Jelinek in January 2024. Jelinek led the company for a decade during which the Thai shrimp supply chain documentation occurred. Costco's executive team has maintained the warehouse model Jim Sinegal built — including the well-documented $1.50 hot dog and soda combo whose price has not changed since 1985, treated as a member loyalty symbol. Executive compensation at Costco is comparatively moderate for a company of its scale.",
+    "flags": ["jelinek_era_thai_shrimp_documentation", "moderate_executive_compensation_for_scale"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Costco's Thai shrimp supply chain connected it to Charoen Pokphand (CP) Foods — one of the world's largest seafood processors and a company the AP investigation documented using feed made partly from fish caught by forced labor workers held on boats. CP Foods subsequently committed to supply chain reforms. Costco's private label Kirkland Signature — which generates approximately $65 billion annually and would make it one of the world's largest standalone consumer goods companies — creates an accountability gap between Costco as retailer and the manufacturers producing Kirkland products.",
+    "flags": ["cp_foods_forced_labor_fish_feed_supply_chain", "kirkland_65b_private_label_accountability_gap"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The California class action alleged that Costco's 'responsible sourcing' marketing — including standards documents and supplier auditing claims — created a false impression that its seafood supply chain had been verified as free of forced labor when Costco's own management acknowledged it could not guarantee this. Environmental advocates have alleged that Costco's progress on single-use plastic reduction has been significantly slower than its public commitments suggested, with the Kirkland private label representing the largest gap between commitment and performance.",
+    "flags": ["responsible_sourcing_marketing_false_impression_alleged", "plastic_reduction_commitment_performance_gap_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "The Thai shrimp supply chain forced labor — workers held on boats, denied wages, subjected to violence — represents a direct human rights and physical welfare harm to the workers involved. Costco's food safety record is generally strong — no major food safety enforcement actions at the scale of some peers have been documented. Its pharmacy and optical operations are subject to regulatory oversight. The rotisserie chicken operation's CAFO practices have the standard industrial agriculture health profile.",
+    "flags": ["thai_boat_worker_physical_welfare_harm", "cafo_chicken_industrial_agriculture_health_profile"],
+    "sources": ["https://apnews.com/article/8f1df77b3f4a408a83c81e78e71c2d12"]
+  },
+  "alternatives": {
+    "cheaper": ["Sam's Club (Walmart-owned) — similar warehouse format, different supply chain documentation profile but also with documented supply chain concerns", "BJ's Wholesale Club — regional East Coast alternative with documented supply chain audit programs"],
+    "healthier": ["For seafood specifically: Marine Stewardship Council certified seafood — look for the blue MSC label; independently verified sustainable sourcing", "Local fish markets and fishing cooperatives — direct relationship with fishing operations, no multi-country supply chain opacity"],
+    "diy": ["The Monterey Bay Aquarium's Seafood Watch program (seafoodwatch.org) rates specific seafood products and retailers — use it before buying shrimp from any major retailer", "Costco's genuine positive: its direct employee wages and benefits are documented as above-average for retail — if you're evaluating retail employment, Costco is genuinely better than most peers on this dimension"]
+  },
+  "timeline": [
+    {"year": 1983, "event": "First Costco warehouse opens in Seattle; Jim Sinegal and Jeff Brotman found the company", "severity": "neutral", "source_url": ""},
+    {"year": 2015, "event": "AP investigation documents forced labor in Thai shrimp supply chain; Costco named as retailer acknowledging it cannot guarantee clean supply chain", "severity": "critical", "source_url": "https://apnews.com/article/8f1df77b3f4a408a83c81e78e71c2d12"},
+    {"year": 2015, "event": "California class action filed alleging misleading responsible sourcing claims on seafood products", "severity": "high", "source_url": ""},
+    {"year": 2019, "event": "Costco opens own chicken processing facility in Nebraska to control rotisserie chicken supply chain; CAFO scale generates environmental scrutiny", "severity": "moderate", "source_url": ""},
+    {"year": 2022, "event": "$3.2M OSHA fine at Mira Loma distribution center for ergonomic hazards", "severity": "high", "source_url": ""},
+    {"year": 2024, "event": "CEO Craig Jelinek succeeded by Ron Vachris; Costco membership fee increase announced; $1.50 hot dog maintained", "severity": "neutral", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Thai fishing boat workers held in forced labor conditions — the source of fish that fed the shrimp Costco sold — experienced violence, wage theft, and physical confinement. Costco's acknowledgment that it could not guarantee its supply chain was clean is unusually candid but does not change the documented harm to those workers.",
+    "price_illusion": "Costco's seafood was priced with 'responsible sourcing' standards marketing. The AP investigation and subsequent class action established that the supply chain could not support those standards claims. Consumers paying for certified responsible seafood received products whose supply chain was documented to include forced labor inputs.",
+    "tax_math": "Costco pays US corporate taxes and is not a documented case of aggressive tax avoidance. This is genuinely a positive dimension of Costco's profile relative to retail peers. Its effective tax rate has been relatively close to statutory rates.",
+    "wealth_velocity": "Costco is publicly traded with broad institutional and retail shareholder ownership including significant index fund exposure. Its membership model generates recurring revenue from approximately 130 million cardholders globally. Kirkland Signature's $65 billion in revenue — from private label products manufactured by suppliers whose labor standards vary — flows to shareholders while creating accountability gaps for the workers producing those products."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Costco shareholders", "how": "Revenue from seafood priced with responsible sourcing marketing; supply chain labor costs reduced by forced labor conditions upstream"},
+      {"group": "Costco consumers", "how": "Below-market prices on bulk goods enabled partly by supply chain opacity and labor cost externalization offshore"}
+    ],
+    "who_paid": [
+      {"group": "Thai fishing boat workers", "how": "Forced labor conditions, wage theft, violence documented by AP investigation in the supply chain producing fish feed for Costco's shrimp"},
+      {"group": "Costco shoppers who paid 'responsible sourcing' premium", "how": "Premium for seafood certified as responsibly sourced when supply chain documentation acknowledged this could not be guaranteed"}
+    ],
+    "the_gap": "The AP found slave labor in Costco's shrimp supply chain. Costco was the only retailer honest enough to say they couldn't guarantee it was clean. Their 'responsible sourcing' marketing said something different. A class action followed. The Kirkland label on $65 billion of products every year represents supply chains Costco controls less than its direct employment — and its direct employment is genuinely better than most retail."
+  }
+}

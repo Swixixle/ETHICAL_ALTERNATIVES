@@ -1,0 +1,95 @@
+{
+  "brand_name": "Petrobras",
+  "brand_slug": "petrobras",
+  "parent_company": "Petróleo Brasileiro S.A.",
+  "ultimate_parent": "Brazilian Federal Government (36.6% stake, controlling shareholder)",
+  "subsidiaries": ["Transpetro", "Petrobras Distribuidora (BR Distribuidora)", "Petroquisa"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "PETROBRAS PAID $2.95 BILLION — THE LARGEST FCPA SETTLEMENT IN HISTORY — FOR A BRIBERY SCHEME THAT IMPLICATED A PRESIDENT, IMPRISONED DOZENS OF EXECUTIVES, AND NEARLY COLLAPSED BRAZILIAN DEMOCRACY",
+  "executive_summary": "Petróleo Brasileiro S.A. (Petrobras) is Brazil's state-controlled oil and gas company and one of the largest companies in Latin America. In September 2018, Petrobras agreed to pay $2.95 billion to resolve DOJ and SEC charges — the largest Foreign Corrupt Practices Act settlement in history. The underlying scheme, exposed by Brazil's Operation Car Wash (Operação Lava Jato) investigation beginning in 2014, revealed that Petrobras executives colluded with a cartel of major construction companies to systematically overcharge for contracts, routing approximately $2 billion in kickbacks to Petrobras officials and to Brazilian political parties including the Workers' Party (PT) and the Brazilian Democratic Movement Party (PMDB). Former President Luiz Inácio Lula da Silva was convicted and imprisoned in connection with the scandal — though his convictions were later annulled on procedural grounds and he was subsequently re-elected president in 2022. Over 150 businesspeople and politicians were convicted in Brazilian courts. The scandal effectively reshaped Brazilian politics for a decade.",
+  "verdict_tags": ["2_95b_fcpa_settlement_largest_ever", "operation_car_wash_lava_jato", "2b_kickback_scheme_construction_cartel", "lula_conviction_then_annulled", "150_plus_convictions_brazil", "state_controlled_company_political_party_payments", "petrobras_executives_imprisoned"],
+  "concern_flags": {"labor": false, "environmental": true, "political": true, "tax": true, "health": false, "legal": true},
+  "labor": {
+    "summary": "Petrobras employs approximately 45,000 workers, primarily in Brazil. The company has a strong union presence through the Brazilian Oil Workers Federation (FUP). The Car Wash investigation affected Petrobras workers significantly — thousands of jobs were lost at Petrobras-contracted construction and engineering firms as contracts were cancelled following the fraud discovery. No major direct Petrobras labor rights violations have been identified as a primary concern separate from the broader corruption context.",
+    "flags": ["contracted_worker_job_losses_fraud_discovery", "union_presence_fup"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Petrobras's deep-water oil exploration in the pre-salt layer off Brazil's coast — including the Tupi/Lula fields — represents one of the world's most significant deepwater extraction operations with associated environmental risk. A 2000 oil spill from a Petrobras platform on the Iguaçu River in Paraná state released approximately 4 million liters of crude oil — one of Brazil's worst environmental disasters at the time. The company paid significant environmental penalties. Its Comperj petrochemical complex in Rio de Janeiro state has been the subject of environmental compliance concerns.",
+    "flags": ["2000_iguacu_river_spill_4_million_liters", "deepwater_pre_salt_environmental_risk", "comperj_compliance_concerns"],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Operation Car Wash investigation revealed that Petrobras was not merely a victim of corruption but a systematic mechanism for funding Brazilian political parties. The construction cartel — including giants Odebrecht, Andrade Gutierrez, and Camargo Corrêa — paid kickbacks to Petrobras executives who then routed funds to politicians and parties. The political consequences were seismic: President Dilma Rousseff was impeached (for unrelated fiscal manipulation); former President Lula was convicted, imprisoned for 580 days, had his conviction annulled, and was re-elected president in 2022; and the political landscape was transformed, enabling the rise of Jair Bolsonaro in 2018. The Car Wash investigation itself became politically controversial — with subsequent findings that lead prosecutor Sérgio Moro had coordinated improperly with investigators.",
+    "flags": ["political_party_funding_mechanism_documented", "rousseff_impeachment_context", "lula_imprisoned_580_days_conviction_annulled", "moro_coordination_improper_subsequent_finding", "bolsonaro_rise_connected_to_scandal_context"],
+    "sources": ["https://www.justice.gov/opa/pr/petrobras-agrees-pay-more-2-billion-resolve-foreign-corrupt-practices-act-charges"]
+  },
+  "legal": {
+    "summary": "September 2018: Petrobras agreed to pay $1.78 billion to the DOJ and $853 million to the SEC — total $2.95 billion — the largest FCPA resolution in history, surpassing the previous record held by Siemens ($1.6 billion, 2008). In Brazil, Operation Car Wash resulted in over 150 convictions including senior Petrobras executives, construction company executives, and politicians. Former CEO Sérgio Gabrielli and other executives were investigated. The Odebrecht construction company separately paid $3.5 billion to DOJ, SEC, Swiss, and Brazilian authorities in its own FCPA settlement — covering bribes paid in 12 countries — of which Petrobras contracts were a significant component.",
+    "flags": ["2_95b_fcpa_largest_ever_history", "1_78b_doj_853m_sec", "150_plus_brazil_convictions", "odebrecht_3_5b_separate_settlement_connected"],
+    "sources": ["https://www.justice.gov/opa/pr/petrobras-agrees-pay-more-2-billion-resolve-foreign-corrupt-practices-act-charges"]
+  },
+  "tax": {
+    "summary": "As a state-controlled company, Petrobras pays Brazilian corporate taxes and royalties to the federal government on its oil production. The corruption scheme had significant tax implications — the inflated contract payments that funded the kickback system were recognized as legitimate business expenses by Petrobras, generating inappropriate tax deductions on fraudulent transactions. The Brazilian IRS (Receita Federal) has examined Petrobras's tax treatment of the scandal-related losses and provisions.",
+    "flags": ["inflated_contract_deductions_fraudulent_transactions", "receita_federal_examination", "state_company_tax_royalty_structure"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Maria das Graças Foster resigned in February 2015 as the Car Wash scandal exploded — she had been a close Dilma Rousseff ally. Former CEO José Sérgio Gabrielli faced Brazilian investigation. Former Petrobras director Paulo Roberto Costa pleaded guilty and cooperated with investigators — his testimony was foundational to the Car Wash investigation. Construction executive Marcelo Odebrecht served prison time. Sérgio Moro — the Car Wash lead judge — subsequently became Bolsonaro's Justice Minister before his appointment was ruled unconstitutional. The scandal's judge-to-politician pipeline was itself later found to have compromised the investigation's impartiality.",
+    "flags": ["foster_resigned_rousseff_ally", "costa_plea_cooperation_foundational", "moro_judge_to_justice_minister_ruled_improper", "gabrielli_investigated"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The Odebrecht construction empire — which was the primary bribery conduit — operated the same scheme in 12 countries across Latin America and beyond, making the Petrobras/Car Wash scandal the most consequential FCPA investigation in history for sheer geographic reach of corruption uncovered. The construction cartel included every major Brazilian engineering company. The political financing dimension connected to the Workers' Party government's broader infrastructure spending programs under Lula and Rousseff, creating a feedback loop between state investment and political funding.",
+    "flags": ["odebrecht_12_country_parallel_scheme", "construction_cartel_all_major_companies", "workers_party_infrastructure_spending_feedback_loop"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Brazilian Supreme Court findings that Sérgio Moro had coordinated improperly with federal prosecutors — sharing strategic information and advising on charging decisions — raised questions about the fairness of proceedings against Lula in particular. Human rights lawyers and legal scholars have alleged that the Car Wash investigation, while exposing genuine corruption, was applied selectively and politically — targeting left-wing politicians more aggressively than right-wing ones. The annulment of Lula's convictions was based on Moro's lack of impartiality — a finding that does not address whether the underlying conduct occurred.",
+    "flags": ["moro_impartiality_supreme_court_finding", "selective_application_alleged", "lula_conviction_annulled_impartiality_not_innocence"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "The 2000 Iguaçu River oil spill — one of Brazil's worst environmental disasters — affected water supplies, fisheries, and ecosystems along the river. Petrobras's deepwater operations present ongoing oil spill risk. The corruption scheme's inflation of Petrobras costs contributed to the company's near-financial collapse in 2014-2015, threatening Brazil's energy security and the employment of tens of thousands directly and indirectly.",
+    "flags": ["iguacu_spill_water_supply_fishery_ecosystem_harm", "deepwater_ongoing_spill_risk", "company_near_collapse_energy_security_employment"],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": ["Petrobras is a state energy company — Brazilian consumers cannot choose their oil producer. The systemic alternative is stronger state-owned enterprise governance and anti-corruption enforcement, which Operation Car Wash attempted with mixed results."],
+    "healthier": ["Brazil's renewable energy sector — which Petrobras itself is partially entering — represents the structural alternative to fossil fuel dependence that underpins Petrobras's scale"],
+    "diy": ["If you are an investor in Petrobras ADRs: the company settled the US securities class action arising from the fraud for $3 billion in 2018 — the largest securities class action settlement involving a foreign private issuer", "Operation Car Wash documentation is extensively public — the Brazilian federal prosecution made most charging documents available"]
+  },
+  "timeline": [
+    {"year": 1953, "event": "Petrobras founded by President Getúlio Vargas as state oil monopoly; 'O petróleo é nosso' (The oil is ours) national movement", "severity": "neutral", "source_url": ""},
+    {"year": 2000, "event": "Iguaçu River oil spill: approximately 4 million liters released; one of Brazil's worst environmental disasters", "severity": "critical", "source_url": ""},
+    {"year": 2006, "event": "Pre-salt layer discovery: massive deep-water oil fields found off Brazilian coast; Petrobras positioned as global energy giant", "severity": "neutral", "source_url": ""},
+    {"year": 2014, "event": "March: Operation Car Wash begins with money laundering investigation; corruption scheme at Petrobras emerges", "severity": "critical", "source_url": ""},
+    {"year": 2015, "event": "Petrobras records $17B write-down for corruption-inflated assets; CEO Foster resigns; company near financial collapse", "severity": "critical", "source_url": ""},
+    {"year": 2016, "event": "President Dilma Rousseff impeached (separate fiscal charges); political crisis deepens; Lula investigated", "severity": "critical", "source_url": ""},
+    {"year": 2018, "event": "April: Lula imprisoned following conviction by Moro; serves 580 days", "severity": "critical", "source_url": ""},
+    {"year": 2018, "event": "September: $2.95B FCPA settlement with DOJ/SEC — largest in FCPA history", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/petrobras-agrees-pay-more-2-billion-resolve-foreign-corrupt-practices-act-charges"},
+    {"year": 2021, "event": "Brazilian Supreme Court annuls Lula convictions — Moro found to have lacked impartiality", "severity": "high", "source_url": ""},
+    {"year": 2022, "event": "Lula elected president for third time; Moro runs for Senate", "severity": "moderate", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "The construction contracts inflated through the kickback scheme — for refineries, platforms, and pipelines — represented public investment in Brazil's infrastructure that was systematically overpriced, delivering less infrastructure per public real than honest procurement would have. The political financing dimension diverted resources from public policy into electoral campaigns. Brazilian communities served by public services funded partly through Petrobras royalties received reduced value from their national resources.",
+    "price_illusion": "Petrobras sells fuel at prices set partly by Brazilian government policy. The corruption scheme increased Petrobras's costs — through inflated contracts — which contributed to pricing pressures and contributed to the company's 2014-2015 financial crisis. Brazilian fuel consumers paid through a less financially stable national energy company.",
+    "tax_math": "The construction cartel's inflated contract payments — which funded kickbacks — were recorded as legitimate Petrobras business expenses, generating tax deductions on fraudulent transactions. The Brazilian government simultaneously owns Petrobras (36.6%) and was receiving corrupt payments from the contractors Petrobras was paying — a circular corruption that the federal prosecutor described as one of the most complex financial crimes in Brazilian history.",
+    "wealth_velocity": "The kickback scheme distributed approximately $2 billion in extracted value to Petrobras executives, construction company executives, and Brazilian political parties over approximately a decade. Brazilian taxpayers — as indirect Petrobras owners through the federal government's stake — funded a significant portion of these payments through the inflated contract costs that were ultimately borne by Petrobras's balance sheet."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Construction cartel executives (Odebrecht, Andrade Gutierrez, Camargo Corrêa)", "how": "Inflated contract payments generated excess profits that funded kickbacks; many were subsequently convicted in Brazilian courts"},
+      {"group": "Brazilian political parties (PT, PMDB, others)", "how": "Approximately $2B in kickbacks from construction cartel, routed through Petrobras executives; funded electoral campaigns"},
+      {"group": "Petrobras executives who received bribes", "how": "Personal enrichment from kickback scheme; dozens convicted in Brazilian courts"}
+    ],
+    "who_paid": [
+      {"group": "Brazilian public (Petrobras shareholders via government)", "how": "$17B write-down on inflated assets; $2.95B FCPA settlement; near-collapse of national energy company"},
+      {"group": "US investors in Petrobras ADRs", "how": "$3B securities fraud settlement for material misstatements about corruption in Petrobras financial disclosures"},
+      {"group": "Brazilian democracy", "how": "The scandal reshaped Brazilian politics for a decade; contributed to Rousseff's impeachment, Bolsonaro's election, Lula's imprisonment and later return — with the investigation itself found to have been compromised"}
+    ],
+    "the_gap": "Petrobras paid $2.95 billion — the largest bribery settlement in history. The construction companies paid another $3.5 billion. Over 150 people were convicted in Brazil. The lead judge who imprisoned a former president became the Justice Minister of the next president. The Supreme Court then annulled the convictions because the judge had been running the prosecution. The former president is now president again. The corruption was real. The investigation was compromised. Both things are true."
+  }
+}

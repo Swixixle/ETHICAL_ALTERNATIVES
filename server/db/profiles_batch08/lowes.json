@@ -1,0 +1,90 @@
+{
+  "brand_name": "Lowe's",
+  "brand_slug": "lowes",
+  "parent_company": "Lowe's Companies, Inc.",
+  "ultimate_parent": "Lowe's Companies, Inc.",
+  "subsidiaries": ["Lowe's Canada", "RONA (Canada)", "Lowe's Pro Supply"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "LOWE'S PAID $1.6 MILLION FOR OSHA VIOLATIONS AT A STORE WHERE A WORKER DIED — AND ITS CONTRACTOR NETWORK HAS DOCUMENTED WAGE THEFT THAT LOWE'S SAYS ISN'T ITS PROBLEM",
+  "executive_summary": "Lowe's Companies, Inc. is the world's second-largest home improvement retailer — operating approximately 1,700 stores and competing directly with Home Depot. Lowe's has faced a pattern of OSHA citations across its store network for hazardous conditions including forklift safety, egress blockages, and overhead storage risks. In 2021, Lowe's paid $1.6 million in OSHA penalties — one of the largest retail OSHA settlements of that year — following the death of a worker at a Lowe's store in Bridgewater, New Jersey, who was struck by a falling steel pipe while retrieving merchandise. OSHA found Lowe's had knowingly maintained the hazardous condition. Like Home Depot, Lowe's installation contractor network has been the subject of documented wage theft investigations in multiple states — with Lowe's asserting it bears no employer responsibility for independent contractors who receive customer referrals through its platform. Lowe's has also been the subject of discrimination claims and has paid significant settlements in race discrimination cases.",
+  "verdict_tags": ["1_6m_osha_settlement_worker_death_2021", "steel_pipe_falling_knowingly_hazardous_condition", "contractor_network_wage_theft_documented", "employer_responsibility_denial_contractor", "race_discrimination_settlements"],
+  "concern_flags": {"labor": true, "environmental": false, "political": false, "tax": false, "health": true, "legal": true},
+  "labor": {
+    "summary": "The 2021 OSHA settlement — covering the death of a Lowe's worker struck by a falling steel pipe — was accompanied by OSHA's finding that Lowe's had knowingly maintained the overhead storage hazard. OSHA has cited Lowe's stores repeatedly for similar overhead storage, forklift, and egress hazards — establishing a documented pattern rather than isolated incidents. Lowe's installation contractor network: investigations in multiple states have documented wage theft by contractors receiving customer referrals through Lowe's platform, with Lowe's asserting independent contractor status precludes employer liability. Lowe's paid $8.3 million in 2015 to settle a race discrimination lawsuit brought by the EEOC — covering discriminatory hiring and termination practices against Black employees.",
+    "flags": ["worker_death_steel_pipe_knowingly_hazardous", "1_6m_osha_settlement_2021", "pattern_overhead_storage_forklift_citations", "contractor_wage_theft_employer_denial", "8_3m_eeoc_race_discrimination_2015"],
+    "sources": ["https://www.osha.gov/news/newsreleases/region2/03042021"]
+  },
+  "environmental": {
+    "summary": "Lowe's is a major purchaser of lumber and wood products — sharing the same deforestation concerns as Home Depot given their similar product ranges. Lowe's has committed to responsible forestry sourcing and has made progress on eliminating products treated with certain pesticides. Its retail footprint — 1,700 large-format stores — represents significant energy consumption and impervious surface development.",
+    "flags": ["major_lumber_purchaser_deforestation_concerns", "retail_footprint_energy_impervious_surface"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Lowe's political profile is similar to Home Depot's — lobbying on construction, housing regulation, and retail policy. Unlike Home Depot's co-founder Bernie Marcus, Lowe's founding family is not publicly associated with major political donations. Lowe's was briefly the subject of a conservative boycott in 2011 when it pulled advertising from a TLC show featuring Muslim American families after pressure from a Florida-based advocacy group — a decision that generated counter-boycotts from civil rights groups and criticism across the political spectrum.",
+    "flags": ["2011_muslim_family_show_ad_pull_boycott_controversy", "construction_housing_retail_lobbying"],
+    "sources": []
+  },
+  "legal": {
+    "summary": "March 2021: Lowe's agrees to pay $1.6 million in OSHA penalties following the death of a worker at its Bridgewater, NJ store — OSHA found Lowe's had knowingly maintained the hazardous overhead storage condition that caused the worker's death. 2015: $8.3 million EEOC settlement for race discrimination in hiring and termination. Lowe's contractor network: documented wage theft cases in California, New York, and other states have resulted in contractor settlements where Lowe's successfully maintained it bore no employer liability. Lowe's has faced class action litigation for misclassifying assistant managers as exempt from overtime — settling multiple state class actions.",
+    "flags": ["1_6m_osha_bridgewater_nj_worker_death_2021", "8_3m_eeoc_race_discrimination_2015", "contractor_wage_theft_employer_liability_denied", "assistant_manager_overtime_misclassification_class_actions"],
+    "sources": ["https://www.osha.gov/news/newsreleases/region2/03042021"]
+  },
+  "tax": {
+    "summary": "Lowe's is a US-headquartered company paying US corporate taxes. The company has benefited from accelerated depreciation on store construction and the 2017 Tax Cuts and Jobs Act. Its Canadian operations (RONA acquisition) involve cross-border tax considerations. No major offshore tax enforcement or documented aggressive tax avoidance has been identified as a primary concern.",
+    "flags": ["tcja_corporate_tax_benefit", "rona_canada_cross_border_considerations"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Marvin Ellison has led Lowe's since 2018 — one of the few Black CEOs of a Fortune 50 company. His tenure has included the OSHA settlement, COVID-related operational challenges, and the company's technology and supply chain transformation. The 2021 OSHA settlement — for a worker who died due to a knowingly maintained hazard — occurred on his watch. The EEOC race discrimination settlement covered conduct predating his tenure.",
+    "flags": ["ellison_black_ceo_fortune_50_rare", "worker_death_osha_settlement_ellison_tenure"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Lowe's and Home Depot together control the US home improvement retail market — effectively a duopoly with combined market share exceeding 80%. Both companies face the same contractor accountability gap, the same lumber sourcing deforestation concerns, and similar OSHA citation patterns. The parallel structure — commercial benefit from contractor referrals without employer liability — is an industry-standard model whose labor consequences are documented at both companies.",
+    "flags": ["home_depot_duopoly_parallel_contractor_issue", "lumber_sourcing_shared_concern", "osha_pattern_industry_parallels"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "OSHA investigators alleged in the Bridgewater, NJ case that store management was aware of the overhead storage hazard that killed the worker and had not corrected it despite having knowledge — making the violation 'willful' in OSHA's characterization, which carries higher penalties. Worker advocacy organizations have alleged that Lowe's contractor referral model is deliberately structured to capture installation service revenue while denying the labor compliance obligations that a direct employment relationship would require.",
+    "flags": ["willful_violation_management_awareness_alleged", "deliberate_contractor_structure_labor_obligation_avoidance_alleged"],
+    "sources": ["https://www.osha.gov/news/newsreleases/region2/03042021"]
+  },
+  "health_record": {
+    "summary": "The Bridgewater, NJ worker death — from a steel pipe falling from overhead storage — represents a direct occupational health failure at Lowe's. OSHA's finding that the condition was knowingly maintained intensifies the documented health failure. The pattern of OSHA citations across Lowe's stores for similar overhead storage, forklift, and egress hazards suggests systemic underinvestment in worker safety compliance. Assistant managers who were misclassified as exempt from overtime — and denied overtime compensation they were legally entitled to — experienced economic harm from the misclassification.",
+    "flags": ["worker_death_knowingly_maintained_hazard", "systematic_overhead_storage_forklift_pattern", "assistant_manager_wage_theft_overtime_misclassification"],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": ["Home Depot — primary competitor with similar pricing and its own documented OSHA and contractor issues", "Local hardware stores and lumber yards — often competitive on specific items with more direct accountability"],
+    "healthier": ["For contractor installation: verify any Lowe's-referred contractor license and insurance directly before engaging — do not assume Lowe's referral implies labor practice vetting", "Local union contractors for major renovation work — union membership implies some baseline labor standard adherence"],
+    "diy": ["For major lumber and wood product purchases: ask specifically for FSC-certified material — Lowe's carries FSC stock but it must be requested; unstaffed sections default to uncertified product", "OSHA's inspection records are publicly available — you can check whether your local Lowe's has received recent citations at osha.gov"]
+  },
+  "timeline": [
+    {"year": 1946, "event": "Lowe's founded in North Wilkesboro, North Carolina by Lucius Smith Lowe", "severity": "neutral", "source_url": ""},
+    {"year": 2011, "event": "Lowe's pulls advertising from TLC's 'All-American Muslim' after pressure from advocacy group; controversy generates cross-spectrum criticism", "severity": "moderate", "source_url": ""},
+    {"year": 2015, "event": "$8.3M EEOC race discrimination settlement for Black employee hiring and termination practices", "severity": "high", "source_url": ""},
+    {"year": 2018, "event": "Marvin Ellison appointed CEO — one of few Black CEOs of a Fortune 50 company", "severity": "neutral", "source_url": ""},
+    {"year": 2021, "event": "Bridgewater, NJ: worker killed by falling steel pipe; OSHA finds knowingly maintained hazard; $1.6M OSHA settlement", "severity": "critical", "source_url": "https://www.osha.gov/news/newsreleases/region2/03042021"},
+    {"year": 2022, "event": "Multiple state class action settlements for assistant manager overtime misclassification", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "The worker killed at Lowe's Bridgewater, NJ store — whose death OSHA found resulted from a knowingly maintained hazard — represents a community loss. Contractors in Lowe's referral network who engage in documented wage theft harm workers who perform installation labor in customers' homes while Lowe's captures the referral fee and denies employer responsibility. Black employees subject to the discriminatory hiring and termination practices documented in the EEOC settlement experienced economic and career harm.",
+    "price_illusion": "Lowe's installation service pricing — which is competitive — may embed the cost of contractor networks whose below-market labor includes documented wage theft that Lowe's structure denies responsibility for. The competitive pricing is partly a function of labor cost externalization onto workers through the contractor structure.",
+    "tax_math": "Lowe's pays standard US corporate taxes. The contractor misclassification — denying employer status for installation contractors — reduces Lowe's payroll tax obligations (FICA, FUTA) on the labor performing its installation services. Workers perform both sides of self-employment tax while lacking employment protections.",
+    "wealth_velocity": "Lowe's is publicly traded with broad institutional shareholder ownership. Revenue from installation services — where contractor labor costs may include documented wage theft that Lowe's denies responsibility for — flows to shareholders. The worker who died at Bridgewater in 2021 did not participate in this structure."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Lowe's shareholders", "how": "Installation network revenue without employer cost obligations; contractor structure reduces labor compliance liability; $1.6M OSHA fine is a fraction of installation service revenue"},
+      {"group": "Lowe's management during discrimination period", "how": "Discriminatory hiring saved costs on Black employee retention; EEOC case suggests systemic not individual conduct"}
+    ],
+    "who_paid": [
+      {"group": "Worker killed at Bridgewater, NJ", "how": "Died from falling steel pipe in a condition Lowe's management knew was hazardous and had not corrected"},
+      {"group": "Black employees subject to discrimination", "how": "Employment opportunity denied or terminated on racial basis; $8.3M settlement"},
+      {"group": "Contractor workers in referral network", "how": "Documented wage theft in contractors receiving Lowe's customer referrals; Lowe's denies employer responsibility"}
+    ],
+    "the_gap": "A Lowe's worker died from a steel pipe that fell from overhead storage. OSHA found management knew the hazard existed and hadn't fixed it. The fine was $1.6 million. Lowe's paid $8.3 million for discriminating against Black employees. Their contractor referral network has documented wage theft. Lowe's says those workers aren't their employees. The customers who hired them thought they were using Lowe's."
+  }
+}
