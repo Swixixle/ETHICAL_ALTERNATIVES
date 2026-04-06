@@ -59,6 +59,65 @@
   margin-bottom: 8px;
 }
 
+/* Side-by-side: user capture + editorial reference (e.g. Coca-Cola) */
+.investigation-card__photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 0 0 18px;
+}
+
+@media (max-width: 560px) {
+  .investigation-card__photo-pair {
+    grid-template-columns: 1fr;
+  }
+}
+
+.investigation-card__photo-cell {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.investigation-card__photo-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6a8a9a;
+  margin: 0 0 8px;
+  padding: 0 2px;
+}
+
+.investigation-card__photo-frame {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #0a0e14;
+  border: 1px solid rgba(42, 63, 82, 0.65);
+}
+
+.investigation-card__photo-frame img {
+  width: 100%;
+  display: block;
+  height: auto;
+  max-height: min(42vh, 320px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.investigation-card__tap-dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #f0a820;
+  border: 2px solid #0f1520;
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(240, 168, 32, 0.4);
+}
+
 .investigation-card__match-line {
   margin: 0;
   font-size: 13px;

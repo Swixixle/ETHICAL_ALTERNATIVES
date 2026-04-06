@@ -50,6 +50,27 @@ function confidenceLabel(c) {
   return 'Low — verify';
 }
 
+/** True when investigation + capture should show the side-by-side editorial Coca-Cola strip in the card. */
+function isCocaColaContext(id, investigation) {
+  const slug =
+    investigation && typeof investigation.brand_slug === 'string'
+      ? investigation.brand_slug.toLowerCase().trim()
+      : '';
+  if (slug === 'coca-cola' || slug.includes('coca-cola')) return true;
+  const blob = [
+    id?.brand,
+    id?.object,
+    id?.corporate_parent,
+    investigation?.brand,
+    investigation?.generated_headline,
+  ]
+    .map((x) => String(x || '').toLowerCase())
+    .join(' ');
+  return (
+    blob.includes('coca-cola') || blob.includes('coca cola') || /\bcoca[-\s]?cola\b/.test(blob)
+  );
+}
+
 export default function App() {
   /** home — feed; snap — photo tap (Quick); deep — typed investigation (rabbit hole); history — saved taps; witnesses — civic registry */
   const [mode, setMode] = useState('home');
@@ -416,6 +437,12 @@ export default function App() {
       ? getConfidenceBadgePresentation(result.investigation, id, result)
       : null;
 
+  const investigationCapturePair =
+    mode === 'snap' &&
+    Boolean(result?.investigation) &&
+    Boolean(dataUrl) &&
+    isCocaColaContext(id, result.investigation);
+
   const identificationBlock =
     result ? (
       <div className="app__id-block app__id-block--results">
@@ -553,6 +580,18 @@ export default function App() {
               result={result}
               recordPresentation={recordPresentation}
               headline={investigationHeadline(id, result.investigation)}
+              userCaptureSrc={investigationCapturePair ? dataUrl : null}
+              referenceImageSrc={
+                investigationCapturePair ? '/references/coca-cola-whats-inside.png' : null
+              }
+              tapPositionNormalized={
+                investigationCapturePair &&
+                tapPosition &&
+                typeof tapPosition.x === 'number' &&
+                typeof tapPosition.y === 'number'
+                  ? { x: tapPosition.x, y: tapPosition.y }
+                  : null
+              }
               onHireDirectShareFootnote={setHireDirectShareFootnote}
               onWrongBrand={() => {
                 reset();
@@ -626,6 +665,15 @@ export default function App() {
       </>
     ) : null;
 
+  const tapPhotoToolbarMinimal =
+    image && result ? (
+      <div className="app__toolbar">
+        <button type="button" className="app__btn app__btn--ghost" onClick={() => reset()}>
+          New photo
+        </button>
+      </div>
+    ) : null;
+
   const deepResultsSection =
     mode === 'deep' && result ? (
       <div className="app__results-root app__results-root--deep">
@@ -671,12 +719,12 @@ export default function App() {
   const tapResultsSection =
     image && result ? (
       <div className="app__results-root">
-        {!isDesktop ? <div className="app__results-top">{tapPhotoToolbar}</div> : null}
-
         {isDesktop ? (
           <div className="app__results-grid app__results-grid--tap">
             <aside className="app__results-sidebar app__results-sidebar--tap" aria-label="Alternatives">
-              <div className="app__results-sidebar-head">{tapPhotoToolbar}</div>
+              <div className="app__results-sidebar-head">
+                {investigationCapturePair ? tapPhotoToolbarMinimal : tapPhotoToolbar}
+              </div>
               <AlternativesSidebar
                 registryResults={result.registry_results}
                 localResults={result.local_results}
@@ -689,6 +737,11 @@ export default function App() {
           </div>
         ) : (
           <div className="app__results-stack">
+            {!investigationCapturePair ? (
+              <div className="app__results-top">{tapPhotoToolbar}</div>
+            ) : (
+              <div className="app__results-top app__results-top--minimal">{tapPhotoToolbarMinimal}</div>
+            )}
             <div className="app__results-main app__results-main--stacked">{identificationBlock}</div>
             {alternativesAside}
           </div>

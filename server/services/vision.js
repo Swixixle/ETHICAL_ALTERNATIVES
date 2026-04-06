@@ -5,6 +5,7 @@ import {
   recordProviderFailure,
   recordProviderSuccess,
 } from './aiProvider.js';
+import { corroborateVisionIdentification } from './visionCorroboration.js';
 
 const client = new Anthropic();
 
@@ -508,5 +509,11 @@ export async function identifyObject(imageBase64, tapX, tapY, selectionBox = nul
     }
   }
 
-  return { ...merged, crop_base64: cropBase64, vision_provider: visionProvider };
+  let out = { ...merged, crop_base64: cropBase64, vision_provider: visionProvider };
+  try {
+    out = await corroborateVisionIdentification(out, imageBase64, 'image/jpeg', { x: tapX, y: tapY }, null);
+  } catch (e) {
+    console.warn('[vision] corroborateVisionIdentification failed:', e?.message || e);
+  }
+  return out;
 }

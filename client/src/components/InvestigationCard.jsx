@@ -647,6 +647,9 @@ function confidenceLabelFromId(c) {
  *   showNoRecordModule?: boolean;
  *   onHireDirectShareFootnote?: (footnote: string) => void;
  *   onWrongBrand?: () => void;
+ *   userCaptureSrc?: string | null;
+ *   referenceImageSrc?: string | null;
+ *   tapPositionNormalized?: { x: number; y: number } | null;
  * }} props
  */
 export default function InvestigationCard({
@@ -660,6 +663,9 @@ export default function InvestigationCard({
   showNoRecordModule = false,
   onHireDirectShareFootnote,
   onWrongBrand,
+  userCaptureSrc = null,
+  referenceImageSrc = null,
+  tapPositionNormalized = null,
 }) {
   const [openSection, setOpenSection] = useState(/** @type {string | null} */ (null));
   const [proportionalityClientPacket, setProportionalityClientPacket] = useState(
@@ -1066,6 +1072,38 @@ export default function InvestigationCard({
           </p>
         ) : null}
       </div>
+
+      {userCaptureSrc && referenceImageSrc ? (
+        <div className="investigation-card__photo-pair" aria-label="Capture and editorial context">
+          <figure className="investigation-card__photo-cell">
+            <figcaption className="investigation-card__photo-label">Your capture</figcaption>
+            <div className="investigation-card__photo-frame">
+              <img src={userCaptureSrc} alt="Your photo used for this investigation" />
+              {tapPositionNormalized &&
+              typeof tapPositionNormalized.x === 'number' &&
+              typeof tapPositionNormalized.y === 'number' ? (
+                <span
+                  aria-hidden
+                  className="investigation-card__tap-dot"
+                  style={{
+                    left: `${tapPositionNormalized.x * 100}%`,
+                    top: `${tapPositionNormalized.y * 100}%`,
+                  }}
+                />
+              ) : null}
+            </div>
+          </figure>
+          <figure className="investigation-card__photo-cell">
+            <figcaption className="investigation-card__photo-label">Editorial — product context</figcaption>
+            <div className="investigation-card__photo-frame">
+              <img
+                src={referenceImageSrc}
+                alt="Editorial reference image for the same product category"
+              />
+            </div>
+          </figure>
+        </div>
+      ) : null}
 
       <div className="investigation-card__verdict-block">
         {flatVerdictPills.length ? (

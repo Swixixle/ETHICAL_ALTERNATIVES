@@ -11,6 +11,7 @@ import {
   recordProviderSuccess,
   runInvestigationTextFallbackChain,
 } from './aiProvider.js';
+import { corroborateLayerC, mergeLayerCCorroborationIntoProfileJson } from './corroboration.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -1233,7 +1234,7 @@ async function extractParsedFromPlainText(text, brandLabel) {
  * @param {string[]} citationUrls
  * @param {string | null | undefined} investigationProvider — claude | perplexity | gemini
  */
-function finalizeRealtimeFromParsed(
+async function finalizeRealtimeFromParsed(
   parsed,
   citationUrls,
   brandName,
@@ -1251,6 +1252,14 @@ function finalizeRealtimeFromParsed(
     recordProviderSuccess('claude');
   }
 
+  try {
+    await corroborateLayerC(investigation);
+  } catch (e) {
+    console.warn('[corroboration] pipeline error (non-fatal):', e?.message || e);
+    investigation.corroboration_ran = false;
+    investigation.corroboration_skipped_reason = 'pipeline_error';
+  }
+
   const slugForDb = investigation.brand_slug;
   const parentCo = investigation.parent ?? null;
   const profileJsonForDb = {
@@ -1266,6 +1275,7 @@ function finalizeRealtimeFromParsed(
           : null,
     profile_type: 'database',
   };
+  mergeLayerCCorroborationIntoProfileJson(investigation, profileJsonForDb);
   return wrapRealtimeInvestigationResult(investigation, profileJsonForDb);
 }
 
@@ -1299,7 +1309,7 @@ If web search is unavailable, use only well-established public knowledge. Use ov
       if (fb) {
         const p = await extractParsedFromPlainText(fb.text, brandLabel);
         if (p) {
-          return finalizeRealtimeFromParsed(
+          return await finalizeRealtimeFromParsed(
             p,
             citationUrls,
             brandName,
@@ -1378,7 +1388,7 @@ If web search is unavailable, use only well-established public knowledge. Use ov
     parsed = buildUnparseableRealtimeStub(brandName, corporateParent, healthFlag, text);
   }
 
-  return finalizeRealtimeFromParsed(parsed, citationUrls, brandName, corporateParent, healthFlag, 'claude');
+  return await finalizeRealtimeFromParsed(parsed, citationUrls, brandName, corporateParent, healthFlag, 'claude');
 }
 
 /** Structured completion log for debugging thin / missing profiles. */
