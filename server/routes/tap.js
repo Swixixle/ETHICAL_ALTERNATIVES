@@ -17,6 +17,12 @@ import { pool } from '../db/pool.js';
 import { getIncumbentDbPreview } from '../services/incumbentPreview.js';
 import { saveTapHistoryAsync } from '../services/tapHistory.js';
 import { attachHireDirectCategories } from '../services/hireDirectCategories.js';
+import {
+  recordImpactAfterInvestigation,
+  recordImpactAfterSourcing,
+  recordImpactAfterTapPreview,
+  recordImpactAfterTypedInvestigate,
+} from '../services/impactAnalytics.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -258,6 +264,7 @@ router.post('/tap', async (req, res) => {
         finalIdentification.corporate_parent
       );
     }
+    recordImpactAfterTapPreview(req, finalIdentification);
     return res.json({
       identification: finalIdentification,
       identification_tier,
@@ -350,6 +357,7 @@ router.post('/tap/sourcing', async (req, res) => {
     const searched_sources = ['etsy', 'seller_registry'];
     if (alt.hasGeo) searched_sources.push('overpass');
 
+    recordImpactAfterSourcing(req, identification);
     res.json({
       results: alt.results,
       registry_results: alt.registry_results,
@@ -396,6 +404,8 @@ router.post('/tap/investigation', async (req, res) => {
     user_lat: user_lat != null ? Number(user_lat) : null,
     user_lng: user_lng != null ? Number(user_lng) : null,
   });
+
+  recordImpactAfterInvestigation(req, identification, investigation);
 
   res.json({
     investigation,
@@ -514,6 +524,8 @@ router.post('/investigate', async (req, res) => {
       user_lat: null,
       user_lng: null,
     });
+
+    recordImpactAfterTypedInvestigate(req, investigation);
 
     res.json({
       identification,

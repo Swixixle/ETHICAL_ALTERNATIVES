@@ -5,6 +5,15 @@ import { Router } from 'express';
 import { resolveIncumbentSlug } from '../services/investigation.js';
 import { getPressOutletsForSlug } from '../services/pressOutletsCatalog.js';
 import { WITNESS_LEGAL_NOTICE } from '../constants/witnessLegal.js';
+import { bumpCivicDaily, logImpactShare } from '../services/impactAnalytics.js';
+import { assignShareRiskTier } from '../services/shareRiskTier.js';
+import { buildInvestigationSummary, buildShareTextBundle, collectPrimarySources } from '../services/shareTextsCore.js';
+import {
+  bodyContainsPhotoPayload,
+  DISCLAIMER_CORE,
+  MEDIUM_TIER_ADDENDUM,
+  TIKTOK_HIGH_RISK_BLOCK_REASON,
+} from '../utils/shareRouteGuards.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -17,32 +26,6 @@ const regulatorData = JSON.parse(
 const shareDestinations = JSON.parse(
   readFileSync(join(__dirname, '../data/share-destinations.json'), 'utf8')
 );
-
-function pickCompanyAccounts(map, slug) {
-  if (!slug || typeof slug !== 'string') return null;
-  if (map[slug]) return map[slug];
-  if (slug.startsWith('mcdonald')) return map.mcdonalds || map['mcdonald-s'];
-  return null;
-}
-
-function collectPrimarySources(inv) {
-  if (!inv || typeof inv !== 'object') return [];
-  const keys = [
-    'tax_sources',
-    'legal_sources',
-    'labor_sources',
-    'environmental_sources',
-    'political_sources',
-    'product_health_sources',
-    'executive_sources',
-  ];
-  const out = [];
-  for (const k of keys) {
-    const arr = inv[k];
-    if (Array.isArray(arr)) out.push(...arr.map(String));
-  }
-  return [...new Set(out.filter(Boolean))];
-}
 
 function buildPullQuote(inv) {
   const timeline = Array.isArray(inv?.timeline) ? inv.timeline : [];
@@ -66,19 +49,6 @@ function buildPullQuote(inv) {
     };
   }
   return { text: null, sourceUrl: null };
-}
-
-function buildInvestigationSummary(inv) {
-  if (!inv) return '';
-  if (typeof inv.executive_summary === 'string' && inv.executive_summary.trim()) {
-    return inv.executive_summary.trim();
-  }
-  const parts = [];
-  for (const k of ['tax_summary', 'legal_summary', 'labor_summary', 'environmental_summary']) {
-    const v = inv[k];
-    if (typeof v === 'string' && v.trim()) parts.push(v.trim());
-  }
-  return parts.join('\n\n') || '';
 }
 
 function buildRegulatorPackText(inv, brandName, sources) {
@@ -122,21 +92,6 @@ function resolveIrContact(slug) {
   return typeof url === 'string' && url ? { url } : null;
 }
 
-function buildInvestigationEmailPack(brandName, headline, inv, siteUrl, verdictTags, sourceCount) {
-  const subj = `Documented corporate investigation: ${brandName}`;
-  const tags = (verdictTags || []).slice(0, 3).map(String).join(', ');
-  const summary = buildInvestigationSummary(inv);
-  const summaryClip = summary.length > 1000 ? `${summary.slice(0, 1000)}…` : summary;
-  const body = `${headline}\n\nKey issues: ${tags || '(see record)'}\n\n${summaryClip}\n\nIndexed primary sources in dossier: ${sourceCount}\n\nLive record: ${siteUrl}\n\n---\nCompiled from publicly available records. Verify primary sources; this email is not a legal filing.`;
-  const max = 1900;
-  const clipped = body.length > max ? `${body.slice(0, max)}…` : body;
-  return {
-    subject: subj,
-    body: clipped,
-    mailto: `mailto:?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(clipped)}`,
-  };
-}
-
 /**
  * Regulators whose applies_to intersects investigation verdict_tags only (no default list).
  */
@@ -161,16 +116,28 @@ function collectVerdictMatchedShareRegulators(verdictTags) {
 
 const router = Router();
 
-/** POST /api/share-card */
-router.post('/', (req, res) => {
+function pickCompanyAccounts(map, slug) {
+  if (!slug || typeof slug !== 'string') return null;
+  if (map[slug]) return map[slug];
+  if (slug.startsWith('mcdonald')) return map.mcdonalds || map['mcdonald-s'];
+  return null;
+}
+
+/** POST /api/share-card — never includes photos; TikTok-style export blocked when share_risk_tier is high. */
+router.post('/', async (req, res) => {
   try {
     const body = req.body || {};
+    if (bodyContainsPhotoPayload(body)) {
+      return res.status(400).json({
+        error: 'photo_payload_rejected',
+        message: 'This endpoint does not accept images or capture data. Remove photo fields and retry.',
+      });
+    }
+
+    const shareChannel =
+      typeof body.share_channel === 'string' ? body.share_channel.trim().toLowerCase() : '';
     const investigation = body.investigation || {};
     const identification = body.identification || {};
-
-    const brandName =
-      String(identification.brand || investigation.brand || identification.object || 'Company').trim() ||
-      'Company';
 
     const slugFromBody = typeof body.brand_slug === 'string' ? body.brand_slug.trim() : '';
     const invSlug =
@@ -181,7 +148,23 @@ router.post('/', (req, res) => {
       slugFromBody ||
       invSlug ||
       resolveIncumbentSlug(identification.brand, identification.corporate_parent) ||
-      resolveIncumbentSlug(investigation.brand, identification.corporate_parent);
+      resolveIncumbentSlug(investigation.brand, investigation.corporate_parent) ||
+      'unknown';
+
+    const shareRiskTier = assignShareRiskTier(investigation);
+
+    if (shareChannel === 'tiktok' && shareRiskTier === 'high') {
+      void logImpactShare(brandSlug, 'tiktok', 'high', true);
+      return res.json({
+        blocked: true,
+        reason: TIKTOK_HIGH_RISK_BLOCK_REASON,
+        share_risk_tier: 'high',
+        photo_included: false,
+      });
+    }
+
+    const bundle = buildShareTextBundle(investigation, identification, body);
+    const { brandName, headline, concernLevel, siteUrl, companyTag, emailPack, verdictTags } = bundle;
 
     const userStateRaw = typeof body.user_state === 'string' ? body.user_state.trim().toUpperCase() : '';
     const userState = userStateRaw.length === 2 ? userStateRaw : '';
@@ -193,61 +176,19 @@ router.post('/', (req, res) => {
       ? shareDestinations.pensionFunds
       : [];
 
-    const verdictTags = Array.isArray(investigation.verdict_tags)
-      ? investigation.verdict_tags.map(String)
-      : [];
-
     const accounts = pickCompanyAccounts(companyAccounts, brandSlug);
     const primarySources = collectPrimarySources(investigation);
-    const invSummary = buildInvestigationSummary(investigation);
     const pullQuote = buildPullQuote(investigation);
     const regulatorPack = buildRegulatorPackText(investigation, brandName, primarySources);
 
-    const headline =
-      String(body.generated_headline || investigation.generated_headline || '').trim() ||
-      brandName;
-    const concernLevel = String(investigation.overall_concern_level || 'unknown');
-
-    const concernEmoji = {
-      significant: '🔴',
-      moderate: '🟡',
-      minor: '🟢',
-      clean: '✅',
-    }[concernLevel] || '⚪';
-
-    const topTagsDisplay = verdictTags.slice(0, 3).map((t) => t.replace(/_/g, ' ').toUpperCase());
-
-    const siteUrl =
-      String(process.env.PUBLIC_SITE_URL || '').replace(/\/$/, '') ||
-      (typeof body.site_url === 'string' ? body.site_url.replace(/\/$/, '') : '') ||
-      'https://ethicalalt-client.onrender.com';
-
-    const companyTag = accounts?.twitter
-      ? accounts.twitter
-      : `#${brandName.replace(/\s+/g, '')}`;
-
-    const emailPack = buildInvestigationEmailPack(
-      brandName,
-      headline,
-      investigation,
-      siteUrl,
-      verdictTags,
-      primarySources.length
-    );
-
     const shareTexts = {
-      twitter: `${concernEmoji} ${headline}\n\n${topTagsDisplay.join(' · ')}\n\nSourced public record · #EthicalAlt\n${companyTag}\n\n${siteUrl}`,
-
-      twitter_company: `${concernEmoji} ${headline}\n\n${topTagsDisplay.join(' · ')}\n\n${companyTag} — documented public record (primary sources in thread context).\n\n#EthicalAlt\n${siteUrl}`,
-
-      instagram: `${concernEmoji} ${headline}\n\n${topTagsDisplay.join(' · ')}\n\n${invSummary ? `${invSummary.slice(0, 600)}${invSummary.length > 600 ? '…' : ''}\n\n` : ''}Every claim ties to public record URLs in the full EthicalAlt dossier.\n\n#EthicalAlt #EthicalShopping`,
-
-      general: `${headline}\n\n${topTagsDisplay.join(' · ')}\n\n${invSummary || ''}\n\nPrimary sources: government filings, courts, and established journalism — see EthicalAlt for links.\n\n${siteUrl}`,
-
+      twitter: bundle.twitterText,
+      twitter_company: `${bundle.concernEmoji} ${bundle.headline}\n\n${bundle.topTagsDisplay.join(' · ')}\n\n${bundle.companyTag} — documented public record (primary sources in thread context).\n\n#EthicalAlt\n${bundle.siteUrl}`,
+      instagram: bundle.instagramText,
+      general: bundle.generalText,
       regulator_pack: regulatorPack,
-
-      email_subject: emailPack.subject,
-      email_body: emailPack.body,
+      email_subject: bundle.emailPack.subject,
+      email_body: bundle.emailPack.body,
     };
 
     const relevantRegulators = collectVerdictMatchedShareRegulators(verdictTags);
@@ -269,6 +210,12 @@ router.post('/', (req, res) => {
       seenPress.add(o.handle);
       return true;
     });
+
+    void bumpCivicDaily(req, 'share_export');
+    void logImpactShare(brandSlug, 'share_card', shareRiskTier, false);
+
+    const disclaimer =
+      shareRiskTier === 'medium' ? `${MEDIUM_TIER_ADDENDUM}\n\n${DISCLAIMER_CORE}` : DISCLAIMER_CORE;
 
     res.json({
       brand_name: brandName,
@@ -296,9 +243,13 @@ router.post('/', (req, res) => {
           ? { text: pullQuote.text, source_url: pullQuote.sourceUrl }
           : null,
       },
-      disclaimer:
-        'All shared content uses only documented public record claims with primary source URLs. Nothing fabricated. The record speaks.',
+      disclaimer,
       legal_notice: WITNESS_LEGAL_NOTICE,
+      photo_included: false,
+      share_risk_tier: shareRiskTier,
+      tiktok_export_blocked: shareRiskTier === 'high',
+      medium_risk_disclaimer: shareRiskTier === 'medium' ? MEDIUM_TIER_ADDENDUM : null,
+      blocked: false,
     });
   } catch (err) {
     console.error('share-card error:', err?.message || err);

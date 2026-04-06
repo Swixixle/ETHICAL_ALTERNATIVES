@@ -7,6 +7,7 @@ import sellersRouter from './routes/sellers.js';
 import cityIdentityRouter from './routes/cityIdentity.js';
 import localFeedRouter from './routes/localFeed.js';
 import shareCardRouter from './routes/shareCard.js';
+import shareExportRouter from './routes/shareExport.js';
 import geocodeRouter from './routes/geocode.js';
 import communityBoardRouter from './routes/communityBoard.js';
 import territoryRouter from './routes/territory.js';
@@ -16,6 +17,7 @@ import witnessRouter from './routes/witness.js';
 import documentaryRouter from './routes/documentary.js';
 import workersRouter from './routes/workers.js';
 import profileIndexRouter from './routes/profiles.index.route.js';
+import impactRouter from './routes/impact.js';
 import { getProviderHealthSnapshot } from './services/aiProvider.js';
 import {
   buildProportionalityPacket,
@@ -87,11 +89,13 @@ app.get('/proportionality', (req, res) => {
 
 app.use('/api/workers', workersRouter);
 app.use('/api', tapRouter);
+app.use('/api', impactRouter);
 app.use('/api/profiles', profileIndexRouter);
 app.use('/api/sellers', sellersRouter);
 app.use('/api/city-identity', cityIdentityRouter);
 app.use('/api/local-feed', localFeedRouter);
 app.use('/api/share-card', shareCardRouter);
+app.use('/api/share-export', shareExportRouter);
 app.use('/api/geocode', geocodeRouter);
 app.use('/api/board', communityBoardRouter);
 app.use('/api/territory', territoryRouter);

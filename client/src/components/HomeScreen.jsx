@@ -22,6 +22,7 @@ import {
   stopTravelTracking,
 } from '../services/travelTracker.js';
 import { getGoogleMapsUrl, getStreetAddressLine } from '../utils/localBusinessMaps.js';
+import PrivacyConsentPanel from './PrivacyConsentPanel.jsx';
 
 const ONBOARD_KEY = 'ea_geo_onboard';
 
@@ -550,6 +551,10 @@ function LocationPrompt({
       >
         Location is used only for finding nearby independents. Never stored. Never sold.
       </div>
+
+      <div style={{ marginTop: 36, width: '100%', maxWidth: 400 }}>
+        <PrivacyConsentPanel variant="compact" showReset={false} />
+      </div>
     </div>
   );
 }
@@ -910,7 +915,7 @@ function FeedCard({ business, chainFootnote = false }) {
 }
 
 /**
- * @param {{ onStartSnap: () => void; onOpenWorkerProfile?: (slug: string) => void; onOpenDirectory?: () => void }} props
+ * @param {{ onStartSnap: () => void; onOpenWorkerProfile?: (slug: string) => void; onOpenDirectory?: () => void; onOpenImpact?: () => void }} props
  */
 export default function HomeScreen({
   onStartSnap,
@@ -919,6 +924,7 @@ export default function HomeScreen({
   onOpenWitnesses,
   onOpenWorkerProfile,
   onOpenDirectory,
+  onOpenImpact,
 }) {
   const [phase, setPhase] = useState(() => initialPhase());
   const [location, setLocation] = useState(() => readCachedLocation());
@@ -938,6 +944,7 @@ export default function HomeScreen({
   const [travelStayChain, setTravelStayChain] = useState([]);
   const [eventsPayload, setEventsPayload] = useState(null);
   const [localCommercialOpen, setLocalCommercialOpen] = useState(false);
+  const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
   const lastTerritoryCountyRef = useRef(null);
 
   const fetchFeed = useCallback(async (lat, lng, cat, opts = {}) => {
@@ -1288,6 +1295,9 @@ export default function HomeScreen({
         >
           Snap
         </button>
+        <div style={{ marginTop: 36, width: '100%', maxWidth: 400 }}>
+          <PrivacyConsentPanel variant="compact" showReset={false} />
+        </div>
       </div>
     );
   }
@@ -1362,8 +1372,105 @@ export default function HomeScreen({
               History
             </button>
           ) : null}
+          <button
+            type="button"
+            onClick={() => setPrivacyModalOpen(true)}
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 10,
+              letterSpacing: 2,
+              textTransform: 'uppercase',
+              background: 'transparent',
+              border: '1px solid #6a8a9a',
+              color: '#a8c4d8',
+              padding: '6px 12px',
+              borderRadius: 2,
+              cursor: 'pointer',
+              flexShrink: 0,
+            }}
+          >
+            Privacy
+          </button>
         </div>
       </div>
+
+      {privacyModalOpen ? (
+        <div
+          role="dialog"
+          aria-modal
+          aria-label="Privacy choices"
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 5000,
+            background: 'rgba(8,12,18,0.92)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 20,
+          }}
+        >
+          <div
+            style={{
+              background: '#121a24',
+              border: '1px solid #2a3f52',
+              borderRadius: 4,
+              padding: '24px 20px 20px',
+              maxWidth: 440,
+              width: '100%',
+              maxHeight: '90vh',
+              overflowY: 'auto',
+            }}
+          >
+            <PrivacyConsentPanel variant="full" showReset />
+            {typeof onOpenImpact === 'function' ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setPrivacyModalOpen(false);
+                  onOpenImpact();
+                }}
+                style={{
+                  marginTop: 20,
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 10,
+                  letterSpacing: 1,
+                  textTransform: 'uppercase',
+                  background: 'transparent',
+                  border: '1px solid #6aaa8a',
+                  color: '#6aaa8a',
+                  padding: '10px 16px',
+                  borderRadius: 2,
+                  cursor: 'pointer',
+                  width: '100%',
+                }}
+              >
+                Public impact numbers
+              </button>
+            ) : null}
+            <button
+              type="button"
+              onClick={() => setPrivacyModalOpen(false)}
+              style={{
+                marginTop: 12,
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 10,
+                letterSpacing: 1,
+                textTransform: 'uppercase',
+                background: '#2a3f52',
+                border: 'none',
+                color: '#e8e0c8',
+                padding: '10px 16px',
+                borderRadius: 2,
+                cursor: 'pointer',
+                width: '100%',
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      ) : null}
 
       <CityCard identity={identity} city={location?.city} state={location?.state} />
 

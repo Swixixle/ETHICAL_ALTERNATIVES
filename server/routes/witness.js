@@ -3,6 +3,7 @@ import { pool } from '../db/pool.js';
 import { WITNESS_LEGAL_NOTICE } from '../constants/witnessLegal.js';
 import { validateWitnessPost, consumeWitnessRateSlot } from '../middleware/witnessValidation.js';
 import { refreshWorkerCivicStatsForWitness } from '../services/workerCivicSync.js';
+import { bumpCivicDaily } from '../services/impactAnalytics.js';
 
 const router = Router();
 
@@ -67,6 +68,7 @@ router.post('/', validateWitnessPost, async (req, res) => {
     );
     consumeWitnessRateSlot(req.witness_ip_hash);
     void refreshWorkerCivicStatsForWitness(safeName, safeCity);
+    void bumpCivicDaily(req, 'witness');
     console.log('[witness] registered', {
       id: result.rows[0].id,
       brand_slug: slug,

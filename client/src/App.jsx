@@ -28,6 +28,9 @@ import { slugifyBrandName } from './utils/brandSlug.js';
 import LocalDocumentary from './components/LocalDocumentary.jsx';
 import LocationCitySheet from './components/LocationCitySheet.jsx';
 import DirectoryPage from './pages/DirectoryPage.jsx';
+import ImpactPublicPage from './pages/ImpactPublicPage.jsx';
+import ImpactOutcomePrompt from './components/ImpactOutcomePrompt.jsx';
+import { getImpactConsentOutcome } from './lib/impactConsent.js';
 import './App.css';
 
 function investigationHeadline(identification, investigation) {
@@ -101,6 +104,40 @@ export default function App() {
     investigateByBrand,
   } = useTapAnalysis();
 
+  const outcomeScheduleRef = useRef(null);
+  const [outcomePrompt, setOutcomePrompt] = useState(/** @type {{ tapKey: number } | null} */ (null));
+
+  const investigateByBrandNav = useCallback(
+    async (brand) => {
+      outcomeScheduleRef.current = null;
+      await investigateByBrand(brand);
+    },
+    [investigateByBrand]
+  );
+
+  const resetSession = useCallback(() => {
+    if (result?.investigation && getImpactConsentOutcome()) {
+      outcomeScheduleRef.current = tapSession;
+    } else {
+      outcomeScheduleRef.current = null;
+    }
+    reset();
+  }, [result?.investigation, tapSession, reset]);
+
+  useEffect(() => {
+    if (result != null) return;
+    const k = outcomeScheduleRef.current;
+    outcomeScheduleRef.current = null;
+    if (k == null) return;
+    try {
+      if (sessionStorage.getItem(`ea_outcome_done_${k}`)) return;
+    } catch {
+      /* ignore */
+    }
+    if (!getImpactConsentOutcome()) return;
+    setOutcomePrompt({ tapKey: k });
+  }, [result]);
+
   const [showShare, setShowShare] = useState(false);
   const [researchCommercialOn, setResearchCommercialOn] = useState(false);
 
@@ -173,22 +210,29 @@ export default function App() {
         setMode('directory');
         return;
       }
+      if (path === '/impact') {
+        setWorkerProfileSlug(null);
+        setMode('impact');
+        return;
+      }
       const prof = path.match(/^\/profile\/([^/]+)$/);
       if (prof) {
         setWorkerProfileSlug(null);
         const slug = decodeURIComponent(prof[1]);
         setDeepBrand(slug);
         setMode('deep');
-        void investigateByBrand(slug);
+        void investigateByBrandNav(slug);
         return;
       }
       setWorkerProfileSlug(null);
-      setMode((prev) => (prev === 'worker-profile' || prev === 'directory' ? 'home' : prev));
+      setMode((prev) =>
+        prev === 'worker-profile' || prev === 'directory' || prev === 'impact' ? 'home' : prev
+      );
     };
     syncPath();
     window.addEventListener('popstate', syncPath);
     return () => window.removeEventListener('popstate', syncPath);
-  }, [investigateByBrand]);
+  }, [investigateByBrandNav]);
 
   useEffect(() => {
     const loc = readCachedLocation();
@@ -314,11 +358,28 @@ export default function App() {
     } catch {
       /* ignore */
     }
-    reset();
+    resetSession();
     setMode('home');
   };
 
   const researchBackdropLoc = researchCommercialOn ? readCachedLocation() : null;
+
+  if (mode === 'impact') {
+    return (
+      <div className="app">
+        <ImpactPublicPage
+          onBack={() => {
+            try {
+              window.history.replaceState({}, '', '/');
+            } catch {
+              /* ignore */
+            }
+            setMode('home');
+          }}
+        />
+      </div>
+    );
+  }
 
   if (mode === 'worker-profile' && workerProfileSlug) {
     return (
@@ -354,7 +415,7 @@ export default function App() {
             const s = String(slug || '').trim();
             if (!s) return;
             setDeepBrand(s);
-            await investigateByBrand(s);
+            await investigateByBrandNav(s);
           }}
         />
       </div>
@@ -366,7 +427,7 @@ export default function App() {
       <div className="app app--home">
         <HomeScreen
           onStartSnap={() => {
-            reset();
+            resetSession();
             setMode('snap');
           }}
           onOpenHistory={() => setMode('history')}
@@ -383,9 +444,17 @@ export default function App() {
           onSearchInvestigate={async (q) => {
             const trimmed = String(q || '').trim();
             setDeepBrand(trimmed);
-            reset();
+            resetSession();
             setMode('deep');
-            await investigateByBrand(trimmed);
+            await investigateByBrandNav(trimmed);
+          }}
+          onOpenImpact={() => {
+            try {
+              window.history.pushState({}, '', '/impact');
+            } catch {
+              /* ignore */
+            }
+            setMode('impact');
           }}
         />
       </div>
@@ -563,7 +632,7 @@ export default function App() {
                   : id && typeof id.object === 'string' && id.object.trim()
                     ? id.object.trim()
                     : '';
-              if (b) void investigateByBrand(b);
+              if (b) void investigateByBrandNav(b);
             }}
           />
         ) : null}
@@ -594,7 +663,7 @@ export default function App() {
               }
               onHireDirectShareFootnote={setHireDirectShareFootnote}
               onWrongBrand={() => {
-                reset();
+                resetSession();
                 setMode('snap');
               }}
               onShare={() => {
@@ -606,7 +675,7 @@ export default function App() {
                   id && typeof id.brand === 'string' && id.brand.trim()
                     ? id.brand.trim()
                     : '';
-                if (b) void investigateByBrand(b);
+                if (b) void investigateByBrandNav(b);
               }}
             />
           </div>
@@ -658,7 +727,7 @@ export default function App() {
           ) : null}
         </div>
         <div className="app__toolbar">
-          <button type="button" className="app__btn app__btn--ghost" onClick={() => reset()}>
+          <button type="button" className="app__btn app__btn--ghost" onClick={() => resetSession()}>
             New photo
           </button>
         </div>
@@ -668,7 +737,7 @@ export default function App() {
   const tapPhotoToolbarMinimal =
     image && result ? (
       <div className="app__toolbar">
-        <button type="button" className="app__btn app__btn--ghost" onClick={() => reset()}>
+        <button type="button" className="app__btn app__btn--ghost" onClick={() => resetSession()}>
           New photo
         </button>
       </div>
@@ -848,7 +917,7 @@ export default function App() {
               <ErrorState message={error} onRetry={() => clearResult()} />
             ) : null}
             <div className="app__toolbar">
-              <button type="button" className="app__btn app__btn--ghost" onClick={() => reset()}>
+              <button type="button" className="app__btn app__btn--ghost" onClick={() => resetSession()}>
                 New photo
               </button>
             </div>
@@ -876,7 +945,7 @@ export default function App() {
               <ErrorState message={error} onRetry={() => cancelPendingConfirmation()} />
             ) : null}
             <div className="app__toolbar">
-              <button type="button" className="app__btn app__btn--ghost" onClick={() => reset()}>
+              <button type="button" className="app__btn app__btn--ghost" onClick={() => resetSession()}>
                 New photo
               </button>
             </div>
@@ -891,7 +960,7 @@ export default function App() {
               onCancel={() => cancelRegionSelect()}
             />
             <div className="app__toolbar">
-              <button type="button" className="app__btn app__btn--ghost" onClick={() => reset()}>
+              <button type="button" className="app__btn app__btn--ghost" onClick={() => resetSession()}>
                 New photo
               </button>
             </div>
@@ -951,7 +1020,7 @@ export default function App() {
             className="app__fab-scan"
             aria-label="New scan"
             onClick={() => {
-              reset();
+              resetSession();
               setMode('snap');
               haptic('tap');
             }}
@@ -971,7 +1040,7 @@ export default function App() {
               type="button"
               className="app__bottom-nav__item app__bottom-nav__item--scan"
               onClick={() => {
-                reset();
+                resetSession();
                 setMode('snap');
                 haptic('tap');
               }}
@@ -985,7 +1054,7 @@ export default function App() {
               type="button"
               className="app__bottom-nav__item"
               onClick={() => {
-                reset();
+                resetSession();
                 setMode('home');
               }}
             >
@@ -1002,6 +1071,13 @@ export default function App() {
             </button>
           </nav>
         </>
+      ) : null}
+
+      {outcomePrompt ? (
+        <ImpactOutcomePrompt
+          tapKey={outcomePrompt.tapKey}
+          onDone={() => setOutcomePrompt(null)}
+        />
       ) : null}
     </div>
   );

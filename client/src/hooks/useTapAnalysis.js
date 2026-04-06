@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { haptic } from '../utils/haptics.js';
+import { getImpactFetchHeaders } from '../lib/impactConsent.js';
 
 const apiBase = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
 
@@ -115,7 +116,7 @@ export function useTapAnalysis() {
   const fetchTap = useCallback(async (tapX, tapY, options) => {
     const res = await fetch(tapUrl(), {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', ...getImpactFetchHeaders() },
       body: JSON.stringify(buildBody(tapX, tapY, options)),
     });
     const data = await res.json().catch(() => ({}));
@@ -144,7 +145,7 @@ export function useTapAnalysis() {
         try {
           const sRes = await fetch(tapSourcingUrl(), {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', ...getImpactFetchHeaders() },
             body: JSON.stringify(sourcingBody),
           });
           const sData = await sRes.json().catch(() => ({}));
@@ -179,7 +180,7 @@ export function useTapAnalysis() {
           }
           const iRes = await fetch(tapInvestigationUrl(), {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', ...getImpactFetchHeaders() },
             body: JSON.stringify(invBody),
           });
           const iData = await iRes.json().catch(() => ({}));
@@ -377,7 +378,7 @@ export function useTapAnalysis() {
     try {
       const res = await fetch(investigateUrl(), {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...getImpactFetchHeaders() },
         body: JSON.stringify({ brand: q, session_id: getSessionId() }),
       });
       const data = await res.json().catch(() => ({}));

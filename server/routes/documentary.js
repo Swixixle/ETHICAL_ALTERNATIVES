@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import Anthropic from '@anthropic-ai/sdk';
+import { bumpCivicDaily } from '../services/impactAnalytics.js';
 
 const router = Router();
 const anthropic = new Anthropic();
@@ -47,6 +48,7 @@ router.post('/', async (req, res) => {
 Company being investigated: ${brandName} (slug: ${brandSlug})
 Generate the documentary narration now.`;
 
+  let narrCounted = false;
   try {
     const stream = anthropic.messages.stream({
       model: MODEL,
@@ -62,12 +64,14 @@ Generate the documentary narration now.`;
       }
     }
     sendSse(res, JSON.stringify('[DONE]'));
+    narrCounted = true;
   } catch (e) {
     console.error('[documentary]', e);
     const msg = e instanceof Error ? e.message : 'stream failed';
     sendSse(res, JSON.stringify(`\n\n[Error: ${msg}]`));
     sendSse(res, JSON.stringify('[DONE]'));
   } finally {
+    if (narrCounted) void bumpCivicDaily(req, 'narration');
     res.end();
   }
 });

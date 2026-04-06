@@ -13,6 +13,9 @@
 
 **Current status:** Functional MVP — 90+ profiled brands, live AI investigation pipeline with three-model corroboration layer, civic witness and worker registries operational. Pre-user acquisition phase.
 
+> EthicalAlt is not a law firm. It is not a regulator. It is not a news organization.
+> It is a mirror. Clean businesses get a clean record here. Companies with documented issues get a documented record. The mirror does not editorialize.
+
 Live at [url]
 
 EthicalAlt is a mobile-first web app that turns your camera into a conscience. Point it at anything on a shelf, in a store window, or in your home — tap the brand — and receive a structured investigation of that company's environmental record, labor practices, political spending, and documented controversies, plus verified independent alternatives sourced from Etsy, local sellers, and nearby businesses.
@@ -77,6 +80,28 @@ EthicalAlt is not an attack machine. It is a mirror. Corporations with bad recor
 
 ---
 
+## How investigations are built — the guardrail system
+
+Every investigation passes through seven layers before it reaches you. The full, user-facing breakdown is in [`docs/HOW_INVESTIGATIONS_WORK.md`](docs/HOW_INVESTIGATIONS_WORK.md). Share-risk enforcement for short-form social export is documented for reviewers in [`docs/SHARE_RISK_TIER_METHODOLOGY.md`](docs/SHARE_RISK_TIER_METHODOLOGY.md).
+
+The short version:
+
+**Layer 1 — Source extraction.** DB profiles are hand-curated against primary sources. Live research uses Claude's web search tool, not just training memory.
+
+**Layer 2 — Vision corroboration.** Claude and Gemini independently identify the brand from the same image. Neither sees the other's answer first. Disagreement is a score penalty, not a midpoint.
+
+**Layer 3 — Evidence grading.** Every finding is graded: stronger sections trace to primary sources; weaker sections carry explicit grades (including AI-inferred paths). Those distinctions stay visible in the UI and in the structured investigation payload.
+
+**Layer 4 — Three-track confidence scoring.** Documentary anchor (50%), model agreement (30%), cross-reference adjustment (20%). Only documents can push a category above the high-confidence band in the documentary track; models act as a gate, not a substitute for citations.
+
+**Layer 5 — Layer C corroboration.** Inferred / limited claims are spot-checked against Perplexity when keyed. Uncorroborated paths are downgraded and flagged visibly.
+
+**Layer 6 — Structured output.** Investigations are normalized server-side: consistent fields, timestamps, evidence grades, corroboration flags, and category scores. Optional cryptographic signing of payloads is on the roadmap as receipt hardening — it is not a claim this repo makes today.
+
+**Layer 7 — Share and distribution gates.** A server-computed `share_risk_tier` controls how aggressively short-form export is offered (including blocking TikTok-oriented export for `high`). No user photo is accepted or included in share API payloads. Server-side rules, not UI suggestions.
+
+---
+
 ## What works today
 
 | Feature | Status |
@@ -89,6 +114,7 @@ EthicalAlt is not an attack machine. It is a mirror. Corporations with bad recor
 | Corporate investigation profiles (DB-backed, 90+ brands) | ✅ Working |
 | Live AI investigation (Claude primary) | ✅ Working |
 | AI provider failover (Claude → Perplexity → Gemini) | ✅ Working |
+| Risk tier assignment + server-side social share gating | ✅ Working |
 | Local independents feed with category filters | ✅ Working |
 | Etsy + Overpass alternatives | ✅ Working |
 | Proportionality tool (USSC/BOP reference) | ✅ Working |
@@ -242,6 +268,8 @@ ETHICAL_ALTERNATIVES/
 │       └── components/               # cards, home, share, board, etc.
 │
 ├── docs/
+│   ├── HOW_INVESTIGATIONS_WORK.md    # public methodology (users, press, counsel)
+│   ├── SHARE_RISK_TIER_METHODOLOGY.md
 │   └── screenshots/
 │
 └── render.yaml                       # Render blueprint (API + static client)
@@ -305,8 +333,19 @@ Run `grep -r "process.env" server/` for the complete list.
 | * | `/api/territory/*` | Native Land + narrative |
 | * | `/api/events/*` | Local events |
 | * | `/api/documentary/*` | SSE documentary narration |
-| * | `/api/share-card/*` | Share artifact builder |
+| POST | `/api/share-card` | Share artifact builder — risk-gated, no photo in payload |
+| POST | `/api/share-export` | Alternate share payload path — same photo / tier guards |
 | * | `/api/city-identity/*` | City identity + local narrative |
+
+---
+
+## Challenging or correcting an investigation
+
+If you believe an investigation contains a factual error, use the contact in the app (`hello@ethicalalt.com` unless overridden at build time) or open an issue on this repository with the brand, the specific sentence or field, why you believe it is wrong, and links to primary sources. This is a **manual** process today: there is structured logging for product events, but there is not yet a dedicated in-app dispute queue with SLA tooling.
+
+EthicalAlt does not guarantee turnaround time. The corroboration layer reduces how often opaque inference ships; it does not eliminate errors.
+
+**Lawyer review pending:** Terms of service, share-flow disclaimers, and on-card copy have not been reviewed by legal counsel. Operational policy around disputes and takedowns should be finalized with counsel before a broad public launch.
 
 ---
 
@@ -321,6 +360,8 @@ Run `grep -r "process.env" server/` for the complete list.
 | No unified request tracing | `console` logging only in investigation path |
 | No docker-compose | Local Postgres setup is manual |
 | Profile corpus is static | 90+ brands hand-curated; search and scale need indexing |
+| Dispute process is manual | Contact-driven; dedicated dispute workflow and admin tooling not shipped yet |
+| Lawyer review pending | External language (TOS, share disclaimers, card text) has not been reviewed by legal counsel |
 
 ---
 
@@ -329,6 +370,8 @@ Run `grep -r "process.env" server/` for the complete list.
 **AI investigation accuracy.** Claude can be wrong. Evidence grades, profile type (`database` vs live), and the corroboration layer make uncertainty explicit and structured. Treat investigations as starting points for research, not verdicts.
 
 **Legal exposure on corporate records.** Every factual claim needs a source. DB-backed profiles should trace to primary citations. Live-generated text must be verified against primary materials. Layer C paths are explicitly weaker and are spot-checked with a second model when Perplexity is keyed; that reduces opaque inference but does not remove legal diligence.
+
+**Defamation surface.** An investigation that contains a false statement of fact about a named company, repeated at scale, creates exposure regardless of technical care in generation. The dispute path, risk-tier gating for certain exports, and conservative share copy are operational responses — they are necessary but not sufficient. Counsel review of publisher-facing language remains the critical next step.
 
 **Data privacy.** The app handles location data, camera images, and user-submitted witness reports. There is no formal privacy policy or GDPR/CCPA compliance layer yet. This is pre-launch — these must be addressed before a broad public release.
 
@@ -342,9 +385,11 @@ Run `grep -r "process.env" server/` for the complete list.
 
 ### Now
 - Client-side confidence pills and breakdown UI (per-category scores visible in accordion)
+- In-app “challenge this record” flow wired to the same dispute policy described above
 - Docker Compose for one-command local dev
 - Mobile Safari camera reliability
 - Unified request ID tracing
+- Lawyer review of TOS, share disclaimer, and card text
 
 ### Next
 - Journalist and civic org outreach — direct contact

@@ -1,9 +1,12 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { getImpactFetchHeaders } from '../lib/impactConsent.js';
+import ShareSheet from './Civic/ShareSheet.jsx';
 import {
   WITNESS_LEGAL_NOTICE,
   WITNESS_LEGAL_NOTICE_COMPACT,
   ETHICALALT_CONTACT,
 } from '../constants/witnessLegalNotice.js';
+import { methodologyPageUrl } from '../lib/methodologyUrl.js';
 
 function apiPrefix() {
   return (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
@@ -212,6 +215,7 @@ export default function ShareCard({ investigation, identification, onClose, hire
     typeof sessionStorage !== 'undefined' ? sessionStorage.getItem('ea_user_state') || '' : ''
   );
   const [openSections, setOpenSections] = useState(() => ({ ...DEFAULT_OPEN }));
+  const [shareSheetOpen, setShareSheetOpen] = useState(false);
 
   useEffect(() => {
     if (!sessionStorage.getItem('ea_session')) {
@@ -229,7 +233,7 @@ export default function ShareCard({ investigation, identification, onClose, hire
       const st = userStateCode.trim().toUpperCase().length === 2 ? userStateCode.trim().toUpperCase() : '';
       const res = await fetch(`${apiPrefix()}/api/share-card`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...getImpactFetchHeaders() },
         body: JSON.stringify({
           investigation,
           identification,
@@ -252,11 +256,12 @@ export default function ShareCard({ investigation, identification, onClose, hire
 
   useEffect(() => {
     if (!shareData) return;
+    const tiktokOk = !shareData.tiktok_export_blocked;
     const next = {
       twitter_feed: true,
       twitter_tag: true,
       instagram: true,
-      tiktok: true,
+      tiktok: tiktokOk,
       facebook: true,
     };
     for (const reg of shareData.relevant_regulators || []) {
@@ -305,7 +310,7 @@ export default function ShareCard({ investigation, identification, onClose, hire
     try {
       const res = await fetch(`${apiPrefix()}/api/witness`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...getImpactFetchHeaders() },
         body: JSON.stringify({
           session_id: sessionStorage.getItem('ea_session') || Date.now().toString(),
           display_name: witnessName.trim(),
@@ -460,19 +465,27 @@ export default function ShareCard({ investigation, identification, onClose, hire
         completed.push({ id: 'twitter_tag', label: `X — Tag company (${s.company_tag})` });
       }
 
-      if (sel.instagram && sel.tiktok) {
+      if (sel.instagram && sel.tiktok && !s.tiktok_export_blocked) {
         await navigator.clipboard.writeText(s.share_texts.instagram);
         setToast('Caption copied — paste in Instagram and TikTok');
         completed.push({ id: 'instagram', label: 'Instagram — caption copied' });
         completed.push({ id: 'tiktok', label: 'TikTok — caption copied' });
+      } else if (sel.instagram && sel.tiktok && s.tiktok_export_blocked) {
+        await navigator.clipboard.writeText(s.share_texts.instagram);
+        setToast('Instagram caption copied (TikTok export disabled for this record)');
+        completed.push({ id: 'instagram', label: 'Instagram — caption copied' });
       } else if (sel.instagram) {
         await navigator.clipboard.writeText(s.share_texts.instagram);
         setToast('Instagram caption copied');
         completed.push({ id: 'instagram', label: 'Instagram — caption copied' });
       } else if (sel.tiktok) {
-        await navigator.clipboard.writeText(s.share_texts.instagram);
-        setToast('TikTok caption copied');
-        completed.push({ id: 'tiktok', label: 'TikTok — caption copied' });
+        if (s.tiktok_export_blocked) {
+          setToast('TikTok export is disabled for this investigation classification.');
+        } else {
+          await navigator.clipboard.writeText(s.share_texts.instagram);
+          setToast('TikTok caption copied');
+          completed.push({ id: 'tiktok', label: 'TikTok — caption copied' });
+        }
       }
 
       if (sel.instagram || sel.tiktok) await sleep(600);
@@ -576,7 +589,9 @@ export default function ShareCard({ investigation, identification, onClose, hire
         { id: 'twitter_feed', primary: 'X / Twitter — Post to my feed' },
         { id: 'twitter_tag', primary: `X / Twitter — Tag the company (${shareData.company_tag})` },
         { id: 'instagram', primary: 'Instagram — Copy caption to clipboard' },
-        { id: 'tiktok', primary: 'TikTok — Copy caption to clipboard' },
+        ...(shareData.tiktok_export_blocked
+          ? []
+          : [{ id: 'tiktok', primary: 'TikTok — Copy caption to clipboard' }]),
         { id: 'facebook', primary: 'Facebook — Share link' },
       ]
     : [];
@@ -722,6 +737,25 @@ export default function ShareCard({ investigation, identification, onClose, hire
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
           <button
             type="button"
+            onClick={() => setShareSheetOpen(true)}
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 10,
+              letterSpacing: 1,
+              textTransform: 'uppercase',
+              color: '#0f1520',
+              background: '#6aaa8a',
+              border: 'none',
+              padding: '8px 12px',
+              borderRadius: 4,
+              cursor: 'pointer',
+              fontWeight: 700,
+            }}
+          >
+            Share sheet
+          </button>
+          <button
+            type="button"
             aria-label="About sending"
             onClick={() => setInfoModalOpen(true)}
             style={{
@@ -759,6 +793,13 @@ export default function ShareCard({ investigation, identification, onClose, hire
           </button>
         </div>
       </div>
+
+      <ShareSheet
+        open={shareSheetOpen}
+        onClose={() => setShareSheetOpen(false)}
+        investigation={investigation}
+        identification={identification}
+      />
 
       {infoModalOpen ? (
         <div
@@ -800,6 +841,12 @@ export default function ShareCard({ investigation, identification, onClose, hire
               When you send, EthicalAlt opens the platforms and destinations you selected. Some steps copy text
               to your clipboard to paste into forms or social apps. Nothing is posted automatically — you confirm
               each step.
+            </p>
+            <p style={{ fontSize: 13, color: '#a8c4d8', lineHeight: 1.55, margin: '0 0 16px' }}>
+              <a href={methodologyPageUrl()} target="_blank" rel="noopener noreferrer" style={{ color: '#d4a017' }}>
+                How investigations work
+              </a>
+              {' — '}layers, scoring, share limits, and how to challenge a record.
             </p>
             <div
               style={{
@@ -1068,6 +1115,29 @@ export default function ShareCard({ investigation, identification, onClose, hire
                 ))}
               </div>
             ) : null}
+            {shareData?.disclaimer ? (
+              <div
+                style={{
+                  marginTop: 12,
+                  padding: '10px 12px',
+                  background: 'rgba(0,0,0,0.2)',
+                  borderRadius: 4,
+                  fontFamily: "'Crimson Pro', serif",
+                  fontSize: 12,
+                  lineHeight: 1.6,
+                  color: '#a8c4d8',
+                  whiteSpace: 'pre-wrap',
+                }}
+              >
+                {shareData.disclaimer}
+              </div>
+            ) : null}
+            <p style={{ fontFamily: "'Crimson Pro', serif", fontSize: 12, color: '#6a8a9a', margin: '12px 0 0', lineHeight: 1.55 }}>
+              <a href={methodologyPageUrl()} target="_blank" rel="noopener noreferrer" style={{ color: '#a8c4d8' }}>
+                How investigations work
+              </a>
+              {' — '}what this record is (and is not).
+            </p>
           </div>
         ) : null}
 
@@ -1097,6 +1167,21 @@ export default function ShareCard({ investigation, identification, onClose, hire
               open={openSections.social}
               onToggle={() => flipSection('social')}
             >
+              {shareData.tiktok_export_blocked ? (
+                <p
+                  style={{
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: 10,
+                    letterSpacing: 0.5,
+                    color: '#d4a017',
+                    margin: '0 0 10px',
+                    lineHeight: 1.5,
+                  }}
+                >
+                  TikTok export is disabled for this record (high-risk classification). Other social
+                  options remain available. Your photo is never included in any share payload.
+                </p>
+              ) : null}
               {staticRows.map((row) => (
                 <label key={row.id} style={rowStyle}>
                   <input

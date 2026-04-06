@@ -250,3 +250,66 @@ CREATE TABLE IF NOT EXISTS worker_messages (
   created_at TIMESTAMPTZ DEFAULT NOW(),
   is_read BOOLEAN DEFAULT FALSE
 );
+
+-- Aggregate impact metrics (no PII). Daily totals are always safe counters; per-brand monthly is keyed only by slug.
+CREATE TABLE IF NOT EXISTS impact_daily_aggregates (
+  day DATE PRIMARY KEY,
+  scan_count INTEGER NOT NULL DEFAULT 0,
+  investigation_count INTEGER NOT NULL DEFAULT 0,
+  clean_card_count INTEGER NOT NULL DEFAULT 0,
+  dirty_card_count INTEGER NOT NULL DEFAULT 0,
+  alt_open_count INTEGER NOT NULL DEFAULT 0,
+  updated_at TIMESTAMPTZ DEFAULT now()
+);
+
+CREATE TABLE IF NOT EXISTS impact_brand_monthly (
+  year_month TEXT NOT NULL,
+  brand_slug TEXT NOT NULL,
+  scan_count INTEGER NOT NULL DEFAULT 0,
+  alt_view_count INTEGER NOT NULL DEFAULT 0,
+  updated_at TIMESTAMPTZ DEFAULT now(),
+  PRIMARY KEY (year_month, brand_slug)
+);
+
+CREATE INDEX IF NOT EXISTS idx_impact_brand_monthly_slug ON impact_brand_monthly (brand_slug);
+
+CREATE TABLE IF NOT EXISTS civic_actions_daily (
+  day DATE PRIMARY KEY,
+  witness_count INTEGER NOT NULL DEFAULT 0,
+  share_export_count INTEGER NOT NULL DEFAULT 0,
+  narration_count INTEGER NOT NULL DEFAULT 0,
+  updated_at TIMESTAMPTZ DEFAULT now()
+);
+
+CREATE TABLE IF NOT EXISTS impact_outcomes_raw (
+  id SERIAL PRIMARY KEY,
+  outcome TEXT NOT NULL
+    CHECK (outcome IN ('yes_switched', 'no_same', 'no_already_avoided', 'skipped')),
+  created_at TIMESTAMPTZ DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS idx_impact_outcomes_raw_created ON impact_outcomes_raw (created_at);
+
+CREATE TABLE IF NOT EXISTS impact_outcomes_monthly (
+  year_month TEXT PRIMARY KEY,
+  response_count INTEGER NOT NULL DEFAULT 0,
+  switched_count INTEGER NOT NULL DEFAULT 0,
+  same_count INTEGER NOT NULL DEFAULT 0,
+  avoided_count INTEGER NOT NULL DEFAULT 0,
+  skipped_count INTEGER NOT NULL DEFAULT 0,
+  updated_at TIMESTAMPTZ DEFAULT now()
+);
+
+-- Share audit log: no user id, no IP column, no binary photo fields (hard rule).
+CREATE TABLE IF NOT EXISTS impact_shares (
+  id BIGSERIAL PRIMARY KEY,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  brand_slug TEXT NOT NULL,
+  channel TEXT NOT NULL,
+  risk_level TEXT NOT NULL,
+  was_blocked BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+CREATE INDEX IF NOT EXISTS idx_impact_shares_created ON impact_shares (created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_impact_shares_brand ON impact_shares (brand_slug);
+

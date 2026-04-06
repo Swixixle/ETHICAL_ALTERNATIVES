@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { getImpactFetchHeaders } from '../lib/impactConsent.js';
 
 const NAVY = '#0A1F3D';
 const AMBER = '#D4A017';
@@ -109,7 +110,7 @@ export default function LocalDocumentary({
       try {
         const res = await fetch(documentaryUrl(), {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', ...getImpactFetchHeaders() },
           body: JSON.stringify({
             city: cityUse,
             state: stateUse,

@@ -12,6 +12,7 @@ import {
   runInvestigationTextFallbackChain,
 } from './aiProvider.js';
 import { corroborateLayerC, mergeLayerCCorroborationIntoProfileJson } from './corroboration.js';
+import { assignShareRiskTier } from './shareRiskTier.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -674,13 +675,17 @@ function finalizeInvestigation(inv, profileType) {
   if (!press_outlets.length) {
     press_outlets = getPressOutletsForSlug(brand_slug);
   }
-  return {
+  const base = {
     ...inv,
     brand_slug,
     press_outlets,
     concern_flags: deriveConcernFlags(inv),
     profile_type: profileType,
     last_updated: new Date().toISOString().slice(0, 10),
+  };
+  return {
+    ...base,
+    share_risk_tier: assignShareRiskTier(base),
   };
 }
 

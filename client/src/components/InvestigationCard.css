@@ -560,6 +560,22 @@
   margin: 0;
 }
 
+.investigation-card__methodology {
+  margin: 16px 4px 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.investigation-card__methodology-link {
+  color: var(--color-link, #a8c4d8);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.investigation-card__methodology-link:hover {
+  color: #d4a017;
+}
+
 .investigation-card__share-wrap {
   padding: 20px 4px 8px;
 }

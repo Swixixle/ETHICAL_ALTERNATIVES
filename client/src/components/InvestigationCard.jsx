@@ -18,6 +18,7 @@ import {
 } from './icons/SectionIcons';
 import HireDirectInvestigationBlock from './HireDirectInvestigationBlock.jsx';
 import { fetchProportionality } from '../lib/fetchProportionality.js';
+import { methodologyPageUrl } from '../lib/methodologyUrl.js';
 import './InvestigationCard.css';
 
 const PLACEHOLDER_EMPTY_NORM = 'no indexed public material in this category';
@@ -1260,6 +1261,17 @@ export default function InvestigationCard({
         </div>
       ) : null}
 
+      <p className="investigation-card__methodology investigation-card__body-muted">
+        <a
+          className="investigation-card__methodology-link"
+          href={methodologyPageUrl()}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          How investigations work
+        </a>
+        <span className="investigation-card__methodology-rest"> — methodology, limits, corrections.</span>
+      </p>
       {typeof onShare === 'function' ? (
         <div className="investigation-card__share-wrap">
           <button type="button" className="app__btn app__btn--share investigation-card__share-btn" onClick={onShare}>
