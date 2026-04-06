@@ -1,0 +1,83 @@
+{
+  "brand_name": "Serco",
+  "brand_slug": "serco",
+  "parent_company": "Serco Group plc",
+  "ultimate_parent": "Serco Group plc (UK)",
+  "subsidiaries": ["Serco Inc. (US)", "Serco Europe", "Serco Asia Pacific"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "SERCO BILLED THE UK GOVERNMENT FOR ELECTRONIC MONITORING TAGS ON DEAD PEOPLE AND PEOPLE IN PRISON — AND PAID £68 MILLION TO SETTLE THE FRAUD — WHILE RUNNING IMMIGRATION DETENTION CENTERS WITH DOCUMENTED ABUSE",
+  "executive_summary": "Serco Group plc is a UK-headquartered global government services company generating approximately £4.5 billion annually from contracts with the UK, U.S., Australian, and other governments. Serco operates a vast array of public services including immigration detention centers, prisoner transport, nuclear decommissioning, air traffic control, and military support services. The company paid £68.5 million in 2013 to resolve UK government fraud allegations that it had billed for electronic tagging of offenders who were dead, in prison, or had never been tagged — one of the most documented cases of government contract fraud in UK history. Serco's immigration detention centers in the UK and Australia have faced documented abuse allegations, deaths, and human rights investigations.",
+  "verdict_tags": [
+    "68m_uk_tagging_fraud_dead_prisoners_tagged",
+    "immigration_detention_documented_abuse",
+    "australia_offshore_detention_human_rights",
+    "uk_government_largest_outsourcing_fraud",
+    "prisoner_transport_failures_escapes",
+    "nuclear_decommissioning_contracts"
+  ],
+  "concern_flags": { "labor": true, "environmental": false, "political": true, "tax": false, "health": true, "legal": true },
+  "labor": {
+    "summary": "Serco has faced labor disputes across its global operations. Workers at Serco immigration detention facilities have faced unsafe conditions. The company's use of subcontracted labor in detention and transport operations has raised accountability concerns. Serco's cost reduction model for government contracts typically involves reducing staff ratios below public sector equivalents.",
+    "flags": ["detention_facility_unsafe_worker_conditions", "subcontracted_labor_accountability_gaps", "cost_reduction_staff_ratio_below_public_sector"],
+    "sources": ["https://www.theguardian.com/society/serco", "https://www.hrw.org"]
+  },
+  "environmental": { "summary": "Serco holds nuclear decommissioning contracts in the UK — including at Sellafield — that involve handling of nuclear waste with associated environmental risks.", "flags": ["nuclear_decommissioning_sellafield_waste_handling"], "sources": [] },
+  "political": {
+    "summary": "Serco is among the largest UK government outsourcing companies — a sector that grew significantly under Conservative Party privatization policies. The company has deep relationships with UK Ministry of Justice, Home Office, and Ministry of Defence. In the U.S., Serco holds contracts with FEMA, DoD, and Navy. The tagging fraud — billing for people who were dead or already imprisoned — occurred under contracts where government monitoring of contract performance was demonstrably inadequate.",
+    "flags": ["uk_major_conservative_privatization_beneficiary", "us_fema_dod_navy_contracts", "government_contract_monitoring_failure_tagging"],
+    "sources": ["https://www.nao.org.uk", "https://www.theguardian.com/society/serco"]
+  },
+  "legal": {
+    "summary": "In 2013, Serco and G4S each paid £68.5 million to the UK government to resolve fraud allegations related to the Ministry of Justice electronic tagging contract — in which both companies billed for monitoring offenders who were dead, had returned to prison, or had never been tagged. The Serious Fraud Office investigated. In Australia, Serco's Manus Island offshore detention facility was the subject of human rights investigations following a detainee death and documented abuse. Serco has faced prisoner transport failure litigation.",
+    "flags": ["68_5m_uk_tagging_fraud_settlement_2013", "sfo_investigation_tagging_fraud", "manus_island_detention_death_investigation", "prisoner_transport_failure_litigation"],
+    "sources": ["https://www.theguardian.com/society/2013/dec/19/serco-g4s-repay-millions-fraud-electronic-tagging", "https://www.hrw.org/world-report/2015/country-chapters/australia"]
+  },
+  "tax": { "summary": "Serco uses standard multinational corporate tax structures across its UK, US, Australian, and other operations.", "flags": [], "sources": [] },
+  "executives": {
+    "summary": "Serco Group CEO Rupert Soames received £3.8 million in total compensation in 2022. The tagging fraud occurred under previous leadership; Soames was brought in as a turnaround CEO. The company has rebuilt its reputation since the fraud settlement while maintaining its government contracts.",
+    "flags": ["soames_3_8m_gbp_compensation_2022", "turnaround_ceo_post_fraud", "maintained_contracts_post_fraud"],
+    "sources": ["https://www.serco.com/investors/annual-reports"]
+  },
+  "connections": {
+    "summary": "Serco operates immigration detention centers in the UK and has operated offshore detention for Australia — most controversially on Manus Island, Papua New Guinea, where a detained Iranian national was killed in 2014 and documented abuse occurred. Serco's U.S. operations include FEMA call centers, Navy ship maintenance, and DoD support services.",
+    "flags": ["uk_immigration_detention_centers", "manus_island_png_offshore_detention", "iranian_national_killed_2014", "fema_call_centers_us"],
+    "sources": ["https://www.hrw.org", "https://www.theguardian.com/australia-news/manus-island"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former Serco employees and whistleblowers have alleged that the tagging fraud was known within the company at multiple levels — that management was aware of the overbilling and chose not to disclose it. Human rights organizations have alleged that Serco's offshore detention operations in Australia were designed to be punitive rather than merely restrictive — that conditions were deliberately harsh to deter asylum seekers.",
+    "flags": ["tagging_fraud_management_awareness_alleged", "australia_offshore_detention_deliberate_punitiveness_alleged"],
+    "sources": ["https://www.theguardian.com/society/2013/dec/19/serco-g4s-repay-millions-fraud-electronic-tagging", "https://www.hrw.org/world-report/2015/country-chapters/australia"]
+  },
+  "health_record": {
+    "summary": "An Iranian asylum seeker, Reza Barati, was killed at Serco-operated Manus Island detention center in February 2014 during a riot. Multiple other detainees were seriously injured. Australian parliamentary investigations documented the events. Serco's immigration detention facilities in the UK have faced inspection findings of inadequate mental health support for detainees. Serco's prisoner transport operations have faced incidents involving inadequate medical care for individuals in transit.",
+    "flags": ["reza_barati_killed_manus_island_2014", "multiple_detainees_seriously_injured_manus", "uk_detention_mental_health_inadequate_inspection", "prisoner_transport_medical_care_incidents"],
+    "sources": ["https://www.hrw.org/world-report/2015/country-chapters/australia", "https://www.theguardian.com/australia-news/manus-island"]
+  },
+  "alternatives": {
+    "cheaper": ["Serco does not sell consumer products. The systemic alternative is robust contract monitoring with audit rights and automatic financial penalties for overbilling — the tagging fraud continued because government monitoring was inadequate"],
+    "healthier": ["Human Rights Watch publishes annual documentation of conditions in Serco-operated detention facilities; the UK's Her Majesty's Inspectorate of Prisons publishes inspection reports on Serco facilities"],
+    "diy": ["The National Audit Office's reports on UK government outsourcing document Serco and other contractor performance"]
+  },
+  "timeline": [
+    { "year": 1929, "event": "Serco founded as Radio Communications Company", "severity": "neutral", "source_url": "" },
+    { "year": 2012, "event": "Serco and G4S win UK Ministry of Justice electronic tagging contract extensions despite known overbilling", "severity": "high", "source_url": "" },
+    { "year": 2013, "event": "Ministry of Justice audit reveals tagging fraud — billing for dead people, prisoners, and untagged individuals", "severity": "critical", "source_url": "https://www.theguardian.com/society/2013/dec/19/serco-g4s-repay-millions-fraud-electronic-tagging" },
+    { "year": 2013, "event": "Serco pays £68.5 million to resolve fraud; SFO investigates", "severity": "critical", "source_url": "" },
+    { "year": 2014, "event": "February: Reza Barati killed at Serco-operated Manus Island detention center", "severity": "critical", "source_url": "https://www.theguardian.com/australia-news/manus-island" },
+    { "year": 2015, "event": "Rupert Soames appointed CEO as turnaround leader post-fraud", "severity": "neutral", "source_url": "" },
+    { "year": 2023, "event": "Serco continues to hold UK, US, and Australian government contracts", "severity": "neutral", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "Serco's outsourcing model displaces public sector workers — transferring government employment to lower-wage private contractor positions while maintaining the same public functions.",
+    "price_illusion": "Serco presents outsourced government services as more efficient than direct public provision. The tagging fraud — billing for nonexistent monitoring — represents a direct contradiction of the efficiency premise.",
+    "tax_math": "Serco's profit margins on UK and Australian government contracts flow to a company whose international structure minimizes tax in contract jurisdictions.",
+    "wealth_velocity": "CEO compensation of £3.8 million is derived from government contracts in the UK, US, and Australia — including detention operations that have killed detainees and been found in violation of human rights standards."
+  },
+  "cost_absorption": {
+    "who_benefited": ["Serco shareholders", "Executive leadership", "Conservative governments that expanded outsourcing contracts"],
+    "who_paid": ["UK taxpayers who were fraudulently billed for nonexistent electronic monitoring", "Reza Barati and other Manus Island detainees", "Asylum seekers in detention facilities with inadequate mental health support"],
+    "the_gap": "Serco billed for electronic monitoring of dead people and prisoners, paid £68.5 million to resolve it, and continued holding government detention and justice contracts. The fraud was discovered by a government audit — not reported by Serco."
+  }
+}

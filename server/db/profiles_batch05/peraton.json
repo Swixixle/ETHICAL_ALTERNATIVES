@@ -1,0 +1,60 @@
+{
+  "brand_name": "Peraton",
+  "brand_slug": "peraton",
+  "parent_company": "Peraton Inc.",
+  "ultimate_parent": "Veritas Capital (private equity)",
+  "subsidiaries": ["Perspecta (acquired)", "DXC US Public Sector (acquired)", "Northrop Grumman IT (acquired)"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "VERITAS CAPITAL ASSEMBLED A $7 BILLION INTELLIGENCE AND DEFENSE IT CONTRACTOR IN FIVE YEARS THROUGH ACQUISITIONS — PERATON NOW HOLDS CLASSIFIED CONTRACTS ACROSS EVERY U.S. INTELLIGENCE AGENCY WITH NO PUBLIC ACCOUNTABILITY",
+  "executive_summary": "Peraton is a defense and intelligence technology company generating approximately $7 billion annually — assembled through a series of private equity acquisitions by Veritas Capital since 2017. The company holds contracts across NSA, CIA, NRO, DIA, and all military intelligence branches. Peraton acquired Perspecta (itself assembled from DXC US Public Sector and CSRA) in 2021 for $7.1 billion, making it one of the largest classified government IT contractors. As a private company owned by Veritas Capital, Peraton has no public financial disclosure obligations. The private equity model applied to classified intelligence infrastructure — with debt service, management fees, and return expectations layered onto government contract revenue — raises the same structural concerns as the ManTech/Carlyle arrangement.",
+  "verdict_tags": [
+    "veritas_capital_private_equity_classified_intelligence",
+    "7b_annual_revenue_intelligence_agencies",
+    "assembled_acquisitions_no_competition",
+    "no_public_financial_disclosure",
+    "nsa_cia_nro_dia_classified_contracts",
+    "7_1b_perspecta_acquisition_debt_loaded"
+  ],
+  "concern_flags": { "labor": false, "environmental": false, "political": true, "tax": false, "health": false, "legal": false },
+  "labor": { "summary": "Peraton employs approximately 24,000 cleared professionals. Private equity acquisitions have involved workforce restructuring and integration of multiple legacy workforces with different cultures and compensation structures.", "flags": ["private_equity_acquisition_workforce_restructuring", "multi_legacy_workforce_integration_challenges"], "sources": [] },
+  "environmental": { "summary": "Peraton is primarily an IT and services company with minimal environmental footprint.", "flags": [], "sources": [] },
+  "political": {
+    "summary": "Veritas Capital has assembled a portfolio of classified government contractors through acquisitions of government IT divisions spun off from larger companies — DXC's public sector arm, Northrop Grumman's IT division, and Perspecta. This consolidation strategy — buying government-dependent IT assets and combining them — has concentrated classified contract relationships in a single private equity vehicle with no public disclosure requirements. Peraton spent $4.1 million on lobbying in 2023.",
+    "flags": ["4_1m_lobbying_2023", "veritas_classified_contractor_consolidation_strategy", "private_equity_intelligence_concentration", "no_public_disclosure_classified_consolidation"],
+    "sources": ["https://www.opensecrets.org/orgs/peraton/lobbying"]
+  },
+  "legal": { "summary": "Peraton has not faced major public legal controversy. Its classified contract environment limits public accountability.", "flags": ["classified_contract_limited_accountability"], "sources": [] },
+  "tax": { "summary": "The $7.1 billion Perspecta acquisition was financed with significant debt loaded onto Peraton — generating interest deductions that reduce taxable income. Veritas Capital's management fee and return expectations represent additional extraction from government contract revenue.", "flags": ["7_1b_acquisition_debt_interest_deductions", "veritas_management_fee_extraction"], "sources": [] },
+  "executives": { "summary": "CEO Stu Shea leads Peraton. As a private company, executive compensation is not publicly disclosed. Veritas Capital's principals profit through management fees and carried interest on the portfolio.", "flags": ["private_compensation_undisclosed", "veritas_principals_management_fee_carried_interest"], "sources": [] },
+  "connections": { "summary": "Peraton holds classified IT infrastructure contracts across the entire U.S. intelligence community — NSA, CIA, NRO, DIA, and military branches. The company's scale and classified footprint make it one of the most deeply embedded private entities in U.S. national security infrastructure.", "flags": ["intelligence_community_wide_classified_contracts", "deeply_embedded_national_security_infrastructure"], "sources": ["https://www.peraton.com/markets/"] },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "National security policy analysts have raised concerns that the consolidation of classified government IT among a small number of private equity-owned companies — Peraton, ManTech/Carlyle, and others — creates systemic concentration risk: if the private equity model creates financial distress in one of these entities, the classified government functions they support could be disrupted. Critics have alleged that the acquisition-driven assembly of these companies prioritizes financial engineering over operational quality.",
+    "flags": ["private_equity_consolidation_systemic_risk_alleged", "financial_engineering_over_operational_quality_alleged"],
+    "sources": ["https://www.pogo.org"]
+  },
+  "health_record": { "summary": "Peraton does not produce consumer health products.", "flags": [], "sources": [] },
+  "alternatives": {
+    "cheaper": ["Peraton does not sell consumer products. The systemic alternative is re-insourcing of classified IT infrastructure to federal employees — limiting the private equity profit extraction from national security spending"],
+    "healthier": ["POGO publishes analysis of intelligence community contracting consolidation"],
+    "diy": ["Veritas Capital's portfolio is described on its website; federal procurement databases document Peraton contract awards"]
+  },
+  "timeline": [
+    { "year": 2017, "event": "Veritas Capital acquires Peraton from Northrop Grumman", "severity": "neutral", "source_url": "" },
+    { "year": 2018, "event": "Veritas acquires DXC US Public Sector, merges into Perspecta", "severity": "neutral", "source_url": "" },
+    { "year": 2021, "event": "Peraton acquires Perspecta for $7.1 billion — becomes one of largest classified IT contractors", "severity": "high", "source_url": "https://www.reuters.com/business/peraton-buy-perspecta-71-billion-deal-2021-01-27/" },
+    { "year": 2023, "event": "Peraton revenues reach approximately $7 billion; holds intelligence community-wide contracts", "severity": "neutral", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "Peraton's assembly through acquisitions has involved workforce consolidations and restructuring across formerly independent companies.",
+    "price_illusion": "Private equity consolidation of classified IT is presented as creating efficiency through scale. The debt service, management fees, and return expectations added to government contract costs challenge the efficiency premise.",
+    "tax_math": "Acquisition debt generates interest deductions that reduce Peraton's taxable income while Veritas extracts management fees — layering private equity costs onto government contract revenue.",
+    "wealth_velocity": "Veritas Capital partners accumulate wealth through management fees and carried interest on a portfolio assembled from public-sector IT assets — funded almost entirely by U.S. government intelligence spending."
+  },
+  "cost_absorption": {
+    "who_benefited": ["Veritas Capital partners and investors", "Sellers of acquired companies at premium acquisition prices"],
+    "who_paid": ["U.S. taxpayers funding intelligence contracts with private equity overhead layered on top", "Employees in consolidated workforces facing post-acquisition restructuring"],
+    "the_gap": "The U.S. intelligence community's IT infrastructure is increasingly owned by private equity firms — whose financial incentives, ownership structures, and performance records are not subject to public disclosure — funded by taxpayer intelligence appropriations."
+  }
+}

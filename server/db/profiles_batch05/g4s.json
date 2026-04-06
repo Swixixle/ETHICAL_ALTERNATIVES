@@ -1,0 +1,83 @@
+{
+  "brand_name": "G4S",
+  "brand_slug": "g4s",
+  "parent_company": "Allied Universal (acquired G4S in 2021)",
+  "ultimate_parent": "Allied Universal Security Services",
+  "subsidiaries": ["G4S Government Solutions (US)", "G4S Secure Solutions", "G4S Cash Solutions"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "G4S WAS SUPPOSED TO PROVIDE 10,400 SECURITY GUARDS FOR THE 2012 LONDON OLYMPICS AND SHOWED UP WITH 3,500 — THE ARMY HAD TO DEPLOY — AND THAT WAS JUST ONE OF ITS DOCUMENTED FAILURES ACROSS PRISONS, DETENTION CENTERS, AND ASYLUM SEEKER HOUSING",
+  "executive_summary": "G4S (now acquired by Allied Universal) was the world's largest private security company, operating in over 90 countries with approximately £7.7 billion in annual revenue before its 2021 acquisition. The company held contracts for prison management, immigration detention, asylum seeker housing, court security, and event security for governments including the UK, US, and Australia. G4S became a symbol of privatized public service failure after its catastrophic failure to fulfill the 2012 London Olympics security contract — forcing emergency military deployment. The company also paid £44.4 million to resolve UK fraud allegations that it overbilled for electronic tagging (simultaneously with Serco), operated detention facilities with documented deaths and abuse, and managed prisons where riots and violence were attributed to understaffing.",
+  "verdict_tags": [
+    "london_olympics_3500_of_10400_guards_army_deployed",
+    "44_4m_uk_tagging_fraud_settlement",
+    "prison_understaffing_riots_violence",
+    "immigration_detention_documented_deaths",
+    "asylum_seeker_housing_abuse_documented",
+    "world_largest_private_security_failure"
+  ],
+  "concern_flags": { "labor": true, "environmental": false, "political": true, "tax": false, "health": true, "legal": true },
+  "labor": {
+    "summary": "G4S has faced widespread labor complaints globally. Its security guards — many working minimum wage with variable hours — have faced wage theft allegations, unsafe working conditions, and inadequate training. G4S prison staff ratios were documented as contributing to violence and riots. Workers at G4S detention facilities have raised safety concerns. The company's low-wage, high-turnover workforce model is central to its cost structure.",
+    "flags": ["minimum_wage_security_guard_variable_hours", "wage_theft_allegations", "prison_staff_ratio_violence_contributing", "detention_facility_worker_safety_complaints"],
+    "sources": ["https://www.theguardian.com/society/g4s", "https://www.hrw.org"]
+  },
+  "environmental": { "summary": "G4S is primarily a services company with minimal direct environmental footprint.", "flags": [], "sources": [] },
+  "political": {
+    "summary": "G4S benefited enormously from UK and global government outsourcing policies from the 1990s through 2010s. The company's Olympic failure — requiring 3,500 military personnel to be deployed as emergency replacements — demonstrated the systemic risk of outsourcing security functions to cost-minimizing private contractors. The tagging fraud (alongside Serco) was discovered by government audit, not self-reported. G4S's political connections across multiple governments facilitated contract awards that preceded documented performance failures.",
+    "flags": ["uk_outsourcing_policy_beneficiary", "olympic_military_emergency_deployment_required", "tagging_fraud_government_discovered_not_self_reported", "cross_government_political_connections"],
+    "sources": ["https://www.theguardian.com/uk/2012/jul/12/london-olympics-security-crisis-g4s", "https://www.nao.org.uk"]
+  },
+  "legal": {
+    "summary": "G4S paid £44.4 million in 2013 to resolve UK fraud allegations for overbilling on the Ministry of Justice electronic tagging contract — the same fraud as Serco. The Serious Fraud Office investigated. G4S faced lawsuits and investigations related to deaths at its Yarl's Wood immigration detention center and its Medway Secure Training Centre for young offenders — where a Channel 4 undercover investigation documented staff assaulting detained children.",
+    "flags": ["44_4m_uk_tagging_fraud_settlement_2013", "sfo_investigation", "yarls_wood_detention_deaths_lawsuits", "medway_staff_children_assault_documented"],
+    "sources": ["https://www.theguardian.com/society/2013/dec/19/serco-g4s-repay-millions-fraud-electronic-tagging", "https://www.channel4.com/news/medway-secure-training-centre-g4s-undercover"]
+  },
+  "tax": { "summary": "G4S used standard multinational tax structures. The Allied Universal acquisition has restructured the entity.", "flags": [], "sources": [] },
+  "executives": {
+    "summary": "G4S CEO Ashley Almanza received approximately £5 million in compensation in 2020. The Olympic failure cost the CEO at the time, Nick Buckles, significant reputational damage — he was summoned to give evidence before a parliamentary committee where his performance was described as 'incompetent' by MPs. Buckles resigned in 2013.",
+    "flags": ["buckles_resigned_post_olympic_parliamentary_censure", "almanza_5m_compensation_post_olympic", "parliamentary_incompetent_characterization"],
+    "sources": ["https://www.theguardian.com/uk/2012/jul/17/g4s-crisis-mps-nick-buckles"]
+  },
+  "connections": {
+    "summary": "G4S operated the Medway Secure Training Centre for young offenders in the UK — where Channel 4's undercover investigation showed staff physically assaulting children. G4S managed Yarl's Wood immigration removal center — where deaths and sexual abuse allegations were documented. The company operated prisons in South Africa, Israel (including facilities housing Palestinian prisoners), and multiple other countries.",
+    "flags": ["medway_staff_assault_children_documented", "yarls_wood_deaths_sexual_abuse_allegations", "israel_palestinian_prisoner_facilities", "south_africa_prison_operations"],
+    "sources": ["https://www.channel4.com/news/medway-secure-training-centre-g4s-undercover", "https://www.hrw.org"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Channel 4's undercover investigation showed G4S staff at Medway physically assaulting restrained young detainees — events the investigation recorded on hidden camera. Human rights organizations have alleged that G4S knowingly understaffed its detention facilities to maximize profit, and that management was aware of abuse allegations at Yarl's Wood and chose not to investigate adequately. The Olympic staffing failure has been alleged to result from G4S providing financial forecasts it knew were unachievable to win the contract.",
+    "flags": ["medway_children_assault_hidden_camera_documented", "deliberate_understaffing_profit_maximization_alleged", "yarls_wood_abuse_management_awareness_alleged", "olympic_unachievable_forecast_contract_win_alleged"],
+    "sources": ["https://www.channel4.com/news/medway-secure-training-centre-g4s-undercover", "https://www.theguardian.com/uk/2012/jul/12/london-olympics-security-crisis-g4s"]
+  },
+  "health_record": {
+    "summary": "Deaths at G4S-operated facilities include deaths at Yarl's Wood immigration detention — including the death of Alois Dvorzak, a 72-year-old Austrian national who died after G4S staff allegedly ignored his requests for medical assistance. At Medway, Channel 4's investigation showed physical assault of detained children by G4S staff. G4S prison understaffing contributed to violence and riots that injured both prisoners and staff. The Olympic failure — while not producing deaths — required emergency military deployment of thousands of personnel.",
+    "flags": ["dvorzak_death_yarls_wood_medical_ignored", "medway_children_physical_assault_documented", "prison_understaffing_violence_injuries", "olympic_emergency_military_deployment"],
+    "sources": ["https://www.theguardian.com/uk/g4s", "https://www.channel4.com/news/medway-secure-training-centre-g4s-undercover"]
+  },
+  "alternatives": {
+    "cheaper": ["G4S does not sell consumer products. The systemic alternative is direct government provision of detention and prison services with public employee accountability, transparent staffing standards, and independent inspection"],
+    "healthier": ["Detention Action, Bail for Immigration Detainees, and Human Rights Watch publish ongoing documentation of conditions at UK immigration detention facilities"],
+    "diy": ["The Channel 4 Medway undercover documentary is available to view; UK parliamentary select committee hearings on G4S are publicly archived"]
+  },
+  "timeline": [
+    { "year": 2004, "event": "Group 4 Falck and Securicor merge to form G4S — world's largest private security company", "severity": "neutral", "source_url": "" },
+    { "year": 2012, "event": "July: G4S admits it cannot fulfill 2012 London Olympics security contract — army deploys 3,500 troops", "severity": "critical", "source_url": "https://www.theguardian.com/uk/2012/jul/12/london-olympics-security-crisis-g4s" },
+    { "year": 2012, "event": "CEO Nick Buckles summoned to Parliament — MPs call performance 'incompetent'", "severity": "critical", "source_url": "https://www.theguardian.com/uk/2012/jul/17/g4s-crisis-mps-nick-buckles" },
+    { "year": 2013, "event": "Pays £44.4 million for electronic tagging fraud — simultaneously with Serco", "severity": "critical", "source_url": "" },
+    { "year": 2013, "event": "CEO Buckles resigns", "severity": "high", "source_url": "" },
+    { "year": 2016, "event": "Channel 4 undercover investigation documents G4S staff assaulting children at Medway", "severity": "critical", "source_url": "https://www.channel4.com/news/medway-secure-training-centre-g4s-undercover" },
+    { "year": 2021, "event": "Allied Universal acquires G4S for approximately £3.8 billion", "severity": "neutral", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "G4S displaced public sector prison and security workers — converting government employment with accountability structures to private contractor positions with lower wages and weaker oversight.",
+    "price_illusion": "G4S presented its Olympic security contract as a cost-effective private sector solution — then couldn't deliver even a third of the promised guards, requiring emergency military deployment at taxpayer expense.",
+    "tax_math": "G4S extracted profit from government detention and security contracts while paying minimum wages to frontline staff — concentrating the spread between contract revenue and labor cost as shareholder returns.",
+    "wealth_velocity": "CEO and executive compensation was maintained through the Olympic failure, the tagging fraud, the Medway children assault scandal, and the Yarl's Wood death investigations — with the company acquired by Allied Universal for £3.8 billion despite this documented record."
+  },
+  "cost_absorption": {
+    "who_benefited": ["G4S shareholders", "Executive leadership", "Allied Universal (acquired at post-scandal price)"],
+    "who_paid": ["UK taxpayers who paid for both G4S contract and emergency military Olympics deployment", "Children assaulted at Medway", "Yarl's Wood detainees who died or were abused", "Prison staff and prisoners injured in understaffing-related violence"],
+    "the_gap": "G4S promised 10,400 security guards for the Olympics and delivered 3,500. Paid £44.4 million for tagging fraud. Had staff assault children on camera. Had detainees die at its facilities. Was acquired for £3.8 billion."
+  }
+}

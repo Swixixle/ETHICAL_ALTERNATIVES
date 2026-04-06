@@ -1,0 +1,185 @@
+{
+  "brand_name": "IBM Federal",
+  "brand_slug": "ibm-federal",
+  "parent_company": "IBM Federal LLC",
+  "ultimate_parent": "International Business Machines Corporation",
+  "subsidiaries": [
+    "IBM Consulting Federal",
+    "IBM Technology Federal"
+  ],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "IBM HAS COLLECTED BILLIONS FROM THE FEDERAL GOVERNMENT FOR DECADES WHILE PAYING $16 MILLION TO SETTLE KICKBACK ALLEGATIONS, SHIPPING JOBS OFFSHORE THROUGH TAX-SUBSIDIZED RESTRUCTURINGS, AND RUNNING A FAILED STATE UNEMPLOYMENT SYSTEM THAT LEFT WORKERS WITHOUT BENEFITS DURING COVID",
+  "executive_summary": "IBM Federal is the U.S. government-focused division of International Business Machines Corporation, generating approximately $8 billion annually from federal contracts covering IT systems, cloud infrastructure, cybersecurity, and consulting. IBM has held government contracts continuously since the 1930s — it provided punch card tabulation equipment used by the Social Security Administration at its founding. The company has paid settlements for kickbacks on government contracts, built state unemployment insurance systems that catastrophically failed during COVID-19, and conducted repeated mass layoffs of U.S. workers while receiving tax incentives and government contracts. IBM's global tax structure — including its Irish and other offshore subsidiaries — reduces its effective tax rate while it collects billions in U.S. government revenue.",
+  "verdict_tags": [
+    "16m_kickback_settlement_government_contracts",
+    "state_unemployment_systems_covid_failure",
+    "decades_mass_layoffs_offshore_while_government_funded",
+    "irish_offshore_tax_structure",
+    "false_claims_act_settlements_multiple",
+    "watson_health_shutdown_government_ai_failure"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "IBM has conducted mass layoffs of U.S. employees — often called 'resource actions' — continuously since the 1990s while simultaneously hiring internationally and receiving government contracts and tax subsidies. IBM has faced age discrimination lawsuits documenting a systematic effort to reduce its older U.S. workforce — ProPublica's 2018 investigation found IBM eliminated approximately 20,000 U.S. employees over 40 in five years while publicly claiming to be hiring. The company has faced ERISA lawsuits related to pension changes.",
+    "flags": [
+      "systematic_age_discrimination_20000_over_40_eliminated",
+      "propublica_investigation_documented_2018",
+      "continuous_mass_layoffs_while_government_funded",
+      "erisa_pension_change_lawsuits"
+    ],
+    "sources": [
+      "https://www.propublica.org/article/ibm-age-discrimination-american-workers",
+      "https://www.eeoc.gov"
+    ]
+  },
+  "environmental": {
+    "summary": "IBM legacy manufacturing sites — including in New York's Hudson Valley — have generated significant hazardous waste contamination. The company's Endicott, New York facility contaminated local groundwater with trichloroethylene. IBM is a responsible party at multiple EPA Superfund sites from decades of semiconductor and computer manufacturing.",
+    "flags": [
+      "endicott_ny_tce_groundwater_contamination",
+      "hudson_valley_manufacturing_legacy_contamination",
+      "epa_superfund_multiple_sites"
+    ],
+    "sources": [
+      "https://www.epa.gov/superfund",
+      "https://www.dec.ny.gov"
+    ]
+  },
+  "political": {
+    "summary": "IBM spent $5.7 million on lobbying in 2023. The company has relationships across the federal government developed over nine decades of contracting. IBM's repeated receipt of government contracts while conducting mass layoffs of U.S. workers has drawn congressional scrutiny. The company has benefited from state and local tax incentives tied to employment commitments that were not always fulfilled.",
+    "flags": [
+      "5_7m_lobbying_2023",
+      "nine_decades_government_contracting_relationships",
+      "mass_layoffs_during_contract_receipt_congressional_scrutiny",
+      "state_local_tax_incentive_employment_commitment_failures"
+    ],
+    "sources": [
+      "https://www.opensecrets.org/orgs/ibm/lobbying",
+      "https://subsidytracker.goodjobsfirst.org/prog.php?parent=ibm"
+    ]
+  },
+  "legal": {
+    "summary": "IBM paid $16 million in 2011 to resolve DOJ allegations that it paid kickbacks to New York State and other government officials to secure IT contracts — including payments to officials at the General Services Administration. IBM has faced multiple False Claims Act allegations across government IT contracts. The company's Watson Health division — which received significant government AI investment — was shut down in 2022 after failing to deliver promised capabilities.",
+    "flags": [
+      "16m_kickback_settlement_2011",
+      "gsa_new_york_state_official_kickbacks",
+      "false_claims_multiple_it_contracts",
+      "watson_health_government_ai_failure_shutdown"
+    ],
+    "sources": [
+      "https://www.justice.gov/opa/pr/ibm-pays-16-million-resolve-false-claims-act-liability",
+      "https://www.statnews.com/2022/01/21/ibm-watson-health-sale/"
+    ]
+  },
+  "tax": {
+    "summary": "IBM has used offshore subsidiary structures — including in Ireland, Luxembourg, and the Netherlands — to reduce its global effective tax rate. The company's effective U.S. tax rate has been significantly below the statutory rate in multiple years. IBM received $1.35 billion in identified state and local subsidies while conducting layoffs in the same states. The company has used executive compensation structures that optimize tax treatment for senior leadership.",
+    "flags": [
+      "ireland_luxembourg_netherlands_offshore_structures",
+      "below_statutory_effective_tax_rate",
+      "1_35b_state_local_subsidies_concurrent_layoffs",
+      "executive_compensation_tax_optimization"
+    ],
+    "sources": [
+      "https://subsidytracker.goodjobsfirst.org/prog.php?parent=ibm",
+      "https://itep.org"
+    ]
+  },
+  "executives": {
+    "summary": "CEO Arvind Krishna received $22.9 million in total compensation in 2022. Former CEO Ginni Rometty oversaw the period of systematic age discrimination documented by ProPublica — receiving approximately $20 million annually during those years. IBM's executive compensation has remained at these levels through repeated restructurings and layoffs.",
+    "flags": [
+      "krishna_22_9m_compensation_2022",
+      "rometty_20m_annual_age_discrimination_period",
+      "executive_pay_through_restructurings_layoffs"
+    ],
+    "sources": [
+      "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=ibm"
+    ]
+  },
+  "connections": {
+    "summary": "IBM has built or managed unemployment insurance systems for multiple U.S. states — systems that catastrophically failed during COVID-19 when claim volumes surged. States including California, New York, and others experienced weeks-long processing failures leaving unemployed workers without benefits during a pandemic. IBM's Watson artificial intelligence platform was sold to governments and healthcare systems with capabilities that did not materialize — the health division was subsequently sold at a loss.",
+    "flags": [
+      "state_unemployment_systems_covid_processing_failure",
+      "california_new_york_unemployment_weeks_delays",
+      "watson_ai_capabilities_not_materialized",
+      "government_healthcare_watson_sold_at_loss"
+    ],
+    "sources": [
+      "https://www.latimes.com/california/story/2020-03-27/california-unemployment-benefits-website-crashes",
+      "https://www.statnews.com/2022/01/21/ibm-watson-health-sale/"
+    ]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "ProPublica's 2018 investigation alleged that IBM's systematic reduction of its over-40 U.S. workforce was a deliberate age discrimination strategy — that the company specifically targeted older, higher-paid American employees for elimination while publicly marketing itself as a company that valued experience. Former IBM employees have alleged that the 'Watson AI' capabilities sold to government and healthcare customers were overstated — that the technology was not ready for the use cases it was marketed for, and that IBM collected significant contract revenue on promises it knew it could not keep.",
+    "flags": [
+      "deliberate_age_discrimination_strategy_propublica_alleged",
+      "watson_capabilities_overstated_government_healthcare_alleged",
+      "contract_revenue_on_unkept_promises_alleged"
+    ],
+    "sources": [
+      "https://www.propublica.org/article/ibm-age-discrimination-american-workers",
+      "https://www.statnews.com/2017/09/05/ibm-watson-healthcare/"
+    ]
+  },
+  "health_record": {
+    "summary": "IBM's unemployment insurance system failures during COVID-19 left unemployed workers — many of whom had lost income due to the pandemic — without benefits for weeks or months during a public health emergency. The inability to access unemployment insurance during COVID-19 was directly connected to food insecurity, housing instability, and inability to access healthcare for affected households. IBM's Watson Health was deployed in multiple hospital systems with claims about cancer diagnosis assistance — capabilities that independent evaluations found were not clinically useful.",
+    "flags": [
+      "covid_unemployment_failure_food_housing_healthcare_impact",
+      "watson_cancer_diagnosis_clinical_utility_not_found",
+      "hospital_systems_watson_clinical_failure"
+    ],
+    "sources": [
+      "https://www.statnews.com/2017/09/05/ibm-watson-healthcare/",
+      "https://www.latimes.com/california/story/2020-03-27/california-unemployment-benefits-website-crashes"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "IBM does not sell consumer products to the general public. The systemic alternative is open-source, modular government IT architecture rather than large proprietary vendor contracts — an approach that reduces single-vendor dependency and enables competition"
+    ],
+    "healthier": [
+      "State unemployment insurance agencies maintain appeal processes; legal aid organizations provide assistance for improperly denied unemployment claims"
+    ],
+    "diy": [
+      "ProPublica's IBM age discrimination investigation is publicly available and documents the systematic workforce reduction with named individuals and internal documents",
+      "STAT News published comprehensive analysis of IBM Watson Health's clinical failures"
+    ]
+  },
+  "timeline": [
+    { "year": 1935, "event": "IBM wins Social Security Administration tabulation contract — begins nine decades of federal contracting", "severity": "neutral", "source_url": "" },
+    { "year": 1990, "event": "IBM begins pattern of 'resource actions' — periodic mass layoffs branded as restructuring", "severity": "high", "source_url": "" },
+    { "year": 2011, "event": "Pays $16 million to resolve kickback allegations for payments to government officials", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/ibm-pays-16-million-resolve-false-claims-act-liability" },
+    { "year": 2011, "event": "IBM Watson defeats Jeopardy champions — company pivots to AI healthcare and government claims", "severity": "neutral", "source_url": "" },
+    { "year": 2018, "event": "ProPublica documents systematic age discrimination — 20,000 U.S. workers over 40 eliminated in five years", "severity": "critical", "source_url": "https://www.propublica.org/article/ibm-age-discrimination-american-workers" },
+    { "year": 2020, "event": "COVID-19 — IBM-built state unemployment systems collapse under claim volume surge; millions left without benefits", "severity": "critical", "source_url": "https://www.latimes.com/california/story/2020-03-27" },
+    { "year": 2022, "event": "IBM sells Watson Health division — AI healthcare capabilities did not materialize", "severity": "high", "source_url": "https://www.statnews.com/2022/01/21/ibm-watson-health-sale/" },
+    { "year": 2023, "event": "IBM continues federal contracting; new rounds of layoffs announced", "severity": "high", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "IBM's systematic elimination of U.S. workers — particularly workers over 40 in communities like Endicott, New York where IBM was the dominant employer for generations — has devastated specific communities. IBM's departure from Endicott left a contaminated site and a community with no comparable replacement employer.",
+    "price_illusion": "IBM sold Watson AI capabilities to governments and healthcare systems with promises of transformative outcomes. Independent evaluations found the technology did not deliver. State governments paid for unemployment systems that failed catastrophically at the moment of greatest need.",
+    "tax_math": "IBM received $1.35 billion in state and local subsidies tied to employment commitments while systematically reducing U.S. employment. The company simultaneously used offshore subsidiaries to reduce its effective tax rate — extracting from both the subsidy side and the tax side.",
+    "wealth_velocity": "CEO compensation exceeds $22 million annually during a period in which IBM conducted repeated mass layoffs of U.S. workers, sold AI capabilities that didn't work to governments, and allowed state unemployment systems to fail during a pandemic."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      "IBM shareholders (consistent dividend through restructuring periods)",
+      "Executive leadership ($20M+ annual compensation through layoff cycles)",
+      "Offshore jurisdictions receiving tax-optimized IBM profit allocation"
+    ],
+    "who_paid": [
+      "20,000+ U.S. workers over 40 systematically eliminated",
+      "Communities like Endicott, NY where IBM's departure left economic devastation and contaminated land",
+      "Unemployed workers who couldn't access benefits during COVID due to IBM system failures",
+      "Government healthcare systems that paid for Watson capabilities that didn't materialize"
+    ],
+    "the_gap": "IBM received $1.35 billion in state subsidies for employment commitments, eliminated 20,000 U.S. workers over 40, let unemployment systems fail during a pandemic, shut down its AI health division after selling incapable technology to hospitals, paid $16 million in kickback settlements — and maintained uninterrupted federal contract access and $22 million CEO compensation throughout."
+  }
+}

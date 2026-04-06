@@ -1,0 +1,82 @@
+{
+  "brand_name": "Accenture Federal Services",
+  "brand_slug": "accenture-federal",
+  "parent_company": "Accenture Federal Services LLC",
+  "ultimate_parent": "Accenture plc (Ireland)",
+  "subsidiaries": ["Accenture Federal Services", "Magellen Federal (acquired)"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "ACCENTURE WAS ONE OF THE FIRMS BEHIND HEALTHCARE.GOV'S CATASTROPHIC 2013 LAUNCH — THEN WON THE CONTRACT TO FIX IT — AND HAS REPEATED THE PATTERN OF FAILED GOVERNMENT IT FOLLOWED BY LUCRATIVE REMEDIATION CONTRACTS",
+  "executive_summary": "Accenture Federal Services is the U.S. government-focused subsidiary of Accenture plc, an Irish-domiciled global consulting and IT firm. Accenture Federal generates approximately $4 billion annually from federal IT, consulting, and managed services contracts. The company was involved in the troubled launch of HealthCare.gov in 2013 — the disastrous rollout of the Affordable Care Act marketplace — and subsequently won contracts to remediate the failures it had contributed to. Accenture has been repeatedly awarded government IT contracts despite a track record of cost overruns and failed implementations. The firm's Irish domicile — following Accenture's 2001 reincorporation from Bermuda to Ireland — allows it to reduce its global tax liability while collecting U.S. government contract revenue.",
+  "verdict_tags": [
+    "healthcare_gov_failed_launch_participant",
+    "remediation_contract_after_failure_pattern",
+    "irish_domicile_us_tax_reduction",
+    "government_it_cost_overruns_pattern",
+    "dhs_cbp_it_failures",
+    "false_claims_act_settlements"
+  ],
+  "concern_flags": { "labor": true, "environmental": false, "political": true, "tax": true, "health": false, "legal": true },
+  "labor": {
+    "summary": "Accenture has faced discrimination and pay equity complaints from employees. The firm's consulting culture involves significant unpaid overtime expectations for junior staff. Accenture has made public diversity commitments while facing internal complaints about advancement disparities for women and employees of color. Federal contractor requirements mandate certain employment practices that Accenture must follow.",
+    "flags": ["discrimination_pay_equity_complaints", "unpaid_overtime_junior_staff_culture", "diversity_commitment_internal_disparity_complaints"],
+    "sources": ["https://www.eeoc.gov", "https://www.bloomberg.com"]
+  },
+  "environmental": { "summary": "Accenture Federal Services is primarily a services firm with minimal direct environmental footprint. Accenture plc has made net-zero commitments though critics note the gap between commitments and practices for a firm that advises fossil fuel companies.", "flags": [], "sources": [] },
+  "political": {
+    "summary": "Accenture Federal spent $4.7 million on lobbying in 2023. The firm benefits from the same revolving door as other federal contractors — former senior government IT officials join Accenture's public sector practice. Accenture's Irish domicile — achieved through a 2001 reincorporation — is a recognized tax inversion that reduces U.S. tax liability while the firm collects billions in U.S. government revenue.",
+    "flags": ["4_7m_lobbying_2023", "revolving_door_government_it_officials", "irish_domicile_tax_inversion_2001", "us_government_revenue_foreign_domicile"],
+    "sources": ["https://www.opensecrets.org/orgs/accenture/lobbying", "https://www.wsj.com/articles/SB10001424052702303740704579099560286242190"]
+  },
+  "legal": {
+    "summary": "Accenture has faced False Claims Act allegations related to government IT contracts. The firm paid $16.8 million in 2019 to resolve claims related to the VA's Electronic Health Records program. Accenture's broader involvement in HealthCare.gov — where multiple contractors shared responsibility for the failed launch — led to settlements and contract restructurings. DHS CBP (Customs and Border Protection) Accenture contracts have faced performance failures and audit findings.",
+    "flags": ["16_8m_va_ehr_false_claims_settlement", "healthcare_gov_multi_contractor_failure", "cbp_contract_performance_failures", "audit_findings_government_it"],
+    "sources": ["https://www.justice.gov", "https://www.gao.gov"]
+  },
+  "tax": {
+    "summary": "Accenture plc is domiciled in Ireland — a structure established through a 2001 reincorporation from Bermuda — that reduces its global effective tax rate. The firm collects approximately $4 billion annually in U.S. government contract revenue while its parent company's tax domicile is Ireland. Congressional investigations have examined whether firms with offshore tax arrangements should be eligible for U.S. government contracts.",
+    "flags": ["irish_domicile_bermuda_predecessor", "us_government_revenue_ireland_tax_domicile", "congressional_offshore_contractor_eligibility_scrutiny"],
+    "sources": ["https://itep.org/accenture-tax/", "https://www.wsj.com"]
+  },
+  "executives": {
+    "summary": "Accenture Federal Services is led by a CEO reporting to Accenture plc's global CEO Julie Sweet, who received $19.8 million in total compensation in fiscal 2022. The firm's revolving door includes former federal CIOs and senior agency IT officials who join Accenture's public sector practice.",
+    "flags": ["sweet_19_8m_global_ceo_compensation", "former_federal_cios_public_sector_practice", "revolving_door_it_officials"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=accenture"]
+  },
+  "connections": {
+    "summary": "Accenture was part of the consortium that built HealthCare.gov — the ACA marketplace that catastrophically failed at its October 2013 launch, preventing millions of Americans from enrolling in health insurance. Accenture subsequently won the CMS contract to rebuild the portal. The firm holds contracts across DHS, DoD, VA, HHS, and other major agencies.",
+    "flags": ["healthcare_gov_consortium_failed_launch", "cms_remediation_contract_post_failure", "dhs_dod_va_hhs_multi_agency_contracts"],
+    "sources": ["https://www.washingtonpost.com/national/health-science/accenture-wins-government-contract-to-fix-healthcaregov/2014/01/10/", "https://www.gao.gov"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Government IT watchdogs have alleged that Accenture and other major federal IT contractors have created a dependency cycle: they win contracts for systems that fail, then win remediation contracts to fix the failures, generating recurring revenue from the same project without facing meaningful consequences. Former government officials have alleged that the consolidation of federal IT contracting among a small number of large firms — Accenture, SAIC, Leidos, IBM — has eliminated competitive pressure and innovation.",
+    "flags": ["failure_remediation_contract_cycle_alleged", "federal_it_consolidation_competition_elimination_alleged"],
+    "sources": ["https://www.pogo.org/analysis/government-it-contracting-reform"]
+  },
+  "health_record": { "summary": "Accenture's HealthCare.gov involvement — where the catastrophic launch prevented millions from accessing health insurance enrollment — had a documented public health impact through delayed coverage. The VA EHR settlement suggests performance failures affecting veteran health IT.", "flags": ["healthcare_gov_enrollment_failure_coverage_delays", "va_ehr_settlement_veteran_health_it"], "sources": ["https://www.washingtonpost.com"] },
+  "alternatives": {
+    "cheaper": ["Accenture Federal Services does not sell consumer products. The systemic alternative is modular, open-source government IT development with multiple vendors rather than large monolithic contracts awarded to a small number of firms"],
+    "healthier": ["The U.S. Digital Service and 18F — federal government digital services teams — publish case studies on alternative government IT development approaches"],
+    "diy": ["GAO's IT acquisition best practices guide and POGO's government contracting reform analysis are publicly available"]
+  },
+  "timeline": [
+    { "year": 1989, "event": "Andersen Consulting (later Accenture) federal practice established", "severity": "neutral", "source_url": "" },
+    { "year": 2001, "event": "Accenture reincorporates in Bermuda then Ireland — reduces US tax liability", "severity": "high", "source_url": "" },
+    { "year": 2013, "event": "October: HealthCare.gov launches catastrophically — Accenture among contractors involved", "severity": "critical", "source_url": "" },
+    { "year": 2014, "event": "Accenture wins CMS contract to rebuild HealthCare.gov after helping build the failed version", "severity": "high", "source_url": "https://www.washingtonpost.com/national/health-science/accenture-wins-government-contract-to-fix-healthcaregov/2014/01/10/" },
+    { "year": 2019, "event": "Pays $16.8 million to resolve VA EHR False Claims Act allegations", "severity": "high", "source_url": "https://www.justice.gov" },
+    { "year": 2023, "event": "Accenture Federal revenues reach approximately $4 billion", "severity": "neutral", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "Accenture Federal's consulting model displaces federal employee expertise — converting government institutional knowledge to contractor dependency through personnel embedded in agencies.",
+    "price_illusion": "Accenture's consulting methodology is presented as private sector best practices applied to government. The HealthCare.gov failure and repeated IT cost overruns challenge the premise that private consulting firms deliver superior government IT outcomes.",
+    "tax_math": "Accenture collects billions in U.S. government contract revenue while its parent company's Irish domicile reduces U.S. tax liability — a structure that allows the firm to profit from American taxpayers while minimizing its contribution to the tax base that funds those contracts.",
+    "wealth_velocity": "Global CEO compensation of $19.8 million is supported by billions in U.S. government contract revenue while the parent company's Irish tax domicile minimizes U.S. tax contributions."
+  },
+  "cost_absorption": {
+    "who_benefited": ["Accenture shareholders (global)", "Executive leadership", "Ireland as tax domicile recipient"],
+    "who_paid": ["Americans who couldn't enroll in ACA coverage during HealthCare.gov failure", "Veterans whose VA EHR implementation underperformed", "U.S. taxpayers funding contracts with documented performance failures"],
+    "the_gap": "Accenture participated in building HealthCare.gov, which failed catastrophically at launch, then won contracts to fix it — generating revenue from both the failure and the remediation, with no debarment or competitive penalty."
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "brand_name": "Maximus",
+  "brand_slug": "maximus",
+  "parent_company": "Maximus Inc.",
+  "ultimate_parent": "Maximus Inc.",
+  "subsidiaries": ["Maximus Federal Services", "Maximus Health Services", "Attain (acquired)", "General Dynamics IT Health (acquired)"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "MAXIMUS RUNS MEDICAID ELIGIBILITY, FOOD STAMP APPLICATIONS, CHILD SUPPORT ENFORCEMENT, AND STUDENT LOAN COLLECTIONS FOR THE U.S. GOVERNMENT — WHEN IT FAILS, THE POOREST AMERICANS LOSE THEIR BENEFITS",
+  "executive_summary": "Maximus Inc. is the largest U.S. government services contractor focused on social services administration, generating approximately $4.9 billion annually. The company operates Medicaid and CHIP eligibility determination, food stamp (SNAP) application processing, child support enforcement, unemployment insurance systems, student loan servicing, and welfare-to-work programs across dozens of states. Maximus holds contracts in over 30 states and multiple federal agencies. When Maximus systems fail — and they have, repeatedly — the populations affected are the most vulnerable: Medicaid recipients losing healthcare access, food stamp applicants facing processing delays, and parents losing child support payments. The company has paid millions in settlements for contract performance failures while expanding its government footprint.",
+  "verdict_tags": [
+    "medicaid_snap_child_support_welfare_administrator",
+    "system_failures_vulnerable_population_impact",
+    "contract_performance_failure_settlements",
+    "student_loan_servicing_complaints",
+    "welfare_to_work_privatization",
+    "30_state_government_dependency"
+  ],
+  "concern_flags": { "labor": true, "environmental": false, "political": true, "tax": false, "health": true, "legal": true },
+  "labor": {
+    "summary": "Maximus call center and case management workers — many processing sensitive benefits applications — are typically paid at or near minimum wage with high turnover. The company has faced labor complaints for insufficient staffing leading to processing backlogs that directly harm benefit applicants. Workers at Maximus contact centers have organized for better wages and working conditions. The company's UK operations have faced employment tribunal findings.",
+    "flags": ["low_wage_call_center_benefit_processing_workers", "understaffing_processing_backlogs_harm", "worker_organizing_contact_centers", "uk_employment_tribunal_findings"],
+    "sources": ["https://www.nlrb.gov", "https://www.theguardian.com/society/maximus"]
+  },
+  "environmental": { "summary": "Maximus is primarily a services company with minimal direct environmental footprint.", "flags": [], "sources": [] },
+  "political": {
+    "summary": "Maximus spent $3.2 million on lobbying in 2023. The company has benefited from bipartisan support for welfare privatization — the political consensus that private companies can administer social services more efficiently than government agencies. This premise has been challenged by repeated contract failures. Maximus has made campaign contributions to both parties. The company's growth has paralleled the expansion of welfare reform and Medicaid managed care privatization since the 1990s.",
+    "flags": ["3_2m_lobbying_2023", "bipartisan_welfare_privatization_beneficiary", "welfare_reform_growth_parallel", "both_party_campaign_contributions"],
+    "sources": ["https://www.opensecrets.org/orgs/maximus/lobbying"]
+  },
+  "legal": {
+    "summary": "Maximus has paid multiple settlements for contract performance failures. In New York, the company paid $30.5 million to resolve False Claims Act allegations related to its administration of the Child Health Plus program — including billing for services not rendered. In multiple states, Maximus has faced contract penalties for processing delays and eligibility determination errors. The company's student loan servicing contracts have generated significant consumer complaints.",
+    "flags": ["30_5m_new_york_false_claims_settlement", "billing_services_not_rendered", "multiple_state_contract_penalties", "student_loan_servicing_consumer_complaints"],
+    "sources": ["https://www.justice.gov/usao-sdny/pr/us-attorney-announces-305-million-settlement-maximus", "https://www.consumerfinance.gov"]
+  },
+  "tax": { "summary": "Maximus uses standard corporate tax structures with no significant identified controversy.", "flags": [], "sources": [] },
+  "executives": {
+    "summary": "CEO Bruce Caswell received $9.1 million in total compensation in 2022. Executive compensation is maintained through periods of contract performance failures that directly harm benefit recipients.",
+    "flags": ["caswell_9_1m_compensation_2022", "executive_pay_through_contract_failures"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=maximus"]
+  },
+  "connections": {
+    "summary": "Maximus administers benefits for tens of millions of Americans — its systems touch Medicaid eligibility for millions of low-income individuals, SNAP applications, child support collections affecting custodial parents and children, and unemployment insurance during economic downturns. During COVID-19, Maximus held contracts for vaccine scheduling and unemployment insurance expansion — system failures during this period affected millions.",
+    "flags": ["tens_millions_benefit_recipients_dependent", "covid_vaccine_unemployment_contract_failures", "child_support_medicaid_snap_simultaneously"],
+    "sources": ["https://www.govexec.com", "https://www.statnews.com"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Advocates for low-income populations have alleged that Maximus' understaffing of benefits processing — a cost-reduction measure that increases margins — systematically delays and denies benefits to eligible individuals who lack the resources to navigate appeals. Former Maximus employees have alleged that productivity metrics incentivize processing speed over accuracy, leading to improper denials that are statistically predictable but not monitored.",
+    "flags": ["understaffing_systematic_denial_alleged", "productivity_metrics_accuracy_sacrifice_alleged", "improper_denials_statistically_predictable_alleged"],
+    "sources": ["https://www.cbpp.org", "https://www.clasp.org"]
+  },
+  "health_record": {
+    "summary": "Maximus' Medicaid eligibility determination failures — documented in multiple states — have caused gaps in healthcare coverage for low-income individuals. Processing delays mean people who qualify for Medicaid go without coverage during the gap. In states where Maximus administers CHIP (Children's Health Insurance Program), processing errors have left children without coverage. The human health impact of administrative failure in healthcare eligibility is loss of access to medical care for people with no private insurance alternative.",
+    "flags": ["medicaid_coverage_gaps_eligibility_failures", "chip_children_coverage_errors", "low_income_healthcare_access_loss", "processing_delays_uninsured_gaps"],
+    "sources": ["https://www.kff.org", "https://www.cbpp.org"]
+  },
+  "alternatives": {
+    "cheaper": ["Maximus does not sell consumer products. The systemic alternative is direct government administration of benefits eligibility with performance standards that prioritize accuracy over processing speed — and debarment for repeated failure"],
+    "healthier": ["State Medicaid offices maintain appeal processes for improper denials; legal aid organizations including the National Health Law Program provide assistance for improperly denied Medicaid claims"],
+    "diy": ["The Center on Budget and Policy Priorities publishes state-level analysis of Medicaid and SNAP administration performance including contractor failures"]
+  },
+  "timeline": [
+    { "year": 1975, "event": "Maximus founded to provide government health and human services consulting", "severity": "neutral", "source_url": "" },
+    { "year": 1997, "event": "Welfare Reform Act expands market for private benefits administration — Maximus grows rapidly", "severity": "neutral", "source_url": "" },
+    { "year": 2007, "event": "Pays $30.5 million to resolve New York False Claims Act case for billing unrendered services", "severity": "critical", "source_url": "https://www.justice.gov/usao-sdny/pr/us-attorney-announces-305-million-settlement-maximus" },
+    { "year": 2020, "event": "COVID-19 — Maximus holds unemployment insurance and vaccine scheduling contracts during crisis; processing failures documented", "severity": "critical", "source_url": "" },
+    { "year": 2021, "event": "Acquires Attain Federal — expands to student loan servicing and VA healthcare administration", "severity": "neutral", "source_url": "" },
+    { "year": 2022, "event": "Student loan servicing complaints rise as COVID payment pause ends", "severity": "high", "source_url": "https://www.consumerfinance.gov" }
+  ],
+  "community_impact": {
+    "displacement": "Maximus has displaced government employees who previously administered social services — converting public sector jobs with benefits into lower-wage private contractor positions.",
+    "price_illusion": "The political case for privatizing benefits administration rests on efficiency claims. Repeated contract failures, false claims settlements, and processing backlogs suggest the efficiency gains do not materialize for beneficiaries — only for shareholders.",
+    "tax_math": "Maximus receives government contracts to administer taxpayer-funded benefits, reduces administration quality through understaffing to increase margins, and pays executives $9M+ annually — extracting private profit from public welfare spending.",
+    "wealth_velocity": "CEO compensation exceeds $9 million annually at a company whose revenue is almost entirely government-funded social services administration — services that when they fail, harm the poorest Americans."
+  },
+  "cost_absorption": {
+    "who_benefited": ["Maximus shareholders", "Executive leadership", "Politicians who backed welfare privatization"],
+    "who_paid": ["Medicaid applicants who lost coverage during processing failures", "SNAP applicants facing processing delays", "Child support recipients with payment disruptions", "Taxpayers funding settlements for contract failures"],
+    "the_gap": "Maximus administers benefits for tens of millions of Americans at the lowest income levels — when it fails, the people with the least capacity to navigate appeals or access alternatives bear the cost. The company's shareholders and executives bear none of it."
+  }
+}

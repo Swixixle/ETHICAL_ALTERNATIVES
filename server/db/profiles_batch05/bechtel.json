@@ -1,0 +1,92 @@
+{
+  "brand_name": "Bechtel Group",
+  "brand_slug": "bechtel",
+  "parent_company": "Bechtel Group, Inc.",
+  "ultimate_parent": "Bechtel Group, Inc. (private, Bechtel family)",
+  "subsidiaries": ["Bechtel Infrastructure", "Bechtel Nuclear, Security & Environmental", "Bechtel Oil, Gas & Chemicals"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "BECHTEL PRIVATIZED BOLIVIA'S WATER SUPPLY AND RAISED PRICES 200% — SPARKING A CIVIL UPRISING THAT KILLED 6 PEOPLE — THEN SUED THE BOLIVIAN GOVERNMENT FOR $50 MILLION FOR PROFITS IT NEVER MADE",
+  "executive_summary": "Bechtel Group is one of the largest privately held companies in the United States, generating approximately $17 billion annually in engineering, construction, and project management. As a private company controlled by the Bechtel family, it operates with minimal public financial disclosure. Bechtel won a World Bank-backed contract to privatize the water system of Cochabamba, Bolivia in 1999 — raising water prices up to 200% in one of the poorest countries in South America. The resulting Cochabamba Water War killed six people and injured hundreds before the government canceled Bechtel's contract. Bechtel then sued Bolivia for $50 million in lost profits under a bilateral investment treaty — a case it eventually dropped under international pressure. Bechtel received $2.3 billion in Iraq reconstruction contracts following the 2003 invasion — contracts that produced documented failures.",
+  "verdict_tags": [
+    "cochabamba_water_war_6_killed_privatization",
+    "200_percent_water_price_increase_poorest_bolivia",
+    "50m_suit_against_bolivia_dropped_pressure",
+    "2_3b_iraq_reconstruction_failures",
+    "private_company_no_financial_disclosure",
+    "world_bank_backed_water_privatization"
+  ],
+  "concern_flags": { "labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": true },
+  "labor": {
+    "summary": "Bechtel's global construction projects rely heavily on migrant and subcontracted labor, with documented issues in Gulf state projects regarding worker conditions. The company's Iraq reconstruction projects used a mix of TCN workers and local Iraqi laborers under conditions that drew scrutiny from the Special Inspector General for Iraq Reconstruction.",
+    "flags": ["migrant_labor_gulf_projects", "tcn_workers_iraq_reconstruction", "subcontracted_labor_oversight_gaps"],
+    "sources": ["https://www.sigir.mil", "https://www.hrw.org"]
+  },
+  "environmental": {
+    "summary": "Bechtel's nuclear remediation contracts — including at Hanford Site and other Cold War nuclear waste sites — have faced cost overruns and performance failures. The company's oil and gas construction projects have been associated with environmental incidents. Bechtel's role in Bolivia's water privatization removed water as a public resource and made it a commodity — a documented environmental justice issue.",
+    "flags": ["hanford_nuclear_remediation_cost_overruns", "oil_gas_construction_environmental_incidents", "water_privatization_environmental_justice"],
+    "sources": ["https://www.gao.gov", "https://www.epa.gov"]
+  },
+  "political": {
+    "summary": "Bechtel has deep ties to Republican administrations — George Shultz served as Bechtel president before becoming Reagan's Secretary of State; Caspar Weinberger was Bechtel's general counsel before becoming Reagan's Defense Secretary. Bechtel received Iraq reconstruction contracts in 2003 on a sole-source basis through USAID shortly after the invasion — when its former executives were leading the State and Defense Departments. The company operates through bilateral investment treaties to enforce contracts against developing country governments.",
+    "flags": ["shultz_bechtel_president_reagan_secretary_state", "weinberger_bechtel_counsel_reagan_defense_secretary", "iraq_sole_source_usaid_former_executives_government", "bilateral_investment_treaty_developing_country_enforcement"],
+    "sources": ["https://www.publicintegrity.org/2003/04/24/5621/bechtel-group-wins-first-iraq-reconstruction-contract", "https://www.pbs.org/frontline/shows/walmart/secrets/bechtel.html"]
+  },
+  "legal": {
+    "summary": "Bechtel's Aguas del Tunari subsidiary filed a $50 million claim against Bolivia under a Netherlands-Bolivia bilateral investment treaty after Cochabamba canceled its water contract following the civil uprising. The case was withdrawn in 2006 after international pressure and became a landmark in the debate over investor-state dispute settlement mechanisms. Bechtel's Iraq reconstruction contracts received adverse audit findings from the Special Inspector General for Iraq Reconstruction.",
+    "flags": ["50m_bolivia_isds_claim_dropped_2006", "bilateral_investment_treaty_developing_nation_suit", "sigir_adverse_iraq_audit_findings", "landmark_isds_case_investor_state"],
+    "sources": ["https://www.citizen.org/article/bechtel-vs-bolivia/", "https://www.sigir.mil"]
+  },
+  "tax": {
+    "summary": "As a private company, Bechtel does not disclose financial statements. The family-controlled structure allows significant flexibility in profit distribution and tax planning. The company's international project structure — operating through subsidiaries in multiple jurisdictions — enables tax optimization across its global footprint.",
+    "flags": ["private_company_no_financial_disclosure", "family_controlled_profit_distribution_flexibility", "international_subsidiary_tax_optimization"],
+    "sources": ["https://www.forbes.com/companies/bechtel/"]
+  },
+  "executives": {
+    "summary": "Bechtel is led by CEO Brendan Bechtel — a fourth-generation family member. As a private company, executive compensation is not publicly disclosed. The family-controlled structure has allowed the Bechtel family to maintain control and extract profits without public shareholder accountability.",
+    "flags": ["fourth_generation_family_ceo", "private_compensation_undisclosed", "no_public_shareholder_accountability"],
+    "sources": ["https://www.bechtel.com/about-us/leadership/"]
+  },
+  "connections": {
+    "summary": "Bechtel's Iraq reconstruction contracts — $2.3 billion — covered water treatment, power generation, airport repair, and schools. The Special Inspector General for Iraq Reconstruction documented significant failures across these projects. Bechtel's Cochabamba water contract was backed by the World Bank as part of a loan conditionality requiring Bolivia to privatize its water utility. The company's nuclear remediation work includes the Hanford Site — the most contaminated nuclear site in the U.S.",
+    "flags": ["2_3b_iraq_water_power_reconstruction", "world_bank_loan_conditionality_water_privatization", "hanford_most_contaminated_nuclear_site_us"],
+    "sources": ["https://www.sigir.mil/reports/", "https://www.worldbank.org"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Bolivian civil society organizations and international development critics have alleged that Bechtel's water privatization contract — which included rights to collect rain water and well water on private land — was designed to extract maximum revenue from a captive population with no alternatives, and that the World Bank's loan conditionality that required the privatization was itself a form of coercion imposed on a heavily indebted developing country. Former USAID officials have alleged that Bechtel's Iraq contract was awarded without meaningful competition in part because of its political connections.",
+    "flags": ["rain_water_well_water_rights_extraction_alleged", "world_bank_conditionality_coercion_alleged", "iraq_contract_political_connections_alleged"],
+    "sources": ["https://www.citizen.org/article/bechtel-vs-bolivia/", "https://www.publicintegrity.org/2003/04/24/5621/bechtel-group-wins-first-iraq-reconstruction-contract"]
+  },
+  "health_record": {
+    "summary": "The Cochabamba Water War — triggered by Bechtel's price increases — killed six people and injured hundreds in civil unrest. Before the uprising, the price increases meant families in Cochabamba were paying up to 20% of their income for water — reducing spending on food and other necessities. In Bolivia's context, water access is directly connected to health outcomes including infant mortality and waterborne disease. Bechtel's Iraq water treatment reconstruction failures contributed to continued water insecurity for Iraqi civilians.",
+    "flags": ["cochabamba_6_killed_civil_unrest", "water_price_20_percent_income_poorest_families", "infant_mortality_waterborne_disease_water_access_link", "iraq_water_treatment_reconstruction_failures"],
+    "sources": ["https://www.pbs.org/frontline", "https://www.citizen.org/article/bechtel-vs-bolivia/"]
+  },
+  "alternatives": {
+    "cheaper": ["Bechtel does not sell consumer products. The systemic alternative is reform of World Bank loan conditionalities that require privatization of public utilities, and the removal of water from investor-state dispute settlement frameworks"],
+    "healthier": ["Food & Water Watch publishes ongoing analysis of water privatization and its impacts on public health and affordability"],
+    "diy": ["The documentary 'Even the Rain' dramatizes the Cochabamba Water War; the Center for International Environmental Law publishes analysis of investor-state dispute settlement and water rights"]
+  },
+  "timeline": [
+    { "year": 1898, "event": "Bechtel founded in San Francisco", "severity": "neutral", "source_url": "" },
+    { "year": 1980, "event": "George Shultz (Bechtel president) becomes Reagan Secretary of State; Caspar Weinberger (Bechtel counsel) becomes Defense Secretary", "severity": "high", "source_url": "" },
+    { "year": 1999, "event": "Bechtel subsidiary Aguas del Tunari awarded Cochabamba water privatization contract; prices rise up to 200%", "severity": "critical", "source_url": "" },
+    { "year": 2000, "event": "Cochabamba Water War — months of protest; 6 killed, hundreds injured; contract canceled", "severity": "critical", "source_url": "https://www.citizen.org/article/bechtel-vs-bolivia/" },
+    { "year": 2002, "event": "Bechtel files $50 million ISDS claim against Bolivia for lost profits", "severity": "critical", "source_url": "" },
+    { "year": 2003, "event": "Bechtel awarded $2.3 billion in Iraq reconstruction contracts on sole-source basis via USAID", "severity": "high", "source_url": "https://www.publicintegrity.org/2003/04/24/5621/bechtel-group-wins-first-iraq-reconstruction-contract" },
+    { "year": 2006, "event": "Bechtel drops Bolivia ISDS claim after sustained international campaign", "severity": "high", "source_url": "https://www.citizen.org/article/bechtel-vs-bolivia/" },
+    { "year": 2006, "event": "SIGIR documents significant failures in Bechtel Iraq reconstruction projects", "severity": "high", "source_url": "https://www.sigir.mil" }
+  ],
+  "community_impact": {
+    "displacement": "In Cochabamba, water price increases forced the poorest families — who were already spending a disproportionate share of income on water — to choose between water and food. The privatization displaced public water management in a context where the private operator had no accountability to the population it served.",
+    "price_illusion": "Bechtel and the World Bank presented Cochabamba water privatization as a modernization that would improve water infrastructure. The primary immediate effect was a 200% price increase on a necessity for one of the poorest populations in the western hemisphere.",
+    "tax_math": "As a private company, Bechtel's tax structure is opaque. Its international project structure allows profit extraction across jurisdictions. The family's generational control has never faced public shareholder or tax transparency requirements.",
+    "wealth_velocity": "The Bechtel family has accumulated multi-generational wealth through government contracts and privatization deals — including deals that raised water prices for the poorest people in the western hemisphere and then sued the government that canceled the contract."
+  },
+  "cost_absorption": {
+    "who_benefited": ["Bechtel family shareholders", "World Bank officials who structured the loan conditionality", "Reagan-era officials who moved between Bechtel and government"],
+    "who_paid": ["Six people killed in Cochabamba Water War", "Bolivian families who paid 20% of income for water", "Iraqi civilians who received failed reconstruction infrastructure", "U.S. taxpayers who funded $2.3B in Iraq contracts with documented failures"],
+    "the_gap": "Bechtel raised water prices 200% for some of the poorest people in the western hemisphere, sparked a civil uprising that killed six people, had its contract canceled, then sued the country for $50 million in profits it never earned — and only dropped the suit under international pressure."
+  }
+}

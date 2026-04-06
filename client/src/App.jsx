@@ -29,6 +29,7 @@ import LocalDocumentary from './components/LocalDocumentary.jsx';
 import LocationCitySheet from './components/LocationCitySheet.jsx';
 import DirectoryPage from './pages/DirectoryPage.jsx';
 import ImpactPublicPage from './pages/ImpactPublicPage.jsx';
+import Library from './pages/Library.jsx';
 import ImpactOutcomePrompt from './components/ImpactOutcomePrompt.jsx';
 import { getImpactConsentOutcome } from './lib/impactConsent.js';
 import './App.css';
@@ -215,6 +216,11 @@ export default function App() {
         setMode('impact');
         return;
       }
+      if (/^\/library(?:\/[^/]+)?$/.test(path)) {
+        setWorkerProfileSlug(null);
+        setMode('library');
+        return;
+      }
       const prof = path.match(/^\/profile\/([^/]+)$/);
       if (prof) {
         setWorkerProfileSlug(null);
@@ -226,7 +232,9 @@ export default function App() {
       }
       setWorkerProfileSlug(null);
       setMode((prev) =>
-        prev === 'worker-profile' || prev === 'directory' || prev === 'impact' ? 'home' : prev
+        prev === 'worker-profile' || prev === 'directory' || prev === 'impact' || prev === 'library'
+          ? 'home'
+          : prev
       );
     };
     syncPath();
@@ -364,6 +372,23 @@ export default function App() {
 
   const researchBackdropLoc = researchCommercialOn ? readCachedLocation() : null;
 
+  if (mode === 'library') {
+    return (
+      <div className="app">
+        <Library
+          onBack={() => {
+            try {
+              window.history.replaceState({}, '', '/');
+            } catch {
+              /* ignore */
+            }
+            setMode('home');
+          }}
+        />
+      </div>
+    );
+  }
+
   if (mode === 'impact') {
     return (
       <div className="app">
@@ -455,6 +480,14 @@ export default function App() {
               /* ignore */
             }
             setMode('impact');
+          }}
+          onOpenLibrary={() => {
+            try {
+              window.history.pushState({}, '', '/library');
+            } catch {
+              /* ignore */
+            }
+            setMode('library');
           }}
         />
       </div>

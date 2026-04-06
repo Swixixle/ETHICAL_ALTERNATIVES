@@ -1,0 +1,91 @@
+{
+  "brand_name": "McKinsey & Company",
+  "brand_slug": "mckinsey",
+  "parent_company": "McKinsey & Company",
+  "ultimate_parent": "McKinsey & Company (private partnership)",
+  "subsidiaries": ["McKinsey Global Institute", "QuantumBlack", "Orpheus (procurement)"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "MCKINSEY ADVISED PURDUE PHARMA ON HOW TO 'TURBOCHARGE' OXYCONTIN SALES DURING THE OPIOID CRISIS — THEN ADVISED ICE ON HOW TO CUT COSTS IN IMMIGRANT DETENTION — THEN ADVISED SAUDI ARABIA, CHINA, AND UKRAINE'S GOVERNMENT SIMULTANEOUSLY",
+  "executive_summary": "McKinsey & Company is the world's most prestigious management consulting firm, operating as a private partnership with approximately $16 billion in annual revenue. The firm has served as a trusted adviser to governments, corporations, and institutions globally — including clients with directly conflicting interests and authoritarian governments. McKinsey paid $573 million in 2021 to settle claims that its advice to opioid manufacturers including Purdue Pharma, Johnson & Johnson, and Mallinckrodt contributed to the opioid crisis by helping companies devise strategies to increase opioid sales and counter regulatory oversight. The firm has also consulted for ICE on immigration detention cost reduction, Saudi Arabia's Vision 2030 government, Chinese state-owned enterprises, and multiple autocratic governments — while advising their geopolitical adversaries simultaneously.",
+  "verdict_tags": [
+    "573m_opioid_settlement_purdue_pharma_advice",
+    "turbocharge_oxycontin_sales_documented",
+    "ice_detention_cost_cutting_advice",
+    "saudi_china_ukraine_simultaneous_advising",
+    "authoritarian_government_consulting",
+    "document_destruction_after_subpoena"
+  ],
+  "concern_flags": { "labor": true, "environmental": false, "political": true, "tax": true, "health": true, "legal": true },
+  "labor": {
+    "summary": "McKinsey's consulting advice has contributed to mass layoffs at client companies — the firm's standard restructuring methodology involves significant workforce reductions. McKinsey has faced internal discrimination complaints from employees of color and women. The firm's up-or-out culture has been documented as producing significant psychological stress. McKinsey has advised governments on austerity measures that reduced public sector employment.",
+    "flags": ["restructuring_advice_mass_layoffs_pattern", "discrimination_complaints_employees_color_women", "up_or_out_culture_psychological_stress", "austerity_public_sector_employment_reduction"],
+    "sources": ["https://www.nytimes.com/2019/12/13/business/mckinsey-opioids-purdue-pharma.html", "https://www.bloomberg.com/news/articles/2021-10-07/mckinsey-sued-by-former-partner-who-claims-racial-discrimination"]
+  },
+  "environmental": {
+    "summary": "McKinsey has advised fossil fuel companies on strategy while simultaneously advising climate-focused organizations and governments. The firm's carbon footprint reporting and climate commitments have been criticized as inconsistent with its fossil fuel consulting practice.",
+    "flags": ["fossil_fuel_consulting_climate_conflict", "fossil_fuel_strategy_advising_documented"],
+    "sources": ["https://www.theguardian.com/environment/2021/oct/27/mckinsey-climate-crisis-fossil-fuel-companies"]
+  },
+  "political": {
+    "summary": "McKinsey has advised the governments of Saudi Arabia, China, Russia (prior to 2022), Ukraine, Egypt, and other countries — often simultaneously advising their geopolitical rivals. The firm advised ICE on reducing costs in immigration detention, producing recommendations that critics said prioritized detainee cost reduction over humanitarian standards. McKinsey's government practice has placed firm alumni in senior government positions globally, creating revolving-door dynamics. The firm destroyed documents relevant to an opioid investigation after receiving a subpoena.",
+    "flags": ["simultaneous_adversarial_government_advising", "ice_detention_cost_reduction_advice", "document_destruction_after_opioid_subpoena", "global_revolving_door_government_alumni"],
+    "sources": ["https://www.nytimes.com/2019/12/03/us/mckinsey-ICE-immigration.html", "https://www.nytimes.com/2021/02/03/us/mckinsey-purdue-pharma-documents.html"]
+  },
+  "legal": {
+    "summary": "In February 2021, McKinsey paid $573 million to resolve claims brought by 49 state attorneys general that its advice to opioid manufacturers — particularly Purdue Pharma, Johnson & Johnson, Mallinckrodt, and Endo — contributed to the opioid epidemic by helping devise strategies to increase opioid sales, overcome physician reluctance, and counter FDA regulatory pressure. Documented McKinsey advice included strategies to 'turbocharge' OxyContin sales and 'Band-Aid' programs to offset opioid addiction concerns. The settlement followed revelation that McKinsey had destroyed documents after receiving a subpoena.",
+    "flags": ["573m_opioid_settlement_49_states", "turbocharge_oxycontin_sales_documented_strategy", "band_aid_addiction_offset_strategy", "document_destruction_post_subpoena"],
+    "sources": ["https://www.nytimes.com/2021/02/04/business/mckinsey-opioid-settlement.html", "https://ag.ny.gov/press-release/2021/attorney-general-james-leads-573-million-settlement-mckinsey"]
+  },
+  "tax": {
+    "summary": "McKinsey operates as a private partnership, limiting public financial disclosure. The firm's partner compensation structure — distributing profits as partnership income rather than salary — has tax optimization dimensions. McKinsey has advised clients on tax minimization strategies while its own tax structure has been described as highly optimized.",
+    "flags": ["private_partnership_limited_disclosure", "partner_income_tax_structure", "client_tax_minimization_advice"],
+    "sources": ["https://www.propublica.org/article/mckinsey-tax-strategies"]
+  },
+  "executives": {
+    "summary": "McKinsey is led by Managing Partner Bob Sternfels. As a private partnership, partner compensation is not publicly disclosed — but senior McKinsey partners are understood to earn millions annually. The firm's management during the opioid consulting period included senior partners who oversaw the Purdue Pharma engagement. No McKinsey partner has faced criminal charges in connection with the opioid crisis.",
+    "flags": ["private_partnership_compensation_undisclosed", "opioid_engagement_senior_partner_oversight", "no_criminal_charges_opioid_partners"],
+    "sources": ["https://www.nytimes.com/2021/02/04/business/mckinsey-opioid-settlement.html"]
+  },
+  "connections": {
+    "summary": "McKinsey's opioid clients — Purdue Pharma, Johnson & Johnson, Mallinckrodt, Endo — collectively paid billions in opioid settlements. McKinsey's ICE engagement put the firm's methodology in service of immigration enforcement. The firm's Saudi Arabia work — advising Vision 2030 — has continued despite the murder of journalist Jamal Khashoggi, which U.S. intelligence attributed to Crown Prince Mohammed bin Salman. McKinsey alumni include senior officials across multiple U.S. administrations.",
+    "flags": ["purdue_jnj_mallinckrodt_endo_opioid_clients", "saudi_vision_2030_post_khashoggi", "ice_immigration_enforcement_methodology", "white_house_alumni_multiple_administrations"],
+    "sources": ["https://www.nytimes.com/2018/10/20/us/politics/saudi-arabia-khashoggi-mckinsey.html", "https://www.nytimes.com/2019/12/03/us/mckinsey-ICE-immigration.html"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "State attorneys general have alleged that McKinsey's opioid advice was not merely negligent but deliberately designed to help clients evade regulatory scrutiny and increase sales of drugs McKinsey knew were causing addiction and death. The New York Times has reported that McKinsey identified specific doctors who prescribed high volumes of opioids and recommended targeting them with sales incentives — a practice the firm knew was associated with high overdose rates in those doctors' patient populations.",
+    "flags": ["regulatory_evasion_deliberate_design_alleged", "high_prescriber_targeting_overdose_rate_knowledge_alleged", "addiction_death_awareness_continued_advice_alleged"],
+    "sources": ["https://www.nytimes.com/2019/12/13/business/mckinsey-opioids-purdue-pharma.html", "https://ag.ny.gov"]
+  },
+  "health_record": {
+    "summary": "McKinsey's opioid consulting work — for which it paid $573 million — coincided with the period of peak opioid prescribing that produced the deadliest drug crisis in American history. Over 500,000 Americans died of opioid overdoses between 1999 and 2019. State attorneys general argued in their settlement that McKinsey's advice materially contributed to opioid sales volumes during this period. McKinsey's ICE advice on cost reduction in detention has been linked to inadequate medical care in detention facilities.",
+    "flags": ["opioid_crisis_500000_deaths_context", "mckinsey_advice_peak_prescribing_period", "state_ag_material_contribution_finding", "ice_detention_medical_care_cuts"],
+    "sources": ["https://www.cdc.gov/drugoverdose/deaths/", "https://ag.ny.gov/press-release/2021/attorney-general-james-leads-573-million-settlement-mckinsey"]
+  },
+  "alternatives": {
+    "cheaper": ["McKinsey does not sell consumer products. The systemic alternative is disclosure requirements for consulting firms advising both government and private clients on the same policy areas — and mandatory conflict-of-interest rules for firms advising adversarial governments simultaneously"],
+    "healthier": ["STAT News and the New York Times have published comprehensive investigations into McKinsey's opioid consulting work that are publicly available"],
+    "diy": ["The 49-state opioid settlement documents — publicly filed — include detailed descriptions of McKinsey's specific advice to opioid manufacturers"]
+  },
+  "timeline": [
+    { "year": 1926, "event": "McKinsey & Company founded in Chicago", "severity": "neutral", "source_url": "" },
+    { "year": 2004, "event": "McKinsey begins advising Purdue Pharma on OxyContin sales strategy", "severity": "high", "source_url": "" },
+    { "year": 2013, "event": "McKinsey advises ICE on cost reduction in immigration detention operations", "severity": "high", "source_url": "https://www.nytimes.com/2019/12/03/us/mckinsey-ICE-immigration.html" },
+    { "year": 2018, "event": "New York Times reports McKinsey advised Saudi government while Khashoggi murder attributed to Crown Prince", "severity": "critical", "source_url": "https://www.nytimes.com/2018/10/20/us/politics/saudi-arabia-khashoggi-mckinsey.html" },
+    { "year": 2019, "event": "New York Times publishes documents showing McKinsey 'turbocharge' and 'Band-Aid' opioid strategies", "severity": "critical", "source_url": "https://www.nytimes.com/2019/12/13/business/mckinsey-opioids-purdue-pharma.html" },
+    { "year": 2021, "event": "McKinsey pays $573 million to 49 states to resolve opioid consulting claims", "severity": "critical", "source_url": "https://www.nytimes.com/2021/02/04/business/mckinsey-opioid-settlement.html" },
+    { "year": 2021, "event": "Revealed McKinsey destroyed documents after receiving opioid investigation subpoena", "severity": "critical", "source_url": "https://www.nytimes.com/2021/02/03/us/mckinsey-purdue-pharma-documents.html" }
+  ],
+  "community_impact": {
+    "displacement": "McKinsey's restructuring advice to client corporations has contributed to mass layoffs in communities across the U.S. and globally — the firm's standard methodology includes workforce reduction as a primary cost lever.",
+    "price_illusion": "McKinsey presents its advice as objective expertise that improves organizational performance. The opioid settlement establishes that its advice to pharmaceutical clients was designed to maximize sales of addictive drugs at the cost of public health.",
+    "tax_math": "McKinsey operates as a private partnership with no public financial disclosure, optimizing partner compensation through structures that minimize tax liability while advising clients on their own tax minimization.",
+    "wealth_velocity": "McKinsey partners earned millions annually during the opioid consulting period — compensation derived in part from engagements that 49 state attorneys general found contributed to a public health crisis killing 50,000 Americans per year."
+  },
+  "cost_absorption": {
+    "who_benefited": ["McKinsey partners (undisclosed but substantial compensation)", "Opioid manufacturer shareholders (increased sales revenue)", "Saudi, Chinese, and other authoritarian government clients (strategic legitimacy)"],
+    "who_paid": ["500,000+ Americans who died of opioid overdoses", "Communities devastated by opioid addiction", "Immigrants in ICE detention affected by cost-cutting advice", "U.S. taxpayers whose government agencies paid McKinsey fees"],
+    "the_gap": "McKinsey advised Purdue Pharma on oxycontin sales strategies during the deadliest drug crisis in American history, paid $573 million to settle — roughly three to four months of firm revenue — and no partner faced criminal charges."
+  }
+}

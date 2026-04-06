@@ -1,0 +1,90 @@
+{
+  "brand_name": "CoreCivic",
+  "brand_slug": "corecivic",
+  "parent_company": "CoreCivic, Inc.",
+  "ultimate_parent": "CoreCivic, Inc.",
+  "subsidiaries": ["CoreCivic Safety", "CoreCivic Community", "CoreCivic Properties"],
+  "overall_concern_level": "critical",
+  "profile_type": "database",
+  "generated_headline": "CORECIVIC INVENTED THE PRIVATE PRISON INDUSTRY IN 1983 AND HAS SPENT 40 YEARS LOBBYING FOR THE POLICIES THAT FILL ITS CELLS — DEATHS, VIOLENCE, AND ESCAPES IN ITS FACILITIES ARE DOCUMENTED ACROSS DECADES",
+  "executive_summary": "CoreCivic (formerly Corrections Corporation of America, CCA) is the largest private prison company in the United States, generating approximately $1.9 billion annually. The company pioneered the private prison model in 1983 and has operated prisons, immigration detention centers, and residential reentry facilities under contracts with federal, state, and local governments for four decades. CoreCivic facilities have documented histories of violence, inadequate medical care, understaffing, and deaths. The company has invested heavily in lobbying for mandatory minimum sentencing, immigration enforcement, and other policies that increase incarcerated populations. CoreCivic's fundamental business model creates a structural incentive to maintain and expand incarceration — a conflict of interest with the stated justice system goal of reducing crime and recidivism.",
+  "verdict_tags": [
+    "invented_private_prison_industry_1983",
+    "documented_violence_deaths_facilities",
+    "lobbying_mandatory_minimums_immigration",
+    "structural_incarceration_incentive_conflict",
+    "understaffing_medical_neglect_pattern",
+    "reit_structure_prison_profit_tax_avoidance"
+  ],
+  "concern_flags": { "labor": true, "environmental": false, "political": true, "tax": true, "health": true, "legal": true },
+  "labor": {
+    "summary": "CoreCivic staffs its facilities at lower rates than public prisons — a primary mechanism for generating profit margins. Understaffing has been documented as a contributing factor in violence, escapes, and deaths at CoreCivic facilities. Staff at CoreCivic prisons are typically paid less than state corrections officers with fewer benefits, producing high turnover. Imprisoned workers in CoreCivic facilities earn nominal wages for prison labor programs.",
+    "flags": ["understaffing_lower_than_public_prisons", "understaffing_violence_deaths_contributing_factor", "lower_wages_higher_turnover_staff", "prison_labor_nominal_wages"],
+    "sources": ["https://www.vera.org/publications/the-price-of-prisons", "https://www.aclu.org/report/banking-bondage-private-prisons-and-mass-incarceration"]
+  },
+  "environmental": { "summary": "CoreCivic's facilities generate standard institutional waste streams with no major documented environmental violations.", "flags": [], "sources": [] },
+  "political": {
+    "summary": "CoreCivic spent $3.1 million on lobbying in 2023. The company has been a member of ALEC and contributed to model legislation supporting mandatory minimum sentencing, three-strikes laws, and immigration enforcement — all of which increase the incarcerated population that CoreCivic profits from. This creates a textbook conflict of interest: a company that profits from incarceration lobbying for policies that increase incarceration. CoreCivic has made contributions to both parties.",
+    "flags": ["3_1m_lobbying_2023", "alec_mandatory_minimum_three_strikes_model_legislation", "immigration_enforcement_lobbying", "profit_incarceration_conflict_lobbying_incarceration_policies"],
+    "sources": ["https://www.opensecrets.org/orgs/corecivic/lobbying", "https://www.justicepolicy.org/research/5020"]
+  },
+  "legal": {
+    "summary": "CoreCivic facilities have been the subject of DOJ investigations, state attorney general actions, and civil rights lawsuits. The DOJ's Civil Rights Division has investigated multiple CoreCivic facilities for unconstitutional conditions. In 2016, the DOJ's Inspector General issued a report finding that private prisons — including CoreCivic facilities — had more safety and security incidents per capita than federal Bureau of Prisons facilities, leading to a phase-out announcement that was reversed by the next administration.",
+    "flags": ["doj_civil_rights_division_investigations", "doj_ig_more_incidents_per_capita_than_federal", "2016_phase_out_reversed_next_administration", "state_ag_civil_rights_lawsuits"],
+    "sources": ["https://oig.justice.gov/reports/2016/e1606.pdf", "https://www.aclu.org"]
+  },
+  "tax": {
+    "summary": "CoreCivic operated as a REIT from 2013 to 2020, avoiding corporate income tax on profit from incarceration by distributing earnings to shareholders. The company converted back to a C-corporation in 2020 following pressure from investors concerned about ESG implications. The REIT structure for a prison company was described by tax policy experts as an extreme example of tax code exploitation.",
+    "flags": ["reit_prison_profit_tax_avoidance_2013_2020", "shareholder_distribution_corporate_tax_exemption", "esg_investor_pressure_conversion"],
+    "sources": ["https://itep.org/private-prison-reit/", "https://www.reuters.com"]
+  },
+  "executives": {
+    "summary": "CEO Damon Hininger received $5.9 million in total compensation in 2022. CoreCivic's founder, Tom Beasley, pioneered the concept of private prisons as a for-profit enterprise — a concept that has been replicated globally. Executive compensation is derived from a business model predicated on maintaining incarceration rates.",
+    "flags": ["hininger_5_9m_compensation_2022", "beasley_private_prison_profit_concept_founder", "executive_pay_incarceration_model_dependent"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=corecivic"]
+  },
+  "connections": {
+    "summary": "CoreCivic operates facilities for the Federal Bureau of Prisons, USMS, ICE, and dozens of state corrections departments. Its facilities house both convicted individuals and immigration detainees. CoreCivic's model has been replicated in Australia, UK, and other countries — exporting the private prison concept globally. The company's lobbying has been documented as influencing Arizona's SB 1070 immigration law — legislation that increased the immigration enforcement market CoreCivic serves.",
+    "flags": ["fbop_usms_ice_state_contracts", "arizona_sb1070_lobbying_influence", "private_prison_global_export", "immigration_enforcement_market_creation"],
+    "sources": ["https://www.npr.org/2010/10/28/130891821/prison-economics-help-drive-ariz-immigration-law", "https://www.bop.gov"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The ACLU and DOJ Civil Rights Division have alleged that conditions in multiple CoreCivic facilities — including the Walnut Grove Youth Correctional Facility in Mississippi — constituted cruel and unusual punishment, with documented violence between prisoners, sexual abuse by staff, and medical neglect rising to constitutional violations. Whistleblowers have alleged that CoreCivic systematically underreports violent incidents to government contract monitors to avoid contract penalties.",
+    "flags": ["cruel_unusual_punishment_doj_aclu_finding", "walnut_grove_sexual_abuse_violence_documented", "incident_underreporting_whistleblower_alleged", "contract_monitor_evasion_alleged"],
+    "sources": ["https://www.aclu.org/report/conditions-confinement-walnut-grove", "https://www.justice.gov/crt/findings-letter"]
+  },
+  "health_record": {
+    "summary": "Deaths in CoreCivic facilities — from violence, suicide, and medical neglect — have been documented across decades. The DOJ IG's 2016 report found that private prisons including CoreCivic facilities had higher rates of assaults and contraband incidents per capita than federal facilities. Medical neglect in CoreCivic facilities has been the subject of multiple civil rights lawsuits. Detained immigrants in CoreCivic ICE facilities have reported inadequate medical care similar to GEO Group's documented failures.",
+    "flags": ["deaths_violence_suicide_medical_neglect_decades", "doj_ig_higher_incident_rates_than_federal", "civil_rights_medical_neglect_lawsuits", "ice_detainee_medical_care_complaints"],
+    "sources": ["https://oig.justice.gov/reports/2016/e1606.pdf", "https://www.aclu.org/report/banking-bondage-private-prisons-and-mass-incarceration"]
+  },
+  "alternatives": {
+    "cheaper": ["CoreCivic does not sell consumer products. The systemic alternative is elimination of private prison profit motive from incarceration — federal law now prohibits new private prison contracts for federal inmates; states can extend this to state systems. Community-based alternatives to detention cost a fraction of imprisonment with equivalent public safety outcomes"],
+    "healthier": ["The Vera Institute publishes research on alternatives to incarceration; the Prison Policy Initiative documents the full scope of incarceration costs and impacts"],
+    "diy": ["The Prison Policy Initiative's profiling of private prison companies and their political spending is publicly available; the DOJ OIG 2016 private prison report is downloadable"]
+  },
+  "timeline": [
+    { "year": 1983, "event": "Corrections Corporation of America (CCA) founded — first private prison company in the US", "severity": "neutral", "source_url": "" },
+    { "year": 1997, "event": "CCA takes over management of entire Tennessee prison system — first state prison system privatization attempt; later reversed", "severity": "high", "source_url": "" },
+    { "year": 2010, "event": "NPR investigation documents CCA lobbying connections to Arizona SB 1070 immigration enforcement law", "severity": "critical", "source_url": "https://www.npr.org/2010/10/28/130891821/prison-economics-help-drive-ariz-immigration-law" },
+    { "year": 2012, "event": "DOJ finds unconstitutional conditions at Walnut Grove Youth Correctional Facility", "severity": "critical", "source_url": "" },
+    { "year": 2013, "event": "CCA converts to REIT structure — avoids corporate income taxes on prison profits", "severity": "high", "source_url": "" },
+    { "year": 2016, "event": "DOJ OIG report finds private prisons less safe than federal facilities; DOJ announces phase-out", "severity": "critical", "source_url": "https://oig.justice.gov/reports/2016/e1606.pdf" },
+    { "year": 2016, "event": "CCA rebrands as CoreCivic", "severity": "neutral", "source_url": "" },
+    { "year": 2017, "event": "Trump administration reverses DOJ phase-out; CoreCivic stock rises", "severity": "high", "source_url": "" },
+    { "year": 2020, "event": "Converts from REIT back to C-corporation under investor ESG pressure", "severity": "neutral", "source_url": "" },
+    { "year": 2021, "event": "Biden executive order ends new private prison contracts for DOJ — ICE detention unaffected", "severity": "high", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "CoreCivic facilities are often located in rural areas — creating rural economic dependency on incarceration as an industry while removing incarcerated people from their urban communities. This geographic displacement reduces family contact and complicates reentry.",
+    "price_illusion": "Private prisons are presented as cost-saving alternatives to public prisons. Studies consistently find that cost savings are marginal or nonexistent when controlling for population differences, and that CoreCivic facilities have higher incident rates than public facilities.",
+    "tax_math": "CoreCivic avoided corporate income taxes for seven years through REIT conversion — paying dividends to shareholders instead of taxes, while its revenue was entirely derived from government contracts funded by taxpayers.",
+    "wealth_velocity": "CoreCivic's business model converts government incarceration spending — funded by taxpayers — into shareholder returns and executive compensation, with the structural incentive to maintain the incarcerated population that generates the revenue."
+  },
+  "cost_absorption": {
+    "who_benefited": ["CoreCivic shareholders", "Executive leadership", "Politicians who received CoreCivic contributions and supported mandatory minimums", "ALEC members who advanced model legislation"],
+    "who_paid": ["Incarcerated individuals in facilities with higher violence and neglect rates", "Families of people in CoreCivic custody", "U.S. taxpayers funding a system the DOJ found less safe than public prisons", "Communities bearing social costs of mass incarceration"],
+    "the_gap": "CoreCivic invented the private prison, spent 40 years lobbying for the policies that fill its cells, avoided corporate taxes through REIT conversion, and operates facilities the DOJ found more dangerous than public alternatives — while paying its CEO $5.9 million annually."
+  }
+}

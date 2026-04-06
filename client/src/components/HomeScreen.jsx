@@ -915,7 +915,7 @@ function FeedCard({ business, chainFootnote = false }) {
 }
 
 /**
- * @param {{ onStartSnap: () => void; onOpenWorkerProfile?: (slug: string) => void; onOpenDirectory?: () => void; onOpenImpact?: () => void }} props
+ * @param {{ onStartSnap: () => void; onOpenWorkerProfile?: (slug: string) => void; onOpenDirectory?: () => void; onOpenLibrary?: () => void; onOpenImpact?: () => void }} props
  */
 export default function HomeScreen({
   onStartSnap,
@@ -924,6 +924,7 @@ export default function HomeScreen({
   onOpenWitnesses,
   onOpenWorkerProfile,
   onOpenDirectory,
+  onOpenLibrary,
   onOpenImpact,
 }) {
   const [phase, setPhase] = useState(() => initialPhase());
@@ -1818,26 +1819,56 @@ export default function HomeScreen({
           </>
         ) : null}
 
-        {typeof onOpenDirectory === 'function' ? (
-          <div style={{ margin: '24px 16px 0', textAlign: 'center' }}>
-            <button
-              type="button"
-              onClick={() => onOpenDirectory()}
-              style={{
-                fontSize: 12,
-                color: 'inherit',
-                opacity: 0.5,
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
-                fontFamily: "'Space Mono', monospace",
-                letterSpacing: '0.06em',
-                textDecoration: 'underline',
-                padding: '8px 4px',
-              }}
-            >
-              Investigation Index
-            </button>
+        {typeof onOpenDirectory === 'function' || typeof onOpenLibrary === 'function' ? (
+          <div
+            style={{
+              margin: '24px 16px 0',
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              gap: '12px 20px',
+            }}
+          >
+            {typeof onOpenLibrary === 'function' ? (
+              <button
+                type="button"
+                onClick={() => onOpenLibrary()}
+                style={{
+                  fontSize: 12,
+                  color: 'inherit',
+                  opacity: 0.5,
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontFamily: "'Space Mono', monospace",
+                  letterSpacing: '0.06em',
+                  textDecoration: 'underline',
+                  padding: '8px 4px',
+                }}
+              >
+                Black Book
+              </button>
+            ) : null}
+            {typeof onOpenDirectory === 'function' ? (
+              <button
+                type="button"
+                onClick={() => onOpenDirectory()}
+                style={{
+                  fontSize: 12,
+                  color: 'inherit',
+                  opacity: 0.5,
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontFamily: "'Space Mono', monospace",
+                  letterSpacing: '0.06em',
+                  textDecoration: 'underline',
+                  padding: '8px 4px',
+                }}
+              >
+                Investigation Index
+              </button>
+            ) : null}
           </div>
         ) : null}
 

@@ -1,0 +1,82 @@
+{
+  "brand_name": "Fluor Corporation",
+  "brand_slug": "fluor",
+  "parent_company": "Fluor Corporation",
+  "ultimate_parent": "Fluor Corporation",
+  "subsidiaries": ["Fluor Federal Solutions", "NuScale Power (stake)", "Stork (industrial services)"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "FLUOR RESTATED FOUR YEARS OF FINANCIAL RESULTS AFTER AN INTERNAL ACCOUNTING FRAUD INVESTIGATION AND HAS COLLECTED BILLIONS IN GOVERNMENT CONTRACTS FROM IRAQ TO HANFORD NUCLEAR WHILE PAYING OVERBILLING SETTLEMENTS",
+  "executive_summary": "Fluor Corporation is a global engineering and construction company generating approximately $15 billion annually, with significant U.S. government contract revenue from infrastructure, environmental remediation, and military support services. The company received Iraq reconstruction contracts following the 2003 invasion and holds Hanford nuclear remediation contracts. In 2020, Fluor disclosed it was restating four years of financial results following an internal investigation into accounting irregularities — the company had improperly recognized revenue on government contracts. Fluor has paid settlements for overbilling on government construction contracts and has faced significant cost overruns on fixed-price government projects that threatened the company's financial stability.",
+  "verdict_tags": [
+    "four_year_financial_restatement_accounting_fraud",
+    "hanford_nuclear_remediation_contractor",
+    "iraq_reconstruction_contracts_failures",
+    "overbilling_government_construction_settlements",
+    "fixed_price_contract_overruns_stability_threat",
+    "sec_investigation_financial_reporting"
+  ],
+  "concern_flags": { "labor": true, "environmental": true, "political": true, "tax": false, "health": true, "legal": true },
+  "labor": {
+    "summary": "Fluor's global projects — particularly in the Middle East and developing countries — have used subcontracted labor through brokers with documented issues including passport confiscation and recruitment fee charging. The company's Iraq reconstruction work relied on third-country national workers under conditions scrutinized by the Special Inspector General for Iraq Reconstruction. U.S. Fluor workers have faced layoffs and benefit changes during the company's financial difficulties.",
+    "flags": ["middle_east_tcn_labor_broker_issues", "iraq_tcn_worker_conditions_sigir", "us_worker_layoffs_financial_difficulties"],
+    "sources": ["https://www.sigir.mil", "https://www.hrw.org"]
+  },
+  "environmental": {
+    "summary": "Fluor holds major contracts for nuclear environmental remediation — including at the Hanford Site in Washington State, the most contaminated nuclear site in the U.S. Hanford cleanup has faced documented cost overruns and schedule delays under Fluor's management. The site poses ongoing groundwater contamination risks to the Columbia River. Fluor's oil and gas construction projects have been associated with environmental incidents globally.",
+    "flags": ["hanford_nuclear_remediation_cost_overruns", "columbia_river_groundwater_contamination_risk", "oil_gas_construction_environmental_incidents"],
+    "sources": ["https://www.gao.gov", "https://www.epa.gov/hanford"]
+  },
+  "political": {
+    "summary": "Fluor spent $3.4 million on lobbying in 2023. The company's Iraq reconstruction contracts were awarded through USAID in the early post-invasion period — part of the broader pattern of sole-source awards to politically connected contractors. Fluor has contributed to both political parties.",
+    "flags": ["3_4m_lobbying_2023", "iraq_usaid_sole_source_early_invasion", "both_party_contributions"],
+    "sources": ["https://www.opensecrets.org/orgs/fluor/lobbying"]
+  },
+  "legal": {
+    "summary": "In 2020, Fluor disclosed a restatement of financial results for 2016-2019 following an internal investigation into accounting irregularities — primarily related to improper revenue recognition on government contracts. The SEC investigated. Fluor has also paid settlements for overbilling on government construction contracts. The company's fixed-price government projects — including nuclear and gas infrastructure — generated losses that required write-downs and threatened financial stability.",
+    "flags": ["2016_2019_financial_restatement", "sec_investigation_accounting_irregularities", "improper_revenue_recognition_government_contracts", "fixed_price_overruns_financial_stability_threat"],
+    "sources": ["https://www.sec.gov/litigation/litreleases", "https://www.wsj.com/articles/fluor-to-restate-years-of-results-after-accounting-review-11581455840"]
+  },
+  "tax": { "summary": "Fluor uses standard engineering and construction company international tax structures for its global project footprint.", "flags": [], "sources": [] },
+  "executives": {
+    "summary": "CEO David Constable received $11.4 million in total compensation in 2022. Constable was brought in to lead the company's turnaround following the financial restatement crisis. Former leadership oversaw the period of accounting irregularities.",
+    "flags": ["constable_11_4m_compensation_2022", "turnaround_ceo_post_restatement", "former_leadership_accounting_irregularity_period"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=fluor"]
+  },
+  "connections": { "summary": "Fluor's Hanford contracts make it responsible for cleanup of 177 underground tanks containing 56 million gallons of radioactive and chemical waste — the legacy of plutonium production for the U.S. nuclear arsenal. The cleanup timeline extends through 2040 or beyond with costs projected in the tens of billions.", "flags": ["hanford_56_million_gallons_radioactive_waste", "40_plus_year_cleanup_timeline", "tens_billions_cleanup_cost"], "sources": ["https://www.hanford.gov"] },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Shareholders alleged in litigation that Fluor executives knowingly misrepresented the financial condition of troubled government contracts — that the restatement reflected not accounting error but intentional misrepresentation to maintain stock price. Former project managers have alleged that pressure from corporate leadership to report favorable project margins led to the improper revenue recognition.",
+    "flags": ["intentional_misrepresentation_alleged_shareholder_litigation", "corporate_margin_pressure_revenue_recognition_alleged"],
+    "sources": ["https://www.wsj.com/articles/fluor-to-restate-years-of-results-after-accounting-review-11581455840"]
+  },
+  "health_record": {
+    "summary": "Fluor's Hanford remediation work affects one of the most significant environmental health risks in the U.S. — 177 tanks of radioactive and chemical waste adjacent to the Columbia River. Delays and cost overruns in Fluor's remediation work extend the period during which this contamination poses risks to groundwater and the river. Workers at Hanford face documented occupational health risks.",
+    "flags": ["hanford_columbia_river_health_risk", "radioactive_chemical_waste_groundwater_threat", "hanford_worker_occupational_health_risks"],
+    "sources": ["https://www.dol.gov/agencies/owcp/energy", "https://www.epa.gov/hanford"]
+  },
+  "alternatives": {
+    "cheaper": ["Fluor does not sell consumer products. The systemic alternative is stronger performance accountability on nuclear remediation contracts — including milestone-based payment and penalty structures for cost overruns"],
+    "healthier": ["The Hanford Challenge and Columbia Riverkeeper publish ongoing monitoring of Hanford cleanup progress and groundwater contamination"],
+    "diy": ["The DOE's Hanford Site website publishes cleanup progress reports; GAO's Hanford cleanup reports document cost overruns and schedule delays"]
+  },
+  "timeline": [
+    { "year": 1912, "event": "Fluor founded in Santa Ana, California", "severity": "neutral", "source_url": "" },
+    { "year": 2003, "event": "Fluor receives Iraq reconstruction contracts through USAID", "severity": "neutral", "source_url": "" },
+    { "year": 2016, "event": "Fluor begins period of improper revenue recognition on government contracts (per 2020 restatement)", "severity": "high", "source_url": "" },
+    { "year": 2020, "event": "Fluor discloses restatement of 2016-2019 financial results — accounting irregularities on government contracts", "severity": "critical", "source_url": "https://www.wsj.com/articles/fluor-to-restate-years-of-results-after-accounting-review-11581455840" },
+    { "year": 2020, "event": "SEC investigates financial reporting; company replaces CEO", "severity": "critical", "source_url": "https://www.sec.gov" },
+    { "year": 2022, "event": "Fluor reports improved financial results under new leadership", "severity": "neutral", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "Fluor's layoffs during the financial restatement crisis displaced thousands of employees across its global project portfolio.",
+    "price_illusion": "Fluor's government contract performance — particularly on fixed-price projects — has been worse than projected costs suggested at award. The financial restatement revealed that reported project margins were overstated.",
+    "tax_math": "Fluor's international project structure allows some tax optimization across jurisdictions, though the company's primary controversy is accounting rather than tax structure.",
+    "wealth_velocity": "Executive compensation exceeds $11 million annually at a company that restated four years of financial results and was investigated by the SEC for improper revenue recognition on government contracts."
+  },
+  "cost_absorption": {
+    "who_benefited": ["Fluor shareholders during the period of inflated reported results", "Executives compensated based on misreported project performance"],
+    "who_paid": ["Shareholders who held stock when the restatement caused price declines", "U.S. taxpayers on government contracts with cost overruns", "Communities near Hanford facing extended cleanup timelines"],
+    "the_gap": "Fluor improperly recognized revenue on government contracts for four years, restated results, faced SEC investigation, replaced its CEO, and continued to hold major federal contracts including the Hanford nuclear remediation."
+  }
+}

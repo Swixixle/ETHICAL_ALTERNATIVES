@@ -1,0 +1,87 @@
+{
+  "brand_name": "GEO Group",
+  "brand_slug": "geo-group",
+  "parent_company": "The GEO Group, Inc.",
+  "ultimate_parent": "The GEO Group, Inc.",
+  "subsidiaries": ["GEO Secure Services", "GEO Care", "BI Incorporated (ankle monitoring)", "GEO Reentry Services"],
+  "overall_concern_level": "critical",
+  "profile_type": "database",
+  "generated_headline": "GEO GROUP MAKES $2.4 BILLION A YEAR IMPRISONING PEOPLE — INCLUDING ICE DETAINEES WHO HAVE NEVER BEEN CHARGED WITH A CRIME — AND PAYS ITS DETAINED IMMIGRANTS $1 A DAY FOR LABOR WHILE CHARGING THEM $14 FOR A PHONE CALL HOME",
+  "executive_summary": "The GEO Group is the second-largest private prison company in the United States, generating approximately $2.4 billion annually from contracts with federal and state governments to operate prisons, immigration detention centers, and community supervision programs. GEO holds major contracts with ICE to detain immigrants — including asylum seekers and individuals with no criminal record — in facilities that have faced documented deaths, medical neglect, and abuse findings. GEO's BI Incorporated subsidiary operates ankle monitoring programs for tens of thousands of immigrants. The company has been accused of operating a forced labor program paying detained immigrants $1 per day for facility maintenance work. GEO Group lobbied against criminal justice reform measures that would reduce incarceration rates — directly advocating for policies that increase its customer population.",
+  "verdict_tags": [
+    "ice_detention_no_criminal_charge",
+    "1_dollar_day_detained_immigrant_labor",
+    "documented_deaths_medical_neglect",
+    "lobbying_against_criminal_justice_reform",
+    "14_dollar_phone_call_captive_market",
+    "forced_labor_lawsuit_detainees"
+  ],
+  "concern_flags": { "labor": true, "environmental": false, "political": true, "tax": true, "health": true, "legal": true },
+  "labor": {
+    "summary": "GEO Group pays detained immigrants — many of whom have no criminal conviction and are awaiting immigration hearings — $1 per day or less for facility maintenance work including cooking, cleaning, and laundry. Federal courts in multiple jurisdictions have allowed forced labor lawsuits against GEO to proceed, with plaintiffs arguing the program violates the Trafficking Victims Protection Act. GEO's paid staff at detention facilities have faced OSHA complaints and labor disputes.",
+    "flags": ["1_dollar_day_detained_immigrant_labor", "forced_labor_lawsuit_trafficking_act", "federal_courts_allowed_suits_to_proceed", "detainees_no_criminal_conviction_working"],
+    "sources": ["https://www.aclu.org/news/immigrants-rights/geo-group-forced-labor", "https://www.courtlistener.com/docket/4340156/menocal-v-the-geo-group-inc/"]
+  },
+  "environmental": { "summary": "GEO Group's facilities generate standard institutional waste streams. No major environmental enforcement actions have been documented.", "flags": [], "sources": [] },
+  "political": {
+    "summary": "GEO Group spent $3.9 million on lobbying in 2023. The company has made substantial political contributions to candidates and PACs supporting tough-on-crime and immigration enforcement policies — policies that directly increase GEO's detained population. GEO contributed to the American Legislative Exchange Council (ALEC), which has pushed mandatory minimum sentencing laws. The company's political spending creates a documented conflict of interest: it profits from incarceration and lobbies for policies that increase incarceration.",
+    "flags": ["3_9m_lobbying_2023", "contributions_tough_on_crime_immigration_enforcement", "alec_mandatory_minimum_sentencing_support", "conflict_profit_from_policies_lobbied_for"],
+    "sources": ["https://www.opensecrets.org/orgs/geo-group/lobbying", "https://www.justicepolicy.org/research/5020"]
+  },
+  "legal": {
+    "summary": "GEO Group faces ongoing class action lawsuits from detained immigrants alleging forced labor in violation of the Trafficking Victims Protection Act — courts in Colorado and Washington have allowed these cases to proceed. Multiple federal investigations have documented deaths in GEO-operated ICE detention facilities, including suicides and preventable medical deaths. In 2021, the Biden administration announced it would phase out private prison use — GEO's stock fell significantly — but ICE detention contracts were exempted, and subsequent administration changes reversed the broader policy.",
+    "flags": ["forced_labor_class_action_colorado_washington", "documented_detention_deaths_suicides", "preventable_medical_deaths_investigations", "biden_private_prison_phase_out_ice_exempted"],
+    "sources": ["https://www.aclu.org/news/immigrants-rights/geo-group-forced-labor", "https://www.ice.gov/detain/detention-facilities"]
+  },
+  "tax": {
+    "summary": "GEO Group operated as a Real Estate Investment Trust (REIT) from 2013 to 2021 — a structure that allowed it to avoid corporate income taxes by distributing profits to shareholders. The REIT structure for a prison company drew significant criticism as a mechanism for avoiding taxes on profit derived from incarceration. GEO converted back to a C-corporation in 2021.",
+    "flags": ["reit_structure_corporate_tax_avoidance_2013_2021", "prison_profit_reit_tax_exemption", "shareholder_distribution_tax_optimization"],
+    "sources": ["https://itep.org/geo-group-prison-reit/", "https://www.reuters.com/business/geo-group-convert-c-corporation-2021-03-09/"]
+  },
+  "executives": {
+    "summary": "CEO George Zoley received $6.7 million in total compensation in 2022. Zoley founded GEO Group and has led it since inception. The company's founding and growth coincided with the expansion of mandatory minimum sentencing and immigration enforcement — policies GEO has lobbied to maintain.",
+    "flags": ["zoley_6_7m_compensation_2022", "founder_ceo_mandatory_minimum_expansion_period", "immigration_enforcement_growth_parallel"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=geo-group"]
+  },
+  "connections": {
+    "summary": "GEO Group holds ICE detention contracts covering approximately 20,000 detained immigrants at any time — including asylum seekers, long-term U.S. residents, and individuals with no criminal record. Its BI Incorporated subsidiary monitors over 100,000 people on electronic monitoring. GEO's state prison contracts incarcerate tens of thousands of convicted individuals in facilities that have faced documented abuse findings.",
+    "flags": ["20000_ice_detainees_no_criminal_charge_included", "100000_ankle_monitoring_bi_incorporated", "documented_state_prison_abuse_findings"],
+    "sources": ["https://www.ice.gov", "https://www.aclu.org"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Detained immigrants in GEO facilities have alleged that participation in the $1/day work program is coerced through threats of solitary confinement and loss of privileges — making it legally indistinguishable from forced labor. Human rights investigators have alleged that medical staff at GEO facilities are systematically undertrained and understaffed, producing preventable deaths. Advocates have alleged that GEO's phone and commissary pricing — charging captive detainees $14 for a 15-minute call — constitutes economic exploitation of a captive population.",
+    "flags": ["work_program_coercion_solitary_threat_alleged", "medical_undertraining_understaffing_alleged", "captive_market_economic_exploitation_alleged"],
+    "sources": ["https://www.aclu.org/news/immigrants-rights/geo-group-forced-labor", "https://www.hrw.org/news/2018/06/20/us-immigrants-face-dangerous-conditions-private-detention"]
+  },
+  "health_record": {
+    "summary": "Deaths in GEO-operated ICE detention facilities have been documented by DHS Office of Inspector General investigations, including deaths attributed to inadequate medical care. Detainees have reported being denied medication, facing long waits for medical attention, and having serious conditions go untreated. Suicides in GEO detention have been documented. The physical and psychological health impact of prolonged detention — including detention of asylum seekers and individuals with no criminal record — has been documented by medical and mental health professionals.",
+    "flags": ["documented_deaths_dhs_oig_investigations", "denied_medication_medical_neglect_reported", "suicides_in_detention_documented", "asylum_seeker_detention_psychological_harm"],
+    "sources": ["https://www.oig.dhs.gov", "https://www.aclu.org/report/fatal-neglect-how-ice-ignores-deaths-custody"]
+  },
+  "alternatives": {
+    "cheaper": ["GEO Group does not sell consumer products. The systemic alternative is community-based alternatives to detention for immigrants — ankle monitoring, case management, and supervised release programs cost approximately $17/day versus $130-200/day for detention, with equivalent appearance rates for immigration hearings"],
+    "healthier": ["The ACLU's National Prison Project and National Immigrant Justice Center publish ongoing documentation of conditions in GEO facilities"],
+    "diy": ["Detention Watch Network maintains a real-time map of immigration detention facilities and publishes accountability reports on facility conditions"]
+  },
+  "timeline": [
+    { "year": 1984, "event": "GEO Group (then Wackenhut Corrections) founded", "severity": "neutral", "source_url": "" },
+    { "year": 2003, "event": "Renamed The GEO Group after rebranding from Wackenhut Corrections", "severity": "neutral", "source_url": "" },
+    { "year": 2013, "event": "Converts to REIT structure — avoids corporate income taxes on prison profits", "severity": "high", "source_url": "" },
+    { "year": 2017, "event": "Trump administration immigration enforcement expansion dramatically increases ICE detention population — GEO stock rises", "severity": "high", "source_url": "" },
+    { "year": 2018, "event": "DHS OIG reports document deaths and medical neglect at GEO-operated ICE facilities", "severity": "critical", "source_url": "https://www.oig.dhs.gov" },
+    { "year": 2019, "event": "Federal court allows forced labor class action to proceed in Colorado", "severity": "critical", "source_url": "" },
+    { "year": 2021, "event": "Biden executive order to phase out private prisons — ICE detention exempted; GEO converts from REIT back to C-corp", "severity": "high", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "GEO detention facilities are often located in rural areas far from urban immigrant communities — creating geographic barriers to legal representation, family visitation, and community support for detainees.",
+    "price_illusion": "GEO presents detention as a necessary immigration enforcement tool. Studies consistently show community supervision achieves equivalent immigration hearing appearance rates at 10-15% of the cost — the cost premium of detention flows to GEO shareholders.",
+    "tax_math": "GEO operated as a REIT from 2013-2021, avoiding corporate income taxes on profit derived from incarcerating human beings — a tax structure that no other incarceration-based business has used at this scale.",
+    "wealth_velocity": "GEO's revenue is almost entirely derived from government contracts funded by taxpayers. The $2.4 billion in annual revenue flows to shareholders and executives, while the detained population — including people who have committed no crime — provides $1/day labor."
+  },
+  "cost_absorption": {
+    "who_benefited": ["GEO Group shareholders", "CEO and executive leadership", "Politicians who received GEO contributions and backed detention expansion"],
+    "who_paid": ["Detained immigrants including asylum seekers and individuals with no criminal record", "Families separated by detention", "U.S. taxpayers paying $130-200/day per detainee versus $17/day for community supervision", "Detainees who died from medical neglect"],
+    "the_gap": "GEO pays detained immigrants $1/day for work maintaining the facilities that confine them, charges them $14 for a 15-minute phone call, and pays its CEO $6.7 million annually — all funded by U.S. taxpayers through ICE contracts."
+  }
+}

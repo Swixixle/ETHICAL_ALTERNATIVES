@@ -1,0 +1,174 @@
+{
+  "brand_name": "DXC Technology",
+  "brand_slug": "dxc-technology",
+  "parent_company": "DXC Technology Company",
+  "ultimate_parent": "DXC Technology Company",
+  "subsidiaries": [
+    "DXC Federal",
+    "Luxoft (acquired)",
+    "Molina Medicaid Solutions (divested)"
+  ],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "DXC TECHNOLOGY WAS FORMED FROM THE MERGER OF TWO FAILING IT GIANTS AND IMMEDIATELY BEGAN MASS LAYOFFS — IT HAS SHED OVER 50,000 EMPLOYEES IN SIX YEARS WHILE COLLECTING BILLIONS IN GOVERNMENT IT CONTRACTS AND ITS STOCK HAS LOST 80% OF ITS VALUE",
+  "executive_summary": "DXC Technology was formed in 2017 from the merger of Hewlett Packard Enterprise's IT services division and Computer Sciences Corporation (CSC). DXC generates approximately $14 billion annually, with significant government contract revenue across the U.S., UK, Australia, and other governments. Since its formation, DXC has shed over 50,000 employees through restructuring while its stock price has fallen approximately 80% from its post-merger high. The company manages critical government IT systems including aspects of the UK's National Health Service infrastructure, Australian government systems, and U.S. federal agency networks. CSC — one of DXC's predecessor companies — had a significant history of government IT failures and fraud settlements before the merger.",
+  "verdict_tags": [
+    "50000_employees_eliminated_six_years",
+    "80_percent_stock_decline_post_merger",
+    "nhs_uk_government_critical_it_infrastructure",
+    "csc_predecessor_fraud_settlement_history",
+    "government_it_systems_mass_restructuring",
+    "australian_government_system_failures"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "DXC has eliminated over 50,000 employees since its 2017 formation — a rate of approximately 8,000-10,000 per year — while collecting billions in government contracts. Employees have faced repeated restructuring, offshoring of roles, and benefit changes. DXC's workforce reductions have been accompanied by shifting work to lower-cost offshore locations, primarily India. Workers managing critical government systems have been replaced by offshore teams with reduced institutional knowledge. The UK workforce reductions have been the subject of union protests and parliamentary concern given DXC's NHS contract roles.",
+    "flags": [
+      "50000_employees_eliminated_since_2017",
+      "8000_10000_annual_workforce_reduction",
+      "critical_government_systems_offshore_low_cost",
+      "uk_nhs_workforce_reductions_union_protest"
+    ],
+    "sources": [
+      "https://www.computerweekly.com/feature/DXC-Technology-job-cuts",
+      "https://www.theguardian.com/society/nhs"
+    ]
+  },
+  "environmental": {
+    "summary": "DXC is primarily an IT and services company with minimal direct environmental footprint. Its predecessor CSC had some legacy manufacturing contamination issues.",
+    "flags": [
+      "csc_predecessor_legacy_contamination"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "DXC spent $2.9 million on lobbying in 2023. The company's role in managing critical government IT infrastructure in the UK, Australia, and US gives it significant leverage in contract negotiations — systems dependencies make switching costly. DXC's predecessor CSC was one of the largest government IT contractors and built deep relationships with defense and civilian agencies over decades.",
+    "flags": [
+      "2_9m_lobbying_2023",
+      "critical_government_infrastructure_switching_cost_leverage",
+      "csc_predecessor_decades_government_relationships"
+    ],
+    "sources": [
+      "https://www.opensecrets.org/orgs/dxc-technology/lobbying"
+    ]
+  },
+  "legal": {
+    "summary": "DXC's predecessor Computer Sciences Corporation (CSC) paid $190 million in 2015 to resolve False Claims Act allegations related to its contract with the NHS National Programme for IT — one of the largest failed government IT projects in history. CSC also faced fraud allegations on U.S. government contracts. DXC has inherited CSC's contractual liabilities and has faced ongoing performance complaints on inherited NHS and other government contracts.",
+    "flags": [
+      "csc_190m_nhs_false_claims_settlement_2015",
+      "nhs_national_programme_it_largest_failed_government_it_project",
+      "csc_us_government_contract_fraud_allegations",
+      "inherited_contractual_liabilities_dxc"
+    ],
+    "sources": [
+      "https://www.justice.gov/opa/pr/computer-sciences-corporation-agrees-pay-190-million-settle-false-claims-act-allegations",
+      "https://www.nao.org.uk/report/the-national-programme-for-it-in-the-nhs-an-update/"
+    ]
+  },
+  "tax": {
+    "summary": "DXC maintains offshore subsidiary structures across its global footprint that enable profit allocation to lower-tax jurisdictions. The company's cost reduction strategy — offshoring work to India — has tax optimization dimensions beyond labor cost reduction.",
+    "flags": [
+      "offshore_subsidiary_profit_allocation",
+      "india_offshoring_tax_optimization_dimensions"
+    ],
+    "sources": [
+      "https://itep.org"
+    ]
+  },
+  "executives": {
+    "summary": "CEO Raul Fernandez received $17.3 million in total compensation in fiscal 2023. Former CEO Mike Salvino oversaw much of the 50,000-employee reduction period while receiving similar compensation levels. DXC's stock declined approximately 80% since its post-merger peak under successive CEOs while executive compensation remained above $15 million annually.",
+    "flags": [
+      "fernandez_17_3m_compensation_fy2023",
+      "80_percent_stock_decline_executive_compensation_maintained",
+      "successive_ceos_15m_plus_during_shareholder_loss"
+    ],
+    "sources": [
+      "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=dxc-technology"
+    ]
+  },
+  "connections": {
+    "summary": "DXC manages elements of NHS England's IT infrastructure — including systems used for patient records and clinical operations. The company holds Australian government contracts across multiple agencies. DXC's federal U.S. contracts span DoD, civilian agencies, and intelligence-adjacent work inherited from CSC. The NHS National Programme for IT — which CSC failed to deliver — was a £12 billion programme described by the UK's National Audit Office as one of the worst and most expensive IT failures in public sector history.",
+    "flags": [
+      "nhs_patient_records_clinical_systems",
+      "australian_multi_agency_contracts",
+      "nhs_national_programme_12_billion_failure",
+      "nao_worst_most_expensive_it_failure_characterization"
+    ],
+    "sources": [
+      "https://www.nao.org.uk/report/the-national-programme-for-it-in-the-nhs-an-update/",
+      "https://www.computerweekly.com"
+    ]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "NHS staff and patient advocacy groups have alleged that DXC's workforce reductions — replacing UK-based staff familiar with NHS systems with offshore teams — have degraded the quality of IT support for clinical operations. Former CSC and DXC employees have alleged that the company has systematically understated the risks of its workforce reduction strategy to government contract clients, who would face significant costs if they sought alternative providers. Shareholders have alleged in litigation that DXC's post-merger leadership overstated the financial benefits of the HPE-CSC merger.",
+    "flags": [
+      "nhs_offshore_replacement_clinical_degradation_alleged",
+      "switching_cost_risk_understated_to_clients_alleged",
+      "merger_benefit_overstatement_shareholder_litigation_alleged"
+    ],
+    "sources": [
+      "https://www.computerweekly.com",
+      "https://www.theguardian.com/society/nhs"
+    ]
+  },
+  "health_record": {
+    "summary": "DXC manages NHS IT systems that support clinical operations for millions of UK patients. CSC's failure to deliver the NHS National Programme for IT — a system intended to digitize patient records across England — was described by the NAO as causing significant harm to NHS modernization and patient care for years. The degradation of NHS IT support through DXC workforce reductions has raised concerns among NHS trusts about system reliability for patient-facing clinical operations.",
+    "flags": [
+      "nhs_millions_patients_dependent_dxc_it",
+      "csc_nhs_failure_patient_care_harm_nao",
+      "workforce_reduction_nhs_system_reliability_concerns"
+    ],
+    "sources": [
+      "https://www.nao.org.uk/report/the-national-programme-for-it-in-the-nhs-an-update/"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "DXC does not sell consumer products. The systemic alternative is modular, open-source NHS IT architecture reducing dependency on single large contractors — a direction NHS England has moved toward following the NPfIT failure"
+    ],
+    "healthier": [
+      "The UK's National Audit Office publishes reports on NHS IT systems; NHS Digital (now NHS England) publishes system status information"
+    ],
+    "diy": [
+      "The NAO's report on the NHS National Programme for IT is publicly available and documents the full scope of the CSC failure",
+      "Computer Weekly publishes ongoing coverage of UK government IT contractor performance"
+    ]
+  },
+  "timeline": [
+    { "year": 2003, "event": "CSC wins NHS National Programme for IT contract — £3 billion for patient records system", "severity": "neutral", "source_url": "" },
+    { "year": 2011, "event": "NAO declares NHS National Programme for IT a failure — £12 billion spent, goals not achieved", "severity": "critical", "source_url": "https://www.nao.org.uk/report/the-national-programme-for-it-in-the-nhs-an-update/" },
+    { "year": 2015, "event": "CSC pays $190 million to resolve False Claims Act allegations on NHS IT contract", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/computer-sciences-corporation-agrees-pay-190-million-settle-false-claims-act-allegations" },
+    { "year": 2017, "event": "DXC Technology formed from merger of HPE IT Services and CSC — stock peaks post-merger", "severity": "neutral", "source_url": "" },
+    { "year": 2018, "event": "DXC begins systematic workforce reduction — 10,000+ employees eliminated annually", "severity": "high", "source_url": "" },
+    { "year": 2022, "event": "DXC stock has fallen approximately 80% from post-merger high; 50,000+ employees eliminated since 2017", "severity": "critical", "source_url": "" },
+    { "year": 2023, "event": "DXC continues government contracts in UK, Australia, and US despite performance concerns", "severity": "high", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "DXC's elimination of 50,000 employees — many in UK, Australia, and US locations with deep institutional knowledge of government systems — has displaced experienced workers while degrading the quality of government IT support. Communities where CSC and HPE had large campuses have lost significant employment.",
+    "price_illusion": "DXC presents its offshore delivery model as cost-effective government IT management. NHS trusts and Australian government clients have raised concerns that cost savings through offshoring come at the expense of service quality and institutional knowledge retention.",
+    "tax_math": "DXC's offshore subsidiary structure allows profit allocation to lower-tax jurisdictions while the company collects government contract revenue from the UK, Australia, and US — whose taxpayers fund the contracts but receive reduced tax contribution from the company.",
+    "wealth_velocity": "CEO compensation exceeds $17 million annually at a company whose stock has lost 80% of its value since formation, which has eliminated 50,000 employees, and whose predecessor paid $190 million for IT fraud — while NHS patients and government clients remain dependent on DXC systems."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      "DXC executives ($15M+ annual compensation through stock decline)",
+      "Offshore delivery centers in India that received work transferred from eliminated positions",
+      "HPE and CSC shareholders at time of merger (received merger premium)"
+    ],
+    "who_paid": [
+      "50,000+ eliminated employees who lost jobs and institutional knowledge",
+      "NHS patients dependent on degraded IT systems",
+      "UK, Australian, and US taxpayers paying for government IT with reduced quality",
+      "DXC shareholders who have seen 80% stock value destruction"
+    ],
+    "the_gap": "DXC's predecessor CSC paid $190 million for NHS IT fraud, delivered what the NAO called one of the worst government IT failures in history, merged with HPE to form DXC, eliminated 50,000 employees, destroyed 80% of shareholder value — and continues to hold critical NHS, Australian government, and U.S. federal IT contracts with no debarment consequences."
+  }
+}

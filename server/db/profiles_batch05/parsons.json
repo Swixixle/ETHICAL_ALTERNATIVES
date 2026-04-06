@@ -1,0 +1,69 @@
+{
+  "brand_name": "Parsons Corporation",
+  "brand_slug": "parsons",
+  "parent_company": "Parsons Corporation",
+  "ultimate_parent": "Parsons Corporation",
+  "subsidiaries": ["Parsons Federal", "Parsons Infrastructure", "Braxton Science & Technology (acquired)", "BlackHorse Solutions (acquired)"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "PARSONS BUILT INFRASTRUCTURE FOR THE U.S. GOVERNMENT ACROSS SIX DECADES — AND PAID TENS OF MILLIONS IN FALSE CLAIMS SETTLEMENTS FOR BILLING WORK IT NEVER PERFORMED ON CONTRACTS FROM IRAQ TO THE INTELLIGENCE COMMUNITY",
+  "executive_summary": "Parsons Corporation is a U.S. defense and intelligence infrastructure and technology company generating approximately $4.3 billion annually. The company provides engineering, construction, cybersecurity, and technology services to federal, state, and local government clients. Parsons has held contracts for border security infrastructure, intelligence community facilities, missile defense systems, and transportation infrastructure. The company has paid multiple False Claims Act settlements for overbilling on government contracts, including an $8 million settlement related to Iraq reconstruction and additional settlements on other government programs. Parsons' employee stock ownership plan (ESOP) structure — in which employees own shares — is a distinctive feature among defense contractors.",
+  "verdict_tags": [
+    "false_claims_act_multiple_settlements",
+    "iraq_reconstruction_overbilling",
+    "border_security_infrastructure_contracts",
+    "intelligence_community_facility_contractor",
+    "missile_defense_engineering",
+    "esop_employee_owned_structure"
+  ],
+  "concern_flags": { "labor": false, "environmental": true, "political": true, "tax": false, "health": false, "legal": true },
+  "labor": { "summary": "Parsons' ESOP structure gives employees a stake in company performance — a less common model in defense contracting. The company has faced standard labor issues in its construction and engineering projects.", "flags": ["esop_employee_ownership_model"], "sources": [] },
+  "environmental": {
+    "summary": "Parsons' infrastructure and construction projects — including border wall segments and environmental remediation work — have generated environmental concerns. The company has held contracts for cleanup of contaminated federal sites.",
+    "flags": ["border_infrastructure_environmental_concerns", "federal_contaminated_site_remediation"],
+    "sources": ["https://www.epa.gov"]
+  },
+  "political": {
+    "summary": "Parsons spent $3.6 million on lobbying in 2023. The company holds contracts across DoD, DHS, intelligence agencies, and transportation authorities. Border security infrastructure contracts — particularly under administrations emphasizing enforcement — have been a growth area for Parsons.",
+    "flags": ["3_6m_lobbying_2023", "border_security_enforcement_growth_contracts", "dod_dhs_intelligence_transportation_contracts"],
+    "sources": ["https://www.opensecrets.org/orgs/parsons/lobbying"]
+  },
+  "legal": {
+    "summary": "Parsons paid $8 million to resolve False Claims Act allegations related to Iraq reconstruction contract overbilling. The company has faced additional settlements and audit findings across government infrastructure and IT contracts. DCAA audit findings have identified unallowable and unsupported costs on Parsons contracts.",
+    "flags": ["8m_iraq_false_claims_settlement", "dcaa_unallowable_unsupported_costs", "multiple_contract_audit_findings"],
+    "sources": ["https://www.justice.gov", "https://www.pogo.org/database/contractor-misconduct"]
+  },
+  "tax": { "summary": "Parsons uses standard engineering and construction company tax structures. Its ESOP structure has some tax advantages for the company.", "flags": ["esop_tax_advantages"], "sources": [] },
+  "executives": { "summary": "CEO Carey Smith received $11.8 million in total compensation in 2022.", "flags": ["smith_11_8m_compensation_2022"], "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=parsons"] },
+  "connections": { "summary": "Parsons holds contracts for border security systems including sensor networks and surveillance infrastructure. The company builds and maintains facilities for intelligence agencies. Its missile defense engineering work connects it to THAAD and other systems.", "flags": ["border_security_sensor_surveillance_contracts", "intelligence_agency_facilities", "thaad_missile_defense_engineering"], "sources": ["https://www.parsons.com"] },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Government contract watchdogs have alleged that Parsons' pattern of False Claims Act settlements — Iraq, and subsequent programs — reflects a systemic culture of overbilling rather than isolated contractor misconduct.",
+    "flags": ["systemic_overbilling_culture_alleged"],
+    "sources": ["https://www.pogo.org/database/contractor-misconduct"]
+  },
+  "health_record": { "summary": "Parsons does not produce consumer health products. Its primary impact is through infrastructure and intelligence services.", "flags": [], "sources": [] },
+  "alternatives": {
+    "cheaper": ["Parsons does not sell consumer products. The systemic alternative is stronger audit and penalty structures on infrastructure contracts"],
+    "healthier": ["POGO's contractor misconduct database documents Parsons' settlement history"],
+    "diy": ["Federal procurement databases document Parsons contract awards and any associated suspension or debarment actions"]
+  },
+  "timeline": [
+    { "year": 1944, "event": "Parsons Corporation founded in Pasadena, California", "severity": "neutral", "source_url": "" },
+    { "year": 2008, "event": "Pays $8 million to resolve Iraq reconstruction False Claims Act allegations", "severity": "high", "source_url": "https://www.justice.gov" },
+    { "year": 2019, "event": "Parsons IPO on NYSE", "severity": "neutral", "source_url": "" },
+    { "year": 2022, "event": "Acquires BlackHorse Solutions — expands intelligence community cybersecurity", "severity": "neutral", "source_url": "" },
+    { "year": 2023, "event": "Revenue reaches $4.3 billion; border security and missile defense drive growth", "severity": "neutral", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "Parsons' border infrastructure construction — walls, sensors, surveillance systems — has environmental and community impacts on border communities and ecosystems.",
+    "price_illusion": "Government infrastructure projects often have cost overruns; Parsons' Iraq overbilling reflects a broader pattern of government construction cost inflation.",
+    "tax_math": "ESOP structure provides some tax advantages while the company benefits from standard defense contractor depreciation and R&D credits.",
+    "wealth_velocity": "CEO compensation exceeds $11 million against nearly all government-funded revenue."
+  },
+  "cost_absorption": {
+    "who_benefited": ["Parsons shareholders and ESOP participants", "Executive leadership"],
+    "who_paid": ["U.S. taxpayers through Iraq overbilling and multiple audit findings", "Border communities affected by surveillance infrastructure"],
+    "the_gap": "Parsons paid $8 million for Iraq reconstruction overbilling — a fraction of its contract revenue from that period — and continued to receive government contracts without debarment."
+  }
+}

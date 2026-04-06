@@ -17,6 +17,7 @@ import {
   HealthIcon,
 } from './icons/SectionIcons';
 import HireDirectInvestigationBlock from './HireDirectInvestigationBlock.jsx';
+import ActiveNowSection from './ActiveNowSection.jsx';
 import { fetchProportionality } from '../lib/fetchProportionality.js';
 import { methodologyPageUrl } from '../lib/methodologyUrl.js';
 import './InvestigationCard.css';
@@ -1034,6 +1035,12 @@ export default function InvestigationCard({
     typeof investigation.degraded_message === 'string' && investigation.degraded_message.trim()
       ? investigation.degraded_message.trim()
       : null;
+  const perimeterSlug =
+    typeof investigation.brand_slug === 'string' && investigation.brand_slug.trim()
+      ? investigation.brand_slug.trim()
+      : '';
+  const showActiveNow =
+    Boolean(perimeterSlug) && (profileType === 'database' || serviceDegraded);
 
   return (
     <section className={`investigation-card investigation-card--bento${variantClass}`}>
@@ -1061,6 +1068,8 @@ export default function InvestigationCard({
           Clean card — highlighted alternative; sections below include honest caveats.
         </p>
       ) : null}
+
+      {showActiveNow ? <ActiveNowSection brandSlug={perimeterSlug} variant="tap" /> : null}
 
       <div className="investigation-card__hero investigation-card__hero-mount">
         <h1 className="investigation-card__headline">{headline}</h1>

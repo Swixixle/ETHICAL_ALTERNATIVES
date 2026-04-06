@@ -1,0 +1,92 @@
+{
+  "brand_name": "KBR",
+  "brand_slug": "kbr",
+  "parent_company": "KBR, Inc.",
+  "ultimate_parent": "KBR, Inc.",
+  "subsidiaries": ["KBR Government Solutions", "KBR Sustainable Technology Solutions", "Centrica Business Solutions (partial)"],
+  "overall_concern_level": "critical",
+  "profile_type": "database",
+  "generated_headline": "KBR ELECTROCUTED 18 U.S. SOLDIERS IN IRAQ WITH FAULTY WIRING IT WAS PAID $40 BILLION TO INSTALL — THEN BILLED THE ARMY FOR MEALS IT NEVER SERVED AND FUEL IT NEVER DELIVERED",
+  "executive_summary": "KBR, Inc. (formerly Kellogg Brown & Root, a Halliburton subsidiary) is one of the largest U.S. government services and construction contractors, receiving approximately $6 billion annually. KBR held the Army's LOGCAP (Logistics Civil Augmentation Program) contract in Iraq and Afghanistan — worth over $40 billion — covering base construction, logistics, food service, and facilities maintenance for U.S. military installations. The company overbilled the government for meals never served, fuel never delivered, and services never rendered. Faulty electrical work by KBR contractors caused the electrocution deaths of at least 18 U.S. soldiers in Iraq. KBR paid $579 million in criminal and civil penalties for bribery of Nigerian officials and $108 million to settle overbilling allegations — while maintaining government contracts throughout.",
+  "verdict_tags": [
+    "18_soldiers_electrocuted_faulty_kbr_wiring",
+    "40_billion_logcap_contract_iraq_afghanistan",
+    "579m_bribery_settlement_nigeria",
+    "108m_overbilling_settlement",
+    "meals_never_served_billed",
+    "fuel_never_delivered_billed"
+  ],
+  "concern_flags": { "labor": true, "environmental": true, "political": true, "tax": false, "health": true, "legal": true },
+  "labor": {
+    "summary": "KBR's Iraq and Afghanistan operations relied heavily on third-country national (TCN) workers recruited from South Asia and other regions through labor brokers — workers who paid recruitment fees, had passports confiscated, and were housed in substandard conditions on U.S. military bases. This practice has been documented by the State Department, the Commission on Wartime Contracting, and journalists as amounting to labor trafficking in some cases. KBR's electrical workers — employed through subcontractors — performed the faulty wiring work that electrocuted 18 U.S. service members.",
+    "flags": ["third_country_national_labor_trafficking_documented", "passport_confiscation_recruitment_fees", "state_department_labor_trafficking_finding", "subcontractor_electricians_faulty_wiring_deaths"],
+    "sources": ["https://www.warcontractingcommission.gov", "https://www.hrw.org/report/2009/11/29/this-alien-legacy/origins-sodomy-laws-british-colonialism"]
+  },
+  "environmental": {
+    "summary": "KBR's burn pit operations at U.S. military bases in Iraq and Afghanistan — where the company was responsible for waste disposal — have been linked to serious respiratory illness in veterans. KBR operated open-air burn pits at Joint Base Balad and other locations, incinerating military waste including chemicals, medical waste, and unexploded ordnance. The 2022 PACT Act expanded VA benefits for veterans with burn pit-related illness, implicitly acknowledging the health crisis KBR's waste management created.",
+    "flags": ["burn_pit_operations_iraq_afghanistan", "chemical_medical_waste_open_air_burning", "veteran_respiratory_illness_documented", "pact_act_burn_pit_veteran_benefits"],
+    "sources": ["https://www.congress.gov/bill/117th-congress/house-bill/3967", "https://www.publicintegrity.org/2010/07/27/2605/burn-pits-iraq-afghanistan-tied-health-problems"]
+  },
+  "political": {
+    "summary": "KBR was a Halliburton subsidiary when Vice President Dick Cheney served as Halliburton CEO (1995-2000). The LOGCAP Iraq contract was awarded as a sole-source contract in 2001-2002 during Cheney's vice presidency — a circumstance that drew sustained congressional scrutiny. KBR spent $5.1 million on lobbying in 2023. The Commission on Wartime Contracting estimated that $31-60 billion in waste, fraud, and abuse occurred in Iraq and Afghanistan contracting — with KBR as the largest single contractor.",
+    "flags": ["cheney_halliburton_ceo_logcap_sole_source_award", "congressional_scrutiny_conflict_of_interest", "5_1m_lobbying_2023", "31_60b_wartime_contracting_waste_estimate"],
+    "sources": ["https://www.warcontractingcommission.gov", "https://www.opensecrets.org/orgs/kbr/lobbying"]
+  },
+  "legal": {
+    "summary": "In February 2009, KBR and its former parent Halliburton paid $579 million to resolve DOJ and SEC charges of bribing Nigerian government officials to secure liquefied natural gas construction contracts — at the time the largest FCPA settlement in history. KBR separately paid $108 million in 2010 to resolve False Claims Act allegations of overbilling on the LOGCAP Iraq contract — including billing for meals never served and services never rendered. Eighteen U.S. soldiers died from electrocution in KBR-maintained facilities; the company faced civil suits from families.",
+    "flags": ["579m_nigeria_bribery_settlement_2009", "largest_fcpa_settlement_at_time", "108m_logcap_overbilling_settlement", "18_soldier_electrocution_civil_suits"],
+    "sources": ["https://www.justice.gov/opa/pr/halliburton-and-kbr-agree-pay-579-million-resolve-foreign-corrupt-practices-act-allegations", "https://www.justice.gov/opa/pr/kbr-inc-pays-108-million-settle-false-claims-act-allegations"]
+  },
+  "tax": {
+    "summary": "KBR has used offshore subsidiary structures — including Cayman Islands entities — to reduce tax liability. During the Iraq war period, KBR's offshore structures allowed it to avoid certain U.S. employment taxes on workers employed overseas. Congressional investigations documented the tax avoidance dimensions of KBR's offshore employment arrangements.",
+    "flags": ["cayman_islands_offshore_structures", "overseas_worker_employment_tax_avoidance", "congressional_offshore_tax_investigation"],
+    "sources": ["https://www.levin.senate.gov", "https://itep.org"]
+  },
+  "executives": {
+    "summary": "KBR CEO Stuart Bradie received $11.2 million in compensation in 2022. During the peak Iraq contracting period, KBR's executives — including those who oversaw the LOGCAP contract — were compensated at significant levels while the overbilling and electrocution deaths occurred. Halliburton's Dick Cheney connection created a uniquely documented conflict of interest between executive career history and contract awards.",
+    "flags": ["bradie_11_2m_compensation_2022", "cheney_halliburton_conflict_documented", "logcap_executive_compensation_overbilling_period"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=kbr"]
+  },
+  "connections": {
+    "summary": "KBR's LOGCAP contract made it the largest single private contractor in the Iraq and Afghanistan wars. Its burn pit operations affected hundreds of thousands of U.S. service members who were exposed to toxic smoke. The Nigeria bribery scheme involved a consortium with Technip, Snamprogetti, and JGC — connecting KBR to an international bribery network. KBR's labor trafficking of third-country nationals connected it to recruitment networks across South Asia and the Philippines.",
+    "flags": ["logcap_largest_iraq_afghanistan_contractor", "burn_pit_hundreds_thousands_exposed", "nigeria_international_bribery_consortium", "south_asia_philippines_labor_recruitment_networks"],
+    "sources": ["https://www.warcontractingcommission.gov", "https://www.hrw.org"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The families of electrocuted soldiers have alleged that KBR was repeatedly warned about faulty wiring at Radwaniyah Palace Complex and other facilities and failed to correct it. Internal KBR documents allegedly showed that electrical safety deficiencies were documented and not repaired. Congressional investigators alleged that KBR's cost-plus contract structure removed all financial incentive to control costs — that the company profited more by spending more, and that overbilling was a structural consequence of the contract design rather than isolated misconduct.",
+    "flags": ["faulty_wiring_warnings_ignored_alleged", "cost_plus_overbilling_structural_incentive_alleged", "internal_electrical_deficiency_documents_alleged"],
+    "sources": ["https://www.huffpost.com/entry/kbr-electrocutions-iraq_n_819392", "https://www.warcontractingcommission.gov"]
+  },
+  "health_record": {
+    "summary": "18 U.S. soldiers died from electrocution in KBR-maintained facilities in Iraq — the result of faulty electrical work by KBR subcontractors. Hundreds of thousands of U.S. veterans were exposed to toxic smoke from open-air burn pits operated by KBR at military bases — contributing to a documented epidemic of burn pit-related respiratory illness, rare cancers, and neurological conditions recognized by the 2022 PACT Act. Third-country national workers lived in substandard housing on U.S. bases with limited access to medical care.",
+    "flags": ["18_soldiers_electrocuted_kbr_facilities", "hundreds_thousands_burn_pit_exposure", "rare_cancers_neurological_conditions_veterans", "tcn_worker_substandard_medical_access"],
+    "sources": ["https://www.congress.gov/bill/117th-congress/house-bill/3967", "https://www.publicintegrity.org"]
+  },
+  "alternatives": {
+    "cheaper": ["KBR does not sell consumer products. The systemic alternative is reform of cost-plus government contracting — which removes cost-control incentives — and mandatory debarment for contractors with documented fraud and safety violations"],
+    "healthier": ["Veterans with burn pit-related illness can apply for PACT Act benefits through the VA; the Burn Pits 360 organization provides advocacy and resources"],
+    "diy": ["The Commission on Wartime Contracting's final report is publicly available and documents the full scope of KBR and other contractor fraud in Iraq and Afghanistan"]
+  },
+  "timeline": [
+    { "year": 1998, "event": "Halliburton acquires Dresser Industries including Kellogg Brown & Root", "severity": "neutral", "source_url": "" },
+    { "year": 2000, "event": "Dick Cheney leaves Halliburton CEO role to become Vice President", "severity": "neutral", "source_url": "" },
+    { "year": 2001, "event": "LOGCAP III sole-source Iraq/Afghanistan logistics contract awarded to KBR", "severity": "high", "source_url": "" },
+    { "year": 2004, "event": "Staff Sergeant Ryan Maseth and others begin dying from electrocution in KBR-maintained facilities", "severity": "critical", "source_url": "" },
+    { "year": 2007, "event": "KBR spun off from Halliburton as independent company", "severity": "neutral", "source_url": "" },
+    { "year": 2009, "event": "KBR/Halliburton pays $579 million for Nigeria bribery — largest FCPA settlement at the time", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/halliburton-and-kbr-agree-pay-579-million" },
+    { "year": 2010, "event": "Pays $108 million to settle LOGCAP overbilling allegations", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/kbr-inc-pays-108-million" },
+    { "year": 2022, "event": "PACT Act signed — acknowledges burn pit health crisis affecting veterans exposed at KBR-operated bases", "severity": "high", "source_url": "https://www.congress.gov/bill/117th-congress/house-bill/3967" }
+  ],
+  "community_impact": {
+    "displacement": "KBR's use of third-country national workers — recruited through brokers who charged fees and confiscated passports — displaced local Iraqi employment while creating exploitative labor conditions on U.S. military bases.",
+    "price_illusion": "The LOGCAP cost-plus contract presented KBR as providing essential wartime logistics. The Commission on Wartime Contracting found that the contract structure incentivized waste and that billions were billed for services not rendered.",
+    "tax_math": "KBR used offshore employment structures to avoid U.S. employment taxes on overseas workers while collecting cost-plus contract payments from the U.S. government — double-extracting from the treasury.",
+    "wealth_velocity": "KBR executives were compensated through the period of the Nigeria bribery scheme, the electrocution deaths, and the overbilling settlements — with no interruption in compensation or contract access."
+  },
+  "cost_absorption": {
+    "who_benefited": ["KBR and Halliburton shareholders", "Nigerian officials who received bribe payments", "Dick Cheney's Halliburton stock options (held in deferred compensation through VP tenure)"],
+    "who_paid": ["18 U.S. soldiers and their families", "Hundreds of thousands of veterans with burn pit illness", "Third-country national workers subjected to labor trafficking conditions", "U.S. taxpayers — $40B contract with documented billions in fraud"],
+    "the_gap": "KBR billed $40 billion under LOGCAP, was found to have overbilled by hundreds of millions, killed 18 soldiers with faulty wiring, exposed hundreds of thousands to toxic burn pits, and paid $579 million in bribery fines — while retaining government contracts and paying executives tens of millions."
+  }
+}

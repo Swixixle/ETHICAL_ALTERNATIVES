@@ -13,6 +13,7 @@ import {
 } from './aiProvider.js';
 import { corroborateLayerC, mergeLayerCCorroborationIntoProfileJson } from './corroboration.js';
 import { assignShareRiskTier } from './shareRiskTier.js';
+import { kickPerimeterCheckForInvestigation } from './perimeterCache.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -815,11 +816,13 @@ async function fetchDegradedCachedInvestigation(brandName, corporateParent, heal
       typeof reason === 'string' && reason.trim()
         ? ` (${String(reason).slice(0, 160)})`
         : '';
-    return {
+    const degraded = {
       ...inv,
       service_degraded: true,
       degraded_message: `Live research was unavailable${tail}. Showing the indexed public record on file for this brand.`,
     };
+    kickPerimeterCheckForInvestigation(degraded);
+    return degraded;
   } catch (e) {
     console.warn('[investigation] degraded cache lookup failed', e?.message || e);
     return null;
@@ -1616,6 +1619,7 @@ export async function getInvestigationProfile(brandName, corporateParent, option
             const out = stubPersisted
               ? { ...upgraded, profile_type: 'database', last_updated: today }
               : upgraded;
+            kickPerimeterCheckForInvestigation(out);
             logInvestigationProfileEnd(stubPersisted ? 'database_stub_upgrade' : 'stub_upgrade_realtime_only', out);
             return out;
           } catch (e) {
@@ -1626,6 +1630,7 @@ export async function getInvestigationProfile(brandName, corporateParent, option
 
         console.log('[investigation] getInvestigationProfile:route', { slug, source: 'database' });
         const finalized = incumbentRowToInvestigation(row, brandName, corporateParent, healthFlag);
+        kickPerimeterCheckForInvestigation(finalized);
         logInvestigationProfileEnd('database', finalized);
         return finalized;
       }

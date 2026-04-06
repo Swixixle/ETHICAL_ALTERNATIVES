@@ -17,6 +17,8 @@ import witnessRouter from './routes/witness.js';
 import documentaryRouter from './routes/documentary.js';
 import workersRouter from './routes/workers.js';
 import profileIndexRouter from './routes/profiles.index.route.js';
+import libraryRouter from './routes/library.route.js';
+import perimeterRouter from './routes/perimeter.route.js';
 import impactRouter from './routes/impact.js';
 import { getProviderHealthSnapshot } from './services/aiProvider.js';
 import {
@@ -91,6 +93,8 @@ app.use('/api/workers', workersRouter);
 app.use('/api', tapRouter);
 app.use('/api', impactRouter);
 app.use('/api/profiles', profileIndexRouter);
+app.use('/api/library', libraryRouter);
+app.use('/api/perimeter', perimeterRouter);
 app.use('/api/sellers', sellersRouter);
 app.use('/api/city-identity', cityIdentityRouter);
 app.use('/api/local-feed', localFeedRouter);

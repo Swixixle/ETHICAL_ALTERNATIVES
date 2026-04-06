@@ -1,0 +1,61 @@
+{
+  "brand_name": "ManTech International",
+  "brand_slug": "mantech",
+  "parent_company": "ManTech International Corporation",
+  "ultimate_parent": "Carlyle Group (private equity, majority owner)",
+  "subsidiaries": ["ManTech MCTS", "ManTech SRS", "Gryphon Technologies (acquired)"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "MANTECH IS A $2.5 BILLION SURVEILLANCE AND INTELLIGENCE CONTRACTOR NOW OWNED BY THE CARLYLE GROUP — THE SAME PRIVATE EQUITY FIRM THAT HAS OWNED DEFENSE CONTRACTORS ACROSS FIVE DECADES OF U.S. MILITARY SPENDING",
+  "executive_summary": "ManTech International is a U.S. cybersecurity, intelligence, and government IT contractor generating approximately $2.5 billion annually, with nearly all revenue from U.S. government contracts — primarily the Department of Defense and intelligence community. In 2022, the Carlyle Group took ManTech private in a $4.2 billion acquisition — embedding private equity financial extraction logic into a company whose primary product is classified intelligence and cybersecurity services for the U.S. government. ManTech provides cyber operations, intelligence analysis, systems engineering, and mission support services across classified programs. The company's acquisition by Carlyle raises questions about private equity ownership of classified government infrastructure.",
+  "verdict_tags": [
+    "carlyle_group_private_equity_classified_intelligence",
+    "2_5b_nearly_all_government_revenue",
+    "4_2b_mantech_takeover_2022",
+    "cybersecurity_intelligence_classified_programs",
+    "private_equity_debt_loading_intelligence_infrastructure",
+    "dod_intel_community_contracts"
+  ],
+  "concern_flags": { "labor": false, "environmental": false, "political": true, "tax": false, "health": false, "legal": false },
+  "labor": { "summary": "ManTech employs approximately 9,000 cleared professionals. Carlyle's acquisition has raised employee concerns about private equity cost-cutting measures being applied to classified work where understaffing creates national security risks.", "flags": ["carlyle_acquisition_cost_cutting_concerns", "cleared_workforce_national_security_understaffing_risk"], "sources": [] },
+  "environmental": { "summary": "ManTech is primarily an IT and services company with minimal environmental footprint.", "flags": [], "sources": [] },
+  "political": {
+    "summary": "ManTech spent $2.8 million on lobbying in 2023. The Carlyle Group's defense sector involvement spans decades — the firm has owned defense and intelligence contractors while its principals have included former President George H.W. Bush, former UK Prime Minister John Major, and former SEC Chairman Arthur Levitt. Carlyle's ownership of ManTech means private equity partners profit from classified government intelligence spending with no requirement for public disclosure of either the firm's finances or its contract performance.",
+    "flags": ["2_8m_lobbying_2023", "carlyle_former_world_leaders_principals", "private_equity_classified_intelligence_no_disclosure", "former_presidents_intelligence_contractor_owners"],
+    "sources": ["https://www.opensecrets.org/orgs/mantech/lobbying", "https://www.theguardian.com/world/2001/oct/31/september11.usa2"]
+  },
+  "legal": { "summary": "ManTech has faced limited public legal controversy. The company's classified contract environment limits public accountability for performance failures.", "flags": ["classified_contract_limited_public_accountability"], "sources": [] },
+  "tax": { "summary": "As a Carlyle portfolio company, ManTech's debt-loading from the $4.2 billion acquisition generates interest deductions that reduce taxable income — a standard private equity tax optimization strategy.", "flags": ["carlyle_acquisition_debt_interest_deduction", "private_equity_tax_optimization"], "sources": [] },
+  "executives": { "summary": "ManTech CEO Matt Tait leads the company post-Carlyle acquisition. Executive compensation is no longer publicly disclosed as a private company. Carlyle's management fees and return expectations represent an additional cost layer on top of operating expenses.", "flags": ["private_compensation_undisclosed_post_carlyle", "carlyle_management_fees_additional_cost_layer"], "sources": [] },
+  "connections": { "summary": "ManTech holds classified cybersecurity and intelligence analysis contracts across NSA, CIA, DIA, and military intelligence agencies. The company's Gryphon Technologies acquisition expanded naval systems engineering capabilities. Carlyle's ownership connects ManTech to a private equity portfolio that includes other defense and intelligence contractors.", "flags": ["nsa_cia_dia_military_intel_classified_contracts", "carlyle_multi_contractor_defense_portfolio"], "sources": [] },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "National security scholars have raised concerns that Carlyle's ownership of classified intelligence contractors creates a structure where private equity financial imperatives — cost reduction, margin expansion, leverage — are applied to national security infrastructure where failures have operational consequences that are classified and cannot be publicly evaluated. Critics have alleged that the Carlyle model extracts profit from government contracts while reducing the institutional quality of the services delivered.",
+    "flags": ["private_equity_national_security_imperatives_conflict_alleged", "carlyle_profit_extraction_quality_reduction_alleged"],
+    "sources": ["https://www.thenation.com/article/archive/carlyle-and-the-defense-establishment/"]
+  },
+  "health_record": { "summary": "ManTech does not produce consumer health products. Its primary impact is through classified government services.", "flags": [], "sources": [] },
+  "alternatives": {
+    "cheaper": ["ManTech does not sell consumer products. The systemic alternative is federal policy restricting private equity ownership of companies with classified intelligence contracts — a restriction that does not currently exist"],
+    "healthier": ["The Project On Government Oversight publishes analysis of private equity involvement in defense contracting"],
+    "diy": ["Carlyle Group's SEC filings describe its defense and intelligence portfolio; The Nation and other outlets have published investigations of Carlyle's defense contractor ownership"]
+  },
+  "timeline": [
+    { "year": 1968, "event": "ManTech International founded", "severity": "neutral", "source_url": "" },
+    { "year": 2002, "event": "ManTech IPO on NASDAQ", "severity": "neutral", "source_url": "" },
+    { "year": 2021, "event": "ManTech acquires Gryphon Technologies — expands naval systems engineering", "severity": "neutral", "source_url": "" },
+    { "year": 2022, "event": "Carlyle Group acquires ManTech for $4.2 billion — takes company private", "severity": "high", "source_url": "https://www.reuters.com/markets/deals/carlyle-group-take-mantech-international-private-4-2-bln-deal-2022-05-16/" },
+    { "year": 2022, "event": "ManTech delisted from NASDAQ — public financial disclosure ends", "severity": "high", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "ManTech's private equity acquisition has led to workforce restructuring aimed at margin improvement.",
+    "price_illusion": "Private equity ownership of intelligence contractors is presented as improving operational efficiency. The debt service costs of Carlyle's acquisition — which must be paid from contract revenue — reduce the share of government spending that goes to actual service delivery.",
+    "tax_math": "Carlyle's $4.2 billion acquisition was financed with debt loaded onto ManTech — generating interest deductions that reduce taxable income while Carlyle extracts management fees and equity returns from a company whose revenue is almost entirely government-funded.",
+    "wealth_velocity": "Carlyle partners profit from classified intelligence spending through management fees and carried interest — wealth extracted from public defense appropriations with no public disclosure requirement."
+  },
+  "cost_absorption": {
+    "who_benefited": ["Carlyle Group partners and investors", "ManTech founders and pre-acquisition shareholders", "Former world leaders who served as Carlyle advisers"],
+    "who_paid": ["U.S. taxpayers funding classified intelligence contracts with private equity overhead", "ManTech employees facing private equity cost-cutting"],
+    "the_gap": "The U.S. government's classified intelligence infrastructure is partially owned by a private equity firm whose partners include former world leaders, whose finances are not publicly disclosed, and whose financial imperatives are misaligned with national security quality."
+  }
+}

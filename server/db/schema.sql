@@ -313,3 +313,14 @@ CREATE TABLE IF NOT EXISTS impact_shares (
 CREATE INDEX IF NOT EXISTS idx_impact_shares_created ON impact_shares (created_at DESC);
 CREATE INDEX IF NOT EXISTS idx_impact_shares_brand ON impact_shares (brand_slug);
 
+-- On-demand “live perimeter” layer (does not mutate profile_json).
+CREATE TABLE IF NOT EXISTS profile_activity_cache (
+  brand_slug        TEXT PRIMARY KEY REFERENCES incumbent_profiles(brand_slug) ON DELETE CASCADE,
+  activity_json     JSONB NOT NULL,
+  generated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  expires_at        TIMESTAMPTZ NOT NULL,
+  sensor_versions   JSONB
+);
+
+CREATE INDEX IF NOT EXISTS idx_activity_cache_expires ON profile_activity_cache (expires_at);
+
