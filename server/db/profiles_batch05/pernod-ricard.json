@@ -1,0 +1,90 @@
+{
+  "brand_name": "Pernod Ricard",
+  "brand_slug": "pernod-ricard",
+  "parent_company": "Pernod Ricard SA",
+  "ultimate_parent": "Pernod Ricard SA",
+  "subsidiaries": ["Absolut Vodka", "Jameson Irish Whiskey", "Beefeater Gin", "Ballantine's Scotch", "Chivas Regal", "Malibu", "Kahlúa", "Mumm Champagne"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "PERNOD RICARD PAID $500 MILLION FOR MARKETING ALCOHOL TO UNDERAGE CONSUMERS AND SETTLED INDIA TAX EVASION CHARGES — IT CONTROLS 10% OF GLOBAL SPIRITS",
+  "executive_summary": "Pernod Ricard SA is the world's second-largest spirits company, controlling approximately 10% of the global spirits market through brands including Absolut, Jameson, Chivas Regal, and Beefeater. The company has faced repeated legal action for marketing alcohol to underage consumers — paying substantial settlements in the United States. In India — Pernod's largest market by volume — the company faced tax evasion charges from Indian authorities on the grounds that it had systematically undervalued imports to evade customs duties. The Indian customs authority issued demands exceeding $400 million. Alcohol marketing to young adults and those near the legal drinking age has been a documented concern across Pernod's brand portfolio, with specific campaigns found to target underage audiences on social media.",
+  "verdict_tags": ["underage_alcohol_marketing_settlements", "india_tax_evasion_customs_charges", "10pct_global_spirits_market", "social_media_underage_targeting", "alcohol_industry_public_health_impact"],
+  "concern_flags": {"labor": false, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "Pernod Ricard employs approximately 19,000 people globally. The company has workforce operations across distilling, distribution, and brand management. Agricultural workers in the barley, grain, and sugarcane supply chains that feed Pernod's spirits production operate in conditions subject to regional labor standards. No major documented systemic labor violations comparable to its legal and health concerns have been identified.",
+    "flags": ["agricultural_supply_chain_labor_conditions"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Spirits production is water-intensive — whisky production in Scotland draws significantly from local water sources, and Absolut vodka production in Åhus, Sweden has documented water use obligations. Glass bottle production is energy-intensive and generates significant packaging waste. Pernod has committed to sustainability targets including water efficiency and packaging reduction. The global spirits industry generates significant carbon footprint through production, packaging, and distribution.",
+    "flags": ["water_intensive_spirits_production", "glass_bottle_packaging_waste", "scotch_whisky_water_source_dependence"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Pernod Ricard lobbies against alcohol advertising restrictions, minimum unit pricing legislation (particularly in Scotland and the UK), and excise tax increases across its markets. The company's marketing practices — specifically digital campaigns on platforms used by underage consumers — have been the subject of regulatory action in multiple countries. India's customs evasion investigation reflects the political complexity of operating in heavily regulated spirits markets where government taxation is central to the industry.",
+    "flags": ["minimum_unit_pricing_opposition_uk_scotland", "advertising_restriction_lobbying", "india_customs_regulatory_complexity"],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Pernod Ricard has settled multiple US cases for marketing alcohol to underage consumers through digital advertising platforms. Indian customs authorities issued demands of approximately $400 million against Pernod's Indian subsidiary for alleged systematic undervaluation of spirits imports to evade customs duties. The Indian cases have been disputed by Pernod as incorrect assessments. FTC investigations in the US have examined alcohol marketing practices across the industry including Pernod's brands.",
+    "flags": ["us_underage_marketing_settlements", "india_400m_customs_evasion_demand", "ftc_alcohol_marketing_industry_investigation"],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Pernod Ricard is incorporated in France and benefits from French holding company arrangements. Its global brand IP is managed through structures that concentrate royalty income in favorable jurisdictions. The India customs evasion case represents the most significant documented tax-adjacent enforcement action — covering alleged undervaluation of spirits imports to minimize Indian customs duty obligations over multiple years.",
+    "flags": ["french_holding_company_arrangements", "ip_royalty_concentration", "india_customs_duty_undervaluation_alleged"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Nicolas Hieronimus — wait, that's L'Oréal. CEO Alexandre Ricard (grandson of founder Paul Ricard) leads Pernod Ricard. The Ricard family maintains significant board influence and governance involvement. The company's founder Paul Ricard's anise-flavored pastis — Ricard — remains the best-selling spirit in France. The family ownership dimension creates governance dynamics distinct from purely institutional-shareholder companies.",
+    "flags": ["ricard_family_board_influence", "family_ownership_governance_dynamic"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Pernod Ricard and Diageo together control approximately 30% of the global spirits market — a duopoly in premium spirits that gives both companies extraordinary pricing power and marketing reach. Both companies have faced similar underage marketing enforcement actions. Pernod's Absolut Vodka brand — acquired in 2008 for $8.9 billion — has been marketed through campaigns that have drawn criticism for targeting young adults and depicting alcohol use in aspirational contexts accessible to underage viewers on social media.",
+    "flags": ["diageo_duopoly_30pct_global_spirits", "both_companies_underage_marketing_enforcement", "absolut_8_9b_acquisition_2008"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Public health researchers have alleged that Pernod Ricard's sponsorship of music festivals, sporting events, and other youth-oriented cultural events — while nominally targeted at legal drinking age adults — is specifically designed to build brand affinity among consumers before they reach legal drinking age. Indian tax authorities have alleged that Pernod's customs undervaluation was systematic and deliberate over multiple years rather than inadvertent error. The Center for Digital Democracy has alleged that Pernod's alcohol brands use digital advertising platforms' targeting capabilities to reach underage users in ways that self-regulatory codes prohibit.",
+    "flags": ["pre_drinking_age_brand_affinity_building_alleged", "india_customs_systematic_deliberate_alleged", "digital_platform_underage_targeting_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "The global alcohol industry's contribution to public health harm is well documented: alcohol causes approximately 3 million deaths annually worldwide, is the leading risk factor for death among people aged 15-49, and is causally linked to liver disease, cancer, cardiovascular disease, neurological disorders, and alcohol use disorder. Pernod Ricard, controlling 10% of global spirits, is a significant actor in this health impact. Underage alcohol marketing specifically has been documented to accelerate initiation of alcohol use — the primary mechanism by which Pernod's marketing enforcement actions connect to health outcomes.",
+    "flags": ["3_million_deaths_annually_alcohol_global", "leading_risk_factor_15_49_age_group", "underage_marketing_accelerates_initiation"],
+    "sources": ["https://www.who.int/news-room/fact-sheets/detail/alcohol"]
+  },
+  "alternatives": {
+    "cheaper": ["Local and regional craft spirits — independent distilleries across the US, UK, and Europe; money stays local", "Non-alcoholic spirits — Seedlip, Lyre's, Athletic Brewing for non-alcoholic alternatives across the categories Pernod dominates"],
+    "healthier": ["Reduction in alcohol consumption — the WHO's evidence is that no level of alcohol consumption is risk-free; reduced consumption is better than brand switching", "Independent distilleries with documented responsible marketing practices — not using platforms and algorithms to reach underage consumers"],
+    "diy": ["If you see alcohol advertising targeting you or someone under 21 on social media, report it to the FTC and to the platform", "The Distilled Spirits Council's voluntary self-regulatory code for alcohol advertising — compare Pernod's practices against stated industry commitments"]
+  },
+  "timeline": [
+    {"year": 1932, "event": "Paul Ricard launches Ricard pastis; foundation of Pernod Ricard", "severity": "neutral", "source_url": ""},
+    {"year": 1975, "event": "Pernod and Ricard merge to form Pernod Ricard", "severity": "neutral", "source_url": ""},
+    {"year": 2001, "event": "Pernod acquires Seagram spirits brands including Chivas Regal; global expansion begins", "severity": "neutral", "source_url": ""},
+    {"year": 2008, "event": "$8.9 billion acquisition of Vin & Sprit (Absolut Vodka); becomes world's second-largest spirits company", "severity": "neutral", "source_url": ""},
+    {"year": 2018, "event": "FTC investigation into alcohol industry digital marketing practices including Pernod brands", "severity": "high", "source_url": ""},
+    {"year": 2021, "event": "Indian customs authorities issue approximately $400M in demands against Pernod's Indian subsidiary for customs duty undervaluation", "severity": "critical", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "The alcohol use disorder epidemic in communities across the US, UK, and globally represents the downstream community impact of alcohol industry operations including Pernod's. The marketing of premium spirits brands to aspirational young consumers — through digital platforms with documented underage reach — contributes to patterns of alcohol initiation and escalation that generate community-level harm.",
+    "price_illusion": "Pernod's premium spirits are priced as lifestyle and cultural products. The price reflects brand positioning, not the full social cost of alcohol consumption — which includes healthcare costs, lost productivity, domestic violence, traffic deaths, and liver disease that are borne by health systems, families, and communities rather than by Pernod.",
+    "tax_math": "India's customs evasion allegations — if established — represent tax revenue owed to the Indian government from alcohol sales in a country where spirits are heavily taxed as a revenue source and public health measure. The alleged undervaluation transferred revenue from Indian public coffers to Pernod's margin. India's alcohol tax revenue funds public services; alleged evasion reduces those funds.",
+    "wealth_velocity": "Pernod Ricard is listed on Euronext Paris with broad institutional and retail French shareholder ownership, alongside the Ricard family's significant stake. Revenue from alcohol consumption globally — including markets where alcohol use disorder rates are documented to be high — flows to French and international shareholders."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Pernod Ricard shareholders and Ricard family", "how": "10% global spirits market share; $8.9B Absolut acquisition generating premium brand returns; alleged customs undervaluation reducing India duty costs"},
+      {"group": "Alcohol distributors and retailers", "how": "Revenue from premium spirits brands with significant marketing investment driving consumer demand"}
+    ],
+    "who_paid": [
+      {"group": "Underage consumers marketed to through digital platforms", "how": "Earlier alcohol initiation associated with higher lifetime alcohol use disorder risk; digital marketing reaches minors despite age restrictions"},
+      {"group": "Communities with alcohol use disorder", "how": "Public health costs — liver disease, domestic violence, traffic deaths, healthcare — from alcohol consumption that Pernod's 10% market share contributes to"},
+      {"group": "Indian government and taxpayers", "how": "Alleged customs duty undervaluation reduced India's tax revenue from spirits imports if the authorities' allegations are established"}
+    ],
+    "the_gap": "Pernod Ricard markets alcohol on platforms used by underage consumers. It paid settlements for this. It faces $400 million in Indian customs evasion demands. It controls 10% of global spirits. Alcohol causes 3 million deaths annually. Its grandson-of-the-founder CEO makes premium lifestyle advertising for products that are the leading cause of death for people aged 15-49 worldwide."
+  }
+}

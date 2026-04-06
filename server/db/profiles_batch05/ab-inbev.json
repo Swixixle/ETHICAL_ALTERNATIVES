@@ -1,0 +1,90 @@
+{
+  "brand_name": "AB InBev",
+  "brand_slug": "ab-inbev",
+  "parent_company": "Anheuser-Busch InBev SA/NV",
+  "ultimate_parent": "Anheuser-Busch InBev SA/NV",
+  "subsidiaries": ["Budweiser", "Bud Light", "Corona", "Stella Artois", "Hoegaarden", "Leffe", "Beck's", "Modelo", "Michelob Ultra", "Goose Island", "Busch", "Natural Light"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "AB INBEV CONTROLS 25-30% OF THE WORLD'S BEER — IT PAID $250M FOR MARKETING BEER TO UNDERAGE DRINKERS AND USES WATER FROM COMMUNITIES FACING DROUGHT TO MAKE IT",
+  "executive_summary": "Anheuser-Busch InBev is the world's largest brewer by volume, controlling approximately 25-30% of global beer sales through its portfolio of over 500 brands. Created through 3G Capital's 2008 merger of InBev and Anheuser-Busch, the company has since acquired SABMiller (2016) for $107 billion — one of the largest acquisitions in corporate history. AB InBev paid $250 million in 2023 to settle DOJ charges that it marketed beer to underage drinkers through misleading alcohol content labeling and social media campaigns targeting minors. It has faced repeated antitrust enforcement for anti-competitive distribution practices. Its massive water use in drought-stressed regions — including Mexico, where it extracts water for Corona and Modelo production — has drawn sustained criticism. The company's zero-based budgeting management philosophy — shared with its 3G Capital owners — has been documented to drive quality cuts and brand value destruction across its portfolio.",
+  "verdict_tags": ["250m_doj_underage_marketing_settlement", "107b_sabmiller_acquisition_antitrust", "water_extraction_drought_stressed_mexico", "zero_based_budgeting_brand_value_destruction", "25-30pct_global_beer_market_control", "antitrust_distribution_violations"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "AB InBev's 3G Capital zero-based budgeting philosophy has resulted in documented workforce reductions across acquired brands — including significant job losses following the $107 billion SABMiller acquisition. Former Anheuser-Busch employees documented major layoffs at its St. Louis headquarters following the 2008 InBev takeover. Agricultural workers in AB InBev's barley, hops, and malt supply chain face conditions documented by labor organizations in developing country sourcing regions.",
+    "flags": ["3g_capital_zero_based_budgeting_workforce_reductions", "anheuser_busch_st_louis_layoffs_post_acquisition", "agricultural_supply_chain_labor_conditions"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "AB InBev extracts approximately 26 million hectoliters of water annually — beer is approximately 90% water. Its Corona and Modelo production in Mexico's Bajío region draws from aquifers that locals depend on for drinking water and agriculture. The state of Zacatecas and other Mexican water-stressed regions have documented AB InBev as a major user of declining water reserves. AB InBev has committed to responsible water use targets. A Harvard Business Review case study documented AB InBev's water extraction as a central example of corporate water use in water-stressed regions.",
+    "flags": ["26_million_hectoliters_annual_water_extraction", "mexico_bajio_aquifer_community_water_competition", "drought_stressed_region_extraction"],
+    "sources": ["https://www.reuters.com/business/environment/ab-inbev-faces-water-security-challenges-its-global-operations-2021-08-12/"]
+  },
+  "political": {
+    "summary": "AB InBev has spent millions lobbying against alcohol advertising restrictions, container deposit legislation, and excise tax increases. Its DOJ settlement for underage marketing included evidence that it specifically targeted younger consumers on social media platforms while labeling higher-alcohol products to appear lower in content. The company's distribution agreements — which have required retailers to carry AB InBev products exclusively or face supply cuts — have drawn antitrust scrutiny in the US and EU.",
+    "flags": ["underage_marketing_social_media_documented", "advertising_restriction_lobbying", "exclusive_distribution_antitrust_scrutiny"],
+    "sources": ["https://www.justice.gov/opa/pr/anheuser-busch-inbev-agrees-pay-250-million-resolve-criminal-charge-related-misleading-alcohol"]
+  },
+  "legal": {
+    "summary": "In June 2023, AB InBev agreed to pay $250 million to resolve DOJ criminal charges that it marketed beer using misleading alcohol content labeling and targeted advertising toward underage consumers on social media. The settlement covered Bud Light and other brands. AB InBev has faced multiple antitrust actions in the US and EU for distribution practices including prohibiting retailers from carrying competing craft beers. The $107 billion SABMiller acquisition required significant asset divestitures to satisfy US and international antitrust regulators — including the sale of the Miller, Coors, and Blue Moon brands in the US.",
+    "flags": ["250m_doj_underage_marketing_criminal_charge_2023", "misleading_alcohol_content_labeling", "antitrust_distribution_practices_multiple_jurisdictions", "sabmiller_asset_divestitures_antitrust"],
+    "sources": ["https://www.justice.gov/opa/pr/anheuser-busch-inbev-agrees-pay-250-million-resolve-criminal-charge-related-misleading-alcohol"]
+  },
+  "tax": {
+    "summary": "AB InBev is incorporated in Belgium and uses a global holding structure that concentrates intellectual property and management functions in low-tax European jurisdictions. The 3G Capital principals who control the company through Brazilian holding structures benefit from Belgium's favorable dividend and capital gains tax treatment for holding companies. The massive debt load from the SABMiller acquisition — which reached approximately $100 billion at peak — generated interest deductions that reduced taxable income globally for years.",
+    "flags": ["belgium_holding_company_tax_structure", "sabmiller_debt_interest_deduction_tax_reduction", "3g_capital_brazil_holding_structures"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Michel Doukeris has led AB InBev since 2021. The company's controlling shareholders — 3G Capital principals Jorge Paulo Lemann, Marcel Herrmann Telles, and Carlos Alberto Sicupira — built AB InBev through a series of 3G-financed acquisitions using zero-based budgeting to extract cost from acquired companies. The Bud Light controversy in April 2023 — involving a promotional can featuring transgender influencer Dylan Mulvaney — generated a sustained consumer boycott that meaningfully reduced Bud Light's market share. AB InBev's handling of the crisis — distancing from the partnership without explicit support for either the influencer or its distributors — satisfied neither conservative nor progressive consumers.",
+    "flags": ["3g_capital_controlling_shareholders_brazil_billionaires", "bud_light_dylan_mulvaney_boycott_market_share_decline", "crisis_handling_alienated_both_sides"],
+    "sources": ["https://www.wsj.com/articles/bud-light-dylan-mulvaney-boycott-sales-2023-ab-inbev-e843aa90"]
+  },
+  "connections": {
+    "summary": "AB InBev's distribution network — covering the largest beer brands globally — gives it extraordinary leverage over bars, restaurants, and retailers. Its exclusive dealing arrangements have been documented as anticompetitive in DOJ and EU investigations. The company's acquisition strategy — buying Goose Island, Four Peaks, Lagunitas, and other craft brewers — brought independent brands under the global corporation while maintaining the craft marketing. Consumer organizations and craft beer advocates have documented AB InBev's craft acquisition strategy as undermining the independent craft beer market while allowing the company to market these brands as independent.",
+    "flags": ["exclusive_dealing_antitrust_documented", "craft_beer_acquisition_independence_marketing_while_corporate", "global_distribution_leverage_bars_restaurants"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Mexican state governments and agricultural communities have alleged that AB InBev's water extraction agreements — negotiated with federal water authorities — did not adequately account for the impact on local communities and farmers who depend on the same aquifers. Former AB InBev executives have alleged that the Bud Light response — distancing from Dylan Mulvaney without defending either her or the partnership — reflected a failure of brand management leadership rather than a deliberate strategy. Craft beer industry advocates have alleged that AB InBev's craft brewery acquisitions specifically targeted brands in markets where AB InBev had weak distribution to use craft brand loyalty as a distribution entry point.",
+    "flags": ["mexican_aquifer_community_consultation_inadequate_alleged", "bud_light_crisis_leadership_failure_alleged", "craft_acquisition_distribution_strategy_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "AB InBev's DOJ settlement specifically addressed misleading alcohol content labeling — a practice that causes consumers to unknowingly drink higher-alcohol products. The company's marketing of higher-alcohol products with labeling suggesting lower alcohol content represents a documented health deception. The global alcohol industry's contribution to alcohol use disorder, liver disease, drunk driving deaths, and domestic violence is well documented in public health literature. AB InBev controlling 25-30% of global beer volume makes it a significant actor in global alcohol-related health outcomes.",
+    "flags": ["misleading_alcohol_content_labeling_doj_confirmed", "underage_marketing_documented", "global_alcohol_health_outcomes_25pct_market_share"],
+    "sources": ["https://www.justice.gov/opa/pr/anheuser-busch-inbev-agrees-pay-250-million-resolve-criminal-charge-related-misleading-alcohol"]
+  },
+  "alternatives": {
+    "cheaper": ["Local craft breweries in your area — most cities have independent craft brewers; money stays local, genuine independent ownership", "Coors (Molson Coors) or Miller products — different corporate ownership than AB InBev; separate company since SABMiller divestiture"],
+    "healthier": ["Non-alcoholic beer options from independent producers — Athletic Brewing (US independent) is the leading example", "Genuinely independent craft breweries — verify at the Brewers Association database (craftbeer.com) which brands are independently owned vs. AB InBev acquired"],
+    "diy": ["Check whether your favorite 'craft' beer is AB InBev-owned at craftbeer.com — the list of AB InBev-acquired craft brands is longer than most consumers know", "Water in Mexico: AB InBev's extraction from the same Bajío aquifers that Mexican farming communities depend on is documented; buying Corona funds this extraction"]
+  },
+  "timeline": [
+    {"year": 1852, "event": "Anheuser-Busch Brewing Association founded in St. Louis; decades of US beer dominance follow", "severity": "neutral", "source_url": ""},
+    {"year": 2004, "event": "InBev formed through merger of Interbrew (Belgium) and AmBev (Brazil); 3G Capital connections established", "severity": "neutral", "source_url": ""},
+    {"year": 2008, "event": "InBev hostile takeover of Anheuser-Busch for $52 billion; massive St. Louis layoffs; 3G Capital zero-based budgeting installed", "severity": "critical", "source_url": ""},
+    {"year": 2016, "event": "$107 billion SABMiller acquisition; largest ever in beverage industry; US divestitures of Miller, Coors, Blue Moon required", "severity": "high", "source_url": ""},
+    {"year": 2023, "event": "April: Bud Light Dylan Mulvaney promotion triggers sustained conservative boycott; Bud Light loses US market share leadership", "severity": "high", "source_url": ""},
+    {"year": 2023, "event": "June: $250M DOJ settlement for underage marketing and misleading alcohol content labeling", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/anheuser-busch-inbev-agrees-pay-250-million-resolve-criminal-charge-related-misleading-alcohol"}
+  ],
+  "community_impact": {
+    "displacement": "AB InBev's water extraction from Mexico's drought-stressed Bajío aquifers directly competes with agricultural communities for a finite resource. Mexico is one of the most water-stressed countries in the world — AB InBev's Corona and Modelo production draws from the same water table that thousands of farming families depend on. The Bud Light controversy displaced American craft and independent beer brands from retail shelf space as AB InBev consolidated market position.",
+    "price_illusion": "Beer is priced as an affordable social product. AB InBev's market control — 25-30% globally — enables pricing power that independent brewers cannot match. The DOJ settlement established that some AB InBev products were priced and labeled to suggest lower alcohol content than they actually contained — a deception with health implications for consumers who rely on labeling to manage consumption.",
+    "tax_math": "AB InBev's Belgium holding structure and 3G Capital ownership arrangements minimize global effective tax rates. The massive SABMiller acquisition debt — which reached $100 billion — generated years of interest deductions that reduced global taxable income. 3G Capital principals who control AB InBev pay capital gains and dividend tax rates that are more favorable than the income tax rates paid by the brewery workers and barley farmers in their supply chain.",
+    "wealth_velocity": "3G Capital principals Jorge Paulo Lemann and partners — Brazilian billionaires — capture the economic returns from the world's largest beer company. AB InBev's global revenue from beer consumption concentrates into holding structures in Belgium and Brazil. Mexican farming communities competing for aquifer water with AB InBev's Corona factories have no share in the returns from that water."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "3G Capital principals (Lemann, Telles, Sicupira)", "how": "Control of 25-30% global beer market through zero-based budgeting acquisitions; Brazil-based billionaires capturing global beer revenue"},
+      {"group": "SABMiller shareholders at acquisition", "how": "$107 billion acquisition premium; significant return for shareholders who were acquired"}
+    ],
+    "who_paid": [
+      {"group": "Mexican farming communities in Bajío", "how": "AB InBev water extraction from aquifers farmers depend on for irrigation and drinking water in drought-stressed region"},
+      {"group": "Consumers who unknowingly drank higher-alcohol products", "how": "Misleading labeling causing consumption above intended levels; DOJ confirmed the deception"},
+      {"group": "Underage consumers targeted by social media campaigns", "how": "DOJ found AB InBev specifically marketed to underage drinkers on social media; $250M settlement"}
+    ],
+    "the_gap": "AB InBev controls 30% of the world's beer. It marketed to underage drinkers. It labeled higher-alcohol products misleadingly. It paid $250 million. It extracts water from Mexican aquifers that farming communities depend on for Corona production. It paid $107 billion to acquire SABMiller and had to sell Miller, Coors, and Blue Moon to do it. The Brazilian billionaires who own it paid less tax in Belgium than the brewery workers in St. Louis."
+  }
+}

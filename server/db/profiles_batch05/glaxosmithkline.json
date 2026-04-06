@@ -1,0 +1,90 @@
+{
+  "brand_name": "GSK",
+  "brand_slug": "glaxosmithkline",
+  "parent_company": "GSK plc",
+  "ultimate_parent": "GSK plc",
+  "subsidiaries": ["Haleon (spun off 2022)", "ViiV Healthcare", "Vaccines division", "Sensodyne (through Haleon)"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "GSK PAID $3 BILLION FOR PROMOTING PAXIL TO CHILDREN AND HIDING THAT IT INCREASED SUICIDAL THOUGHTS — THE LARGEST HEALTHCARE FRAUD SETTLEMENT IN US HISTORY AT THE TIME",
+  "executive_summary": "GSK plc (formerly GlaxoSmithKline) is the UK's largest pharmaceutical company and one of the world's largest vaccine manufacturers. In July 2012, GSK agreed to pay $3 billion to resolve DOJ criminal and civil charges — the largest healthcare fraud settlement in US history at the time. The settlement covered: promoting Paxil (paroxetine) for unapproved uses including depression in children under 18 when it was only approved for adults; promoting Wellbutrin for unapproved uses; withholding from the FDA clinical trial data showing Paxil increased suicidal thoughts in children and adolescents; and paying physician kickbacks including luxury spa trips, fishing excursions, and lavish meals to prescribe GSK drugs. GSK pleaded guilty to criminal charges. The company has also faced multiple antitrust actions for 'pay-for-delay' agreements with generic drug manufacturers.",
+  "verdict_tags": ["3b_doj_settlement_largest_at_time", "paxil_children_unapproved_use", "withheld_fda_data_suicidal_thoughts_children", "wellbutrin_unapproved_promotion", "physician_kickbacks_documented", "pay_for_delay_antitrust"],
+  "concern_flags": {"labor": false, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "GSK employs approximately 70,000 people globally. The company's 2012 settlement included corporate integrity agreement obligations affecting its sales force practices. GSK has since restructured its commercial operations, eliminating some of the sales incentive structures that contributed to the fraud. No major documented systemic labor violations comparable to its product liability and fraud record have been identified.",
+    "flags": ["sales_force_incentive_restructuring_post_settlement"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "GSK's pharmaceutical manufacturing operations generate chemical waste streams that require specialized treatment. The company has disclosed environmental compliance obligations in multiple jurisdictions. No major environmental enforcement actions comparable to its healthcare fraud record have been publicly documented as a primary concern.",
+    "flags": ["pharmaceutical_chemical_waste_manufacturing"],
+    "sources": []
+  },
+  "political": {
+    "summary": "GSK has been a major lobbying presence on pharmaceutical regulation, patent protection, and drug pricing. Its pay-for-delay agreements — paying generic manufacturers not to enter markets with cheaper versions of GSK drugs — were challenged by the FTC as anticompetitive and harmful to consumers. GSK has lobbied against international compulsory licensing of its vaccines in developing countries during disease outbreaks, and has separately been involved in debates about COVID-19 vaccine access.",
+    "flags": ["pharmaceutical_patent_protection_lobbying", "pay_for_delay_ftc_challenged", "compulsory_licensing_opposition_developing_countries"],
+    "sources": []
+  },
+  "legal": {
+    "summary": "July 2012: GSK pleaded guilty to criminal charges and agreed to pay $3 billion — $1 billion criminal, $2 billion civil — the largest healthcare fraud settlement in US history at the time. Criminal conduct: promoting Paxil for use in under-18 patients when FDA approval was only for adults; promoting Wellbutrin for uses not approved including weight loss and sexual dysfunction; withholding clinical trial data from FDA. Civil conduct: paying kickbacks to physicians. GSK separately settled multiple pay-for-delay antitrust cases. The UK Serious Fraud Office investigated GSK's China operations for bribery — in 2014 Chinese courts convicted GSK's China unit of bribery and fined it $490 million.",
+    "flags": ["3b_criminal_civil_settlement_2012_largest_at_time", "paxil_under_18_unapproved_criminal_guilty_plea", "withheld_suicidal_ideation_data_fda", "physician_kickbacks_guilty", "china_bribery_490m_fine_2014", "pay_for_delay_antitrust_multiple"],
+    "sources": ["https://www.justice.gov/opa/pr/glaxosmithkline-plead-guilty-and-pay-3-billion-resolve-fraud-allegations-and-failure-report", "https://www.nytimes.com/2012/07/03/business/glaxosmithkline-agrees-to-pay-3-billion-in-fraud-settlement.html"]
+  },
+  "tax": {
+    "summary": "GSK has maintained pharmaceutical IP structures in Belgium and other low-tax European jurisdictions to reduce effective tax rates on drug royalty income. The company has faced UK HMRC scrutiny on its transfer pricing arrangements between its UK operations and IP-holding subsidiaries. The spinoff of Haleon (consumer health brands including Sensodyne and Panadol) in 2022 generated tax planning considerations across multiple jurisdictions.",
+    "flags": ["belgium_ip_structure", "uk_hmrc_transfer_pricing_scrutiny", "haleon_spinoff_tax_planning"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Emma Walmsley has led GSK since 2017 through the Haleon spinoff and restructuring. The 2012 settlement was reached under her predecessor Andrew Witty. The executives who presided over the Paxil promotion fraud — including those who withheld clinical trial data showing increased suicidal ideation in children — did not face personal criminal charges in the US. The corporate guilty plea resolved criminal liability at the entity level without executive imprisonment.",
+    "flags": ["executives_who_withheld_child_data_not_criminally_charged", "corporate_guilty_plea_entity_level_resolution"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "GSK's Paxil fraud connected it to the broader antidepressant prescription scandal of the 1990s-2000s — a period when multiple pharmaceutical companies were found to have withheld data showing antidepressants increased suicidal ideation in children while promoting off-label prescribing. Eli Lilly (Prozac), Pfizer (Zoloft), and Forest Labs (Lexapro) all faced related investigations. GSK's ViiV Healthcare joint venture with Pfizer and Shionogi makes it a major HIV treatment provider — a genuinely positive public health role that exists alongside its documented fraud history.",
+    "flags": ["industry_wide_antidepressant_withholding_pattern", "viiv_healthcare_hiv_treatment_positive", "multiple_pharma_peers_same_pattern"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Whistleblowers in the GSK qui tam cases alleged that GSK's internal compliance team was aware that Paxil clinical trial data showing increased suicidal ideation in children was being withheld from the FDA — and that the decision to withhold was made at senior management level to protect sales of a drug generating billions annually. Former GSK sales representatives alleged that the physician kickback program — including all-expenses-paid spa weekends and sporting events — was a structured corporate program with sales management approval, not rogue individual behavior.",
+    "flags": ["internal_compliance_awareness_data_withholding_alleged", "physician_kickback_structured_corporate_program_alleged"],
+    "sources": ["https://www.justice.gov/opa/pr/glaxosmithkline-plead-guilty-and-pay-3-billion-resolve-fraud-allegations-and-failure-report"]
+  },
+  "health_record": {
+    "summary": "GSK withheld from the FDA clinical trial data showing Paxil increased suicidal thoughts and self-harm in children and adolescents — while promoting the drug off-label to prescribers treating children. This is the most consequential documented health harm in GSK's profile: children were prescribed a drug with known suicidal ideation risk, based on a marketing campaign that concealed that risk, approved by prescribers who received GSK-funded kickbacks. The FDA's 2004 black box warning requirement for all antidepressants regarding pediatric suicidal ideation was triggered in part by the Paxil data GSK had withheld.",
+    "flags": ["paxil_suicidal_ideation_children_data_withheld", "fda_2004_black_box_warning_triggered_by_withheld_data", "children_prescribed_based_on_concealed_risk"],
+    "sources": ["https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/suicidality-children-and-adolescents-being-treated-antidepressant-medications"]
+  },
+  "alternatives": {
+    "cheaper": ["Generic paroxetine (Paxil's generic) is now available from multiple manufacturers — the patent protections that GSK used pay-for-delay agreements to extend have expired", "Generic versions of GSK's major products are available in most therapeutic categories"],
+    "healthier": ["Ask your prescriber specifically about clinical trial data for any psychiatric medication being prescribed for a child — the Paxil case established why this matters", "National Alliance on Mental Illness (NAMI) provides independent guidance on psychiatric medication decisions not funded by pharmaceutical companies"],
+    "diy": ["Access FDA drug approval packages at Drugs@FDA — the complete clinical trial data GSK submitted is publicly available; what was withheld is also now documented", "If you or your child experienced suicidal ideation while taking Paxil as a minor, consult a lawyer — the statute of limitations for many such claims has passed, but understanding what happened is your right"]
+  },
+  "timeline": [
+    {"year": 2000, "event": "GlaxoWellcome and SmithKline Beecham merge to form GlaxoSmithKline; Paxil is a primary revenue driver", "severity": "neutral", "source_url": ""},
+    {"year": 1998, "event": "Paxil approved by FDA for adults with depression; GSK begins promoting off-label to children without approval", "severity": "critical", "source_url": ""},
+    {"year": 2000, "event": "Internal GSK clinical trial data shows Paxil increases suicidal ideation in children; data not disclosed to FDA", "severity": "critical", "source_url": ""},
+    {"year": 2004, "event": "FDA issues black box warning for pediatric suicidal ideation with antidepressants; triggered partly by Paxil data eventually disclosed", "severity": "high", "source_url": "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/suicidality-children-and-adolescents-being-treated-antidepressant-medications"},
+    {"year": 2012, "event": "July: $3B DOJ settlement — largest healthcare fraud at time; criminal guilty plea for Paxil and Wellbutrin; physician kickbacks admitted", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/glaxosmithkline-plead-guilty-and-pay-3-billion-resolve-fraud-allegations-and-failure-report"},
+    {"year": 2014, "event": "Chinese courts convict GSK China operations of bribery; $490M fine; first major pharma criminal bribery conviction in China", "severity": "critical", "source_url": ""},
+    {"year": 2022, "event": "GSK spins off Haleon consumer health division; Sensodyne, Panadol, Voltaren become separate public company", "severity": "neutral", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Children and adolescents who were prescribed Paxil based on GSK's concealed clinical trial data — and who experienced increased suicidal ideation — represent the direct community harm. Their parents and prescribers made medical decisions based on information GSK had withheld. The FDA black box warning that eventually corrected the information gap came years after the off-label prescribing campaign had already exposed hundreds of thousands of children to the undisclosed risk.",
+    "price_illusion": "Paxil was priced as a safe and effective antidepressant for children and adolescents — a premium for therapeutic benefit. GSK's clinical trial data, withheld from the FDA, showed increased suicidal ideation risk. The price included a marketing campaign specifically designed to conceal a documented harm.",
+    "tax_math": "GSK's $3 billion settlement is substantially tax-deductible as a business expense — meaning US and UK taxpayers effectively subsidize a portion of the penalty for concealing data that increased suicidal risk in children. The pay-for-delay agreements that extended GSK drug exclusivity beyond patent expiration added billions to US healthcare costs paid by consumers and insurers.",
+    "wealth_velocity": "GSK is a UK-listed company with broad institutional and retail shareholder ownership. Paxil's multi-billion dollar annual revenue — generated during the period when the suicidal ideation data was being withheld — funded shareholder dividends that flowed to UK and international investors. The children who experienced suicidal ideation based on those prescriptions have no recourse against those dividends."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "GSK shareholders", "how": "Billions in Paxil revenue during the period when suicidal ideation data in children was withheld from the FDA"},
+      {"group": "Physicians who received kickbacks", "how": "Spa weekends, fishing trips, lavish meals funded by GSK in exchange for prescribing GSK drugs to patients including children"}
+    ],
+    "who_paid": [
+      {"group": "Children and adolescents prescribed Paxil", "how": "Suicidal ideation risk from a drug marketed to their prescribers with data concealed that showed this risk"},
+      {"group": "US taxpayers", "how": "$3B settlement partially tax-deductible; pay-for-delay agreements added billions to healthcare costs"}
+    ],
+    "the_gap": "GSK had clinical trial data showing Paxil increased suicidal thoughts in children. They withheld it from the FDA. They marketed the drug to prescribers treating children. They paid those prescribers with spa trips and fishing excursions. They paid $3 billion to settle it. No executive went to prison. The children who experienced suicidal ideation during those years are adults now."
+  }
+}

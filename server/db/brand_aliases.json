@@ -192,5 +192,21 @@
   "lockheed": "lockheed-martin",
   "northrop": "northrop-grumman",
   "huntington-ingalls-industries": "huntington-ingalls",
-  "hii": "huntington-ingalls"
+  "hii": "huntington-ingalls",
+  "hon-hai": "foxconn",
+  "hon-hai-precision": "foxconn",
+  "budweiser": "ab-inbev",
+  "corona": "ab-inbev",
+  "stella-artois": "ab-inbev",
+  "modelo": "ab-inbev",
+  "gsk": "glaxosmithkline",
+  "zara": "inditex",
+  "bershka": "inditex",
+  "pull-and-bear": "inditex",
+  "massimo-dutti": "inditex",
+  "stradivarius": "inditex",
+  "oysho": "inditex",
+  "chivas": "pernod-ricard",
+  "absolut": "pernod-ricard",
+  "jameson": "pernod-ricard"
 }

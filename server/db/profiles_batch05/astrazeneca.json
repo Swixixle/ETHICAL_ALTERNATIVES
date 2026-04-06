@@ -1,0 +1,90 @@
+{
+  "brand_name": "AstraZeneca",
+  "brand_slug": "astrazeneca",
+  "parent_company": "AstraZeneca PLC",
+  "ultimate_parent": "AstraZeneca PLC",
+  "subsidiaries": ["Alexion Pharmaceuticals (acquired 2021)", "Rare Disease division", "Oncology division", "BioPharmaceuticals division"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "ASTRAZENECA PAID $520 MILLION FOR OFF-LABEL DRUG PROMOTION AND THEN SUED DOZENS OF COUNTRIES THAT TRIED TO COMPEL PRODUCTION OF ITS COVID VACCINE",
+  "executive_summary": "AstraZeneca PLC is the UK-Swedish pharmaceutical company that developed the Oxford-AstraZeneca COVID-19 vaccine — one of the most widely distributed vaccines in history, including in low-income countries at cost. AstraZeneca simultaneously sued the European Union for breach of contract when it failed to deliver contracted vaccine volumes, pursued legal action against multiple countries that attempted to use compulsory licensing provisions to produce vaccines, and admitted in UK court proceedings in 2024 that the vaccine rarely causes vaccine-induced immune thrombocytopenia and thrombosis (VITT) — a rare but serious clotting disorder. AstraZeneca paid $520 million in 2010 to settle DOJ charges of off-label promotion of its antipsychotic drug Seroquel. The company's $39 billion acquisition of Alexion Pharmaceuticals in 2021 gave it access to Soliris — a drug treating rare blood disorders priced at approximately $700,000 per year.",
+  "verdict_tags": ["520m_seroquel_off_label_settlement_2010", "covid_vaccine_vitt_clotting_admitted_2024", "eu_vaccine_delivery_lawsuit", "compulsory_licensing_opposition", "soliris_700k_annual_price", "alexion_39b_acquisition"],
+  "concern_flags": {"labor": false, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "AstraZeneca employs approximately 83,000 people globally. No major documented systemic labor violations have been identified. The company has conducted significant workforce restructuring through its transformation from a diversified pharmaceutical company to an oncology and rare disease specialist.",
+    "flags": ["workforce_restructuring_transformation"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "AstraZeneca has committed to being a zero-carbon company by 2025 and has invested in sustainable pharmaceutical manufacturing. No major environmental enforcement actions have been identified as a primary concern. The company's pharmaceutical manufacturing generates chemical waste streams requiring specialized treatment.",
+    "flags": ["zero_carbon_commitment_2025", "pharmaceutical_chemical_waste"],
+    "sources": []
+  },
+  "political": {
+    "summary": "AstraZeneca's litigation against the EU over COVID vaccine delivery failures — and its legal resistance to compulsory licensing provisions — represented significant political controversy during a global public health emergency. The company's acquisition of Alexion for $39 billion gave it control of Soliris — a drug that multiple countries have challenged under compulsory licensing provisions as essential medicine priced beyond reach. AstraZeneca lobbies on pharmaceutical patent protection, drug pricing regulation, and FDA/EMA regulatory frameworks.",
+    "flags": ["eu_covid_vaccine_lawsuit", "compulsory_licensing_soliris_multiple_countries", "pharmaceutical_patent_protection_lobbying"],
+    "sources": []
+  },
+  "legal": {
+    "summary": "April 2010: AstraZeneca agreed to pay $520 million to resolve DOJ allegations that it illegally promoted Seroquel (quetiapine) for unapproved uses including sleep disorders, PTSD, and aggression in children, and that it paid physician kickbacks. The settlement covered conduct from the 1990s through 2006. In 2024, UK High Court proceedings in cases brought by claimants who developed VITT after receiving the vaccine resulted in AstraZeneca acknowledging in written legal submissions that the vaccine 'can, in very rare cases, cause VITT' — the first company acknowledgment in court. AstraZeneca subsequently withdrew the vaccine from global markets in May 2024.",
+    "flags": ["520m_seroquel_off_label_doj_2010", "physician_kickbacks_seroquel", "vitt_clotting_admitted_uk_court_2024", "astrazeneca_covid_vaccine_withdrawn_2024"],
+    "sources": ["https://www.justice.gov/opa/pr/astrazeneca-pays-520-million-misbranding-antipsychotic-drug", "https://www.bbc.com/news/health-68937412"]
+  },
+  "tax": {
+    "summary": "AstraZeneca is UK-Swedish — dual-listed on the London Stock Exchange and NASDAQ. The company holds significant pharmaceutical IP in Swedish and other European structures. Its 2021 move to Cambridge, UK for headquarters has UK tax implications. The Alexion acquisition gave it control of Soliris IP held through structures in Ireland and other favorable jurisdictions. AstraZeneca has faced questions in multiple jurisdictions about its transfer pricing arrangements for pharmaceutical IP.",
+    "flags": ["swedish_uk_dual_corporate_structure", "alexion_soliris_ireland_ip_structure", "transfer_pricing_pharmaceutical_ip"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Pascal Soriot has led AstraZeneca since 2012 — through its transformation from a struggling mid-sized company to a major oncology and rare disease player. The Oxford-AstraZeneca vaccine partnership — genuinely producing one of the most widely distributed COVID vaccines at cost-price for developing countries — represents the positive counterweight to the VITT admission and the EU litigation. The VITT acknowledgment in 2024 occurred in litigation AstraZeneca had been fighting, raising questions about the timing of the admission relative to years of claimant proceedings.",
+    "flags": ["soriot_transformation_positive_and_negative", "vitt_admission_timing_litigation_context"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The Oxford-AstraZeneca COVID vaccine partnership is AstraZeneca's most significant public health intervention — providing vaccine access to low-income countries at cost price, genuinely contributing to global vaccine equity in a way that distinguished it from Pfizer and Moderna. Simultaneously, AstraZeneca's response to the EU delivery shortfall — litigation rather than remediation — and its handling of VITT — denial through litigation followed by acknowledgment — established a problematic pattern alongside the genuine public health contribution.",
+    "flags": ["oxford_covid_vaccine_developing_country_access_positive", "eu_delivery_failure_litigation_not_remediation", "vitt_denial_then_acknowledgment_pattern"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "UK claimants in VITT cases have alleged that AstraZeneca was aware of the clotting signal in clinical trial data before the vaccine was widely deployed — and that disclosures to regulators and the public were slower than the internal evidence warranted. Healthcare lawyers representing VITT claimants have alleged that AstraZeneca's litigation strategy — fighting cases aggressively before acknowledging VITT causation in written submissions — delayed compensation for claimants with documented harm. AstraZeneca has disputed these characterizations.",
+    "flags": ["vitt_signal_awareness_timing_alleged", "litigation_strategy_delayed_compensation_alleged"],
+    "sources": ["https://www.bbc.com/news/health-68937412"]
+  },
+  "health_record": {
+    "summary": "AstraZeneca's Seroquel off-label promotion was specifically documented to include marketing the antipsychotic to elderly patients with dementia — a population for whom antipsychotics carry an FDA black box warning for increased mortality risk. Children were also marketed Seroquel for conditions it was not approved to treat. The VITT risk from the COVID vaccine — acknowledged in 2024 UK court proceedings — is rare (estimated at approximately 1 in 50,000 doses in some studies) but serious, involving blood clots and low platelet counts with documented fatalities. The vaccine simultaneously provided significant COVID protection and contributed to global public health — the net benefit is not disputed; the handling of VITT disclosure is the documented concern.",
+    "flags": ["seroquel_elderly_dementia_fda_black_box_violation", "seroquel_children_unapproved_off_label", "vitt_rare_but_fatal_acknowledged_2024", "vaccine_net_benefit_positive_vitt_disclosure_handling_concern"],
+    "sources": ["https://www.justice.gov/opa/pr/astrazeneca-pays-520-million-misbranding-antipsychotic-drug", "https://www.bbc.com/news/health-68937412"]
+  },
+  "alternatives": {
+    "cheaper": ["Generic quetiapine (Seroquel's generic) is now available; significant cost reduction; same molecule", "For rare disease drugs like Soliris: biosimilars are entering the market; manufacturer patient assistance programs available"],
+    "healthier": ["For antipsychotic prescribing: the Seroquel settlement established that off-label use including for sleep should be questioned with prescribers; evidence-based prescribing resources available through NICE and the APA", "Independent information on COVID vaccines: UK MHRA Yellow Card system for adverse event reporting; UK COVID-19 Vaccine Damage Payment Scheme for VITT claimants"],
+    "diy": ["If you or a family member developed blood clots or low platelets within 28 days of AstraZeneca COVID vaccination: contact the UK COVID-19 Vaccine Damage Payment Scheme or equivalent in your country", "For Seroquel prescribed off-label: ask your prescriber about the evidence base specifically — the settlement established that AstraZeneca promoted it for conditions without adequate supporting evidence"]
+  },
+  "timeline": [
+    {"year": 1999, "event": "AstraZeneca formed through merger of Astra AB (Sweden) and Zeneca Group (UK)", "severity": "neutral", "source_url": ""},
+    {"year": 2010, "event": "April: $520M DOJ settlement for Seroquel off-label promotion including to elderly patients with dementia and children", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/astrazeneca-pays-520-million-misbranding-antipsychotic-drug"},
+    {"year": 2021, "event": "Oxford-AstraZeneca COVID vaccine deployed globally; low-income country access at cost-price; significant public health contribution", "severity": "neutral", "source_url": ""},
+    {"year": 2021, "event": "AstraZeneca sues EU for breach of contract over COVID vaccine delivery shortfalls; EU counter-sues", "severity": "high", "source_url": ""},
+    {"year": 2021, "event": "$39 billion acquisition of Alexion Pharmaceuticals including Soliris ($700K/year rare disease drug)", "severity": "neutral", "source_url": ""},
+    {"year": 2024, "event": "UK High Court proceedings: AstraZeneca acknowledges in written submissions that vaccine 'can, in very rare cases, cause VITT'", "severity": "critical", "source_url": "https://www.bbc.com/news/health-68937412"},
+    {"year": 2024, "event": "May: AstraZeneca withdraws COVID vaccine from all global markets", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "VITT claimants — people who developed blood clots and low platelets following AstraZeneca COVID vaccination — have navigated years of litigation against AstraZeneca while dealing with serious illness and in some cases the deaths of family members. The company's litigation approach before the 2024 admission extended the period during which claimants faced AstraZeneca's denial. Simultaneously, the vaccine's contribution to COVID protection — particularly in low-income countries — represents genuine community health benefit.",
+    "price_illusion": "AstraZeneca's Soliris — at $700,000 per year — is priced at the maximum that wealthy-country health systems will bear for a drug treating a rare blood disorder. The drug was developed with significant NIH and academic research funding. Its IP is held in structures favorable to Alexion/AstraZeneca's tax position. The $700,000 price does not reflect development cost — it reflects pricing power in a market where patients have no alternatives.",
+    "tax_math": "AstraZeneca's Alexion acquisition gave it control of Soliris IP held in Ireland and other favorable jurisdictions — reducing effective tax rates on revenues from a drug significantly funded by US public research. The $39 billion acquisition generated interest deduction from debt financing that reduces taxable income across the group.",
+    "wealth_velocity": "AstraZeneca is dual-listed in London and New York with broad institutional ownership. The Oxford-AstraZeneca vaccine generated no profit — Soriot committed to cost-price supply — distinguishing it from Pfizer and Moderna's profit models. Soliris at $700,000 annually generates significant shareholder returns from a patient population with no alternatives."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "AstraZeneca shareholders", "how": "Seroquel off-label revenue during promotion period; Soliris $700K/year pricing through Alexion acquisition"},
+      {"group": "Physicians who received Seroquel kickbacks", "how": "Payments for prescribing an antipsychotic to elderly patients with dementia where FDA black box warning indicated increased mortality risk"}
+    ],
+    "who_paid": [
+      {"group": "VITT claimants and families", "how": "Rare but serious blood clotting disorder; navigated years of litigation while AstraZeneca denied causation before acknowledging in 2024"},
+      {"group": "Elderly dementia patients prescribed Seroquel off-label", "how": "Prescribed a drug with FDA black box warning for increased mortality in this population; based on off-label promotion that generated $520M settlement"}
+    ],
+    "the_gap": "AstraZeneca promoted Seroquel to elderly dementia patients despite an FDA black box warning for increased mortality. It paid $520 million. Its COVID vaccine caused VITT in rare cases. It fought claimants in court for years. Then it admitted it in writing in 2024. Then it withdrew the vaccine. The Soliris drug costs $700,000 per year. The people who need it have no alternative."
+  }
+}

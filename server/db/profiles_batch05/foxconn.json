@@ -1,0 +1,92 @@
+{
+  "brand_name": "Foxconn",
+  "brand_slug": "foxconn",
+  "parent_company": "Hon Hai Precision Industry Co., Ltd.",
+  "ultimate_parent": "Hon Hai Precision Industry Co., Ltd.",
+  "subsidiaries": ["Foxconn Industrial Internet", "Sharp Corporation (acquired 2016)", "Innolux", "FIH Mobile"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "FOXCONN INSTALLED NETS AROUND ITS DORMITORIES AFTER 14 WORKERS JUMPED TO THEIR DEATHS — THEN LOCKED 200,000 WORKERS INSIDE DURING COVID TO KEEP MAKING IPHONES",
+  "executive_summary": "Foxconn (Hon Hai Precision Industry) is the world's largest contract electronics manufacturer, producing iPhones, iPads, PlayStation consoles, and products for virtually every major technology brand. It is the largest private employer in China with over one million employees, primarily concentrated in its massive factory complexes. Between January and November 2010, 14 Foxconn workers died by suicide at its Shenzhen facility — jumping from dormitory buildings. In response, Foxconn installed anti-suicide nets around its dormitory buildings and offered worker pay raises. In November 2022, Foxconn locked approximately 200,000 workers inside its Zhengzhou iPhone factory complex — the world's largest iPhone assembly facility — to maintain production as COVID outbreaks spread. Workers who attempted to escape were pursued by security guards and faced losing bonuses. The containment broke down when workers staged a mass exodus on foot through fields.",
+  "verdict_tags": ["14_worker_suicides_2010_nets_installed", "zhengzhou_200000_workers_locked_inside_covid", "worker_mass_exodus_through_fields", "apple_iphone_supplier", "uyghur_labor_xinjiang_recruitment_documented"],
+  "concern_flags": {"labor": true, "environmental": false, "political": true, "tax": false, "health": true, "legal": true},
+  "labor": {
+    "summary": "The 2010 suicide cluster at Foxconn's Shenzhen facility — 14 deaths — drew global attention to labor conditions in Chinese electronics manufacturing. Independent investigations documented: 60-80 hour work weeks, monotonous assembly line work with minimal breaks, dormitory living with crowded conditions, limited freedom of movement, and prohibition on social interaction during work. Foxconn's response — suicide nets, pay raises, and a 'care hotline' — addressed symptoms without structural change. The 2022 Zhengzhou lockdown — where workers were contained inside the campus as COVID spread — resulted in workers physically fleeing through fields at night. Reports of workers being chased by security guards attempting to retrieve them were documented by journalists and on Chinese social media before censorship.",
+    "flags": ["14_suicides_2010_shenzhen", "suicide_nets_installed_dormitories", "zhengzhou_200000_lockdown_2022", "workers_fled_through_fields_security_pursued", "60_80_hour_work_weeks_documented"],
+    "sources": ["https://www.theguardian.com/technology/2010/may/28/foxconn-suicide-iphone-plants-china", "https://www.nytimes.com/2022/11/23/technology/foxconn-zhengzhou-workers-china.html"]
+  },
+  "environmental": {
+    "summary": "Foxconn's manufacturing operations generate significant electronic waste, chemical discharge from PCB and display manufacturing, and energy consumption from 24-hour production operations. Greenpeace has documented chemical pollution near Foxconn facilities. The company has committed to renewable energy targets. No major formal environmental enforcement actions comparable to its labor concerns have been documented.",
+    "flags": ["pcb_manufacturing_chemical_discharge", "greenpeace_pollution_documentation", "24_hour_operations_energy_consumption"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Foxconn's Zhengzhou lockdown was implemented in coordination with local Chinese government officials to maintain iPhone production during COVID — a collaboration between a Taiwanese corporation and Chinese Communist Party local authorities to restrict worker movement. Sheffield Hallam University documented Foxconn's participation in Xinjiang labor transfer programs — recruiting Uyghur workers from Xinjiang to work at its facilities in Henan province. Foxconn founder Terry Gou has been a prominent figure in Taiwan politics, running for president in 2019 and 2023.",
+    "flags": ["zhengzhou_lockdown_ccp_coordination", "xinjiang_labor_transfer_program_sheffield_hallam", "terry_gou_taiwan_presidential_candidate"],
+    "sources": ["https://storymaps.arcgis.com/stories/5048828d0e7045568e2a86c57a26df0e", "https://www.theguardian.com/world/2022/nov/29/foxconn-iphone-factory-workers-flee"]
+  },
+  "legal": {
+    "summary": "Foxconn's 2010 suicide cluster generated legal proceedings in China — the workers' families received compensation settlements. The Zhengzhou lockdown generated legal complaints from workers about unpaid bonuses and breach of employment terms. Workers who were promised specific bonuses for joining the Zhengzhou factory during COVID were documented as having those bonuses withheld or reclassified when they attempted to leave. Foxconn settled with workers following the mass exodus. No major US criminal enforcement actions against Foxconn have been documented — Apple, as the client, bears indirect legal exposure through supply chain liability frameworks.",
+    "flags": ["suicide_family_compensation_settlements", "zhengzhou_bonus_withholding_documented", "worker_breach_of_employment_claims", "apple_supply_chain_liability_indirect"],
+    "sources": ["https://www.nytimes.com/2022/11/30/business/foxconn-china-workers-bonuses.html"]
+  },
+  "tax": {
+    "summary": "Foxconn is incorporated in Taiwan and listed on the Taiwan Stock Exchange. It operates in China under preferential tax arrangements for foreign-invested enterprises. The company has received significant subsidies and tax incentives from Chinese local governments competing to host Foxconn facilities — including from Zhengzhou to establish the iPhone production campus. No major documented tax enforcement actions have been identified.",
+    "flags": ["chinese_local_government_subsidies_incentives", "taiwan_corporate_structure", "foreign_invested_enterprise_preferential_rates"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Founder Terry Gou built Foxconn from a plastics company in 1974 into the world's largest contract manufacturer. His management philosophy — characterized by military discipline, tight control, and worker surveillance — shaped the company's labor culture. Gou stepped back from day-to-day management to pursue Taiwanese politics but remains a dominant influence. Current chairman Liu Young-way has overseen the COVID-era controversies. Apple's dependence on Foxconn — which assembles the majority of iPhones — gives it extraordinary leverage over both companies: Apple needs Foxconn's capacity; Foxconn needs Apple's volume.",
+    "flags": ["gou_military_discipline_management_philosophy", "apple_foxconn_mutual_dependence", "gou_taiwan_presidential_runs"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Foxconn's relationship with Apple is the most consequential supplier-client relationship in global electronics. Apple's supply chain investigations — conducted through its Supplier Responsibility program — have repeatedly found labor violations at Foxconn while continuing to contract with it. This pattern — audit, find violations, remediate partially, continue — has been documented by labor organizations as insufficient to drive structural change. Foxconn also manufactures for Sony, Nintendo, Microsoft, Dell, and HP — making it embedded in virtually every major consumer electronics brand.",
+    "flags": ["apple_supplier_responsibility_audit_violations_continued_contracting", "sony_nintendo_microsoft_dell_hp_client", "global_electronics_infrastructure_embedded"],
+    "sources": ["https://www.apple.com/supplier-responsibility/"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Researchers studying the 2010 Foxconn suicides alleged that the company's psychological screening of workers — designed to identify and exclude those with mental health vulnerability — was used to deflect responsibility while leaving structural working conditions unchanged. Workers who fled the Zhengzhou campus in November 2022 alleged on Chinese social media that they were housed in facilities with active COVID cases without disclosure, and that the decision to lock them in was made without worker consultation or consent. Labor researchers have alleged that Apple's Supplier Responsibility audits are designed to identify and remediate specific violations that generate PR risk rather than to address the structural conditions that create systematic labor abuses.",
+    "flags": ["psychological_screening_deflect_responsibility_alleged", "covid_active_cases_no_disclosure_alleged", "apple_audit_pr_risk_not_structural_change_alleged"],
+    "sources": ["https://www.theguardian.com/world/2022/nov/29/foxconn-iphone-factory-workers-flee"]
+  },
+  "health_record": {
+    "summary": "The 2010 suicide cluster represents the most documented occupational mental health crisis in the history of consumer electronics manufacturing. Fourteen deaths by suicide among young workers at a single facility constituted a public health emergency that revealed the psychological toll of high-volume electronics assembly. The 2022 Zhengzhou lockdown exposed workers to COVID without their consent or adequate protective measures, generating illness and psychological trauma. Workers who fled the campus on foot — some carrying their belongings — experienced acute stress and physical hardship documented by journalists and video.",
+    "flags": ["14_deaths_occupational_mental_health_crisis", "zhengzhou_covid_exposure_without_consent", "worker_exodus_physical_hardship_documented"],
+    "sources": ["https://www.theguardian.com/technology/2010/may/28/foxconn-suicide-iphone-plants-china", "https://www.nytimes.com/2022/11/23/technology/foxconn-zhengzhou-workers-china.html"]
+  },
+  "alternatives": {
+    "cheaper": ["There is no direct consumer alternative to Foxconn — it is a B2B manufacturer. The alternative is Apple choosing different suppliers or improving conditions through contractual requirements", "Refurbished iPhones and consumer electronics — extending device life reduces the demand that drives Foxconn's production volume"],
+    "healthier": ["Fairphone — Netherlands-based brand with documented supply chain accountability; manufactured by a Foxconn-independent supply chain", "Extending your device's life is the most direct action — every year you keep a phone is a year Foxconn doesn't produce one for you"],
+    "diy": ["Check Apple's Supplier Responsibility Progress Report — Apple publishes more supply chain data than most companies; the violations documented there while contracting continues is the key data point", "Support policy that creates binding supply chain due diligence requirements for companies like Apple — the EU Corporate Sustainability Due Diligence Directive is the most significant current example"]
+  },
+  "timeline": [
+    {"year": 1974, "event": "Terry Gou founds Hon Hai Precision Industry (Foxconn) in Taiwan with NT$100,000", "severity": "neutral", "source_url": ""},
+    {"year": 2007, "event": "iPhone production begins at Foxconn Shenzhen; company becomes dominant Apple supplier", "severity": "neutral", "source_url": ""},
+    {"year": 2010, "event": "14 Foxconn workers die by suicide at Shenzhen campus; anti-suicide nets installed; pay raises announced", "severity": "critical", "source_url": "https://www.theguardian.com/technology/2010/may/28/foxconn-suicide-iphone-plants-china"},
+    {"year": 2012, "event": "Fair Labor Association audit documents violations at Foxconn following Foxconn–Apple agreement; improvements partial", "severity": "high", "source_url": ""},
+    {"year": 2016, "event": "Foxconn acquires Sharp Corporation for $3.5 billion; first major Japanese acquisition by Chinese-Taiwanese company", "severity": "neutral", "source_url": ""},
+    {"year": 2022, "event": "November: COVID lockdown at Zhengzhou campus of 200,000+ workers; workers flee through fields; bonuses withheld", "severity": "critical", "source_url": "https://www.nytimes.com/2022/11/23/technology/foxconn-zhengzhou-workers-china.html"},
+    {"year": 2023, "event": "Sheffield Hallam University documents Foxconn participation in Xinjiang labor transfer programs", "severity": "critical", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Foxconn's Zhengzhou campus houses over 200,000 workers in company dormitories — creating a total dependence on the employer for housing, food, employment, and social connection that intensifies leverage over workers and reduces their ability to exit. The campus lockdown demonstrated that this residential dependency can be weaponized. Rural Chinese communities from which Foxconn recruits workers — including through documented Xinjiang labor transfer programs — experience the departure of working-age adults who send remittances home while living in controlled factory campuses.",
+    "price_illusion": "The iPhone you buy for $1,000 was assembled at Foxconn by workers earning approximately $400-600 per month in controlled campus environments with documented labor violations. The suicide nets around dormitory buildings are not visible in Apple's marketing. The Zhengzhou lockdown was not disclosed to consumers purchasing iPhones during the 2022 holiday season. The price of the phone does not include the cost of the labor conditions that produce it.",
+    "tax_math": "Foxconn receives significant Chinese local government subsidies and tax incentives for establishing manufacturing capacity — the Zhengzhou campus was built with extensive local government support. These public subsidies reduce Foxconn's cost structure and therefore Apple's component prices, effectively transferring public Chinese taxpayer funds to Apple's supply chain cost advantage.",
+    "wealth_velocity": "Terry Gou, with an estimated net worth of $7 billion, built this wealth from one million Chinese workers assembling electronics for global technology brands. Apple — the primary beneficiary of Foxconn's labor — has market capitalization exceeding $3 trillion. The workers who assembled those products in Zhengzhou dormitories, who fled through fields in November 2022, earn approximately $400 per month."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Apple shareholders", "how": "Foxconn's labor model enables iPhone production at costs that support Apple's extraordinary profit margins; $3T market cap built partly on Foxconn labor"},
+      {"group": "Terry Gou and Foxconn shareholders", "how": "$7B founder wealth; world's largest contract manufacturer built on controlled campus labor model"},
+      {"group": "Chinese local governments", "how": "Employment and economic activity from Foxconn facilities; political credit for attracting investment"}
+    ],
+    "who_paid": [
+      {"group": "14 workers who died by suicide in 2010", "how": "Fourteen young workers died; families received compensation; Foxconn installed nets and continued the production model"},
+      {"group": "200,000+ Zhengzhou workers locked in during COVID 2022", "how": "Confined without consent during active COVID outbreak; some fled through fields; bonuses withheld from those who left"},
+      {"group": "Uyghur workers in Xinjiang labor transfer programs", "how": "Documented recruitment from Xinjiang detention context into Foxconn facilities; Sheffield Hallam University documented this"}
+    ],
+    "the_gap": "Foxconn installed nets to stop workers from jumping off buildings. The workers were still there. In 2022 it locked 200,000 people inside a factory campus during a COVID outbreak. Some of them ran away through fields at night. Security guards chased them. The iPhone you are holding was assembled there."
+  }
+}

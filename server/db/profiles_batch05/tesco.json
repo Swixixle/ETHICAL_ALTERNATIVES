@@ -1,0 +1,90 @@
+{
+  "brand_name": "Tesco",
+  "brand_slug": "tesco",
+  "parent_company": "Tesco PLC",
+  "ultimate_parent": "Tesco PLC",
+  "subsidiaries": ["Tesco Bank", "Booker Group", "Jack's (discount format)", "Tesco Mobile"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "TESCO OVERSTATED ITS PROFITS BY £263 MILLION AND FOUR EXECUTIVES WERE CHARGED WITH FRAUD — THEN IT SOLD BEEF BURGERS THAT WERE 29% HORSEMEAT",
+  "executive_summary": "Tesco PLC is the UK's largest supermarket chain and one of the world's largest retailers, operating over 4,000 stores. In September 2014, Tesco revealed it had overstated its half-year profit by £263 million — one of the largest accounting scandals in UK retail history. The Serious Fraud Office investigated, resulting in criminal charges against four former executives and a £129 million fine from the FCA (then-Financial Conduct Authority). In 2013, Tesco was among the retailers caught in the European horsemeat scandal — selling beef burgers tested at 29% horsemeat — exposing the opacity of the European processed meat supply chain. Tesco has also faced sustained scrutiny over its treatment of suppliers, market dominance, and labor practices at its distribution centers.",
+  "verdict_tags": ["263m_profit_overstatement_accounting_fraud", "four_executives_criminally_charged_fraud", "129m_fca_fine", "horsemeat_29pct_beef_burgers", "supplier_treatment_uk_investigation", "market_dominance_competition_scrutiny"],
+  "concern_flags": {"labor": true, "environmental": false, "political": false, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "Tesco employs approximately 330,000 people in the UK — one of Britain's largest private employers. The company has faced criticism for its use of zero-hours contracts, suppression of union organizing, and treatment of agency workers at distribution centers. A 2016 Guardian investigation documented Tesco distribution center workers facing harsh productivity targets and a culture of fear around toilet breaks. Tesco's supplier treatment — the subject of a Groceries Code Adjudicator investigation that found Tesco had consistently and sometimes illegally delayed payments to suppliers and imposed unjustified charges — affects the livelihoods of thousands of supplier employees.",
+    "flags": ["zero_hours_contracts", "distribution_center_productivity_culture_documented", "supplier_payment_delays_illegal_charges_adjudicator"],
+    "sources": ["https://www.gov.uk/government/publications/tesco-investigation-final-report"]
+  },
+  "environmental": {
+    "summary": "Tesco is one of the UK's largest sources of food packaging waste and has committed to packaging reduction targets. The company generates significant food waste — it publishes food waste data under UK regulatory requirements. Tesco's distribution and logistics network is a major source of diesel emissions in the UK. The company has committed to net zero by 2035.",
+    "flags": ["food_packaging_waste_major_source", "food_waste_reporting_regulatory", "logistics_diesel_emissions"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Tesco's market dominance in UK grocery — holding approximately 27% market share — has generated sustained investigation by the Competition and Markets Authority. The Groceries Code Adjudicator found Tesco in breach of the Groceries Supply Code of Practice for its treatment of suppliers. Tesco has lobbied extensively on planning law (allowing it to build new stores), packaging regulations, and business rates. The horsemeat scandal generated significant parliamentary hearings and regulatory response across the EU.",
+    "flags": ["27pct_uk_market_share_competition_scrutiny", "groceries_code_adjudicator_breach", "horsemeat_parliamentary_hearings"],
+    "sources": ["https://www.gov.uk/government/publications/tesco-investigation-final-report"]
+  },
+  "legal": {
+    "summary": "The SFO investigated Tesco's £263 million profit overstatement — money that Tesco had recognized as commercial income from suppliers prematurely, creating a misleadingly positive financial picture. Three former executives were tried on fraud charges; the trial collapsed in 2019 on procedural grounds. A fourth executive entered a deferred prosecution agreement. Tesco reached a £129 million settlement with the FCA for market abuse. The Groceries Code Adjudicator found Tesco in breach of the supply code — marking a significant regulatory finding for a FTSE 100 company.",
+    "flags": ["263m_profit_overstatement_sfo_investigation", "four_executives_charged_trial_collapsed_procedural", "129m_fca_market_abuse_settlement", "groceries_code_adjudicator_breach_finding"],
+    "sources": ["https://www.theguardian.com/business/2014/sep/22/tesco-overstated-profit-263m", "https://www.fca.org.uk/news/press-releases/tesco-plc-agrees-settlement-financial-conduct-authority"]
+  },
+  "tax": {
+    "summary": "Tesco has faced criticism for its use of offshore structures for property transactions — using Luxembourg-based vehicles for UK real estate holdings in ways that reduced UK stamp duty and corporation tax obligations. Following UK government tax reform, Tesco restructured some of these arrangements. The company pays significant UK business rates and corporation tax as one of Britain's largest companies, but has also historically used property holding structures to minimize UK taxable gains.",
+    "flags": ["luxembourg_property_vehicles_tax_minimization", "stamp_duty_corporation_tax_offshore_reduction"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Ken Murphy has led Tesco since 2020. During the profit overstatement period, CEO Philip Clarke was removed; his successor Dave Lewis led the recovery. The executives charged in the SFO investigation — former CFO Carl Rogberg, former UK managing director Chris Bush, and former food commercial director John Scouler among others — saw their cases collapse in 2019 when the judge ruled they had no case to answer on fraud charges. Tesco's accounting of commercial income — the central issue — was found misleading but the individual criminal liability was not established in court.",
+    "flags": ["sfo_charges_collapsed_2019_no_case_to_answer", "ceo_removed_during_overstatement_period", "commercial_income_accounting_misleading_finding"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Tesco's UK supply chain includes hundreds of British farmers and food producers who are commercially dependent on Tesco contracts. The Groceries Code Adjudicator's investigation found systematic abuse of this dependence through delayed payments and retrospective charges — practices that caused financial harm to smaller suppliers. The horsemeat scandal connected Tesco to the complexity of European processed meat supply chains — where beef burgers passed through multiple countries and processors before reaching UK supermarket shelves, with no traceability system that could detect species substitution.",
+    "flags": ["supplier_dependence_systematic_abuse_adjudicator", "european_processed_meat_supply_chain_opacity", "horsemeat_multi_country_supply_chain_failure"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "UK farmer organizations have alleged that Tesco's commercial practices — while restructured following the adjudicator's investigation — continue to exert pricing pressure on suppliers through indirect mechanisms not covered by the Supply Code. Distribution center workers have alleged that Tesco's outsourcing of warehouse operations to agencies creates a deliberate accountability gap — where agency workers receive worse treatment than direct Tesco employees while Tesco maintains distance from the employment relationship.",
+    "flags": ["ongoing_supplier_pricing_pressure_alleged", "agency_worker_accountability_gap_deliberate_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "The 2013 horsemeat scandal established that Tesco beef burgers sold to UK consumers contained up to 29% horsemeat — an undisclosed species substitution that represented both a health labeling failure and a significant consumer fraud. While horse meat is generally safe to consume, the substitution exposed: potential veterinary drug contamination (horses are given drugs not approved for food animals), religious dietary concerns (beef products consumed in good faith by Muslim and Jewish consumers), and fundamental failures in food supply chain traceability. The scandal triggered EU-wide food traceability reform.",
+    "flags": ["horsemeat_29pct_beef_burgers", "phenylbutazone_veterinary_drug_contamination_risk", "religious_dietary_violation", "eu_food_traceability_reform_triggered"],
+    "sources": ["https://www.theguardian.com/uk-news/2013/jan/15/tesco-beef-burgers-horse-dna"]
+  },
+  "alternatives": {
+    "cheaper": ["Aldi and Lidl — German discounters with significant UK presence; different ownership model; comparable or lower prices on many staples", "Co-op supermarkets — UK cooperative structure; member ownership; genuine community accountability different from PLC model"],
+    "healthier": ["Local butchers for meat — direct relationship, known sourcing, no supply chain opacity of the type that enabled horsemeat substitution", "Farm shops and box schemes — direct producer relationship eliminates multi-country processed meat supply chains"],
+    "diy": ["Use the UK Groceries Code Adjudicator annual reports to understand which supermarkets are in compliance with fair supplier treatment — available publicly", "For meat: ask your retailer where the animal was born, raised, and slaughtered — if they can't tell you, the supply chain has the same opacity that produced the horsemeat scandal"]
+  },
+  "timeline": [
+    {"year": 1919, "event": "Jack Cohen founds Tesco market stall in London's East End", "severity": "neutral", "source_url": ""},
+    {"year": 2013, "event": "January: Horsemeat DNA found in Tesco beef burgers — 29% horsemeat confirmed; Europe-wide food fraud scandal triggered", "severity": "critical", "source_url": "https://www.theguardian.com/uk-news/2013/jan/15/tesco-beef-burgers-horse-dna"},
+    {"year": 2014, "event": "September: Tesco reveals £263M profit overstatement; CEO Philip Clarke removed; SFO investigation begins", "severity": "critical", "source_url": "https://www.theguardian.com/business/2014/sep/22/tesco-overstated-profit-263m"},
+    {"year": 2016, "event": "Groceries Code Adjudicator finds Tesco in breach of supply code for systematic supplier mistreatment", "severity": "high", "source_url": "https://www.gov.uk/government/publications/tesco-investigation-final-report"},
+    {"year": 2017, "event": "$129M FCA settlement for market abuse related to profit overstatement", "severity": "high", "source_url": ""},
+    {"year": 2019, "event": "SFO criminal trial collapses — judge rules executives have no case to answer on fraud charges", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Tesco's dominance of UK grocery — controlling approximately 27% of the market — has contributed to the documented collapse of independent UK grocery retail and the decline of UK high streets. Smaller towns where Tesco opened large stores saw significant independent retailer closures. UK farming communities depend on Tesco contracts while being subject to commercial practices the adjudicator found systematically abusive.",
+    "price_illusion": "Tesco's low-price positioning relies partly on commercial income extracted from suppliers through the delayed payments and retrospective charges the adjudicator found illegal. The apparent price advantage at the till is partially funded by transferring financial cost onto smaller suppliers who cannot afford to lose a Tesco listing.",
+    "tax_math": "Tesco's Luxembourg property vehicles reduced UK stamp duty and corporation tax on property transactions — using structures that transferred UK tax obligations offshore while operating entirely in UK markets. UK business rates — which Tesco pays at scale — provide some offset, but the property tax optimization represents a gap between UK operations and UK tax.",
+    "wealth_velocity": "Tesco is a UK-listed FTSE 100 company with broad institutional and retail shareholder ownership in the UK and internationally. The £263 million profit overstatement — which temporarily inflated the share price — benefited shareholders who sold during the overstatement period at the expense of shareholders who bought at the inflated price before the revelation."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Tesco shareholders during overstatement period", "how": "£263M in overstated profits created temporarily inflated share price; shareholders who sold during this period received more than the true value"},
+      {"group": "Tesco's commercial income position", "how": "Delayed payments and retrospective charges from suppliers — found illegal by adjudicator — funded Tesco's short-term cash position at suppliers' expense"}
+    ],
+    "who_paid": [
+      {"group": "Tesco suppliers", "how": "Delayed payments and unjustified charges found illegal; financial harm to businesses dependent on Tesco contracts"},
+      {"group": "UK consumers who ate horsemeat", "how": "Religious and dietary deception; potential phenylbutazone contamination; fundamental right to know what they were eating"},
+      {"group": "Shareholders who bought during overstatement", "how": "Paid inflated price for Tesco shares; suffered losses when the overstatement was revealed"}
+    ],
+    "the_gap": "Tesco overstated profits by £263 million. Four executives were charged with fraud. The trial collapsed. Tesco paid £129 million. Its beef burgers were 29% horsemeat. The adjudicator found it systematically abused its suppliers illegally. It controls 27% of UK grocery. No executive went to prison."
+  }
+}
