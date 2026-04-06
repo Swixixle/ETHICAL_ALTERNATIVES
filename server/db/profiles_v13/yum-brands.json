@@ -1,0 +1,187 @@
+{
+  "brand_name": "Yum! Brands (Taco Bell / KFC / Pizza Hut)",
+  "brand_slug": "yum-brands",
+  "parent_company": "Yum! Brands Inc.",
+  "ultimate_parent": "Yum! Brands Inc.",
+  "subsidiaries": [
+    "Taco Bell Corp.",
+    "KFC Corporation",
+    "Pizza Hut LLC",
+    "The Habit Restaurants"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "YUM! BRANDS OPERATES 55,000 RESTAURANTS IN 155 COUNTRIES — MOSTLY THROUGH FRANCHISEES IT CLAIMS EMPLOY WORKERS IT HAS NO CONTROL OVER",
+  "executive_summary": "Yum! Brands is the world's largest fast food company by number of locations, operating Taco Bell, KFC, Pizza Hut, and The Habit Burger through approximately 55,000 restaurants in 155 countries. The franchise model is the central feature of Yum!'s business: it collects royalties and fees while individual franchise owners manage employees, wages, and working conditions. NLRB complaints, OSHA citations, and wage theft settlements across all three major brands document a pattern of labor violations that Yum! corporate consistently attributes to independent franchise operators. KFC has faced child labor violations, wage theft settlements, and OSHA violations at franchise locations. Taco Bell has settled wage theft class actions. Pizza Hut cut thousands of delivery driver positions in 2023-2024. Yum! simultaneously automated ordering with kiosks — CEO David Gibbs reported kiosk sales are 10% higher than counter sales with reduced labor hours per day.",
+  "verdict_tags": [
+    "franchise_accountability_gap",
+    "child_labor_kfc_violations",
+    "wage_theft_class_actions",
+    "kiosk_automation_labor_reduction",
+    "pizza_hut_driver_mass_firings",
+    "55000_locations_franchise_labor_opacity"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Yum! Brands is incorporated in North Carolina and uses international franchise structures that route royalty income through lower-tax jurisdictions. The company spun off Yum China in 2016, separating its Chinese operations into a separately traded company. The royalty model — collecting fees from franchisees globally — creates favorable tax treatment for the IP-holding entities.",
+    "flags": [
+      "royalty_income_international_structure",
+      "yum_china_spinoff",
+      "franchise_ip_tax_treatment"
+    ],
+    "sources": [
+      "https://www.sec.gov"
+    ]
+  },
+  "legal": {
+    "summary": "KFC: Multiple DOL child labor investigations at franchise locations; OSHA citations for hazardous kitchen conditions. Taco Bell: Class action wage theft settlements in multiple states for off-the-clock work and missed breaks. Pizza Hut: Mass termination of delivery drivers in 2023-2024 as franchisees replaced them with third-party delivery services — NLRB examined whether drivers were terminated in retaliation for organizing activity. SEIU complaints filed against multiple Yum! brand franchise operators. Fair Workweek violations investigated in NYC alongside Chipotle and McDonald's.",
+    "flags": [
+      "kfc_child_labor_dol_investigations",
+      "taco_bell_wage_class_actions",
+      "pizza_hut_driver_mass_terminations",
+      "seiu_nlrb_complaints_franchise"
+    ],
+    "sources": []
+  },
+  "labor": {
+    "summary": "Yum! brands are almost entirely franchised, with 98%+ of locations operated by independent owners. This creates documented accountability gaps: when a KFC franchise has child labor violations, Yum! corporate says it takes the matter seriously and reminds franchisees of legal obligations. Simultaneously, Yum! CEO David Gibbs publicly reported to investors that kiosk installations reduce restaurant-level labor hours per day — automation as explicit labor cost strategy. Pizza Hut franchisees terminated thousands of delivery drivers in 2023-2024, replacing them with DoorDash and Grubhub contracts. Workers lost employment; platform gig workers took the routes at lower effective wages.",
+    "flags": [
+      "98pct_franchised_accountability_gap",
+      "kiosk_labor_reduction_ceo_statement",
+      "pizza_hut_delivery_driver_mass_terminations",
+      "gig_replacement_lower_wages"
+    ],
+    "sources": [
+      "https://www.cnbc.com/amp/2023/12/29/mcdonalds-chipotle-prepare-for-fast-food-worker-battles-in-2024.html"
+    ]
+  },
+  "environmental": {
+    "summary": "Yum! Brands generates substantial packaging waste across 55,000 locations. KFC's supply chain relies heavily on industrial chicken production with documented environmental impacts. The company has made some sustainability commitments but scale makes meaningful reduction difficult.",
+    "flags": [
+      "55000_locations_packaging_waste",
+      "industrial_chicken_supply_chain"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Yum! Brands and the International Franchise Association spent heavily opposing California's AB 1228 and similar legislation in other states. The industry's core argument — that franchisors should not be liable for franchisee labor violations — is Yum!'s primary political position. The company lobbied against changes to joint employer doctrine at the federal level.",
+    "flags": [
+      "ab1228_opposition",
+      "joint_employer_doctrine_opposition",
+      "ifa_lobbying"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO David Gibbs has led Yum! since 2020. He publicly reported to investors that kiosk deployments reduce labor hours — framing automation explicitly as a cost-cutting tool. Gibbs received $12.7 million in total compensation in 2023 while the company's franchise labor record accumulated violations.",
+    "flags": [
+      "gibbs_kiosk_labor_reduction_public_statement",
+      "gibbs_12_7m_compensation_2023"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Pizza Hut's termination of delivery drivers and shift to DoorDash/Grubhub creates a documented pipeline from Yum! brand employment to gig platform misclassification. Workers who were Pizza Hut employees with some protections became DoorDash contractors with none. The EthicalAlt investigation cards for DoorDash and Uber Eats document what those workers face. Hire Direct delivery workers are the direct local alternative.",
+    "flags": [
+      "pizza_hut_to_doordash_pipeline_gig_misclassification",
+      "hire_direct_delivery_alternative"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "NLRB investigated whether Pizza Hut's mass driver terminations were timed to preempt organizing activity — the terminations occurred as drivers were beginning to discuss working conditions with union organizers. Former franchise employees have alleged that Yum! corporate's training and operational standards give it more control over day-to-day operations than the 'independently operated' framing suggests — similar to the Subway joint employer argument.",
+    "flags": [
+      "pizza_hut_terminations_organizing_timing_alleged",
+      "yum_operational_control_joint_employer_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Taco Bell, KFC, and Pizza Hut menus are high in sodium, saturated fat, and processed ingredients. A KFC Famous Bowl contains 1,000+ calories and 2,390mg of sodium — more than the AHA daily recommendation. Taco Bell has been sued over 'seasoned beef' ingredient proportions. The brands' primary customers skew toward lower-income communities where they often represent the primary available food option.",
+    "flags": [
+      "high_sodium_high_calorie_menus",
+      "lower_income_community_concentration",
+      "taco_bell_beef_ingredient_lawsuit"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Local taquerias — often better food at comparable prices, locally owned",
+      "Local pizza shops — independent pizzerias in most communities",
+      "Local chicken restaurants — independent alternatives to KFC in most markets"
+    ],
+    "healthier": [
+      "Local restaurants with known sourcing",
+      "Cooking at home — beans, rice, and chicken cost less than fast food at scale"
+    ],
+    "diy": [
+      "Pizza Hut fired its delivery drivers and replaced them with DoorDash — if you order from Pizza Hut via DoorDash, you're paying both Pizza Hut and DoorDash fees while the driver gets gig wages with no protections",
+      "Your local independent pizza shop keeps money in your community; the Yum! royalty goes to a North Carolina holding company",
+      "Hire Direct on EthicalAlt connects you with local delivery workers directly"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1997,
+      "event": "PepsiCo spins off its restaurant divisions as Tricon Global, later renamed Yum! Brands",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2016,
+      "event": "Yum China spun off as separate publicly traded company",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "CEO reports kiosks reduce labor hours by 10%+ while increasing check size; industry lobbying campaign against California fast food worker protection",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "Pizza Hut franchisees begin mass termination of delivery drivers, replacing with DoorDash/Grubhub contracts",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "Pizza Hut driver terminations continue; NLRB examines timing relative to organizing activity; KFC child labor investigations ongoing",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Yum! Brands shareholders",
+        "how": "Royalty income from 55,000 locations; labor liability pushed to franchisees; kiosk automation reduces cost base"
+      },
+      {
+        "group": "DoorDash and Grubhub",
+        "how": "Pizza Hut driver terminations created new gig delivery demand"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Pizza Hut delivery drivers",
+        "how": "Jobs eliminated; replaced by gig platform work with no employment protections"
+      },
+      {
+        "group": "Fast food workers generally",
+        "how": "Kiosk deployment explicitly stated by CEO as reducing labor hours"
+      }
+    ],
+    "the_gap": "Yum! Brands collects royalties from 55,000 restaurants. When the workers at those restaurants face violations, it's the franchisees' problem. When kiosks reduce labor costs, that's a shareholder benefit reported to investors. When Pizza Hut fires its drivers and replaces them with DoorDash, that's a business decision. The CEO made $12.7 million last year."
+  }
+}

@@ -1,0 +1,425 @@
+[
+  {
+    "facility_code": "DAN",
+    "facility_name": "FCI Danbury",
+    "latitude": 41.386,
+    "longitude": -73.451,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/dan/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "MAR",
+    "facility_name": "USP Marion",
+    "latitude": 38.589,
+    "longitude": -88.965,
+    "security_level": "high",
+    "source_url": "https://www.bop.gov/locations/institutions/mar/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "THR",
+    "facility_name": "FCI Terre Haute",
+    "latitude": 39.472,
+    "longitude": -87.329,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/thr/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "ADX",
+    "facility_name": "USP Florence ADMAX",
+    "latitude": 38.955,
+    "longitude": -105.072,
+    "security_level": "max",
+    "source_url": "https://www.bop.gov/locations/institutions/adx/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "LVW",
+    "facility_name": "USP Leavenworth",
+    "latitude": 39.313,
+    "longitude": -94.934,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/lvw/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "ENW",
+    "facility_name": "FCI Englewood",
+    "latitude": 39.64,
+    "longitude": -105.014,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/enw/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "FLO",
+    "facility_name": "FCC Florence",
+    "latitude": 38.375,
+    "longitude": -105.066,
+    "security_level": "high",
+    "source_url": "https://www.bop.gov/locations/institutions/flo/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "TUC",
+    "facility_name": "FCI Tucson",
+    "latitude": 32.252,
+    "longitude": -110.895,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/tuc/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "VIL",
+    "facility_name": "FCI Victorville Medium I",
+    "latitude": 34.536,
+    "longitude": -117.291,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/vil/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "LOM",
+    "facility_name": "FCI Lompoc",
+    "latitude": 34.684,
+    "longitude": -120.456,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/lom/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "DUB",
+    "facility_name": "FCI Dublin",
+    "latitude": 37.702,
+    "longitude": -121.935,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/dub/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "HER",
+    "facility_name": "FCI Herlong",
+    "latitude": 40.144,
+    "longitude": -120.139,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/her/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "MEN",
+    "facility_name": "FCI Mendota",
+    "latitude": 36.753,
+    "longitude": -120.382,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/men/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "TAF",
+    "facility_name": "FCI Taft",
+    "latitude": 35.12,
+    "longitude": -119.456,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/taf/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "ATW",
+    "facility_name": "USP Atwater",
+    "latitude": 37.348,
+    "longitude": -120.61,
+    "security_level": "high",
+    "source_url": "https://www.bop.gov/locations/institutions/atw/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "ELR",
+    "facility_name": "FCI El Reno",
+    "latitude": 35.538,
+    "longitude": -97.955,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/elr/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "HUS",
+    "facility_name": "FMC Houston",
+    "latitude": 29.706,
+    "longitude": -95.285,
+    "security_level": "administrative",
+    "source_url": "https://www.bop.gov/locations/institutions/hus/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "SEA",
+    "facility_name": "FCI Seagoville",
+    "latitude": 32.651,
+    "longitude": -96.7,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/sea/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "TRV",
+    "facility_name": "FCI Three Rivers",
+    "latitude": 28.185,
+    "longitude": -98.127,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/trv/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "BMT",
+    "facility_name": "FCI Beaumont Medium",
+    "latitude": 30.087,
+    "longitude": -94.102,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/bmt/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "BAS",
+    "facility_name": "FCI Bastrop",
+    "latitude": 30.111,
+    "longitude": -97.315,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/bas/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "MIA",
+    "facility_name": "FDC Miami",
+    "latitude": 25.796,
+    "longitude": -80.22,
+    "security_level": "administrative",
+    "source_url": "https://www.bop.gov/locations/institutions/mia/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "YAZ",
+    "facility_name": "FCI Yazoo City Medium",
+    "latitude": 32.855,
+    "longitude": -90.405,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/yaz/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "JES",
+    "facility_name": "FCI Jesup",
+    "latitude": 31.608,
+    "longitude": -81.884,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/jes/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "COL",
+    "facility_name": "FCI Coleman Medium",
+    "latitude": 28.857,
+    "longitude": -82.029,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/col/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "RAL",
+    "facility_name": "FCI Tallahassee",
+    "latitude": 30.438,
+    "longitude": -84.28,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/ral/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "ALD",
+    "facility_name": "FCI Alderson",
+    "latitude": 37.989,
+    "longitude": -80.64,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/ald/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "OTV",
+    "facility_name": "FCI Otisville",
+    "latitude": 41.474,
+    "longitude": -74.502,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/otv/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "MNY",
+    "facility_name": "MCC New York",
+    "latitude": 40.713,
+    "longitude": -74.0,
+    "security_level": "administrative",
+    "source_url": "https://www.bop.gov/locations/institutions/mny/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "PHL",
+    "facility_name": "FDC Philadelphia",
+    "latitude": 39.953,
+    "longitude": -75.165,
+    "security_level": "administrative",
+    "source_url": "https://www.bop.gov/locations/institutions/phl/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "LEW",
+    "facility_name": "USP Lewisburg",
+    "latitude": 40.965,
+    "longitude": -76.885,
+    "security_level": "high",
+    "source_url": "https://www.bop.gov/locations/institutions/lew/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "ALN",
+    "facility_name": "FCI Allenwood Low",
+    "latitude": 41.092,
+    "longitude": -76.788,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/aln/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "CAA",
+    "facility_name": "USP Canaan",
+    "latitude": 41.559,
+    "longitude": -75.256,
+    "security_level": "high",
+    "source_url": "https://www.bop.gov/locations/institutions/caa/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "SMX",
+    "facility_name": "FCI Schuylkill",
+    "latitude": 40.786,
+    "longitude": -76.195,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/smx/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "FTX",
+    "facility_name": "FCI Fort Dix",
+    "latitude": 39.99,
+    "longitude": -74.629,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/ftx/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "RYB",
+    "facility_name": "FCI Ray Brook",
+    "latitude": 44.304,
+    "longitude": -74.081,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/ryb/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "BEN",
+    "facility_name": "FCI Bennettsville",
+    "latitude": 34.594,
+    "longitude": -79.703,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/ben/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "EST",
+    "facility_name": "FCI Estill",
+    "latitude": 32.755,
+    "longitude": -81.239,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/est/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "FOR",
+    "facility_name": "FCI Forrest City",
+    "latitude": 35.015,
+    "longitude": -90.79,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/for/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "ELK",
+    "facility_name": "FCI Elkton",
+    "latitude": 40.757,
+    "longitude": -80.714,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/elk/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "MXW",
+    "facility_name": "FCI Milan",
+    "latitude": 42.085,
+    "longitude": -83.682,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/mxw/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "CHI",
+    "facility_name": "MCC Chicago",
+    "latitude": 41.878,
+    "longitude": -87.63,
+    "security_level": "administrative",
+    "source_url": "https://www.bop.gov/locations/institutions/mcc/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "ATL",
+    "facility_name": "USP Atlanta",
+    "latitude": 33.715,
+    "longitude": -84.349,
+    "security_level": "high",
+    "source_url": "https://www.bop.gov/locations/institutions/atl/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "BUT",
+    "facility_name": "FCI Butner Medium II",
+    "latitude": 36.16,
+    "longitude": -78.757,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/but/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "CRN",
+    "facility_name": "FCI Cumberland",
+    "latitude": 39.669,
+    "longitude": -78.755,
+    "security_level": "medium",
+    "source_url": "https://www.bop.gov/locations/institutions/crn/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "SAF",
+    "facility_name": "FCI Safford",
+    "latitude": 32.708,
+    "longitude": -109.65,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/saf/",
+    "last_updated": "2026-04-05"
+  },
+  {
+    "facility_code": "ELP",
+    "facility_name": "FCI El Paso",
+    "latitude": 31.813,
+    "longitude": -106.408,
+    "security_level": "low",
+    "source_url": "https://www.bop.gov/locations/institutions/elp/",
+    "last_updated": "2026-04-05"
+  }
+]

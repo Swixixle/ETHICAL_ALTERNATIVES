@@ -1,0 +1,197 @@
+{
+  "brand_name": "Subway",
+  "brand_slug": "subway",
+  "parent_company": "Doctor's Associates LLC",
+  "ultimate_parent": "Doctor's Associates LLC",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "SUBWAY FRANCHISE OWNERS PAID IMMIGRANT WORKERS $14/HOUR IN CASH ENVELOPES, DENIED BATHROOM BREAKS, AND MANIPULATED PAYROLL RECORDS — CORPORATE SAID THE RESTAURANTS ARE INDEPENDENTLY OPERATED",
+  "executive_summary": "Subway is the world's largest fast food chain by location count with over 20,000 US locations and 37,000 globally, operated under franchise agreements with Doctor's Associates LLC. The company's franchise model creates documented accountability gaps: when franchise owners commit wage theft, Subway corporate says the restaurants are independently operated. When investigators find violations, corporate says it takes the matter seriously. A pattern of documented wage theft targeting immigrant workers spans California, the Bay Area specifically, and franchise locations nationwide. A DOL investigation forced 14 Bay Area Subway locations to pay nearly $1 million in wages and sell or shut down after owners continued violating labor law despite a preliminary court injunction. San Francisco investigators found workers paid $14/hour in cash envelopes in a city with an $18.67 minimum wage. A Los Angeles worker documented working 100+ hour weeks for over a decade, paid sub-minimum wage, denied overtime, and threatened with immigration consequences when she complained.",
+  "verdict_tags": [
+    "immigrant_worker_wage_theft_documented",
+    "cash_envelope_payments_below_minimum",
+    "payroll_record_manipulation",
+    "dol_1m_bay_area_settlement",
+    "immigration_threat_retaliation",
+    "franchise_accountability_gap",
+    "joint_employer_disputed"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": false,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Doctor's Associates LLC is privately held and does not disclose financial statements. The franchise fee model — charging franchisees for the right to operate — concentrates revenue at the corporate level while pushing employment liability to franchisees.",
+    "flags": [
+      "private_no_disclosure",
+      "franchise_fee_model_labor_liability_push"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "DOL Wage and Hour Division: Court ordered operators of 14 Bay Area Subway locations to pay nearly $1 million in wages and damages and sell or shut down after owners continued violating federal law despite a preliminary court injunction — a level of contempt the DOL called extraordinary. Doctor's Associates was notified in June 2023 that it knew of the litigation and the franchisees continued to violate federal law — and allowed them to keep operating. California Labor Commissioner: $1.7 million citation against seven San Francisco Subway franchises for wage theft against 81 current and former workers between 2021 and 2024. Multiple additional lawsuits pending in California. A 2024 lawsuit names Doctor's Associates as joint employer for the LA violations.",
+    "flags": [
+      "dol_14_bay_area_locations_1m_shutdown",
+      "california_1_7m_citation_81_workers",
+      "joint_employer_lawsuit_doctors_associates",
+      "contempt_continued_violations_after_injunction"
+    ],
+    "sources": [
+      "https://stopchildlabor.org/u-s-dol-news-release-court-orders-operators-of-14-bay-area-subway-locations-to-pay-employees-nearly-1m-in-wages-damages-sell-or-shut-down-their-businesses",
+      "https://eltecolote.org/content/en/sf-subway-wage-theft"
+    ]
+  },
+  "labor": {
+    "summary": "Documented violations across multiple states targeting immigrant workers. San Francisco: workers paid $14/hour cash in envelopes in a city with $18.67 minimum wage, denied bathroom breaks during solo 10-hour shifts, no pay stubs. Los Angeles: Eva Rodriguez worked 100+ hour weeks for over a decade, forced to work under two names to avoid overtime, denied sick pay, tips stolen, threatened with immigration status consequences when she complained. Franchise owners manipulated ADP payroll system to reduce documented hours. Doctor's Associates notified of violations and continued allowing operators to run franchises. SEIU and California Fast Food Workers Union have documented wage theft as a pattern, not isolated incidents.",
+    "flags": [
+      "cash_payments_below_minimum_wage",
+      "no_pay_stubs",
+      "100_hour_weeks_undocumented",
+      "immigration_threat_retaliation",
+      "payroll_system_manipulation",
+      "pattern_not_isolated"
+    ],
+    "sources": [
+      "https://lapublicpress.org/2025/03/fast-food-wage-theft-lawsuit-subway",
+      "https://www.nbcnews.com/news/asian-america/subway-immigrant-workers-abuse-allegations-san-francisco-rcna159045"
+    ]
+  },
+  "environmental": {
+    "summary": "Fast food packaging waste is a documented environmental concern for the sector. Subway's 20,000+ US locations generate significant single-use plastic and packaging waste.",
+    "flags": [
+      "single_use_packaging_waste",
+      "20000_us_locations_scale"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Subway and the broader fast food industry spent over $64 million fighting California's AB 1228 fast food worker protection bill before reaching a compromise. The International Franchise Association — representing Subway and other franchise models — has made defeating joint employer liability rules a top political priority, specifically to prevent corporate franchisors from being held accountable for franchisee labor violations.",
+    "flags": [
+      "64m_california_ab1228_opposition",
+      "joint_employer_ifa_lobbying",
+      "franchise_model_political_protection"
+    ],
+    "sources": [
+      "https://www.cnbc.com/2023/09/15/california-fast-food-minimum-wage-deal-what-to-know.html"
+    ]
+  },
+  "executives": {
+    "summary": "Subway is privately held, owned by Roark Capital Group which acquired it in 2023. The franchise model insulates corporate leadership from direct accountability for worker violations — the same structure that allowed operators to continue violating labor law after DOL notification.",
+    "flags": [
+      "roark_capital_2023_acquisition",
+      "corporate_insulation_franchise_model"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The joint employer doctrine — whether Subway corporate is liable for franchisee violations — is the central legal battleground. The DOL's Bay Area case specifically documented that Doctor's Associates knew of violations and allowed them to continue, strengthening the joint employer argument. Subway's franchise agreement gives corporate control over ingredients, pricing, and operations (workers themselves describe 'they manage everything from the top down') while corporate disclaims employment responsibility.",
+    "flags": [
+      "joint_employer_central_legal_issue",
+      "franchise_agreement_controls_operations",
+      "employment_responsibility_disclaimed"
+    ],
+    "sources": [
+      "https://www.restaurantdive.com/news/subway-franchisee-face-wage-theft-joint-employer-suit-in-california/728617"
+    ]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The LA lawsuit alleges Doctor's Associates is a joint employer because it controls how sandwiches are made, pricing, and operations — making the 'independently operated' defense legally questionable. Multiple advocacy organizations allege Subway franchisees systematically target immigrant workers specifically because they are less likely to know their rights or report violations. Former franchise employees allege that Subway's business model — which squeezes franchisees on food costs and royalty fees — creates conditions where labor violations become the primary cost-cutting lever available to franchise owners.",
+    "flags": [
+      "joint_employer_operations_control_alleged",
+      "immigrant_targeting_systematic_alleged",
+      "fee_squeeze_creates_labor_violation_incentive_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "A 2021 study by the Center for Science in the Public Interest found that a Subway footlong sandwich can contain more sodium than the daily recommended limit. Subway has faced food safety violations at franchise locations. The brand's 'eat fresh' positioning is inconsistently supported by nutritional content of its most popular menu items.",
+    "flags": [
+      "high_sodium_footlong_documented",
+      "eat_fresh_nutritional_gap",
+      "food_safety_franchise_violations"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Local delis and sandwich shops — same product, locally owned, workers more likely to receive legal wages",
+      "Grocery store deli counter — fresh-made sandwiches at comparable or lower cost",
+      "Make your own — a loaf of bread and deli meat costs less per sandwich than Subway"
+    ],
+    "healthier": [
+      "Local sandwich shops — fresher ingredients, independent sourcing",
+      "Grocery deli with known ingredient sourcing"
+    ],
+    "diy": [
+      "Subway's franchise owners pay $18,500 franchise fee plus 8% royalty plus 4.5% advertising fee — the math of operating profitably while paying legal wages is genuinely difficult",
+      "The worker in LA worked 100+ hour weeks for over a decade — when she complained about wage theft, her hours were cut as retaliation",
+      "Find local sandwich shops on EthicalAlt's Local tab — Hire Direct has local food service workers near you"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1965,
+      "event": "Subway founded by Fred DeLuca and Peter Buck in Bridgeport, Connecticut",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "DOL investigation begins into Bay Area Subway operators; preliminary court injunction issued",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "June: Doctor's Associates notified of ongoing violations and allows operators to continue; DOL court order forces 14 Bay Area locations to pay $1M and sell or shut down",
+      "severity": "critical",
+      "source_url": "https://stopchildlabor.org/u-s-dol-news-release-court-orders-operators-of-14-bay-area-subway-locations"
+    },
+    {
+      "year": 2023,
+      "event": "Roark Capital Group acquires Subway",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "Eva Rodriguez files lawsuit against LA Subway owner and Doctor's Associates for decade of wage theft; San Francisco investigation finds 7 franchises paid workers $14/hour cash in envelopes",
+      "severity": "critical",
+      "source_url": "https://lapublicpress.org/2025/03/fast-food-wage-theft-lawsuit-subway"
+    },
+    {
+      "year": 2025,
+      "event": "California Labor Commissioner issues $1.7M citation against SF franchise owners for violations against 81 workers",
+      "severity": "critical",
+      "source_url": "https://eltecolote.org/content/en/sf-subway-wage-theft"
+    }
+  ],
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Doctor's Associates / Roark Capital",
+        "how": "Franchise fees, royalties, and advertising fees from 20,000+ US locations; labor liability pushed to individual franchise owners"
+      },
+      {
+        "group": "Franchise owners who violated labor law",
+        "how": "Lower labor costs through wage theft; continued operating through DOL investigation and court injunction"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Immigrant workers across multiple states",
+        "how": "Wages stolen across years; bathroom breaks denied; threatened with immigration consequences for complaining"
+      },
+      {
+        "group": "Eva Rodriguez",
+        "how": "100+ hour weeks, decade of wage theft, ~$54,000 in documented stolen wages, retaliation when she spoke up"
+      }
+    ],
+    "the_gap": "Eva Rodriguez worked 100-hour weeks at Subway for over a decade. Her boss paid her sub-minimum wage, denied her overtime, stole her tips, and threatened her immigration status when she complained. Doctor's Associates' response: our restaurants are independently owned and operated. The DOJ found that Subway's franchise agreement gives corporate control over how sandwiches are made, the prices, and store operations. They just don't control whether workers get paid."
+  }
+}

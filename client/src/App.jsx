@@ -27,6 +27,7 @@ import { playReveal } from './utils/sounds.js';
 import { slugifyBrandName } from './utils/brandSlug.js';
 import LocalDocumentary from './components/LocalDocumentary.jsx';
 import LocationCitySheet from './components/LocationCitySheet.jsx';
+import DirectoryPage from './pages/DirectoryPage.jsx';
 import './App.css';
 
 function investigationHeadline(identification, investigation) {
@@ -146,13 +147,27 @@ export default function App() {
         setMode('worker-profile');
         return;
       }
+      if (path === '/directory') {
+        setWorkerProfileSlug(null);
+        setMode('directory');
+        return;
+      }
+      const prof = path.match(/^\/profile\/([^/]+)$/);
+      if (prof) {
+        setWorkerProfileSlug(null);
+        const slug = decodeURIComponent(prof[1]);
+        setDeepBrand(slug);
+        setMode('deep');
+        void investigateByBrand(slug);
+        return;
+      }
       setWorkerProfileSlug(null);
-      setMode((prev) => (prev === 'worker-profile' ? 'home' : prev));
+      setMode((prev) => (prev === 'worker-profile' || prev === 'directory' ? 'home' : prev));
     };
     syncPath();
     window.addEventListener('popstate', syncPath);
     return () => window.removeEventListener('popstate', syncPath);
-  }, []);
+  }, [investigateByBrand]);
 
   useEffect(() => {
     const loc = readCachedLocation();
@@ -273,6 +288,11 @@ export default function App() {
     image && !result && !pendingConfirmation && !regionSelectActive ? 'tap' : null;
 
   const goHome = () => {
+    try {
+      window.history.replaceState({}, '', '/');
+    } catch {
+      /* ignore */
+    }
     reset();
     setMode('home');
   };
@@ -304,6 +324,22 @@ export default function App() {
     );
   }
 
+  if (mode === 'directory') {
+    return (
+      <div className="app">
+        <DirectoryPage
+          setMode={setMode}
+          investigateByBrand={async (slug) => {
+            const s = String(slug || '').trim();
+            if (!s) return;
+            setDeepBrand(s);
+            await investigateByBrand(s);
+          }}
+        />
+      </div>
+    );
+  }
+
   if (mode === 'home') {
     return (
       <div className="app app--home">
@@ -315,6 +351,14 @@ export default function App() {
           onOpenHistory={() => setMode('history')}
           onOpenWitnesses={openWitnessRegistry}
           onOpenWorkerProfile={openWorkerProfile}
+          onOpenDirectory={() => {
+            try {
+              window.history.pushState({}, '', '/directory');
+            } catch {
+              /* ignore */
+            }
+            setMode('directory');
+          }}
           onSearchInvestigate={async (q) => {
             const trimmed = String(q || '').trim();
             setDeepBrand(trimmed);

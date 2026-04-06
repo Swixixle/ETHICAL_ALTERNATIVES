@@ -1,0 +1,182 @@
+{
+  "brand_name": "Wendy's",
+  "brand_slug": "wendys",
+  "parent_company": "The Wendy's Company",
+  "ultimate_parent": "The Wendy's Company",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "WENDY'S ANNOUNCED DYNAMIC SURGE PRICING FOR MENU ITEMS — THEN BACKED DOWN AFTER CUSTOMERS NOTICED AND CALLED IT WHAT IT WAS",
+  "executive_summary": "Wendy's is the third-largest hamburger fast food chain with 7,000+ US locations and revenues of $2.2 billion annually. In February 2024, Wendy's announced it would invest $20 million in digital menu boards and implement 'dynamic pricing' — menu prices that fluctuate based on demand, time of day, and customer traffic. After significant public backlash, Wendy's clarified it did not plan to implement surge pricing — contradicting its own investor presentation language. The company has faced labor violations at franchise locations, participated in industry lobbying against minimum wage increases, and has a documented pattern of food safety violations across franchise locations. Wendy's supply chain has faced scrutiny over the tomato supply — the company was the final major fast food chain to join the Fair Food Program, which protects farmworkers from exploitation.",
+  "verdict_tags": [
+    "surge_pricing_announcement_reversed",
+    "fair_food_program_last_major_holdout",
+    "franchise_labor_violations",
+    "minimum_wage_lobbying",
+    "food_safety_violations"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": false,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "The Wendy's Company is publicly traded and incorporated in Ohio. Standard restaurant company tax structure. The company uses franchise structures that concentrate IP royalties at the holding company level.",
+    "flags": [
+      "ohio_incorporation",
+      "franchise_ip_royalty_structure"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Fair Food Program: Wendy's was the last major fast food chain to join the Coalition of Immokalee Workers' Fair Food Program — which ensures farmworkers in its tomato supply chain receive a penny-per-pound premium and are protected from exploitation. Wendy's finally joined in 2023 after years of being targeted by advocates. Franchise wage theft settlements across multiple states. OSHA citations at franchise locations. NYC Fair Workweek Law investigations.",
+    "flags": [
+      "fair_food_program_last_holdout_joined_2023",
+      "franchise_wage_theft_settlements",
+      "osha_franchise_citations"
+    ],
+    "sources": []
+  },
+  "labor": {
+    "summary": "Wendy's franchise model creates the same accountability gap documented at Subway and Yum! Brands. The 2024 dynamic pricing announcement — which executives framed to investors as a revenue opportunity — was widely understood by workers and advocates as a mechanism to capture more revenue without paying workers more. Wendy's has opposed minimum wage increases through NRA lobbying. The Fair Food Program holdout — lasting years while farmworkers in Wendy's supply chain faced documented exploitation — represents a documented supply chain labor failure.",
+    "flags": [
+      "franchise_accountability_gap",
+      "dynamic_pricing_revenue_without_worker_share",
+      "minimum_wage_opposition",
+      "fair_food_holdout_documented_exploitation"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Wendy's beef supply chain is a significant source of greenhouse gas emissions. The company sources beef from large-scale industrial cattle operations. Packaging waste at 7,000+ US locations is substantial.",
+    "flags": [
+      "beef_supply_chain_emissions",
+      "industrial_cattle_sourcing",
+      "packaging_waste_7000_locations"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Wendy's participates in NRA lobbying against minimum wage increases and the tipped sub-minimum wage. The dynamic pricing announcement was made in an investor context — a signal to financial markets that the company was exploring revenue optimization mechanisms that would increase prices for workers without increasing wages.",
+    "flags": [
+      "nra_minimum_wage_lobbying",
+      "dynamic_pricing_investor_signal",
+      "revenue_optimization_without_wage_increase"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Kirk Tanner joined Wendy's in early 2024 and was responsible for the investor presentation that mentioned dynamic pricing. He subsequently left the company in May 2024 after less than four months — one of the fastest departures of a major restaurant CEO. The dynamic pricing controversy was among the factors cited in reporting about the departure.",
+    "flags": [
+      "tanner_4_month_ceo_departure",
+      "dynamic_pricing_controversy_cited_departure"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The Coalition of Immokalee Workers (CIW) campaign against Wendy's lasted years and is one of the most documented corporate supply chain accountability campaigns. Farmworkers picking tomatoes for Wendy's supply chain documented wage theft, forced labor conditions, and exploitation while Wendy's refused to join the Fair Food Program that its competitors had already joined. Wendy's finally joined in 2023 under sustained pressure.",
+    "flags": [
+      "ciw_campaign_years_documented",
+      "forced_labor_supply_chain_documented",
+      "fair_food_program_competitor_joined_earlier"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Advocates alleged that Wendy's refusal to join the Fair Food Program for years — while McDonald's, Burger King, Taco Bell, Subway, and others had already joined — indicated a deliberate choice to benefit from cheaper tomato supply chains at the cost of farmworker protections. The dynamic pricing announcement was characterized by some analysts as a test of consumer tolerance for demand-based pricing that would effectively charge higher prices to low-income workers eating during their lunch breaks when restaurant demand peaks.",
+    "flags": [
+      "fair_food_refusal_deliberate_cheaper_sourcing_alleged",
+      "dynamic_pricing_low_income_peak_hour_targeting_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Wendy's menu items are high in sodium and saturated fat. The Baconator burger contains 950 calories and 1,920mg of sodium. The company markets value meals aggressively to price-sensitive customers. Franchise food safety violations have been documented across multiple states.",
+    "flags": [
+      "high_sodium_baconator",
+      "value_meal_price_sensitive_targeting",
+      "franchise_food_safety_violations"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Local burger restaurants — comparable quality, locally owned",
+      "Grocery store — a pound of beef and buns cost less than two Wendy's burgers",
+      "Local diners — comparable price with local economic impact"
+    ],
+    "healthier": [
+      "Local restaurants with known beef sourcing",
+      "Home cooking with control over ingredients"
+    ],
+    "diy": [
+      "Wendy's announced surge pricing to investors before telling customers — the menu board showing you higher prices at noon than at 10am was the plan",
+      "The tomato on your Wendy's burger was picked by workers who faced documented exploitation for years while Wendy's refused to join the Fair Food Program",
+      "Find local burger restaurants on EthicalAlt's Local tab"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1969,
+      "event": "Wendy's founded by Dave Thomas in Columbus, Ohio",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2014,
+      "event": "McDonald's, Burger King, Taco Bell join Fair Food Program protecting farmworkers; Wendy's declines",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "CIW extends national boycott campaign against Wendy's for Fair Food Program refusal",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "Wendy's finally joins Fair Food Program — years after major competitors",
+      "severity": "moderate",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "February: CEO announces dynamic pricing in investor presentation; massive consumer backlash; company backtracks within days",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "May: CEO Kirk Tanner departs after less than 4 months — fastest major restaurant CEO departure in recent memory",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Wendy's shareholders",
+        "how": "$2.2B revenue; franchise model externalizes labor liability; dynamic pricing explored as revenue optimization"
+      },
+      {
+        "group": "Cheaper tomato supply chain suppliers",
+        "how": "Years of Wendy's Fair Food Program refusal maintained lower-cost sourcing at documented cost to farmworkers"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Farmworkers in Wendy's tomato supply chain",
+        "how": "Years of documented exploitation while Wendy's refused to join the Fair Food Program that its competitors had already joined"
+      },
+      {
+        "group": "Workers and customers",
+        "how": "Dynamic pricing would have extracted more from customers during peak hours without sharing with workers"
+      }
+    ],
+    "the_gap": "McDonald's joined the Fair Food Program in 2014. Burger King joined. Subway joined. Taco Bell joined. Wendy's refused for almost a decade while farmworkers documented exploitation in its supply chain. Wendy's joined in 2023. Then announced surge pricing to investors in 2024. Then backed down when customers noticed."
+  }
+}

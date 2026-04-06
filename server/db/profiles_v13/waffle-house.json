@@ -1,0 +1,171 @@
+{
+  "brand_name": "Waffle House",
+  "brand_slug": "waffle-house",
+  "parent_company": "Waffle House Inc.",
+  "ultimate_parent": "Waffle House Inc.",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "WAFFLE HOUSE IS PRIVATELY HELD, PAYS TIPPED WORKERS $2.13/HOUR, AND SEIU FILED A DOL COMPLAINT ALLEGING SYSTEMATIC WAGE THEFT AT HUNDREDS OF LOCATIONS",
+  "executive_summary": "Waffle House is a privately held American restaurant chain with approximately 1,900 locations across 25 states, concentrated in the South and Midwest. The chain is iconic in American culture — its status as an informal FEMA disaster metric is genuine — and is genuinely beloved by many customers. It is also a poster case for the tipped sub-minimum wage: servers receive $2.13/hour base and depend entirely on tips to reach minimum wage, with the employer legally responsible for the difference if tips fall short. In 2024, the Union of Southern Service Workers, an SEIU affiliate, filed a Department of Labor complaint alleging Waffle House engages in systematic wage theft by paying employees the sub-minimum wage for tasks that should require full minimum wage — including tasks performed before and after shifts when no tipping is occurring. Waffle House has also been the site of documented violent incidents including physical altercations involving both customers and staff.",
+  "verdict_tags": [
+    "2_13_tipped_minimum_wage",
+    "seiu_dol_wage_theft_complaint",
+    "sub_minimum_wage_non_tipped_tasks",
+    "privately_held_no_disclosure",
+    "workplace_violence_documented"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": false,
+    "tax": false,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Waffle House Inc. is privately held and does not disclose financial statements. No public information is available on its tax structure.",
+    "flags": [
+      "private_no_disclosure"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "2024: Union of Southern Service Workers (SEIU affiliate) filed Department of Labor complaint alleging Waffle House systematically pays the sub-minimum tipped wage ($2.13/hour) for non-tipped tasks including side work performed before and after shifts — a documented violation of FLSA tip credit rules. When workers perform non-tipped work, they must receive the full minimum wage for that time. Multiple EEOC complaints filed for workplace discrimination and harassment. Individual location wage theft lawsuits filed across multiple states.",
+    "flags": [
+      "dol_complaint_sub_minimum_non_tipped_tasks",
+      "eeoc_discrimination_harassment_complaints",
+      "wage_theft_individual_location_lawsuits"
+    ],
+    "sources": [
+      "https://www.restaurantdive.com/news/subway-franchisee-face-wage-theft-joint-employer-suit-in-california/728617"
+    ]
+  },
+  "labor": {
+    "summary": "Waffle House servers receive $2.13/hour base plus tips. The SEIU complaint documents a specific pattern: workers performing setup and cleanup tasks before and after their shifts — during which no tipping occurs — at the sub-minimum tipped wage rather than the full minimum wage as required by law. Waffle House operates 24/7/365 with a demanding service environment. The company is known for a culture of promoting from within but its base wages start at legally possible minimums.",
+    "flags": [
+      "2_13_tipped_base_wage",
+      "sub_minimum_non_tipped_tasks_alleged",
+      "24_7_demanding_service",
+      "promote_from_within_culture"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Waffle House's 1,900 locations generate food waste and packaging waste. The chain's round-the-clock operation means continuous energy use across its footprint.",
+    "flags": [
+      "24_hour_energy_consumption",
+      "food_packaging_waste"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Waffle House is privately held and maintains a low political profile. The company's labor practices — particularly the tipped sub-minimum wage — implicitly benefit from NRA lobbying that has maintained the $2.13 floor since 1991, even if Waffle House's own political spending is not publicly documented.",
+    "flags": [
+      "benefits_nra_tipped_wage_lobbying",
+      "private_political_spending_undisclosed"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Waffle House is employee and management owned, with a culture of promoting from within. The company's private ownership and management structure is genuine and unusual for a chain of its scale. However, private ownership does not prevent labor violations and insulates the company from public accountability mechanisms available for public companies.",
+    "flags": [
+      "employee_management_owned",
+      "promote_from_within_genuine",
+      "private_insulation_from_accountability"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Waffle House's concentration in the South means its workforce is disproportionately Black women — a demographic that has faced particular vulnerability to tipped sub-minimum wage exploitation. FEMA uses Waffle House's operational status as an informal disaster recovery metric — if the Waffle House is open, the community is recovering. This cultural standing obscures the documented labor practices of its employment model.",
+    "flags": [
+      "workforce_black_women_disproportionate",
+      "fema_index_cultural_standing",
+      "cultural_standing_obscures_labor_practices"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The SEIU DOL complaint alleges Waffle House 'engages in systematic wage theft by paying employees the subminimum wage for tasks that should require the full minimum wage.' Individual workers have alleged that Waffle House management discourages tip reporting and wage complaints by creating a culture where workers feel replaceable and fear termination. Workplace safety advocates have alleged that Waffle House's 24-hour operation and cash-heavy business model creates disproportionate robbery and violence exposure for workers without adequate safety protocols.",
+    "flags": [
+      "systematic_wage_theft_dol_complaint_alleged",
+      "tip_complaint_culture_suppression_alleged",
+      "24_hour_violence_safety_protocol_inadequate_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Waffle House menus are high in sodium, saturated fat, and calories. The chain's signature All-Star breakfast contains over 1,300 calories and 3,000mg of sodium. The 24-hour model serves customers who may be impaired — the chain's association with late-night and post-bar eating is documented in popular culture and creates specific safety considerations.",
+    "flags": [
+      "high_sodium_high_calorie_menu",
+      "impaired_late_night_customer_base",
+      "1300_calorie_all_star_breakfast"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Local diners — same cuisine, comparable prices, locally owned",
+      "Home cooking — eggs, bacon, and waffles cost a fraction per meal",
+      "Local breakfast spots open early morning"
+    ],
+    "healthier": [
+      "Local diners with known sourcing",
+      "Home breakfast cooking with control over ingredients"
+    ],
+    "diy": [
+      "A Waffle House server earns $2.13/hour — your tip is approximately 85-90% of their wage on a slow morning",
+      "The setup and cleanup work they do before your food arrives is performed at $2.13/hour regardless of whether you tip for it",
+      "Find local diners on EthicalAlt's Local tab — many are genuinely locally owned with workers earning full minimum wage"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1955,
+      "event": "Waffle House founded by Joe Rogers Sr. and Tom Forkner in Avondale Estates, Georgia",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1991,
+      "event": "Federal tipped minimum wage set at $2.13/hour — Waffle House workers receive this as their base wage",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "SEIU files DOL complaint alleging systematic wage theft for sub-minimum wage payment during non-tipped tasks",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "Tipped minimum wage remains $2.13 — unchanged for 33 years; Waffle House workers continue receiving it as base wage",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Waffle House employee-owners",
+        "how": "Privately held; extract value through ownership structure; labor costs minimized through $2.13 wage floor"
+      },
+      {
+        "group": "Customers",
+        "how": "Lower menu prices enabled by sub-minimum wage model"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Waffle House servers — predominantly Black women",
+        "how": "$2.13/hour base; tips make up 85-90% of income; setup and cleanup at sub-minimum rate during non-tipped time"
+      },
+      {
+        "group": "Workers performing non-tipped tasks",
+        "how": "SEIU complaint alleges illegal sub-minimum wage payment for tasks that legally require full minimum"
+      }
+    ],
+    "the_gap": "Waffle House servers receive $2.13 per hour. They have received $2.13 per hour since 1991. The FEMA index — informal measure of community disaster recovery based on whether the Waffle House is open — is a genuine cultural phenomenon. The servers making that recovery possible earn $2.13 per hour plus your tips. The SEIU says some of their non-tipping hours are being paid at $2.13 when the law requires full minimum wage."
+  }
+}

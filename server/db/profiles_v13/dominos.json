@@ -1,0 +1,179 @@
+{
+  "brand_name": "Domino's",
+  "brand_slug": "dominos",
+  "parent_company": "Domino's Pizza Inc.",
+  "ultimate_parent": "Domino's Pizza Inc.",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "DOMINO'S DELIVERY DRIVERS ARE AMONG THE MOST INJURED FAST FOOD WORKERS IN THE COUNTRY — THE COMPANY CALLS THEM INDEPENDENT FRANCHISEE EMPLOYEES",
+  "executive_summary": "Domino's Pizza is the world's largest pizza company by sales with 20,000+ global locations and revenues of $4.5 billion annually. Its business model is built around speed: 30-minute delivery commitments created documented pressure on drivers that the company eventually abandoned after lawsuits. Domino's is almost entirely franchised — 98%+ of US locations are franchise-operated — creating the same accountability gap documented at Subway and Yum! Brands. Domino's delivery drivers face disproportionate accident rates driven by delivery speed pressure. The company has settled numerous wage theft class actions, particularly for delivery mileage reimbursement below minimum wage after fuel costs. In 2023 Domino's entered a delivery partnership with Uber Eats, reversing its long-standing strategy of company-employed drivers — moving toward the gig model its labor record had made controversial.",
+  "verdict_tags": [
+    "delivery_driver_injury_rate",
+    "mileage_reimbursement_wage_theft",
+    "franchise_accountability_gap",
+    "uber_eats_partnership_gig_shift",
+    "30_minute_pressure_abandoned",
+    "wage_class_actions_multiple_states"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": false,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Domino's Pizza Inc. is a public company incorporated in Delaware. It has used franchise IP structures and debt financing to minimize its effective tax rate. The company completed a leveraged recapitalization — paying shareholders while loading the company with debt — a common tax-optimization and shareholder-return strategy.",
+    "flags": [
+      "delaware_incorporation",
+      "leveraged_recapitalization",
+      "franchise_ip_structure"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Multiple class action wage theft settlements in California, New York, and other states for delivery driver mileage reimbursement — drivers paid per-mile rates below the IRS standard rate, resulting in effective wages below minimum wage after fuel and vehicle costs. NLRB complaints at franchise locations for labor violations. NYC Fair Workweek investigations. State labor commissioner actions in multiple states for franchise-level violations. Historical: Domino's abandoned its 30-minute delivery guarantee in 1993 after a jury awarded $78 million to a woman hit by a Domino's driver; the guarantee had been cited as creating pressure that led to accidents.",
+    "flags": [
+      "mileage_reimbursement_class_actions_multiple_states",
+      "30_minute_guarantee_abandoned_78m_verdict_1993",
+      "nlrb_franchise_complaints",
+      "fair_workweek_investigations"
+    ],
+    "sources": []
+  },
+  "labor": {
+    "summary": "Domino's delivery drivers are among the most injured workers in the fast food sector. Speed pressure — even without the formal 30-minute guarantee — creates documented accident risk. Mileage reimbursement below actual vehicle costs means drivers effectively subsidize Domino's delivery model with their own cars, insurance, and maintenance. Class actions have documented that after calculating fuel, wear, and depreciation against Domino's per-mile reimbursement rates, effective wages fall below minimum wage. The 2023 Uber Eats partnership begins shifting Domino's toward the gig model that makes these calculations even more opaque.",
+    "flags": [
+      "driver_injury_rate_documented",
+      "mileage_below_actual_cost_effective_below_minimum",
+      "vehicle_subsidization_by_workers",
+      "uber_eats_gig_shift"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Pizza delivery is one of the least environmentally efficient food service models — individual car trips to single households. Domino's generates significant packaging waste across 20,000+ locations. The company has piloted electric delivery vehicles in some markets.",
+    "flags": [
+      "individual_car_delivery_inefficiency",
+      "packaging_waste_20000_locations",
+      "ev_pilot_some_markets"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Domino's and the broader pizza franchise industry opposed California's AB 1228 and similar legislation. The company has lobbied through the National Restaurant Association and International Franchise Association against minimum wage increases and joint employer liability rules.",
+    "flags": [
+      "ab1228_opposition",
+      "nra_ifa_lobbying",
+      "minimum_wage_opposition"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Russell Weiner joined in 2022. The company's strategy under Weiner has included the Uber Eats partnership and a focus on technology — Domino's was an early adopter of online ordering and GPS delivery tracking. Executive compensation has been substantial for a predominantly franchised operation with documented labor violations at the franchise level.",
+    "flags": [
+      "weiner_ceo_2022",
+      "uber_eats_technology_strategy",
+      "gps_tracking_early_adopter"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The 2023 Uber Eats partnership is significant: it moves Domino's toward gig delivery workers who have fewer protections than company or franchise employees, and toward a commission structure that adds cost for customers while reducing driver income compared to direct employment. The EthicalAlt DoorDash and Uber Eats investigation cards document what that shift means for drivers.",
+    "flags": [
+      "uber_eats_gig_shift_worker_protection_reduction",
+      "commission_customer_cost_increase"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Class action plaintiffs have alleged that Domino's mileage reimbursement rates are intentionally set below actual vehicle costs to transfer delivery infrastructure costs to workers, allowing the company to maintain lower prices while workers subsidize the model. Former franchise employees have alleged that the 30-minute cultural pressure — even without the formal guarantee — persists in many franchise operations through management culture and bonus structures tied to delivery speed.",
+    "flags": [
+      "mileage_below_cost_intentional_transfer_alleged",
+      "30_minute_culture_persists_informal_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Domino's menu items are high in sodium, saturated fat, and refined carbohydrates. A large pepperoni pizza contains approximately 4,000mg of sodium — nearly two days of AHA recommended intake. The company's aggressive pricing and frequent discounting make it a primary food option for lower-income households. Its delivery model contributes to sedentary consumption patterns.",
+    "flags": [
+      "high_sodium_pizza",
+      "lower_income_primary_option",
+      "sedentary_consumption_model"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Local independent pizza shops — comparable or better quality at similar price points, money stays local",
+      "Frozen pizza at grocery stores — substantially cheaper per slice",
+      "Make your own — dough, sauce, and toppings cost less per pizza at scale"
+    ],
+    "healthier": [
+      "Local pizzerias with known ingredient sourcing",
+      "Pizza with whole grain crust and vegetable toppings from local shops"
+    ],
+    "diy": [
+      "Domino's delivery drivers use their own vehicles, pay their own fuel and insurance, and receive mileage reimbursement that courts have found falls below minimum wage after costs",
+      "A local pizza shop delivery driver is likely a direct employee with more protections than a Domino's franchise driver",
+      "EthicalAlt Hire Direct has local food delivery workers near you who keep 100% of their rate"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1960,
+      "event": "Domino's founded by Tom Monaghan in Ypsilanti, Michigan",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1993,
+      "event": "Jury awards $78 million to woman hit by Domino's driver; 30-minute guarantee abandoned",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2010,
+      "event": "Multiple class actions filed in California and other states for delivery driver mileage reimbursement below minimum wage after costs",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "Uber Eats partnership announced — shift toward gig delivery model",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "Mileage reimbursement class actions continue across multiple states",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Domino's shareholders",
+        "how": "$4.5B revenue; vehicle costs externalized to drivers; franchise model externalizes labor liability"
+      },
+      {
+        "group": "Customers",
+        "how": "Lower delivery prices enabled by driver vehicle cost subsidization"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Delivery drivers",
+        "how": "Own vehicles, fuel, insurance, maintenance used to deliver Domino's pizza; effective wages below minimum wage after costs documented in class actions"
+      },
+      {
+        "group": "Person hit by Domino's driver in 1993",
+        "how": "$78M jury verdict before 30-minute guarantee abandoned; decades of speed pressure creating accidents"
+      }
+    ],
+    "the_gap": "Domino's built its brand on 30-minute delivery. A jury awarded $78 million to someone hit by a driver racing to meet that guarantee. They dropped the formal guarantee. The speed culture remained. The mileage reimbursement stayed below actual vehicle costs. Courts called it wage theft. Domino's called the drivers franchisee employees."
+  }
+}

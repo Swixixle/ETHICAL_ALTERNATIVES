@@ -31,5 +31,15 @@
   "trugreen": ["lawn_garden"],
   "_default_service": ["handyman", "cleaning"],
   "_default_food": ["grocery", "delivery"],
-  "_default_tech": ["tech_help"]
+  "_default_tech": ["tech_help"],
+  "subway": ["grocery", "delivery"],
+  "chipotle": ["grocery", "delivery"],
+  "yum-brands": ["grocery", "delivery"],
+  "dominos": ["grocery", "delivery"],
+  "darden-restaurants": ["grocery", "delivery"],
+  "waffle-house": ["grocery", "delivery"],
+  "wendys": ["grocery", "delivery"],
+  "7-eleven": ["grocery", "delivery"],
+  "circle-k": ["grocery", "delivery"],
+  "pilot-flying-j": ["grocery", "delivery"]
 }

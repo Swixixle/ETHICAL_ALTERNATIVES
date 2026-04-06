@@ -17,6 +17,7 @@ import {
   HealthIcon,
 } from './icons/SectionIcons';
 import HireDirectInvestigationBlock from './HireDirectInvestigationBlock.jsx';
+import { fetchProportionality } from '../lib/fetchProportionality.js';
 import './InvestigationCard.css';
 
 const PLACEHOLDER_EMPTY_NORM = 'no indexed public material in this category';
@@ -166,6 +167,285 @@ const SECTION_ICONS = {
   executive: ExecutivesIcon,
 };
 
+/** Collapsed accordion — monospace text badge colors (Phase 1). */
+const EVIDENCE_LEVEL_ROW_BADGE = {
+  established: { color: '#4ade80', label: 'CONFIRMED' },
+  strong: { color: '#facc15', label: 'STRONG' },
+  moderate: { color: '#fb923c', label: 'MODERATE' },
+  limited: { color: '#94a3b8', label: 'LIMITED' },
+  alleged: { color: '#f87171', label: 'ALLEGED' },
+};
+
+/** @param {string} sectionKey */
+function sectionKeyToTimelineCategory(sectionKey) {
+  const m = {
+    tax: 'tax',
+    legal: 'legal',
+    labor: 'labor',
+    environmental: 'environmental',
+    political: 'political',
+    product_health: 'product',
+    executive: 'executive',
+  };
+  return m[sectionKey] ?? null;
+}
+
+/**
+ * @param {unknown} timeline
+ * @param {string} sectionKey
+ */
+function getMostRecentTimelineYearForSection(timeline, sectionKey) {
+  if (!Array.isArray(timeline)) return null;
+  const want = sectionKeyToTimelineCategory(sectionKey);
+  if (!want) return null;
+  const labelSlug = String(sectionKey).toLowerCase().replace(/_/g, ' ');
+  const matching = timeline.filter((e) => {
+    if (!e || typeof e !== 'object') return false;
+    if (typeof e.category !== 'string') return false;
+    const cat = e.category.toLowerCase();
+    if (cat === want) return true;
+    const ev = typeof e.event === 'string' ? e.event.toLowerCase() : '';
+    if (!ev) return false;
+    return ev.includes(want) || ev.includes(labelSlug);
+  });
+  if (!matching.length) return null;
+  matching.sort((a, b) => {
+    const dy = (Number(b.year) || 0) - (Number(a.year) || 0);
+    if (dy !== 0) return dy;
+    return (Number(b.month) || 0) - (Number(a.month) || 0);
+  });
+  const y = matching[0].year;
+  return Number.isFinite(Number(y)) ? Number(y) : null;
+}
+
+const PROPORTIONALITY_SECTION_KEYS = new Set([
+  'tax',
+  'legal',
+  'labor',
+  'environmental',
+  'political',
+  'product_health',
+]);
+
+/** @param {number} n */
+function formatUsdRecord(n) {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    maximumFractionDigits: 0,
+  }).format(n);
+}
+
+/** @param {{ text: string; url?: string | null }} props */
+function ProportionalitySourceLine({ text, url }) {
+  const body =
+    url && /^https?:\/\//i.test(url) ? (
+      <a
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+        className="investigation-card__legal-context-source-link"
+      >
+        {text}
+      </a>
+    ) : (
+      text
+    );
+  return <p className="investigation-card__legal-context-source">{body}</p>;
+}
+
+/** @param {unknown} chargeStatus */
+function shouldPrefixFacilityBlock(chargeStatus) {
+  const s = String(chargeStatus || '').toLowerCase();
+  return s.includes('credibly alleged') || s.includes('under investigation');
+}
+
+/**
+ * @param {{
+ *   sectionKey: string;
+ *   investigation: Record<string, unknown>;
+ *   clientPacket: Record<string, unknown> | null | undefined;
+ *   onClientPacket: (p: Record<string, unknown>) => void;
+ *   geoDismissed: boolean;
+ *   onGeoDismiss: () => void;
+ * }} props
+ */
+function ProportionalityLegalContextBlock({
+  sectionKey,
+  investigation,
+  clientPacket,
+  onClientPacket,
+  geoDismissed,
+  onGeoDismiss,
+}) {
+  const serverPacket = investigation[`${sectionKey}_proportionality_packet`];
+  const packet =
+    clientPacket && typeof clientPacket === 'object'
+      ? clientPacket
+      : serverPacket && typeof serverPacket === 'object'
+        ? serverPacket
+        : null;
+  if (!packet) return null;
+
+  const coords = investigation.investigation_coordinates;
+  const hasServerCoords =
+    coords &&
+    typeof coords === 'object' &&
+    Number.isFinite(Number(coords.lat)) &&
+    Number.isFinite(Number(coords.lng));
+
+  const statutes = Array.isArray(packet.applicable_statutes) ? packet.applicable_statutes : [];
+  const sc =
+    packet.sentencing_context && typeof packet.sentencing_context === 'object'
+      ? packet.sentencing_context
+      : null;
+  const amountComp =
+    packet.amount_comparison && typeof packet.amount_comparison === 'object'
+      ? packet.amount_comparison
+      : null;
+  const facility =
+    packet.facility_context && typeof packet.facility_context === 'object'
+      ? packet.facility_context
+      : null;
+
+  const showStatutes = statutes.length > 0;
+  const showSentencing = Boolean(sc);
+  const showAmount =
+    amountComp &&
+    amountComp.median_amount_involved != null &&
+    Number.isFinite(Number(amountComp.median_amount_involved));
+  const showFacility = Boolean(facility);
+  const showGeoPrompt =
+    !showFacility &&
+    !hasServerCoords &&
+    !geoDismissed &&
+    typeof navigator !== 'undefined' &&
+    'geolocation' in navigator;
+
+  if (!showStatutes && !showSentencing && !showAmount && !showFacility && !showGeoPrompt) return null;
+
+  const chargeStatus = packet.charge_status ?? investigation[`${sectionKey}_charge_status`];
+
+  const requestGeo = () => {
+    if (!navigator.geolocation) {
+      onGeoDismiss();
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(
+      async (pos) => {
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        const vt =
+          typeof packet.violation_type === 'string'
+            ? packet.violation_type
+            : String(investigation[`${sectionKey}_violation_type`] || '');
+        const cs = chargeStatus != null ? String(chargeStatus) : '';
+        const amtRaw =
+          amountComp && amountComp.amount_involved != null
+            ? amountComp.amount_involved
+            : investigation[`${sectionKey}_amount_involved`];
+        const next = await fetchProportionality({
+          category: sectionKey,
+          violationType: vt,
+          chargeStatus: cs || undefined,
+          amountInvolved: amtRaw != null ? Number(amtRaw) : undefined,
+          lat,
+          lng,
+        });
+        if (next && typeof next === 'object') onClientPacket(next);
+      },
+      () => {
+        onGeoDismiss();
+      },
+      { enableHighAccuracy: false, timeout: 12_000, maximumAge: 60_000 }
+    );
+  };
+
+  const bopHref =
+    facility && typeof facility.source_url === 'string' && facility.source_url.startsWith('http')
+      ? facility.source_url
+      : 'https://www.bop.gov/';
+
+  return (
+    <div className="investigation-card__legal-context investigation-card__body">
+      <div className="investigation-card__legal-context-title">LEGAL CONTEXT</div>
+      {showStatutes ? (
+        <div className="investigation-card__legal-context-sub">
+          <div className="investigation-card__legal-context-divider" aria-hidden />
+          <div className="investigation-card__legal-context-heading">APPLICABLE LAW</div>
+          {statutes.map((row, i) => (
+            <div key={`${row.code}-${i}`} className="investigation-card__legal-context-statute">
+              <div>
+                {row.code} — {row.description}
+              </div>
+              <div>Max term: {row.max_penalty_years} years</div>
+              {row.citation_url ? (
+                <ProportionalitySourceLine text={String(row.citation_url)} url={String(row.citation_url)} />
+              ) : null}
+            </div>
+          ))}
+        </div>
+      ) : null}
+      {showSentencing && sc ? (
+        <div className="investigation-card__legal-context-sub">
+          <div className="investigation-card__legal-context-divider" aria-hidden />
+          <div className="investigation-card__legal-context-heading">SENTENCE COMPARISON</div>
+          <div>Comparison offense: {String(sc.comparison_offense)}</div>
+          <div>Median sentence (comparable federal cases): {String(sc.median_sentence_months)} months</div>
+          <div>Total sentenced (2023, comparable): {String(sc.total_sentenced_2023)}</div>
+          <ProportionalitySourceLine text={String(sc.source)} url={sc.source_url ? String(sc.source_url) : null} />
+        </div>
+      ) : null}
+      {showAmount && amountComp ? (
+        <div className="investigation-card__legal-context-sub">
+          <div className="investigation-card__legal-context-divider" aria-hidden />
+          <div className="investigation-card__legal-context-heading">AMOUNT IN RECORD</div>
+          <div>Amount involved: {formatUsdRecord(Number(amountComp.amount_involved))}</div>
+          <div>Median amount in comparable federal cases: {formatUsdRecord(Number(amountComp.median_amount_involved))}</div>
+          <div>≈ {String(amountComp.multiple_of_median)}x the median</div>
+          {sc ? (
+            <ProportionalitySourceLine text={String(sc.source)} url={sc.source_url ? String(sc.source_url) : null} />
+          ) : null}
+        </div>
+      ) : null}
+      {showGeoPrompt ? (
+        <div className="investigation-card__legal-context-sub">
+          <div className="investigation-card__legal-context-divider" aria-hidden />
+          <button type="button" className="investigation-card__legal-context-geo-prompt" onClick={requestGeo}>
+            Show nearest federal facility — uses your location, nothing stored
+          </button>
+        </div>
+      ) : null}
+      {showFacility && facility ? (
+        <div className="investigation-card__legal-context-sub">
+          <div className="investigation-card__legal-context-divider" aria-hidden />
+          <div className="investigation-card__legal-context-heading">NEAREST FEDERAL FACILITY</div>
+          {shouldPrefixFacilityBlock(chargeStatus) ? (
+            <p className="investigation-card__legal-context-charge-prefix investigation-card__body-muted">
+              No criminal charge established — context only
+            </p>
+          ) : null}
+          <div>
+            {String(facility.facility_name)} · {String(facility.distance_miles)} miles
+          </div>
+          <div>Security level: {String(facility.security_level)}</div>
+          {facility.population_total != null && Number.isFinite(Number(facility.population_total)) ? (
+            <div>Population: {String(facility.population_total)}</div>
+          ) : null}
+          <p className="investigation-card__legal-context-bop-line">
+            <a href={bopHref} target="_blank" rel="noreferrer" className="investigation-card__legal-context-bop-link">
+              Bureau of Prisons ↗
+            </a>
+          </p>
+          {typeof facility.source_url === 'string' && facility.source_url.startsWith('http') ? (
+            <ProportionalitySourceLine text={facility.source_url} url={facility.source_url} />
+          ) : null}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 const SECTIONS = [
   {
     key: 'tax',
@@ -174,6 +454,7 @@ const SECTIONS = [
     flagsKey: 'tax_flags',
     sourcesKey: 'tax_sources',
     evidenceGradeKey: 'tax_evidence_grade',
+    findingKey: 'tax_finding',
   },
   {
     key: 'legal',
@@ -182,6 +463,7 @@ const SECTIONS = [
     flagsKey: 'legal_flags',
     sourcesKey: 'legal_sources',
     evidenceGradeKey: 'legal_evidence_grade',
+    findingKey: 'legal_finding',
   },
   {
     key: 'labor',
@@ -190,6 +472,7 @@ const SECTIONS = [
     flagsKey: 'labor_flags',
     sourcesKey: 'labor_sources',
     evidenceGradeKey: 'labor_evidence_grade',
+    findingKey: 'labor_finding',
   },
   {
     key: 'environmental',
@@ -198,6 +481,7 @@ const SECTIONS = [
     flagsKey: 'environmental_flags',
     sourcesKey: 'environmental_sources',
     evidenceGradeKey: 'environmental_evidence_grade',
+    findingKey: 'environmental_finding',
   },
   {
     key: 'political',
@@ -206,6 +490,7 @@ const SECTIONS = [
     flagsKey: null,
     sourcesKey: 'political_sources',
     evidenceGradeKey: 'political_evidence_grade',
+    findingKey: 'political_finding',
   },
   {
     key: 'product_health',
@@ -214,6 +499,7 @@ const SECTIONS = [
     flagsKey: null,
     sourcesKey: 'product_health_sources',
     evidenceGradeKey: 'product_health_evidence_grade',
+    findingKey: 'product_health_finding',
   },
   {
     key: 'executive',
@@ -222,6 +508,7 @@ const SECTIONS = [
     flagsKey: null,
     sourcesKey: 'executive_sources',
     evidenceGradeKey: null,
+    findingKey: null,
   },
 ];
 
@@ -375,6 +662,12 @@ export default function InvestigationCard({
   onWrongBrand,
 }) {
   const [openSection, setOpenSection] = useState(/** @type {string | null} */ (null));
+  const [proportionalityClientPacket, setProportionalityClientPacket] = useState(
+    /** @type {Record<string, Record<string, unknown>>} */ ({})
+  );
+  const [proportionalityGeoDismissed, setProportionalityGeoDismissed] = useState(
+    /** @type {Record<string, boolean>} */ ({})
+  );
   const verdictRef = useRef(null);
 
   const profileType = investigation ? String(investigation.profile_type || '') : '';
@@ -426,11 +719,29 @@ export default function InvestigationCard({
     const hasSummary = isSummaryMeaningful(summary);
     const hasFlags = Array.isArray(fl) && fl.length > 0;
     const hasSources = Array.isArray(sources) && sources.length > 0;
-    const hasContent = hasSummary || hasFlags || hasSources;
+    const proportionalityPacketKey = `${s.key}_proportionality_packet`;
+    const rawPacket = PROPORTIONALITY_SECTION_KEYS.has(s.key) ? investigation[proportionalityPacketKey] : null;
+    const hasProportionality = rawPacket != null && typeof rawPacket === 'object';
+    const hasContent = hasSummary || hasFlags || hasSources || hasProportionality;
 
     const Icon = SECTION_ICONS[s.key];
     const evGrade =
       s.evidenceGradeKey && investigation[s.evidenceGradeKey] ? investigation[s.evidenceGradeKey] : null;
+    const levelRaw =
+      evGrade && typeof evGrade === 'object' && typeof evGrade.level === 'string'
+        ? evGrade.level.toLowerCase()
+        : '';
+    const rowBadge = EVIDENCE_LEVEL_ROW_BADGE[levelRaw] || null;
+    const hasEvidenceGradeLevel = Boolean(rowBadge);
+    const isCollapsedEmpty =
+      !hasSummary && !hasSources && !hasEvidenceGradeLevel && !hasProportionality;
+    const timelineYear = getMostRecentTimelineYearForSection(investigation.timeline, s.key);
+
+    const findingKey = s.findingKey;
+    const findingRaw = findingKey ? investigation[findingKey] : null;
+    const findingText =
+      typeof findingRaw === 'string' && findingRaw.trim() ? findingRaw.trim() : null;
+    const findingBorderColor = rowBadge ? rowBadge.color : '#d4a017';
 
     sectionItems.push({
       key: s.key,
@@ -438,9 +749,37 @@ export default function InvestigationCard({
       accent: 'confirmed',
       Icon,
       evGrade,
+      rowPhase1: {
+        isCollapsedEmpty,
+        badge: rowBadge,
+        sourceCount: hasSources ? sources.length : 0,
+        timelineYear,
+      },
       hasContent,
       body: hasContent ? (
         <>
+          {findingText ? (
+            <p
+              className="investigation-card__section-finding investigation-card__body"
+              style={{ borderLeftColor: findingBorderColor }}
+            >
+              {findingText}
+            </p>
+          ) : null}
+          {PROPORTIONALITY_SECTION_KEYS.has(s.key) ? (
+            <ProportionalityLegalContextBlock
+              sectionKey={s.key}
+              investigation={investigation}
+              clientPacket={proportionalityClientPacket[s.key]}
+              onClientPacket={(p) =>
+                setProportionalityClientPacket((prev) => ({ ...prev, [s.key]: p }))
+              }
+              geoDismissed={!!proportionalityGeoDismissed[s.key]}
+              onGeoDismiss={() =>
+                setProportionalityGeoDismissed((prev) => ({ ...prev, [s.key]: true }))
+              }
+            />
+          ) : null}
           {hasSummary ? (
             <p className="investigation-card__section-summary investigation-card__body">{String(summary)}</p>
           ) : null}
@@ -786,29 +1125,80 @@ export default function InvestigationCard({
             item.accent === 'allegation'
               ? ' investigation-card__accordion-item--allegation'
               : ' investigation-card__accordion-item--confirmed';
+          const rp = item.rowPhase1;
           return (
             <div key={item.key} className={`investigation-card__accordion-item${accentClass}`}>
-              <button
-                type="button"
-                className="investigation-card__accordion-trigger"
-                aria-expanded={open}
-                onClick={() => setOpenSection(open ? null : item.key)}
-              >
-                <span className="investigation-card__accordion-chev" aria-hidden style={{ transform: open ? 'rotate(90deg)' : 'rotate(0deg)' }}>
-                  ›
-                </span>
-                {SectionIcon ? <SectionIcon /> : null}
-                <span className="investigation-card__accordion-title">{item.title}</span>
-                {item.evGrade ? <EvidenceBadge grade={item.evGrade} /> : null}
-                {item.severityStyle ? (
-                  <span
-                    className="investigation-card__health-severity-pill"
-                    style={{ color: item.severityStyle.accent, borderColor: item.severityStyle.border }}
-                  >
-                    {String(item.severityLabel).toUpperCase()}
+              {rp ? (
+                <button
+                  type="button"
+                  className="investigation-card__accordion-trigger investigation-card__accordion-trigger--split"
+                  aria-expanded={open}
+                  onClick={() => setOpenSection(open ? null : item.key)}
+                >
+                  <span className="investigation-card__accordion-trigger-start">
+                    {SectionIcon ? <SectionIcon /> : null}
+                    <span
+                      className="investigation-card__accordion-title investigation-card__accordion-title--split"
+                      style={{ opacity: rp.isCollapsedEmpty ? 0.35 : 1 }}
+                    >
+                      {item.title}
+                    </span>
                   </span>
-                ) : null}
-              </button>
+                  <span className="investigation-card__accordion-trigger-end">
+                    {!rp.isCollapsedEmpty ? (
+                      <span className="investigation-card__accordion-row-meta investigation-card__body-muted">
+                        {rp.badge ? (
+                          <>
+                            <span aria-hidden> · </span>
+                            <span
+                              className="investigation-card__evidence-row-label"
+                              style={{ color: rp.badge.color }}
+                            >
+                              {rp.badge.label}
+                            </span>
+                          </>
+                        ) : null}
+                        {rp.sourceCount > 0 ? (
+                          <span>
+                            {' · '}
+                            {rp.sourceCount} source{rp.sourceCount === 1 ? '' : 's'}
+                          </span>
+                        ) : null}
+                        {rp.timelineYear != null ? <span>{` · ${rp.timelineYear}`}</span> : null}
+                      </span>
+                    ) : null}
+                    <span
+                      className="investigation-card__accordion-chev investigation-card__accordion-chev--end"
+                      aria-hidden
+                      style={{ transform: open ? 'rotate(90deg)' : 'rotate(0deg)' }}
+                    >
+                      ›
+                    </span>
+                  </span>
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="investigation-card__accordion-trigger"
+                  aria-expanded={open}
+                  onClick={() => setOpenSection(open ? null : item.key)}
+                >
+                  <span className="investigation-card__accordion-chev" aria-hidden style={{ transform: open ? 'rotate(90deg)' : 'rotate(0deg)' }}>
+                    ›
+                  </span>
+                  {SectionIcon ? <SectionIcon /> : null}
+                  <span className="investigation-card__accordion-title">{item.title}</span>
+                  {item.evGrade ? <EvidenceBadge grade={item.evGrade} /> : null}
+                  {item.severityStyle ? (
+                    <span
+                      className="investigation-card__health-severity-pill"
+                      style={{ color: item.severityStyle.accent, borderColor: item.severityStyle.border }}
+                    >
+                      {String(item.severityLabel).toUpperCase()}
+                    </span>
+                  ) : null}
+                </button>
+              )}
               <div
                 className={`investigation-card__accordion-panel${open ? ' investigation-card__accordion-panel--open' : ''}`}
               >

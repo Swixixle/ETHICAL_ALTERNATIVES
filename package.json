@@ -1,5 +1,6 @@
 {
   "name": "ethicalalt",
+  "description": "EthicalAlt — React + Express investigative shopping lens (photo, tap, sourced corporate record + local alternatives)",
   "private": true,
   "version": "0.0.1",
   "workspaces": [

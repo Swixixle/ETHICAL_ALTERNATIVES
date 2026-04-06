@@ -1,0 +1,196 @@
+{
+  "brand_name": "Darden Restaurants (Olive Garden)",
+  "brand_slug": "darden-restaurants",
+  "parent_company": "Darden Restaurants Inc.",
+  "ultimate_parent": "Darden Restaurants Inc.",
+  "subsidiaries": [
+    "Olive Garden",
+    "LongHorn Steakhouse",
+    "Cheddar's Scratch Kitchen",
+    "Yard House",
+    "The Capital Grille",
+    "Seasons 52",
+    "Bahama Breeze",
+    "Eddie V's"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "DARDEN RESTAURANTS FOUGHT A DECADE-LONG BATTLE TO KEEP TIPPED WORKERS AT $2.13/HOUR — THEN RAISED PRICES WHILE CUTTING SERVER HOURS",
+  "executive_summary": "Darden Restaurants is the world's largest full-service restaurant company with 1,900+ locations and $10 billion in annual revenue, primarily through Olive Garden and LongHorn Steakhouse. Unlike the fast food chains above, Darden employs its workers directly — no franchise model. This makes its labor record directly attributable. Darden has been a leading industry voice opposing increases to the federal tipped minimum wage — $2.13 per hour, unchanged since 1991. The company lobbied extensively against the Raise the Wage Act, which would have eliminated the sub-minimum tipped wage. Darden simultaneously raised menu prices, reduced server hours per shift, and implemented table-side tablets (Ziosk) that allow customers to order dessert and pay without server interaction — directly reducing tipped income for servers while the company captured the tablet revenue stream.",
+  "verdict_tags": [
+    "tipped_minimum_wage_opposition",
+    "2_13_hour_tipped_wage_lobby",
+    "ziosk_tablet_tip_income_reduction",
+    "server_hour_cuts",
+    "menu_price_increases",
+    "wage_theft_settlements"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": false,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Darden Restaurants Inc. is a publicly traded company incorporated in Florida. The company uses standard restaurant industry tax structures including accelerated depreciation on restaurant equipment and leasehold improvements. No documented offshore tax optimization controversies.",
+    "flags": [
+      "florida_incorporation",
+      "standard_restaurant_tax_structures"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Darden has settled wage theft class actions related to tipped minimum wage calculations and tip pooling violations. The DOL has investigated Darden brands for violations of tip credit rules — employers who pay the tipped minimum wage ($2.13/hour) must ensure workers' tips bring them to at least the federal minimum wage; when they don't, the employer owes the difference. In practice, enforcement is difficult and underpayment is documented. NYC and California investigations into scheduling practices at Olive Garden locations.",
+    "flags": [
+      "tip_credit_wage_theft_settlements",
+      "dol_tip_credit_investigations",
+      "scheduling_practice_investigations"
+    ],
+    "sources": []
+  },
+  "labor": {
+    "summary": "Darden employs approximately 175,000 people directly, primarily as tipped servers, cooks, and support staff. Tipped servers at Olive Garden receive $2.13/hour base plus tips — on slow shifts, effective wages can fall below minimum wage if tips are insufficient to cover the gap. Darden has lobbied the National Restaurant Association's position against eliminating the tipped minimum wage for over a decade. The company installed Ziosk tablets at Olive Garden tables — customers can order dessert and pay without server interaction, directly reducing server tip income. Server hours were reduced in tandem with menu price increases, meaning customers pay more while servers earn less per shift.",
+    "flags": [
+      "175000_direct_employees",
+      "2_13_tipped_minimum_wage_base",
+      "slow_shift_below_minimum_wage_risk",
+      "ziosk_tablet_tip_income_reduction",
+      "server_hour_cuts_price_increases_simultaneous"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Darden operates 1,900+ large-format full-service restaurants with significant energy use for cooking, climate control, and dishwashing. The company has made some sustainability commitments including seafood sourcing standards. Its supply chain — particularly for shrimp and seafood at Olive Garden — has faced sustainability scrutiny.",
+    "flags": [
+      "large_format_restaurant_energy_use",
+      "seafood_supply_chain_scrutiny"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Darden has been a major donor to the National Restaurant Association and its political arm, which has spent tens of millions fighting minimum wage increases, paid sick leave requirements, and the elimination of the tipped sub-minimum wage. The company's CEO and executives have testified before Congress and state legislatures against wage legislation. Darden's political influence was significant enough that the National Restaurant Association's NRSA PAC has been called 'the other NRA' for its lobbying power.",
+    "flags": [
+      "nra_major_donor",
+      "tipped_wage_elimination_opposition_decade",
+      "congressional_testimony_against_wages",
+      "other_nra_lobbying"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Ricardo Cardenas has led Darden since 2022. The company's executive compensation — including Cardenas's $11+ million total package — contrasts with the $2.13/hour tipped minimum wage its server workforce receives as a base. Previous CEO Gene Lee was a prominent industry voice against minimum wage increases while leading one of the largest restaurant employers in the country.",
+    "flags": [
+      "cardenas_11m_compensation",
+      "lee_minimum_wage_opposition_prominent",
+      "executive_tipped_wage_contrast"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Darden is a member company of the National Restaurant Association, whose political arm has spent over $100 million since 1990 opposing minimum wage increases. The sub-minimum tipped wage of $2.13/hour — unchanged since 1991 — is specifically the result of NRA lobbying. When customers pay Darden's menu prices, some of their payment funds the lobbying that keeps the $2.13 wage floor in place.",
+    "flags": [
+      "nra_100m_minimum_wage_lobbying",
+      "2_13_wage_nra_lobbying_result",
+      "customer_payment_funds_wage_floor_lobbying"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Servers and advocacy organizations have alleged that Darden's Ziosk tablet implementation was specifically designed to reduce server tip income while allowing the company to capture revenue from tablet advertising and games — effectively shifting income from servers to Darden. Former employees have alleged that server scheduling reductions were timed to maximize labor cost reduction while maintaining the legal appearance of not firing workers. The Restaurant Opportunities Centers United has documented alleged wage theft patterns at Darden brands.",
+    "flags": [
+      "ziosk_tip_reduction_intentional_alleged",
+      "scheduling_reduction_constructive_dismissal_alleged",
+      "roc_united_wage_theft_documentation"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Olive Garden's menu is high in sodium, saturated fat, and refined carbohydrates. A Tour of Italy entree contains 1,520 calories and 3,600mg of sodium — more than the AHA daily recommendation. The unlimited breadstick model encourages overconsumption of refined carbohydrates. Portion sizes at full-service restaurants are documented to be 2-3x recommended serving sizes.",
+    "flags": [
+      "high_sodium_olive_garden_entrees",
+      "unlimited_breadstick_overconsumption",
+      "portion_sizes_2_3x_recommended"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Local Italian restaurants — same cuisine, locally owned, often comparable or better quality",
+      "Home cooking — pasta, sauce, and salad cost a fraction of an Olive Garden meal for a family",
+      "Local family-owned steakhouses — LongHorn alternative with local economic impact"
+    ],
+    "healthier": [
+      "Local restaurants with known sourcing",
+      "Home cooking with control over sodium and portion size"
+    ],
+    "diy": [
+      "Olive Garden's server receives $2.13/hour base — your tip is not a bonus, it is their wage; tipping below 20% on a slow night means the server may have earned below minimum wage serving you",
+      "The restaurant industry has successfully kept the tipped minimum wage at $2.13 since 1991 — it has not been adjusted for inflation in 34 years",
+      "Find local Italian restaurants on EthicalAlt — your money stays in your community and workers are more likely to receive full minimum wage"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1968,
+      "event": "Darden founded as Red Lobster by Bill Darden",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1991,
+      "event": "Federal tipped minimum wage set at $2.13/hour — NRA lobbying instrumental in keeping it separate from regular minimum wage; unchanged to present day",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2014,
+      "event": "Darden installs Ziosk tablets at Olive Garden tables — server tip income reduced as dessert and payment interaction moves to tablet",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "Raise the Wage Act considered in Congress — Darden and NRA lobby extensively against elimination of $2.13 tipped minimum wage",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Ricardo Cardenas becomes CEO; menu price increases implemented; server hours reduced",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "Tipped minimum wage remains $2.13; Darden reports record revenue while server base wages unchanged since 1991",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Darden shareholders and executives",
+        "how": "$10B revenue; Ziosk tablet revenue; server hour reductions reduce labor cost; menu price increases boost revenue"
+      },
+      {
+        "group": "National Restaurant Association",
+        "how": "Darden funding for lobbying that has maintained $2.13 tipped minimum wage since 1991"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Olive Garden and LongHorn servers",
+        "how": "$2.13/hour base wage — unchanged for 34 years; tips reduced by Ziosk tablets; hours reduced while prices rose"
+      },
+      {
+        "group": "American tipped workers broadly",
+        "how": "$2.13 tipped minimum wage unchanged since 1991 — 34 years of wage stagnation at the floor maintained by NRA lobbying funded by companies like Darden"
+      }
+    ],
+    "the_gap": "The tipped minimum wage has been $2.13 since 1991. Olive Garden servers receive $2.13 per hour. Darden's CEO received $11 million last year. The company installed tablets that reduce server tip income. Then cut server hours. Then raised menu prices. The $2.13 wage floor is unchanged because the NRA — funded by Darden — has spent over $100 million since 1990 to keep it there."
+  }
+}

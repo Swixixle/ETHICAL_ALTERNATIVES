@@ -1,0 +1,195 @@
+{
+  "brand_name": "Chipotle",
+  "brand_slug": "chipotle",
+  "parent_company": "Chipotle Mexican Grill Inc.",
+  "ultimate_parent": "Chipotle Mexican Grill Inc.",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "CHIPOTLE PAID $20 MILLION TO 13,000 NEW YORK WORKERS FOR FAIR WORKWEEK VIOLATIONS, THEN KEPT VIOLATING THE SAME LAW",
+  "executive_summary": "Chipotle Mexican Grill is a $9+ billion revenue fast casual chain with 3,500+ locations, notable for its direct employment model — unlike McDonald's or Subway, Chipotle employs its workers directly, making corporate accountability cleaner. That has also made its labor record more directly attributable. Chipotle paid $20 million to 13,000 current and former New York workers in 2022 for violating the city's Fair Workweek Law. It then kept violating the same law — accumulating the most unfair labor practice violations of any NYC employer in 2023, primarily for retaliating against workers trying to unionize. It settled $2.9 million with Seattle in 2024 for scheduling and sick time violations affecting 1,853 workers. The NYC Comptroller named Chipotle to its Employer Wall of Shame for being the second-worst wage theft offender in the city. Chipotle closed its Hawthorn, New York location in 2022 rather than allow workers to unionize — the first Chipotle location where workers had filed for a union election.",
+  "verdict_tags": [
+    "20m_nyc_fair_workweek_settlement",
+    "most_uflp_violations_nyc_2023",
+    "union_retaliation_documented",
+    "store_closed_to_prevent_union",
+    "2_9m_seattle_settlement",
+    "wall_of_shame_nyc"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": false,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Chipotle is a publicly traded company (CMG) incorporated in Delaware. Standard corporate tax structure for a restaurant company of its scale. No documented offshore tax optimization controversies.",
+    "flags": [
+      "delaware_incorporation",
+      "public_company_cme"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "2022: $20 million settlement with NYC Department of Consumer and Worker Protection for Fair Workweek Law violations — predictable scheduling, advance notice of shifts, offering extra hours to existing employees before hiring — affecting 13,000 workers. 2024: $2.9 million settlement with Seattle Office of Labor Standards for Secure Scheduling and Paid Sick and Safe Time violations at 8 locations, affecting 1,853 workers. 2023: NYC Comptroller Employer Wall of Shame — most unfair labor practice violations of any employer in the city (7), primarily for union retaliation. NLRB complaints filed by SEIU 32BJ for retaliating against workers seeking to organize. 2022: Hawthorn, NY location closed after workers filed for union election — NLRB complaint filed.",
+    "flags": [
+      "20m_nyc_settlement_13000_workers",
+      "2_9m_seattle_settlement_1853_workers",
+      "most_ulp_violations_nyc_2023",
+      "hawthorn_store_closure_union_retaliation"
+    ],
+    "sources": [
+      "https://www.thechiefleader.com/stories/comptrollers-wall-of-shame-spotlights-worst-labor-rights-offenders,53016",
+      "https://content.govdelivery.com/accounts/WASEATTLE/bulletins/395a663"
+    ]
+  },
+  "labor": {
+    "summary": "Chipotle's Fair Workweek violations — unpredictable scheduling, last-minute shift changes, failure to offer extra hours to existing workers before hiring new ones — are the core documented pattern. The $20 million NYC settlement covered violations across Chipotle's entire NYC footprint. After the settlement, complaints continued at 10 additional NYC stores. Chipotle closed its Hawthorn, NY location in 2022 rather than allow a union election to proceed — a documented union-busting tactic. SEIU 32BJ filed NLRB complaints. The NYC Comptroller's Wall of Shame data shows Chipotle owed over $350,000 to more than 9,000 workers for wage theft separate from Fair Workweek violations.",
+    "flags": [
+      "fair_workweek_violations_systemicnyc",
+      "hawthorn_closure_union_busting",
+      "seiu_nlrb_complaints",
+      "350k_additional_wage_theft_nyc_9000_workers"
+    ],
+    "sources": [
+      "https://www.seiu32bj.org/press-release/ny-fast-food-workers-rally-and-march-calling-on-employers-to-obey-the-law"
+    ]
+  },
+  "environmental": {
+    "summary": "Chipotle uses some sustainably sourced ingredients and has environmental marketing around responsible sourcing. The company generates significant food waste and packaging waste across 3,500+ locations. Chipotle has faced supply chain disruptions from norovirus and E. coli outbreaks that raised questions about sourcing controls.",
+    "flags": [
+      "food_waste_3500_locations",
+      "ecoli_norovirus_outbreaks_sourcing_questions"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Chipotle actively lobbied against California's AB 1228 fast food worker protection bill. The fast food industry collectively spent $64 million fighting the bill. Chipotle's direct employment model made it particularly exposed to the bill's provisions — unlike franchised chains, Chipotle could not use the franchise accountability gap as a shield.",
+    "flags": [
+      "ab1228_opposition",
+      "64m_industry_california_lobbying",
+      "direct_employer_model_exposure"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Brian Niccol departed in 2024 to become CEO of Starbucks. Scott Boatwright became CEO. Niccol received $100+ million in compensation during his tenure at Chipotle. The company's executive compensation has been substantially higher than peer restaurant companies while its labor settlement record accumulated.",
+    "flags": [
+      "niccol_100m_compensation_departed_starbucks",
+      "boatwright_new_ceo",
+      "executive_pay_labor_settlement_contrast"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Chipotle's direct employment model makes it a cleaner accountability case than franchised competitors — there's no franchise owner to blame. The SEIU's campaign against Chipotle is part of its broader fast food organizing effort. The Hawthorn closure set a precedent that other Chipotle workers watched; organizing slowed at other locations after the closure. Chipotle's food sourcing from small and mid-sized farms is genuine but does not offset the labor record.",
+    "flags": [
+      "direct_employer_clean_accountability",
+      "hawthorn_chilling_effect_organizing",
+      "small_farm_sourcing_genuine_but_insufficient"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "SEIU 32BJ has alleged Chipotle's pattern of Fair Workweek violations was systematic and deliberate — using scheduling instability as a tool to make union organizing harder by preventing workers from reliably attending meetings or planning their lives. Workers at Chipotle locations have alleged that after the Hawthorn closure, management at other locations made clear that unionization attempts would result in closures. NLRB complaints allege specific instances of retaliation against workers who discussed organizing.",
+    "flags": [
+      "scheduling_instability_anti_union_tool_alleged",
+      "hawthorn_chilling_effect_alleged",
+      "retaliation_specific_instances_nlrb_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Chipotle has had documented food safety crises: 2015 E. coli outbreak affecting 55 people across 11 states; 2017 norovirus outbreak at a Virginia location sickening 135 people; ongoing norovirus complaints. The CDC investigated multiple Chipotle outbreaks. Chipotle paid $25 million in 2020 to resolve criminal charges related to a 2018 norovirus outbreak — the largest fine ever for a food safety violation. Menu items are high in sodium and calories despite the fresh ingredient positioning.",
+    "flags": [
+      "ecoli_2015_11_states_55_people",
+      "norovirus_multiple_outbreaks",
+      "25m_criminal_fine_food_safety_2020",
+      "largest_food_safety_fine_ever"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Local Mexican and Latin American restaurants — same cuisine, locally owned, workers more likely treated to legal standards",
+      "Grocery store prepared foods from local markets",
+      "Cooking at home — rice, beans, and fresh vegetables cost a fraction of a Chipotle bowl"
+    ],
+    "healthier": [
+      "Local taquerias — often family-owned, fresher sourcing, community economic multiplier",
+      "Cooking at home — control sodium content and ingredient sourcing"
+    ],
+    "diy": [
+      "Chipotle's $20M NYC settlement covered 13,000 workers — that is the equivalent of the entire workforce of a mid-sized city's food service sector",
+      "Find local Mexican restaurants on EthicalAlt's Local tab — your money stays in the community",
+      "Chipotle closed a store rather than let workers vote on a union. Cook at home or find a local spot."
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1993,
+      "event": "Chipotle founded by Steve Ells in Denver, Colorado",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2015,
+      "event": "E. coli outbreak across 11 states affecting 55 people; subsequent norovirus outbreaks",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "$25 million criminal fine for food safety violation — largest ever in food safety case",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "$20 million NYC Fair Workweek settlement for 13,000 workers; Hawthorn NY store closed rather than allow union election",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "Named most unfair labor practice violator in NYC — 7 ULPs, primarily union retaliation; Wall of Shame for wage theft",
+      "severity": "critical",
+      "source_url": "https://www.thechiefleader.com/stories/comptrollers-wall-of-shame-spotlights-worst-labor-rights-offenders,53016"
+    },
+    {
+      "year": 2024,
+      "event": "$2.9 million Seattle settlement for scheduling and sick time violations at 8 locations; CEO Brian Niccol departs for Starbucks with $100M+ in compensation",
+      "severity": "high",
+      "source_url": "https://content.govdelivery.com/accounts/WASEATTLE/bulletins/395a663"
+    }
+  ],
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Chipotle shareholders and executives",
+        "how": "$9B revenue; Brian Niccol received $100M+ during tenure of documented violations; direct employment model enables profitable operations at scale"
+      },
+      {
+        "group": "Chipotle managers who closed Hawthorn",
+        "how": "Union organizing at that location ended; chilling effect spread to other locations"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "13,000 NYC workers",
+        "how": "Unpredictable scheduling preventing workers from planning lives, second jobs, childcare, school; $20M settlement partial remedy"
+      },
+      {
+        "group": "Hawthorn workers",
+        "how": "Store closed rather than allow union vote; jobs eliminated to prevent organizing"
+      },
+      {
+        "group": "1,853 Seattle workers",
+        "how": "Scheduling and sick time violations; $2.9M settlement"
+      }
+    ],
+    "the_gap": "Chipotle paid $20 million to 13,000 workers for scheduling violations. Then kept violating the same law. Then closed a store when workers tried to unionize. Then paid $2.9 million in Seattle. The CEO who oversaw this record left for Starbucks with over $100 million in compensation. The workers who filed for a union election lost their jobs."
+  }
+}

@@ -910,7 +910,7 @@ function FeedCard({ business, chainFootnote = false }) {
 }
 
 /**
- * @param {{ onStartSnap: () => void; onOpenWorkerProfile?: (slug: string) => void }} props
+ * @param {{ onStartSnap: () => void; onOpenWorkerProfile?: (slug: string) => void; onOpenDirectory?: () => void }} props
  */
 export default function HomeScreen({
   onStartSnap,
@@ -918,6 +918,7 @@ export default function HomeScreen({
   onOpenHistory,
   onOpenWitnesses,
   onOpenWorkerProfile,
+  onOpenDirectory,
 }) {
   const [phase, setPhase] = useState(() => initialPhase());
   const [location, setLocation] = useState(() => readCachedLocation());
@@ -1708,6 +1709,29 @@ export default function HomeScreen({
               </div>
             ) : null}
           </>
+        ) : null}
+
+        {typeof onOpenDirectory === 'function' ? (
+          <div style={{ margin: '24px 16px 0', textAlign: 'center' }}>
+            <button
+              type="button"
+              onClick={() => onOpenDirectory()}
+              style={{
+                fontSize: 12,
+                color: 'inherit',
+                opacity: 0.5,
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                fontFamily: "'Space Mono', monospace",
+                letterSpacing: '0.06em',
+                textDecoration: 'underline',
+                padding: '8px 4px',
+              }}
+            >
+              Investigation Index
+            </button>
+          </div>
         ) : null}
 
         <div style={{ paddingBottom: 56 }} aria-hidden />

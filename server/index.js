@@ -15,7 +15,12 @@ import localCommercialRouter from './routes/localCommercial.js';
 import witnessRouter from './routes/witness.js';
 import documentaryRouter from './routes/documentary.js';
 import workersRouter from './routes/workers.js';
+import profileIndexRouter from './routes/profiles.index.route.js';
 import { getProviderHealthSnapshot } from './services/aiProvider.js';
+import {
+  buildProportionalityPacket,
+  PROPORTIONALITY_CATEGORIES,
+} from './services/proportionality.js';
 
 const app = express();
 
@@ -40,8 +45,49 @@ app.get('/api/health/providers', (_req, res) => {
   res.json(getProviderHealthSnapshot());
 });
 
+const proportionalityCategorySet = new Set(PROPORTIONALITY_CATEGORIES);
+
+app.get('/proportionality', (req, res) => {
+  const category = typeof req.query.category === 'string' ? req.query.category.trim().toLowerCase() : '';
+  if (!category || !proportionalityCategorySet.has(category)) {
+    return res.status(400).json({ ok: false, error: 'invalid or missing category' });
+  }
+  const violationType =
+    typeof req.query.violation_type === 'string' ? req.query.violation_type : '';
+  const chargeStatus =
+    typeof req.query.charge_status === 'string' && req.query.charge_status.trim()
+      ? req.query.charge_status.trim()
+      : null;
+  const amountRaw = req.query.amount_involved;
+  let amountInvolved = null;
+  if (amountRaw != null && String(amountRaw).trim() !== '') {
+    const n = Number(amountRaw);
+    amountInvolved = Number.isFinite(n) ? n : null;
+  }
+  let lat = null;
+  let lng = null;
+  if (req.query.lat != null && String(req.query.lat).trim() !== '') {
+    const la = Number(req.query.lat);
+    if (Number.isFinite(la)) lat = la;
+  }
+  if (req.query.lng != null && String(req.query.lng).trim() !== '') {
+    const ln = Number(req.query.lng);
+    if (Number.isFinite(ln)) lng = ln;
+  }
+  const packet = buildProportionalityPacket({
+    category,
+    violationType,
+    chargeStatus,
+    amountInvolved,
+    lat,
+    lng,
+  });
+  res.json({ ok: true, proportionality: packet });
+});
+
 app.use('/api/workers', workersRouter);
 app.use('/api', tapRouter);
+app.use('/api/profiles', profileIndexRouter);
 app.use('/api/sellers', sellersRouter);
 app.use('/api/city-identity', cityIdentityRouter);
 app.use('/api/local-feed', localFeedRouter);

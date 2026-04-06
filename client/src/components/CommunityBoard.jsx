@@ -323,7 +323,7 @@ function PostForm({ onSubmit, location }) {
       />
 
       <label style={labelStyle} htmlFor="cb-contact">
-        Contact (phone or email — shared with your match)
+        Contact (phone or email — shown on your public post)
       </label>
       <input
         id="cb-contact"
@@ -512,7 +512,7 @@ export default function CommunityBoard({ location }) {
             textTransform: 'uppercase',
           }}
         >
-          Community Board
+          Notice board
         </div>
         <div
           style={{
@@ -536,8 +536,9 @@ export default function CommunityBoard({ location }) {
           marginBottom: 20,
         }}
       >
-        Daily labor board. Post by 10am, work starts at noon. EthicalAlt connects you — the work happens
-        between people, not platforms. No cut taken. No reviews. No algorithm.
+        A simple local notice board for today — who can help, who needs help. You post contact details;
+        neighbors coordinate directly. EthicalAlt only lists posts for your area; it does not match jobs,
+        run payments, or screen workers.
       </p>
 
       <div style={{ display: 'flex', gap: 8, marginBottom: 24 }}>

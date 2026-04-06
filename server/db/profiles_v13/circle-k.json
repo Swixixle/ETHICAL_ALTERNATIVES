@@ -1,0 +1,191 @@
+{
+  "brand_name": "Circle K",
+  "brand_slug": "circle-k",
+  "parent_company": "Alimentation Couche-Tard Inc.",
+  "ultimate_parent": "Alimentation Couche-Tard Inc. (Quebec, Canada)",
+  "subsidiaries": [
+    "Circle K",
+    "Mac's",
+    "Couche-Tard",
+    "Holiday Stationstores",
+    "Flash Foods"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "CIRCLE K'S CANADIAN PARENT ATTEMPTED A $47 BILLION HOSTILE TAKEOVER OF 7-ELEVEN IN 2024 — WHILE ITS OWN STORES FACE LABOR VIOLATIONS AND FUEL SPILL CITATIONS",
+  "executive_summary": "Circle K is the US convenience store and gas station brand of Alimentation Couche-Tard, a Quebec-based company that has grown into one of the world's largest convenience store operators through aggressive acquisition. With 14,000+ Circle K locations across North America and 16,000+ globally, Couche-Tard attempted an unsolicited $47 billion acquisition of 7-Eleven's parent Seven & i Holdings in 2024 — which would have created a monopolistic convenience store empire. The acquisition was blocked. Circle K locations have faced wage theft citations, OSHA violations, and fuel storage environmental violations across multiple states. The company's aggressive acquisition strategy has repeatedly raised antitrust scrutiny from the FTC.",
+  "verdict_tags": [
+    "47b_hostile_7eleven_takeover_blocked",
+    "ftc_antitrust_scrutiny_acquisitions",
+    "fuel_storage_environmental_violations",
+    "wage_theft_citations",
+    "monopolistic_convenience_expansion",
+    "canadian_parent_us_operations"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": false,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Alimentation Couche-Tard is incorporated in Quebec, Canada. US operations are conducted through Circle K Stores Inc., a Delaware subsidiary. Revenue from US operations is subject to transfer pricing arrangements between US and Canadian entities. The company has used acquisition structures that minimize US tax obligations on acquired brands.",
+    "flags": [
+      "canadian_parent_quebec",
+      "delaware_us_subsidiary",
+      "transfer_pricing_us_canada",
+      "acquisition_tax_structures"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Multiple state environmental agencies have cited Circle K and predecessor brands for underground storage tank leaks and fuel spill violations — a systemic risk across any large fuel retail network. OSHA citations at Circle K locations for workplace safety violations. DOL wage theft investigations at company-operated locations. FTC has reviewed multiple Couche-Tard acquisitions for antitrust concerns; the 7-Eleven acquisition attempt was blocked. EPA Leaking Underground Storage Tank (LUST) program has documented violations at Couche-Tard/Circle K locations.",
+    "flags": [
+      "underground_storage_tank_epa_violations",
+      "osha_workplace_safety_citations",
+      "dol_wage_theft",
+      "ftc_antitrust_acquisition_reviews",
+      "7eleven_acquisition_blocked"
+    ],
+    "sources": []
+  },
+  "labor": {
+    "summary": "Circle K operates a mix of company-owned and licensed locations. Company-owned location workers face direct corporate accountability for labor practices. Convenience store workers are among the highest-risk retail workers — exposure to robbery, overnight shifts, and isolated work environments. Circle K has faced wage theft citations particularly in Southern states. Overnight shift workers at convenience stores face documented risks including robbery, with inadequate safety protocols at some locations.",
+    "flags": [
+      "robbery_risk_overnight_workers",
+      "wage_theft_southern_states",
+      "company_vs_licensed_accountability_mix",
+      "overnight_isolated_work_risk"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Circle K's fuel retail operations create documented environmental risks through underground storage tank leaks, fuel spills, and air quality impacts. The EPA's LUST program tracks underground storage tank violations — Circle K/Couche-Tard locations appear in violation records across multiple states. Fuel retail is one of the most environmentally regulated retail sectors due to contamination risks, and enforcement varies significantly by state.",
+    "flags": [
+      "underground_storage_tank_lust_violations",
+      "fuel_spill_contamination",
+      "air_quality_fuel_evaporation",
+      "state_enforcement_variation"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Couche-Tard's attempted hostile takeover of 7-Eleven/Seven & i Holdings in 2024 raised geopolitical dimensions — a Canadian company attempting to acquire a Japanese-owned chain that had been subject to Japanese government pressure to remain independent. The $47 billion acquisition was eventually abandoned after Seven & i indicated it would not engage. The potential monopolistic combination of the world's two largest convenience store chains drew regulatory attention globally.",
+    "flags": [
+      "7eleven_hostile_takeover_attempt",
+      "japanese_government_pressure_resist",
+      "global_antitrust_attention",
+      "monopolistic_combination_concern"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Brian Hannasch has led Couche-Tard since 2014 and has executed a string of major acquisitions that grew the company from a Canadian regional chain to a global convenience store operator. The failed 7-Eleven bid was the most ambitious. Founders Alain Bouchard and associates retain significant ownership stakes.",
+    "flags": [
+      "hannasch_ceo_acquisition_strategy",
+      "bouchard_founder_ownership",
+      "failed_7eleven_most_ambitious"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Circle K's acquisition history includes Holiday Stationstores, Flash Foods, CrossAmerica Partners, and dozens of regional chains. Each acquisition brings legacy environmental liabilities from previous owners' fuel storage practices — underground tank violations often predate Couche-Tard ownership but require remediation funding. The convenience store industry's environmental liability exposure is distributed across thousands of sites, many of which are in low-income communities near fuel retail concentration.",
+    "flags": [
+      "legacy_environmental_liability_acquisitions",
+      "underground_tank_low_income_community_concentration"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Environmental advocates have alleged that Couche-Tard's acquisition-focused growth strategy deprioritizes environmental remediation of acquired legacy underground storage tank violations, creating ongoing contamination risk. Worker advocates have alleged that Circle K's reliance on overnight single-worker shifts creates known robbery vulnerability that the company has not adequately addressed with safety protocols, panic buttons, or staffing.",
+    "flags": [
+      "remediation_deprioritization_alleged",
+      "overnight_single_worker_robbery_vulnerability_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Circle K convenience stores are primary food access points in communities with limited grocery access. The product mix — energy drinks, processed snacks, roller grill food — is nutritionally poor. Energy drink sales, a significant convenience store revenue category, are linked to cardiovascular effects in younger consumers. High-caffeine energy drinks are sold without age restrictions despite documented health effects.",
+    "flags": [
+      "energy_drink_cardiovascular_effects",
+      "no_age_restriction_energy_drinks",
+      "food_desert_primary_access",
+      "processed_snack_primary_product"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Independent gas stations for fuel — often comparable prices without the corporate markup on convenience items",
+      "Warehouse clubs (Costco, Sam's Club) for fuel at lower per-gallon prices",
+      "Local grocery stores for snacks and drinks at lower markup"
+    ],
+    "healthier": [
+      "Grocery store prepared food sections vs. convenience store roller grill",
+      "Local food options when traveling instead of convenience store processed snacks"
+    ],
+    "diy": [
+      "Circle K's parent company tried to buy 7-Eleven for $47 billion in 2024 — the world's two largest convenience store chains under one owner would have been a retail monopoly",
+      "Underground storage tank leaks contaminate groundwater in surrounding communities — often low-income neighborhoods near fuel retail concentration",
+      "Find independent gas stations on EthicalAlt's Local tab"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1951,
+      "event": "Circle K founded in El Paso, Texas",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2003,
+      "event": "Alimentation Couche-Tard acquires Circle K",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2014,
+      "event": "Couche-Tard becomes one of North America's largest fuel retailers through Holiday Stationstores acquisition",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "FTC reviews multiple Couche-Tard acquisitions for antitrust concerns",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "Couche-Tard attempts $47 billion hostile takeover of 7-Eleven parent Seven & i Holdings; blocked after Japanese government pressure and board rejection",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Couche-Tard/Alimentation shareholders",
+        "how": "Global convenience store empire built through acquisitions; $47B takeover attempt signals ambition to monopolize sector"
+      },
+      {
+        "group": "Previous owners of acquired chains",
+        "how": "Sold legacy operations including environmental liabilities to Couche-Tard at acquisition price"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Communities near underground storage tank leak sites",
+        "how": "Groundwater contamination from legacy and active tank violations"
+      },
+      {
+        "group": "Overnight Circle K workers",
+        "how": "Robbery exposure in overnight single-worker environments; inadequate safety protocols alleged"
+      }
+    ],
+    "the_gap": "Circle K's parent tried to buy 7-Eleven for $47 billion. It would have controlled more convenience stores and gas stations than any company in history. The combined operation would have set prices at fuel pumps across North America. It was blocked. The underground storage tanks at their existing locations are still leaking."
+  }
+}

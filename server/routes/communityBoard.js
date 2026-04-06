@@ -125,8 +125,8 @@ router.post('/', async (req, res) => {
       post: result.rows[0],
       message:
         post_type === 'offer'
-          ? "You're on the board for today. Check back — matches are made by proximity and skill."
-          : 'Your request is posted. Someone nearby will see it.',
+          ? "You're on the board for today. Listings are sorted by distance when we have your area."
+          : 'Your request is posted on the board for today.',
     });
   } catch (err) {
     console.error('[board] POST error:', err.message);

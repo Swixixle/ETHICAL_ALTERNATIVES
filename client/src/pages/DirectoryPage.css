@@ -1,0 +1,202 @@
+.dir-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+  font-family: var(--font-sans, system-ui, sans-serif);
+}
+
+.dir-header {
+  margin-bottom: 1.25rem;
+}
+
+.dir-back {
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: var(--color-text-secondary, #666);
+  cursor: pointer;
+  padding: 0 0 12px;
+  font-family: inherit;
+}
+
+.dir-back:hover {
+  color: var(--color-text-primary, #111);
+}
+
+.dir-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary, #999);
+  font-family: var(--font-mono, monospace);
+  margin-bottom: 4px;
+}
+
+.dir-headline {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--color-text-primary, #111);
+  margin-bottom: 4px;
+}
+
+.dir-sub {
+  font-size: 13px;
+  color: var(--color-text-secondary, #666);
+}
+
+.dir-search {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+  font-size: 13px;
+  font-family: var(--font-mono, monospace);
+}
+
+.dir-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 1.25rem;
+}
+
+.dir-filter-btn {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  border: 0.5px solid var(--color-border-tertiary, #ddd);
+  background: transparent;
+  color: var(--color-text-secondary, #666);
+  cursor: pointer;
+  font-family: var(--font-mono, monospace);
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.dir-filter-btn:hover {
+  border-color: var(--color-border-secondary, #ccc);
+  color: var(--color-text-primary, #111);
+}
+
+.dir-filter-btn.active {
+  background: var(--color-text-primary, #111);
+  color: var(--color-background-primary, #fff);
+  border-color: var(--color-text-primary, #111);
+}
+
+.dir-error {
+  font-size: 13px;
+  color: #a32d2d;
+  padding: 1rem 0;
+}
+
+.dir-empty {
+  font-size: 14px;
+  color: var(--color-text-tertiary, #aaa);
+  padding: 2rem 0;
+}
+
+.dir-table-wrap {
+  overflow-x: auto;
+}
+
+.dir-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.dir-table th {
+  text-align: left;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary, #999);
+  font-weight: 500;
+  padding: 0 12px 8px 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary, #eee);
+}
+
+.dir-table td {
+  padding: 10px 12px 10px 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary, #eee);
+  vertical-align: top;
+}
+
+.dir-row {
+  cursor: pointer;
+}
+
+.dir-row:hover td {
+  background: var(--color-background-secondary, #f9f9f9);
+}
+
+.company-name {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--color-text-primary, #111);
+}
+
+.company-headline {
+  display: block;
+  font-size: 11px;
+  color: var(--color-text-tertiary, #999);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+.sector-tag {
+  font-size: 12px;
+  color: var(--color-text-secondary, #666);
+  font-family: var(--font-mono, monospace);
+}
+
+.slug-tag {
+  font-size: 11px;
+  color: var(--color-text-tertiary, #aaa);
+  font-family: var(--font-mono, monospace);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-family: var(--font-mono, monospace);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.badge-significant { background: #fcebeb; color: #a32d2d; }
+.badge-moderate    { background: #e6f1fb; color: #185fa5; }
+.badge-minor       { background: #faeeda; color: #854f0b; }
+.badge-clean       { background: #eaf3de; color: #3b6d11; }
+.badge-unknown     { background: var(--color-background-secondary, #f5f5f5); color: var(--color-text-tertiary, #999); }
+
+.skeleton {
+  height: 12px;
+  border-radius: 4px;
+  background: var(--color-border-tertiary, #eee);
+  animation: dir-pulse 1.3s ease-in-out infinite;
+}
+
+@keyframes dir-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.dir-footer {
+  margin-top: 3rem;
+  font-size: 11px;
+  color: var(--color-text-tertiary, #bbb);
+  font-family: var(--font-mono, monospace);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+  .hide-mobile { display: none; }
+}
+
+@media (max-width: 800px) {
+  .hide-small { display: none; }
+}

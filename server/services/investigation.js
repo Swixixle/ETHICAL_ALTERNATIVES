@@ -5,6 +5,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { relationalRowToParsed } from '../db/mapIncumbentProfile.js';
 import { pool } from '../db/pool.js';
 import { getPressOutletsForSlug } from './pressOutletsCatalog.js';
+import { attachProportionalityToInvestigation } from './proportionality.js';
 import {
   recordProviderFailure,
   recordProviderSuccess,
@@ -372,6 +373,12 @@ function flattenNestedProfileJson(parsed) {
     product_health_sources: Array.isArray(parsed.product_health_sources)
       ? parsed.product_health_sources.map(String)
       : [],
+    tax_finding: parsed.tax_finding,
+    legal_finding: parsed.legal_finding,
+    labor_finding: parsed.labor_finding,
+    environmental_finding: parsed.environmental_finding,
+    political_finding: parsed.political_finding,
+    product_health_finding: parsed.product_health_finding,
     tax_evidence_grade: parsed.tax_evidence_grade,
     legal_evidence_grade: parsed.legal_evidence_grade,
     labor_evidence_grade: parsed.labor_evidence_grade,
@@ -388,6 +395,28 @@ function flattenNestedProfileJson(parsed) {
     allegations: parsed.allegations,
     health_record: parsed.health_record,
     alternatives: parsed.alternatives,
+    latitude: parsed.latitude,
+    longitude: parsed.longitude,
+    lat: parsed.lat,
+    lng: parsed.lng,
+    tax_violation_type: parsed.tax_violation_type,
+    tax_charge_status: parsed.tax_charge_status,
+    tax_amount_involved: parsed.tax_amount_involved,
+    legal_violation_type: parsed.legal_violation_type,
+    legal_charge_status: parsed.legal_charge_status,
+    legal_amount_involved: parsed.legal_amount_involved,
+    labor_violation_type: parsed.labor_violation_type,
+    labor_charge_status: parsed.labor_charge_status,
+    labor_amount_involved: parsed.labor_amount_involved,
+    environmental_violation_type: parsed.environmental_violation_type,
+    environmental_charge_status: parsed.environmental_charge_status,
+    environmental_amount_involved: parsed.environmental_amount_involved,
+    political_violation_type: parsed.political_violation_type,
+    political_charge_status: parsed.political_charge_status,
+    political_amount_involved: parsed.political_amount_involved,
+    product_health_violation_type: parsed.product_health_violation_type,
+    product_health_charge_status: parsed.product_health_charge_status,
+    product_health_amount_involved: parsed.product_health_amount_involved,
   };
 }
 
@@ -482,6 +511,13 @@ function normalizePressOutletsFromParsed(raw) {
   return out;
 }
 
+/** @param {unknown} raw */
+function normalizeCategoryFinding(raw) {
+  if (raw == null) return null;
+  const s = String(raw).trim();
+  return s || null;
+}
+
 function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) {
   const brand = typeof parsed?.brand === 'string' ? parsed.brand : brandName || 'Unknown';
   const parent =
@@ -537,14 +573,17 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
     tax_summary: parsed?.tax_summary ?? null,
     tax_flags: Array.isArray(parsed?.tax_flags) ? parsed.tax_flags.map(String) : emptyArr(),
     tax_sources: Array.isArray(parsed?.tax_sources) ? parsed.tax_sources.map(String) : emptyArr(),
+    tax_finding: normalizeCategoryFinding(parsed?.tax_finding),
 
     legal_summary: parsed?.legal_summary ?? null,
     legal_flags: Array.isArray(parsed?.legal_flags) ? parsed.legal_flags.map(String) : emptyArr(),
     legal_sources: Array.isArray(parsed?.legal_sources) ? parsed.legal_sources.map(String) : emptyArr(),
+    legal_finding: normalizeCategoryFinding(parsed?.legal_finding),
 
     labor_summary: parsed?.labor_summary ?? null,
     labor_flags: Array.isArray(parsed?.labor_flags) ? parsed.labor_flags.map(String) : emptyArr(),
     labor_sources: Array.isArray(parsed?.labor_sources) ? parsed.labor_sources.map(String) : emptyArr(),
+    labor_finding: normalizeCategoryFinding(parsed?.labor_finding),
 
     environmental_summary: parsed?.environmental_summary ?? null,
     environmental_flags: Array.isArray(parsed?.environmental_flags)
@@ -553,11 +592,13 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
     environmental_sources: Array.isArray(parsed?.environmental_sources)
       ? parsed.environmental_sources.map(String)
       : emptyArr(),
+    environmental_finding: normalizeCategoryFinding(parsed?.environmental_finding),
 
     political_summary: parsed?.political_summary ?? null,
     political_sources: Array.isArray(parsed?.political_sources)
       ? parsed.political_sources.map(String)
       : emptyArr(),
+    political_finding: normalizeCategoryFinding(parsed?.political_finding),
 
     product_health: healthFlag
       ? parsed?.product_health != null && parsed.product_health !== ''
@@ -567,6 +608,9 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
     product_health_sources: Array.isArray(parsed?.product_health_sources)
       ? parsed.product_health_sources.map(String)
       : emptyArr(),
+    product_health_finding: healthFlag
+      ? normalizeCategoryFinding(parsed?.product_health_finding)
+      : null,
 
     tax_evidence_grade: normalizeEvidenceGrade(parsed?.tax_evidence_grade),
     legal_evidence_grade: normalizeEvidenceGrade(parsed?.legal_evidence_grade),
@@ -596,10 +640,19 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
     press_outlets: normalizePressOutletsFromParsed(parsed?.press_outlets),
   };
 
+  attachProportionalityToInvestigation(inv, parsed, healthFlag);
+
   if (!healthFlag) {
     inv.product_health = null;
     inv.product_health_sources = [];
     inv.product_health_evidence_grade = null;
+    inv.product_health_finding = null;
+    inv.product_health_proportionality_packet = null;
+    inv.product_health_applicable_statutes = [];
+    inv.product_health_proportionality = null;
+    inv.product_health_violation_type = null;
+    inv.product_health_charge_status = null;
+    inv.product_health_amount_involved = null;
   }
 
   return inv;
@@ -790,20 +843,26 @@ Return ONLY valid JSON (no markdown). Shape:
   "parent": string | null,
   "subsidiaries": string[],
   "tax_summary": string | null,
+  "tax_finding": string | null,
   "tax_flags": string[],
   "tax_sources": string[],
   "legal_summary": string | null,
+  "legal_finding": string | null,
   "legal_flags": string[],
   "legal_sources": string[],
   "labor_summary": string | null,
+  "labor_finding": string | null,
   "labor_flags": string[],
   "labor_sources": string[],
   "environmental_summary": string | null,
+  "environmental_finding": string | null,
   "environmental_flags": string[],
   "environmental_sources": string[],
   "political_summary": string | null,
+  "political_finding": string | null,
   "political_sources": string[],
   "product_health": string | null,
+  "product_health_finding": string | null,
   "product_health_sources": string[],
   "tax_evidence_grade": { "level": "established"|"strong"|"moderate"|"limited"|"alleged", "source_types": string[], "note": string | null },
   "legal_evidence_grade": { "level": "...", "source_types": string[], "note": string | null },
@@ -852,6 +911,8 @@ Return ONLY valid JSON (no markdown). Shape:
     "the_gap": string
   }
 }
+
+Per-category one-line findings — include tax_finding, legal_finding, labor_finding, environmental_finding, political_finding, and product_health_finding (omit or null when product_health is null). Each is one sentence, maximum 15 words, stating the single most consequential documented fact about this company in that category. No hedging language. No phrasing like "allegations of." State what the record shows. If nothing credible exists in that category, use null.
 
 Also return a "timeline" array with all documented events in the corporate
 record listed in chronological order (oldest first).
@@ -936,7 +997,7 @@ Rules:
 - If insufficient evidence, use null summaries, empty flags, and overall_concern_level "moderate" (never "unknown").
 - verdict_tags: snake_case e.g. tax_avoidance, labor_violations, bribery, clean_record.
 - generated_headline: follow the headline rules above; null only when there is no substantive record to summarize.
-${healthFlag ? '- product_health must summarize documented health implications for this product category, with sources.' : '- Set product_health and product_health_sources to null and [].'}
+${healthFlag ? '- product_health must summarize documented health implications for this product category, with sources.' : '- Set product_health, product_health_finding, and product_health_sources to null and [].'}
 ${
   shouldIncludeNotableMentions(productCategory)
     ? `
@@ -967,7 +1028,7 @@ async function repairInvestigationJson(brandName, contaminated) {
     messages: [
       {
         role: 'user',
-        content: `Extract ONE valid JSON object for a corporate investigation of "${brandName}" from the text below. The JSON must match the investigation schema (brand, parent, subsidiaries, summaries, flags, sources, overall_concern_level, verdict_tags, timeline, community_impact, generated_headline, product_health fields, and notable_mentions when present for restaurants). Output ONLY the JSON — no markdown, no commentary. If a value is missing use null or [].
+        content: `Extract ONE valid JSON object for a corporate investigation of "${brandName}" from the text below. The JSON must match the investigation schema (brand, parent, subsidiaries, summaries, tax_finding/legal_finding/labor_finding/environmental_finding/political_finding/product_health_finding, flags, sources, evidence grades, overall_concern_level, verdict_tags, timeline, community_impact, generated_headline, product_health fields, and notable_mentions when present for restaurants). Output ONLY the JSON — no markdown, no commentary. If a value is missing use null or [].
 
 --- begin ---
 ${slice}

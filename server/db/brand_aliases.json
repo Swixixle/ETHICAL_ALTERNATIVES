@@ -161,5 +161,15 @@
   "gig-work": "doordash",
   "twitter": "twitter-x",
   "x": "twitter-x",
-  "x-dot-com": "twitter-x"
+  "x-dot-com": "twitter-x",
+  "olive-garden": "darden-restaurants",
+  "longhorn-steakhouse": "darden-restaurants",
+  "capital-grille": "darden-restaurants",
+  "speedway": "7-eleven",
+  "taco-bell": "yum-brands",
+  "kfc": "yum-brands",
+  "pizza-hut": "yum-brands",
+  "pilot": "pilot-flying-j",
+  "flying-j": "pilot-flying-j",
+  "couche-tard": "circle-k"
 }

@@ -1,0 +1,193 @@
+{
+  "brand_name": "7-Eleven / Speedway",
+  "brand_slug": "7-eleven",
+  "parent_company": "7-Eleven Inc.",
+  "ultimate_parent": "Seven & i Holdings (Japan)",
+  "subsidiaries": [
+    "Speedway LLC",
+    "Stripes LLC",
+    "Laredo Taco Company"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "7-ELEVEN ACQUIRED SPEEDWAY FOR $21 BILLION AND IS NOW BEING PRESSURED BY ACTIVIST INVESTORS TO SELL ITSELF — WHILE ITS FRANCHISE OWNERS FACE WAGE THEFT INVESTIGATIONS ACROSS THE US",
+  "executive_summary": "7-Eleven is the world's largest convenience store chain with 13,000+ US locations, owned by Japanese retail conglomerate Seven & i Holdings which acquired Speedway from Marathon Petroleum for $21 billion in 2021. 7-Eleven is primarily a franchise operation in the US — franchise owners operate the stores under licensing agreements while 7-Eleven corporate collects fees and sells inventory to franchisees at marked-up prices through a 'gross profit split' model. This model has generated repeated franchise owner revolts and federal investigations. The DOJ investigated 7-Eleven for conducting coordinated raids on its own franchise locations using immigration authorities — targeting franchise owners who were disputing the company's financial practices. 7-Eleven franchise owners, many of whom are South Asian and immigrant entrepreneurs, have documented systematic financial practices that make profitability difficult while corporate captures income through the inventory supply model.",
+  "verdict_tags": [
+    "doj_ice_franchise_raids_investigation",
+    "immigrant_franchise_owner_targeting",
+    "gross_profit_split_model_disputes",
+    "21b_speedway_acquisition",
+    "seven_i_japanese_parent",
+    "franchise_owner_revolt"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": false,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "7-Eleven Inc. is a wholly owned subsidiary of Seven & i Holdings, a Japanese company. Revenue from US operations flows to Japan through dividend and royalty structures. The 2021 Speedway acquisition at $21 billion created significant debt that has been loaded onto the US operations. Activist investors in Japan have pushed for a breakup of Seven & i, potentially selling 7-Eleven to focus on its Japanese convenience store operations.",
+    "flags": [
+      "japanese_parent_revenue_flow",
+      "21b_acquisition_debt",
+      "activist_investor_breakup_pressure"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "DOJ investigation: 7-Eleven coordinated with US Immigration and Customs Enforcement (ICE) to conduct raids on franchise locations in 2018 and 2019 — targeting franchise owners who were in disputes with corporate over financial practices. The raids were conducted while franchise owners were challenging 7-Eleven's gross profit split model. DOL investigations into wage theft at franchise locations across multiple states. FTC antitrust review of the Speedway acquisition. New York: multiple 7-Eleven franchise locations investigated for wage theft and labor violations targeting workers.",
+    "flags": [
+      "doj_ice_franchise_raid_coordination",
+      "raids_during_financial_disputes",
+      "dol_wage_theft_franchise",
+      "ftc_speedway_antitrust_review"
+    ],
+    "sources": []
+  },
+  "labor": {
+    "summary": "7-Eleven franchise employees — typically minimum wage or near-minimum workers — face the same accountability gap as other franchise chain workers. The additional layer is the franchise owner's financial situation: if 7-Eleven's gross profit split model squeezes franchise profitability, franchise owners may cut labor costs to survive. Workers bear the downstream consequences of upstream financial extraction. Speedway locations, which are mostly company-operated, have more direct corporate accountability for labor practices.",
+    "flags": [
+      "franchise_squeeze_downstream_labor_cuts",
+      "speedway_company_operated_more_direct",
+      "minimum_wage_workforce",
+      "accountability_gap_double_layer"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Gas station operations create documented environmental risks: underground storage tank leaks, petroleum contamination of groundwater, and air quality impacts from fuel evaporation and vehicle emissions. Speedway's acquisition brought hundreds of fuel retail locations with associated environmental liability. 7-Eleven's massive fuel distribution network and single-use convenience item model creates significant environmental footprint.",
+    "flags": [
+      "underground_storage_tank_contamination_risk",
+      "petroleum_groundwater_risk",
+      "single_use_convenience_items",
+      "fuel_distribution_air_quality"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "The ICE raid coordination is the most politically significant documented action. Using federal immigration enforcement against franchise owners who are disputing business terms — while those disputes are ongoing — raises serious due process and abuse of power concerns that were investigated by the DOJ. 7-Eleven corporate denied coordinating the raids to pressure franchisees.",
+    "flags": [
+      "ice_raid_coordination_abuse_of_power_alleged",
+      "due_process_concerns_franchise_raids",
+      "doj_investigation_ongoing"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "7-Eleven Inc. is run by CEO Joe DePinto. The company's parent Seven & i Holdings faces pressure from activist investor ValueAct Capital to spin off or sell 7-Eleven to focus on Japanese operations. A potential sale of 7-Eleven could trigger significant ownership and operational changes at the world's largest convenience store chain.",
+    "flags": [
+      "depinto_ceo",
+      "valueact_breakup_pressure",
+      "potential_sale_implications"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "7-Eleven's franchise model has generated organized franchise owner resistance including the National Coalition of Associations of 7-Eleven Franchisees (NCASEF). Many 7-Eleven franchise owners are South Asian immigrants who bought franchises as a business ownership pathway — the same community documented as being targeted by ICE raids during franchise financial disputes. Marathon Petroleum sold Speedway for $21 billion; Seven & i is now dealing with debt from that acquisition while activist investors demand restructuring.",
+    "flags": [
+      "ncasef_franchise_resistance",
+      "south_asian_immigrant_franchise_owners",
+      "ice_targeting_immigrant_owners_during_disputes"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Franchise owners and NCASEF have alleged that 7-Eleven's gross profit split model is structured to make it nearly impossible for franchise owners to profit while corporate captures income through mandatory inventory purchases at marked-up prices. The ICE raid coordination allegations — investigated by DOJ — alleged that 7-Eleven used immigration enforcement as a tool to intimidate franchise owners during financial disputes, a use of federal authority for private commercial purposes. 7-Eleven has denied coordinating raids for this purpose.",
+    "flags": [
+      "gross_profit_split_profit_prevention_alleged",
+      "ice_raid_commercial_intimidation_alleged_investigated"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "7-Eleven convenience store products — energy drinks, processed snacks, hot dogs, roller grill items — represent some of the most nutritionally poor food options in the American diet. The chain's Slurpees and Big Gulps contain extraordinary quantities of sugar. Convenience store food is a primary food source for communities with limited grocery access, making 7-Eleven's product mix a public health concern in food-insecure areas.",
+    "flags": [
+      "nutritionally_poor_product_mix",
+      "energy_drinks_processed_snacks_primary",
+      "food_desert_primary_source",
+      "big_gulp_sugar_content"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Independent convenience stores — locally owned, comparable products, money stays in community",
+      "Gas station alternatives: warehouse clubs (Costco, Sam's Club) for fuel often have lower prices",
+      "Local grocery stores for snacks and drinks at lower markup than convenience stores"
+    ],
+    "healthier": [
+      "Fresh fruit at local markets vs. 7-Eleven processed snacks",
+      "Preparing food at home for road trips rather than convenience store purchases"
+    ],
+    "diy": [
+      "A 32oz Big Gulp contains 91 grams of sugar — nearly four days of AHA recommended added sugar intake",
+      "The franchise owner who sold you that Big Gulp may be in a financial dispute with 7-Eleven corporate that led to their store being raided by ICE",
+      "Find independent gas stations and local convenience stores on EthicalAlt's Local tab"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1927,
+      "event": "Southland Corporation founded — becomes 7-Eleven",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1991,
+      "event": "Southland files bankruptcy; Japanese partner Ito-Yokado acquires majority stake; becomes Seven & i Holdings",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "DOJ begins investigating ICE raid coordination at franchise locations",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "ICE conducts raids at 7-Eleven franchise locations while franchisee financial disputes ongoing",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "$21 billion Speedway acquisition from Marathon Petroleum; FTC antitrust review",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "ValueAct Capital activist investor campaign for Seven & i breakup and 7-Eleven sale",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Seven & i Holdings",
+        "how": "World's largest convenience store chain; revenue from franchise fees and inventory markups; $21B Speedway acquisition"
+      },
+      {
+        "group": "ICE (alleged)",
+        "how": "Alleged use of federal immigration enforcement resources for private commercial dispute resolution"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "South Asian immigrant franchise owners",
+        "how": "Documented target of ICE raids during financial disputes with corporate; gross profit split model squeezes profitability"
+      },
+      {
+        "group": "7-Eleven franchise workers",
+        "how": "Downstream of franchise financial squeeze; labor cost cuts when franchise owners struggle with corporate's model"
+      }
+    ],
+    "the_gap": "7-Eleven franchise owners — many South Asian immigrants who bought franchises as a path to business ownership — were raided by ICE while disputing 7-Eleven corporate's financial practices. The DOJ investigated whether the raids were coordinated to intimidate franchisees during commercial disputes. 7-Eleven denied it. The DOJ investigated it."
+  }
+}

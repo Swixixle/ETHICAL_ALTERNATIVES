@@ -295,6 +295,53 @@
   font: inherit;
 }
 
+/* Phase 1: collapsed row — title left, evidence + source count + year right, chevron far right */
+.investigation-card__accordion-trigger--split {
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.investigation-card__accordion-trigger-start {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.investigation-card__accordion-trigger-end {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 6px;
+}
+
+.investigation-card__accordion-title--split {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.investigation-card__accordion-row-meta {
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.investigation-card__evidence-row-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: none;
+}
+
+.investigation-card__accordion-chev--end {
+  margin-left: 4px;
+}
+
 .investigation-card__accordion-chev {
   font-size: 18px;
   color: #d4a017;
@@ -329,6 +376,17 @@
 .investigation-card__section-summary {
   margin: 0 0 10px;
   white-space: pre-wrap;
+}
+
+/* Phase 2: one-line finding above section prose */
+.investigation-card__section-finding {
+  margin: 0 0 16px;
+  padding-left: 12px;
+  border-left: 3px solid #d4a017;
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 400;
+  opacity: 1;
 }
 
 .investigation-card__list {
@@ -597,4 +655,92 @@
   .investigation-card__alt-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Proportionality / legal context — monospace, amber dividers */
+.investigation-card__legal-context {
+  margin: 12px 0 16px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+}
+
+.investigation-card__legal-context-title {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-main, #e0e0e0);
+  margin-bottom: 8px;
+}
+
+.investigation-card__legal-context-sub {
+  margin-top: 8px;
+}
+
+.investigation-card__legal-context-divider {
+  height: 0;
+  border: none;
+  border-top: 1px solid #d4a017;
+  opacity: 0.85;
+  margin: 0 0 10px;
+}
+
+.investigation-card__legal-context-heading {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d4a017;
+  margin-bottom: 8px;
+}
+
+.investigation-card__legal-context-statute {
+  margin-bottom: 10px;
+}
+
+.investigation-card__legal-context-statute:last-child {
+  margin-bottom: 0;
+}
+
+.investigation-card__legal-context-source {
+  margin: 6px 0 0;
+  font-size: 9px;
+  color: #6a8a9a;
+}
+
+.investigation-card__legal-context-source-link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.investigation-card__legal-context-source-link:hover {
+  color: #a8c4d8;
+}
+
+.investigation-card__legal-context-charge-prefix {
+  margin: 0 0 8px;
+  font-size: 10px;
+}
+
+.investigation-card__legal-context-bop-line {
+  margin: 8px 0 4px;
+}
+
+.investigation-card__legal-context-bop-link {
+  color: var(--color-text-main, #e0e0e0);
+  text-decoration: underline;
+}
+
+.investigation-card__legal-context-geo-prompt {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  font-family: 'Space Mono', monospace;
+  color: #6a8a9a;
+  text-decoration: underline;
+  text-align: left;
 }

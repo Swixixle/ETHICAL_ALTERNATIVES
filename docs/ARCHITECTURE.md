@@ -1,7 +1,8 @@
 # Architecture
 
-EthicalAlt is a Node.js / React application with a PostgreSQL backend,
-BullMQ job queue, and Claude Vision as the identification engine.
+> **Reality check:** The [root README](../README.md) is the **source of truth** for what this repo actually runs today: **Express + React**, optional **PostgreSQL** via `DATABASE_URL`, and **Anthropic** for vision/research. There is **no BullMQ/Redis** dependency in the current `server/package.json`. Sections below describe **request flow**, **deployment ideas**, and **schema concepts**; some pieces (e.g. pgvector batch jobs) are **design or partial** — not guaranteed in a minimal install.
+
+EthicalAlt is a Node.js / React application. Identification uses **Claude Vision** (Anthropic). **PostgreSQL** (when configured) can back profiles, embeddings tables, the community board, and related features.
 
 ---
 
@@ -121,10 +122,7 @@ User image → Claude Vision → style attributes
                          Return top 10
 ```
 
-The etsy_visual_index is built by a BullMQ background job:
-- Fetches active Etsy listings in priority categories
-- Sends listing images to Ximilar (fashion) or Imagga (general)
-- Stores 512-dimension embeddings in pgvector
+In a **full** deployment, `etsy_visual_index` may be populated by **offline or batch** jobs (ingest listings, embed images, store vectors in pgvector). That pipeline is **not** part of the default Express dev server — run or implement separately if you need visual similarity at scale.
 
 ---
 
