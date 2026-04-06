@@ -1,21 +1,12 @@
-<div align="center">
-
-# ETHICALALT
+# EthicalAlt
 
 **Photograph a product. Tap any item. Get a full corporate investigation record and verified local alternatives.**
 
-[![Live](https://img.shields.io/badge/Live-ethicalalt--client.onrender.com-D4A017?style=flat-square&labelColor=0A1F3D)](https://ethicalalt-client.onrender.com)
-[![License](https://img.shields.io/badge/License-MIT-6A8A9A?style=flat-square&labelColor=0A1F3D)](LICENSE)
+**Current status:** Functional MVP — 90+ profiled brands, live AI investigation pipeline with three-model corroboration layer, civic witness and worker registries operational. Pre-user acquisition phase.
 
-</div>
+Live at [url]
 
 EthicalAlt is a mobile-first web app that turns your camera into a conscience. Point it at anything on a shelf, in a store window, or in your home — tap the brand — and receive a structured investigation of that company's environmental record, labor practices, political spending, and documented controversies, plus verified independent alternatives sourced from Etsy, local sellers, and nearby businesses.
-
-| **McDonald’s** — tap a mass-market product; the record shows what’s in the file | **Shambhala Publications** — same flow when the public record is clean; shareable, sourced |
-|:-:|:-:|
-| ![Desktop: McDonald’s Happy Meal investigation with verdict tags and record](docs/screenshots/mirror-mcdonalds-desktop.png) | ![Share-the-record: Shambhala Publications, independent press, clean record](docs/screenshots/03-share-record-clean.jpeg) |
-
-The investigation is not opinion. It is a structured record with sourced evidence, graded by confidence, with clear separation in the UI between **database** profiles and **live** research so you know what to verify.
 
 ---
 
@@ -27,43 +18,44 @@ Photograph → Tap object → Identify brand → Investigate → Act
 
 1. **Photograph** — open the camera, point at any product or scene
 2. **Tap** — touch any item in the frame
-3. **Identify** — vision AI resolves the brand and corporate parent with a confidence score
-4. **Investigate** — structured profile loads: environmental record, labor record, political donations, documented violations, proportionality context
-5. **Act** — verified independent alternatives surface; share findings; file a civic witness report
+3. **Identify** — Claude Vision resolves the brand and corporate parent; Gemini Vision independently corroborates, producing a weighted confidence score across three tracks
+4. **Investigate** — structured profile loads across six categories: environmental, labor, political, legal, tax, product health
+5. **Corroborate** — Layer C inferences are spot-checked against Perplexity; each category gets its own confidence score with a visible breakdown
+6. **Act** — verified independent alternatives surface; share the record; file a civic witness report; tag the company; report to regulators
 
 ---
 
 ## Screenshots
 
-**1. Home — local feed with category filters and SNAP**
+**1. Home — local feed with category filters**
 
-![Home screen showing local independents feed, category filters, and SNAP button](docs/screenshots/01-home-local-feed.jpeg)
-
-The entry point. Local independent businesses near you, filterable by category. The SNAP button opens the camera. The INVESTIGATE bar accepts a brand name directly if you already know what you're looking at.
+![Home screen showing local independents feed, SNAP button, category filters, and local business listings](docs/screenshots/01-home-local-feed.jpeg)
 
 ---
 
-**2. Full investigation view — desktop (product photo + record)**
+**2. Full investigation — desktop view (alternatives + accordion)**
 
-The same desktop layout as in the pair above: evidence on the right, context and imagery on the left. Heavier files show verdict tags and section grades; clean files show the same chrome with nothing to bury.
-
-![Desktop: McDonald’s Happy Meal tap flow with record and thumbnails](docs/screenshots/mirror-mcdonalds-desktop.png)
+![Desktop split view showing alternatives panel left, investigation accordion right with Tax, Legal, Labor, Environmental, Political, Product Health sections](docs/screenshots/02-tap-investigation-desktop.png)
 
 ---
 
-**3. City identity — local narrative layer (Indianapolis)**
+**3. Clean record — Shambhala Publications**
 
-![Local story screen for Indianapolis showing city narrative, location tags, and recreation landmarks](docs/screenshots/04-city-identity.jpeg)
+![Share the record screen showing Shambhala Publications: 55-year independent press, no documented violations, family owned, 4 primary sources, blue verified border](docs/screenshots/03-share-record-clean.jpeg)
 
-The city identity layer surfaces a curated narrative about the local area — landmarks, culture, outdoor life, independent institutions. Not algorithmic. Not scraped. Written by the model from public record and edited for accuracy.
+A clean record is published with the same weight as a damaging one. For honest independent businesses this is free verified advertising — sourced, corroboration-scored, and publicly accessible in the investigation payload.
 
 ---
 
-**4. Brand identified — inferred from scene**
+**4. City identity — Indianapolis**
 
-![Investigation result showing brand detected as Apple macOS, high confidence, inferred from scene context](docs/screenshots/05-brand-identified.jpeg)
+![Local story screen for Indianapolis showing city narrative, recreation landmarks, and location tags](docs/screenshots/04-city-identity.jpeg)
 
-The vision step returns a confidence score and a method label. **High confidence** means the brand was read directly. **Inferred from scene** means it was resolved from object type, visual context, and surroundings. Both can be correct — only the label changes, and the label is always shown.
+---
+
+**5. Brand identified — inferred from scene**
+
+![Investigation result showing brand detected as Apple macOS, high confidence, inferred from scene context, inventory-adjusted](docs/screenshots/05-brand-identified.jpeg)
 
 ---
 
@@ -71,9 +63,9 @@ The vision step returns a confidence score and a method label. **High confidence
 
 The investigation finds what it finds.
 
-A business with a clean record gets a clean record — publicly stated, sourced, and shown with the same UI rigor as a heavy file. A 55-year independent press with no documented violations, family owned, four primary sources: that is the finding. That is what gets published.
+A business with a clean record gets a clean record — publicly stated, sourced, and shown with the same UI rigor as a heavy file. A 55-year independent press with no documented violations, family owned, four primary sources: that is the finding, and that is what gets published.
 
-For honest independent businesses, that is not a liability. It is free verified advertising that no marketing budget can replicate. A public record saying your company has no documented labor findings, no environmental findings, no political entanglements — that is worth something. It is worth more than a review, because it comes from public record, not from a customer mood.
+For honest independent businesses that is not a liability. It is free verified advertising that no marketing budget can replicate.
 
 EthicalAlt is not an attack machine. It is a mirror. Corporations with bad records look bad in it. Businesses with clean records look clean in it. The mirror does not editorialize.
 
@@ -84,18 +76,21 @@ EthicalAlt is not an attack machine. It is a mirror. Corporations with bad recor
 | Feature | Status |
 |---------|--------|
 | Camera tap + brand identification | ✅ Working |
-| Corporate investigation profiles (DB-backed) | ✅ Working |
-| Live AI investigation (Claude + fallbacks) | ✅ Working |
-| Confidence scoring + evidence grading | ✅ Working |
+| Gemini Vision corroboration on identification | ✅ Working (with `GEMINI_API_KEY`) |
+| Three-track confidence scoring (documentary + model agreement + cross-reference) | ✅ Working |
+| Per-category confidence scores (corroboration path) | ✅ Working |
+| Layer C Perplexity corroboration | ✅ Working (with `PERPLEXITY_API_KEY`) |
+| Corporate investigation profiles (DB-backed, 90+ brands) | ✅ Working |
+| Live AI investigation (Claude primary) | ✅ Working |
+| AI provider failover (Claude → Perplexity → Gemini) | ✅ Working |
 | Local independents feed with category filters | ✅ Working |
-| Etsy alternatives | ✅ Working |
-| Local business alternatives (Overpass) | ✅ Working |
+| Etsy + Overpass alternatives | ✅ Working |
 | Proportionality tool (USSC/BOP reference) | ✅ Working |
-| Share to network / tag company / report to regulators | ✅ Working |
+| Share record / tag company / report to regulators | ✅ Working |
 | City identity + local narrative layer | ✅ Working |
 | Civic witness registry | ✅ Working |
 | Hire-direct worker registry | ✅ Working |
-| Local events + Native Land territory layer | ✅ Working |
+| Native Land territory layer | ✅ Working |
 | Community board (notice board, bottom of feed) | ✅ Working |
 
 ---
@@ -107,6 +102,9 @@ EthicalAlt is not an attack machine. It is a mirror. Corporations with bad recor
 | API | Express (Node ≥ 20, ESM) |
 | UI | React 19 + Vite 6 |
 | AI — vision + investigation | Claude (primary) → Perplexity → Gemini (failover) |
+| Vision corroboration | Gemini (e.g. `gemini-2.0-flash`, configurable) |
+| Text corroboration | Perplexity (e.g. Sonar family, configurable) |
+| Confidence scoring | Three-track: documentary anchor, model agreement, cross-reference |
 | Database | PostgreSQL (optional — degrades gracefully without it) |
 | Alternatives | Etsy API + Overpass (OpenStreetMap) |
 | Local data | Native Land API, Eventbrite, Bandcamp |
@@ -120,7 +118,7 @@ EthicalAlt is not an attack machine. It is a mirror. Corporations with bad recor
 
 - Node ≥ 20
 - PostgreSQL (optional — most features work without it)
-- An [Anthropic API key](https://console.anthropic.com) (required for vision + investigation)
+- An Anthropic API key (required for vision + investigation)
 
 ### 1. Clone and install
 
@@ -142,7 +140,7 @@ Open `server/.env` and set at minimum:
 ANTHROPIC_API_KEY=sk-ant-...
 ```
 
-Everything else is optional. The app runs without a database — investigation profiles fall back to live AI generation, and civic features that require persistence are gracefully disabled.
+Everything else is optional. The app runs without a database — profiles fall back to live AI generation. Features requiring persistence degrade gracefully.
 
 ### 3. Run
 
@@ -157,14 +155,8 @@ npm run dev
 
 ```bash
 createdb ethicalalt
-
-# Add to server/.env:
-DATABASE_URL=postgresql://localhost:5432/ethicalalt
-
-# Initialize schema (adjust path if your process differs)
+# Add DATABASE_URL to server/.env
 psql ethicalalt < server/db/schema.sql
-
-# Optional: seed sample profiles
 node server/db/import_profiles_v2.mjs
 ```
 
@@ -177,29 +169,40 @@ node server/db/import_profiles_v2.mjs
 ```
 Image + tap coordinates
         ↓
-  vision.js — brand ID, confidence score, scene inventory
+  vision.js — Claude identifies brand, confidence, scene context
         ↓
-  investigation.js — slug resolution
+  visionCorroboration.js — Gemini independently identifies (when keyed)
         ↓
-  [DB profile exists?]
-     YES → hydrate relational profile + optional JSON override
-     NO  → live Claude research with web search tool loop
+  confidenceScorer.js — three-track weighted score
+  Track 1: documentary anchor (50%) — source count, court records, DB profile
+  Track 2: model agreement (30%)    — gate score, not average
+  Track 3: cross-reference (20%)     — compounding bonus/penalty
         ↓
-  normalizeInvestigation() — canonical shape
+  investigation.js — slug resolution, DB hydration or live Claude research
         ↓
-  finalizeInvestigation() — slug, press outlets, concern flags, timestamp
+  normalizeInvestigation() + finalizeInvestigation()
         ↓
-  [violation metadata present?]
-     YES → attachProportionality() — USSC reference + nearest BOP facility
+  corroboration.js — Layer C claims spot-checked against Perplexity (when keyed)
+  each category can attach: final_confidence, confidence_breakdown, model findings
         ↓
-  Investigation payload → client
+  attachProportionality() — USSC/BOP reference if violation metadata present
+        ↓
+  Investigation payload → client (includes identification corroboration + Layer C fields)
 ```
 
-The AI provider layer handles failover transparently. If Claude is unavailable, Perplexity covers the text leg; Gemini covers vision fallback when keyed.
+### Layer A / B / C (semantic)
 
-### Evidence and confidence
+Investigations mix **primary-sourced material** with **model inference**. In the data model, stronger claims should trace to citations; weaker sections carry evidence grades. **Layer C**-style inferences are the ones the corroboration pass targets: limited / alleged grades (and similar), then rescored with documentary + model + cross-reference tracks so the number is not an arbitrary middle.
 
-Per-section **evidence grades** and **profile type** (`database` vs realtime search) make uncertainty explicit. Treat live-generated text as a **starting point** — verify material claims against primary sources.
+### Confidence scoring — why it is not 40–80% purgatory
+
+The three tracks are not averaged. They compound:
+
+- **Documentary anchor** is the only track that can push confidence above 85%. Models cannot. Documents can. 10+ sources with a court record reaches 0.93 before the other tracks run.
+- **Model agreement** is a gate, not a midpoint. Both models agree at high confidence: 0.90. Explicit disagreement: 0.25. One model found nothing: 0.50.
+- **Cross-reference** adds or subtracts based on whether the photo and documents reinforce each other. Photo matches documented brand profile: +0.15. Photo contradicts documented profile: −0.25.
+
+A brand with strong documentary support, model agreement, and photo match can legitimately reach the high band. A contested identification with thin documentary support can land in the low band. The range reflects the inputs, not a default middle.
 
 ---
 
@@ -208,34 +211,34 @@ Per-section **evidence grades** and **profile type** (`database` vs realtime sea
 ```
 ETHICAL_ALTERNATIVES/
 ├── server/
-│   ├── index.js                      # Entry point, route mounting
-│   ├── env.js                        # Environment loader
+│   ├── index.js
+│   ├── env.js                        # loads server/.env
 │   ├── routes/
-│   │   ├── tap.js                    # /api/tap — core camera flow
-│   │   ├── profiles.index.route.js
-│   │   ├── sellers.js
-│   │   ├── witness.js
-│   │   ├── workers.js
-│   │   ├── communityBoard.js         # /api/board — notice board
+│   │   ├── tap.js                    # core camera flow
 │   │   └── ...
 │   ├── services/
-│   │   ├── vision.js                 # Brand identification from image
-│   │   ├── investigation.js          # Profile assembly + AI research
+│   │   ├── vision.js                 # brand identification
+│   │   ├── visionCorroboration.js    # Gemini second opinion
+│   │   ├── confidenceScorer.js       # three-track scoring
+│   │   ├── investigation.js         # profile assembly + AI research
+│   │   ├── corroboration.js          # Layer C Perplexity check
 │   │   ├── aiProvider.js             # Claude → Perplexity → Gemini failover
-│   │   └── proportionality.js        # USSC/BOP deterministic scoring
+│   │   └── proportionality.js         # USSC/BOP deterministic scoring
 │   └── db/
 │       ├── schema.sql
-│       └── pool.js                   # null when DATABASE_URL is absent
+│       └── pool.js
 │
 ├── client/
 │   └── src/
-│       ├── App.jsx                   # Mode router — URL + in-app state
+│       ├── App.jsx                   # mode router
 │       ├── hooks/
-│       │   └── useTapAnalysis.js     # Core camera → investigation orchestration
-│       └── components/               # Cards, home, share, board, etc.
+│       │   └── useTapAnalysis.js
+│       └── components/               # cards, home, share, board, etc.
 │
-└── docs/
-    └── screenshots/                  # README figures (jpeg + one png)
+├── docs/
+│   └── screenshots/
+│
+└── render.yaml                       # Render blueprint (API + static client)
 ```
 
 ---
@@ -252,24 +255,26 @@ ANTHROPIC_API_KEY=
 
 ```env
 DATABASE_URL=
-PERPLEXITY_API_KEY=          # investigation text fallback
-GEMINI_API_KEY=              # vision fallback
-ETSY_API_KEY=                # alternatives
+GEMINI_API_KEY=                      # vision fallback + vision corroboration
+PERPLEXITY_API_KEY=                  # investigation text fallback + Layer C corroboration
+ETSY_API_KEY=                        # alternatives
 ```
 
 **Optional (each unlocks a specific feature):**
 
 ```env
+GEMINI_VISION_MODEL=gemini-2.0-flash
+PERPLEXITY_CORROBORATION_MODEL=sonar
+ANTHROPIC_INVESTIGATION_MODEL=
+ANTHROPIC_VISION_MODEL=
 NATIVE_LAND_API_KEY=
 EVENTBRITE_API_KEY=
 NEWS_API_KEY=
-ANTHROPIC_INVESTIGATION_MODEL=
-ANTHROPIC_VISION_MODEL=
 CORS_ORIGIN=
 PORT=3001
 ```
 
-The app does not crash on missing optional keys. Run `grep -r "process.env" server/` for the full list.
+Run `grep -r "process.env" server/` for the complete list.
 
 ---
 
@@ -279,16 +284,17 @@ The app does not crash on missing optional keys. Run `grep -r "process.env" serv
 |--------|------|-------------|
 | GET | `/health` | Liveness |
 | GET | `/api/health/providers` | AI provider status |
-| POST | `/api/tap` | Image + tap → brand identification |
+| POST | `/api/tap` | Image + tap → brand identification + corroboration |
 | POST | `/api/tap/investigation` | Investigation profile |
 | POST | `/api/tap/sourcing` | Alternatives bundle |
 | POST | `/api/investigate` | Investigation by brand name (no image) |
+| GET | `/api/history` | Tap history |
 | GET | `/proportionality` | Deterministic sentencing reference |
 | * | `/api/profiles/*` | Brand profile directory |
 | * | `/api/sellers/*` | Independent seller registry |
 | * | `/api/witness/*` | Civic witness submissions |
 | * | `/api/workers/*` | Hire-direct worker registry |
-| * | `/api/board` | Community notice board (GET/POST) |
+| * | `/api/board/*` | Community board |
 | * | `/api/local-feed/*` | Local business + chain filter |
 | * | `/api/territory/*` | Native Land + narrative |
 | * | `/api/events/*` | Local events |
@@ -302,45 +308,48 @@ The app does not crash on missing optional keys. Run `grep -r "process.env" serv
 
 | Gap | Notes |
 |-----|-------|
-| No unified request tracing | `console` logging in investigation path only |
+| No auth layer | Session-scoped only; rate-limited but unauthenticated |
 | No automated tests | Manual verification throughout |
-| Camera API reliability | `getUserMedia` behavior varies on mobile — Safari is the worst offender |
-| Mobile web, not native | UI is mobile-first but runs in a browser; no React Native or Capacitor yet |
-| Profile corpus is static | Scale and search will eventually need an indexing strategy |
-| No auth layer | Session-scoped only; civic features are rate-limited but unauthenticated |
-| No docker-compose | Local setup requires manual Postgres provisioning |
+| Camera API reliability | `getUserMedia` on mobile Safari is fragile |
+| Mobile web, not native | Browser-based; no React Native or Capacitor yet |
+| No unified request tracing | `console` logging only in investigation path |
+| No docker-compose | Local Postgres setup is manual |
+| Profile corpus is static | 90+ brands hand-curated; search and scale need indexing |
 
 ---
 
 ## Risks
 
-**AI investigation accuracy.** The live AI path uses Claude with web search. Claude can be wrong. Evidence grades and profile-type labeling are there so uncertainty is visible — treat `overall_concern_level` as a structured starting point for research, not a verdict.
+**AI investigation accuracy.** Claude can be wrong. Evidence grades, profile type (`database` vs live), and the corroboration layer make uncertainty explicit and structured. Treat investigations as starting points for research, not verdicts.
 
-**Legal exposure on corporate records.** Every factual claim needs a source. DB profiles are hand-curated with citations. Live-generated profiles should be verified against primary materials. This is the primary ongoing operational risk.
+**Legal exposure on corporate records.** Every factual claim needs a source. DB-backed profiles should trace to primary citations. Live-generated text must be verified against primary materials. Layer C paths are explicitly weaker and are spot-checked with a second model when Perplexity is keyed; that reduces opaque inference but does not remove legal diligence.
 
-**Camera and tap on mobile web.** `getUserMedia` on Safari in PWA mode is fragile. Tap precision on small screens is a real UX problem. The architecture supports a native wrapper when the web version proves the product.
+**Data privacy.** The app handles location data, camera images, and user-submitted witness reports. There is no formal privacy policy or GDPR/CCPA compliance layer yet. This is pre-launch — these must be addressed before a broad public release.
 
-**No significant user load yet.** This is a serious prototype. It has not faced real adversarial use, scale, or edge cases.
+**Camera and tap on mobile web.** `getUserMedia` on Safari in PWA mode is unreliable. Tap precision on small screens is a known UX problem. The architecture supports a native wrapper when the web version proves the product.
+
+**No user load yet.** This is a serious prototype. It has not faced real adversarial use, concurrent load, or edge cases at scale.
 
 ---
 
 ## Roadmap
 
 ### Now
-- Unified request ID tracing through the investigation pipeline
+- Client-side confidence pills and breakdown UI (per-category scores visible in accordion)
 - Docker Compose for one-command local dev
-- Basic E2E test coverage for the tap → investigate flow
-- Mobile Safari camera reliability fixes
+- Mobile Safari camera reliability
+- Unified request ID tracing
 
 ### Next
-- Journalist and civic org outreach — direct contact, not PR
+- Journalist and civic org outreach — direct contact
 - Profile corpus expansion toward top 500 consumer brands
+- Privacy policy and data retention documentation
 - PWA manifest + install prompt
 
 ### Later
 - Native wrapper (Capacitor) when mobile web limits become the bottleneck
 - Community profile contributions with moderation queue
-- Expanded alternatives: co-ops, local business registry
+- Optional cryptographic signing of investigation payloads (receipt hardening)
 
 ---
 
@@ -348,13 +357,13 @@ The app does not crash on missing optional keys. Run `grep -r "process.env" serv
 
 Solo project in active development. Issues and PRs are welcome but reviewed slowly.
 
-If you're a journalist, researcher, or investigator using this for real work — reach out directly. The share-to-regulator and witness registry features exist for you.
+If you are a journalist, researcher, or investigator using this for real work — reach out directly. The share-to-regulator and witness registry features exist for you.
 
 ---
 
 ## Community board
 
-The notice board lives at the **bottom of the main feed**. Same-day **offers** and **needs** (help / labor) with contact info; posts can be sorted by distance when the client sends coordinates. **No algorithmic ranking, no engagement mechanics.** It only lists posts — it does not match people, process payments, or verify identities. Neighbors coordinate on their own.
+The community board lives at the bottom of the main feed. Local posts from verified accounts in your area, sorted by distance. No algorithmic ranking. No engagement mechanics. It lists posts. It does not match people, process payments, or screen anyone.
 
 ---
 
@@ -364,6 +373,6 @@ MIT — see `LICENSE`.
 
 ---
 
-*Built by [Nikodemus Systems](https://github.com/Swixixle) — Indianapolis.*
+*Built by Nikodemus Systems — Indianapolis.*
 
-*If something happened, it should be verifiable. If something is claimed, there should be a receipt.*
+*Procedural Trust Infrastructure: if something happened, it should be verifiable. If something is claimed, there should be a receipt.*
