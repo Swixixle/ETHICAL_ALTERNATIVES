@@ -3,13 +3,13 @@
 **Hand-authored batch folders** (for `import_all_profiles.mjs` / `import_profiles_from_dir.mjs`): see `server/db/profileBatchManifest.mjs`.
 
 ## Last updated: April 6, 2026
-## Total profiles complete: 137 | Remaining: ~405+
+## Total profiles complete: 145 | Remaining: ~397+
 
 Legend: ✅ = profile complete | ⬜ = not yet done
 
 ---
 
-## COMPLETE (137)
+## COMPLETE (145)
 
 From existing DB (pre-today):
 7-eleven ✅ | alphabet/google ✅ | altria ✅ | amazon ✅ | apple ✅ | ascension ✅ | att ✅ | bank-of-america ✅ | bat-reynolds ✅ | bayer-monsanto ✅ | ben-jerrys ✅ | bp ✅ | burger-king ✅ | caesars-entertainment ✅ | cardinal-health ✅ | cargill ✅ | chevron ✅ | chipotle ✅ | cigna ✅ | circle-k ✅ | coca-cola ✅ | comcast ✅ | community-health-systems ✅ | cotopaxi ✅ | cvs-health ✅ | darden-restaurants ✅ | davita ✅ | disney ✅ | dollar-general ✅ | dominos ✅ | draftkings ✅ | eileen-fisher ✅ | eli-lilly ✅ | exxonmobil ✅ | fanduel ✅ | ford ✅ | gap ✅ | general-motors ✅ | goldman-sachs ✅ | hca-healthcare ✅ | high-5-games ✅ | jpmorgan-chase ✅ | koch-industries ✅ | kraft-heinz ✅ | kroger ✅ | las-vegas-sands ✅ | linkedin ✅ | lvmh ✅ | mars ✅ | mcdonalds ✅ | mckesson ✅ | merck ✅ | meta ✅ | mgm-resorts ✅ | microsoft ✅ | netflix ✅ | nike ✅ | patagonia ✅ | penn-entertainment ✅ | pfizer ✅ | philip-morris ✅ | philips-healthcare ✅ | pilot-flying-j ✅ | pinterest ✅ | pvh-corp ✅ | reddit ✅ | rei ✅ | shein ✅ | shell ✅ | snapchat ✅ | spotify ✅ | stake-us ✅ | starbucks ✅ | steward-health-care ✅ | subway ✅ | sweepstakes-casinos-sector ✅ | sysco ✅ | target ✅ | tesla ✅ | tiktok-bytedance ✅ | toyota ✅ | twitch ✅ | twitter-x ✅ | uber ✅ | unilever ✅ | unitedhealth ✅ | verizon ✅ | vgw-holdings ✅ | waffle-house ✅ | wells-fargo ✅ | wendys ✅ | youtube ✅ | yum-brands ✅
@@ -28,6 +28,9 @@ accenture-federal ✅ | bechtel ✅ | corecivic ✅ | dxc-technology ✅ | fluor
 
 Batch 06 (Apr 6):
 volkswagen-group ✅ | hsbc ✅ | deutsche-bank ✅ | airbnb ✅ | cencora ✅ | fresenius-medical-care ✅ | stellantis ✅ | dollar-tree ✅ | lyft ✅ | barclays ✅
+
+Batch 07 (Apr 6):
+3m ✅ | purdue-pharma ✅ | glencore ✅ | ikea ✅ | lactalis ✅ | medtronic ✅ | rio-tinto ✅ | mondelez-international ✅ | sanofi ✅ | diageo ✅
 
 **Importer:** Canonical folder list for hand-authored batches is `server/db/profileBatchManifest.mjs` (keep this doc aligned). `import_all_profiles.mjs` imports legacy `profiles_v*` then every folder in that manifest.
 
@@ -194,7 +197,6 @@ volkswagen-group ✅ | hsbc ✅ | deutsche-bank ✅ | airbnb ✅ | cencora ✅ |
 ⬜ kohl's
 ⬜ kumho
 ⬜ lacoste
-⬜ lactalis
 ⬜ lavazza
 ⬜ lawson
 ⬜ lenovo
@@ -209,13 +211,11 @@ volkswagen-group ✅ | hsbc ✅ | deutsche-bank ✅ | airbnb ✅ | cencora ✅ |
 ⬜ mango
 ⬜ marks-and-spencer
 ⬜ mediatek
-⬜ medtronic
 ⬜ meijer
 ⬜ mercado-libre
 ⬜ michelin
 ⬜ midea
 ⬜ miele
-⬜ milka (Mondelez)
 ⬜ moderna
 ⬜ molina-healthcare
 ⬜ morgan-stanley
@@ -245,7 +245,6 @@ volkswagen-group ✅ | hsbc ✅ | deutsche-bank ✅ | airbnb ✅ | cencora ✅ |
 ⬜ ross-stores
 ⬜ saic-motor
 ⬜ sainsburys
-⬜ sanofi
 ⬜ santander
 ⬜ sephora (LVMH) — use lvmh profile
 ⬜ shell ✅ (already in DB)
@@ -299,3 +298,7 @@ Some master list entries are brands, not companies — they should resolve to a 
 - Certina, Blancpain, Longines, Omega, Tissot → swatch-group (separate profile needed)
 - Lamborghini, Bugatti, Bentley, Škoda, SEAT → volkswagen-group ✅ (profile + `brand_aliases.json` tap routing)
 - Alfa Romeo, Citroën, Peugeot, Vauxhall, Opel, Maserati, Jeep, Ram, Dodge, Fiat… → stellantis ✅ (same)
+- Cadbury, Oreo, Toblerone, Milka, Ritz, Triscuit… → mondelez-international ✅ (`brand_aliases.json`)
+- Post-it, Filtrete → 3m ✅
+- Purdue, OxyContin, Sackler (as entity tap) → purdue-pharma ✅
+- Guinness, Smirnoff, Johnnie Walker… → diageo ✅

@@ -236,5 +236,22 @@
   "skoda": "volkswagen-group",
   "vauxhall": "stellantis",
   "volkswagen": "volkswagen-group",
-  "vw": "volkswagen-group"
+  "vw": "volkswagen-group",
+  "belvita": "mondelez-international",
+  "cadbury": "mondelez-international",
+  "chips-ahoy": "mondelez-international",
+  "filtrete": "3m",
+  "guinness": "diageo",
+  "johnnie-walker": "diageo",
+  "milka": "mondelez-international",
+  "oreo": "mondelez-international",
+  "oxycontin": "purdue-pharma",
+  "post-it": "3m",
+  "purdue": "purdue-pharma",
+  "ritz": "mondelez-international",
+  "sackler": "purdue-pharma",
+  "smirnoff": "diageo",
+  "toblerone": "mondelez-international",
+  "triscuit": "mondelez-international",
+  "wheat-thins": "mondelez-international"
 }

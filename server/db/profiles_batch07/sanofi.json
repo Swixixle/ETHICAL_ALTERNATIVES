@@ -1,0 +1,90 @@
+{
+  "brand_name": "Sanofi",
+  "brand_slug": "sanofi",
+  "parent_company": "Sanofi S.A.",
+  "ultimate_parent": "Sanofi S.A.",
+  "subsidiaries": ["Aventis Pharma", "Genzyme", "Sanofi Pasteur (vaccines)", "Chattem (consumer health)"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "SANOFI KNEW SINCE THE 1980s THAT DEPAKINE CAUSED BIRTH DEFECTS — 30,000 CHILDREN IN FRANCE WERE BORN WITH DISORDERS — AND THE COMPANY WAS CONVICTED OF AGGRAVATED DECEIT IN 2022",
+  "executive_summary": "Sanofi S.A. is one of the world's largest pharmaceutical companies, headquartered in Paris. Its epilepsy drug valproate (sold as Depakine in France, Epilim in the UK, Depakote in the US) has been prescribed to pregnant women for decades — despite documented knowledge that it causes severe birth defects and developmental disorders. Internal Sanofi documents and regulatory investigations established that the company had warnings about valproate's teratogenic (fetus-harming) risks since at least the early 1980s. An estimated 30,000 children in France were born with Depakine-related disorders between 1967 and 2018 — including neural tube defects, skeletal abnormalities, autism spectrum disorder, and developmental delays. In 2022, a French criminal court convicted Sanofi of 'tromperie aggravée' (aggravated deceit) for failing to adequately warn of risks and fined it €2.7 million — the maximum available penalty under French law at the time. The French government established a compensation fund; Sanofi's contribution to that fund has been disputed as inadequate.",
+  "verdict_tags": ["depakine_30000_children_birth_defects_france", "warnings_known_1980s_continued_without_adequate_disclosure", "2022_french_criminal_conviction_aggravated_deceit", "2_7m_maximum_french_penalty", "compensation_fund_disputed_inadequate", "neural_tube_defects_autism_developmental_disorders"],
+  "concern_flags": {"labor": false, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "Sanofi employs approximately 91,000 people globally. The company has conducted significant workforce restructuring as it has refocused on biologics and specialty medicines. No major documented systemic labor violations comparable to its Depakine record have been identified as a primary concern.",
+    "flags": ["workforce_restructuring_biologics_refocus"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Sanofi's pharmaceutical manufacturing generates chemical waste streams requiring specialized treatment. The company has environmental commitments and reports on its footprint. No major environmental enforcement actions have been identified as a primary concern relative to its product liability record.",
+    "flags": ["pharmaceutical_chemical_waste"],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Depakine scandal generated sustained political pressure in France — a parliamentary inquiry, regulatory reform, and the creation of a dedicated compensation fund. The French Medicines Agency (ANSM) was also investigated for the adequacy of its regulatory oversight of valproate during the decades of inadequate warning. A Senate report criticized both Sanofi and French regulatory authorities for the prolonged delay in adequate risk communication. Sanofi has lobbied against liability reforms that would increase pharmaceutical company exposure for inadequate drug safety disclosure.",
+    "flags": ["ansm_regulatory_inadequacy_investigated", "senate_report_sanofi_ansm_criticized", "pharmaceutical_liability_reform_opposition"],
+    "sources": []
+  },
+  "legal": {
+    "summary": "January 2022: A Paris criminal court convicted Sanofi of 'tromperie aggravée' (aggravated deceit) for failing to adequately warn of valproate's teratogenic risks in its Depakine product. The court imposed fines of €2.7 million — the maximum available under French criminal law for this offense at the time, which advocates characterized as shockingly low relative to the harm caused. The French government established the Valproate National Compensation Fund (FIVA) to compensate affected families — funded by Sanofi and the French state. As of 2023, the fund's adequacy and Sanofi's contribution levels remained contested in ongoing civil proceedings. In the UK, litigation against Sanofi for Epilim (valproate) has been pursued by affected families; UK regulatory reform of valproate prescribing in pregnancy has been implemented.",
+    "flags": ["2022_criminal_conviction_aggravated_deceit", "2_7m_maximum_penalty_characterized_shockingly_low", "fiva_compensation_fund_disputed_adequacy", "uk_epilim_litigation_ongoing", "uk_prescribing_reform_implemented"],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Sanofi is a French company with significant pharmaceutical IP held through international structures. The company uses Irish, Swiss, and other favorable-jurisdiction entities for IP management. No major criminal tax enforcement actions against Sanofi have been publicly documented. Standard pharmaceutical transfer pricing arrangements apply.",
+    "flags": ["pharmaceutical_ip_international_structures", "irish_swiss_entities"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Paul Hudson leads Sanofi. Previous leadership presided over the decades of inadequate Depakine warning and the criminal conviction period. No individual Sanofi executive was personally convicted in the 2022 criminal proceedings — the conviction was at the corporate entity level. The criminal fine of €2.7 million represents the maximum available to the court — critics of the French pharmaceutical liability framework note that this ceiling was created before pharmaceutical companies achieved their current scale and bears no proportionality to either Sanofi's revenues or the harm caused.",
+    "flags": ["no_individual_conviction_corporate_entity_only", "2_7m_ceiling_disproportionate_to_harm_and_revenue", "penalty_ceiling_proportionality_criticized"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Valproate is a widely prescribed drug for epilepsy and bipolar disorder globally — the Depakine/Epilim/Depakote issue has international dimensions beyond France. UK regulatory investigations have found similar patterns of inadequate warning to pregnant women despite long-standing safety evidence. The US FDA has maintained a Black Box warning on valproate for use in pregnancy for many years — the French case highlights that the warning was inadequate or insufficiently communicated in European markets for much longer. Sanofi's Zantac (ranitidine) product — sold OTC and found in 2020 to contain NDMA, a potential carcinogen — represents a separate product safety concern requiring major recall.",
+    "flags": ["valproate_international_inadequate_warning_uk_also", "fda_black_box_warning_us_europe_comparison", "zantac_ranitidine_ndma_carcinogen_recall_2020"],
+    "sources": ["https://www.fda.gov/drugs/drug-safety-and-availability/fda-updates-and-press-announcements-ndma-zantac-ranitidine"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Affected families and their legal advocates have alleged that Sanofi's internal documents — which surfaced in the criminal proceedings — show the company received explicit warnings about valproate's teratogenic effects in the early 1980s and made commercial decisions to delay or minimize warning updates to protect Depakine's market position. French patient advocate groups have alleged that Sanofi has resisted adequate contribution to the FIVA compensation fund — making offers that families characterize as proportionally inadequate to the scale of harm caused. UK parliamentary investigations have alleged that both the manufacturer and UK regulatory authorities failed to act on safety evidence for decades.",
+    "flags": ["1980s_internal_warnings_commercial_decision_delay_alleged", "fiva_contribution_inadequate_alleged", "uk_manufacturer_regulator_both_failed_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Valproate is a known teratogen — it causes birth defects when taken during pregnancy. The documented effects include: neural tube defects (spina bifida, anencephaly), craniofacial abnormalities, skeletal abnormalities, autism spectrum disorder (3x elevated risk), developmental delays and intellectual disability. The French government's Valproate National Report estimated 30,000 children in France were born with valproate-related disorders between 1967 and 2018. UK data suggests similar proportional impact in the UK. Women were prescribed Depakine for seizure disorders without adequate warning of these documented risks for decades — the prescription was appropriate for controlling epilepsy but the risk disclosure was found criminally inadequate.",
+    "flags": ["30000_children_france_birth_defects_estimated", "3x_autism_spectrum_disorder_risk", "neural_tube_defects_spina_bifida_documented", "seizure_control_appropriate_risk_disclosure_criminal"],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": ["For epilepsy management: other antiseizure medications do not carry the same teratogenic risk profile; lamotrigine has been extensively studied as a safer alternative in pregnancy — neurologist consultation is essential for any antiseizure medication change"],
+    "healthier": ["The epilepsy and pregnancy decision is a medical one requiring specialist neurologist input — this profile does not provide medical advice; the Epilepsy Foundation (epilepsy.com) provides evidence-based guidance on pregnancy and epilepsy management", "UK patients: MHRA's Patient Safety Advisory on valproate provides current guidance; the Valproate Pregnancy Prevention Programme outlines current UK requirements"],
+    "diy": ["If you or a family member took Depakine/Epilim/Depakote during pregnancy and a child has developmental issues: the French FIVA fund and UK litigation processes are available — contact a patient advocate organization in your country", "OpenPaymentsData.cms.gov shows US physician payments from Sanofi — check your neurologist's financial relationships before medication decisions"]
+  },
+  "timeline": [
+    {"year": 1967, "event": "Valproate (Depakine) approved in France; begins widespread prescribing", "severity": "neutral", "source_url": ""},
+    {"year": 1982, "event": "Estimated period from which internal Sanofi documents later showed awareness of teratogenic risk based on published scientific evidence and regulatory correspondence", "severity": "critical", "source_url": ""},
+    {"year": 2014, "event": "French ANSM restricts valproate use in pregnancy and requires annual attestation from women of childbearing age", "severity": "high", "source_url": ""},
+    {"year": 2017, "event": "French government orders national compensation fund study; confirms scale of harm — estimated 30,000 children affected", "severity": "critical", "source_url": ""},
+    {"year": 2020, "event": "Sanofi recalls Zantac (ranitidine) globally after FDA finds NDMA carcinogen contamination — separate product safety crisis", "severity": "critical", "source_url": ""},
+    {"year": 2022, "event": "January: Paris criminal court convicts Sanofi of aggravated deceit; €2.7M fine (maximum available); individual no convictions", "severity": "critical", "source_url": ""},
+    {"year": 2023, "event": "UK parliamentary hearings document similar valproate warning failures in the UK; UK prescribing reform implemented", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "An estimated 30,000 children in France — and additional thousands in the UK and internationally — were born with disorders associated with their mother's use of Depakine during pregnancy. These families have navigated disability services, specialist care, and educational support without knowing for years that the cause of their child's condition was a drug prescribed without adequate safety warning. The documented harm spans a generation of French families.",
+    "price_illusion": "Depakine was prescribed as a safe and effective epilepsy treatment. The French criminal court found that Sanofi's disclosure of its risks to pregnant women was criminally inadequate despite documented internal knowledge of those risks since the early 1980s. Patients and prescribers making treatment decisions in good faith based on Sanofi's disclosures were not given the information they needed to make genuinely informed decisions.",
+    "tax_math": "The French government's FIVA compensation fund is funded partly by the French state — meaning French taxpayers are funding compensation for harm caused by inadequate pharmaceutical disclosure. Sanofi's contribution to the fund remains contested as inadequate relative to both the harm caused and the company's revenues. The criminal fine of €2.7 million bears no proportionality to a company with €43+ billion in annual revenue.",
+    "wealth_velocity": "Sanofi's revenue from Depakine sales during the decades of inadequate warning funded shareholder dividends. The families of children born with Depakine-related disorders — who could not have known the risk because Sanofi's disclosures were found criminally inadequate — bear the lifetime cost of their children's conditions. The French government (and French taxpayers) fund a portion of the compensation that Sanofi's fine does not cover."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Sanofi shareholders", "how": "Revenue from Depakine sales during the period of inadequate risk disclosure; criminal fine of €2.7M is a fraction of revenue from the drug"},
+      {"group": "Sanofi management during inadequate disclosure period", "how": "No individual criminal convictions; corporate conviction does not reach individual executives who presided over inadequate disclosures"}
+    ],
+    "who_paid": [
+      {"group": "30,000 French children and their families", "how": "Neural tube defects, autism, developmental disorders associated with valproate exposure during pregnancy without adequate informed consent about risks"},
+      {"group": "French taxpayers", "how": "State contribution to FIVA compensation fund covering portion of harm that Sanofi's maximum €2.7M fine does not address"}
+    ],
+    "the_gap": "Sanofi knew Depakine caused birth defects. The evidence was in the scientific literature from the 1970s. Internal documents showed awareness in the 1980s. 30,000 children in France were born with disorders. The criminal fine was €2.7 million — the maximum allowed by law. Sanofi's revenue is €43 billion. No individual executive was convicted. The mothers who took Depakine didn't know."
+  }
+}

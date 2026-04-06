@@ -1,5 +1,6 @@
 /**
  * Shared importer for hand-authored JSON profiles (batch folders).
+ * brand_slug may start with a digit (e.g. "3m"); PostgreSQL `TEXT` PK accepts it.
  */
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { basename, join } from 'node:path';
