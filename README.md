@@ -11,6 +11,10 @@
 
 EthicalAlt is a mobile-first web app that turns your camera into a conscience. Point it at anything on a shelf, in a store window, or in your home — tap the brand — and receive a structured investigation of that company's environmental record, labor practices, political spending, and documented controversies, plus verified independent alternatives sourced from Etsy, local sellers, and nearby businesses.
 
+| **McDonald’s** — tap a mass-market product; the record shows what’s in the file | **Shambhala Publications** — same flow when the public record is clean; shareable, sourced |
+|:-:|:-:|
+| ![Desktop: McDonald’s Happy Meal investigation with verdict tags and record](docs/screenshots/mirror-mcdonalds-desktop.png) | ![Share-the-record: Shambhala Publications, independent press, clean record](docs/screenshots/03-share-record-clean.jpeg) |
+
 The investigation is not opinion. It is a structured record with sourced evidence, graded by confidence, with clear separation in the UI between **database** profiles and **live** research so you know what to verify.
 
 ---
@@ -39,23 +43,15 @@ The entry point. Local independent businesses near you, filterable by category. 
 
 ---
 
-**2. Full investigation view — desktop (alternatives left, record right)**
+**2. Full investigation view — desktop (product photo + record)**
 
-![Desktop view showing alternatives panel on the left and investigation accordion on the right with Tax, Legal, Labor, Environmental, Political, Product Health, and Executives sections](docs/screenshots/02-tap-investigation-desktop.png)
+The same desktop layout as in the pair above: evidence on the right, context and imagery on the left. Heavier files show verdict tags and section grades; clean files show the same chrome with nothing to bury.
 
-The split layout shows the full product in one frame. Left: independent alternatives sourced from Etsy, Overpass, secondhand platforms, and repair resources. Right: the investigation accordion — Tax, Legal, Labor, Environmental, Political, Product Health, Executives — each expandable with sourced findings and evidence grades.
-
----
-
-**3. Share the record — clean profile (Shambhala Publications)**
-
-![Share the record screen showing Shambhala Publications clean record: 55-year independent press, no documented violations, family owned, 4 primary sources](docs/screenshots/03-share-record-clean.jpeg)
-
-A clean record, publicly verified, with sources. This is what the investigation looks like when there is nothing to flag.
+![Desktop: McDonald’s Happy Meal tap flow with record and thumbnails](docs/screenshots/mirror-mcdonalds-desktop.png)
 
 ---
 
-**4. City identity — local narrative layer (Indianapolis)**
+**3. City identity — local narrative layer (Indianapolis)**
 
 ![Local story screen for Indianapolis showing city narrative, location tags, and recreation landmarks](docs/screenshots/04-city-identity.jpeg)
 
@@ -63,7 +59,7 @@ The city identity layer surfaces a curated narrative about the local area — la
 
 ---
 
-**5. Brand identified — inferred from scene**
+**4. Brand identified — inferred from scene**
 
 ![Investigation result showing brand detected as Apple macOS, high confidence, inferred from scene context](docs/screenshots/05-brand-identified.jpeg)
 
