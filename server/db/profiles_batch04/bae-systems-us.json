@@ -1,0 +1,96 @@
+{
+  "brand_name": "BAE Systems US",
+  "brand_slug": "bae-systems-us",
+  "parent_company": "BAE Systems Inc.",
+  "ultimate_parent": "BAE Systems plc (UK)",
+  "subsidiaries": [
+    "BAE Systems Electronic Systems",
+    "BAE Systems Intelligence & Security",
+    "BAE Systems Platforms & Services",
+    "BAE Systems Space & Mission Systems"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "BAE SYSTEMS PAID $400 MILLION IN THE LARGEST FOREIGN BRIBERY SETTLEMENT IN UK HISTORY AND KEPT SELLING WEAPONS TO SAUDI ARABIA — ITS JETS HAVE BEEN USED IN DOCUMENTED STRIKES ON YEMENI CIVILIANS",
+  "executive_summary": "BAE Systems is the UK's largest defense contractor and the third-largest globally, with its U.S. subsidiary generating approximately $13 billion annually. The company produces Bradley and M113 armored vehicles, the Paladin howitzer, electronic warfare systems, ship repair services, and components for the F-35. In 2010, BAE Systems plc paid $400 million to resolve U.S. DOJ and UK Serious Fraud Office charges of bribery — including payments to Saudi officials to secure the Al-Yamamah arms contract, one of the largest defense deals in history. The UK government shut down the SFO investigation into Al-Yamamah in 2006 citing national security — a decision that shielded BAE from full accountability. BAE Systems' Typhoon jets — sold to Saudi Arabia — have been used in documented airstrikes on civilian infrastructure in Yemen.",
+  "verdict_tags": [
+    "400m_bribery_settlement_2010",
+    "al_yamamah_saudi_bribery_largest_uk_case",
+    "sfo_investigation_shut_down_government",
+    "typhoon_jets_yemen_civilian_strikes",
+    "bradley_vehicle_ukraine_deployment",
+    "f35_component_manufacturer"
+  ],
+  "concern_flags": { "labor": true, "environmental": true, "political": true, "tax": false, "health": true, "legal": true },
+  "labor": {
+    "summary": "BAE Systems US workers have engaged in union disputes at shipbuilding and manufacturing facilities. The company's Jacksonville ship repair facility has faced OSHA violations. Workers at BAE Systems facilities handling electronic warfare and classified systems face occupational hazard limitations due to classification.",
+    "flags": ["jacksonville_ship_repair_osha_violations", "union_disputes_manufacturing_facilities", "classified_facility_hazard_limitation"],
+    "sources": ["https://www.osha.gov", "https://www.nlrb.gov"]
+  },
+  "environmental": {
+    "summary": "BAE Systems legacy manufacturing facilities — including former shipyards and electronics plants — have generated industrial contamination. The company has faced state environmental enforcement actions at multiple U.S. sites. Its armored vehicle production facilities generate hazardous metal waste.",
+    "flags": ["legacy_facility_industrial_contamination", "state_environmental_enforcement", "armored_vehicle_metal_waste"],
+    "sources": ["https://www.epa.gov/superfund"]
+  },
+  "political": {
+    "summary": "BAE Systems spent $7.9 million on lobbying in 2023. The company's status as a foreign-owned entity with U.S. security clearances — operating through a special security arrangement with DoD — is unique among major defense contractors. The Al-Yamamah investigation shutdown by the UK government in 2006 represents a documented case of geopolitical considerations overriding fraud accountability. BAE has continued Saudi Arabia sales through both US and UK channels following the settlement.",
+    "flags": ["7_9m_lobbying_2023", "foreign_owned_entity_us_security_clearances", "al_yamamah_investigation_government_shutdown", "continued_saudi_sales_post_settlement"],
+    "sources": ["https://www.opensecrets.org/orgs/bae-systems/lobbying", "https://www.theguardian.com/world/2006/dec/15/bae.saudiarabia"]
+  },
+  "legal": {
+    "summary": "In March 2010, BAE Systems plc pleaded guilty to charges of making false statements to the U.S. government and paid $400 million — the largest penalty in DOJ history for an arms export case at that time. The UK SFO investigation into the Al-Yamamah deal — which involved alleged payments to Saudi Prince Bandar and others — was shut down by the UK Attorney General in 2006 citing national security, preventing full accountability. BAE Systems has also faced False Claims Act allegations in the U.S.",
+    "flags": ["400m_doj_settlement_2010", "largest_arms_export_penalty_at_time", "sfo_al_yamamah_government_shutdown", "false_statements_us_government"],
+    "sources": ["https://www.justice.gov/opa/pr/bae-systems-plc-pleads-guilty-and-ordered-pay-400-million-criminal-fine", "https://www.theguardian.com/world/2010/mar/01/bae-systems-guilty-plea"]
+  },
+  "tax": {
+    "summary": "BAE Systems US operates under a Special Security Arrangement with DoD — a structure that provides access to classified contracts while maintaining foreign ownership. This arrangement creates unique transfer pricing dynamics between the UK parent and US subsidiary. The company benefits from standard defense contractor R&D credits.",
+    "flags": ["foreign_parent_transfer_pricing_dynamics", "special_security_arrangement_structure", "rd_credits_classified_research"],
+    "sources": ["https://itep.org"]
+  },
+  "executives": {
+    "summary": "BAE Systems Inc. (US) is led by a president reporting to the UK parent CEO. The Al-Yamamah deal implicated senior BAE executives — the SFO investigation was shut down before executive accountability was established. UK parent CEO Charles Woodburn received £3.2 million in total compensation in 2022.",
+    "flags": ["al_yamamah_executive_accountability_blocked_sfo", "uk_parent_ceo_3_2m_gbp_compensation", "us_subsidiary_foreign_parent_governance"],
+    "sources": ["https://www.sec.gov", "https://www.theguardian.com"]
+  },
+  "connections": {
+    "summary": "BAE Systems Typhoon jets sold to Saudi Arabia have appeared in documented Saudi air force strikes on civilian infrastructure in Yemen — markets, hospitals, and residential areas investigated by the UN and Human Rights Watch. Bradley Fighting Vehicles have been supplied to Ukraine. BAE Systems produces components for the F-35, embedding it in the largest weapons program in history. Its electronic warfare systems are on virtually every U.S. combat aircraft.",
+    "flags": ["typhoon_jets_yemen_civilian_infrastructure_strikes", "bradley_ukraine_supplied", "f35_component_supplier", "ew_systems_us_combat_aircraft"],
+    "sources": ["https://www.hrw.org/world-report/2020/country-chapters/yemen", "https://www.dsca.mil"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Journalists and investigators have alleged that payments in the Al-Yamamah deal went directly to Saudi Prince Bandar — then Saudi ambassador to the United States — and that the UK government's decision to shut down the SFO investigation was influenced by Saudi threats to withhold intelligence cooperation. The Guardian's investigation alleged payments of over £1 billion moved through a BAE-controlled account at Riggs Bank in Washington DC.",
+    "flags": ["prince_bandar_payments_alleged", "uk_government_investigation_shutdown_saudi_pressure_alleged", "1b_gbp_riggs_bank_payments_alleged"],
+    "sources": ["https://www.theguardian.com/world/2007/jun/07/bae1", "https://www.bbc.co.uk/news/uk-politics-15282174"]
+  },
+  "health_record": {
+    "summary": "BAE Systems Typhoon aircraft sold to Saudi Arabia have been documented in strikes on Yemeni civilian infrastructure. The UN Panel of Experts on Yemen has documented strikes on markets, hospitals, and residential areas using munitions from BAE and other suppliers. Civilian casualties from these strikes are documented by ACLED and Airwars.",
+    "flags": ["typhoon_jets_yemeni_civilian_casualty_context", "un_documented_civilian_infrastructure_strikes", "markets_hospitals_residential_strikes"],
+    "sources": ["https://www.un.org/sc/suborg/en/sanctions/2140/panel-of-experts", "https://airwars.org/conflict/the-saudi-led-coalition-in-yemen/"]
+  },
+  "alternatives": {
+    "cheaper": ["BAE Systems does not sell consumer products. The systemic alternative is robust end-use monitoring on arms exports to conflict zones and enforcement of the Leahy Law prohibiting assistance to foreign security units with documented human rights violations"],
+    "healthier": ["Airwars.org and Human Rights Watch publish ongoing tracking of civilian casualties from strikes involving BAE Systems aircraft and munitions in Yemen"],
+    "diy": ["The Campaign Against Arms Trade (CAAT) in the UK has published extensive documentation of the Al-Yamamah deal and BAE Systems export practices"]
+  },
+  "timeline": [
+    { "year": 1999, "event": "BAE Systems plc formed from merger of British Aerospace and Marconi Electronic Systems", "severity": "neutral", "source_url": "" },
+    { "year": 2006, "event": "UK Attorney General shuts down SFO investigation into Al-Yamamah Saudi deal citing national security", "severity": "critical", "source_url": "https://www.theguardian.com/world/2006/dec/15/bae.saudiarabia" },
+    { "year": 2007, "event": "Guardian investigation reveals alleged £1 billion in payments through Riggs Bank to Saudi officials", "severity": "critical", "source_url": "https://www.theguardian.com/world/2007/jun/07/bae1" },
+    { "year": 2010, "event": "Pays $400 million to DOJ — largest arms export penalty in U.S. history at the time", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/bae-systems-plc-pleads-guilty-and-ordered-pay-400-million-criminal-fine" },
+    { "year": 2015, "event": "Saudi-led coalition air campaign begins in Yemen using BAE Systems Typhoon jets", "severity": "critical", "source_url": "" },
+    { "year": 2019, "event": "UN Panel documents strikes on civilian targets in Yemen using munitions from BAE and other suppliers", "severity": "critical", "source_url": "https://www.un.org/sc/suborg/en/sanctions/2140/panel-of-experts" },
+    { "year": 2023, "event": "Bradley Fighting Vehicles supplied to Ukraine — BAE ramps production", "severity": "neutral", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "BAE Systems US facility footprint across ship repair, electronics, and vehicle production employs thousands in communities where defense contracting is a primary economic driver.",
+    "price_illusion": "The Al-Yamamah deal was presented as a straightforward arms sale supporting UK-Saudi strategic partnership. The DOJ settlement established that it involved payments constituting bribery — the commercial terms were a vehicle for corruption.",
+    "tax_math": "A foreign-owned defense contractor with US security clearances benefits from US government contracts, R&D credits, and the Special Security Arrangement while profits flow to a UK parent — limiting US tax capture on US-funded contract revenue.",
+    "wealth_velocity": "The $400 million bribery settlement was paid by BAE Systems plc — a company generating £23 billion in annual revenue — without interrupting executive compensation, Saudi arms sales, or U.S. contract access."
+  },
+  "cost_absorption": {
+    "who_benefited": ["BAE Systems shareholders", "Saudi officials who received alleged bribe payments", "UK defense establishment through Saudi strategic relationship"],
+    "who_paid": ["Yemeni civilians in documented strikes using BAE aircraft and munitions", "US and UK taxpayers whose justice systems were used and then blocked", "Nations that signed the Convention on Cluster Munitions while BAE continues sales to non-signatories"],
+    "the_gap": "BAE Systems bribed Saudi officials to secure the Al-Yamamah contract — one of the largest arms deals in history. The SFO investigation was shut down before full accountability. The $400M DOJ settlement covered US charges only. Saudi arms sales continued."
+  }
+}

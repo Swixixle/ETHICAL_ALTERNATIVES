@@ -1,0 +1,184 @@
+{
+  "brand_name": "Northrop Grumman",
+  "brand_slug": "northrop-grumman",
+  "parent_company": "Northrop Grumman Corporation",
+  "ultimate_parent": "Northrop Grumman Corporation",
+  "subsidiaries": [
+    "Northrop Grumman Aeronautics Systems",
+    "Northrop Grumman Defense Systems",
+    "Northrop Grumman Mission Systems",
+    "Northrop Grumman Space Systems"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "NORTHROP GRUMMAN WON A $100 BILLION NUCLEAR MISSILE CONTRACT AFTER ITS LOBBYISTS HELPED WRITE THE REQUIREMENTS — THEN BILLED THE GOVERNMENT FOR A COUNTRY CLUB MEMBERSHIP",
+  "executive_summary": "Northrop Grumman Corporation is the fourth-largest U.S. defense contractor, generating approximately $37 billion in annual revenue. It is the primary contractor for the B-21 Raider stealth bomber and the Sentinel intercontinental ballistic missile program — a $96 billion contract to replace the Minuteman III nuclear missile force. The company produces the Global Hawk surveillance drone, the E-2D Hawkeye carrier airborne early warning aircraft, and major components of the James Webb Space Telescope. Northrop Grumman has faced False Claims Act violations, improper billing charges, and documented conflicts of interest in the Sentinel ICBM contract award. Its nuclear weapons infrastructure role gives it unique leverage in defense budget negotiations.",
+  "verdict_tags": [
+    "96b_sentinel_icbm_contract",
+    "false_claims_act_settlements",
+    "country_club_billed_to_government",
+    "sentinel_contract_conflict_of_interest",
+    "b21_stealth_bomber_cost_overruns",
+    "revolving_door_nuclear_contracts"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": false,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Northrop Grumman workers at multiple facilities have engaged in union disputes over wages, benefits, and safety. The company's classified program facilities have faced allegations of creating a culture of silence around safety and quality concerns due to the classified nature of work. Workers at missile defense and nuclear weapons facilities face unique occupational exposures and have historically had limited ability to raise concerns publicly.",
+    "flags": [
+      "classified_facility_safety_silence_culture",
+      "union_disputes_wages_benefits",
+      "nuclear_facility_worker_exposure_limitations"
+    ],
+    "sources": [
+      "https://www.nlrb.gov",
+      "https://www.defensenews.com/industry/northrop-grumman"
+    ]
+  },
+  "environmental": {
+    "summary": "Northrop Grumman's historical manufacturing facilities — particularly in Southern California — have generated significant hazardous waste contamination. The company is a responsible party at EPA Superfund sites in California and Virginia. Its Redondo Beach facility contaminated groundwater with solvents. The production of nuclear-related materials and solid rocket motors generates hazardous byproducts subject to DOE and EPA oversight.",
+    "flags": [
+      "redondo_beach_groundwater_contamination",
+      "california_virginia_superfund_sites",
+      "solid_rocket_motor_hazardous_byproducts",
+      "nuclear_materials_doe_epa_oversight"
+    ],
+    "sources": [
+      "https://www.epa.gov/superfund",
+      "https://www.latimes.com/archives/la-xpm-2001-northrop-contamination"
+    ]
+  },
+  "political": {
+    "summary": "Northrop Grumman spent $12.8 million on lobbying in 2023. The Sentinel ICBM contract — awarded to Northrop Grumman as a sole-source award — has faced congressional scrutiny over whether competition was genuine or structured to favor the incumbent. Former Air Force officials who had oversight of nuclear modernization programs have joined Northrop Grumman in advisory roles. The company's B-21 and ICBM programs are both classified, limiting congressional and public oversight of costs.",
+    "flags": [
+      "12_8m_lobbying_2023",
+      "sentinel_sole_source_award_scrutiny",
+      "former_air_force_nuclear_officials_revolving_door",
+      "classified_programs_limit_cost_oversight"
+    ],
+    "sources": [
+      "https://www.opensecrets.org/orgs/northrop-grumman/lobbying",
+      "https://www.gao.gov/products/gao-23-106047"
+    ]
+  },
+  "legal": {
+    "summary": "Northrop Grumman has paid tens of millions in False Claims Act settlements for overbilling on government contracts, including charges for unallowable costs such as country club memberships, entertainment, and lobbying expenses billed as overhead to defense contracts. In 2006, Northrop Grumman paid $62 million to resolve allegations of defective pricing and billing fraud on military contracts. The company has faced DCAA audit findings of unsupported and unallowable costs across multiple programs.",
+    "flags": [
+      "country_club_membership_billed_to_government",
+      "62m_false_claims_settlement_2006",
+      "dcaa_unsupported_unallowable_costs",
+      "entertainment_lobbying_billed_overhead"
+    ],
+    "sources": [
+      "https://www.justice.gov/archive/opa/pr/2006/March/06_civ_166.html",
+      "https://www.pogo.org/database/contractor-misconduct"
+    ]
+  },
+  "tax": {
+    "summary": "Northrop Grumman has used offshore subsidiaries and cost-accounting structures that shift profits from taxable U.S. operations to lower-tax entities. The company benefits from significant R&D tax credits on classified research funded by government contracts. State and local subsidies to Northrop Grumman facilities have been identified through subsidy tracking databases.",
+    "flags": [
+      "offshore_subsidiary_profit_shifting",
+      "rd_credits_classified_government_research",
+      "state_local_facility_subsidies"
+    ],
+    "sources": [
+      "https://subsidytracker.goodjobsfirst.org/prog.php?parent=northrop-grumman",
+      "https://itep.org"
+    ]
+  },
+  "executives": {
+    "summary": "CEO Kathy Warden received $21.4 million in total compensation in 2022. The company's executive compensation is tied to program awards including classified contracts — creating incentives aligned with winning new classified programs regardless of cost or strategic necessity. Former executives have moved directly into senior DoD and National Security Council positions.",
+    "flags": [
+      "warden_21_4m_compensation_2022",
+      "classified_program_award_executive_incentive",
+      "executives_to_senior_dod_positions"
+    ],
+    "sources": [
+      "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=northrop-grumman"
+    ]
+  },
+  "connections": {
+    "summary": "Northrop Grumman's Sentinel program replaces the U.S. land-based nuclear deterrent — its missiles will carry nuclear warheads maintained by the DOE's National Nuclear Security Administration. The B-21 Raider is designed to penetrate advanced air defenses and deliver nuclear and conventional weapons. Northrop Grumman's Global Hawk drones have been used for surveillance in Afghanistan, Iraq, and across multiple active theaters.",
+    "flags": [
+      "sentinel_land_based_nuclear_deterrent",
+      "b21_nuclear_delivery_system",
+      "global_hawk_active_conflict_surveillance"
+    ],
+    "sources": [
+      "https://www.af.mil/About-Us/Fact-Sheets/Display/Article/104466/b-21-raider/",
+      "https://www.defensenews.com"
+    ]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Congressional watchdog staff have alleged that the Sentinel ICBM contract requirements were written in a manner that only Northrop Grumman could satisfy — effectively guaranteeing the sole-source award. Critics have alleged that the ICBM modernization program reflects contractor lobbying for a nuclear triad structure that exceeds U.S. strategic requirements. Former DOE nuclear security officials have alleged that nuclear infrastructure maintenance contracts create cost-plus structures that incentivize cost growth.",
+    "flags": [
+      "sentinel_requirements_tailored_for_northrop_alleged",
+      "nuclear_triad_contractor_lobbied_excess_alleged",
+      "cost_plus_nuclear_cost_growth_incentive_alleged"
+    ],
+    "sources": [
+      "https://www.gao.gov/products/gao-23-106047",
+      "https://armscontrolcenter.org/fact-sheet-the-cost-of-u-s-nuclear-weapons/"
+    ]
+  },
+  "health_record": {
+    "summary": "Northrop Grumman's Southern California contamination sites have exposed nearby communities to carcinogenic solvents. Workers at nuclear-related facilities face unique occupational health risks under DOE oversight, with some categories of nuclear worker health impacts documented in the Energy Employees Occupational Illness Compensation Program. The company's hazardous waste sites in Los Angeles County have been linked to ongoing residential exposure concerns.",
+    "flags": [
+      "la_county_residential_solvent_exposure",
+      "nuclear_worker_occupational_illness_program",
+      "doe_nuclear_facility_worker_health_risks"
+    ],
+    "sources": [
+      "https://www.dol.gov/agencies/owcp/energy",
+      "https://www.epa.gov/superfund"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Northrop Grumman does not sell consumer products. The systemic alternative is independent cost estimation and competitive procurement for nuclear modernization contracts — the Congressional Budget Office's independent nuclear cost estimates have consistently exceeded Air Force projections"
+    ],
+    "healthier": [
+      "For communities near Northrop Grumman legacy facilities in Southern California: California's GeoTracker database provides contamination site information and cleanup status"
+    ],
+    "diy": [
+      "The Arms Control Association, Stimson Center, and Federation of American Scientists publish independent analysis of U.S. nuclear modernization programs and costs",
+      "GAO's annual defense acquisition report tracks cost overruns on major programs including Sentinel and B-21"
+    ]
+  },
+  "timeline": [
+    { "year": 1939, "event": "Northrop Corporation founded by Jack Northrop in Hawthorne, California", "severity": "neutral", "source_url": "" },
+    { "year": 1994, "event": "Northrop acquires Grumman to form Northrop Grumman Corporation", "severity": "neutral", "source_url": "" },
+    { "year": 2001, "event": "Acquires Litton Industries and Newport News Shipbuilding", "severity": "neutral", "source_url": "" },
+    { "year": 2006, "event": "Pays $62 million to resolve False Claims Act allegations of defective pricing", "severity": "high", "source_url": "https://www.justice.gov/archive/opa/pr/2006/March/06_civ_166.html" },
+    { "year": 2015, "event": "Awarded B-21 Raider stealth bomber contract — cost classified", "severity": "neutral", "source_url": "" },
+    { "year": 2020, "event": "Sentinel ICBM program awarded — projected at $96 billion", "severity": "high", "source_url": "https://www.gao.gov" },
+    { "year": 2022, "event": "B-21 Raider unveiled; cost per aircraft remains classified", "severity": "neutral", "source_url": "" },
+    { "year": 2023, "event": "Sentinel program cost growth flagged by GAO; schedule delays emerging", "severity": "high", "source_url": "https://www.gao.gov/products/gao-23-106047" }
+  ],
+  "community_impact": {
+    "displacement": "Northrop Grumman's legacy manufacturing sites in Los Angeles County have left contaminated land that reduces property values and limits redevelopment in communities already facing housing pressure.",
+    "price_illusion": "The Sentinel ICBM program is presented as a like-for-like replacement for the Minuteman III — but the $96 billion projected cost represents a massive premium over maintaining and upgrading the existing system, which independent analysts have proposed as a less expensive alternative.",
+    "tax_math": "Northrop Grumman receives classified defense contracts funded by taxpayers, claims R&D credits on classified research performed under those contracts, and operates subsidiary structures that reduce its effective tax rate — a triple-layer of public subsidy.",
+    "wealth_velocity": "CEO compensation exceeds $21 million annually against a backdrop of sole-source nuclear contracts where no competitive check exists on pricing."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      "Northrop Grumman shareholders",
+      "Executive leadership ($20M+ annual compensation)",
+      "Revolving-door former officials who facilitate contract awards"
+    ],
+    "who_paid": [
+      "U.S. taxpayers funding $96 billion ICBM replacement",
+      "Communities near legacy contamination sites",
+      "Nuclear facility workers with occupational health risks"
+    ],
+    "the_gap": "The Sentinel contract was awarded sole-source at $96 billion for a weapons system whose strategic necessity has been questioned by independent arms control analysts — with cost classification preventing meaningful public scrutiny."
+  }
+}

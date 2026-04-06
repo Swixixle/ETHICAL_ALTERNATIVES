@@ -1,0 +1,91 @@
+{
+  "brand_name": "PepsiCo",
+  "brand_slug": "pepsico",
+  "parent_company": "PepsiCo, Inc.",
+  "ultimate_parent": "PepsiCo, Inc.",
+  "subsidiaries": ["Frito-Lay", "Quaker Oats", "Tropicana (sold 2021)", "Gatorade", "Lay's", "Doritos", "Mountain Dew", "Cheetos", "Pepsi", "7UP"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "PEPSICO HAS BEEN THE WORLD'S SECOND-LARGEST PLASTIC POLLUTER FOR FIVE CONSECUTIVE YEARS — AND SPENT MILLIONS LOBBYING AGAINST THE TAXES THAT MIGHT FIX IT",
+  "executive_summary": "PepsiCo, Inc. is one of the world's largest food and beverage companies, with annual revenues exceeding $91 billion from beverages and snack foods sold in over 200 countries. It has been ranked among the top five global plastic polluters by the annual Break Free From Plastic brand audit for five consecutive years — its branded plastic waste found on six continents annually. PepsiCo has spent millions lobbying against soda taxes in Philadelphia, San Francisco, and other cities, and opposing mandatory added-sugar labeling at the federal level. It settled a $9 million class action over Naked Juice 'all natural' and 'non-GMO' claims after the product was found to contain synthetic vitamins. Its Frito-Lay and beverage product lines are significant contributors to ultra-processed food consumption associated with chronic disease in population studies.",
+  "verdict_tags": ["top_5_global_plastic_polluter_five_years", "naked_juice_settlement_misleading_claims", "soda_tax_lobbying", "sugar_labeling_opposition", "agricultural_water_use_stressed_regions"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "PepsiCo's agricultural supply chain — potatoes for Frito-Lay, corn for snack foods, sugar for beverages — involves sourcing from farms where the Coalition of Immokalee Workers and other labor organizations have documented violations. PepsiCo's Frito-Lay division joined the Fair Food Program after the Coalition documented abuses among Florida tomato suppliers. Distribution and warehouse workers at PepsiCo-contracted facilities have filed OSHA complaints regarding heat conditions and ergonomic hazards from repetitive loading.",
+    "flags": ["agricultural_supply_chain_labor_violations", "fair_food_program_entry_after_violations_documented", "warehouse_distribution_worker_safety_complaints"],
+    "sources": ["https://ciw-online.org/campaigns/fair-food/participating-buyers/"]
+  },
+  "environmental": {
+    "summary": "The Break Free From Plastic 2023 Brand Audit ranked PepsiCo among the top five global plastic polluters for the fifth consecutive year, with Pepsi and Lay's branded plastic waste collected on six continents. PepsiCo's potato supply chain has a documented significant water footprint in Idaho and other semi-arid regions. The company has committed to 50% recycled content in packaging by 2030 — a target it has not met for the majority of its packaging volume. Agricultural chemical runoff from PepsiCo's contracted potato farming operations has been documented by environmental groups in farming communities.",
+    "flags": ["top_5_plastic_polluter_five_consecutive_years", "agricultural_water_footprint_water_stressed_regions", "2030_recycled_content_target_current_gap"],
+    "sources": ["https://www.breakfreefromplastic.org/globalbrandauditreport2023/", "https://www.pepsico.com/our-stories/press-release/pepsico-sets-ambitious-new-plastic-packaging-goals"]
+  },
+  "political": {
+    "summary": "PepsiCo has spent millions lobbying against soda taxes in Philadelphia (2016), San Francisco, and other municipalities — taxes that public health researchers have documented reduce consumption and generate revenue for health programs. The company has lobbied against mandatory added-sugar labeling at the federal level and against advertising restrictions targeting children's products. According to OpenSecrets data, PepsiCo's PAC has spent over $20 million in federal political contributions over the past decade. The company has been a consistent opponent of regulatory interventions on sugar and ultra-processed food.",
+    "flags": ["soda_tax_lobbying_millions_spent", "sugar_labeling_opposition", "childrens_advertising_restriction_opposition"],
+    "sources": ["https://www.opensecrets.org/orgs/pepsico/summary?id=D000000205", "https://www.theguardian.com/society/2016/oct/02/soda-companies-spending-millions-on-lobbying-to-kill-anti-sugar-legislation"]
+  },
+  "legal": {
+    "summary": "PepsiCo settled a class action in 2013 for $9 million over Naked Juice 'all natural' and 'non-GMO' claims after the product was found to contain synthetic vitamins and other non-natural ingredients. Quaker oatmeal 'heart healthy' labeling has been challenged in multiple consumer protection cases. Tropicana 'fresh-squeezed' marketing claims were the subject of litigation. These cases establish a documented pattern of health and naturalness marketing claims that regulatory and judicial scrutiny has found overstated.",
+    "flags": ["naked_juice_9m_class_action_settlement", "quaker_heart_healthy_labeling_challenged", "tropicana_fresh_squeezed_litigation", "pattern_of_misleading_health_claims"],
+    "sources": ["https://www.classaction.org/news/naked-juice-class-action-settlement"]
+  },
+  "tax": {
+    "summary": "PepsiCo's international income allocation — through intellectual property structures in Ireland and other low-tax jurisdictions — has resulted in effective tax rates historically below the US statutory corporate rate. The company has disclosed offshore income structures in SEC filings. No major formal US enforcement action has been publicly documented, but PepsiCo has been cited in academic analyses of consumer goods profit shifting.",
+    "flags": ["offshore_ip_structures_ireland", "below_statutory_effective_tax_rate"],
+    "sources": ["https://www.pepsico.com/investors/financial-information/annual-reports"]
+  },
+  "executives": {
+    "summary": "CEO Ramon Laguarta received approximately $26 million in total compensation in 2023. PepsiCo's executive compensation structure ties bonuses to revenue and net revenue growth — metrics that are maximized by product volume regardless of health or environmental consequences. The company's investor day presentations consistently emphasize premiumization and volume growth without quantifying the external costs of its plastic pollution or its lobbying against public health measures.",
+    "flags": ["revenue_growth_compensation_structure", "external_cost_not_quantified_in_investor_communications"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "connections": {
+    "summary": "PepsiCo's lobbying against soda taxes connects it to the American Beverage Association — the industry trade group that coordinates anti-soda-tax campaigns and is funded primarily by PepsiCo and Coca-Cola. PepsiCo's relationships with major grocery retailers give it leverage over shelf placement and promotional pricing that shapes consumer access to its products at population scale. Its Frito-Lay division is the dominant US salty snack manufacturer, giving it effective pricing power in the ultra-processed snack category.",
+    "flags": ["aba_soda_tax_campaign_coordination", "retail_leverage_consumer_access_shaping", "frito_lay_snack_market_dominance"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Public health researchers have alleged that PepsiCo's funding of nutrition research creates conflicts of interest in the scientific literature on sugar and ultra-processed food — citing instances where PepsiCo-funded studies produced more favorable results than independently funded research on the same products. Consumer advocates have alleged that PepsiCo's commitment to 50% recycled content by 2030 involves accounting methodologies that count materials that are not currently recyclable in most US municipalities. Agricultural labor monitors have alleged that PepsiCo's supplier audit systems do not effectively reach the farm labor level where documented abuses occur.",
+    "flags": ["nutrition_research_funding_conflict_alleged", "recycled_content_accounting_methodology_questioned_alleged", "farm_labor_audit_gap_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Research published in JAMA Internal Medicine and other peer-reviewed journals has found that regular consumption of sugar-sweetened beverages is associated with increased risk of type 2 diabetes, cardiovascular disease, and obesity — conditions that PepsiCo's beverage portfolio contributes to at population scale. PepsiCo's Frito-Lay products are among the highest-selling ultra-processed snack foods in the United States. The NOVA food classification system categorizes most PepsiCo products as ultra-processed — a category associated with significantly higher rates of chronic disease in longitudinal studies. The Naked Juice settlement established that PepsiCo marketed a product as 'all natural' when it contained synthetic ingredients.",
+    "flags": ["sugar_sweetened_beverages_diabetes_cardiovascular_association", "ultra_processed_food_chronic_disease_association", "naked_juice_misleading_natural_claims"],
+    "sources": ["https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/1819573"]
+  },
+  "alternatives": {
+    "cheaper": ["Tap water — zero cost, no plastic packaging, no sugar, no artificial ingredients; the most cost-effective alternative to PepsiCo beverages", "Store brand sparkling water or electrolyte drinks — same function as Gatorade at fraction of cost with less sugar"],
+    "healthier": ["Water, coffee, tea for hydration — documented superior health profile to any PepsiCo beverage product", "Whole food snacks (nuts, fresh fruit, vegetables) as alternative to Frito-Lay ultra-processed products — no NOVA Class 4 classification"],
+    "diy": ["Use a reusable water bottle — eliminates the plastic footprint of single-serving PepsiCo beverage purchases entirely", "Make your own electrolyte drink: water, salt, potassium, citrus — cheaper than Gatorade, no artificial dyes, no plastic bottle", "Calculate the sugar content of PepsiCo beverages in your weekly diet — the American Heart Association recommends no more than 36g added sugar daily for men; a 20oz Pepsi contains 69g"]
+  },
+  "timeline": [
+    {"year": 1965, "event": "PepsiCo formed through merger of Pepsi-Cola and Frito-Lay", "severity": "neutral", "source_url": ""},
+    {"year": 2013, "event": "$9M Naked Juice 'all natural' and 'non-GMO' class action settlement", "severity": "high", "source_url": ""},
+    {"year": 2016, "event": "PepsiCo and Coca-Cola spend millions lobbying against Philadelphia soda tax; tax passes", "severity": "high", "source_url": ""},
+    {"year": 2019, "event": "Break Free From Plastic first ranks PepsiCo among top global plastic polluters", "severity": "high", "source_url": ""},
+    {"year": 2021, "event": "PepsiCo sells Tropicana brand; commits to 50% recycled packaging content by 2030", "severity": "neutral", "source_url": ""},
+    {"year": 2023, "event": "Fifth consecutive year ranked top-5 global plastic polluter by Break Free From Plastic brand audit", "severity": "critical", "source_url": "https://www.breakfreefromplastic.org/globalbrandauditreport2023/"}
+  ],
+  "community_impact": {
+    "displacement": "Soda taxes that PepsiCo has spent millions opposing have been shown in peer-reviewed research to reduce sugar-sweetened beverage consumption — particularly among low-income consumers for whom price is a meaningful signal. PepsiCo's lobbying against these taxes has directly blocked public health interventions that research supports. Agricultural water use in semi-arid potato farming regions affects water availability for surrounding communities.",
+    "price_illusion": "PepsiCo products are priced as affordable everyday items. The full price includes the chronic disease risk from sugar and ultra-processed food consumption — costs that are borne by consumers' health and by public health systems — and the plastic waste that PepsiCo's products generate at six-continent scale, which is borne by governments and ecosystems that receive it.",
+    "tax_math": "Soda taxes that PepsiCo lobbied against would have generated public revenue for health programs — in Philadelphia, the soda tax was dedicated to pre-K education funding. PepsiCo's lobbying investment against these taxes preserved its revenue while blocking public funding that would have been generated from it.",
+    "wealth_velocity": "PepsiCo annual dividends and share buybacks return capital to institutional shareholders. The chronic disease costs of regular sugar-sweetened beverage consumption are borne by consumers, their families, and public health systems — not by PepsiCo shareholders."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "PepsiCo shareholders", "how": "$91B annual revenue; plastic externalizes disposal costs; lobbying blocks regulations that would reduce product volume"},
+      {"group": "American Beverage Association", "how": "PepsiCo funding enables industry-wide lobbying against soda taxes and labeling requirements"},
+      {"group": "PepsiCo marketing division", "how": "Naked Juice premium pricing on 'all natural' claims that courts found were not substantiated"}
+    ],
+    "who_paid": [
+      {"group": "Consumers with chronic disease", "how": "Medical costs from conditions associated with regular consumption of PepsiCo sugar-sweetened beverages and ultra-processed products"},
+      {"group": "Public health systems", "how": "Treatment costs for diabetes, cardiovascular disease, obesity attributable to ultra-processed food and beverage consumption at population scale"},
+      {"group": "Ecosystems receiving plastic waste", "how": "PepsiCo branded plastic found on six continents annually for five consecutive years"}
+    ],
+    "the_gap": "PepsiCo has been ranked a top-five global plastic polluter five consecutive years. It spent millions lobbying against soda taxes that peer-reviewed research shows reduce consumption of its products. It settled a lawsuit for marketing Naked Juice as 'all natural' when it contained synthetic ingredients. Its snack and beverage products are classified as ultra-processed and associated with chronic disease in peer-reviewed studies. It made $91 billion last year."
+  }
+}

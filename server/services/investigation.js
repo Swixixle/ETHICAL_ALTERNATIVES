@@ -419,6 +419,8 @@ function flattenNestedProfileJson(parsed) {
     product_health_violation_type: parsed.product_health_violation_type,
     product_health_charge_status: parsed.product_health_charge_status,
     product_health_amount_involved: parsed.product_health_amount_involved,
+
+    concern_flags: parsed.concern_flags,
   };
 }
 
@@ -526,6 +528,15 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
     parsed?.parent === undefined || parsed?.parent === ''
       ? corporateParent || null
       : parsed.parent;
+
+  /** Category axes from profile JSON (`concern_flags: { labor: true, ... }`) merged into API concern_flags in finalize. */
+  const concern_axis_booleans = (() => {
+    const c = parsed?.concern_flags;
+    if (!c || typeof c !== 'object' || Array.isArray(c)) return [];
+    return Object.entries(c)
+      .filter(([, v]) => v === true)
+      .map(([k]) => String(k));
+  })();
 
   const emptyArr = () => [];
   const rawConcern =
@@ -640,6 +651,8 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
     alternatives: normalizeAlternativesBlock(parsed?.alternatives),
 
     press_outlets: normalizePressOutletsFromParsed(parsed?.press_outlets),
+
+    concern_axis_booleans,
   };
 
   attachProportionalityToInvestigation(inv, parsed, healthFlag);
@@ -675,11 +688,14 @@ function finalizeInvestigation(inv, profileType) {
   if (!press_outlets.length) {
     press_outlets = getPressOutletsForSlug(brand_slug);
   }
+  const axes = Array.isArray(inv.concern_axis_booleans) ? inv.concern_axis_booleans.map(String) : [];
+  const mergedConcern = [...new Set([...deriveConcernFlags(inv), ...axes])];
+  const { concern_axis_booleans: _omitAxes, ...invRest } = inv;
   const base = {
-    ...inv,
+    ...invRest,
     brand_slug,
     press_outlets,
-    concern_flags: deriveConcernFlags(inv),
+    concern_flags: mergedConcern,
     profile_type: profileType,
     last_updated: new Date().toISOString().slice(0, 10),
   };

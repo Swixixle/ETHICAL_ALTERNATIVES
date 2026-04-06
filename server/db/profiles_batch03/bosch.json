@@ -1,0 +1,92 @@
+{
+  "brand_name": "Bosch",
+  "brand_slug": "bosch",
+  "parent_company": "Robert Bosch GmbH",
+  "ultimate_parent": "Robert Bosch Stiftung GmbH (charitable foundation)",
+  "subsidiaries": ["Bosch Automotive", "BSH Hausgeräte (appliances)", "Bosch Power Tools", "Bosch Rexroth", "Bosch Security Systems"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "BOSCH WARNED VOLKSWAGEN IN 2007 THAT THE DIESEL DEFEAT DEVICE SOFTWARE WAS POTENTIALLY ILLEGAL — THEN SUPPLIED IT FOR EIGHT MORE YEARS",
+  "executive_summary": "Robert Bosch GmbH is one of Europe's largest private companies and the world's largest automotive supplier, owned 94% by the Robert Bosch Stiftung charitable foundation. Bosch supplied the engine control software and management systems used in Volkswagen's diesel emissions defeat device — the technology at the heart of the Volkswagen diesel scandal that affected 11 million vehicles globally. Internal Bosch communications, obtained during litigation and government investigation, showed that Bosch warned Volkswagen in 2007 that the defeat device configuration was 'not permissible under American emissions law' — and continued to supply the software for eight more years. Bosch settled US state and private litigation for $327.5 million without criminal charges. The settlement established that Bosch knew about the illegal configuration and continued to supply it — without publicly disclosing this knowledge.",
+  "verdict_tags": ["vw_diesel_defeat_device_supplier", "2007_internal_warning_not_permissible", "8_years_supply_after_warning", "327_5m_settlement", "no_criminal_charges", "11_million_vehicles_affected"],
+  "concern_flags": {"labor": false, "environmental": true, "political": false, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "Bosch employs approximately 420,000 people globally, making it one of Germany's largest private employers. The company has maintained strong labor relations through its works council structure under German co-determination law. No major documented labor violations comparable to its defeat device role have been identified in public sources.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "The Volkswagen diesel defeat device that Bosch supplied allowed diesel vehicles to emit nitrogen oxides at up to 40 times the legal limit under real-world driving conditions while appearing compliant during testing. Nitrogen oxides contribute to ground-level ozone, particulate matter formation, and are associated with respiratory disease. An academic study estimated the excess NOx emissions from the affected vehicles caused approximately 59 deaths in the United States and many more in Europe. Bosch's software made this emissions fraud technically possible and scalable to 11 million vehicles.",
+    "flags": ["defeat_device_40x_nox_legal_limit", "59_us_deaths_estimated_excess_nox", "emissions_fraud_enabled_at_11_million_vehicle_scale"],
+    "sources": ["https://ehp.niehs.nih.gov/doi/10.1289/EHP1875", "https://www.epa.gov/vw"]
+  },
+  "political": {
+    "summary": "Bosch's involvement in the VW scandal became politically significant because it established that VW's defeat device was not a proprietary VW creation but relied on commercially supplied software from the world's largest automotive supplier. This implicated the entire European diesel industry's regulatory testing practices — raising questions about how widespread similar configurations were across other manufacturers. German industrial policy's historical protection of its automotive sector has been cited in analysis of why enforcement against Bosch was civil rather than criminal.",
+    "flags": ["european_diesel_testing_industry_wide_questions", "german_industrial_policy_enforcement_context"],
+    "sources": []
+  },
+  "legal": {
+    "summary": "In January 2017, Bosch agreed to pay $327.5 million to settle claims from US states and private plaintiffs in multidistrict litigation related to its role in the Volkswagen defeat device. The settlement was civil — no criminal charges were filed against Bosch in the United States. The settlement required Bosch to cooperate with ongoing VW investigations. In Germany, Bosch paid approximately $90 million to Stuttgart prosecutors in a separate proceeding. Internal Bosch communications obtained in litigation showed the company had been aware since at least 2007 that the defeat device configuration violated US law.",
+    "flags": ["327_5m_civil_settlement_no_criminal_charges", "2007_internal_awareness_not_permissible", "eight_years_supply_after_legal_warning_internal", "german_90m_separate_settlement"],
+    "sources": ["https://www.epa.gov/vw", "https://www.reuters.com/article/us-volkswagen-emissions-bosch/bosch-to-pay-327-5-million-in-u-s-settlements-over-vw-emissions-scandal-idUSKBN14X1EJ"]
+  },
+  "tax": {
+    "summary": "Bosch is owned 94% by the Robert Bosch Stiftung — a charitable foundation. This structure significantly reduces Bosch's tax burden compared to a conventional corporate ownership structure, since foundation-owned profits are not taxed as dividends to individual shareholders. The Bosch Stiftung uses the foundation income for charitable purposes in Germany. This foundation ownership model — common among German Mittelstand companies — creates effective tax advantages that have drawn academic analysis without generating enforcement actions.",
+    "flags": ["foundation_ownership_tax_structure", "no_shareholder_dividend_tax_at_individual_level"],
+    "sources": ["https://www.bosch.com/our-company/our-ownership-structure/"]
+  },
+  "executives": {
+    "summary": "CEO Stefan Hartung leads Bosch as of 2022. During the defeat device period, Bosch CEO Volkmar Denner oversaw the company's automotive software division. Denner has acknowledged Bosch's role and the 2007 warning in public statements. No Bosch executive was criminally charged. The contrast between Bosch's civil-only settlement and the criminal convictions of some VW executives illustrates differential enforcement that critics attribute to Bosch's cooperative posture and the complexity of establishing criminal intent at the supplier level.",
+    "flags": ["denner_acknowledged_2007_warning", "no_bosch_executive_criminal_charges", "differential_enforcement_vw_criminal_bosch_civil"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Bosch's role established that the VW defeat device was not unique to VW — it was a commercially supplied component. Subsequent investigations found that other European manufacturers including Fiat-Chrysler also used defeat device configurations in their diesel vehicles, suggesting the problem was industry-wide rather than a single manufacturer. Bosch's automotive software division supplies virtually every major automaker — its software is embedded in the engine management systems of vehicles across BMW, Mercedes-Benz, Audi, and others — making Bosch's technical decisions consequential for the entire automotive sector.",
+    "flags": ["industry_wide_defeat_device_implication", "bosch_software_embedded_all_major_automakers", "fiat_chrysler_separate_defeat_device_investigation"],
+    "sources": ["https://www.epa.gov/enforcement/fca-us-llc-fiat-chrysler-automobiles-settlement"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Plaintiff attorneys in the multidistrict litigation alleged that Bosch's 2007 warning to VW was not an attempt to prevent the fraud but a legal protection measure — that Bosch documented the warning to create a paper trail in case enforcement occurred, while continuing to supply the software as a profitable business decision. Automotive engineers and researchers have alleged that Bosch's technical expertise in diesel engine management makes it implausible that the company's engineers were unaware the defeat device was functional in real-world emissions as well as test cycle performance. Environmental advocates have alleged that Bosch's civil settlement — rather than criminal prosecution — reflects a structural bias in enforcement against large industrial suppliers that are systemically important to national economies.",
+    "flags": ["warning_as_legal_protection_not_genuine_attempt_to_stop_alleged", "technical_expertise_awareness_implausible_deniability_alleged", "large_supplier_civil_settlement_structural_bias_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "A peer-reviewed study in Environmental Health Perspectives estimated that excess NOx emissions from VW defeat device vehicles caused approximately 59 premature deaths in the United States and 1,200 new cases of asthma, among other health impacts. European studies found higher death estimates given higher diesel vehicle penetration. Nitrogen oxides are precursors to ground-level ozone and secondary particulate matter — both associated with respiratory disease, cardiovascular disease, and premature mortality. The defeat device emissions were real-world, over eight years, across 11 million vehicles — the health impacts were not hypothetical.",
+    "flags": ["59_premature_us_deaths_estimated_defeat_device_nox", "1200_asthma_cases_estimated", "8_years_11_million_vehicles_real_world_health_impact"],
+    "sources": ["https://ehp.niehs.nih.gov/doi/10.1289/EHP1875"]
+  },
+  "alternatives": {
+    "cheaper": ["Bosch manufactures appliances through BSH Hausgeräte — Bosch washing machines, dishwashers, and refrigerators are available at multiple price points. The VW scandal does not directly affect appliance quality.", "For automotive components: Bosch remains the dominant supplier; alternatives depend on vehicle manufacturer and specific component"],
+    "healthier": ["Electric vehicles entirely bypass diesel engine management systems — the defeat device issue is specific to internal combustion diesel", "For home appliances (BSH): Energy Star certified Bosch appliances have documented energy efficiency; the VW scandal involvement is limited to the automotive software division"],
+    "diy": ["If you own a VW diesel vehicle from 2009-2015: check the VW settlement website for your VIN's eligibility for compensation or buyback", "The Bosch settlement fund paid directly to state environmental programs — your state's environmental agency may have received Bosch settlement funds"]
+  },
+  "timeline": [
+    {"year": 1886, "event": "Robert Bosch founds his electrical engineering workshop in Stuttgart, Germany", "severity": "neutral", "source_url": ""},
+    {"year": 2000, "event": "Estimated beginning of Bosch's development of diesel engine management software used in VW defeat devices", "severity": "neutral", "source_url": ""},
+    {"year": 2007, "event": "Internal Bosch communication warns Volkswagen that defeat device configuration is 'not permissible under American emissions law'", "severity": "critical", "source_url": ""},
+    {"year": 2007, "event": "Bosch continues to supply defeat device software to VW despite internal legal warning — for eight more years", "severity": "critical", "source_url": ""},
+    {"year": 2015, "event": "September: EPA issues notice of violation to VW; defeat device scandal becomes public; affects 11 million vehicles globally", "severity": "critical", "source_url": "https://www.epa.gov/vw"},
+    {"year": 2017, "event": "January: Bosch agrees to $327.5M civil settlement with US states and private plaintiffs; no criminal charges", "severity": "high", "source_url": "https://www.reuters.com/article/us-volkswagen-emissions-bosch"},
+    {"year": 2017, "event": "Germany: Bosch pays approximately $90M to Stuttgart prosecutors in separate proceeding", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Communities in US and European cities — particularly those near highways — absorbed elevated nitrogen oxide exposures from 11 million vehicles emitting at up to 40 times the legal limit over eight years. The estimated 59 US premature deaths and 1,200 asthma cases are concentrated in communities with high diesel vehicle traffic. Low-income communities near freight corridors typically have the highest diesel vehicle exposure.",
+    "price_illusion": "VW diesel vehicles were marketed as clean diesel — a premium for environmental performance that did not exist in real-world driving. Consumers paid a price premium for emissions performance the software was specifically designed to fake. Bosch's software made this premium-for-fraud viable at 11 million vehicle scale.",
+    "tax_math": "Bosch's foundation ownership structure provides structural tax advantages compared to a conventionally owned company. The $327.5 million civil settlement is tax-deductible as a business settlement. The estimated health costs — respiratory treatment, cardiovascular care — from the excess NOx emissions are borne by health systems and individuals, not by Bosch or VW.",
+    "wealth_velocity": "Bosch's foundation ownership means its profits fund charitable activities in Germany rather than individual shareholder dividends. The Robert Bosch Stiftung funds significant medical research and education. This philanthropic structure exists alongside the documented role in supplying defeat device software for eight years after internal warning that it violated US law."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Volkswagen", "how": "Defeat device software enabled clean diesel marketing for 11 million vehicles that were not clean; significant competitive advantage from fraudulent compliance"},
+      {"group": "Bosch automotive software division", "how": "Revenue from defeat device software supply to VW for eight years after internal warning that it violated US law"},
+      {"group": "Diesel vehicle buyers who paid clean diesel premium", "how": "More fuel efficient vehicles — the fuel economy benefits were real even when emissions compliance was not"}
+    ],
+    "who_paid": [
+      {"group": "Communities with elevated NOx exposure", "how": "Estimated 59 premature US deaths; 1,200 asthma cases; cardiovascular and respiratory disease from 8 years of 40x legal limit emissions"},
+      {"group": "VW buyers who thought they were buying clean diesel", "how": "Premium paid for emissions compliance that was fabricated; value of vehicles destroyed by scandal"},
+      {"group": "State environmental programs", "how": "Settlement funds compensate for regulatory damage — but regulatory trust and public health cannot be fully compensated in monetary terms"}
+    ],
+    "the_gap": "Bosch wrote an internal memo in 2007 saying the defeat device software was not permissible under US law. They kept supplying it for eight more years. 11 million vehicles were sold with the software. 59 people in the United States are estimated to have died from the excess emissions. Bosch paid $327.5 million. No Bosch executive was criminally charged."
+  }
+}

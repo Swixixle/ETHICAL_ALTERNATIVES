@@ -1,0 +1,78 @@
+{
+  "brand_name": "TransDigm Group",
+  "brand_slug": "transdigm",
+  "parent_company": "TransDigm Group Incorporated",
+  "ultimate_parent": "TransDigm Group Incorporated",
+  "subsidiaries": ["Aviall Services", "Extant Aerospace", "Esterline Technologies", "over 50 acquired subsidiaries"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "TRANSDIGM BUYS COMPANIES THAT MAKE PARTS THE MILITARY CANNOT GET ANYWHERE ELSE — THEN CHARGES 9,400% MARKUPS. THE PENTAGON'S OWN INSPECTOR GENERAL CALLED IT PRICE GOUGING.",
+  "executive_summary": "TransDigm Group is a defense aerospace parts manufacturer that has built a business model around acquiring companies that make proprietary sole-source components for military aircraft — parts that the Pentagon cannot buy from anyone else. Once it owns a sole-source supplier, TransDigm systematically raises prices. A 2019 Pentagon Inspector General audit of 47 TransDigm parts found that the company had earned excess profits on 46 of them — with markups ranging from 95% to 9,400% above reasonable rates. The company returned $16.1 million to the government following the audit — a fraction of its total excess profits. TransDigm has been a Wall Street favorite for its private equity-style acquisition and extraction model applied to defense contracting.",
+  "verdict_tags": [
+    "9400_percent_markup_pentagon_parts",
+    "dod_ig_price_gouging_finding_2019",
+    "sole_source_monopoly_acquisition_strategy",
+    "16_1m_returned_fraction_excess_profits",
+    "private_equity_defense_extraction_model",
+    "46_of_47_parts_excess_profits"
+  ],
+  "concern_flags": { "labor": true, "environmental": false, "political": true, "tax": false, "health": false, "legal": true },
+  "labor": {
+    "summary": "TransDigm's acquisition-and-extract model typically involves workforce reductions and benefit cuts at acquired companies to increase margins. The company has faced criticism for eliminating pension plans and reducing compensation at acquired manufacturers. Workers at acquired facilities have faced changed working conditions as TransDigm implements its standardized margin-improvement model.",
+    "flags": ["acquisition_workforce_reductions_pattern", "pension_plan_eliminations", "benefit_cuts_acquired_facilities"],
+    "sources": ["https://www.nlrb.gov", "https://www.pogo.org"]
+  },
+  "environmental": { "summary": "TransDigm is primarily a parts manufacturer and holding company with environmental impact limited to manufacturing processes at acquired facilities.", "flags": [], "sources": [] },
+  "political": {
+    "summary": "TransDigm spent $2.1 million on lobbying in 2023. The company's sole-source position in military aviation parts limits the Pentagon's ability to take punitive action — threatening to cut off parts supply to aircraft in service would create operational readiness crises. Congressional members have raised alarm about TransDigm's pricing practices but the company has faced limited structural consequences.",
+    "flags": ["2_1m_lobbying_2023", "sole_source_leverage_over_pentagon", "congressional_alarm_limited_consequences"],
+    "sources": ["https://www.opensecrets.org/orgs/transdigm/lobbying", "https://www.warren.senate.gov/newsroom/press-releases/warren-to-defense-department-stop-paying-transdigm-excessive-prices"]
+  },
+  "legal": {
+    "summary": "The DOD Inspector General's 2019 audit of 47 TransDigm parts found excess profits on 46, with the company returning $16.1 million. Congressional investigators found that TransDigm had charged the government $4,361 for a half-inch metal pin that cost $46 to manufacture. Senator Warren has called for criminal referrals. TransDigm has disputed the IG methodology while returning funds under pressure.",
+    "flags": ["dod_ig_2019_excess_profits_46_of_47_parts", "4361_dollar_pin_cost_46_to_make", "16_1m_returned_under_pressure", "warren_criminal_referral_call"],
+    "sources": ["https://media.defense.gov/2019/Feb/27/2002093834/-1/-1/1/DODIG-2019-060.PDF", "https://www.warren.senate.gov"]
+  },
+  "tax": { "summary": "TransDigm uses acquisition financing structures involving significant debt loading at acquired subsidiaries — a private equity technique that reduces taxable income through interest deductions while extracting equity through dividends and buybacks.", "flags": ["debt_loading_interest_deduction_structure", "private_equity_extraction_dividend_model"], "sources": ["https://itep.org"] },
+  "executives": {
+    "summary": "CEO Kevin Stein received $18.7 million in compensation in 2022. Former CEO Nick Howley built the company's acquisition model and received hundreds of millions in compensation over his tenure. TransDigm's compensation structure rewards margin expansion — directly incentivizing the price gouging model.",
+    "flags": ["stein_18_7m_compensation_2022", "howley_hundreds_millions_tenure", "margin_expansion_executive_incentive"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=transdigm"]
+  },
+  "connections": {
+    "summary": "TransDigm parts are in virtually every U.S. military aircraft — F-35, F-16, C-17, Black Hawk helicopters, and others. The sole-source nature of its components means that aircraft operational readiness depends on TransDigm supply. Parts have been documented in aircraft deployed in Afghanistan, Iraq, and other theaters.",
+    "flags": ["f35_f16_c17_blackhawk_parts_supplier", "operational_readiness_sole_source_dependency"],
+    "sources": ["https://media.defense.gov/2019/Feb/27/2002093834/-1/-1/1/DODIG-2019-060.PDF"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Congressional investigators and defense watchdogs have alleged that TransDigm's business model constitutes systematic fraud on the government — that the company deliberately seeks out sole-source positions to extract above-market prices with no competitive check. Former DOD procurement officials have alleged that the contracting system lacks adequate tools to force fair pricing from sole-source suppliers.",
+    "flags": ["systematic_fraud_allegation_congressional", "sole_source_extraction_model_alleged_fraud", "procurement_system_inadequate_tools_alleged"],
+    "sources": ["https://www.warren.senate.gov", "https://www.pogo.org/investigation/2019/03/transdigm-pentagon-price-gouging/"]
+  },
+  "health_record": { "summary": "TransDigm does not produce consumer health products. Its manufacturing processes involve standard aerospace parts production.", "flags": [], "sources": [] },
+  "alternatives": {
+    "cheaper": ["TransDigm does not sell consumer products. The systemic alternative is DOD reform of sole-source contracting rules — including rights to technical data that would allow the government to qualify alternative suppliers for proprietary parts"],
+    "healthier": ["POGO's reporting and Senator Warren's investigation documentation are available publicly"],
+    "diy": ["The DOD IG report on TransDigm pricing is publicly available at media.defense.gov and documents specific part numbers, markups, and amounts"]
+  },
+  "timeline": [
+    { "year": 1993, "event": "TransDigm founded with acquisition-based sole-source model", "severity": "neutral", "source_url": "" },
+    { "year": 2006, "event": "TransDigm IPO on NYSE", "severity": "neutral", "source_url": "" },
+    { "year": 2019, "event": "DOD Inspector General audit finds excess profits on 46 of 47 TransDigm parts — markups up to 9,400%", "severity": "critical", "source_url": "https://media.defense.gov/2019/Feb/27/2002093834/-1/-1/1/DODIG-2019-060.PDF" },
+    { "year": 2019, "event": "TransDigm returns $16.1 million under congressional pressure — fraction of documented excess profits", "severity": "high", "source_url": "" },
+    { "year": 2020, "event": "House Armed Services Committee investigation documents systematic overpricing pattern", "severity": "high", "source_url": "" },
+    { "year": 2022, "event": "Continues acquisition strategy; revenue reaches $5.4 billion", "severity": "neutral", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "TransDigm's acquisition model typically reduces employment at acquired manufacturers as it implements margin-improvement programs and eliminates pension obligations.",
+    "price_illusion": "TransDigm presents itself as a value-added aerospace manufacturer. The DOD IG found that its pricing bore no relationship to cost — the 'value' is monopoly extraction, not engineering.",
+    "tax_math": "Debt-loading at acquired subsidiaries generates interest deductions that reduce taxable income while profits are extracted through dividends to the parent — a structure that minimizes tax while maximizing extraction.",
+    "wealth_velocity": "CEO and former CEO compensation in the tens to hundreds of millions is funded by sole-source defense contracts where the government has no competitive alternative and limited legal recourse."
+  },
+  "cost_absorption": {
+    "who_benefited": ["TransDigm shareholders and private equity predecessors", "Executive leadership", "Investment banks facilitating acquisitions"],
+    "who_paid": ["U.S. taxpayers through documented excess pricing on defense contracts", "Workers at acquired companies who lost pensions and benefits", "The government's defense readiness budget eroded by overpricing"],
+    "the_gap": "A $46 part sold for $4,361 — a 9,378% markup — documented by the Pentagon's own Inspector General. The company returned $16.1 million while generating $1.2 billion in annual EBITDA. The returned amount was approximately 1.3% of one year's earnings."
+  }
+}

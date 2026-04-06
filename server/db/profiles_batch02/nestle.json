@@ -1,0 +1,94 @@
+{
+  "brand_name": "Nestlé",
+  "brand_slug": "nestle",
+  "parent_company": "Nestlé S.A.",
+  "ultimate_parent": "Nestlé S.A.",
+  "subsidiaries": ["Gerber", "Nespresso", "Purina", "KitKat", "Maggi", "Häagen-Dazs", "Hot Pockets", "Lean Cuisine", "Perrier", "San Pellegrino", "Dreyer's"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "NESTLÉ KNEW ITS COCOA SUPPLY CHAIN USED CHILD SLAVES — IT TOOK THEM TO THE SUPREME COURT TO FIND OUT IT WASN'T AMERICA'S PROBLEM",
+  "executive_summary": "Nestlé S.A. is the world's largest food and beverage company by revenue, operating in 186 countries with annual sales exceeding CHF 93 billion. It holds the record for one of the most sustained corporate boycotts in history — running since 1977 over infant formula marketing that WHO and UNICEF documented was killing babies in developing countries by displacing breastfeeding. A US Supreme Court case in 2021 established that American courts could not reach Nestlé's cocoa supply chain child labor in Ivory Coast, not that the child labor didn't exist. The company operates water extraction operations in drought-stressed communities across the American West on permits expired for decades. Its Maggi instant noodles were recalled across India for lead contamination. A 2023 investigation found it adds sugar to infant formula sold in lower-income countries that is sugar-free in Europe.",
+  "verdict_tags": ["child_labor_supply_chain", "infant_formula_marketing_violations", "water_extraction_expired_permits", "lead_contamination_recall", "plastic_pollution_top_5", "WHO_code_violations", "added_sugar_infant_formula"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "Multiple US federal lawsuits alleged Nestlé knowingly benefited from child and forced labor in its Ivory Coast cocoa supply chain. The case Sissoko v. Nestlé USA reached the US Supreme Court in 2021. Reuters has documented that child labor in Nestlé's cocoa supply chain remained widespread as recently as 2022 despite decade-long pledges to eliminate it. The International Labour Organization estimates 1.56 million children work in cocoa farming in Ghana and Ivory Coast — the primary source countries for Nestlé's cocoa.",
+    "flags": ["child_labor_cocoa_supply_chain", "supreme_court_case_sissoko", "decade_of_failed_elimination_pledges"],
+    "sources": ["https://www.supremecourt.gov/opinions/20pdf/19-416_i4dj.pdf", "https://www.theguardian.com/global-development/2021/jun/17/us-supreme-court-rules-against-mali-child-slaves-in-nestle-and-cargill-case", "https://www.reuters.com/article/us-nestle-child-labor/nestle-says-child-labor-still-common-in-cocoa-supply-chain-idUSBRE82R0LM20120328"]
+  },
+  "environmental": {
+    "summary": "Nestlé is consistently ranked among the top five global plastic polluters in the annual Break Free From Plastic brand audit, with branded plastic waste found on six continents. Its water extraction operations in San Bernardino National Forest, California were found to operate on a permit that expired in 1988 — for over 30 years. The Guardian documented extraction of up to 36 million gallons per year under that expired permit. Nestlé's virtual water footprint in cocoa and coffee supply chains involves significant water use in water-stressed agricultural regions.",
+    "flags": ["top_5_global_plastic_polluter", "water_extraction_expired_1988_permit", "36_million_gallons_unauthorized_extraction"],
+    "sources": ["https://www.breakfreefromplastic.org/globalbrandauditreport2023/", "https://www.theguardian.com/environment/2021/apr/27/nestle-water-arrowhead-california-san-bernardino"]
+  },
+  "political": {
+    "summary": "In 2018, the United States — under pressure from formula industry lobbyists — threatened trade measures against Ecuador to prevent it from introducing a breastfeeding promotion resolution at the World Health Assembly. Reuters and the New York Times documented Nestlé as a central actor in this lobbying effort. The resolution, which called for limits on formula marketing in healthcare settings, was ultimately passed after Russia agreed to sponsor it instead. Nestlé denied direct lobbying while industry groups it funds were the documented actors.",
+    "flags": ["WHO_breastfeeding_resolution_lobbying", "US_government_trade_threats_formula_industry", "marketing_code_opposition_decades"],
+    "sources": ["https://www.nytimes.com/2018/07/08/health/world-health-breastfeeding-formula.html", "https://www.reuters.com/investigates/special-report/nestle-infant-formula/"]
+  },
+  "legal": {
+    "summary": "In 2015, the Food Safety and Standards Authority of India ordered a nationwide recall of Maggi instant noodles after tests found lead levels exceeding regulatory limits and undisclosed MSG. Nestlé India took an approximately CHF 70 million write-off. Indian courts later found some initial tests were flawed but the incident documented systemic supply chain quality failures affecting one of India's most-consumed food products. The Sissoko v. Nestlé USA Supreme Court case was dismissed on jurisdictional grounds, leaving underlying child labor claims unresolved on the merits.",
+    "flags": ["maggi_lead_contamination_recall_india", "chf_70m_write_off", "sissoko_supreme_court_dismissed_not_exonerated"],
+    "sources": ["https://www.bbc.com/news/world-asia-india-33252886", "https://www.theguardian.com/world/2015/jun/05/nestle-india-maggi-noodles-recall-lead"]
+  },
+  "tax": {
+    "summary": "Nestlé maintains its global headquarters in Vevey, Switzerland and benefits from Swiss cantonal tax arrangements that reduce its effective rate below headline Swiss corporate rates. The company routes significant intellectual property income through Switzerland. It operates treasury functions through favorable European jurisdictions. Academic analyses of multinational profit shifting have cited Nestlé's structure as representative of consumer goods companies that concentrate taxable income in low-rate jurisdictions while generating revenue globally.",
+    "flags": ["swiss_cantonal_tax_arrangements", "ip_income_concentration_low_rate_jurisdictions"],
+    "sources": ["https://www.nestle.com/csv/global-challenges/business-integrity/tax"]
+  },
+  "executives": {
+    "summary": "CEO Mark Schneider received approximately CHF 10 million in 2023. Nestlé's board includes directors with connections across the food and beverage industry. The company's leadership during the infant formula crisis of the 1970s-80s — when WHO-documented marketing practices contributed to infant deaths — reflects a corporate culture that the subsequent century of WHO code violations suggests has not fundamentally changed. The 2023 investigation finding added sugar in infant formula for lower-income markets was not accompanied by public executive accountability.",
+    "flags": ["infant_formula_executive_accountability_absent", "ceo_compensation_during_code_violations"],
+    "sources": ["https://www.nestle.com/investors/corporate-governance/executive-compensation"]
+  },
+  "connections": {
+    "summary": "Nestlé's relationships with cocoa cooperatives and traders in West Africa connect it to the broader chocolate industry's documented child labor problem — shared with Mars, Hershey, and Cargill. Nestlé's water brands (Perrier, San Pellegrino, Poland Spring, Deer Park) operate extraction in communities across multiple continents, creating a pattern of resource extraction from local communities for global premium brand sales. Nestlé's Nespresso supply chain connects it to coffee producers in Ethiopia, Colombia, and other countries where labor conditions have been separately investigated.",
+    "flags": ["cocoa_industry_wide_child_labor", "water_extraction_global_pattern", "nespresso_supply_chain_labor_investigations"],
+    "sources": ["https://www.theguardian.com/global-development/2019/feb/28/nestle-walkers-cocoa-farms"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The International Baby Food Action Network (IBFAN) has repeatedly documented Nestlé marketing infant formula through healthcare workers and facilities in violation of the International Code of Marketing of Breast-milk Substitutes — a practice that substitutes formula for breastfeeding and has been linked to infant deaths in contexts where clean water is unavailable. A 2023 Bureau of Investigative Journalism investigation found that Nestlé adds sugar and honey to infant milk products sold in lower-income countries at levels not present in European versions of the same products. Whistleblowers in the cocoa supply chain have alleged that Nestlé's certification programs do not meaningfully reduce child labor in practice.",
+    "flags": ["ibfan_code_violations_ongoing", "added_sugar_infant_formula_lower_income_countries", "certification_program_effectiveness_questioned"],
+    "sources": ["https://www.thebureauinvestigates.com/stories/2023-04-13/nestle-adds-sugar-and-honey-to-infant-milks-and-cereals-sold-in-poorer-countries", "https://www.ibfan.org/breaking-the-rules/"]
+  },
+  "health_record": {
+    "summary": "Nestlé's infant formula marketing has been causally linked to infant deaths by the WHO and UNICEF — substituting formula for breastfeeding in settings without clean water creates acute malnutrition and infection risk. The 2023 finding of added sugar in infant formula sold in lower-income countries introduces metabolic risk from the first months of life. Maggi noodle lead contamination in India created documented acute health risk for millions of consumers. Nestlé's bottled water products have faced contamination incidents across multiple brands including PFAS contamination documented in France and microplastic contamination documented by peer-reviewed research.",
+    "flags": ["infant_formula_death_linkage_who_documented", "added_sugar_infant_formula", "maggi_lead_contamination", "pfas_bottled_water_france", "microplastic_contamination"],
+    "sources": ["https://www.who.int/nutrition/publications/infantfeeding/9789241594981/en/", "https://www.thebureauinvestigates.com/stories/2023-04-13/nestle-adds-sugar-and-honey-to-infant-milks"]
+  },
+  "alternatives": {
+    "cheaper": ["Store brand infant formula — same FDA nutritional requirements as Nestlé/Gerber; dramatically lower cost; no documented safety difference for healthy infants", "Breastfeeding support resources — WIC provides free lactation consulting and breastfeeding equipment reducing formula dependence"],
+    "healthier": ["Breastfeeding when possible — WHO recommends exclusive breastfeeding for six months; no marketing campaign changes the clinical evidence", "Non-Nestlé infant formula brands not associated with WHO code violations — Bobbie Organic, Earth's Best for formula-dependent families"],
+    "diy": ["Check if your Nestlé water brand extraction is contested in your region — find your water source at your state environmental agency", "Cocoa alternatives: Tony's Chocolonely and Theo Chocolate have third-party verified supply chains for child-labor-free cocoa", "Filter tap water rather than buying bottled — equivalent or superior safety, fraction of the environmental cost"]
+  },
+  "timeline": [
+    {"year": 1867, "event": "Henri Nestlé develops infant formula in Switzerland", "severity": "neutral", "source_url": ""},
+    {"year": 1977, "event": "Nestlé boycott launched globally over infant formula marketing contributing to infant deaths", "severity": "critical", "source_url": ""},
+    {"year": 1981, "event": "WHO adopts International Code of Marketing of Breast-milk Substitutes; Nestlé begins documented pattern of violations", "severity": "high", "source_url": ""},
+    {"year": 2015, "event": "Maggi noodles recalled across India for lead contamination and undisclosed MSG; CHF 70M write-off", "severity": "critical", "source_url": "https://www.bbc.com/news/world-asia-india-33252886"},
+    {"year": 2018, "event": "US lobbies against WHO breastfeeding resolution under formula industry pressure; Nestlé identified as key actor", "severity": "high", "source_url": "https://www.nytimes.com/2018/07/08/health/world-health-breastfeeding-formula.html"},
+    {"year": 2021, "event": "Supreme Court dismisses Sissoko v. Nestlé — jurisdictional ruling, not exoneration of child labor allegations", "severity": "high", "source_url": "https://www.supremecourt.gov/opinions/20pdf/19-416_i4dj.pdf"},
+    {"year": 2021, "event": "Guardian documents Nestlé extracting water in California on permit expired since 1988", "severity": "high", "source_url": "https://www.theguardian.com/environment/2021/apr/27/nestle-water-arrowhead-california-san-bernardino"},
+    {"year": 2023, "event": "Bureau of Investigative Journalism finds Nestlé adds sugar to infant formula sold in lower-income countries", "severity": "critical", "source_url": "https://www.thebureauinvestigates.com/stories/2023-04-13/nestle-adds-sugar-and-honey-to-infant-milks-and-cereals-sold-in-poorer-countries"}
+  ],
+  "community_impact": {
+    "displacement": "Nestlé water extraction from San Bernardino National Forest removed water from drought-stressed Southern California communities and Indigenous territories for premium bottled water sales — a resource transfer from public watershed to private premium product. Cocoa child labor displaces West African children from education and safe childhoods into agricultural labor that benefits a global supply chain worth billions.",
+    "price_illusion": "Nestlé's infant formula is priced as a premium health product. The added sugar found in versions sold to lower-income countries — absent in European versions — suggests the product is formulated differently for markets where consumers have less ability to scrutinize ingredients. The premium price does not reflect a premium product.",
+    "tax_math": "Nestlé's Swiss tax arrangements mean that profits generated from global consumer sales — including from the lowest-income markets where it sells infant formula with added sugar — are concentrated in Switzerland where they are taxed at reduced cantonal rates. The public health costs of formula dependence — infant mortality, hospitalization, healthcare — are borne by the governments of the countries where Nestlé operates.",
+    "wealth_velocity": "Nestlé's global revenue flows to Vevey, Switzerland and to institutional shareholders globally. The water extracted from California communities and the cocoa harvested by child labor in Ivory Coast generate dividends for investors who bear none of the community costs of either extraction."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Nestlé shareholders", "how": "CHF 93B annual revenue from globally dominant food brands; decades of WHO code violations without meaningful financial consequence"},
+      {"group": "Swiss cantonal governments", "how": "Tax revenue from multinational profit concentration with favorable rate arrangements"},
+      {"group": "Formula industry trade groups", "how": "Successful lobbying against WHO breastfeeding protections preserving global formula market access"}
+    ],
+    "who_paid": [
+      {"group": "West African cocoa farming families", "how": "Children in labor instead of school; communities without economic alternatives to supply chain participation on Nestlé's terms"},
+      {"group": "Infants in lower-income countries", "how": "Formula with added sugar not present in European versions; displacement of breastfeeding by marketing that WHO has linked to infant mortality"},
+      {"group": "San Bernardino communities", "how": "Water extracted from drought-stressed watershed on expired permit for decades while communities faced water restrictions"},
+      {"group": "Indian consumers", "how": "Maggi noodles with lead contamination sold for years before recall; acute health risk from trusted everyday product"}
+    ],
+    "the_gap": "Nestlé has pledged to eliminate child labor from its cocoa supply chain every decade since 2001. The boycott is 47 years old. The infant formula is sweeter in poorer countries. The water permit expired in 1988. The company made CHF 93 billion last year."
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "brand_name": "Textron",
+  "brand_slug": "textron",
+  "parent_company": "Textron Inc.",
+  "ultimate_parent": "Textron Inc.",
+  "subsidiaries": ["Bell Helicopter", "Cessna", "Beechcraft", "Textron Systems", "Arctic Cat", "Kautex"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "TEXTRON MAKES BELL ATTACK HELICOPTERS USED IN DOCUMENTED CIVILIAN STRIKES AND CESSNA PLANES SOLD TO GOVERNMENTS WORLDWIDE — ITS CLUSTER MUNITION DISPENSERS HAVE BEEN FOUND IN MULTIPLE CONFLICT ZONES",
+  "executive_summary": "Textron Inc. is a diversified industrial conglomerate operating across defense, aviation, and industrial manufacturing. Its Bell division produces the V-22 Osprey tiltrotor aircraft and AH-1Z Viper attack helicopters for the U.S. military. Textron Systems produces the CBU-97 Sensor Fuzed Weapon — a cluster munition dispenser — as well as armored vehicles, unmanned aircraft, and missile systems. Cessna and Beechcraft aircraft — also Textron subsidiaries — are widely used by military and paramilitary forces globally. Textron has faced scrutiny over cluster munition sales, helicopter accidents, and the V-22 Osprey's safety record.",
+  "verdict_tags": [
+    "cluster_munition_dispenser_manufacturer",
+    "v22_osprey_safety_record",
+    "bell_helicopter_documented_conflict_deployments",
+    "cessna_paramilitary_global_sales",
+    "false_claims_act_settlements",
+    "cluster_munitions_banned_most_countries"
+  ],
+  "concern_flags": { "labor": true, "environmental": true, "political": true, "tax": false, "health": true, "legal": true },
+  "labor": {
+    "summary": "Bell Helicopter workers have engaged in strikes at the Fort Worth, Texas facility. Textron has faced OSHA violations at manufacturing facilities. The company's diverse portfolio has involved multiple labor negotiations across different subsidiary workforces.",
+    "flags": ["bell_helicopter_fort_worth_strikes", "osha_violations_manufacturing", "multi_subsidiary_labor_negotiations"],
+    "sources": ["https://www.nlrb.gov", "https://www.osha.gov"]
+  },
+  "environmental": {
+    "summary": "Textron legacy manufacturing facilities have generated industrial contamination. The company's Kautex automotive parts division has faced environmental compliance issues. Aircraft manufacturing generates hazardous waste from composite materials and chemical processes.",
+    "flags": ["legacy_manufacturing_contamination", "composite_aircraft_manufacturing_waste", "kautex_environmental_compliance"],
+    "sources": ["https://www.epa.gov/superfund"]
+  },
+  "political": {
+    "summary": "Textron spent $4.6 million on lobbying in 2023. The V-22 Osprey program — which has faced repeated fatal crashes — has been sustained through congressional support tied to manufacturing in politically strategic states. The U.S. has not signed the Convention on Cluster Munitions, allowing Textron to continue producing and selling cluster munition dispensers.",
+    "flags": ["4_6m_lobbying_2023", "v22_crash_history_congressional_protection", "us_cluster_munition_convention_non_signatory"],
+    "sources": ["https://www.opensecrets.org/orgs/textron/lobbying", "https://www.clusterconvention.org"]
+  },
+  "legal": {
+    "summary": "Textron has faced False Claims Act allegations related to government aviation contracts. The company's cluster munition products are banned in over 110 countries under the Convention on Cluster Munitions — a treaty the U.S. has not signed. The CBU-97 and similar systems have been documented in conflicts where civilian casualties from unexploded submunitions have been reported.",
+    "flags": ["false_claims_aviation_contracts", "cluster_munitions_banned_110_countries", "unexploded_submunition_civilian_casualties"],
+    "sources": ["https://www.hrw.org/topic/arms/cluster-munitions", "https://www.pogo.org/database/contractor-misconduct"]
+  },
+  "tax": { "summary": "Textron uses standard defense and industrial conglomerate tax structures including depreciation benefits and offshore subsidiary arrangements.", "flags": ["offshore_subsidiary_arrangements", "depreciation_benefits_aircraft_manufacturing"], "sources": ["https://subsidytracker.goodjobsfirst.org/prog.php?parent=textron"] },
+  "executives": {
+    "summary": "CEO Scott Donnelly received $16.2 million in total compensation in 2022. Executive compensation is maintained across Textron's diversified portfolio.",
+    "flags": ["donnelly_16_2m_compensation_2022"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=textron"]
+  },
+  "connections": {
+    "summary": "Bell V-22 Ospreys are operated by U.S. special operations forces globally. AH-1Z Vipers are deployed aboard U.S. Navy amphibious ships and have been used in active operations. Textron's CBU-97 cluster munition dispensers have been used in Iraq, Afghanistan, and other theaters. Cessna aircraft are used by paramilitary and government forces across Latin America, Africa, and Asia.",
+    "flags": ["v22_special_operations_global_deployment", "cbu97_cluster_munitions_iraq_afghanistan", "cessna_paramilitary_latin_america_africa"],
+    "sources": ["https://www.hrw.org", "https://www.dsca.mil"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Human rights investigators have alleged that CBU-97 submunitions have caused civilian casualties from unexploded ordnance in Iraq and Afghanistan years after initial deployment — the same pattern documented with other cluster munitions globally. Critics have alleged that the V-22 Osprey's crash rate has been understated in public reporting due to classification of incident details.",
+    "flags": ["cbu97_unexploded_submunition_civilian_casualties_alleged", "v22_crash_rate_understated_alleged"],
+    "sources": ["https://www.hrw.org/topic/arms/cluster-munitions", "https://www.pogo.org"]
+  },
+  "health_record": {
+    "summary": "The V-22 Osprey has experienced a series of fatal crashes. In August 2023, an Osprey crash off the coast of Japan killed eight U.S. Air Force special operations personnel. In November 2023, another Osprey crash off Japan killed eight more. The aircraft's tiltrotor system has been associated with a documented pattern of fatal accidents. Cluster munition submunitions — produced by Textron's systems division — have caused documented civilian casualties and injuries from unexploded ordnance.",
+    "flags": ["v22_osprey_fatal_crash_pattern", "japan_crashes_2023_sixteen_killed", "cluster_submunition_civilian_uxo_casualties"],
+    "sources": ["https://www.nytimes.com/2023/11/30/us/politics/osprey-crash-japan.html", "https://www.hrw.org/topic/arms/cluster-munitions"]
+  },
+  "alternatives": {
+    "cheaper": ["Textron does not sell consumer products. The systemic alternative for cluster munitions is U.S. accession to the Convention on Cluster Munitions — currently blocked by defense industry lobbying"],
+    "healthier": ["The Cluster Munition Monitor publishes annual data on civilian casualties from unexploded cluster munition submunitions globally"],
+    "diy": ["The Convention on Cluster Munitions website lists signatory countries and documents the humanitarian case for the ban"]
+  },
+  "timeline": [
+    { "year": 1923, "event": "Textron founded in Providence, Rhode Island", "severity": "neutral", "source_url": "" },
+    { "year": 1960, "event": "Acquires Bell Helicopter", "severity": "neutral", "source_url": "" },
+    { "year": 2014, "event": "Acquires Beechcraft Corporation", "severity": "neutral", "source_url": "" },
+    { "year": 2023, "event": "August: V-22 Osprey crash kills 8 U.S. Air Force personnel off Japan", "severity": "critical", "source_url": "https://www.nytimes.com" },
+    { "year": 2023, "event": "November: Second V-22 crash kills 8 more off Japan; fleet temporarily grounded", "severity": "critical", "source_url": "https://www.nytimes.com/2023/11/30/us/politics/osprey-crash-japan.html" },
+    { "year": 2024, "event": "V-22 Osprey returned to limited flight operations following engineering review", "severity": "high", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "Textron's conglomerate structure has involved facility closures and consolidations at acquired aviation brands that have displaced manufacturing communities.",
+    "price_illusion": "The V-22 Osprey was presented as a revolutionary capability combining helicopter and fixed-wing aircraft performance. Its crash history — and the classification of many accident details — has prevented full public assessment of the safety record.",
+    "tax_math": "Offshore subsidiary structures and depreciation benefits reduce effective tax rates while the company benefits from government defense contracts.",
+    "wealth_velocity": "CEO compensation exceeds $16 million across a portfolio that includes cluster munition production — weapons banned in most of the world — alongside consumer brands."
+  },
+  "cost_absorption": {
+    "who_benefited": ["Textron shareholders", "Executive leadership", "Congressional districts with V-22 and Bell supply chains"],
+    "who_paid": ["16 U.S. service members killed in 2023 V-22 crashes", "Civilians injured by unexploded cluster munition submunitions", "Communities displaced by facility consolidations"],
+    "the_gap": "The V-22 Osprey has killed service members in a documented pattern of crashes. The CBU-97 cluster munition system is banned in 110 countries due to civilian harm. Both products continue to be manufactured and sold under active U.S. government contracts."
+  }
+}

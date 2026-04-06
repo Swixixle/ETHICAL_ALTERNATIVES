@@ -1,0 +1,189 @@
+{
+  "brand_name": "General Dynamics",
+  "brand_slug": "general-dynamics",
+  "parent_company": "General Dynamics Corporation",
+  "ultimate_parent": "General Dynamics Corporation",
+  "subsidiaries": [
+    "Gulfstream Aerospace",
+    "General Dynamics Land Systems",
+    "General Dynamics Information Technology (GDIT)",
+    "General Dynamics Mission Systems",
+    "Bath Iron Works",
+    "Electric Boat (submarines)"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "GENERAL DYNAMICS BUILDS EVERY U.S. NUCLEAR SUBMARINE AND SELLS GULFSTREAM JETS TO THE SAME GOVERNMENT OFFICIALS WHO APPROVE ITS CONTRACTS — ITS ABRAMS TANKS HAVE SAT UNUSED IN THE DESERT WHILE CONGRESS KEPT FUNDING THEM",
+  "executive_summary": "General Dynamics Corporation is the fifth-largest U.S. defense contractor, generating approximately $39 billion annually. Its Electric Boat division is the sole manufacturer of U.S. Navy nuclear-powered submarines — including the Virginia-class attack submarine and the Columbia-class ballistic missile submarine. General Dynamics Land Systems produces the M1 Abrams tank. Its GDIT division holds major federal IT and surveillance contracts. Gulfstream Aerospace — also a General Dynamics subsidiary — produces business jets purchased by governments, executives, and the U.S. military. The convergence of weapons manufacturing, government IT, and luxury aviation creates a uniquely embedded relationship with federal decision-makers.",
+  "verdict_tags": [
+    "sole_manufacturer_nuclear_submarines",
+    "abrams_tanks_funded_against_army_requests",
+    "gulfstream_government_official_sales",
+    "gdit_surveillance_contracts",
+    "false_claims_act_overbilling",
+    "columbia_class_submarine_cost_overruns"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": false,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "General Dynamics shipyard workers — particularly at Bath Iron Works and Electric Boat — have engaged in repeated strikes over wages and benefits. A 2020 strike at Bath Iron Works lasted 62 days. The company has faced OSHA violations at shipyard facilities where workers are exposed to asbestos, heavy metals, and confined space hazards. Electric Boat workers building nuclear submarines operate in uniquely hazardous environments with radiation exposure protocols.",
+    "flags": [
+      "bath_iron_works_62_day_strike_2020",
+      "osha_violations_shipyard_asbestos",
+      "nuclear_submarine_worker_radiation_protocols",
+      "heavy_metal_confined_space_hazards"
+    ],
+    "sources": [
+      "https://www.defensenews.com/industry/2020/06/22/general-dynamics-bath-iron-works-workers-go-on-strike/",
+      "https://www.osha.gov"
+    ]
+  },
+  "environmental": {
+    "summary": "General Dynamics' shipbuilding facilities have generated significant contamination including heavy metals, asbestos, and industrial solvents. The Groton, Connecticut Electric Boat facility — home of U.S. nuclear submarine production — has faced state environmental oversight for decades. Former General Dynamics facilities in the Midwest have left contaminated industrial sites. The company's tank production facilities generate hazardous metal machining waste.",
+    "flags": [
+      "groton_connecticut_electric_boat_contamination",
+      "asbestos_heavy_metal_shipyard_contamination",
+      "midwest_former_facility_contamination",
+      "tank_production_metal_machining_waste"
+    ],
+    "sources": [
+      "https://www.epa.gov/superfund",
+      "https://portal.ct.gov/DEEP"
+    ]
+  },
+  "political": {
+    "summary": "General Dynamics spent $11.2 million on lobbying in 2023. The M1 Abrams tank program has been funded by Congress for years despite the U.S. Army stating it had more tanks than it needed — a documented example of congressional district politics driving weapons procurement. The Columbia-class submarine program is spread across multiple states to build political constituencies. Former Defense Secretaries William Cohen and Dick Cheney have had relationships with General Dynamics. The Gulfstream subsidiary creates direct relationships with government officials who purchase or operate its jets.",
+    "flags": [
+      "11_2m_lobbying_2023",
+      "abrams_tank_funded_against_army_request",
+      "columbia_class_political_district_spread",
+      "gulfstream_government_official_relationships"
+    ],
+    "sources": [
+      "https://www.opensecrets.org/orgs/general-dynamics/lobbying",
+      "https://www.pogo.org/analysis/2014/04/abrams-tank-army-doesnt-want"
+    ]
+  },
+  "legal": {
+    "summary": "General Dynamics has paid over $350 million in False Claims Act settlements. In 1993, the company paid $9.5 million to settle overbilling allegations. Subsequent settlements have covered improper billing on Navy shipbuilding contracts, overpricing of spare parts, and defective pricing on IT contracts. The GDIT division has faced contract fraud investigations related to government IT billing.",
+    "flags": [
+      "350m_plus_false_claims_settlements",
+      "navy_shipbuilding_overbilling",
+      "spare_parts_overpricing",
+      "gdit_it_contract_fraud_investigations"
+    ],
+    "sources": [
+      "https://www.pogo.org/database/contractor-misconduct",
+      "https://www.justice.gov"
+    ]
+  },
+  "tax": {
+    "summary": "General Dynamics maintains offshore subsidiaries and uses standard defense industry tax optimization structures including accelerated depreciation on defense contracts and R&D credits. State and local subsidies to shipyard and manufacturing facilities have been documented.",
+    "flags": [
+      "offshore_subsidiary_structures",
+      "accelerated_depreciation_defense_contracts",
+      "state_local_shipyard_subsidies"
+    ],
+    "sources": [
+      "https://subsidytracker.goodjobsfirst.org/prog.php?parent=general-dynamics"
+    ]
+  },
+  "executives": {
+    "summary": "CEO Phebe Novakovic received $21.7 million in total compensation in 2022. Novakovic previously worked at the CIA and the Office of the Secretary of Defense — a career path that illustrates the revolving door between intelligence community and defense contracting. The company's board includes former senior government officials.",
+    "flags": [
+      "novakovic_21_7m_compensation_2022",
+      "novakovic_former_cia_osd_career",
+      "board_former_senior_government_officials",
+      "revolving_door_intelligence_community"
+    ],
+    "sources": [
+      "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=general-dynamics"
+    ]
+  },
+  "connections": {
+    "summary": "Electric Boat's nuclear submarines carry Trident II D5 ballistic missiles — the sea-based leg of the U.S. nuclear triad. The Columbia-class submarine, currently under construction, will carry the bulk of U.S. nuclear deterrent. General Dynamics' Abrams tanks have been supplied to Saudi Arabia, Egypt, Kuwait, and other countries. GDIT holds surveillance and data management contracts across the U.S. intelligence community.",
+    "flags": [
+      "columbia_class_us_nuclear_deterrent",
+      "abrams_sales_saudi_egypt_kuwait",
+      "gdit_intelligence_community_surveillance",
+      "trident_nuclear_delivery_system"
+    ],
+    "sources": [
+      "https://www.dsca.mil",
+      "https://www.navy.mil/Resources/Fact-Files/Display-FactFiles/Article/2169558/columbia-class-submarine/"
+    ]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Defense analysts and congressional investigators have alleged that the Abrams tank production line is maintained primarily to preserve congressional support rather than to meet military requirements — that the Army's repeated statements about having excess tank inventory have been ignored because Ohio-based production supports key congressional votes. Former Navy officials have alleged that Columbia-class submarine schedule pressures have led Electric Boat to accept components that do not meet specifications.",
+    "flags": [
+      "abrams_production_congressional_politics_alleged",
+      "columbia_class_off_spec_components_alleged",
+      "army_tank_inventory_excess_ignored_alleged"
+    ],
+    "sources": [
+      "https://www.pogo.org/analysis/2014/04/abrams-tank-army-doesnt-want",
+      "https://www.gao.gov"
+    ]
+  },
+  "health_record": {
+    "summary": "Shipyard workers at Bath Iron Works and Electric Boat face documented occupational health risks including asbestos exposure in submarine construction and repair, heavy metal exposure in welding and cutting operations, and confined space risks. The history of asbestos use in naval shipbuilding has produced mesothelioma and other asbestos-related diseases in former shipyard workers — a population that includes General Dynamics employees from earlier decades.",
+    "flags": [
+      "asbestos_mesothelioma_naval_shipbuilding",
+      "heavy_metal_welding_cutting_exposure",
+      "confined_space_submarine_construction_risk"
+    ],
+    "sources": [
+      "https://www.osha.gov/asbestos",
+      "https://www.cdc.gov/niosh/topics/shipyard/"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "General Dynamics does not sell consumer products. The systemic alternative for the Abrams tank program is allowing the Army's stated inventory requirements to drive procurement rather than congressional district politics"
+    ],
+    "healthier": [
+      "Former Naval shipyard workers and their families can access asbestos disease diagnosis and compensation resources through the Mesothelioma Veterans Center and DOL's EEOIC program"
+    ],
+    "diy": [
+      "POGO's Contractor Misconduct Database documents General Dynamics' settlement history",
+      "GAO's Weapon System Acquisition annual report tracks Columbia-class and other General Dynamics programs"
+    ]
+  },
+  "timeline": [
+    { "year": 1952, "event": "General Dynamics Corporation formed from Consolidated Vultee Aircraft", "severity": "neutral", "source_url": "" },
+    { "year": 1993, "event": "Pays $9.5 million to settle overbilling allegations", "severity": "high", "source_url": "" },
+    { "year": 1999, "event": "Acquires Gulfstream Aerospace for $5.3 billion", "severity": "neutral", "source_url": "" },
+    { "year": 2014, "event": "Congress funds 42 additional Abrams tanks Army did not request and does not want", "severity": "high", "source_url": "https://www.pogo.org/analysis/2014/04/abrams-tank-army-doesnt-want" },
+    { "year": 2020, "event": "Bath Iron Works machinists strike for 62 days", "severity": "high", "source_url": "https://www.defensenews.com" },
+    { "year": 2020, "event": "Columbia-class submarine contract — $109 billion lifetime program cost", "severity": "neutral", "source_url": "" },
+    { "year": 2022, "event": "Columbia-class program faces schedule delays and cost growth flagged by GAO", "severity": "high", "source_url": "https://www.gao.gov" },
+    { "year": 2023, "event": "U.S. Army requests modernization focus over additional tank purchases — Congress continues Abrams funding", "severity": "high", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "General Dynamics' shipyard communities — particularly in Bath, Maine and Groton, Connecticut — are heavily economically dependent on single employer relationships, giving the company significant leverage over local political and regulatory environments.",
+    "price_illusion": "Congress has funded Abrams tank production for years beyond Army requirements — presenting it as readiness investment while the Army warehouses the excess. The cost of unwanted tanks is borne by taxpayers; the benefit accrues to the production district and shareholders.",
+    "tax_math": "General Dynamics receives billions in annual government contracts while using offshore structures to reduce effective tax rates — double-extracting from the public treasury.",
+    "wealth_velocity": "CEO compensation of $21.7 million against a backdrop of $39 billion in largely government-funded revenue, maintained through a sole-source nuclear submarine monopoly that cannot be meaningfully competed."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      "General Dynamics shareholders",
+      "Executive leadership",
+      "Congressional districts with Abrams and Columbia-class supply chains",
+      "Gulfstream customers in government and private sector"
+    ],
+    "who_paid": [
+      "U.S. taxpayers funding excess Abrams tank production",
+      "Former shipyard workers with asbestos-related disease",
+      "Communities near contaminated former facilities"
+    ],
+    "the_gap": "The Army has stated it does not need additional Abrams tanks. Congress has continued to fund them. The gap between military requirement and political procurement represents hundreds of millions in annual spending that flows to shareholders rather than capability."
+  }
+}

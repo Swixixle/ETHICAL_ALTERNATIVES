@@ -1,0 +1,92 @@
+{
+  "brand_name": "Procter & Gamble",
+  "brand_slug": "procter-gamble",
+  "parent_company": "The Procter & Gamble Company",
+  "ultimate_parent": "The Procter & Gamble Company",
+  "subsidiaries": ["Tide", "Pampers", "Gillette", "Pantene", "Oral-B", "Bounty", "Charmin", "Old Spice", "Head & Shoulders", "Febreze", "Crest", "Dawn", "Downy"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "P&G'S CHARMIN TOILET PAPER COMES FROM CANADIAN FORESTS BEING CLEARED AT UNPRECEDENTED RATES — AND ALWAYS PADS WERE FOUND TO CONTAIN PFAS",
+  "executive_summary": "Procter & Gamble is the world's largest consumer goods company by revenue, with annual sales exceeding $82 billion. Its Charmin toilet paper brand has been documented by the Rainforest Action Network and NRDC to source wood pulp from Canadian boreal forests being cleared at a rate described by scientists as unprecedented — including from areas with old-growth characteristics. Independent testing has found PFAS 'forever chemicals' in P&G's Always brand menstrual pads — chemicals associated with cancer, immune system effects, and reproductive harm. P&G's palm oil supply chain was linked to plantations using child and forced labor by an Amnesty International investigation. The company is a consistent top-five lobbying spender opposing chemical disclosure requirements and environmental regulations.",
+  "verdict_tags": ["charmin_boreal_forest_clearance", "always_pads_pfas_detected", "palm_oil_child_forced_labor_supply_chain", "chemical_disclosure_opposition", "deforestation_sourcing"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": false},
+  "labor": {
+    "summary": "Amnesty International's 2016 investigation into palm oil supply chains documented that companies including P&G were linked to suppliers using child and forced labor on Indonesian and Malaysian plantations. P&G sources palm oil used in Tide detergent, Pantene shampoo, and other products. The company has committed to traceable and responsible palm oil sourcing but independent monitoring has found persistent gaps between commitment and supply chain reality — particularly at the plantation and smallholder level below certified mills.",
+    "flags": ["palm_oil_supply_chain_child_forced_labor", "amnesty_international_documented_2016", "traceability_commitment_compliance_gap"],
+    "sources": ["https://www.amnesty.org/en/documents/asa21/5184/2016/en/", "https://www.pg.com/en_US/sustainability/environmental-sustainability/forests/"]
+  },
+  "environmental": {
+    "summary": "The Rainforest Action Network and NRDC's 2019 'The Issue with Tissue' report documented that P&G's Charmin brand sources wood pulp from Canadian boreal forest suppliers clearing forests at unprecedented rates. The report found that none of the major tissue brands — including Charmin — scored adequately on forest protection. Boreal forests are a significant global carbon sink and home to Indigenous communities. P&G's palm oil supply chain connects it to deforestation in Indonesia and Malaysia. The company is among the top ten global plastic packagers by volume.",
+    "flags": ["charmin_boreal_forest_clearance_unprecedented_rate", "old_growth_forest_sourcing", "palm_oil_deforestation_indonesia_malaysia", "top_10_plastic_packager"],
+    "sources": ["https://www.ran.org/the-understory/wiping-out-forests/", "https://www.nrdc.org/stories/issue-tissue-how-americans-are-flushing-forests-down-toilet"]
+  },
+  "political": {
+    "summary": "P&G has spent over $15 million in federal political contributions through its PAC over the past decade. The company has lobbied against chemical disclosure requirements in consumer products — requirements that would require disclosure of ingredients including PFAS in personal care products. P&G has lobbied against strengthened EPA regulations on industrial chemicals and against labor organizing facilitation legislation. Its political spending has historically concentrated on members of committees relevant to chemical regulation, consumer product safety, and trade.",
+    "flags": ["chemical_disclosure_requirement_opposition", "epa_chemical_regulation_opposition", "labor_legislation_opposition"],
+    "sources": ["https://www.opensecrets.org/orgs/procter-gamble/summary?id=D000000186"]
+  },
+  "legal": {
+    "summary": "P&G has faced consumer class action lawsuits over 'natural' ingredient claims on Herbal Essences and other product lines. These cases have been settled at the class action level. The Herbal Essences and similar cases establish a pattern of natural and ingredient marketing claims that courts have found potentially misleading. No major criminal or regulatory enforcement action at the scale of its product safety and environmental issues has been publicly documented.",
+    "flags": ["herbal_essences_natural_claim_class_action", "ingredient_marketing_misleading_pattern"],
+    "sources": []
+  },
+  "tax": {
+    "summary": "P&G has disclosed significant operations in Ireland and other European jurisdictions with favorable tax treatment for intellectual property income. P&G's brand intellectual property — which supports its premium pricing across Tide, Pampers, Gillette, and other brands — is partially held through Irish structures that reduce US tax on the associated royalty income. P&G's effective tax rates have typically run below US statutory rates. No major formal US enforcement action has been publicly documented.",
+    "flags": ["ireland_ip_structures", "below_statutory_effective_rate", "brand_ip_royalty_offshore"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=pg"]
+  },
+  "executives": {
+    "summary": "CEO Jon Moeller received approximately $20 million in total compensation in 2023. P&G's executive compensation structure is tied to organic sales growth and net earnings — metrics that are maximized by product volume and margin regardless of environmental or health externalities. P&G's response to the Always PFAS testing findings was to dispute the methodology rather than to conduct and publish independent testing — a pattern consistent with its lobbying against chemical disclosure requirements.",
+    "flags": ["pfas_finding_response_methodology_dispute_not_independent_testing", "volume_growth_compensation_structure"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "connections": {
+    "summary": "P&G's relationships with major grocery retailers — through its purchasing power and brand demand — give it leverage over shelf placement and promotional support. Its palm oil sourcing connects it to the Roundtable on Sustainable Palm Oil (RSPO) certification system that Amnesty International's investigation found insufficient to prevent labor abuses at the plantation level. P&G's chemical lobbying connects it to the American Chemistry Council and the Consumer Brands Association — industry groups that coordinate lobbying against chemical disclosure and environmental regulation.",
+    "flags": ["rspo_certification_insufficient_labor_protection", "american_chemistry_council_coordination", "retail_leverage_shelf_placement"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Women's Voices for the Earth has alleged that P&G's response to the PFAS-in-Always testing — disputing methodology without publishing its own testing — reflects a deliberate strategy to avoid confirming findings that would require product reformulation or disclosure. Environmental advocates have alleged that P&G's Charmin sourcing practices violate the company's own forest policy commitments — which prohibit sourcing from areas of High Conservation Value forest — because the Canadian boreal suppliers it uses clear-cut in such areas. Indigenous rights organizations have alleged that P&G's forest fiber supply chain includes sourcing from traditional territories of First Nations communities without adequate consultation.",
+    "flags": ["pfas_methodology_dispute_strategy_alleged", "charmin_own_forest_policy_violation_alleged", "indigenous_territory_sourcing_without_consultation_alleged"],
+    "sources": ["https://womensvoices.org/2020/07/07/always-pads-with-wings-contain-toxic-pfas-chemicals/"]
+  },
+  "health_record": {
+    "summary": "Women's Voices for the Earth's 2020 report found detectable levels of PFAS in Always brand menstrual pads — products used by reproductive-age people for extended periods of intimate contact. PFAS are designated as chemicals of concern by the EPA due to their persistence, bioaccumulation, and association with kidney cancer, testicular cancer, thyroid disease, immune system suppression, and reproductive harm. The EPA has established a maximum contaminant level of 4 parts per trillion for PFAS in drinking water — a level that reflects concern about exposure at very low concentrations. P&G disputed the testing methodology but did not publish independent testing. Subsequent testing by EWG and other researchers also found PFAS in menstrual products.",
+    "flags": ["pfas_always_pads_detected", "reproductive_age_intimate_contact_exposure", "epa_pfas_chemical_of_concern", "cancer_immune_reproductive_harm_association"],
+    "sources": ["https://womensvoices.org/2020/07/07/always-pads-with-wings-contain-toxic-pfas-chemicals/", "https://www.ewg.org/news-insights/news-release/2023/11/pfas-period-products-report"]
+  },
+  "alternatives": {
+    "cheaper": ["Generic store brand menstrual pads from retailers who have tested for PFAS — several private label brands have published PFAS testing results", "Reusable menstrual products (cups, discs, period underwear) — significantly lower lifetime cost, no PFAS concerns, no continuous single-use waste"],
+    "healthier": ["Certified organic cotton menstrual pads (Natracare, Organyc) — no PFAS, no synthetic materials, compostable", "Reusable menstrual cups (DivaCup, Lunette) — medical-grade silicone, no PFAS, designed for reuse"],
+    "diy": ["Request PFAS testing results from your menstrual product brand — companies that publish testing results are demonstrating transparency that P&G has not shown for Always", "Choose toilet paper made from recycled content or bamboo — these do not require virgin forest fiber and have a documented lower deforestation footprint", "For Charmin specifically: Seventh Generation and Who Gives A Crap use 100% recycled content or bamboo with documented lower forest impact"]
+  },
+  "timeline": [
+    {"year": 1837, "event": "Procter & Gamble founded in Cincinnati by William Procter and James Gamble", "severity": "neutral", "source_url": ""},
+    {"year": 2005, "event": "P&G acquires Gillette for $57 billion", "severity": "neutral", "source_url": ""},
+    {"year": 2016, "event": "Amnesty International documents P&G linked to palm oil suppliers using child and forced labor", "severity": "critical", "source_url": "https://www.amnesty.org/en/documents/asa21/5184/2016/en/"},
+    {"year": 2019, "event": "Rainforest Action Network and NRDC document Charmin sourcing from Canadian boreal forest clearance at unprecedented rates", "severity": "high", "source_url": "https://www.ran.org/the-understory/wiping-out-forests/"},
+    {"year": 2019, "event": "$8B Gillette write-down; shareholder litigation follows over acquisition price", "severity": "moderate", "source_url": ""},
+    {"year": 2020, "event": "Women's Voices for the Earth publishes PFAS detection in Always menstrual pads; P&G disputes methodology", "severity": "critical", "source_url": "https://womensvoices.org/2020/07/07/always-pads-with-wings-contain-toxic-pfas-chemicals/"},
+    {"year": 2023, "event": "EWG and additional researchers publish further PFAS testing in menstrual products including Always", "severity": "high", "source_url": "https://www.ewg.org/news-insights/news-release/2023/11/pfas-period-products-report"}
+  ],
+  "community_impact": {
+    "displacement": "P&G's Charmin sourcing from Canadian boreal forests affects First Nations communities whose traditional territories are cleared for pulp production — communities that were not adequately consulted according to Indigenous rights organizations. Palm oil plantation expansion in Indonesia and Malaysia displaces forest communities and wildlife habitats that have supported Indigenous peoples for generations.",
+    "price_illusion": "Always menstrual pads are priced as a basic health necessity. The PFAS chemicals detected in testing represent a hidden health cost not reflected in the product price — a cost borne by users' bodies over years of use. Charmin's premium pricing is supported by marketing that does not disclose its forest fiber sourcing from boreal clear-cuts.",
+    "tax_math": "P&G's intellectual property offshore structures reduce US taxable income while the revenue generated by US consumer purchases of Tide, Pampers, Always, and Charmin is fully American. The chemical disclosure lobbying P&G funds opposes regulations that would require it to disclose ingredients including PFAS — disclosure that would affect its ability to sell products at current volumes and prices.",
+    "wealth_velocity": "P&G's annual dividends and share buybacks return capital to institutional shareholders globally. The women using Always pads bear the PFAS exposure risk. The First Nations communities whose traditional territories are cleared for Charmin bear the deforestation impact. None of these communities share in the $82 billion in annual revenue generated from their resources and their trust."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "P&G shareholders", "how": "$82B annual revenue; chemical disclosure opposition preserves product formulations without mandatory disclosure; deforestation sourcing reduces raw material costs"},
+      {"group": "P&G palm oil suppliers", "how": "Contract revenue from P&G sourcing despite documented labor violations; RSPO certification insufficient to prevent violations"},
+      {"group": "Canadian boreal forest logging operators", "how": "Demand from P&G Charmin sourcing enables continued clear-cutting of forests Indigenous communities and scientists have documented as irreplaceable"}
+    ],
+    "who_paid": [
+      {"group": "Users of Always menstrual pads", "how": "PFAS exposure from products used in intimate contact by reproductive-age people over years; no disclosure or warning"},
+      {"group": "First Nations communities in Canadian boreal territories", "how": "Traditional territories cleared for toilet paper production; inadequate consultation documented"},
+      {"group": "Indonesian and Malaysian plantation workers", "how": "Child and forced labor documented in palm oil supply chain by Amnesty International in 2016"}
+    ],
+    "the_gap": "PFAS were found in Always pads in 2020. P&G disputed the methodology. They did not publish their own testing. PFAS have been found again in 2023 by independent researchers. P&G lobbied against the chemical disclosure requirements that would have required them to tell you what is in the pads. They made $82 billion last year."
+  }
+}

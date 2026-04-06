@@ -1,0 +1,90 @@
+{
+  "brand_name": "Haier",
+  "brand_slug": "haier",
+  "parent_company": "Haier Smart Home Co., Ltd.",
+  "ultimate_parent": "Haier Group Corporation",
+  "subsidiaries": ["GE Appliances (acquired 2016)", "Fisher & Paykel (acquired 2012)", "Candy (acquired 2019)", "Aqua (Japan)"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "HAIER BOUGHT GE'S APPLIANCE BUSINESS FOR $5.4 BILLION — NOW HOUSE INTELLIGENCE COMMITTEES ARE ASKING WHAT CHINA'S NATIONAL INTELLIGENCE LAW MEANS FOR YOUR REFRIGERATOR",
+  "executive_summary": "Haier Group is China's largest appliance manufacturer and one of the world's largest home appliance companies, selling under the GE Appliances brand in the United States following a $5.4 billion acquisition from General Electric in 2016. GE Appliances — which manufactures in Louisville, Kentucky and sells refrigerators, dishwashers, and washing machines across the US market — is now a wholly-owned Chinese subsidiary. China's National Intelligence Law of 2017 requires Chinese companies and individuals to 'support, assist, and cooperate with national intelligence work' when asked — with no public reporting or oversight mechanism. The House Select Committee on the Chinese Communist Party has raised specific questions about Haier's GE Appliances acquisition in the context of this law. Haier's 'Internet of Things' connected appliance strategy means its products collect usage data from inside American homes. The question of what data those appliances collect, where it goes, and what legal obligations Haier has under Chinese law has not been publicly resolved.",
+  "verdict_tags": ["ge_appliances_chinese_ownership_5_4b", "china_national_intelligence_law_data_obligation", "house_select_committee_scrutiny", "iot_connected_appliances_data_collection", "louisville_manufacturing_chinese_corporate_control"],
+  "concern_flags": {"labor": false, "environmental": false, "political": true, "tax": false, "health": false, "legal": false},
+  "labor": {
+    "summary": "GE Appliances employs approximately 12,000 workers in Louisville, Kentucky — one of the largest manufacturing workforces in the state. The Haier acquisition preserved US manufacturing jobs, a point the company has consistently emphasized. No major documented labor violations at GE Appliances under Haier ownership have been identified. Haier's Chinese manufacturing facilities are subject to Chinese labor law.",
+    "flags": ["12000_louisville_manufacturing_jobs_retained", "chinese_labor_law_for_haier_chinese_operations"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "GE Appliances manufactures Energy Star certified products and has maintained US environmental compliance under Haier ownership. No major documented environmental enforcement actions against GE Appliances have been identified since the acquisition. Haier's Chinese manufacturing operations are subject to Chinese environmental regulation.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "China's National Intelligence Law (2017) requires all Chinese companies and citizens to cooperate with national intelligence operations. Haier Group — as a Chinese company — is legally obligated under this law to assist Chinese intelligence when directed. GE Appliances is a wholly-owned subsidiary of Haier, making it a Chinese-owned company. The House Select Committee on the Chinese Communist Party included Haier among companies it examined for data security concerns. No confirmed case of Haier providing US consumer data to Chinese intelligence has been publicly documented — but the legal framework creating that obligation exists and has not been publicly addressed.",
+    "flags": ["china_national_intelligence_law_2017_haier_obligation", "house_select_committee_ccp_examined", "legal_framework_data_obligation_publicly_unresolved"],
+    "sources": ["https://selectcommitteeontheccp.house.gov/"]
+  },
+  "legal": {
+    "summary": "No US enforcement actions against Haier or GE Appliances have been documented as of April 2026. The legal concern is prospective and structural — China's National Intelligence Law creates obligations for Haier that would apply to its US subsidiary's operations and data. No court has adjudicated whether GE Appliances data is subject to Chinese government access under this framework. The Committee on Foreign Investment in the United States (CFIUS) reviewed the original GE Appliances acquisition; it did not block the deal, though restrictions on certain GE technologies were separately applied.",
+    "flags": ["cfius_reviewed_acquisition_not_blocked", "national_intelligence_law_us_enforcement_untested", "legal_framework_concern_prospective_not_adjudicated"],
+    "sources": []
+  },
+  "tax": {
+    "summary": "GE Appliances pays US corporate tax as a US-based business. Haier Group is subject to Chinese corporate tax on its global consolidated results. Transfer pricing between GE Appliances and Haier's global operations creates standard multinational tax planning considerations. No documented major tax enforcement actions have been identified.",
+    "flags": ["us_corporate_tax_on_ge_appliances_operations", "multinational_transfer_pricing_considerations"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Haier Group founder and CEO Zhang Ruimin built Haier from a failing refrigerator factory in 1984 into China's largest appliance company through a management philosophy called RenDanHeYi — placing individual accountability at the center. Kevin Nolan leads GE Appliances as president and CEO. Haier's ownership structure includes the Haier Group parent and its publicly listed Haier Smart Home subsidiary. Zhang Ruimin stepped back from daily management in 2021.",
+    "flags": ["chinese_founder_controlled_company", "us_ceo_for_ge_appliances_subsidiary"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Haier's acquisition of GE Appliances, Fisher & Paykel, and Candy gives it a global appliance portfolio covering premium to mass market. Its connected appliance strategy — the 'Haier Smart Home' ecosystem — creates data collection infrastructure across dishwashers, refrigerators, washing machines, and other home appliances. In the US, GE Appliances-branded products with network connectivity are manufactured in Louisville but operated under Haier's corporate parent. The data flows from those connected appliances are subject to GE Appliances' privacy policy — and to Haier Group's obligations under Chinese law.",
+    "flags": ["global_appliance_portfolio_ge_fisher_paykel_candy", "smart_home_iot_data_collection_infrastructure", "us_connected_appliance_data_chinese_corporate_parent"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "US intelligence officials have alleged in congressional testimony that Chinese-owned companies operating in the United States are structurally vulnerable to Chinese government intelligence demands under the National Intelligence Law — and that the voluntary cooperation framework that law creates cannot be publicly verified by US authorities. Technology security researchers have alleged that smart home appliances from Chinese-owned manufacturers may transmit user behavioral data that, when aggregated, creates profiles of American home life useful for intelligence purposes. No confirmed case specifically involving Haier has been publicly documented.",
+    "flags": ["chinese_intelligence_law_structural_vulnerability_alleged", "smart_appliance_behavioral_data_aggregation_concern_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "GE Appliances products are standard home appliances with established safety records. No major product safety recalls specific to GE Appliances under Haier ownership have been documented at the scale of some peers. The primary concern in Haier's profile is data and national security — not physical product health.",
+    "flags": [],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": ["Whirlpool — US-headquartered appliance manufacturer; KitchenAid, Maytag are Whirlpool brands", "Electrolux — Swedish-headquartered with US manufacturing; not Chinese-owned"],
+    "healthier": ["LG Electronics and Samsung are South Korean companies — different national security framework than China", "Miele — German family-owned company with documented manufacturing quality; premium price but not Chinese-owned"],
+    "diy": ["Check what data your smart appliances collect and where it goes — GE Appliances' privacy policy discloses data practices; compare to what your comfort level is with Chinese parent company obligations under Chinese law", "Disable WiFi connectivity on smart appliances if data collection concerns you — most functions work without network connection", "For major appliance purchases: country of ownership matters differently than country of manufacture — verify ultimate corporate parent"]
+  },
+  "timeline": [
+    {"year": 1984, "event": "Zhang Ruimin takes over failing Qingdao refrigerator factory; foundation of Haier Group", "severity": "neutral", "source_url": ""},
+    {"year": 2012, "event": "Haier acquires Fisher & Paykel; begins international appliance acquisition strategy", "severity": "neutral", "source_url": ""},
+    {"year": 2016, "event": "Haier acquires GE Appliances for $5.4 billion; becomes owner of iconic US appliance brand made in Louisville, KY", "severity": "high", "source_url": ""},
+    {"year": 2017, "event": "China enacts National Intelligence Law requiring Chinese companies to cooperate with intelligence operations", "severity": "critical", "source_url": ""},
+    {"year": 2019, "event": "Haier acquires Candy Group (Italy); global portfolio now includes GE, Fisher & Paykel, Candy, Haier brands", "severity": "neutral", "source_url": ""},
+    {"year": 2023, "event": "House Select Committee on CCP examines Chinese ownership of US consumer technology and appliance companies including Haier", "severity": "high", "source_url": "https://selectcommitteeontheccp.house.gov/"}
+  ],
+  "community_impact": {
+    "displacement": "Haier's acquisition preserved GE Appliances' Louisville manufacturing — a significant positive outcome for Kentucky manufacturing workers compared to the alternative of plant closure or overseas relocation. The community impact concern is not job loss but data sovereignty: connected GE Appliances in Louisville homes collect usage data that flows to a company legally obligated to cooperate with Chinese intelligence when directed.",
+    "price_illusion": "GE Appliances are priced as American-made products with an American heritage brand. The price does not reflect disclosure of Chinese corporate control or the implications of China's National Intelligence Law for the data those appliances collect. Consumers paying for GE brand heritage are receiving products made in Louisville but owned and controlled from Shanghai.",
+    "tax_math": "GE Appliances pays US corporate tax. The profit on those US appliances flows to Haier Group in China, subject to Chinese corporate tax on consolidated returns. Transfer pricing between the US subsidiary and Chinese parent creates standard planning considerations. US consumers' spending on GE Appliances generates Chinese shareholder returns.",
+    "wealth_velocity": "Haier Group shareholders — including Haier Group Corporation and institutional investors in Haier Smart Home's Shanghai listing — capture the economic returns from GE Appliances' US consumer spending. Louisville workers' wages stay in Kentucky; profits flow to China."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Haier Group shareholders", "how": "$5.4B acquisition of globally recognized US appliance brand; US consumer market access through trusted GE heritage brand"},
+      {"group": "GE (seller)", "how": "Divested non-core appliance business at strong valuation; redirected capital to GE Aviation and healthcare"},
+      {"group": "Louisville manufacturing workers", "how": "Jobs preserved under Haier ownership rather than eliminated or offshored"}
+    ],
+    "who_paid": [
+      {"group": "US consumers buying GE Appliances", "how": "Purchasing Chinese-owned products while believing they are buying a US heritage brand; data from connected appliances subject to Chinese corporate parent's legal obligations"},
+      {"group": "US national security framework", "how": "Chinese-owned company with National Intelligence Law obligations operating critical home infrastructure across millions of American homes"}
+    ],
+    "the_gap": "GE Appliances are made in Louisville by American workers. They are owned by a Chinese company. China's 2017 National Intelligence Law requires that Chinese company to cooperate with intelligence operations when directed. The refrigerators with WiFi collect data about when you're home. Nobody has publicly resolved what Haier's obligations under Chinese law mean for that data."
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "brand_name": "Palantir Technologies",
+  "brand_slug": "palantir",
+  "parent_company": "Palantir Technologies Inc.",
+  "ultimate_parent": "Palantir Technologies Inc.",
+  "subsidiaries": ["Palantir USG", "Palantir Commercial"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "PALANTIR BUILT ITS ENTIRE BUSINESS ON ICE DEPORTATION TRACKING, NSA MASS SURVEILLANCE, AND TARGETING SOFTWARE FOR DRONE STRIKES — ITS CEO CALLS IT 'THE WEST'S MOST IMPORTANT TECHNOLOGY COMPANY' AND MOST AMERICANS HAVE NO IDEA IT EXISTS",
+  "executive_summary": "Palantir Technologies is a data analytics and surveillance infrastructure company generating approximately $2.2 billion annually, with the U.S. government as its primary customer. The company was co-founded by Peter Thiel with seed funding from the CIA's In-Q-Tel venture arm. Palantir's Gotham platform is used by U.S. military and intelligence agencies for targeting, surveillance, and intelligence analysis — including drone strike targeting in multiple theaters. Its Foundry platform is used by ICE for deportation case management and immigration enforcement tracking. Palantir has supplied targeting systems used by Ukraine and Israel. The company has no meaningful competitor in AI-driven military targeting and government surveillance infrastructure, giving it unique leverage over the systems that make lethal and deportation decisions.",
+  "verdict_tags": [
+    "ice_deportation_tracking_gotham",
+    "drone_strike_targeting_platform",
+    "cia_in_q_tel_seed_funding",
+    "nsa_surveillance_infrastructure",
+    "israel_military_targeting_gaza",
+    "immigration_enforcement_foundry"
+  ],
+  "concern_flags": { "labor": false, "environmental": false, "political": true, "tax": false, "health": false, "legal": true },
+  "labor": {
+    "summary": "Palantir has faced internal employee protests over its ICE and military contracts. In 2018, a significant number of employees signed a petition opposing the company's work with ICE. The company maintains a workforce of approximately 3,800 — small relative to its contract scale — of highly compensated engineers and analysts. Employee turnover is driven in part by ethical objections to government surveillance work.",
+    "flags": ["employee_petition_ice_contracts_2018", "ethical_objection_turnover", "small_workforce_large_contract_scale"],
+    "sources": ["https://www.buzzfeednews.com/article/carolinehaskins1/palantir-employees-protest-ice-contract", "https://www.theguardian.com/technology/2018/jun/26/palantir-ice-contract-employee-protests"]
+  },
+  "environmental": { "summary": "Palantir is a software and data analytics company with minimal direct environmental footprint.", "flags": [], "sources": [] },
+  "political": {
+    "summary": "Palantir spent $4.3 million on lobbying in 2023. CEO Alex Karp and co-founder Peter Thiel have taken overt political positions — Thiel funded the Trump 2016 campaign and served on the transition team while Palantir simultaneously held major government contracts. The company's CIA origin funding through In-Q-Tel represents an unusual government-private entanglement at founding. Palantir has been awarded contracts without competitive bidding in multiple instances. Karp has made explicit public statements that Palantir exists to help Western governments prevail in conflicts — framing the company as ideologically committed to outcomes, not neutral infrastructure.",
+    "flags": ["4_3m_lobbying_2023", "thiel_trump_campaign_concurrent_contracts", "cia_in_q_tel_founding_funding", "sole_source_contract_awards", "karp_western_conflict_ideology_statements"],
+    "sources": ["https://www.opensecrets.org/orgs/palantir/lobbying", "https://theintercept.com/2017/02/22/palantir-provides-the-engine-for-donald-trumps-deportation-machine/"]
+  },
+  "legal": {
+    "summary": "Palantir has not faced major criminal or civil fraud settlements. The company has faced civil liberties litigation related to its ICE deportation tracking systems. ACLU and immigrant rights organizations have challenged the legal basis for surveillance infrastructure used in immigration enforcement. Palantir's contracts have been challenged by competitor protests alleging improper sole-source awards.",
+    "flags": ["aclu_ice_surveillance_litigation", "competitor_protests_sole_source_awards", "civil_liberties_immigration_enforcement_legal_challenges"],
+    "sources": ["https://www.aclu.org/issues/immigrants-rights/ice-and-border-patrol-abuses", "https://www.gao.gov"]
+  },
+  "tax": {
+    "summary": "Palantir has used stock-based compensation structures that significantly reduce taxable income while creating substantial wealth for founders and early employees. The company's offshore subsidiary arrangements have been noted in SEC filings. Palantir received significant tax benefits related to stock compensation deductions in years of high stock price.",
+    "flags": ["stock_compensation_taxable_income_reduction", "offshore_subsidiary_arrangements", "founder_equity_tax_optimization"],
+    "sources": ["https://itep.org", "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=palantir"]
+  },
+  "executives": {
+    "summary": "CEO Alex Karp received $1.1 billion in compensation in 2021 — almost entirely in stock options exercised during the SPAC listing period — making him one of the highest-compensated executives in U.S. corporate history in a single year. Karp has made explicit public statements that Palantir's purpose is to help Western military and intelligence agencies prevail against adversaries. Co-founder Peter Thiel received similar stock wealth. The company's executive compensation structure has been described as extraordinarily founder-favorable.",
+    "flags": ["karp_1_1b_compensation_2021", "highest_compensated_us_executive_single_year", "thiel_concurrent_political_government_contract_roles", "founder_favorable_compensation_structure"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=palantir", "https://www.nytimes.com/2021/10/01/technology/palantir-alex-karp-pay.html"]
+  },
+  "connections": {
+    "summary": "Palantir's Gotham platform is used by U.S. Special Operations Command for targeting, by NSA for signals intelligence analysis, and by the Army for battlefield intelligence. The company has supplied targeting software to the Israeli Defense Forces — software used in operations in Gaza. Its Foundry platform powers ICE's Investigative Case Management (ICM) system, which tracks millions of immigration cases and supports deportation decisions. Palantir systems have been deployed in Ukraine for military operations.",
+    "flags": ["idf_targeting_software_gaza_operations", "ice_icm_millions_immigration_cases", "socom_targeting_nsa_sigint", "ukraine_military_deployment", "army_battlefield_intelligence"],
+    "sources": ["https://theintercept.com/2024/04/14/palantir-israel-idf-gaza/", "https://theintercept.com/2017/02/22/palantir-provides-the-engine-for-donald-trumps-deportation-machine/"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The Intercept and other investigative outlets have alleged that Palantir's targeting software has been used in IDF operations in Gaza where civilian casualties have been documented — and that the opacity of AI-assisted targeting makes accountability for specific strikes impossible to establish. Civil liberties organizations have alleged that Palantir's ICE systems enable deportation of individuals with U.S. citizen family members and people with no criminal records through algorithmic case prioritization that lacks adequate human review. Employee whistleblowers have alleged that the company's internal ethics review processes are inadequate relative to the scope of harm enabled by its systems.",
+    "flags": ["idf_gaza_civilian_casualty_targeting_context_alleged", "ice_algorithmic_deportation_no_criminal_record_alleged", "ethics_review_inadequate_harm_scope_alleged", "ai_targeting_accountability_gap_alleged"],
+    "sources": ["https://theintercept.com/2024/04/14/palantir-israel-idf-gaza/", "https://www.aclu.org/report/ice-surveillance-technology"]
+  },
+  "health_record": {
+    "summary": "Palantir does not produce consumer health products. Its primary documented public impacts are through its role in: military targeting systems used in active conflicts with documented civilian casualties; immigration enforcement systems used in deportation of individuals including parents of U.S. citizen children; and surveillance infrastructure that enables mass data collection on civilian populations. The psychological and material harm from deportation and from lethal targeting errors are documented in human rights reporting.",
+    "flags": ["military_targeting_civilian_casualty_context", "immigration_deportation_family_separation_impact", "surveillance_infrastructure_civilian_population"],
+    "sources": ["https://theintercept.com/2024/04/14/palantir-israel-idf-gaza/", "https://www.aclu.org/issues/immigrants-rights"]
+  },
+  "alternatives": {
+    "cheaper": ["Palantir does not sell consumer products. The systemic alternative is algorithmic accountability legislation requiring human review of automated decisions in targeting and immigration enforcement, and transparency requirements for AI systems used in lethal and deportation decisions"],
+    "healthier": ["The Intercept's reporting on Palantir's government contracts is publicly available and documents specific contract details, system capabilities, and use cases"],
+    "diy": ["The ACLU's surveillance technology project documents ICE's use of Palantir systems; immigrant rights organizations publish guides on ICE enforcement practices"]
+  },
+  "timeline": [
+    { "year": 2003, "event": "Palantir founded by Peter Thiel, Alex Karp, and others with CIA In-Q-Tel seed funding", "severity": "neutral", "source_url": "" },
+    { "year": 2011, "event": "Palantir Gotham deployed with NSA — assists in surveillance analysis", "severity": "high", "source_url": "" },
+    { "year": 2014, "event": "ICE contract — Palantir Foundry begins powering immigration enforcement case management", "severity": "high", "source_url": "https://theintercept.com/2017/02/22/palantir-provides-the-engine-for-donald-trumps-deportation-machine/" },
+    { "year": 2018, "event": "Employee petition protests ICE contract; company retains contract", "severity": "high", "source_url": "https://www.theguardian.com/technology/2018/jun/26/palantir-ice-contract-employee-protests" },
+    { "year": 2020, "event": "Palantir goes public via direct listing; Karp and Thiel realize extraordinary stock wealth", "severity": "neutral", "source_url": "" },
+    { "year": 2021, "event": "CEO Karp receives $1.1 billion in compensation — one of highest in U.S. history", "severity": "high", "source_url": "https://www.nytimes.com/2021/10/01/technology/palantir-alex-karp-pay.html" },
+    { "year": 2022, "event": "Palantir systems deployed in Ukraine military operations", "severity": "neutral", "source_url": "" },
+    { "year": 2024, "event": "Investigative reports document Palantir targeting software supplied to IDF for Gaza operations", "severity": "critical", "source_url": "https://theintercept.com/2024/04/14/palantir-israel-idf-gaza/" }
+  ],
+  "community_impact": {
+    "displacement": "Palantir's ICE systems have contributed to the deportation of individuals who have lived in the United States for decades, separating families and displacing people from communities where they have established lives. The scale of ICE's Investigative Case Management system — which tracks millions of individuals — is enabled by Palantir infrastructure.",
+    "price_illusion": "Palantir presents its AI-assisted targeting and surveillance tools as precision instruments that reduce harm. Human rights documentation of casualties in conflicts where Palantir systems are deployed, and ACLU documentation of ICE enforcement patterns, challenges this framing.",
+    "tax_math": "CEO Karp received $1.1 billion in compensation — almost entirely in stock options — while the company uses stock-based compensation structures that reduce taxable income. CIA seed funding at founding represents a public investment in a company whose returns have been captured by founders.",
+    "wealth_velocity": "Peter Thiel and Alex Karp converted CIA-seeded startup equity into billions in personal wealth through government contracts that are now essential to U.S. military targeting and immigration enforcement infrastructure — a closed loop from public investment to private extraction with no competitive alternative."
+  },
+  "cost_absorption": {
+    "who_benefited": ["Palantir founders and early investors (billions in equity wealth)", "Peter Thiel (concurrent political influence and contract revenue)", "U.S. military and intelligence agencies seeking AI targeting capability"],
+    "who_paid": ["Immigrants deported through ICE systems Palantir built", "Civilians in conflict zones where Palantir-assisted targeting has been used", "U.S. taxpayers funding contracts with no competitive alternative", "Palantir employees who resigned over ethical objections"],
+    "the_gap": "Palantir was seeded with CIA money, built on government contracts, and its founders became billionaires — while the systems they built make deportation and lethal targeting decisions at scale, with no public accountability mechanism adequate to the scope of their impact."
+  }
+}

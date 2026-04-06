@@ -1,0 +1,194 @@
+{
+  "brand_name": "Boeing Defense",
+  "brand_slug": "boeing-defense",
+  "parent_company": "The Boeing Company",
+  "ultimate_parent": "The Boeing Company",
+  "subsidiaries": [
+    "Boeing Defense, Space & Security",
+    "Boeing Global Services",
+    "Insitu (drones)",
+    "Liquid Robotics"
+  ],
+  "overall_concern_level": "critical",
+  "profile_type": "database",
+  "generated_headline": "BOEING CONCEALED A KNOWN FLAW IN THE 737 MAX THAT KILLED 346 PEOPLE — ITS DEFENSE DIVISION HAS RUN UP $24 BILLION IN LOSSES ON FIXED-PRICE MILITARY CONTRACTS WHILE COLLECTING $10 BILLION IN CEO PAY OVER A DECADE",
+  "executive_summary": "The Boeing Company operates both the world's largest commercial aircraft manufacturer and a major defense division producing F-15 and F/A-18 fighters, Apache and Chinook helicopters, KC-46 tankers, and ballistic missile systems. The company's 737 MAX crisis — in which two crashes killed 346 people after Boeing concealed the MCAS software flaw from regulators — resulted in a $2.5 billion criminal settlement and triggered a fundamental reassessment of FAA oversight. Boeing's defense division has accumulated over $24 billion in charges and losses on fixed-price military contracts including the KC-46 tanker, Air Force One replacement, and T-7 trainer. The company has faced serial quality control failures, whistleblower retaliation, and an SEC investigation into executive disclosures.",
+  "verdict_tags": [
+    "737_max_346_killed_concealed_flaw",
+    "2_5b_criminal_settlement_doj",
+    "24b_defense_contract_losses",
+    "whistleblower_retaliation_documented",
+    "kc46_tanker_deficiency_pattern",
+    "sec_investigation_executive_disclosures"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Boeing machinists have engaged in major strikes including a 57-day strike in 2024. The company has faced NLRB complaints for anti-union activities and has relocated production lines from unionized Seattle facilities to reduce labor costs — a strategy that contributed to quality control failures at the non-union North Charleston, South Carolina 787 Dreamliner facility. Whistleblowers from the Charleston facility documented pressure to skip inspections. Two 737 MAX whistleblowers died under disputed circumstances in 2024.",
+    "flags": [
+      "57_day_machinist_strike_2024",
+      "charleston_quality_control_inspection_skipping",
+      "two_whistleblowers_died_2024",
+      "anti_union_production_relocation_nlrb"
+    ],
+    "sources": [
+      "https://www.nytimes.com/2024/03/09/business/boeing-whistleblower-john-barnett-dead.html",
+      "https://www.nlrb.gov"
+    ]
+  },
+  "environmental": {
+    "summary": "Boeing's historic Puget Sound manufacturing operations have left significant environmental contamination. The company is a responsible party at EPA Superfund sites in Washington State. Boeing's Wichita facility contaminated local groundwater with industrial solvents. The 787 Dreamliner's manufacturing process uses composite materials that generate hazardous waste. Boeing has faced state-level enforcement actions in Washington for air quality violations.",
+    "flags": [
+      "puget_sound_superfund_contamination",
+      "wichita_groundwater_solvent_contamination",
+      "composite_manufacturing_hazardous_waste",
+      "washington_air_quality_violations"
+    ],
+    "sources": [
+      "https://www.epa.gov/superfund",
+      "https://ecology.wa.gov/Waste-Toxics/Toxic-release-to-environment/Cleanup-contaminated-sites/Boeing"
+    ]
+  },
+  "political": {
+    "summary": "Boeing spent $15.1 million on lobbying in 2023. The company's relationship with the FAA — in which Boeing employees were embedded in the certification process for its own aircraft — has been described by congressional investigators as regulatory capture. Boeing's defense contracts are spread across politically strategic districts. Former defense secretaries and senior military officials have served on Boeing's board. The company has made significant campaign contributions across both parties.",
+    "flags": [
+      "15_1m_lobbying_2023",
+      "faa_regulatory_capture_congressional_finding",
+      "boeing_employees_embedded_faa_certification",
+      "former_defense_secretaries_board_members"
+    ],
+    "sources": [
+      "https://www.opensecrets.org/orgs/boeing/lobbying",
+      "https://www.commerce.senate.gov/2020/12/senate-commerce-committee-releases-final-report-on-boeing-737-max"
+    ]
+  },
+  "legal": {
+    "summary": "In January 2021, Boeing paid $2.5 billion to resolve DOJ criminal charges related to the 737 MAX crashes — the largest aviation criminal settlement in U.S. history. The settlement included a deferred prosecution agreement. In 2024, the DOJ moved to charge Boeing with fraud, arguing it violated the deferred prosecution agreement. Boeing faces wrongful death lawsuits from families of the 346 victims. The company is under an FAA consent order limiting production expansion until quality issues are resolved.",
+    "flags": [
+      "2_5b_doj_criminal_settlement_737_max",
+      "deferred_prosecution_agreement_violated_alleged",
+      "346_wrongful_death_lawsuits",
+      "faa_consent_order_production_limits"
+    ],
+    "sources": [
+      "https://www.justice.gov/opa/pr/boeing-charged-737-max-fraud-conspiracy-and-agrees-pay-over-25-billion",
+      "https://www.reuters.com/business/aerospace-defense/boeing-faces-criminal-prosecution-max-crashes-us-doj-2024"
+    ]
+  },
+  "tax": {
+    "summary": "Boeing received $13.4 billion in identified federal, state, and local subsidies — one of the largest subsidy totals of any U.S. corporation. Washington State provided $8.7 billion in tax breaks in 2013 — the largest state tax subsidy package in U.S. history at the time — for 777X production, which the company subsequently restructured away from Washington. Boeing's effective tax rate has been near zero or negative in multiple years through accelerated depreciation and tax credits.",
+    "flags": [
+      "13_4b_identified_total_subsidies",
+      "8_7b_washington_state_tax_breaks_2013",
+      "near_zero_effective_tax_rate_multiple_years",
+      "777x_commitments_not_fulfilled"
+    ],
+    "sources": [
+      "https://subsidytracker.goodjobsfirst.org/prog.php?parent=boeing",
+      "https://itep.org/boeing-tax-breaks/"
+    ]
+  },
+  "executives": {
+    "summary": "Former CEO Dennis Muilenburg received $80 million in compensation over his tenure while overseeing the 737 MAX crisis. He was terminated but received a $62 million exit package. CEO Dave Calhoun received $32.8 million in 2023 while the company posted $2.2 billion in losses. Boeing's board approved CEO departures with full compensation packages following both the MAX crisis and subsequent quality failures. Boeing's Spirit AeroSystems spinoff — which produced defective fuselage panels — was led by executives compensated at similar levels.",
+    "flags": [
+      "muilenburg_62m_exit_package_737_max_crisis",
+      "calhoun_32_8m_compensation_2_2b_loss_year",
+      "executive_pay_maintained_through_safety_failures",
+      "spirit_aerosystems_defective_panels"
+    ],
+    "sources": [
+      "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=boeing",
+      "https://www.nytimes.com/2024/01/07/business/boeing-door-plug-alaska-airlines.html"
+    ]
+  },
+  "connections": {
+    "summary": "Boeing's defense products are embedded in U.S. military operations globally. Its Apache helicopters have been used in Afghanistan, Iraq, and by allied forces in multiple conflicts. Boeing supplies munitions — including JDAM precision guidance kits — used in conflicts worldwide including in Gaza. Its KC-46 tankers — despite ongoing deficiencies — support U.S. air operations. Boeing's satellite and space division is embedded in national security infrastructure.",
+    "flags": [
+      "jdam_kits_documented_use_in_gaza",
+      "apache_helicopter_documented_conflict_deployments",
+      "kc46_unresolved_deficiencies_deployed_operations",
+      "national_security_satellite_dependency"
+    ],
+    "sources": [
+      "https://www.dsca.mil",
+      "https://www.defensenews.com/air/2023/08/14/boeings-kc-46-still-has-major-problems/"
+    ]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Congressional investigators alleged that Boeing executives knew about MCAS risks before the first Lion Air crash and chose not to disclose them to avoid recertification costs. Whistleblowers have alleged that quality control failures at the 787 Dreamliner Charleston facility were known to senior management and suppressed to meet production targets. Former employees have alleged that the culture of safety prioritization visible at Boeing in the 1990s was systematically dismantled after the 1997 McDonnell Douglas merger, which brought financial engineering culture into the company.",
+    "flags": [
+      "mcas_risk_known_before_lion_air_crash_alleged",
+      "787_quality_failures_senior_management_awareness_alleged",
+      "mcdonnell_douglas_merger_safety_culture_destruction_alleged"
+    ],
+    "sources": [
+      "https://www.commerce.senate.gov/2020/12/senate-commerce-committee-releases-final-report-on-boeing-737-max",
+      "https://www.theatlantic.com/ideas/archive/2019/11/how-boeing-lost-its-bearings/602188/"
+    ]
+  },
+  "health_record": {
+    "summary": "346 people died in two 737 MAX crashes — Lion Air Flight 610 (October 2018, 189 killed) and Ethiopian Airlines Flight 302 (March 2019, 157 killed). Both were caused by the MCAS system that Boeing had not disclosed in pilot training materials. Boeing's concealment of the flaw from the FAA and airlines has been documented in detail by both DOJ prosecutors and Senate investigators. Workers at the Charleston 787 facility have documented pressure to falsify inspection records.",
+    "flags": [
+      "346_killed_two_737_max_crashes",
+      "mcas_flaw_concealed_from_pilots_faa",
+      "lion_air_189_killed_october_2018",
+      "ethiopian_airlines_157_killed_march_2019"
+    ],
+    "sources": [
+      "https://www.ntsb.gov/investigations/Pages/DCA19MA060.aspx",
+      "https://www.commerce.senate.gov/2020/12/senate-commerce-committee-releases-final-report-on-boeing-737-max"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "For air travel: the 737 MAX has returned to service under FAA oversight. All major U.S. carriers operate the aircraft. Airbus A320 family aircraft are the primary alternative on equivalent routes — route comparison tools show which aircraft type is scheduled on specific flights"
+    ],
+    "healthier": [
+      "Aviation safety information is available through the FAA's aircraft registry and the NTSB investigations database. Seat tracking websites such as SeatGuru identify aircraft type by flight number"
+    ],
+    "diy": [
+      "The families of 737 MAX victims have organized through the 737 MAX Crash Victims' Family Association — they have testified before Congress and advocated for criminal accountability",
+      "Boeing's FAA consent order status and quality audit results are published by the FAA"
+    ]
+  },
+  "timeline": [
+    { "year": 1916, "event": "Boeing Company founded in Seattle, Washington", "severity": "neutral", "source_url": "" },
+    { "year": 1997, "event": "Boeing acquires McDonnell Douglas — financial engineering culture begins to dominate", "severity": "neutral", "source_url": "" },
+    { "year": 2013, "event": "Washington State grants $8.7 billion in tax breaks for 777X production", "severity": "high", "source_url": "" },
+    { "year": 2018, "event": "October 29: Lion Air Flight 610 crashes killing 189 — MCAS implicated", "severity": "critical", "source_url": "https://www.ntsb.gov" },
+    { "year": 2019, "event": "March 10: Ethiopian Airlines Flight 302 crashes killing 157 — 737 MAX grounded worldwide", "severity": "critical", "source_url": "https://www.ntsb.gov" },
+    { "year": 2021, "event": "January: Boeing pays $2.5 billion to resolve DOJ criminal charges — deferred prosecution agreement", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/boeing-charged-737-max-fraud-conspiracy" },
+    { "year": 2024, "event": "January: Door plug blows out on Alaska Airlines 737 MAX 9 in flight — fuselage quality crisis", "severity": "critical", "source_url": "https://www.nytimes.com/2024/01/07/business/boeing-door-plug-alaska-airlines.html" },
+    { "year": 2024, "event": "March: Boeing whistleblower John Barnett found dead; had testified about 787 quality failures", "severity": "critical", "source_url": "https://www.nytimes.com/2024/03/09/business/boeing-whistleblower-john-barnett-dead.html" },
+    { "year": 2024, "event": "DOJ moves to prosecute Boeing for violating deferred prosecution agreement", "severity": "critical", "source_url": "https://www.reuters.com/business/aerospace-defense/boeing-faces-criminal-prosecution" }
+  ],
+  "community_impact": {
+    "displacement": "Boeing's production shifts away from unionized Puget Sound facilities to South Carolina — driven by labor cost reduction — displaced thousands of high-wage manufacturing jobs and transferred production to a facility where quality failures subsequently emerged.",
+    "price_illusion": "Boeing presented the 737 MAX as an upgrade on the 737 NG with minimal differences — specifically to avoid the cost of recertifying pilots. This framing concealed MCAS, a fundamentally new flight control system with no equivalent in the 737 NG.",
+    "tax_math": "Boeing received $8.7 billion in Washington State tax breaks for the 777X and subsequently restructured production commitments. Taxpayers funded the subsidy; the jobs it was designed to retain were partially moved. The company's effective federal tax rate has been near zero or negative in multiple years.",
+    "wealth_velocity": "CEO compensation remained above $30 million annually through quality crises and criminal settlements. The $2.5 billion DOJ settlement — the largest aviation criminal settlement in history — equals approximately one year of CEO and senior executive compensation across the leadership team over the relevant period."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      "Boeing shareholders (buybacks and dividends through the MAX crisis period)",
+      "Executive leadership ($80M+ in individual CEO compensation during crisis years)",
+      "McDonnell Douglas legacy financial management culture",
+      "FAA officials embedded in Boeing's self-certification process"
+    ],
+    "who_paid": [
+      "346 people killed in two crashes",
+      "Families of 737 MAX victims",
+      "Washington State taxpayers who funded $8.7B in tax breaks",
+      "737 MAX whistleblowers, two of whom died",
+      "Airlines forced to ground fleets and pay compensation"
+    ],
+    "the_gap": "Boeing concealed a flight control flaw to avoid recertification costs — an estimated $1-2 million per pilot in retraining. The decision cost 346 lives, $2.5 billion in criminal penalties, $24 billion in defense contract losses, and triggered a safety crisis that has not been resolved."
+  }
+}

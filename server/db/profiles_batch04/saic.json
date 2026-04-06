@@ -1,0 +1,73 @@
+{
+  "brand_name": "SAIC",
+  "brand_slug": "saic",
+  "parent_company": "Science Applications International Corporation",
+  "ultimate_parent": "Science Applications International Corporation",
+  "subsidiaries": ["Engility (acquired)", "Unison (acquired)"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "SAIC PAID $500 MILLION TO SETTLE THE LARGEST FRAUD CASE IN NEW YORK CITY HISTORY AFTER BILLING A FAILED $700 MILLION GOVERNMENT IT PROJECT THAT NEVER WORKED — THEN KEPT ITS FEDERAL CONTRACTS",
+  "executive_summary": "Science Applications International Corporation (SAIC) is a major U.S. defense IT and services contractor generating approximately $7.5 billion annually from government contracts. SAIC paid $500 million in 2012 to resolve what prosecutors called the largest fraud case in New York City history — related to a $700 million CityTime payroll management system that was years late, massively over budget, and riddled with contractor fraud. The company's predecessor (prior to a 2013 split) also faced fraud allegations related to the FBI's Virtual Case File project and other government IT programs. SAIC holds contracts across the DoD, intelligence community, and civilian agencies.",
+  "verdict_tags": [
+    "500m_settlement_largest_nyc_fraud_case",
+    "citytime_700m_failed_it_project",
+    "fbi_virtual_case_file_failure",
+    "government_it_fraud_pattern",
+    "false_claims_act_multiple_settlements",
+    "cleared_it_personnel_classified_programs"
+  ],
+  "concern_flags": { "labor": false, "environmental": false, "political": true, "tax": false, "health": false, "legal": true },
+  "labor": { "summary": "SAIC has undergone multiple reorganizations and acquisitions with associated workforce changes. Cleared employees face non-compete and mobility constraints.", "flags": ["clearance_dependent_employee_mobility_constraints"], "sources": [] },
+  "environmental": { "summary": "SAIC is primarily an IT and services company with minimal manufacturing environmental footprint.", "flags": [], "sources": [] },
+  "political": {
+    "summary": "SAIC spent $4.2 million on lobbying in 2023. The company's diversified government contract base across DoD and civilian agencies provides broad political relationships. Former senior officials populate SAIC's leadership.",
+    "flags": ["4_2m_lobbying_2023", "former_officials_leadership", "broad_dod_civilian_contract_base"],
+    "sources": ["https://www.opensecrets.org/orgs/saic/lobbying"]
+  },
+  "legal": {
+    "summary": "In 2012, SAIC paid $500.4 million to resolve fraud claims related to the New York City CityTime payroll project — at the time described by prosecutors as the largest fraud in city history. SAIC employees and subcontractors were convicted of accepting kickbacks and inflating hours. The company's predecessor also faced the FBI Virtual Case File failure — a $170 million system that never became operational and was abandoned. SAIC has paid multiple additional False Claims Act settlements.",
+    "flags": ["500m_citytime_fraud_settlement_2012", "citytime_largest_nyc_fraud_case_history", "fbi_vcf_170m_abandoned_failure", "multiple_false_claims_act_settlements"],
+    "sources": ["https://www.justice.gov/usao-sdny/pr/saic-agrees-pay-500-million-city-time-fraud", "https://www.nytimes.com/2012/03/14/nyregion/saic-to-pay-500-million-in-citytime-fraud-case.html"]
+  },
+  "tax": { "summary": "SAIC uses standard IT services company tax structures with R&D credits on classified government-funded technology development.", "flags": ["rd_credits_classified_government_research"], "sources": [] },
+  "executives": {
+    "summary": "CEO Nazzic Keene received $11.3 million in compensation in 2022. Executive compensation has been maintained through the company's fraud settlement history.",
+    "flags": ["keene_11_3m_compensation_2022"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=saic"]
+  },
+  "connections": {
+    "summary": "SAIC holds classified contracts across the intelligence community, military, and civilian agencies. The CityTime fraud affected approximately 167,000 New York City employees. SAIC systems are embedded in military logistics, health IT, and intelligence analysis infrastructure.",
+    "flags": ["classified_intelligence_community_contracts", "citytime_167000_nyc_employees_affected", "military_logistics_health_it_intelligence"],
+    "sources": ["https://www.justice.gov"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Watchdog organizations have alleged that SAIC's fraud history — spanning multiple high-profile failed government IT projects — reflects a systemic failure of federal IT contracting rather than isolated misconduct, and that the company's continued contract eligibility following $500 million in fraud settlements reflects the government's dependency on a small number of large cleared contractors.",
+    "flags": ["systemic_it_contracting_failure_alleged", "continued_eligibility_despite_fraud_alleged"],
+    "sources": ["https://www.pogo.org/analysis/government-it-contracting-reform"]
+  },
+  "health_record": { "summary": "SAIC does not produce consumer health products. Its primary documented public impact is through government IT system failures affecting public services.", "flags": [], "sources": [] },
+  "alternatives": {
+    "cheaper": ["SAIC does not sell consumer products. The systemic alternative is stronger performance measurement, debarment enforcement, and independent technical oversight on large government IT contracts"],
+    "healthier": ["The DOJ Procurement Collusion Strike Force and GAO IT acquisition best practices documentation are public resources"],
+    "diy": ["POGO's Bad Business report and the Government Accountability Project document patterns in government IT contracting"]
+  },
+  "timeline": [
+    { "year": 1969, "event": "SAIC founded in La Jolla, California", "severity": "neutral", "source_url": "" },
+    { "year": 2004, "event": "FBI Virtual Case File — $170 million SAIC system abandoned as non-functional", "severity": "critical", "source_url": "" },
+    { "year": 2012, "event": "Pays $500 million to resolve NYC CityTime fraud — largest fraud case in city history", "severity": "critical", "source_url": "https://www.justice.gov/usao-sdny/pr/saic-agrees-pay-500-million-city-time-fraud" },
+    { "year": 2013, "event": "SAIC splits into two companies — government IT services SAIC and technology company Leidos", "severity": "neutral", "source_url": "" },
+    { "year": 2019, "event": "Acquires Engility for $2.5 billion, expanding classified contract base", "severity": "neutral", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "The CityTime payroll system failure directly affected 167,000 New York City municipal employees who depended on functioning payroll infrastructure during the project's troubled implementation.",
+    "price_illusion": "SAIC's CityTime contract was presented as a modernization that would save the city money through automated timekeeping. It cost $700 million, didn't work, and generated a $500 million fraud settlement.",
+    "tax_math": "SAIC continues to receive federal contracts after paying $500 million in fraud settlements — with no effective debarment — while benefiting from R&D credits on classified government research.",
+    "wealth_velocity": "Executive compensation exceeds $11 million annually at a company that paid the largest fraud settlement in New York City history and continued operating federal contracts without interruption."
+  },
+  "cost_absorption": {
+    "who_benefited": ["SAIC shareholders", "Executives and employees who received inflated billing proceeds", "Subcontractors who received kickbacks"],
+    "who_paid": ["New York City taxpayers — $700M for a system that didn't work", "167,000 NYC municipal employees dependent on failed payroll system", "Federal taxpayers through continued contracts with a documented fraud history"],
+    "the_gap": "SAIC billed $700 million for a system that never worked, settled for $500 million, and retained its federal contract eligibility. The gap between the fraud cost and the consequence was $200 million plus continued access to billions in future contracts."
+  }
+}

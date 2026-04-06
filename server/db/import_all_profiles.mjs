@@ -1,3 +1,9 @@
+/**
+ * Upserts `profile_json` + basic columns only. For hand-authored batches (`profiles_batch02/`, etc.),
+ * run `import_profiles_from_dir.mjs` so `verdict_tags`, `primary_sources`, `investigation_summary`,
+ * and related columns stay in sync:
+ *   DATABASE_URL=... node server/db/import_profiles_from_dir.mjs profiles_batch04
+ */
 import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -28,6 +34,8 @@ async function main() {
     total += await importBatch(join(__dirname, batch));
   }
   console.log(`\nDone. ${total} profiles upserted.`);
+  console.log('\nHand-authored batches: DATABASE_URL=... node server/db/import_profiles_from_dir.mjs <dirName>');
+  console.log('  Example: import_profiles_from_dir.mjs profiles_batch04');
   await pool.end();
 }
 main().catch(err => { console.error(err); process.exit(1); });

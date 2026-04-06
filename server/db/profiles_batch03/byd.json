@@ -1,0 +1,94 @@
+{
+  "brand_name": "BYD",
+  "brand_slug": "byd",
+  "parent_company": "BYD Company Limited",
+  "ultimate_parent": "BYD Company Limited",
+  "subsidiaries": ["BYD Auto", "BYD Electronics", "BYD Energy", "FinDreams Battery", "BYD Semiconductor"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "THE US NAVY PUT BYD ON THE CHINESE MILITARY COMPANY LIST AND THE US SLAPPED ON 100% TARIFFS — WARREN BUFFETT HAS BEEN SELLING HIS STAKE SINCE 2022",
+  "executive_summary": "BYD Company Limited is China's largest electric vehicle manufacturer and one of the world's largest battery producers, headquartered in Shenzhen. BYD surpassed Tesla as the world's top-selling EV brand in 2023. The US Navy included BYD on its list of 'companies allegedly working with China's People's Liberation Army' under the National Defense Authorization Act. The Biden administration imposed 100% tariffs on Chinese electric vehicles including BYD in 2024, effectively barring BYD from the US passenger car market through pricing. Warren Buffett's Berkshire Hathaway — which acquired approximately 25% of BYD in 2008 for $232 million — has been systematically selling its stake since 2022. Sheffield Hallam University research has documented that BYD's battery supply chain involves polysilicon from Xinjiang — a region where the US government has determined forced labor of Uyghur people is prevalent. BYD is seeking US market entry through Mexico and other routes.",
+  "verdict_tags": ["us_navy_chinese_military_company_list", "100pct_us_tariffs_ev_2024", "berkshire_hathaway_selling_stake_2022", "xinjiang_polysilicon_battery_supply_chain", "byd_surpassed_tesla_2023_global_ev", "mexico_us_market_entry_strategy"],
+  "concern_flags": {"labor": true, "environmental": false, "political": true, "tax": false, "health": false, "legal": true},
+  "labor": {
+    "summary": "Sheffield Hallam University's research into the solar and battery supply chains documented that polysilicon used in EV batteries — including batteries manufactured by BYD and its FinDreams subsidiary — originates from Xinjiang facilities connected to documented forced labor programs involving Uyghur workers. Polysilicon is a key input in lithium iron phosphate batteries that BYD manufactures. BYD has disputed these findings. The Uyghur Forced Labor Prevention Act creates a rebuttable presumption that all Xinjiang-origin materials involve forced labor — placing a compliance burden on BYD for any US-market products.",
+    "flags": ["xinjiang_polysilicon_battery_supply_chain_sheffield_hallam", "uyghur_forced_labor_documented_region", "uflpa_rebuttable_presumption_byd_products"],
+    "sources": ["https://storymaps.arcgis.com/stories/5048828d0e7045568e2a86c57a26df0e"]
+  },
+  "environmental": {
+    "summary": "BYD's core business — electric vehicles and batteries — addresses transportation emissions that are a significant source of climate change. The lithium, cobalt, and other materials in BYD batteries create mining extraction impacts including water use in lithium brine operations in South America and cobalt mining conditions in the Democratic Republic of Congo. BYD's battery manufacturing scale — producing cells for both its own vehicles and for third-party customers — creates significant chemical processing waste management obligations.",
+    "flags": ["battery_material_mining_extraction_impacts", "lithium_water_use_south_america", "cobalt_drc_mining_conditions"],
+    "sources": []
+  },
+  "political": {
+    "summary": "The US Navy's designation of BYD as a company 'allegedly working with China's People's Liberation Army' under Section 1260H of the NDAA represents a significant political and regulatory finding. The 100% tariffs on Chinese EVs — announced by the Biden administration in May 2024 and maintained by the Trump administration — are explicitly protective industrial policy that also reflects national security concerns about Chinese automotive technology. BYD's Mexico manufacturing strategy — producing vehicles in Mexico to potentially qualify for lower USMCA tariffs — has drawn congressional scrutiny and potential countermeasure legislation.",
+    "flags": ["us_navy_pla_working_relationship_designation", "100pct_tariffs_protective_industrial_policy_national_security", "mexico_manufacturing_tariff_avoidance_congressional_scrutiny"],
+    "sources": ["https://www.federalregister.gov/documents/2024/05/14/2024-10447/action-pursuant-to-section-301-of-the-trade-act-of-1974-four-year-review"]
+  },
+  "legal": {
+    "summary": "The US Navy Section 1260H designation does not constitute a criminal finding but carries reporting requirements and restricts Department of Defense engagement. The 100% EV tariffs are trade law measures that effectively exclude BYD from the US market through pricing. UFLPA compliance represents ongoing legal exposure for any BYD products entering the US if polysilicon supply chain Xinjiang connections cannot be documented away. BYD has not faced US criminal enforcement actions.",
+    "flags": ["navy_1260h_designation_dod_restrictions", "100pct_ev_tariffs_market_exclusion", "uflpa_compliance_exposure_us_imports"],
+    "sources": []
+  },
+  "tax": {
+    "summary": "BYD is listed on the Hong Kong Stock Exchange and Shenzhen Stock Exchange, paying Chinese corporate taxes. The company benefits from significant Chinese government subsidies for electric vehicle manufacturing — subsidies that are part of the Made in China 2025 industrial strategy and that US trade officials cited in imposing 100% tariffs. The precise value of Chinese government support for BYD has been documented in US Trade Representative analyses as a factor enabling below-market pricing.",
+    "flags": ["chinese_government_ev_subsidies_documented", "made_in_china_2025_industrial_strategy", "us_trade_representative_subsidy_documentation"],
+    "sources": ["https://ustr.gov/about-us/policy-offices/press-office/press-releases/2024/may/ustr-releases-findings-four-year-review-actions-taken-pursuant-section-301-trade-act-1974"]
+  },
+  "executives": {
+    "summary": "Founder and chairman Wang Chuanfu built BYD from a battery rechargeable battery manufacturer in 1995 into the world's largest EV company. Berkshire Hathaway's Charlie Munger — who endorsed the BYD investment before his death in 2023 — described Wang Chuanfu as combining Thomas Edison and Jack Welch. Despite this endorsement, Berkshire began selling its BYD stake in 2022, reducing from approximately 25% to approximately 5% by early 2024, without detailed public explanation of the decision.",
+    "flags": ["wang_chuanfu_founder_controlled", "berkshire_systematic_stake_reduction_2022_2024", "munger_edison_jack_welch_endorsement_vs_selling"],
+    "sources": ["https://www.berkshirehathaway.com/letters/letters.html"]
+  },
+  "connections": {
+    "summary": "BYD's battery technology connects it to the global EV supply chain — it manufactures batteries for Toyota, Ford (previously), and other automakers in addition to its own vehicles. Its polysilicon supply chain connects it to Chinese solar and battery manufacturing ecosystems documented for Xinjiang labor. BYD's planned Mexico manufacturing facility would connect it to the USMCA trade framework — creating potential tariff arbitrage concerns for US manufacturers. Its parent Berkshire Hathaway's divestiture creates a documented signal from one of the world's most sophisticated investors.",
+    "flags": ["battery_supplier_toyota_ford_connections", "usmca_mexico_facility_tariff_arbitrage", "berkshire_divestiture_sophisticated_investor_signal"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "US trade officials and congressional representatives have alleged that BYD's pricing below comparable Western competitors is structurally dependent on Chinese government subsidies that violate WTO rules — subsidies that represent state support unavailable to US, European, and Japanese competitors. Sheffield Hallam University's research alleged that BYD's supply chain transparency claims do not adequately document the provenance of polysilicon given the complexity of Chinese battery supply chains. Security researchers have alleged that BYD vehicles' connected car systems present similar data sovereignty concerns to those raised about other Chinese technology products.",
+    "flags": ["below_market_pricing_wto_violation_subsidy_alleged", "polysilicon_supply_chain_transparency_inadequate_alleged", "connected_car_data_sovereignty_concern_alleged"],
+    "sources": ["https://storymaps.arcgis.com/stories/5048828d0e7045568e2a86c57a26df0e"]
+  },
+  "health_record": {
+    "summary": "BYD vehicles are consumer automobiles subject to safety standards in their markets. No major documented safety recalls at the scale of comparable EV manufacturers have been identified. The environmental health benefit of EVs replacing internal combustion vehicles is documented — reduced urban NOx and particulate emissions from tailpipe removal. Battery manufacturing and disposal creates separate environmental health considerations for communities near production facilities.",
+    "flags": ["ev_urban_air_quality_benefit_documented", "battery_manufacturing_community_environmental_health"],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": ["BYD is not currently available in the US passenger car market due to 100% tariffs — alternatives for US consumers are domestic and allied-nation EVs", "Used Tesla Model 3 — significant price reduction from new; US-made in Fremont, CA and Austin, TX"],
+    "healthier": ["Tesla — US-headquartered, US-manufactured in key models; different set of governance and labor concerns but not subject to Chinese military company designation", "GM Ultium EVs (Chevy Equinox EV, etc.) — US-made, union labor at some facilities", "Hyundai/Kia EVs — South Korean company; manufactured in US and Korea; UFLPA exposure different from Chinese manufacturers"],
+    "diy": ["If you are an investor: Berkshire Hathaway's systematic reduction of BYD stake from 25% to ~5% over 2022-2024 is a documented signal from one of the world's most successful long-term investors — understand what drove that decision before investing", "BYD products are widely available outside the US — in Europe and Australia particularly — where the competitive dynamics and national security considerations are different from the US market"]
+  },
+  "timeline": [
+    {"year": 1995, "event": "BYD founded in Shenzhen by Wang Chuanfu as rechargeable battery manufacturer", "severity": "neutral", "source_url": ""},
+    {"year": 2003, "event": "BYD acquires Qinchuan Auto; enters vehicle manufacturing", "severity": "neutral", "source_url": ""},
+    {"year": 2008, "event": "Berkshire Hathaway acquires approximately 10% of BYD for $232 million; eventually reaches ~25%", "severity": "neutral", "source_url": ""},
+    {"year": 2022, "event": "Berkshire Hathaway begins systematic reduction of BYD stake; sells from ~25% toward ~5% over following two years", "severity": "high", "source_url": ""},
+    {"year": 2022, "event": "Sheffield Hallam University documents Xinjiang polysilicon in BYD and other EV battery supply chains", "severity": "critical", "source_url": ""},
+    {"year": 2023, "event": "BYD surpasses Tesla as world's top-selling EV manufacturer", "severity": "neutral", "source_url": ""},
+    {"year": 2023, "event": "US Navy lists BYD on Chinese military company list under NDAA Section 1260H", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "May: Biden administration announces 100% tariffs on Chinese EVs including BYD — effective exclusion from US passenger market", "severity": "critical", "source_url": "https://www.federalregister.gov/documents/2024/05/14/2024-10447"},
+    {"year": 2024, "event": "BYD announces Mexico manufacturing facility; congressional scrutiny of USMCA tariff arbitrage potential", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "BYD's global EV market dominance — enabled by Chinese government industrial subsidies — has accelerated competitive pressure on US, European, and Japanese EV manufacturers. US auto manufacturing communities in Michigan, Ohio, and Tennessee face competition from Chinese EVs that are priced below what equivalent Western production costs allow. The 100% tariff is explicitly protective of these communities — reflecting a policy judgment that BYD's pricing is subsidized to a degree incompatible with fair competition.",
+    "price_illusion": "BYD vehicles are priced below comparable Western EVs — with Chinese models retailing for approximately $12,000-20,000 USD equivalent compared to $35,000+ for comparable US-available EVs. If this price advantage is substantially funded by Chinese government subsidies, it represents a hidden transfer from Chinese taxpayers to BYD vehicle buyers — a subsidy that US trade officials have documented and tariffs are designed to offset.",
+    "tax_math": "Chinese government subsidies for BYD — documented by the US Trade Representative — represent Chinese public funds supporting BYD's global expansion at prices US manufacturers cannot match without equivalent support. The 100% US tariff attempts to neutralize this subsidy effect for the US market. The US industrial policy question is whether matching support for US EV manufacturers is the appropriate response.",
+    "wealth_velocity": "Wang Chuanfu and Chinese institutional investors capture BYD's economic returns. Berkshire Hathaway — a US institutional investor — profited significantly from its BYD investment before systematically reducing its stake. The US communities that would have employed workers in EV manufacturing competitive with BYD face structural cost disadvantages from Chinese industrial subsidies."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "BYD shareholders and founder Wang Chuanfu", "how": "World's largest EV company built partly on Chinese government industrial subsidies; global market expansion at prices Western competitors cannot match"},
+      {"group": "Berkshire Hathaway", "how": "$232M 2008 investment in BYD; sold down at significant profit over 2022-2024 despite ongoing divestiture"},
+      {"group": "Global EV consumers outside US", "how": "Access to low-cost EVs enabled by Chinese subsidies; genuine acceleration of EV adoption globally"}
+    ],
+    "who_paid": [
+      {"group": "Chinese taxpayers", "how": "Government subsidies funding BYD's below-market pricing in global EV competition"},
+      {"group": "Uyghur workers in Xinjiang polysilicon facilities", "how": "Documented forced labor in facilities that Sheffield Hallam University linked to BYD's battery supply chain"},
+      {"group": "US and Western EV manufacturers", "how": "Competition from subsidized Chinese pricing that US trade officials determined is unfair under WTO principles"}
+    ],
+    "the_gap": "BYD is the world's largest EV maker. The US Navy put it on the Chinese military company list. The US imposed 100% tariffs. Warren Buffett's company has been selling its stake for two years. Sheffield Hallam University linked its battery supply chain to Xinjiang forced labor. BYD is building a factory in Mexico. Nobody has resolved what happens next."
+  }
+}

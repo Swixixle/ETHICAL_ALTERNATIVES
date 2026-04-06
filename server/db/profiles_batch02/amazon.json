@@ -1,0 +1,93 @@
+{
+  "brand_name": "Amazon",
+  "brand_slug": "amazon",
+  "parent_company": "Amazon.com, Inc.",
+  "ultimate_parent": "Amazon.com, Inc.",
+  "subsidiaries": ["AWS", "Whole Foods", "Ring", "Twitch", "MGM Studios", "Zappos", "Audible", "IMDb", "Amazon Pharmacy", "Amazon Robotics", "Zoox"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "AMAZON PAID ZERO FEDERAL TAXES ON $11 BILLION IN PROFIT IN 2018 — AND ITS WAREHOUSE WORKERS GET INJURED AT TWICE THE INDUSTRY RATE",
+  "executive_summary": "Amazon.com, Inc. is the world's largest e-commerce company and second-largest private employer in the United States with approximately 1.5 million employees. It faces an active FTC antitrust lawsuit filed in September 2023 — joined by 17 state attorneys general — alleging it maintains an illegal monopoly through anti-competitive practices in online retail and online marketplace services. Its warehouse workers sustain serious injuries at approximately twice the industry average rate, documented by OSHA records and independent analysis. The NLRB has filed multiple unfair labor practice complaints following organizing drives. The EU imposed a €1.13 billion competition fine. Amazon paid zero federal corporate income tax in 2018 on $11.2 billion in US profit. A CPSC Administrative Law Judge ruled in 2023 that Amazon is a distributor responsible for recalled products sold on its marketplace.",
+  "verdict_tags": ["ftc_antitrust_suit_active_17_states", "warehouse_injury_twice_industry_rate", "nlrb_unfair_labor_practice_complaints", "zero_federal_tax_11b_profit_2018", "cpsc_distributor_ruling", "eu_1_13b_competition_fine"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "Strategic Organizing Center analysis of Amazon's OSHA injury logs found Amazon's serious injury rate was 6.8 per 100 workers in 2021 — compared to 3.3 for the rest of the warehousing industry. Amazon workers sustain injuries at approximately double the industry rate. The Amazon Labor Union won the first successful union election at a US Amazon facility at JFK8 on Staten Island in April 2022 — a historic first. The NLRB filed multiple unfair labor practice complaints against Amazon following the organizing drive, alleging illegal surveillance, retaliatory terminations, and coercive conduct. Subsequent decertification efforts at JFK8 have been attributed by union advocates to Amazon interference.",
+    "flags": ["warehouse_injury_double_industry_rate", "amazon_labor_union_alu_jfk8_first_win", "nlrb_unfair_labor_practice_complaints_multiple", "union_organizing_retaliation_documented"],
+    "sources": ["https://thesoc.org/wp-content/uploads/2022/09/amazons-injury-crisis.pdf", "https://www.nlrb.gov/news-outreach/news-story/nlrb-issues-complaint-against-amazon", "https://www.nytimes.com/2022/04/01/technology/amazon-union-staten-island.html"]
+  },
+  "environmental": {
+    "summary": "Amazon's own disclosed absolute carbon footprint grew from 51.2 million metric tons in 2019 to over 71 million metric tons in 2021 — a 38% increase despite significant renewable energy purchases. A 2023 peer-reviewed analysis found Amazon's emissions calculations exclude a substantial portion of supply chain and third-party logistics emissions. Amazon is the largest corporate renewable energy purchaser by absolute volume. Amazon's last-mile delivery fleet contributes to urban air quality degradation and its packaging waste is significant. Amazon has committed to net-zero carbon by 2040 under The Climate Pledge.",
+    "flags": ["absolute_emissions_grew_38pct_despite_renewables", "supply_chain_emissions_excluded_from_calculations", "last_mile_delivery_urban_air_quality", "packaging_waste_at_scale"],
+    "sources": ["https://sustainability.aboutamazon.com/2022-amazon-sustainability-report", "https://www.theguardian.com/technology/2022/oct/12/amazon-carbon-footprint-pollution"]
+  },
+  "political": {
+    "summary": "Amazon is consistently among the top five federal lobbying spenders in the United States, spending approximately $20 million annually. It has lobbied against the PRO Act — legislation that would facilitate union organizing — against state and local digital services taxes, and on antitrust regulation and AWS-related procurement rules. Amazon's political contributions favor incumbents on relevant congressional committees. Ring has provided footage to law enforcement without user consent in documented cases — a documented intersection of Amazon's political influence and privacy concerns.",
+    "flags": ["top_5_federal_lobbying_spender", "pro_act_union_organizing_opposition", "ring_law_enforcement_footage_without_consent"],
+    "sources": ["https://www.opensecrets.org/orgs/amazon-com/summary?id=D000023883"]
+  },
+  "legal": {
+    "summary": "The FTC, joined by 17 state attorneys general, filed an antitrust lawsuit in September 2023 in the Western District of Washington. The complaint alleges Amazon uses anti-competitive practices including tying Prime membership to marketplace seller tools, using seller data to benefit Amazon private label products, and degrading search results with advertising. The EU imposed a €1.13 billion competition fine in December 2022. A CPSC Administrative Law Judge ruled in 2023 that Amazon is a 'distributor' under the Consumer Product Safety Act, ordering corrective actions for recalled marketplace products. Amazon has appealed.",
+    "flags": ["ftc_antitrust_suit_17_states_september_2023", "eu_1_13b_competition_fine", "cpsc_distributor_ruling_2023", "monopoly_allegation_online_retail_marketplace"],
+    "sources": ["https://www.ftc.gov/news-events/news/press-releases/2023/09/ftc-files-suit-amazon", "https://ec.europa.eu/commission/presscorner/detail/en/ip_22_7777"]
+  },
+  "tax": {
+    "summary": "Amazon paid zero federal corporate income tax in 2018 on $11.2 billion in US profit, using accelerated depreciation on warehouses and equipment and stock compensation deductions. The Institute on Taxation and Economic Policy documented this. Amazon has routed European revenues through a Luxembourg subsidiary (Amazon EU Sarl) — a structure that resulted in a €250 million EU state aid order (later annulled by the EU General Court on procedural grounds). Amazon's effective tax rate has risen since the 2017 Tax Cuts and Jobs Act but continues to attract scrutiny from tax policy researchers.",
+    "flags": ["zero_federal_tax_11_2b_profit_2018", "luxembourg_european_revenue_routing", "eu_state_aid_250m_order", "itep_documented_zero_tax"],
+    "sources": ["https://itep.org/amazon-pays-0-in-federal-income-taxes-again-this-year/", "https://ec.europa.eu/commission/presscorner/detail/en/ip_17_3701"]
+  },
+  "executives": {
+    "summary": "CEO Andy Jassy received approximately $34 million in total compensation in 2023. Founder Jeff Bezos — with an estimated net worth exceeding $170 billion — resigned as CEO in 2021 but retains an approximately 9% stake in Amazon and executive chairman role. Bezos's personal wealth grew by tens of billions during the COVID-19 pandemic while Amazon warehouse workers — many of them essential workers — sustained the injury rates documented above and faced the COVID risks documented at large warehouse facilities. Bezos's space company Blue Origin uses aerospace tax provisions that have drawn congressional scrutiny.",
+    "flags": ["bezos_170b_wealth_pandemic_growth", "warehouse_worker_covid_risk_during_bezos_wealth_growth", "blue_origin_tax_provisions"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "connections": {
+    "summary": "Amazon Web Services (AWS) provides cloud infrastructure for a substantial portion of the global internet, giving Amazon extraordinary leverage over digital commerce, media, and government services. AWS is the primary cloud provider for multiple US intelligence and defense agencies. Amazon's Marketplace connects it to millions of third-party sellers whose products it hosts but does not inspect — creating the product safety gap the CPSC ruling addresses. Amazon's Ring subsidiary has built one of the largest private surveillance networks in the United States through its relationships with over 2,000 law enforcement agencies.",
+    "flags": ["aws_government_intelligence_cloud_dominance", "marketplace_product_safety_inspection_gap", "ring_2000_plus_law_enforcement_partnerships", "surveillance_network_scale"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The FTC antitrust complaint alleges that Amazon uses seller performance data — generated by third-party sellers using Amazon's marketplace — to identify successful products and then launches competing Amazon private label products, undermining the sellers who created the demand. Former Amazon employees have alleged that productivity monitoring of warehouse workers — tracking 'time off task' to the second — creates conditions where workers avoid bathroom breaks to maintain productivity metrics. The ALU and NLRB have alleged that Amazon hired consultants specifically to surveil organizers at JFK8 and conduct illegal interrogation of workers about union sympathies.",
+    "flags": ["seller_data_private_label_competition_alleged", "bathroom_break_avoidance_productivity_pressure_alleged", "union_organizer_surveillance_consultant_hiring_alleged"],
+    "sources": ["https://www.ftc.gov/news-events/news/press-releases/2023/09/ftc-files-suit-amazon"]
+  },
+  "health_record": {
+    "summary": "Amazon Marketplace has been documented by CPSC and investigative journalists to contain thousands of recalled, counterfeit, or safety-hazardous products sold by third-party sellers. A Wall Street Journal investigation found dangerous electrical products failing safety standards widely available on Amazon. The CPSC's 2023 distributor ruling represents a regulatory determination that Amazon bears responsibility for product safety on its marketplace. Warehouse worker injury rates — double the industry average — represent a documented occupational health crisis at scale affecting hundreds of thousands of workers.",
+    "flags": ["marketplace_recalled_counterfeit_hazardous_products", "cpsc_distributor_responsibility_ruling", "warehouse_worker_occupational_injury_crisis"],
+    "sources": ["https://www.cpsc.gov/Newsroom/News-Releases/2021/CPSC-Warns-Consumers-About-Dangerous-Products-Sold-on-Amazon", "https://www.wsj.com/articles/amazon-has-ceded-control-of-its-site-the-result-dangerous-fakes-11566564990"]
+  },
+  "alternatives": {
+    "cheaper": ["Direct brand websites — many brands sell directly at prices matching or beating Amazon with the same or better warranty support", "Local retail for same-day needs — Walmart, Target, and local stores for items needed immediately without the warehouse labor costs embedded in next-day shipping"],
+    "healthier": ["Bookshop.org for books — explicitly routes to independent booksellers; documented support for local bookstore ecosystem", "Etsy for handmade and small-producer goods — direct relationship with producers, no counterfeit risk, workers' income stays with creators"],
+    "diy": ["Before purchasing on Amazon Marketplace, verify the seller — check return policies, seller ratings, and product authenticity independently", "Support independent retailers in your area — local hardware stores, pharmacies, and grocery stores provide employment with documented better injury rates than Amazon warehouses", "If you're an Amazon seller, understand that your performance data may be used to develop competing Amazon private label products per the FTC complaint"]
+  },
+  "timeline": [
+    {"year": 1994, "event": "Amazon.com founded by Jeff Bezos in Seattle, Washington", "severity": "neutral", "source_url": ""},
+    {"year": 2018, "event": "Amazon pays $0 federal income tax on $11.2B US profit; documented by ITEP", "severity": "critical", "source_url": "https://itep.org/amazon-pays-0-in-federal-income-taxes-again-this-year/"},
+    {"year": 2021, "event": "CPSC begins enforcement action over recalled products on Amazon Marketplace", "severity": "high", "source_url": ""},
+    {"year": 2021, "event": "SOC analysis documents Amazon warehouse injury rate at double industry average", "severity": "critical", "source_url": "https://thesoc.org/wp-content/uploads/2022/09/amazons-injury-crisis.pdf"},
+    {"year": 2022, "event": "April: Amazon Labor Union wins election at JFK8 — first US Amazon union; NLRB complaints follow for organizing interference", "severity": "critical", "source_url": "https://www.nytimes.com/2022/04/01/technology/amazon-union-staten-island.html"},
+    {"year": 2022, "event": "December: EU imposes €1.13B competition fine for marketplace favoritism", "severity": "critical", "source_url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_22_7777"},
+    {"year": 2023, "event": "September: FTC files antitrust suit joined by 17 state AGs alleging illegal monopoly", "severity": "critical", "source_url": "https://www.ftc.gov/news-events/news/press-releases/2023/09/ftc-files-suit-amazon"},
+    {"year": 2023, "event": "CPSC Administrative Law Judge rules Amazon is 'distributor' under Consumer Product Safety Act; Amazon appeals", "severity": "critical", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Academic research has documented net job losses in retail communities where Amazon's e-commerce growth has displaced local retail employment — jobs that typically pay more, offer better working conditions, and provide community economic anchoring. Amazon's fulfillment center jobs have higher injury rates than the retail jobs they replace. The warehouse communities surrounding Amazon facilities absorb the traffic, infrastructure, and air quality impacts of large logistics operations.",
+    "price_illusion": "Amazon's pricing appears consumer-friendly. The full price includes: warehouse worker injuries at double the industry rate; zero federal tax on billions in profit shifting the tax burden to other businesses and individuals; third-party seller platform risks including counterfeit and recalled products; and the surveillance infrastructure Amazon is building through Ring and Alexa devices in customer homes.",
+    "tax_math": "Amazon paid zero federal corporate income tax in 2018 on $11.2 billion in profit. That $11.2 billion in untaxed profit represents public infrastructure — roads that Amazon's delivery trucks use, education systems that train Amazon's workers, public safety infrastructure that protects Amazon's facilities — paid for by everyone else. The warehouse depreciation deductions that enabled the zero-tax result were specifically designed to incentivize warehouse construction — they subsidized the infrastructure of the company that injured workers at double the industry rate.",
+    "wealth_velocity": "Amazon's revenue concentrates into shareholder returns — Bezos's estimated $170 billion net worth grew by approximately $75 billion during the COVID-19 pandemic while Amazon warehouse workers faced COVID exposure risks and sustained injuries at documented double the industry rate. The value generated by 1.5 million Amazon workers flows disproportionately to a founder whose net worth exceeds the GDP of many countries."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Jeff Bezos", "how": "$170B+ net worth; $75B+ pandemic wealth growth while workers faced COVID risk; Blue Origin space company funded by Amazon profits"},
+      {"group": "Amazon shareholders", "how": "Zero federal taxes in 2018 on $11.2B profit; warehouse depreciation subsidized by public tax policy; externalized injury costs"},
+      {"group": "Amazon Marketplace counterfeit sellers", "how": "Platform infrastructure enabling sale of recalled and counterfeit products to unsuspecting consumers without adequate policing"}
+    ],
+    "who_paid": [
+      {"group": "1.5 million Amazon warehouse workers", "how": "Injury rates double the industry average; COVID exposure; productivity monitoring that workers describe as dehumanizing; union organizing efforts met with documented interference"},
+      {"group": "Consumers who received defective or recalled marketplace products", "how": "Safety risk from products CPSC would have required retailers to remove; CPSC distributor ruling now establishes responsibility"},
+      {"group": "Local retail communities", "how": "Documented net job displacement; surviving retail jobs pay less and offer worse conditions than displaced local retail"}
+    ],
+    "the_gap": "Amazon paid zero federal income tax on $11.2 billion in profit. Its warehouse workers get injured at twice the industry rate. The FTC says it's an illegal monopoly. The EU fined it over a billion euros. A government agency ruled it's responsible for recalled products on its marketplace. Bezos grew his wealth by $75 billion during COVID while his workers were essential workers in facilities where injuries were double the industry average."
+  }
+}

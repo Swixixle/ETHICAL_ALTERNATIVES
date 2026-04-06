@@ -1,0 +1,165 @@
+{
+  "brand_name": "Booz Allen Hamilton",
+  "brand_slug": "booz-allen-hamilton",
+  "parent_company": "Booz Allen Hamilton Holding Corporation",
+  "ultimate_parent": "Booz Allen Hamilton Holding Corporation",
+  "subsidiaries": [
+    "Booz Allen Hamilton Inc."
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "BOOZ ALLEN HAMILTON EMPLOYED EDWARD SNOWDEN AND COLLECTED $4 BILLION A YEAR FROM THE NSA — THEN PAID $377 MILLION TO SETTLE CHARGES IT BILLED THE GOVERNMENT FOR WORK IT NEVER DID",
+  "executive_summary": "Booz Allen Hamilton is the largest U.S. government consulting and intelligence contractor, generating approximately $9 billion annually — over 97% from government contracts, primarily the Department of Defense and U.S. intelligence community. The company employed NSA contractor Edward Snowden, whose 2013 disclosures revealed the scope of U.S. mass surveillance programs. Booz Allen paid $377 million in 2021 to resolve DOJ charges that it defrauded the government by billing for work not performed, mischarging costs, and retaining employees who were not performing contract work. The company operates at the intersection of government intelligence, military consulting, and commercial data analytics — a convergence that raises fundamental questions about the privatization of national security functions.",
+  "verdict_tags": [
+    "377m_fraud_settlement_2021",
+    "snowden_employment_nsa_surveillance",
+    "97_percent_government_revenue",
+    "billing_for_work_not_performed",
+    "intelligence_community_privatization",
+    "revolving_door_nsa_dod_officials"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": false,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Booz Allen Hamilton's workforce of approximately 33,000 is primarily composed of cleared professionals with government security clearances. The company has faced allegations of non-compete clause abuse that restricts cleared employees from moving to competitor firms — effectively using clearance infrastructure to limit labor market mobility. Employee turnover is constrained by clearance dependencies.",
+    "flags": [
+      "non_compete_clearance_labor_lock_in",
+      "cleared_employee_mobility_restrictions"
+    ],
+    "sources": [
+      "https://www.ftc.gov/reports/non-competes-harm-workers-competition"
+    ]
+  },
+  "environmental": {
+    "summary": "Booz Allen Hamilton is primarily a consulting and technology services firm with minimal physical manufacturing footprint. Environmental impact is not a primary concern category for this company.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Booz Allen Hamilton spent $7.2 million on lobbying in 2023. The company's board and executive team are heavily populated with former senior intelligence community and DoD officials — including former NSA Directors, CIA Deputy Directors, and Under Secretaries of Defense. This creates a structural revolving door where the company's leadership directly influences contracting decisions through personal relationships with current officials. The company's revenue is almost entirely dependent on government contract awards made by officials who are former colleagues of Booz Allen leadership.",
+    "flags": [
+      "7_2m_lobbying_2023",
+      "former_nsa_cia_dod_officials_leadership",
+      "97_percent_revenue_government_contracts",
+      "revolving_door_structural_conflict_of_interest"
+    ],
+    "sources": [
+      "https://www.opensecrets.org/orgs/booz-allen-hamilton/lobbying",
+      "https://www.pogo.org/analysis/the-revolving-door"
+    ]
+  },
+  "legal": {
+    "summary": "In November 2021, Booz Allen Hamilton paid $377.4 million — the largest civil settlement by a U.S. defense contractor for billing fraud at that time — to resolve DOJ allegations that it fraudulently billed the government for costs that were either not incurred, not allowable, or not properly allocated to government contracts. The scheme included billing for time of employees not working on government contracts and charging unallowable costs including entertainment and marketing. The company entered a civil settlement without criminal conviction.",
+    "flags": [
+      "377_4m_fraud_settlement_2021",
+      "largest_contractor_billing_fraud_settlement_at_time",
+      "billing_employee_time_not_on_contract",
+      "entertainment_marketing_billed_to_government"
+    ],
+    "sources": [
+      "https://www.justice.gov/opa/pr/booz-allen-hamilton-agrees-pay-377-million-resolve-fraud-allegations",
+      "https://www.sec.gov"
+    ]
+  },
+  "tax": {
+    "summary": "Booz Allen Hamilton's government contracting structure provides significant tax advantages. Allowable overhead costs billed to government contracts — including generous compensation packages — reduce taxable income. The company's compensation structure for senior officials creates tax optimization through deferred compensation and equity arrangements.",
+    "flags": [
+      "government_contract_overhead_tax_reduction",
+      "executive_deferred_compensation_optimization"
+    ],
+    "sources": [
+      "https://itep.org"
+    ]
+  },
+  "executives": {
+    "summary": "CEO Horacio Rozanski received $13.7 million in total compensation in 2022. Former Executive Chairman Ralph Shrader was compensated at similar levels during the period of the billing fraud. The company's Carlyle Group ownership (which took the company public in 2008) created significant equity wealth for leadership during the IPO and subsequent stock performance.",
+    "flags": [
+      "rozanski_13_7m_compensation_2022",
+      "carlyle_group_ipo_executive_equity",
+      "billing_fraud_period_executive_compensation"
+    ],
+    "sources": [
+      "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=booz-allen-hamilton"
+    ]
+  },
+  "connections": {
+    "summary": "Booz Allen Hamilton employed Edward Snowden as an NSA contractor in Hawaii, where he accessed and disclosed classified surveillance programs including PRISM and XKeyscore. The company holds contracts across CIA, NSA, DIA, NRO, and military intelligence agencies. Its analytical work directly informs targeting, surveillance, and intelligence decisions. The company also consults for commercial clients using methodologies developed under government contracts.",
+    "flags": [
+      "snowden_nsa_contractor_employee",
+      "prism_xkeyscore_surveillance_context",
+      "cia_nsa_dia_nro_contracts",
+      "commercial_client_government_methodology_transfer"
+    ],
+    "sources": [
+      "https://www.theguardian.com/world/2013/jun/09/edward-snowden-nsa-whistleblower-surveillance",
+      "https://www.washingtonpost.com/investigations/the-top-secret-rules-that-allow-nsa-to-use-us-data-without-a-warrant/2013/06/20/"
+    ]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Critics and former intelligence officials have alleged that Booz Allen Hamilton's dominance of intelligence community contracting represents a fundamental privatization of national security functions — that core intelligence analysis that should be performed by government employees is instead performed by private contractors whose loyalty is to shareholders and not to the public interest. Former officials have alleged that the revolving door between Booz Allen and the intelligence community has created a system where contracting decisions are made by officials who expect to join the contractor after government service.",
+    "flags": [
+      "intelligence_privatization_public_interest_conflict_alleged",
+      "revolving_door_contracting_decision_corruption_alleged",
+      "shareholder_loyalty_vs_public_interest_alleged"
+    ],
+    "sources": [
+      "https://www.salon.com/2013/09/06/booz_allen_hamilton_privatizing_intelligence/",
+      "https://www.pogo.org/analysis/the-revolving-door"
+    ]
+  },
+  "health_record": {
+    "summary": "Booz Allen Hamilton does not produce products with direct consumer health impacts. Its primary documented public interest impact is through its role in surveillance programs and intelligence contracting. The Snowden disclosures revealed mass surveillance programs that affected the privacy rights of millions of Americans and non-Americans without their knowledge.",
+    "flags": [
+      "snowden_mass_surveillance_program_context"
+    ],
+    "sources": [
+      "https://www.aclu.org/issues/national-security/privacy-and-surveillance/nsa-surveillance"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Booz Allen Hamilton does not sell consumer products. The systemic alternative is re-insourcing core intelligence analysis functions to government employees — the Office of the Director of National Intelligence has published analyses showing that contractor rates for equivalent analytical work exceed government employee costs significantly"
+    ],
+    "healthier": [
+      "Privacy advocacy organizations including the ACLU and EFF publish ongoing analysis of surveillance programs supported by Booz Allen Hamilton contracts"
+    ],
+    "diy": [
+      "POGO's report 'Bad Business: Billions of Taxpayer Dollars Wasted on Hiring Contractors' documents cost disparities between government employees and contractors in national security roles",
+      "The Intelligence Community Whistleblower Protection Act provides formal channels for intelligence community contractors to raise fraud and abuse concerns"
+    ]
+  },
+  "timeline": [
+    { "year": 1914, "event": "Booz Allen Hamilton founded as management consulting firm", "severity": "neutral", "source_url": "" },
+    { "year": 2008, "event": "Carlyle Group acquires majority stake; company splits government and commercial divisions", "severity": "neutral", "source_url": "" },
+    { "year": 2010, "event": "Booz Allen Hamilton government division IPO", "severity": "neutral", "source_url": "" },
+    { "year": 2013, "event": "Edward Snowden, Booz Allen NSA contractor, discloses PRISM and XKeyscore surveillance programs", "severity": "critical", "source_url": "https://www.theguardian.com/world/2013/jun/09/edward-snowden-nsa-whistleblower-surveillance" },
+    { "year": 2017, "event": "NSA contractor Harold Martin, also Booz Allen employee, arrested for hoarding classified materials for 20 years", "severity": "critical", "source_url": "https://www.washingtonpost.com" },
+    { "year": 2021, "event": "Pays $377.4 million — largest contractor billing fraud settlement at the time — to resolve DOJ allegations", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/booz-allen-hamilton-agrees-pay-377-million-resolve-fraud-allegations" }
+  ],
+  "community_impact": {
+    "displacement": "Booz Allen Hamilton has displaced government workforce through contracting — federal employees in intelligence analysis, technology, and consulting roles have been converted to contractor positions at higher individual rates but with reduced institutional accountability.",
+    "price_illusion": "The company presents itself as providing specialized expertise unavailable in government. Independent analyses have found that equivalent analytical and technology work performed by government employees costs 25-40% less than contractor rates.",
+    "tax_math": "Booz Allen's allowable overhead costs — including generous executive compensation — are billed to government contracts, reducing net taxable income while passing personnel costs back to taxpayers through contract pricing.",
+    "wealth_velocity": "The Carlyle Group IPO created significant private equity returns from a company whose revenue is 97% government-funded. Public money was converted to private equity wealth through the contracting and IPO structure."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      "Carlyle Group and pre-IPO investors",
+      "Executive leadership and cleared employees with equity",
+      "Former government officials who joined Booz Allen after service"
+    ],
+    "who_paid": [
+      "U.S. taxpayers — $377M fraud settlement plus ongoing contract overpricing",
+      "Americans subject to surveillance programs Booz Allen supported",
+      "Government employees displaced by contractor outsourcing"
+    ],
+    "the_gap": "Booz Allen collected $377 million in fraudulent billings — essentially the same amount it later paid to settle charges — while maintaining its intelligence community contracts and executive compensation throughout. The fraud was profitable even after the settlement."
+  }
+}

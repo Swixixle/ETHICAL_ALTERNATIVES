@@ -1,0 +1,93 @@
+{
+  "brand_name": "Vale",
+  "brand_slug": "vale",
+  "parent_company": "Vale S.A.",
+  "ultimate_parent": "Vale S.A.",
+  "subsidiaries": ["Vale Base Metals", "Vale Indonesia", "Samarco (50% stake)", "Vale Energy Transition Metals"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "VALE'S BRUMADINHO DAM COLLAPSED AND BURIED 270 PEOPLE IN IRON ORE SLURRY — THEY HAD CERTIFIED IT SAFE FOUR MONTHS EARLIER",
+  "executive_summary": "Vale S.A. is the world's largest iron ore producer and largest nickel producer, headquartered in Rio de Janeiro. On January 25, 2019, the Brumadinho tailings dam at Vale's Córrego do Feijão iron ore mine in Minas Gerais, Brazil collapsed — killing 270 people, most of them Vale employees eating lunch in a cafeteria located in the dam's projected flow path. German certification firm TÜV SÜD had certified the dam as structurally stable in September 2018 — four months before the collapse. This was Vale's second major dam disaster in four years: in November 2015, the Samarco tailings dam (a 50% Vale joint venture) collapsed at Mariana, killing 19 people and releasing 60 million cubic meters of toxic mining waste into the Doce River — one of Brazil's longest rivers, reaching the Atlantic Ocean and destroying ecosystems and communities across 680 kilometers. Vale settled with Minas Gerais state for approximately R$37 billion ($7 billion). Vale's CEO and other executives faced criminal charges in Brazil.",
+  "verdict_tags": ["brumadinho_dam_collapse_270_deaths", "certified_safe_four_months_before_collapse", "samarco_dam_disaster_19_deaths_2015", "two_dam_disasters_four_years", "7_billion_settlement_minas_gerais", "executive_criminal_charges", "doce_river_environmental_catastrophe"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "270 people died at Brumadinho, the majority of them Vale employees and contractors — including workers in a cafeteria and on a train located within the dam's anticipated flow path. Vale continued to operate the cafeteria in the dam flow zone despite internal risk assessments. Samarco's 2015 collapse affected thousands of workers employed at the mine and in downstream communities. Vale's safety culture has been scrutinized by Brazilian federal authorities, parliamentary commissions, and international investors following the two disasters.",
+    "flags": ["270_employees_contractors_killed_brumadinho", "cafeteria_located_in_dam_flow_path", "safety_culture_systemic_failure_documented", "criminal_charges_management"],
+    "sources": ["https://www.reuters.com/article/us-brazil-damburst-vale/vale-dam-collapses-in-brazil-killing-at-least-seven-idUSKCN1PJ20N", "https://www.theguardian.com/world/2019/jan/25/brazil-dam-collapse-what-we-know"]
+  },
+  "environmental": {
+    "summary": "The Samarco dam collapse in 2015 released approximately 60 million cubic meters of iron ore tailings into the Doce River — Brazil's equivalent of the Mississippi, running 850 kilometers to the Atlantic. The toxic slurry destroyed entire ecosystems, killed fish stocks that communities depended on, contaminated municipal water supplies, and reached the ocean. Scientists documented it as Brazil's worst environmental disaster. The Brumadinho collapse released 12 million cubic meters of tailings into the Paraopeba River. Both rivers have documented ongoing contamination years after the events.",
+    "flags": ["samarco_60_million_cubic_meters_doce_river", "brazils_worst_environmental_disaster_2015", "brumadinho_paraopeba_river_contamination", "ocean_contamination_documented", "years_long_ecosystem_destruction"],
+    "sources": ["https://www.bbc.com/news/world-latin-america-34931372", "https://www.nature.com/articles/s41893-019-0349-4"]
+  },
+  "political": {
+    "summary": "Vale has significant relationships with Brazilian federal and state governments as the country's largest mining company. The Brumadinho disaster triggered major Brazilian legislative action including prohibitions on upstream dam construction — a cheaper dam type that both Brumadinho and Samarco used. Vale's operations in Indigenous territories in the Carajás region have drawn sustained protest from Indigenous communities and environmental advocates. The company's privatization in 1997 — during the Cardoso government — created ongoing political questions about regulatory capture in Brazilian mining.",
+    "flags": ["legislative_action_upstream_dam_ban", "indigenous_territory_carajas_operations", "privatization_1997_regulatory_capture_concerns"],
+    "sources": ["https://www.reuters.com/article/us-vale-dams-ban/brazil-bans-same-type-of-dams-as-those-that-burst-at-samarco-and-brumadinho-idUSKCN1Q22VO"]
+  },
+  "legal": {
+    "summary": "Vale settled with the State of Minas Gerais for R$37.68 billion ($7.3 billion) in February 2021 — the largest environmental and social settlement in Brazilian history — to address reparations, infrastructure repairs, and environmental restoration at Brumadinho. CEO Fabio Schvartsman and several other executives were criminally charged in Brazil with homicide and environmental crimes. TÜV SÜD, the German certifier, also faced Brazilian legal action. For Samarco, a separate compensation fund was established with ongoing litigation in the UK courts against BHP (the other 50% owner) by approximately 700,000 Brazilian victims seeking additional damages.",
+    "flags": ["7_3b_settlement_largest_brazil_environmental", "ceo_schvartsman_homicide_charges_brazil", "tuv_sud_certifier_criminal_action", "bhp_uk_litigation_700000_victims"],
+    "sources": ["https://www.reuters.com/business/environment/vale-pays-7-bln-settle-brumadinho-dam-disaster-claims-state-minas-gerais-2021-02-04/", "https://www.theguardian.com/world/2021/jul/05/bhp-samarco-dam-uk-court-case"]
+  },
+  "tax": {
+    "summary": "Vale has used offshore structures — primarily in the Cayman Islands and Luxembourg — for holding its international operations. The company has faced Brazilian tax authority challenges on transfer pricing arrangements between its Brazilian mining operations and international trading subsidiaries. Brazilian Senate investigations into Vale's privatization structure have raised questions about whether the government received adequate value. Vale's effective tax rate has varied significantly based on Brazilian tax provisions and international structure.",
+    "flags": ["cayman_luxembourg_offshore_structures", "transfer_pricing_brazil_tax_challenges", "privatization_structure_tax_questions"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=vale"]
+  },
+  "executives": {
+    "summary": "CEO Fabio Schvartsman was charged with homicide in connection with Brumadinho — one of the most significant executive criminal charges in Latin American mining history. He was replaced by Eduardo Bartolomeo. Multiple other Vale executives and engineers faced charges. The company's board faced investor pressure over safety governance following the two disasters. TÜV SÜD's Brazilian executives also faced Brazilian prosecution for certifying a dam that collapsed four months after certification — raising profound questions about the liability of safety certification firms in extractive industry.",
+    "flags": ["schvartsman_homicide_charges", "multiple_executives_criminally_charged", "tuv_sud_certification_liability", "board_safety_governance_failure"],
+    "sources": ["https://www.reuters.com/article/us-brazil-vale-charges/brazil-charges-vale-tuv-sud-executives-over-2019-dam-disaster-idUSKBN2842VL"]
+  },
+  "connections": {
+    "summary": "Vale's Samarco disaster connected it to BHP Billiton — the Anglo-Australian mining giant and co-owner. Both companies' UK and Australian parent entities have faced litigation in British courts. Vale's iron ore sales to Chinese steel mills — which account for the majority of its revenue — connect it to global infrastructure of Chinese steel production. The certification failure at Brumadinho connected Vale to the international safety certification industry — TÜV SÜD is a major global player — and raised industry-wide questions about conflicts of interest when dam safety certifiers are paid by the dam owners.",
+    "flags": ["bhp_samarco_co_owner_litigation", "chinese_steel_mill_revenue_dependence", "certification_conflict_of_interest_industry_wide"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Brazilian prosecutors and parliamentary investigators have alleged that Vale executives were aware of stability concerns at the Brumadinho dam before the certification and collapse — and chose not to decommission the dam because it would have required disclosing ore reserves losses that would have affected the company's stock price. Internal Vale documents allegedly showed the dam had been classified as 'level 3 emergency' status in the months before the collapse. Former Vale employees have alleged that safety culture at the company systematically subordinated safety reporting to production targets.",
+    "flags": ["dam_stability_awareness_alleged", "stock_disclosure_motivation_alleged", "level_3_emergency_status_before_collapse_alleged", "safety_subordinated_to_production_alleged"],
+    "sources": ["https://apnews.com/article/brazil-mines-environment-brumadinho-dam-3cb83c0fa5f0a97e1e5caa1a2427e7f8"]
+  },
+  "health_record": {
+    "summary": "270 people were killed at Brumadinho — 259 bodies recovered, 11 still missing as of 2024. The cause of death for most was asphyxiation and trauma from iron ore tailings — effectively being buried alive in heavy industrial slurry. 19 people died at Samarco/Mariana in 2015. Downstream communities along the Doce River faced acute contamination of drinking water supplies. Long-term health monitoring of communities near both disaster sites has documented elevated rates of respiratory disease, psychological trauma, and disrupted livelihoods. The tailings waste contains heavy metals including arsenic, lead, and mercury.",
+    "flags": ["270_killed_brumadinho", "19_killed_samarco_mariana", "heavy_metal_contamination_doce_river", "drinking_water_acute_contamination", "long_term_community_health_impacts"],
+    "sources": ["https://www.who.int/tools/emergency-toolkit/incident-management/case-studies/samarco-dam-break-brazil-2015", "https://www.thelancet.com/journals/lanpla/article/PIIS2542-5196(19)30041-5/fulltext"]
+  },
+  "alternatives": {
+    "cheaper": ["Iron ore is a commodity input — consumers do not directly purchase Vale products. The alternative is systemic: mandatory upstream dam decommissioning, independent certification without pay-for-approval structures, and criminal accountability for mining executives"],
+    "healthier": ["For personal health products containing iron pigments or nickel: verify supply chain sourcing through brands with documented mine safety records — some specialty suppliers publish mine-level certifications"],
+    "diy": ["If you are an investor: Vale's ESG risk disclosure has materially improved since 2019 but the two dam disasters represent documented governance failure at the highest levels — evaluate against the track record", "Support NGO organizations working with Doce River communities on remediation claims — Instituto BioAtlântica and others have documented the ecosystem damage in detail"]
+  },
+  "timeline": [
+    {"year": 1942, "event": "Companhia Vale do Rio Doce founded by Brazilian government", "severity": "neutral", "source_url": ""},
+    {"year": 1997, "event": "Vale privatized during Cardoso government; Valepar consortium acquires controlling stake", "severity": "neutral", "source_url": ""},
+    {"year": 2015, "event": "November 5: Samarco dam (50% Vale) collapses at Mariana, MG — 19 killed; 60M cubic meters of tailings destroy 680km of Doce River", "severity": "critical", "source_url": "https://www.bbc.com/news/world-latin-america-34931372"},
+    {"year": 2018, "event": "September: TÜV SÜD certifies Brumadinho dam as structurally stable", "severity": "critical", "source_url": ""},
+    {"year": 2019, "event": "January 25: Brumadinho dam collapses — 270 killed, majority Vale employees in cafeteria located in flow path", "severity": "critical", "source_url": "https://www.theguardian.com/world/2019/jan/25/brazil-dam-collapse-what-we-know"},
+    {"year": 2019, "event": "Brazil passes legislation banning upstream construction dams — the cheaper type used at both disaster sites", "severity": "high", "source_url": ""},
+    {"year": 2021, "event": "Vale settles with Minas Gerais for R$37.68B ($7.3B) — largest environmental settlement in Brazilian history", "severity": "high", "source_url": "https://www.reuters.com/business/environment/vale-pays-7-bln-settle-brumadinho-dam-disaster-claims-state-minas-gerais-2021-02-04/"},
+    {"year": 2021, "event": "CEO Schvartsman and executives criminally charged with homicide and environmental crimes", "severity": "critical", "source_url": "https://www.reuters.com/article/us-brazil-vale-charges"}
+  ],
+  "community_impact": {
+    "displacement": "The Brumadinho disaster physically destroyed communities downstream from the dam — the tailings wave moved at speeds of approximately 80 kilometers per hour, giving no time for evacuation. The town of Brumadinho lost a disproportionate share of its municipal workforce — many victims were employees in the dam's administrative cafeteria. Downstream communities along the Paraopeba River lost their primary water source. The Doce River communities devastated by Samarco in 2015 have documented a decade of disrupted fishing, farming, and municipal water supply.",
+    "price_illusion": "Vale's iron ore is an input into global steel production — the economic benefits of cheap iron ore production are distributed globally through lower steel prices. The costs of the dam disasters are concentrated in Minas Gerais communities: 270 dead workers and their families, contaminated rivers, destroyed fisheries, disrupted water supplies. The $7.3 billion settlement is substantial in Brazilian terms but represents approximately one year of Vale's annual profit.",
+    "tax_math": "Vale's offshore structures reduce Brazilian tax on international iron ore trading revenue. Brazil's iron ore — extracted from public mineral rights — generates private profits that are partially sheltered through Cayman Islands and Luxembourg structures. The $7.3 billion Brumadinho settlement, while paid by Vale, is at least partially structured to reduce taxable income through provisions and deductions.",
+    "wealth_velocity": "Vale's largest shareholders include Brazilian pension funds, the Brazilian government through Bradespar and BNDESPAR, and international institutional investors. The iron ore extracted from Brazilian public mineral estates — through a privatization deal in 1997 — generates returns that flow to institutional investors globally. The communities living next to the tailings dams absorb the risk that investors do not."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Vale shareholders", "how": "Decades of iron ore revenue from operations including the Brumadinho mine; dam decommissioning cost avoided until collapse"},
+      {"group": "TÜV SÜD", "how": "Certification fees for declaring the dam safe four months before it collapsed; subsequent criminal charges in Brazil"},
+      {"group": "Global steel producers and consumers", "how": "Lower input costs from cheap iron ore production that externalized dam safety costs onto Minas Gerais communities"}
+    ],
+    "who_paid": [
+      {"group": "270 people killed at Brumadinho", "how": "Death by iron ore tailings — the majority eating lunch in a cafeteria Vale knew was in the dam flow path"},
+      {"group": "19 people killed at Samarco/Mariana 2015", "how": "Previous dam disaster at Vale-owned joint venture four years earlier; second disaster occurred in same region"},
+      {"group": "Doce River and Paraopeba River communities", "how": "Two rivers contaminated across hundreds of kilometers; fishing and drinking water destroyed; decade-long remediation ongoing"}
+    ],
+    "the_gap": "Vale's dam was certified safe in September 2018. It collapsed in January 2019 and killed 270 people. The cafeteria where most of them died was inside the projected flow path of that dam. The certifier who signed off four months before charged money for the certification. Vale settled for $7 billion. The CEO was charged with homicide. The dam had been classified at emergency level 3 internally before it collapsed."
+  }
+}

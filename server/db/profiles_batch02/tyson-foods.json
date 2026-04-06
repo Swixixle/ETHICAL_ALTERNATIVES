@@ -1,0 +1,93 @@
+{
+  "brand_name": "Tyson Foods",
+  "brand_slug": "tyson-foods",
+  "parent_company": "Tyson Foods, Inc.",
+  "ultimate_parent": "Tyson Foods, Inc.",
+  "subsidiaries": ["Jimmy Dean", "Ball Park", "Hillshire Farm", "Sara Lee", "Aidells", "State Fair", "Tyson Ventures"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "TYSON MANAGERS BET ON HOW MANY WORKERS WOULD GET COVID — THEN THE COMPANY SOUGHT IMMUNITY FROM BEING SUED FOR THE DEATHS",
+  "executive_summary": "Tyson Foods is the largest US meat processor by production volume, processing approximately 20% of all beef, pork, and chicken in the United States. During the COVID-19 pandemic, a wrongful death lawsuit alleged that plant managers at Tyson's Waterloo, Iowa facility organized a betting pool on how many workers would contract COVID-19 while managers concealed the outbreak from workers and misrepresented conditions to local public health officials. Tyson simultaneously lobbied for liability protection from worker illness claims. The company has been ranked the number one corporate polluter of US waterways by Environment America. It is under a DOJ antitrust investigation for broiler chicken price fixing in which executives at competing companies have pled guilty. Its OSHA violation record spans multiple facilities and years.",
+  "verdict_tags": ["covid_worker_betting_pool", "wrongful_death_lawsuits_pandemic", "number_one_us_waterway_polluter", "clean_water_act_violations", "broiler_price_fixing_investigation", "osha_repeat_violations"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "A wrongful death lawsuit filed in Iowa alleged that Waterloo plant manager Tom Hart and colleagues organized a betting pool on COVID-19 worker infection rates while concealing the outbreak. Tyson terminated several managers after an internal investigation confirmed the betting pool occurred. OSHA records document Tyson's pattern of violations across facilities including machine guarding failures, lockout/tagout deficiencies, and ergonomic hazards. Meatpacking workers — many of whom are immigrants and lower-income workers — are among the highest-risk categories for occupational illness and injury in the US.",
+    "flags": ["covid_manager_betting_pool_confirmed", "outbreak_concealment_from_workers", "osha_pattern_violations_multiple_facilities", "immigrant_worker_disproportionate_risk"],
+    "sources": ["https://www.nytimes.com/2020/11/18/business/tyson-foods-managers-betting-coronavirus.html", "https://www.theguardian.com/environment/2020/nov/20/tyson-foods-managers-bet-covid19-workers-plant", "https://www.osha.gov/enforcement/establishment/tyson"]
+  },
+  "environmental": {
+    "summary": "Environment America's 2020 Tyson's Dirty Secret report found that Tyson Foods and its subsidiaries released more toxic pollutants into waterways than any other company in the United States based on EPA Toxic Release Inventory data — approximately 104 million pounds of pollutants between 2010 and 2014. Multiple Tyson facilities have faced Clean Water Act enforcement actions. A 2003 settlement required Tyson to pay $7.5 million for violations at two facilities. Nitrogen and phosphorus discharge from meat processing operations contributes to hypoxic zones — oxygen-depleted dead zones — in rivers and the Gulf of Mexico.",
+    "flags": ["number_one_us_waterway_polluter_environment_america", "104_million_pounds_pollutants_2010_2014", "clean_water_act_multiple_enforcement_actions", "nitrogen_hypoxic_zone_contributor"],
+    "sources": ["https://environmentamerica.org/reports/tyson-foods-and-the-dirty-water-crisis/", "https://echo.epa.gov/"]
+  },
+  "political": {
+    "summary": "Tyson Foods lobbied for liability protection from COVID-19 worker illness claims while its managers were alleged to have been concealing outbreaks. The company has lobbied against EPA water quality regulations affecting agricultural runoff — regulations that would directly address the nitrogen and pollutant discharges its facilities release. During the pandemic, Tyson and other meat processing companies successfully lobbied the Trump administration to invoke the Defense Production Act to keep plants open despite documented COVID outbreaks — over the objections of local public health officials.",
+    "flags": ["covid_liability_immunity_lobbying", "epa_water_regulation_opposition", "defense_production_act_lobbying_plant_openings"],
+    "sources": ["https://www.opensecrets.org/orgs/tyson-foods/summary?id=D000000280", "https://www.theguardian.com/us-news/2020/sep/14/meat-companies-covid-immunity-liability-worker"]
+  },
+  "legal": {
+    "summary": "The DOJ Antitrust Division has been investigating broiler chicken price fixing involving multiple major poultry producers. Several executives at competing companies have pled guilty to conspiracy charges. Tyson reached a civil class action settlement and a separate DOJ resolution. The company has faced multiple Clean Water Act enforcement settlements. Wrongful death litigation from COVID-19 plant outbreaks is ongoing. The $7.5 million 2003 Clean Water Act settlement covered violations at two specific facilities — subsequent violations at other facilities indicate the compliance issue is systemic rather than isolated.",
+    "flags": ["doj_price_fixing_investigation_broiler", "executive_pleas_competing_companies", "clean_water_act_repeat_violations_systemic", "covid_wrongful_death_litigation_ongoing"],
+    "sources": ["https://www.justice.gov/opa/pr/former-executive-broiler-chicken-producer-pleads-guilty-participating-price-fixing-conspiracy", "https://www.reuters.com/legal/tyson-foods-reach-settlement-broiler-chicken-price-fixing-litigation-2022-12-22/"]
+  },
+  "tax": {
+    "summary": "Tyson Foods has used accelerated depreciation on processing equipment and real property to reduce effective tax rates below statutory levels in multiple years — a standard meat processing industry practice. Tyson has also benefited from specific agricultural tax provisions. The company's acquisition strategy — acquiring brands like Jimmy Dean, Ball Park, and Sara Lee — has generated significant goodwill that affects tax treatment. No major offshore enforcement actions or tax haven utilization has been documented at the scale of some peers.",
+    "flags": ["accelerated_depreciation_processing_equipment", "below_statutory_effective_rate"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=tyson+foods"]
+  },
+  "executives": {
+    "summary": "CEO Donnie King received approximately $12 million in total compensation in 2023. The Tyson family controls the company through a dual-class share structure that maintains family voting control regardless of economic ownership. Following the COVID betting pool revelations, Tyson's then-CEO John Tyson was photographed sleeping on a stranger's doorstep in Fayetteville, Arkansas — he was subsequently arrested for public intoxication. The company has faced repeated questions about whether family control enables governance failures that an independent board would address.",
+    "flags": ["tyson_family_dual_class_voting_control", "ceo_public_intoxication_arrest", "governance_accountability_gap"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Tyson, JBS USA, Cargill, and National Beef together process approximately 80% of US beef — a market concentration that gives these four companies extraordinary leverage over cattle prices paid to ranchers and beef prices charged to consumers. The broiler chicken price-fixing investigation involves this same pattern of oligopolistic coordination. Tyson's relationships with retail grocery chains give it shelf placement power that shapes consumer access to its products at national scale.",
+    "flags": ["beef_processing_oligopoly_80_pct_four_companies", "retail_grocery_shelf_placement_power", "price_fixing_in_oligopolistic_market"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Wrongful death plaintiffs have alleged that Tyson management at the Waterloo facility actively misled local health officials about the severity of the COVID outbreak to prevent shutdown orders — a form of deliberate public health fraud. Workers at multiple Tyson facilities have alleged through union complaints that line speeds are deliberately set at levels that make ergonomic injuries inevitable — and that workers who report injuries face retaliation. Environmental advocates have alleged that Tyson's relationships with state agriculture departments in Arkansas and other states have enabled it to avoid enforcement of water quality standards that apply to other industries.",
+    "flags": ["public_health_official_misleading_alleged", "line_speed_injury_inevitability_alleged", "state_agriculture_enforcement_avoidance_alleged"],
+    "sources": ["https://www.nytimes.com/2020/11/18/business/tyson-foods-managers-betting-coronavirus.html"]
+  },
+  "health_record": {
+    "summary": "Tyson Foods has conducted multiple significant product recalls including for Listeria contamination, Salmonella contamination, and foreign material (bone fragments, rubber pieces). Meatpacking is documented as one of the most dangerous occupations in the United States by OSHA data — Tyson's OSHA records show violations across multiple facilities. The COVID outbreaks at Tyson plants were among the most severe documented in US food processing, with some facilities reporting infection rates exceeding 20% of workers before shutdowns were ordered.",
+    "flags": ["product_recalls_listeria_salmonella_foreign_material", "meatpacking_most_dangerous_occupation_osha", "covid_infection_rates_exceeding_20_pct"],
+    "sources": ["https://www.fsis.usda.gov/recalls-alerts", "https://www.osha.gov/"]
+  },
+  "alternatives": {
+    "cheaper": ["Local butcher shops sourcing from regional farms — often price-competitive on ground beef and common cuts; money stays in local economy", "Plant-based protein sources (beans, lentils, tofu) — significantly cheaper per gram of protein than meat with no associated animal welfare or slaughterhouse labor issues"],
+    "healthier": ["Grass-fed beef from farms with verified practices — different nutritional profile, verified supply chain, often processed at smaller facilities with different safety culture", "Pasture-raised poultry from regional producers — smaller scale, different labor conditions, documented supply chain"],
+    "diy": ["Find your region's USDA-inspected small meat processors at ams.usda.gov — direct relationships with smaller facilities is one alternative to oligopolistic meat processing", "Reduce meat consumption — the most direct way to reduce exposure to Tyson's labor and environmental practices", "Report food safety concerns to USDA FSIS at 1-800-535-4555 — your report about a Tyson product creates a public record"]
+  },
+  "timeline": [
+    {"year": 1935, "event": "John W. Tyson begins trucking chickens; company founded in Springdale, Arkansas", "severity": "neutral", "source_url": ""},
+    {"year": 2003, "event": "$7.5M Clean Water Act settlement for violations at two facilities", "severity": "high", "source_url": ""},
+    {"year": 2019, "event": "DOJ antitrust investigation begins into broiler chicken price fixing", "severity": "critical", "source_url": ""},
+    {"year": 2020, "event": "Waterloo, Iowa plant outbreak; COVID manager betting pool alleged; managers terminated after internal investigation", "severity": "critical", "source_url": "https://www.nytimes.com/2020/11/18/business/tyson-foods-managers-betting-coronavirus.html"},
+    {"year": 2020, "event": "Environment America report names Tyson number one US waterway polluter based on EPA data", "severity": "critical", "source_url": "https://environmentamerica.org/reports/tyson-foods-and-the-dirty-water-crisis/"},
+    {"year": 2020, "event": "Tyson and peers lobby for COVID liability immunity while outbreaks are occurring in plants", "severity": "high", "source_url": ""},
+    {"year": 2022, "event": "Tyson settles civil class action in broiler chicken price-fixing litigation", "severity": "high", "source_url": ""},
+    {"year": 2022, "event": "CEO John Tyson arrested for public intoxication after found sleeping on a stranger's porch", "severity": "moderate", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Waterway pollution from Tyson facilities affects downstream communities, fisheries, and recreational water users across the Midwest and South. The Gulf of Mexico hypoxic zone — a documented oxygen-depleted dead zone — is partially attributable to agricultural nitrogen runoff from operations including Tyson's. Meatpacking plant communities — often small Midwestern towns — absorb the public health costs of COVID outbreaks, worker injuries, and environmental contamination while profits flow to company headquarters and shareholders.",
+    "price_illusion": "Tyson meat is priced as affordable everyday protein. The price does not reflect: the COVID risk to meatpacking workers, the water pollution from processing facilities, the regulatory violations that reduce compliance costs, or the community health costs absorbed by plant towns. The affordability is achieved in part by externalizing these costs onto workers and communities.",
+    "tax_math": "Tyson's lobbying for COVID liability immunity would have shifted the financial cost of worker deaths from Tyson to the workers' families and to public assistance programs. The accelerated depreciation on processing equipment reduces Tyson's tax burden while the water pollution from those same facilities requires public environmental remediation expenditure.",
+    "wealth_velocity": "The Tyson family controls the company through dual-class shares. Profits from the largest US meat processing operation flow to family shareholders in Arkansas and to institutional investors. The meatpacking workers — many of whom are immigrants earning near minimum wage in dangerous conditions — have no stake in the company's profits."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Tyson family shareholders", "how": "Dominant market position in meat processing; dual-class control insulated from governance accountability"},
+      {"group": "Tyson management who organized betting pool", "how": "Terminated but not criminally charged; betting pool on worker infection rates treated as HR matter not criminal conduct"},
+      {"group": "Tyson price-fixing co-conspirators", "how": "Elevated prices in broiler chicken market benefited all participating companies during investigation period"}
+    ],
+    "who_paid": [
+      {"group": "Waterloo plant workers who contracted COVID", "how": "Illness, long-COVID, deaths; betting pool bet on how many of them would become infected"},
+      {"group": "Downstream waterway communities", "how": "104 million pounds of pollutants in US waterways from Tyson operations 2010-2014 per EPA data"},
+      {"group": "Cattle ranchers and chicken consumers", "how": "Price-fixing in concentrated market suppresses prices paid to producers and inflates prices charged to consumers simultaneously"}
+    ],
+    "the_gap": "Tyson managers bet money on how many of their workers would get COVID. They were terminated. Not charged. The company simultaneously lobbied for immunity from being sued for those workers' deaths. The company is the number one polluter of US waterways. It is under investigation for price fixing. No executive has been criminally charged."
+  }
+}

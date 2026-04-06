@@ -1,0 +1,89 @@
+{
+  "brand_name": "Leidos",
+  "brand_slug": "leidos",
+  "parent_company": "Leidos Holdings, Inc.",
+  "ultimate_parent": "Leidos Holdings, Inc.",
+  "subsidiaries": ["Leidos Defense", "Leidos Health", "Leidos Civil", "Dynetics"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "LEIDOS COLLECTS $15 BILLION A YEAR ANALYZING INTELLIGENCE, RUNNING AIRPORT SECURITY, AND MANAGING HEALTH RECORDS — WITH SO LITTLE PUBLIC SCRUTINY THAT MOST AMERICANS HAVE NEVER HEARD OF IT",
+  "executive_summary": "Leidos Holdings is the largest U.S. defense IT and services contractor by revenue, generating approximately $15 billion annually from government contracts. Originally spun out of Science Applications International Corporation (SAIC), Leidos holds contracts across the Department of Defense, Department of Homeland Security, National Institutes of Health, and the intelligence community. The company runs transportation security systems at U.S. airports, manages health IT infrastructure for the Veterans Administration, analyzes intelligence data, and operates classified programs. Its Dynetics subsidiary develops hypersonic weapons and advanced air defense systems. Leidos' scale and cross-government footprint make it one of the most embedded private entities in U.S. government operations.",
+  "verdict_tags": [
+    "15b_annual_government_revenue",
+    "airport_security_health_it_intelligence_triple_role",
+    "dynetics_hypersonic_weapons",
+    "false_claims_act_settlements",
+    "va_health_it_contract_failures",
+    "classified_program_limited_oversight"
+  ],
+  "concern_flags": { "labor": false, "environmental": false, "political": true, "tax": false, "health": false, "legal": true },
+  "labor": {
+    "summary": "Leidos has faced employee complaints related to working conditions on classified contracts where concerns cannot be raised publicly. The company has gone through multiple reorganizations and acquisitions that have resulted in workforce reductions and benefit changes.",
+    "flags": ["classified_contract_complaint_limitation", "acquisition_workforce_reductions"],
+    "sources": ["https://www.glassdoor.com/Reviews/Leidos-Reviews"]
+  },
+  "environmental": {
+    "summary": "Leidos is primarily an IT and services company with minimal manufacturing environmental footprint.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Leidos spent $5.8 million on lobbying in 2023. The company's presence across DoD, DHS, VA, and intelligence community creates a uniquely broad lobbying footprint. Former officials from all of these agencies have joined Leidos in senior roles. The company's airport security systems — used at major U.S. airports — represent a public safety function performed by a private contractor with shareholder interests.",
+    "flags": ["5_8m_lobbying_2023", "dod_dhs_va_intel_multi_agency_footprint", "former_officials_multiple_agencies", "public_safety_private_contractor"],
+    "sources": ["https://www.opensecrets.org/orgs/leidos/lobbying"]
+  },
+  "legal": {
+    "summary": "Leidos and its SAIC predecessor have faced False Claims Act allegations related to IT contract billing. The company paid settlements related to improper cost charging on government IT contracts. The VA Electronic Health Record Modernization (EHRM) program — a major Leidos contract — has faced congressional scrutiny for cost overruns and implementation failures affecting veterans' healthcare.",
+    "flags": ["false_claims_it_contract_billing", "va_ehrm_cost_overruns_failures", "congressional_scrutiny_veterans_care"],
+    "sources": ["https://www.gao.gov", "https://www.va.gov/oig/pubs/VAOIG-22-01278-15.pdf"]
+  },
+  "tax": {
+    "summary": "Leidos uses standard IT services company tax structures. The company benefits from R&D credits on classified technology development funded by government contracts.",
+    "flags": ["rd_credits_classified_government_research"],
+    "sources": ["https://subsidytracker.goodjobsfirst.org"]
+  },
+  "executives": {
+    "summary": "CEO Tom Bell received $15.9 million in compensation in 2022. Former CEO Roger Krone was compensated at similar levels. The company's executive team includes numerous former government officials.",
+    "flags": ["bell_15_9m_compensation_2022", "former_government_officials_executive_team"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=leidos"]
+  },
+  "connections": {
+    "summary": "Leidos runs the Transportation Security Administration's checkpoint screening technology at U.S. airports. Its health IT systems manage records for millions of veterans. Dynetics develops hypersonic missile systems and SHORAD air defense. The company's intelligence analysis contracts are classified.",
+    "flags": ["tsa_airport_screening_technology", "va_millions_veterans_health_records", "dynetics_hypersonic_missiles", "classified_intelligence_analysis"],
+    "sources": ["https://www.tsa.gov", "https://www.va.gov"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Congressional investigators have alleged that the VA Electronic Health Record Modernization contract has failed to deliver functional systems to veterans while consuming billions in contract payments — and that Leidos continued billing at full rates despite documented system failures. Former VA employees have alleged that contract performance was overstated in reports to Congress.",
+    "flags": ["va_ehrm_billing_system_failures_alleged", "va_performance_overstated_congress_alleged"],
+    "sources": ["https://www.va.gov/oig", "https://www.hsgac.senate.gov"]
+  },
+  "health_record": {
+    "summary": "Leidos manages Electronic Health Records for the Veterans Health Administration. Failures in the VA EHRM implementation have been documented as contributing to delayed care, medication errors, and administrative failures affecting veterans' healthcare. This is a documented impact on the health of a vulnerable population.",
+    "flags": ["va_ehr_failures_veteran_care_delays", "medication_error_risk_ehr_failures", "veterans_healthcare_system_impact"],
+    "sources": ["https://www.va.gov/oig/pubs/VAOIG-22-01278-15.pdf"]
+  },
+  "alternatives": {
+    "cheaper": ["Leidos does not sell consumer products. The systemic alternative is stronger performance measurement and penalty clauses on IT government contracts — the VA EHRM contract structure has not adequately penalized underperformance"],
+    "healthier": ["Veterans experiencing healthcare delays or records issues can contact their VA Patient Advocate or file a complaint with the VA Office of Inspector General"],
+    "diy": ["The VA OIG publishes reports on EHRM implementation status; the Senate Homeland Security and Government Affairs Committee has conducted oversight hearings"]
+  },
+  "timeline": [
+    { "year": 2013, "event": "Leidos spun off from SAIC as independent defense IT company", "severity": "neutral", "source_url": "" },
+    { "year": 2016, "event": "Acquires Lockheed Martin's IS&GS division for $4.6 billion", "severity": "neutral", "source_url": "" },
+    { "year": 2019, "event": "VA Electronic Health Record Modernization contract awarded — $10 billion ceiling", "severity": "neutral", "source_url": "" },
+    { "year": 2022, "event": "VA OIG reports significant implementation failures in EHRM affecting veteran care", "severity": "critical", "source_url": "https://www.va.gov/oig" },
+    { "year": 2023, "event": "Congressional hearings on VA EHRM cost overruns and implementation failures", "severity": "high", "source_url": "https://www.hsgac.senate.gov" }
+  ],
+  "community_impact": {
+    "displacement": "Leidos' government IT contracts have displaced federal employee positions — VA IT staff have been converted to contractor positions managed by Leidos with reduced institutional knowledge retention.",
+    "price_illusion": "The VA EHRM was presented as a modernization that would improve veteran care. OIG findings of implementation failures, care delays, and medication risks contradict this framing.",
+    "tax_math": "Leidos receives $15 billion in annual government revenue while using R&D credits on classified research funded by those same contracts.",
+    "wealth_velocity": "CEO compensation exceeds $15 million against a backdrop of a VA health IT contract that has not delivered promised functionality to veterans."
+  },
+  "cost_absorption": {
+    "who_benefited": ["Leidos shareholders", "Executive leadership", "Former government officials who facilitated contracts"],
+    "who_paid": ["Veterans experiencing EHRM-related care delays", "U.S. taxpayers through contract cost overruns", "Federal employees displaced by IT outsourcing"],
+    "the_gap": "The VA EHRM contract has consumed billions while delivering a system the VA OIG has documented as causing healthcare failures for veterans — with no contractor accountability mechanisms adequate to address the performance gap."
+  }
+}

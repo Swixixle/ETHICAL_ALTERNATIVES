@@ -1,0 +1,94 @@
+{
+  "brand_name": "DJI",
+  "brand_slug": "dji",
+  "parent_company": "SZ DJI Technology Co., Ltd.",
+  "ultimate_parent": "SZ DJI Technology Co., Ltd.",
+  "subsidiaries": ["Hasselblad (camera brand)", "Livox (lidar)", "Manifold (computing)"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "THE US PUT DJI ON THE MILITARY COMPANY AND EXPORT RESTRICTION LIST FOR SURVEILLANCE OF UYGHURS — 70% OF THE WORLD'S CONSUMER DRONES ARE STILL DJI",
+  "executive_summary": "DJI (Da-Jiang Innovations) is the world's dominant consumer and commercial drone manufacturer, headquartered in Shenzhen, China, controlling approximately 70% of the global consumer drone market. The US Department of Commerce placed DJI on its Entity List in December 2020, restricting US exports of technology to DJI, citing concerns about its role in surveillance of Uyghur and other Muslim-minority populations in China's Xinjiang region. The US Department of Defense listed DJI as a 'Chinese Military Company' in 2022. The US Army banned DJI drones in 2017 over cybersecurity concerns about data transmitted to Chinese servers. Security researchers have documented that DJI drones transmit data including GPS coordinates, serial numbers, and user account information to servers in China. DJI drones have been used in combat by both sides in the Ukraine-Russia conflict and documented in Xinjiang surveillance operations by Human Rights Watch and other organizations. Despite all of this, DJI remains legally purchasable and widely used by American consumers, photographers, and commercial operators.",
+  "verdict_tags": ["entity_list_us_commerce_2020", "dod_chinese_military_company_list_2022", "us_army_ban_2017_cybersecurity", "xinjiang_surveillance_documented_hrw", "data_transmission_china_servers", "ukraine_conflict_military_use", "70pct_global_drone_market"],
+  "concern_flags": {"labor": true, "environmental": false, "political": true, "tax": false, "health": false, "legal": true},
+  "labor": {
+    "summary": "DJI manufactures in Shenzhen and other Chinese locations. Its supply chain for drone components includes facilities in regions subject to the Uyghur Forced Labor Prevention Act scrutiny. DJI has been specifically named in Xinjiang surveillance contexts — its drones have been documented in use by Chinese police forces to monitor Uyghur communities. The company's workforce in Shenzhen has not been subject to major documented independent labor audits.",
+    "flags": ["xinjiang_police_surveillance_documented", "uflpa_supply_chain_exposure", "independent_labor_audit_absent"],
+    "sources": ["https://www.hrw.org/report/2020/05/07/china-police-bio-data-collection-minorities"]
+  },
+  "environmental": {
+    "summary": "DJI's drone products are consumer electronics with associated e-waste and lithium battery lifecycle concerns. The company's products have enabled significant environmental monitoring and conservation work — a genuine dual-use characteristic. No major documented environmental enforcement actions have been identified.",
+    "flags": ["lithium_battery_e_waste", "dual_use_conservation_positive"],
+    "sources": []
+  },
+  "political": {
+    "summary": "DJI's placement on the US Commerce Department Entity List in December 2020 was specifically linked to the company's drones being used to surveil and facilitate repression of Uyghurs, Kazakhs, and other Muslim minorities in Xinjiang. Human Rights Watch documented in 2020 that police in Xinjiang used DJI drones in their surveillance and control operations. The US Department of Defense listed DJI as a 'Chinese Military Company' under Section 1260H of the National Defense Authorization Act — a designation that carries reporting requirements but does not automatically trigger a ban on US government contracts. The American Security Drone Act, passed in the 2024 NDAA, prohibits federal agencies from purchasing or using DJI drones.",
+    "flags": ["entity_list_xinjiang_surveillance_basis", "dod_chinese_military_company_1260h", "american_security_drone_act_federal_ban", "xinjiang_police_operation_documented"],
+    "sources": ["https://www.federalregister.gov/documents/2020/12/21/2020-28031/addition-of-entities-to-the-entity-list", "https://www.hrw.org/report/2020/05/07/china-police-bio-data-collection-minorities"]
+  },
+  "legal": {
+    "summary": "The Entity List designation means US companies cannot export technology to DJI without a specific license — restricting DJI's access to US semiconductor components, software, and technology. DJI has challenged the designation and lobbied Congress for removal. The Department of Defense Chinese Military Company listing carries separate restrictions. DJI is not banned from US civilian sales — Americans can legally buy DJI drones — but the federal government cannot purchase or use them under the American Security Drone Act. DJI faces ongoing legal and regulatory pressure across multiple US agencies.",
+    "flags": ["entity_list_technology_export_restriction", "dod_military_company_designation", "american_security_drone_act_federal_purchase_ban", "civilian_sales_still_legal_despite_designations"],
+    "sources": ["https://www.commerce.gov/news/press-releases/2020/12/commerce-adds-china-based-companies-entity-list-aerial-surveillance"]
+  },
+  "tax": {
+    "summary": "DJI is a private Chinese company and does not publish detailed financial disclosures comparable to publicly listed companies. Its tax structure is subject to Chinese corporate tax law. No significant international tax enforcement actions have been documented. DJI's Hasselblad subsidiary is Swedish, creating a multi-jurisdictional structure.",
+    "flags": ["private_company_limited_financial_disclosure"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "DJI was founded by Frank Wang (Wang Tao) in 2006. Wang remains the dominant shareholder and CEO — an unusual structure that has given him extraordinary control over a company valued at approximately $15-$16 billion in its last private funding round. Wang has characterized US government designations as politically motivated and unfair. DJI's senior leadership has maintained the company's denial of providing surveillance capabilities specifically for Xinjiang operations — while the company's products have been documented in those operations by independent researchers.",
+    "flags": ["founder_dominated_control_structure", "us_designation_denial", "xinjiang_use_denied_despite_documentation"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "DJI's drone platform is used by the US military's adversaries — documented Russian and Ukrainian use of DJI drones in combat has made the drone company an accidental weapons supplier to both sides of the war. DJI's Aeroscope system — a tool to detect and track drones — has been used by multiple militaries. DJI's dominance of the drone market means alternatives do not exist at comparable price, quality, and capability — creating a strategic dependency that US policymakers have identified as a national security concern. The US drone manufacturing base collapsed under price competition from DJI in the 2010s.",
+    "flags": ["ukraine_russia_conflict_both_sides_documented", "aeroscope_military_use", "us_drone_manufacturing_base_collapse", "strategic_dependency_national_security_concern"],
+    "sources": ["https://www.nytimes.com/2022/03/14/technology/ukraine-drones.html"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Security researchers at Synacktiv and other firms have alleged that DJI's mobile applications transmit location data, device identifiers, and other user information to servers in China beyond what is disclosed in privacy policies — and that this data could be accessible to Chinese government entities under China's National Intelligence Law. US military cybersecurity researchers have alleged that DJI geofencing systems — designed to prevent drones from flying in restricted areas — can be bypassed using DJI's own 'debug mode' modifications available in Chinese-market versions of the drone software. Uyghur rights organizations have alleged that DJI specifically marketed its thermal imaging and facial recognition integration capabilities to Chinese law enforcement for use in Xinjiang.",
+    "flags": ["data_transmission_beyond_disclosure_alleged", "geofencing_bypass_debug_mode_alleged", "xinjiang_law_enforcement_marketing_alleged"],
+    "sources": ["https://www.bleepingcomputer.com/news/security/dji-apps-on-android-send-device-data-to-servers-in-china-report/"]
+  },
+  "health_record": {
+    "summary": "DJI drones are not consumer health products. The primary documented harm is through their use as surveillance infrastructure against minority populations in China, as dual-use military equipment in the Ukraine conflict, and as potential data collection infrastructure sending user location and device data to Chinese servers. The company's thermal imaging products have medical applications in fever detection that were marketed globally during COVID-19.",
+    "flags": ["surveillance_infrastructure_xinjiang_documented", "military_use_ukraine_conflict", "user_location_data_china_servers"],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": ["There are no cost-competitive DJI alternatives at equivalent capability — this is the core US national security problem. DJI's pricing destroyed the US consumer drone industry", "Autel Robotics (Chinese-American company, Wenzhou-based) — also Chinese-owned but not on Entity List; less capable; not a complete alternative"],
+    "healthier": ["Skydio — San Mateo, California-based drone manufacturer; US-made; used by US military and law enforcement; significantly more expensive than DJI for comparable capability", "Parrot — French drone company; NDAA-compliant for US government use; less capable than DJI at consumer price points"],
+    "diy": ["If you are a federal contractor or government employee: DJI drones are now banned for federal use under the American Security Drone Act — compliance is mandatory", "If you are a commercial drone operator concerned about data: enable DJI's local data mode (prevents data transmission) and use a VPN; independently verify what data your DJI app is transmitting using network analysis tools", "Support the US domestic drone manufacturing base: Skydio and others need commercial market support to compete with DJI on cost"]
+  },
+  "timeline": [
+    {"year": 2006, "event": "DJI founded in Shenzhen by Frank Wang; initial focus on helicopter flight controllers", "severity": "neutral", "source_url": ""},
+    {"year": 2013, "event": "Phantom 1 consumer drone launched; DJI begins dominating global consumer drone market", "severity": "neutral", "source_url": ""},
+    {"year": 2017, "event": "US Army bans DJI drones from field use over cybersecurity concerns about data sent to Chinese servers", "severity": "high", "source_url": ""},
+    {"year": 2019, "event": "US Interior Department grounds its 800+ drone fleet (primarily DJI) pending security review", "severity": "high", "source_url": ""},
+    {"year": 2020, "event": "Human Rights Watch documents DJI drone use in Xinjiang surveillance operations by Chinese police", "severity": "critical", "source_url": "https://www.hrw.org/report/2020/05/07/china-police-bio-data-collection-minorities"},
+    {"year": 2020, "event": "December: US Commerce Department adds DJI to Entity List citing Xinjiang surveillance role", "severity": "critical", "source_url": "https://www.federalregister.gov/documents/2020/12/21/2020-28031/addition-of-entities-to-the-entity-list"},
+    {"year": 2022, "event": "DOD lists DJI as Chinese Military Company under NDAA Section 1260H", "severity": "critical", "source_url": ""},
+    {"year": 2022, "event": "DJI drones documented in use by Russian and Ukrainian forces in Ukraine conflict", "severity": "high", "source_url": "https://www.nytimes.com/2022/03/14/technology/ukraine-drones.html"},
+    {"year": 2024, "event": "American Security Drone Act enacted prohibiting federal purchase or use of DJI drones", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "The collapse of US consumer drone manufacturing under DJI competition eliminated domestic drone manufacturing capacity that US military and government officials now identify as a national security gap. Communities that depended on US drone manufacturing employment lost those jobs. Uyghur communities in Xinjiang are surveilled by the very drones that American consumers purchase.",
+    "price_illusion": "DJI drones are priced as accessible consumer products — the Phantom and Mini series in particular brought aerial photography to millions of hobbyists and commercial operators at prices no domestic manufacturer could match. The hidden cost is the data sent to Chinese servers, the strategic dependency created, and the surveillance infrastructure those purchases fund in Xinjiang.",
+    "tax_math": "DJI is a private company paying Chinese taxes. American consumer drone purchases generate Chinese corporate tax revenue and shareholder returns. No US tax revenue is generated from DJI sales in the United States. The US drone manufacturing base that DJI displaced would have generated US corporate tax, US employment tax, and US wage income.",
+    "wealth_velocity": "DJI's estimated $15 billion valuation concentrates in founder Frank Wang and Chinese institutional investors. American consumer spending on consumer drones — a market DJI dominates at 70% — flows directly to Chinese entities, including entities subject to China's National Intelligence Law requiring cooperation with government intelligence demands."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "DJI shareholders and founder Frank Wang", "how": "$15B+ valuation from dominating global drone market; US consumer spending on DJI products funds Chinese shareholder returns"},
+      {"group": "Chinese government", "how": "Corporate tax revenue from world's dominant drone maker; Xinjiang surveillance capabilities using commercially available DJI technology"},
+      {"group": "DJI drone users globally", "how": "Genuinely excellent consumer drone technology at prices no domestic alternative matches"}
+    ],
+    "who_paid": [
+      {"group": "Uyghur people in Xinjiang", "how": "Surveilled by DJI drones used by Chinese police forces; documented by Human Rights Watch and others"},
+      {"group": "US domestic drone manufacturers", "how": "Eliminated by DJI pricing; Parrot, 3DR, and others collapsed or drastically reduced US operations under DJI competition"},
+      {"group": "DJI users whose data goes to Chinese servers", "how": "Location data, device identifiers, and usage data transmitted to Chinese servers subject to National Intelligence Law"}
+    ],
+    "the_gap": "The US put DJI on the military company list and the Entity List for surveillance of Uyghurs. The US Army banned it in 2017. The federal government banned it in 2024. American consumers still buy them at 70% market share. The data goes to servers in China. The drones that photograph American national parks and weddings are the same brand that photographs Uyghurs in Xinjiang for Chinese police."
+  }
+}

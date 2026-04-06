@@ -1,0 +1,190 @@
+{
+  "brand_name": "RTX / Raytheon",
+  "brand_slug": "rtx-raytheon",
+  "parent_company": "RTX Corporation",
+  "ultimate_parent": "RTX Corporation",
+  "subsidiaries": [
+    "Raytheon",
+    "Pratt & Whitney",
+    "Collins Aerospace",
+    "Raytheon Missiles & Defense"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "RAYTHEON SUPPLIED THE BOMBS USED IN DOCUMENTED STRIKES ON YEMENI WEDDINGS, SCHOOL BUSES, AND HOSPITALS — AND LOBBIED AGAINST RESTRICTIONS ON THOSE SALES WHILE PAYING $950 MILLION TO SETTLE U.S. BRIBERY CHARGES",
+  "executive_summary": "RTX Corporation (formerly Raytheon Technologies) is the world's second-largest defense contractor, generating approximately $67 billion in annual revenue. Its Raytheon division is the primary U.S. supplier of precision-guided munitions including Paveway bombs and Small Diameter Bombs used extensively in Saudi Arabia's air campaign in Yemen — a conflict the UN has documented as producing some of the world's worst humanitarian conditions. In 2022, Raytheon's predecessor company paid $950 million to resolve DOJ and SEC charges of bribery and corruption in sales to Qatar, the UAE, and other countries. The company produces Tomahawk cruise missiles, Patriot air defense systems, Javelin anti-tank missiles, and AMRAAM air-to-air missiles, positioning it at the center of nearly every active U.S.-backed military operation.",
+  "verdict_tags": [
+    "950m_bribery_settlement_doj_sec",
+    "yemen_munitions_documented_civilian_casualties",
+    "paveway_bomb_school_bus_strike",
+    "qatar_uae_bribery_charges",
+    "top_5_lobbying_defense_sector",
+    "false_claims_act_overbilling"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Raytheon has faced repeated labor disputes at manufacturing facilities. Pratt & Whitney engine workers have engaged in strikes over wages and benefits. The company has used mandatory overtime practices at missile production facilities under pressure from DoD surge orders, drawing union grievances. Multiple whistleblower complaints have alleged retaliation against employees who raised quality control concerns on weapons production lines.",
+    "flags": [
+      "pratt_whitney_worker_strikes",
+      "mandatory_overtime_missile_production",
+      "whistleblower_retaliation_quality_control",
+      "union_grievances_multiple_facilities"
+    ],
+    "sources": [
+      "https://www.defensenews.com/industry/2022/10/01/pratt-whitney-machinists-approve-new-contract/",
+      "https://www.nlrb.gov"
+    ]
+  },
+  "environmental": {
+    "summary": "Raytheon facilities appear on multiple EPA Superfund and state hazardous waste lists due to historical contamination with solvents, heavy metals, and manufacturing byproducts. The company's Tucson, Arizona missile production campus has faced ongoing groundwater monitoring for TCE and perchlorate contamination. Perchlorate — a rocket propellant ingredient — is a thyroid disruptor and has been found in groundwater near Raytheon facilities at levels above EPA thresholds.",
+    "flags": [
+      "tucson_tce_perchlorate_groundwater",
+      "epa_superfund_multiple_facilities",
+      "perchlorate_thyroid_disruptor_contamination",
+      "solvent_heavy_metal_legacy_contamination"
+    ],
+    "sources": [
+      "https://www.epa.gov/superfund",
+      "https://www.azcentral.com/story/news/local/arizona-environment/2019/03/14/raytheon-tucson-groundwater-contamination"
+    ]
+  },
+  "political": {
+    "summary": "RTX spent $10.4 million on lobbying in 2023. The company employs dozens of former Pentagon officials and military officers in senior roles. William Lynn, former Deputy Secretary of Defense, served as a Raytheon executive. The company has actively lobbied against arms sale restrictions to Saudi Arabia — sales that provide significant revenue while supplying munitions used in documented civilian strikes. Congressional members from states with major Raytheon facilities have reliably blocked oversight measures.",
+    "flags": [
+      "10_4m_lobbying_2023",
+      "william_lynn_former_deputy_secdef_executive",
+      "lobbied_against_saudi_arms_restrictions",
+      "revolving_door_dozens_dod_officials"
+    ],
+    "sources": [
+      "https://www.opensecrets.org/orgs/rtx/lobbying",
+      "https://www.pogo.org/analysis/2023/01/the-defense-department-and-the-revolving-door"
+    ]
+  },
+  "legal": {
+    "summary": "In October 2022, Raytheon agreed to pay $950 million to resolve DOJ criminal charges and SEC civil charges of bribery and anti-money-laundering violations in arms sales to Qatar, the UAE, Saudi Arabia, and other countries — including payments to foreign government officials to secure contracts. The company entered a deferred prosecution agreement. Separately, Raytheon has paid tens of millions in False Claims Act settlements for overbilling on government contracts.",
+    "flags": [
+      "950m_doj_sec_bribery_settlement_2022",
+      "deferred_prosecution_agreement",
+      "qatar_uae_saudi_bribery_charges",
+      "false_claims_act_overbilling_settlements"
+    ],
+    "sources": [
+      "https://www.justice.gov/opa/pr/raytheon-company-agrees-pay-950-million-connection-foreign-bribery-scheme-and-related",
+      "https://www.sec.gov/litigation/litreleases/2022/lr25534.htm"
+    ]
+  },
+  "tax": {
+    "summary": "RTX has used offshore subsidiaries in Ireland, Singapore, and Luxembourg to reduce its effective tax rate. The company benefits from R&D tax credits on weapons development funded primarily by U.S. government contracts — allowing it to receive public funding for research and then claim tax credits on that same research. RTX received $285 million in identified government subsidies through state and local incentive programs.",
+    "flags": [
+      "ireland_singapore_luxembourg_offshore_structures",
+      "rd_credits_government_funded_research",
+      "285m_identified_state_local_subsidies"
+    ],
+    "sources": [
+      "https://subsidytracker.goodjobsfirst.org/prog.php?parent=rtx",
+      "https://itep.org"
+    ]
+  },
+  "executives": {
+    "summary": "CEO Greg Hayes received $22.9 million in total compensation in 2022. Hayes publicly stated in January 2022 that Raytheon would benefit financially from escalating tensions in Eastern Europe — a statement made weeks before the Russian invasion of Ukraine. The company's board includes former senior military officials and former national security advisers.",
+    "flags": [
+      "hayes_22_9m_compensation_2022",
+      "hayes_conflict_escalation_profit_statement",
+      "board_former_national_security_officials"
+    ],
+    "sources": [
+      "https://www.businessinsider.com/raytheon-ceo-said-company-would-benefit-from-war-in-ukraine-2022-1",
+      "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=rtx"
+    ]
+  },
+  "connections": {
+    "summary": "Raytheon's Paveway precision-guided bomb kits were found at the scene of documented Saudi air strikes on a Yemeni school bus killing 40 children in 2018, a wedding in 2015 killing over 130 people, and multiple hospital strikes documented by Human Rights Watch. The company supplies Patriot missile systems to Saudi Arabia and Israel. Its Javelin missile, co-produced with Lockheed Martin, has been central to Ukraine's defense. Raytheon's Pratt & Whitney engines power the F-35.",
+    "flags": [
+      "paveway_bombs_yemeni_school_bus_40_children",
+      "paveway_bombs_yemeni_wedding_130_killed",
+      "hospital_strikes_hrw_documented",
+      "patriot_israel_saudi_arabia_sales"
+    ],
+    "sources": [
+      "https://www.hrw.org/report/2018/08/19/children-were-bus-when-it-was-hit/saudi-led-strike-school-bus-yemen",
+      "https://www.amnesty.org/en/documents/mde31/4198/2016/en/"
+    ]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Human rights investigators have alleged that Raytheon representatives were aware that munitions sold to Saudi Arabia were being used in strikes on civilian infrastructure in Yemen and continued sales without implementing use-monitoring requirements. Congressional investigators have alleged that the State Department suppressed internal dissent about the humanitarian impact of Raytheon arms sales to Saudi Arabia during both the Obama and Trump administrations.",
+    "flags": [
+      "awareness_of_civilian_use_alleged",
+      "state_department_dissent_suppression_alleged",
+      "use_monitoring_failure_alleged"
+    ],
+    "sources": [
+      "https://www.hrw.org/news/2019/04/08/us-complicit-unlawful-saudi-coalition-attacks-yemen",
+      "https://www.reuters.com/article/us-usa-arms-saudi/u-s-state-department-approved-saudi-arms-sales-after-overruling-dissent-idUSKBN1K12A0"
+    ]
+  },
+  "health_record": {
+    "summary": "Perchlorate contamination from Raytheon facilities has been documented in groundwater used for drinking and irrigation in communities near manufacturing sites. Perchlorate interferes with thyroid function and is particularly harmful to pregnant women, fetuses, and infants. Communities near the Tucson manufacturing complex have faced ongoing health monitoring. Civilian casualties from Raytheon munitions in Yemen represent a documented public health catastrophe — the UN has cited over 150,000 deaths from the conflict including direct violence and disease and famine triggered by infrastructure destruction.",
+    "flags": [
+      "perchlorate_thyroid_disruption_residential_exposure",
+      "pregnant_women_fetal_risk_groundwater",
+      "yemen_150000_deaths_conflict_context",
+      "infrastructure_destruction_disease_famine"
+    ],
+    "sources": [
+      "https://www.epa.gov/sdwa/perchlorate-drinking-water",
+      "https://www.acledsdata.com/2022/09/27/yemen-the-worlds-most-neglected-conflict/"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Raytheon does not sell consumer products. The systemic alternative is congressional use-monitoring requirements on arms exports — legislation requiring end-use verification before munitions sales to conflict zones, which Raytheon has actively lobbied against"
+    ],
+    "healthier": [
+      "For communities near Raytheon facilities: EPA Superfund and state environmental agency records on perchlorate and TCE contamination are public. Water testing through certified labs can establish baseline exposure"
+    ],
+    "diy": [
+      "The Arms Control Association and Human Rights Watch publish ongoing tracking of U.S. arms sales to Saudi Arabia and Yemen",
+      "Congressional representatives on the Armed Services and Foreign Relations committees have jurisdiction over arms export policy"
+    ]
+  },
+  "timeline": [
+    { "year": 1922, "event": "Raytheon Company founded in Cambridge, Massachusetts", "severity": "neutral", "source_url": "" },
+    { "year": 2015, "event": "Raytheon Paveway bombs documented at site of Saudi strike on Yemeni wedding — 130+ killed", "severity": "critical", "source_url": "https://www.amnesty.org" },
+    { "year": 2018, "event": "August: Raytheon Paveway bomb found at wreckage of Saudi strike on school bus — 40 children killed", "severity": "critical", "source_url": "https://www.hrw.org/report/2018/08/19/children-were-bus-when-it-was-hit" },
+    { "year": 2020, "event": "United Technologies and Raytheon merge to form Raytheon Technologies (now RTX)", "severity": "neutral", "source_url": "" },
+    { "year": 2022, "event": "January: CEO Hayes states company will benefit financially from geopolitical tensions weeks before Ukraine invasion", "severity": "high", "source_url": "https://www.businessinsider.com/raytheon-ceo-said-company-would-benefit-from-war-in-ukraine-2022-1" },
+    { "year": 2022, "event": "October: Pays $950 million to DOJ/SEC to resolve bribery charges in Qatar, UAE, Saudi Arabia arms sales", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/raytheon-company-agrees-pay-950-million" },
+    { "year": 2023, "event": "Company rebrands from Raytheon Technologies to RTX Corporation", "severity": "neutral", "source_url": "" },
+    { "year": 2024, "event": "Raytheon munitions continue to appear in documented civilian strikes in Gaza and Yemen", "severity": "critical", "source_url": "https://www.hrw.org" }
+  ],
+  "community_impact": {
+    "displacement": "Communities near Raytheon's historical manufacturing sites — particularly in Massachusetts and Arizona — have faced property value impacts from Superfund contamination. Cleanup timelines have extended decades, during which residents faced ongoing exposure risks.",
+    "price_illusion": "Raytheon presents its products as precision systems reducing civilian casualties. Independent investigation of munitions found at documented civilian strike sites in Yemen and Gaza contradicts this framing — precision delivery does not eliminate harm when targets include civilian infrastructure.",
+    "tax_math": "RTX receives the majority of its revenue from U.S. government contracts while reducing its effective tax rate through offshore structures and R&D credits — effectively receiving a public subsidy on both the revenue and the tax side.",
+    "wealth_velocity": "CEO compensation of $22.9 million and consistent shareholder returns are funded directly by defense appropriations, arms export revenues enabled by State Department approvals, and settlement structures that allow the company to continue operating after bribery convictions."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      "RTX shareholders (stock buybacks and dividends maintained through conflict periods)",
+      "Executive leadership ($20M+ annual compensation)",
+      "Foreign officials who received bribe payments to award contracts",
+      "Lobbying firms retained to block arms sale restrictions"
+    ],
+    "who_paid": [
+      "Yemeni civilians killed or displaced by documented munitions strikes",
+      "U.S. taxpayers funding defense contracts and DOJ enforcement costs",
+      "Communities near contaminated Raytheon facilities",
+      "U.S. military personnel in conflicts where Raytheon systems have malfunctioned"
+    ],
+    "the_gap": "Raytheon settled bribery charges for $950 million while generating $67 billion in annual revenue — a penalty equivalent to approximately five days of revenue, with no interruption to arms sales or executive compensation."
+  }
+}

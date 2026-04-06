@@ -1,0 +1,93 @@
+{
+  "brand_name": "Samsung",
+  "brand_slug": "samsung",
+  "parent_company": "Samsung Electronics Co., Ltd.",
+  "ultimate_parent": "Samsung Electronics Co., Ltd.",
+  "subsidiaries": ["Samsung Display", "Samsung SDI", "Samsung SDS", "Harman International", "Samsung Austin Semiconductor"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "SAMSUNG'S HEIR WENT TO PRISON FOR BRIBING THE SOUTH KOREAN PRESIDENT — AND WAS BACK IN CHARGE 18 MONTHS LATER",
+  "executive_summary": "Samsung Electronics is South Korea's largest conglomerate and the world's largest semiconductor manufacturer. Its de facto controlling heir Lee Jae-yong was convicted of bribery in January 2021 — sentenced to two and a half years in prison for payments made to entities controlled by Choi Soon-sil, confidante of impeached and imprisoned President Park Geun-hye, in exchange for government support of a Samsung merger that consolidated Lee family control. He was paroled in August 2021 after serving 18 months and returned to active management. The company conducted the largest consumer electronics recall in history in 2016 when Galaxy Note 7 batteries caught fire. Former semiconductor factory workers and their families have pursued decade-long litigation alleging occupational cancer from manufacturing conditions — Samsung issued a formal apology in 2018 after a decade of dispute.",
+  "verdict_tags": ["lee_jae_yong_bribery_conviction", "park_geun_hye_corruption_scandal", "galaxy_note7_recall_largest_ever", "semiconductor_worker_cancer_litigation", "occupation_disease_compensation"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "SHARPS (Supporters for the Health and Rights of People in the Semiconductor Industry) has documented over 300 cases of cancer and other serious illness among former Samsung semiconductor factory workers since 2007. After a decade of denial, Samsung issued a formal apology in November 2018 and agreed to compensate workers through an independent committee. The Korea Workers Compensation and Welfare Service has recognized occupational disease claims from multiple Samsung semiconductor factory workers. Compensation amounts have been disputed as insufficient by worker advocates.",
+    "flags": ["300_plus_cancer_cases_semiconductor_workers", "decade_of_denial_before_apology", "compensation_disputed_as_insufficient"],
+    "sources": ["https://www.bbc.com/news/business-45806913", "https://www.reuters.com/article/us-samsung-electronics-workers/samsung-apologizes-to-workers-who-got-cancer-agrees-to-compensation-idUSKCN1MY0CG", "https://sharps.or.kr/en/"]
+  },
+  "environmental": {
+    "summary": "Samsung is the world's largest generator of electronic waste by product volume. Its semiconductor manufacturing has been associated with soil and groundwater contamination at South Korean manufacturing clusters documented in academic studies. Samsung has committed to 100% renewable energy for US, Europe, and China operations. Greenpeace's Guide to Greener Electronics has given Samsung mixed ratings on chemical management, e-waste take-back, and energy transparency. The volume of semiconductors Samsung produces globally means its chemical manufacturing discharge profile is significant even at industry-standard compliance.",
+    "flags": ["largest_e_waste_generator_by_volume", "semiconductor_manufacturing_contamination", "chemical_manufacturing_discharge"],
+    "sources": ["https://www.greenpeace.org/usa/reports/guide-to-greener-electronics/"]
+  },
+  "political": {
+    "summary": "Lee Jae-yong's conviction involved payments totaling approximately 8.6 billion won to entities controlled by Choi Soon-sil in exchange for government support for a Samsung Biologics/Cheil Industries merger that benefited Lee family inheritance planning. Park Geun-hye was also convicted and imprisoned for her role in the broader scandal. Lee's swift parole — after serving only 18 months of a 2.5-year sentence — was granted by the Justice Ministry citing the national economic need for Lee's leadership. This rationale established that the heir of a chaebol is above normal criminal justice application in South Korea.",
+    "flags": ["bribery_conviction_for_inheritance_planning", "chaebol_heir_above_normal_justice", "park_geun_hye_connected_scandal"],
+    "sources": ["https://www.bbc.com/news/business-55697914", "https://www.reuters.com/article/us-samsung-elec-heir-verdict/samsung-heir-lee-jae-yong-jailed-for-two-and-a-half-years-for-bribery-idUSKBN29K0GT", "https://www.theguardian.com/world/2021/jan/18/samsung-chief-lee-jae-yong-jailed-for-two-and-a-half-years"]
+  },
+  "legal": {
+    "summary": "The Galaxy Note 7 recall in September 2016 covered all 2.5 million devices globally after batteries caught fire in residential settings, on aircraft, and in vehicles. The FAA banned the device on US commercial flights. The US CPSC was involved in the recall coordination. Total estimated cost exceeded $5 billion. Samsung's subsequent investigation found a manufacturing defect in batteries from two suppliers. The Note 7 recall is the largest consumer electronics recall in history. In addition, Lee Jae-yong's bribery conviction represents a final criminal court judgment.",
+    "flags": ["note7_largest_consumer_electronics_recall", "faa_commercial_flight_ban", "5b_recall_cost", "battery_fire_residential_aircraft_vehicles", "lee_jae_yong_criminal_conviction_final"],
+    "sources": ["https://www.cpsc.gov/Recalls/2016/samsung-recalls-galaxy-note7-smartphones", "https://www.faa.gov/news/updates/?newsId=87032"]
+  },
+  "tax": {
+    "summary": "Samsung Electronics has been investigated multiple times by South Korean tax authorities. A 2017 audit resulted in additional tax assessments. Transfer pricing arrangements for semiconductor intellectual property have drawn scrutiny. Samsung benefits from South Korean R&D tax credits. The Lee family's inheritance planning — which the bribery conviction was directly connected to — involved structuring Samsung group companies to transfer control to Lee Jae-yong with minimum inheritance tax, a practice the Korean government has challenged in separate civil proceedings.",
+    "flags": ["korean_tax_authority_audits", "ip_transfer_pricing_scrutiny", "inheritance_planning_tax_avoidance_connected_to_bribery"],
+    "sources": ["https://www.bloomberg.com/news/articles/2017-10-17/samsung-tax-audit"]
+  },
+  "executives": {
+    "summary": "Lee Jae-yong is the de facto chairman of Samsung Group, controlling the company through a complex web of cross-shareholdings despite holding a minority economic stake. He was convicted of bribery in 2021 and paroled after 18 months. His return to active management was justified by the South Korean government as necessary for national economic competitiveness — a rationale that effectively created a legal double standard for chaebol heirs. His father Lee Kun-hee ran Samsung for decades and was also the subject of criminal proceedings he largely avoided through pardons.",
+    "flags": ["bribery_conviction_active_management_continued", "chaebol_legal_double_standard_documented", "father_also_subject_criminal_proceedings"],
+    "sources": ["https://www.bbc.com/news/business-55697914"]
+  },
+  "connections": {
+    "summary": "Samsung's semiconductor division supplies chips to Apple, Qualcomm, NVIDIA, and virtually every major technology company — giving it extraordinary leverage over the global technology supply chain. Samsung Austin Semiconductor in Texas has received billions in US government subsidies under the CHIPS Act for domestic semiconductor manufacturing. The Lee family controls Samsung Electronics through Samsung Life Insurance, which controls Samsung C&T, which controls Samsung Electronics — a chain of cross-shareholdings that concentrates control far beyond what their economic ownership would otherwise permit.",
+    "flags": ["global_tech_supply_chain_leverage", "chips_act_subsidies_billions", "cross_shareholding_control_structure"],
+    "sources": ["https://www.commerce.gov/chips"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Worker advocates at SHARPS have alleged that Samsung systematically denied the connection between semiconductor manufacturing chemicals and worker cancer for a decade while maintaining surveillance of worker illness claims — delaying compensation until litigation and public pressure forced a response. Antitrust researchers have alleged that Samsung's dominance across semiconductors, displays, and consumer electronics creates conflicts of interest when it is simultaneously a supplier to and competitor of companies like Apple and Qualcomm. South Korean governance researchers have alleged that the Lee family's cross-shareholding structure is specifically designed to maintain control while evading Korean inheritance tax.",
+    "flags": ["worker_cancer_denial_decade_alleged", "supply_chain_conflict_of_interest_alleged", "inheritance_tax_evasion_structure_alleged"],
+    "sources": ["https://sharps.or.kr/en/"]
+  },
+  "health_record": {
+    "summary": "Samsung's semiconductor factory workers were exposed to chemicals including benzene, formaldehyde, arsenic compounds, and radiation as documented in SHARPS research. These exposures were associated with leukemia, non-Hodgkin lymphoma, breast cancer, and other cancers in workers who were often young women in their 20s. The Galaxy Note 7 battery fires posed direct burn injury risk to consumers. Post-recall, Samsung implemented the Multi-Layer Safety Protocol for battery design. The pattern of occupational disease denial followed by eventual compensation represents a decade-long harm to workers and families.",
+    "flags": ["benzene_formaldehyde_arsenic_worker_exposure", "young_women_workers_cancer_leukemia", "note7_burn_injury_risk_consumers"],
+    "sources": ["https://sharps.or.kr/en/", "https://www.cpsc.gov/Recalls/2016/samsung-recalls-galaxy-note7-smartphones"]
+  },
+  "alternatives": {
+    "cheaper": ["Refurbished Samsung devices through Samsung Certified Re-Newed program — same device, fraction of the environmental and financial cost", "Google Pixel phones — Android alternative from a company not entangled with chaebol governance issues"],
+    "healthier": ["Fairphone — Netherlands-based brand with documented supply chain transparency and repairability focus; limited to Europe but ships internationally", "Apple — different set of labor and environmental concerns but not connected to bribery conviction or semiconductor worker cancer denial"],
+    "diy": ["Check if your Samsung device is on the recall list at CPSC.gov before purchasing secondhand Note 7 devices", "Recycle Samsung devices through Samsung's take-back program rather than general waste — semiconductor manufacturing waste requires proper handling", "Support SHARPS — the organization that documented semiconductor worker illness and forced Samsung's eventual apology"]
+  },
+  "timeline": [
+    {"year": 1969, "event": "Samsung Electronics founded in South Korea", "severity": "neutral", "source_url": ""},
+    {"year": 2007, "event": "First SHARPS reports of cancer among Samsung semiconductor factory workers; company denies connection", "severity": "critical", "source_url": ""},
+    {"year": 2016, "event": "Galaxy Note 7 global recall — largest in consumer electronics history; FAA bans device on flights; cost exceeds $5B", "severity": "critical", "source_url": "https://www.cpsc.gov/Recalls/2016/samsung-recalls-galaxy-note7-smartphones"},
+    {"year": 2017, "event": "Lee Jae-yong first arrested in connection with Park Geun-hye corruption scandal", "severity": "critical", "source_url": ""},
+    {"year": 2018, "event": "Samsung apology and compensation agreement with semiconductor worker victims after decade of denial", "severity": "high", "source_url": "https://www.reuters.com/article/us-samsung-electronics-workers"},
+    {"year": 2021, "event": "January: Lee Jae-yong convicted of bribery, sentenced to 2.5 years prison", "severity": "critical", "source_url": "https://www.bbc.com/news/business-55697914"},
+    {"year": 2021, "event": "August: Lee Jae-yong paroled after 18 months; Justice Ministry cites national economic necessity", "severity": "high", "source_url": ""},
+    {"year": 2023, "event": "CHIPS Act: Samsung receives billions in US government subsidies for Texas semiconductor expansion", "severity": "neutral", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Samsung semiconductor workers in South Korea — many of them young women recruited for precision manufacturing — developed cancer at rates SHARPS documented significantly above baseline. Their decade-long fight for recognition while Samsung denied the connection represents a direct community health harm. In Austin, Texas, Samsung's semiconductor expansion receives public subsidies while semiconductor manufacturing creates environmental compliance obligations for surrounding communities.",
+    "price_illusion": "Samsung devices are priced as premium consumer electronics with implicit quality and safety guarantees. The Galaxy Note 7 fire — from a manufacturing defect in batteries — revealed that the premium price did not prevent a catastrophic and dangerous product failure. The compensation for semiconductor worker cancer — reached only after decade-long litigation — was not included in the price of the chips those workers produced.",
+    "tax_math": "The Lee family's inheritance planning — to which Lee Jae-yong's bribery conviction was directly connected — was designed to transfer control of Samsung group companies across generations while minimizing South Korean inheritance tax obligations. The mechanism involved government support obtained through bribery of a president who was subsequently imprisoned. The tax avoided was the cost of the bribe — externalized onto the broader South Korean public.",
+    "wealth_velocity": "Samsung Electronics' revenue flows disproportionately to the Lee family through cross-shareholding structures that give them control far exceeding their economic ownership. The semiconductor factories staffed by workers who developed cancer generated profits that strengthened the Lee family's inheritance position — the same inheritance the bribery conviction was connected to."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Lee family", "how": "Government support for merger enabling inheritance planning; chaebol control maintained across generations; paroled after 18 months despite 2.5 year sentence"},
+      {"group": "Park Geun-hye associates", "how": "8.6 billion won in payments to entities they controlled; subsequently convicted and imprisoned"},
+      {"group": "Samsung shareholders", "how": "Decades of returns from semiconductor manufacturing where worker safety was denied for decade"}
+    ],
+    "who_paid": [
+      {"group": "Semiconductor factory workers and families", "how": "Cancer, occupational disease, decade of denial; eventual compensation after litigation described as insufficient"},
+      {"group": "Galaxy Note 7 owners", "how": "Burn risk from fire; device discontinued; property damage from fires in homes and vehicles"},
+      {"group": "South Korean public", "how": "Bribery of national president; chaebol heir effectively exempt from normal justice application; inheritance tax avoided through bribery-connected merger"}
+    ],
+    "the_gap": "Lee Jae-yong bribed a president to help him inherit Samsung. He went to prison for 18 months. He was released because the government said the economy needed him. The workers who made Samsung's chips got cancer. Samsung denied it for a decade. The compensation was described as insufficient. He is now in charge of Samsung."
+  }
+}

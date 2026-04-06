@@ -1,0 +1,93 @@
+{
+  "brand_name": "Huntington Ingalls Industries",
+  "brand_slug": "huntington-ingalls",
+  "parent_company": "Huntington Ingalls Industries, Inc.",
+  "ultimate_parent": "Huntington Ingalls Industries, Inc.",
+  "subsidiaries": [
+    "Newport News Shipbuilding",
+    "Ingalls Shipbuilding",
+    "HII Mission Technologies"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "HUNTINGTON INGALLS IS THE ONLY COMPANY IN AMERICA THAT CAN BUILD NUCLEAR AIRCRAFT CARRIERS — A MONOPOLY THAT HAS PRODUCED CONSISTENT COST OVERRUNS, ASBESTOS DISEASE IN THOUSANDS OF WORKERS, AND A $3.2 BILLION FORD-CLASS CARRIER THAT COULDN'T LAUNCH AIRCRAFT",
+  "executive_summary": "Huntington Ingalls Industries (HII) is the largest U.S. military shipbuilder, operating the only facilities in the country capable of constructing nuclear-powered aircraft carriers and one of two facilities capable of building nuclear submarines. Its Newport News Shipbuilding division in Virginia builds Gerald R. Ford-class carriers. Its Ingalls Shipbuilding division in Mississippi builds destroyers, amphibious assault ships, and Coast Guard cutters. The company's monopoly position in nuclear carrier construction limits competitive pressure. HII has faced serial cost overruns on the Ford-class carrier program — the USS Gerald R. Ford was $2.4 billion over budget. Decades of asbestos use in naval shipbuilding have produced thousands of mesothelioma cases among former HII workers.",
+  "verdict_tags": [
+    "nuclear_carrier_sole_manufacturer",
+    "ford_class_2_4b_over_budget",
+    "ford_carrier_launch_system_failures",
+    "asbestos_mesothelioma_thousands_workers",
+    "shipbuilding_monopoly_no_competition",
+    "cost_overrun_pattern_documented"
+  ],
+  "concern_flags": { "labor": true, "environmental": true, "political": true, "tax": false, "health": true, "legal": true },
+  "labor": {
+    "summary": "HII shipyard workers have engaged in repeated strikes at both Newport News and Ingalls facilities. The company's shipyards are the largest industrial employers in their regions — Newport News is the largest private employer in Virginia — creating significant power asymmetry in labor negotiations. Thousands of former HII workers have developed mesothelioma and other asbestos-related diseases from decades of asbestos insulation use in naval construction.",
+    "flags": ["newport_news_virginia_largest_employer_power_asymmetry", "asbestos_mesothelioma_thousands_former_workers", "repeated_strikes_newport_news_ingalls"],
+    "sources": ["https://www.nlrb.gov", "https://www.mesotheliomaveterans.org/navy/shipyards/newport-news-shipbuilding/"]
+  },
+  "environmental": {
+    "summary": "HII's shipyard facilities have generated significant industrial contamination across decades of naval construction. Asbestos, heavy metals, and industrial solvents from shipbuilding operations have contaminated soil and groundwater at Newport News and Pascagoula sites. The James River near Newport News carries contamination from decades of shipyard operations.",
+    "flags": ["newport_news_james_river_contamination", "pascagoula_industrial_contamination", "asbestos_heavy_metal_solvent_legacy"],
+    "sources": ["https://www.epa.gov/superfund", "https://www.deq.virginia.gov"]
+  },
+  "political": {
+    "summary": "HII spent $8.3 million on lobbying in 2023. The company's sole-source status for nuclear carriers and its role as the largest employer in Virginia and Mississippi gives it exceptional political leverage. Congressional delegations from both states reliably support HII funding requests. The Ford-class carrier program has continued despite documented operational failures because cancellation would eliminate thousands of jobs in politically strategic states.",
+    "flags": ["8_3m_lobbying_2023", "sole_source_nuclear_carrier_monopoly_leverage", "virginia_mississippi_congressional_protection", "ford_class_operational_failure_continued_funding"],
+    "sources": ["https://www.opensecrets.org/orgs/huntington-ingalls/lobbying", "https://www.gao.gov"]
+  },
+  "legal": {
+    "summary": "HII has faced False Claims Act allegations and DCAA audit findings related to cost charging on shipbuilding contracts. The Ford-class carrier program has been the subject of ongoing GAO and DOT&E oversight reports documenting cost overruns and unresolved technical failures that have been attributed in part to contractual structure issues.",
+    "flags": ["false_claims_cost_charging_allegations", "dcaa_audit_findings", "gao_dote_ford_class_findings"],
+    "sources": ["https://www.gao.gov/products/gao-22-105995", "https://www.pogo.org/database/contractor-misconduct"]
+  },
+  "tax": {
+    "summary": "HII benefits from standard defense contractor tax structures including accelerated depreciation on shipbuilding assets and state and local incentives tied to maintaining employment at Newport News and Pascagoula facilities.",
+    "flags": ["state_local_employment_incentives", "accelerated_depreciation_shipbuilding"],
+    "sources": ["https://subsidytracker.goodjobsfirst.org/prog.php?parent=huntington-ingalls"]
+  },
+  "executives": {
+    "summary": "CEO Chris Kastner received $14.2 million in total compensation in 2022. Former CEO Mike Petters was compensated at similar levels during the Ford-class cost overrun period. Executive compensation has been maintained through the program's cost and technical failures.",
+    "flags": ["kastner_14_2m_compensation_2022", "executive_pay_through_ford_class_failures"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=huntington-ingalls"]
+  },
+  "connections": {
+    "summary": "The USS Gerald R. Ford — the first of the Ford-class carriers — was delivered $2.4 billion over budget and with an electromagnetic aircraft launch system (EMALS) that experienced repeated failures. The carrier conducted its first deployment in 2022, years behind schedule. Nuclear carriers are central to U.S. power projection and are deployed globally in response to geopolitical crises.",
+    "flags": ["ford_carrier_emals_repeated_failures", "2_4b_over_budget_delivery", "carrier_global_power_projection_deployed"],
+    "sources": ["https://www.dote.osd.mil", "https://www.gao.gov"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Congressional investigators and defense watchdogs have alleged that the Ford-class carrier program's cost overruns and technical failures were foreseeable and that HII and the Navy failed to adequately test EMALS before committing to full production. Former shipyard workers have alleged that the speed of production demanded under contract schedules created quality corners being cut.",
+    "flags": ["emals_foreseeable_failure_alleged", "production_speed_quality_corners_alleged"],
+    "sources": ["https://www.gao.gov/products/gao-20-374", "https://www.pogo.org"]
+  },
+  "health_record": {
+    "summary": "Asbestos use in U.S. naval shipbuilding — which continued at Newport News Shipbuilding through the 1970s — has produced one of the largest documented occupational disease cohorts in American industrial history. Mesothelioma, asbestosis, and lung cancer affect tens of thousands of former Newport News and Ingalls workers. The latency period of asbestos disease (20-50 years) means workers employed in the 1950s-1970s are still receiving diagnoses today.",
+    "flags": ["asbestos_largest_occupational_disease_cohorts", "mesothelioma_asbestosis_lung_cancer_documented", "20_50_year_latency_ongoing_diagnoses"],
+    "sources": ["https://www.mesotheliomaveterans.org", "https://www.cdc.gov/niosh/topics/shipyard/"]
+  },
+  "alternatives": {
+    "cheaper": ["HII does not sell consumer products. The systemic alternative is genuine competition in naval shipbuilding through investment in capacity at alternative facilities — the current monopoly structure has no competitive check on pricing"],
+    "healthier": ["Former HII shipyard workers can access asbestos disease resources through the Mesothelioma Veterans Center, and may be eligible for VA benefits and EEOIC compensation"],
+    "diy": ["GAO's annual shipbuilding report and DOT&E annual report track Ford-class carrier program status and technical deficiencies"]
+  },
+  "timeline": [
+    { "year": 1886, "event": "Newport News Shipbuilding founded", "severity": "neutral", "source_url": "" },
+    { "year": 2011, "event": "Huntington Ingalls Industries spun off from Northrop Grumman", "severity": "neutral", "source_url": "" },
+    { "year": 2017, "event": "USS Gerald R. Ford delivered — $2.4 billion over budget; EMALS system not operational", "severity": "critical", "source_url": "https://www.gao.gov" },
+    { "year": 2022, "event": "USS Ford deploys for first time — years behind schedule", "severity": "high", "source_url": "" },
+    { "year": 2023, "event": "GAO continues to flag Ford-class program with unresolved technical deficiencies", "severity": "high", "source_url": "https://www.gao.gov" }
+  ],
+  "community_impact": {
+    "displacement": "Newport News, Virginia and Pascagoula, Mississippi are single-employer communities where HII's monopoly position gives the company disproportionate leverage over local wages, politics, and regulation.",
+    "price_illusion": "The Ford-class carrier was presented as a leap-ahead platform that would reduce crew size and operating costs. The EMALS system failures, cost overruns, and crew reduction targets that have not been met contradict this framing.",
+    "tax_math": "HII receives state and local subsidies tied to employment commitments in Virginia and Mississippi while maintaining a monopoly that limits the government's ability to negotiate pricing.",
+    "wealth_velocity": "Executive compensation exceeds $14 million against a backdrop of a company whose primary product — nuclear carriers — can only be bought by the U.S. Navy, with no competitive alternative."
+  },
+  "cost_absorption": {
+    "who_benefited": ["HII shareholders", "Executive leadership", "Newport News and Pascagoula political establishments"],
+    "who_paid": ["U.S. taxpayers absorbing $2.4B in Ford-class overruns", "Former workers with asbestos disease", "Communities near contaminated shipyard sites"],
+    "the_gap": "The Ford-class carrier cost $13.3 billion — $2.4 billion over the original contract price — for a ship whose aircraft launch system did not work at delivery. No contractor penalty was imposed."
+  }
+}

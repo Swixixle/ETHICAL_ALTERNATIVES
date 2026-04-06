@@ -1,0 +1,93 @@
+{
+  "brand_name": "Restaurant Brands International",
+  "brand_slug": "restaurant-brands-international",
+  "parent_company": "Restaurant Brands International Inc.",
+  "ultimate_parent": "Restaurant Brands International Inc. (3G Capital majority owned)",
+  "subsidiaries": ["Tim Hortons", "Burger King", "Popeyes Louisiana Kitchen", "Firehouse Subs"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "TIM HORTONS FRANCHISE OWNERS CUT WORKER BREAKS AND BENEFITS THE DAY ONTARIO'S MINIMUM WAGE WENT UP — 3G CAPITAL OWNS THE BRAND AND USES ZERO-BASED BUDGETING ON EVERYTHING",
+  "executive_summary": "Restaurant Brands International (RBI) is a Canadian-headquartered fast food conglomerate created in 2014 through the merger of Burger King and Tim Hortons, engineered by 3G Capital — the Brazilian private equity firm notorious for its zero-based budgeting management philosophy. RBI also owns Popeyes Louisiana Kitchen and Firehouse Subs. On January 1, 2018 — the day Ontario's minimum wage increased from $11.60 to $14.00 per hour — Tim Hortons franchise owners across Ontario began cutting paid breaks, reducing employee benefits, and charging employees for previously employer-provided uniforms. Videos of the cuts spread virally across Canada, triggering a national controversy and Ontario government hearings. The incident crystallized the tension between franchisor 3G Capital's extraction-focused management model, franchise owners absorbing cost pressure, and minimum wage workers who saw legally mandated wage increases immediately offset by benefit reductions.",
+  "verdict_tags": ["ontario_minimum_wage_benefit_cuts_january_2018", "3g_capital_zero_based_budgeting_extraction_model", "franchise_worker_benefit_reductions_documented", "national_canada_controversy_hearings", "rbi_burger_king_popeyes_portfolio"],
+  "concern_flags": {"labor": true, "environmental": false, "political": true, "tax": true, "health": false, "legal": true},
+  "labor": {
+    "summary": "On January 1, 2018, multiple Tim Hortons franchise owners in Ontario — citing increased labor costs from the minimum wage increase — cut paid breaks, reduced dental and health benefits, and began charging employees for previously provided uniforms. The most prominent case involved the Janes family franchise in Cobourg, Ontario. The Ontario government convened hearings. The incident was not isolated — multiple franchise owners adopted similar measures on the same day. Workers who publicly objected in some cases faced retaliation. The incident illustrated how franchise structure can create a blame-deflection mechanism: corporate RBI denied responsibility while benefiting from the cost structure that created the pressure.",
+    "flags": ["ontario_minimum_wage_benefit_cuts_january_1_2018", "paid_break_elimination_documented", "dental_health_benefit_reductions", "uniform_costs_transferred_to_workers", "franchise_blame_deflection_mechanism"],
+    "sources": ["https://www.theguardian.com/world/2018/jan/08/tim-hortons-franchise-minimum-wage-ontario", "https://www.cbc.ca/news/canada/toronto/tim-hortons-minimum-wage-ontario-1.4475636"]
+  },
+  "environmental": {
+    "summary": "Tim Hortons is one of Canada's largest single-use cup users — the iconic Tim Hortons coffee cup is a documented source of landfill waste. Tim Hortons has announced cup recycling programs and reusable cup initiatives. The fast food industry's packaging waste profile applies fully to Tim Hortons. No major environmental enforcement actions have been identified.",
+    "flags": ["single_use_cup_landfill_waste", "packaging_waste_fast_food_scale"],
+    "sources": []
+  },
+  "political": {
+    "summary": "The January 2018 Ontario benefit cuts triggered direct government response — Ontario Premier Kathleen Wynne publicly condemned the franchise owners' actions and convened hearings. Tim Hortons and RBI denied corporate responsibility while franchise owners blamed the minimum wage increase. The incident became a political symbol in the Canadian debate about whether minimum wage increases benefit workers or are offset by employer responses. RBI has lobbied on minimum wage policy and franchise regulation issues in both Canada and the United States.",
+    "flags": ["ontario_premier_condemnation", "minimum_wage_offset_political_symbol", "franchise_regulation_lobbying"],
+    "sources": ["https://www.cbc.ca/news/politics/tim-hortons-wynne-minimum-wage-1.4476020"]
+  },
+  "legal": {
+    "summary": "Ontario's Labour Relations Board investigated the benefit cuts following the minimum wage increase. Some franchise owners were required to restore benefits. Class action litigation in multiple Canadian provinces addressed benefit reduction conduct. RBI's corporate structure — which positions it as franchisor rather than employer — created legal ambiguity about which entity bore responsibility for the benefit cuts. No major criminal enforcement actions have been identified against RBI. 3G Capital's use of RBI's franchise operations as a financial engineering vehicle has attracted regulatory attention in multiple jurisdictions.",
+    "flags": ["ontario_labour_relations_board_investigation", "class_action_litigation_benefit_cuts", "corporate_franchisor_employer_ambiguity", "benefits_restoration_orders"],
+    "sources": ["https://www.cbc.ca/news/canada/toronto/tim-hortons-minimum-wage-ontario-1.4475636"]
+  },
+  "tax": {
+    "summary": "RBI is incorporated in Canada and structured to benefit from Canadian corporate tax rates. Its 3G Capital ownership involves structures in Brazil, the United States, and Canada. RBI's franchise model generates royalty income that is managed through the parent holding structure. Tim Hortons' Canadian operations pay Canadian corporate taxes but RBI's overall structure — including Burger King's historical use of the Canadian inversion following the Burger King-Tim Hortons merger — was widely cited as a tax optimization vehicle.",
+    "flags": ["burger_king_tim_hortons_inversion_tax_optimization_cited", "3g_capital_multi_jurisdiction_structure", "royalty_income_parent_structure"],
+    "sources": ["https://www.nytimes.com/2014/08/26/business/burger-king-in-talks-to-buy-tim-hortons.html"]
+  },
+  "executives": {
+    "summary": "RBI CEO Josh Kobza leads the company. 3G Capital's principals — Jorge Paulo Lemann, Marcel Herrmann Telles, and Carlos Alberto Sicupira — are among Brazil's wealthiest individuals who have applied zero-based budgeting across their portfolio of Anheuser-Busch InBev, Kraft Heinz (where cost cutting caused a $15B write-down), and RBI. The zero-based budgeting philosophy — requiring every expense to be justified from zero each year — has been documented to create pressure on franchise owners that flows downstream to workers. RBI CEO Daniel Schwartz, who led during the 2018 controversy, characterized the franchise owners' conduct as 'completely unacceptable' while not addressing the structural incentives that created it.",
+    "flags": ["3g_capital_zero_based_budgeting_philosophy", "lemann_telles_sicupira_brazil_billionaires", "kraft_heinz_15b_write_down_zero_based_failure", "schwartz_unacceptable_without_structural_address"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "RBI's ownership by 3G Capital connects it to the same investment philosophy behind Anheuser-Busch InBev (Budweiser, Bud Light) and Kraft Heinz — a pattern of financial engineering through cost elimination that has generated significant shareholder returns while creating documented operational and worker welfare concerns across portfolio companies. Berkshire Hathaway has also had investment exposure to 3G Capital-managed companies, including Kraft Heinz where the zero-based budgeting approach led to a $15 billion write-down and SEC investigation into accounting practices.",
+    "flags": ["3g_capital_abinbev_kraft_heinz_pattern", "kraft_heinz_15b_writedown_sec_investigation", "berkshire_3g_capital_partnership_documented"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former Tim Hortons franchise owners and their associations have alleged that RBI's royalty and cost structures make it structurally impossible for franchisees to absorb minimum wage increases without cutting labor costs — and that the January 2018 conduct by franchise owners was a predictable and perhaps anticipated consequence of RBI's financial model. Workers who spoke to media about the cuts have alleged retaliation by franchise owners. Labor researchers have alleged that 3G Capital's zero-based budgeting creates a systematic pressure to externalize costs onto workers and franchise owners that is embedded in the investment model.",
+    "flags": ["rbi_structure_franchisee_cost_absorption_impossible_alleged", "worker_retaliation_for_media_speaking_alleged", "zero_based_budgeting_worker_cost_externalization_systematic_alleged"],
+    "sources": ["https://www.theguardian.com/world/2018/jan/08/tim-hortons-franchise-minimum-wage-ontario"]
+  },
+  "health_record": {
+    "summary": "Tim Hortons' menu is primarily coffee and baked goods — products associated with high sugar and refined carbohydrate content in nutritional research. The chain's value positioning makes it a frequent choice for lower-income consumers. No major food safety enforcement actions have been documented at the scale of some peers. The health concern in Tim Hortons' profile is primarily the labor welfare of its workers rather than the health profile of its products.",
+    "flags": ["high_sugar_refined_carbohydrate_menu", "lower_income_consumer_base_menu_health_profile"],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": ["Independent local coffee shops — keeping money in local economies rather than flowing to 3G Capital principals in Brazil", "Grocery store coffee and baked goods — significantly lower cost than any fast food chain with the same or better quality"],
+    "healthier": ["Locally owned cafes and bakeries — employer-employee relationships not mediated by the franchise structure that generated the 2018 benefit cuts", "Starbucks — different set of labor concerns but does not use the 3G Capital zero-based budgeting model"],
+    "diy": ["Make coffee at home — a $10 bag of good coffee makes approximately 40 cups; a Tim Hortons coffee is approximately $2 per cup", "Understand the franchise model when you see a Tim Hortons controversy: the person who cut your coworker's break is the franchise owner, but the system that made that economically rational is the franchisor RBI and its 3G Capital owners"]
+  },
+  "timeline": [
+    {"year": 1964, "event": "Tim Horton and Ron Joyce open first Tim Hortons donut shop in Hamilton, Ontario", "severity": "neutral", "source_url": ""},
+    {"year": 1995, "event": "Wendy's acquires Tim Hortons; eventual spin-off in 2006", "severity": "neutral", "source_url": ""},
+    {"year": 2014, "event": "Burger King acquires Tim Hortons for $11.4B; merger creates RBI; 3G Capital controls combined entity; widely cited as tax inversion", "severity": "high", "source_url": "https://www.nytimes.com/2014/08/26/business/burger-king-in-talks-to-buy-tim-hortons.html"},
+    {"year": 2017, "event": "RBI acquires Popeyes Louisiana Kitchen for $1.8B", "severity": "neutral", "source_url": ""},
+    {"year": 2018, "event": "January 1: Ontario minimum wage increases to $14/hr; Tim Hortons franchise owners cut paid breaks, benefits, uniform allowances on same day", "severity": "critical", "source_url": "https://www.cbc.ca/news/canada/toronto/tim-hortons-minimum-wage-ontario-1.4475636"},
+    {"year": 2018, "event": "Ontario Premier Wynne condemns franchise owner conduct; Ontario Labour Relations Board investigates", "severity": "high", "source_url": ""},
+    {"year": 2019, "event": "Some franchise owners required to restore benefits; class action litigation ongoing in multiple provinces", "severity": "high", "source_url": ""},
+    {"year": 2021, "event": "RBI acquires Firehouse Subs for $1B; continues multi-brand fast food consolidation strategy", "severity": "neutral", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Tim Hortons is a Canadian cultural institution with over 5,700 locations. The 2018 benefit cuts affected tens of thousands of minimum-wage workers who had anticipated that Ontario's legislated wage increase would improve their financial position — and found that benefit eliminations on the same day offset or eliminated the gain. For workers near the minimum wage in Ontario, the net effect of the largest minimum wage increase in Ontario history was substantially neutralized by their immediate employer's response.",
+    "price_illusion": "Tim Hortons coffee and donuts are affordable everyday items. The cost structure that makes them affordable requires franchise owners to operate on thin margins — margins that, when squeezed by input cost increases, create immediate pressure on the lowest-paid workers in the system. The $2 coffee does not visibly incorporate the cost externalization onto minimum wage workers that the 2018 incident documented.",
+    "tax_math": "The Burger King-Tim Hortons merger was widely characterized as a tax inversion — using Tim Hortons' Canadian domicile to reduce the combined company's US tax obligations. 3G Capital principals — Jorge Paulo Lemann and partners — are Brazilian billionaires whose wealth is managed through structures in multiple jurisdictions. The returns from Tim Hortons' Canadian consumer spending flow through 3G Capital structures to principals who are not Canadian taxpayers.",
+    "wealth_velocity": "3G Capital principals Jorge Paulo Lemann, Marcel Herrmann Telles, and Carlos Alberto Sicupira — among Brazil's wealthiest individuals — capture the economic returns from Tim Hortons' millions of daily Canadian and American customer transactions. The minimum-wage workers who serve those customers saw their legally mandated wage increase offset by benefit cuts on the day it took effect."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "3G Capital principals (Lemann, Telles, Sicupira)", "how": "Zero-based budgeting financial engineering across RBI, AB InBev, Kraft Heinz; Brazilian billionaires capturing global fast food returns"},
+      {"group": "RBI shareholders", "how": "Franchise model outsources cost pressure to franchise owners; royalty income insulated from minimum wage increases"},
+      {"group": "Burger King and Tim Hortons combined entity", "how": "Tax inversion structure — Canadian domicile reducing combined US-Canada tax obligations"}
+    ],
+    "who_paid": [
+      {"group": "Ontario Tim Hortons workers January 2018", "how": "Paid break elimination, dental/health benefit reductions, uniform costs transferred — on the same day their minimum wage increased"},
+      {"group": "Tim Hortons franchise owners", "how": "Caught between RBI royalty obligations and rising labor costs; made cuts that became national controversy and legal investigations"},
+      {"group": "Canadian taxpayers", "how": "Tax inversion structure in the merger design reduced combined entity's Canadian tax obligations"}
+    ],
+    "the_gap": "Ontario raised the minimum wage by $2.40 per hour on January 1, 2018. Tim Hortons franchise owners eliminated paid breaks and cut benefits on January 1, 2018. The company that owns Tim Hortons is majority-controlled by Brazilian billionaires who use zero-based budgeting to extract value from their portfolio companies. The workers who make the coffee in the orange cup net approximately the same as before the minimum wage increase."
+  }
+}

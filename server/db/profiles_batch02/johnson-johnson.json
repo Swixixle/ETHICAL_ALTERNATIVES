@@ -1,0 +1,98 @@
+{
+  "brand_name": "Johnson & Johnson",
+  "brand_slug": "johnson-johnson",
+  "parent_company": "Johnson & Johnson",
+  "ultimate_parent": "Johnson & Johnson",
+  "subsidiaries": ["Kenvue (spun off 2023)", "Janssen Pharmaceuticals", "DePuy Synthes", "Ethicon", "Johnson & Johnson MedTech"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "J&J KNEW THEIR BABY POWDER CONTAINED ASBESTOS FOR 50 YEARS — THEY TRIED TO MAKE IT SOMEONE ELSE'S PROBLEM THROUGH BANKRUPTCY",
+  "executive_summary": "Johnson & Johnson is one of the world's largest healthcare companies, operating across consumer health, pharmaceuticals, and medical devices. Internal J&J documents obtained in litigation and published by Reuters in 2018 showed the company knew for decades — from at least 1971 to 2003 — that its talc baby powder could be contaminated with asbestos. J&J discontinued talc-based baby powder in the US and Canada in 2020 and globally in 2023 while facing approximately 38,000 lawsuits. The company attempted to resolve this liability through a 'Texas Two-Step' bankruptcy maneuver — spinning off a subsidiary called LTL Management to absorb the talc claims and file for bankruptcy — a tactic the Third Circuit Court of Appeals rejected twice as lacking good faith. A proposed $8.9 billion settlement is contested. J&J separately paid $5 billion as part of the national opioid settlement through its Janssen subsidiary.",
+  "verdict_tags": ["talc_asbestos_internal_knowledge_50_years", "38000_talc_lawsuits", "texas_two_step_bankruptcy_rejected_twice", "8_9b_settlement_proposed", "opioid_5b_settlement_janssen", "product_discontinued_2023"],
+  "concern_flags": {"labor": false, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "J&J employs approximately 130,000 people globally. The company's primary documented concerns are in product safety and legal categories rather than labor. Supply chain labor audits have been conducted through its supplier responsibility program. No major systemic labor violations at the scale of J&J's product liability exposure have been identified in public sources.",
+    "flags": [],
+    "sources": ["https://www.jnj.com/latest-news/johnson-johnson-releases-2022-esg-performance-report"]
+  },
+  "environmental": {
+    "summary": "J&J has disclosed Superfund and other environmental cleanup liabilities in its annual reports relating to historical manufacturing operations. EPA enforcement records show actions at some former manufacturing locations. The talc mining and processing operations that supplied J&J's baby powder created associated environmental obligations. J&J has committed to carbon neutrality and 100% renewable electricity goals. The scope of documented environmental violations is significantly smaller than its product liability exposure.",
+    "flags": ["superfund_site_liabilities", "historical_manufacturing_contamination", "talc_mining_environmental_obligations"],
+    "sources": ["https://www.epa.gov/enforcement", "https://www.jnj.com/latest-news/johnson-johnson-releases-2023-esg-performance-report"]
+  },
+  "political": {
+    "summary": "J&J is consistently among the top pharmaceutical political donors according to OpenSecrets data. The company has lobbied against drug price negotiation provisions in the Inflation Reduction Act, against opioid-related regulations despite its Janssen subsidiary's settlement, and for intellectual property protections on pharmaceutical products. J&J's lobbying disclosures reflect significant spending on FDA regulation, patent protections, and healthcare financing legislation that affects its reimbursement structure.",
+    "flags": ["drug_price_negotiation_opposition", "pharmaceutical_ip_protection_lobbying", "opioid_related_lobbying"],
+    "sources": ["https://www.opensecrets.org/orgs/johnson-johnson/summary?id=D000000125"]
+  },
+  "legal": {
+    "summary": "The talc litigation represents the largest product liability exposure in J&J's history. Internal documents revealed by Reuters showed J&J knew from at least 1971 that its talc could contain asbestos. J&J discontinued talc baby powder in all markets in 2023. The Texas Two-Step: J&J created subsidiary LTL Management to absorb talc claims, file for bankruptcy, and resolve claims at a fraction of their value. The Third Circuit rejected LTL's bankruptcy twice — first in January 2023, again in July 2024 — finding it lacked good faith because J&J itself was not in financial distress. J&J's Janssen subsidiary paid $5 billion as part of the national opioid settlement in 2021.",
+    "flags": ["reuters_internal_documents_50_year_knowledge", "texas_two_step_rejected_twice_third_circuit", "8_9b_proposed_settlement_contested", "5b_opioid_janssen_settlement", "product_discontinued_after_decades"],
+    "sources": ["https://www.reuters.com/investigates/special-report/johnsonandjohnson-cancer/", "https://www.nytimes.com/2022/01/31/business/johnson-johnson-bankruptcy-talc.html", "https://www.justice.gov/opa/pr/justice-department-announces-global-resolution-criminal-and-civil-investigations-opioid"]
+  },
+  "tax": {
+    "summary": "J&J's pharmaceutical division holds significant intellectual property in Belgium and Ireland through structures that result in a substantial portion of pharmaceutical profits being taxed at lower European rates. The company's effective worldwide tax rate has historically run below the US statutory rate. The $8.9 billion proposed talc settlement — if it proceeds — would generate significant tax deductions on the provision. No major formal US enforcement action has been publicly documented.",
+    "flags": ["pharma_ip_belgium_ireland_structures", "below_statutory_effective_rate", "settlement_deduction_tax_effect"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=jnj"]
+  },
+  "executives": {
+    "summary": "CEO Joaquin Duato received approximately $29 million in total compensation in 2023. Duato's predecessor Alex Gorsky — who led J&J through the period when the Reuters talc investigation was published, when talc baby powder was discontinued in the US, and when the Texas Two-Step maneuver was initiated — stepped down in 2022. Gorsky received a severance arrangement commensurate with his tenure despite leading the company through the largest product liability crisis in its history. No J&J executive has been criminally charged in connection with the talc asbestos knowledge.",
+    "flags": ["gorsky_severance_during_largest_liability_crisis", "no_criminal_charges_internal_knowledge_period", "ceo_29m_compensation"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "connections": {
+    "summary": "J&J's Janssen subsidiary was a manufacturer of opioid medications including fentanyl patches — connecting it to the broader opioid supply chain through both manufacturer and distributor relationships. J&J's DePuy Synthes medical device division has faced its own separate litigation over metal-on-metal hip replacements that were found to shed metallic debris. The Texas Two-Step bankruptcy tactic J&J pioneered has been attempted by other companies facing mass tort claims — making J&J's experience a test case for corporate liability evasion through subsidiary bankruptcy.",
+    "flags": ["opioid_manufacturer_janssen", "depuy_metal_on_metal_hip_litigation", "texas_two_step_precedent_for_other_companies"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Reuters' 2018 investigation reviewed internal J&J documents from 1971 to 2003 showing scientists and executives knew the talc 'sometimes' tested positive for small amounts of asbestos and that they took steps to keep this information from regulators and the public. Plaintiff attorneys in the talc litigation have alleged that J&J's decision to discontinue talc baby powder coincided not with any new safety finding but with the litigation reaching a scale that made continued sale untenable — suggesting the product was known to be problematic long before discontinuation. The Texas Two-Step has been characterized by legal scholars as a deliberate attempt to extinguish the claims of cancer victims through a legal maneuver designed to circumvent normal bankruptcy requirements.",
+    "flags": ["internal_knowledge_regulators_concealment_alleged_reuters", "discontinuation_timing_litigation_driven_alleged", "texas_two_step_cancer_victim_rights_extinguishment_alleged"],
+    "sources": ["https://www.reuters.com/investigates/special-report/johnsonandjohnson-cancer/"]
+  },
+  "health_record": {
+    "summary": "PE-PUR — polyurethane foam in CPAP machines — is not the J&J issue. J&J's talc baby powder has been the subject of jury verdicts totaling billions finding the product caused mesothelioma and ovarian cancer. A 2018 Missouri jury awarded $4.69 billion to 22 women with ovarian cancer — later reduced on appeal. The FDA identified asbestos in a sample of Johnson's Baby Powder in 2019 following independent testing, triggering a voluntary recall. Mesothelioma is virtually always fatal and almost exclusively caused by asbestos exposure. Hundreds of women have died of ovarian cancer during the pendency of litigation that J&J continues to contest.",
+    "flags": ["asbestos_in_talc_fda_confirmed_2019", "4_69b_jury_verdict_22_women_ovarian_cancer", "mesothelioma_virtually_always_fatal", "deaths_during_litigation_pendency"],
+    "sources": ["https://www.reuters.com/investigates/special-report/johnsonandjohnson-cancer/", "https://www.nytimes.com/2018/12/14/business/johnson-johnson-baby-powder-asbestos.html", "https://www.fda.gov/news-events/press-announcements/fda-alerts-consumers-johnson-johnsons-voluntary-recall-single-lot-johnsons-baby-powder"]
+  },
+  "alternatives": {
+    "cheaper": ["Cornstarch-based baby powder — no talc, no asbestos risk, lower cost, available from any store brand", "No powder — pediatricians have long recommended against using any powder in infant care due to inhalation risk; the entire category is medically unnecessary"],
+    "healthier": ["Cornstarch-based alternatives from brands with no talc history: Burt's Bees, Earth Mama", "For adult moisture control: moisture-wicking fabrics address the need that talc was marketed to solve without inhalation risk"],
+    "diy": ["If you have retained Johnson's Baby Powder, check the FDA recall list for your lot number", "Mesothelioma or ovarian cancer after talc exposure: contact an attorney — the settlement deadline has passed but ongoing MDL litigation may still be relevant depending on your circumstances", "For health information on talc exposure: contact the Mesothelioma Applied Research Foundation"]
+  },
+  "timeline": [
+    {"year": 1971, "event": "Internal J&J documents later revealed to show awareness that talc 'sometimes' tested positive for asbestos", "severity": "critical", "source_url": ""},
+    {"year": 1994, "event": "Internal J&J memo documenting conversation about asbestos in talc; obtained in later litigation", "severity": "critical", "source_url": ""},
+    {"year": 2003, "event": "Latest internal documents showing asbestos awareness per Reuters investigation", "severity": "critical", "source_url": ""},
+    {"year": 2018, "event": "Reuters publishes investigation documenting J&J's internal knowledge of asbestos in talc spanning decades", "severity": "critical", "source_url": "https://www.reuters.com/investigates/special-report/johnsonandjohnson-cancer/"},
+    {"year": 2018, "event": "Missouri jury awards $4.69B to 22 women with ovarian cancer; later reduced on appeal", "severity": "critical", "source_url": ""},
+    {"year": 2019, "event": "FDA confirms asbestos in Johnson's Baby Powder sample; J&J issues voluntary recall of one lot", "severity": "critical", "source_url": "https://www.fda.gov"},
+    {"year": 2020, "event": "J&J discontinues talc baby powder in US and Canada", "severity": "high", "source_url": ""},
+    {"year": 2021, "event": "Texas Two-Step: LTL Management subsidiary created to absorb talc claims; files for bankruptcy", "severity": "critical", "source_url": ""},
+    {"year": 2021, "event": "Janssen pays $5B as part of national opioid settlement", "severity": "high", "source_url": ""},
+    {"year": 2023, "event": "January: Third Circuit rejects LTL bankruptcy — no good faith basis", "severity": "critical", "source_url": ""},
+    {"year": 2023, "event": "J&J discontinues talc baby powder globally", "severity": "high", "source_url": ""},
+    {"year": 2024, "event": "July: Third Circuit rejects second LTL bankruptcy attempt", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "$8.9B proposed settlement announced; contested by plaintiff advocates as insufficient", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "The tens of thousands of plaintiffs in J&J talc litigation are predominantly women who used baby powder for personal hygiene over decades — trusting a product marketed by a healthcare company as safe and gentle. Mesothelioma patients — who developed cancer from asbestos exposure — have life expectancies measured in months after diagnosis. Their families have navigated the litigation process while experiencing terminal illness and death.",
+    "price_illusion": "Johnson's Baby Powder was priced and marketed as a safe, gentle, trusted healthcare product for infants and adults. The internal documents reveal that J&J knew for decades that this marketing did not reflect what they knew about asbestos contamination risk. The price of the product did not include compensation for the cancer risk that internal documents suggest the company was aware of.",
+    "tax_math": "The $8.9 billion proposed settlement — if it proceeds — would generate substantial tax deductions for J&J, effectively requiring taxpayers to subsidize a portion of the penalty for a product the company knew was potentially contaminated with a known carcinogen. The opioid settlement has similar tax implications. J&J's pharmaceutical IP structures in Ireland and Belgium reduce US tax obligations further.",
+    "wealth_velocity": "J&J generates approximately $85 billion in annual revenue. The proposed talc settlement of $8.9 billion — to be paid over many years — represents approximately one year's revenue for a company that spent decades selling a product its internal documents suggest it knew carried asbestos contamination risk. The people who developed mesothelioma and ovarian cancer using that product cannot reclaim those years."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "J&J shareholders", "how": "Decades of revenue from talc baby powder despite internal knowledge of asbestos contamination risk; Texas Two-Step attempt to resolve claims below their value"},
+      {"group": "J&J executives during knowledge period 1971-2003", "how": "No criminal charges; careers unaffected by internal knowledge of asbestos contamination risk"},
+      {"group": "Lawyers who designed the Texas Two-Step", "how": "Legal fees for the maneuver; litigation strategy regardless of outcome"}
+    ],
+    "who_paid": [
+      {"group": "Women who developed ovarian cancer using talc", "how": "Cancer diagnoses — ovarian cancer has a 47% five-year survival rate; decades of trust in a product internal documents suggest was known to carry risk"},
+      {"group": "Mesothelioma patients", "how": "Virtually always fatal cancer; median survival after diagnosis approximately 12-21 months; asbestos is essentially the only cause"},
+      {"group": "Families of those who died during litigation", "how": "Loss of family members; legal process ongoing while ill; settlement amounts contested as insufficient"}
+    ],
+    "the_gap": "J&J's internal documents show awareness of asbestos in talc from 1971. They discontinued the product in 2020 — 49 years later. When the claims against them reached 38,000 lawsuits, they tried to put the liability into a bankruptcy that the courts rejected twice. The people who developed cancer from the product are still in litigation. No J&J executive has been criminally charged."
+  }
+}

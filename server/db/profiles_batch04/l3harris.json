@@ -1,0 +1,167 @@
+{
+  "brand_name": "L3Harris Technologies",
+  "brand_slug": "l3harris",
+  "parent_company": "L3Harris Technologies, Inc.",
+  "ultimate_parent": "L3Harris Technologies, Inc.",
+  "subsidiaries": [
+    "Harris Corporation (legacy)",
+    "L3 Technologies (legacy)",
+    "Aerojet (components)",
+    "WESCAM",
+    "Trax International"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "L3HARRIS MAKES THE CAMERAS THAT GUIDE DRONE STRIKES AND THE RADIOS EVERY U.S. SOLDIER CARRIES — IT ALSO PAID $25 MILLION TO SETTLE ALLEGATIONS IT BRIBED FOREIGN OFFICIALS TO SELL THEM SURVEILLANCE EQUIPMENT",
+  "executive_summary": "L3Harris Technologies is the sixth-largest U.S. defense contractor, formed in 2019 from the merger of L3 Technologies and Harris Corporation. The company produces tactical radio systems used by every branch of the U.S. military, electro-optical and infrared (EO/IR) targeting systems mounted on drones and aircraft, electronic warfare systems, and communications infrastructure for defense and intelligence communities. Its WESCAM subsidiary produces the camera systems that guide Predator and Reaper drone strikes. L3Harris paid $25 million in 2016 to settle DOJ and SEC charges of bribing foreign officials in countries including Malaysia, Saudi Arabia, and Oman to secure communications contracts.",
+  "verdict_tags": [
+    "25m_foreign_bribery_settlement_2016",
+    "drone_strike_targeting_cameras_wescam",
+    "tactical_radio_universal_military_use",
+    "electronic_warfare_classified_programs",
+    "false_claims_act_overbilling",
+    "malaysia_saudi_oman_bribery_charges"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": false,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "L3Harris has faced workforce reductions following its 2019 merger, with layoffs affecting thousands of employees as the company pursued cost synergies. Workers at acquired facilities have faced benefit reductions and changes to retirement plans. The company has faced complaints about working conditions at facilities producing classified systems where employees have limited ability to raise public concerns.",
+    "flags": [
+      "post_merger_mass_layoffs",
+      "benefit_reductions_acquired_facilities",
+      "classified_facility_complaint_limitations"
+    ],
+    "sources": [
+      "https://www.defensenews.com/industry/2019/10/29/l3harris-begins-layoffs-as-part-of-merger-integration/",
+      "https://www.nlrb.gov"
+    ]
+  },
+  "environmental": {
+    "summary": "L3Harris legacy facilities have generated industrial contamination in some locations, though the company's primary products — electronics and communications systems — generate less environmental contamination than heavy manufacturing defense contractors. Some legacy Harris Corporation manufacturing sites have faced cleanup requirements.",
+    "flags": [
+      "legacy_harris_manufacturing_site_cleanup"
+    ],
+    "sources": [
+      "https://www.epa.gov/superfund"
+    ]
+  },
+  "political": {
+    "summary": "L3Harris spent $7.4 million on lobbying in 2023. The company's tactical radio systems — used by all military branches — create a near-monopoly relationship with the Pentagon that limits competitive pressure. Former senior military officials have joined L3Harris in advisory capacities. The company's classified electronic warfare programs receive limited congressional oversight.",
+    "flags": [
+      "7_4m_lobbying_2023",
+      "tactical_radio_near_monopoly_pentagon",
+      "former_military_officials_advisory_roles",
+      "classified_ew_limited_oversight"
+    ],
+    "sources": [
+      "https://www.opensecrets.org/orgs/l3harris-technologies/lobbying"
+    ]
+  },
+  "legal": {
+    "summary": "In 2016, L3 Technologies (predecessor) paid $25.6 million to resolve DOJ and SEC charges that it bribed government officials in Malaysia, Saudi Arabia, and Oman to secure contracts for communications equipment. The company entered a non-prosecution agreement. L3Harris has also faced False Claims Act allegations related to overbilling on government communications contracts.",
+    "flags": [
+      "25_6m_bribery_settlement_2016",
+      "non_prosecution_agreement",
+      "malaysia_saudi_oman_bribery",
+      "false_claims_communications_contracts"
+    ],
+    "sources": [
+      "https://www.justice.gov/opa/pr/l-3-communications-agrees-pay-255-million-resolve-foreign-bribery-charges",
+      "https://www.sec.gov"
+    ]
+  },
+  "tax": {
+    "summary": "L3Harris uses standard defense industry tax structures. The company benefits from R&D credits on classified electronics and communications research funded by government contracts.",
+    "flags": [
+      "rd_credits_classified_government_research"
+    ],
+    "sources": [
+      "https://subsidytracker.goodjobsfirst.org"
+    ]
+  },
+  "executives": {
+    "summary": "CEO Christopher Kubasik received $17.8 million in total compensation in 2022. The L3Harris merger created significant executive compensation packages for leadership of the combined entity.",
+    "flags": [
+      "kubasik_17_8m_compensation_2022"
+    ],
+    "sources": [
+      "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=l3harris"
+    ]
+  },
+  "connections": {
+    "summary": "L3Harris WESCAM cameras are mounted on Predator and Reaper drones used in U.S. strikes across Afghanistan, Iraq, Syria, Somalia, Yemen, and other theaters. The cameras provide the targeting imagery for strikes that have killed both combatants and documented civilians. L3Harris tactical radios are the primary communication device for U.S. ground forces globally.",
+    "flags": [
+      "wescam_predator_reaper_drone_targeting",
+      "drone_strike_civilian_casualty_context",
+      "tactical_radio_all_us_ground_forces"
+    ],
+    "sources": [
+      "https://theintercept.com/drone-papers/",
+      "https://airwars.org"
+    ]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Investigative journalists have alleged that L3Harris WESCAM targeting systems have been used in drone strikes where civilian casualties were later documented — and that the precision of the imaging system does not preclude misidentification of targets. Former military drone operators have alleged that targeting decisions made using these systems involved ambiguous intelligence that should have precluded lethal action.",
+    "flags": [
+      "wescam_civilian_casualty_strikes_alleged",
+      "target_misidentification_with_precision_imaging_alleged"
+    ],
+    "sources": [
+      "https://theintercept.com/drone-papers/",
+      "https://airwars.org/conflict/us-operations-in-afghanistan/"
+    ]
+  },
+  "health_record": {
+    "summary": "L3Harris does not produce products with direct consumer health impacts. Its manufacturing processes involve electronics production with associated chemical handling requirements. The primary health impact documented in connection with L3Harris products is through their use in drone strike targeting systems.",
+    "flags": [
+      "drone_targeting_system_civilian_casualty_context"
+    ],
+    "sources": [
+      "https://airwars.org"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "L3Harris does not sell consumer products. The systemic alternative is end-use monitoring requirements for surveillance and targeting systems sold to allied nations and used in active conflict zones"
+    ],
+    "healthier": [
+      "Airwars.org provides civilian casualty tracking for U.S. and allied drone operations where L3Harris targeting systems are deployed"
+    ],
+    "diy": [
+      "The Drone Papers, published by The Intercept, documents internal U.S. drone targeting processes including use of EO/IR targeting systems"
+    ]
+  },
+  "timeline": [
+    { "year": 1895, "event": "Harris Corporation predecessor founded", "severity": "neutral", "source_url": "" },
+    { "year": 2016, "event": "L3 Technologies pays $25.6 million to resolve foreign bribery charges in Malaysia, Saudi Arabia, Oman", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/l-3-communications-agrees-pay-255-million" },
+    { "year": 2019, "event": "L3 Technologies and Harris Corporation merge to form L3Harris — $33 billion combined company", "severity": "neutral", "source_url": "" },
+    { "year": 2019, "event": "Post-merger integration begins — thousands of layoffs announced", "severity": "high", "source_url": "" },
+    { "year": 2022, "event": "Company revenue reaches $17 billion; WESCAM and tactical radio divisions grow on Ukraine and Indo-Pacific demand", "severity": "neutral", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "Post-merger workforce reductions displaced thousands of employees at legacy L3 and Harris facilities across multiple states.",
+    "price_illusion": "L3Harris tactical radio systems are procured at significant per-unit cost to the Pentagon — the near-monopoly position limits competitive pricing pressure and independent cost validation.",
+    "tax_math": "R&D credits on classified government-funded communications research reduce tax liability while the research cost is already borne by taxpayers through contracts.",
+    "wealth_velocity": "CEO compensation of $17.8 million is funded through government contracts that have no competitive alternative in key product categories."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      "L3Harris shareholders",
+      "Executive leadership",
+      "Foreign officials who received bribe payments"
+    ],
+    "who_paid": [
+      "U.S. taxpayers through non-competitive radio and targeting system contracts",
+      "Civilians in conflict zones targeted using WESCAM systems",
+      "Employees laid off during post-merger integration"
+    ],
+    "the_gap": "L3Harris settled foreign bribery charges for $25.6 million — less than one year of CEO compensation at current levels — with no interruption to contracts or classified program access."
+  }
+}

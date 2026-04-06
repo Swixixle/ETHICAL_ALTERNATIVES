@@ -1,0 +1,95 @@
+{
+  "brand_name": "Walmart",
+  "brand_slug": "walmart",
+  "parent_company": "Walmart Inc.",
+  "ultimate_parent": "Walmart Inc.",
+  "subsidiaries": ["Sam's Club", "Walmart Canada", "Flipkart", "Walmart Chile", "Walmart Mexico (Walmex)"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "WALMART BRIBED GOVERNMENTS IN FOUR COUNTRIES FOR A DECADE AND PAID $282 MILLION — THEN CALLED IT A COMPLIANCE SUCCESS",
+  "executive_summary": "Walmart Inc. is the world's largest retailer by revenue and the largest private employer in the United States, with approximately 1.6 million US workers and 2.3 million globally. In 2019, Walmart agreed to pay $282 million to the DOJ and SEC to resolve one of the most extensive Foreign Corrupt Practices Act investigations in history — covering systematic bribery of government officials in Mexico, Brazil, China, and India spanning more than a decade. The company's own internal investigation in Mexico in 2005 found evidence of bribery and suppressed it, according to a 2012 New York Times investigation. Walmart has settled multiple large wage theft class actions affecting hundreds of thousands of California workers. It has been a persistent NLRB enforcement target for anti-union activity, and its supply chain in Bangladesh included factories that collapsed or burned killing hundreds of garment workers.",
+  "verdict_tags": ["fcpa_bribery_four_countries", "282m_doj_sec_settlement", "internal_investigation_suppressed", "wage_theft_class_action", "anti_union_nlrb", "bangladesh_factory_deaths", "tax_haven_subsidiaries"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "Walmart settled a California class action in 2014 for $188 million covering approximately 187,000 current and former workers alleging systematic denial of meal and rest breaks. The company has faced dozens of NLRB unfair labor practice complaints and has documented anti-union campaigns at stores where workers attempted to organize. Walmart's supply chain in Bangladesh included the Rana Plaza factory complex, which collapsed in 2013 killing 1,134 garment workers — Walmart-label clothing was found in the rubble. Walmart initially denied sourcing from Rana Plaza before acknowledging its connection.",
+    "flags": ["188m_wage_theft_california_187000_workers", "nlrb_anti_union_campaigns", "rana_plaza_connection_initially_denied"],
+    "sources": ["https://www.reuters.com/article/us-walmart-settlement-idUSBREA0Q1GX20140127", "https://www.nlrb.gov/case-activity-reports", "https://www.theguardian.com/world/2013/apr/25/rana-plaza-bangladesh"]
+  },
+  "environmental": {
+    "summary": "EPA enforcement records document hazardous waste management violations at multiple Walmart distribution centers. The company generates significant single-use plastic packaging waste through its retail operations — it is one of the largest purchasers of single-use plastic packaging in the United States. Walmart's Project Gigaton supply chain emissions initiative has been criticized by the Environmental Defense Fund for relying on unverified supplier self-reporting. Its fleet and logistics operations are a major source of diesel emissions in communities near distribution centers.",
+    "flags": ["epa_hazardous_waste_enforcement", "largest_us_plastic_packaging_buyers", "supply_chain_emissions_unverified"],
+    "sources": ["https://echo.epa.gov", "https://www.edf.org/media/walmart-supply-chain-emissions"]
+  },
+  "political": {
+    "summary": "Walmart's PAC has spent over $30 million in federal political contributions over the past decade, with a documented pattern of targeting members of committees overseeing trade and labor regulation. The Walton family — with an estimated combined wealth exceeding $250 billion — is among the largest individual political donors in the United States, with particular spending on school privatization and anti-union legislative efforts. Walmart lobbied successfully against proposed OSHA ergonomic regulations that would have addressed workplace injuries at its distribution centers.",
+    "flags": ["30m_pac_federal_contributions", "walton_family_top_national_donors", "osha_ergonomic_regulation_opposition"],
+    "sources": ["https://www.opensecrets.org/orgs/walmart/summary?id=D000000534"]
+  },
+  "legal": {
+    "summary": "In June 2019, Walmart agreed to pay $282 million to the DOJ and SEC to resolve FCPA violations. The DOJ filed charges against Walmart's Brazilian and Indian subsidiaries. The SEC charged the parent. The conduct involved payments to government officials to obtain permits and approvals in Mexico, Brazil, China, and India over more than a decade. The 2012 New York Times investigation revealed that Walmart's 2005 internal inquiry in Mexico found evidence of $24 million in bribes — and that senior Walmart executives suppressed the findings and dismissed the lead investigator.",
+    "flags": ["282m_fcpa_settlement", "four_country_bribery_program", "internal_investigation_suppressed_2005", "doj_criminal_charges_subsidiaries"],
+    "sources": ["https://www.justice.gov/opa/pr/walmart-inc-and-brazil-based-subsidiary-pay-137-million-resolve-foreign-corrupt-practices-act", "https://www.sec.gov/litigation/litreleases/2019/lr24490.htm", "https://www.nytimes.com/2012/04/22/business/at-walmart-in-mexico-a-bribe-inquiry-silenced.html"]
+  },
+  "tax": {
+    "summary": "Americans for Tax Fairness documented in 2015 that Walmart operated at least 78 subsidiaries and branches in 15 offshore tax haven jurisdictions, enabling it to hold $76 billion in assets offshore. The structure was legal but resulted in lower effective tax rates than equivalent domestic income would generate. Walmart has benefited substantially from accelerated depreciation on distribution center construction and from the 2017 Tax Cuts and Jobs Act. The Walton family's estate planning through trusts has been documented as one of the most extensive in the United States.",
+    "flags": ["78_offshore_subsidiaries_15_tax_havens", "76b_offshore_assets", "walton_estate_planning_documented"],
+    "sources": ["https://americansfortaxfairness.org/walmart-report-executive-summary/"]
+  },
+  "executives": {
+    "summary": "CEO Doug McMillon received approximately $26 million in total compensation in 2023. The Walton family — heirs of founder Sam Walton — retain approximately 46% ownership of Walmart through trusts and holding companies, making them collectively among the wealthiest families in human history. The family's involvement in political spending, charter school promotion, and anti-union legislative efforts represents an extraordinary concentration of economic and political influence traceable to a single retail enterprise. Senior executives who suppressed the Mexico bribery investigation in 2005 were not criminally charged.",
+    "flags": ["walton_family_46pct_ownership", "bribery_investigation_suppressors_not_charged", "ceo_26m_compensation"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "connections": {
+    "summary": "Walmart's supply chain connects it to garment manufacturers across Bangladesh, Cambodia, Vietnam, and other low-wage countries where labor rights organizations have documented systemic violations. Its relationships with major food manufacturers — through its purchasing power — give it leverage to influence ingredient and safety standards throughout the consumer food supply. Walmart Marketplace, its third-party seller platform, connects it to tens of thousands of sellers whose products it does not inspect or verify — creating a product safety responsibility gap that the CPSC has attempted to address.",
+    "flags": ["bangladesh_supply_chain_safety_failures", "purchasing_power_over_food_supply", "marketplace_product_safety_gap"],
+    "sources": ["https://www.cpsc.gov"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former Walmart executives have alleged in litigation that the company's 2005 suppression of the Mexico bribery investigation involved decisions made at the highest levels of corporate leadership — including awareness by then-CEO Lee Scott. The New York Times reported that H. Lee Scott was briefed on the investigation's findings and participated in decisions about how to respond. Walmart has denied that Scott was aware of the decision to suppress. Labor organizers at multiple Walmart stores have alleged that the company uses sophisticated workplace monitoring and employee 'coaching' programs specifically designed to identify and neutralize organizing activity before it results in NLRB petitions.",
+    "flags": ["ceo_bribery_awareness_alleged", "anti_union_monitoring_program_alleged", "investigation_suppression_executive_level_alleged"],
+    "sources": ["https://www.nytimes.com/2012/04/22/business/at-walmart-in-mexico-a-bribe-inquiry-silenced.html"]
+  },
+  "health_record": {
+    "summary": "Walmart Marketplace has been documented by CPSC, investigative journalists, and consumer safety organizations to contain thousands of recalled, counterfeit, or safety-hazardous products. A 2019 investigation found banned children's products and recalled electronics readily available through third-party sellers. Walmart's food operations — through its grocery business serving millions of Americans — have been subject to multiple FDA enforcement actions and product recalls for contamination. Worker injuries at Walmart distribution centers occur at documented rates from ergonomic hazards that OSHA ergonomic standards would have addressed.",
+    "flags": ["marketplace_recalled_products", "fda_food_enforcement_actions", "distribution_center_worker_injury_rates"],
+    "sources": ["https://www.cpsc.gov/Newsroom/News-Releases", "https://usatoday.com/story/money/2019/06/26/recalled-products-still-sold-amazon-walmart-other-sites/1555885001/"]
+  },
+  "alternatives": {
+    "cheaper": ["Local grocery stores and food co-ops — often price-competitive on staples while keeping money in local economies", "Dollar General and Dollar Tree for household goods — lower cost, local employment, not controlled by Walton family interests"],
+    "healthier": ["Farmers markets and community supported agriculture for food — direct producer relationships, no supply chain opacity", "Locally owned hardware and general merchandise stores — relationships with local business owners rather than corporate employment"],
+    "diy": ["Calculate the full community cost of Walmart — academic research consistently shows net job loss and wage suppression in communities where Walmart opens", "Support independent local retail through deliberate purchasing choices — the wage difference between local retail and Walmart employment is documented to affect community economic health", "If you must shop at Walmart, Walmart Marketplace third-party sellers are not Walmart — verify seller reviews and product authenticity independently"]
+  },
+  "timeline": [
+    {"year": 1945, "event": "Sam Walton opens first store in Newport, Arkansas", "severity": "neutral", "source_url": ""},
+    {"year": 2002, "event": "Internal Walmart audits begin flagging suspicious payments in Mexico; findings not escalated", "severity": "high", "source_url": ""},
+    {"year": 2004, "event": "Internal Mexico bribery investigation commissioned; investigators find $24M in bribes to officials", "severity": "critical", "source_url": ""},
+    {"year": 2005, "event": "Senior executives suppress Mexico findings; lead investigator dismissed; DOJ not notified", "severity": "critical", "source_url": ""},
+    {"year": 2012, "event": "New York Times publishes investigation into Walmart Mexico bribery suppression; DOJ opens FCPA investigation", "severity": "critical", "source_url": "https://www.nytimes.com/2012/04/22/business/at-walmart-in-mexico-a-bribe-inquiry-silenced.html"},
+    {"year": 2013, "event": "Rana Plaza collapse kills 1,134 workers; Walmart garments found in rubble; company initially denies connection", "severity": "critical", "source_url": ""},
+    {"year": 2014, "event": "$188M California wage theft settlement covering 187,000 workers for meal and rest break violations", "severity": "high", "source_url": ""},
+    {"year": 2019, "event": "$282M DOJ and SEC FCPA settlement for decade of bribery in four countries", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/walmart-inc-and-brazil-based-subsidiary-pay-137-million-resolve-foreign-corrupt-practices-act"},
+    {"year": 2022, "event": "NLRB complaints filed following Walmart organizing activity; multiple locations involved", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Academic research has documented that Walmart's entry into local markets results in net job loss — wages at Walmart are lower than the wages of the retail jobs it displaces, and local business closures eliminate the multiplier effect of local spending. In communities across the American South and Midwest, Walmart is the only large employer remaining after its entry displaced the local business ecosystem it then failed to replace economically.",
+    "price_illusion": "Walmart's pricing model appears to offer savings to individual consumers. The full economic picture includes: suppressed local wages, reduced local tax revenue from displaced businesses, supply chain manufacturing conditions that externalize labor and safety costs onto workers in Bangladesh and elsewhere, and a return of profits to a family with $250 billion in wealth rather than reinvestment in local communities.",
+    "tax_math": "The Walton family's estate planning through trusts — among the most sophisticated in US history — has been structured to minimize estate tax obligations on their approximately $250 billion in family wealth. The $282 million FCPA settlement for decade-long bribery in four countries is deductible as a business settlement, partially shifting the penalty cost to taxpayers.",
+    "wealth_velocity": "Walmart revenue generated from working-class American consumers flows to the Walton family — which controls 46% of the company — and to institutional shareholders. The Walton family is estimated to receive over $2 billion annually in Walmart dividends. This represents one of the largest upward transfers of wealth from working-class consumer spending in economic history."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Walton family", "how": "$250B+ accumulated wealth; $2B+ annual dividends; 46% ownership with de facto corporate control"},
+      {"group": "Walmart executives who suppressed Mexico investigation", "how": "No criminal charges filed; careers continued; suppression of $24M bribery evidence caused no personal legal consequence"},
+      {"group": "Mexican, Brazilian, Indian, Chinese officials who received bribes", "how": "Approvals and permits obtained through payments; Walmart's investigation of specific officials not publicly disclosed"}
+    ],
+    "who_paid": [
+      {"group": "187,000 California workers", "how": "Systematic denial of legally required meal and rest breaks; settled for $188M"},
+      {"group": "1,134 Rana Plaza workers", "how": "Died in factory collapse supplying Walmart-label garments; Walmart initially denied connection"},
+      {"group": "Communities where Walmart opened", "how": "Net job loss, wage suppression, local business displacement documented by academic research"},
+      {"group": "US taxpayers", "how": "FCPA settlement partially tax-deductible; Walton estate planning reduces inheritance tax obligations"}
+    ],
+    "the_gap": "Walmart found $24 million in bribes in 2005. Senior executives suppressed the investigation and fired the investigator. It took a New York Times investigation seven years later to make it public. The company paid $282 million fourteen years after the suppression. No individual was criminally charged. The family that owns 46% of the company has $250 billion."
+  }
+}

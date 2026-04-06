@@ -1,0 +1,190 @@
+{
+  "brand_name": "Lockheed Martin",
+  "brand_slug": "lockheed-martin",
+  "parent_company": "Lockheed Martin Corporation",
+  "ultimate_parent": "Lockheed Martin Corporation",
+  "subsidiaries": [
+    "Sikorsky Aircraft",
+    "Lockheed Martin Aeronautics",
+    "Lockheed Martin Missiles and Fire Control",
+    "Lockheed Martin Rotary and Mission Systems",
+    "Lockheed Martin Space"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "LOCKHEED MARTIN BILLED THE PENTAGON $37 BILLION FOR THE F-35 BEFORE A SINGLE PLANE WAS COMBAT-READY — THE PROGRAM IS NOW THE MOST EXPENSIVE WEAPONS SYSTEM IN HUMAN HISTORY",
+  "executive_summary": "Lockheed Martin Corporation is the world's largest defense contractor by revenue, receiving approximately $65 billion annually — the majority from the U.S. federal government. Its flagship F-35 Joint Strike Fighter program has become the most expensive weapons acquisition in history, projected at over $1.7 trillion in lifetime costs. The program has faced decades of cost overruns, schedule delays, and unresolved technical deficiencies documented by the Pentagon's own testing office. Lockheed Martin has been cited for overbilling, improper lobbying through revolving-door relationships with DoD officials, and labor violations at multiple facilities. Its products — including missiles, fighter jets, and surveillance systems — have been used in conflicts with documented civilian casualties.",
+  "verdict_tags": [
+    "f35_1_7_trillion_lifetime_cost",
+    "pentagon_cost_overruns_documented",
+    "revolving_door_dod_executives",
+    "cluster_munitions_supplier",
+    "overbilling_settlements",
+    "lobbying_spend_top_defense"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Lockheed Martin has faced NLRB complaints and union disputes at multiple facilities. Workers at the Sikorsky helicopter division have engaged in extended strikes over benefit cuts. The company has faced accusations of retaliating against whistleblowers who raised safety and billing concerns internally. Subcontracted labor at Lockheed facilities — particularly in maintenance and logistics — has faced wage theft allegations in multiple states.",
+    "flags": [
+      "sikorsky_worker_strikes_benefit_cuts",
+      "nlrb_complaints_multiple_facilities",
+      "whistleblower_retaliation_documented",
+      "subcontractor_wage_violations"
+    ],
+    "sources": [
+      "https://www.nlrb.gov/cases-decisions/cases",
+      "https://www.defensenews.com/industry/2022/02/22/sikorsky-workers-ratify-contract-ending-strike/"
+    ]
+  },
+  "environmental": {
+    "summary": "Lockheed Martin facilities have been listed on EPA Superfund sites due to decades of industrial contamination. The company's former Burbank, California plant contaminated groundwater with trichloroethylene (TCE) — a carcinogen — affecting a plume spanning hundreds of acres. Cleanup costs have run into hundreds of millions of dollars. Lockheed Martin's Fort Worth F-35 production facility has faced local air quality complaints.",
+    "flags": [
+      "burbank_tce_groundwater_contamination_superfund",
+      "epa_superfund_multiple_sites",
+      "fort_worth_air_quality_complaints"
+    ],
+    "sources": [
+      "https://www.epa.gov/superfund/lockheed-martin-aeronautics",
+      "https://www.latimes.com/local/california/la-me-lockheed-contamination-20140601-story.html"
+    ]
+  },
+  "political": {
+    "summary": "Lockheed Martin is one of the largest political spenders in the defense sector. It spent $13.2 million on lobbying in 2023. The company benefits from a revolving door with the Pentagon — dozens of former DoD officials and military officers have moved into Lockheed Martin executive or board positions. James Mattis served on the board before becoming Secretary of Defense. The F-35 program was deliberately spread across 45 states to make cancellation politically untenable — a strategy documented in Congressional testimony.",
+    "flags": [
+      "13_2m_lobbying_2023",
+      "revolving_door_mattis_board_member",
+      "f35_congressional_district_strategy",
+      "former_dod_officials_executives"
+    ],
+    "sources": [
+      "https://www.opensecrets.org/orgs/lockheed-martin/lobbying",
+      "https://www.pogo.org/analysis/2023/01/the-defense-department-and-the-revolving-door"
+    ]
+  },
+  "legal": {
+    "summary": "Lockheed Martin has paid over $500 million in False Claims Act settlements since 2000 for overbilling the federal government. In 2008, the company paid $37.9 million to settle allegations that it overcharged the Air Force for aircraft parts. A 2015 settlement covered improper billing on government contracts. The company's export control violations have resulted in State Department fines for unauthorized transfer of technical data to foreign nationals.",
+    "flags": [
+      "500m_plus_false_claims_act_settlements",
+      "37_9m_overcharging_settlement_2008",
+      "state_department_export_control_fines",
+      "overbilling_pattern_documented"
+    ],
+    "sources": [
+      "https://www.justice.gov/opa/pr/lockheed-martin-agrees-pay-37-million-settle-allegations-it-overcharged-air-force",
+      "https://www.pogo.org/database/contractor-misconduct"
+    ]
+  },
+  "tax": {
+    "summary": "Lockheed Martin's effective tax rate has been significantly reduced through accelerated depreciation on defense contracts, R&D tax credits funded by government contracts, and offshore subsidiary structures. The company received approximately $116 million in tax subsidies identified in the Good Jobs First subsidy tracker. Lockheed Martin's pension obligations — largely unfunded — represent a liability that has been shifted through contract pricing back to the federal government.",
+    "flags": [
+      "116m_identified_tax_subsidies",
+      "r_and_d_credits_on_government_funded_research",
+      "pension_liability_contract_pass_through"
+    ],
+    "sources": [
+      "https://subsidytracker.goodjobsfirst.org/prog.php?parent=lockheed-martin",
+      "https://itep.org/corporate-tax-avoidance/"
+    ]
+  },
+  "executives": {
+    "summary": "CEO James Taiclet received $26.3 million in total compensation in 2022. Former executives have cycled between Lockheed Martin and senior DoD positions — a pattern documented repeatedly by the Project On Government Oversight. Marillyn Hewson, former CEO, received over $20 million annually during the peak F-35 cost overrun period. Board members have included former Secretaries of Defense and senior military officials.",
+    "flags": [
+      "taiclet_26_3m_compensation_2022",
+      "revolving_door_board_dod_officials",
+      "hewson_20m_annual_during_overruns"
+    ],
+    "sources": [
+      "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=lockheed-martin",
+      "https://www.pogo.org/analysis/2023/01/the-defense-department-and-the-revolving-door"
+    ]
+  },
+  "connections": {
+    "summary": "Lockheed Martin's F-35 has been sold to 17 countries, embedding the company in NATO alliance politics. The company's Javelin missile system — co-produced with Raytheon — was central to Ukraine's defense. Its HIMARS rocket systems have been used in multiple active conflict zones. Lockheed Martin's Israeli sales include weapons systems used in Gaza. The company's satellite and surveillance systems are embedded in U.S. intelligence community infrastructure.",
+    "flags": [
+      "f35_17_country_sales",
+      "javelin_ukraine_deployment",
+      "israel_weapons_sales_gaza_context",
+      "intelligence_community_satellite_contracts"
+    ],
+    "sources": [
+      "https://www.dsca.mil/major-arms-sales",
+      "https://www.reuters.com/business/aerospace-defense/"
+    ]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The Pentagon's own Director of Operational Test and Evaluation has alleged in annual reports that the F-35 has hundreds of unresolved deficiencies that were deferred rather than fixed — and that combat readiness claims have been overstated. Whistleblowers have alleged that Lockheed Martin pressured quality control inspectors at the F-35 production line to pass aircraft with known defects. Former employees have alleged that billing irregularities on classified programs cannot be audited because the classification shields them from oversight.",
+    "flags": [
+      "dote_f35_deficiencies_deferred_not_fixed",
+      "quality_control_pressure_alleged",
+      "classified_program_billing_audit_shield_alleged"
+    ],
+    "sources": [
+      "https://www.dote.osd.mil/Portals/97/pub/reports/FY2022/navy/2022f35.pdf",
+      "https://www.pogo.org/investigation/2021/04/f-35-still-not-ready-for-combat"
+    ]
+  },
+  "health_record": {
+    "summary": "Lockheed Martin's groundwater contamination at the Burbank facility exposed nearby residents to TCE — a documented carcinogen linked to non-Hodgkin lymphoma, kidney cancer, and liver disease. The contamination plume affected residential areas for decades before full remediation. Workers at Lockheed Martin facilities handling composite materials for aircraft production have faced occupational exposure to known respiratory hazards.",
+    "flags": [
+      "tce_carcinogen_residential_exposure_burbank",
+      "nhl_kidney_cancer_tce_linked",
+      "composite_material_occupational_respiratory_hazard"
+    ],
+    "sources": [
+      "https://www.epa.gov/superfund/health-effects-trichloroethylene",
+      "https://www.latimes.com/local/california/la-me-lockheed-contamination-20140601-story.html"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "As a defense contractor, Lockheed Martin does not sell consumer products. The systemic alternative is congressional oversight reform: independent cost estimation, fixed-price contracts, and enforceable penalty clauses for cost overruns — all of which have been proposed and blocked in part through Lockheed Martin lobbying"
+    ],
+    "healthier": [
+      "For communities near Lockheed Martin facilities: the EPA Superfund site locator identifies contamination areas and cleanup status. Environmental health advocates can access monitoring data through FOIA requests"
+    ],
+    "diy": [
+      "Contact your congressional representative about F-35 cost overrun accountability — the program exists in 45 states by design",
+      "The Project On Government Oversight (POGO) publishes ongoing contractor misconduct database at contractormisconduct.org"
+    ]
+  },
+  "timeline": [
+    { "year": 1912, "event": "Glenn L. Martin Company founded", "severity": "neutral", "source_url": "" },
+    { "year": 1995, "event": "Lockheed Corporation and Martin Marietta merge to form Lockheed Martin", "severity": "neutral", "source_url": "" },
+    { "year": 2001, "event": "Lockheed Martin awarded F-35 Joint Strike Fighter contract — estimated cost $233 billion", "severity": "neutral", "source_url": "" },
+    { "year": 2008, "event": "Pays $37.9 million to settle Air Force overbilling allegations", "severity": "high", "source_url": "https://www.justice.gov/opa/pr/lockheed-martin-agrees-pay-37-million-settle-allegations-it-overcharged-air-force" },
+    { "year": 2015, "event": "F-35 program cost estimate reaches $400 billion — 70% above original projection", "severity": "high", "source_url": "https://www.gao.gov/products/gao-15-364" },
+    { "year": 2015, "event": "Acquires Sikorsky Aircraft from United Technologies for $9 billion", "severity": "neutral", "source_url": "" },
+    { "year": 2019, "event": "Pentagon's testing office documents 873 unresolved software deficiencies on F-35", "severity": "high", "source_url": "https://www.dote.osd.mil" },
+    { "year": 2022, "event": "F-35 lifetime cost projection reaches $1.7 trillion — most expensive weapons program in history", "severity": "critical", "source_url": "https://www.gao.gov/products/gao-22-105995" },
+    { "year": 2023, "event": "F-35 grounded after crash — investigation reveals ongoing structural and software issues", "severity": "high", "source_url": "https://www.defensenews.com" }
+  ],
+  "community_impact": {
+    "displacement": "Lockheed Martin facility closures — including the Burbank plant — left communities with contaminated land requiring decades of remediation, transferring cleanup costs to taxpayers and reducing property values for nearby residents.",
+    "price_illusion": "The F-35's per-unit cost has been presented selectively — flyaway cost versus lifetime sustainment cost differs by a factor of 4 to 5. The true cost is obscured through accounting structures that spread expenditures across decades.",
+    "tax_math": "Lockheed Martin receives the majority of its revenue from federal contracts funded by taxpayers, while simultaneously reducing its tax liability through credits on research performed under those same contracts.",
+    "wealth_velocity": "CEO compensation of $26 million occurs against a backdrop of $65 billion in annual government revenue. The wealth extracted by executives and shareholders is directly funded by defense appropriations — a closed loop between public money and private accumulation."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      "Lockheed Martin shareholders (consistent dividend and buyback program)",
+      "Executive leadership (average $15-26M annual compensation)",
+      "Lobbyists and revolving-door consultants",
+      "Congressional districts with F-35 supply chain presence"
+    ],
+    "who_paid": [
+      "U.S. taxpayers via defense appropriations",
+      "Burbank, CA residents exposed to TCE contamination",
+      "Military personnel flying aircraft with unresolved deficiencies",
+      "Allied nations locked into F-35 sustainment costs"
+    ],
+    "the_gap": "The F-35 program transferred $1.7 trillion in projected public spending to a single contractor over 20+ years while delivering an aircraft the Pentagon's own testing office has never fully certified as combat-ready."
+  }
+}

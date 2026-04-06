@@ -1,0 +1,79 @@
+{
+  "brand_name": "CACI International",
+  "brand_slug": "caci-international",
+  "parent_company": "CACI International Inc.",
+  "ultimate_parent": "CACI International Inc.",
+  "subsidiaries": ["CACI NSS", "CACI Federal", "Six3 Systems (acquired)", "LGS Innovations (acquired)"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "CACI EMPLOYEES WERE PRESENT DURING ABU GHRAIB INTERROGATIONS — THE COMPANY HAS SPENT 20 YEARS IN COURT AVOIDING ACCOUNTABILITY AND CONTINUES TO HOLD MILITARY INTELLIGENCE CONTRACTS",
+  "executive_summary": "CACI International is a U.S. defense and intelligence services contractor generating approximately $6 billion annually. The company provides military intelligence, IT systems, and interrogation support services to the U.S. government. CACI employees were present at Abu Ghraib prison in Iraq during the 2003-2004 period when documented torture and abuse of detainees occurred — abuse that produced the photographs that became a global symbol of U.S. detention practices. CACI has faced litigation for two decades from Abu Ghraib survivors. The company has argued its employees were under military command authority, shielding it from civil liability. CACI continues to hold military intelligence contracts and has expanded through acquisitions.",
+  "verdict_tags": [
+    "abu_ghraib_employee_presence_torture_period",
+    "20_years_survivor_litigation",
+    "military_intelligence_interrogation_contracts",
+    "detainee_abuse_documented_period",
+    "liability_shield_military_command_argument",
+    "continued_cleared_contracts_post_abu_ghraib"
+  ],
+  "concern_flags": { "labor": false, "environmental": false, "political": true, "tax": false, "health": false, "legal": true },
+  "labor": { "summary": "CACI employs approximately 23,000 cleared professionals. Clearance-dependent employment creates labor mobility constraints. The company has faced complaints about working conditions on classified contracts.", "flags": ["clearance_dependent_mobility_constraints"], "sources": [] },
+  "environmental": { "summary": "CACI is primarily an IT and services company with minimal manufacturing environmental footprint.", "flags": [], "sources": [] },
+  "political": {
+    "summary": "CACI spent $3.8 million on lobbying in 2023. The company's presence in military intelligence contracting creates relationships with senior Defense Intelligence Agency, Army intelligence, and CIA officials. Former senior intelligence officials populate CACI's advisory and leadership structure. The Abu Ghraib litigation has not affected CACI's contract eligibility.",
+    "flags": ["3_8m_lobbying_2023", "dia_army_intel_cia_relationships", "abu_ghraib_no_contract_impact", "former_intel_officials_leadership"],
+    "sources": ["https://www.opensecrets.org/orgs/caci-international/lobbying"]
+  },
+  "legal": {
+    "summary": "CACI has been named in civil lawsuits by Abu Ghraib survivors since 2004. The cases have been litigated for two decades across multiple courts. In June 2023, a federal appeals court ruled that Abu Ghraib survivors could proceed with their civil suit against CACI — one of the few cases to survive CACI's legal defenses. CACI has argued that its employees were acting under military command authority and therefore enjoy the same immunity as soldiers. The company has denied that its employees participated in or condoned abuse.",
+    "flags": ["abu_ghraib_civil_suits_20_years", "2023_appeals_court_case_proceeds", "military_command_immunity_defense", "company_denies_employee_participation"],
+    "sources": ["https://www.aclu.org/cases/al-shimari-v-caci", "https://www.reuters.com/legal/abu-ghraib-detainees-can-sue-caci-appeals-court-rules-2023"]
+  },
+  "tax": { "summary": "CACI uses standard IT services company tax structures including R&D credits on classified government-funded technology.", "flags": ["rd_credits_classified_research"], "sources": [] },
+  "executives": {
+    "summary": "CEO John Mengucci received $12.1 million in total compensation in 2022. Former CEO Ken Asbury led the company through significant Abu Ghraib litigation periods while maintaining executive compensation and contract growth.",
+    "flags": ["mengucci_12_1m_compensation_2022", "executive_pay_maintained_through_abu_ghraib_litigation"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=caci"]
+  },
+  "connections": {
+    "summary": "CACI provided interrogation support services at Abu Ghraib through a contract with the U.S. Army's Interior Department. The company holds military intelligence analysis contracts across the DoD and intelligence community. Its Six3 Systems acquisition expanded classified SIGINT capabilities. CACI provides IT and intelligence support in active military theaters.",
+    "flags": ["abu_ghraib_army_interrogation_contract", "military_intelligence_analysis_dod_intel", "six3_classified_sigint_capabilities", "active_theater_support"],
+    "sources": ["https://www.aclu.org/cases/al-shimari-v-caci", "https://www.caci.com"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Abu Ghraib survivor plaintiffs — represented by the ACLU — have alleged that CACI employees directly participated in and supervised abuse of detainees including sleep deprivation, stress positions, and physical assault. Internal U.S. Army investigations documented that civilian contractors were present during abuse incidents. The Taguba Report — a classified U.S. Army investigation — named CACI employees in connection with documented abuse.",
+    "flags": ["caci_employees_abuse_participation_alleged_aclu", "taguba_report_caci_employee_named", "sleep_deprivation_stress_positions_physical_assault_alleged", "army_investigation_contractor_presence_documented"],
+    "sources": ["https://www.aclu.org/cases/al-shimari-v-caci", "https://www.hrw.org/report/2005/02/20/get-it-legal-use-approved-techniques/detainee-abuse-during-operations-enduring"]
+  },
+  "health_record": {
+    "summary": "Abu Ghraib survivors who have pursued civil litigation against CACI have documented lasting psychological and physical trauma from detention and alleged abuse. The detainee abuse at Abu Ghraib — during which CACI employees were contractually present — produced documented trauma in survivors that has been described in court filings and human rights reports.",
+    "flags": ["abu_ghraib_survivor_psychological_physical_trauma", "detainee_abuse_lasting_harm_documented"],
+    "sources": ["https://www.aclu.org/cases/al-shimari-v-caci", "https://www.hrw.org"]
+  },
+  "alternatives": {
+    "cheaper": ["CACI does not sell consumer products. The systemic alternative is prohibition on private contractor provision of interrogation services in military detention facilities — a reform that has been proposed but not enacted"],
+    "healthier": ["The ACLU's Al-Shimari v. CACI case documentation is publicly available and describes the allegations in detail"],
+    "diy": ["Human Rights Watch and the ACLU publish ongoing documentation of contractor accountability for detainee abuse"]
+  },
+  "timeline": [
+    { "year": 1962, "event": "CACI founded as California Analysis Center Inc.", "severity": "neutral", "source_url": "" },
+    { "year": 2003, "event": "CACI employees begin work at Abu Ghraib under U.S. Army contract providing interrogation support", "severity": "high", "source_url": "" },
+    { "year": 2004, "event": "Abu Ghraib abuse photographs published — CACI employee presence during abuse period documented in Army investigations", "severity": "critical", "source_url": "https://www.hrw.org" },
+    { "year": 2004, "event": "ACLU and survivor plaintiffs file civil suit against CACI", "severity": "high", "source_url": "https://www.aclu.org/cases/al-shimari-v-caci" },
+    { "year": 2008, "event": "CACI acquires Six3 Systems — expands classified SIGINT capabilities", "severity": "neutral", "source_url": "" },
+    { "year": 2023, "event": "Federal appeals court rules Abu Ghraib survivors can proceed with civil suit against CACI", "severity": "high", "source_url": "https://www.reuters.com/legal/abu-ghraib-detainees-can-sue-caci-appeals-court-rules-2023" },
+    { "year": 2024, "event": "Case proceeds toward trial — 20 years after original filing", "severity": "high", "source_url": "" }
+  ],
+  "community_impact": {
+    "displacement": "CACI's primary community impact is through its role in military intelligence contracting and the documented Abu Ghraib period, not through facility displacement.",
+    "price_illusion": "CACI presents its interrogation support services as professional intelligence assistance operating within legal boundaries. The Taguba Report and 20 years of litigation tell a different story about what those services involved.",
+    "tax_math": "CACI collects $6 billion annually in government contracts while using R&D credits on classified research funded by those same contracts.",
+    "wealth_velocity": "CEO compensation exceeds $12 million annually at a company that has spent 20 years litigating against Abu Ghraib torture survivors while maintaining full access to military intelligence contracts."
+  },
+  "cost_absorption": {
+    "who_benefited": ["CACI shareholders", "Executive leadership", "U.S. Army contracting officials who designed the interrogation support contract structure"],
+    "who_paid": ["Abu Ghraib detainees subjected to documented abuse", "Abu Ghraib survivors pursuing 20 years of litigation", "U.S. global standing damaged by Abu Ghraib photographs"],
+    "the_gap": "CACI employees were contractually present at Abu Ghraib during documented torture. The company has spent 20 years in litigation avoiding accountability. It has never lost its federal contract eligibility."
+  }
+}

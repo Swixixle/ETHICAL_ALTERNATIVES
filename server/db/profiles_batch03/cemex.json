@@ -1,0 +1,90 @@
+{
+  "brand_name": "Cemex",
+  "brand_slug": "cemex",
+  "parent_company": "CEMEX, S.A.B. de C.V.",
+  "ultimate_parent": "CEMEX, S.A.B. de C.V.",
+  "subsidiaries": ["CEMEX USA", "CEMEX UK", "CEMEX Germany", "CEMEX Colombia", "CEMEX Philippines"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "CEMEX PAID A FARC-DESIGNATED TERRORIST ORGANIZATION $9 MILLION TO KEEP ITS COLOMBIA FACTORIES RUNNING — THEN PAID $1.69 BILLION TO SETTLE IT",
+  "executive_summary": "CEMEX is the world's third-largest cement producer, headquartered in Monterrey, Mexico, operating in more than 50 countries. In September 2024, CEMEX agreed to pay $1.69 billion to resolve DOJ FCPA and US Treasury OFAC investigations — one of the largest combined enforcement actions in both programs. The underlying conduct: CEMEX's Colombian subsidiary made approximately $9 million in payments to guerrilla and paramilitary organizations designated as terrorist organizations by the US government — including the FARC and the AUC (United Self-Defense Forces of Colombia) — between 2010 and 2018 to protect its operations and employees. CEMEX also paid bribes to Colombian government officials and engaged in bribery in other countries. The company did not disclose these payments to US regulators for years, constituting separate securities violations.",
+  "verdict_tags": ["1_69b_doj_ofac_settlement", "farc_payments_9_million", "terrorist_organization_payments", "fcpa_colombia_bribery", "ofac_sanctions_violations", "securities_disclosure_failure"],
+  "concern_flags": {"labor": false, "environmental": true, "political": true, "tax": true, "health": false, "legal": true},
+  "labor": {
+    "summary": "CEMEX employs approximately 40,000 people globally. The context for the FARC and paramilitary payments was the protection of workers and facilities operating in conflict zones in Colombia — a genuinely difficult operating environment. However, paying designated terrorist organizations to protect operations is the documented corporate response, regardless of the security rationale. No major separate US labor enforcement actions have been identified.",
+    "flags": ["conflict_zone_operations_worker_protection_justification", "terrorist_organization_payment_as_security_measure"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Cement manufacturing is one of the most carbon-intensive industrial processes — producing approximately 8% of global CO2 emissions. CEMEX has committed to net-zero concrete by 2050 and has invested in alternative cement formulations. EPA enforcement records show violations at CEMEX's US cement plants for Clean Air Act particulate and nitrogen oxide emissions. Quarrying operations create significant landscape alteration and dust impacts in communities near cement plants.",
+    "flags": ["cement_manufacturing_8pct_global_co2", "clean_air_act_violations_us_plants", "quarrying_community_environmental_impact"],
+    "sources": ["https://echo.epa.gov/"]
+  },
+  "political": {
+    "summary": "CEMEX's payments to FARC and AUC in Colombia represent direct financial support to US-designated terrorist organizations — organizations responsible for bombings, kidnappings, assassinations, and drug trafficking that destabilized Colombia for decades. The OFAC sanctions violations are the most serious legal dimension: US companies are prohibited from transacting with OFAC-designated entities regardless of business justification. CEMEX made these payments over eight years while operating as a US-listed company subject to US securities law.",
+    "flags": ["farc_auc_us_designated_terrorist_organization_payments", "ofac_sanctions_violations_eight_years", "listed_company_continuing_violations"],
+    "sources": ["https://www.justice.gov/opa/pr/cemex-agrees-pay-169-billion-resolve-foreign-corrupt-practices-act-violations-and-sanctions"]
+  },
+  "legal": {
+    "summary": "September 2024: CEMEX SAB de CV agreed to pay $1.69 billion to resolve DOJ FCPA charges and OFAC sanctions violations. The DOJ portion covered FCPA violations for bribing Colombian government officials. The OFAC portion covered payments to FARC and AUC — both designated Foreign Terrorist Organizations under US law. CEMEX's Colombian subsidiary pled guilty to criminal charges. This settlement is one of the largest combined FCPA/OFAC actions in history. The securities fraud component — failing to disclose material legal violations to investors — was addressed in the settlement terms.",
+    "flags": ["1_69b_combined_fcpa_ofac_settlement", "colombian_subsidiary_criminal_guilty_plea", "farc_auc_foreign_terrorist_organization_payments", "securities_disclosure_failure_parallel"],
+    "sources": ["https://www.justice.gov/opa/pr/cemex-agrees-pay-169-billion-resolve-foreign-corrupt-practices-act-violations-and-sanctions"]
+  },
+  "tax": {
+    "summary": "CEMEX has historically used aggressive tax structures including offshore vehicles in the Netherlands and Luxembourg to manage its global tax position. The company's 2008-2009 financial crisis — driven by its aggressive debt-fueled acquisitions including Rinker Group in Australia — required emergency debt restructuring. Transfer pricing between its production countries (Mexico, Colombia) and trading entities in lower-tax jurisdictions has been a documented concern for tax authorities in multiple countries.",
+    "flags": ["netherlands_luxembourg_offshore_structures", "transfer_pricing_concerns_multiple_countries", "debt_crisis_2008_2009_acquisitions"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Fernando González has led CEMEX since 2014 through the FARC payment period and the subsequent investigation and settlement. The company's senior leadership in Colombia during the period of the payments included executives who made operational decisions about security in conflict zones — decisions that ultimately resulted in payments to designated terrorist organizations. CEMEX has stated it self-reported aspects of the conduct to US authorities — a factor that may have influenced the settlement terms.",
+    "flags": ["ceo_leadership_during_payment_period_and_settlement", "self_reporting_factor_in_settlement"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "CEMEX's Colombia operations connected it to one of the most documented corporate security-terrorism payment ecosystems in Latin American business history — a pattern of multinational companies making payments to armed groups that Colombian and US investigations have also found at Chiquita Brands (bananas), drummaker Drummond (coal), and others. CEMEX's global cement operations connect it to construction industries in 50 countries — infrastructure that shapes how cities are built, how carbon is emitted, and how local procurement operates.",
+    "flags": ["colombia_corporate_terrorist_payment_pattern_chiquita_drummond", "50_country_construction_industry_leverage"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former CEMEX employees and Colombian security researchers have alleged that the payments to armed groups were not simply passive extortion — that CEMEX actively negotiated terms with FARC and AUC commanders for different levels of 'protection service,' suggesting a more transactional relationship than pure victimhood. Securities class action plaintiffs have alleged that CEMEX's failure to disclose the payments to investors for years while continuing to issue public financial statements constituted deliberate concealment rather than inadvertent omission.",
+    "flags": ["negotiated_terms_with_armed_groups_alleged", "active_transactional_relationship_not_passive_extortion_alleged", "deliberate_concealment_from_investors_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Cement manufacturing creates significant particulate matter and nitrogen oxide pollution that is associated with respiratory disease in communities near cement plants. EPA enforcement records show CEMEX US facilities have been cited for Clean Air Act violations. The FARC and AUC organizations whose operations CEMEX payments funded are responsible for documented mass atrocities — bombings, kidnappings, massacres — against Colombian civilian communities. While CEMEX's payments were framed as protective, the organizations receiving them perpetrated documented violence against other communities.",
+    "flags": ["cement_particulate_respiratory_community_impact", "farc_auc_civilian_atrocities_organizations_funded"],
+    "sources": ["https://echo.epa.gov/"]
+  },
+  "alternatives": {
+    "cheaper": ["Cement is primarily a B2B commodity — consumers purchasing concrete products choose through contractors and builders", "US-produced cement from companies not under DOJ enforcement action: Vulcan Materials, Martin Marietta, Eagle Materials"],
+    "healthier": ["Supplementary cementitious materials (fly ash, slag, silica fume) reduce cement content in concrete — lower carbon, equivalent or better performance", "Geopolymer concrete — alternative binding agent that can reduce cement-related CO2 by up to 80% in some formulations"],
+    "diy": ["If you are a construction professional: specify cement supplier to your contractor — CEMEX's market position varies by region; alternatives exist in most major US markets", "If you are an investor: the $1.69B settlement was disclosed in September 2024 — review CEMEX's compliance program disclosures for evidence that systemic change has occurred beyond settlement terms"]
+  },
+  "timeline": [
+    {"year": 1906, "event": "Cementos Hidalgo founded in Monterrey, Mexico — CEMEX's original entity", "severity": "neutral", "source_url": ""},
+    {"year": 1992, "event": "CEMEX expands internationally; acquires Spain's Valenciana and La Union", "severity": "neutral", "source_url": ""},
+    {"year": 2007, "event": "CEMEX acquires Rinker Group for $14.2B — largest cement deal; debt-financed acquisition triggers later crisis", "severity": "neutral", "source_url": ""},
+    {"year": 2010, "event": "Estimated beginning of FARC and AUC payments in Colombia per DOJ investigation", "severity": "critical", "source_url": ""},
+    {"year": 2018, "event": "Estimated end of Colombia terrorist organization payments per DOJ findings", "severity": "critical", "source_url": ""},
+    {"year": 2024, "event": "September: $1.69B combined DOJ FCPA and OFAC settlement; Colombian subsidiary criminal guilty plea", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/cemex-agrees-pay-169-billion-resolve-foreign-corrupt-practices-act-violations-and-sanctions"}
+  ],
+  "community_impact": {
+    "displacement": "Colombian communities in conflict zones — who were the targets of FARC and AUC violence — were effectively surrounded by an operating environment in which CEMEX (and documented peers) were funding the armed groups threatening them. The payments kept CEMEX's operations running; they did not protect the surrounding communities from the same armed groups.",
+    "price_illusion": "CEMEX's cement prices reflect production costs that for eight years included payments to designated terrorist organizations. US investors in CEMEX's debt and equity funded operations that were conducting OFAC violations without disclosure for the same period. The cost of the $1.69 billion settlement will affect CEMEX's financial capacity for years — ultimately passed through in prices and reduced investment.",
+    "tax_math": "CEMEX's payments to FARC and AUC were business expenses in Colombia that reduced taxable income. Payments to designated terrorist organizations were simultaneously tax-deductible business costs and OFAC sanctions violations — a remarkable dual legal status. The settlement is substantially tax-deductible as a business settlement.",
+    "wealth_velocity": "CEMEX's Mexican headquarters and shareholder base concentrates the economic returns from cement operations in 50 countries. The Colombian communities near CEMEX plants absorbed both the environmental impact of cement manufacturing and the security environment funded by CEMEX's payments to armed groups."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "CEMEX shareholders", "how": "Eight years of continued operations in Colombia funded by payments that kept production running; operations that would have otherwise been disrupted"},
+      {"group": "FARC and AUC commanders who received payments", "how": "$9M in payments to designated terrorist organizations; funding for armed groups responsible for documented civilian atrocities"}
+    ],
+    "who_paid": [
+      {"group": "Colombian civilian communities targeted by FARC and AUC", "how": "The same organizations receiving CEMEX payments conducted bombings, kidnappings, and massacres against Colombian communities"},
+      {"group": "US investors in CEMEX securities", "how": "Material legal violations — OFAC sanctions violations — not disclosed for years while investing in the company's debt and equity"},
+      {"group": "US government and competing companies", "how": "CEMEX's Colombia operations competed against companies not paying terrorist organizations; OFAC violations represent illegal transactions under US law"}
+    ],
+    "the_gap": "CEMEX paid $9 million to FARC and AUC — both US-designated terrorist organizations — over eight years while listed on US exchanges and subject to US law. The same organizations receiving the payments were conducting documented atrocities against Colombian civilians. CEMEX paid $1.69 billion to settle. The Colombian subsidiary pled guilty. No senior executive was personally charged."
+  }
+}
