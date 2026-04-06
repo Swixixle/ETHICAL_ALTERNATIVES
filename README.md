@@ -2,11 +2,29 @@
 
 **Photograph a product. Tap any item. Get a full corporate investigation record and verified local alternatives.**
 
+<p align="center">
+  <img
+    src="docs/screenshots/hero-coca-cola-investigation.png"
+    alt="EthicalAlt desktop: live Coca-Cola investigation with alternatives sidebar, sources indexed, and verdict tags"
+    width="1280"
+  />
+</p>
+<p align="center"><em>Production build — tap flow with full investigation and local alternatives.</em></p>
+
 **Current status:** Functional MVP — 90+ profiled brands, live AI investigation pipeline with three-model corroboration layer, civic witness and worker registries operational. Pre-user acquisition phase.
 
 Live at [url]
 
 EthicalAlt is a mobile-first web app that turns your camera into a conscience. Point it at anything on a shelf, in a store window, or in your home — tap the brand — and receive a structured investigation of that company's environmental record, labor practices, political spending, and documented controversies, plus verified independent alternatives sourced from Etsy, local sellers, and nearby businesses.
+
+<p align="center">
+  <img
+    src="docs/screenshots/mcdonalds-happy-meal-the-record.png"
+    alt="EthicalAlt desktop: tall capture of McDonald's Happy Meal with THE RECORD grid of issue tags and high-confidence brand match"
+    width="1280"
+  />
+</p>
+<p align="center"><em>Local dev — vision match, curated record tags, and source mix (Etsy, investigation, Overpass).</em></p>
 
 ---
 
