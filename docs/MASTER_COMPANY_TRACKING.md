@@ -1,12 +1,15 @@
 # EthicalAlt — Master Company Tracking List
+
+**Hand-authored batch folders** (for `import_all_profiles.mjs` / `import_profiles_from_dir.mjs`): see `server/db/profileBatchManifest.mjs`.
+
 ## Last updated: April 6, 2026
-## Total profiles complete: 112 | Remaining: ~430+
+## Total profiles complete: 137 | Remaining: ~405+
 
 Legend: ✅ = profile complete | ⬜ = not yet done
 
 ---
 
-## COMPLETE (112)
+## COMPLETE (137)
 
 From existing DB (pre-today):
 7-eleven ✅ | alphabet/google ✅ | altria ✅ | amazon ✅ | apple ✅ | ascension ✅ | att ✅ | bank-of-america ✅ | bat-reynolds ✅ | bayer-monsanto ✅ | ben-jerrys ✅ | bp ✅ | burger-king ✅ | caesars-entertainment ✅ | cardinal-health ✅ | cargill ✅ | chevron ✅ | chipotle ✅ | cigna ✅ | circle-k ✅ | coca-cola ✅ | comcast ✅ | community-health-systems ✅ | cotopaxi ✅ | cvs-health ✅ | darden-restaurants ✅ | davita ✅ | disney ✅ | dollar-general ✅ | dominos ✅ | draftkings ✅ | eileen-fisher ✅ | eli-lilly ✅ | exxonmobil ✅ | fanduel ✅ | ford ✅ | gap ✅ | general-motors ✅ | goldman-sachs ✅ | hca-healthcare ✅ | high-5-games ✅ | jpmorgan-chase ✅ | koch-industries ✅ | kraft-heinz ✅ | kroger ✅ | las-vegas-sands ✅ | linkedin ✅ | lvmh ✅ | mars ✅ | mcdonalds ✅ | mckesson ✅ | merck ✅ | meta ✅ | mgm-resorts ✅ | microsoft ✅ | netflix ✅ | nike ✅ | patagonia ✅ | penn-entertainment ✅ | pfizer ✅ | philip-morris ✅ | philips-healthcare ✅ | pilot-flying-j ✅ | pinterest ✅ | pvh-corp ✅ | reddit ✅ | rei ✅ | shein ✅ | shell ✅ | snapchat ✅ | spotify ✅ | stake-us ✅ | starbucks ✅ | steward-health-care ✅ | subway ✅ | sweepstakes-casinos-sector ✅ | sysco ✅ | target ✅ | tesla ✅ | tiktok-bytedance ✅ | toyota ✅ | twitch ✅ | twitter-x ✅ | uber ✅ | unilever ✅ | unitedhealth ✅ | verizon ✅ | vgw-holdings ✅ | waffle-house ✅ | wells-fargo ✅ | wendys ✅ | youtube ✅ | yum-brands ✅
@@ -19,6 +22,14 @@ vale ✅ | siemens ✅ | dji ✅ | primark ✅ | tim-hortons ✅ | cemex ✅ | b
 
 Batch 04 (Apr 6):
 adidas ✅ | ab-inbev ✅ | foxconn ✅ | inditex ✅ | glaxosmithkline ✅ | huawei ✅ | tesco ✅ | novartis ✅ | pernod-ricard ✅ | astrazeneca ✅
+
+Batch 05 (Apr 6):
+accenture-federal ✅ | bechtel ✅ | corecivic ✅ | dxc-technology ✅ | fluor ✅ | g4s ✅ | geo-group ✅ | ibm-federal ✅ | kbr ✅ | mantech ✅ | maximus ✅ | mckinsey ✅ | parsons ✅ | peraton ✅ | serco ✅
+
+Batch 06 (Apr 6):
+volkswagen-group ✅ | hsbc ✅ | deutsche-bank ✅ | airbnb ✅ | cencora ✅ | fresenius-medical-care ✅ | stellantis ✅ | dollar-tree ✅ | lyft ✅ | barclays ✅
+
+**Importer:** Canonical folder list for hand-authored batches is `server/db/profileBatchManifest.mjs` (keep this doc aligned). `import_all_profiles.mjs` imports legacy `profiles_v*` then every folder in that manifest.
 
 ---
 
@@ -36,14 +47,12 @@ adidas ✅ | ab-inbev ✅ | foxconn ✅ | inditex ✅ | glaxosmithkline ✅ | hu
 ⬜ aero (Nestlé)
 ⬜ after-eight (Nestlé)
 ⬜ aga
-⬜ airbnb
 ⬜ aiways
 ⬜ albertsons
 ⬜ aldi-nord
 ⬜ aldi-sud
 ⬜ aldi-uk
 ⬜ alexander-mcqueen (Kering)
-⬜ alfa-romeo (Stellantis)
 ⬜ allergan (AbbVie)
 ⬜ alpine (Renault)
 ⬜ alteogen
@@ -78,7 +87,6 @@ adidas ✅ | ab-inbev ✅ | foxconn ✅ | inditex ✅ | glaxosmithkline ✅ | hu
 ⬜ banco-sabadell
 ⬜ bankinter
 ⬜ barcel (Grupo Bimbo)
-⬜ barclays
 ⬜ bbva
 ⬜ bd-becton-dickinson
 ⬜ beauty-bay
@@ -86,7 +94,6 @@ adidas ✅ | ab-inbev ✅ | foxconn ✅ | inditex ✅ | glaxosmithkline ✅ | hu
 ⬜ beko (Arçelik)
 ⬜ bel-group
 ⬜ belling
-⬜ bentley (Volkswagen)
 ⬜ bershka (Inditex) — use inditex profile
 ⬜ best-buy
 ⬜ bimbo-grupo-bimbo
@@ -110,7 +117,6 @@ adidas ✅ | ab-inbev ✅ | foxconn ✅ | inditex ✅ | glaxosmithkline ✅ | hu
 ⬜ bristol-myers-squibb
 ⬜ britvic
 ⬜ budweiser (AB InBev) — use ab-inbev profile
-⬜ bugatti (Volkswagen)
 ⬜ burton
 ⬜ caffe-nero
 ⬜ caixabank
@@ -122,7 +128,6 @@ adidas ✅ | ab-inbev ✅ | foxconn ✅ | inditex ✅ | glaxosmithkline ✅ | hu
 ⬜ cath-kidston
 ⬜ ceat
 ⬜ celltrion
-⬜ cencora
 ⬜ centene-ambetter
 ⬜ certina (Swatch)
 ⬜ changan
@@ -131,7 +136,6 @@ adidas ✅ | ab-inbev ✅ | foxconn ✅ | inditex ✅ | glaxosmithkline ✅ | hu
 ⬜ chevron-phillips-chemical
 ⬜ cif (Unilever)
 ⬜ citigroup
-⬜ citroen (Stellantis) — use stellantis
 ⬜ cloetta
 ⬜ co-op
 ⬜ commonwealth-spirit (CommonSpirit Health)
@@ -143,10 +147,8 @@ adidas ✅ | ab-inbev ✅ | foxconn ✅ | inditex ✅ | glaxosmithkline ✅ | hu
 ⬜ costco
 ⬜ danone
 ⬜ day-lewis
-⬜ deutsche-bank
 ⬜ diesel
 ⬜ dm-drogerie
-⬜ dollar-tree
 ⬜ dollarama
 ⬜ doordash
 ⬜ douwe-egberts (JDE Peet's)
@@ -162,8 +164,6 @@ adidas ✅ | ab-inbev ✅ | foxconn ✅ | inditex ✅ | glaxosmithkline ✅ | hu
 ⬜ ferrari
 ⬜ fonterra
 ⬜ forever-21
-⬜ foxconn ✅
-⬜ fresenius-medical-care
 ⬜ gac-group
 ⬜ ge-healthcare
 ⬜ geely
@@ -177,13 +177,11 @@ adidas ✅ | ab-inbev ✅ | foxconn ✅ | inditex ✅ | glaxosmithkline ✅ | hu
 ⬜ haribo
 ⬜ home-depot
 ⬜ honor (Huawei spinoff) — use huawei profile
-⬜ hsbc
 ⬜ hugo-boss
 ⬜ humana
 ⬜ hyundai-mobis
 ⬜ iberdrola
 ⬜ illycaffe
-⬜ inditex ✅
 ⬜ innocent-drinks (Coca-Cola)
 ⬜ instacart
 ⬜ john-lewis
@@ -197,7 +195,6 @@ adidas ✅ | ab-inbev ✅ | foxconn ✅ | inditex ✅ | glaxosmithkline ✅ | hu
 ⬜ kumho
 ⬜ lacoste
 ⬜ lactalis
-⬜ lamborghini (Volkswagen)
 ⬜ lavazza
 ⬜ lawson
 ⬜ lenovo
@@ -208,11 +205,9 @@ adidas ✅ | ab-inbev ✅ | foxconn ✅ | inditex ✅ | glaxosmithkline ✅ | hu
 ⬜ loblaw
 ⬜ lowe's
 ⬜ lush
-⬜ lyft
 ⬜ macys
 ⬜ mango
 ⬜ marks-and-spencer
-⬜ maserati (Stellantis)
 ⬜ mediatek
 ⬜ medtronic
 ⬜ meijer
@@ -229,14 +224,11 @@ adidas ✅ | ab-inbev ✅ | foxconn ✅ | inditex ✅ | glaxosmithkline ✅ | hu
 ⬜ nexen
 ⬜ next
 ⬜ nio
-⬜ novartis ✅
 ⬜ occidental-petroleum
 ⬜ oppo
 ⬜ patek-philippe (Patek Philippe)
 ⬜ pegatron
-⬜ pernod-ricard ✅
 ⬜ petrobras
-⬜ peugeot (Stellantis)
 ⬜ pirelli
 ⬜ polestar (Geely)
 ⬜ pret-a-manger
@@ -259,7 +251,6 @@ adidas ✅ | ab-inbev ✅ | foxconn ✅ | inditex ✅ | glaxosmithkline ✅ | hu
 ⬜ shell ✅ (already in DB)
 ⬜ sk-innovation
 ⬜ sobeys
-⬜ stellantis
 ⬜ storck
 ⬜ stryker
 ⬜ superdry
@@ -268,7 +259,6 @@ adidas ✅ | ab-inbev ✅ | foxconn ✅ | inditex ✅ | glaxosmithkline ✅ | hu
 ⬜ tcl
 ⬜ td-bank
 ⬜ tenet-healthcare ✅ (already in DB)
-⬜ tesco ✅
 ⬜ teva-pharmaceuticals
 ⬜ the-body-shop
 ⬜ thg-hut-group
@@ -307,5 +297,5 @@ Some master list entries are brands, not companies — they should resolve to a 
 - Calvin Klein, Tommy Hilfiger → pvh-corp (done)
 - Sephora, TAG Heuer → lvmh (done)
 - Certina, Blancpain, Longines, Omega, Tissot → swatch-group (separate profile needed)
-- Lamborghini, Bugatti, Bentley, Škoda, SEAT, Cupra → volkswagen-group (separate profile needed)
-- Alfa Romeo, Citroën, Peugeot, Vauxhall, Opel, Maserati → stellantis (separate profile needed)
+- Lamborghini, Bugatti, Bentley, Škoda, SEAT → volkswagen-group ✅ (profile + `brand_aliases.json` tap routing)
+- Alfa Romeo, Citroën, Peugeot, Vauxhall, Opel, Maserati, Jeep, Ram, Dodge, Fiat… → stellantis ✅ (same)
