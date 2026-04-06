@@ -1,0 +1,95 @@
+{
+  "brand_name": "Barclays",
+  "brand_slug": "barclays",
+  "parent_company": "Barclays PLC",
+  "ultimate_parent": "Barclays PLC",
+  "subsidiaries": ["Barclays Bank UK", "Barclays US Consumer Bank", "Barclays Investment Bank", "Barclaycard"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "BARCLAYS PAID $361 MILLION FOR MANIPULATING HOW MUCH MONEY IT WAS RAISING DURING THE 2008 CRISIS — THEN PAID $2.4 BILLION FOR MORTGAGE SECURITIES FRAUD — THEN BECAME EUROPE'S LARGEST FOSSIL FUEL FINANCIER",
+  "executive_summary": "Barclays PLC is the UK's third-largest bank by assets and one of the world's largest investment banks. Barclays paid $361 million to the DOJ in 2016 to resolve allegations that it manipulated the price of its own securities during a 2008 fundraising from Qatar and Abu Dhabi — payments made to Qatar investors that US prosecutors alleged were disguised as fees but were in fact improper inducements to secure the capital that allowed Barclays to avoid a UK government bailout. Barclays paid $2 billion to the DOJ in 2016 for mortgage-backed securities fraud. The bank was the first major bank fined for LIBOR manipulation in 2012 — paying $290 million to US and UK regulators. Rainforest Action Network's Banking on Climate Chaos report has consistently ranked Barclays as the largest European financier of fossil fuel expansion globally, having provided approximately $167 billion in fossil fuel financing since the Paris Agreement was signed in 2015.",
+  "verdict_tags": ["361m_qatar_securities_manipulation", "2b_mortgage_securities_fraud", "290m_libor_first_major_bank_fined", "167b_fossil_fuel_financing_since_paris", "largest_european_fossil_fuel_financier_ran", "qatargate_uk_sfo_investigation"],
+  "concern_flags": {"labor": false, "environmental": true, "political": true, "tax": true, "health": false, "legal": true},
+  "labor": {
+    "summary": "Barclays employs approximately 83,000 people globally. The bank has conducted multiple rounds of significant workforce reductions in its investment banking and retail operations. No major documented systemic labor violations comparable to its legal record have been identified as a primary concern.",
+    "flags": ["repeated_investment_banking_retail_restructuring"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Rainforest Action Network's annual Banking on Climate Chaos report has ranked Barclays as Europe's largest fossil fuel financier every year since the report's inception — providing approximately $167 billion in fossil fuel financing from 2016 through 2023. This includes financing for coal, oil, gas, and pipeline projects including major liquefied natural gas expansion projects in the United States and internationally. Barclays has committed to net zero by 2050 and has announced policies to reduce financing for coal and some oil and gas sectors. ShareAction and other investor advocacy organizations have consistently found Barclays's climate commitments inadequate relative to the Paris Agreement targets.",
+    "flags": ["167b_fossil_fuel_since_paris_2016_2023", "largest_european_fossil_fuel_financier_annual", "lng_expansion_financing", "net_zero_commitment_shareaction_inadequate_finding"],
+    "sources": ["https://www.ran.org/bankingonclimatchaos2024/"]
+  },
+  "political": {
+    "summary": "The Qatar fundraising case — in which Barclays avoided a UK government bailout during the 2008 financial crisis by raising capital from Qatar's sovereign wealth fund through arrangements prosecutors alleged involved improper payments — was investigated by the UK Serious Fraud Office. The SFO brought criminal charges against Barclays and four executives in 2017. The criminal cases against the individual executives were dropped following judicial rulings about the SFO's powers; the case against Barclays itself was dropped in 2020 after the Court of Appeal ruled the SFO's witness interview procedures were improper. The US DOJ civil resolution remained.",
+    "flags": ["sfo_criminal_charges_four_executives_dropped", "sfo_barclays_charges_dropped_2020_procedural", "uk_bailout_avoidance_qatar_fundraising_context"],
+    "sources": ["https://www.theguardian.com/business/2017/jun/20/barclays-charged-with-fraud-over-2008-fundraising"]
+  },
+  "legal": {
+    "summary": "June 2012: Barclays became the first major bank fined for LIBOR manipulation — $290 million to the CFTC, DOJ, and UK FCA. CEO Bob Diamond resigned following the settlement. June 2016: Barclays paid $100 million to 44 US states for LIBOR-related conduct. March 2022: Barclays agreed to pay $361 million to the DOJ to resolve allegations it made undisclosed improper payments to Qatari investors who provided emergency capital during the 2008 crisis. August 2016: Barclays agreed to pay $2 billion to the DOJ for selling toxic mortgage-backed securities before the 2008 financial crisis. Total US regulatory settlements this decade exceed $2.5 billion.",
+    "flags": ["290m_libor_first_major_bank", "361m_qatar_improper_payments", "2b_mortgage_securities", "2_5b_total_us_settlements_decade"],
+    "sources": ["https://www.justice.gov/opa/pr/department-justice-announces-2-billion-resolution-barclays", "https://www.cftc.gov/PressRoom/PressReleases/pr6289-12"]
+  },
+  "tax": {
+    "summary": "Barclays operates through complex international structures that have been the subject of UK and EU tax authority scrutiny. In 2012, Barclays was forced to disclose two tax avoidance schemes after HMRC challenged them — paying approximately £500 million in backdated taxes and penalties. The schemes involved structured financial transactions designed to generate artificial tax losses. HMRC introduced specific legislation to counteract the schemes. Barclays has faced multiple other HMRC challenges on tax avoidance arrangements over the past decade.",
+    "flags": ["500m_hmrc_backdated_taxes_penalties_2012", "hmrc_legislation_counteract_barclays_schemes", "multiple_hmrc_challenges_decade"],
+    "sources": ["https://www.theguardian.com/business/2012/feb/28/barclays-tax-avoidance-500m"]
+  },
+  "executives": {
+    "summary": "CEO Bob Diamond resigned in July 2012 following the LIBOR fine — the most significant UK executive departure for a bank scandal at the time. His departure was preceded by pressure from the Bank of England Governor and the UK Chancellor. Current CEO CS Venkatakrishnan has led Barclays through the Qatar fundraising settlement and ongoing climate advocacy pressure. No Barclays executive was criminally convicted in any of the major settlements — the SFO's individual cases were dropped on procedural grounds.",
+    "flags": ["diamond_resignation_bank_england_chancellor_pressure", "no_executive_conviction_despite_sfo_charges", "sfo_individual_cases_dropped_procedural"],
+    "sources": ["https://www.theguardian.com/business/2012/jul/03/bob-diamond-resigns-barclays-ceo"]
+  },
+  "connections": {
+    "summary": "Barclays' LIBOR manipulation was part of an industry-wide scandal that implicated Deutsche Bank, UBS, Citigroup, JPMorgan Chase, and others — collectively paying over $9 billion in LIBOR-related fines globally. Barclays was first and its settlement established the template for others. Its fossil fuel financing connects it to major oil and gas companies including Shell, TotalEnergies, BP, and US LNG exporters — providing the capital for fossil fuel expansion that climate scientists document as incompatible with the Paris Agreement targets.",
+    "flags": ["libor_industry_wide_pattern_first_settled", "shell_total_bp_financing_climate_paris_incompatible", "lng_us_expansion_financing"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The SFO's criminal charges — brought against Barclays and four executives before being dropped — alleged that the Qatari payments were structured as 'advisory service agreements' for services never actually rendered, as a mechanism to disguise what were in substance improper payments for the emergency capital. Barclays has denied the characterization of the payments as improper. ShareAction and other shareholder advocacy organizations have alleged that Barclays's fossil fuel financing commitments are structured to generate favorable press coverage while maintaining financing that is incompatible with limiting global warming to 1.5°C as documented in IEA Net Zero modeling.",
+    "flags": ["qatar_advisory_agreements_for_unrendered_services_alleged", "fossil_fuel_commitments_paris_incompatible_shareaction_alleged"],
+    "sources": ["https://www.theguardian.com/business/2017/jun/20/barclays-charged-with-fraud-over-2008-fundraising"]
+  },
+  "health_record": {
+    "summary": "Barclays's fossil fuel financing — $167 billion since the Paris Agreement — provides the capital for energy infrastructure that climate science documents will contribute to global warming beyond the 1.5°C target. The health consequences of climate change — heat-related illness and death, air quality degradation from fossil fuel combustion, vector-borne disease spread, and climate-related displacement — are documented by WHO and IPCC as among the most significant global health challenges. Barclays financing decisions are part of the capital allocation that determines whether fossil fuel infrastructure is built.",
+    "flags": ["167b_fossil_fuel_financing_climate_health_impact", "who_ipcc_climate_health_consequences", "capital_allocation_fossil_fuel_infrastructure_decisions"],
+    "sources": ["https://www.ran.org/bankingonclimatchaos2024/"]
+  },
+  "alternatives": {
+    "cheaper": ["UK building societies and credit unions — member-owned, not-for-profit; no LIBOR manipulation, no fossil fuel financing at Barclays's scale", "Nationwide Building Society (UK) — largest building society; different ownership structure; no major AML or securities fraud settlements"],
+    "healthier": ["Triodos Bank — certified B Corp; publishes full loan book; no fossil fuel financing by policy", "Charity Bank, Ecology Building Society (UK) — specialist ethical banks with documented positive lending criteria"],
+    "diy": ["Check Barclays's current fossil fuel financing policies at shareaction.org — ShareAction publishes annual rankings of major bank climate commitments vs. actual financing", "Move your account to a bank with documented fossil fuel exclusion policies — the Move Your Money UK guide lists banks by fossil fuel financing record", "As a Barclays shareholder: ShareAction coordinates climate resolutions at Barclays's AGM — shareholder pressure has been the primary mechanism for climate policy changes at UK banks"]
+  },
+  "timeline": [
+    {"year": 1736, "event": "Barclays founded in London; one of the oldest banks in continuous operation", "severity": "neutral", "source_url": ""},
+    {"year": 2008, "event": "Barclays raises emergency capital from Qatar and Abu Dhabi sovereign wealth funds; avoids UK government bailout; payments later alleged as improper", "severity": "critical", "source_url": ""},
+    {"year": 2012, "event": "June: $290M LIBOR settlement — first major bank fined; CEO Bob Diamond resigns under Bank of England pressure", "severity": "critical", "source_url": "https://www.cftc.gov/PressRoom/PressReleases/pr6289-12"},
+    {"year": 2012, "event": "February: HMRC forces disclosure of two Barclays tax avoidance schemes; approximately £500M in backdated taxes paid", "severity": "high", "source_url": ""},
+    {"year": 2015, "event": "Paris Agreement signed; Barclays begins $167B+ fossil fuel financing in the years following", "severity": "high", "source_url": ""},
+    {"year": 2016, "event": "$2B DOJ settlement for mortgage-backed securities fraud", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/department-justice-announces-2-billion-resolution-barclays"},
+    {"year": 2017, "event": "UK SFO brings criminal charges against Barclays and four executives over 2008 Qatar fundraising", "severity": "critical", "source_url": "https://www.theguardian.com/business/2017/jun/20/barclays-charged-with-fraud-over-2008-fundraising"},
+    {"year": 2020, "event": "SFO criminal case against Barclays dropped following Court of Appeal ruling on SFO procedures", "severity": "high", "source_url": ""},
+    {"year": 2022, "event": "$361M DOJ civil resolution for Qatar improper payments — criminal case dropped, civil liability resolved", "severity": "high", "source_url": ""},
+    {"year": 2024, "event": "Barclays ranked largest European fossil fuel financier for eighth consecutive year in Banking on Climate Chaos report", "severity": "high", "source_url": "https://www.ran.org/bankingonclimatchaos2024/"}
+  ],
+  "community_impact": {
+    "displacement": "Barclays's fossil fuel financing provides capital for energy infrastructure — coal plants, oil and gas fields, LNG export terminals — whose continued operation contributes to climate change. The communities most affected by climate-related displacement, flooding, heat, and air quality are disproportionately in lower-income countries and lower-income communities within wealthy countries — communities with no relationship to Barclays's investment banking clients.",
+    "price_illusion": "Barclays presents its fossil fuel financing as prudent capital allocation for a global energy transition. Climate science published by the IEA and IPCC documents that investments in new fossil fuel infrastructure are incompatible with limiting warming to 1.5°C. The financing is priced as a credit and market risk calculation — the climate externality is not priced into the transaction.",
+    "tax_math": "The HMRC tax avoidance schemes — for which Barclays paid £500 million in backdated taxes — involved structured financial transactions designed to generate artificial tax losses in the UK while Barclays maintained profits. The LIBOR and mortgage securities settlements have generated US tax deductions. The net tax effect across Barclays's settlement history is that regulatory penalties are partially subsidized by taxpayers in the UK and US.",
+    "wealth_velocity": "Barclays is publicly traded on the London Stock Exchange with predominantly UK and international institutional shareholder ownership. Revenue from fossil fuel financing transactions — which fund infrastructure contributing to climate change — flows to Barclays shareholders. The communities absorbing climate-related health and economic impacts from the infrastructure Barclays finances are not Barclays shareholders."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Barclays shareholders", "how": "Avoided UK government bailout through Qatar capital (avoiding dilution); LIBOR manipulation revenue; mortgage securities fee income; fossil fuel financing fees"},
+      {"group": "Qatar sovereign wealth fund investors", "how": "Allegedly received improper payments as inducement to provide 2008 emergency capital — payments Barclays says were legitimate advisory fees"},
+      {"group": "Fossil fuel companies financed by Barclays", "how": "$167B in financing since Paris Agreement enabling continued fossil fuel expansion despite IEA documentation that new fossil fuel development is climate-incompatible"}
+    ],
+    "who_paid": [
+      {"group": "LIBOR-linked contract holders globally", "how": "Overcharged on interest rates by manipulated benchmark affecting trillions in financial contracts"},
+      {"group": "2008 mortgage securities investors", "how": "Purchased toxic securities Barclays sold without adequate disclosure of underlying risk"},
+      {"group": "Communities absorbing climate impacts", "how": "Heat, flooding, air quality, displacement from climate change that Barclays-financed fossil fuel infrastructure contributes to"}
+    ],
+    "the_gap": "Barclays was the first major bank fined for LIBOR manipulation. It paid $2 billion for mortgage fraud. It paid $361 million for what the DOJ called improper payments to the investors who funded its 2008 survival. The UK's SFO charged it with fraud and then dropped the case on a procedural ruling. It has provided $167 billion in fossil fuel financing since the Paris Agreement. It is Europe's largest fossil fuel financier. Its net zero target is 2050."
+  }
+}

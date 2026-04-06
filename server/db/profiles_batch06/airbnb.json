@@ -1,0 +1,93 @@
+{
+  "brand_name": "Airbnb",
+  "brand_slug": "airbnb",
+  "parent_company": "Airbnb, Inc.",
+  "ultimate_parent": "Airbnb, Inc.",
+  "subsidiaries": ["HotelTonight", "Airbnb Rooms", "Airbnb Experiences"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "HARVARD RESEARCHERS FOUND AIRBNB HOSTS 16% LESS LIKELY TO ACCEPT BLACK GUESTS — AIRBNB'S OWN AUDIT CONFIRMED IT AND THEY CALLED THE PROBLEM 'PROJECT LIGHTHOUSE'",
+  "executive_summary": "Airbnb, Inc. operates a global short-term rental platform with over 7 million active listings. A 2016 Harvard Business School study — 'Racial Discrimination in the Sharing Economy' — documented that guests with distinctively African American names were 16% less likely to be accepted by Airbnb hosts compared to guests with identical credentials and distinctively white names. Airbnb commissioned its own internal audit ('Project Lighthouse') which confirmed the discrimination problem. Housing researchers have documented significant reductions in residential housing stock available for long-term rentals in cities including Barcelona, Amsterdam, New York, and San Francisco — with documented price effects on local rental markets. Airbnb has lobbied against or circumvented local short-term rental regulations across dozens of cities globally. The company went public in December 2020 at a valuation that made its founders billionaires on a platform whose labor model — where hosts bear all operational risk — has drawn sustained regulatory and academic scrutiny.",
+  "verdict_tags": ["16pct_racial_discrimination_harvard_documented", "project_lighthouse_airbnb_confirmed_own_audit", "housing_stock_reduction_documented_multiple_cities", "local_regulation_lobbying_circumvention", "host_labor_misclassification_concerns"],
+  "concern_flags": {"labor": true, "environmental": false, "political": true, "tax": true, "health": false, "legal": true},
+  "labor": {
+    "summary": "Airbnb's platform model classifies hosts as independent contractors who bear all operational risk — cleaning, maintenance, guest disputes, property liability — while Airbnb extracts platform fees. The gig economy classification avoids employee benefit obligations. Airbnb's cleaning and maintenance workers — who service listings through Airbnb's platform but are employed by or contracted directly to hosts — have documented worker safety and wage concerns without Airbnb assuming employer responsibility. New York's housing regulations requiring host registration exposed that significant portions of the Airbnb listings market in that city were operated by professional property managers and institutional investors, not individual hosts.",
+    "flags": ["host_operational_risk_bearing", "cleaning_maintenance_worker_no_airbnb_employer_responsibility", "professional_host_majority_documented_new_york"],
+    "sources": ["https://www.cityandstateny.com/policy/2023/01/how-many-people-are-losing-housing-because-airbnb/381887/"]
+  },
+  "environmental": {
+    "summary": "Airbnb's environmental footprint is primarily through its housing market effects — conversion of residential units to short-term rentals reduces density of long-term occupancy, potentially increasing urban sprawl and commuting distances as residents are displaced to less central locations. Short-term rental guests also typically have higher per-stay energy and water consumption than long-term residents. Airbnb has marketed environmental benefits of staying in homes vs. hotels without independent verification of these claims.",
+    "flags": ["housing_density_reduction_environmental_effect", "unverified_environmental_benefit_marketing"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Airbnb has lobbied against short-term rental regulations in dozens of cities globally — challenging registration requirements, caps on rental days, and safety inspection requirements that apply to traditional hotels. In New York City, Airbnb sued to block Local Law 18 (which required host registration and effectively eliminated most entire-apartment listings). The lawsuit failed. In Barcelona, Amsterdam, and Paris, Airbnb has repeatedly faced regulatory action for facilitating unregistered listings that violated local housing law. Airbnb's political spending has focused on defeating regulations it characterizes as hostile to the 'home sharing economy.'",
+    "flags": ["local_law_18_new_york_litigation_failed", "barcelona_amsterdam_paris_regulatory_action", "home_sharing_framing_for_commercial_operation_lobbying"],
+    "sources": ["https://www.nytimes.com/2023/05/10/travel/airbnb-new-york-law.html"]
+  },
+  "legal": {
+    "summary": "The 2016 Harvard discrimination study led to congressional scrutiny and an FTC investigation into discriminatory practices on sharing economy platforms. Airbnb settled a 2016 class action lawsuit alleging racial discrimination, creating its 'Project Lighthouse' internal audit that confirmed the discrimination problem. Airbnb has faced consumer protection enforcement in multiple European jurisdictions for misleading pricing — displaying prices without mandatory taxes and fees until checkout, inflating apparent savings. The EU forced pricing transparency changes. New York's successful enforcement of Local Law 18 removed approximately 15,000 listings from the Airbnb platform in that city.",
+    "flags": ["harvard_discrimination_class_action_settlement", "project_lighthouse_discrimination_confirmed", "eu_price_transparency_enforcement", "new_york_15000_listings_removed_enforcement"],
+    "sources": ["https://hbswk.hbs.edu/item/racial-discrimination-in-the-sharing-economy-evidence-from-a-field-experiment", "https://www.nytimes.com/2023/08/01/travel/airbnb-nyc-regulation.html"]
+  },
+  "tax": {
+    "summary": "Airbnb has faced tax disputes with multiple jurisdictions over its responsibility to collect and remit local occupancy taxes that traditional hotels are required to collect. The company has negotiated voluntary collection agreements with some jurisdictions while litigating others. Airbnb uses Irish and international corporate structures for its tax management — consistent with other major tech platforms. Many Airbnb hosts fail to report rental income, creating a widespread tax compliance problem that tax authorities in the US, UK, and EU have begun pursuing through data sharing requirements on platforms.",
+    "flags": ["occupancy_tax_collection_disputes_multiple_jurisdictions", "host_income_tax_reporting_compliance_gap", "data_sharing_requirements_triggered_host_reporting"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Brian Chesky co-founded Airbnb in 2008 and has led it through its December 2020 IPO. Chesky's net worth from the IPO exceeded $10 billion. The IPO valued Airbnb at approximately $47 billion — a valuation built on a platform that had at the time of listing confirmed racial discrimination in its acceptance rates through its own internal Project Lighthouse audit. Chesky has publicly acknowledged the discrimination problem and committed to anti-discrimination measures. The structural enforcement of those measures — allowing individual host discretion over guest acceptance — remains the documented mechanism through which discrimination can persist.",
+    "flags": ["10b_ipo_wealth_on_platform_with_confirmed_discrimination", "structural_discrimination_mechanism_host_discretion_remains"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Airbnb's housing market effects connect it to the broader financialization of residential real estate — the same economic forces driving housing unaffordability in major cities globally. Academic research in cities including Barcelona, New York, Los Angeles, Amsterdam, and Tokyo has documented relationships between Airbnb density and rental price increases in surrounding neighborhoods. Airbnb has consistently disputed the magnitude of these effects while the academic consensus has grown stronger. The transition of residential units to short-term rental use effectively converts housing from a community resource to a hospitality asset.",
+    "flags": ["housing_financialization_connection", "academic_consensus_price_effect_growing", "residential_to_hospitality_conversion_documented"],
+    "sources": ["https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9949089/"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Housing researchers have alleged that Airbnb's lobbying characterizes its platform as primarily 'home sharing' by individual homeowners — when New York registration data showed the majority of nights booked were through multi-listing professional hosts who operate commercial operations. Consumer advocates have alleged that Airbnb's pricing display — showing low base prices before adding cleaning fees and service fees that can exceed the nightly rate — constitutes deceptive pricing practices that the EU addressed but US regulators have not. Former Airbnb trust and safety staff have alleged that the platform's complaint investigation process for discrimination reports is slow and systematically under-resources.",
+    "flags": ["commercial_host_majority_home_sharing_framing_alleged", "deceptive_pricing_us_not_addressed_alleged", "discrimination_complaint_investigation_under_resourced_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Airbnb listings are not subject to the same health and safety inspections as licensed hotels — no fire safety, no smoke alarm verification, no sanitation standards enforcement. The platform has faced significant liability claims for deaths and injuries in unlicensed properties — carbon monoxide poisoning, structural failures, and fires. Airbnb's host verification and safety standards are platform-enforced, not government-inspected. The lack of regulatory parity with hotels creates documented safety gaps for guests who may not be aware they are staying in an uninspected property.",
+    "flags": ["no_government_safety_inspection_hotel_parity_gap", "carbon_monoxide_poisoning_deaths_documented", "platform_not_government_safety_enforcement"],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": ["Traditional hotels — price-competitive in most markets when Airbnb cleaning fees and service fees are included in total cost comparison", "Hostels for solo or budget travelers — often price-competitive with full cost of Airbnb including fees"],
+    "healthier": ["Government-inspected hotels — fire safety, smoke alarms, CO detectors, and sanitation are verified by local authorities", "Locally-owned boutique hotels and bed-and-breakfasts — keeps money in local economy; subject to local hospitality regulations"],
+    "diy": ["Calculate full Airbnb cost including cleaning fee, service fee, and taxes before comparing to hotel — the 'from $89/night' price often becomes $180+ per night with fees", "Check your city's short-term rental registration list — stay only in registered listings; illegal listings have zero safety oversight"]
+  },
+  "timeline": [
+    {"year": 2008, "event": "Airbnb founded in San Francisco by Brian Chesky, Joe Gebbia, and Nathan Blecharczyk", "severity": "neutral", "source_url": ""},
+    {"year": 2016, "event": "Harvard Business School study documents 16% lower acceptance rate for Black guests; #AirbnbWhileBlack movement emerges", "severity": "critical", "source_url": "https://hbswk.hbs.edu/item/racial-discrimination-in-the-sharing-economy-evidence-from-a-field-experiment"},
+    {"year": 2016, "event": "Airbnb commissions 'Project Lighthouse' internal audit; findings confirm discrimination problem", "severity": "critical", "source_url": ""},
+    {"year": 2016, "event": "Airbnb settles discrimination class action; implements anti-discrimination policy changes", "severity": "high", "source_url": ""},
+    {"year": 2020, "event": "December: Airbnb IPO at $47B valuation; founders become billionaires; COVID-era rebound begins", "severity": "neutral", "source_url": ""},
+    {"year": 2022, "event": "EU forces Airbnb pricing transparency — display of total price including fees required", "severity": "high", "source_url": ""},
+    {"year": 2023, "event": "New York City Local Law 18 takes effect; Airbnb loses lawsuit to block it; approximately 15,000 listings removed", "severity": "critical", "source_url": "https://www.nytimes.com/2023/08/01/travel/airbnb-nyc-regulation.html"},
+    {"year": 2024, "event": "Barcelona announces ban on tourist apartment renewals; Mayor Jaume Collboni cites housing crisis; Airbnb faces European regulatory wave", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Academic research across dozens of cities has documented that increased Airbnb density is associated with higher rental prices and reduced housing availability for long-term residents. In Barcelona, the city with the most documented research, studies found Airbnb listings contributed to approximately 1.9% annual rent increases in the most affected neighborhoods. New York registration data revealed that the 15,000 listings removed after Local Law 18 represented residential units that could house approximately 30,000-45,000 long-term residents.",
+    "price_illusion": "Airbnb's pricing display — showing low per-night base prices before adding cleaning fees, service fees, and occupancy taxes — has been documented to systematically inflate the apparent price advantage over hotels. EU enforcement required full price display. In the US, the FTC issued guidance on drip pricing but enforcement against Airbnb's specific practices has been limited. The 'savings' displayed in search results frequently disappear by checkout.",
+    "tax_math": "Short-term rental income earned by Airbnb hosts is taxable income that many hosts do not report. The IRS estimates significant non-compliance in the sharing economy. Airbnb's data-sharing agreements with tax authorities — which began in Europe and have expanded to the US — have generated significant previously unpaid tax collection. The platform's international corporate structure also minimizes its own corporate tax through Irish and other jurisdiction arrangements.",
+    "wealth_velocity": "Airbnb's market capitalization — approximately $75-95 billion since IPO — concentrates in its three founders and institutional investors. The housing units converted to short-term rentals represent residential real estate in communities globally being redirected from long-term community use to short-term visitor revenue generation, with the platform fee flowing to San Francisco."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Airbnb founders (Chesky, Gebbia, Blecharczyk)", "how": "$10B+ each at IPO from platform whose discrimination problem was confirmed in their own internal audit"},
+      {"group": "Professional multi-listing hosts", "how": "Commercial real estate operators using platform's 'home sharing' framing to operate hotel-equivalent businesses without hotel regulations"},
+      {"group": "Institutional investors pre-IPO", "how": "$47B IPO valuation on a platform with confirmed discrimination and documented housing market distortion"}
+    ],
+    "who_paid": [
+      {"group": "Black guests discriminated against", "how": "16% lower acceptance rate documented; denied accommodation based on names associated with racial identity"},
+      {"group": "Long-term residents in high-Airbnb neighborhoods", "how": "Documented rental price increases and reduced availability as residential units convert to short-term rental use"},
+      {"group": "Hotels and licensed hospitality", "how": "Competed against uninspected, unregulated, untaxed equivalent services operating without the compliance costs hotels bear"}
+    ],
+    "the_gap": "Airbnb commissioned an audit called Project Lighthouse. It confirmed their platform discriminates against Black guests. The platform's mechanism — individual host discretion on accepting guests — is still the mechanism. The company went public at $47 billion. The founders became billionaires. The neighborhoods where Airbnb is densest have documented higher rents. The Black guests are 16% less likely to get the room."
+  }
+}

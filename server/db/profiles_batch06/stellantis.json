@@ -1,0 +1,89 @@
+{
+  "brand_name": "Stellantis",
+  "brand_slug": "stellantis",
+  "parent_company": "Stellantis N.V.",
+  "ultimate_parent": "Stellantis N.V.",
+  "subsidiaries": ["Jeep", "Ram", "Dodge", "Chrysler", "Fiat", "Alfa Romeo", "Maserati", "Peugeot", "Citroën", "Opel", "Vauxhall", "DS Automobiles"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "FIAT CHRYSLER PAID $305 MILLION IN CRIMINAL FINES FOR ITS OWN DIESEL DEFEAT DEVICE IN RAMS AND JEEP GRAND CHEROKEES — BEFORE IT MERGED INTO STELLANTIS",
+  "executive_summary": "Stellantis N.V. is the world's third-largest automaker by vehicle sales, formed in January 2021 through the merger of Fiat Chrysler Automobiles (FCA) and the PSA Group (Peugeot, Citroën, Opel, Vauxhall). Before the merger, Fiat Chrysler Automobiles paid $305 million in criminal fines and $2.8 billion in civil settlements in 2019 — resolved by the DOJ, EPA, and state of California — for installing emissions defeat device software in approximately 100,000 Ram 1500 trucks and Jeep Grand Cherokees sold in the US between 2014 and 2016. The FCA defeat device operated on the same principle as the Volkswagen scandal: vehicles emitted significantly more nitrogen oxides during real-world driving than during regulatory testing. Stellantis's CEO Carlos Tavares — who led the combined company through significant restructuring — abruptly resigned in December 2024 amid declining sales and strategic disputes with the board.",
+  "verdict_tags": ["fca_305m_criminal_defeat_device", "2_8b_civil_settlement", "100000_ram_jeep_grand_cherokee_us_affected", "nox_defeat_device_pre_merger", "tavares_abrupt_resignation_2024"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "labor": {
+    "summary": "Stellantis employs approximately 300,000 people globally. The 2023 UAW strike targeted Stellantis, Ford, and General Motors simultaneously — the first time all three Detroit automakers were struck simultaneously. Stellantis eventually reached a UAW agreement providing approximately 25% wage increases over four years. Italian manufacturing workers under Stellantis have faced repeated restructuring threats. The Tavares era was characterized by aggressive cost-cutting that generated significant labor tension across US and European operations.",
+    "flags": ["2023_uaw_strike_all_three_detroit_targeted", "25pct_wage_increase_settlement", "tavares_aggressive_cost_cutting_labor_tension"],
+    "sources": ["https://www.reuters.com/business/autos-transportation/stellantis-uaw-reach-tentative-agreement-ending-six-week-strike-2023-10-28/"]
+  },
+  "environmental": {
+    "summary": "Fiat Chrysler's diesel defeat device covered approximately 100,000 Ram 1500 trucks and Jeep Grand Cherokees — emitting nitrogen oxides at significantly elevated rates during real-world driving versus regulatory test cycles. Stellantis has committed to full electrification of its lineup by 2030 in Europe and has launched EV variants of its major brands. Its EV transition has been slower than European competitors. The US Ram 1500 and Jeep lineup — Stellantis's most profitable vehicles — are among the highest per-vehicle emissions contributors in the US market.",
+    "flags": ["100000_us_defeat_device_vehicles", "ram_jeep_high_emissions_profile", "ev_transition_slower_than_european_competitors"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Stellantis has lobbied extensively on fuel economy standards, EV incentive policies, and tariffs on European vehicles. The company has benefited from US EV tax credits under the Inflation Reduction Act. The FCA settlement required a consent decree with ongoing compliance monitoring by EPA and the California Air Resources Board. FCA separately paid $9.5 million to the state of California as part of the settlement for state-level emissions violations.",
+    "flags": ["consent_decree_epa_carb_ongoing", "9_5m_california_state_settlement", "ira_ev_credits_beneficiary"],
+    "sources": []
+  },
+  "legal": {
+    "summary": "January 2019: FCA (now part of Stellantis) agreed to pay $305 million in criminal fines to the DOJ for Clean Air Act violations — installing defeat device software in Ram 1500 trucks and Jeep Grand Cherokees. An FCA subsidiary pleaded guilty. Civil settlements totaling approximately $2.8 billion covered consumer compensation, EPA civil penalties, and state enforcement. Affected vehicle owners received compensation through a recall and remediation program. The civil settlement was the largest in EPA history for mobile source violations at the time.",
+    "flags": ["305m_criminal_fine_clean_air_act", "fca_subsidiary_criminal_guilty_plea", "2_8b_civil_settlement_largest_epa_mobile_source", "100000_vehicles_recall_remediation"],
+    "sources": ["https://www.justice.gov/opa/pr/fiat-chrysler-automobiles-nv-agree-pay-over-800-million-dodge-ram-1500-truck-and-jeep"]
+  },
+  "tax": {
+    "summary": "Stellantis is incorporated in the Netherlands — the legal domicile was established as part of the FCA-PSA merger. Dutch holding company structures are used by major European multinationals for tax management. The company has significant operations in Italy (Fiat heritage), France (Peugeot heritage), and the United States. No major standalone tax enforcement actions have been identified as a primary concern.",
+    "flags": ["netherlands_incorporation_european_merger", "dutch_holding_tax_structure"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Carlos Tavares — who had previously led PSA Group's successful turnaround — built Stellantis through aggressive cost-cutting and premium pricing on Jeep and Ram trucks. His resignation in December 2024 came after board disputes over strategic direction as Stellantis's US market share declined significantly. Tavares's departure left the company without clear leadership as it faced challenges in its EV transition. No Stellantis or FCA executive was criminally charged in the defeat device case — the criminal guilty plea was at the subsidiary level.",
+    "flags": ["tavares_abrupt_resignation_december_2024", "no_executive_criminal_charges_defeat_device", "subsidiary_level_criminal_plea"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Stellantis's defeat device scandal operated through the same basic mechanism as Volkswagen's — defeat device software detecting test conditions and reducing emissions only during testing. The FCA case emerged from the same regulatory environment that caught VW, as EPA and CARB expanded their real-world testing programs following the VW discovery. Stellantis's merger with PSA connected it to European automotive networks including Peugeot's complex histories with French government ownership and industrial policy.",
+    "flags": ["same_mechanism_as_vw_post_vw_regulatory_environment", "epa_carb_real_world_testing_expanded_post_vw"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Plaintiff attorneys in consumer class actions alleged that FCA's defeat device was as deliberate as VW's — that the software was specifically engineered to detect the particular drive cycles used in US regulatory testing and respond differently. FCA denied this characterization, and the civil settlement did not require an admission that the defeat device was intentionally deceptive in the same manner as VW's. Automotive analysts have alleged that Tavares's aggressive US pricing strategy — which significantly increased average transaction prices on Ram and Jeep vehicles — contributed to market share losses that preceded his resignation.",
+    "flags": ["defeat_device_deliberate_intent_disputed", "tavares_pricing_market_share_loss_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "NOx emissions from the approximately 100,000 affected Ram and Jeep vehicles exceeded regulatory limits during real-world driving. The health effects — ground-level ozone formation, secondary particulate matter, respiratory disease — are documented for the vehicle class as a whole. The specific health impact of the FCA defeat device is smaller in scale than VW's 11-million-vehicle scandal but operates through the same mechanism. Communities near highways where these vehicles operated at elevated emission rates absorbed excess NOx without the knowledge that the vehicles were non-compliant.",
+    "flags": ["100000_vehicles_elevated_nox_real_world", "highway_community_excess_nox_exposure"],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": ["Toyota Tacoma for trucks — no defeat device history; consistent fuel economy", "Honda CR-V, Toyota RAV4 for SUV equivalents to Jeep Grand Cherokee — no defeat device history"],
+    "healthier": ["Electric vehicles from any manufacturer eliminate tailpipe NOx entirely", "Toyota, Honda hybrid SUVs and trucks — lower absolute emissions, verified fuel economy"],
+    "diy": ["Check your Ram 1500 or Jeep Grand Cherokee 3.0L diesel VIN against the FCA settlement recall list — some vehicles may still be eligible for remediation or extended warranty coverage", "Verify any diesel vehicle's real-world emissions vs. EPA test cycle — the West Virginia University research that caught VW used portable emissions measurement equipment that is now standard in regulatory testing"]
+  },
+  "timeline": [
+    {"year": 2014, "event": "FCA begins selling Ram 1500 and Jeep Grand Cherokee with 3.0L EcoDiesel engines containing defeat device software in the US", "severity": "critical", "source_url": ""},
+    {"year": 2017, "event": "EPA and CARB issue notice of violation to FCA following expanded real-world emissions testing program post-VW", "severity": "critical", "source_url": ""},
+    {"year": 2019, "event": "$305M criminal fine; FCA subsidiary pleads guilty; $2.8B civil settlement — largest EPA mobile source settlement at time", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/fiat-chrysler-automobiles-nv-agree-pay-over-800-million-dodge-ram-1500-truck-and-jeep"},
+    {"year": 2021, "event": "January: Stellantis formed through FCA-PSA merger; Carlos Tavares becomes CEO", "severity": "neutral", "source_url": ""},
+    {"year": 2023, "event": "UAW strikes all three Detroit automakers simultaneously; Stellantis settles for 25% wage increases over four years", "severity": "high", "source_url": ""},
+    {"year": 2024, "event": "December: CEO Tavares abruptly resigns amid declining US market share and board disputes; no successor named immediately", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Communities near highways and in urban corridors absorbed elevated NOx from approximately 100,000 non-compliant FCA diesel vehicles between 2014 and the recall. The remediation program did not address the NOx already emitted during the years of non-compliance. Workers at FCA's manufacturing facilities — who built the vehicles — were unaware that the defeat device was present.",
+    "price_illusion": "The Ram 1500 and Jeep Grand Cherokee EcoDiesel were marketed as combining performance with fuel efficiency and environmental responsibility. The fuel economy was genuine; the emissions compliance was not. Buyers paid a premium for a diesel drivetrain with emissions performance that existed only during regulatory testing.",
+    "tax_math": "The $305 million criminal fine and civil settlements generated deductions that reduced Stellantis's (then FCA's) taxable income. The Dutch incorporation of the combined Stellantis entity provides additional tax management capability. US consumers whose vehicles were affected may have experienced reduced resale value — a cost not addressed by the settlement.",
+    "wealth_velocity": "Stellantis is publicly traded with broad European and North American institutional ownership. The Agnelli family (through Exor NV) holds approximately 14% and is the largest single shareholder — descendants of Fiat's founding family retaining influence over a global automaker that resulted from decades of acquisitions and mergers."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "FCA shareholders (now Stellantis)", "how": "Revenue from selling diesel vehicles without the cost of actual emissions compliance technology; competitive advantage vs. manufacturers who complied"},
+      {"group": "Agnelli family through Exor NV", "how": "Largest single shareholder in Stellantis; inherited benefit from FCA's operational period including the defeat device era"}
+    ],
+    "who_paid": [
+      {"group": "Ram and Jeep Grand Cherokee EcoDiesel buyers", "how": "Premium paid for diesel drivetrain with emissions compliance that only existed during tests; vehicle values affected"},
+      {"group": "Communities near highway corridors", "how": "Elevated NOx from approximately 100,000 non-compliant vehicles for three years before recall"}
+    ],
+    "the_gap": "Fiat Chrysler installed defeat device software in Ram trucks and Jeep Grand Cherokees. The vehicles passed emissions tests. They emitted significantly more NOx on the road. FCA paid $305 million in criminal fines. An FCA subsidiary pleaded guilty. No individual executive was criminally charged. The company merged into Stellantis. The new name does not include the word Fiat or Chrysler."
+  }
+}

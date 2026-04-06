@@ -1,0 +1,95 @@
+{
+  "brand_name": "HSBC",
+  "brand_slug": "hsbc",
+  "parent_company": "HSBC Holdings plc",
+  "ultimate_parent": "HSBC Holdings plc",
+  "subsidiaries": ["HSBC Bank USA", "HSBC UK", "HSBC France", "HSBC Mexico", "Hang Seng Bank"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "HSBC PROCESSED HUNDREDS OF MILLIONS FOR THE SINALOA CARTEL AND PAID $1.9 BILLION — NOT ONE EXECUTIVE WAS CRIMINALLY CHARGED",
+  "executive_summary": "HSBC Holdings plc is Europe's largest bank by assets, headquartered in London with deep roots in Asia. In December 2012, HSBC entered into a Deferred Prosecution Agreement with the US Department of Justice and agreed to pay $1.9 billion — the largest bank money laundering settlement in history at the time — for systematically failing to maintain adequate anti-money laundering controls. HSBC's Mexican subsidiary moved at least $881 million for the Sinaloa Cartel and other drug trafficking organizations through accounts at HSBC Mexico that were known as 'drug accounts' by cartel money launderers. HSBC also violated US sanctions against Iran, Sudan, Libya, Cuba, and Burma — processing billions in transactions for sanctioned entities. No HSBC executive was criminally charged. The bank was described by US Senate investigators as having a 'pervasively polluted' culture of compliance failure.",
+  "verdict_tags": ["1_9b_money_laundering_settlement_largest_at_time", "sinaloa_cartel_881m_documented", "drug_accounts_known_terminology", "iran_sudan_libya_cuba_sanctions_violations", "no_executive_criminally_charged", "senate_pervasively_polluted_finding", "deferred_prosecution_no_criminal_plea"],
+  "concern_flags": {"labor": false, "environmental": true, "political": true, "tax": true, "health": false, "legal": true},
+  "labor": {
+    "summary": "HSBC employs approximately 220,000 people globally. The bank has conducted multiple rounds of significant workforce reductions — eliminating approximately 35,000 positions between 2015 and 2017, and further restructuring following COVID-19. No major systematic labor rights violations comparable to its money laundering record have been documented at HSBC as a primary concern.",
+    "flags": ["35000_position_elimination_2015_2017", "repeated_restructuring_cycles"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "HSBC has committed to net zero by 2050 and has pledged to phase out coal financing. However, the bank remains among the largest financiers of fossil fuel expansion globally — providing significant financing for oil and gas projects including controversial pipelines. A 2021 internal HSBC presentation — leaked by a whistleblower — showed an HSBC asset management executive dismissing climate risks and mocking central bank warnings about climate change as 'blah blah blah.' The bank subsequently suspended that executive. Rainforest Action Network tracking consistently ranks HSBC among the top European fossil fuel financiers.",
+    "flags": ["major_fossil_fuel_financier_europe", "internal_climate_dismissal_documented_leaked", "ran_top_european_fossil_fuel_financier"],
+    "sources": ["https://www.theguardian.com/environment/2022/may/23/hsbc-suspends-top-banker-who-mocked-central-bank-climate-warnings"]
+  },
+  "political": {
+    "summary": "The 2012 Deferred Prosecution Agreement — rather than a criminal indictment — was justified in part by US DOJ officials citing the risk that a criminal conviction could destabilize a major global financial institution. This rationale was explicitly criticized by US Senator Elizabeth Warren and others as establishing a 'too big to jail' doctrine for major banks. HSBC's deep commercial relationships with China — where it is one of the largest foreign banks — create ongoing tensions with Western governments on sanctions, data sharing, and Hong Kong democracy. HSBC supported the Hong Kong national security law in 2020.",
+    "flags": ["too_big_to_jail_doctrine_dpa_not_criminal", "warren_criticism_documented", "hong_kong_security_law_support", "china_commercial_relationship_political_tension"],
+    "sources": ["https://www.theguardian.com/business/2012/dec/11/hsbc-bank-us-senate-drug-money", "https://www.reuters.com/article/us-hsbc-hongkong-security/hsbc-backs-chinas-new-security-law-for-hong-kong-idUSKBN2390MZ"]
+  },
+  "legal": {
+    "summary": "December 2012: HSBC agreed to pay $1.9 billion and enter a five-year DPA — the largest AML settlement in history at the time. The settlement covered: allowing Mexican and Colombian drug cartels to launder approximately $881 million through HSBC Mexico; stripping information from wire transfers to evade OFAC sanctions screening for Iran, Sudan, Libya, Cuba, and Burma; and failing to monitor over $670 billion in wire transfers and $9.4 billion in purchases of US dollars from HSBC Mexico. The DPA ended in 2017 without criminal charges — HSBC avoided prosecution. In 2021, HSBC faced a separate fine of $85 million from the UK Financial Conduct Authority for failings in its AML systems, suggesting the culture issues were not resolved by the DPA.",
+    "flags": ["1_9b_dpa_largest_aml_at_time", "881m_cartel_laundering_documented", "670b_wire_transfers_unmonitored", "9_4b_us_dollars_unmonitored_purchases", "fca_85m_2021_subsequent_failings"],
+    "sources": ["https://www.justice.gov/opa/pr/hsbc-holdings-plc-and-hsbc-bank-usa-na-admit-anti-money-laundering-and-sanctions-violations", "https://www.theguardian.com/business/2012/dec/11/hsbc-bank-us-senate-drug-money"]
+  },
+  "tax": {
+    "summary": "HSBC's Swiss private banking subsidiary (HSBC Private Bank Suisse) was at the center of a major tax evasion scandal revealed through leaked data — the 'SwissLeaks' — in 2015. The leaked data showed HSBC Switzerland held accounts for approximately 30,000 clients globally and actively helped them evade taxes in their home countries, offering services to conceal assets from tax authorities. France fined HSBC €300 million for tax fraud assistance. HSBC Switzerland subsequently pleaded guilty to tax fraud conspiracy in France in 2017 and paid €300 million.",
+    "flags": ["swissleaks_30000_clients_tax_evasion", "france_300m_tax_fraud_fine", "hsbc_switzerland_guilty_plea_france"],
+    "sources": ["https://www.icij.org/investigations/swiss-leaks/", "https://www.reuters.com/article/us-hsbc-swissleaks-france/hsbc-swiss-unit-fined-300-million-by-france-for-tax-fraud-idUSKBN1CC21D"]
+  },
+  "executives": {
+    "summary": "No HSBC executive was criminally charged in the 2012 US settlement. Former Group CEO Stuart Gulliver's personal tax arrangements — revealed in the SwissLeaks — showed he had routed his own compensation through a Panamanian company and held it in the same HSBC Switzerland subsidiary that was helping clients evade taxes. Gulliver stated the arrangements were for privacy, not tax evasion. The irony of the CEO of a bank fined for tax fraud assistance having undisclosed offshore arrangements was noted extensively in parliamentary testimony.",
+    "flags": ["no_executive_criminal_charges_1_9b_settlement", "gulliver_personal_offshore_arrangements_swissleaks", "ceo_offshore_structure_during_bank_tax_fraud_fine"],
+    "sources": ["https://www.theguardian.com/business/2015/feb/22/hsbc-boss-stuart-gulliver-secret-panama-account-hsbc-swiss-private-bank"]
+  },
+  "connections": {
+    "summary": "HSBC's history in Asia — founded in 1865 to finance trade between Europe and Asia — gives it extraordinary commercial relationships in China and Hong Kong that create documented political tensions with Western governments. The bank's simultaneous presence in virtually every major financial market makes it systemically important — a characteristic that the DOJ explicitly cited in justifying a DPA rather than criminal prosecution. The 'too big to jail' precedent HSBC established was extended to other major banks in subsequent AML settlements.",
+    "flags": ["too_big_to_jail_precedent_extended_industry", "systemic_importance_used_as_prosecution_shield", "china_commercial_relationships_political_tension"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The US Senate Permanent Subcommittee on Investigations' 2012 report alleged that HSBC executives in multiple countries were aware of the money laundering risks presented by their Mexican affiliate and did not act — in some cases allegedly overriding compliance officers' concerns. Whistleblowers have alleged that HSBC's AML compliance function was systematically understaffed and that compliance officers who raised concerns faced retaliation. Former employees have alleged that the bank's profit pressure from high-volume clients in Latin America created a culture where compliance concerns were unwelcome.",
+    "flags": ["executive_awareness_alleged_senate_report", "compliance_officers_overridden_alleged", "profit_pressure_culture_compliance_unwelcome_alleged"],
+    "sources": ["https://www.hsgac.senate.gov/subcommittees/investigations/media/hsbc-exposed-us-financial-system-to-money-laundering-drug-terrorist-financing-risks"]
+  },
+  "health_record": {
+    "summary": "HSBC's facilitation of cartel money laundering directly financed the Sinaloa Cartel and other drug trafficking organizations — organizations responsible for producing and distributing fentanyl, heroin, methamphetamine, and cocaine into US communities. The $881 million laundered through HSBC Mexico funded the operational infrastructure of organizations that have contributed to hundreds of thousands of overdose deaths in the United States. The bank received fee income on every transaction it processed for cartel accounts.",
+    "flags": ["cartel_financing_opioid_crisis_connection", "881m_cartel_accounts_operational_funding", "fee_income_on_cartel_transactions"],
+    "sources": ["https://www.justice.gov/opa/pr/hsbc-holdings-plc-and-hsbc-bank-usa-na-admit-anti-money-laundering-and-sanctions-violations"]
+  },
+  "alternatives": {
+    "cheaper": ["Credit unions — member-owned, not-for-profit financial institutions with documented better rates on loans and deposits; no cartel laundering record", "Local community banks — deposit insurance same as HSBC; profits stay in community; smaller compliance failure scale"],
+    "healthier": ["Credit unions — documented better customer outcomes, lower fees, no systemic money laundering settlements", "Online banks (Ally, Marcus) — FDIC-insured, lower fee structures, no major AML enforcement actions"],
+    "diy": ["Check if your bank has DOJ enforcement history at violationtracker.goodjobsfirst.org before opening accounts", "Credit union finder at MyCreditUnion.gov — enter your zip code to find locally available not-for-profit financial institutions"]
+  },
+  "timeline": [
+    {"year": 1865, "event": "HSBC founded in Hong Kong and Shanghai to finance Asian trade", "severity": "neutral", "source_url": ""},
+    {"year": 2002, "event": "HSBC acquires Household Finance Corporation for $14.2B — subsequent subprime lending exposure", "severity": "neutral", "source_url": ""},
+    {"year": 2008, "event": "HSBC takes $10.6B writedown on Household Finance subprime assets — among largest US subprime losses", "severity": "high", "source_url": ""},
+    {"year": 2012, "event": "July: US Senate Permanent Subcommittee report documents 'pervasively polluted' HSBC compliance culture; cartel accounts documented", "severity": "critical", "source_url": "https://www.hsgac.senate.gov/subcommittees/investigations/media/hsbc-exposed-us-financial-system-to-money-laundering-drug-terrorist-financing-risks"},
+    {"year": 2012, "event": "December: $1.9B DPA — largest AML settlement in history; no criminal charges; no executive indicted", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/hsbc-holdings-plc-and-hsbc-bank-usa-na-admit-anti-money-laundering-and-sanctions-violations"},
+    {"year": 2015, "event": "SwissLeaks: ICIJ publishes data showing HSBC Switzerland held 30,000 client accounts for tax evasion purposes", "severity": "critical", "source_url": "https://www.icij.org/investigations/swiss-leaks/"},
+    {"year": 2017, "event": "HSBC Switzerland pleads guilty to tax fraud conspiracy in France; pays €300M fine", "severity": "high", "source_url": ""},
+    {"year": 2020, "event": "HSBC publicly supports Hong Kong national security law amid democratic protests; criticized by UK government", "severity": "high", "source_url": ""},
+    {"year": 2021, "event": "Senior HSBC asset manager suspended for leaked presentation dismissing climate risk as 'blah blah blah'", "severity": "high", "source_url": "https://www.theguardian.com/environment/2022/may/23/hsbc-suspends-top-banker-who-mocked-central-bank-climate-warnings"},
+    {"year": 2021, "event": "UK FCA fines HSBC £63.9M for AML control failings — 9 years after the US settlement", "severity": "high", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "The Sinaloa Cartel's operational financing — facilitated through HSBC Mexico — funded the infrastructure of a criminal organization that has devastated communities across Mexico and the United States through violence, drug distribution, and corruption of local institutions. Communities on both sides of the US-Mexico border experiencing cartel violence were paying the cost of HSBC's compliance failures.",
+    "price_illusion": "HSBC presents itself as a global banking institution with standards appropriate to its scale and systemic importance. The Senate investigation found it had 'pervasively polluted' compliance culture where accounts known internally as 'drug accounts' processed cartel funds. The bank's size was used as a shield against prosecution rather than as evidence of accountability.",
+    "tax_math": "The SwissLeaks showed HSBC Switzerland actively helping clients — including wealthy individuals from over 60 countries — evade taxes. The tax revenue lost through HSBC-facilitated evasion represents public funds that funded public services in those countries. France alone lost billions. The €300 million French settlement is a fraction of the estimated tax evasion facilitated.",
+    "wealth_velocity": "HSBC is a UK-listed company with significant Hong Kong and Chinese institutional shareholder ownership following Ping An Insurance's stake building. Revenue from fee income on cartel transactions, from helping wealthy clients evade taxes, and from processing sanctions violations for Iran and Sudan flowed to London and to institutional shareholders globally."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "HSBC shareholders", "how": "Fee income from cartel accounts, sanctions violations, and tax evasion facilitation over years of operation; DPA avoided criminal conviction that would have triggered counterparty terminations"},
+      {"group": "Sinaloa Cartel", "how": "$881M laundered through HSBC Mexico accounts; operational funding for drug trafficking and violence"},
+      {"group": "HSBC high-net-worth tax evasion clients", "how": "30,000 clients helped to conceal assets from their home country tax authorities through Swiss accounts"}
+    ],
+    "who_paid": [
+      {"group": "Communities affected by Sinaloa Cartel operations", "how": "Violence, drug distribution, institutional corruption funded by laundered cartel proceeds processed through HSBC"},
+      {"group": "Taxpayers in 60+ countries", "how": "Tax revenue lost through HSBC-facilitated evasion at Swiss private banking subsidiary"},
+      {"group": "Sanctioned countries' civilian populations", "how": "US sanctions exist to constrain governments engaged in documented human rights abuses — HSBC's sanctions violations reduced their effectiveness"}
+    ],
+    "the_gap": "HSBC processed $881 million for the Sinaloa Cartel through accounts cartel money launderers called 'drug accounts.' The US Senate said the compliance culture was 'pervasively polluted.' HSBC paid $1.9 billion and signed a deferred prosecution agreement. No executive was criminally charged. Five years later the DPA expired. The same year, the UK fined HSBC again for AML failings."
+  }
+}

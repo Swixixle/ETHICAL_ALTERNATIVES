@@ -1,0 +1,93 @@
+{
+  "brand_name": "Lyft",
+  "brand_slug": "lyft",
+  "parent_company": "Lyft, Inc.",
+  "ultimate_parent": "Lyft, Inc.",
+  "subsidiaries": ["Flexdrive (sold)", "Lyft Bikes and Scooters", "PBSC Urban Solutions"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "LYFT SPENT $220 MILLION WITH UBER TO BLOCK DRIVER EMPLOYEE STATUS — THEN PUBLISHED A SAFETY REPORT ADMITTING 4,158 SEXUAL ASSAULTS IN TWO YEARS",
+  "executive_summary": "Lyft, Inc. is the second-largest US rideshare company, operating in the United States and Canada. In 2020, Lyft and Uber together spent approximately $220 million to fund California's Proposition 22 — a ballot measure that exempted rideshare and delivery companies from AB5, a California law that would have required classifying gig workers as employees entitled to minimum wage, overtime, benefits, and workers' compensation. Proposition 22 passed but was subsequently ruled unconstitutional by a California Superior Court judge in 2021 — a ruling that Lyft and Uber have appealed through successive courts. Lyft's 2019 safety report revealed that 4,158 sexual assault reports were filed against Lyft drivers in 2017 and 2018 combined. The safety report was published only after sustained pressure from advocacy organizations. Academic research consistently documents that rideshare drivers earn below minimum wage after expenses.",
+  "verdict_tags": ["220m_prop_22_gig_worker_classification_blocking", "prop_22_ruled_unconstitutional_appealing", "4158_sexual_assaults_2017_2018", "safety_report_pressure_required", "driver_below_minimum_wage_after_expenses_documented"],
+  "concern_flags": {"labor": true, "environmental": false, "political": true, "tax": true, "health": false, "legal": true},
+  "labor": {
+    "summary": "Lyft classifies drivers as independent contractors — denying them minimum wage guarantees, overtime pay, health insurance, workers' compensation, and unemployment insurance. Academic research from the Economic Policy Institute and others has documented that Lyft drivers earn below minimum wage in many markets after accounting for vehicle depreciation, fuel, insurance, and maintenance costs. A 2018 MIT study found Lyft and Uber drivers earned a median of $3.37 per hour profit after expenses — below the federal minimum wage. Prop 22 provides limited benefits for drivers working above a threshold of hours — benefits that driver advocacy groups have characterized as significantly below full employee status.",
+    "flags": ["below_minimum_wage_after_expenses_mit_documented", "no_workers_compensation_independent_contractor", "prop_22_benefits_below_full_employee_status", "vehicle_depreciation_cost_borne_by_driver"],
+    "sources": ["https://economics.mit.edu/sites/default/files/2022-08/The%20Uber-Lyft%20Business%20Model%20and%20its%20Effects%20on%20Drivers.pdf"]
+  },
+  "environmental": {
+    "summary": "Rideshare vehicles add to urban congestion — studies in San Francisco, New York, and other cities have documented that Lyft and Uber increase vehicle miles traveled by reducing transit ridership and adding deadhead miles (driving without a passenger). University of California research found Lyft and Uber contributed approximately 13,000 additional metric tons of CO2 in San Francisco annually. The electrification commitments Lyft has made are voluntary and enforcement is through driver incentives rather than mandates.",
+    "flags": ["congestion_increase_transit_reduction_documented", "deadhead_miles_co2_contribution_documented", "uc_san_francisco_13000_metric_tons_annual"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Lyft and Uber's $220 million Proposition 22 campaign is the most expensive ballot measure campaign in California history. The campaign defeated AB5 — which would have required employee classification — through a measure written by the companies themselves, exempting specifically the rideshare and delivery categories. The California Superior Court judge who ruled Prop 22 unconstitutional in 2021 found it violated the California Constitution by limiting the legislature's authority over workers' compensation and by including an initiative entrenchment clause requiring a supermajority to amend it. The appeal is ongoing.",
+    "flags": ["220m_most_expensive_california_ballot_measure", "companies_wrote_exemption_for_themselves", "unconstitutional_ruling_superior_court_2021", "workers_comp_constitutional_violation_finding"],
+    "sources": ["https://www.latimes.com/california/story/2021-08-20/prop-22-ruled-unconstitutional-superior-court-judge-gig-workers"]
+  },
+  "legal": {
+    "summary": "Lyft's 2019 safety report disclosed 4,158 sexual assault reports filed in 2017 and 2018. Lyft faced significant class action litigation from assault victims who alleged inadequate background check procedures and insufficient response to assault complaints. Lyft settled a class action for $25 million in 2021 covering sexual assault claims. The company has also faced state regulatory actions for data privacy violations including a 2023 settlement with the FTC over sharing driver geolocation data with third parties without adequate disclosure. Prop 22's legal status continues through California appellate courts.",
+    "flags": ["4158_sexual_assaults_2017_2018_disclosed", "25m_sexual_assault_class_action_settlement", "ftc_geolocation_data_sharing_settlement", "prop_22_appellate_litigation_ongoing"],
+    "sources": ["https://www.nytimes.com/2019/10/03/technology/lyft-safety-report-sexual-assaults.html", "https://www.latimes.com/business/story/2021-07-26/lyft-25-million-sexual-assault-settlement"]
+  },
+  "tax": {
+    "summary": "Lyft has generated significant accumulated losses since its founding, reducing or eliminating US corporate tax obligations for most of its operating history. The company's structure as a marketplace connecting drivers (independent contractors) and riders means it generates revenue without directly employing the workers who provide the service — a structure that also has implications for payroll tax obligations. Stock-based compensation at Lyft has been substantial, generating additional corporate tax deductions.",
+    "flags": ["accumulated_losses_minimal_corporate_tax", "independent_contractor_payroll_tax_avoidance", "stock_compensation_deductions"],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO David Risher replaced co-founder Logan Green in April 2023 — one of a series of leadership transitions at Lyft. Co-founders Logan Green and John Zimmer led the company through the Prop 22 campaign, the safety report, and the 2019 IPO that valued Lyft at approximately $24 billion on a company that had not achieved profitability. Green and Zimmer received significant IPO proceeds and subsequent compensation while the company has remained structurally dependent on drivers who the company classifies as independent contractors.",
+    "flags": ["24b_ipo_without_profitability", "founders_ipo_proceeds_while_drivers_below_minimum_wage", "multiple_ceo_transitions"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Lyft's Prop 22 campaign was coordinated with Uber — the two primary competitors jointly funded the same ballot measure to block employee classification. This coordination represents a documented instance of competitors working together to weaken labor protections for their shared workforce. The gig economy model Lyft and Uber pioneered has been extended to food delivery (DoorDash), grocery delivery (Instacart), and household tasks (TaskRabbit) — all using the same independent contractor classification that externalizes labor costs onto workers.",
+    "flags": ["uber_lyft_competitor_coordination_against_workers", "gig_economy_model_extended_doordash_instacart", "independent_contractor_labor_cost_externalization_industry_wide"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Driver advocacy organizations have alleged that Lyft's background check process is systematically weaker than what an employer relationship would require — that the independent contractor classification allows Lyft to use lighter-touch screening and avoid ongoing monitoring obligations that would apply to employees. Sexual assault plaintiffs have alleged that Lyft received complaints about specific drivers before subsequent assaults and did not deactivate those drivers in a timely manner. Labor researchers have alleged that Lyft's earnings transparency — the per-ride earnings shown to drivers — does not adequately disclose the full cost structure that reduces net earnings below minimum wage.",
+    "flags": ["background_check_weaker_than_employer_standard_alleged", "prior_complaints_before_subsequent_assaults_alleged", "earnings_transparency_failure_alleged"],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Lyft's 2019 safety report disclosed 4,158 sexual assault reports across 2017 and 2018 — incidents involving passengers assaulting drivers and drivers assaulting passengers. The report, published after advocacy pressure, disclosed nine people murdered during Lyft rides in the same period. The $25 million class action settlement for sexual assault victims acknowledged the scale of the problem. Driver safety — including the risk of robbery and assault that falls entirely on independent contractor drivers without workers' compensation — represents the occupational health dimension of the classification issue.",
+    "flags": ["4158_sexual_assaults_2017_2018", "9_murders_2017_2018_disclosed", "driver_robbery_assault_risk_no_workers_comp"],
+    "sources": ["https://www.nytimes.com/2019/10/03/technology/lyft-safety-report-sexual-assaults.html"]
+  },
+  "alternatives": {
+    "cheaper": ["Public transit where available — genuinely lower cost, lower environmental impact, union-represented workers with benefits", "Taxis in markets where taxi apps (Curb, Flywheel) operate — many taxi drivers are employees or owner-operators with different economic structures"],
+    "healthier": ["Walking, cycling, and public transit for short distances — health benefits documented beyond the labor question", "Worker-owned rideshare cooperatives where available — Denver's Green Taxi and other cooperative models provide similar service with different labor structure"],
+    "diy": ["Calculate your full cost of a Lyft ride including the surge pricing surge and driver's actual earnings — tip drivers; they earn significantly below what the fare suggests", "If you are a Lyft driver: your true hourly earnings require calculating vehicle depreciation, insurance costs, fuel, and maintenance — the MIT study methodology is publicly available", "Support AB5-style legislation in your state — 12 states have considered similar worker classification bills following California's"]
+  },
+  "timeline": [
+    {"year": 2012, "event": "Lyft founded in San Francisco as Zimride rideshare; pivots to on-demand model", "severity": "neutral", "source_url": ""},
+    {"year": 2019, "event": "March: Lyft IPO at approximately $24B valuation; company not yet profitable", "severity": "neutral", "source_url": ""},
+    {"year": 2019, "event": "October: Lyft publishes safety report under advocacy pressure; discloses 4,158 sexual assaults in 2017-2018 and 9 murders", "severity": "critical", "source_url": "https://www.nytimes.com/2019/10/03/technology/lyft-safety-report-sexual-assaults.html"},
+    {"year": 2019, "event": "California AB5 signed into law; would require classifying gig workers as employees", "severity": "high", "source_url": ""},
+    {"year": 2020, "event": "November: Prop 22 passes with $220M in Lyft/Uber funding — exempts rideshare from AB5 requirements", "severity": "critical", "source_url": ""},
+    {"year": 2021, "event": "California Superior Court rules Prop 22 unconstitutional; Lyft and Uber appeal", "severity": "critical", "source_url": "https://www.latimes.com/california/story/2021-08-20/prop-22-ruled-unconstitutional-superior-court-judge-gig-workers"},
+    {"year": 2021, "event": "$25M class action settlement for sexual assault claims", "severity": "high", "source_url": ""},
+    {"year": 2023, "event": "April: Co-founder Logan Green steps down as CEO; David Risher appointed", "severity": "moderate", "source_url": ""}
+  ],
+  "community_impact": {
+    "displacement": "Lyft drivers — often working multiple gig economy jobs to approximate full-time income — absorb all vehicle costs, bear all occupational safety risk without workers' compensation, and receive no unemployment insurance. When the COVID-19 pandemic eliminated rideshare demand overnight in March 2020, Lyft drivers had no unemployment safety net — because they were classified as independent contractors. The communities where gig work has become a primary employment category have absorbed this vulnerability.",
+    "price_illusion": "Lyft rides appear affordable. The cost structure distributes expenses: Lyft takes platform fees; drivers absorb vehicle depreciation, fuel, insurance, and maintenance; passengers pay the fare. Academic research establishes that drivers earn below minimum wage after these costs. The apparent affordability of the ride is partially subsidized by transferring costs onto drivers who have no employment protections.",
+    "tax_math": "Independent contractor classification means Lyft does not pay employer-side payroll taxes — FICA, FUTA — on the labor its platform depends on. Drivers pay both employee and employer sides of FICA as self-employed individuals. The $220 million Prop 22 campaign is a tax-deductible business expense. The labor costs that Lyft avoids through contractor classification — minimum wage, overtime, benefits, workers' compensation — represent costs shifted to drivers and, for injuries and unemployment, to public safety net programs.",
+    "wealth_velocity": "Lyft's co-founders and early investors received significant returns through the 2019 IPO on a company built on labor classified as independent contracting to avoid employment obligations. The revenue generated by Lyft drivers' labor — drivers who the MIT study found earn $3.37 per hour profit after expenses — concentrates in San Francisco and in institutional shareholder portfolios."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Lyft founders (Green, Zimmer) and investors", "how": "$24B IPO valuation on a company built on worker classification that avoids minimum wage, overtime, workers' compensation, and benefits"},
+      {"group": "Lyft shareholders", "how": "Revenue from platform fees on rides where driver labor costs are externalized onto drivers through independent contractor classification"},
+      {"group": "Prop 22 political consultants", "how": "$220M campaign for a ballot measure the companies wrote themselves to exempt themselves from labor law"}
+    ],
+    "who_paid": [
+      {"group": "Lyft drivers", "how": "Vehicle depreciation, fuel, insurance, and maintenance reduce earnings to below minimum wage per MIT research; no workers' compensation for occupational injury; no unemployment during demand drops"},
+      {"group": "Sexual assault victims (4,158 reported 2017-2018)", "how": "Assaults during Lyft rides; $25M class action settlement; safety report required advocacy pressure to publish"},
+      {"group": "California workers broadly", "how": "$220M ballot measure campaign to prevent legislature from classifying gig workers as employees — corporate spending to constrain democratic labor law"}
+    ],
+    "the_gap": "Lyft drivers earn $3.37 per hour after expenses per MIT research. Lyft spent $220 million with Uber to make sure that doesn't have to change. Their safety report — which they published only after sustained advocacy pressure — showed 4,158 sexual assaults in two years. The measure they funded was ruled unconstitutional. They're appealing it. The founders took the company public at $24 billion."
+  }
+}

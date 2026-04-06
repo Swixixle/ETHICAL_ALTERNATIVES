@@ -1,0 +1,95 @@
+{
+  "brand_name": "Deutsche Bank",
+  "brand_slug": "deutsche-bank",
+  "parent_company": "Deutsche Bank AG",
+  "ultimate_parent": "Deutsche Bank AG",
+  "subsidiaries": ["DWS Group", "Deutsche Bank Trust Company Americas", "Postbank"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "DEUTSCHE BANK BANKED JEFFREY EPSTEIN FOR 18 YEARS AFTER HIS 2008 CONVICTION AND PAID $150M — THAT WAS THE SMALLEST OF ITS FOUR MAJOR SETTLEMENTS THIS DECADE",
+  "executive_summary": "Deutsche Bank AG is Germany's largest bank, headquartered in Frankfurt. Between 2013 and 2018, Deutsche Bank maintained accounts for Jeffrey Epstein — a registered sex offender since his 2008 Florida conviction — processing approximately $120 million in transactions and explicitly noting 'reputational risks' in internal documents while choosing to continue the relationship for the revenue it generated. New York's Department of Financial Services fined Deutsche Bank $150 million in 2020 for these Epstein failings. This was Deutsche Bank's smallest major legal settlement in recent years: the bank paid $7.2 billion to the DOJ for mortgage-backed securities fraud (2017), $2.5 billion to US and UK authorities for LIBOR manipulation (2015), and $630 million to US and UK authorities for a Russian mirror trading scheme that laundered approximately $10 billion through its Moscow, London, and New York branches.",
+  "verdict_tags": ["epstein_banking_18_years_post_conviction", "150m_dfs_epstein_fine", "7_2b_mortgage_securities_settlement", "2_5b_libor_manipulation", "630m_russian_mirror_trading_10b_laundering", "four_major_settlements_one_decade"],
+  "concern_flags": {"labor": false, "environmental": false, "political": true, "tax": true, "health": false, "legal": true},
+  "labor": {
+    "summary": "Deutsche Bank has reduced its workforce from approximately 100,000 to 85,000 employees through restructuring programs. The bank's workforce reductions — driven by the need to rebuild capital after multiple massive settlements — affected thousands of workers who bore the cost of decisions made at the executive level. No major documented systemic labor violations have been identified as a primary concern.",
+    "flags": ["workforce_reduction_settlement_driven", "employee_cost_of_executive_decisions"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Deutsche Bank has committed to ESG integration and sustainable finance goals. Its DWS asset management subsidiary faced a greenwashing investigation by German and US authorities in 2022 — the SEC fined DWS $19 million for making materially misleading statements about its ESG integration in investment processes. A former DWS sustainability chief had blown the whistle on the greenwashing allegations. The US SEC and German BaFin both investigated.",
+    "flags": ["dws_19m_sec_greenwashing_fine", "esg_misleading_statements_documented", "whistleblower_triggered_investigation"],
+    "sources": ["https://www.sec.gov/news/press-release/2023-86"]
+  },
+  "political": {
+    "summary": "Deutsche Bank was Donald Trump's primary lender for approximately two decades — extending over $2 billion in loans when other major banks had cut ties following multiple Trump business failures and bankruptcies. This relationship became politically significant when congressional investigators sought Trump's Deutsche Bank loan records in 2019. Deutsche Bank cooperated with subpoenas. The Trump relationship exposed Deutsche Bank to documented AML control criticism — the bank's own anti-financial crime staff had flagged suspicious transactions in Trump and Kushner accounts, and were overruled by senior management, according to a 2020 New York Times investigation.",
+    "flags": ["trump_primary_lender_2_billion_other_banks_refused", "trump_kushner_aml_flags_overruled_nyt_report", "congressional_subpoena_compliance"],
+    "sources": ["https://www.nytimes.com/2020/05/19/business/deutsche-bank-trump-kushner-fraud-alert.html"]
+  },
+  "legal": {
+    "summary": "2015: $2.5 billion settlement with US DOJ and UK FCA for LIBOR manipulation — colluding with other banks to manipulate benchmark interest rates affecting trillions in financial contracts globally. Deutsche Bank pleaded guilty to wire fraud. 2017: $7.2 billion DOJ settlement for selling toxic mortgage-backed securities in the lead-up to the 2008 financial crisis — admitting it misled investors. 2017: $630 million settlement with US DFS and UK FCA for the Russian mirror trading scheme — approximately $10 billion in potentially suspicious transactions moved through Moscow, London, and New York branches. 2020: $150 million DFS fine for Epstein-related AML failings. Total: approximately $10.5 billion in major US settlements across one decade.",
+    "flags": ["2_5b_libor_criminal_guilty_plea_wire_fraud", "7_2b_mortgage_securities_investor_fraud", "630m_10b_russian_mirror_trading", "150m_epstein_aml", "10_5b_total_decade"],
+    "sources": ["https://www.justice.gov/opa/pr/deutsche-bank-agrees-pay-72-billion-misconduct-relating-mortgage-backed-securities", "https://www.dfs.ny.gov/reports_and_publications/press_releases/pr202007072"]
+  },
+  "tax": {
+    "summary": "Deutsche Bank was investigated by German tax authorities in 2012 over a €900 million VAT fraud scheme involving carbon emissions trading certificates — German police raided the bank's Frankfurt headquarters. The bank denied wrongdoing but paid €202 million to resolve the investigation. Deutsche Bank has also been investigated for facilitating tax evasion for wealthy clients through its private banking operations.",
+    "flags": ["900m_vat_fraud_carbon_trading_investigation", "202m_resolution_without_conviction", "private_banking_tax_evasion_facilitation"],
+    "sources": ["https://www.reuters.com/article/us-deutsche-bank-tax-idUSTRE81B17W20120112"]
+  },
+  "executives": {
+    "summary": "Deutsche Bank has had five CEOs in ten years — a pattern reflecting the governance instability created by serial legal crises. Josef Ackermann oversaw the LIBOR-era conduct. Anshu Jain resigned in 2015 amid LIBOR settlement. John Cryan was brought to lead cleanup but was replaced in 2018. Christian Sewing has led the bank through the Epstein, DWS greenwashing, and ongoing regulatory scrutiny. No Deutsche Bank executive was criminally charged in any of the four major US settlements. The LIBOR guilty plea was at the entity level.",
+    "flags": ["five_ceos_ten_years", "no_executive_criminal_charges_10_5b_settlements", "libor_guilty_plea_entity_not_individual"],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Deutsche Bank's Russian mirror trading scheme — where clients in Russia simultaneously bought securities in one branch and sold them in another, converting rubles to dollars — operated through Deutsche Bank's Moscow, London, and New York offices simultaneously. Approximately $10 billion was moved through this mechanism. The DFS investigation found it was structured to evade anti-money laundering controls. The Russian clients who used the scheme have not been publicly identified. Deutsche Bank's relationship with Trump and the Epstein relationship both intersected with real estate and private wealth management — two areas where the bank's AML controls were repeatedly found deficient.",
+    "flags": ["russian_mirror_trading_three_branch_simultaneous", "clients_identities_not_public", "real_estate_private_wealth_aml_deficiencies_repeated"],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The New York Times reported in 2020 that Deutsche Bank's anti-financial crime staff had flagged transactions in Trump and Kushner accounts as potentially suspicious and recommended filing Suspicious Activity Reports with FinCEN — and that senior management overruled these recommendations. Deutsche Bank denied that it overruled the filings. Congressional investigators and the New York DFS have alleged that Deutsche Bank's pattern of AML failures was systematic rather than isolated — reflecting a culture that prioritized revenue from high-risk clients over compliance obligations.",
+    "flags": ["trump_kushner_sar_recommendations_overruled_alleged_nyt", "systematic_aml_failure_culture_alleged", "high_risk_client_revenue_over_compliance_alleged"],
+    "sources": ["https://www.nytimes.com/2020/05/19/business/deutsche-bank-trump-kushner-fraud-alert.html"]
+  },
+  "health_record": {
+    "summary": "Deutsche Bank's banking of Jeffrey Epstein — a registered sex offender who had pleaded guilty to state prostitution charges involving a minor in 2008 — provided the financial infrastructure for his continued activities between 2013 and 2018. The DFS order documented that Deutsche Bank processed payments to Epstein's alleged co-conspirators and women identified as victims, to law firms engaged in legal disputes related to Epstein's conduct, and to dozens of women consistent with patterns identified in prior Epstein criminal proceedings. The bank's own documents noted reputational risks and proceeded anyway.",
+    "flags": ["epstein_financial_infrastructure_2013_2018", "payments_to_alleged_coconspirators_documented_dfs", "own_documents_noted_reputational_risk_proceeded"],
+    "sources": ["https://www.dfs.ny.gov/reports_and_publications/press_releases/pr202007072"]
+  },
+  "alternatives": {
+    "cheaper": ["Credit unions for personal banking — member-owned, not-for-profit, no serial AML settlement history", "For institutional clients: JPMorgan, Citigroup — different set of concerns but no Russian mirror trading or Epstein banking record"],
+    "healthier": ["Deutsche Bank's DWS greenwashing settlement means ESG funds branded as 'sustainable' were not — check any DWS fund's actual holdings against claimed ESG criteria before investing"],
+    "diy": ["If you hold DWS funds sold as ESG: verify the fund's actual holdings against its stated ESG criteria — the SEC greenwashing settlement established the prior disclosures were misleading", "Violation Tracker at goodjobsfirst.org shows complete settlement history for any bank before you open an account"]
+  },
+  "timeline": [
+    {"year": 2008, "event": "Jeffrey Epstein pleads guilty to state prostitution charges involving a minor; Deutsche Bank later begins banking relationship", "severity": "critical", "source_url": ""},
+    {"year": 2012, "event": "German police raid Deutsche Bank Frankfurt HQ over €900M carbon trading VAT fraud investigation", "severity": "critical", "source_url": ""},
+    {"year": 2013, "event": "Deutsche Bank begins banking Jeffrey Epstein despite his 2008 sex offense conviction — internal documents note 'reputational risks'", "severity": "critical", "source_url": ""},
+    {"year": 2015, "event": "$2.5B settlement for LIBOR manipulation; Deutsche Bank entity pleads guilty to wire fraud; no individual charged", "severity": "critical", "source_url": ""},
+    {"year": 2017, "event": "$7.2B DOJ settlement for toxic mortgage-backed securities sold to investors pre-2008 crisis", "severity": "critical", "source_url": "https://www.justice.gov/opa/pr/deutsche-bank-agrees-pay-72-billion-misconduct-relating-mortgage-backed-securities"},
+    {"year": 2017, "event": "$630M settlement for Russian mirror trading scheme — approximately $10B in suspicious transactions", "severity": "critical", "source_url": ""},
+    {"year": 2018, "event": "Deutsche Bank terminates Epstein banking relationship after 5 years; total transactions approximately $120M", "severity": "high", "source_url": ""},
+    {"year": 2019, "event": "Congress subpoenas Deutsche Bank for Trump loan records; bank cooperates", "severity": "high", "source_url": ""},
+    {"year": 2020, "event": "July: NY DFS $150M fine for Epstein AML failings", "severity": "high", "source_url": "https://www.dfs.ny.gov/reports_and_publications/press_releases/pr202007072"},
+    {"year": 2023, "event": "SEC fines DWS $19M for greenwashing — misleading ESG investment claims", "severity": "high", "source_url": "https://www.sec.gov/news/press-release/2023-86"}
+  ],
+  "community_impact": {
+    "displacement": "The LIBOR manipulation — in which Deutsche Bank and other banks colluded to artificially set benchmark interest rates — affected trillions of dollars in financial contracts globally. Municipalities, pension funds, and ordinary borrowers with LIBOR-linked loans were overcharged. The Russian mirror trading scheme moved approximately $10 billion of potentially suspicious money through global financial systems — the ultimate destination and ownership of those funds is undisclosed.",
+    "price_illusion": "Deutsche Bank's DWS funds were sold to investors as sustainable ESG investments with explicit environmental and social criteria. The SEC found those claims were materially misleading. Investors paid a premium for sustainability standards that were not applied. Deutsche Bank's mortgage securities were sold as investment-grade products that the bank knew were backed by defective loans.",
+    "tax_math": "The €900 million carbon trading VAT fraud scheme involved Deutsche Bank clients using the bank's infrastructure to fraudulently claim VAT refunds on carbon certificates that were bought and sold in rapid cycles — stealing from European governments' tax revenues. The $10.5 billion in US settlements are partially tax-deductible as business expenses.",
+    "wealth_velocity": "Deutsche Bank is publicly traded on the Frankfurt Stock Exchange with broad European and international institutional ownership. The revenues from the Russian mirror trading, LIBOR manipulation, and mortgage securities fraud flowed to German and international shareholders during the periods these activities generated income. The costs — settlements, regulatory fines, damaged counterparties — were paid by the institution."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Deutsche Bank shareholders", "how": "Revenue from LIBOR manipulation, toxic mortgage securities sales, Russian mirror trading, and Epstein banking relationship during operational periods"},
+      {"group": "Epstein", "how": "Banking infrastructure after his 2008 conviction for processing approximately $120M in transactions"},
+      {"group": "Russian mirror trading clients", "how": "Mechanism to convert approximately $10B from rubles to dollars through simultaneous cross-border transactions"}
+    ],
+    "who_paid": [
+      {"group": "Municipalities and pension funds with LIBOR-linked contracts", "how": "Overcharged on interest rates by manipulated LIBOR benchmark"},
+      {"group": "2008 mortgage securities investors", "how": "Purchased securities Deutsche Bank knew were backed by defective loans"},
+      {"group": "Epstein's victims 2013-2018", "how": "Banking infrastructure provided to Epstein after conviction continued financing his activities"}
+    ],
+    "the_gap": "Deutsche Bank banked Jeffrey Epstein from 2013 to 2018 — five years after he was a convicted sex offender. Their own documents said it was a reputational risk. They kept the account. They paid $150 million for it. That was their smallest settlement. The LIBOR fine was $2.5 billion. The mortgage fraud was $7.2 billion. The Russian mirror trading was $630 million. No executive was criminally charged for any of it."
+  }
+}
