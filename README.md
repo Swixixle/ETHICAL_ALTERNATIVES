@@ -2,193 +2,372 @@
 
 # ETHICALALT
 
-**Photograph anything. Tap any object. Get the full corporate record.**
+**Photograph a product. Tap any item. Get a full corporate investigation record and verified local alternatives.**
 
 [![Live](https://img.shields.io/badge/Live-ethicalalt--client.onrender.com-D4A017?style=flat-square&labelColor=0A1F3D)](https://ethicalalt-client.onrender.com)
-[![Profiles](https://img.shields.io/badge/Profiles-92%2B_companies-A8C4D8?style=flat-square&labelColor=0A1F3D)](#investigation-database)
 [![License](https://img.shields.io/badge/License-MIT-6A8A9A?style=flat-square&labelColor=0A1F3D)](LICENSE)
 
 </div>
 
----
+EthicalAlt is a mobile-first web app that turns your camera into a conscience. Point it at anything on a shelf, in a store window, or in your home — tap the brand — and receive a structured investigation of that company's environmental record, labor practices, political spending, and documented controversies, plus verified independent alternatives sourced from Etsy, local sellers, and nearby businesses.
 
-## What It Does
-
-EthicalAlt is a mobile-first investigative shopping lens. You photograph your environment — a store shelf, a logo on a cup, a brand on someone's shirt — tap any object, and receive two things:
-
-**The record.** A full corporate investigation sourced to public primary documents: EPA enforcement actions, DOJ settlements, NLRB complaints, FEC filings, SEC EDGAR, OSHA violations, congressional testimony. Tax exposure, legal history, labor violations, environmental penalties, political spend, documented health impacts, and the executives who run it.
-
-**The alternatives.** Independent local businesses near you, CSA farms, Etsy sellers, and secondhand options matched to what you actually tapped. Not generic alternatives — the closest independent equivalent.
-
-No barcode required. Any photograph of anything.
+The investigation is not opinion. It is a structured record with sourced evidence, graded by confidence, with clear separation in the UI between **database** profiles and **live** research so you know what to verify.
 
 ---
 
-## Flow
+## The core loop
 
 ```
-PHOTOGRAPH → TAP → INVESTIGATE → ACT
+Photograph → Tap object → Identify brand → Investigate → Act
 ```
 
-1. **Photograph** your surroundings. No barcode, no specific framing.
-
-2. **Tap** any object. Claude Vision identifies it with maximum precision — brand, parent company, product category.
-
-3. **Investigate** — the card loads:
-   - Five-state confidence badge: `VERIFIED RECORD` (from indexed database) down to `NO PUBLIC RECORD`
-   - Generated headline from documented facts
-   - Verdict tags sourced to primary records
-   - Collapsible sections: Tax · Legal · Labor · Environmental · Political · Executives · Connections · Allegations · Health Record
-   - Cost absorption breakdown: who benefited, who paid, the gap
-   - Timeline of documented events
-   - Sources ledger with provenance
-
-4. **Act:**
-   - **Find local alternatives** — OSM-sourced independents, Etsy sellers, CSA farms near you
-   - **Share to regulators** — FTC, SEC, NLRB, EPA, DOL, OSHA, FDA, plus your state AG
-   - **Share to press** — pre-mapped journalists who cover that company
-   - **Share to institutional actors** — ESG raters, pension funds, union locals, investor relations
-   - **Register as a civic witness** — opt-in public attestation that you reviewed this record
+1. **Photograph** — open the camera, point at any product or scene
+2. **Tap** — touch any item in the frame
+3. **Identify** — vision AI resolves the brand and corporate parent with a confidence score
+4. **Investigate** — structured profile loads: environmental record, labor record, political donations, documented violations, proportionality context
+5. **Act** — verified independent alternatives surface; share findings; file a civic witness report
 
 ---
 
-## Investigation Database
+## Screenshots
 
-92+ company profiles across 10 sectors. Every profile built from public primary records.
+**1. Home — local feed with category filters and SNAP**
 
-| Sector | Coverage |
-|--------|----------|
-| Consumer Goods | Coca-Cola, Nike, H&M, Nestlé, Shein, P&G, Unilever, LVMH, Philip Morris, Altria, Starbucks, McDonald's, Amazon, Apple |
-| Finance | Goldman Sachs, JPMorgan Chase, Wells Fargo, Bank of America, Koch Industries |
-| Energy | ExxonMobil, Chevron, Shell, BP, Koch Industries |
-| Healthcare | UnitedHealth, HCA, Cigna, CVS Health, McKesson, DaVita, Steward, Tenet, Ascension, Cardinal Health |
-| Pharma | Pfizer, Merck, Eli Lilly, Bayer/Monsanto |
-| Tech | Meta, Google, Microsoft, Tesla, Samsung, TikTok/ByteDance |
-| Streaming & social | Disney, LinkedIn, Netflix, Pinterest, Reddit, Snapchat, Spotify, Twitch, X (Twitter), YouTube |
-| Retail | Walmart, Target, Kroger, Dollar General |
-| Auto | Toyota, General Motors, Ford |
-| Gambling | MGM Resorts, Caesars Entertainment, DraftKings, FanDuel, Las Vegas Sands, Penn Entertainment |
-| Sweepstakes Casinos | VGW/Chumba Casino, High 5 Games, Stake.us, Pulsz, sector overview |
-| Food/Agri | Tyson Foods, Cargill, Kraft Heinz, Mars, PepsiCo, Sysco |
-| Telecom | Comcast, AT&T, Verizon |
-| Positive profiles | Patagonia, REI, Ben & Jerry's, Cotopaxi, Eileen Fisher |
+![Home screen showing local independents feed, category filters, and SNAP button](docs/screenshots/01-home-local-feed.jpeg)
 
-**Sources queried per profile:**
-
-| Source | Data |
-|--------|------|
-| [EPA ECHO](https://echo.epa.gov) | Environmental violations, penalties |
-| [DOJ Press Releases](https://www.justice.gov/news) | Criminal charges, settlements |
-| [FEC API](https://api.open.fec.gov) | Political donations, PAC activity |
-| [CourtListener](https://www.courtlistener.com) | Federal court cases |
-| [NLRB Case DB](https://www.nlrb.gov) | Labor dispute cases |
-| [OSHA](https://www.osha.gov) | Worker safety violations |
-| [SEC EDGAR](https://www.sec.gov/edgar) | Corporate filings |
-| [Senate LDA](https://lda.senate.gov) | Lobbying disclosures |
-| [OpenSecrets](https://www.opensecrets.org) | Lobbying expenditures |
+The entry point. Local independent businesses near you, filterable by category. The SNAP button opens the camera. The INVESTIGATE bar accepts a brand name directly if you already know what you're looking at.
 
 ---
 
-## Civic Witness Registry
+**2. Full investigation view — desktop (alternatives left, record right)**
 
-When sharing an investigation, users can opt in to add their name to a public ledger:
+![Desktop view showing alternatives panel on the left and investigation accordion on the right with Tax, Legal, Labor, Environmental, Political, Product Health, and Executives sections](docs/screenshots/02-tap-investigation-desktop.png)
 
-> *"I have reviewed this documented investigation and choose to be on record as having seen it."*
-
-This is not a legal filing. It is a public attestation — a ledger of named people who have documented their review of corporate conduct. The registry is public at `/witnesses`, sortable by witness count per company, and shareable as a press-ready record.
-
-Rate limited. Abuse controlled. Legal notice on every surface.
+The split layout shows the full product in one frame. Left: independent alternatives sourced from Etsy, Overpass, secondhand platforms, and repair resources. Right: the investigation accordion — Tax, Legal, Labor, Environmental, Political, Product Health, Executives — each expandable with sourced findings and evidence grades.
 
 ---
 
-## Share System
+**3. Share the record — clean profile (Shambhala Publications)**
 
-Every investigation card routes to:
+![Share the record screen showing Shambhala Publications clean record: 55-year independent press, no documented violations, family owned, 4 primary sources](docs/screenshots/03-share-record-clean.jpeg)
 
-- **Press** — journalists pre-mapped to each company by beat (ProPublica, The Markup, STAT News, ICIJ, The Guardian, Reuters, and 30+ others)
-- **Federal regulators** — FTC, SEC, IRS, NLRB, DOL, OSHA, EPA, FDA
-- **State AG** — geolocated to the user's state, all 50 mapped
-- **Institutional** — MSCI ESG, Sustainalytics, CDP, ISS, CalPERS, TIAA, NYC Pension Funds
-- **Labor** — UFCW, UAW, CWA, SEIU, AFL-CIO, mapped by brand category
-- **Investor Relations** — direct IR contact for 16 major companies
+A clean record, publicly verified, with sources. This is what the investigation looks like when there is nothing to flag.
 
 ---
 
-## Hire Direct *(in development)*
+**4. City identity — local narrative layer (Indianapolis)**
 
-Post-investigation, users can connect with local workers who do what the corporation does — directly, at their own rates, keeping everything they earn.
+![Local story screen for Indianapolis showing city narrative, location tags, and recreation landmarks](docs/screenshots/04-city-identity.jpeg)
 
-Someone reads a DoorDash investigation. The card surfaces local independent couriers near them. One tap. Direct contact. No platform cut.
-
-Worker profiles include a **Corporate Alternatives** section: which companies they left, when, and why. Civic Verified badge for workers with 2+ witness attestations.
-
-Zero platform fee. No ratings at MVP. Trust through transparency and civic attestation.
+The city identity layer surfaces a curated narrative about the local area — landmarks, culture, outdoor life, independent institutions. Not algorithmic. Not scraped. Written by the model from public record and edited for accuracy.
 
 ---
 
-## Stack
+**5. Brand identified — inferred from scene**
 
-```
-Client          React · Vite · PWA
-Server          Node.js · Express
-Database        PostgreSQL (Render)
-Queue           BullMQ · Redis
-Vision          Claude Vision (Anthropic)
-Investigation   Claude Sonnet
-Local data      OpenStreetMap Overpass API
-Sellers         Etsy API
-```
+![Investigation result showing brand detected as Apple macOS, high confidence, inferred from scene context](docs/screenshots/05-brand-identified.jpeg)
+
+The vision step returns a confidence score and a method label. **High confidence** means the brand was read directly. **Inferred from scene** means it was resolved from object type, visual context, and surroundings. Both can be correct — only the label changes, and the label is always shown.
 
 ---
 
-## Running Locally
+## Neutral by design — it is a mirror
+
+The investigation finds what it finds.
+
+A business with a clean record gets a clean record — publicly stated, sourced, and shown with the same UI rigor as a heavy file. A 55-year independent press with no documented violations, family owned, four primary sources: that is the finding. That is what gets published.
+
+For honest independent businesses, that is not a liability. It is free verified advertising that no marketing budget can replicate. A public record saying your company has no documented labor findings, no environmental findings, no political entanglements — that is worth something. It is worth more than a review, because it comes from public record, not from a customer mood.
+
+EthicalAlt is not an attack machine. It is a mirror. Corporations with bad records look bad in it. Businesses with clean records look clean in it. The mirror does not editorialize.
+
+---
+
+## What works today
+
+| Feature | Status |
+|---------|--------|
+| Camera tap + brand identification | ✅ Working |
+| Corporate investigation profiles (DB-backed) | ✅ Working |
+| Live AI investigation (Claude + fallbacks) | ✅ Working |
+| Confidence scoring + evidence grading | ✅ Working |
+| Local independents feed with category filters | ✅ Working |
+| Etsy alternatives | ✅ Working |
+| Local business alternatives (Overpass) | ✅ Working |
+| Proportionality tool (USSC/BOP reference) | ✅ Working |
+| Share to network / tag company / report to regulators | ✅ Working |
+| City identity + local narrative layer | ✅ Working |
+| Civic witness registry | ✅ Working |
+| Hire-direct worker registry | ✅ Working |
+| Local events + Native Land territory layer | ✅ Working |
+| Community board (notice board, bottom of feed) | ✅ Working |
+
+---
+
+## Tech stack
+
+| Layer | Choice |
+|-------|--------|
+| API | Express (Node ≥ 20, ESM) |
+| UI | React 19 + Vite 6 |
+| AI — vision + investigation | Claude (primary) → Perplexity → Gemini (failover) |
+| Database | PostgreSQL (optional — degrades gracefully without it) |
+| Alternatives | Etsy API + Overpass (OpenStreetMap) |
+| Local data | Native Land API, Eventbrite, Bandcamp |
+| Monorepo | npm workspaces (`client/`, `server/`) |
+
+---
+
+## Quick start
+
+### Prerequisites
+
+- Node ≥ 20
+- PostgreSQL (optional — most features work without it)
+- An [Anthropic API key](https://console.anthropic.com) (required for vision + investigation)
+
+### 1. Clone and install
 
 ```bash
-git clone https://github.com/Swixixle/ETHICAL_ALTERNATIVES
+git clone https://github.com/Swixixle/ETHICAL_ALTERNATIVES.git
 cd ETHICAL_ALTERNATIVES
-
-# Server
-cd server
 npm install
-cp .env.example .env   # add ANTHROPIC_API_KEY, DATABASE_URL
-npm run dev
+```
 
-# Client
-cd ../client
-npm install
+### 2. Configure environment
+
+```bash
+cp server/.env.example server/.env
+```
+
+Open `server/.env` and set at minimum:
+
+```env
+ANTHROPIC_API_KEY=sk-ant-...
+```
+
+Everything else is optional. The app runs without a database — investigation profiles fall back to live AI generation, and civic features that require persistence are gracefully disabled.
+
+### 3. Run
+
+```bash
 npm run dev
 ```
 
-The app runs at `localhost:5173`. Server at `localhost:3001`.
+- Client: `http://localhost:5173`
+- API: `http://localhost:3001`
 
-For the full investigation pipeline you need an Anthropic API key. For local business data, the OSM Overpass API requires no key.
+### With database (full features)
+
+```bash
+createdb ethicalalt
+
+# Add to server/.env:
+DATABASE_URL=postgresql://localhost:5432/ethicalalt
+
+# Initialize schema (adjust path if your process differs)
+psql ethicalalt < server/db/schema.sql
+
+# Optional: seed sample profiles
+node server/db/import_profiles_v2.mjs
+```
 
 ---
 
-## Architecture Notes
+## How it works
 
-**Profile lookup:** Incoming brand slugs query `incumbent_profiles` first. If a profile exists with more than 5,000 characters, it returns immediately as `VERIFIED RECORD`. If the profile is a stub (under 5,000 chars) or missing, the live investigation pipeline runs, the result is upserted back to the database, and the upgraded profile is returned — the database self-heals on first access.
+### Investigation pipeline
 
-**Confidence system:** Five states driven by source depth and profile origin. `VERIFIED RECORD` requires `profile_type = 'database'` with a full indexed profile. Realtime investigation results are capped at `PARTIAL RECORD` regardless of source count.
+```
+Image + tap coordinates
+        ↓
+  vision.js — brand ID, confidence score, scene inventory
+        ↓
+  investigation.js — slug resolution
+        ↓
+  [DB profile exists?]
+     YES → hydrate relational profile + optional JSON override
+     NO  → live Claude research with web search tool loop
+        ↓
+  normalizeInvestigation() — canonical shape
+        ↓
+  finalizeInvestigation() — slug, press outlets, concern flags, timestamp
+        ↓
+  [violation metadata present?]
+     YES → attachProportionality() — USSC reference + nearest BOP facility
+        ↓
+  Investigation payload → client
+```
 
-**Share routing:** State AG URLs are mapped for all 50 states. ESG rater and pension fund contacts are static. Union routing uses a brand slug → union category map. Press routing uses a per-company journalist mapping built from documented beat coverage.
+The AI provider layer handles failover transparently. If Claude is unavailable, Perplexity covers the text leg; Gemini covers vision fallback when keyed.
+
+### Evidence and confidence
+
+Per-section **evidence grades** and **profile type** (`database` vs realtime search) make uncertainty explicit. Treat live-generated text as a **starting point** — verify material claims against primary sources.
+
+---
+
+## Project structure
+
+```
+ETHICAL_ALTERNATIVES/
+├── server/
+│   ├── index.js                      # Entry point, route mounting
+│   ├── env.js                        # Environment loader
+│   ├── routes/
+│   │   ├── tap.js                    # /api/tap — core camera flow
+│   │   ├── profiles.index.route.js
+│   │   ├── sellers.js
+│   │   ├── witness.js
+│   │   ├── workers.js
+│   │   ├── communityBoard.js         # /api/board — notice board
+│   │   └── ...
+│   ├── services/
+│   │   ├── vision.js                 # Brand identification from image
+│   │   ├── investigation.js          # Profile assembly + AI research
+│   │   ├── aiProvider.js             # Claude → Perplexity → Gemini failover
+│   │   └── proportionality.js        # USSC/BOP deterministic scoring
+│   └── db/
+│       ├── schema.sql
+│       └── pool.js                   # null when DATABASE_URL is absent
+│
+├── client/
+│   └── src/
+│       ├── App.jsx                   # Mode router — URL + in-app state
+│       ├── hooks/
+│       │   └── useTapAnalysis.js     # Core camera → investigation orchestration
+│       └── components/               # Cards, home, share, board, etc.
+│
+└── docs/
+    └── screenshots/                  # README figures (jpeg + one png)
+```
+
+---
+
+## Environment variables
+
+**Required:**
+
+```env
+ANTHROPIC_API_KEY=
+```
+
+**Recommended:**
+
+```env
+DATABASE_URL=
+PERPLEXITY_API_KEY=          # investigation text fallback
+GEMINI_API_KEY=              # vision fallback
+ETSY_API_KEY=                # alternatives
+```
+
+**Optional (each unlocks a specific feature):**
+
+```env
+NATIVE_LAND_API_KEY=
+EVENTBRITE_API_KEY=
+NEWS_API_KEY=
+ANTHROPIC_INVESTIGATION_MODEL=
+ANTHROPIC_VISION_MODEL=
+CORS_ORIGIN=
+PORT=3001
+```
+
+The app does not crash on missing optional keys. Run `grep -r "process.env" server/` for the full list.
+
+---
+
+## API surface
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/health` | Liveness |
+| GET | `/api/health/providers` | AI provider status |
+| POST | `/api/tap` | Image + tap → brand identification |
+| POST | `/api/tap/investigation` | Investigation profile |
+| POST | `/api/tap/sourcing` | Alternatives bundle |
+| POST | `/api/investigate` | Investigation by brand name (no image) |
+| GET | `/proportionality` | Deterministic sentencing reference |
+| * | `/api/profiles/*` | Brand profile directory |
+| * | `/api/sellers/*` | Independent seller registry |
+| * | `/api/witness/*` | Civic witness submissions |
+| * | `/api/workers/*` | Hire-direct worker registry |
+| * | `/api/board` | Community notice board (GET/POST) |
+| * | `/api/local-feed/*` | Local business + chain filter |
+| * | `/api/territory/*` | Native Land + narrative |
+| * | `/api/events/*` | Local events |
+| * | `/api/documentary/*` | SSE documentary narration |
+| * | `/api/share-card/*` | Share artifact builder |
+| * | `/api/city-identity/*` | City identity + local narrative |
+
+---
+
+## Honest gaps
+
+| Gap | Notes |
+|-----|-------|
+| No unified request tracing | `console` logging in investigation path only |
+| No automated tests | Manual verification throughout |
+| Camera API reliability | `getUserMedia` behavior varies on mobile — Safari is the worst offender |
+| Mobile web, not native | UI is mobile-first but runs in a browser; no React Native or Capacitor yet |
+| Profile corpus is static | Scale and search will eventually need an indexing strategy |
+| No auth layer | Session-scoped only; civic features are rate-limited but unauthenticated |
+| No docker-compose | Local setup requires manual Postgres provisioning |
+
+---
+
+## Risks
+
+**AI investigation accuracy.** The live AI path uses Claude with web search. Claude can be wrong. Evidence grades and profile-type labeling are there so uncertainty is visible — treat `overall_concern_level` as a structured starting point for research, not a verdict.
+
+**Legal exposure on corporate records.** Every factual claim needs a source. DB profiles are hand-curated with citations. Live-generated profiles should be verified against primary materials. This is the primary ongoing operational risk.
+
+**Camera and tap on mobile web.** `getUserMedia` on Safari in PWA mode is fragile. Tap precision on small screens is a real UX problem. The architecture supports a native wrapper when the web version proves the product.
+
+**No significant user load yet.** This is a serious prototype. It has not faced real adversarial use, scale, or edge cases.
+
+---
+
+## Roadmap
+
+### Now
+- Unified request ID tracing through the investigation pipeline
+- Docker Compose for one-command local dev
+- Basic E2E test coverage for the tap → investigate flow
+- Mobile Safari camera reliability fixes
+
+### Next
+- Journalist and civic org outreach — direct contact, not PR
+- Profile corpus expansion toward top 500 consumer brands
+- PWA manifest + install prompt
+
+### Later
+- Native wrapper (Capacitor) when mobile web limits become the bottleneck
+- Community profile contributions with moderation queue
+- Expanded alternatives: co-ops, local business registry
 
 ---
 
 ## Contributing
 
-**Profiles** — each profile is a JSON document in `server/db/profiles_v*/`. If you have documented primary-source information that updates or adds to an existing profile, open a PR. Every claim requires a source URL to a primary document (EPA, DOJ, NLRB, FEC, SEC, OSHA).
+Solo project in active development. Issues and PRs are welcome but reviewed slowly.
 
-**Local business exclusions** — the OSM layer filters known chains. If a chain is missing from the exclusion list, open an issue.
-
-**Bug reports** — open an issue with the brand you tapped, what was expected, and what happened.
+If you're a journalist, researcher, or investigator using this for real work — reach out directly. The share-to-regulator and witness registry features exist for you.
 
 ---
 
-## Built By
+## Community board
 
-Alex Maksimovich · Indianapolis · [Nikodemus Systems](https://github.com/Swixixle)
+The notice board lives at the **bottom of the main feed**. Same-day **offers** and **needs** (help / labor) with contact info; posts can be sorted by distance when the client sends coordinates. **No algorithmic ranking, no engagement mechanics.** It only lists posts — it does not match people, process payments, or verify identities. Neighbors coordinate on their own.
 
-Self-taught. Respiratory therapist background. AI-assisted development: Claude for architecture, Cursor for implementation.
+---
 
-> *If something happened, it should be verifiable. If something is claimed, there should be a receipt.*
+## License
+
+MIT — see `LICENSE`.
+
+---
+
+*Built by [Nikodemus Systems](https://github.com/Swixixle) — Indianapolis.*
+
+*If something happened, it should be verifiable. If something is claimed, there should be a receipt.*
