@@ -45,19 +45,13 @@ Photograph → Tap object → Identify brand → Investigate → Act
 
 ## Screenshots
 
-**1. Home — local feed with category filters**
-
-![Home screen showing local independents feed, SNAP button, category filters, and local business listings](docs/screenshots/01-home-local-feed.jpeg)
-
----
-
-**2. Full investigation — desktop view (alternatives + accordion)**
+**1. Full investigation — desktop view (alternatives + accordion)**
 
 ![Desktop split view showing alternatives panel left, investigation accordion right with Tax, Legal, Labor, Environmental, Political, Product Health sections](docs/screenshots/02-tap-investigation-desktop.png)
 
 ---
 
-**3. Clean record — Shambhala Publications**
+**2. Clean record — Shambhala Publications**
 
 ![Share the record screen showing Shambhala Publications: 55-year independent press, no documented violations, family owned, 4 primary sources, blue verified border](docs/screenshots/03-share-record-clean.jpeg)
 
@@ -65,15 +59,9 @@ A clean record is published with the same weight as a damaging one. For honest i
 
 ---
 
-**4. City identity — Indianapolis**
+**3. City identity — Indianapolis**
 
 ![Local story screen for Indianapolis showing city narrative, recreation landmarks, and location tags](docs/screenshots/04-city-identity.jpeg)
-
----
-
-**5. Brand identified — inferred from scene**
-
-![Investigation result showing brand detected as Apple macOS, high confidence, inferred from scene context, inventory-adjusted](docs/screenshots/05-brand-identified.jpeg)
 
 ---
 
