@@ -654,6 +654,8 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
     press_outlets: normalizePressOutletsFromParsed(parsed?.press_outlets),
 
     concern_axis_booleans,
+
+    is_stub_investigation: parsed?.is_stub_investigation ?? false,
   };
 
   attachProportionalityToInvestigation(inv, parsed, healthFlag);
@@ -726,6 +728,7 @@ function buildRealtimeEmergencyProfile(
       brand: brandName || 'Unknown',
       parent: corporateParent ?? null,
       subsidiaries: [],
+      is_stub_investigation: true,
       overall_concern_level: 'moderate',
       verdict_tags: [],
       executive_summary: `Realtime research for ${label} encountered an issue (${safeReason}). The brand is identified but its full public record could not be retrieved in this session. Try tapping again.`,
@@ -1090,6 +1093,14 @@ async function runInvestigationAnthropicTurn(userPrompt, tools) {
     if (tools?.length) params.tools = tools;
 
     lastResponse = await client.messages.create(params);
+
+    if (lastResponse.usage) {
+      const u = lastResponse.usage;
+      console.log(
+        `[investigation] tokens step=${step + 1} input=${u.input_tokens ?? 0} output=${u.output_tokens ?? 0} cache_read=${u.cache_read_input_tokens ?? 0} cache_write=${u.cache_creation_input_tokens ?? 0}`
+      );
+    }
+
     citationUrls = [...citationUrls, ...collectCitationUrls(lastResponse)];
 
     const blockTypes = (lastResponse.content || []).map((b) => b.type).join(', ');
@@ -1134,6 +1145,15 @@ async function runInvestigationAnthropicTurn(userPrompt, tools) {
 
     console.warn(`[investigation] realtime: unhandled stop_reason=${sr} — exiting loop`);
     break;
+  }
+
+  if (lastResponse?.usage) {
+    const u = lastResponse.usage;
+    const inputCost = ((u.input_tokens ?? 0) / 1_000_000) * 3.0;
+    const outputCost = ((u.output_tokens ?? 0) / 1_000_000) * 15.0;
+    console.log(
+      `[investigation] cost_estimate step_final input_tokens=${u.input_tokens ?? 0} output_tokens=${u.output_tokens ?? 0} est_usd=$${(inputCost + outputCost).toFixed(4)}`
+    );
   }
 
   return { message: lastResponse, citationUrls };
@@ -1212,6 +1232,7 @@ function buildUnparseableRealtimeStub(brandName, corporateParent, healthFlag, te
     brand: brandName || label,
     parent: corporateParent ?? null,
     subsidiaries: [],
+    _unparseable: true,
     overall_concern_level: 'moderate',
     verdict_tags: ['sparse_public_record'],
     executive_summary: `Realtime research finished, but we could not obtain structured JSON for "${label}". Try again or verify primary sources.${tail}`,
@@ -1300,6 +1321,16 @@ async function finalizeRealtimeFromParsed(
     profile_type: 'database',
   };
   mergeLayerCCorroborationIntoProfileJson(investigation, profileJsonForDb);
+
+  const isStub = Boolean(
+    parsed?._stub === true ||
+      parsed?._emergency === true ||
+      parsed?._unparseable === true ||
+      (typeof parsed?.executive_summary === 'string' && parsed.executive_summary.length < 120) ||
+      (!parsed?.legal_summary && !parsed?.tax_summary)
+  );
+  investigation.is_stub_investigation = isStub || Boolean(investigation.is_stub_investigation);
+
   return wrapRealtimeInvestigationResult(investigation, profileJsonForDb);
 }
 

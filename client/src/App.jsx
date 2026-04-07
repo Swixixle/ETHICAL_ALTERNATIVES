@@ -183,6 +183,69 @@ function TapRateLimitFullScreen({ message, onOpenBlackBook, onHome }) {
   );
 }
 
+function TapRetapFullScreen({ message, onTryAgain }) {
+  return (
+    <div
+      style={{
+        position: 'fixed',
+        inset: 0,
+        background: '#0f1520',
+        zIndex: 300,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '40px 32px',
+        textAlign: 'center',
+      }}
+    >
+      <div
+        style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: 10,
+          letterSpacing: 3,
+          color: '#6a8a9a',
+          textTransform: 'uppercase',
+          marginBottom: 24,
+        }}
+      >
+        Could not identify
+      </div>
+      <div
+        style={{
+          fontFamily: "'Crimson Pro', serif",
+          fontSize: 20,
+          color: '#a8c4d8',
+          lineHeight: 1.7,
+          maxWidth: 320,
+          marginBottom: 32,
+        }}
+      >
+        {message}
+      </div>
+      <button
+        type="button"
+        data-no-disintegrate
+        onClick={onTryAgain}
+        style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: 11,
+          letterSpacing: 2,
+          textTransform: 'uppercase',
+          background: 'transparent',
+          color: '#f0a820',
+          border: '1px solid #f0a820',
+          padding: '12px 28px',
+          borderRadius: 2,
+          cursor: 'pointer',
+        }}
+      >
+        Try again →
+      </button>
+    </div>
+  );
+}
+
 export default function App() {
   /** home — feed; snap — photo tap (Quick); deep — typed investigation (rabbit hole); history — saved taps; witnesses — civic registry */
   const [mode, setMode] = useState('home');
@@ -864,6 +927,24 @@ export default function App() {
                 Low confidence identification — results may be inaccurate. Tap again for a clearer shot.
               </div>
             ) : null}
+            {result?.is_stub_investigation ? (
+              <div
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 9,
+                  letterSpacing: 1.5,
+                  color: '#6a8a9a',
+                  background: 'rgba(106,138,154,0.08)',
+                  border: '1px solid rgba(106,138,154,0.2)',
+                  borderRadius: 2,
+                  padding: '8px 12px',
+                  margin: '0 0 12px',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Limited record — this brand has minimal documented public history. Results may be incomplete.
+              </div>
+            ) : null}
             <InvestigationCard
               investigation={result.investigation}
               identification={id}
@@ -1101,6 +1182,14 @@ export default function App() {
                   setMode('home');
                 }}
               />
+            ) : typeof error === 'string' && error.startsWith('RETAP:') ? (
+              <TapRetapFullScreen
+                message={error.replace('RETAP:', '')}
+                onTryAgain={() => {
+                  setError(null);
+                  resetSession();
+                }}
+              />
             ) : (
               <ErrorState message={error} onRetry={goHome} />
             )}
@@ -1176,6 +1265,14 @@ export default function App() {
                     setMode('home');
                   }}
                 />
+              ) : typeof error === 'string' && error.startsWith('RETAP:') ? (
+                <TapRetapFullScreen
+                  message={error.replace('RETAP:', '')}
+                  onTryAgain={() => {
+                    setError(null);
+                    resetSession();
+                  }}
+                />
               ) : (
                 <ErrorState message={error} onRetry={() => clearResult()} />
               )
@@ -1222,6 +1319,14 @@ export default function App() {
                     setError(null);
                     resetSession();
                     setMode('home');
+                  }}
+                />
+              ) : typeof error === 'string' && error.startsWith('RETAP:') ? (
+                <TapRetapFullScreen
+                  message={error.replace('RETAP:', '')}
+                  onTryAgain={() => {
+                    setError(null);
+                    resetSession();
                   }}
                 />
               ) : (

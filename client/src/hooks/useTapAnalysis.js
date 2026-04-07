@@ -191,6 +191,8 @@ export function useTapAnalysis() {
               return {
                 ...prev,
                 investigation: inv,
+                is_stub_investigation:
+                  iData.investigation?.is_stub_investigation ?? iData.is_stub_investigation ?? false,
                 research_loading: false,
                 searched_sources: mergeSources(prev.searched_sources, iData.searched_sources),
               };
@@ -267,6 +269,12 @@ export function useTapAnalysis() {
               preview.data?.message ||
               'You have used your 5 free investigations for today. Come back tomorrow.';
             setError(`RATE_LIMITED:${msg}`);
+          } else if (preview.status === 422 && preview.data?.error === 'confidence_too_low') {
+            setError(
+              'RETAP:' +
+                (preview.data?.message ||
+                  'Could not identify a brand. Try holding to select a specific object.')
+            );
           } else {
             setError(preview.data?.error || `Request failed (${preview.status})`);
           }
@@ -420,6 +428,8 @@ export function useTapAnalysis() {
       }
       setResult({
         ...data,
+        is_stub_investigation:
+          data.investigation?.is_stub_investigation ?? data.is_stub_investigation ?? false,
         research_loading: false,
         sourcing_complete: true,
       });

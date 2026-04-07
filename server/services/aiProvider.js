@@ -140,25 +140,35 @@ Return ONLY one valid JSON object matching the investigation schema — no markd
  * @returns {Promise<{ text: string; provider: 'perplexity' | 'gemini' } | null>}
  */
 export async function runInvestigationTextFallbackChain(userPrompt) {
+  const candidates = [];
+
   if (process.env.PERPLEXITY_API_KEY) {
-    try {
-      const text = await perplexityTextCompletion(userPrompt);
-      return { text, provider: 'perplexity' };
-    } catch (e) {
-      console.warn('[aiProvider] Perplexity investigation failed:', e?.message || e);
-      recordProviderFailure('perplexity');
-    }
+    candidates.push(
+      perplexityTextCompletion(userPrompt)
+        .then((text) => ({ text, provider: 'perplexity' }))
+        .catch((e) => {
+          console.warn('[aiProvider] Perplexity investigation failed:', e?.message || e);
+          recordProviderFailure('perplexity');
+          return null;
+        })
+    );
   }
 
   if (process.env.GEMINI_API_KEY) {
-    try {
-      const text = await geminiTextCompletion(userPrompt);
-      return { text, provider: 'gemini' };
-    } catch (e) {
-      console.warn('[aiProvider] Gemini investigation failed:', e?.message || e);
-      recordProviderFailure('gemini');
-    }
+    candidates.push(
+      geminiTextCompletion(userPrompt)
+        .then((text) => ({ text, provider: 'gemini' }))
+        .catch((e) => {
+          console.warn('[aiProvider] Gemini investigation failed:', e?.message || e);
+          recordProviderFailure('gemini');
+          return null;
+        })
+    );
   }
 
-  return null;
+  if (candidates.length === 0) return null;
+
+  const results = await Promise.all(candidates);
+  const first = results.find((r) => r !== null);
+  return first ?? null;
 }

@@ -253,6 +253,20 @@ router.post('/tap', tapRateLimit, async (req, res) => {
 
   const identification_tier = getIdentificationTier(finalIdentification);
 
+  const CONFIDENCE_FLOOR = 0.25;
+  const finalConf =
+    typeof finalIdentification.confidence === 'number' ? finalIdentification.confidence : 0;
+
+  if (finalConf < CONFIDENCE_FLOOR && !req.body.preview_only) {
+    return res.status(422).json({
+      error: 'confidence_too_low',
+      message:
+        'Could not identify a brand from this image. Try holding to select a specific object, or move closer to the label.',
+      confidence: finalConf,
+      identification_tier: 'ambiguous',
+    });
+  }
+
   if (req.body?.preview_only === true) {
     const response_ms = Date.now() - t0;
     const crop_base64 =
@@ -410,6 +424,7 @@ router.post('/tap/investigation', tapRateLimit, async (req, res) => {
 
   res.json({
     investigation,
+    is_stub_investigation: investigation?.is_stub_investigation ?? false,
     searched_sources: investigation ? ['investigation'] : [],
     response_ms: Date.now() - t0,
     version: 'v1',
