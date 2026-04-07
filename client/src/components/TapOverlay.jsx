@@ -1,11 +1,15 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { haptic } from '../utils/haptics.js';
 import { playTap } from '../utils/sounds.js';
+
+const MOVE_CANCEL_PX = 8;
 
 /**
  * @param {{
  *   imageUrl: string;
  *   onTap: (x: number, y: number) => void;
+ *   onHoldSelect?: (x: number, y: number) => void;
+ *   holdDurationMs?: number;
  *   marker?: { x: number; y: number } | null;
  *   interactionDisabled?: boolean;
  * }} props
@@ -13,51 +17,139 @@ import { playTap } from '../utils/sounds.js';
 export default function TapOverlay({
   imageUrl,
   onTap,
+  onHoldSelect,
+  holdDurationMs = 600,
   marker = null,
   interactionDisabled = false,
 }) {
   const ref = useRef(null);
-  /** Skip synthetic click right after touchstart (mobile double invoke). */
-  const suppressClickUntil = useRef(0);
-  const [ripple, setRipple] = useState(null);
+  const holdTimerRef = useRef(/** @type {ReturnType<typeof setTimeout> | null} */ (null));
+  const holdIndicatorClearRef = useRef(/** @type {ReturnType<typeof setTimeout> | null} */ (null));
+  const startClientRef = useRef({ x: 0, y: 0 });
+  const normDownRef = useRef({ x: 0, y: 0 });
+  const movedTooFarRef = useRef(false);
+  const holdCompletedRef = useRef(false);
+  const pointerDownRef = useRef(false);
 
-  function coordsFromEvent(e) {
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-    return { clientX, clientY };
+  const [ripple, setRipple] = useState(/** @type {{ x: number; y: number; id: number } | null} */ (null));
+  const [holdIndicator, setHoldIndicator] = useState(
+    /** @type {{ x: number; y: number; id: number } | null} */ (null)
+  );
+
+  useEffect(() => {
+    return () => {
+      if (holdTimerRef.current != null) window.clearTimeout(holdTimerRef.current);
+      if (holdIndicatorClearRef.current != null) window.clearTimeout(holdIndicatorClearRef.current);
+    };
+  }, []);
+
+  function clearHoldTimer() {
+    if (holdTimerRef.current != null) {
+      window.clearTimeout(holdTimerRef.current);
+      holdTimerRef.current = null;
+    }
   }
 
-  function applyTap(e) {
-    if (interactionDisabled) return;
+  function normFromClient(clientX, clientY) {
     const el = ref.current;
-    if (!el || typeof onTap !== 'function') return;
+    if (!el) return { x: 0, y: 0 };
     const rect = el.getBoundingClientRect();
-    const { clientX, clientY } = coordsFromEvent(e);
     const w = rect.width;
     const h = rect.height;
-    if (w <= 0 || h <= 0) return;
-    const x = (clientX - rect.left) / w;
-    const y = (clientY - rect.top) / h;
+    if (w <= 0 || h <= 0) return { x: 0, y: 0 };
+    return {
+      x: (clientX - rect.left) / w,
+      y: (clientY - rect.top) / h,
+    };
+  }
 
-    setRipple({ x, y, id: Date.now() });
+  function performTap(nx, ny) {
+    if (interactionDisabled) return;
+    if (typeof onTap !== 'function') return;
+    setRipple({ x: nx, y: ny, id: Date.now() });
     window.setTimeout(() => setRipple(null), 500);
     playTap();
     haptic('tap');
-    onTap(x, y);
+    onTap(nx, ny);
   }
 
-  function onTouchStart(e) {
+  function onPointerDown(e) {
+    if (interactionDisabled) return;
+    if (e.button !== 0) return;
+    const el = ref.current;
+    if (!el) return;
+
+    pointerDownRef.current = true;
+    movedTooFarRef.current = false;
+    holdCompletedRef.current = false;
+    startClientRef.current = { x: e.clientX, y: e.clientY };
+    normDownRef.current = normFromClient(e.clientX, e.clientY);
+    clearHoldTimer();
+
     e.preventDefault();
-    suppressClickUntil.current =
-      (typeof performance !== 'undefined' ? performance.now() : Date.now()) + 450;
-    applyTap(e);
+    el.setPointerCapture?.(e.pointerId);
+
+    const holdEnabled = typeof onHoldSelect === 'function';
+    if (holdEnabled) {
+      holdTimerRef.current = window.setTimeout(() => {
+        holdTimerRef.current = null;
+        if (!pointerDownRef.current || movedTooFarRef.current) return;
+        holdCompletedRef.current = true;
+        haptic('scan');
+        const id = Date.now();
+        const { x, y } = normDownRef.current;
+        setHoldIndicator({ x, y, id });
+        if (holdIndicatorClearRef.current != null) window.clearTimeout(holdIndicatorClearRef.current);
+        holdIndicatorClearRef.current = window.setTimeout(() => {
+          holdIndicatorClearRef.current = null;
+          setHoldIndicator(null);
+        }, 400);
+        onHoldSelect(x, y);
+      }, holdDurationMs);
+    }
   }
 
-  function onClick(e) {
-    const now = typeof performance !== 'undefined' ? performance.now() : Date.now();
-    if (now < suppressClickUntil.current) return;
-    e.preventDefault();
-    applyTap(e);
+  function onPointerMove(e) {
+    if (interactionDisabled || !pointerDownRef.current) return;
+    const sx = startClientRef.current.x;
+    const sy = startClientRef.current.y;
+    const dx = e.clientX - sx;
+    const dy = e.clientY - sy;
+    if (dx * dx + dy * dy > MOVE_CANCEL_PX * MOVE_CANCEL_PX) {
+      movedTooFarRef.current = true;
+      clearHoldTimer();
+    }
+  }
+
+  function endPointer(e, { cancelled }) {
+    if (interactionDisabled) return;
+    const el = ref.current;
+    clearHoldTimer();
+    const wasDown = pointerDownRef.current;
+    pointerDownRef.current = false;
+
+    if (el?.releasePointerCapture && e.pointerId != null) {
+      try {
+        el.releasePointerCapture(e.pointerId);
+      } catch {
+        /* ignore */
+      }
+    }
+
+    if (!wasDown) return;
+    if (holdCompletedRef.current) return;
+    if (cancelled) return;
+    if (movedTooFarRef.current) return;
+    const { x, y } = normDownRef.current;
+    performTap(x, y);
+  }
+
+  function onPointerUp(e) {
+    endPointer(e, { cancelled: false });
+  }
+
+  function onPointerCancel(e) {
+    endPointer(e, { cancelled: true });
   }
 
   return (
@@ -70,8 +162,10 @@ export default function TapOverlay({
         touchAction: 'none',
         overflow: 'hidden',
       }}
-      onClick={interactionDisabled ? undefined : onClick}
-      onTouchStart={interactionDisabled ? undefined : onTouchStart}
+      onPointerDown={interactionDisabled ? undefined : onPointerDown}
+      onPointerMove={interactionDisabled ? undefined : onPointerMove}
+      onPointerUp={interactionDisabled ? undefined : onPointerUp}
+      onPointerCancel={interactionDisabled ? undefined : onPointerCancel}
     >
       <img className="app__photo" src={imageUrl} style={{ width: '100%', display: 'block' }} alt="" />
       {ripple ? (
@@ -88,6 +182,24 @@ export default function TapOverlay({
             background: 'rgba(212, 160, 23, 0.35)',
             border: 'none',
             animation: 'tapRipple 280ms ease-out forwards',
+            pointerEvents: 'none',
+          }}
+        />
+      ) : null}
+      {holdIndicator ? (
+        <div
+          key={holdIndicator.id}
+          style={{
+            position: 'absolute',
+            left: `${holdIndicator.x * 100}%`,
+            top: `${holdIndicator.y * 100}%`,
+            transform: 'translate(-50%, -50%)',
+            width: 64,
+            height: 64,
+            borderRadius: '50%',
+            border: '2px solid #f0a820',
+            background: 'transparent',
+            animation: 'holdPulse 400ms ease-out forwards',
             pointerEvents: 'none',
           }}
         />

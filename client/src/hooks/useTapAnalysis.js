@@ -367,6 +367,11 @@ export function useTapAnalysis() {
     setRegionSelectActive(true);
   }, []);
 
+  const startRegionSelect = useCallback((x, y) => {
+    setRegionSelectActive(true);
+    setTapPosition({ x, y });
+  }, []);
+
   const completeRegionSelect = useCallback(
     async (cx, cy, normRect = null) => {
       setRegionSelectActive(false);
@@ -475,6 +480,7 @@ export function useTapAnalysis() {
     pendingConfirmation,
     regionSelectActive,
     startBackgroundReselect,
+    startRegionSelect,
     completeRegionSelect,
     cancelRegionSelect,
     reset,

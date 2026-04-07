@@ -204,6 +204,7 @@ export default function App() {
     pendingConfirmation,
     regionSelectActive,
     startBackgroundReselect,
+    startRegionSelect,
     completeRegionSelect,
     cancelRegionSelect,
     reset,
@@ -1144,6 +1145,9 @@ export default function App() {
                 key={tapSession}
                 imageUrl={dataUrl || ''}
                 onTap={(x, y) => analyzeTap(x, y, null)}
+                onHoldSelect={(x, y) => {
+                  startRegionSelect(x, y);
+                }}
                 marker={loading && tapPosition ? tapPosition : null}
                 interactionDisabled={loading}
               />
