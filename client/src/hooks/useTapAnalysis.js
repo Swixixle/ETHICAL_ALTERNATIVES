@@ -195,6 +195,21 @@ export function useTapAnalysis() {
                 searched_sources: mergeSources(prev.searched_sources, iData.searched_sources),
               };
             });
+          } else if (iRes.status === 429) {
+            const msg =
+              iData.message ||
+              'You have used your 5 free investigations for today. Come back tomorrow.';
+            setResult((prev) =>
+              prev
+                ? {
+                    ...prev,
+                    research_loading: false,
+                    rate_limited: true,
+                    rate_limit_message: msg,
+                    rate_limit_resets_in_ms: iData.resets_in_ms ?? null,
+                  }
+                : prev
+            );
           } else {
             setResult((prev) => (prev ? { ...prev, research_loading: false } : prev));
           }
@@ -247,7 +262,14 @@ export function useTapAnalysis() {
           selection_box: selBox,
         });
         if (!preview.ok) {
-          setError(preview.data.error || `Request failed (${preview.status})`);
+          if (preview.status === 429) {
+            const msg =
+              preview.data?.message ||
+              'You have used your 5 free investigations for today. Come back tomorrow.';
+            setError(`RATE_LIMITED:${msg}`);
+          } else {
+            setError(preview.data?.error || `Request failed (${preview.status})`);
+          }
           return;
         }
 
@@ -289,6 +311,7 @@ export function useTapAnalysis() {
           searched_sources: [],
           empty_sources: [],
           sourcing_complete: false,
+          low_confidence_warning: conf >= CONFIRM_THRESHOLD && conf < 0.72,
         });
         runResearchPhase(idRaw);
       } catch (e) {
@@ -308,6 +331,7 @@ export function useTapAnalysis() {
     setError(null);
     setPendingConfirmation(null);
 
+    const confPc = typeof id?.confidence === 'number' ? id.confidence : 0;
     setResult({
       identification: id,
       identification_tier: pc.identification_tier,
@@ -323,6 +347,9 @@ export function useTapAnalysis() {
       searched_sources: [],
       empty_sources: [],
       sourcing_complete: false,
+      low_confidence_warning:
+        (confPc >= CONFIRM_THRESHOLD && confPc < 0.72) ||
+        (confPc < CONFIRM_THRESHOLD && confPc >= 0.45),
     });
     runResearchPhase(id);
   }, [pendingConfirmation, runResearchPhase]);
@@ -440,6 +467,7 @@ export function useTapAnalysis() {
     loading,
     result,
     error,
+    setError,
     setImage,
     analyzeTap,
     confirmPendingIdentification,

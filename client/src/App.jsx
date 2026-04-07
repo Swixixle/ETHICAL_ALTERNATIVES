@@ -75,6 +75,114 @@ function isCocaColaContext(id, investigation) {
   );
 }
 
+function TapRateLimitFullScreen({ message, onOpenBlackBook, onHome }) {
+  return (
+    <div
+      style={{
+        position: 'fixed',
+        inset: 0,
+        background: '#0f1520',
+        zIndex: 300,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '40px 32px',
+        textAlign: 'center',
+      }}
+    >
+      <div
+        style={{
+          fontFamily: "'Bebas Neue', sans-serif",
+          fontSize: 28,
+          letterSpacing: 3,
+          color: '#f0e8d0',
+          marginBottom: 24,
+        }}
+      >
+        ETHICALALT
+      </div>
+      <div style={{ width: 40, height: 1, background: '#f0a820', margin: '0 auto 24px' }} />
+      <div
+        style={{
+          fontFamily: "'Bebas Neue', sans-serif",
+          fontSize: 'clamp(24px, 4vw, 40px)',
+          letterSpacing: 2,
+          color: '#f0a820',
+          maxWidth: 340,
+          marginBottom: 16,
+        }}
+      >
+        DAILY LIMIT REACHED
+      </div>
+      <div
+        style={{
+          fontFamily: "'Crimson Pro', serif",
+          fontSize: 18,
+          color: '#a8c4d8',
+          lineHeight: 1.7,
+          maxWidth: 340,
+          marginBottom: 32,
+        }}
+      >
+        {message}
+      </div>
+      <div
+        style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: 10,
+          letterSpacing: 2,
+          color: '#6a8a9a',
+          marginBottom: 24,
+          textTransform: 'uppercase',
+        }}
+      >
+        Or search documented profiles in the Black Book
+      </div>
+      <button
+        type="button"
+        data-no-disintegrate
+        onClick={onOpenBlackBook}
+        style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: 11,
+          letterSpacing: 2,
+          textTransform: 'uppercase',
+          background: '#f0a820',
+          color: '#0f1520',
+          border: 'none',
+          padding: '14px 32px',
+          borderRadius: 2,
+          cursor: 'pointer',
+          fontWeight: 700,
+          marginBottom: 12,
+        }}
+      >
+        Open Black Book →
+      </button>
+      <button
+        type="button"
+        data-no-disintegrate
+        onClick={onHome}
+        style={{
+          fontFamily: "'Space Mono', monospace",
+          fontSize: 10,
+          letterSpacing: 1,
+          textTransform: 'uppercase',
+          background: 'transparent',
+          color: '#6a8a9a',
+          border: '1px solid #2a3f52',
+          padding: '10px 24px',
+          borderRadius: 2,
+          cursor: 'pointer',
+        }}
+      >
+        Back to home
+      </button>
+    </div>
+  );
+}
+
 export default function App() {
   /** home — feed; snap — photo tap (Quick); deep — typed investigation (rabbit hole); history — saved taps; witnesses — civic registry */
   const [mode, setMode] = useState('home');
@@ -87,6 +195,7 @@ export default function App() {
     loading,
     result,
     error,
+    setError,
     tapPosition,
     setImage,
     analyzeTap,
@@ -409,26 +518,34 @@ export default function App() {
 
   if (mode === 'worker-profile' && workerProfileSlug) {
     return (
-      <div className="app">
-        <WorkerProfilePage slug={workerProfileSlug} onBack={closeWorkerProfile} />
-      </div>
+      <>
+        {false && (
+          <div className="app">
+            <WorkerProfilePage slug={workerProfileSlug} onBack={closeWorkerProfile} />
+          </div>
+        )}
+      </>
     );
   }
 
   if (mode === 'witnesses') {
     return (
-      <div className="app">
-        <WitnessRegistry
-          onBack={() => {
-            try {
-              window.history.replaceState({}, '', '/');
-            } catch {
-              /* ignore */
-            }
-            setMode(witnessReturnMode);
-          }}
-        />
-      </div>
+      <>
+        {false && (
+          <div className="app">
+            <WitnessRegistry
+              onBack={() => {
+                try {
+                  window.history.replaceState({}, '', '/');
+                } catch {
+                  /* ignore */
+                }
+                setMode(witnessReturnMode);
+              }}
+            />
+          </div>
+        )}
+      </>
     );
   }
 
@@ -457,8 +574,8 @@ export default function App() {
             setMode('snap');
           }}
           onOpenHistory={() => setMode('history')}
-          onOpenWitnesses={openWitnessRegistry}
-          onOpenWorkerProfile={openWorkerProfile}
+          onOpenWitnesses={() => {}}
+          onOpenWorkerProfile={() => {}}
           onOpenDirectory={() => {
             try {
               window.history.pushState({}, '', '/directory');
@@ -677,6 +794,75 @@ export default function App() {
             key={`investigation-${tapSession}`}
             className="app__investigation-wrap investigation-card-enter"
           >
+            {result.rate_limited ? (
+              <div
+                style={{
+                  marginBottom: 12,
+                  padding: '12px 14px',
+                  borderRadius: 4,
+                  border: '1px solid rgba(240,168,32,0.35)',
+                  background: 'rgba(22,32,48,0.85)',
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: "'Crimson Pro', serif",
+                    fontSize: 15,
+                    color: '#a8c4d8',
+                    margin: '0 0 10px',
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {result.rate_limit_message ||
+                    'You have used your 5 free investigations for today. Come back tomorrow.'}
+                </p>
+                <button
+                  type="button"
+                  data-no-disintegrate
+                  onClick={() => {
+                    try {
+                      window.history.pushState({}, '', '/library');
+                    } catch {
+                      /* ignore */
+                    }
+                    setMode('library');
+                  }}
+                  style={{
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: 10,
+                    letterSpacing: 2,
+                    textTransform: 'uppercase',
+                    background: '#f0a820',
+                    color: '#0f1520',
+                    border: 'none',
+                    padding: '8px 16px',
+                    borderRadius: 2,
+                    cursor: 'pointer',
+                    fontWeight: 700,
+                  }}
+                >
+                  Open Black Book →
+                </button>
+              </div>
+            ) : null}
+            {result.low_confidence_warning ? (
+              <div
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 9,
+                  letterSpacing: 1.5,
+                  color: '#d4a574',
+                  background: 'rgba(212,165,116,0.1)',
+                  border: '1px solid rgba(212,165,116,0.3)',
+                  borderRadius: 2,
+                  padding: '8px 12px',
+                  margin: '0 0 12px',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Low confidence identification — results may be inaccurate. Tap again for a clearer shot.
+              </div>
+            ) : null}
             <InvestigationCard
               investigation={result.investigation}
               identification={id}
@@ -695,7 +881,7 @@ export default function App() {
                   ? { x: tapPosition.x, y: tapPosition.y }
                   : null
               }
-              onHireDirectShareFootnote={setHireDirectShareFootnote}
+              onHireDirectShareFootnote={false ? setHireDirectShareFootnote : undefined}
               onWrongBrand={() => {
                 resetSession();
                 setMode('snap');
@@ -896,7 +1082,27 @@ export default function App() {
 
         {mode === 'deep' && error && !result ? (
           <div className="app__panel">
-            <ErrorState message={error} onRetry={goHome} />
+            {typeof error === 'string' && error.startsWith('RATE_LIMITED:') ? (
+              <TapRateLimitFullScreen
+                message={error.replace('RATE_LIMITED:', '')}
+                onOpenBlackBook={() => {
+                  setError(null);
+                  try {
+                    window.history.pushState({}, '', '/library');
+                  } catch {
+                    /* ignore */
+                  }
+                  setMode('library');
+                }}
+                onHome={() => {
+                  setError(null);
+                  resetSession();
+                  setMode('home');
+                }}
+              />
+            ) : (
+              <ErrorState message={error} onRetry={goHome} />
+            )}
           </div>
         ) : null}
 
@@ -948,7 +1154,27 @@ export default function App() {
               </div>
             ) : null}
             {error ? (
-              <ErrorState message={error} onRetry={() => clearResult()} />
+              typeof error === 'string' && error.startsWith('RATE_LIMITED:') ? (
+                <TapRateLimitFullScreen
+                  message={error.replace('RATE_LIMITED:', '')}
+                  onOpenBlackBook={() => {
+                    setError(null);
+                    try {
+                      window.history.pushState({}, '', '/library');
+                    } catch {
+                      /* ignore */
+                    }
+                    setMode('library');
+                  }}
+                  onHome={() => {
+                    setError(null);
+                    resetSession();
+                    setMode('home');
+                  }}
+                />
+              ) : (
+                <ErrorState message={error} onRetry={() => clearResult()} />
+              )
             ) : null}
             <div className="app__toolbar">
               <button type="button" className="app__btn app__btn--ghost" onClick={() => resetSession()}>
@@ -976,7 +1202,27 @@ export default function App() {
               </div>
             ) : null}
             {error ? (
-              <ErrorState message={error} onRetry={() => cancelPendingConfirmation()} />
+              typeof error === 'string' && error.startsWith('RATE_LIMITED:') ? (
+                <TapRateLimitFullScreen
+                  message={error.replace('RATE_LIMITED:', '')}
+                  onOpenBlackBook={() => {
+                    setError(null);
+                    try {
+                      window.history.pushState({}, '', '/library');
+                    } catch {
+                      /* ignore */
+                    }
+                    setMode('library');
+                  }}
+                  onHome={() => {
+                    setError(null);
+                    resetSession();
+                    setMode('home');
+                  }}
+                />
+              ) : (
+                <ErrorState message={error} onRetry={() => cancelPendingConfirmation()} />
+              )
             ) : null}
             <div className="app__toolbar">
               <button type="button" className="app__btn app__btn--ghost" onClick={() => resetSession()}>
@@ -1008,7 +1254,7 @@ export default function App() {
         <ShareCard
           investigation={result.investigation}
           identification={id}
-          hireDirectShareFooter={hireDirectShareFootnote}
+          hireDirectShareFooter={false ? hireDirectShareFootnote : undefined}
           onClose={() => setShowShare(false)}
         />
       ) : null}
@@ -1094,12 +1340,14 @@ export default function App() {
               </span>
               <span className="app__bottom-nav__label">Local</span>
             </button>
-            <button type="button" className="app__bottom-nav__item" onClick={openWitnessRegistry}>
-              <span className="app__bottom-nav__icon" aria-hidden>
-                ✧
-              </span>
-              <span className="app__bottom-nav__label">Registry</span>
-            </button>
+            {false && (
+              <button type="button" className="app__bottom-nav__item" onClick={openWitnessRegistry}>
+                <span className="app__bottom-nav__icon" aria-hidden>
+                  ✧
+                </span>
+                <span className="app__bottom-nav__label">Registry</span>
+              </button>
+            )}
           </nav>
         </>
       ) : null}

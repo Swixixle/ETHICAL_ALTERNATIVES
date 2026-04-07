@@ -21,6 +21,7 @@ export default function Library({ onBack }) {
   const [error, setError] = useState(/** @type {string | null} */ (null));
   const [search, setSearch] = useState('');
   const [concernFilter, setConcernFilter] = useState('all');
+  const [typeFilter, setTypeFilter] = useState('all');
   const [sort, setSort] = useState('az');
   const [selectedSlug, setSelectedSlug] = useState(/** @type {string | null} */ (null));
   const [detail, setDetail] = useState(/** @type {Record<string, unknown> | null} */ (null));
@@ -82,6 +83,13 @@ export default function Library({ onBack }) {
     if (concernFilter === 'significant') {
       rows = rows.filter((p) => String(p.concern_level || '').toLowerCase() === 'significant');
     }
+    if (typeFilter === 'corporations') {
+      rows = rows.filter((p) => p.profile_type === 'database');
+    } else if (typeFilter === 'institutions') {
+      rows = rows.filter((p) => p.profile_type === 'religious_institution');
+    } else if (typeFilter === 'nonprofits') {
+      rows = rows.filter((p) => p.profile_type === 'nonprofit');
+    }
     rows.sort((a, b) => {
       if (sort === 'za') {
         return String(b.name || b.slug).localeCompare(String(a.name || a.slug), 'en', {
@@ -98,7 +106,7 @@ export default function Library({ onBack }) {
       });
     });
     return rows;
-  }, [profiles, search, concernFilter, sort]);
+  }, [profiles, search, concernFilter, typeFilter, sort]);
 
   const grouped = useMemo(() => {
     const letters = new Map();
@@ -270,6 +278,47 @@ export default function Library({ onBack }) {
           </select>
         </div>
       </header>
+
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: 8,
+          alignItems: 'center',
+          marginBottom: 16,
+        }}
+      >
+        {(['all', 'corporations', 'institutions', 'nonprofits']).map((key) => {
+          const labels = {
+            all: 'ALL',
+            corporations: 'CORPORATIONS',
+            institutions: 'INSTITUTIONS',
+            nonprofits: 'NONPROFITS',
+          };
+          const active = typeFilter === key;
+          return (
+            <button
+              key={key}
+              type="button"
+              onClick={() => setTypeFilter(key)}
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 9,
+                letterSpacing: 1.5,
+                textTransform: 'uppercase',
+                padding: '6px 12px',
+                borderRadius: 2,
+                cursor: 'pointer',
+                border: active ? 'none' : '1px solid #2a3f52',
+                background: active ? '#f0a820' : 'transparent',
+                color: active ? '#0f1520' : '#6a8a9a',
+              }}
+            >
+              {labels[key]}
+            </button>
+          );
+        })}
+      </div>
 
       {loading ? (
         <p className="bb-page__error" style={{ color: '#888' }}>
