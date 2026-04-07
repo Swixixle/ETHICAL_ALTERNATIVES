@@ -12,6 +12,26 @@ Then find something better nearby.
 
 ---
 
+## Screenshots
+
+**Investigation with alternatives** — production: structured record, health callout, verified local options.
+
+![Investigation results with alternatives sidebar](docs/readme/screenshots/investigation-alternatives.png)
+
+**The record** — identification, confidence, and verdict tags after a tap (local dev).
+
+![Investigation: identification and the record](docs/readme/screenshots/investigation-the-record.png)
+
+**Share the record** — exportable card for a clean or partial profile.
+
+![Share the record modal](docs/readme/screenshots/share-the-record.png)
+
+**Home** — search, snap, investigate, and nearby independents.
+
+![Home: local feed and actions](docs/readme/screenshots/home-local-feed.png)
+
+---
+
 ## How it works
 
 ```
