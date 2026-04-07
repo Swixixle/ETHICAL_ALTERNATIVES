@@ -1,0 +1,113 @@
+{
+  "brand_slug": "southern-baptist-convention",
+  "members": [
+    {
+      "person_slug": "ronnie-floyd",
+      "full_name": "Ronnie Floyd",
+      "role": "President and CEO, SBC Executive Committee",
+      "tenure_start": "2019",
+      "tenure_end": "2021",
+      "is_current": false,
+      "committees": [
+        "Executive Committee"
+      ],
+      "present_during": [
+        "guidepost_investigation_period",
+        "abuse_reform_resistance"
+      ],
+      "departure_reason": "Resigned amid Executive Committee crisis",
+      "departure_context": "Floyd led the SBC Executive Committee during the period when — per the Guidepost Solutions investigation — EC leaders most actively resisted the creation of an independent investigation into sexual abuse. Floyd and the EC initially claimed attorney-client privilege to resist cooperating with the investigation — a position ultimately rejected by the SBC's messengers (members) in a floor vote. The Guidepost report found that EC leaders during Floyd's tenure misled SBC members about the extent of their knowledge of abuse. Floyd resigned in September 2021 as the EC crisis escalated.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "EC claimed attorney-client privilege to block investigation. Guidepost found EC misled members during his tenure. Resigned 2021 as crisis escalated.",
+      "sources": [
+        "https://www.sataskforce.net/updates/guidepost-solutions-report"
+      ]
+    },
+    {
+      "person_slug": "paige-patterson",
+      "full_name": "Paige Patterson",
+      "role": "President, Southwestern Baptist Theological Seminary; former SBC President",
+      "tenure_start": "2003",
+      "tenure_end": "2018",
+      "is_current": false,
+      "committees": [
+        "SBC Presidency 1998-2000"
+      ],
+      "present_during": [
+        "patterson_seminary_abuse_mishandling",
+        "conservative_resurgence"
+      ],
+      "departure_reason": "Fired — mishandling of sexual abuse reports",
+      "departure_context": "Patterson was fired as Southwestern Seminary president in May 2018 after documents emerged showing he had discouraged a seminary student from reporting rape to police, had instructed another woman to meet with her alleged abuser alone, and had kept a documented abuser on seminary staff. Additionally, recorded audio emerged of Patterson describing in graphic terms how he appreciated the physical appearance of a 16-year-old girl. Patterson had led the SBC's conservative resurgence — a theological realignment that concentrated power in a leadership culture that the Guidepost report later found resistant to abuse accountability.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Fired 2018. Discouraged rape reporting to police. Kept documented abuser on staff. Graphic comments about 16-year-old documented. Led the conservative resurgence that shaped SBC power structure.",
+      "sources": []
+    },
+    {
+      "person_slug": "russell-moore-sbc",
+      "full_name": "Russell Moore",
+      "role": "President, Ethics and Religious Liberty Commission",
+      "tenure_start": "2013",
+      "tenure_end": "2021",
+      "is_current": false,
+      "committees": [
+        "ERLC"
+      ],
+      "present_during": [
+        "guidepost_investigation_period",
+        "abuse_reform_resistance"
+      ],
+      "departure_reason": "Resigned — threats and intimidation from EC leadership",
+      "departure_context": "Moore resigned as ERLC president in May 2021. He subsequently published letters documenting that SBC Executive Committee leaders had threatened him and his family, attempted to have him fired, and subjected him to financial pressure when he raised concerns about the SBC's abuse response and the EC's conduct. Moore's letters — which named specific EC leaders including Ronnie Floyd — provided the primary documentary evidence of the EC's intimidation culture. Moore later joined Christianity Today as editor-in-chief.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Published letters documenting EC threats and intimidation when he raised abuse concerns. Primary whistleblower documentation in the SBC crisis. Joined Christianity Today post-resignation.",
+      "sources": []
+    },
+    {
+      "person_slug": "johnny-hunt",
+      "full_name": "Johnny Hunt",
+      "role": "Senior VP for Evangelism and Leadership, North American Mission Board; former SBC President",
+      "tenure_start": "2018",
+      "tenure_end": "2022",
+      "is_current": false,
+      "committees": [
+        "SBC Presidency 2008-2010",
+        "NAMB"
+      ],
+      "present_during": [
+        "guidepost_investigation_period"
+      ],
+      "departure_reason": "Resigned — sexual misconduct finding",
+      "departure_context": "The Guidepost Solutions report named Hunt as having sexually assaulted another pastor's wife in 2010. Hunt denied the allegation. He had been a highly prominent SBC figure — former SBC president, lead pastor of a major Georgia congregation, and NAMB VP. His resignation from NAMB came the same day the Guidepost report was published in May 2022.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Named in Guidepost report for 2010 sexual misconduct. Resigned NAMB position same day report published. Former SBC President.",
+      "sources": [
+        "https://www.sataskforce.net/updates/guidepost-solutions-report"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "person_slug": "paige-patterson",
+      "brand_slug_a": "southern-baptist-convention",
+      "brand_slug_b": "southern-baptist-convention",
+      "overlap_start": "1979",
+      "overlap_end": "2018",
+      "pattern_type": "family_control",
+      "description": "Patterson was the primary architect of the SBC Conservative Resurgence — a decades-long political realignment of the denomination that concentrated theological and institutional power in a leadership culture that the Guidepost investigation later found systematically resistant to abuse accountability. The governance structure Patterson built enabled the cover-up the Guidepost report documented.",
+      "significance": "The institutional culture that enabled the secret list and EC resistance to investigation was shaped by the Conservative Resurgence Patterson led."
+    }
+  ]
+}

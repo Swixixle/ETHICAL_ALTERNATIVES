@@ -1,0 +1,172 @@
+{
+  "brand_name": "Knights of Columbus",
+  "brand_slug": "knights-of-columbus",
+  "parent_company": "Knights of Columbus",
+  "ultimate_parent": "Knights of Columbus (Supreme Council)",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "THE KNIGHTS OF COLUMBUS HAS $2 BILLION IN NET ASSETS AND SPENDS MILLIONS ON ANTI-ABORTION AND ANTI-LGBTQ POLITICS — ITS FORMER SUPREME KNIGHT PAID HIMSELF $2.4 MILLION A YEAR AND FILED NO PUBLIC DISCLOSURE",
+  "executive_summary": "The Knights of Columbus is a Catholic fraternal organization with approximately 2 million members globally, operating one of the largest Catholic insurance companies in North America with approximately $29 billion in assets under management. Led for 43 years by Supreme Knight Carl Anderson — who received compensation exceeding $2.4 million annually before his 2023 retirement — the organization has spent tens of millions on anti-abortion legislation, opposition to same-sex marriage, and opposition to LGBTQ civil rights protections, while claiming tax-exempt charitable status. The Knights provided $1.4 million to support California's Proposition 8 (same-sex marriage ban) in 2008 — one of the largest single donations to that campaign. As a religious fraternal organization it is not required to file a Form 990 public financial disclosure — making it one of the largest financially opaque organizations in American civic life.",
+  "verdict_tags": [
+    "2_4m_annual_compensation_supreme_knight",
+    "29b_insurance_assets_no_form_990",
+    "1_4m_prop_8_donation_largest_catholic",
+    "anti_lgbtq_anti_abortion_tens_millions_spent",
+    "carl_anderson_43_year_reign",
+    "texas_anti_abortion_legislation_funding",
+    "no_public_financial_disclosure"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": false
+  },
+  "labor": {
+    "summary": "The Knights of Columbus employs approximately 3,000 people in its insurance and administrative operations. No major documented systemic labor violations have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental positions or enforcement actions have been identified for the Knights of Columbus.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Knights of Columbus has been one of the largest single sources of Catholic political money in the United States. Major documented political spending: $1.4 million to Proposition 8 (California same-sex marriage ban, 2008); millions to anti-abortion legislative campaigns in Texas, Arizona, and other states; funding for the Alliance Defending Freedom and other legal organizations that litigate against LGBTQ rights and abortion access. The organization's political activity is not required to be disclosed in a Form 990 because it is a fraternal benefit society rather than a public charity.",
+    "flags": [
+      "1_4m_prop_8_largest_catholic_donation",
+      "anti_abortion_texas_arizona_millions",
+      "alliance_defending_freedom_funding",
+      "fraternal_society_no_990_disclosure_required"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "No major criminal enforcement actions against the Knights of Columbus have been documented. The organization's refusal to file Form 990 has been noted by transparency advocates as inconsistent with its charitable claims. Its political spending has complied with applicable campaign finance disclosure laws where those laws apply — but the fraternal society exemption removes most financial activity from public view.",
+    "flags": [
+      "form_990_exemption_fraternal_society",
+      "political_spending_disclosure_variable_by_state"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "As a fraternal benefit society, the Knights of Columbus is exempt from federal income tax under 501(c)(8) and is not required to file Form 990. Its insurance operations generate significant investment income managed through its $29 billion asset base. Supreme Knight Carl Anderson's $2.4 million annual compensation was disclosed only through a leaked internal document — not through any required public filing.",
+    "flags": [
+      "501c8_no_form_990_required",
+      "2_4m_compensation_disclosed_only_through_leak",
+      "29b_assets_tax_advantaged"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Carl Anderson served as Supreme Knight from 1980 to 2023 — 43 years. His annual compensation exceeded $2.4 million per year based on leaked internal documents, making him one of the highest-compensated nonprofit executives in the United States — a figure that was never publicly disclosed through required filings because the organization files no Form 990. Patrick Kelly succeeded Anderson as Supreme Knight in 2023. Anderson was appointed by Pope Francis as a member of the Dicastery for Laity, Family, and Life — a Vatican advisory body.",
+    "flags": [
+      "anderson_43_years_2_4m_no_disclosure",
+      "anderson_vatican_advisory_appointment",
+      "kelly_successor_2023"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The Knights of Columbus's insurance arm has made it financially self-sustaining and politically influential independent of diocese or parish giving. Its donations to the Alliance Defending Freedom — which has litigated against LGBTQ rights at the Supreme Court — connect its financial resources to the legal infrastructure of the conservative religious freedom movement. Its members include prominent Republican politicians and Catholic judges.",
+    "flags": [
+      "alliance_defending_freedom_litigation_funder",
+      "conservative_religious_freedom_legal_infrastructure"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former members and progressive Catholic organizations have alleged that the Knights of Columbus presents itself to ordinary members as a charitable fraternal organization focused on community service while directing significant unreported resources to political campaigns that many members would not knowingly support. The lack of Form 990 disclosure means members cannot independently verify how their dues and insurance premiums are deployed.",
+    "flags": [
+      "members_unaware_political_spending_alleged",
+      "charitable_framing_political_spending_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "The Knights of Columbus's funding of anti-abortion legislation — including Texas's SB 8 (the heartbeat bill) and similar legislation in other states — has resulted in laws that restrict access to abortion in ways that medical organizations including ACOG have documented create health risks for pregnant people. The organization's opposition to contraception access and LGBTQ healthcare connects its political spending to documented healthcare access restrictions.",
+    "flags": [
+      "anti_abortion_legislation_funding_healthcare_access",
+      "acog_documented_health_risks_restrictions"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Catholic Charities USA — publicly files Form 990; focused on direct service rather than political activity",
+      "St. Vincent de Paul Society — local chapter-based Catholic charitable organization with direct community service focus"
+    ],
+    "healthier": [
+      "Catholic organizations that publish financial statements and focus on direct charitable service"
+    ],
+    "diy": [
+      "The Knights of Columbus does not file a Form 990 — its finances are not publicly available",
+      "Campaign finance disclosure databases (FEC, state databases) show its political contributions where disclosure is required"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1882,
+      "event": "Knights of Columbus founded in New Haven, Connecticut by Father Michael McGivney",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1980,
+      "event": "Carl Anderson becomes Supreme Knight; begins 43-year tenure",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2008,
+      "event": "Knights provide $1.4M to California Proposition 8 — largest single Catholic donation to the campaign",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "Texas SB 8 (heartbeat bill) passes; Knights documented as major funder of anti-abortion legislative campaigns",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "Carl Anderson retires after 43 years; compensation of $2.4M+ annually revealed through leaked documents; Patrick Kelly succeeds him",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "LGBTQ Catholics and their families have been directly targeted by political spending from an organization whose members may not be aware of the scale or nature of that spending. Same-sex couples whose marriages were challenged through Proposition 8 — funded in part by $1.4 million from the Knights — experienced direct legal and personal harm.",
+    "price_illusion": "Knights of Columbus membership presents as Catholic community belonging and charitable service. The organization's political spending — invisible to members because there is no Form 990 disclosure — includes tens of millions directed at anti-LGBTQ and anti-abortion legislative campaigns.",
+    "tax_math": "Carl Anderson's $2.4 million annual compensation was paid from a tax-exempt organization that files no public financial disclosure. The $29 billion in insurance assets generates tax-advantaged investment income. Political spending from tax-exempt resources represents an indirect public subsidy of that political activity.",
+    "wealth_velocity": "The Knights of Columbus's $29 billion insurance asset base makes it one of the largest Catholic financial institutions in North America. This wealth is accumulated and deployed without the public financial transparency required of other organizations of comparable scale."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Carl Anderson and senior leadership",
+        "how": "$2.4M+ annual compensation with no public disclosure requirement; 43-year tenure with no standard nonprofit accountability"
+      },
+      {
+        "group": "Conservative political campaigns and legal organizations",
+        "how": "Tens of millions in political spending from a tax-exempt fraternal organization that files no public disclosure"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "LGBTQ individuals affected by funded legislation",
+        "how": "$1.4M Prop 8 donation; ongoing anti-LGBTQ legislative funding; healthcare restrictions"
+      },
+      {
+        "group": "Knights members unaware of political spending",
+        "how": "Dues and insurance premiums deployed for political purposes without required disclosure"
+      }
+    ],
+    "the_gap": "The Knights of Columbus paid their Supreme Knight $2.4 million a year. Nobody outside the organization knew because they don't file financial disclosures. They gave $1.4 million to ban same-sex marriage in California. They fund anti-abortion legislation across multiple states. They have $29 billion in assets. It is all tax-exempt. Their members see a charitable fraternal organization. The political spending is invisible in the public record."
+  }
+}

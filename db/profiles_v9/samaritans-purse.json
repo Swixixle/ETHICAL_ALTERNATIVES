@@ -1,0 +1,184 @@
+{
+  "brand_name": "Samaritan's Purse",
+  "brand_slug": "samaritans-purse",
+  "parent_company": "Samaritan's Purse",
+  "ultimate_parent": "Billy Graham Evangelistic Association (affiliated)",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "FRANKLIN GRAHAM RUNS SAMARITAN'S PURSE AND PAYS HIMSELF $800,000 A YEAR — DURING COVID HE SET UP A FIELD HOSPITAL IN CENTRAL PARK AND REQUIRED STAFF TO SIGN STATEMENTS AGAINST SAME-SEX MARRIAGE",
+  "executive_summary": "Samaritan's Purse is a Christian humanitarian aid organization led by Franklin Graham — son of Billy Graham — with annual revenue exceeding $800 million. Franklin Graham simultaneously serves as president of both Samaritan's Purse and the Billy Graham Evangelistic Association, receiving combined compensation exceeding $800,000 annually from the two organizations. In April 2020, Samaritan's Purse erected a field hospital in Central Park to treat COVID-19 patients — then required volunteers to sign a statement of faith that included agreeing homosexuality is 'sinful' and that marriage is exclusively between a man and a woman. New York City officials and LGBTQ advocacy organizations protested; the City Council passed a resolution condemning the conditions. Samaritan's Purse's Operation Christmas Child — which distributes shoeboxes of gifts to children internationally — has been documented to distribute proselytization materials alongside gifts.",
+  "verdict_tags": [
+    "graham_800k_dual_compensation_two_organizations",
+    "covid_field_hospital_central_park_anti_lgbtq_statement",
+    "volunteers_sign_anti_homosexuality_statement",
+    "operation_christmas_child_proselytization",
+    "nyc_council_condemned_field_hospital_conditions",
+    "800m_annual_revenue",
+    "franklin_graham_political_trump_support"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": false
+  },
+  "labor": {
+    "summary": "Samaritan's Purse employs approximately 6,000 staff globally in disaster relief and development operations. The volunteer requirement to sign statements of faith — including agreeing homosexuality is sinful — for the Central Park COVID field hospital generated significant documentation of discriminatory volunteer selection practices.",
+    "flags": [
+      "volunteer_anti_homosexuality_statement_required",
+      "discriminatory_volunteer_selection_documented"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental enforcement actions against Samaritan's Purse have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Franklin Graham has been a prominent supporter of Donald Trump — including participating in the January 2021 inauguration ceremonies and defending Trump's conduct surrounding January 6th. Graham has made documented public statements characterizing Islam as 'evil and wicked,' characterizing LGBTQ people as engaging in 'a very wicked and sinful lifestyle,' and making statements about Muslim immigration that civil rights organizations have characterized as Islamophobic. His political statements have been made as president of a humanitarian organization that receives government funding and operates in Muslim-majority countries.",
+    "flags": [
+      "trump_political_support_documented",
+      "islam_evil_wicked_statement",
+      "lgbtq_wicked_sinful_statement",
+      "islamophobia_civil_rights_documentation",
+      "government_funding_political_statements_tension"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "No major criminal enforcement actions against Samaritan's Purse have been documented. The Central Park field hospital's volunteer statement requirement generated legal scrutiny from New York City officials about whether anti-discrimination law applied — the organization maintained its religious exemption. Franklin Graham's combined $800,000+ compensation from two organizations is publicly disclosed through their respective Form 990 filings.",
+    "flags": [
+      "central_park_anti_discrimination_scrutiny",
+      "religious_exemption_claimed",
+      "graham_800k_dual_compensation_form_990_disclosed"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Samaritan's Purse is a 501(c)(3) public charity that files Form 990. Franklin Graham's combined compensation from Samaritan's Purse and the Billy Graham Evangelistic Association exceeded $800,000 in recent years — disclosed in both organizations' Form 990 filings. The organization receives some government grants for international disaster relief work alongside private donations.",
+    "flags": [
+      "form_990_filed_compensation_disclosed",
+      "government_grants_international_relief",
+      "graham_800k_publicly_disclosed"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Franklin Graham has led Samaritan's Purse since 1979 and the Billy Graham Evangelistic Association since 2001. His dual leadership and dual compensation — drawing from both organizations — was documented by the Charlotte Observer. His political statements — including support for Trump, statements about Islam, and statements about LGBTQ people — have been made as the president of a humanitarian organization operating globally in contexts where those statements create documented operational and diplomatic tensions.",
+    "flags": [
+      "dual_leadership_dual_compensation_documented",
+      "political_statements_humanitarian_context_tension"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Samaritan's Purse's relationship with the Billy Graham Evangelistic Association — Graham leads both — creates a dual-organization structure where the family dynasty controls two major Christian institutions simultaneously. The organization's Operation Christmas Child program has been documented to include proselytization materials in gift boxes distributed to children in non-Christian countries — creating tensions with local communities and governments.",
+    "flags": [
+      "graham_family_dynasty_dual_control",
+      "operation_christmas_child_proselytization_documented"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Aid workers and critics have alleged that Operation Christmas Child's proselytization content — distributed alongside toys and gifts to children in non-Christian countries — constitutes a form of leveraged religious conversion that exploits recipients' poverty and need. Samaritan's Purse maintains this reflects its Christian mission. Former staff members have alleged that Graham's political statements create operational risks for field staff in Muslim-majority countries.",
+    "flags": [
+      "operation_christmas_child_leveraged_conversion_alleged",
+      "political_statements_field_staff_risk_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "The Central Park COVID field hospital's volunteer requirement — signing a statement that homosexuality is sinful — meant LGBTQ healthcare workers who might have volunteered were excluded from a major public health emergency response. The field hospital was erected with city permission in a public park and treated patients regardless of sexual orientation; the discriminatory element applied to volunteers, not patients. The New York City Council passed a resolution condemning the conditions attached to the field hospital.",
+    "flags": [
+      "covid_lgbtq_volunteer_exclusion",
+      "nyc_council_resolution_condemning_conditions",
+      "public_park_discriminatory_conditions"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Direct Relief — non-religious humanitarian aid with high Charity Navigator ratings and no religious conditions",
+      "International Rescue Committee — secular humanitarian organization with comparable global reach"
+    ],
+    "healthier": [
+      "Médecins Sans Frontières (Doctors Without Borders) — secular; no religious conversion component to aid",
+      "Direct Relief, IRC, CARE — secular humanitarian organizations without discriminatory volunteer conditions"
+    ],
+    "diy": [
+      "Both Samaritan's Purse and Billy Graham Evangelistic Association Form 990s are publicly available at ProPublica Nonprofit Explorer",
+      "Charity Navigator rates Samaritan's Purse; check financial efficiency ratings alongside the documented concerns"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1970,
+      "event": "Samaritan's Purse founded by Bob Pierce",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1979,
+      "event": "Franklin Graham assumes leadership of Samaritan's Purse",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1993,
+      "event": "Operation Christmas Child launched — shoebox gift program distributed to children internationally",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2001,
+      "event": "Franklin Graham assumes leadership of Billy Graham Evangelistic Association alongside Samaritan's Purse",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "April: COVID field hospital erected in Central Park; volunteers required to sign anti-homosexuality statement; NYC Council passes condemning resolution",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "Graham participates in Trump inauguration events; defends Trump's January 6th conduct; Charlotte Observer documents $800k+ dual compensation",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "LGBTQ healthcare workers and volunteers who might have contributed to the Central Park COVID response were excluded through a statement requirement. LGBTQ patients treated at the field hospital did so in a facility operated by an organization whose volunteer policy required agreement that they were sinful.",
+    "price_illusion": "Samaritan's Purse presents as a humanitarian organization providing disaster relief and care to vulnerable people. Its volunteer requirements — and its leader's political statements — reflect a specific religious and political agenda that is attached to that humanitarian work.",
+    "tax_math": "Samaritan's Purse's $800+ million annual revenue is received as charitable donations that are tax-deductible for donors. Franklin Graham's $800,000+ compensation is paid from tax-exempt charitable funds. The organization receives government grants for international relief work alongside private donations.",
+    "wealth_velocity": "Franklin Graham's $800,000+ annual compensation — drawn from two charitable organizations he simultaneously leads — reflects wealth concentration at the executive level of a humanitarian organization. The organizational structure gives the Graham family dynasty control over two of the largest evangelical Christian organizations in the United States."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Franklin Graham",
+        "how": "$800k+ annual compensation from two tax-exempt organizations; prominent platform for political statements"
+      },
+      {
+        "group": "Graham family dynasty",
+        "how": "Control of two major evangelical Christian institutions with combined $1B+ in annual revenue"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "LGBTQ healthcare workers excluded from COVID response",
+        "how": "Required to agree homosexuality is sinful to volunteer at public park field hospital during pandemic"
+      },
+      {
+        "group": "Disaster aid recipients in Muslim-majority countries",
+        "how": "Aid accompanied by proselytization materials and delivered by organization whose leader has made documented Islamophobic statements"
+      }
+    ],
+    "the_gap": "Franklin Graham set up a hospital in Central Park during COVID. To volunteer you had to sign a statement saying homosexuality is sinful. The New York City Council passed a resolution condemning it. Franklin Graham makes $800,000 a year from two organizations he runs simultaneously. He endorsed Trump. He said Islam is evil and wicked. Samaritan's Purse has $800 million in annual revenue. It receives government grants. All of this is tax-exempt."
+  }
+}

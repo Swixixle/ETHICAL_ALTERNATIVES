@@ -1,0 +1,186 @@
+{
+  "brand_name": "Billy Graham Evangelistic Association",
+  "brand_slug": "billy-graham-evangelistic-association",
+  "parent_company": "Billy Graham Evangelistic Association",
+  "ultimate_parent": "Graham family",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "BILLY GRAHAM WAS THE MOST TRUSTED RELIGIOUS FIGURE IN AMERICA FOR 50 YEARS — HIS SON FRANKLIN PAYS HIMSELF $800,000 FROM TWO ORGANIZATIONS AND CALLS ISLAM EVIL",
+  "executive_summary": "The Billy Graham Evangelistic Association (BGEA) was founded by Billy Graham in 1950 and remains one of the most recognized Christian evangelistic organizations in the world, with annual revenue of approximately $130 million. Billy Graham — who died in 2018 — was widely regarded as the most prominent American evangelical of the 20th century, counseled every US president from Truman to Obama, and built a global ministry with documented reach into hundreds of countries. His son Franklin Graham assumed the BGEA presidency in 2001 alongside his Samaritan's Purse leadership — drawing combined compensation exceeding $800,000 annually from both organizations. Franklin Graham has made documented public statements calling Islam 'evil and wicked,' characterizing LGBTQ people as living 'a very wicked and sinful lifestyle,' and supporting Donald Trump through January 6th 2021. These statements have been made as president of an organization bearing his father's name — whose credibility was built on Billy Graham's reputation for keeping his evangelism politically neutral relative to his era's standards.",
+  "verdict_tags": [
+    "franklin_graham_800k_dual_compensation",
+    "franklin_graham_islam_evil_wicked_statement",
+    "lgbtq_wicked_sinful_statement",
+    "trump_january_6_defense",
+    "billy_graham_every_president_truman_obama",
+    "anti_kissinger_antisemitism_tape_revealed",
+    "graham_dynasty_inherited_presidency",
+    "130m_annual_revenue"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": false
+  },
+  "labor": {
+    "summary": "BGEA employs approximately 500 staff. No major labor violations have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental positions or enforcement actions have been identified for BGEA.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Billy Graham's political legacy is complicated: he counseled presidents of both parties and generally maintained a non-partisan public image — while private communications revealed significant political involvement including expressing antisemitic views to Nixon in 1972 (captured on White House tape; Graham apologized when the tape was released). Franklin Graham has abandoned his father's non-partisan positioning entirely — publicly endorsing Trump, defending January 6th, calling Islam evil, and making anti-LGBTQ statements — while leading the same organization whose credibility was built on his father's reputation.",
+    "flags": [
+      "billy_graham_nixon_antisemitic_tape_1972",
+      "franklin_trump_endorsement_january_6_defense",
+      "franklin_islam_evil_lgbtq_wicked_statements",
+      "non_partisan_reputation_abandoned_franklin"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "No major criminal enforcement actions against BGEA have been documented. Franklin Graham's dual compensation from BGEA and Samaritan's Purse — documented through both organizations' Form 990 filings — has generated scrutiny but no legal action. BGEA files Form 990 — its finances are publicly available.",
+    "flags": [
+      "dual_compensation_form_990_documented",
+      "form_990_public"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "BGEA is a 501(c)(3) public charity filing Form 990. Its annual revenue of approximately $130 million is received as tax-deductible donations. Franklin Graham's combined compensation from BGEA and Samaritan's Purse exceeds $800,000 annually — disclosed in both organizations' Form 990s. The Graham family's control of two major organizations through a single family member — with compensation drawn from both — represents a documented nepotism-adjacent governance structure.",
+    "flags": [
+      "130m_revenue_tax_deductible_donations",
+      "graham_800k_dual_compensation_public",
+      "graham_family_dual_organization_control"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Franklin Graham inherited the BGEA presidency from his father Billy Graham in 2001. Billy Graham had originally designated his son as successor over BGEA's own board preferences — a documented example of dynastic succession in religious institutional leadership. Billy Graham's own career included documented lapses from his non-partisan image: the 1972 Nixon antisemitism tape, his support for Nixon through Watergate, and his backing of South Korean President Park Chung-hee's authoritarian government. Franklin Graham's conduct has been substantially more politically explicit and controversial than his father's.",
+    "flags": [
+      "dynastic_succession_board_preference_overridden",
+      "billy_nixon_antisemitism_tape_1972",
+      "billy_watergate_nixon_support",
+      "franklin_substantially_more_controversial"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The BGEA's connection to Samaritan's Purse — through Franklin Graham's dual leadership — creates a family dynasty controlling two major Christian institutions with combined revenue of approximately $1 billion annually. The BGEA's historical relationships with US presidents give Franklin Graham institutional access that amplifies his political statements.",
+    "flags": [
+      "1b_combined_revenue_graham_dynasty",
+      "presidential_access_amplifies_political_statements"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former BGEA staff and evangelical commentators have alleged that Franklin Graham has systematically weaponized his father's institutional legacy — using Billy Graham's credibility to amplify political positions his father never publicly held. Former evangelical leaders have documented concern that Franklin Graham's explicit political partisanship, combined with his anti-Muslim and anti-LGBTQ statements, has damaged the credibility of evangelical Christianity globally in a way that undermines the evangelistic mission the organization was built to serve.",
+    "flags": [
+      "father_legacy_weaponized_alleged",
+      "evangelical_credibility_global_damage_documented"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Franklin Graham's documented statements characterizing LGBTQ people as living 'a very wicked and sinful lifestyle' — made as president of a major Christian organization — contribute to the stigma environment that researchers document as a primary driver of LGBTQ mental health disparities. His statements about Islam — made as president of a humanitarian organization operating in Muslim-majority countries — create documented operational risks for field staff and contribute to anti-Muslim prejudice.",
+    "flags": [
+      "lgbtq_stigma_statements_mental_health_disparities",
+      "anti_muslim_statements_field_staff_risk"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "World Vision — Christian humanitarian organization; non-family-dynasty leadership; comparable global reach",
+      "International Justice Mission — Christian anti-trafficking organization; different governance structure"
+    ],
+    "healthier": [
+      "Christian organizations with published succession plans, independent boards, and non-family leadership"
+    ],
+    "diy": [
+      "Both BGEA and Samaritan's Purse Form 990s are publicly available at ProPublica Nonprofit Explorer",
+      "Billy Graham's archived sermons and writings are accessible through BGEA's website — useful for comparison with Franklin Graham's public statements"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1950,
+      "event": "Billy Graham Evangelistic Association founded",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1952,
+      "event": "Billy Graham begins counseling US presidents — relationship continues through Obama",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1972,
+      "event": "Nixon White House tape captures Billy Graham making antisemitic comments; released 2002; Graham apologizes",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2001,
+      "event": "Franklin Graham assumes BGEA presidency alongside Samaritan's Purse leadership",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2001,
+      "event": "After September 11, Franklin Graham calls Islam 'evil and wicked' — marks break from Billy Graham's more measured public positioning",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "Billy Graham dies at 99; Charlotte Observer documents Franklin's dual $800k+ compensation",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "Franklin Graham defends Trump through January 6th; participates in inaugural events",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Billy Graham's legacy — built on a reputation for keeping faith above partisan politics — has been used by Franklin Graham to amplify political positions his father never publicly held. Communities that trusted the Billy Graham name encounter an organization whose current leadership has made documented statements against Muslims and LGBTQ people.",
+    "price_illusion": "Donations to the Billy Graham Evangelistic Association are made in the context of Billy Graham's 50-year reputation for pastoral integrity and relative political neutrality. The current president's conduct represents a significant departure from the institutional identity donors associate with the organization's name.",
+    "tax_math": "$130 million annually in tax-deductible donations supports an organization whose current president makes documented anti-LGBTQ and anti-Muslim statements while drawing $800,000+ from two charitable organizations simultaneously.",
+    "wealth_velocity": "The Graham family's control of two organizations — through a single family member collecting $800,000+ in combined compensation — represents wealth concentration enabled by dynastic succession in a charitable institution."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Franklin Graham",
+        "how": "$800k+ dual compensation; presidential access from father's legacy; platform for political statements"
+      },
+      {
+        "group": "Graham family dynasty",
+        "how": "$1B+ in combined charitable revenue under family control"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Donors who trust the Billy Graham name",
+        "how": "Donations made in context of Billy Graham's reputation being deployed by son with substantially different public conduct"
+      },
+      {
+        "group": "Muslims and LGBTQ individuals",
+        "how": "Documented stigmatizing statements from the president of a major religious institution"
+      }
+    ],
+    "the_gap": "Billy Graham counseled every president from Truman to Obama. He built one of the most trusted names in American Christianity. In 1972 he told Nixon that Jewish people controlled the media. The tape was released 30 years later. He apologized. His son Franklin now runs the organization. Franklin calls Islam evil. He calls LGBTQ people wicked. He defended Trump after January 6th. He pays himself $800,000 from two charitable organizations simultaneously. Billy Graham built the credibility. Franklin Graham is spending it."
+  }
+}

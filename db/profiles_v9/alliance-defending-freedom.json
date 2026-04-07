@@ -1,0 +1,188 @@
+{
+  "brand_name": "Alliance Defending Freedom",
+  "brand_slug": "alliance-defending-freedom",
+  "parent_company": "Alliance Defending Freedom",
+  "ultimate_parent": "Alliance Defending Freedom",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "THE ALLIANCE DEFENDING FREEDOM IS DESIGNATED A HATE GROUP — IT HAS WON AT THE SUPREME COURT EIGHT TIMES — AND IT TRAINS LAWYERS TO DISMANTLE LGBTQ RIGHTS GLOBALLY USING A NETWORK FUNDED BY KNIGHTS OF COLUMBUS AND OTHER MAJOR DONORS",
+  "executive_summary": "Alliance Defending Freedom (ADF) is a Scottsdale, Arizona-based conservative Christian legal advocacy organization with annual revenue exceeding $100 million. It was designated a hate group by the Southern Poverty Law Center in 2016 for spreading documented falsehoods about LGBTQ people. ADF has won eight cases at the US Supreme Court — including 303 Creative v. Elenis (2023, allowing businesses to refuse service to same-sex couples based on religious objection) and Masterpiece Cakeshop v. Colorado (2018). ADF has represented clients in anti-LGBTQ cases in more than 50 countries, trained over 4,000 lawyers globally through its Blackstone Legal Fellowship, and provided model legislation used in anti-LGBTQ laws globally including Uganda's Anti-Homosexuality Act. Its annual revenue has grown from $30 million in 2010 to over $100 million — funded by major donors including the Knights of Columbus, National Christian Charitable Foundation, and dozens of conservative family foundations.",
+  "verdict_tags": [
+    "splc_hate_group_designation_2016",
+    "8_supreme_court_wins_including_303_creative",
+    "100m_annual_revenue_growing",
+    "blackstone_fellowship_4000_lawyers_trained",
+    "uganda_anti_homosexuality_act_model_legislation",
+    "50_plus_countries_anti_lgbtq_cases",
+    "knights_of_columbus_major_donor",
+    "masterpiece_cakeshop_303_creative_wins"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": false
+  },
+  "labor": {
+    "summary": "ADF employs approximately 100 staff lawyers and support personnel. No major labor violations have been identified. Its Blackstone Legal Fellowship trains law students in conservative Christian legal theory.",
+    "flags": [
+      "blackstone_4000_lawyers_trained"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No environmental positions or enforcement actions have been identified for ADF.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "ADF's explicit mission is litigation and legislation — it is the most legally sophisticated anti-LGBTQ advocacy organization in the United States. Its eight Supreme Court wins have established precedents that allow: religious exemptions from anti-discrimination laws (303 Creative), limits on government compelled speech in LGBTQ-adjacent contexts, and narrowed application of public accommodation laws. ADF has provided model legislation used in anti-LGBTQ laws in multiple US states and internationally. Its international program has operated in Uganda, in European courts, and in other jurisdictions to establish legal frameworks restricting LGBTQ rights.",
+    "flags": [
+      "303_creative_religious_exemption_discrimination",
+      "model_legislation_us_states_international",
+      "uganda_international_legal_export",
+      "european_court_anti_lgbtq_litigation"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "ADF has won eight cases at the US Supreme Court as of 2024 — more than any other conservative religious advocacy organization. Key wins: 303 Creative LLC v. Elenis (2023) — web designer can refuse same-sex wedding website; Masterpiece Cakeshop (2018) — Colorado Civil Rights Commission showed hostility to religion; Trinity Lutheran (2017) — churches can receive public playground grants. ADF is currently counsel in multiple cases challenging transgender healthcare for minors, gender-neutral bathrooms, and other LGBTQ civil rights in US federal courts. It files Form 990 — its finances are public.",
+    "flags": [
+      "8_supreme_court_wins",
+      "303_creative_2023",
+      "masterpiece_cakeshop_2018",
+      "transgender_healthcare_current_litigation",
+      "form_990_filed"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "ADF is a 501(c)(3) public charity that files Form 990. Its annual revenue has grown from $30 million (2010) to over $100 million — a 3x increase driven by major donor contributions. Its largest documented donors include the National Christian Charitable Foundation (a donor-advised fund), the Knights of Columbus, and multiple conservative family foundations. CEO Michael Farris's compensation is approximately $600,000 annually — disclosed through Form 990.",
+    "flags": [
+      "100m_revenue_tripled_decade",
+      "national_christian_charitable_foundation_donor",
+      "knights_of_columbus_donor",
+      "farris_600k_compensation",
+      "form_990_public"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Michael Farris became ADF CEO in 2017, bringing his background as founder of the Home School Legal Defense Association. Previous CEO Alan Sears built ADF from its founding coalition of 30 Christian ministries in 1994. Farris's background — including his home school advocacy and his training of conservative Christian lawyers — connects ADF to the broader infrastructure of the conservative Christian political movement. ADF's legal team has argued before the US Supreme Court multiple times.",
+    "flags": [
+      "farris_hslda_background",
+      "sears_founding_30_ministries",
+      "supreme_court_multiple_arguments"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "ADF is the legal arm of a coordinated conservative Christian political network that includes FRC (lobbying), Focus on the Family (media), Knights of Columbus (funding), and Heritage Foundation (policy). This network has operated in a coordinated fashion across legislative, legal, media, and funding dimensions for four decades. ADF's international program specifically exports legal strategies and model legislation to other countries — documented in Uganda (Anti-Homosexuality Act) and in European court cases.",
+    "flags": [
+      "coordinated_network_frc_fotf_koc_heritage",
+      "international_legal_export_documented",
+      "uganda_model_legislation_connection"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Human rights organizations including Human Rights Watch and Amnesty International have alleged that ADF's international program has directly contributed to anti-LGBTQ legislation in Uganda and other countries that has been followed by documented violence and persecution against LGBTQ individuals. ADF has disputed the causal connection while acknowledging its international legal activities.",
+    "flags": [
+      "international_program_lgbtq_persecution_causal_connection_alleged",
+      "uganda_violence_persecution_downstream_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "ADF's legal wins — particularly 303 Creative and similar cases — establish precedents that allow businesses to refuse service to LGBTQ people on religious grounds. Healthcare providers, counselors, and other service providers have sought religious exemptions from non-discrimination requirements in healthcare contexts. The downstream health effect of ADF's litigation is documented by researchers as contributing to reduced healthcare access for LGBTQ individuals in jurisdictions where exemptions are established. ADF's international model legislation — in Uganda — has been followed by documented violence and persecution of LGBTQ individuals.",
+    "flags": [
+      "healthcare_religious_exemption_lgbtq_access_downstream",
+      "uganda_violence_persecution_documented_downstream",
+      "303_creative_service_refusal_precedent"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Lambda Legal — LGBTQ rights litigation organization",
+      "ACLU LGBT Rights Project — civil liberties litigation"
+    ],
+    "healthier": [
+      "Organizations providing legal services to LGBTQ individuals facing discrimination"
+    ],
+    "diy": [
+      "ADF's Form 990 is publicly available at ProPublica Nonprofit Explorer — donor list not required to be disclosed but revenue sources visible",
+      "Supreme Court case records for ADF cases are public at supremecourt.gov"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1994,
+      "event": "Alliance Defending Freedom founded by coalition of 30 Christian ministries in Scottsdale, Arizona",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2011,
+      "event": "ADF begins international program; model legislation provided to multiple countries",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2016,
+      "event": "SPLC designates ADF as hate group for documented falsehoods about LGBTQ people",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "Michael Farris becomes CEO; Trinity Lutheran won at Supreme Court",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "Masterpiece Cakeshop won at Supreme Court (narrow religious hostility grounds)",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "303 Creative won at Supreme Court — websites are speech; designer can refuse same-sex wedding sites; major LGBTQ rights rollback",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "LGBTQ individuals refused service by businesses claiming religious exemptions under ADF-won precedents experience documented economic and dignitary harm. In jurisdictions influenced by ADF's international model legislation — Uganda — LGBTQ individuals have experienced documented violence, imprisonment, and persecution.",
+    "price_illusion": "ADF presents as a religious freedom organization — defending the rights of Christians against government compulsion. Its litigation record is specifically targeted at reducing legal protections for LGBTQ individuals. The framing of LGBTQ civil rights as threats to religious freedom presents discrimination against one group as protection of another.",
+    "tax_math": "ADF's $100+ million annual revenue is received as tax-deductible charitable donations. This revenue funds litigation whose explicit purpose is reducing LGBTQ civil rights protections. Donors receive a charitable tax deduction for funding this litigation.",
+    "wealth_velocity": "ADF's revenue has tripled from $30 million (2010) to $100+ million (2024) — reflecting the increasing investment by conservative Christian donors in legal strategies following political setbacks in legislative advocacy. Michael Farris's $600,000 compensation is drawn from this growing donor base."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "ADF donors (Knights of Columbus, conservative family foundations)",
+        "how": "Eight Supreme Court wins establishing precedents reducing LGBTQ civil rights; 4,000 trained lawyers in a coordinated legal movement"
+      },
+      {
+        "group": "ADF leadership",
+        "how": "$100M+ annual operation with $600k CEO compensation; growing donor base"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "LGBTQ individuals denied service under ADF-won religious exemptions",
+        "how": "Businesses can refuse service based on religious objection; documented economic and dignitary harm"
+      },
+      {
+        "group": "LGBTQ Ugandans",
+        "how": "Model legislation contributed to Anti-Homosexuality Act; documented violence and persecution"
+      }
+    ],
+    "the_gap": "The Alliance Defending Freedom has won eight Supreme Court cases. The SPLC calls them a hate group. They have trained 4,000 lawyers. They have operated in 50 countries. They helped write Uganda's Anti-Homosexuality Act. They won a case in 2023 that lets businesses refuse service to gay people. Their revenue is $100 million. Donations are tax-deductible. The Knights of Columbus is a major donor."
+  }
+}

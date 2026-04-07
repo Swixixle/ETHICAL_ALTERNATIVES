@@ -1,0 +1,179 @@
+{
+  "brand_name": "Focus on the Family",
+  "brand_slug": "focus-on-the-family",
+  "parent_company": "Focus on the Family",
+  "ultimate_parent": "Focus on the Family",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "FOCUS ON THE FAMILY FOUNDED THE CONVERSION THERAPY MOVEMENT IN AMERICA AND SPENT DECADES TELLING PARENTS THEIR GAY CHILDREN COULD BE CHANGED — EVERY MAJOR MEDICAL ORGANIZATION SAYS THIS IS HARMFUL AND FALSE",
+  "executive_summary": "Focus on the Family is a Colorado Springs-based Christian advocacy organization founded by psychologist James Dobson in 1977, with annual revenue of approximately $90 million. Dobson built Focus on the Family into one of the most influential conservative Christian media and advocacy organizations in America — with a radio program reaching millions, a publishing operation, and a political action subsidiary. Focus on the Family was a primary developer and promoter of the conversion therapy movement — the practice of attempting to change a person's sexual orientation or gender identity through psychological or religious intervention. Every major medical and psychiatric organization has found conversion therapy to be ineffective and harmful, particularly for minors. Focus on the Family has lobbied against bans on conversion therapy for minors in over 20 states. It maintains a resource called 'Day of Dialogue' positioned as an alternative to the Day of Silence in schools.",
+  "verdict_tags": [
+    "conversion_therapy_movement_founder",
+    "every_major_medical_org_harmful_ineffective",
+    "20_plus_states_conversion_therapy_ban_opposition",
+    "90m_annual_revenue",
+    "dobson_founded_major_political_influence",
+    "day_of_dialogue_counter_day_of_silence",
+    "exodus_international_connected",
+    "alliance_defending_freedom_network"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": false
+  },
+  "labor": {
+    "summary": "Focus on the Family employs approximately 650 staff in Colorado Springs. No major documented labor violations have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental positions or enforcement actions have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Focus on the Family has been one of the most politically active conservative Christian organizations in the United States since the 1980s. Dobson's endorsement was considered essential for Republican presidential candidates through the 2000s. The organization has lobbied against: same-sex marriage, LGBTQ civil rights protections, abortion access, comprehensive sex education, and conversion therapy bans. It has supported: school prayer, abstinence-only education, and religious freedom exemptions. Its political action subsidiary, Focus on the Family Action, has engaged in direct political spending.",
+    "flags": [
+      "dobson_endorsement_republican_essential",
+      "same_sex_marriage_lgbtq_opposition_documented",
+      "conversion_therapy_ban_opposition_20_states",
+      "focus_action_political_spending"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "No major criminal enforcement actions against Focus on the Family have been documented. Its advocacy for conversion therapy has been challenged in courts in the context of consumer protection laws — New Jersey and California have successfully defended conversion therapy bans against constitutional challenge. Focus on the Family's arguments against these bans have been rejected by courts in multiple jurisdictions. The organization files Form 990 — its finances are publicly available.",
+    "flags": [
+      "conversion_therapy_ban_challenges_rejected_courts",
+      "form_990_filed_public",
+      "consumer_protection_law_challenges"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Focus on the Family is a 501(c)(3) public charity that files Form 990. Current president Jim Daly's compensation is approximately $300,000 annually — disclosed through Form 990. James Dobson's compensation during his tenure was not publicly disclosed as he restructured his activities through James Dobson Family Institute after leaving Focus on the Family.",
+    "flags": [
+      "form_990_filed",
+      "daly_300k_disclosed",
+      "dobson_compensation_restructured_separate_entity"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "James Dobson founded Focus on the Family and led it until 2003 when Jim Daly succeeded him. Dobson went on to found the James Dobson Family Institute — a separate organization — continuing his political activity. Dobson's influence in developing the conversion therapy movement — through his psychology background and his radio program's reach — is documented by academics studying the movement's origins. Daly has led Focus on the Family with somewhat lower public political profile than Dobson while maintaining the same policy positions.",
+    "flags": [
+      "dobson_conversion_therapy_movement_originator",
+      "dobson_psychologist_background",
+      "daly_lower_profile_same_positions"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Focus on the Family is a primary node in the conservative Christian political network alongside FRC, ADF, and AFA. Its specific contribution to this network is media reach — the radio program, publications, and website — that translates policy positions into accessible content for millions of conservative Christian households. The conversion therapy advocacy connects Focus on the Family to Exodus International (now closed), NARTH, and other organizations that promoted the same practices.",
+    "flags": [
+      "exodus_international_conversion_therapy_connected",
+      "narth_connected",
+      "conservative_christian_media_primary_node"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former participants in conversion therapy programs promoted by Focus on the Family have alleged that the programs caused documented psychological harm — including depression, anxiety, suicidal ideation, and PTSD — and that Focus on the Family promoted these programs with knowledge of harm reports while continuing to characterize them as beneficial. Alan Chambers, the former president of Exodus International (connected to Focus on the Family's network), publicly apologized in 2013 for the harm caused by conversion therapy and closed Exodus — a documented acknowledgment of harm from within the movement Focus on the Family helped build.",
+    "flags": [
+      "harm_knowledge_continued_promotion_alleged",
+      "exodus_chambers_apology_harm_documented"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "The American Psychological Association, American Medical Association, American Academy of Pediatrics, American Psychiatric Association, and every other major medical organization have found that conversion therapy is ineffective and harmful — particularly for minors. Documented harms include depression, anxiety, suicidal ideation, and PTSD. The Trevor Project's research documents that LGBTQ youth who experience conversion therapy are more than twice as likely to attempt suicide as those who do not. Focus on the Family was a primary developer and promoter of this movement for decades and continues to oppose bans on it for minors.",
+    "flags": [
+      "apa_ama_aap_harmful_ineffective_documented",
+      "trevor_project_2x_suicide_attempt_documented",
+      "focus_on_family_primary_developer_opposed_bans"
+    ],
+    "sources": [
+      "https://www.apa.org/pi/lgbt/resources/therapeutic-response.pdf"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "American Association of Christian Counselors — some members practice evidence-based approaches",
+      "Licensed therapists who are affirming of LGBTQ identity — Psychology Today's therapist finder includes filters for LGBTQ-affirming"
+    ],
+    "healthier": [
+      "The Trevor Project (thetrevorproject.org) — crisis support for LGBTQ youth",
+      "PFLAG — support for LGBTQ individuals and their families",
+      "Affirming licensed mental health professionals who do not practice conversion therapy"
+    ],
+    "diy": [
+      "The APA's report on conversion therapy is publicly available at apa.org",
+      "The Trevor Project's research on conversion therapy outcomes is documented at thetrevorproject.org",
+      "Focus on the Family's Form 990 is available at ProPublica Nonprofit Explorer"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1977,
+      "event": "James Dobson founds Focus on the Family in Arcadia, California",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1991,
+      "event": "Focus on the Family publishes 'Reparative Therapy' resources; becomes primary national promoter of conversion therapy approach",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2003,
+      "event": "Jim Daly succeeds Dobson as president; Dobson continues separately through James Dobson Family Institute",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2013,
+      "event": "Alan Chambers closes Exodus International with public apology for conversion therapy harm — connected organization's leader acknowledges documented harm",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2015,
+      "event": "Multiple states begin banning conversion therapy for minors; Focus on the Family lobbies against each ban",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "Over 20 states have banned conversion therapy for minors; Focus on the Family continues opposition",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "LGBTQ youth whose parents sought out conversion therapy resources promoted by Focus on the Family — and who underwent such practices — have documented lasting psychological harm. The Trevor Project's research documents that these youth are more than twice as likely to attempt suicide as LGBTQ youth who did not experience conversion therapy.",
+    "price_illusion": "Focus on the Family presents as a family strengthening resource — Dobson's original radio program provided child development and parenting advice alongside religious content. Its conversion therapy advocacy was packaged in the same accessible family-help format, presenting harmful practices as professionally sound.",
+    "tax_math": "Focus on the Family's $90 million annual revenue is received as tax-deductible charitable donations. Its advocacy against conversion therapy bans — which protect minors from documented harm — is conducted from a tax-exempt platform.",
+    "wealth_velocity": "Focus on the Family's $90 million annual operation is funded by tax-deductible donations from households that trust it as a family resource. This revenue funds advocacy for practices that major medical organizations have documented as harmful to the children of those same households' LGBTQ members."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Focus on the Family leadership and the broader conversion therapy industry",
+        "how": "Decades of promotion created a market for conversion therapy programs and practitioners; continuing to oppose bans prolongs this market"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "LGBTQ youth who underwent conversion therapy",
+        "how": "Depression, anxiety, suicidal ideation, PTSD — documented by APA and Trevor Project; 2x suicide attempt rate documented; practices promoted for decades by Focus on the Family"
+      }
+    ],
+    "the_gap": "Focus on the Family built the conversion therapy movement in America. Every major medical organization says conversion therapy is harmful and doesn't work. The Trevor Project found that LGBTQ youth who undergo it are twice as likely to attempt suicide. Exodus International — a connected organization — closed in 2013 with a public apology for the harm. Focus on the Family still opposes bans on doing this to children. Their annual revenue is $90 million. Donations are tax-deductible."
+  }
+}

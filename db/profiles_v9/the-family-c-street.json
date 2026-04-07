@@ -1,0 +1,191 @@
+{
+  "brand_name": "The Family (C Street)",
+  "brand_slug": "the-family-c-street",
+  "parent_company": "The Fellowship Foundation",
+  "ultimate_parent": "The Fellowship Foundation",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "'THE FAMILY' RUNS A HOUSE FOR US SENATORS AND CONGRESSMEN IN WASHINGTON DC — IT DOESN'T CALL ITSELF A CHURCH BUT IT FUNCTIONS LIKE ONE — AND IT ARRANGES PRIVATE MEETINGS BETWEEN AMERICAN POLITICIANS AND FOREIGN DICTATORS IN JESUS'S NAME",
+  "executive_summary": "The Fellowship Foundation — known publicly as 'The Family' or 'C Street' — is an extraordinarily secretive religious organization that has operated in Washington DC since 1935. It runs the C Street Center, a townhouse registered as a church where US senators and congressmen live at below-market rates. The organization hosts the National Prayer Breakfast — an annual Washington event attended by the President, Cabinet, foreign heads of state, and thousands of political and business leaders — which is not organized by the government but by The Family, giving it unparalleled access to global political leadership. Jeff Sharlet's book 'The Family' (2008) and the Netflix documentary of the same name documented The Family's theology — which holds that powerful leaders are chosen by God and need not answer to conventional morality — and its international political networking on behalf of anti-LGBTQ and authoritarian-adjacent causes.",
+  "verdict_tags": [
+    "national_prayer_breakfast_organized_secretly",
+    "c_street_senators_congressmen_below_market_housing",
+    "fellowship_foundation_church_registration",
+    "jeff_sharlet_documented_theology",
+    "international_dictator_meetings_arranged",
+    "anti_lgbtq_international_advocacy",
+    "doug_coe_leader_died_2017",
+    "senators_c_street_sexual_scandal_connection"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": false
+  },
+  "labor": {
+    "summary": "The Fellowship Foundation employs a small permanent staff. Its work is primarily conducted through relationships and access rather than organizational infrastructure. No major labor violations have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No environmental positions or enforcement actions have been identified for The Family.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Family's political influence operates through personal relationships rather than formal lobbying — making it both more powerful and less visible than registered advocacy organizations. It has arranged private meetings between US politicians and foreign leaders including Ugandan President Yoweri Museveni (during the period when Uganda's Anti-Homosexuality Act was advancing), Rwandan President Paul Kagame, and officials from authoritarian regimes. Jeff Sharlet's research documented that The Family's theology — elite chosen-ness and the irrelevance of conventional morality for the chosen — has been used to counsel politicians implicated in scandals to remain in power rather than resign. C Street residents who experienced sex scandals — including Senators John Ensign and Mark Sanford — received counseling from Family leaders that, in Ensign's case, involved attempts to manage the scandal rather than disclose it.",
+    "flags": [
+      "uganda_anti_homosexuality_act_museveni_meetings",
+      "international_authoritarian_meetings_arranged",
+      "ensign_sanford_c_street_scandal_counseling",
+      "elite_chosenness_theology_documented_sharlet",
+      "no_form_990_required_church"
+    ],
+    "sources": [
+      "https://www.nytimes.com/2009/08/23/books/review/Brooks-t.html"
+    ]
+  },
+  "legal": {
+    "summary": "The Fellowship Foundation is registered as a church — not a public charity — and therefore files no Form 990 and has minimal public financial disclosure requirements. Senator John Ensign's C Street connection: Ensign had an affair with a staffer's wife; The Family's Doug Coe and other leaders counseled him; Ensign's parents paid the family $96,000; the Justice Department and Senate Ethics Committee investigated; no criminal charges were filed against Ensign though he resigned. The Family's church registration — and therefore its financial opacity — has not been successfully challenged legally despite advocacy organization scrutiny.",
+    "flags": [
+      "church_registration_no_form_990",
+      "ensign_affair_family_counseling_96000_payments",
+      "justice_department_senate_ethics_investigation_no_charges"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "The Fellowship Foundation's church registration exempts it from Form 990 filing requirements and most financial disclosure obligations. The C Street Center's registration as a church provides property tax exemption and the housing subsidy it provides to senators and congressmen — below-market rent in a Washington DC property — has not been successfully characterized as an impermissible gift to public officials.",
+    "flags": [
+      "church_registration_complete_financial_opacity",
+      "c_street_below_market_rent_not_challenged",
+      "national_prayer_breakfast_access_unregistered"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Doug Coe led The Family from the 1960s until his death in 2017. Coe was described by Time Magazine as 'the most influential Christian in America' — a description that captures the paradox of an organization that cultivates maximum influence through minimum visibility. Coe reportedly compared The Family's model of quiet power to the organizational model of the Mafia and the Nazi Party — a comparison documented in Jeff Sharlet's research as an illustration of cell-based loyalty structures, not an endorsement. Coe's son David Coe has continued in a leadership role since his father's death.",
+    "flags": [
+      "coe_time_most_influential_christian_america",
+      "coe_mafia_nazi_comparison_documented_sharlet",
+      "minimum_visibility_maximum_influence_model"
+    ],
+    "sources": [
+      "https://www.theatlantic.com/politics/archive/2009/09/the-family-and-its-scandals/27166/"
+    ]
+  },
+  "connections": {
+    "summary": "The National Prayer Breakfast — The Family's annual flagship event — provides extraordinary access: US presidents attend, foreign heads of state attend, Cabinet members attend, and thousands of political and business leaders attend. This access is controlled by a private religious organization that files no public financial disclosure and whose theology and operations are not publicly disclosed to most attendees. The Fellowship's international network has been documented operating in Uganda during the Anti-Homosexuality Act's development, in Russia during anti-LGBTQ legislation, and in multiple other countries where conservative religious agendas intersect with political power.",
+    "flags": [
+      "national_prayer_breakfast_presidential_cabinet_access",
+      "uganda_anti_homosexuality_act_period",
+      "russia_anti_lgbtq_legislation_period"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Jeff Sharlet's research — based on time spent living in a Family house and interviews with members — alleged that The Family's theology of elite chosen-ness has been used to counsel powerful members implicated in wrongdoing that they need not apply conventional moral standards to themselves because they are chosen instruments of God. Sharlet further alleged that The Family's international networking has actively supported leaders who criminalize homosexuality. These allegations are grounded in documentary evidence but are contested by Family-affiliated individuals.",
+    "flags": [
+      "elite_chosenness_conventional_morality_irrelevant_theology_alleged",
+      "international_criminalization_support_alleged_sharlet"
+    ],
+    "sources": [
+      "https://www.nytimes.com/2009/08/23/books/review/Brooks-t.html"
+    ]
+  },
+  "health_record": {
+    "summary": "The Family's documented international networking during the development of Uganda's Anti-Homosexuality Act — which originally provided for the death penalty for homosexuality — represents the most documented health-adjacent harm of its political work. US politicians with Family connections met with Ugandan political leaders during this legislation's development. The legislation has been documented by human rights organizations as having contributed to violence and persecution of LGBTQ Ugandans.",
+    "flags": [
+      "uganda_death_penalty_homosexuality_bill_networking_period",
+      "lgbtq_persecution_documented_downstream"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Congressional Prayer Meetings that are publicly organized and disclosed",
+      "Publicly organized interfaith events with disclosed organizers and funding"
+    ],
+    "healthier": [
+      "Religious organizations that disclose their finances, theology, and political activities publicly"
+    ],
+    "diy": [
+      "Jeff Sharlet's 'The Family' (Harper, 2008) — the foundational documented account",
+      "Netflix documentary 'The Family' (2019) based on Sharlet's reporting",
+      "The Fellowship Foundation files no Form 990 — its finances are not publicly available"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1935,
+      "event": "The Fellowship Foundation founded by Abraham Vereide in Seattle — initially as an anti-labor organizing effort among Christian businessmen",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 1953,
+      "event": "First National Prayer Breakfast held; Eisenhower attends; becomes annual presidential fixture organized by The Family",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 1978,
+      "event": "Doug Coe assumes effective leadership; begins expanding international network",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2008,
+      "event": "Jeff Sharlet publishes 'The Family'; C Street scandal connections begin emerging; senators Ensign and Sanford implicated",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2009,
+      "event": "Uganda Anti-Homosexuality Bill introduced; Family member meetings with Ugandan leaders documented in the same period",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "Doug Coe dies; David Coe continues leadership",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "Netflix documentary 'The Family' based on Sharlet's reporting reaches mass audience",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "LGBTQ individuals in Uganda — where The Family's international networking occurred during the development of legislation originally providing the death penalty for homosexuality — have experienced documented persecution, violence, and displacement.",
+    "price_illusion": "The National Prayer Breakfast presents as a nonpartisan, broadly Christian gathering. It is organized by a private religious organization that files no financial disclosure, whose theology is not disclosed to most attendees, and whose international political networking is documented but not visible to Prayer Breakfast participants.",
+    "tax_math": "The Fellowship Foundation's church registration exempts it from all meaningful financial disclosure. The National Prayer Breakfast's attendees — US presidents, Cabinet members, foreign heads of state — attend an event organized by a financially opaque private religious organization with documented international political activities.",
+    "wealth_velocity": "The Family's assets and revenue are not publicly known because it files no financial disclosure. Its influence — measured in presidential and head-of-state access — is extraordinary relative to any documented financial expenditure."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "The Family's political network",
+        "how": "Extraordinary access to US presidents, Cabinet, and foreign heads of state through the National Prayer Breakfast; arranged private meetings between US politicians and foreign leaders"
+      },
+      {
+        "group": "C Street residents (senators and congressmen)",
+        "how": "Below-market housing in Washington DC from a church-registered property"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "LGBTQ Ugandans",
+        "how": "Family-connected networking during development of legislation originally providing death penalty for homosexuality; documented persecution"
+      }
+    ],
+    "the_gap": "A private religious organization with no public financial disclosure has organized the National Prayer Breakfast since 1953. Every US president has attended. It runs a house in Washington DC where senators live below market rate. It arranged private meetings between American politicians and the Ugandan president while Uganda was developing a bill to execute gay people. It files no financial disclosures because it is registered as a church. Jeff Sharlet documented all of this. The organization barely acknowledged it existed until the book came out."
+  }
+}

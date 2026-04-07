@@ -1,0 +1,176 @@
+{
+  "brand_slug": "roman-catholic-church",
+  "members": [
+    {
+      "person_slug": "bernard-cardinal-law",
+      "full_name": "Cardinal Bernard Francis Law",
+      "role": "Archbishop of Boston",
+      "tenure_start": "1984",
+      "tenure_end": "2002",
+      "is_current": false,
+      "committees": [
+        "US Conference of Catholic Bishops"
+      ],
+      "present_during": [
+        "boston_clergy_abuse_cover_up_1984_2002"
+      ],
+      "departure_reason": "Resigned — Boston Globe Spotlight investigation",
+      "departure_context": "Law resigned as Archbishop of Boston on December 13, 2002, after the Boston Globe's Spotlight team documented that he had systematically transferred known abuser priests to new parishes where they reoffended rather than reporting them to law enforcement. A grand jury found probable cause to indict Law for covering up abuse but could not proceed due to his clerical status. Law fled to Rome, where Pope John Paul II appointed him Archpriest of the Basilica of Santa Maria Maggiore — a senior Vatican position he held until his death in 2017. He was never prosecuted. He received full cardinal honors at his death.",
+      "revolving_door": true,
+      "revolving_door_note": "Archbishop of Boston who covered up abuse → fled to Rome → appointed to senior Vatican position protected by sovereign immunity → died with full honors. Vatican sovereignty provided complete prosecutorial protection.",
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Grand jury found probable cause to indict. Never prosecuted. Died 2017 in Rome with full Vatican honors. His transfer of abuser priests created new victims in each receiving parish.",
+      "sources": [
+        "https://www.bostonglobe.com/arts/movies/spotlight/"
+      ]
+    },
+    {
+      "person_slug": "roger-cardinal-mahony",
+      "full_name": "Cardinal Roger Mahony",
+      "role": "Archbishop of Los Angeles",
+      "tenure_start": "1985",
+      "tenure_end": "2011",
+      "is_current": false,
+      "committees": [
+        "US Conference of Catholic Bishops"
+      ],
+      "present_during": [
+        "la_archdiocese_abuse_cover_up"
+      ],
+      "departure_reason": "Retired at mandatory retirement age",
+      "departure_context": "Internal Church memos released in 2013 — after Mahony had retired — showed he had strategically transferred accused priests out of California to avoid mandatory reporting laws, and had coached subordinates on how to handle abuse allegations to minimize legal exposure. LA Archbishop José Gomez stripped Mahony of his public duties in January 2013 after the memos' release — an unprecedented rebuke of a retired cardinal. Mahony retained his voting rights in the College of Cardinals and voted in the 2013 conclave that elected Pope Francis.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Memos showed strategic transfer of priests out of California to avoid reporting laws. Stripped of public duties by successor — unprecedented. Retained cardinal voting rights. Voted in 2013 papal conclave.",
+      "sources": [
+        "https://www.latimes.com/local/la-me-mahony-files-20130122-story.html"
+      ]
+    },
+    {
+      "person_slug": "george-cardinal-pell",
+      "full_name": "Cardinal George Pell",
+      "role": "Archbishop of Melbourne, then Sydney; Vatican Prefect of Secretariat for Economy",
+      "tenure_start": "1996",
+      "tenure_end": "2023",
+      "is_current": false,
+      "committees": [
+        "Council for the Economy",
+        "C9 Council of Cardinals"
+      ],
+      "present_during": [
+        "australia_clergy_abuse_royal_commission",
+        "vatican_financial_reform"
+      ],
+      "departure_reason": "Died January 2023",
+      "departure_context": "Pell was convicted in Australia in December 2018 of sexually abusing two 13-year-old choir boys in 1996 — sentenced to six years. The conviction was overturned by the Australian High Court in April 2020 on the grounds of reasonable doubt — not exoneration. The Royal Commission into Institutional Responses to Child Sexual Abuse found Pell had known about abusive priest Gerald Ridsdale and had failed to act. Pell was separately one of the most senior Vatican financial reformers as Prefect of the Secretariat for Economy. He died in Rome in January 2023 days after publishing a diary that characterized his conviction as a political attack.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Convicted 2018, overturned 2020 on reasonable doubt not exoneration. Royal Commission separately found he knew of abuser Ridsdale and failed to act. Died 2023.",
+      "sources": [
+        "https://www.childabuseroyalcommission.gov.au"
+      ]
+    },
+    {
+      "person_slug": "theodore-cardinal-mccarrick",
+      "full_name": "Cardinal Theodore McCarrick",
+      "role": "Archbishop of Washington DC",
+      "tenure_start": "2000",
+      "tenure_end": "2018",
+      "is_current": false,
+      "committees": [
+        "US Conference of Catholic Bishops"
+      ],
+      "present_during": [
+        "mccarrick_abuse_period",
+        "us_political_catholicism"
+      ],
+      "departure_reason": "Laicized — removed from priesthood",
+      "departure_context": "McCarrick was the first cardinal in modern Church history to be laicized (removed from the priesthood) for sexual abuse — formally defrocked by Pope Francis in February 2019. He had abused seminarians and minors over decades. A Vatican investigation found Pope John Paul II had been warned about McCarrick's conduct before appointing him to Washington and elevated him to cardinal anyway. McCarrick was a prominent political figure — dined with presidents, advised on Vatican-US relations — whose influence protected him for decades.",
+      "revolving_door": true,
+      "revolving_door_note": "Archbishop of Washington → political adviser to presidents and Vatican → laicized for abuse. Vatican investigation found JPII warned before appointment and elevated him anyway. Political influence enabled decades of protection.",
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "First cardinal laicized for abuse in modern history. Vatican investigation confirmed JPII warned before appointment. Political connections with multiple US presidents documented.",
+      "sources": [
+        "https://www.vatican.va/resources/resources_rapporto-card-mccarrick_20201110_en.html"
+      ]
+    },
+    {
+      "person_slug": "angelo-cardinal-becciu",
+      "full_name": "Cardinal Angelo Becciu",
+      "role": "Substitute for General Affairs of the Secretariat of State; Prefect of Congregation for Saints' Causes",
+      "tenure_start": "2011",
+      "tenure_end": "2020",
+      "is_current": false,
+      "committees": [
+        "Secretariat of State"
+      ],
+      "present_during": [
+        "vatican_london_real_estate_scandal",
+        "vatican_financial_mismanagement"
+      ],
+      "departure_reason": "Resigned — financial investigation; subsequently convicted",
+      "departure_context": "Becciu was the highest-ranking Vatican official to face criminal prosecution in modern history. He was convicted by the Vatican City State court in December 2023 of embezzlement and abuse of office — primarily related to the Vatican's disastrous investment in a London luxury real estate development that lost approximately €200 million of Vatican funds. He was sentenced to 5.5 years and fined €8,000. Becciu had also directed Vatican funds to his brother's cooperative in Sardinia. Pope Francis stripped Becciu of his cardinal rights in September 2020 — another unprecedented action — before charges were filed.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "First senior cardinal convicted of financial crimes in modern Vatican history. 5.5 year sentence. €200M London real estate loss. Pope Francis stripped cardinal rights pre-trial — unprecedented.",
+      "sources": [
+        "https://www.reuters.com/world/europe/vatican-court-convicts-cardinal-becciu-other-defendants-2023-12-16/"
+      ]
+    },
+    {
+      "person_slug": "rembert-weakland",
+      "full_name": "Archbishop Rembert Weakland",
+      "role": "Archbishop of Milwaukee",
+      "tenure_start": "1977",
+      "tenure_end": "2002",
+      "is_current": false,
+      "committees": [
+        "US Conference of Catholic Bishops"
+      ],
+      "present_during": [
+        "milwaukee_abuse_cover_up",
+        "weakland_personal_scandal"
+      ],
+      "departure_reason": "Resigned — personal sexual misconduct and cover-up",
+      "departure_context": "Weakland resigned in May 2002 after it was revealed that the Archdiocese of Milwaukee had paid $450,000 in 1998 to a man who claimed Weakland had sexually assaulted him. The payment was made from archdiocesan funds — donor money — to silence the claim. Separately, the Milwaukee Archdiocese under Weakland had documented the most egregious single case of clergy abuse cover-up in the US — decades of abuse by Lawrence Murphy at a school for deaf children, where Murphy abused up to 200 deaf boys and was never reported to police, and where Vatican officials including Cardinal Ratzinger (later Pope Benedict XVI) were informed and took no action for years.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "$450,000 archdiocesan funds paid to silence personal assault claim. Lawrence Murphy abused 200 deaf children under his watch; Vatican informed; no police report. Ratzinger/Benedict implicated in delayed response.",
+      "sources": [
+        "https://www.nytimes.com/2010/03/25/world/europe/25pope.html"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "person_slug": "bernard-cardinal-law",
+      "brand_slug_a": "roman-catholic-church",
+      "brand_slug_b": "roman-catholic-church",
+      "overlap_start": "1984",
+      "overlap_end": "2017",
+      "pattern_type": "revolving_door",
+      "description": "Law covered up abuse in Boston, resigned to avoid prosecution, was appointed to a senior Vatican position protected by sovereign immunity, and died with full honors in Rome. Vatican sovereignty functioned as prosecutorial protection for a bishop who had enabled documented harm to hundreds of children.",
+      "significance": "The most documented case of a religious institution using sovereign status to shield a leadership figure from criminal accountability for institutional misconduct."
+    },
+    {
+      "person_slug": "theodore-cardinal-mccarrick",
+      "brand_slug_a": "roman-catholic-church",
+      "brand_slug_b": "roman-catholic-church",
+      "overlap_start": "2000",
+      "overlap_end": "2019",
+      "pattern_type": "revolving_door",
+      "description": "McCarrick's political influence — as a diplomatic asset in Vatican-US relations — protected him from accountability for documented abuse of seminarians and minors for decades. The Vatican's own investigation found the pattern of protection was deliberate.",
+      "significance": "Political influence operated as an institutional protection mechanism for documented abuse within the Church's most elite diplomatic circles."
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "brand_name": "Family Research Council",
+  "brand_slug": "family-research-council",
+  "parent_company": "Family Research Council",
+  "ultimate_parent": "Family Research Council",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "THE FAMILY RESEARCH COUNCIL IS DESIGNATED A HATE GROUP BY THE SPLC — ITS PRESIDENT TONY PERKINS PAID DAVID DUKE'S MAILING LIST FOR A LOUISIANA SENATE CAMPAIGN AND WASN'T CHARGED",
+  "executive_summary": "The Family Research Council (FRC) is a Washington DC-based conservative Christian advocacy organization founded in 1983, currently led by Tony Perkins. The Southern Poverty Law Center designated FRC as a hate group in 2010 for spreading documented falsehoods about LGBTQ people — including claims that gay men are more likely to molest children, that homosexuality causes shorter lifespans, and that LGBTQ rights represent a threat to children. FRC's budget exceeds $15 million annually. In 1996, Tony Perkins — while running for a Louisiana Senate seat — paid David Duke's former campaign manager $82,500 for Duke's mailing list. Perkins settled with the FEC for filing false disclosure reports about the payment. FRC has lobbied against every major LGBTQ civil rights advance in the US and has been linked to efforts to maintain criminalization of homosexuality internationally.",
+  "verdict_tags": [
+    "splc_hate_group_designation_2010",
+    "tony_perkins_david_duke_mailing_list_82500",
+    "fec_settlement_false_disclosure",
+    "lgbtq_criminalization_international_advocacy",
+    "15m_annual_budget_political_lobbying",
+    "designated_essential_worker_trump",
+    "family_policy_alliance_network"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "FRC employs policy researchers, communications staff, and lobbyists. No major documented labor violations have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "FRC has not taken significant positions on environmental policy as a primary organizational focus.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "FRC is one of the most influential religious right lobbying organizations in Washington. It has lobbied against: the Employment Non-Discrimination Act, the Matthew Shepard Act (hate crimes), same-sex marriage, transgender military service, and LGBTQ adoption. It has supported: conversion therapy, abstinence-only education, and religious freedom exemptions from non-discrimination laws. FRC's international advocacy — through its connections to the World Congress of Families — has supported legislation in Russia, Uganda, and other countries that criminalizes homosexuality or restricts LGBTQ civil rights. Tony Perkins was appointed to the US Commission on International Religious Freedom by Senate Republicans. In 2020, Trump designated Perkins as an 'essential worker' for COVID purposes.",
+    "flags": [
+      "employment_non_discrimination_opposition",
+      "matthew_shepard_act_opposition",
+      "uganda_russia_criminalization_advocacy_connections",
+      "world_congress_families_connection",
+      "perkins_uscirf_appointment"
+    ],
+    "sources": [
+      "https://www.splcenter.org/fighting-hate/extremist-files/group/family-research-council"
+    ]
+  },
+  "legal": {
+    "summary": "1996: Tony Perkins, while running for Louisiana Senate, paid $82,500 for David Duke's mailing list — filed as payment to a company to obscure the source. Perkins settled with the FEC for filing false disclosure reports; paid a fine. No criminal charges were filed. 2012: A gunman entered FRC headquarters and shot a security guard, citing FRC's SPLC hate group designation as motivation. FRC has used this incident to argue the SPLC designation incites violence — a claim courts have not sustained. FRC is a 501(c)(3) public charity that files Form 990 — its finances are publicly available.",
+    "flags": [
+      "perkins_david_duke_mailing_list_82500",
+      "fec_false_disclosure_settlement",
+      "2012_shooting_splc_designation_cited",
+      "501c3_form_990_filed"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "FRC is a 501(c)(3) public charity that files Form 990. Its annual revenue exceeds $15 million. Tony Perkins's compensation — publicly disclosed through Form 990 — has been approximately $400,000 annually. The organization's lobbying activity is conducted through a connected 501(c)(4) entity — FRC Action — which can engage in more direct political activity.",
+    "flags": [
+      "501c3_form_990_public",
+      "frc_action_501c4_political_arm",
+      "perkins_400k_compensation_disclosed"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Tony Perkins has led FRC since 2003. His political background — including the David Duke mailing list purchase and FEC settlement — predates his FRC tenure. He was appointed by Senate Republican leadership to the US Commission on International Religious Freedom (USCIRF) — a federal advisory body — creating a documented conflict between his FRC advocacy for international criminalization of homosexuality and his government advisory role on international religious freedom. Peter Sprigg, a senior FRC fellow, has published documented falsehoods about LGBTQ people that formed the basis for the SPLC hate group designation.",
+    "flags": [
+      "perkins_david_duke_history",
+      "perkins_uscirf_government_advisory_conflict",
+      "sprigg_falsehoods_splc_basis"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "FRC is a primary node in the religious right political network that includes the Alliance Defending Freedom (legal), American Family Association (media), Focus on the Family (family policy), and Heritage Foundation (policy). Together this network has coordinated the legislative and legal strategy against LGBTQ civil rights for four decades. FRC's connection to the World Congress of Families — which has organized conferences in Russia — connects American religious right organizations to Russian state-supported efforts to restrict LGBTQ rights globally.",
+    "flags": [
+      "alliance_defending_freedom_adf_network",
+      "world_congress_families_russia_connection",
+      "heritage_foundation_policy_network"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "LGBTQ advocacy organizations and researchers have alleged that FRC's documented falsehoods about LGBTQ people — including the claim that gay men are more likely to molest children — have contributed to documented violence against LGBTQ individuals by providing pseudo-scientific justification for anti-LGBTQ prejudice. FRC has disputed the hate group designation and the underlying claims about its research.",
+    "flags": [
+      "falsehoods_documented_splc_basis",
+      "violence_contribution_alleged",
+      "hate_group_designation_disputed_by_frc"
+    ],
+    "sources": [
+      "https://www.splcenter.org/fighting-hate/extremist-files/group/family-research-council"
+    ]
+  },
+  "health_record": {
+    "summary": "FRC's advocacy for conversion therapy — practices that major medical organizations including the American Psychological Association, American Medical Association, and American Academy of Pediatrics have documented as harmful and ineffective — represents the clearest documented health harm of its policy positions. FRC has lobbied against laws banning conversion therapy for minors in multiple states. Its documented falsehoods about LGBTQ people contribute to the stigma environment that researchers document as a primary driver of LGBTQ mental health disparities.",
+    "flags": [
+      "conversion_therapy_advocacy_apa_ama_aap_harmful_documented",
+      "conversion_therapy_ban_opposition",
+      "lgbtq_stigma_mental_health_disparities_connection"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Charitable organizations focused on family strengthening without LGBTQ opposition: Boys and Girls Clubs, Big Brothers Big Sisters",
+      "Catholic Charities, Lutheran Social Services — direct family service without political advocacy"
+    ],
+    "healthier": [
+      "The Trevor Project, PFLAG — family-focused organizations with documented positive outcomes for LGBTQ youth"
+    ],
+    "diy": [
+      "FRC's Form 990 is publicly available at ProPublica's Nonprofit Explorer",
+      "The SPLC's FRC file documents specific false claims with citations"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1983,
+      "event": "Family Research Council founded in Washington DC",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1996,
+      "event": "Tony Perkins pays $82,500 for David Duke's mailing list; files false FEC disclosure; settles with FEC",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2003,
+      "event": "Tony Perkins becomes FRC President",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2010,
+      "event": "SPLC designates FRC as hate group for documented falsehoods about LGBTQ people",
+      "severity": "critical",
+      "source_url": "https://www.splcenter.org/fighting-hate/extremist-files/group/family-research-council"
+    },
+    {
+      "year": 2012,
+      "event": "Gunman shoots FRC security guard; cites SPLC hate group designation as motivation",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "Senate Republicans appoint Perkins to US Commission on International Religious Freedom",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "LGBTQ Americans — particularly youth — have been directly targeted by FRC's policy advocacy, including opposition to anti-discrimination protections, support for conversion therapy, and documented falsehoods that contribute to stigma. Medical researchers document that stigma environments created by organizations spreading false information about LGBTQ people are directly correlated with elevated rates of depression, anxiety, and suicidality in LGBTQ youth.",
+    "price_illusion": "FRC presents as a 'family' organization focused on strengthening American families. Its primary policy output is opposition to LGBTQ civil rights and reproductive rights — policy positions that affect specific communities while being framed as universal family values.",
+    "tax_math": "FRC operates as a 501(c)(3) public charity — meaning donations are tax-deductible. Its political lobbying is conducted through FRC Action (501(c)(4)) where donations are not deductible. The tax-deductible donations to FRC subsidize the research and communications that support its lobbying arm's work.",
+    "wealth_velocity": "FRC's $15+ million annual revenue funds a full Washington lobbying and communications operation. Tony Perkins's $400,000 annual compensation is paid from a tax-exempt organization whose donors receive charitable tax deductions."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "FRC leadership and staff",
+        "how": "$15M+ annual operation funded by tax-deductible donations; Perkins $400k salary"
+      },
+      {
+        "group": "Conservative political campaigns and legislators",
+        "how": "Policy research, testimony, and lobbying infrastructure supporting anti-LGBTQ legislation"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "LGBTQ Americans",
+        "how": "Conversion therapy advocacy; anti-discrimination law opposition; documented falsehoods contributing to stigma and documented health disparities"
+      },
+      {
+        "group": "Taxpayers",
+        "how": "Tax deductions on donations to an organization SPLC has designated a hate group"
+      }
+    ],
+    "the_gap": "The Family Research Council's SPLC hate group designation is based on documented specific false claims about gay people. Tony Perkins paid $82,500 for David Duke's mailing list and settled with the FEC for lying about it. Senate Republicans appointed him to an international religious freedom advisory body. FRC lobbies against bans on conversion therapy — which every major medical organization has found harmful and ineffective. Donations to FRC are tax-deductible."
+  }
+}

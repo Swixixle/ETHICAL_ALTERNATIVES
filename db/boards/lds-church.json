@@ -1,0 +1,115 @@
+{
+  "brand_slug": "lds-church",
+  "members": [
+    {
+      "person_slug": "russell-nelson",
+      "full_name": "Russell M. Nelson",
+      "role": "President and Prophet",
+      "tenure_start": "2018",
+      "tenure_end": null,
+      "is_current": true,
+      "committees": [
+        "First Presidency"
+      ],
+      "present_during": [
+        "ensign_peak_sec_settlement_2023",
+        "2019_policy_exclusion_reversal"
+      ],
+      "departure_reason": null,
+      "departure_context": "Nelson became Church President in January 2018 following the death of Thomas Monson. The SEC's Ensign Peak settlement (2023) established that Church leadership had approved the shell LLC concealment structure that the SEC charged as fraud. Nelson reversed the 2015 Policy of Exclusion against children of same-sex couples in 2019. As President, he holds the legal authority over the Church's assets as a corporation sole — the single most powerful position in a multi-billion dollar institution with no board of directors or shareholder accountability.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Corporation sole — single individual controls all Church assets. SEC settlement established leadership approved Ensign Peak concealment. Reversed Policy of Exclusion 2019.",
+      "sources": [
+        "https://www.sec.gov/news/press-release/2023-25"
+      ]
+    },
+    {
+      "person_slug": "dallin-oaks",
+      "full_name": "Dallin H. Oaks",
+      "role": "First Counselor in First Presidency",
+      "tenure_start": "2018",
+      "tenure_end": null,
+      "is_current": true,
+      "committees": [
+        "First Presidency",
+        "Quorum of Twelve (former)"
+      ],
+      "present_during": [
+        "ensign_peak_sec_settlement_2023",
+        "lgbtq_policy_era",
+        "prop_8_california"
+      ],
+      "departure_reason": null,
+      "departure_context": "Oaks is a former Utah Supreme Court justice and BYU president who has been one of the most publicly prominent voices on LDS policy regarding LGBTQ members, same-sex marriage, and religious freedom. He was an Apostle during the 2015 Policy of Exclusion. As a former judge and lawyer, his senior role in the First Presidency during the Ensign Peak SEC settlement has generated scrutiny from legal scholars.",
+      "revolving_door": true,
+      "revolving_door_note": "Utah Supreme Court Justice → BYU President → LDS Apostle → First Presidency. Legal expertise in institutional leadership during the Ensign Peak concealment period that the SEC charged as fraud.",
+      "other_boards": [],
+      "prior_government": true,
+      "notes": "Former Utah Supreme Court justice. Legal background present in Church leadership during SEC fraud finding. Public voice on LGBTQ policy.",
+      "sources": []
+    },
+    {
+      "person_slug": "roger-clarke-ensign",
+      "full_name": "Roger Clarke",
+      "role": "CEO, Ensign Peak Advisors",
+      "tenure_start": "1997",
+      "tenure_end": "2019",
+      "is_current": false,
+      "committees": [
+        "Ensign Peak Advisors"
+      ],
+      "present_during": [
+        "ensign_peak_sec_concealment_period"
+      ],
+      "departure_reason": "Retired",
+      "departure_context": "Clarke led Ensign Peak Advisors during the core period of the SEC-charged concealment — managing the creation and maintenance of the 13 shell LLCs used to hide the fund's size from regulatory disclosure. The SEC settlement documents established that the concealment structure was approved by Church leadership. Clarke was succeeded as CEO before the SEC investigation became public.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Ran Ensign Peak during the 22-year concealment period. SEC fraud finding covered his tenure. Retired before SEC investigation became public.",
+      "sources": [
+        "https://www.sec.gov/news/press-release/2023-25"
+      ]
+    },
+    {
+      "person_slug": "thomas-monson",
+      "full_name": "Thomas S. Monson",
+      "role": "President and Prophet",
+      "tenure_start": "2008",
+      "tenure_end": "2018",
+      "is_current": false,
+      "committees": [
+        "First Presidency"
+      ],
+      "present_during": [
+        "prop_8_campaign",
+        "ensign_peak_concealment_period",
+        "2015_policy_exclusion"
+      ],
+      "departure_reason": "Died January 2018",
+      "departure_context": "Monson led the Church during Prop 8 (2008), the 2015 Policy of Exclusion, and through the bulk of the Ensign Peak concealment period. The Church's California FPPC campaign finance violation — for failing to properly disclose approximately $180,000 in Prop 8 spending — occurred during his presidency.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Died 2018. President during Prop 8, Policy of Exclusion, and majority of Ensign Peak concealment period. UK court appearances declined due to health.",
+      "sources": []
+    }
+  ],
+  "connections": [
+    {
+      "person_slug": "dallin-oaks",
+      "brand_slug_a": "lds-church",
+      "brand_slug_b": "lds-church",
+      "overlap_start": "1984",
+      "overlap_end": null,
+      "pattern_type": "revolving_door",
+      "description": "Oaks moved from Utah Supreme Court Justice to LDS Apostle to First Presidency — bringing legal expertise into the Church's senior leadership during the period when the Ensign Peak concealment structure was designed and maintained. The SEC charged the concealment as fraud.",
+      "significance": "Legal expertise in institutional leadership raises questions about the advice available to Church leaders during the Ensign Peak concealment design."
+    }
+  ]
+}

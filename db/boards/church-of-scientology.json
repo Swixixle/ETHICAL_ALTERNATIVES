@@ -1,0 +1,122 @@
+{
+  "brand_slug": "church-of-scientology",
+  "members": [
+    {
+      "person_slug": "david-miscavige",
+      "full_name": "David Miscavige",
+      "role": "Chairman of the Board, Religious Technology Center (RTC)",
+      "tenure_start": "1986",
+      "tenure_end": null,
+      "is_current": true,
+      "committees": [
+        "RTC Board"
+      ],
+      "present_during": [
+        "irs_1993_settlement",
+        "lisa_mcpherson_1995",
+        "france_conviction_2009",
+        "sea_org_rpf_documented"
+      ],
+      "departure_reason": null,
+      "departure_context": "Miscavige has been the effective leader of Scientology since L. Ron Hubbard's death in 1986. He has been named as a defendant or alleged abuser in lawsuits filed by his own father, his niece Jenna Miscavige Hill, and hundreds of former senior officials including Inspector General Marty Rathbun, spokesman Mike Rinder, and former senior executives. He has successfully avoided being served with process in multiple civil cases by maintaining extreme personal security and avoiding predictable locations. The organization has spent millions on private investigators to monitor former members and critics.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Hundreds of sworn declarations from former senior officials alleging physical assault, false imprisonment, and other abuse. Has avoided service of process in multiple cases. Father and niece among plaintiffs. Controls multi-billion dollar organization as single individual through RTC.",
+      "sources": [
+        "https://www.tampabay.com/specials/2009/reports/project/"
+      ]
+    },
+    {
+      "person_slug": "marty-rathbun",
+      "full_name": "Mark 'Marty' Rathbun",
+      "role": "Inspector General, Religious Technology Center",
+      "tenure_start": "1993",
+      "tenure_end": "2004",
+      "is_current": false,
+      "committees": [
+        "RTC"
+      ],
+      "present_during": [
+        "irs_1993_settlement",
+        "lisa_mcpherson_1995"
+      ],
+      "departure_reason": "Left organization",
+      "departure_context": "Rathbun was one of Scientology's most senior officials — the number two executive behind Miscavige — and played a central role in the 1993 IRS settlement negotiations. After leaving in 2004, he became one of Scientology's most prominent critics, filing sworn declarations describing physical assaults by Miscavige including punching and choking of staff members. He subsequently became a consultant for defendants in Scientology litigation, then in a controversial turn began providing declarations supporting Scientology — a reversal that generated significant coverage.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Number two executive behind Miscavige. Central to 1993 IRS deal. Filed sworn declarations of Miscavige physical assault. Subsequently provided declarations for Scientology in litigation — contested credibility.",
+      "sources": [
+        "https://www.tampabay.com/specials/2009/reports/project/"
+      ]
+    },
+    {
+      "person_slug": "mike-rinder",
+      "full_name": "Mike Rinder",
+      "role": "Chief Spokesman, Church of Scientology International",
+      "tenure_start": "1982",
+      "tenure_end": "2007",
+      "is_current": false,
+      "committees": [
+        "Office of Special Affairs"
+      ],
+      "present_during": [
+        "lisa_mcpherson_1995",
+        "france_conviction_2009_pre",
+        "fair_game_operations"
+      ],
+      "departure_reason": "Left organization",
+      "departure_context": "Rinder was Scientology's chief public spokesman for 25 years and head of the Office of Special Affairs — the unit responsible for legal, PR, and intelligence operations. After leaving in 2007, he became one of the organization's most prominent critics, filing sworn declarations about Miscavige's conduct and co-hosting Leah Remini's documentary series 'Scientology and the Aftermath.' The Church has pursued him with private investigators and sent family members to publicly confront him in staged events.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "25-year spokesman. Ran OSA intelligence operations. Leah Remini documentary co-host post-departure. Family used in staged confrontation operations.",
+      "sources": [
+        "https://www.tampabay.com/specials/2009/reports/project/"
+      ]
+    },
+    {
+      "person_slug": "l-ron-hubbard",
+      "full_name": "Lafayette Ronald Hubbard",
+      "role": "Founder",
+      "tenure_start": "1954",
+      "tenure_end": "1986",
+      "is_current": false,
+      "committees": [
+        "Founder"
+      ],
+      "present_during": [
+        "operation_snow_white",
+        "operation_freakout",
+        "sea_org_founding",
+        "fair_game_doctrine"
+      ],
+      "departure_reason": "Died January 1986",
+      "departure_context": "Hubbard founded Dianetics in 1950 and the Church of Scientology in 1954. He authored the Fair Game policy (1967), directed Operation Snow White (the largest domestic espionage operation against the US government by a private organization — infiltrating 136 agencies), and authored Operation Freakout (the campaign to frame journalist Paulette Cooper with a bomb threat). His wife Mary Sue Hubbard was convicted in Operation Snow White. Hubbard spent the last years of his life in hiding, communicating with the Church through intermediaries. His death was not reported to authorities for approximately 24 hours.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Authored Fair Game policy. Directed Operation Snow White. Authored Operation Freakout to frame journalist Cooper. Wife convicted. Died in hiding — death delayed 24 hours before reporting.",
+      "sources": [
+        "https://vault.fbi.gov/scientology"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "person_slug": "david-miscavige",
+      "brand_slug_a": "church-of-scientology",
+      "brand_slug_b": "church-of-scientology",
+      "overlap_start": "1986",
+      "overlap_end": null,
+      "pattern_type": "family_control",
+      "description": "Miscavige controls Scientology through the Religious Technology Center without any board oversight, shareholder accountability, or succession mechanism beyond his own designation. Hundreds of former senior officials have filed sworn declarations about his conduct; he has successfully avoided legal accountability through the organization's resources and his own evasion of service.",
+      "significance": "Single-person control of a multi-billion dollar organization with no external accountability structure, active pursuit of critics, and documented evasion of legal process."
+    }
+  ]
+}
