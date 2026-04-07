@@ -111,9 +111,15 @@ highlight — use it as the primary subject. The full image is context only.`
 FIRST image (full scene). The SECOND image is a tight crop centered exactly on
 that tap point.`;
 
+  const manualRegionNote = userDrawnRegion
+    ? `
+
+The user has manually selected this specific region of the image. The crop shows exactly what they intend to identify. Prioritize the cropped region over the full scene for brand identification.`
+    : '';
+
   return `You are a precise brand and product identification system.
 
-${intro}
+${intro}${manualRegionNote}
 
 PRIMARY RULE: Identify what is in the CROP IMAGE. The crop shows exactly what
 the user intended. The full image provides context only.

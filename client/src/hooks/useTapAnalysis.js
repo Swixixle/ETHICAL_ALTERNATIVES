@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { haptic } from '../utils/haptics.js';
 import { getImpactFetchHeaders } from '../lib/impactConsent.js';
+import { enhanceRegionCrop } from '../utils/imageEnhance.js';
 
 const apiBase = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
 
@@ -88,9 +89,9 @@ export function useTapAnalysis() {
   }, [geo]);
 
   const buildBody = useCallback(
-    (tapX, tapY, { preview_only = false, selection_box = null } = {}) => {
+    (tapX, tapY, { preview_only = false, selection_box = null, imageOverride = null } = {}) => {
       const body = {
-        image_base64: image,
+        image_base64: imageOverride || image,
         tap_x: tapX,
         tap_y: tapY,
         preview_only,
@@ -226,8 +227,9 @@ export function useTapAnalysis() {
 
   /** Single tap: preview; high confidence → partial result + parallel research/alternatives. */
   const analyzeTap = useCallback(
-    async (tapX, tapY, selectionBox = null) => {
-      if (!image) {
+    async (tapX, tapY, selectionBox = null, extra = {}) => {
+      const { imageOverride } = extra;
+      if (!image && !imageOverride) {
         setError('No image loaded');
         return;
       }
@@ -262,6 +264,7 @@ export function useTapAnalysis() {
         const preview = await fetchTap(tapX, tapY, {
           preview_only: true,
           selection_box: selBox,
+          imageOverride,
         });
         if (!preview.ok) {
           if (preview.status === 429) {
@@ -385,9 +388,27 @@ export function useTapAnalysis() {
       setRegionSelectActive(false);
       setTapPosition({ x: cx, y: cy });
       setTapSession((s) => s + 1);
-      await analyzeTap(cx, cy, normRect);
+
+      if (normRect && image) {
+        try {
+          const { enhancedBase64 } = await enhanceRegionCrop(image, normRect);
+          const nx = Number(normRect.x);
+          const ny = Number(normRect.y);
+          const nw = Number(normRect.width);
+          const nh = Number(normRect.height);
+          const localCx = nw > 0 ? Math.min(1, Math.max(0, (cx - nx) / nw)) : 0.5;
+          const localCy = nh > 0 ? Math.min(1, Math.max(0, (cy - ny) / nh)) : 0.5;
+          await analyzeTap(localCx, localCy, { x: 0, y: 0, width: 1, height: 1 }, {
+            imageOverride: enhancedBase64,
+          });
+        } catch {
+          await analyzeTap(cx, cy, normRect);
+        }
+      } else {
+        await analyzeTap(cx, cy, normRect);
+      }
     },
-    [analyzeTap]
+    [analyzeTap, image]
   );
 
   const cancelRegionSelect = useCallback(() => {
