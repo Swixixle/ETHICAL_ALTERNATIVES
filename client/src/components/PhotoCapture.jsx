@@ -52,19 +52,29 @@ function fileToResizedJpegBase64(file) {
 /**
  * @param {object} props
  * @param {(base64: string) => void} props.onImageSelected — JPEG base64 only (no data URL prefix)
+ * @param {(value: string, format: string) => void} [props.onBarcodeDetected]
  * @param {boolean} [props.loading]
  */
-export default function PhotoCapture({ onImageSelected, loading = false }) {
+export default function PhotoCapture({ onImageSelected, onBarcodeDetected, loading = false }) {
   const videoRef = useRef(null);
   const streamRef = useRef(null);
+  const barcodeDetectorRef = useRef(null);
+  const onBarcodeDetectedRef = useRef(onBarcodeDetected);
 
   const [previewDataUrl, setPreviewDataUrl] = useState(null);
   const [busy, setBusy] = useState(false);
   const [dragActive, setDragActive] = useState(false);
   const [cameraMode, setCameraMode] = useState(false);
+  const [barcodeDetected, setBarcodeDetected] = useState(/** @type {{ value: string; format: string } | null} */ (null));
+  const [scanningBarcode, setScanningBarcode] = useState(false);
+  const [barcodePillOpacity, setBarcodePillOpacity] = useState(0);
   const [showCameraCta, setShowCameraCta] = useState(
     () => typeof navigator !== 'undefined' && Boolean(navigator.mediaDevices?.getUserMedia)
   );
+
+  useEffect(() => {
+    onBarcodeDetectedRef.current = onBarcodeDetected;
+  }, [onBarcodeDetected]);
 
   const stopCamera = useCallback(() => {
     if (videoRef.current) videoRef.current.srcObject = null;
@@ -81,6 +91,78 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
     if (!video || !stream) return;
     video.srcObject = stream;
     void video.play().catch(() => {});
+  }, [cameraMode]);
+
+  useEffect(() => {
+    if (!barcodeDetected) {
+      setBarcodePillOpacity(0);
+      return;
+    }
+    setBarcodePillOpacity(0);
+    const t = window.setTimeout(() => setBarcodePillOpacity(1), 10);
+    return () => clearTimeout(t);
+  }, [barcodeDetected]);
+
+  useEffect(() => {
+    if (!cameraMode) {
+      setBarcodeDetected(null);
+      setScanningBarcode(false);
+      barcodeDetectorRef.current = null;
+      return;
+    }
+
+    barcodeDetectorRef.current = null;
+    if (typeof window !== 'undefined' && 'BarcodeDetector' in window) {
+      try {
+        barcodeDetectorRef.current = new window.BarcodeDetector({
+          formats: ['ean_13', 'ean_8', 'upc_a', 'upc_e', 'code_128', 'code_39', 'qr_code'],
+        });
+      } catch {
+        barcodeDetectorRef.current = null;
+      }
+    }
+
+    if (!barcodeDetectorRef.current) {
+      setScanningBarcode(false);
+      return;
+    }
+
+    setScanningBarcode(true);
+
+    let intervalId = /** @type {ReturnType<typeof setInterval> | null} */ (null);
+
+    const scan = async () => {
+      if (!videoRef.current || !barcodeDetectorRef.current) return;
+      if (videoRef.current.readyState < 2) return;
+      try {
+        const barcodes = await barcodeDetectorRef.current.detect(videoRef.current);
+        if (barcodes.length > 0) {
+          if (intervalId != null) {
+            clearInterval(intervalId);
+            intervalId = null;
+          }
+          const bc = barcodes[0];
+          setBarcodeDetected({ value: bc.rawValue, format: bc.format });
+          setScanningBarcode(false);
+          const cb = onBarcodeDetectedRef.current;
+          if (typeof cb === 'function') {
+            cb(bc.rawValue, bc.format);
+          }
+        }
+      } catch {
+        /* BarcodeDetector may throw on some frames — ignore */
+      }
+    };
+
+    intervalId = setInterval(() => {
+      void scan();
+    }, 500);
+
+    return () => {
+      if (intervalId != null) clearInterval(intervalId);
+      setScanningBarcode(false);
+      setBarcodeDetected(null);
+    };
   }, [cameraMode]);
 
   const emitFile = useCallback(
@@ -208,13 +290,79 @@ export default function PhotoCapture({ onImageSelected, loading = false }) {
             background: '#000',
           }}
         >
-          <video
-            ref={videoRef}
-            playsInline
-            muted
-            autoPlay
-            style={{ flex: 1, width: '100%', objectFit: 'cover', minHeight: 260 }}
-          />
+          <div style={{ position: 'relative', flex: 1, minHeight: 260 }}>
+            <video
+              ref={videoRef}
+              playsInline
+              muted
+              autoPlay
+              style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: 260, display: 'block' }}
+            />
+            {barcodeDetected ? (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 12,
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  background: 'rgba(240, 168, 32, 0.9)',
+                  padding: '8px 14px',
+                  borderRadius: 999,
+                  opacity: barcodePillOpacity,
+                  transition: 'opacity 0.3s ease',
+                  pointerEvents: 'none',
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: 9,
+                    letterSpacing: 2,
+                    color: '#0f1520',
+                    textTransform: 'uppercase',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  BARCODE DETECTED — LOOKING UP...
+                </span>
+              </div>
+            ) : null}
+            {scanningBarcode ? (
+              <div
+                style={{
+                  position: 'absolute',
+                  bottom: 12,
+                  left: 12,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  pointerEvents: 'none',
+                }}
+              >
+                <span
+                  style={{
+                    width: 6,
+                    height: 6,
+                    borderRadius: '50%',
+                    background: '#6a8a9a',
+                    flexShrink: 0,
+                  }}
+                  aria-hidden
+                />
+                <span
+                  style={{
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: 8,
+                    color: '#6a8a9a',
+                    letterSpacing: 1,
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  SCANNING
+                </span>
+              </div>
+            ) : null}
+          </div>
           <div
             style={{
               display: 'flex',

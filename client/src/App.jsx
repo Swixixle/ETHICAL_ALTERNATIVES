@@ -31,8 +31,11 @@ import DirectoryPage from './pages/DirectoryPage.jsx';
 import ImpactPublicPage from './pages/ImpactPublicPage.jsx';
 import Library from './pages/Library.jsx';
 import ImpactOutcomePrompt from './components/ImpactOutcomePrompt.jsx';
-import { getImpactConsentOutcome } from './lib/impactConsent.js';
+import { getImpactConsentOutcome, getImpactFetchHeaders } from './lib/impactConsent.js';
 import './App.css';
+
+const viteApiBase = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+const barcodeApiUrl = viteApiBase ? `${viteApiBase}/api/barcode` : '/api/barcode';
 
 function investigationHeadline(identification, investigation) {
   const id = identification || {};
@@ -261,6 +264,7 @@ export default function App() {
     setError,
     tapPosition,
     setImage,
+    setResult,
     analyzeTap,
     confirmPendingIdentification,
     cancelPendingConfirmation,
@@ -276,6 +280,7 @@ export default function App() {
     tapSession,
     selectAlternativeBrand,
     investigateByBrand,
+    runResearchPhase,
   } = useTapAnalysis();
 
   const outcomeScheduleRef = useRef(null);
@@ -528,6 +533,54 @@ export default function App() {
     setImage(b64);
     captureGeoOnce();
   };
+
+  const onBarcodeDetected = useCallback(
+    async (value, format) => {
+      if (result || loading) return;
+      try {
+        const res = await fetch(barcodeApiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', ...getImpactFetchHeaders() },
+          body: JSON.stringify({ barcode: value }),
+        });
+        const data = await res.json().catch(() => ({}));
+
+        if (data.found && data.brand) {
+          const identification = {
+            brand: data.brand,
+            corporate_parent: null,
+            product_line: data.product_name || null,
+            object: data.product_name || data.brand,
+            category: data.category || 'food',
+            confidence: 0.85,
+            identification_method: 'barcode',
+            barcode: value,
+            barcode_format: format,
+          };
+          setResult({
+            identification,
+            identification_tier: 'confirmed',
+            results: [],
+            registry_results: [],
+            local_results: [],
+            investigation: null,
+            research_loading: true,
+            sourcing_complete: false,
+            searched_sources: [],
+            empty_sources: [],
+            version: 'v1',
+            low_confidence_warning: false,
+          });
+          setMode('snap');
+          captureGeoOnce();
+          runResearchPhase(identification);
+        }
+      } catch {
+        /* silent — lookup failure should not interrupt tap flow */
+      }
+    },
+    [result, loading, runResearchPhase, setResult, captureGeoOnce]
+  );
 
   const id = result?.identification;
 
@@ -1037,7 +1090,7 @@ export default function App() {
     ) : null;
 
   const tapPhotoToolbarMinimal =
-    image && result ? (
+    result && (image || id?.identification_method === 'barcode') ? (
       <div className="app__toolbar">
         <button type="button" className="app__btn app__btn--ghost" onClick={() => resetSession()}>
           New photo
@@ -1088,13 +1141,15 @@ export default function App() {
     ) : null;
 
   const tapResultsSection =
-    image && result ? (
+    mode === 'snap' && result && (image || id?.identification_method === 'barcode') ? (
       <div className="app__results-root">
         {isDesktop ? (
           <div className="app__results-grid app__results-grid--tap">
             <aside className="app__results-sidebar app__results-sidebar--tap" aria-label="Alternatives">
               <div className="app__results-sidebar-head">
-                {investigationCapturePair ? tapPhotoToolbarMinimal : tapPhotoToolbar}
+                {investigationCapturePair
+                  ? tapPhotoToolbarMinimal
+                  : tapPhotoToolbar || tapPhotoToolbarMinimal}
               </div>
               <AlternativesSidebar
                 registryResults={result.registry_results}
@@ -1109,7 +1164,7 @@ export default function App() {
         ) : (
           <div className="app__results-stack">
             {!investigationCapturePair ? (
-              <div className="app__results-top">{tapPhotoToolbar}</div>
+              <div className="app__results-top">{tapPhotoToolbar || tapPhotoToolbarMinimal}</div>
             ) : (
               <div className="app__results-top app__results-top--minimal">{tapPhotoToolbarMinimal}</div>
             )}
@@ -1121,7 +1176,10 @@ export default function App() {
     ) : null;
 
   const showResultsNav = Boolean(
-    (mode === 'snap' && image && result) || (mode === 'deep' && result?.investigation)
+    (mode === 'snap' &&
+      result &&
+      (image || id?.identification_method === 'barcode')) ||
+      (mode === 'deep' && result?.investigation)
   );
 
   const docLoc = readUserCityState();
@@ -1200,7 +1258,11 @@ export default function App() {
 
         {mode === 'snap' && !image ? (
           <div className="app__panel">
-            <PhotoCapture onImageSelected={onImageSelected} loading={false} />
+            <PhotoCapture
+              onImageSelected={onImageSelected}
+              onBarcodeDetected={onBarcodeDetected}
+              loading={false}
+            />
           </div>
         ) : null}
 

@@ -21,6 +21,7 @@ import libraryRouter from './routes/library.route.js';
 import perimeterRouter from './routes/perimeter.route.js';
 import cityNarrativeRouter from './routes/cityNarrative.route.js';
 import impactRouter from './routes/impact.js';
+import barcodeRouter from './routes/barcode.route.js';
 import { getProviderHealthSnapshot } from './services/aiProvider.js';
 import {
   buildProportionalityPacket,
@@ -92,6 +93,7 @@ app.get('/proportionality', (req, res) => {
 
 app.use('/api/workers', workersRouter);
 app.use('/api', tapRouter);
+app.use('/api/barcode', barcodeRouter);
 app.use('/api', impactRouter);
 app.use('/api/profiles', profileIndexRouter);
 app.use('/api/library', libraryRouter);

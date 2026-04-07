@@ -484,6 +484,7 @@ export function useTapAnalysis() {
     error,
     setError,
     setImage,
+    setResult,
     analyzeTap,
     confirmPendingIdentification,
     cancelPendingConfirmation,
@@ -499,5 +500,6 @@ export function useTapAnalysis() {
     tapSession,
     selectAlternativeBrand,
     investigateByBrand,
+    runResearchPhase,
   };
 }
