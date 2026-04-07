@@ -9,7 +9,7 @@ import HealthCallout from './components/HealthCallout.jsx';
 import AlternativesSidebar from './components/AlternativesSidebar.jsx';
 import HomeScreen from './components/HomeScreen.jsx';
 import HistoryScreen from './components/HistoryScreen.jsx';
-import LocalCommercial from './components/LocalCommercial.jsx';
+import ResearchNarrative from './components/ResearchNarrative.jsx';
 import ShareCard from './components/ShareCard.jsx';
 import WitnessRegistry from './components/WitnessRegistry.jsx';
 import WorkerProfilePage from './components/WorkerProfilePage.jsx';
@@ -140,7 +140,7 @@ export default function App() {
   }, [result]);
 
   const [showShare, setShowShare] = useState(false);
-  const [researchCommercialOn, setResearchCommercialOn] = useState(false);
+  const [researchNarrativeOn, setResearchNarrativeOn] = useState(false);
 
   /** Local documentary overlay during async investigation */
   const [docRun, setDocRun] = useState(null);
@@ -337,14 +337,15 @@ export default function App() {
   }, [result?.investigation]);
 
   useEffect(() => {
-    if (!result?.research_loading) {
-      setResearchCommercialOn(false);
-      return undefined;
-    }
+    if (result == null) setResearchNarrativeOn(false);
+  }, [result]);
+
+  useEffect(() => {
+    if (!result?.research_loading) return undefined;
     const timer = window.setTimeout(() => {
       const loc = readCachedLocation();
-      if (loc?.city) setResearchCommercialOn(true);
-    }, 8000);
+      if (loc?.city) setResearchNarrativeOn(true);
+    }, 1500);
     return () => window.clearTimeout(timer);
   }, [result?.research_loading]);
 
@@ -370,7 +371,7 @@ export default function App() {
     setMode('home');
   };
 
-  const researchBackdropLoc = researchCommercialOn ? readCachedLocation() : null;
+  const researchBackdropLoc = researchNarrativeOn ? readCachedLocation() : null;
 
   if (mode === 'library') {
     return (
@@ -1034,15 +1035,12 @@ export default function App() {
         />
       ) : null}
 
-      {researchCommercialOn && researchBackdropLoc?.city ? (
-        <LocalCommercial
+      {researchNarrativeOn && researchBackdropLoc?.city ? (
+        <ResearchNarrative
           city={researchBackdropLoc.city}
           state={researchBackdropLoc.state ?? null}
-          lat={typeof researchBackdropLoc.lat === 'number' ? researchBackdropLoc.lat : null}
-          lng={typeof researchBackdropLoc.lng === 'number' ? researchBackdropLoc.lng : null}
-          onClose={() => setResearchCommercialOn(false)}
-          onExploreCity={() => setResearchCommercialOn(false)}
-          autoLoad
+          reportReady={!result?.research_loading}
+          onSkip={() => setResearchNarrativeOn(false)}
         />
       ) : null}
 

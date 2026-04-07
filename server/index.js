@@ -19,6 +19,7 @@ import workersRouter from './routes/workers.js';
 import profileIndexRouter from './routes/profiles.index.route.js';
 import libraryRouter from './routes/library.route.js';
 import perimeterRouter from './routes/perimeter.route.js';
+import cityNarrativeRouter from './routes/cityNarrative.route.js';
 import impactRouter from './routes/impact.js';
 import { getProviderHealthSnapshot } from './services/aiProvider.js';
 import {
@@ -95,6 +96,7 @@ app.use('/api', impactRouter);
 app.use('/api/profiles', profileIndexRouter);
 app.use('/api/library', libraryRouter);
 app.use('/api/perimeter', perimeterRouter);
+app.use('/api/city-narrative', cityNarrativeRouter);
 app.use('/api/sellers', sellersRouter);
 app.use('/api/city-identity', cityIdentityRouter);
 app.use('/api/local-feed', localFeedRouter);
