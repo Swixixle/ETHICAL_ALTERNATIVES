@@ -91,7 +91,7 @@
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
-    "summary": "Russian investigative journalists and former Church officials have alleged that the Russian Orthodox Church's administrative hierarchy contains significant FSB officer infiltration — that some bishops and senior clergy are active FSB officers using their Church positions as cover, and that the Patriarchate's foreign department functions as an intelligence-gathering operation. These allegations are consistent with documented Soviet-era KGB penetration of the Church hierarchy but have not been individually confirmed for current officeholders.",
+    "summary": "Russian investigative journalists and former Church officials have alleged that the Russian Orthodox Church's administrative hierarchy contains significant FSB officer infiltration — that some bishops and senior clergy are active FSB officers using their Church positions as cover, and that the Patriarchate's foreign department functions as an intelligence-gathering operation. These allegations are consistent with documented Soviet-era KGB penetration of the Church hierarchy but have not been individually confirmed for current officeholders. The Moscow Patriarchate and Russian Orthodox Church officials have publicly disputed Western allegations of subservience to the Russian state and have framed church-state relations as legitimate pastoral care for Russian society. EthicalAlt allegation response type: Type 1 — documented denial or dispute.",
     "flags": [
       "fsb_active_officer_infiltration_hierarchy_alleged",
       "foreign_department_intelligence_gathering_alleged"

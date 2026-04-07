@@ -86,7 +86,7 @@
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
-    "summary": "Child safety advocates have alleged that the YMCA's decentralized structure — where affiliates operate independently with minimal Y-USA oversight of program safety — creates a documented accountability gap that has allowed abuse to continue across the network without national-level response. Y-USA has updated its child protection guidelines and training requirements; advocates dispute whether these measures are adequate given the decentralized implementation.",
+    "summary": "Child safety advocates have alleged that the YMCA's decentralized structure — where affiliates operate independently with minimal Y-USA oversight of program safety — creates a documented accountability gap that has allowed abuse to continue across the network without national-level response. Y-USA has updated its child protection guidelines and training requirements; advocates dispute whether these measures are adequate given the decentralized implementation. YMCA of the USA and affiliates have publicly acknowledged past abuse cases, expanded child-protection policies, and responded to litigation with public statements on safeguarding in multiple jurisdictions. EthicalAlt allegation response type: Type 2 — documented acknowledgment.",
     "flags": [
       "decentralized_accountability_gap_alleged",
       "national_level_response_absence_alleged",

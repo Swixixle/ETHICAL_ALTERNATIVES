@@ -97,7 +97,7 @@
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
-    "summary": "Former NRA employees and the NY AG's investigation alleged that the board of directors was aware of LaPierre's spending patterns and chose not to act — that some board members received NRA benefits that created conflicts preventing them from challenging LaPierre. These allegations were partially supported by the trial record — the jury found LaPierre liable while the court found other executives liable at lower amounts.",
+    "summary": "Former NRA employees and the NY AG's investigation alleged that the board of directors was aware of LaPierre's spending patterns and chose not to act — that some board members received NRA benefits that created conflicts preventing them from challenging LaPierre. These allegations were partially supported by the trial record — the jury found LaPierre liable while the court found other executives liable at lower amounts. The National Rifle Association and its leadership have publicly disputed allegations of financial self-dealing, excessive insider payments, and improper foreign influence in court filings, regulatory submissions, and public statements. EthicalAlt allegation response type: Type 1 — documented denial or dispute.",
     "flags": [
       "board_awareness_chose_not_act_alleged",
       "board_conflicts_benefits_preventing_challenge_alleged",

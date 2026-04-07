@@ -89,7 +89,7 @@
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
-    "summary": "ProPublica and NPR's investigation alleged that the Red Cross's internal management culture — which prioritized public image and fundraising over operational effectiveness — was a systemic cause of the Haiti failures, not merely isolated operational mistakes. Internal documents showed executives discussing how to manage the PR implications of failures rather than how to fix the failures. The Red Cross disputed characterizations of its Haiti response while acknowledging specific operational failures.",
+    "summary": "ProPublica and NPR's investigation alleged that the Red Cross's internal management culture — which prioritized public image and fundraising over operational effectiveness — was a systemic cause of the Haiti failures, not merely isolated operational mistakes. Internal documents showed executives discussing how to manage the PR implications of failures rather than how to fix the failures. The Red Cross disputed characterizations of its Haiti response while acknowledging specific operational failures. The American Red Cross has publicly disputed or clarified allegations of fund misuse in major disasters when challenged, and has acknowledged operational mistakes in official statements and congressional testimony contexts. EthicalAlt allegation response type: Type 2 — documented acknowledgment.",
     "flags": [
       "image_fundraising_prioritized_operational_effectiveness_alleged",
       "internal_documents_pr_management_over_fixing",
