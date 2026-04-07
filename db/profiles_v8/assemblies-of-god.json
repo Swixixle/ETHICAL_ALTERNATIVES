@@ -1,0 +1,178 @@
+{
+  "brand_name": "Assemblies of God",
+  "brand_slug": "assemblies-of-god",
+  "parent_company": "General Council of the Assemblies of God",
+  "ultimate_parent": "General Council of the Assemblies of God",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "THE ASSEMBLIES OF GOD ORDAINED JIMMY SWAGGART AND JIM BAKKER — BOTH WERE DEFROCKED FOR SEXUAL MISCONDUCT AND FINANCIAL FRAUD AFTER BUILDING TELEVISION EMPIRES WORTH HUNDREDS OF MILLIONS",
+  "executive_summary": "The Assemblies of God (AG) is the world's largest Pentecostal denomination with approximately 69 million adherents across 380,000 churches globally, making it one of the fastest-growing Christian denominations in the world. Founded in 1914, the AG gained global prominence through its televangelists — most notably Jimmy Swaggart and Jim Bakker — both of whom built television ministries worth hundreds of millions before being defrocked: Bakker for sexually assaulting a church secretary and defrauding ministry supporters of $158 million; Swaggart for paying prostitutes for sexual activities and then preaching against the same conduct. The AG's prosperity gospel-adjacent theology and its role in Pentecostalism's global expansion make it one of the most influential Protestant denominations, particularly in Latin America, Africa, and Asia.",
+  "verdict_tags": [
+    "jim_bakker_158m_fraud_convicted_defrocked",
+    "jimmy_swaggart_prostitution_defrocked",
+    "prosperity_gospel_adjacent_theology",
+    "69_million_members_largest_pentecostal",
+    "global_expansion_latin_america_africa_asia",
+    "televangelism_wealth_accumulation",
+    "covid_miracle_cure_claims_bakker"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "The AG ordains ministers through a credentialing process that includes background checks. The denomination's network of Bible colleges and universities employs significant staff. No major documented systemic labor violations have been identified at the denominational level.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental positions or enforcement actions have been identified for the Assemblies of God at the denominational level.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Assemblies of God has been closely aligned with conservative political causes in the United States — anti-abortion, anti-LGBTQ civil rights, and anti-pornography. The denomination's global growth has accompanied the spread of conservative Pentecostal political theology in Latin America and Africa, where AG-influenced Christianity has been associated with opposition to LGBTQ rights legislation. In the US, the AG's political presence is documented through voter guides and pastoral communications from the National Association of Evangelicals, of which the AG is a significant member.",
+    "flags": [
+      "conservative_political_alignment_documented",
+      "global_lgbtq_opposition_latin_america_africa",
+      "national_association_evangelicals_membership"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Jim Bakker: In 1989, Bakker was convicted of 24 counts of fraud and conspiracy for defrauding PTL (Praise the Lord) Ministry supporters of approximately $158 million by selling 'Lifetime Partnerships' for resort accommodations that did not exist. He was sentenced to 45 years (reduced to 8; released after 5). He was defrocked by the AG. In 2020, the FTC and state attorneys general sent warning letters to Bakker (whose ministry had resumed) for marketing a silver colloidal solution as a treatment for COVID-19. Jimmy Swaggart: Defrocked by the AG in 1988 after photographs of him with a prostitute were published. He subsequently resumed ministry independently. The AG's institutional accountability is primarily exercised through ordination and credentialing — it does not exercise financial control over member ministries.",
+    "flags": [
+      "bakker_158m_fraud_24_counts_convicted",
+      "bakker_45_year_sentence_served_5",
+      "swaggart_prostitution_defrocked",
+      "bakker_2020_covid_cure_ftc_warning",
+      "ag_no_financial_control_member_ministries"
+    ],
+    "sources": [
+      "https://www.justice.gov/archives/jm/criminal-resource-manual-98-televangelism-fraud"
+    ]
+  },
+  "tax": {
+    "summary": "The Assemblies of God national organization and its affiliated churches are exempt from federal income tax. Individual AG ministers — including televangelists — have historically received significant housing allowances and other tax-advantaged compensation. The denomination's affiliated ministries (including Bakker's PTL and Swaggart's ministry) operated as separate entities with their own tax-exempt status — the AG's institutional accountability gap means affiliated ministries can accumulate wealth and commit fraud without direct denominational financial control or oversight.",
+    "flags": [
+      "affiliated_ministries_separate_entities_no_financial_oversight",
+      "minister_housing_allowance_tax_advantaged",
+      "televangelism_entities_tax_exempt"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Doug Clay has served as General Superintendent of the Assemblies of God since 2017. The denomination is governed through a General Council that meets biennially. The AG's most famous former ministers — Jim Bakker and Jimmy Swaggart — were products of an era when televangelism and the AG's Pentecostal theology intersected to create television ministries worth hundreds of millions with minimal institutional accountability.",
+    "flags": [
+      "bakker_swaggart_institutional_accountability_gap",
+      "general_superintendent_clay"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The Assemblies of God's global growth — particularly in Brazil, where it is the largest Protestant denomination, and across sub-Saharan Africa — has made Pentecostal theology and AG-influenced Christianity some of the fastest-growing religious movements in the world. This global expansion has been documented by academics as accompanying conservative political mobilization in those countries, including opposition to LGBTQ rights and family planning.",
+    "flags": [
+      "brazil_largest_protestant_denomination",
+      "sub_saharan_africa_fastest_growing",
+      "political_mobilization_lgbtq_family_planning_opposition"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Critics of the Assemblies of God's accountability structure have alleged that the denomination's loose affiliation model — where member churches and ministries operate largely independently — is structurally designed in a way that allows financial fraud and sexual misconduct to occur within the AG network while limiting the denomination's legal exposure. This is the same autonomy argument raised against the SBC; the AG's accountability structure is different but similarly limited.",
+    "flags": [
+      "loose_affiliation_limits_accountability_fraud_misconduct_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Jim Bakker's 2020 marketing of colloidal silver as a COVID-19 treatment — on his television program — prompted FTC and state AG warning letters citing federal consumer protection law. The product had no documented efficacy against COVID-19. The AG's theological tradition includes faith healing — the belief that God heals through prayer — which in documented cases has led to parents substituting prayer for medical care for children with serious illnesses. The Faith Tabernacle and related traditions (related to but distinct from the AG) have documented the most severe cases; AG theology generally does not prohibit medical care but creates a framework where some members interpret faith as inconsistent with seeking it.",
+    "flags": [
+      "bakker_covid_silver_cure_ftc_warning",
+      "faith_healing_theology_medical_care_substitution_risk",
+      "faith_vs_medicine_framework_documented"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Non-televangelist Pentecostal and charismatic churches with locally accountable finances",
+      "Church of God (Cleveland, TN) — different Pentecostal tradition without the Bakker/Swaggart history"
+    ],
+    "healthier": [
+      "Pentecostal communities with transparent financial disclosure and no prosperity gospel emphasis"
+    ],
+    "diy": [
+      "Trinity Foundation (trinityfi.org) tracks televangelist financial practices",
+      "The FTC's 2020 COVID cure warning letters to Bakker's ministry are public documents"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1914,
+      "event": "Assemblies of God founded in Hot Springs, Arkansas; becomes organizing body for Pentecostal movement in US",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1974,
+      "event": "Jim Bakker founds PTL (Praise the Lord) Ministry; builds Heritage USA resort and television empire",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1987,
+      "event": "Jessica Hahn reveals Bakker sexually assaulted her in 1980; PTL financial fraud begins to unravel",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1988,
+      "event": "Jimmy Swaggart photographed with prostitute; defrocked by AG; continues independent ministry",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1989,
+      "event": "Jim Bakker convicted of 24 counts fraud and conspiracy; $158M in supporter losses; sentenced to 45 years (served 5); defrocked",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "FTC and state attorneys general warn Bakker's revived ministry against marketing silver solution as COVID-19 treatment",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "PTL Ministry supporters who purchased 'Lifetime Partnerships' for Heritage USA resort accommodations — at prices ranging from $1,000 to $10,000 — lost their investments when the fraud was revealed. Approximately $158 million was defrauded from supporters who were told they were investing in a Christian resort community.",
+    "price_illusion": "Televangelism presents donation as participation in a Christian ministry with spiritual benefit. Bakker's Lifetime Partnerships presented religious donation as real estate investment. The $158 million in fraud was raised from people who believed their contributions served both purposes.",
+    "tax_math": "PTL Ministry operated as a tax-exempt religious organization. The fraudulently raised funds were received tax-free. The $158 million in losses to supporters represented charitable contributions deducted from their own taxable income — meaning the fraud operated in a framework that sheltered the raised funds from taxation while deducting them from donors' taxes.",
+    "wealth_velocity": "Bakker's PTL empire — Heritage USA resort, television ministry, and associated entities — generated hundreds of millions in revenue that Bakker and associates controlled as the executives of tax-exempt religious organizations. The AG's affiliation model did not provide financial oversight of this accumulation."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Jim Bakker and PTL executives",
+        "how": "$158M in supporter donations defrauded; luxury lifestyle maintained through ministry funds; sentenced to 45 years (served 5)"
+      },
+      {
+        "group": "Jimmy Swaggart",
+        "how": "Built television empire estimated at $150M annually; resumed ministry independently after defrocking"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "PTL Lifetime Partnership holders",
+        "how": "$1,000-$10,000 per person in real estate-adjacent investments that were fraudulent; $158M total losses"
+      }
+    ],
+    "the_gap": "The Assemblies of God ordained Jim Bakker. He sold Lifetime Partnerships for a Christian resort that didn't have enough rooms. He raised $158 million. He was convicted of 24 counts of fraud. He served 5 of his 45 years. The Assemblies of God also ordained Jimmy Swaggart. He was photographed with a prostitute after years of preaching against sexual immorality. In 2020 Bakker was back on television selling a silver solution as a COVID cure. The FTC sent warning letters. The ministry is still broadcasting."
+  }
+}

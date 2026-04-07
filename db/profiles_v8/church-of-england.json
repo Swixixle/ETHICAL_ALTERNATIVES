@@ -1,0 +1,198 @@
+{
+  "brand_name": "Church of England",
+  "brand_slug": "church-of-england",
+  "parent_company": "Church of England",
+  "ultimate_parent": "Church of England (Monarch as Supreme Governor)",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "THE CHURCH OF ENGLAND INVESTED PENSION FUNDS IN PAYDAY LENDERS WHILE PUBLICLY ATTACKING PAYDAY LENDING — AND ITS ABUSE COVER-UP LED TO A VICTIM SAYING 'THE CHURCH BASICALLY KILLED ME'",
+  "executive_summary": "The Church of England is the established church of England with approximately 1 million weekly worshippers, 16,000 churches, and the Archbishop of Canterbury as its spiritual leader. As an established church, it has 26 bishops sitting as Lords Spiritual in the House of Lords — giving it direct representation in the UK legislature unavailable to any other religious body. The Church has paid over £40 million in sexual abuse compensation to date and commissioned the Independent Inquiry into Child Sexual Abuse (IICSA) which found in 2020 that the Church had failed to protect children and had prioritized its reputation over victims. In a documented case of institutional hypocrisy, Archbishop Justin Welby was found in 2013 to have invested Church of England Commissioners funds in Wren Capital — which invested in Wonga, a payday lender the Archbishop had publicly criticized as predatory — causing him to call his own position 'very embarrassing.' The Church also manages approximately £10 billion in investment assets through the Church Commissioners.",
+  "verdict_tags": [
+    "iicsa_found_reputation_over_victims_2020",
+    "40m_plus_abuse_compensation",
+    "26_lords_spiritual_parliament",
+    "wonga_investment_while_attacking_payday_lending",
+    "10b_investment_fund_church_commissioners",
+    "john_smyth_qc_serial_abuser_church_protected",
+    "george_bell_bishop_abuse_allegation_mishandled",
+    "established_church_state_privileges"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Church of England clergy are employed under a unique legal framework — they are not employees in the standard legal sense but hold the 'freehold' of their parish or receive a 'common tenure' arrangement. This structure historically made it difficult to remove clergy, which contributed to the abuse cover-up dynamic documented by IICSA. The Church has approximately 17,000 stipendiary clergy (paid) and tens of thousands of self-supporting ministers.",
+    "flags": [
+      "clergy_freehold_removal_difficulty_contributed_abuse_cover_up",
+      "unique_employment_framework"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "The Church of England Commissioners manage approximately £10 billion in assets with a documented responsible investment strategy. The Church made commitments to divest from fossil fuels and reached net zero across its operations by specific dates. The investment fund's track record on Environmental, Social, and Governance issues is among the more documented of any religious institution.",
+    "flags": [
+      "10b_commissioners_responsible_investment",
+      "fossil_fuel_divestment_commitment",
+      "net_zero_operations_commitment"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Church of England has 26 bishops (Lords Spiritual) sitting in the House of Lords — giving it direct legislative representation unavailable to any other religious body and to non-Christian faiths. This establishment privilege means the Church has formal voice in legislation. The Church has used this position on issues ranging from welfare cuts (Archbishops have criticized government welfare policy) to assisted dying legislation. The Church's position on same-sex marriage — permitting blessings of same-sex unions from 2024 but not solemnizing same-sex marriages — represents a contested internal political compromise.",
+    "flags": [
+      "26_lords_spiritual_house_of_lords_unique_privilege",
+      "welfare_policy_criticism_bishops",
+      "same_sex_blessing_not_marriage_2024_compromise"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "IICSA (2020): The Independent Inquiry into Child Sexual Abuse found that the Church of England had failed to protect children and had prioritized institutional reputation over victim welfare. John Smyth QC case: Smyth was a senior Christian barrister who conducted severe physical abuse of boys with Church of England connections over decades; the abuse was known to senior figures including an Archbishop of Canterbury in waiting; it was not reported to police for decades. The Smyth case generated an independent review finding the Church had covered up knowledge for 35+ years. Bishop George Bell: posthumous abuse allegations against a former Bishop of Chichester were mishandled — the Church initially accepted allegations without adequate evidence review, paid compensation, and then had to reverse some findings after independent review. Wonga: In 2013, the Church's investment fund was found to have invested (through a third party) in Wonga — the payday lender the Archbishop had publicly criticized; the Archbishop called it 'very embarrassing'; the investment was divested.",
+    "flags": [
+      "iicsa_reputation_over_victims_2020",
+      "john_smyth_35_years_covered_up_archbishop_knew",
+      "bishop_george_bell_posthumous_allegations_mishandled",
+      "wonga_investment_while_criticizing_payday_lending"
+    ],
+    "sources": [
+      "https://www.iicsa.org.uk/reports-and-publications/inquiry-reports/anglican-church"
+    ]
+  },
+  "tax": {
+    "summary": "The Church of England is exempt from UK income tax on its religious activities and charitable work. The Church Commissioners manage approximately £10 billion in investment assets largely exempt from standard investment taxation. The 26 bishops in the House of Lords — an established church privilege — provides legislative access that other religious organizations must achieve through conventional lobbying.",
+    "flags": [
+      "10b_investment_assets_largely_tax_exempt",
+      "lords_spiritual_legislative_privilege",
+      "established_church_uk_tax_framework"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Archbishop of Canterbury Justin Welby led the Church from 2013 to 2023, resigning in November 2024 following the publication of the Makin Review into the John Smyth abuse scandal — which found that the Church had known about Smyth's abuse and had failed to report it for decades. Welby acknowledged that a Church official had informed him of the abuse in 2013 and he had failed to ensure it was reported to police. Stephen Cottrell, Archbishop of York, became the senior Archbishop following Welby's resignation. The John Smyth case — where a senior barrister known to future archbishops conducted documented severe abuse of boys connected to Church networks over decades — is the most documented leadership accountability failure in recent Church history.",
+    "flags": [
+      "welby_resigned_makin_review_smyth_case",
+      "welby_informed_2013_failed_ensure_police_report",
+      "smyth_known_to_future_archbishops"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The Church of England's establishment status — as the official state church of England — gives it unique institutional privileges including parliamentary representation, access to state schools, and legal frameworks unavailable to other religious bodies. This establishment privilege coexists with the documented failures to protect children documented by IICSA.",
+    "flags": [
+      "establishment_privilege_parliamentary_school_legal",
+      "iicsa_findings_coexist_with_privilege"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Abuse survivors and their advocates have alleged that the Church's culture of deference to clerical authority — reinforced by establishment status and parliamentary representation — created an institutional environment where abuse could be covered up for decades because challenging clergy was culturally and institutionally difficult. The IICSA report's finding of 'reputation over victims' is established fact; the systemic cultural mechanism is the subject of ongoing research.",
+    "flags": [
+      "clerical_deference_culture_cover_up_mechanism_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "John Smyth QC conducted documented severe physical abuse — including hundreds of severe canings — of boys connected to Church of England Christian camps and networks over multiple decades. The abuse was known to senior Church of England figures. Victims documented lasting physical and psychological harm. One victim described the Church's institutional response as 'basically killing' him through re-traumatization. The IICSA's 2020 report found the Church had prioritized its reputation over the welfare of abuse victims across multiple documented cases.",
+    "flags": [
+      "smyth_severe_physical_abuse_hundreds_canings_decades",
+      "victim_stated_church_basically_killed_me",
+      "iicsa_reputation_over_welfare_documented"
+    ],
+    "sources": [
+      "https://www.iicsa.org.uk/reports-and-publications/inquiry-reports/anglican-church"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Non-established Protestant denominations without Lords Spiritual representation and parliamentary privilege",
+      "Quakers, Methodists, URC — Protestant traditions without state establishment"
+    ],
+    "healthier": [
+      "Faith communities with fully documented safeguarding policies and third-party verification",
+      "IICSA's safeguarding standards provide a reference framework for evaluating any church's child protection practices"
+    ],
+    "diy": [
+      "The IICSA Anglican Church investigation report is publicly available at iicsa.org.uk",
+      "The Makin Review into the John Smyth case is published by the Church of England"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1534,
+      "event": "Henry VIII establishes Church of England, breaking with Rome over papal authority",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1970,
+      "event": "John Smyth QC begins documented abuse of boys in Church-connected networks; abuse continues for over two decades",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1982,
+      "event": "Senior figures in Church networks become aware of Smyth's abuse; decision made not to report to police",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2013,
+      "event": "Archbishop Welby informed of Smyth abuse history; fails to ensure police reporting. Wonga investment discovered while Archbishop publicly criticizes payday lending.",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "Channel 4 News exposes John Smyth; Thames Valley Police investigation begins; Smyth dies 2018 before charges",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "IICSA publishes Anglican Church investigation report: Church prioritized reputation over victims",
+      "severity": "critical",
+      "source_url": "https://www.iicsa.org.uk/reports-and-publications/inquiry-reports/anglican-church"
+    },
+    {
+      "year": 2024,
+      "event": "Makin Review: Church knew of Smyth abuse for 40+ years; Archbishop Welby resigns",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Boys who were abused in Church-connected networks by John Smyth — a barrister known to future archbishops — reported the abuse to Church figures and were not believed or protected. The abuse continued for decades. One victim described the institutional response as having 'basically killed' him.",
+    "price_illusion": "The Church of England presents as a national institution embodying Christian values of care, community, and moral leadership. It simultaneously invested in Wonga while publicly condemning payday lending, and covered up knowledge of severe abuse for 35+ years while publicly advocating for child welfare.",
+    "tax_math": "The Church Commissioners' £10 billion investment portfolio — including the investment in Wonga-connected funds discovered in 2013 — operates largely outside standard investment taxation. The Church's establishment privileges — including Lords Spiritual — represent a state subsidy of institutional influence unavailable to non-established religions.",
+    "wealth_velocity": "The Church Commissioners' investment fund has grown significantly. The 16,000 Church of England churches represent significant property holdings across England — much of it historic and valuable in major urban areas."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Church of England as institution",
+        "how": "Establishment privileges maintained; reputation protected for decades while abuse knowledge was contained"
+      },
+      {
+        "group": "John Smyth QC",
+        "how": "Enabled to continue abuse for decades after Church network figures became aware; died in 2018 before criminal charges"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Abuse survivors across multiple Church cases",
+        "how": "Abused over decades; Church prioritized reputation over their welfare per IICSA finding; over £40M in compensation paid"
+      },
+      {
+        "group": "Non-Christian and non-established faith communities",
+        "how": "Denied the parliamentary representation the Church of England holds through Lords Spiritual — an establishment privilege based on religious identity"
+      }
+    ],
+    "the_gap": "The Church of England knew about John Smyth's abuse in 1982. The Archbishop of Canterbury was informed in 2013. The abuse had been going on for over a decade by 1982. Smyth died in 2018 without being charged. The Archbishop resigned in 2024 when the review was published. IICSA found the Church prioritized reputation over victims. The Church also invested in Wonga while publicly calling payday lending predatory. The Commissioners manage £10 billion. 26 bishops sit in parliament. No other religion has that."
+  }
+}

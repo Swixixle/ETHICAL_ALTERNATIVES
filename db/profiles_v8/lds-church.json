@@ -1,0 +1,214 @@
+{
+  "brand_name": "Church of Jesus Christ of Latter-day Saints",
+  "brand_slug": "lds-church",
+  "parent_company": "Corporation of the President of the Church of Jesus Christ of Latter-day Saints",
+  "ultimate_parent": "First Presidency of the Church of Jesus Christ of Latter-day Saints",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "THE LDS CHURCH'S INVESTMENT FUND HAD $32 BILLION AND THEY HID IT FROM MEMBERS FOR DECADES — THE SEC CALLED IT FRAUD AND FINED THEM $5 BILLION",
+  "executive_summary": "The Church of Jesus Christ of Latter-day Saints (LDS Church / Mormon Church) is headquartered in Salt Lake City, Utah, with approximately 17 million members globally. In February 2023, the SEC charged Ensign Peak Advisors — the Church's investment management arm — with fraud for concealing approximately $32-38 billion in investment assets from regulators over approximately 22 years. The Church paid $4 billion and Ensign Peak paid $1 billion — a combined $5 billion settlement — the largest ever against a religious organization for financial disclosure violations. The Church had deliberately created 13 shell LLCs to hold securities and avoid triggering the SEC disclosure requirements that would have revealed to members the scale of funds accumulated from tithing. The LDS Church is estimated to be one of the wealthiest religious institutions per member in the world, with estimated total holdings of $100 billion or more. The Church is also the largest private landowner in Florida and one of the largest in the United States.",
+  "verdict_tags": [
+    "5b_sec_settlement_largest_religious_organization",
+    "ensign_peak_32b_hidden_22_years",
+    "13_shell_llcs_concealment_structure",
+    "100b_plus_estimated_total_holdings",
+    "largest_private_landowner_florida",
+    "tithing_condition_temple_access",
+    "historic_polygamy_doctrine",
+    "lgbtq_family_proclamation_policy"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "The LDS Church operates one of the largest volunteer labor systems of any religious institution — members are called to unpaid service ('callings') that can require significant time commitments. Bishops and stake presidents — lay ecclesiastical leaders — perform pastoral duties unpaid alongside their professional careers. Full-time missionaries — approximately 70,000 at any given time — pay approximately $500/month for the privilege of two years of unpaid full-time proselytizing. The Church is the second-largest employer in Utah through its for-profit and nonprofit entities.",
+    "flags": [
+      "70000_unpaid_missionaries_paying_own_costs",
+      "lay_leader_unpaid_pastoral_labor",
+      "second_largest_utah_employer"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "The LDS Church's massive agricultural landholdings — including AgReserves, Inc., which manages over 1 million acres of farmland — represent a significant environmental footprint. The Church's Florida landholding (Deseret Ranches — approximately 290,000 acres) is the largest contiguous private landholding in Florida. Environmental management of these assets reflects agricultural norms rather than conservation priorities.",
+    "flags": [
+      "290000_acres_florida_deseret_ranches_largest_private",
+      "1_million_plus_acres_agricultural_global"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "The LDS Church spent approximately $180,000 — laundered through front organizations — opposing California's Proposition 8 (same-sex marriage ban) in 2008. This was a violation of California campaign finance disclosure law; the Church was fined by the California Fair Political Practices Commission. The Church has also lobbied against LGBTQ civil rights protections. The 'Proclamation to the World on the Family' (1995) defines family as exclusively heterosexual. In 2015, the Church adopted a policy (informally called 'Policy of Exclusion') that barred children of same-sex couples from baptism and classified same-sex married members as apostates subject to excommunication — the policy was reversed in 2019 after significant member criticism.",
+    "flags": [
+      "prop_8_180000_laundered_campaign_finance_violation",
+      "fair_political_practices_commission_fine",
+      "2015_policy_exclusion_children_same_sex_couples",
+      "1995_family_proclamation",
+      "2019_policy_reversal"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "February 2023: SEC charges Ensign Peak Advisors with fraud for concealing $32-38 billion in investment assets using 13 shell LLCs over approximately 22 years. The Church paid $4 billion and Ensign Peak paid $1 billion — combined $5 billion — the largest settlement ever against a religious organization for financial disclosure. The SEC found the shell LLC structure was specifically designed to avoid triggering 13F filing requirements that would have revealed the fund's size to the public, including Church members who tithe. California FPPC: fined the Church $5,538 for late campaign contribution disclosures related to Proposition 8 — significantly less than the actual violation scale. Polygamy: the Church discontinued plural marriage in 1890 as a condition of Utah's statehood; fundamentalist offshoots continue the practice without Church authorization.",
+    "flags": [
+      "5b_sec_settlement_ensign_peak_largest_religious",
+      "13_shell_llcs_22_years_concealment",
+      "sec_fraud_charge_not_just_technical_violation",
+      "prop_8_california_fppc_fine",
+      "polygamy_discontinued_1890_statehood_condition"
+    ],
+    "sources": [
+      "https://www.sec.gov/news/press-release/2023-25"
+    ]
+  },
+  "tax": {
+    "summary": "The LDS Church pays no income tax on its tithing revenue (estimated at $7-8 billion annually from US members alone at 10% of income). Ensign Peak Advisors — through which the Church invested its tithing — had generated approximately $100 billion in accumulated investment assets. The SEC investigation established that the shell LLC structure was specifically designed to avoid transparency — including to Church members who were told tithing went to charitable and operational uses. A whistleblower to the IRS alleged in 2019 that Ensign Peak accumulated far more in investment assets than it spent on charitable purposes — raising questions about whether the fund qualifies for tax-exempt treatment as a charitable reserve.",
+    "flags": [
+      "7_8b_estimated_annual_tithing_us_tax_exempt",
+      "100b_accumulated_investment_assets",
+      "irs_whistleblower_charitable_purpose_question",
+      "shell_llcs_concealed_from_members_not_just_sec"
+    ],
+    "sources": [
+      "https://www.sec.gov/news/press-release/2023-25"
+    ]
+  },
+  "executives": {
+    "summary": "Russell M. Nelson is the Church's President and Prophet — its highest authority. The Church is governed by the First Presidency (3 apostles) and Quorum of the Twelve Apostles (12 apostles) — all of whom receive a 'living allowance' estimated at approximately $120,000-150,000 annually. The Church does not publicly disclose executive compensation. The Ensign Peak settlement identified Church leadership as having been aware of and having approved the concealment structure.",
+    "flags": [
+      "church_leadership_approved_concealment_per_sec",
+      "executive_compensation_undisclosed",
+      "prophet_president_ecclesiastical_executive_combined"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The LDS Church's corporate structure — the Corporation of the President — controls the Church's property and financial assets as a corporation sole. This structure is unique in allowing a single individual (the Church President) to legally control billions in assets without a board of directors or shareholder accountability. The Church's business interests span insurance (Beneficial Life), real estate, agriculture, media, and retail.",
+    "flags": [
+      "corporation_sole_single_person_control_billions",
+      "beneficial_life_insurance",
+      "deseret_news_media_ownership"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The IRS whistleblower (2019) alleged that Ensign Peak's accumulation of $100 billion while spending a small fraction on charitable purposes represented a violation of the tax-exempt charitable reserve rationale — that the fund was an investment vehicle masquerading as a charitable reserve. The SEC settlement established the concealment; the IRS has not publicly concluded its investigation. Former members and critics have alleged that the Church's tithing emphasis — including tying temple access (required for salvation-related ordinances) to full tithe payment — creates a coercive financial structure where members pay a 10% income levy without knowledge of how it is invested.",
+    "flags": [
+      "irs_charitable_reserve_rationale_challenged",
+      "tithing_temple_access_coercive_structure_alleged",
+      "100b_investment_small_charitable_fraction_alleged"
+    ],
+    "sources": [
+      "https://www.wsj.com/articles/a-mormon-church-whistleblower-says-it-stockpiled-100-billion-intended-for-charity-and-misled-irs-11578500054"
+    ]
+  },
+  "health_record": {
+    "summary": "The 2015 'Policy of Exclusion' — which barred children of same-sex couples from baptism and classified their parents as apostates — generated documented mental health harm among LGBTQ members and their families. Multiple LDS LGBTQ advocacy organizations documented elevated rates of suicidality among LGBTQ Mormon youth in the period following the 2015 policy announcement. The policy was reversed in 2019 after significant member and public criticism. The LDS Church's historical emphasis on conversion therapy for LGBTQ members has generated ongoing mental health concerns documented by independent researchers.",
+    "flags": [
+      "2015_policy_exclusion_lgbtq_mental_health_harm",
+      "elevated_suicidality_lgbtq_youth_documented",
+      "conversion_therapy_historical_emphasis"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Community of Christ (formerly RLDS) — restoration movement denomination with different governance and transparency",
+      "Local non-denominational community churches without mandatory tithing structures"
+    ],
+    "healthier": [
+      "Denominations with full LGBTQ inclusion and published financial statements"
+    ],
+    "diy": [
+      "The SEC's Ensign Peak settlement documents are public at sec.gov/news/press-release/2023-25",
+      "Mormon Stories Podcast documents member experiences including faith transitions — for those navigating departure"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1830,
+      "event": "Church of Jesus Christ of Latter-day Saints founded by Joseph Smith in New York",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1890,
+      "event": "Manifesto discontinues plural marriage as condition of Utah statehood — ending official polygamy after 40+ years",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 1978,
+      "event": "Church extends priesthood to Black members — reversing a 148-year exclusion that the Church later acknowledged lacked doctrinal justification",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1995,
+      "event": "Proclamation to the World on the Family defines family as exclusively heterosexual — used in lobbying against same-sex marriage for the next 25 years",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2001,
+      "event": "Ensign Peak Advisors begins using shell LLCs to conceal investment fund size from SEC — per 2023 settlement",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2008,
+      "event": "Church spends approximately $180,000 opposing California's Prop 8; fined by Fair Political Practices Commission for campaign finance violations",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2015,
+      "event": "Policy of Exclusion: children of same-sex couples barred from baptism; same-sex married members classified as apostates; documented harm to LGBTQ members",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "IRS whistleblower alleges Ensign Peak accumulated $100B while spending fraction on charitable purposes. Policy of Exclusion reversed.",
+      "severity": "critical",
+      "source_url": "https://www.wsj.com/articles/a-mormon-church-whistleblower-says-it-stockpiled-100-billion-intended-for-charity-and-misled-irs-11578500054"
+    },
+    {
+      "year": 2023,
+      "event": "February: SEC charges Ensign Peak with fraud; Church pays $4B, Ensign Peak $1B — $5B combined — largest settlement against religious organization for financial disclosure",
+      "severity": "critical",
+      "source_url": "https://www.sec.gov/news/press-release/2023-25"
+    }
+  ],
+  "community_impact": {
+    "displacement": "LGBTQ members who were excommunicated or voluntarily left the Church following the 2015 Policy of Exclusion were separated from family members who remained — the Church's social structure, where most meaningful relationships exist within the congregation, makes departure particularly costly. Former members documented loss of family relationships, community, and life structure.",
+    "price_illusion": "Members who paid a full tithe — 10% of gross income — were told the funds were used for building temples, funding missions, and humanitarian aid. The SEC investigation established that a significant portion was invested in Ensign Peak's $32-38 billion investment fund, accumulated over 22 years without disclosure to members, regulators, or the public through a deliberate shell LLC concealment structure.",
+    "tax_math": "LDS tithing — estimated at $7-8 billion annually from US members — is tax-deductible as a charitable contribution for members and tax-exempt as religious income for the Church. The Ensign Peak investment fund accumulated approximately $100 billion in assets. The SEC found the concealment was deliberate. The IRS has not publicly concluded whether the investment accumulation is consistent with tax-exempt charitable status.",
+    "wealth_velocity": "The Church of Jesus Christ of Latter-day Saints is estimated to be one of the wealthiest religious institutions per member on Earth. Its total holdings — $100 billion or more — are controlled through a corporation sole by a single individual (the Church President) without shareholder accountability, board oversight, or public financial disclosure."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Church leadership and the institution",
+        "how": "$32-38B in investment assets accumulated tax-free over 22 years using shell LLCs to avoid disclosure; assets not spent on charitable purposes at a level commensurate with accumulation"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Tithing members",
+        "how": "Paid 10% of income as a condition of temple access (required for salvation-related ordinances) without knowledge that a significant portion was invested in an undisclosed $32B fund"
+      },
+      {
+        "group": "LGBTQ members and their children",
+        "how": "2015 Policy of Exclusion barred children from baptism and classified parents as apostates; documented mental health harm and elevated suicidality; policy reversed 2019 after public backlash"
+      }
+    ],
+    "the_gap": "The LDS Church told members their tithing funded temples, missions, and humanitarian aid. Their investment arm had $32 billion. They hid it using 13 shell companies for 22 years. The SEC called it fraud. The fine was $5 billion. The Church is the largest private landowner in Florida. They also barred the children of gay members from baptism. They reversed that policy four years later. The total assets are estimated at $100 billion."
+  }
+}

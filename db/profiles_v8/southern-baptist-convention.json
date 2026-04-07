@@ -1,0 +1,183 @@
+{
+  "brand_name": "Southern Baptist Convention",
+  "brand_slug": "southern-baptist-convention",
+  "parent_company": "Southern Baptist Convention (autonomous congregations)",
+  "ultimate_parent": "Southern Baptist Convention Executive Committee",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "THE SBC KEPT A SECRET LIST OF 700 ACCUSED ABUSERS — THEN PAID A FIRM TO INVESTIGATE ITSELF — AND THE REPORT CONFIRMED LEADERS KNEW AND DID NOTHING FOR DECADES",
+  "executive_summary": "The Southern Baptist Convention is the largest Protestant denomination in the United States with approximately 14 million members across 47,000 autonomous local churches. In May 2022, Guidepost Solutions — an independent firm hired by the SBC after years of internal resistance — published a 288-page investigation confirming that SBC Executive Committee leaders had maintained a secret internal list of hundreds of accused sexual abusers, had resisted reforms that might have protected victims, and had used insurance defense attorneys and the doctrine of local church autonomy to avoid accountability. The report documented that EC leaders had actively misled SBC members about their knowledge of abuse. The SBC subsequently adopted a database of abusers. Its political influence — through the Ethics and Religious Liberty Commission — is among the most significant of any religious organization in US domestic policy.",
+  "verdict_tags": [
+    "guidepost_288_page_investigation_confirmed_cover_up",
+    "700_plus_accused_abusers_secret_list",
+    "executive_committee_actively_misled_members",
+    "sbc_erlc_abortion_lgbtq_political_lobbying",
+    "local_church_autonomy_used_shield_accountability",
+    "refused_reform_for_years"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "SBC pastors and staff operate under individual church employment arrangements with minimal denominational oversight. The doctrine of local church autonomy — while genuine — was documented in the Guidepost investigation as being weaponized by SBC Executive Committee leaders to avoid taking any action on abuse reports, even when they had information about abusers moving between churches.",
+    "flags": [
+      "local_autonomy_weaponized_avoid_accountability"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "The SBC has not taken significant institutional positions on climate science or environmental policy. The ERLC has generally aligned with positions skeptical of regulatory approaches to climate.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The SBC's Ethics and Religious Liberty Commission (ERLC) — led for many years by Russell Moore, who resigned amid internal disputes — is one of the most active religious lobbying entities in Washington. The SBC has been a primary institutional advocate against Roe v. Wade, against same-sex marriage, and against LGBTQ civil rights protections. The denomination split from Northern Baptist churches in 1845 partly over the defense of slavery — a fact the SBC formally apologized for in 1995. The SBC's 2021 vote to disfellowship churches that affirm women in pastoral leadership roles represents ongoing political-theological control over member congregations.",
+    "flags": [
+      "erlc_abortion_lgbtq_primary_lobbying_entity",
+      "1845_split_slavery_defense",
+      "1995_formal_apology_slavery",
+      "women_pastoral_leadership_disfellowship"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "The Guidepost Solutions investigation (2022): Confirmed SBC EC leaders maintained a secret list of accused abusers dating to at least 2007. The list contained over 700 names. EC leaders used insurance defense attorneys to advise against victim-support policies. Leaders were documented misleading SBC members about the extent of their knowledge. The SBC has no formal legal structure to compel member churches to report abusers — but the investigation documented that EC leaders had information about abusers moving between churches and took no action to warn receiving congregations. Class action and individual civil litigation has been filed against SBC entities and individual churches. No federal criminal charges have been filed against SBC leadership.",
+    "flags": [
+      "guidepost_700_accused_list_documented",
+      "insurance_defense_attorneys_advised_against_victim_policies",
+      "leaders_misled_members_documented",
+      "no_federal_criminal_charges_leadership"
+    ],
+    "sources": [
+      "https://www.sataskforce.net/updates/guidepost-solutions-report"
+    ]
+  },
+  "tax": {
+    "summary": "The SBC and its member churches are exempt from federal income tax as religious organizations. Individual SBC churches are not required to file financial disclosures. The SBC Executive Committee is required to file a Form 990 as a nonprofit but is not required to disclose the finances of the 47,000 individual member churches. Pastors receive a 'housing allowance' that is excluded from federal income tax — a provision unique to religious organizations that has been estimated to cost the federal government approximately $800 million annually across all denominations.",
+    "flags": [
+      "no_member_church_financial_disclosure",
+      "pastor_housing_allowance_800m_annual_tax_expenditure",
+      "ec_form_990_required_not_churches"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Bart Barber is the current SBC President. Russell Moore — former ERLC president — resigned in 2021 and subsequently published letters documenting that SBC EC leaders had threatened and intimidated him when he raised concerns about abuse response. Ed Litton served as SBC president during the 2022 Guidepost investigation. Ronnie Floyd led the SBC Executive Committee during the period when — per Guidepost — EC leaders most actively resisted reform and misled members.",
+    "flags": [
+      "moore_resigned_threats_intimidation_documented",
+      "floyd_ec_era_guidepost_found_misleading"
+    ],
+    "sources": [
+      "https://www.sataskforce.net/updates/guidepost-solutions-report"
+    ]
+  },
+  "connections": {
+    "summary": "The SBC's political alliance with the Republican Party through the ERLC has made it one of the most influential denominational forces in US domestic policy over the past 40 years — shaping Supreme Court nominations, abortion legislation, and LGBTQ civil rights policy. The denomination's theological infrastructure — including six seminaries — produces pastors who serve in churches across all 50 states and internationally, creating a coordinated theological and political ecosystem.",
+    "flags": [
+      "republican_political_alliance_documented",
+      "six_seminaries_theological_pipeline",
+      "47000_churches_50_states"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Abuse survivors and their advocates have alleged that the SBC's use of local church autonomy doctrine was deliberately chosen as a governance structure that limits centralized accountability — that leaders understood autonomy would prevent systematic accountability for abuse and chose it for that reason. The Guidepost report stopped short of this characterization but documented the pattern of its use.",
+    "flags": [
+      "autonomy_doctrine_deliberate_accountability_avoidance_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Sexual abuse of church members — including children — by SBC pastors and staff represents the primary documented health harm. The Guidepost report confirmed that SBC EC leaders had information about abusers for at least 15 years before the investigation and took no action that would have protected victims in receiving congregations. The 700+ names on the secret list represent accused abusers across the country — with no centralized mechanism to warn churches considering hiring them.",
+    "flags": [
+      "700_accused_list_no_warning_mechanism",
+      "15_years_ec_knowledge_no_action_documented"
+    ],
+    "sources": [
+      "https://www.sataskforce.net/updates/guidepost-solutions-report"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Progressive Baptist churches — different theological tradition with documented support for abuse accountability",
+      "Cooperative Baptist Fellowship — formed partly in response to SBC theological conservatism; different governance"
+    ],
+    "healthier": [
+      "Churches with publicly disclosed pastoral background checks and mandatory abuse reporting policies",
+      "Congregations affiliated with denominations with centralized accountability mechanisms"
+    ],
+    "diy": [
+      "The Guidepost Solutions report is publicly available at sataskforce.net — 288 pages of documented findings",
+      "Stop Baptist Predators (stopbaptistpredators.org) tracks accused abusers across Baptist churches"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1845,
+      "event": "SBC founded; split from Northern Baptists partly over defense of slaveholders as missionaries",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1995,
+      "event": "SBC issues formal apology for founding role of slavery defense — 150 years after the fact",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2007,
+      "event": "SBC EC begins maintaining internal list of accused abusers — per Guidepost investigation — while publicly stating they lacked authority to act",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "Houston Chronicle / San Antonio Express-News publishes investigation of 700 SBC leaders and volunteers accused of abuse over 20 years",
+      "severity": "critical",
+      "source_url": "https://www.houstonchronicle.com/news/investigations/article/Southern-Baptist-sexual-abuse-spreads-as-leaders-13588038.php"
+    },
+    {
+      "year": 2021,
+      "event": "Russell Moore resigns as ERLC president; publishes letters documenting threats and intimidation from EC leaders when he raised abuse concerns",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "May: Guidepost Solutions publishes 288-page investigation confirming cover-up, secret list, and EC leaders misleading members",
+      "severity": "critical",
+      "source_url": "https://www.sataskforce.net/updates/guidepost-solutions-report"
+    }
+  ],
+  "community_impact": {
+    "displacement": "Survivors of SBC pastor and staff abuse who reported to denominational leadership were told — per the Guidepost investigation — that the SBC lacked authority to act due to local church autonomy. Abusers who were accused in one congregation and moved to another carried no formal warning that receiving congregations could access. The 700+ name secret list held by EC leaders was not shared with the broader SBC membership.",
+    "price_illusion": "SBC churches present as autonomous local congregations — which they genuinely are theologically. The Guidepost investigation established that this autonomy did not prevent the EC from maintaining centralized information about abusers, hiring insurance defense attorneys to limit liability, and coordinating resistance to accountability reform across the denomination.",
+    "tax_math": "47,000 SBC churches pay no federal income tax and most file no public financial disclosure. The pastor housing allowance — exclusive to religious workers — shelters a significant portion of pastoral compensation from taxation.",
+    "wealth_velocity": "The SBC has no centralized wealth — member churches hold their own assets. The EC operates as a nonprofit coordinating body. The absence of centralized financial structure is both theologically genuine and practically convenient for limiting liability."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "SBC Executive Committee leadership",
+        "how": "Maintained secret list of abusers while publicly claiming powerlessness; used insurance defense attorneys to minimize liability; resisted reforms that would have exposed institutional knowledge"
+      },
+      {
+        "group": "Accused pastors and staff who moved between congregations",
+        "how": "No centralized warning system meant abusers could be hired by new congregations unaware of prior accusations"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Sexual abuse survivors across 47,000 SBC churches",
+        "how": "Abused by pastors and staff; told the denomination had no authority to act; abusers moved to new congregations with no warning"
+      }
+    ],
+    "the_gap": "The SBC Executive Committee kept a list of over 700 accused abusers since at least 2007. They told survivors they had no authority to act. They hired insurance defense attorneys to minimize liability. They misled their own members. When Russell Moore raised concerns internally, they threatened him. He published the letters proving it. The denomination's response was to vote on whether women can be pastors. The list had 700 names. The investigation is 288 pages."
+  }
+}

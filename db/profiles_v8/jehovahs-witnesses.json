@@ -1,0 +1,194 @@
+{
+  "brand_name": "Jehovah's Witnesses",
+  "brand_slug": "jehovahs-witnesses",
+  "parent_company": "Watch Tower Bible and Tract Society of Pennsylvania",
+  "ultimate_parent": "Governing Body of Jehovah's Witnesses",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "JEHOVAH'S WITNESSES REQUIRE TWO WITNESSES TO REPORT SEXUAL ABUSE — CHILDREN HAVE DIED FROM BLOOD TRANSFUSION REFUSAL — AND COURTS GLOBALLY HAVE FOUND THE SHUNNING DOCTRINE VIOLATES HUMAN RIGHTS",
+  "executive_summary": "Jehovah's Witnesses is a millenarian Christian denomination with approximately 8.7 million members globally, governed by the Governing Body — an unpaid group of approximately 8-9 men based at the organization's headquarters in Warwick, New York. The organization has been the subject of major legal and human rights findings on three separate grounds: (1) its 'two-witness rule' — requiring two independent witnesses to report sexual abuse internally before action is taken — has been found by courts in multiple countries to enable abusers to continue offending; (2) its prohibition on blood transfusions has resulted in documented deaths of adult members and children; (3) its 'shunning' doctrine — requiring members to completely cut off from disfellowshipped individuals including family members — has been found by courts in Norway and other countries to violate religious freedom and human rights law. The organization paid $35 million in a 2018 California jury verdict and has faced similar findings globally.",
+  "verdict_tags": [
+    "two_witness_rule_enables_abuse_courts_found",
+    "35m_conti_california_verdict",
+    "blood_transfusion_refusal_documented_deaths_children",
+    "shunning_doctrine_human_rights_violation_courts",
+    "norway_banned_funding_human_rights_violation",
+    "watch_tower_brooklyn_real_estate_empire",
+    "disfellowshipping_family_separation_documented"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Bethel members — those who live and work at Jehovah's Witnesses facilities globally — work full-time for the organization in exchange for room, board, and a small monthly allowance ($150/month at US Bethel). Bethel members sign contracts committing to organizational service for extended periods. The organization has been compared by critics to a labor organization that pays below minimum wage — though the voluntary nature and religious context are legally relevant. The organization has approximately 100,000 Bethel workers globally.",
+    "flags": [
+      "bethel_workers_150_month_allowance_room_board",
+      "100000_global_bethel_workers",
+      "below_minimum_wage_compensation_structure"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "The Watch Tower Society's sale of its Brooklyn, New York properties — comprising 34 buildings in Brooklyn Heights — for approximately $1.3 billion beginning in 2012 represents one of the largest real estate transactions in Brooklyn history. The organization relocated to Warwick, New York. The real estate operations are managed through subsidiary corporations with standard commercial practices. No major environmental enforcement actions have been identified.",
+    "flags": [
+      "brooklyn_1_3b_real_estate_sale",
+      "warwick_ny_headquarters_relocation"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Jehovah's Witnesses do not vote, hold political office, salute national flags, or serve in military forces — positions based on doctrinal neutrality toward 'worldly' politics. This neutrality is genuine and historically demonstrated — Witnesses were persecuted by Nazi Germany for refusing military service and political loyalty. The organization's political influence operates not through lobbying but through strategic litigation: the Watch Tower Society has won 71 US Supreme Court cases — more than any other religious organization — establishing First Amendment precedents on free speech, religious freedom, and proselytizing rights that benefit all religions.",
+    "flags": [
+      "71_us_supreme_court_cases_most_any_religious_org",
+      "no_voting_military_political_service_doctrinal",
+      "nazi_persecution_documented_refusal_military"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Two-witness rule: Courts in California, Australia (Royal Commission), the UK (Independent Inquiry into Child Sexual Abuse), and other jurisdictions have found that the organization's internal policy requiring two witnesses to abuse before taking congregational action effectively prevents reporting and enables abusers. The 2018 Ogle v. Jehovah's Witnesses case resulted in a $35 million jury verdict (later settled) in California. The 2017 Australian Royal Commission found the organization had failed to report 1,006 alleged perpetrators of child sexual abuse to police. Blood transfusion: courts in multiple countries have granted emergency orders to compel transfusions for children of Witness parents when the child's life was at risk; some children have died when orders were not obtained in time. Norway: in 2024 a Norwegian court found the shunning doctrine violated European human rights law; Norway withdrew state funding from the Jehovah's Witnesses.",
+    "flags": [
+      "35m_california_verdict_2018",
+      "australia_royal_commission_1006_perpetrators_not_reported",
+      "norway_state_funding_withdrawn_human_rights_violation",
+      "blood_transfusion_children_deaths_documented",
+      "uk_iicsa_two_witness_rule_finding"
+    ],
+    "sources": [
+      "https://www.childabuseroyalcommission.gov.au/sites/default/files/file-list/Case%20Study%2029%20-%20Findings%20Report%20-%20Jehovah%27s%20Witnesses.pdf"
+    ]
+  },
+  "tax": {
+    "summary": "The Watch Tower Society and its affiliated corporations are exempt from US federal income tax. The sale of the Brooklyn real estate portfolio — approximately $1.3 billion — was largely exempt from taxation as a nonprofit real estate transaction. Norway's 2024 withdrawal of state funding specifically cited the human rights violation finding, removing the government subsidy the organization had received as a recognized religious group.",
+    "flags": [
+      "brooklyn_1_3b_sale_tax_exempt",
+      "norway_state_funding_withdrawn_human_rights_finding"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "The Governing Body — currently approximately 8-9 men — exercises supreme doctrinal and organizational authority over the global organization. Members of the Governing Body are not publicly compensated beyond Bethel room and board. All Governing Body members are men; women have no authority in the organizational hierarchy. The Governing Body's decisions are presented to members as spiritually directed — dissent is treated as potential grounds for disfellowshipping.",
+    "flags": [
+      "governing_body_all_male_no_women_authority",
+      "governing_body_decisions_dissent_disfellowship_grounds",
+      "no_public_compensation_disclosure"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The Watch Tower Society's legal victories in the US Supreme Court — including Cantwell v. Connecticut (1940) and other seminal First Amendment cases — have established religious freedom protections that benefit all religious organizations. This legal legacy coexists with the organization's internal policies that courts in other contexts have found to restrict the rights of its own members.",
+    "flags": [
+      "71_supreme_court_cases_first_amendment_legacy",
+      "internal_policies_restrict_member_rights_courts_found"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former members and survivors have alleged that the two-witness rule is maintained not because it has biblical foundation as the organization claims, but because it systematically prevents external reporting — and that the organization's internal 'judicial committee' process for handling abuse allegations is designed to manage internal discipline rather than protect victims. Former elders have alleged they were instructed to call the organization's legal hotline before reporting abuse to police — instructions documented in elder manuals and confirmed by organization representatives in court testimony.",
+    "flags": [
+      "legal_hotline_before_police_reporting_instruction_documented",
+      "judicial_committee_internal_management_not_victim_protection_alleged"
+    ],
+    "sources": [
+      "https://www.childabuseroyalcommission.gov.au/sites/default/files/file-list/Case%20Study%2029%20-%20Findings%20Report%20-%20Jehovah%27s%20Witnesses.pdf"
+    ]
+  },
+  "health_record": {
+    "summary": "Blood transfusion refusal: documented deaths of adult members and children from refusal of blood transfusions on religious grounds. Children's cases have generated emergency court intervention in many jurisdictions; some children have died when emergency orders were not obtained in time or were refused by parents. Courts in the UK, Australia, the US, and other countries have established legal frameworks for emergency transfusion orders for minors. Shunning: former members document severe psychological harm from complete separation from family members — including parents and children — who remain members and follow the shunning requirement. Clinical literature documents elevated rates of depression, anxiety, and suicidality among former members subject to complete family shunning.",
+    "flags": [
+      "blood_transfusion_refusal_children_deaths_documented",
+      "shunning_family_separation_clinical_harm_documented",
+      "court_orders_emergency_transfusion_established"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Non-hierarchical Protestant denominations without shunning doctrine",
+      "Progressive faith communities with full family inclusion regardless of belief"
+    ],
+    "healthier": [
+      "Faith communities without medical treatment restrictions",
+      "Therapy resources for former members: Recovery from Religion Foundation, JW Support groups"
+    ],
+    "diy": [
+      "jwvictims.org documents sexual abuse cases and legal proceedings",
+      "The Australian Royal Commission Case Study 29 report on Jehovah's Witnesses is publicly available and comprehensive"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1870,
+      "event": "Watch Tower organization founded by Charles Taze Russell in Pittsburgh, Pennsylvania",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1940,
+      "event": "Cantwell v. Connecticut — Watch Tower wins landmark First Amendment religious freedom case at US Supreme Court",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1943,
+      "event": "West Virginia State Board of Education v. Barnette — Watch Tower wins; students cannot be compelled to salute flag",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1945,
+      "event": "Blood transfusion prohibition introduced — documented deaths of adults and children follow in subsequent decades",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "$35M California jury verdict for sexual abuse survivor; two-witness rule documented as enabling factor",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "Australia Royal Commission publishes findings: 1,006 alleged perpetrators not reported to police; two-witness rule found to fail child protection",
+      "severity": "critical",
+      "source_url": "https://www.childabuseroyalcommission.gov.au"
+    },
+    {
+      "year": 2024,
+      "event": "Norway court finds shunning doctrine violates European human rights law; Norwegian government withdraws state funding",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Former members who are disfellowshipped — for doctrinal deviation, lifestyle, or leaving the religion — face complete separation from family members who remain in the organization and follow the shunning doctrine. This is not a soft social preference; it is an organizational requirement enforced through the threat of disfellowshipping for those who maintain contact with former members. Clinical researchers document this as a high-trauma experience with lasting psychological harm.",
+    "price_illusion": "Jehovah's Witnesses present their religion as a close-knit community of mutual support. That community is conditional — it exists only for those who maintain doctrinal compliance. Exit carries the cost of complete family and social severance for those whose family members remain.",
+    "tax_math": "The Watch Tower Society's Brooklyn real estate sale — approximately $1.3 billion — was conducted largely tax-free as a nonprofit religious organization. The organization's annual revenue from member contributions is not publicly disclosed. Norway's withdrawal of state funding represents a documented instance of a government removing religious organization subsidy specifically for human rights violations.",
+    "wealth_velocity": "The Watch Tower Society's real estate transactions — particularly the Brooklyn portfolio — represent significant asset appreciation realized tax-free. The organization's global headquarters operations run on Bethel worker labor compensated at below-minimum-wage rates by commercial standards."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Watch Tower Society",
+        "how": "$1.3B Brooklyn real estate sale tax-free; Bethel worker labor below minimum wage; two-witness rule prevented external accountability for internal abuse cases"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Sexual abuse survivors whose cases were not reported",
+        "how": "Australia Royal Commission found 1,006 alleged perpetrators not reported to police under two-witness rule; survivors revictimized by internal 'judicial committee' processes"
+      },
+      {
+        "group": "Former members subject to shunning",
+        "how": "Complete separation from family members; Norway court found this violates human rights; clinical literature documents severe psychological harm"
+      }
+    ],
+    "the_gap": "The Jehovah's Witnesses told abuse survivors they needed two witnesses. The Australia Royal Commission found 1,006 alleged abusers were never reported to police. A California jury awarded $35 million. Children have died because their parents refused blood transfusions. Former members are completely shunned by their families — including parents and children. A Norwegian court found this violates human rights. The organization has won 71 US Supreme Court cases. It uses the First Amendment to protect its right to shun its own members' children."
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "brand_name": "Church of Scientology",
+  "brand_slug": "church-of-scientology",
+  "parent_company": "Church of Scientology International",
+  "ultimate_parent": "Religious Technology Center (RTC)",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "SCIENTOLOGY'S SEA ORG WORKERS SIGN BILLION-YEAR CONTRACTS AND EARN $50 A WEEK — THE ORGANIZATION SPENT 25 YEARS ATTACKING THE IRS BEFORE GETTING TAX EXEMPTION IN A DEAL THAT HAS NEVER BEEN PUBLICLY DISCLOSED",
+  "executive_summary": "The Church of Scientology is a new religious movement founded by science fiction writer L. Ron Hubbard in 1954, based on his 1950 book Dianetics. It is legally recognized as a tax-exempt religious organization in the United States following a controversial 1993 agreement with the IRS — the terms of which have never been publicly disclosed, despite the IRS normally publishing such settlement documents. Scientology's corporate structure is extraordinarily complex — the Religious Technology Center (RTC), Church of Scientology International (CSI), Church of Scientology Flag Service Organization, and dozens of affiliated entities operate as distinct legal corporations while functioning as a unified organization under the effective control of Chairman David Miscavige. The Sea Organization (Sea Org) — Scientology's most committed staff — sign billion-year contracts, earn approximately $50 per week, and are subject to discipline through the Rehabilitation Project Force (RPF), a documented forced labor and re-education program. The organization has been convicted of criminal conduct in France (2009), Belgium (2012), and Spain; been the subject of criminal investigations in Australia, Germany, and Canada; and faced sustained documentary evidence of surveillance, harassment, and litigation campaigns against critics.",
+  "verdict_tags": [
+    "irs_1993_secret_deal_never_disclosed",
+    "sea_org_billion_year_contracts_50_week",
+    "rpf_forced_labor_re_education_documented",
+    "france_criminal_conviction_2009",
+    "fair_game_doctrine_critics_harassment",
+    "lisa_mcpherson_death_1995",
+    "clearwater_florida_real_estate_dominance",
+    "david_miscavige_defectors_allege_abuse"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Sea Org members — Scientology's most committed staff — sign billion-year contracts committing to service across multiple lifetimes per the organization's belief system. They are compensated at approximately $50 per week in the United States (plus room and board). They are subject to the Rehabilitation Project Force (RPF) — a documented disciplinary program where members live separately, perform manual labor, study Scientology materials for hours daily, and are prohibited from speaking to non-RPF members. Former Sea Org members — including high-ranking officials — have documented physical and psychological abuse in sworn declarations, lawsuits, and investigative journalism. Women in Sea Org who became pregnant were reportedly pressured to have abortions to remain in Sea Org, as children are not permitted in Sea Org berthing.",
+    "flags": [
+      "billion_year_contracts_sea_org",
+      "50_week_compensation",
+      "rpf_forced_labor_re_education",
+      "pregnancy_abortion_pressure_documented",
+      "former_high_ranking_officials_abuse_sworn_declarations"
+    ],
+    "sources": [
+      "https://www.tampabay.com/specials/2009/reports/project/"
+    ]
+  },
+  "environmental": {
+    "summary": "No major environmental enforcement actions against Scientology have been identified. The organization operates the Freewinds — a cruise ship used for advanced Scientology courses — whose asbestos removal has generated documented legal proceedings.",
+    "flags": [
+      "freewinds_asbestos_documented"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Scientology's 25-year campaign against the IRS — including filing thousands of lawsuits against IRS employees personally, investigating and publicizing private information about IRS agents, and sustained institutional pressure — ended with a 1993 agreement granting tax exemption whose terms were never publicly disclosed. This represents the most documented successful campaign by a private organization to reverse an IRS determination. The 'Fair Game' doctrine — adopted by Hubbard in 1967 and formally cancelled in 1968 though critics allege the practice continued — authorized the suppression, injury, and ruin of critics of Scientology. The Guardian's Office (later Office of Special Affairs / OSA) conducted documented operations against critics, journalists, government officials, and former members.",
+    "flags": [
+      "irs_25_year_campaign_secret_settlement",
+      "fair_game_doctrine_1967_formal_cancellation_practices_alleged_continued",
+      "office_of_special_affairs_documented_operations"
+    ],
+    "sources": [
+      "https://www.newyorker.com/magazine/2011/02/14/the-apostate-lawrence-wright"
+    ]
+  },
+  "legal": {
+    "summary": "1993: IRS grants tax exemption in a settlement whose terms have never been disclosed. 1995: Lisa McPherson dies in Scientology care in Clearwater, Florida after 17 days of isolation; criminal charges were filed then dropped; civil lawsuit settled. 2009: French court convicts the Church of Scientology of organized fraud; fined €600,000. 2012: Belgian court prosecutes but acquits (prosecutor had been changed). Operation Snow White (1970s): the largest domestic espionage operation against the US government by a private organization — Scientology operatives infiltrated 136 government agencies and stole documents; 11 Scientology officials including Hubbard's wife Mary Sue were convicted. Operation Freakout: Scientology's documented campaign against journalist Paulette Cooper — forging a bomb threat letter on her stationary to get her prosecuted.",
+    "flags": [
+      "irs_1993_secret_terms",
+      "lisa_mcpherson_1995_death_charges_dropped",
+      "france_2009_criminal_conviction_fraud",
+      "operation_snow_white_136_agencies_infiltrated",
+      "11_officials_convicted_operation_snow_white",
+      "operation_freakout_paulette_cooper_documented"
+    ],
+    "sources": [
+      "https://vault.fbi.gov/scientology",
+      "https://www.latimes.com/archives/la-xpm-1990-06-24-mn-543-story.html"
+    ]
+  },
+  "tax": {
+    "summary": "Scientology's 1993 IRS tax exemption was granted following an extraordinary 25-year campaign against IRS employees and the institution. The terms of the agreement — contained in closing agreements — have never been publicly released, though portions were leaked. The exemption covers Church of Scientology International and hundreds of affiliated entities. The organization requires members to pay for courses, auditing sessions, and books — revenue that flows to tax-exempt entities. Advanced courses (Operating Thetan levels) cost hundreds of thousands of dollars. Critics and tax scholars have challenged whether the pay-for-services model is consistent with religious tax exemption.",
+    "flags": [
+      "1993_irs_terms_never_disclosed",
+      "pay_for_courses_auditing_books_hundreds_thousands",
+      "hundreds_affiliated_tax_exempt_entities",
+      "25_year_irs_campaign_won"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "David Miscavige has been Chairman of the Board of Religious Technology Center since 1986 and is the effective leader of the organization. He has been served with a lawsuit by his father, his niece, and dozens of former senior officials who allege physical assault, false imprisonment, and other abuse. Miscavige has not been served in person with multiple civil suits despite process servers and investigators spending years attempting to locate him. L. Ron Hubbard, the founder, died in 1986 under disputed circumstances — his death was not reported to authorities for 24 hours; he had been in hiding for the last years of his life.",
+    "flags": [
+      "miscavige_abuse_allegations_former_senior_officials",
+      "miscavige_evading_service_documented",
+      "hubbard_death_24_hour_delay_reporting"
+    ],
+    "sources": [
+      "https://www.tampabay.com/specials/2009/reports/project/"
+    ]
+  },
+  "connections": {
+    "summary": "Narconon — Scientology's drug rehabilitation program — operates internationally using Scientology's Purification Rundown as its treatment basis. Narconon has been investigated in multiple countries for deaths of participants and for misrepresenting its efficacy. Applied Scholastics uses Hubbard's study technology in school settings without disclosing the Scientology connection. The Way to Happiness Foundation distributes Hubbard's moral code booklet through government and school channels without Scientology branding.",
+    "flags": [
+      "narconon_drug_rehab_deaths_investigated",
+      "applied_scholastics_undisclosed_connection",
+      "way_to_happiness_government_distribution"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Hundreds of former senior Scientology officials — including former Inspector General Marty Rathbun, former spokesman Mike Rinder, and former senior executive Amy Scobee — have alleged in sworn declarations and documentary films that David Miscavige personally committed physical assaults on staff members, ordered the surveillance of former members, and maintained a network of private investigators tracking critics globally. Miscavige has not responded to these allegations in a deposition despite years of litigation.",
+    "flags": [
+      "miscavige_physical_assault_hundreds_sworn_declarations",
+      "former_senior_officials_multiple_sworn_allegations",
+      "private_investigator_network_former_members_alleged"
+    ],
+    "sources": [
+      "https://www.tampabay.com/specials/2009/reports/project/"
+    ]
+  },
+  "health_record": {
+    "summary": "Lisa McPherson (1995): died after 17 days of isolation in Scientology care in Clearwater, Florida. Medical examiner's initial finding was consistent with blood clots and severe dehydration. Criminal charges were filed then dropped. The case remains the most documented death directly within Scientology care. Narconon participant deaths: multiple deaths have been documented at Narconon facilities in Canada, the US, and other countries; investigations have found that the 'Purification Rundown' — high-dose niacin and extended sauna sessions — is not evidence-based and has caused documented harm. Disconnection/shunning: former members document psychological harm from enforced disconnection from family members who remain in Scientology.",
+    "flags": [
+      "lisa_mcpherson_1995_death_isolation",
+      "narconon_participant_deaths_multiple_countries",
+      "disconnection_psychological_harm_former_members"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Dianetics counseling is the basis of Scientology — comparable secular therapy is available through licensed therapists at standard rates without the structured advancement system requiring escalating fees"
+    ],
+    "healthier": [
+      "Licensed cognitive behavioral therapy for the self-improvement goals Scientology markets",
+      "For substance abuse: evidence-based treatment through SAMHSA (1-800-662-4357) instead of Narconon's non-evidence-based approach"
+    ],
+    "diy": [
+      "Leah Remini's documentary 'Scientology and the Aftermath' (A&E) documents former member experiences",
+      "Tony Ortega's blog (tonyortega.org) tracks ongoing Scientology litigation and news",
+      "Lawrence Wright's 'Going Clear' (Pulitzer-winner) is the most comprehensive reported account"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1950,
+      "event": "L. Ron Hubbard publishes Dianetics: The Modern Science of Mental Health",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1954,
+      "event": "Church of Scientology formally incorporated",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1967,
+      "event": "Hubbard issues Fair Game policy authorizing suppression of critics",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1970,
+      "event": "Operation Snow White begins — infiltration of 136 government agencies; 11 officials later convicted",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1977,
+      "event": "FBI raids Scientology offices; Operation Snow White exposed",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1986,
+      "event": "Hubbard dies under disputed circumstances; death not reported for 24 hours",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 1993,
+      "event": "IRS grants Scientology tax exemption in settlement whose terms are never publicly disclosed",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1995,
+      "event": "Lisa McPherson dies after 17 days in Scientology care; criminal charges filed then dropped",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2009,
+      "event": "French court convicts Church of Scientology of organized fraud; €600,000 fine",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Clearwater, Florida — the spiritual headquarters of Scientology — has experienced significant real estate acquisition by Scientology entities over decades. Former residents and civic leaders have documented that Scientology's concentrated real estate ownership affects community character, political representation, and civic life.",
+    "price_illusion": "Scientology presents itself as a self-improvement system available to all. The full cost of the 'Bridge to Total Freedom' — the complete set of Scientology courses and auditing — is estimated at $500,000 to $1 million or more per person. Sea Org members pay for this path with labor at $50 per week.",
+    "tax_math": "Scientology's hundreds of affiliated entities are tax-exempt following the 1993 IRS settlement. Members pay for courses, auditing, and materials — this revenue is received by tax-exempt entities. The terms of the IRS settlement have never been disclosed to the public.",
+    "wealth_velocity": "Scientology's real estate holdings — including the Clearwater, Florida complex, the Celebrity Centre network, and the Gold Base compound in California — represent significant accumulated wealth controlled by David Miscavige through the RTC."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Church of Scientology International and affiliated entities",
+        "how": "25-year IRS campaign won undisclosed tax exemption; Sea Org labor at $50/week; course fees generating hundreds of thousands per member"
+      },
+      {
+        "group": "David Miscavige",
+        "how": "Effective control of multi-billion dollar organization without public financial accountability"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Sea Org members",
+        "how": "Billion-year contracts at $50/week; RPF disciplinary labor; pregnancy pressure; family disconnection"
+      },
+      {
+        "group": "Members pursuing the Bridge to Total Freedom",
+        "how": "Estimated $500,000-$1M+ per person in course and auditing fees to reach top levels"
+      }
+    ],
+    "the_gap": "Sea Org members sign contracts committing to a billion years of service. They earn $50 a week. If they get pregnant they're pressured to have abortions to stay in Sea Org. The disciplinary program is called the Rehabilitation Project Force. The IRS gave them tax exemption in 1993 in a deal nobody has ever seen. The organization infiltrated 136 government agencies in the 1970s. Eleven officials were convicted. The founder's wife was one of them. A woman died after 17 days in their care in Florida. Criminal charges were filed and dropped. David Miscavige has been avoiding service of process for years. Hundreds of former senior officials have filed sworn statements about what they saw."
+  }
+}

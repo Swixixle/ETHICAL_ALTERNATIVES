@@ -1,0 +1,202 @@
+{
+  "brand_name": "Opus Dei",
+  "brand_slug": "opus-dei",
+  "parent_company": "Prelature of the Holy Cross and Opus Dei",
+  "ultimate_parent": "Holy See (Vatican City)",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "OPUS DEI RECRUITS TEENAGERS AS 'NUMERARY ASSISTANTS' — THEY DO HOUSEWORK FOR CELIBATE MALE MEMBERS FOR DECADES IN EXCHANGE FOR ROOM AND BOARD — AND FORMER MEMBERS ALLEGE PSYCHOLOGICAL MANIPULATION AND RESTRICTED CONTACT WITH FAMILY",
+  "executive_summary": "Opus Dei (Latin: 'Work of God') is a personal prelature of the Catholic Church founded by Spanish priest Josemaría Escrivá in 1928 and given its current canonical status by Pope John Paul II in 1982. It has approximately 90,000 members globally. Opus Dei's practices — including corporal mortification (wearing a spiked chain called a cilice and self-flagellation), strict gender segregation, controlled reading lists, required confession to Opus Dei priests, restrictions on contact with family members, and the numerary assistant category (primarily women who live in Opus Dei centers performing domestic labor for celibate male members) — have generated sustained criticism from former members, academic researchers, and human rights advocates. The organization is known for exceptional secrecy about its membership, finances, and internal practices, and for significant influence in Catholic ecclesiastical, political, and business circles globally.",
+  "verdict_tags": [
+    "numerary_assistants_domestic_labor_decades",
+    "cilice_corporal_mortification",
+    "controlled_reading_restriction_information",
+    "family_contact_restrictions_documented",
+    "secretive_membership_finances",
+    "political_influence_spain_latin_america_us",
+    "former_members_psychological_manipulation_documented",
+    "90000_members_significant_elite_networks"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": false
+  },
+  "labor": {
+    "summary": "Numerary assistants — a category of Opus Dei membership consisting predominantly of women — live in Opus Dei centers, perform domestic labor (cooking, cleaning, laundry) for the celibate male numeraries and priests who live there, and are compensated with room, board, and education. Former numerary assistants and academic researchers have documented that this arrangement places women in a servant role to men under the framework of spiritual vocation, with limited ability to leave given that their financial resources, social networks, and often their professional training exist within the Opus Dei structure. Former members have described being recruited as teenagers and not understanding the lifetime nature of the commitment.",
+    "flags": [
+      "numerary_assistants_domestic_labor_women_serve_men",
+      "recruited_teenagers_lifetime_commitment",
+      "financial_social_dependence_limits_exit"
+    ],
+    "sources": [
+      "https://www.escapetoopusdei.com"
+    ]
+  },
+  "environmental": {
+    "summary": "No major environmental enforcement actions against Opus Dei have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Opus Dei has cultivated political influence in Spain (particularly during and after the Franco era), Latin America, the United States, and the Vatican since its founding. In Spain, Opus Dei members held key positions in Franco's technocratic government from the 1950s through the 1970s. In the United States, Opus Dei has significant presence in elite educational institutions, law, finance, and government — documented members have included Supreme Court Justices Antonin Scalia, Clarence Thomas, and Samuel Alito, though membership is not confirmed for all. The organization's opposition to divorce, abortion, contraception, and LGBTQ rights has shaped its political activities across all jurisdictions where it has influence.",
+    "flags": [
+      "franco_spain_government_technocrats",
+      "us_elite_institutions_law_finance_government",
+      "supreme_court_documented_connections",
+      "abortion_lgbtq_political_positions"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "No major criminal convictions against Opus Dei as an institution have been documented. Former members have filed civil claims related to alleged labor exploitation of numerary assistants in multiple countries. In France, former members have filed complaints alleging mental manipulation and labor exploitation — French courts have dismissed some claims and accepted others for investigation. The organization's secretive financial structure makes independent financial verification impossible.",
+    "flags": [
+      "former_member_civil_claims_labor_exploitation",
+      "france_mental_manipulation_complaints",
+      "secretive_financial_structure_unverifiable"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Opus Dei is exempt from taxation as a Catholic religious organization in all countries where it operates. Its financial structure is not publicly disclosed. The organization's corporate work centers — schools, universities, and professional training centers — operate through affiliated secular institutions that vary in their tax treatment.",
+    "flags": [
+      "no_public_financial_disclosure",
+      "affiliated_secular_institutions_variable_tax"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Fernando Ocáriz Braña has been Prelate of Opus Dei since 2017. The Prelate is elected by the General Congress of Opus Dei and confirmed by the Pope. The organization's governance is documented in its Statutes, which establish a strictly gender-segregated structure in which women have no authority over the institution's overall direction. The founder Josemaría Escrivá was canonized by Pope John Paul II in 2002 — the fastest canonization process for a 20th century figure at the time. Opus Dei managed the canonization campaign with resources that critics of the process have documented as extraordinary.",
+    "flags": [
+      "strictly_gender_segregated_governance",
+      "escriva_fast_track_canonization_criticized",
+      "women_no_authority_overall_direction"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Opus Dei's documented connections to elite networks in law, finance, government, and Catholic hierarchy globally make it one of the most influential religious organizations per member on Earth. Its members hold positions in major law firms, investment banks, governments, and university faculties. The organization's influence in Vatican appointments — particularly under John Paul II and Benedict XVI — is documented by Vatican correspondents.",
+    "flags": [
+      "elite_networks_law_finance_government_documented",
+      "vatican_appointments_influence_jpii_b16"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former members — organized through groups including the Opus Dei Awareness Network (ODAN) — have alleged psychological manipulation through 'spiritual direction' that discourages critical thinking and outside information; restrictions on reading material that prevent members from accessing criticism of the organization; controlled contact with family members who are not in Opus Dei; and pressure on members to recruit others through cultivated friendships. Former numerary assistants have alleged that the domestic labor arrangement constitutes economic exploitation under a spiritual cover.",
+    "flags": [
+      "psychological_manipulation_spiritual_direction_alleged",
+      "restricted_reading_outside_information",
+      "family_contact_restrictions",
+      "recruitment_through_friendship_love_bombing_alleged",
+      "numerary_assistant_economic_exploitation_alleged"
+    ],
+    "sources": [
+      "https://www.odan.org"
+    ]
+  },
+  "health_record": {
+    "summary": "Corporal mortification practices — wearing the cilice (a spiked chain worn on the thigh for two hours daily) and using the discipline (a knotted rope for weekly self-flagellation) — are documented Opus Dei practices prescribed in the organization's founding texts. These practices involve intentional physical pain as a spiritual discipline. Mental health professionals and former members have documented the psychological harm associated with restricted information environments, controlled social networks, and guilt-based spiritual formation techniques.",
+    "flags": [
+      "cilice_spiked_chain_daily_wear_documented",
+      "discipline_self_flagellation_weekly_documented",
+      "restricted_information_psychological_harm",
+      "controlled_social_network_isolation"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Standard Catholic parish membership without the numerary commitment structure",
+      "Lay Catholic movements without corporal mortification practices"
+    ],
+    "healthier": [
+      "Catholic communities with transparent governance and no physical penance requirements",
+      "Secular professional networks without religious commitment structures"
+    ],
+    "diy": [
+      "Opus Dei Awareness Network (odan.org) — run by former members with documented experiences",
+      "'Beyond Belief' by Gareth Gore is a recent journalistic investigation",
+      "The organization's own Statutes are partially available — reading them against former member testimony provides the clearest picture"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1928,
+      "event": "Josemaría Escrivá founds Opus Dei in Madrid during politically volatile Spain",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1946,
+      "event": "Opus Dei moves its headquarters to Rome; begins international expansion",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1957,
+      "event": "Opus Dei members become key figures in Franco's technocratic government; Spain's economic development directed by Opus Dei-connected ministers",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 1975,
+      "event": "Founder Josemaría Escrivá dies; Alberto Vázquez de Prada and others develop the canonization campaign",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1982,
+      "event": "Pope John Paul II grants Opus Dei status as a Personal Prelature — unique canonical status giving it independence from local bishops",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 1994,
+      "event": "Opus Dei Awareness Network (ODAN) founded by former members to document practices and support those leaving",
+      "severity": "moderate",
+      "source_url": ""
+    },
+    {
+      "year": 2002,
+      "event": "Escrivá canonized by John Paul II — fastest canonization of a 20th century figure; canonization campaign criticized for pace",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "Fernando Ocáriz Braña becomes Prelate; begins modest transparency reforms including publication of membership numbers",
+      "severity": "neutral",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Former members who leave Opus Dei — particularly numeraries who joined as teenagers — have documented losing their housing, social network, and financial resources simultaneously, as all three exist within the Opus Dei structure. The organization's requirement that numeraries turn over their professional earnings to the organization means members who leave often do so with few financial resources and a gap in their professional network.",
+    "price_illusion": "Opus Dei presents membership as a path to sanctifying ordinary life and professional work. The full cost — for numeraries — includes celibacy, turning over professional income, domestic labor arrangements (for numerary assistants), corporal mortification, and restrictions on information and family contact that former members have documented as psychologically coercive.",
+    "tax_math": "Opus Dei's finances are not publicly disclosed. Its affiliated schools, universities, and professional centers operate through secular institutions with their own tax arrangements. The organization's network of elite connections generates influence that does not require direct financial expenditure.",
+    "wealth_velocity": "Numerary members who are professionals turn over their professional income to Opus Dei. The organization's accumulated assets — including significant real estate associated with its centers globally — are not publicly disclosed."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Opus Dei as institution",
+        "how": "Numerary professional income turned over; numerary assistant domestic labor; elite network cultivation generating political and ecclesiastical influence"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Numerary members",
+        "how": "Professional income turned over; celibacy; restricted information environment; corporal mortification"
+      },
+      {
+        "group": "Numerary assistants",
+        "how": "Domestic labor serving celibate male members for decades; recruited as teenagers; limited exit due to financial and social dependence built within the organization"
+      }
+    ],
+    "the_gap": "Numerary assistants join Opus Dei as teenagers. They perform domestic labor — cooking, cleaning, laundry — for celibate male members. They are compensated with room and board. They do this for decades. The founder said this was their vocation. They wear a spiked chain on their thigh for two hours a day as a spiritual exercise. They read from approved lists. Former members who leave lose their housing, their income, and their social network simultaneously. The organization's membership list is not public. Its finances are not disclosed."
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "brand_name": "Prosperity Gospel Sector",
+  "brand_slug": "prosperity-gospel-sector",
+  "parent_company": "Multiple independent ministries (sector profile)",
+  "ultimate_parent": "No single entity — sector analysis",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "KENNETH COPELAND LIVES IN A $7 MILLION MANSION TAX-FREE AND SAID GOD TOLD HIM TO FLY PRIVATE — THE SECTOR COLLECTIVELY RAISES BILLIONS FROM PREDOMINANTLY POOR CONGREGATIONS BY TEACHING THAT DONATIONS PRODUCE WEALTH",
+  "executive_summary": "The Prosperity Gospel — also called Word of Faith, Health and Wealth Gospel, or Name It and Claim It theology — is a theological tradition teaching that financial wealth, physical health, and material success are God's will for believers and that donations to ministries ('seed faith') produce material returns. The sector's major figures — including Kenneth Copeland, Creflo Dollar, Joel Osteen, Benny Hinn, and Kenneth Hagin (founder) — have accumulated extraordinary personal wealth through ministries that primarily serve lower-income congregations and are almost entirely exempt from financial transparency requirements. A 2019 Dallas Morning News investigation found that Kenneth Copeland's ministry raised $1 billion over a decade. Copeland has publicly said God told him to fly private jets because commercial aviation would expose him to 'demons.' His ministry-owned $7 million mansion is not subject to property tax. Senator Chuck Grassley (R-IA) investigated six prosperity gospel ministries in 2007-2011; most refused to provide financial documents.",
+  "verdict_tags": [
+    "kenneth_copeland_7m_mansion_tax_free",
+    "copeland_1b_raised_decade",
+    "grassley_investigation_refused_documents",
+    "seed_faith_theology_wealth_extraction",
+    "private_jet_ministry_tax_exempt",
+    "predominantly_lower_income_congregations",
+    "benny_hinn_divorce_remarriage_healing_fraud_allegations",
+    "creflo_dollar_65m_jet_request_congregation"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Prosperity gospel ministries employ staff under standard nonprofit employment arrangements. No major documented systemic labor violations at the sector level have been identified beyond the standard critique of below-market nonprofit compensation.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "The private aviation fleets associated with major prosperity gospel ministries — multiple jets owned by Kenneth Copeland Ministries, Jesse Duplantis, Creflo Dollar — represent significant per-person carbon footprints justified by the ministers as ministry necessities.",
+    "flags": [
+      "private_jet_fleets_significant_carbon_religious_justification"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Prosperity gospel ministries have been significant funders and supporters of conservative political candidates. Paula White — a prosperity gospel minister — was appointed as Donald Trump's spiritual advisor and served in the White House Office of Public Liaison. Kenneth Copeland's endorsement of Trump and his prayer ceremonies on White House grounds were widely documented. The sector's political alignment with conservative politics coexists with its theological teaching that financial success is divine favor — a framework that validates existing wealth concentration.",
+    "flags": [
+      "paula_white_white_house_spiritual_advisor",
+      "copeland_trump_political_endorsement_white_house",
+      "theological_validation_wealth_concentration"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Senator Chuck Grassley's 2007-2011 investigation: Grassley sent detailed financial questionnaires to six prosperity gospel ministries — Kenneth Copeland Ministries, Creflo Dollar Ministries, Benny Hinn Ministries, Joyce Meyer Ministries, Eddie Long's New Birth Missionary Baptist Church, and Randy and Paula White Ministries. Most refused to comply or provided incomplete documents. The investigation concluded without criminal charges, primarily because the legal standards for proving improperly taxable religious organization income are extremely difficult to meet. Benny Hinn: multiple journalists and former ministry employees have documented that healing claims made at Hinn's crusades — where people in wheelchairs appear to walk and tumors appear to disappear — have not been medically verified and that individuals documented as healed subsequently reported their conditions had not improved. No successful criminal fraud prosecution has been completed.",
+    "flags": [
+      "grassley_investigation_six_ministries_refused_documents",
+      "no_criminal_charges_evidence_standard",
+      "benny_hinn_healing_claims_unverified_documented"
+    ],
+    "sources": [
+      "https://www.grassley.senate.gov/news/news-releases/grassley-releases-tax-exempt-status-for-media-based-ministries-investigation"
+    ]
+  },
+  "tax": {
+    "summary": "Prosperity gospel ministries operate as tax-exempt religious organizations and are not required to file Form 990 financial disclosures. Ministers' housing — often lavish — is covered by the 'parsonage exemption' which excludes housing allowances from federal income tax without caps. Kenneth Copeland's $7 million, 18,000 square foot mansion is exempt from property tax as a religious minister's residence. Creflo Dollar requested $65 million from his congregation for a private jet in 2015. The Congressional Research Service has documented that the parsonage exemption — worth an estimated $800 million annually across all ministers — is available without a cap, allowing it to shelter enormous housing expenditures at the most wealthy end of ministry.",
+    "flags": [
+      "parsonage_exemption_no_cap_800m_annual",
+      "copeland_7m_mansion_property_tax_exempt",
+      "no_form_990_required",
+      "dollar_65m_jet_congregation_request",
+      "grassley_investigation_no_transparency_achieved"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Kenneth Copeland — whose net worth is estimated at $300+ million — leads Kenneth Copeland Ministries from Fort Worth, Texas and is among the wealthiest prosperity gospel ministers. Creflo Dollar, Joel Osteen (pastor of Lakewood Church, Houston), Paula White, Joyce Meyer, and Benny Hinn are among the sector's most prominent figures. Each operates an independent ministry with no denominational financial oversight. Senator Grassley's investigation found that most declined to provide financial information even under Congressional inquiry.",
+    "flags": [
+      "copeland_300m_estimated_net_worth",
+      "no_denominational_financial_oversight",
+      "grassley_congressional_inquiry_refused"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The prosperity gospel sector's influence extends globally — its theology has shaped Pentecostal Christianity in Brazil, Nigeria, South Korea, and across sub-Saharan Africa, where local prosperity gospel ministers have built television empires and megachurches serving lower-income urban populations with the same wealth-for-donation theology. This represents a global export of a theological framework that extracts wealth from lower-income believers to concentrate it in ministry executives.",
+    "flags": [
+      "global_export_nigeria_brazil_south_korea_sub_saharan_africa",
+      "lower_income_congregation_wealth_extraction_global"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Academic theologians, investigative journalists, and former ministry employees have alleged that the 'seed faith' theological framework — which teaches that donations produce financial returns — is knowingly deployed by prosperity gospel ministers as a fundraising mechanism rather than as a genuine theological belief the ministers hold about their own giving. Critics allege that the ministers' documented accumulation of personal wealth funded by lower-income congregations constitutes a documented pattern of wealth extraction operating through religious exemption. No criminal fraud prosecution has succeeded in this framework because the theological claim — that donations produce returns from God — is protected speech.",
+    "flags": [
+      "seed_faith_fundraising_mechanism_not_genuine_belief_alleged",
+      "wealth_extraction_lower_income_documented_not_criminal",
+      "protected_speech_theological_claim"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Benny Hinn's healing crusades — and similar events by other prosperity gospel ministers — have been documented by journalists and former ministry employees to involve staged or unverified healings. People who arrived at crusades in wheelchairs and appeared to walk were later found to have had conditions that did not improve; people who declared themselves healed of cancer at crusades were documented in follow-up investigations to have continued disease progression. The theological teaching that illness reflects insufficient faith — which is not universal in the sector but present in Word of Faith theology — creates documented psychological harm for sick people who are taught they are ill because they do not believe enough or have not given enough.",
+    "flags": [
+      "benny_hinn_unverified_healings_documented",
+      "illness_insufficient_faith_theology",
+      "cancer_patients_declared_healed_documented_not_healed"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Churches with published budgets and third-party financial audits",
+      "Non-prosperity gospel evangelical churches where minister compensation is disclosed and reasonable"
+    ],
+    "healthier": [
+      "Churches that do not theologically frame illness as insufficient faith",
+      "Medical care through licensed providers rather than healing crusade attendance"
+    ],
+    "diy": [
+      "Trinity Foundation (trinityfi.org) tracks prosperity gospel minister finances and documents specific cases",
+      "The Wall Street Journal has published multiple investigations into specific ministries",
+      "Senator Grassley's investigation documents are available through his Senate website"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1949,
+      "event": "Kenneth Hagin begins developing Word of Faith theology that will underpin prosperity gospel — based on his interpretation of Mark 11:24",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1974,
+      "event": "Kenneth Copeland founded Kenneth Copeland Ministries; begins building television and publication empire from Fort Worth, Texas",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1987,
+      "event": "PTL Ministry (Jim Bakker) collapses — exposing televangelism financial practices; prosperity gospel sector responds by emphasizing theology rather than accountability",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2007,
+      "event": "Senator Grassley launches investigation of six prosperity gospel ministries; most refuse to provide financial documents",
+      "severity": "critical",
+      "source_url": "https://www.grassley.senate.gov/news/news-releases/grassley-releases-tax-exempt-status-for-media-based-ministries-investigation"
+    },
+    {
+      "year": 2011,
+      "event": "Grassley investigation concludes without criminal charges; recommends voluntary financial transparency standards that are largely ignored",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2015,
+      "event": "Creflo Dollar requests $65M from congregation to purchase Gulfstream G650 private jet; public backlash; jet subsequently acquired",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "Kenneth Copeland tells journalist he flies private because commercial travel exposes him to 'demons'; video widely circulated",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "Paula White serves as Trump's spiritual advisor; conducts ceremonies at White House",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Prosperity gospel congregations are documented to skew toward lower-income communities — particularly in the United States, Nigeria, Brazil, and South Korea — where the theological promise of material return on spiritual investment is most economically urgent. Money flows from these communities to minister-controlled entities operating with no financial transparency.",
+    "price_illusion": "Prosperity gospel presents donation as investment — 'seed faith' theology explicitly teaches that money given to the ministry produces material return from God. The documented outcome is that minister personal wealth grows while congregation median income remains unchanged.",
+    "tax_math": "The parsonage exemption — no cap — means Kenneth Copeland's $7 million mansion is both property-tax exempt and not subject to income tax for the housing allowance portion. His ministry raises $100+ million annually with no Form 990 disclosure. The sector collectively receives hundreds of millions in tax-deductible donations from lower-income congregants who are taught the donations will produce material returns.",
+    "wealth_velocity": "Kenneth Copeland's estimated $300+ million net worth was accumulated through a tax-exempt ministry serving predominantly lower-income congregations. The theological framework — seed faith — presents this wealth transfer as spiritually beneficial to donors. It operates entirely within legal parameters because the theological claim is protected speech."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Prosperity gospel ministers (Copeland, Dollar, Osteen, Hinn, White)",
+        "how": "Hundreds of millions in personal wealth accumulated through tax-exempt ministries with no Form 990 disclosure; mansion housing exemptions; private jets funded by ministry"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Lower-income congregation members",
+        "how": "'Seed faith' donations to ministers teaching that financial giving produces material returns; documented outcomes show minister wealth growing, not congregation wealth"
+      }
+    ],
+    "the_gap": "Kenneth Copeland has a $7 million mansion. It is tax-free. He flies private jets. He said God told him to because commercial travel has demons. He raised $1 billion over a decade. His congregation is predominantly lower-income. The theology teaches that donating to the ministry produces financial returns from God. Senator Grassley investigated six ministries. They refused to provide documents. No criminal charges were filed. The parsonage exemption has no cap. Creflo Dollar asked his congregation for $65 million for a jet. They gave it to him."
+  }
+}
