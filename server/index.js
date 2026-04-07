@@ -22,6 +22,7 @@ import perimeterRouter from './routes/perimeter.route.js';
 import cityNarrativeRouter from './routes/cityNarrative.route.js';
 import impactRouter from './routes/impact.js';
 import barcodeRouter from './routes/barcode.route.js';
+import reportErrorRouter from './routes/reportError.route.js';
 import { getProviderHealthSnapshot } from './services/aiProvider.js';
 import {
   investigationCache,
@@ -106,6 +107,7 @@ app.get('/proportionality', (req, res) => {
 app.use('/api/workers', workersRouter);
 app.use('/api', tapRouter);
 app.use('/api/barcode', barcodeRouter);
+app.use('/api/report-error', reportErrorRouter);
 app.use('/api', impactRouter);
 app.use('/api/profiles', profileIndexRouter);
 app.use('/api/library', libraryRouter);

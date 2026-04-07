@@ -31,6 +31,7 @@ import DirectoryPage from './pages/DirectoryPage.jsx';
 import ImpactPublicPage from './pages/ImpactPublicPage.jsx';
 import Library from './pages/Library.jsx';
 import ImpactOutcomePrompt from './components/ImpactOutcomePrompt.jsx';
+import ReportErrorSheet from './components/ReportErrorSheet.jsx';
 import { getImpactConsentOutcome, getImpactFetchHeaders } from './lib/impactConsent.js';
 import './App.css';
 
@@ -318,6 +319,7 @@ export default function App() {
   }, [result]);
 
   const [showShare, setShowShare] = useState(false);
+  const [showReportError, setShowReportError] = useState(false);
   const [researchNarrativeOn, setResearchNarrativeOn] = useState(false);
 
   /** Local documentary overlay during async investigation */
@@ -495,6 +497,10 @@ export default function App() {
 
   useEffect(() => {
     if (!result) setShowShare(false);
+  }, [result]);
+
+  useEffect(() => {
+    if (!result) setShowReportError(false);
   }, [result]);
 
   useEffect(() => {
@@ -1025,6 +1031,7 @@ export default function App() {
                 haptic('confirm');
                 setShowShare(true);
               }}
+              onReportError={() => setShowReportError(true)}
               onRunLiveInvestigation={() => {
                 const b =
                   id && typeof id.brand === 'string' && id.brand.trim()
@@ -1033,6 +1040,17 @@ export default function App() {
                 if (b) void investigateByBrandNav(b);
               }}
             />
+            {showReportError && result?.identification ? (
+              <ReportErrorSheet
+                brandName={
+                  result.identification.brand ||
+                  result.identification.corporate_parent ||
+                  'Unknown'
+                }
+                brandSlug={result.identification.resolved_incumbent_slug || null}
+                onClose={() => setShowReportError(false)}
+              />
+            ) : null}
           </div>
         ) : null}
       </div>

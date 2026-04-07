@@ -649,6 +649,7 @@ function confidenceLabelFromId(c) {
  *   showNoRecordModule?: boolean;
  *   onHireDirectShareFootnote?: (footnote: string) => void;
  *   onWrongBrand?: () => void;
+ *   onReportError?: () => void;
  *   userCaptureSrc?: string | null;
  *   referenceImageSrc?: string | null;
  *   tapPositionNormalized?: { x: number; y: number } | null;
@@ -665,6 +666,7 @@ export default function InvestigationCard({
   showNoRecordModule = false,
   onHireDirectShareFootnote,
   onWrongBrand,
+  onReportError,
   userCaptureSrc = null,
   referenceImageSrc = null,
   tapPositionNormalized = null,
@@ -1287,6 +1289,28 @@ export default function InvestigationCard({
             Share this record
           </button>
         </div>
+      ) : null}
+      {typeof onReportError === 'function' ? (
+        <button
+          type="button"
+          onClick={onReportError}
+          data-no-disintegrate
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontSize: 9,
+            letterSpacing: 1,
+            textTransform: 'uppercase',
+            background: 'transparent',
+            border: 'none',
+            color: '#4a6a7a',
+            cursor: 'pointer',
+            padding: '4px 0',
+            marginTop: 8,
+            display: 'block',
+          }}
+        >
+          report an error
+        </button>
       ) : null}
     </section>
   );
