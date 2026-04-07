@@ -23,6 +23,11 @@ router.get('/', async (req, res) => {
         brand_slug,
         brand_name,
         parent_company,
+        COALESCE(
+          NULLIF(TRIM(profile_json->>'profile_type'), ''),
+          NULLIF(TRIM(profile_type::text), ''),
+          'database'
+        ) AS profile_type,
         LOWER(COALESCE(
           NULLIF(TRIM(profile_json->>'overall_concern_level'), ''),
           NULLIF(TRIM(overall_concern_level::text), ''),
@@ -46,6 +51,7 @@ router.get('/', async (req, res) => {
       slug: row.brand_slug,
       name: row.brand_name,
       parent: row.parent_company || '',
+      profile_type: row.profile_type || 'database',
       concern_level: row.concern_level || 'unknown',
       headline: row.headline || '',
       summary_snippet: row.summary_snippet || '',
