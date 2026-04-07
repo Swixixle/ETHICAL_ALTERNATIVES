@@ -23,6 +23,7 @@ import {
   recordImpactAfterTapPreview,
   recordImpactAfterTypedInvestigate,
 } from '../services/impactAnalytics.js';
+import { tapRateLimit } from '../middleware/tapRateLimit.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -205,7 +206,7 @@ async function loadAlternativesBundle(finalIdentification, user_lat, user_lng) {
   };
 }
 
-router.post('/tap', async (req, res) => {
+router.post('/tap', tapRateLimit, async (req, res) => {
   const t0 = Date.now();
   const { image_base64, tap_x, tap_y, user_lat, user_lng, selection_box } = req.body || {};
 
@@ -374,7 +375,7 @@ router.post('/tap/sourcing', async (req, res) => {
 });
 
 /** POST /api/tap/investigation — deep research only (progressive loading). */
-router.post('/tap/investigation', async (req, res) => {
+router.post('/tap/investigation', tapRateLimit, async (req, res) => {
   const t0 = Date.now();
   const { identification, session_id, user_lat, user_lng } = req.body || {};
 

@@ -82,7 +82,8 @@ const CARDS = [
     headlineFont: "'Space Mono', monospace",
     label: 'BEFORE YOU CONTINUE',
     headline: 'No account. No tracking. Just receipts.',
-    subtext: "Location is used only to find what's near you. Never stored. Never sold.",
+    subtext:
+      "Location is used only to find what's near you. Never stored. Never sold. 5 free investigations per day — no account needed.",
     accent: 'none',
     footer: 'cta',
     footerStyle: 'cta',
