@@ -1,0 +1,180 @@
+{
+  "brand_name": "Orthodox Union",
+  "brand_slug": "orthodox-union",
+  "parent_company": "Union of Orthodox Jewish Congregations of America",
+  "ultimate_parent": "Union of Orthodox Jewish Congregations of America",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "THE ORTHODOX UNION RUNS THE MOST RECOGNIZED KOSHER CERTIFICATION IN THE WORLD — IT ALSO LOBBIES AGAINST LGBTQ RIGHTS AND ITS AFFILIATED NCSY YOUTH GROUP HAD A RABBI CONVICTED OF SEXUAL ABUSE OF TEENS",
+  "executive_summary": "The Union of Orthodox Jewish Congregations of America (Orthodox Union / OU) is the largest Orthodox Jewish synagogue organization in North America with approximately 1,000 member congregations. It operates the world's most recognized kosher certification symbol — the OU hechsher — found on approximately 1 million products globally, generating significant certification fee revenue. The OU's affiliated youth organization NCSY (National Conference of Synagogue Youth) has been the site of documented sexual abuse by rabbinical advisors, including Rabbi Baruch Lanner — who abused teenage members for decades before the Forward's investigation in 2000 led to his conviction and imprisonment. The OU's political arm engages in advocacy on issues including LGBTQ rights — opposing same-sex marriage and LGBTQ civil rights protections. Its political advocacy also includes support for government vouchers for religious school tuition and religious freedom exemptions.",
+  "verdict_tags": [
+    "ou_hechsher_1_million_products_certification",
+    "ncsy_baruch_lanner_decades_abuse_conviction",
+    "forward_2000_investigation_preceded_conviction",
+    "lgbtq_rights_opposition_documented",
+    "government_voucher_religious_school_advocacy",
+    "1000_member_congregations",
+    "mandatory_reporting_policy_questions",
+    "largest_orthodox_synagogue_org"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "The Orthodox Union employs several hundred staff across its synagogue, youth, kosher certification, and Israel advocacy divisions. No major documented systemic labor violations beyond the NCSY abuse have been identified.",
+    "flags": [
+      "ncsy_abuse_documented"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental positions or enforcement actions have been identified for the Orthodox Union.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The OU's political advocacy — conducted through its Institute for Public Affairs — has focused on: opposing same-sex marriage and LGBTQ civil rights protections; supporting government vouchers for religious school tuition (the most significant Orthodox political priority); advocating for religious freedom exemptions from non-discrimination laws; and opposing abortion access. The OU's political positions are standard Modern Orthodox consensus positions — more engaged with secular legal systems than Haredi positions, but similarly conservative on LGBTQ and reproductive issues.",
+    "flags": [
+      "lgbtq_opposition_same_sex_marriage",
+      "government_voucher_religious_school_primary_priority",
+      "religious_freedom_exemption_advocacy",
+      "abortion_opposition"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "NCSY Rabbi Baruch Lanner: The Forward's 2000 investigation documented that Lanner had abused teenage NCSY members for approximately 25 years, and that the OU had received complaints about him for years without taking adequate action. Lanner was subsequently convicted of sexual abuse and sentenced to 7 years. He was released and later violated parole. The OU commissioned an independent review following the Forward investigation that found significant institutional failures in handling complaints about Lanner. No other criminal enforcement actions against the OU have been identified.",
+    "flags": [
+      "lanner_25_years_abuse_conviction_7_years",
+      "ou_complaints_for_years_inadequate_action",
+      "forward_2000_investigation_preceded_action",
+      "ou_independent_review_institutional_failure_found"
+    ],
+    "sources": [
+      "https://forward.com/news/3926/un-orthodox/"
+    ]
+  },
+  "tax": {
+    "summary": "The Orthodox Union is a 501(c)(3) organization that files Form 990. Its kosher certification revenue — from certification fees paid by food companies — is a significant revenue source. Total OU revenue exceeds $30 million annually. Its political advocacy is conducted through the Institute for Public Affairs as a component of the 501(c)(3) rather than a separate political entity.",
+    "flags": [
+      "form_990_public",
+      "30m_plus_annual_revenue",
+      "kosher_certification_fee_revenue",
+      "ipa_political_advocacy_501c3"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Rabbi Moshe Hauer serves as Executive Vice President of the Orthodox Union. The OU's leadership has conducted more external accountability processes than many Orthodox institutions — including the independent review following the Lanner scandal — while maintaining institutional policy positions that have drawn criticism from LGBTQ advocates. The OU's response to Lanner was significantly better than many comparable institutions' responses to abuse, though the failure to act on years of complaints before the Forward investigation remains documented.",
+    "flags": [
+      "independent_review_commissioned_post_lanner",
+      "complaints_years_before_action_documented"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The OU's kosher certification — the OU hechsher — is the most recognized kosher symbol globally, appearing on approximately 1 million products. This gives the OU significant institutional relationships with major food companies including those also documented in EthicalAlt's corporate profiles. The OU's political network connects it to the broader Orthodox political ecosystem including Agudath Israel, the RCA (Rabbinical Council of America), and the Orthodox Jewish Chamber of Commerce.",
+    "flags": [
+      "1_million_products_major_food_company_relationships",
+      "agudath_israel_rca_political_network"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Survivors and advocacy organizations have alleged that the OU's independent review — while it found institutional failures — did not fully account for the extent of leadership knowledge about Lanner or the full scope of the failures in complaint handling. The OU has disputed the extent of leadership knowledge. Additional NCSY abuse cases in the years following the Lanner case have raised questions about whether the structural reforms implemented post-Lanner were sufficient.",
+    "flags": [
+      "independent_review_leadership_knowledge_disputed",
+      "post_lanner_additional_cases_structural_reform_adequacy"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Baruch Lanner abused teenage NCSY members for approximately 25 years — documented in the Forward's 2000 investigation and confirmed in his criminal conviction. The OU had received complaints about Lanner during this period and had not taken adequate action. Teenagers who were abused in the context of a trusted rabbinical youth organization experienced documented lasting psychological harm.",
+    "flags": [
+      "lanner_25_years_ncsy_teens_documented",
+      "ou_complaints_years_inadequate_action",
+      "trusted_rabbinical_context_harm_amplified"
+    ],
+    "sources": [
+      "https://forward.com/news/3926/un-orthodox/"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Conservative Judaism's United Synagogue of Conservative Judaism — different denomination with same-sex marriage acceptance",
+      "Reconstructionist Rabbinical Association — full LGBTQ inclusion"
+    ],
+    "healthier": [
+      "Jewish communities with published LGBTQ-inclusive policies and independent abuse reporting mechanisms"
+    ],
+    "diy": [
+      "OU's Form 990 is available at ProPublica Nonprofit Explorer",
+      "The Forward's 2000 Baruch Lanner investigation is publicly available in archive"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1898,
+      "event": "Orthodox Union founded",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1924,
+      "event": "OU hechsher kosher certification symbol introduced",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1975,
+      "event": "Estimated beginning of documented Baruch Lanner abuse of NCSY teenage members",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2000,
+      "event": "The Forward publishes investigation documenting Lanner's 25 years of abuse and OU's failure to act on years of complaints",
+      "severity": "critical",
+      "source_url": "https://forward.com/news/3926/un-orthodox/"
+    },
+    {
+      "year": 2000,
+      "event": "OU commissions independent review; review finds institutional failures; Lanner convicted; sentenced to 7 years",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2015,
+      "event": "Lanner released; subsequently violates parole",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Teenage NCSY members who were abused by Baruch Lanner over 25 years — in the context of a trusted rabbinical youth organization — experienced documented lasting psychological harm. The OU's failure to act on years of complaints before the Forward investigation extended the period of harm.",
+    "price_illusion": "The Orthodox Union's OU hechsher is one of the most trusted symbols in consumer food certification — appearing on 1 million products and relied upon by observant Jews globally. The organization behind that symbol had a 25-year undisclosed abuse problem in its youth organization before a journalism investigation forced accountability.",
+    "tax_math": "The OU's kosher certification fees — paid by major food companies for the right to display the OU symbol — generate significant revenue for a 501(c)(3) organization. Its political advocacy — conducted through its Institute for Public Affairs — benefits from the 501(c)(3) framework.",
+    "wealth_velocity": "The OU's $30+ million annual revenue is driven significantly by kosher certification fees — a private religious certification system that effectively generates a tax-advantaged revenue stream from the food industry."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Orthodox Union as institution",
+        "how": "25 years of Lanner tenure during which abuse occurred; complaints handled inadequately; institutional reputation protected until journalism forced accountability"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "NCSY teenage members abused by Lanner",
+        "how": "25 years of abuse by trusted rabbinical authority figure; OU received complaints and did not act adequately; Forward investigation was required to produce accountability"
+      }
+    ],
+    "the_gap": "Rabbi Baruch Lanner abused teenagers in NCSY for 25 years. The Orthodox Union received complaints about him. They did not act adequately. The Forward investigated and published in 2000. Lanner was convicted. The OU commissioned an independent review that found institutional failures. Lanner was sentenced to 7 years. He violated parole after release. The OU's kosher symbol is on 1 million food products. Their political arm opposes same-sex marriage and LGBTQ civil rights. They are tax-exempt."
+  }
+}

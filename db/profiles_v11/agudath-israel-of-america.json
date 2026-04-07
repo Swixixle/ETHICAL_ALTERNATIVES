@@ -1,0 +1,171 @@
+{
+  "brand_name": "Agudath Israel of America",
+  "brand_slug": "agudath-israel-of-america",
+  "parent_company": "Agudath Israel of America",
+  "ultimate_parent": "Moetzes Gedolei HaTorah (Council of Torah Sages)",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "AGUDATH ISRAEL LOBBIED AGAINST MANDATORY REPORTING LAWS FOR RABBIS AND AGAINST STATUTE OF LIMITATIONS EXTENSIONS THAT WOULD HAVE HELPED ABUSE SURVIVORS — WHILE REPRESENTING THE MOST POLITICALLY POWERFUL HAREDI BLOC IN AMERICA",
+  "executive_summary": "Agudath Israel of America is the primary political and advocacy organization representing Haredi (ultra-Orthodox) Jewish interests in the United States. It is governed by the Moetzes Gedolei HaTorah — a council of senior rabbinical authorities whose rulings Agudath Israel implements in the political sphere. Agudath Israel has been the primary lobbying force against: mandatory reporting laws that would require rabbis to report suspected child abuse to civil authorities (they have lobbied for a 'rabbi exemption'); extensions of statutes of limitations that would allow more abuse survivors to sue; and legislation that would impose secular education standards on Haredi yeshivas. Simultaneously, it has successfully lobbied for: public funding for yeshiva busing and services, tax credits for private religious school tuition, and protection of bloc-voting communities' political interests. The organization exercises influence through both Albany (New York State) and Washington DC lobbying operations funded by member communities.",
+  "verdict_tags": [
+    "mandatory_reporting_rabbi_exemption_lobbying",
+    "statute_limitations_extension_opposition",
+    "yeshiva_secular_education_standard_opposition",
+    "public_yeshiva_funding_lobbying",
+    "bloc_voting_political_leverage_documented",
+    "moetzes_council_governance",
+    "new_york_albany_washington_dual_lobbying",
+    "abuse_survivor_accountability_obstacles"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": false
+  },
+  "labor": {
+    "summary": "Agudath Israel employs policy, legal, and communications staff. No major documented labor violations have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental positions or enforcement actions have been identified for Agudath Israel.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Agudath Israel's political influence operates primarily through New York State and City, where Haredi communities constitute significant bloc voting constituencies. Documented political activities: Successfully lobbying against mandatory reporting bills that would have required clergy (including rabbis) to report suspected child abuse to civil authorities — arguing that confidential rabbinic counseling relationships should be privileged like attorney-client relationships. Successfully opposing statute of limitations extension bills that would have opened a window for historical abuse survivors to sue institutions. Lobbying for and obtaining public funds for yeshiva busing, special education services, and other services — while opposing state oversight of yeshiva secular education quality.",
+    "flags": [
+      "mandatory_reporting_clergy_exemption_opposition_documented",
+      "statute_limitations_window_opposition",
+      "public_funds_obtained_oversight_opposed",
+      "new_york_bloc_voting_leverage"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Agudath Israel has filed or supported amicus briefs in multiple significant cases including religious freedom cases before the Supreme Court. Its most controversial legal positioning has been its opposition to mandatory reporting requirements for clergy — arguing through its legal arm that rabbinic privilege should exempt rabbis from mandatory child abuse reporting requirements. This position has been documented in New York State legislative records across multiple sessions.",
+    "flags": [
+      "amicus_briefs_supreme_court_multiple",
+      "mandatory_reporting_exemption_legislative_documented",
+      "new_york_multiple_sessions_opposition"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Agudath Israel is a 501(c)(3) organization that files Form 990 — its finances are publicly available. It has successfully lobbied for public funding streams that benefit its constituent communities — including yeshiva busing, special education, and textbook programs — while opposing the oversight conditions that accompany public funding in other contexts.",
+    "flags": [
+      "form_990_public",
+      "public_funding_without_oversight_lobbying_documented"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Rabbi Chaim Dovid Zwiebel serves as Executive Vice President. The organization's ultimate authority rests with the Moetzes Gedolei HaTorah — a council of senior rabbinical authorities. This governance structure means Agudath Israel's political positions reflect rabbinical consensus decisions — giving them religious authority within the community and making them difficult to challenge from within.",
+    "flags": [
+      "zwiebel_executive_vice_president",
+      "moetzes_rabbinical_authority_governance",
+      "religious_authority_difficult_challenge"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Agudath Israel's bloc voting relationships have given it documented influence with governors, state legislators, and city officials in New York across party lines. These relationships have been particularly documented in Andrew Cuomo's administration, where Haredi communities' political support intersected with documented state responses to COVID-19 enforcement in those communities.",
+    "flags": [
+      "cuomo_haredi_documented_political_relationship",
+      "covid_enforcement_political_accommodation_documented",
+      "bipartisan_documented_leverage"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Abuse survivor advocates have alleged that Agudath Israel's lobbying against mandatory reporting and statute of limitations extensions is motivated primarily by institutional protection — limiting civil liability for Haredi institutions and limiting criminal exposure for community members — rather than by genuine religious principle. Agudath Israel maintains its positions are based on halachic (Jewish legal) principles including the mesirah doctrine. The legislative record documents the practical effect regardless of motivation.",
+    "flags": [
+      "institutional_protection_motivation_alleged",
+      "halachic_principle_claimed",
+      "legislative_effect_documented_regardless"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Agudath Israel's opposition to mandatory reporting laws — if those laws had passed — would have required rabbis to report suspected child abuse to civil authorities, potentially enabling earlier intervention in cases documented to have continued for years. The direct health consequence of successfully opposing mandatory reporting is that abuse cases that would have been reported remain handled internally. The Weberman case — where community leaders held a fundraiser for a convicted abuser — illustrates the documented pattern that mandatory reporting advocates argue their legislation would have changed.",
+    "flags": [
+      "mandatory_reporting_opposition_abuse_reporting_barrier",
+      "weberman_case_illustrates_internal_handling_pattern"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "OU Advocacy (Orthodox Union's political arm) — represents modern Orthodox interests with somewhat different positions on some accountability questions",
+      "National Council of Jewish Women — advocacy organization with different positions on abuse reporting laws"
+    ],
+    "healthier": [
+      "Organizations supporting abuse survivor legislation: CHILD USA, SNAP"
+    ],
+    "diy": [
+      "Agudath Israel's Form 990 is publicly available at ProPublica Nonprofit Explorer",
+      "New York State legislative records document specific bills Agudath Israel opposed"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1922,
+      "event": "Agudath Israel of America founded",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2012,
+      "event": "Weberman case brings Haredi abuse cover-up to national attention; Agudath Israel's mandatory reporting opposition becomes more publicly scrutinized",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2015,
+      "event": "New York State considering statute of limitations extension for abuse claims; Agudath Israel opposes; bill does not pass in that session",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "New York State passes Child Victims Act — extending statute of limitations; Agudath Israel had opposed earlier versions; passed over its opposition",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "New York State issues yeshiva secular education regulations; Agudath Israel challenges in court",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Abuse survivors in Haredi communities whose cases were handled internally — in part because mandatory reporting laws that would have required external reporting were successfully opposed by Agudath Israel — experienced documented outcomes consistent with institutional protection of abusers over victims.",
+    "price_illusion": "Agudath Israel presents as the voice of Orthodox Jewish values in the political sphere — advocating for religious freedom and community interests. Its specific legislative record on mandatory reporting and statute of limitations extension represents advocacy that abuse survivor organizations have documented as creating barriers to accountability for abuse within Haredi institutions.",
+    "tax_math": "Agudath Israel's lobbying for public funding (yeshiva busing, special education, tuition tax credits) while opposing oversight of how that funding is used represents a documented accountability gap in public fund administration.",
+    "wealth_velocity": "Agudath Israel's influence is political rather than primarily financial. Its value to constituent communities is access and legislative effectiveness — measured in bills opposed and public funding obtained."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Haredi institutions with abuse liability exposure",
+        "how": "Mandatory reporting exemptions prevent external reporting; statute of limitations opposition limits civil claims window; institutional accountability reduced"
+      },
+      {
+        "group": "Haredi communities broadly",
+        "how": "Public funding for yeshiva services without secular education oversight; political accommodations through bloc voting leverage"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Abuse survivors in Haredi communities",
+        "how": "Mandatory reporting exemptions meant their abuse was handled internally rather than reported to law enforcement; statute of limitations opposition limited their window to sue"
+      }
+    ],
+    "the_gap": "Agudath Israel lobbied for rabbis to be exempt from mandatory child abuse reporting requirements. They lobbied against statute of limitations extensions that would have let more abuse survivors sue. They obtained public funding for yeshivas while opposing oversight of what those yeshivas teach. The Weberman case — where a community figure convicted of 59 counts of abuse had his defense funded by a $500,000 community dinner — happened in the community Agudath Israel represents. The Child Victims Act passed in New York in 2019 over their opposition."
+  }
+}

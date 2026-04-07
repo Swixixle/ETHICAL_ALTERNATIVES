@@ -1,0 +1,181 @@
+{
+  "brand_name": "Haredi Orthodox Sector",
+  "brand_slug": "haredi-orthodox-sector",
+  "parent_company": "Multiple autonomous communities (sector profile)",
+  "ultimate_parent": "No single entity — sector analysis",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "ULTRA-ORTHODOX COMMUNITIES USE A DOCTRINE CALLED MESIRAH TO DISCOURAGE REPORTING ABUSE TO POLICE — NECHEMYA WEBERMAN WAS CONVICTED OF 59 COUNTS AFTER COMMUNITY MEMBERS THREATENED HIS VICTIM AND RAISED $500,000 FOR HIS DEFENSE",
+  "executive_summary": "Haredi (ultra-Orthodox) Judaism encompasses multiple distinct communities — including Satmar, Bobov, Ger, Belz, and dozens of other Hasidic courts, as well as non-Hasidic Litvish/Yeshivish communities — united by strict Orthodox observance, rejection of secular modernity, high birth rates, and insular community structures. The sector's documented institutional problem is the application of mesirah — a traditional Jewish legal concept historically prohibiting Jews from informing on fellow Jews to potentially hostile non-Jewish authorities — to discourage reporting of sexual abuse, financial crimes, and other misconduct to contemporary law enforcement. In 2012, Nechemya Weberman — a prominent Brooklyn Satmar community figure who worked as an unlicensed therapist — was convicted of 59 counts of sexual abuse of a young woman he had counseled. Community members organized a fundraising dinner raising approximately $500,000 for his defense, attempted to intimidate the victim, and were themselves prosecuted for witness tampering.",
+  "verdict_tags": [
+    "mesirah_doctrine_abuse_reporting_discouraged",
+    "weberman_59_counts_500k_fundraiser_defense",
+    "victim_intimidation_witness_tampering_prosecuted",
+    "yeshiva_tax_funded_services_controversy",
+    "boys_education_secular_subjects_minimal",
+    "new_york_yeshiva_education_investigations",
+    "australian_royal_commission_orthodox_findings",
+    "brooklyn_da_investigations_ongoing"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Haredi communities operate extensive parallel institutions — schools, courts (batei din), social services — largely outside mainstream secular regulatory frameworks. Employment within Haredi-controlled institutions operates under community norms rather than standard labor law in some documented cases. No major documented systemic labor violations at the sector level have been identified beyond the educational controversy.",
+    "flags": [
+      "parallel_institutions_outside_regulatory_framework",
+      "employment_community_norms_documented"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental positions or enforcement actions have been identified for the Haredi sector.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Haredi communities exercise substantial political influence in New York City and State through bloc voting — delivering highly cohesive electoral support in exchange for political accommodations. These accommodations have included: exemptions from secular education requirements for yeshivas, public funding for private religious school busing and services, and documented political pressure on prosecutors to limit prosecution of community members. In Israel, Haredi political parties (UTJ and Shas) are perennial coalition partners whose leverage has secured: exemption from military service for yeshiva students, significant public funding for Haredi institutions, and control over religious affairs including conversion, marriage, and divorce.",
+    "flags": [
+      "bloc_voting_political_accommodations_documented",
+      "yeshiva_secular_education_exemption_ny",
+      "israel_military_service_exemption_documented",
+      "shas_utj_coalition_leverage_israel"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Nechemya Weberman (2012): Convicted of 59 counts of sexual abuse of a minor he was counseling as an unlicensed therapist in the Satmar community of Brooklyn. Community members organized a fundraising dinner raising approximately $500,000 for his defense. Three men were subsequently convicted of intimidating the victim. Weberman was sentenced to 103 years. New York yeshiva education: New York City and State investigations have found that many Haredi yeshivas provide minimal or no secular education — potentially violating compulsory education laws — while receiving millions in public funds for busing and services. Brooklyn DA investigations: successive Brooklyn DAs have investigated multiple cases of abuse within Haredi communities with documented challenges from community pressure.",
+    "flags": [
+      "weberman_103_years_59_counts",
+      "500k_fundraiser_community_defense",
+      "three_convicted_victim_intimidation",
+      "nyc_yeshiva_secular_education_investigation",
+      "brooklyn_da_community_pressure_documented"
+    ],
+    "sources": [
+      "https://www.nytimes.com/2012/12/10/nyregion/nechemya-weberman-sexual-abuse-trial-verdict.html"
+    ]
+  },
+  "tax": {
+    "summary": "Haredi institutions — schools, synagogues, and social service organizations — are tax-exempt religious entities. New York State provides millions in public funds for yeshiva busing, special education services, and other programs serving Haredi students — public funding that has continued despite documented investigations into the adequacy of secular education in those schools. The intersection of public funding and inadequate secular education compliance represents a documented accountability gap.",
+    "flags": [
+      "public_funds_busing_services_documented",
+      "yeshiva_secular_education_noncompliance_public_funding",
+      "tax_exempt_institutions_parallel_system"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "The Haredi sector is governed by multiple grand rabbis (Rebbes in Hasidic communities, Rosh Yeshivas in Litvish communities) who exercise significant authority over their followers' lives. The Satmar Rebbe — currently divided between two brothers (Williamsburg and Kiryas Joel factions) — leads one of the largest and most insular Hasidic communities. Community rabbinical leaders have been documented making statements discouraging cooperation with law enforcement in abuse cases. Rabbi Shmuel Kamenetzky of Philadelphia — a senior Agudath Israel leader — was documented in the New York Times for providing a rabbinic letter supporting a parent who abducted children to Israel rather than comply with a US court custody order.",
+    "flags": [
+      "satmar_rebbe_split_two_brothers",
+      "community_leaders_discourage_law_enforcement_documented",
+      "kamenetzky_abduction_support_nyt"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Agudath Israel of America — the primary political lobbying organization for Haredi interests in the United States — has lobbied against mandatory reporting laws that would require rabbis to report abuse to civil authorities, against statute of limitations extensions for abuse claims, and for political accommodations for yeshiva education standards. The organization's political relationships have been documented in New York City and Albany where Haredi bloc voting is a significant electoral factor.",
+    "flags": [
+      "agudath_israel_mandatory_reporting_opposition",
+      "statute_of_limitations_extension_opposition",
+      "yeshiva_education_standard_lobbying"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Abuse survivors, their advocates, and investigative journalists have alleged that mesirah doctrine is systematically deployed by community leaders to discourage abuse reporting not for its original purpose (protecting Jews from antisemitic authorities) but as an institutional protection mechanism — and that community leaders who discourage reporting are aware that the abuse is occurring. The Weberman case documentation supports the pattern of community protection for the abuser rather than the victim, though 'systematic deployment' as a deliberate institutional policy is contested.",
+    "flags": [
+      "mesirah_systematic_institutional_protection_alleged",
+      "community_leader_abuse_awareness_discourage_reporting_alleged"
+    ],
+    "sources": [
+      "https://www.nytimes.com/2012/12/10/nyregion/nechemya-weberman-sexual-abuse-trial-verdict.html"
+    ]
+  },
+  "health_record": {
+    "summary": "The Weberman case documented the sexual abuse of a young woman over years by a community figure positioned as her therapist — with no professional license or oversight. Community members organized his defense and attempted to intimidate his victim. The mesirah doctrine's application to abuse reporting — documented in Australian Royal Commission findings, Brooklyn DA cases, and investigative journalism — creates a systematic barrier to victims accessing external legal remedies. New York yeshiva investigations have documented that children in some Haredi schools receive little or no secular education — creating documented limitations on their ability to participate in secular economic and civic life as adults.",
+    "flags": [
+      "weberman_years_abuse_unlicensed_therapist",
+      "mesirah_barrier_external_legal_remedy",
+      "yeshiva_secular_education_deprivation_documented"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Modern Orthodox Judaism — observant Judaism with full engagement in secular education and professional life",
+      "Conservative Judaism — observant with different standards on secular engagement"
+    ],
+    "healthier": [
+      "Jewish communities with mandatory reporting policies and external accountability mechanisms",
+      "Footsteps (footstepsorg.org) — organization supporting people leaving ultra-Orthodox communities"
+    ],
+    "diy": [
+      "Unchosen documentary covers yeshiva education issues",
+      "The New York Times yeshiva investigation series is publicly available",
+      "Footsteps.org provides resources for those leaving Haredi communities"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2012,
+      "event": "Nechemya Weberman convicted of 59 counts of sexual abuse; community raises $500,000 for his defense; victim intimidation documented; three convicted for tampering",
+      "severity": "critical",
+      "source_url": "https://www.nytimes.com/2012/12/10/nyregion/nechemya-weberman-sexual-abuse-trial-verdict.html"
+    },
+    {
+      "year": 2015,
+      "event": "Australian Royal Commission documents Orthodox Jewish institutions' abuse cover-up patterns including mesirah doctrine application",
+      "severity": "critical",
+      "source_url": "https://www.childabuseroyalcommission.gov.au"
+    },
+    {
+      "year": 2018,
+      "event": "New York Times investigation documents Haredi yeshivas providing minimal secular education while receiving public funds",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "New York State issues regulations requiring minimum secular education in yeshivas; Agudath Israel opposes; litigation ongoing",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Children in Haredi yeshivas who receive minimal secular education face documented barriers to economic participation in the broader society if they choose or are forced to leave their community. Abuse victims who report to community leaders rather than police face documented patterns of community protection for abusers and potential ostracism for the victim.",
+    "price_illusion": "Haredi communities present as close-knit mutual aid networks providing comprehensive social support — education, healthcare, social services, marriage assistance — from birth to death. The full picture includes documented limitations on secular education that constrain children's future choices, and institutional responses to abuse that have prioritized community reputation over victim welfare.",
+    "tax_math": "Haredi institutions receive millions in public funds — busing, special education, nutrition programs — while documented investigations have found some of those institutions provide minimal secular education in violation of compulsory education standards. The public funds flow to institutions with documented accountability gaps.",
+    "wealth_velocity": "The Haredi sector's economic model — within-community mutual aid, controlled real estate markets in concentrated neighborhoods, public funding for services — concentrates resources within the community. The communities' insular structure limits external financial accountability."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Haredi institutional leaders",
+        "how": "Mesirah doctrine deployed to limit external accountability; public funds received without secular education compliance; bloc voting delivers political accommodations"
+      },
+      {
+        "group": "Nechemya Weberman",
+        "how": "Community raised $500,000 for his defense; victim was intimidated; he was convicted anyway"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Abuse victims discouraged from reporting",
+        "how": "Mesirah doctrine applied; community pressure to handle internally; abusers protected by institutional response"
+      },
+      {
+        "group": "Children in secular-education-deficient yeshivas",
+        "how": "Minimal secular education documented; limited options if they leave community; public funds paid for schools providing this education"
+      }
+    ],
+    "the_gap": "Nechemya Weberman counseled a young woman for years as an unlicensed therapist. He sexually abused her for those years. The community raised $500,000 for his defense. They tried to intimidate his victim. Three people were convicted for that. He was sentenced to 103 years. The doctrine of mesirah — which says you cannot report a Jew to potentially hostile secular authorities — has been applied to discourage abuse reporting in documented cases. The Australian Royal Commission found it. The Brooklyn DA has found it. Children in some Haredi schools receive no secular education. Those schools receive public funds."
+  }
+}

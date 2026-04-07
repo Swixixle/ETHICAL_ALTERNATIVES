@@ -1,0 +1,175 @@
+{
+  "brand_name": "AIPAC",
+  "brand_slug": "aipac",
+  "parent_company": "American Israel Public Affairs Committee",
+  "ultimate_parent": "American Israel Public Affairs Committee",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "AIPAC SPENT $100 MILLION IN THE 2022 MIDTERMS TO DEFEAT PROGRESSIVE DEMOCRATS — IT STILL CLAIMS IT IS NOT A POLITICAL ACTION COMMITTEE — AND DEBATE OVER WHETHER IT SHOULD REGISTER AS A FOREIGN AGENT HAS RUN FOR 60 YEARS",
+  "executive_summary": "The American Israel Public Affairs Committee (AIPAC) is the largest pro-Israel lobbying organization in the United States, with a declared membership of approximately 3 million people and annual revenue exceeding $100 million. In the 2022 midterm elections, AIPAC's affiliated super PAC — the United Democracy Project — spent approximately $100 million, primarily targeting progressive Democratic candidates who were critical of Israeli government policies, including Reps. Andy Levin and Summer Lee. This represented a dramatic expansion from AIPAC's historic non-electoral posture. The debate over whether AIPAC should register as a foreign agent under the Foreign Agents Registration Act (FARA) — given that it advocates for the policies of a foreign government — has been ongoing since the 1960s when the Kennedy administration investigated its predecessor organization, the American Zionist Council.",
+  "verdict_tags": [
+    "100m_2022_midterms_progressive_targeting",
+    "united_democracy_project_super_pac",
+    "fara_foreign_agent_debate_60_years",
+    "kennedy_investigation_predecessor",
+    "3_million_declared_members",
+    "no_electoral_disclosure_historically",
+    "andy_levin_summer_lee_targeting",
+    "bipartisan_congressional_access_documented"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": false
+  },
+  "labor": {
+    "summary": "AIPAC employs approximately 400 staff. No major documented labor violations have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "AIPAC does not take positions on US domestic environmental policy. Its advocacy is focused on US-Israel relations.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "AIPAC is the most powerful single-issue lobby in Washington by most assessments. Its annual policy conference attracts the majority of Congress and every presidential candidate. Its documented influence operates through: direct lobbying of members of Congress and executive branch officials; cultivating congressional relationships through AIPAC-sponsored trips to Israel; and since 2022, direct electoral intervention through the United Democracy Project super PAC. The 2022 intervention — spending $100 million primarily to defeat progressive Democrats critical of Israeli government policy — represented a strategic shift from AIPAC's historic non-electoral posture and generated significant internal debate. AIPAC has been the subject of FARA registration debates since the Kennedy administration investigated its predecessor organization in the early 1960s; it has never been required to register.",
+    "flags": [
+      "100m_2022_electoral_intervention_progressive_targeting",
+      "fara_registration_never_required_debated_60_years",
+      "congressional_israel_trips_documented",
+      "policy_conference_majority_congress_attendance",
+      "kennedy_predecessor_investigation"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "AIPAC has never been required to register as a foreign agent under FARA despite decades of debate. The Kennedy administration's 1961-1963 investigation of AIPAC's predecessor — the American Zionist Council — led to its dissolution; AIPAC was reorganized in a structure designed to avoid FARA registration. DOJ has not pursued FARA registration against AIPAC. The United Democracy Project super PAC — AIPAC's electoral arm since 2022 — is subject to standard campaign finance disclosure requirements and files with the FEC.",
+    "flags": [
+      "fara_registration_never_required",
+      "kennedy_predecessor_investigation_led_reorganization",
+      "udp_fec_disclosed",
+      "no_criminal_enforcement"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "AIPAC itself is a 501(c)(4) social welfare organization — contributions are not tax-deductible. Its educational arm, the AIPAC Foundation, is a 501(c)(3) — contributions are tax-deductible. The United Democracy Project super PAC is separately organized. AIPAC's revenue and expenditures are publicly available through its Form 990 filings. The $100 million in 2022 electoral spending is disclosed in FEC filings.",
+    "flags": [
+      "501c4_contributions_not_deductible",
+      "aipac_foundation_501c3_deductible",
+      "udp_fec_disclosed",
+      "form_990_public"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Howard Kohr has led AIPAC since 1996 — one of the longest tenures of any major advocacy organization CEO. His compensation is publicly disclosed through Form 990 — approximately $1 million annually. The 2022 decision to enter electoral politics through the United Democracy Project represented the most significant strategic shift in AIPAC's history under Kohr's leadership and was controversial within the pro-Israel advocacy community.",
+    "flags": [
+      "kohr_since_1996_longest_tenures",
+      "1m_compensation_form_990",
+      "2022_electoral_shift_controversial"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "AIPAC operates within a broader network of pro-Israel advocacy organizations including the American Jewish Committee, the Jewish Federations of North America, the Conference of Presidents of Major American Jewish Organizations, and JINSA (Jewish Institute for National Security of America). Its relationship with the Israeli government — particularly under different administrations — has varied; AIPAC generally supports Israeli government policy regardless of which party governs Israel.",
+    "flags": [
+      "broader_pro_israel_network",
+      "israel_government_policy_support_regardless_party",
+      "conference_presidents_ajc_jinsa_network"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Critics — including some within the Jewish community — have alleged that AIPAC's 2022 electoral intervention specifically targeted progressive Democrats who were not anti-Israel but were critical of specific Israeli government policies, and that framing criticism of Israeli government policy as anti-Israel has a chilling effect on legitimate policy debate. Critics have also alleged that AIPAC's historic non-registration under FARA represents a politically protected exemption not available to other foreign government advocacy organizations. AIPAC disputes both characterizations.",
+    "flags": [
+      "progressive_targeting_policy_criticism_vs_anti_israel_alleged",
+      "fara_politically_protected_exemption_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "No direct health enforcement actions against AIPAC have been identified. Its advocacy for US military aid to Israel has downstream connections to the Israeli-Palestinian conflict's human cost, which is a matter of significant international documentation and dispute. These connections are political and contested rather than the kind of direct institutional health harm documented for other organizations in this database.",
+    "flags": [
+      "us_military_aid_advocacy_conflict_connection_contested"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "J Street — self-described pro-Israel, pro-peace advocacy organization with different policy positions",
+      "Americans for Peace Now — advocacy for two-state solution",
+      "If Not Now — progressive Jewish organization"
+    ],
+    "healthier": [
+      "Jewish Voice for Peace — progressive Jewish organization opposed to Israeli occupation",
+      "J Street — alternative pro-Israel advocacy with different policy positions"
+    ],
+    "diy": [
+      "AIPAC's Form 990 and the United Democracy Project's FEC filings are publicly available",
+      "The DOJ's FARA registration database shows which foreign-government-adjacent organizations have registered"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1953,
+      "event": "AIPAC founded as a lobbying organization; predecessor American Zionist Council operates alongside",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1961,
+      "event": "Kennedy administration Justice Department investigates American Zionist Council for FARA registration; AZC dissolves; AIPAC reorganized",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1984,
+      "event": "AIPAC achieves recognition as the dominant pro-Israel lobby following Congressional influence campaigns",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "AIPAC creates United Democracy Project super PAC; spends approximately $100M in midterms primarily targeting progressive Democrats",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "AIPAC continues electoral intervention; spends significant funds in Democratic primaries",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Progressive Democratic representatives who were defeated in 2022 primaries with significant AIPAC super PAC spending — including Rep. Andy Levin — represented constituencies whose representation was affected by an outside organization's electoral intervention.",
+    "price_illusion": "AIPAC presents as a bipartisan organization representing broad Jewish American interests. Its 2022 electoral intervention — targeting progressive Democrats critical of specific Israeli government policies — has been characterized by critics as representing the Israeli government's preferred policy positions more than the diverse range of Jewish American views on Israel.",
+    "tax_math": "AIPAC's 501(c)(4) structure allows it to engage in political activity without donor disclosure requirements applicable to PACs. The AIPAC Foundation's 501(c)(3) status allows deductible donations for its educational activities. The United Democracy Project super PAC discloses donors through FEC filings.",
+    "wealth_velocity": "AIPAC's $100 million in 2022 electoral spending represents a significant concentration of pro-Israel advocacy resources into electoral intervention. The donors to the United Democracy Project are publicly disclosed through FEC filings."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Israeli government and right-aligned Israeli policy positions",
+        "how": "$100M electoral intervention in 2022 targeted representatives who criticized specific Israeli government policies; bipartisan congressional relationships cultivated over decades"
+      },
+      {
+        "group": "Pro-Israel donor network",
+        "how": "Concentrated electoral influence through a single organizational vehicle"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Progressive Democratic candidates targeted in 2022",
+        "how": "Andy Levin and others defeated with significant AIPAC super PAC spending; representatives whose constituencies had elected them replaced"
+      }
+    ],
+    "the_gap": "AIPAC spent $100 million in the 2022 midterms. Most of it targeted progressive Democrats who criticized Israeli government policy. Rep. Andy Levin — who described himself as pro-Israel and anti-occupation — was defeated with significant AIPAC spending. AIPAC has been debated as a potential foreign agent since the Kennedy administration. It has never registered under FARA. The debate has been running for 60 years. Howard Kohr has been CEO for 28 years and makes $1 million a year."
+  }
+}

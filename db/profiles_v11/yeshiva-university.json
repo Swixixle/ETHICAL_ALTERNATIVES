@@ -1,0 +1,175 @@
+{
+  "brand_name": "Yeshiva University",
+  "brand_slug": "yeshiva-university",
+  "parent_company": "Yeshiva University",
+  "ultimate_parent": "Yeshiva University Board of Trustees",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "YESHIVA UNIVERSITY'S HIGH SCHOOL DEANS SEXUALLY ABUSED STUDENTS FOR DECADES — THE UNIVERSITY KNEW — AND WHEN SURVIVORS FORMED A SUPPORT GROUP IN 2012 THE UNIVERSITY'S RESPONSE WAS TO HOLD A DINNER HONORING ONE OF THE ABUSERS",
+  "executive_summary": "Yeshiva University (YU) is a prestigious New York Orthodox Jewish university with approximately 7,000 students across undergraduate, graduate, and professional schools. Its affiliated high school — Yeshiva University High School for Boys (MTA) — was the site of documented sexual abuse by two deans, Norman Lamm (then university president, later accused of knowing) and Rabbi George Finkelstein and Rabbi Macy Gordon, who abused students for decades. A 2012 exposé by The Forward documented over 50 survivors. When survivors established a support group and went public in 2012, the university's initial response included a dinner event honoring Rabbi George Finkelstein — one of the accused abusers — causing outrage. YU subsequently filed for bankruptcy in 2023 in connection with the abuse claims. Former YU president Norman Lamm acknowledged in 2013 that he had been told of the abuse and had simply asked the rabbis to leave, without reporting to law enforcement.",
+  "verdict_tags": [
+    "mta_high_school_deans_decades_abuse",
+    "lamm_acknowledged_knew_asked_leave_no_reporting",
+    "2012_dinner_honoring_accused_abuser",
+    "50_plus_survivors_forward_investigation",
+    "bankruptcy_2023_abuse_claims",
+    "finkelstein_gordon_abusers_named",
+    "yeshiva_statue_of_limitations_expired_many_cases"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": false,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Yeshiva University employs approximately 2,500 faculty and staff. No major documented systemic labor violations have been identified beyond the abuse cover-up at MTA.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental enforcement actions against YU have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Yeshiva University has been at the center of a significant US Supreme Court case — Yeshiva University v. YU Pride Alliance (2023) — in which the university argued it had a religious exemption from New York City's Human Rights Law and was not required to recognize an LGBTQ student group. The Supreme Court declined to grant a stay, leaving the lower court order in effect, in a decision that intersects with broader religious freedom litigation.",
+    "flags": [
+      "supreme_court_lgbtq_student_group_case",
+      "religious_freedom_exemption_human_rights_law"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "2012: The Forward publishes investigation documenting decades of abuse at MTA by Rabbi George Finkelstein and Rabbi Macy Gordon. Over 50 survivors identified. University's initial response included an event honoring Finkelstein. Norman Lamm acknowledged in 2013 that he had been informed of abuse and had simply asked the rabbis to leave without reporting to law enforcement or taking other action. Most survivors could not sue due to expired statutes of limitations. In 2023, Yeshiva University's associated insurance entities filed for bankruptcy in connection with the abuse claims — using a similar structure to Catholic diocesan bankruptcies to limit liability while preserving institutional assets.",
+    "flags": [
+      "lamm_acknowledged_knew_no_reporting",
+      "finkelstein_gordon_named_survivors",
+      "2023_bankruptcy_abuse_claims",
+      "diocesan_parallel_structure",
+      "statute_of_limitations_expired_most_cases"
+    ],
+    "sources": [
+      "https://forward.com/news/breaking-news/165765/yeshiva-high-school-sex-abuse/"
+    ]
+  },
+  "tax": {
+    "summary": "Yeshiva University is a 501(c)(3) educational institution that files Form 990. Its financial disclosures are publicly available. The 2023 bankruptcy filing in connection with abuse claims creates a financial structure designed to limit survivor compensation while preserving university assets — a pattern documented in Catholic diocesan bankruptcies.",
+    "flags": [
+      "form_990_public",
+      "bankruptcy_asset_protection_structure",
+      "diocesan_bankruptcy_pattern_parallel"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Rabbi Dr. Ari Berman is the current YU president. Former president Norman Lamm — who led YU from 1976 to 2003 — acknowledged in 2013 that he had been told of abuse by Finkelstein and Gordon and had simply asked them to leave rather than report to law enforcement or take other protective action. Lamm's acknowledgment was made in the context of the 2012 Forward investigation and survivor organizing. He died in 2020. YU's board and subsequent leadership have pursued the bankruptcy strategy to manage abuse claims.",
+    "flags": [
+      "lamm_acknowledged_asked_leave_no_report",
+      "lamm_died_2020",
+      "berman_current_president_bankruptcy_strategy"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "YU's abuse cover-up and subsequent bankruptcy strategy connect it to the broader pattern of religious institutions using subsidiary or institutional bankruptcy to limit abuse settlement liability — documented in Catholic dioceses, the Boy Scouts of America, and now YU. The statute of limitations issue — which has prevented most YU survivors from suing — is one of the primary drivers of state statute of limitations reform legislation.",
+    "flags": [
+      "bankruptcy_pattern_catholic_bsa_yu",
+      "statute_limitations_reform_legislation_driver"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Survivors and their advocates have alleged that knowledge of the abuse extended beyond Norman Lamm — that other administrators, teachers, and community figures were aware and that the institutional culture prioritized community reputation and the rabbis' professional standing over student safety. YU has disputed the extent of institutional knowledge beyond what Lamm acknowledged.",
+    "flags": [
+      "extended_institutional_knowledge_alleged",
+      "community_reputation_priority_alleged"
+    ],
+    "sources": [
+      "https://forward.com/news/breaking-news/165765/yeshiva-high-school-sex-abuse/"
+    ]
+  },
+  "health_record": {
+    "summary": "Survivors of MTA abuse have documented lasting psychological harm from the abuse and from the institutional cover-up that allowed it to continue for decades. The university's 2012 response — which included an event honoring one of the accused abusers while survivors were organizing publicly — was described by survivors as a re-traumatization. Most survivors could not access legal remedy because statutes of limitations had expired.",
+    "flags": [
+      "lasting_psychological_harm_documented",
+      "2012_dinner_honoring_abuser_retraumatization",
+      "statute_limitations_expired_legal_remedy_denied"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Other Orthodox Jewish universities — Touro University, Hebrew Theological College",
+      "Non-Orthodox Jewish universities with full LGBTQ inclusion — Brandeis, Jewish Theological Seminary"
+    ],
+    "healthier": [
+      "Universities with demonstrated independent Title IX compliance and external reporting protocols"
+    ],
+    "diy": [
+      "The Forward's 2012 investigation and subsequent coverage is publicly available",
+      "YU's Form 990 is available at ProPublica Nonprofit Explorer",
+      "The bankruptcy filings are public court records"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1970,
+      "event": "Estimated beginning of documented abuse period at MTA by Rabbis Finkelstein and Gordon",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1976,
+      "event": "Norman Lamm becomes YU president; per his own 2013 acknowledgment, is later informed of abuse and asks rabbis to leave",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2012,
+      "event": "The Forward publishes investigation documenting 50+ survivors; YU holds event honoring Finkelstein; outrage follows",
+      "severity": "critical",
+      "source_url": "https://forward.com/news/breaking-news/165765/yeshiva-high-school-sex-abuse/"
+    },
+    {
+      "year": 2013,
+      "event": "Norman Lamm publicly acknowledges he was informed of abuse and simply asked rabbis to leave; no law enforcement report",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "YU files bankruptcy in connection with abuse claims; follows Catholic diocesan model of limiting liability through bankruptcy",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "MTA students who were abused by school deans — figures of religious and institutional authority — experienced harm in a context of profound trust. The institutional cover-up that followed — and the subsequent event honoring an accused abuser — extended that harm. Most survivors reached the statute of limitations before they could sue.",
+    "price_illusion": "Yeshiva University's affiliated high school presented parents and students with the combination of elite academic preparation and Orthodox Jewish formation — trust that institutional authority figures embodied both standards. The documented abuse by deans betrayed both simultaneously.",
+    "tax_math": "YU's 2023 bankruptcy structure — designed to limit abuse settlement liability while preserving institutional assets — follows the Catholic diocesan model where the institution's assets are protected through legal structure while survivors' claims are resolved at a fraction of their value.",
+    "wealth_velocity": "Yeshiva University's endowment and assets are significant for an institution of its size. The bankruptcy strategy preserves these assets while limiting the financial remedy available to survivors whose statutes of limitations had already expired for most claims."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Yeshiva University as institution",
+        "how": "Abuse covered up for decades preserving institutional reputation; Norman Lamm asked rabbis to leave rather than report; bankruptcy strategy limits financial exposure to remaining claims"
+      },
+      {
+        "group": "Rabbis Finkelstein and Gordon",
+        "how": "Asked to leave rather than reported to law enforcement; continued careers without criminal charges"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "MTA students who were abused",
+        "how": "Abused by institutional authority figures; cover-up extended the period of abuse; most could not sue when the truth became public due to expired statutes of limitations; 2012 dinner honoring abuser re-traumatized survivors"
+      }
+    ],
+    "the_gap": "Two deans at Yeshiva University's high school sexually abused students for decades. Norman Lamm was told about it. He asked them to leave. He did not report it to law enforcement. He was president of Yeshiva University. The Forward documented over 50 survivors in 2012. The university's response included a dinner honoring one of the accused abusers. Lamm acknowledged what he had done in 2013. He died in 2020. YU filed for bankruptcy in 2023 to limit what it would have to pay survivors. Most survivors' statutes of limitations had already expired."
+  }
+}

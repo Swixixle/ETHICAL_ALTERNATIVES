@@ -1,0 +1,183 @@
+{
+  "brand_name": "Lev Tahor",
+  "brand_slug": "lev-tahor",
+  "parent_company": "Lev Tahor",
+  "ultimate_parent": "Shlomo Helbrans (founder, deceased) / Nachman Helbrans (current leader)",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "LEV TAHOR HAS FLED CANADA, GUATEMALA, AND TRINIDAD WITH ITS CHILDREN WHILE UNDER CHILD ABUSE INVESTIGATIONS — ITS FOUNDER DIED UNDER DISPUTED CIRCUMSTANCES — AND US FEDERAL PROSECUTORS CHARGED ITS LEADERS WITH INTERNATIONAL PARENTAL KIDNAPPING",
+  "executive_summary": "Lev Tahor ('Pure Heart') is an extremist Haredi Jewish sect founded by Rabbi Shlomo Helbrans — convicted in the United States in 1994 for kidnapping a bar mitzvah student and sentenced to prison. After his deportation to Israel and eventual relocation to Canada, Helbrans built a community in Chatham, Ontario that Canadian child protection authorities investigated for abuse and forced child marriage. The community fled to Guatemala ahead of Canadian child removal proceedings in 2014. They fled Guatemala to Trinidad in 2016 under similar pressure. In 2018, Lev Tahor members were charged by US federal prosecutors with international parental kidnapping after two children were taken from court-appointed guardians and transported to Mexico. The community has also allegedly been in contact with ISIS. Helbrans died in Mexico in 2017 under disputed circumstances. His son Nachman Helbrans continues to lead the group and has been charged with federal crimes.",
+  "verdict_tags": [
+    "helbrans_1994_us_kidnapping_convicted",
+    "fled_canada_guatemala_trinidad_investigations",
+    "nachman_helbrans_federal_charges",
+    "2018_international_parental_kidnapping_charged",
+    "isis_contact_alleged_documented",
+    "forced_child_marriage_documented",
+    "children_removed_canada",
+    "total_control_isolation_extreme_dress"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": false,
+    "tax": false,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Lev Tahor members operate in conditions of near-total communal control — communal property, communal labor, communal decision-making under rabbinical authority. Women and girls are documented as performing domestic labor in conditions consistent with modern slavery definitions used by some researchers. The community's extreme isolation and control over members' movements and communications creates a documented labor captivity structure.",
+    "flags": [
+      "communal_property_labor_control",
+      "women_girls_domestic_labor_captivity_structure",
+      "extreme_isolation_movement_control"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental enforcement actions against Lev Tahor have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Lev Tahor has no conventional political activity. Its documented political significance is as an example of religious extremism that has evaded multiple countries' child protection systems through international mobility. The group's alleged contact with ISIS — documented in Canadian and US intelligence assessments — represents the most extreme documented intersection of Jewish ultra-Orthodoxy and political violence, though the nature of the contact remains unclear.",
+    "flags": [
+      "isis_contact_alleged_documented",
+      "international_mobility_evading_child_protection",
+      "multiple_countries_jurisdiction_escape"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "1994: Shlomo Helbrans convicted in US District Court for kidnapping a bar mitzvah student; sentenced to 4 years; deported. 2014: Canadian child protection authorities investigate Lev Tahor; community flees to Guatemala ahead of proceedings; some children removed by Canadian courts. 2016: Community flees Guatemala to Trinidad under similar pressure. 2018: US DOJ charges Lev Tahor members with international parental kidnapping — two children were taken from court-appointed guardians and transported through multiple countries. Nachman Helbrans — Shlomo's son and current leader — charged with federal crimes including kidnapping.",
+    "flags": [
+      "helbrans_sr_1994_kidnapping_convicted",
+      "canada_child_protection_fled",
+      "guatemala_fled_similar_pressure",
+      "2018_doj_international_kidnapping",
+      "nachman_helbrans_federal_charges"
+    ],
+    "sources": [
+      "https://www.justice.gov/usao-sdny/pr/lev-tahor-members-charged-international-parental-kidnapping-and-obstruction"
+    ]
+  },
+  "tax": {
+    "summary": "Lev Tahor's communal structure and international mobility make standard tax analysis inapplicable. The community has operated in Canada, Guatemala, Trinidad, and Mexico without establishing transparent financial structures in any jurisdiction.",
+    "flags": [
+      "communal_structure_international_mobility_no_standard_analysis"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Shlomo Helbrans founded Lev Tahor, was convicted of kidnapping in the US in 1994, deported to Israel, relocated to Canada, built the Chatham community, and died in Mexico in 2017 under disputed circumstances — some members attribute his death to drowning; others have raised questions. Nachman Helbrans — his son — assumed leadership and has been charged with federal crimes including international parental kidnapping. The Helbrans family's documented criminal record spans two generations of leadership.",
+    "flags": [
+      "shlomo_convicted_1994",
+      "shlomo_died_mexico_2017_disputed",
+      "nachman_federal_charges_son_leader",
+      "two_generation_criminal_record"
+    ],
+    "sources": [
+      "https://www.justice.gov/usao-sdny/pr/lev-tahor-members-charged-international-parental-kidnapping-and-obstruction"
+    ]
+  },
+  "connections": {
+    "summary": "Lev Tahor's alleged contact with ISIS — documented in Canadian security assessments — is one of the most unusual documented intersections in religious extremism, connecting an ultra-Orthodox Jewish sect with an Islamic terrorist organization. The community's extreme anti-Zionism — it opposes the existence of the State of Israel on religious grounds — may provide the ideological basis for such contact, though the nature and depth of any relationship remains a matter of investigation.",
+    "flags": [
+      "isis_contact_documented_canadian_security_assessment",
+      "extreme_anti_zionism_ideological_basis_alleged"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Canadian child protection investigators, journalists, and former members have alleged forced child marriages between girls as young as 13 and adult men; physical abuse of children as religious discipline; denial of secular education; food restriction as punishment; sleep deprivation; total isolation from outside contact including family; and surveillance of members' communications. These allegations are documented in Canadian court proceedings and journalism but the community's international mobility has complicated prosecution.",
+    "flags": [
+      "forced_child_marriage_girls_13_adult_men_alleged",
+      "physical_abuse_discipline_documented_canadian_proceedings",
+      "food_restriction_sleep_deprivation_alleged",
+      "total_isolation_family_contact_denied_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Canadian child protection proceedings documented conditions that justified the removal of some Lev Tahor children. The forced child marriage allegations — involving girls as young as 13 — represent the most serious documented health harm. Former members have documented lasting psychological harm from the community's extreme control and isolation. The community's flight from multiple countries' child protection authorities rather than submitting to investigation represents the most consistent documented pattern.",
+    "flags": [
+      "canadian_child_removal_proceedings",
+      "forced_marriage_girls_13_documented",
+      "lasting_psychological_harm_former_members",
+      "flight_from_protection_authorities_documented_pattern"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Mainstream Haredi communities — while themselves insular, operate within national legal frameworks without documented forced child marriage"
+    ],
+    "healthier": [
+      "Jewish communities within mainstream Haredi or Modern Orthodox frameworks with participation in national legal systems"
+    ],
+    "diy": [
+      "US DOJ charging documents for Nachman Helbrans are public at justice.gov",
+      "Canadian court proceedings on child protection are public records"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1994,
+      "event": "Shlomo Helbrans convicted in US for kidnapping bar mitzvah student Shai Fhima; sentenced to 4 years; deported to Israel",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2000,
+      "event": "Helbrans relocates to Canada; builds community in Chatham, Ontario",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2014,
+      "event": "Canadian child protection authorities investigate; community flees to Guatemala ahead of proceedings; some children removed by Canadian courts",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2016,
+      "event": "Community flees Guatemala to Trinidad under similar child protection pressure",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "Shlomo Helbrans dies in Mexico under disputed circumstances",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "DOJ charges Lev Tahor members with international parental kidnapping; Nachman Helbrans charged with federal crimes",
+      "severity": "critical",
+      "source_url": "https://www.justice.gov/usao-sdny/pr/lev-tahor-members-charged-international-parental-kidnapping-and-obstruction"
+    }
+  ],
+  "community_impact": {
+    "displacement": "Children in Lev Tahor — particularly girls subject to documented forced marriage allegations — have experienced documented harm in conditions that multiple countries' child protection authorities have found serious enough to warrant removal proceedings. The community's international flight has repeatedly displaced those children rather than allowing protection proceedings to conclude.",
+    "price_illusion": "Lev Tahor presents its extreme practices — including the all-black dress that covers women and girls entirely, the isolation from outside contact, and the communal structure — as authentic Jewish piety. Canadian and US court proceedings have documented the human cost of those practices, particularly for children.",
+    "tax_math": "Lev Tahor's communal and international structure makes standard financial analysis inapplicable. The community lives communally with pooled resources under rabbinical authority.",
+    "wealth_velocity": "The community's financial resources — sufficient to fund repeated international relocations — are controlled entirely by its leadership structure without external accountability."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Shlomo and Nachman Helbrans",
+        "how": "Founded and led a community of complete control; fled multiple countries' child protection authorities; Nachman continues leading despite federal charges"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Lev Tahor children — particularly girls",
+        "how": "Documented forced marriage allegations; physical abuse allegations; denial of secular education; repeated displacement across multiple countries as community fled protection authorities"
+      }
+    ],
+    "the_gap": "Shlomo Helbrans was convicted of kidnapping a bar mitzvah student in the United States in 1994. He built a community in Canada. Canada tried to remove his children for abuse. He fled to Guatemala. Guatemala tried to remove children. He fled to Trinidad. He died in Mexico in 2017. His son Nachman took over. The US charged Nachman with international parental kidnapping in 2018. The community has alleged contact with ISIS. They have been fleeing child protection authorities across multiple countries for a decade. Girls as young as 13 are alleged to have been forced into marriage with adult men."
+  }
+}

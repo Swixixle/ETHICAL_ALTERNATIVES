@@ -1,0 +1,177 @@
+{
+  "brand_name": "Zionist Organization of America",
+  "brand_slug": "zionist-organization-of-america",
+  "parent_company": "Zionist Organization of America",
+  "ultimate_parent": "Zionist Organization of America",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "THE ZOA'S PRESIDENT MORT KLEIN HAS BEEN ACCUSED OF SEXUAL HARASSMENT BY HIS OWN STAFF AND BOARD — CALLED A HOLOCAUST SURVIVOR 'AN OLD FOOL' — AND CALLED FOR BANNING MUSLIMS FROM PUBLIC OFFICE",
+  "executive_summary": "The Zionist Organization of America (ZOA) is one of the oldest and largest pro-Israel advocacy organizations in the United States, founded in 1897. Under its long-serving president Morton Klein — who has led ZOA since 1993 — the organization has moved significantly to the right of the mainstream pro-Israel community, aligning more closely with the Israeli political right and Trump-era Republicanism than with the broader Jewish organizational consensus. In 2021, ZOA's own board members and former staff filed complaints documenting that Klein had sexually harassed female employees and board members, called Holocaust survivor Nobel laureate Elie Wiesel 'an old fool' in a dispute, publicly called for banning Muslims from public office, and had created a hostile work environment. ZOA's board conducted an internal investigation and ultimately retained Klein. Klein has also made documented statements characterizing Palestinians as 'savage murderous people' and has been criticized by mainstream Jewish organizations for his rhetoric.",
+  "verdict_tags": [
+    "klein_sexual_harassment_own_board_staff_complaint",
+    "wiesel_old_fool_statement",
+    "muslims_public_office_ban_statement",
+    "palestinians_savage_murderous_statement",
+    "board_retained_klein_after_investigation",
+    "splc_monitoring",
+    "trump_alignment_right_of_mainstream_jewish",
+    "1897_founding_oldest_pro_israel"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": false,
+    "health": false,
+    "legal": false
+  },
+  "labor": {
+    "summary": "ZOA's own board members and former staff filed documented complaints in 2021 about Mort Klein's conduct toward employees — including sexual harassment allegations and creating a hostile work environment. The board conducted an internal investigation and retained Klein. The complaints were documented in multiple news reports and represented an unusual case of a nonprofit board receiving formal harassment complaints about its own president and choosing to retain him.",
+    "flags": [
+      "klein_sexual_harassment_staff_board_complaints",
+      "board_retained_after_complaints",
+      "hostile_work_environment_documented"
+    ],
+    "sources": [
+      "https://forward.com/news/475558/zoa-morton-klein-harassment-complaints/"
+    ]
+  },
+  "environmental": {
+    "summary": "No environmental positions or enforcement actions have been identified for ZOA.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Under Klein's leadership, ZOA has: aligned strongly with Trump and the Israeli political right; defended Trump associates against antisemitism accusations despite documented antisemitic statements; called for banning Muslims from public office; characterized Palestinians collectively as 'savage murderous people'; described progressive Jewish organizations as antisemitic. ZOA has been criticized by the Anti-Defamation League, the American Jewish Committee, and other mainstream Jewish organizations for rhetoric they characterize as counterproductive and harmful. Klein appeared at the same Israeli government gala as Kanye West's associates following West's antisemitic statements — generating additional criticism.",
+    "flags": [
+      "trump_strong_alignment_documented",
+      "muslims_public_office_ban_call",
+      "palestinians_savage_murderous_statement",
+      "adl_ajc_criticism_documented",
+      "kanye_gala_appearance_documented"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "No major criminal enforcement actions against ZOA have been documented. The sexual harassment complaints were handled internally — the board investigation did not result in external legal action. ZOA files Form 990 — its finances are publicly available.",
+    "flags": [
+      "harassment_complaints_internal_handling",
+      "form_990_public"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "ZOA is a 501(c)(3) public charity — donations are tax-deductible. Its annual revenue is approximately $10-15 million. Mort Klein's compensation is publicly disclosed through Form 990 — approximately $500,000 annually. The tax-deductible status of donations to an organization whose president has made documented statements calling for banning Muslims from public office and characterizing Palestinians as 'savage murderous people' has been noted by civil rights organizations.",
+    "flags": [
+      "501c3_donations_deductible",
+      "klein_500k_compensation_form_990",
+      "10_15m_annual_revenue"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Morton Klein has led ZOA since 1993 — over 30 years. He survived a board investigation into documented complaints from his own staff and board members about sexual harassment and hostile work environment. His public statements — calling Elie Wiesel 'an old fool,' calling for banning Muslims from public office, characterizing Palestinians as 'savage murderous people' — have generated sustained criticism from across the Jewish organizational spectrum. His alignment with Trump — including defending Trump against antisemitism accusations — has placed ZOA to the right of virtually every other major Jewish organization.",
+    "flags": [
+      "klein_30_years_survived_investigation",
+      "wiesel_old_fool",
+      "muslims_ban_office",
+      "palestinians_savage_murderous",
+      "trump_alignment_far_right_jewish_orgs"
+    ],
+    "sources": [
+      "https://forward.com/news/475558/zoa-morton-klein-harassment-complaints/"
+    ]
+  },
+  "connections": {
+    "summary": "ZOA's political connections have shifted significantly under Klein — from the bipartisan mainstream Jewish organizational network to a more explicitly Republican and Israeli right-aligned network. Its relationship with Steve Bannon, Sebastian Gorka, and other figures considered by mainstream Jewish organizations to have antisemitic associations generated public criticism from ADL and other organizations.",
+    "flags": [
+      "bannon_gorka_relationships_adl_criticism",
+      "right_of_mainstream_jewish_organizational_network"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former ZOA staff and board members alleged in 2021 that Klein had sexually harassed women in the organization, had created a hostile work environment through his conduct, and that the board's investigation was insufficiently independent. Klein denied the sexual harassment allegations. The board retained him following its investigation. The other documented statements — Wiesel, Muslims, Palestinians — are public record, not allegations.",
+    "flags": [
+      "sexual_harassment_denied_by_klein",
+      "board_investigation_independence_questioned",
+      "wiesel_muslims_palestinians_statements_public_record"
+    ],
+    "sources": [
+      "https://forward.com/news/475558/zoa-morton-klein-harassment-complaints/"
+    ]
+  },
+  "health_record": {
+    "summary": "No direct health enforcement actions against ZOA have been identified. Klein's documented statement calling for banning Muslims from public office — if enacted as policy — would constitute religious discrimination affecting Muslim Americans' civic participation.",
+    "flags": [
+      "muslims_public_office_ban_civic_participation_harm"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "J Street — pro-Israel, pro-peace advocacy with different political alignment",
+      "Americans for Peace Now — two-state solution advocacy",
+      "AJC, ADL — mainstream Jewish organizations with different rhetoric standards"
+    ],
+    "healthier": [
+      "Jewish organizations that have adopted and enforce sexual harassment policies independent of board investigation"
+    ],
+    "diy": [
+      "ZOA's Form 990 is publicly available at ProPublica Nonprofit Explorer",
+      "The Forward's documentation of the 2021 harassment complaints is publicly available"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1897,
+      "event": "Zionist Organization of America founded; oldest pro-Israel advocacy organization in the US",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1993,
+      "event": "Morton Klein becomes ZOA president; begins 30+ year tenure",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2016,
+      "event": "ZOA aligns strongly with Trump campaign; breaks from mainstream Jewish organizational consensus",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "ZOA staff and board members file documented complaints about Klein's sexual harassment and hostile work environment; board investigates; retains Klein",
+      "severity": "critical",
+      "source_url": "https://forward.com/news/475558/zoa-morton-klein-harassment-complaints/"
+    }
+  ],
+  "community_impact": {
+    "displacement": "Muslim Americans who are targets of Klein's documented statements calling for a ban on Muslims in public office face documented civic discrimination advocacy from a tax-deductible Jewish organization. Jewish Americans who support Palestinian rights or maintain relationships with Muslim communities have been characterized by Klein as antisemitic.",
+    "price_illusion": "ZOA presents as a pro-Israel advocacy organization rooted in Jewish values. Its president's documented statements — calling Holocaust survivor Elie Wiesel 'an old fool,' calling for banning Muslims from public office, characterizing Palestinians collectively as 'savage murderous people' — represent a values framework that mainstream Jewish organizations have documented as counterproductive to Jewish safety and interests.",
+    "tax_math": "Donations to ZOA are tax-deductible. Those donations fund an organization whose president has made documented statements calling for religious-based exclusion from public office and characterizing an ethnic group collectively as savage and murderous.",
+    "wealth_velocity": "ZOA's $10-15 million annual revenue supports Mort Klein's $500,000 compensation and the organization's advocacy activities. The board's decision to retain Klein after documented harassment complaints preserved both."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Morton Klein",
+        "how": "30+ year presidency; $500k annual compensation; survived documented harassment complaints through internal investigation"
+      },
+      {
+        "group": "Israeli political right",
+        "how": "ZOA's alignment and advocacy at the far right of the US Jewish organizational spectrum"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "ZOA female staff and board members who filed harassment complaints",
+        "how": "Complaints documented; internal investigation conducted; Klein retained; documented hostile work environment continued"
+      }
+    ],
+    "the_gap": "ZOA's president called Elie Wiesel an old fool. He called for banning Muslims from public office. He called Palestinians savage murderous people. His own staff and board members filed harassment complaints against him. The board investigated and kept him. He has been president for 30 years. He makes $500,000 a year from a tax-deductible organization. The ADL and AJC have publicly criticized his statements. He is still president."
+  }
+}

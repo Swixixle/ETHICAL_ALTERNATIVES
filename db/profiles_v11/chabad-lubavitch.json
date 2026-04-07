@@ -1,0 +1,185 @@
+{
+  "brand_name": "Chabad-Lubavitch",
+  "brand_slug": "chabad-lubavitch",
+  "parent_company": "Chabad-Lubavitch World Headquarters",
+  "ultimate_parent": "Chabad-Lubavitch (de facto leaderless since Rebbe's death 1994)",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "CHABAD HAS 5,000 CENTERS IN 100 COUNTRIES AND NO CENTRAL FINANCIAL OVERSIGHT — SOME FOLLOWERS BELIEVE THE REBBE WHO DIED IN 1994 IS THE MESSIAH AND WILL RETURN — AND ITS AUSTRALIA BRANCH COVERED UP SEXUAL ABUSE FOR DECADES",
+  "executive_summary": "Chabad-Lubavitch is a Hasidic Jewish movement founded in 18th century Russia and now headquartered at 770 Eastern Parkway in Crown Heights, Brooklyn. It operates approximately 5,000 centers in over 100 countries — the most geographically dispersed Jewish outreach network in the world. Since the death of its seventh Rebbe, Menachem Mendel Schneerson, in 1994, Chabad has operated without a recognized successor — a unique organizational structure where thousands of semi-autonomous emissary couples (shluchim) operate individual Chabad Houses with significant local independence and minimal central financial oversight. A significant minority of Chabad members and leaders believe Schneerson was the Messiah and will return — a belief (meshichism) that has caused internal divisions. Chabad Australia was the subject of a major sexual abuse scandal documented by the Australian Royal Commission into Institutional Responses to Child Sexual Abuse — finding that Chabad institutions in Australia failed to report abuse and handled allegations in ways that protected abusers.",
+  "verdict_tags": [
+    "5000_centers_100_countries_no_central_oversight",
+    "australian_royal_commission_abuse_cover_up",
+    "meshichist_messiah_belief_rebbe_1994",
+    "shluchim_semi_autonomous_financial_opacity",
+    "crown_heights_brooklyn_headquarters",
+    "schneerson_death_no_successor",
+    "political_influence_global_documented"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Chabad shluchim (emissary couples) are essentially self-employed small business operators running their own Chabad Houses — they fundraise independently, employ local staff, and operate with significant autonomy. This model creates both entrepreneurial flexibility and accountability gaps. No major documented systemic labor violations have been identified at the movement level.",
+    "flags": [
+      "shluchim_self_employed_independent_fundraising",
+      "autonomous_model_accountability_gaps"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental positions or enforcement actions have been identified for Chabad-Lubavitch at the movement level.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Chabad's global network gives it extraordinary political access — Chabad rabbis serve as the primary Jewish institutional presence in dozens of countries where there is no other significant Jewish community. This access has been documented in relationships with political leaders from Vladimir Putin (who has had documented positive relationships with Russian Chabad leadership) to multiple US presidents. Chabad's non-proselytizing outreach model — welcoming any Jew regardless of observance — gives it broad cross-denominational Jewish political relationships. The movement's political positions align with Orthodox Jewish consensus: support for Israel, opposition to anti-Semitism, support for Jewish continuity programs.",
+    "flags": [
+      "putin_russian_chabad_documented_relationship",
+      "presidential_access_multiple_countries",
+      "orthodox_political_consensus_alignment"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Australian Royal Commission into Institutional Responses to Child Sexual Abuse: The Commission examined Chabad institutions in Australia and found documented failures to report abuse and handling of allegations that protected abusers. Rabbi Zelig Serebryanski — a prominent Melbourne Chabad figure — was documented as having been protected by community leaders despite abuse allegations. The Commission's findings regarding Chabad Australia were consistent with its broader findings about Orthodox Jewish institutions' use of rabbinic authority to discourage external reporting. In the United States, multiple Chabad rabbis have been convicted of sexual abuse; the organizational structure's decentralization has made institutional accountability difficult to establish.",
+    "flags": [
+      "australian_royal_commission_abuse_cover_up",
+      "serebryanski_protected_documented",
+      "us_multiple_rabbis_convicted_decentralized_accountability",
+      "reporting_discouraged_rabbinic_authority"
+    ],
+    "sources": [
+      "https://www.childabuseroyalcommission.gov.au"
+    ]
+  },
+  "tax": {
+    "summary": "Chabad-Lubavitch World Headquarters and individual Chabad Houses are tax-exempt religious organizations. The decentralized structure — where each Chabad House is a separate entity — means there is no consolidated financial disclosure for the movement as a whole. Individual Chabad Houses file their own Form 990s (if required) but the movement's total financial scale is not publicly known. Estimates of Chabad's global budget range from hundreds of millions to over a billion dollars annually.",
+    "flags": [
+      "no_consolidated_financial_disclosure",
+      "individual_houses_separate_entities",
+      "total_scale_unknown",
+      "hundreds_millions_to_billion_estimated"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Menachem Mendel Schneerson — the seventh Lubavitcher Rebbe — died in June 1994 without designating a successor. The movement has operated without a recognized leader since. The meshichist faction believes Schneerson is the Messiah and will return; this belief is held by a significant minority of Chabad institutions globally and by a majority of some Chabad centers. Rabbi Moshe Kotlarsky leads the Chabad-Lubavitch International Shluchim Office — the closest thing to a central coordinating body — but has no authority over individual Chabad Houses. Kushner family connections: Jared Kushner has documented Chabad affiliation; the Kushner family's relationship with Chabad has generated political commentary about the movement's proximity to US political power.",
+    "flags": [
+      "schneerson_died_1994_no_successor",
+      "meshichist_faction_significant_minority",
+      "kotlarsky_coordinating_no_authority",
+      "kushner_chabad_political_commentary"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Chabad's global network creates documented political relationships that no other Jewish organization can match — in countries from South Africa to Thailand to Russia, the Chabad shliach is often the first and only Jewish institutional contact for visiting heads of state and business figures. The movement's relationship with Russian Jewish oligarchs — who have funded many Chabad Houses globally — creates documented financial connections to post-Soviet wealth.",
+    "flags": [
+      "unique_global_political_access",
+      "russian_jewish_oligarch_funding_documented",
+      "post_soviet_wealth_connections"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The Australian Royal Commission documented that Chabad's rabbinic authority structures discouraged victims from reporting abuse to secular authorities — consistent with the broader Orthodox Jewish mesirah (informing) doctrine that some authorities use to discourage reporting to non-Jewish legal systems. Critics have alleged that Chabad's decentralized structure is specifically advantageous for avoiding institutional accountability for abuse — that individual houses can distance themselves from convicted rabbis without the movement bearing institutional responsibility. Chabad disputes this characterization.",
+    "flags": [
+      "mesirah_doctrine_reporting_discouragement_alleged",
+      "decentralization_accountability_avoidance_alleged"
+    ],
+    "sources": [
+      "https://www.childabuseroyalcommission.gov.au"
+    ]
+  },
+  "health_record": {
+    "summary": "The Australian Royal Commission documented specific cases of sexual abuse within Chabad institutions in Australia and found that institutional responses prioritized community reputation over victim welfare — consistent with the Commission's findings across multiple Jewish and non-Jewish religious institutions. Multiple Chabad rabbis in the United States have been convicted of sexual abuse of minors and adults; the decentralized structure has complicated institutional accountability.",
+    "flags": [
+      "australia_royal_commission_abuse_documented",
+      "us_multiple_convictions_decentralized_accountability",
+      "reputation_over_victim_welfare_finding"
+    ],
+    "sources": [
+      "https://www.childabuseroyalcommission.gov.au"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Reform, Conservative, and Reconstructionist synagogues — different Jewish denominational traditions with varying institutional structures",
+      "Independent minyanim — self-organized prayer communities without institutional hierarchy"
+    ],
+    "healthier": [
+      "Jewish communities with published safeguarding policies and external reporting protocols",
+      "Synagogues affiliated with denominations with centralized accountability mechanisms"
+    ],
+    "diy": [
+      "Australian Royal Commission Case Study findings on Jewish institutions are publicly available",
+      "Individual Chabad House Form 990s are available through ProPublica Nonprofit Explorer where filed"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1775,
+      "event": "Shneur Zalman of Liadi founds Chabad Hasidic movement in Belarus",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1940,
+      "event": "Sixth Rebbe Yosef Yitzchak Schneersohn relocates Chabad headquarters to Crown Heights, Brooklyn from Nazi-occupied Europe",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1951,
+      "event": "Menachem Mendel Schneerson becomes seventh Rebbe; begins global shluchim expansion program",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1994,
+      "event": "Schneerson dies without successor; meshichist faction declares him Messiah; movement continues without recognized leader",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2015,
+      "event": "Australian Royal Commission examines Chabad institutions; documents abuse cover-up and reporting discouragement",
+      "severity": "critical",
+      "source_url": "https://www.childabuseroyalcommission.gov.au"
+    },
+    {
+      "year": 2017,
+      "event": "Multiple Chabad rabbis in US face criminal proceedings for sexual abuse",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Sexual abuse victims within Chabad institutions — particularly in Australia — who reported abuse to community leaders found their reports handled internally in ways that protected abusers and discouraged external reporting. The Royal Commission documented these outcomes.",
+    "price_illusion": "Chabad presents as a warm, non-judgmental Jewish outreach movement welcoming any Jew regardless of observance or background. The institutional accountability gap created by decentralization means abuse within individual Chabad Houses is handled at the local level without movement-wide oversight.",
+    "tax_math": "Each Chabad House is a separate tax-exempt entity — meaning the movement's total financial scale is invisible in the public record. Estimates suggest Chabad's global budget may exceed a billion dollars annually, operating with no consolidated disclosure.",
+    "wealth_velocity": "Russian Jewish oligarch funding of Chabad Houses globally — documented in multiple journalistic investigations — connects post-Soviet wealth to religious institution building without transparent financial disclosure."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Chabad movement",
+        "how": "5,000 centers in 100 countries built through semi-autonomous shluchim model with no central financial accountability; extraordinary political access globally"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Sexual abuse victims in Chabad institutions",
+        "how": "Australian Royal Commission documented abuse cover-up; reporting discouraged; institutional accountability gap from decentralization"
+      }
+    ],
+    "the_gap": "Chabad has 5,000 centers in 100 countries. There is no central financial disclosure. Each house is a separate entity. The seventh Rebbe died in 1994 and some followers believe he is the Messiah and will return. The Australian Royal Commission found Chabad institutions covered up abuse and discouraged reporting. Multiple Chabad rabbis in the US have been convicted of abuse. The decentralized structure makes institutional accountability nearly impossible to establish. That structure is also why it grew so fast."
+  }
+}

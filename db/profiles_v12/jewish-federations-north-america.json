@@ -1,0 +1,169 @@
+{
+  "brand_name": "Jewish Federations of North America",
+  "brand_slug": "jewish-federations-north-america",
+  "parent_company": "Jewish Federations of North America",
+  "ultimate_parent": "Jewish Federations of North America",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "THE JEWISH FEDERATIONS RAISE $3 BILLION A YEAR AND DISTRIBUTE IT ACROSS JEWISH COMMUNAL INFRASTRUCTURE — THEIR CEO MAKES $1.2 MILLION AND THEIR LARGEST CAMPAIGNS FUND ISRAEL MORE THAN LOCAL NEEDS",
+  "executive_summary": "The Jewish Federations of North America (JFNA) is the umbrella organization for approximately 146 local Jewish federations across the United States and Canada that collectively raise approximately $3 billion annually — making the federation system one of the largest nonprofit fundraising networks in the world. Federations historically have allocated approximately 40-50% of funds raised to Israel and overseas needs (through the Jewish Agency for Israel and the American Jewish Joint Distribution Committee) and 50-60% to local Jewish communal needs. Critics — including some within the Jewish community — have documented that federation allocations prioritize established institutions over new and emerging Jewish communities, that the large percentage going overseas reduces local impact, and that federation governance tends to favor older, more established (and more politically conservative) major donors. JFNA's CEO Eric Fingerhut's compensation of approximately $1.2 million annually has been noted in the context of the federation system's allocation debates.",
+  "verdict_tags": [
+    "3_billion_annual_fundraising",
+    "40_50_pct_overseas_allocation_documented",
+    "fingerhut_1_2m_compensation",
+    "146_federations_largest_nonprofit_network",
+    "allocation_established_institutions_over_emerging",
+    "governance_major_donor_conservative_bias_documented",
+    "jewish_agency_jdc_overseas_recipients",
+    "local_vs_overseas_allocation_debate"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": false,
+    "health": false,
+    "legal": false
+  },
+  "labor": {
+    "summary": "JFNA and its 146 member federations collectively employ thousands of professionals in Jewish communal service. No major documented systemic labor violations have been identified at the network level.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental positions or enforcement actions have been identified for JFNA.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Jewish federation system's political influence operates through its allocation decisions — which organizations receive funding and which do not shapes the Jewish communal landscape. Documented concerns: progressive and LGBTQ-inclusive Jewish organizations have documented difficulty obtaining federation funding relative to more established institutions; federations have been slower to fund organizations working on Israeli-Palestinian peace advocacy; federation governance — typically dominated by major donors who tend toward more politically conservative positions — shapes allocation priorities. JFNA has also been a significant voice in Washington on Israel-related legislation, antisemitism policy, and Jewish communal interests.",
+    "flags": [
+      "progressive_lgbtq_organizations_funding_difficulty_documented",
+      "major_donor_governance_conservative_allocation_documented",
+      "washington_israel_antisemitism_advocacy"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "No major criminal enforcement actions against JFNA or its member federations have been identified. Individual federations have had documented financial management issues in various communities over the decades. JFNA files Form 990 — its finances are publicly available.",
+    "flags": [
+      "individual_federation_financial_issues_historical",
+      "form_990_public"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "JFNA and its member federations are 501(c)(3) public charities — donations are tax-deductible. The $3 billion raised annually through the federation system is received as tax-deductible charitable contributions. The allocation of approximately 40-50% of these funds to overseas needs — primarily Israel — raises the question (noted by some tax policy scholars) of whether tax-deductible US charitable contributions are effectively subsidizing a foreign country's domestic institutional needs. Eric Fingerhut's $1.2 million compensation is publicly disclosed through JFNA's Form 990.",
+    "flags": [
+      "3b_annual_tax_deductible",
+      "40_50_pct_overseas_allocation",
+      "fingerhut_1_2m_form_990_disclosed",
+      "overseas_deductible_subsidy_question"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Eric Fingerhut has served as JFNA CEO since 2018. His compensation of approximately $1.2 million annually has generated attention in the context of debates about federation allocation priorities. Fingerhut previously served as a US Congressman from Ohio and as president of Hillel International — bringing a combination of political and Jewish communal experience to the role. Individual federation CEOs are separately compensated through their local federation boards.",
+    "flags": [
+      "fingerhut_congressman_background",
+      "1_2m_compensation_noted_allocation_debates",
+      "individual_federation_ceos_separately_compensated"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The Jewish federation system is the central financial infrastructure of American Jewish communal life — funding synagogues, Jewish community centers, day schools, social services, and Israel advocacy. Its relationship with the Israeli government and Israeli institutions — through the Jewish Agency for Israel — makes it a critical bridge between American Jewish philanthropy and Israeli state institutions. The federation system's allocation decisions effectively determine which Jewish organizations and institutions have the resources to exist.",
+    "flags": [
+      "central_financial_infrastructure_jewish_communal_life",
+      "jewish_agency_israeli_government_bridge",
+      "allocation_determines_institutional_existence"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Progressive Jewish organizations and researchers have alleged that federation governance — dominated by major donors whose political and religious views tend toward the more conservative — has systematically underfunded LGBTQ-inclusive synagogues, Israeli-Palestinian peace organizations, and other emerging Jewish community expressions that do not reflect the preferences of traditional major donors. Federation advocates dispute that this reflects bias rather than legitimate allocation priorities based on community need assessment.",
+    "flags": [
+      "major_donor_governance_progressive_underfunding_alleged",
+      "lgbtq_peace_organizations_underfunded_documented",
+      "allocation_priorities_donor_preference_disputed"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "No direct health enforcement actions against JFNA have been identified. The federation system's allocation decisions — which organizations receive funding — have downstream effects on the services available to Jewish community members, including mental health services, social services, and support for vulnerable populations.",
+    "flags": [
+      "allocation_decisions_downstream_services_impact"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Direct giving to specific Jewish organizations — bypasses federation overhead while directing funds to preferred priorities",
+      "Donor-advised funds through Jewish Community Foundations — more direct allocation control"
+    ],
+    "healthier": [
+      "New Israel Fund — progressive Jewish philanthropy focused on Israeli civil society",
+      "Bend the Arc — progressive Jewish domestic advocacy"
+    ],
+    "diy": [
+      "JFNA's Form 990 is available at ProPublica Nonprofit Explorer — allocation data provides transparency",
+      "Individual federation Form 990s show local allocation priorities"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1932,
+      "event": "Council of Jewish Federations founded (predecessor to JFNA)",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1999,
+      "event": "United Jewish Communities formed through merger of UJA and CJF; becomes JFNA in 2009",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "Eric Fingerhut becomes JFNA CEO; $1.2M compensation becomes subject of community debate in allocation context",
+      "severity": "moderate",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "October 7 Hamas attack on Israel; JFNA launches emergency campaign raising over $500M for Israel — largest emergency campaign in federation history",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Jewish organizations and communities that do not fit the established federation funding model — LGBTQ-inclusive synagogues, Israeli-Palestinian peace organizations, emergent Jewish spiritual communities — have documented difficulty accessing federation funds that disproportionately support established institutional recipients.",
+    "price_illusion": "Jewish federation campaigns present as raising money for 'Jewish needs' and 'our community.' The allocation of 40-50% to overseas needs — primarily Israel — means a significant portion of locally-raised funds leave the community that raised them. Donors may not be aware of this allocation pattern when contributing.",
+    "tax_math": "$3 billion in annual tax-deductible contributions to the federation system, with 40-50% flowing overseas — primarily to Israel — represents a significant annual subsidy through charitable deductions of overseas funding that has FARA-adjacent implications noted by policy analysts.",
+    "wealth_velocity": "The federation system's major donor governance structure concentrates allocation decision-making authority in the hands of the largest contributors — typically older, more established, more politically conservative community members — who shape which Jewish institutions receive the resources to exist and grow."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Established Jewish institutions",
+        "how": "Stable federation funding maintains large synagogues, JCCs, day schools, and other established institutions"
+      },
+      {
+        "group": "Israeli institutions",
+        "how": "40-50% overseas allocation funds Jewish Agency, JDC, and Israeli educational institutions through US tax-deductible contributions"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Emerging and progressive Jewish organizations",
+        "how": "Documentation of difficulty accessing federation funding relative to established institutions"
+      },
+      {
+        "group": "US taxpayers",
+        "how": "Tax deductions on contributions that allocate 40-50% overseas, including to institutions of a foreign government"
+      }
+    ],
+    "the_gap": "Jewish federations raise $3 billion a year. 40-50% of it goes overseas — primarily to Israel. The CEO makes $1.2 million. The governance is dominated by major donors who tend to be older and more conservative. Progressive and LGBTQ-inclusive Jewish organizations have documented difficulty getting funded. The donors get tax deductions for giving money that goes to another country's institutions. The federation system is the central financial infrastructure of American Jewish life. It decides which organizations have the resources to exist."
+  }
+}

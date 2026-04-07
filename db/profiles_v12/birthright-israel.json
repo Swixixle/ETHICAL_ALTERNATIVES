@@ -1,0 +1,168 @@
+{
+  "brand_name": "Birthright Israel (Taglit)",
+  "brand_slug": "birthright-israel",
+  "parent_company": "Taglit-Birthright Israel",
+  "ultimate_parent": "Taglit-Birthright Israel Foundation",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "BIRTHRIGHT FLIES 700,000 YOUNG JEWISH ADULTS TO ISRAEL FOR FREE — ITS DONORS INCLUDE SHELDON ADELSON AND LYNN SCHUSTERMAN — AND CRITICS DOCUMENT IT AS A 10-DAY PROPAGANDA TRIP THAT AVOIDS SHOWING PARTICIPANTS THE OCCUPATION",
+  "executive_summary": "Taglit-Birthright Israel is a nonprofit that provides free 10-day trips to Israel for Jewish young adults (ages 18-32) who have not previously traveled to Israel on an organized youth trip. Since its founding in 1999, it has sent approximately 800,000 participants from 67 countries. The program is funded approximately equally by private donors — including major contributions from the late Sheldon Adelson (estimated $380 million), Lynn Schusterman, and Charles Bronfman — and by the Israeli government. Critics — including some former participants — have documented that the trip is structured to avoid exposure to the Israeli-Palestinian conflict, Palestinian communities, and the West Bank occupation, while immersing participants in Israeli Jewish culture and nationalism. Organizations including IfNotNow and Jewish Voice for Peace have conducted protests at Birthright departures. Several Birthright participants have made news by walking off their trips to visit Palestinian communities.",
+  "verdict_tags": [
+    "800000_participants_67_countries",
+    "adelson_380m_donor",
+    "israeli_government_equal_funding",
+    "occupation_not_shown_documented",
+    "ifnotnow_protests_documented",
+    "participants_walked_off_visit_palestinians",
+    "sheldon_schusterman_bronfman_major_donors",
+    "propaganda_characterization_critics"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": false
+  },
+  "labor": {
+    "summary": "Birthright Israel employs staff in the US, Israel, and internationally to coordinate its programs. No major documented labor violations have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental enforcement actions against Birthright have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Birthright is explicitly designed to strengthen Jewish identity and connection to Israel — stated in its founding mission. Critics document that this political/identity mission is implemented through trip itineraries that: include visits to military memorials, meetings with IDF soldiers, and immersive Israeli cultural experiences; and exclude visits to Palestinian communities, the West Bank, checkpoints, or exposure to perspectives critical of Israeli government policy. The Israeli government's equal funding of the program — approximately $100 million annually — has been documented as making Birthright a state-funded identity program as much as a private philanthropic one. Participants who have walked off trips to visit Palestinian communities have received significant media coverage.",
+    "flags": [
+      "military_memorial_idf_immersion_included",
+      "occupation_west_bank_excluded_documented",
+      "israeli_government_100m_annual_equal_funder",
+      "state_funded_identity_program_characterization",
+      "walkaways_visit_palestinians_media_documented"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "No major criminal enforcement actions against Birthright have been identified. The Israeli government's funding of the program — and Birthright's receipt of US private donations — has been examined for FARA registration implications; Birthright has not been required to register. US donors' tax-deductible contributions to Birthright have been noted by FARA reform advocates as a potential area of scrutiny given the Israeli government's co-funding.",
+    "flags": [
+      "fara_scrutiny_noted_not_required",
+      "us_donor_deductible_foreign_government_co_funding"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Birthright Israel Foundation is a 501(c)(3) — US donor contributions are tax-deductible. The Israeli government provides approximately equal funding to private donors — meaning US taxpayers subsidize, through charitable deductions, a program that is equally funded by a foreign government. Sheldon Adelson's estimated $380 million lifetime contribution to Birthright generated substantial charitable tax deductions. Total annual Birthright budget is approximately $100 million.",
+    "flags": [
+      "501c3_deductible_foreign_government_equal_funder",
+      "adelson_380m_deductions_generated",
+      "100m_annual_budget"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Gidi Mark leads Birthright Israel Foundation. The program was co-founded by Charles Bronfman and Michael Steinhardt — two major Jewish philanthropists — alongside the Israeli government. Sheldon Adelson's subsequent major funding transformed the program's scale. The program's governance reflects its joint private-public (Israeli government) structure.",
+    "flags": [
+      "bronfman_steinhardt_co_founders",
+      "adelson_transformed_scale",
+      "gidi_mark_ceo"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Birthright's donor network — Adelson, Schusterman, Bronfman, and dozens of other major Jewish philanthropists — overlaps significantly with the broader pro-Israel advocacy donor ecosystem. The Israeli government's co-funding connects Birthright to Israeli state policy in a documented way that FARA reform advocates have noted. Birthright's alumni include a significant portion of young Jewish communal leaders across North America — giving the program documented long-term influence over the Jewish organizational leadership pipeline.",
+    "flags": [
+      "pro_israel_donor_network_overlap",
+      "israeli_government_co_funding_fara_noted",
+      "alumni_jewish_communal_leadership_pipeline"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "IfNotNow, Jewish Voice for Peace, and academic researchers have alleged that Birthright's itinerary is specifically designed to cultivate uncritical attachment to Israel by excluding any exposure to Palestinian perspectives or the occupation — and that participants do not receive disclosure that the program's framing reflects a specific political perspective rather than a balanced introduction to Israel. Birthright maintains the program is an introduction to Jewish heritage and culture, not a political advocacy trip. Former participants who walked off trips to visit Palestinian communities have described discovering the occupation's realities as a shock compared to their Birthright experience.",
+    "flags": [
+      "itinerary_designed_exclude_occupation_alleged",
+      "no_framing_disclosure_alleged",
+      "walkaways_occupation_shock_documented"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "No direct health enforcement actions against Birthright have been identified. The documented concern is political — the program's framing and what it includes and excludes — rather than direct physical health harm.",
+    "flags": [],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Unsupported independent travel to Israel — significantly more expensive without the subsidy",
+      "Alternative Jewish travel programs that include exposure to Palestinian communities: Encounter, Abraham Path"
+    ],
+    "healthier": [
+      "Encounter Programs — brings Jewish leaders into contact with Palestinian communities",
+      "Center for Jewish Nonviolence — organized Jewish solidarity travel to the West Bank"
+    ],
+    "diy": [
+      "IfNotNow's Birthright documentation is publicly available at ifnotnow.org",
+      "Former participant 'walkaway' accounts are documented in media including Vox and the Forward"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1999,
+      "event": "Birthright Israel founded by Charles Bronfman, Michael Steinhardt, and Israeli government; first trips conducted",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2007,
+      "event": "Sheldon Adelson becomes major funder; program scale expands dramatically; eventually contributes estimated $380M over lifetime",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "IfNotNow begins organizing Birthright walkaway protests; first participants walk off trips to visit Palestinian communities; significant media coverage",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Birthright reaches 800,000 cumulative participants since founding",
+      "severity": "neutral",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Palestinians whose communities, perspective, and experience of the Israeli-Palestinian conflict are excluded from a program reaching 800,000 young Jewish adults are absent from those participants' foundational experience of Israel. Participants who subsequently discover the occupation's realities — including those who walked off their trips — have documented experiencing significant cognitive dissonance.",
+    "price_illusion": "Birthright presents as a gift — a free trip to explore Jewish heritage and connection. Critics document that the 'gift' is specifically structured to cultivate political attachment to Israeli state policies by excluding exposure to the perspectives of Palestinians who live under those policies. The Israeli government's equal funding of the program makes it simultaneously a private philanthropic gift and a foreign government-sponsored political program.",
+    "tax_math": "US donors' tax-deductible contributions to Birthright are matched by Israeli government funding — meaning US taxpayers subsidize, through charitable deductions, a program equally funded by a foreign government whose policies are directly relevant to the program's political effect. Sheldon Adelson's estimated $380 million in Birthright contributions generated significant charitable deductions.",
+    "wealth_velocity": "The Adelson, Schusterman, and Bronfman family philanthropies have deployed hundreds of millions into Birthright — a program that has demonstrably shaped the political perspectives of a significant portion of young Jewish American communal leadership over 25 years."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Israeli government",
+        "how": "800,000 young Jewish adults shaped toward uncritical attachment to Israel at equal Israeli government expense; alumni pipeline into Jewish communal leadership globally"
+      },
+      {
+        "group": "Major Jewish philanthropic donors",
+        "how": "Tax-deductible contributions to a program that advances their political perspectives on Israel; Adelson estimated $380M with charitable deductions"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "US taxpayers",
+        "how": "Tax deductions on contributions to a program equally funded by a foreign government whose policies are the program's implicit political subject"
+      },
+      {
+        "group": "Palestinian communities",
+        "how": "Excluded from the experience of 800,000 young adults learning about the country they live in"
+      }
+    ],
+    "the_gap": "Birthright has flown 800,000 young Jewish adults to Israel for free. The Israeli government pays half. Sheldon Adelson gave $380 million. All of that is tax-deductible in the United States. The trip visits military memorials and has participants meet IDF soldiers. It does not show them the West Bank or Palestinian communities. Participants who walked off their trips to visit Palestinians said they were shocked by what they found. The program has shaped a generation of Jewish communal leaders. Palestinians are not in it."
+  }
+}
