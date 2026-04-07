@@ -1,0 +1,175 @@
+{
+  "brand_name": "Salvation Army",
+  "brand_slug": "salvation-army",
+  "parent_company": "The Salvation Army",
+  "ultimate_parent": "General of The Salvation Army",
+  "overall_concern_level": "significant",
+  "profile_type": "nonprofit",
+  "generated_headline": "THE SALVATION ARMY HAS DOCUMENTED POLICIES REQUIRING LGBT PEOPLE TO RENOUNCE THEIR SEXUALITY TO RECEIVE SERVICES — IT TAKES $2 BILLION A YEAR IN GOVERNMENT CONTRACTS — AND ITS INTERNATIONAL LEADER ONCE SAID HOMOSEXUALITY DESERVES DEATH",
+  "executive_summary": "The Salvation Army is a Christian organization operating as an international church and social services provider, with annual revenue of approximately $4 billion — including approximately $2 billion in US government contracts and grants. It operates homeless shelters, food pantries, disaster relief, and rehabilitation programs. Its documented anti-LGBTQ policies have been the subject of sustained criticism and organized boycotts. A 2012 interview with Salvation Army Australia's media director confirmed that, in his interpretation, the organization's theology holds that homosexuality warrants the death penalty — a statement the Salvation Army subsequently repudiated. The organization has documented policies requiring LGBTQ individuals seeking services at some of its shelters and programs to renounce their sexual orientation or face denial of services. Multiple investigations have documented that transgender individuals have been denied shelter access consistent with their gender identity at Salvation Army facilities.",
+  "verdict_tags": [
+    "2b_government_contracts_lgbtq_discrimination",
+    "australia_director_homosexuality_death_statement",
+    "transgender_shelter_denial_documented",
+    "boycott_red_kettle_organized",
+    "lgbtq_renounce_sexuality_services_condition",
+    "4b_annual_revenue_christian_organization",
+    "rehabilitation_program_religious_conditions",
+    "2_billion_government_funded_lgbtq_discrimination"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "The Salvation Army employs approximately 27,000 people in the US and hundreds of thousands globally, with a significant volunteer workforce. Its rehabilitation programs — Adult Rehabilitation Centers — have been documented as using program participants as labor in thrift stores for minimal compensation while the thrift stores generate significant revenue for the organization.",
+    "flags": [
+      "adult_rehabilitation_centers_participant_labor_thrift",
+      "thrift_store_revenue_participant_minimal_compensation"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental enforcement actions against the Salvation Army have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Salvation Army's official positions on homosexuality — that it is 'a departure from God's will' requiring 'redemptive grace' — have been consistent since its founding in Victorian England. These positions have translated into documented service policies: LGBTQ individuals seeking services at some Salvation Army facilities have been required to renounce homosexual relationships as a condition of service; transgender individuals have been documented as denied shelter consistent with their gender identity. The Salvation Army has lobbied against LGBTQ non-discrimination laws in multiple jurisdictions, arguing that requiring it to serve LGBTQ people without condition violates its religious freedom.",
+    "flags": [
+      "official_homosexuality_departure_gods_will_position",
+      "services_conditioned_renouncing_homosexuality",
+      "transgender_shelter_denial_documented",
+      "lgbtq_non_discrimination_law_opposition_lobbying"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "The Salvation Army's receipt of approximately $2 billion annually in US government contracts and grants — including from federal, state, and local governments — while maintaining documented discriminatory service policies has generated legal challenges under civil rights law. Multiple cities have reduced or eliminated Salvation Army contracts following documented discrimination against LGBTQ recipients. San Francisco cut $3.5 million in Salvation Army contracts in 2003 after the organization refused to extend employee benefits to domestic partners. Multiple government contractors have anti-discrimination requirements that the Salvation Army has sought religious exemptions from.",
+    "flags": [
+      "2b_government_contracts_with_discrimination",
+      "san_francisco_3_5m_cut_2003",
+      "religious_exemption_sought_contractor_requirements",
+      "multiple_cities_reduced_contracts"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "The Salvation Army is registered as a religious organization and church — giving it broader tax exemptions than standard nonprofits, including the ability to receive tax-deductible donations while not filing Form 990 for its church activities. Its social services arms file Form 990. The approximately $2 billion in annual government contracts represents taxpayer funds flowing to an organization with documented discriminatory service policies.",
+    "flags": [
+      "church_registration_broader_exemption",
+      "2b_taxpayer_funds_discriminatory_policies",
+      "social_services_form_990_filed"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "General LyndonBöhmer leads the Salvation Army internationally. The international General is elected by a High Council. The Salvation Army's leadership is embedded in its military-style hierarchy — officers rather than pastors. Commissioner Kenneth Hodder leads the USA Western Territory. The 2012 incident in which Salvation Army Australia's media director said homosexuals 'deserve death' — per the Bible — before retracting the statement represents the most documented leadership statement connecting the organization's theology to violence.",
+    "flags": [
+      "australia_director_homosexuals_deserve_death_2012",
+      "statement_retracted",
+      "military_hierarchy_officers",
+      "hodder_usa_western_territory"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The Salvation Army's red kettle Christmas campaign is one of the most recognized charitable fundraising activities in America — generating approximately $2 billion annually from public donations. Organized boycotts of the red kettle campaign have been documented since at least 2012, when the Australia homosexuality-death statement went viral. The organization's network of thrift stores — Family Stores — competes with Goodwill in many markets.",
+    "flags": [
+      "red_kettle_2b_annual_recognized",
+      "organized_boycott_2012_ongoing",
+      "family_stores_thrift_competition_goodwill"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "LGBTQ advocates and investigative journalists have documented specific cases in which Salvation Army shelters denied services to LGBTQ individuals — requiring them to pray, attend services, or renounce relationships as conditions of shelter access. The Salvation Army has disputed many individual cases while maintaining its official theological position. Transgender individuals have documented specific incidents of being denied shelter consistent with gender identity at Salvation Army facilities.",
+    "flags": [
+      "specific_cases_services_denied_documented",
+      "prayer_services_renounce_relationship_conditions_documented",
+      "transgender_gender_identity_denial_documented"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "The denial of emergency shelter services to LGBTQ individuals — particularly transgender individuals — has documented life safety consequences in jurisdictions where the Salvation Army is a primary shelter provider. LGBTQ youth who are homeless at higher rates than non-LGBTQ youth have been documented as avoiding Salvation Army services due to documented discrimination, reducing their access to emergency services.",
+    "flags": [
+      "emergency_shelter_denial_life_safety",
+      "lgbtq_youth_avoiding_services_access_reduction",
+      "transgender_primary_shelter_denial_documented"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Local community shelters without religious conditions on service",
+      "Secular food banks and community fridges without religious programming requirements"
+    ],
+    "healthier": [
+      "LGBTQ-affirming shelters — National Center for Transgender Equality maintains a resource list",
+      "Secular emergency services without documented LGBTQ service conditions"
+    ],
+    "diy": [
+      "Before donating to the red kettle: check whether your local Salvation Army has documented LGBTQ service policies",
+      "Local Community Action Agencies provide emergency services without documented religious conditions"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1865,
+      "event": "William Booth founds Salvation Army in London's East End; Victorian-era theology shapes its positions on sexuality",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2001,
+      "event": "Multiple cities including San Francisco document Salvation Army refusing domestic partner benefits to employees; contracts cut",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2012,
+      "event": "Salvation Army Australia media director says homosexuals 'deserve death' per the Bible in interview; statement retracted after global outrage",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "Multiple transgender individuals document being denied shelter consistent with gender identity at Salvation Army facilities",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "Salvation Army 'Do Homosexuals Deserve to Die?' FAQ document discovered on website; removed after media coverage",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "LGBTQ individuals — particularly homeless LGBTQ youth and transgender individuals — who are denied Salvation Army services in communities where it is a primary emergency shelter provider face documented displacement with limited alternatives. The Salvation Army's $2 billion in government contracts funds services that, in documented cases, have been conditioned on religious compliance.",
+    "price_illusion": "The red kettle and holiday donation campaigns present the Salvation Army as a straightforward emergency services charity. The $2 billion in government contracts — and the documented service conditions attached to some Salvation Army programs — represent public funding of an organization that has official policies treating LGBTQ people as requiring redemption.",
+    "tax_math": "The Salvation Army receives approximately $2 billion annually in US government contracts and approximately $2 billion in public donations — $4 billion total — as a tax-exempt religious organization whose official theology characterizes homosexuality as a departure from God's will. Donors receive tax deductions for contributing to an organization with documented discriminatory service policies.",
+    "wealth_velocity": "The Salvation Army's $4 billion annual US revenue funds an international organization with documented theological commitments that translate into documented service discrimination. The Adult Rehabilitation Centers' use of program participants as thrift store labor — for minimal compensation while the stores generate significant revenue — represents a labor model worth scrutinizing."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Salvation Army",
+        "how": "$2B in government contracts plus $2B in public donations; tax-exempt status as church; red kettle recognition enables continued fundraising despite documented discrimination"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "LGBTQ individuals denied services",
+        "how": "Emergency shelter denied; services conditioned on renouncing relationships; transgender individuals denied gender-consistent shelter; in communities where Salvation Army is primary provider, no alternative exists"
+      }
+    ],
+    "the_gap": "The Salvation Army takes $2 billion a year in US government contracts. Its official theology says homosexuality is a departure from God's will. Its Australia media director said homosexuals deserve death in 2012. The statement was retracted. A FAQ document on their website asking 'Do Homosexuals Deserve to Die?' was discovered and removed. Transgender people have been denied shelter consistent with their gender identity at documented specific locations. The red kettle raises another $2 billion. Donations are tax-deductible."
+  }
+}

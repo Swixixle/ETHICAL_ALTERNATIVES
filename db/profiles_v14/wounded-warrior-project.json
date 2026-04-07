@@ -1,0 +1,175 @@
+{
+  "brand_name": "Wounded Warrior Project",
+  "brand_slug": "wounded-warrior-project",
+  "parent_company": "Wounded Warrior Project",
+  "ultimate_parent": "Wounded Warrior Project Board of Directors",
+  "overall_concern_level": "moderate",
+  "profile_type": "nonprofit",
+  "generated_headline": "CBS NEWS DOCUMENTED WOUNDED WARRIOR PROJECT SPENDING $26 MILLION ON CONFERENCES AND MEETINGS IN TWO YEARS — STAFF DESCRIBED 'EXTRAVAGANT' PARTIES — AND THE CEO AND COO WERE FIRED AFTER THE INVESTIGATION",
+  "executive_summary": "Wounded Warrior Project (WWP) is a veterans service organization founded in 2003, raising approximately $500 million annually to serve post-9/11 veterans. In January 2016, CBS News published an investigation — based on interviews with more than 40 current and former WWP employees — documenting that the organization had spent approximately $26 million on conferences and meetings in two years, that employees described lavish parties with expensive meals and entertainment, and that WWP's spending on overhead had grown dramatically relative to direct veteran services. Following the investigation, WWP fired CEO Steve Nardizzi and COO Al Giordano. An independent audit commissioned by the board found that conference expenditures had been excessive and inconsistent with the organization's charitable mission. WWP subsequently reformed its spending practices and its Charity Navigator rating has improved.",
+  "verdict_tags": [
+    "26m_conferences_meetings_two_years",
+    "ceo_coo_fired_after_investigation",
+    "cbs_news_40_employees_investigation",
+    "lavish_parties_documented_former_employees",
+    "charity_navigator_rating_decline_recovery",
+    "500m_annual_revenue",
+    "overhead_spending_dramatic_growth",
+    "post_9_11_veterans_service"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": false,
+    "tax": true,
+    "health": false,
+    "legal": false
+  },
+  "labor": {
+    "summary": "WWP employs approximately 600 staff. Former employees who spoke to CBS News described a workplace culture where questioning leadership's spending decisions was discouraged and employees who raised concerns faced retaliation. The CEO and COO firings followed both the CBS investigation and internal board review.",
+    "flags": [
+      "retaliation_concern_raising_alleged_former_employees",
+      "ceo_coo_fired_post_investigation"
+    ],
+    "sources": [
+      "https://www.cbsnews.com/news/wounded-warrior-project-accused-of-spending-problems/"
+    ]
+  },
+  "environmental": {
+    "summary": "No environmental positions or enforcement actions have been identified for WWP.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "WWP is a veterans service organization whose mission is politically uncontroversial. It has not engaged in documented political advocacy beyond veterans issues. The CBS investigation's political impact was on the nonprofit accountability landscape — generating significant discussion about overhead ratios and the accountability of large veterans charities.",
+    "flags": [
+      "veterans_issues_noncontroversial_mission",
+      "nonprofit_accountability_landscape_impact"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "No criminal enforcement actions against WWP have been identified. The CBS investigation, the subsequent board review, and the CEO/COO firing were handled internally. The independent audit commissioned by the board found excessive conference spending but did not identify criminal conduct. WWP has not been charged with any offense.",
+    "flags": [
+      "no_criminal_enforcement",
+      "board_independent_audit_excessive_spending",
+      "no_charges"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "WWP is a 501(c)(3) public charity — donations are tax-deductible. It files Form 990. Steve Nardizzi's compensation prior to his firing was approximately $500,000 annually — disclosed through Form 990. The $26 million in conference spending over two years was received from charitable donations. WWP's overhead ratio — the percentage of spending on administration and fundraising versus direct programs — became the primary accountability metric discussed following the investigation.",
+    "flags": [
+      "form_990_public",
+      "nardizzi_500k_compensation",
+      "26m_from_charitable_donations",
+      "overhead_ratio_accountability_focus"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Steve Nardizzi and COO Al Giordano were fired by WWP's board of directors in March 2016 following the CBS investigation and the board's independent review. Michael Linnington became CEO and undertook significant organizational reforms. The board's decision to fire both executives represented one of the faster nonprofit leadership accountability responses to a major media investigation in the sector's history.",
+    "flags": [
+      "nardizzi_giordano_fired_march_2016",
+      "linnington_reform_ceo",
+      "board_faster_accountability_response_sector"
+    ],
+    "sources": [
+      "https://www.cbsnews.com/news/wounded-warrior-project-accused-of-spending-problems/"
+    ]
+  },
+  "connections": {
+    "summary": "WWP's size — $500 million annual revenue — made it the largest veterans service nonprofit in the US by revenue at the time of the investigation. The investigation prompted scrutiny of the broader veterans charity landscape, where multiple organizations were found to have high overhead ratios. The Better Business Bureau and Charity Navigator both updated their WWP assessments following the investigation.",
+    "flags": [
+      "largest_veterans_nonprofit_revenue",
+      "broader_veterans_charity_scrutiny",
+      "bbb_charity_navigator_updated_assessments"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former WWP employees quoted in the CBS investigation alleged that the organization's spending culture — lavish conferences, open bars, entertainment — reflected a prioritization of employee perks and leadership comfort over veteran services; and that employees who questioned spending were marginalized or terminated. WWP disputed these characterizations while acknowledging that some conference spending had been excessive.",
+    "flags": [
+      "spending_culture_perks_over_veterans_alleged",
+      "employee_questioning_retaliation_alleged",
+      "wwp_disputed_while_acknowledging_excessive"
+    ],
+    "sources": [
+      "https://www.cbsnews.com/news/wounded-warrior-project-accused-of-spending-problems/"
+    ]
+  },
+  "health_record": {
+    "summary": "No direct health enforcement actions against WWP have been identified. The documented concern is financial — whether charitable donations intended to serve veterans with physical and psychological injuries were being spent on overhead and staff entertainment at documented excessive rates.",
+    "flags": [
+      "financial_overhead_not_health_enforcement"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Disabled American Veterans (DAV) — highly rated veterans service organization",
+      "Fisher House Foundation — housing for military families at VA hospitals",
+      "Gary Sinise Foundation — veterans services with high program spending ratio"
+    ],
+    "healthier": [
+      "Veterans service organizations with lower overhead ratios verified by Charity Navigator",
+      "Direct VA advocacy — supporting adequate VA funding through policy advocacy"
+    ],
+    "diy": [
+      "Charity Navigator rates veterans charities including WWP and alternatives",
+      "WWP's Form 990 is available at ProPublica Nonprofit Explorer — current overhead ratios are disclosed"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2003,
+      "event": "Wounded Warrior Project founded to support post-9/11 veterans",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2014,
+      "event": "WWP spends approximately $26M on conferences and meetings over two fiscal years",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2016,
+      "event": "January: CBS News investigation publishes; 40+ current and former employees document excessive spending and lavish events. March: Board fires CEO Nardizzi and COO Giordano. Independent audit confirms excessive conference spending.",
+      "severity": "critical",
+      "source_url": "https://www.cbsnews.com/news/wounded-warrior-project-accused-of-spending-problems/"
+    },
+    {
+      "year": 2017,
+      "event": "WWP under new CEO Linnington reforms spending; Charity Navigator rating recovers",
+      "severity": "moderate",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Veterans with service-connected injuries and psychological wounds who donated to or sought services from WWP during the period of excessive overhead spending received less in direct services than their contributions would have funded under different spending practices. The CBS investigation's disclosure damaged the broader veterans charity sector's credibility.",
+    "price_illusion": "Wounded Warrior Project's marketing — featuring veterans with visible injuries and compelling stories — presented donation as directly funding veteran services. The $26 million in conference spending over two years — with documented lavish events — represented a spending pattern inconsistent with that marketing presentation.",
+    "tax_math": "$26 million in charitable donations designated for veterans services were spent on conferences, parties, and overhead during the two-year documented period. All of these donations were received as tax-deductible charitable contributions. Steve Nardizzi's $500,000 compensation was paid from those funds.",
+    "wealth_velocity": "WWP's rapid growth — from a small startup to $500 million annually — created the spending culture documented in the CBS investigation. The board's response — firing both executives — was unusually decisive for a large nonprofit."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "WWP leadership and staff under Nardizzi",
+        "how": "Lavish conferences, parties, and entertainment funded from charitable donations designated for veterans"
+      },
+      {
+        "group": "Steve Nardizzi and Al Giordano",
+        "how": "$500k+ compensation; conference culture they built; fired but not criminally charged"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Post-9/11 veterans with service-connected injuries",
+        "how": "Charitable donations in their name spent on overhead and entertainment rather than direct services"
+      }
+    ],
+    "the_gap": "Wounded Warrior Project raised $500 million a year from people who wanted to help veterans. They spent $26 million on conferences and meetings in two years. Former employees described lavish parties. CBS interviewed 40 current and former employees. The CEO and COO were fired. The board commissioned an independent audit. No criminal charges were filed. The organization reformed. The veterans who were supposed to receive those services during those two years received less than the donations would have funded."
+  }
+}

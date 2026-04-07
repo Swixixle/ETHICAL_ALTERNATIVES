@@ -1,0 +1,189 @@
+{
+  "brand_name": "Susan G. Komen",
+  "brand_slug": "susan-g-komen",
+  "parent_company": "Susan G. Komen",
+  "ultimate_parent": "Susan G. Komen Board of Directors",
+  "overall_concern_level": "moderate",
+  "profile_type": "nonprofit",
+  "generated_headline": "KOMEN LICENSED ITS PINK RIBBON TO COMPANIES SELLING PRODUCTS WITH CANCER-CAUSING INGREDIENTS — THEN CUT PLANNED PARENTHOOD FUNDING FOR A YEAR IN A POLITICAL DECISION — AND ITS CEO MADE $684,000 FROM A BREAST CANCER CHARITY",
+  "executive_summary": "Susan G. Komen is the world's largest breast cancer organization, raising approximately $350 million annually and having raised over $2 billion for breast cancer research and awareness since its founding in 1982. The organization pioneered the pink ribbon — now the world's most recognized cause marketing symbol — and generates significant revenue through licensing the ribbon to corporate partners. Critics have documented 'pinkwashing' — companies using Komen's pink ribbon while selling products associated with cancer risk, including cosmetics with potentially harmful ingredients and processed foods. In 2012, Komen defunded Planned Parenthood's breast cancer screening programs in a decision its leadership initially attributed to a new grant policy — then reversed after massive public backlash. The reversal was accompanied by the resignation of senior vice president Karen Handel, who had championed the defunding. Founder Nancy Brinker's compensation exceeded $684,000 annually.",
+  "verdict_tags": [
+    "planned_parenthood_defunding_2012_reversed",
+    "pinkwashing_cancer_causing_products",
+    "nancy_brinker_684k_compensation",
+    "pink_ribbon_licensed_harmful_companies",
+    "2b_raised_research_awareness_ratio_criticized",
+    "handel_resigned_defunding_champion",
+    "cure_vs_awareness_spending_ratio",
+    "ambassador_appointment_bush_administration"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": false
+  },
+  "labor": {
+    "summary": "Komen employs approximately 600 staff nationally and at its affiliates. No major documented labor violations have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Komen's pinkwashing issue has direct environmental and health intersections — the pink ribbon has been licensed to companies selling products with potentially carcinogenic ingredients, creating a documented irony of a cancer charity partnering with companies whose products may increase cancer risk.",
+    "flags": [
+      "pinkwashing_carcinogenic_ingredients_documented"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "The 2012 Planned Parenthood defunding decision — which Komen's leadership initially attributed to a new policy prohibiting grants to organizations under government investigation (Planned Parenthood was under a Congressional inquiry) — was documented by journalists as a political decision championed by Karen Handel, a senior vice president who had run for Georgia governor on an anti-Planned Parenthood platform. The decision and reversal generated the largest-single-week fundraising spike in Planned Parenthood's history. Nancy Brinker — the founder — had been appointed by President George W. Bush as US Ambassador to Hungary and Chief of Protocol of the United States, creating documented connections between Komen's leadership and Republican political networks.",
+    "flags": [
+      "planned_parenthood_defunding_political_decision_documented",
+      "handel_anti_planned_parenthood_history",
+      "brinker_bush_ambassador_appointment",
+      "reversal_planned_parenthood_largest_fundraising_spike"
+    ],
+    "sources": [
+      "https://www.nytimes.com/2012/02/07/health/komen-foundation-reverses-decision-on-planned-parenthood.html"
+    ]
+  },
+  "legal": {
+    "summary": "No major criminal enforcement actions against Komen have been identified. The Planned Parenthood defunding and reversal generated no legal proceedings — it was a governance decision. Pinkwashing: the pink ribbon licensing has not generated legal action but has been the subject of significant advocacy by organizations including Breast Cancer Action (which operates the Think Before You Pink campaign).",
+    "flags": [
+      "no_criminal_enforcement",
+      "pinkwashing_advocacy_not_legal",
+      "planned_parenthood_no_legal_proceedings"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Komen is a 501(c)(3) public charity — donations are tax-deductible. It files Form 990. Nancy Brinker's compensation of $684,000 annually was disclosed through Form 990 — a figure critics noted as extraordinarily high for a breast cancer charity whose spending ratios on research versus awareness have been questioned. Pink ribbon licensing fees from corporate partners generate additional revenue. The ratio of Komen spending on awareness versus research has been documented as skewed toward awareness.",
+    "flags": [
+      "form_990_public",
+      "brinker_684k_disclosed",
+      "awareness_research_spending_ratio_criticized",
+      "pink_ribbon_licensing_revenue"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Nancy Brinker founded Komen in honor of her sister Susan G. Komen who died of breast cancer in 1980. Brinker led the organization for decades and built it into the world's largest breast cancer charity. Her $684,000 annual compensation — disclosed through Form 990 — was the subject of significant criticism. The 2012 Planned Parenthood decision occurred during her leadership; she announced the reversal personally. Paula Schneider succeeded Brinker as CEO. Karen Handel — whose anti-Planned Parenthood advocacy was documented as the primary driver of the defunding decision — resigned from Komen following the reversal.",
+    "flags": [
+      "brinker_684k_subject_criticism",
+      "handel_resigned_decision_driver",
+      "brinker_led_decades_organization_built"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Komen's pink ribbon licensing has generated corporate partnerships with dozens of major companies — including, documented by critics, companies selling products with potentially cancer-causing ingredients. The Think Before You Pink campaign (Breast Cancer Action) specifically targets pinkwashing — documenting companies that use the pink ribbon while selling products associated with cancer risk. KFC and Komen's 'Buckets for the Cure' partnership — selling pink buckets of fried chicken — was a particularly documented example of marketing incongruity.",
+    "flags": [
+      "kfc_buckets_for_cure_pink_chicken_documented",
+      "think_before_you_pink_campaign_targets_komen",
+      "cancer_causing_ingredients_pink_licensed_documented"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Breast cancer advocacy critics have alleged that Komen's focus on awareness — pink ribbons, walks, corporate partnerships — over research has slowed scientific progress on breast cancer prevention and treatment. The specific allegation is that Komen's marketing model prioritizes activities that generate fundraising over activities that would most effectively address breast cancer. Komen maintains its research funding is significant and its awareness programs save lives through earlier detection.",
+    "flags": [
+      "awareness_over_research_priorities_alleged",
+      "marketing_model_prioritizes_fundraising_alleged",
+      "research_funding_significant_earlier_detection_argument"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "The pinkwashing issue has direct health dimensions — Komen's pink ribbon has been licensed to companies selling cosmetics with parabens, phthalates, and other ingredients that some researchers associate with cancer risk. The Planned Parenthood defunding — even for one year — affected access to breast cancer screening for lower-income women at Planned Parenthood facilities. Komen maintains its awareness programs have contributed to earlier detection and improved survival rates.",
+    "flags": [
+      "pink_licensed_parabens_phthalates_carcinogen_concern",
+      "planned_parenthood_screening_access_reduced_one_year",
+      "awareness_earlier_detection_survival_argument"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Breast Cancer Research Foundation — higher-rated research spending ratio",
+      "National Breast Cancer Coalition — advocacy for research funding"
+    ],
+    "healthier": [
+      "Think Before You Pink donors guide (thinkbeforeyoupink.org) evaluates pink ribbon campaigns",
+      "Breast Cancer Action — advocacy without pink ribbon licensing"
+    ],
+    "diy": [
+      "Charity Navigator rates Komen vs. alternative breast cancer organizations",
+      "Think Before You Pink's annual guide documents pinkwashing products before holiday shopping"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1982,
+      "event": "Nancy Brinker founds Susan G. Komen in honor of her sister; Race for the Cure begins",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1991,
+      "event": "Pink ribbon introduced as breast cancer awareness symbol; becomes most recognized cause marketing symbol globally",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2004,
+      "event": "Brinker appointed by Bush as US Ambassador to Hungary; Komen's Republican political connections documented",
+      "severity": "moderate",
+      "source_url": ""
+    },
+    {
+      "year": 2011,
+      "event": "Karen Handel joins Komen as SVP; advocates for defunding Planned Parenthood",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2012,
+      "event": "February: Komen defunds Planned Parenthood citing new grant policy; massive backlash including $3M Planned Parenthood fundraising surge; Komen reverses decision within days; Handel resigns",
+      "severity": "critical",
+      "source_url": "https://www.nytimes.com/2012/02/07/health/komen-foundation-reverses-decision-on-planned-parenthood.html"
+    },
+    {
+      "year": 2015,
+      "event": "Brinker's $684k compensation disclosed; organization restructures leadership amid declining fundraising",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Lower-income women who relied on Planned Parenthood's Komen-funded breast cancer screening — approximately 170,000 per year at the time of the defunding — had access temporarily reduced during the period of the grant suspension. Planned Parenthood's fundraising surge following the controversy ultimately increased its resources.",
+    "price_illusion": "The pink ribbon presents as a simple symbol of breast cancer awareness and research support. Komen's licensing of the ribbon to companies selling products with potentially cancer-associated ingredients — combined with an awareness-to-research spending ratio criticized by advocates — represents a documented gap between the symbol's meaning and the organization's practices.",
+    "tax_math": "Komen's $350 million annual revenue is received as tax-deductible charitable contributions. Nancy Brinker's $684,000 compensation was paid from those funds. The pink ribbon licensing fees represent additional revenue from corporate partners who receive charitable cause marketing benefits.",
+    "wealth_velocity": "The pink ribbon's global recognition generates significant corporate licensing revenue for Komen. The decision to license the ribbon to companies selling processed foods and cosmetics with potentially harmful ingredients creates documented revenue at the potential expense of the brand's core mission."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Nancy Brinker and Komen leadership",
+        "how": "$684k annual compensation building the world's largest breast cancer charity"
+      },
+      {
+        "group": "Corporate pink ribbon partners",
+        "how": "Cause marketing benefit from pink ribbon association regardless of product's health profile"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Lower-income women at Planned Parenthood",
+        "how": "Breast cancer screening access temporarily reduced during defunding period"
+      },
+      {
+        "group": "Donors who trust the pink ribbon",
+        "how": "Charitable contributions funding awareness over research at a ratio critics document as skewed; pink ribbon licensed to companies selling potentially cancer-associated products"
+      }
+    ],
+    "the_gap": "Komen licensed the pink ribbon to KFC for pink buckets of fried chicken. They licensed it to companies selling cosmetics with ingredients some researchers link to cancer risk. In 2012 they defunded Planned Parenthood's breast cancer screening in what their own documents showed was a political decision. They reversed it after a week when Planned Parenthood raised $3 million in backlash. The SVP who championed the defunding resigned. The founder made $684,000 a year. The research-to-awareness spending ratio has been criticized for years."
+  }
+}

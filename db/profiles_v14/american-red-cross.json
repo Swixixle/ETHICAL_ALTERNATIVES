@@ -1,0 +1,191 @@
+{
+  "brand_name": "American Red Cross",
+  "brand_slug": "american-red-cross",
+  "parent_company": "American National Red Cross",
+  "ultimate_parent": "American National Red Cross",
+  "overall_concern_level": "significant",
+  "profile_type": "nonprofit",
+  "generated_headline": "THE RED CROSS RAISED $500 MILLION FOR HAITI EARTHQUAKE RELIEF AND BUILT SIX HOUSES — A PROPUBLICA/NPR INVESTIGATION DOCUMENTED WHERE THE MONEY WENT — NOBODY COULD FULLY EXPLAIN IT",
+  "executive_summary": "The American Red Cross is the United States' primary disaster relief organization, operating under a congressional charter and raising approximately $3 billion annually. A 2015 ProPublica and NPR joint investigation — one of the most significant pieces of nonprofit accountability journalism in recent decades — documented that the Red Cross had raised approximately $500 million for Haiti earthquake relief (2010) but had built only six permanent homes, failed to provide promised services to hundreds of thousands of Haitians, and was unable to account for how it had spent the money. Internal Red Cross documents obtained by ProPublica showed executives were aware of significant operational failures. The investigation also documented that the Red Cross had diverted ambulances from Sandy storm relief in New Jersey to serve as backdrops for a public relations event. The Red Cross maintained it had provided significant Haiti relief beyond housing and disputed some specific findings.",
+  "verdict_tags": [
+    "haiti_500m_raised_6_houses_built",
+    "propublica_npr_2015_investigation_pulitzer",
+    "sandy_ambulances_pr_event_diversion",
+    "ceo_gail_mcgovern_salary_600k",
+    "blood_supply_monopoly_revenue",
+    "internal_documents_showed_operational_failures",
+    "congressional_charter_public_trust",
+    "3b_annual_revenue"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": false,
+    "tax": true,
+    "health": true,
+    "legal": false
+  },
+  "labor": {
+    "summary": "The Red Cross employs approximately 22,000 paid staff and mobilizes approximately 300,000 volunteers. No major documented systemic labor violations have been identified at the organizational level.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental enforcement actions against the Red Cross have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The American Red Cross was chartered by Congress in 1905 and has operated under that charter ever since — giving it a unique quasi-governmental status. The President of the United States is the honorary chairman of the Red Cross. This status creates a documented accountability gap: the Red Cross is neither fully government (subject to Congressional oversight and FOIA) nor fully private (no standard nonprofit accountability applies). Its blood supply operations — which provide approximately 40% of the US blood supply — operate as a near-monopoly with significant pricing power.",
+    "flags": [
+      "congressional_charter_quasi_governmental",
+      "president_honorary_chairman",
+      "blood_supply_40pct_us_monopoly",
+      "accountability_gap_neither_government_nor_private"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "In 2003, the Red Cross reached a $5.2 billion settlement with the FDA over blood safety violations — the largest civil settlement with a nonprofit at the time — covering systematic failures in blood collection and processing that put donors and patients at risk. The Red Cross's blood operations had been subject to FDA oversight and enforcement for decades. The Haiti investigation generated Congressional hearings; no criminal charges were filed. The Sandy ambulance diversion was documented but not prosecuted.",
+    "flags": [
+      "5_2b_fda_blood_safety_settlement_2003",
+      "blood_collection_processing_failures",
+      "congressional_hearings_haiti_no_charges",
+      "sandy_ambulance_diversion_documented"
+    ],
+    "sources": [
+      "https://www.propublica.org/article/how-the-red-cross-raised-half-a-billion-dollars-for-haiti-and-built-6-homes"
+    ]
+  },
+  "tax": {
+    "summary": "The American Red Cross is a 501(c)(3) public charity — donations are tax-deductible. It files Form 990. Its annual revenue of approximately $3 billion includes public donations, government grants, and blood supply revenue. CEO Gail McGovern's compensation was approximately $600,000 annually during the Haiti period. The blood supply revenue — from selling blood products to hospitals — operates as a for-profit business within a nonprofit framework, generating significant revenue.",
+    "flags": [
+      "form_990_public",
+      "mcgovern_600k_compensation",
+      "blood_revenue_for_profit_within_nonprofit",
+      "3b_annual_revenue"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Gail McGovern served as Red Cross CEO from 2008 to 2023 — spanning the Haiti earthquake response and the ProPublica/NPR investigation. Internal Red Cross documents obtained by ProPublica showed executives were aware of operational failures in Haiti during her tenure. Bonnie McElveen-Hunter served as Board Chair. The Board's accountability for the Haiti failures was a subject of Congressional attention.",
+    "flags": [
+      "mcgovern_ceo_2008_2023_haiti_period",
+      "internal_documents_executive_awareness_documented",
+      "mcelveen_hunter_board_chair",
+      "congressional_board_accountability_attention"
+    ],
+    "sources": [
+      "https://www.propublica.org/article/how-the-red-cross-raised-half-a-billion-dollars-for-haiti-and-built-6-homes"
+    ]
+  },
+  "connections": {
+    "summary": "The Red Cross's congressional charter gives it official standing in US disaster response that no other nonprofit has — FEMA and other federal agencies coordinate directly with the Red Cross. This official standing creates both unique access and unique accountability expectations. The blood supply monopoly — where the Red Cross provides approximately 40% of the US blood supply — creates a documented revenue stream funded by hospitals and ultimately by patients.",
+    "flags": [
+      "fema_official_coordination",
+      "blood_supply_hospital_patient_revenue_stream"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "ProPublica and NPR's investigation alleged that the Red Cross's internal management culture — which prioritized public image and fundraising over operational effectiveness — was a systemic cause of the Haiti failures, not merely isolated operational mistakes. Internal documents showed executives discussing how to manage the PR implications of failures rather than how to fix the failures. The Red Cross disputed characterizations of its Haiti response while acknowledging specific operational failures.",
+    "flags": [
+      "image_fundraising_prioritized_operational_effectiveness_alleged",
+      "internal_documents_pr_management_over_fixing",
+      "red_cross_disputed_while_acknowledging_specific_failures"
+    ],
+    "sources": [
+      "https://www.propublica.org/article/how-the-red-cross-raised-half-a-billion-dollars-for-haiti-and-built-6-homes"
+    ]
+  },
+  "health_record": {
+    "summary": "The FDA's 2003 blood safety enforcement action against the Red Cross — including the $5.2 billion settlement — documented systematic failures in blood collection and processing that created health risks for blood donors and recipients. The Haiti response failures — where $500 million raised for earthquake victims produced six permanent homes — represent documented failures to provide promised health and humanitarian services to hundreds of thousands of earthquake survivors.",
+    "flags": [
+      "blood_safety_violations_donor_recipient_risk",
+      "fda_enforcement_systematic_failures",
+      "haiti_promised_services_not_delivered_documented"
+    ],
+    "sources": [
+      "https://www.propublica.org/article/how-the-red-cross-raised-half-a-billion-dollars-for-haiti-and-built-6-homes"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Direct Relief — highly rated disaster relief organization with documented operational efficiency",
+      "International Rescue Committee — secular humanitarian with documented effectiveness",
+      "Doctors Without Borders (MSF) — direct medical intervention"
+    ],
+    "healthier": [
+      "Partners in Health — Haiti-focused health organization with documented decade-long Haiti presence and community trust",
+      "Direct Relief — 99% charity rating from Charity Navigator"
+    ],
+    "diy": [
+      "The ProPublica/NPR Haiti investigation is publicly available — read before donating after disasters",
+      "Charity Navigator and GiveWell rate disaster relief organizations on financial efficiency and effectiveness"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1903,
+      "event": "Congressional charter enacted; Red Cross given official disaster relief role",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2003,
+      "event": "$5.2B FDA blood safety settlement — largest civil nonprofit settlement at time; systematic blood collection failures documented",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2010,
+      "event": "Haiti earthquake; Red Cross raises approximately $500M; launches 'transformative' relief program",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2012,
+      "event": "Superstorm Sandy; Red Cross mobilizes; ambulances later documented diverted to serve as PR event backdrops in New Jersey",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2015,
+      "event": "ProPublica/NPR investigation publishes: $500M raised, 6 homes built, hundreds of thousands without promised services; internal documents show executive awareness of failures",
+      "severity": "critical",
+      "source_url": "https://www.propublica.org/article/how-the-red-cross-raised-half-a-billion-dollars-for-haiti-and-built-6-homes"
+    },
+    {
+      "year": 2016,
+      "event": "Congressional hearings on Haiti response; Red Cross acknowledges some failures; no criminal charges filed",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Haitian earthquake survivors — approximately 1.5 million displaced — donated to by Americans trusting that $500 million would rebuild communities. Internal Red Cross documents showed the organization knew it was failing to deliver promised services while maintaining its public fundraising and PR operations.",
+    "price_illusion": "Red Cross disaster appeals present as straightforward humanitarian relief — donate and help victims. The Haiti investigation documented that the gap between fundraising presentation and operational delivery was extraordinary: $500 million raised, six permanent homes built, internal awareness of failures managed for PR rather than fixed.",
+    "tax_math": "Donors to the Red Cross's Haiti appeal received charitable tax deductions for contributions whose operational effectiveness the Red Cross's own internal documents showed was dramatically below what was publicly communicated. The $500 million in tax-deductible contributions generated six permanent homes and significant undocumented expenditures.",
+    "wealth_velocity": "The Red Cross's $3 billion annual revenue is sustained by brand trust built over a century. The Haiti and Sandy revelations damaged but did not end that trust — the organization continues to raise $3 billion annually because disaster fundraising relies on name recognition in crisis moments."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "American Red Cross as institution",
+        "how": "$500M in Haiti fundraising; brand maintained through PR management; blood supply monopoly revenue; CEO $600k compensation"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Haitian earthquake survivors",
+        "how": "$500M raised in their name built six permanent homes; promised services not delivered; hundreds of thousands without aid promised"
+      },
+      {
+        "group": "American donors",
+        "how": "Contributed $500M based on fundraising claims that organizational documents showed were not matched by operational delivery"
+      }
+    ],
+    "the_gap": "The Red Cross raised $500 million for Haiti. They built six houses. ProPublica and NPR documented where the money went. The internal documents showed executives knew they were failing and were managing the PR rather than fixing the operations. At Sandy, they diverted ambulances from relief to use as backdrops for a public relations photo opportunity. They paid $5.2 billion for blood safety violations in 2003. Their CEO made $600,000 a year. They have a congressional charter. The President of the United States is their honorary chairman."
+  }
+}

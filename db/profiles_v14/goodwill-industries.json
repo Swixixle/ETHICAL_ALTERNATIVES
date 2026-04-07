@@ -1,0 +1,186 @@
+{
+  "brand_name": "Goodwill Industries",
+  "brand_slug": "goodwill-industries",
+  "parent_company": "Goodwill Industries International",
+  "ultimate_parent": "Goodwill Industries International",
+  "overall_concern_level": "significant",
+  "profile_type": "nonprofit",
+  "generated_headline": "GOODWILL LEGALLY PAYS SOME DISABLED WORKERS $0.22 PER HOUR USING A FEDERAL SUBMINIMUM WAGE EXEMPTION — WHILE ITS LOCAL CEOs MAKE $400,000-$700,000 — AND SELLS DONATED GOODS FOR PROFIT THAT MOSTLY DOESN'T GO TO THOSE WORKERS",
+  "executive_summary": "Goodwill Industries International is a network of approximately 157 independent local Goodwill organizations operating approximately 3,300 thrift stores across the United States and Canada, collectively generating over $6 billion in annual revenue. Goodwill is one of America's most recognized charitable brands — donations of used clothing and household goods are a routine part of American life. Under Section 14(c) of the Fair Labor Standards Act, Goodwill and other nonprofits are permitted to pay workers with disabilities at rates below the federal minimum wage — as low as $0.22 per hour in documented cases. Multiple Goodwill affiliates have paid disabled workers subminimum wages while their CEOs received compensation of $400,000-$700,000 annually. The combination — disabled workers paid cents per hour while affiliated CEOs earn hundreds of thousands — has been documented by disability rights advocates and journalists as one of the most egregious compensation disparities in the nonprofit sector.",
+  "verdict_tags": [
+    "section_14c_subminimum_wage_0_22_per_hour",
+    "ceo_400k_700k_while_workers_cents",
+    "6b_annual_revenue_recognized_brand",
+    "157_independent_local_affiliates",
+    "donated_goods_resold_revenue",
+    "disability_rights_advocacy_opposition",
+    "congressional_hearings_14c_documented",
+    "goodwill_international_no_direct_control_affiliates"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Section 14(c) of the Fair Labor Standards Act — enacted in 1938 — allows employers who obtain special certificates from the Department of Labor to pay workers with disabilities at rates commensurate with their productivity rather than minimum wage. Goodwill has been one of the largest users of these certificates. Documented cases: Goodwill of Southern Arizona paid some workers $0.22 per hour while its CEO received $729,000 annually. Multiple Goodwill affiliates paying subminimum wages while maintaining CEO compensation in the hundreds of thousands have been documented by NBC News investigations. Goodwill International maintains it does not control affiliates' wage practices.",
+    "flags": [
+      "0_22_per_hour_documented_southern_arizona",
+      "ceo_729k_southern_arizona",
+      "14c_certificates_goodwill_largest_users",
+      "goodwill_international_no_affiliate_control",
+      "multiple_affiliates_documented_nbc"
+    ],
+    "sources": [
+      "https://www.nbcnews.com/feature/in-plain-sight/goodwill-pays-disabled-workers-pennies-hour-its-ceos-pull-n286081"
+    ]
+  },
+  "environmental": {
+    "summary": "Goodwill's thrift store model diverts millions of tons of used goods from landfills annually — a genuine environmental benefit. The organization has documented sustainability commitments around textile recycling. No major environmental enforcement actions have been identified.",
+    "flags": [
+      "millions_tons_diverted_landfill_genuine_benefit",
+      "textile_recycling_documented"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Goodwill Industries International has lobbied against the elimination of Section 14(c) — the subminimum wage provision it uses for disabled workers. Disability rights organizations — including the National Federation of the Blind, the National Disability Rights Network, and ADAPT — have documented opposition to 14(c) and have targeted Goodwill as its most visible beneficiary. Multiple states have passed or are considering laws eliminating subminimum wages for disabled workers. Goodwill has argued that eliminating 14(c) would result in employers being unable to hire workers with the most significant disabilities.",
+    "flags": [
+      "14c_lobbying_documented",
+      "national_federation_blind_opposition",
+      "adapt_target_goodwill",
+      "states_eliminating_subminimum_wage",
+      "goodwill_argument_employment_impact"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Section 14(c) is legal under federal law — Goodwill's subminimum wage payments are authorized by DOL certificates. The legal controversy is whether 14(c) should continue to exist rather than whether Goodwill has violated existing law. Congressional hearings on 14(c) have featured both Goodwill defense of the practice and disability rights advocates' testimony against it. No major criminal enforcement actions against Goodwill have been identified.",
+    "flags": [
+      "14c_legal_dol_certified",
+      "14c_elimination_congressional_hearings",
+      "no_criminal_enforcement",
+      "legal_controversy_not_violations"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Goodwill Industries International and its affiliated local organizations are 501(c)(3) public charities — donations are tax-deductible. Goodwill's revenue model — accepting donated goods and reselling them — generates significant revenue from donated items whose donors received charitable tax deductions. The extent to which this revenue funds services for disabled workers (vs. administrative costs and executive compensation) has been documented as variable across affiliates.",
+    "flags": [
+      "501c3_donations_deductible",
+      "donated_goods_resale_revenue_model",
+      "revenue_to_services_ratio_variable_affiliates"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Steven Preston serves as CEO of Goodwill Industries International. Local affiliate CEOs are employed by independent boards and are not controlled by Goodwill International. The local affiliate CEO compensation disparities — $400,000-$729,000 annually at affiliates paying workers $0.22/hour — represent decisions made by independent local boards rather than Goodwill International. This organizational structure both enables local flexibility and limits central accountability.",
+    "flags": [
+      "preston_international_ceo",
+      "local_affiliate_independent_boards",
+      "local_compensation_disparity_not_international_controlled"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Goodwill's thrift store network competes with Salvation Army Family Stores, Habitat for Humanity ReStores, and commercial thrift chains. Its charitable brand recognition is among the highest of any US nonprofit — the Goodwill name on a thrift store generates significant donation volume based on brand trust built over a century. The 14(c) issue connects Goodwill to the broader disability employment policy debate.",
+    "flags": [
+      "salvation_army_habitat_competition",
+      "century_brand_trust",
+      "14c_disability_employment_policy_debate"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Disability rights advocates have alleged that Goodwill's use of 14(c) is not primarily about enabling meaningful employment for workers with the most significant disabilities — as the program's defenders argue — but about accessing a legal labor arbitrage that allows Goodwill to staff its thrift store operations at dramatically below-market rates while generating significant revenue. Goodwill disputes this characterization and maintains that 14(c) workers receive training, rehabilitation services, and community integration that they would not receive in competitive employment.",
+    "flags": [
+      "labor_arbitrage_not_rehabilitation_alleged_advocates",
+      "goodwill_training_rehabilitation_community_integration_argument",
+      "14c_worker_outcome_debate"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "No direct public health enforcement actions against Goodwill have been identified. The subminimum wage issue intersects with disability rights research documenting that segregated employment at subminimum wages is associated with worse life outcomes for disabled workers compared to supported competitive employment — a documented finding that disability rights organizations use to argue for 14(c) elimination.",
+    "flags": [
+      "segregated_subminimum_employment_worse_outcomes_documented",
+      "supported_competitive_employment_better_outcomes_documented"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Local thrift stores operated by non-14(c) nonprofits",
+      "Habitat for Humanity ReStores — building materials and furniture; revenue funds Habitat homebuilding"
+    ],
+    "healthier": [
+      "Thrift stores that do not use Section 14(c) subminimum wage provisions",
+      "Donating directly to organizations that employ disabled workers at minimum wage or above"
+    ],
+    "diy": [
+      "Check whether your local Goodwill affiliate uses Section 14(c) — some affiliates have voluntarily eliminated the practice",
+      "The DOL maintains a database of 14(c) certificate holders — verify whether your local Goodwill holds one"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1902,
+      "event": "Edgar Helms founds Goodwill Industries in Boston as a social enterprise employing poor immigrants and people with disabilities",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1938,
+      "event": "Fair Labor Standards Act enacted; Section 14(c) subminimum wage provision included — allows paying disabled workers below minimum wage",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2013,
+      "event": "NBC News investigation documents Goodwill affiliates paying workers $0.22/hour while CEOs earn $700,000+; national attention",
+      "severity": "critical",
+      "source_url": "https://www.nbcnews.com/feature/in-plain-sight/goodwill-pays-disabled-workers-pennies-hour-its-ceos-pull-n286081"
+    },
+    {
+      "year": 2014,
+      "event": "Congressional hearings on Section 14(c) elimination; Goodwill lobbies against; disability rights organizations testify in favor",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "Multiple states including Maryland and New Hampshire eliminate subminimum wages; Goodwill affiliates adjust practices in those states",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Disabled workers paid subminimum wages at Goodwill affiliates — in some documented cases as little as $0.22/hour — receive wages insufficient to support independent living. The research consensus that supported competitive employment produces better outcomes for disabled workers suggests that 14(c) placements, while providing some employment, may not serve workers' long-term interests relative to alternatives.",
+    "price_illusion": "Goodwill donations are made with the understanding that proceeds fund employment programs for people with disabilities. The extent to which revenue goes to those programs — vs. executive compensation and administrative costs — varies by affiliate and is not transparently disclosed in Goodwill's brand marketing.",
+    "tax_math": "Goodwill receives donated goods for which donors claim charitable tax deductions. These goods are resold at full retail prices in thrift stores generating $6+ billion annually. The workers processing and selling these goods may legally be paid $0.22/hour under Section 14(c) while local CEOs earn $400,000-$729,000. The charitable tax deductions subsidize this revenue model.",
+    "wealth_velocity": "Goodwill's $6+ billion annual revenue is distributed across 157 independent affiliates. Local affiliate executives capture significant compensation from operations funded by donated goods and charitable tax deductions — while the workers whose employment constitutes Goodwill's charitable mission may earn subminimum wages."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Goodwill affiliate executives",
+        "how": "$400,000-$729,000 annual compensation at affiliates legally paying workers $0.22/hour; independent local boards without Goodwill International accountability"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Disabled workers paid subminimum wages",
+        "how": "As little as $0.22/hour legally under Section 14(c); wages insufficient for independent living; CEO earns in one day what worker earns in years at subminimum rate"
+      },
+      {
+        "group": "Donors who believed donations funded worker programs",
+        "how": "Donated goods generate $6B+ in revenue; donor intent is employment programs; portion captured by executive compensation"
+      }
+    ],
+    "the_gap": "Goodwill legally pays some disabled workers $0.22 an hour. Section 14(c) of the Fair Labor Standards Act allows this. A Goodwill affiliate CEO made $729,000 in the same year workers made $0.22 an hour. Goodwill International says it doesn't control affiliates. NBC documented multiple affiliates doing this. Congressional hearings have been held. Some states have eliminated the practice. Goodwill lobbied to keep it. The thrift stores generate $6 billion a year from goods people donated for the tax deduction."
+  }
+}

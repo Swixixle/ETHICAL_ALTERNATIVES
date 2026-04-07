@@ -1,0 +1,182 @@
+{
+  "brand_name": "United Way",
+  "brand_slug": "united-way",
+  "parent_company": "United Way Worldwide",
+  "ultimate_parent": "United Way Worldwide",
+  "overall_concern_level": "moderate",
+  "profile_type": "nonprofit",
+  "generated_headline": "UNITED WAY'S PRESIDENT WILLIAM ARAMONY WAS CONVICTED OF FRAUD — HE SPENT DONOR MONEY ON HIS TEENAGE GIRLFRIEND AND A PRIVATE JET — AND THE CURRENT CEO MAKES $1.6 MILLION FROM AN ORGANIZATION THAT PASSES THROUGH DONOR DOLLARS",
+  "executive_summary": "United Way is one of the most recognized charitable brands in America — the annual United Way workplace campaign has been a fixture of American corporate life for decades. United Way Worldwide and its approximately 1,700 local affiliates collectively raise approximately $3.7 billion annually. In 1992, United Way's longtime President and CEO William Aramony was forced to resign after revelations that he had used donor funds for personal expenses including a teenage girlfriend, a private apartment for her, private jet travel, and other personal expenditures. Aramony was subsequently convicted of 25 counts of fraud and sentenced to seven years in prison. The scandal — one of the most significant in nonprofit history — prompted significant changes in nonprofit governance and transparency standards. Current United Way Worldwide CEO Angela Williams's compensation is approximately $1.6 million annually.",
+  "verdict_tags": [
+    "aramony_convicted_25_counts_fraud_sentenced_7_years",
+    "teenage_girlfriend_donor_funds",
+    "1_6m_current_ceo_compensation",
+    "3_7b_annual_fundraising",
+    "1700_local_affiliates",
+    "workplace_campaign_corporate_fixture",
+    "passthrough_allocation_model_criticized",
+    "aramony_1992_resignation_scandal"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": false,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "United Way Worldwide and its local affiliates employ thousands of staff across fundraising, allocation, and program operations. No major documented systemic labor violations have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental positions or enforcement actions have been identified for United Way.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "United Way's primary political activity is advocacy for its funding recipients — social services organizations receiving United Way allocation. The organization has adopted a focus area strategy (Education, Income, Health) that guides its advocacy positions. No major documented controversial political activities have been identified beyond the allocation debates.",
+    "flags": [
+      "education_income_health_focus_areas",
+      "recipient_advocacy_primary_political_activity"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "William Aramony: United Way's president and CEO from 1970 to 1992 was forced to resign after the Washington Post documented that he had spent donor funds on personal expenses including supporting a teenage girlfriend, an apartment, private jet travel, and other personal expenditures. Aramony was convicted of 25 counts of fraud and conspiracy, sentenced to seven years in prison, and served five years. The scandal prompted congressional scrutiny of nonprofit governance and voluntary adoption of transparency standards across the sector. No major criminal enforcement actions against United Way Worldwide have been identified since the Aramony case.",
+    "flags": [
+      "aramony_25_counts_fraud_7_year_sentence_served_5",
+      "teenage_girlfriend_apartment_jet_documented",
+      "congressional_scrutiny_sector_reform",
+      "no_major_criminal_since_aramony"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "United Way Worldwide and its local affiliates are 501(c)(3) public charities — donations are tax-deductible. Angela Williams's $1.6 million compensation is disclosed through Form 990. The United Way's allocation model — receiving donations through workplace campaigns and distributing to local nonprofits — generates significant overhead in the fundraising and allocation process. Critics of the United Way model argue that donors can give more efficiently directly to specific organizations they want to support.",
+    "flags": [
+      "form_990_public",
+      "williams_1_6m_disclosed",
+      "workplace_campaign_overhead",
+      "direct_giving_efficiency_critique"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Angela Williams serves as CEO of United Way Worldwide with compensation of approximately $1.6 million annually — disclosed through Form 990. William Aramony served from 1970 to 1992 and built United Way into its dominant position in American workplace giving through a combination of corporate partnerships and aggressive fundraising — and used donor funds for personal benefit throughout his later tenure. The Aramony scandal and conviction represents the most significant leadership crisis in United Way's history.",
+    "flags": [
+      "williams_1_6m_ceo",
+      "aramony_1970_1992_built_dominance_abused_position",
+      "aramony_conviction_most_significant_crisis"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "United Way's workplace campaign model — where employers encourage employees to donate through payroll deduction to United Way — has been the dominant workplace charitable giving vehicle for decades. This model gives United Way significant power over which local nonprofits receive funding through its allocation process. Organizations that are not United Way recipients may struggle for workplace donation access in companies where United Way is the designated giving vehicle. The model has been disrupted by workplace giving platforms that allow employees to give directly to any nonprofit.",
+    "flags": [
+      "workplace_campaign_dominant_vehicle",
+      "allocation_power_local_nonprofits",
+      "platforms_disrupting_model",
+      "payroll_deduction_capture"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Critics of the United Way model have alleged that its workplace campaign dominance effectively crowds out other nonprofits from workplace giving, giving United Way significant power to determine which organizations receive funding based on criteria that are not always transparent. Individual United Way affiliates have been criticized for allocation processes that favor established, larger organizations over newer and smaller nonprofits serving emerging community needs.",
+    "flags": [
+      "workplace_crowding_out_alleged",
+      "allocation_favors_established_organizations_alleged",
+      "transparency_allocation_process_criticized"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "No direct health enforcement actions against United Way have been identified. Its funding of health-focused social services organizations has documented community health benefits. The Aramony scandal's primary harm was to donor trust and the broader nonprofit sector's credibility.",
+    "flags": [
+      "health_social_services_funding_documented",
+      "aramony_scandal_donor_trust_harm"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Direct giving to specific organizations — eliminates United Way overhead",
+      "GiveDirectly — direct cash transfers to individuals in poverty",
+      "Local Community Foundations — direct allocation to vetted local nonprofits"
+    ],
+    "healthier": [
+      "Charity Navigator, GiveWell, and Giving What We Can provide evidence-based direct giving guidance",
+      "Donor-advised funds at community foundations for tax-advantaged flexible giving"
+    ],
+    "diy": [
+      "United Way Worldwide's Form 990 is publicly available",
+      "Local United Way affiliate Form 990s are available at ProPublica Nonprofit Explorer",
+      "Workplace giving platforms now allow payroll deduction giving to any 501(c)(3)"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1887,
+      "event": "United Way founded in Denver, Colorado",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1970,
+      "event": "William Aramony becomes United Way president; builds dominant workplace giving position over 22-year tenure",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1992,
+      "event": "Washington Post investigation reveals Aramony's misuse of donor funds; he resigns; subsequent investigation and conviction",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1995,
+      "event": "Aramony convicted of 25 counts of fraud and conspiracy; sentenced to 7 years; serves 5",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2000,
+      "event": "United Way rebrands and restructures following scandal; adopts focus area strategy",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Angela Williams becomes CEO; compensation disclosed at approximately $1.6M through Form 990",
+      "severity": "moderate",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Local nonprofits that are not United Way recipients may face reduced access to workplace charitable giving in companies where United Way is the primary or exclusive vehicle. The allocation process — controlled by local United Way boards — determines which community organizations receive access to this giving stream.",
+    "price_illusion": "United Way workplace campaigns present donation as directly helping community needs. The overhead involved in United Way's fundraising, allocation, and administrative operations means a portion of each donation funds those functions rather than direct services. The Aramony scandal established that this overhead had, in one documented case, included a president's personal expenses.",
+    "tax_math": "United Way's allocation model receives tax-deductible donations through workplace payroll deduction and distributes to recipient nonprofits — generating a second layer of charitable tax benefit when recipients receive the funds. Aramony's fraudulent use of donor funds — for personal benefit rather than charitable purposes — represented a documented abuse of the tax-exempt framework.",
+    "wealth_velocity": "United Way Worldwide's CEO compensation of $1.6 million annually is drawn from an organization that functions primarily as a fundraising and allocation intermediary. The overhead model concentrates some value in the intermediary rather than in direct services."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "William Aramony",
+        "how": "22 years of donor-funded personal expenses including teenage girlfriend, apartment, private jets; sentenced 7 years, served 5"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "United Way donors",
+        "how": "Charitable contributions used for president's personal expenses for years before discovery; donor trust in nonprofit sector broadly damaged by scandal"
+      },
+      {
+        "group": "Community nonprofits dependent on United Way allocation",
+        "how": "Scandal reduced United Way fundraising and credibility, reducing funds available for allocation to community organizations"
+      }
+    ],
+    "the_gap": "William Aramony ran United Way for 22 years. He was using donor money to support a teenage girlfriend — apartment, private jets, personal expenses. The Washington Post found out. He resigned. He was convicted of 25 counts of fraud. He served 5 of his 7 years. The current CEO makes $1.6 million a year. United Way raises $3.7 billion annually. The workplace campaign model controls which local nonprofits get access to payroll deduction giving. That is a lot of power for an organization that was run as a personal expense account for two decades."
+  }
+}

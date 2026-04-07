@@ -1,0 +1,192 @@
+{
+  "brand_name": "Boy Scouts of America",
+  "brand_slug": "boy-scouts-of-america",
+  "parent_company": "Boy Scouts of America",
+  "ultimate_parent": "Boy Scouts of America National Council",
+  "overall_concern_level": "significant",
+  "profile_type": "nonprofit",
+  "generated_headline": "THE BOY SCOUTS KEPT SECRET FILES ON SEXUAL PREDATORS FOR 70 YEARS — CALLED THEM 'PERVERSION FILES' — AND PAID $850 MILLION TO 82,000 ABUSE SURVIVORS IN THE LARGEST YOUTH ORGANIZATION ABUSE SETTLEMENT IN US HISTORY",
+  "executive_summary": "The Boy Scouts of America (BSA) is one of the largest youth organizations in the United States, with approximately 1 million current Scouts and a century-long history. In February 2020, the BSA filed for Chapter 11 bankruptcy — driven by the overwhelming volume of sexual abuse claims from survivors. The bankruptcy process revealed that the BSA had maintained internal files on suspected and known sexual predators since the 1920s — files it called 'perversion files' internally — that were never shared with law enforcement. By the time the bankruptcy concluded, approximately 82,000 survivors had filed claims. In September 2023, the BSA's reorganization plan was confirmed, providing approximately $850 million in settlements — the largest settlement for sexual abuse in any youth-serving organization in US history. The bankruptcy also revealed that the BSA had concealed the perversion files from parents, law enforcement, and the public for approximately 70 years.",
+  "verdict_tags": [
+    "82000_survivors_largest_youth_organization_abuse",
+    "850m_settlement_largest_youth_organization",
+    "perversion_files_70_years_concealed",
+    "chapter_11_2020_abuse_claims_driven",
+    "perversion_files_never_shared_law_enforcement",
+    "local_councils_asset_separate_bankruptcy",
+    "chartered_organizations_co_defendants",
+    "1_million_current_scouts"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": false,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "The BSA employs professional Scouters at national, regional, and local levels alongside its vast volunteer leadership structure. No major documented systemic labor violations have been identified beyond the abuse cover-up.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "The BSA has documented environmental stewardship programs — conservation and outdoor ethics are core program elements. No major environmental enforcement actions have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The BSA excluded openly gay Scouts until 2013 and openly gay leaders until 2015 — positions that generated sustained legal and civil rights challenges. It excluded transgender Scouts until 2017. The organization's chartered relationships with religious organizations — particularly the Mormon Church (which was a major BSA sponsor until it withdrew in 2020) — shaped its social positions. The BSA's political evolution on LGBTQ inclusion tracked broader social change but lagged significantly behind public opinion.",
+    "flags": [
+      "gay_scouts_excluded_until_2013",
+      "gay_leaders_excluded_until_2015",
+      "transgender_excluded_until_2017",
+      "lds_church_major_sponsor_withdrew_2020",
+      "lgbtq_inclusion_lagged_public_opinion"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "February 2020: BSA files for Chapter 11 bankruptcy. The bankruptcy process: local BSA councils filed separately, preserving their assets outside the national bankruptcy estate. Chartered organizations (churches, civic groups that sponsor troops) were separately named in abuse claims and were required to contribute to the settlement fund. September 2023: Reorganization plan confirmed; approximately $850 million settlement covering approximately 82,000 survivor claims. The perversion files: the BSA had maintained files on known and suspected sexual predators since the 1920s — never shared with law enforcement or parents. These files were ordered released by an Oregon court in 2012; they documented abuse patterns the organization had been aware of for decades.",
+    "flags": [
+      "chapter_11_2020",
+      "82000_survivors",
+      "850m_settlement",
+      "perversion_files_released_oregon_2012",
+      "local_councils_separate_estate",
+      "chartered_organizations_required_contribution"
+    ],
+    "sources": [
+      "https://www.nbcnews.com/news/us-news/boy-scouts-bankruptcy-plan-confirmed-82-000-sexual-abuse-survivors-rcna100988"
+    ]
+  },
+  "tax": {
+    "summary": "The BSA is a 501(c)(3) public charity — donations are tax-deductible. Local BSA councils are separately incorporated 501(c)(3) entities. The BSA's bankruptcy structure — separating national and local council assets — has been criticized by survivor advocates as allowing the organization to preserve local council assets while limiting national settlement. Chartered organizations' required contributions were primarily from religious institutions, including Catholic dioceses, that had separately been managing abuse claims.",
+    "flags": [
+      "501c3_national_local_separate",
+      "local_council_asset_preservation",
+      "chartered_organizations_primarily_religious",
+      "catholic_dioceses_among_contributors"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Roger Mosby served as BSA CEO during the bankruptcy period. The BSA's national leadership — across multiple CEO tenures — was aware of the perversion files' existence but did not disclose them to law enforcement. The release of the files in 2012 — ordered by an Oregon court in civil litigation — revealed the scope of what the organization had known. The BSA's post-bankruptcy leadership has undertaken significant reforms.",
+    "flags": [
+      "mosby_ceo_bankruptcy_period",
+      "leadership_aware_perversion_files_no_disclosure",
+      "2012_court_ordered_release",
+      "post_bankruptcy_reforms"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The BSA's chartered organization model — where troops are sponsored by religious congregations, civic groups, and other organizations — distributed both the Scouting program and potential abuse liability across thousands of institutions. The Mormon Church was the BSA's largest chartered organization until it withdrew in 2020. Catholic dioceses were among the largest remaining chartered organizations and were required to contribute to the settlement fund.",
+    "flags": [
+      "lds_largest_withdrew_2020",
+      "catholic_dioceses_required_contribution",
+      "chartered_model_distributed_liability",
+      "thousands_of_chartered_organizations"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Survivors and their attorneys have alleged that BSA executives knowingly used the perversion files to prevent law enforcement from prosecuting known abusers — that the file system was designed as an internal management tool to quietly remove abusers while protecting the organization from scandal rather than protecting future children from known predators. The BSA has disputed the characterization of intent while acknowledging the files' existence and its failure to share them with law enforcement.",
+    "flags": [
+      "files_designed_prevent_prosecution_alleged",
+      "internal_management_protect_organization_not_children_alleged",
+      "bsa_disputes_intent_acknowledges_failure"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Approximately 82,000 survivors filed claims in the BSA bankruptcy — the largest documented youth organization abuse claim process in US history. The perversion files documented abuse patterns the BSA was aware of since the 1920s — approximately 70 years before their court-ordered release. Survivors have documented lasting psychological harm from childhood sexual abuse in a trusted youth organization context.",
+    "flags": [
+      "82000_survivors_largest_youth_organization",
+      "70_years_concealed_known_patterns",
+      "lasting_psychological_harm_documented"
+    ],
+    "sources": [
+      "https://www.nbcnews.com/news/us-news/boy-scouts-bankruptcy-plan-confirmed-82-000-sexual-abuse-survivors-rcna100988"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "4-H — youth development organization through the US Department of Agriculture",
+      "Girls Scouts of the USA — separate organization with different history and documented commitment to inclusion",
+      "Campfire — co-ed youth organization"
+    ],
+    "healthier": [
+      "Youth organizations with published safeguarding policies and mandatory external reporting protocols",
+      "Organizations that have never used internal files to manage known abusers without law enforcement involvement"
+    ],
+    "diy": [
+      "The released BSA perversion files are available through journalistic archives",
+      "The bankruptcy court documents — including survivor declarations — are public court records"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1910,
+      "event": "Boy Scouts of America founded",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1920,
+      "event": "BSA begins maintaining internal files on suspected sexual predators — later called 'perversion files'",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2012,
+      "event": "Oregon court orders BSA to release perversion files in civil litigation; files document 70 years of known abuse patterns never shared with law enforcement",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2013,
+      "event": "BSA votes to admit openly gay Scouts; gay leaders remain excluded until 2015",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "February: BSA files for Chapter 11 bankruptcy; LDS Church simultaneously withdraws as largest chartered organization",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "September: $850M settlement confirmed for approximately 82,000 survivors — largest youth organization abuse settlement in US history",
+      "severity": "critical",
+      "source_url": "https://www.nbcnews.com/news/us-news/boy-scouts-bankruptcy-plan-confirmed-82-000-sexual-abuse-survivors-rcna100988"
+    }
+  ],
+  "community_impact": {
+    "displacement": "82,000 Americans who were abused as Scouts — in the context of a trusted youth development organization — have received settlements averaging approximately $10,000 each from the $850 million fund, which survivor advocates characterized as dramatically insufficient relative to documented harm.",
+    "price_illusion": "The BSA presented itself as a character-building organization focused on trustworthiness, loyalty, and duty — the Scout Law's core values. It simultaneously maintained files on known sexual predators for 70 years without sharing them with law enforcement, enabling documented reoffending in new troops.",
+    "tax_math": "The BSA and local councils operated as tax-exempt organizations during the 70-year period documented in the perversion files. The $850 million settlement was funded partly through bankruptcy proceedings and partly through chartered organizations' required contributions — with tax implications for all parties.",
+    "wealth_velocity": "The BSA's bankruptcy preserved significant local council assets outside the national estate — a structure that survivor advocates argued was specifically designed to minimize settlement payments while maintaining organizational continuity. Local council property and endowments remained available to the continuing organization after settlement."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Boy Scouts of America as institution",
+        "how": "70 years of maintaining perversion files internally rather than reporting to law enforcement preserved organizational reputation while enabling serial reoffending; bankruptcy structure preserved local council assets"
+      },
+      {
+        "group": "Known abusers identified in perversion files",
+        "how": "Removed from one troop without law enforcement involvement; documented as reoffending in subsequent placements"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "82,000 sexual abuse survivors",
+        "how": "Childhood sexual abuse in trusted youth organization; 70 years of organizational knowledge of patterns without law enforcement disclosure; $850M settlement averaging approximately $10,000 per survivor"
+      }
+    ],
+    "the_gap": "The Boy Scouts kept files on sexual predators since the 1920s. They called them perversion files. They never showed them to law enforcement. When a court ordered them released in 2012 they documented 70 years of known abuse patterns. 82,000 survivors filed claims in the bankruptcy. The settlement was $850 million. The average payment was approximately $10,000. The local councils kept their assets. The organization still exists."
+  }
+}
