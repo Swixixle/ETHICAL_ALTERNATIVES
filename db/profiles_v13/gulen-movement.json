@@ -1,0 +1,185 @@
+{
+  "brand_name": "Gülen Movement (Hizmet)",
+  "brand_slug": "gulen-movement",
+  "parent_company": "No formal organization — global network",
+  "ultimate_parent": "Fethullah Gülen (died 2024)",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "FETHULLAH GÜLEN LIVED IN PENNSYLVANIA FOR 25 YEARS WHILE TURKEY ACCUSED HIM OF RUNNING A PARALLEL STATE — HIS NETWORK OPERATED THE LARGEST CHAIN OF CHARTER SCHOOLS IN THE US AND PAID TEACHERS TO TRANSFER MONEY TO TURKEY",
+  "executive_summary": "The Gülen movement (also called Hizmet, meaning 'service') was an Islamic educational and civic movement founded by Turkish Islamic preacher Fethullah Gülen, who lived in self-imposed exile in Saylorsburg, Pennsylvania from 1999 until his death in October 2024. The movement's global network encompasses schools, media, businesses, and civic organizations across over 150 countries. In the United States, Gülen-affiliated organizations operated the largest single charter school network in the country — approximately 170 schools across 26 states, operating under names including Harmony, Magnolia, and Accord — with total federal and state funding exceeding $500 million annually. Federal investigators documented allegations of systematic visa fraud (using H-1B visas to import Turkish teachers), requiring teachers to transfer a portion of their salaries to movement-affiliated Turkish organizations ('golden generation' contributions), and bid-rigging in construction contracts at charter schools. Turkey designated the Gülen movement as the Fethullahist Terror Organization (FETÖ) following the 2016 coup attempt that Turkish authorities blamed on Gülen. The US government did not extradite Gülen before his death.",
+  "verdict_tags": [
+    "largest_charter_school_us_170_schools_26_states",
+    "500m_plus_annual_federal_state_funding",
+    "h1b_visa_fraud_allegations_documented",
+    "teacher_salary_transfer_golden_generation",
+    "turkey_feto_terrorist_designation",
+    "2016_coup_attempt_gulen_accused",
+    "extradition_refused_gulen_died_2024",
+    "bid_rigging_construction_investigations"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Federal and state investigators documented allegations that Turkish teachers employed at Gülen-affiliated charter schools under H-1B visas were required to contribute portions of their salaries to Gülen movement organizations — a form of salary kickback. Investigators found evidence of coordinated salary transfer schemes where teachers' net compensation was significantly less than their stated H-1B salaries. Some teachers were documented as having signed agreements to make these contributions as a condition of employment.",
+    "flags": [
+      "h1b_salary_kickback_documented_investigators",
+      "coordinated_transfer_scheme_evidence",
+      "teacher_agreement_condition_employment"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental enforcement actions against Gülen-affiliated organizations have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Gülen movement's political significance is primarily the Turkey conflict. Turkish President Erdoğan blamed the July 2016 coup attempt — which killed approximately 250 people — on the Gülen movement, which he designated FETÖ. Turkey requested Gülen's extradition from the United States; the US consistently declined, citing insufficient evidence meeting extradition treaty standards. Gülen denied involvement. The US State Department listed the extradition request as ongoing. Gülen's charter school network's political connections — including documented lobbying expenditures and relationships with US politicians who visited Gülen or attended Gülen-affiliated events — were documented by journalists and investigators.",
+    "flags": [
+      "erdogan_feto_designation_2016_coup",
+      "250_killed_coup_attempt",
+      "us_extradition_refused_insufficient_evidence",
+      "charter_school_lobbying_politician_relationships_documented"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Multiple federal and state investigations into Gülen-affiliated charter schools have documented: H-1B visa fraud (importing Turkish teachers who did not qualify for the visa category used); salary kickback schemes requiring teachers to transfer portions of pay to movement organizations; bid-rigging in school construction contracts; and improper financial relationships between charter schools and Gülen-affiliated vendors. No major criminal convictions of Gülen movement leaders in the US have been obtained. Civil settlements have been reached in some states. Texas's Harmony Public Schools (the largest single network) has been the subject of the most extensive documented investigations.",
+    "flags": [
+      "h1b_fraud_documented",
+      "salary_kickback_bid_rigging_documented",
+      "no_major_us_criminal_convictions",
+      "harmony_texas_most_investigated",
+      "civil_settlements_some_states"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Gülen-affiliated charter schools receive hundreds of millions annually in federal and state funding as public charter schools — tax-funded institutions operating as private nonprofit entities. The salary kickback scheme — if the documented allegations are accurate — diverted a portion of taxpayer-funded teacher salaries to Turkish Islamic movement organizations. The charter school networks file Form 990 — their finances are publicly available.",
+    "flags": [
+      "500m_plus_annual_public_funding_tax",
+      "salary_kickback_diverted_public_funds_allegation",
+      "form_990_public_charter_networks"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Fethullah Gülen lived in Saylorsburg, Pennsylvania from 1999 until his death on October 20, 2024 at age 83. He gave interviews, wrote books, and directed the global movement from his compound in Pennsylvania. His movement operated without a formal organizational structure — Gülen provided religious and intellectual guidance; local networks self-organized in each country. US charter school networks were led by local boards of Turkish-American educators with documented connections to the broader Gülen network.",
+    "flags": [
+      "gulen_died_october_2024",
+      "pennsylvania_compound_1999_2024",
+      "no_formal_organizational_structure",
+      "local_boards_turkish_american_documented_connections"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The Gülen movement's global school network — operating in over 150 countries — represents one of the most extensive private Islamic educational enterprises in history. Its charter school network in the US was specifically designed to operate as public schools receiving government funding while promoting movement values and maintaining movement financial relationships. Gülen's death in October 2024 leaves the movement's future organizational direction uncertain.",
+    "flags": [
+      "150_countries_global_school_network",
+      "us_public_funding_private_values_documented",
+      "movement_future_uncertain_post_gulen"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Turkey has alleged that the Gülen movement organized and executed the 2016 coup attempt — killing approximately 250 people — and has documented what it characterizes as the movement's infiltration of the Turkish military, judiciary, police, and civil service over decades. Gülen and the movement denied involvement in the coup. US investigators have alleged that the charter school financial schemes were organized at the movement level rather than being local decisions — that the salary transfer system was a global movement structure applied to US charter school employees. Charter school boards have disputed that their schools were operationally directed by Gülen movement leadership.",
+    "flags": [
+      "2016_coup_execution_alleged_turkey",
+      "infiltration_military_judiciary_alleged",
+      "salary_scheme_movement_level_alleged_investigators",
+      "charter_boards_dispute_operational_direction"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "No direct health enforcement actions against Gülen-affiliated organizations have been identified. The 2016 coup attempt in Turkey — which Turkey attributes to the Gülen movement — killed approximately 250 people, including civilians and security personnel. The movement denies responsibility.",
+    "flags": [
+      "2016_coup_250_killed_attributed_denied"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Non-Gülen-affiliated charter schools without documented investigations",
+      "Traditional public schools without documented financial scheme allegations"
+    ],
+    "healthier": [
+      "Charter schools with independent governance and no documented salary kickback allegations"
+    ],
+    "diy": [
+      "The Texas Education Agency's investigations into Harmony Public Schools are documented in public records",
+      "Federal H-1B violation proceedings are public court records"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1999,
+      "event": "Fethullah Gülen relocates to Saylorsburg, Pennsylvania citing health reasons; Turkey later claims it was to direct coup planning",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2000,
+      "event": "Gülen-affiliated charter schools begin opening in the United States; network eventually reaches 170 schools in 26 states",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2010,
+      "event": "Federal investigations into H-1B visa use and salary transfer schemes at Gülen-affiliated charter schools begin",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2016,
+      "event": "July: Military coup attempt in Turkey kills approximately 250 people; Erdoğan blames Gülen movement; designates FETÖ; requests extradition",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2016,
+      "event": "US declines extradition citing insufficient evidence meeting treaty standards; Turkey relations deteriorate",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "October: Fethullah Gülen dies in Pennsylvania at age 83; movement's future direction uncertain",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Students in Gülen-affiliated charter schools received public education funded by taxpayers while the schools' financial operations — salary kickbacks, H-1B visa schemes, bid-rigging — diverted portions of that public funding to an international Islamic movement. The quality of education provided by the schools has been documented as variable; some Harmony schools in Texas have received strong academic ratings.",
+    "price_illusion": "Gülen-affiliated charter schools presented as high-quality public schools emphasizing STEM education and civic engagement. The documented financial schemes — salary kickbacks, H-1B fraud, construction bid-rigging — operated beneath this public presentation.",
+    "tax_math": "Over $500 million annually in taxpayer funding flowed to Gülen-affiliated charter schools. The documented salary transfer scheme diverted portions of taxpayer-funded teacher salaries to Turkish movement organizations — an effective diversion of public funds to a foreign Islamic movement.",
+    "wealth_velocity": "The Gülen movement's global financial resources — accumulated through its school network, media, businesses, and donor base — are not publicly disclosed in any comprehensive way. The US charter school network's diversion of taxpayer funds to movement organizations represents a documented flow of public money into private movement resources."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Gülen movement globally",
+        "how": "Over $500M annual US taxpayer funding to charter schools; salary transfer scheme diverted additional funds to movement organizations; global network financed partly through US operations"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "US taxpayers",
+        "how": "Over $500M annually in public charter school funding; documented salary kickback scheme diverted portions to Turkish Islamic movement organizations"
+      },
+      {
+        "group": "Turkish teachers on H-1B visas",
+        "how": "Required to transfer portions of salaries to movement organizations as condition of employment"
+      }
+    ],
+    "the_gap": "Fethullah Gülen lived in Pennsylvania for 25 years. His movement ran 170 charter schools in 26 states funded by over $500 million in US taxpayer money annually. Investigators documented that teachers were required to transfer portions of their salaries to movement organizations in Turkey. Turkey accused him of organizing a military coup that killed 250 people. The US refused to extradite him. He died in Pennsylvania in October 2024. The investigations found H-1B fraud and bid rigging. No major criminal convictions were obtained in the US."
+  }
+}

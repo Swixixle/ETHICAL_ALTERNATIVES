@@ -1,0 +1,173 @@
+{
+  "brand_name": "Council on American-Islamic Relations (CAIR)",
+  "brand_slug": "cair",
+  "parent_company": "Council on American-Islamic Relations",
+  "ultimate_parent": "CAIR National Board",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "CAIR WAS NAMED AN UNINDICTED CO-CONSPIRATOR IN A FEDERAL HAMAS FUNDRAISING CASE — THE FBI CUT OFF FORMAL TIES IN 2009 — THEN RESTORED THEM — AND CAIR SAYS IT IS AMERICA'S LARGEST MUSLIM CIVIL RIGHTS ORGANIZATION",
+  "executive_summary": "The Council on American-Islamic Relations (CAIR) was founded in 1994 and describes itself as America's largest Muslim civil rights and advocacy organization, with chapters across the United States. CAIR's documented controversies center primarily on its 2007-2008 designation as an unindicted co-conspirator in the Holy Land Foundation case — the largest terrorism financing prosecution in US history, in which the Holy Land Foundation was convicted of funneling $12 million to Hamas. The federal government named CAIR as an unindicted co-conspirator without bringing charges against CAIR or proving that it had knowingly funded terrorism. CAIR disputed the designation and its legal basis. The FBI formally suspended its relationship with CAIR in 2009 citing the co-conspirator designation; that relationship was subsequently restored in some jurisdictions. Several CAIR founding board members have documented connections to the Muslim Brotherhood. CAIR maintains the co-conspirator designation was improper and that it has no operational ties to Hamas or the Muslim Brotherhood.",
+  "verdict_tags": [
+    "holy_land_foundation_unindicted_co_conspirator",
+    "fbi_suspended_relationship_2009",
+    "fbi_relationship_restored_some_jurisdictions",
+    "founding_board_muslim_brotherhood_connections_documented",
+    "cair_disputes_designation_no_charges_filed",
+    "largest_muslim_civil_rights_advocacy",
+    "civil_liberties_advocacy_documented",
+    "founding_1994"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": false,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "CAIR employs staff across its national and chapter offices. No major documented labor violations have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental positions or enforcement actions have been identified for CAIR.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "CAIR engages in civil rights advocacy, litigation, and political lobbying on behalf of Muslim Americans. Documented activities: filing civil rights complaints against employment discrimination, airport profiling, and hate crimes; opposing the Trump travel ban; advocating against surveillance of Muslim communities; filing amicus briefs in religious freedom cases. CAIR has also been documented making statements about US foreign policy — particularly regarding Israel-Palestine — that have generated controversy and criticism from pro-Israel organizations. Some Republican politicians have called for designating CAIR as a terrorist organization; no US administration has done so.",
+    "flags": [
+      "civil_rights_complaints_discrimination_profiling",
+      "travel_ban_opposition",
+      "israel_palestine_statements_controversy",
+      "terrorist_designation_calls_not_acted_upon"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Holy Land Foundation case (2007-2008): CAIR was named as one of approximately 300 unindicted co-conspirators in the prosecution of the Holy Land Foundation for Hamas fundraising. No charges were filed against CAIR. The Fifth Circuit Court of Appeals ruled in 2009 that the government had violated CAIR's due process rights by naming it as a co-conspirator without notice or opportunity to respond, but declined to order the name removed from public court filings. CAIR itself has never been charged with any terrorism-related offense. The FBI suspended formal communication with CAIR in 2009 following a Justice Department decision; relationships have varied by jurisdiction since then.",
+    "flags": [
+      "holy_land_unindicted_co_conspirator_no_charges",
+      "fifth_circuit_due_process_violation_found",
+      "no_terrorism_charges_ever_filed",
+      "fbi_suspended_2009_variable_since"
+    ],
+    "sources": [
+      "https://www.justice.gov/archive/usao-ndtx/holyland.html"
+    ]
+  },
+  "tax": {
+    "summary": "CAIR is a 501(c)(4) social welfare organization — contributions are not tax-deductible. Its affiliated CAIR Foundation is a 501(c)(3) — contributions are tax-deductible. CAIR files Form 990 — its finances are publicly available. Annual revenue is approximately $20-30 million.",
+    "flags": [
+      "501c4_contributions_not_deductible",
+      "cair_foundation_501c3_deductible",
+      "form_990_public",
+      "20_30m_annual_revenue"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Nihad Awad has served as CAIR's executive director since its founding in 1994. Awad has been a prominent public voice for American Muslim civil rights. His documented statements — including a 1994 statement expressing support for Hamas before CAIR's founding — have been repeatedly cited by critics. Awad has said the statement was taken out of context and that he supports a two-state solution. Several CAIR founding board members — including Omar Ahmad — have documented connections to the Islamic Association for Palestine, which the government linked to the Muslim Brotherhood.",
+    "flags": [
+      "awad_executive_director_since_1994",
+      "awad_1994_hamas_statement_disputed_context",
+      "ahmad_islamic_association_palestine_connection"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "CAIR's critics document its founding connections to the Islamic Association for Palestine — which federal courts have found to be a front group for the Muslim Brotherhood's Palestine Committee — as evidence of organizational connection to Hamas. CAIR maintains these connections reflect its founders' backgrounds before CAIR's establishment, not organizational relationships. CAIR's civil rights work has generated documented partnerships with other civil rights organizations including the ACLU, NAACP, and various immigrant rights groups.",
+    "flags": [
+      "islamic_association_palestine_founding_connection",
+      "aclu_naacp_immigrant_rights_partnerships",
+      "critic_hamas_connection_vs_cair_rebuttal"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Critics — primarily from pro-Israel organizations and some counterterrorism researchers — have alleged that CAIR's founding connections to Brotherhood-linked organizations, combined with the unindicted co-conspirator designation, establish organizational ties to Hamas that CAIR has never severed. CAIR has disputed these allegations in detail, noting that no charges have ever been filed, that the co-conspirator designation violated its due process rights per the Fifth Circuit, and that its work is entirely focused on civil rights advocacy for Muslim Americans.",
+    "flags": [
+      "founding_brotherhood_connections_operational_ties_alleged_critics",
+      "cair_detailed_rebuttal",
+      "no_charges_fifth_circuit_due_process",
+      "civil_rights_work_documented"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "No direct health enforcement actions against CAIR have been identified. CAIR's civil rights advocacy — including opposing discriminatory surveillance of Muslim communities and defending Muslim Americans' civil liberties — has documented positive community health dimensions for Muslim Americans experiencing discrimination.",
+    "flags": [
+      "civil_rights_advocacy_positive_community_dimension"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Muslim Advocates — Muslim American civil rights organization with different founding history",
+      "Islamic Society of North America (ISNA) — largest Muslim American organization by membership"
+    ],
+    "healthier": [
+      "Muslim American organizations without unindicted co-conspirator designations"
+    ],
+    "diy": [
+      "CAIR's Form 990 is publicly available at ProPublica Nonprofit Explorer",
+      "The Holy Land Foundation trial documents are public court records",
+      "The Fifth Circuit opinion on CAIR's due process rights is public"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1994,
+      "event": "CAIR founded in Washington DC; Nihad Awad becomes executive director",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2007,
+      "event": "Federal government names CAIR as unindicted co-conspirator in Holy Land Foundation Hamas fundraising prosecution",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2008,
+      "event": "Holy Land Foundation convicted on all counts; CAIR not charged with any offense",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2009,
+      "event": "FBI formally suspends relationship with CAIR following Justice Department decision; Fifth Circuit finds government violated CAIR's due process rights in co-conspirator naming",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "CAIR documents record Islamophobia complaints in the US; profile rises in context of Israel-Gaza conflict",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Muslim Americans who have experienced employment discrimination, airport profiling, hate crimes, and civil rights violations have received documented assistance from CAIR's legal and advocacy work. The organization's civil rights record — regardless of its founding controversies — is documented.",
+    "price_illusion": "CAIR presents as a straightforward civil rights organization. The unindicted co-conspirator designation — which the Fifth Circuit found violated CAIR's due process rights — and the founding connections to Brotherhood-linked organizations create a documented controversy about the organization's full history that donors and constituents may not be aware of.",
+    "tax_math": "CAIR's 501(c)(4) structure means contributions are not tax-deductible — a limitation on its fundraising compared to 501(c)(3) organizations. Its affiliated CAIR Foundation's 501(c)(3) status allows deductible contributions for its research and education work.",
+    "wealth_velocity": "CAIR's $20-30 million annual revenue funds its national and chapter operations. Nihad Awad's compensation is disclosed through Form 990."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Muslim Americans experiencing civil rights violations",
+        "how": "CAIR's documented civil rights advocacy, legal representation, and complaint filing"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "CAIR's reputation",
+        "how": "Unindicted co-conspirator designation — even without charges and with Fifth Circuit due process finding — has damaged CAIR's relationships with law enforcement and some civil society partners"
+      }
+    ],
+    "the_gap": "CAIR was named an unindicted co-conspirator in the largest terrorism financing prosecution in US history. No charges were ever filed against CAIR. The Fifth Circuit found the government violated CAIR's due process rights in naming it. The FBI cut off formal relationships in 2009 and later restored some. CAIR has been doing civil rights work for Muslim Americans since 1994. Its founding board members had connections to organizations the government linked to the Muslim Brotherhood. CAIR disputes this means CAIR had operational ties to Hamas. The charges that would have resolved the question were never filed."
+  }
+}

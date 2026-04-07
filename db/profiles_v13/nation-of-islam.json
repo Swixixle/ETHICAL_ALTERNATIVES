@@ -1,0 +1,206 @@
+{
+  "brand_name": "Nation of Islam",
+  "brand_slug": "nation-of-islam",
+  "parent_company": "Nation of Islam",
+  "ultimate_parent": "Louis Farrakhan (Minister/Leader)",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "LOUIS FARRAKHAN HAS CALLED JUDAISM A 'GUTTER RELIGION,' CALLED HITLER 'A VERY GREAT MAN,' AND COMPARED JEWISH PEOPLE TO TERMITES — THE SPLC DESIGNATES NOI A HATE GROUP — AND MULTIPLE US POLITICIANS HAVE DOCUMENTED RELATIONSHIPS WITH FARRAKHAN",
+  "executive_summary": "The Nation of Islam (NOI) is a Black nationalist religious movement founded in Detroit in 1930 by Wallace D. Fard Muhammad, who taught a theology radically different from mainstream Islam — including the belief that white people were created by a scientist named Yakub as a race of devils, and that Black people are the original people of the Earth. Under its most prominent leader Elijah Muhammad (1934-1975) and his successor Louis Farrakhan (who reorganized the NOI after a schism with Warith Deen Mohammed), the NOI built a significant community infrastructure including the Final Call newspaper, restaurants, farms, and educational institutions. The Southern Poverty Law Center designates the NOI as a hate group for its documented antisemitic statements. Farrakhan has called Judaism a 'gutter religion' (1984), called Hitler 'a very great man' (1984), compared Jewish people to termites (2018), and made sustained documented statements characterizing Jewish people as controlling the media, Hollywood, and the US government. Despite this record, Farrakhan has maintained documented relationships with elected officials including US Representatives.",
+  "verdict_tags": [
+    "farrakhan_gutter_religion_1984",
+    "farrakhan_hitler_great_man_1984",
+    "farrakhan_jewish_termites_2018",
+    "splc_hate_group_designation",
+    "elijah_muhammad_yakub_theology",
+    "malcolm_x_assassination_noi_connection",
+    "million_man_march_1995",
+    "politicians_documented_farrakhan_relationships"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "The Nation of Islam operates a network of businesses, farms, and educational institutions employing community members. No major documented systemic labor violations have been identified beyond the organization's documented hate group status.",
+    "flags": [
+      "business_farm_educational_network_employment"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental enforcement actions against the NOI have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The NOI's political influence is disproportionate to its estimated 50,000-500,000 membership (estimates vary widely). The Million Man March (1995) — organized by Farrakhan — drew hundreds of thousands to Washington DC. Farrakhan's documented relationships with politicians who later distanced themselves include: Rep. Keith Ellison (D-MN, later Minnesota Attorney General), Rep. Maxine Waters (D-CA), and others who attended or met with Farrakhan. The Obama administration's longstanding relationship with Rev. Jeremiah Wright — who has documented NOI connections — generated significant political controversy. Farrakhan has also maintained documented relationships with Iranian leadership and traveled to Iran multiple times.",
+    "flags": [
+      "million_man_march_hundreds_thousands",
+      "politicians_ellison_waters_documented_then_distanced",
+      "farrakhan_iran_relationship_documented",
+      "obama_wright_noi_connections_controversy"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Malcolm X — the NOI's most prominent figure until his break with Elijah Muhammad — was assassinated in 1965. Three NOI members were convicted of the murder. The 2021 exoneration of two of the three convicted men — Muhammad Aziz and Khalil Islam — raised questions about the adequacy of the original prosecution. A 2021 Manhattan DA investigation into the assassination found law enforcement intelligence failures and that evidence pointing to NOI involvement had been suppressed. Farrakhan's statements — including calling Jewish people termites — have been documented but have not resulted in criminal charges as protected speech. Facebook removed Farrakhan from its platform in 2019 under its policy against dangerous individuals.",
+    "flags": [
+      "malcolm_x_assassination_noi_members_convicted",
+      "2021_exoneration_two_convicted",
+      "da_investigation_suppressed_evidence",
+      "farrakhan_facebook_removed_2019",
+      "antisemitism_statements_protected_speech_not_charged"
+    ],
+    "sources": [
+      "https://www.nytimes.com/2021/11/18/nyregion/malcolm-x-murder-exoneration.html"
+    ]
+  },
+  "tax": {
+    "summary": "The Nation of Islam is registered as a religious organization and claims tax exemption. The Final Call newspaper — the NOI's publication — is operated as a separate entity. NOI businesses and farms operate as commercial entities with their own tax treatment. No major tax enforcement actions against the NOI have been identified.",
+    "flags": [
+      "religious_tax_exemption_claimed",
+      "final_call_separate_entity",
+      "businesses_farms_commercial_treatment"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Louis Farrakhan has led the Nation of Islam since reorganizing it in 1977-1978 following the schism with Warith Deen Mohammed. Warith Deen Mohammed — son of Elijah Muhammad — moved the NOI toward mainstream Sunni Islam; Farrakhan maintained the original NOI theology. Farrakhan is in his late 80s and has had documented serious health issues. The succession question is unresolved. Elijah Muhammad — who led the NOI from 1934 to 1975 — fathered children with at least seven women outside his marriage; Malcolm X's public acknowledgment of this was a factor in the break between them.",
+    "flags": [
+      "farrakhan_late_80s_health_issues_succession_unclear",
+      "elijah_muhammad_outside_children_seven_women",
+      "malcolm_x_break_over_elijah_conduct"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The NOI's connections to mainstream Black American political and religious life have been more extensive than its hate group designation suggests — Farrakhan maintained relationships with civil rights figures and politicians who later publicly distanced themselves. Its theology is distinct from mainstream Islam; the Council on American-Islamic Relations and mainstream Muslim organizations do not endorse the NOI's racial theology or Farrakhan's antisemitic statements.",
+    "flags": [
+      "civil_rights_figure_relationships_documented",
+      "mainstream_muslim_orgs_no_endorsement",
+      "cair_no_endorsement"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Malcolm X's family and advocates have alleged that the NOI's leadership — including members with documented connections to Farrakhan's organization — was responsible for ordering Malcolm X's assassination, and that law enforcement intelligence about this was suppressed from the defense at trial. The 2021 Manhattan DA investigation found law enforcement failures without conclusively establishing who ordered the killing.",
+    "flags": [
+      "noi_leadership_ordered_assassination_alleged",
+      "law_enforcement_suppression_documented_da_investigation",
+      "conclusive_finding_not_made"
+    ],
+    "sources": [
+      "https://www.nytimes.com/2021/11/18/nyregion/malcolm-x-murder-exoneration.html"
+    ]
+  },
+  "health_record": {
+    "summary": "The NOI's documented antisemitic statements — including characterizing Jewish people as termites and as controlling media and government — contribute to antisemitic prejudice in documented ways. The specific statements made by Farrakhan are among the most documented examples of prominent American antisemitism in recent decades. The ADL and SPLC have documented the NOI's antisemitism extensively. The NOI's racial theology — teaching that white people are a race of devils created by the scientist Yakub — similarly documents a hate ideology targeting white people.",
+    "flags": [
+      "antisemitism_documented_adl_splc_extensively",
+      "termites_hitler_gutter_religion_documented",
+      "racial_theology_anti_white_documented"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Mainstream Sunni Muslim organizations — ISNA, ICNA — without hate group designation",
+      "Warith Deen Mohammed's movement — the American Society of Muslims — which moved to mainstream Sunni Islam"
+    ],
+    "healthier": [
+      "Muslim American organizations without documented antisemitism and racial theology",
+      "Black American Muslim communities aligned with mainstream Sunni Islam"
+    ],
+    "diy": [
+      "SPLC's NOI file documents specific statements with citations",
+      "ADL's documentation of Farrakhan's statements is publicly available"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1930,
+      "event": "Wallace D. Fard Muhammad founds the Nation of Islam in Detroit",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1934,
+      "event": "Elijah Muhammad assumes leadership; builds NOI as significant Black nationalist religious movement",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1965,
+      "event": "Malcolm X assassinated; three NOI members convicted",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1975,
+      "event": "Elijah Muhammad dies; son Warith Deen Mohammed moves NOI toward mainstream Sunni Islam",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 1977,
+      "event": "Farrakhan reorganizes the original NOI theology; builds parallel organization",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 1984,
+      "event": "Farrakhan calls Judaism a 'gutter religion' and Hitler 'a very great man' — remarks documented nationally",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1995,
+      "event": "Million Man March in Washington DC — hundreds of thousands attend event organized by Farrakhan",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "Farrakhan compares Jewish people to termites; Facebook later removes him under dangerous individuals policy",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "Two of three men convicted of Malcolm X's murder exonerated; Manhattan DA investigation finds law enforcement failures",
+      "severity": "critical",
+      "source_url": "https://www.nytimes.com/2021/11/18/nyregion/malcolm-x-murder-exoneration.html"
+    }
+  ],
+  "community_impact": {
+    "displacement": "Jewish Americans have been the primary documented targets of the NOI's sustained antisemitic ideology — an ideology that frames Jewish people as a malevolent controlling force in American life. The NOI's racial theology simultaneously targets white Americans as a devil race. Both have been documented by civil rights organizations as contributing to hate environments.",
+    "price_illusion": "The NOI presents as a Black liberation and self-determination organization — and has provided documented community infrastructure including schools, farms, and businesses in Black communities. This community service coexists with a documented hate ideology that the SPLC has designated a hate group.",
+    "tax_math": "The NOI's tax exemption as a religious organization means its operations — including its Final Call newspaper and business network — benefit from religious tax treatment. Donations to the NOI are received by a tax-exempt organization that the SPLC designates as a hate group.",
+    "wealth_velocity": "The NOI's business network — including Farrakhan's estimated personal wealth accumulated through the organization — represents wealth concentration in religious leadership consistent with the prosperity gospel pattern in Christianity."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Louis Farrakhan",
+        "how": "Maintained prominent national platform for 40+ years despite sustained documented antisemitism and hate group designation; relationships with politicians who met with him"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Jewish Americans",
+        "how": "Sustained targeted antisemitism from one of America's most visible public figures; 'gutter religion,' 'termites,' 'Hitler was great'"
+      },
+      {
+        "group": "Malcolm X",
+        "how": "Assassinated in 1965 by NOI members; two of three convicted men were exonerated in 2021"
+      }
+    ],
+    "the_gap": "Louis Farrakhan called Judaism a gutter religion in 1984. He called Hitler a very great man in 1984. He compared Jewish people to termites in 2018. The SPLC designates the Nation of Islam as a hate group. US Representatives have met with him and been documented in the photographs. Facebook removed him in 2019. He organized the Million Man March with hundreds of thousands of attendees. Three men were convicted of killing Malcolm X. Two were exonerated in 2021. The Manhattan DA found law enforcement had suppressed evidence."
+  }
+}

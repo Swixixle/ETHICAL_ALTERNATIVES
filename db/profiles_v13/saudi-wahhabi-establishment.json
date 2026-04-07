@@ -1,0 +1,210 @@
+{
+  "brand_name": "Saudi Wahhabi Establishment",
+  "brand_slug": "saudi-wahhabi-establishment",
+  "parent_company": "Kingdom of Saudi Arabia / Ministry of Islamic Affairs",
+  "ultimate_parent": "Al Saud royal family",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "SAUDI ARABIA HAS EXPORTED AN ESTIMATED $75-100 BILLION IN WAHHABI RELIGIOUS FUNDING SINCE 1975 — 15 OF THE 19 SEPTEMBER 11 HIJACKERS WERE SAUDI — AND THE '28 PAGES' DOCUMENTED SAUDI GOVERNMENT CONNECTIONS TO THE PLOT",
+  "executive_summary": "The Saudi Wahhabi establishment represents the intersection of the Al Saud royal family's political authority and the Wahhabi religious movement founded by Muhammad ibn Abd al-Wahhab in the 18th century — a puritanical Sunni Islamic doctrine that became the state religion of Saudi Arabia. Since the 1973 oil embargo generated massive petroleum wealth, Saudi Arabia has exported an estimated $75-100 billion in religious funding globally — building mosques, madrassas, and Islamic centers, funding scholars, and distributing religious literature promoting Wahhabi/Salafi interpretations of Islam in over 100 countries. The 9/11 Commission documented that 15 of the 19 hijackers were Saudi nationals. Declassified portions of the 28-page section of the Joint Congressional Inquiry into 9/11 (released 2016) documented connections between Saudi government officials and some hijackers. The Saudi government paid $1 billion in 2016 in the first US payments to 9/11 victims' families — without admitting responsibility.",
+  "verdict_tags": [
+    "75_100b_wahhabi_funding_exported_estimated",
+    "15_of_19_hijackers_saudi_nationals",
+    "28_pages_saudi_government_connections_documented",
+    "1b_2016_payments_9_11_families",
+    "global_mosque_madrassa_funding_100_countries",
+    "jamal_khashoggi_assassination_cia_mbs_ordered",
+    "khashoggi_1b_cia_mbs_ordered",
+    "no_us_terrorism_designation"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": false,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Saudi Arabia's kafala system — under which migrant workers are legally bound to their employers and cannot change jobs or leave the country without employer permission — has been documented by Human Rights Watch, Amnesty International, and UN bodies as creating conditions of forced labor and modern slavery for millions of domestic and construction workers. An estimated 10-13 million migrant workers work in Saudi Arabia under kafala.",
+    "flags": [
+      "kafala_forced_labor_10_13_million_migrants",
+      "hrw_amnesty_un_documented",
+      "cannot_change_jobs_leave_without_permission"
+    ],
+    "sources": [
+      "https://www.hrw.org/report/2008/07/07/locked-box/isolation-and-abuse-domestic-workers-saudi-arabia"
+    ]
+  },
+  "environmental": {
+    "summary": "Saudi Arabia is the world's largest oil exporter and the de facto leader of OPEC — whose output decisions directly affect global greenhouse gas emissions. Saudi Aramco is the world's most profitable company and among the largest single contributors to global carbon emissions. The Saudi state's oil revenues fund the religious establishment that is the subject of this profile.",
+    "flags": [
+      "largest_oil_exporter_aramco",
+      "opec_output_decisions_greenhouse_effect",
+      "oil_revenues_fund_religious_establishment"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Wahhabi establishment's global funding — documented by the 9/11 Commission, the US Department of State, and multiple Western intelligence agencies — has promoted an intolerant interpretation of Islam that has been linked to radicalization in multiple countries. The declassified 28 pages of the Joint Congressional Inquiry documented connections between Saudi government officials (including then-Ambassador Prince Bandar bin Sultan's wife's charitable payments) and two hijackers. CIA Director Gina Haspel's assessment — provided to the Biden administration in 2021 — concluded that Saudi Crown Prince Mohammed bin Salman approved the operation to capture or kill journalist Jamal Khashoggi, who was subsequently murdered and dismembered in the Saudi consulate in Istanbul in October 2018.",
+    "flags": [
+      "9_11_commission_global_funding_documented",
+      "28_pages_government_official_connections",
+      "cia_mbs_khashoggi_murder_approved",
+      "khashoggi_istanbul_consulate_murdered_dismembered_2018",
+      "state_department_radicalization_link_documented"
+    ],
+    "sources": [
+      "https://www.dni.gov/files/ODNI/documents/assessments/Assessment-Saudi-Gov-Role-in-JK-Death-20210226v2.pdf"
+    ]
+  },
+  "legal": {
+    "summary": "The Justice Against Sponsors of Terrorism Act (JASTA, 2016) allows US citizens to sue foreign governments for acts of terrorism on US soil — enabling 9/11 victims' families to sue Saudi Arabia. Saudi Arabia reached settlements with families totaling approximately $1 billion in 2016 without admitting responsibility. The 28-page section of the Joint Congressional Inquiry — classified for 15 years and released in 2016 — documented connections between Saudi government officials and some hijackers without establishing direct government authorization. Jamal Khashoggi: the Biden administration's CIA assessment concluded MBS approved the operation; the US imposed sanctions on some involved individuals but not on MBS himself.",
+    "flags": [
+      "jasta_2016_enables_family_suits",
+      "1b_settlements_no_admission",
+      "28_pages_released_2016_connections_documented",
+      "cia_mbs_assessment_sanctions_not_on_mbs"
+    ],
+    "sources": [
+      "https://www.dni.gov/files/ODNI/documents/assessments/Assessment-Saudi-Gov-Role-in-JK-Death-20210226v2.pdf"
+    ]
+  },
+  "tax": {
+    "summary": "The Saudi Wahhabi establishment's global funding operates through the Saudi government, the Muslim World League, and hundreds of Saudi-funded charitable organizations globally — many of which are registered as nonprofits in their host countries and receive charitable tax benefits. The financial flows are not publicly disclosed in any comprehensive way; estimates of $75-100 billion since 1975 are based on research by scholars including Rand Corporation analysts and former US officials.",
+    "flags": [
+      "muslim_world_league_primary_vehicle",
+      "global_charitable_registration_tax_benefits",
+      "75_100b_estimate_based_research"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Crown Prince Mohammed bin Salman (MBS) is the de facto ruler of Saudi Arabia and the primary decision-maker in the kingdom's religious, political, and economic affairs. The CIA assessment concluded he approved the killing of Jamal Khashoggi. The Grand Mufti — currently Sheikh Abdulaziz Al Sheikh — is the highest religious authority in the kingdom. The Ministry of Islamic Affairs controls the Wahhabi religious establishment's global funding apparatus.",
+    "flags": [
+      "mbs_cia_khashoggi_approved",
+      "grand_mufti_al_sheikh",
+      "ministry_islamic_affairs_controls_global_funding"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The Wahhabi establishment's funded network is documented as having contributed to the ideological formation of Al Qaeda, ISIS, and other Salafi-jihadist movements — though direct organizational connections are contested and the majority of Wahhabi-influenced Muslims do not engage in political violence. The Taliban's religious ideology (Deobandism) is distinct from Wahhabism but shares a puritanical framework. Saudi funding of madrassas in Pakistan has been documented as contributing to radicalization pipelines.",
+    "flags": [
+      "al_qaeda_isis_ideological_connection_contested",
+      "pakistan_madrassa_funding_radicalization_documented",
+      "majority_wahhabi_not_violent_clarification"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former US officials and terrorism researchers have alleged that Saudi charities and government-adjacent organizations knowingly funded organizations with connections to terrorism financing — not merely inadvertently promoting radical ideology through educational materials. The 28 pages documented specific connections without establishing direct government authorization at the highest levels. Saudi Arabia disputes that its government or senior officials deliberately facilitated the September 11 attacks.",
+    "flags": [
+      "knowing_terrorism_financing_alleged_former_officials",
+      "28_pages_connections_not_authorization",
+      "saudi_denial_deliberate_facilitation"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "The kafala system's documented conditions — forced labor, inability to leave employment, physical abuse of domestic workers, deaths in construction (documented at FIFA World Cup Qatar preparations, where similar Gulf state systems apply) — represent direct health harm to millions of migrant workers. The Wahhabi religious export's documented contribution to radicalization environments has downstream violence connections that are documented but causally complex.",
+    "flags": [
+      "kafala_migrant_worker_physical_abuse_deaths",
+      "qatari_world_cup_parallel_gulf_state",
+      "radicalization_violence_downstream_documented"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "No direct consumer alternative — Saudi Arabia is a state actor",
+      "Supporting human rights organizations documenting kafala: Human Rights Watch, Migrant-Rights.org"
+    ],
+    "healthier": [
+      "Amnesty International's documentation of kafala abuses",
+      "Human Rights Watch reports on Saudi migrant worker conditions"
+    ],
+    "diy": [
+      "The declassified 28 pages are publicly available through the DNI",
+      "The CIA Khashoggi assessment is publicly available at dni.gov"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1744,
+      "event": "Muhammad ibn Abd al-Wahhab and Muhammad ibn Saud form the alliance that founds the Saudi-Wahhabi pact — the foundation of modern Saudi Arabia",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1973,
+      "event": "Oil embargo generates massive petroleum wealth; Saudi Arabia begins systematic global Wahhabi religious funding expansion",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2001,
+      "event": "September 11: 15 of 19 hijackers are Saudi nationals; 9/11 Commission subsequently documents global Wahhabi funding concerns",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2002,
+      "event": "Joint Congressional Inquiry completed; 28-page section on Saudi connections classified by Bush administration",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2016,
+      "event": "28 pages declassified and released; JASTA passes allowing families to sue Saudi Arabia; $1B in settlements without Saudi admission",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "October: Jamal Khashoggi murdered and dismembered in Saudi consulate in Istanbul; CIA subsequently concludes MBS approved the operation",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "Biden administration releases CIA assessment concluding MBS approved Khashoggi operation; imposes sanctions on participants but not MBS",
+      "severity": "critical",
+      "source_url": "https://www.dni.gov/files/ODNI/documents/assessments/Assessment-Saudi-Gov-Role-in-JK-Death-20210226v2.pdf"
+    }
+  ],
+  "community_impact": {
+    "displacement": "Migrant workers in Saudi Arabia under the kafala system — approximately 10-13 million people — cannot legally leave their employment or the country without employer permission. Documented abuses include confiscation of passports, non-payment of wages, physical abuse, and deaths in dangerous working conditions. Muslim communities globally who received Saudi-funded religious education have been documented to have received materials promoting intolerant interpretations of Islam inconsistent with their traditional local practices.",
+    "price_illusion": "Saudi Arabia presents its religious funding as charitable Islamic outreach — spreading authentic Islam. Western intelligence assessments document that the specific interpretations spread (Wahhabi/Salafi) have contributed to radicalization environments globally. The oil that funds this outreach is purchased by global consumers and governments.",
+    "tax_math": "Saudi Arabia is a state — standard corporate tax analysis does not apply. Its oil revenues fund the religious establishment. Global recipients of Saudi religious funding often register as nonprofits receiving charitable tax benefits in their host countries.",
+    "wealth_velocity": "The Al Saud royal family controls one of the world's largest sovereign wealth funds (PIF, approximately $700 billion) funded by Saudi Aramco's oil revenues. This wealth funds both the religious establishment and MBS's Vision 2030 economic diversification program."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Al Saud royal family",
+        "how": "Political legitimacy purchased through religious establishment support; oil revenues fund both"
+      },
+      {
+        "group": "Wahhabi religious scholars and institutions globally",
+        "how": "$75-100B in funding since 1975 building global network of mosques, madrassas, and Islamic centers"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "10-13 million kafala migrant workers",
+        "how": "Forced labor conditions; inability to leave employment; physical abuse documented"
+      },
+      {
+        "group": "9/11 victims and families",
+        "how": "15 of 19 hijackers were Saudi; 28 pages documented government connections; $1B settlements reached without Saudi admission"
+      },
+      {
+        "group": "Jamal Khashoggi",
+        "how": "CIA assessment: MBS approved the operation; murdered and dismembered in Istanbul consulate"
+      }
+    ],
+    "the_gap": "Saudi Arabia has exported an estimated $75-100 billion in Wahhabi religious funding since 1975. 15 of the 19 September 11 hijackers were Saudi. The US classified the relevant 28 pages for 15 years. When they were released they documented connections between Saudi government officials and some hijackers. Jamal Khashoggi wrote critically about the Saudi government. He walked into the Saudi consulate in Istanbul in 2018. The CIA concluded the Crown Prince approved what happened to him. The US sanctioned the people who did it. Not the Crown Prince. Saudi Arabia settled with 9/11 families for $1 billion. They did not admit responsibility."
+  }
+}

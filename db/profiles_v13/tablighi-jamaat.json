@@ -1,0 +1,176 @@
+{
+  "brand_name": "Tablighi Jamaat",
+  "brand_slug": "tablighi-jamaat",
+  "parent_company": "No formal organization",
+  "ultimate_parent": "Shura council (informal)",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "TABLIGHI JAMAAT IS THE WORLD'S LARGEST ISLAMIC MISSIONARY MOVEMENT WITH AN ESTIMATED 80 MILLION FOLLOWERS — THE FBI CALLED IT A 'GATEWAY TO TERRORISM' — AND SEVERAL CONVICTED TERRORISTS PASSED THROUGH ITS NETWORK",
+  "executive_summary": "Tablighi Jamaat (roughly translated: 'Society for Spreading Faith') is an Islamic missionary movement founded in India in 1927 by Muhammad Ilyas Kandhlawi. It is estimated to have 80-150 million followers globally — making it potentially the largest Islamic movement in the world. The organization operates through an entirely informal structure with no membership, no fees, no central organization, and no published accounts. Its central practice is the chilla — where members spend time traveling in groups to mosques, encouraging other Muslims to return to basic Islamic practice. The FBI has described Tablighi Jamaat as 'a gateway to terrorism' — a characterization the organization and mainstream scholars dispute. Several individuals who were later convicted of terrorism-related offenses — including Reid Shoe Bomber Richard Reid and Germaine Lindsay (7/7 London bombing) — had documented contact with Tablighi Jamaat before their radicalization. France banned Tablighi Jamaat from building what would have been Europe's largest mosque near Paris in 2020, citing security concerns. The organization is not designated as a terrorist organization by the United States or any major Western government.",
+  "verdict_tags": [
+    "80_150_million_followers_largest_islamic_movement",
+    "no_formal_organization_membership_fees",
+    "fbi_gateway_terrorism_characterization",
+    "richard_reid_germaine_lindsay_tablighi_contact",
+    "france_mosque_ban_security_2020",
+    "not_designated_terrorist_organization",
+    "chilla_practice_travel_mosques",
+    "india_1927_founding"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": false,
+    "health": false,
+    "legal": false
+  },
+  "labor": {
+    "summary": "Tablighi Jamaat has no employees and no formal organizational structure. Its members participate voluntarily, funding their own travel and time for chilla journeys. No labor violations have been identified.",
+    "flags": [
+      "no_employees_voluntary_participation",
+      "self_funded_travel"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No environmental positions or enforcement actions have been identified for Tablighi Jamaat.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Tablighi Jamaat explicitly avoids political activity — its focus is personal religious practice and missionary outreach encouraging individual Muslims to observe prayer, dress, and other Islamic practices more strictly. This apolitical stance is genuine and consistent across its global network. France's security services have documented concerns that Tablighi Jamaat's insular networks and travel patterns create environments that have in some documented cases facilitated radicalization. The organization disputes that its practices contribute to radicalization, noting that its emphasis is on personal piety rather than political Islam.",
+    "flags": [
+      "explicitly_apolitical_genuine_documented",
+      "france_security_services_insular_networks_concern",
+      "organization_disputes_radicalization_contribution"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Tablighi Jamaat is not designated as a terrorist organization by the United States, United Kingdom, European Union, or any major Western government. The FBI's 'gateway to terrorism' characterization has been disputed by academics who study the organization, who note that the vast majority of Tablighi Jamaat participants are not radicalized and that the correlation between Tablighi contact and later radicalization may reflect the organization's size rather than any causal mechanism. Richard Reid (Shoe Bomber, 2001) and Germaine Lindsay (7/7 London bombing, 2005) had documented contact with Tablighi Jamaat before their radicalization; neither was radicalized within Tablighi Jamaat's own networks per investigators.",
+    "flags": [
+      "not_designated_us_uk_eu",
+      "fbi_characterization_disputed_academics",
+      "reid_lindsay_contact_not_radicalized_within_tablighi",
+      "france_mosque_ban_security_2020"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Tablighi Jamaat has no formal financial structure — members fund their own participation; local mosques where the organization operates are separately governed. No tax enforcement actions have been identified.",
+    "flags": [
+      "no_formal_financial_structure",
+      "member_self_funded"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Tablighi Jamaat is governed by a shura (consultative council) based primarily at its Nizamuddin Markaz mosque in Delhi, India. The current senior leadership is drawn from the family of founder Muhammad Ilyas Kandhlawi. The organization's informal structure means 'executives' is a misnomer — it is more accurately described as a decentralized religious movement with recognized scholars providing guidance.",
+    "flags": [
+      "nizamuddin_markaz_delhi_center",
+      "kandhlawi_family_leadership",
+      "decentralized_scholars_guidance"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Tablighi Jamaat's global network — operating in over 150 countries with an estimated 80-150 million participants — creates one of the most extensive informal religious social networks in the world. Its annual ijtemas (gatherings) in Bangladesh (Biswa Ijtema) and Pakistan attract millions of participants and are among the largest human gatherings on Earth. The organization's insular network — where members travel in groups, staying in mosques, interacting primarily with each other — has been documented by security services as creating information and travel patterns of interest.",
+    "flags": [
+      "150_countries_80_150m_participants",
+      "biswa_ijtema_millions_attendance",
+      "insular_network_security_services_documented"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "French security services and some US counterterrorism officials have alleged that Tablighi Jamaat's networks — while not themselves recruiting for terrorism — create social environments and travel patterns that other organizations (particularly Al Qaeda-linked groups) have exploited for recruitment. The organization disputes this characterization and notes that its explicit theology rejects political violence. Academic researchers are divided on whether the documented cases of individuals with Tablighi contact later engaging in terrorism reflect organizational responsibility or simply the movement's massive scale.",
+    "flags": [
+      "exploitation_by_terrorist_recruiters_alleged_security_services",
+      "theology_rejects_political_violence",
+      "academic_division_organizational_responsibility"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "No direct health enforcement actions against Tablighi Jamaat have been identified. A Tablighi Jamaat gathering in Malaysia in February-March 2020 was documented as a COVID-19 super-spreader event — one of the largest documented COVID clusters at the time, linked to thousands of cases across Southeast Asia. This was an inadvertent public health consequence of a large religious gathering rather than deliberate misconduct.",
+    "flags": [
+      "malaysia_2020_covid_super_spreader_thousands_cases",
+      "inadvertent_public_health_gathering"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Mainstream mosque communities without documented security service concerns",
+      "Traditional Islamic education institutions with established academic frameworks"
+    ],
+    "healthier": [
+      "Islamic organizations with transparent governance and published positions on political violence"
+    ],
+    "diy": [
+      "Academic literature on Tablighi Jamaat — Yoginder Sikand's work is the most comprehensive — provides documented analysis",
+      "The organization's own publications are available in Islamic bookstores"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1927,
+      "event": "Muhammad Ilyas Kandhlawi founds Tablighi Jamaat in Mewat, India as a grassroots Islamic revivalist movement",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1945,
+      "event": "First international chilla journeys; movement begins global expansion",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2001,
+      "event": "Richard Reid (Shoe Bomber) had documented contact with Tablighi Jamaat before radicalization; FBI characterizes TJ as 'gateway to terrorism'",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2005,
+      "event": "Germaine Lindsay (7/7 London bombing) had documented Tablighi Jamaat contact; UK investigation examines network",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "Tablighi Jamaat gathering in Kuala Lumpur documented as major COVID-19 super-spreader event — thousands of cases across Southeast Asia",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "France bans Tablighi Jamaat from building Europe's largest mosque near Paris citing security concerns",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "The COVID-19 super-spreader event associated with the 2020 Kuala Lumpur gathering had documented public health consequences for Southeast Asian communities. Beyond this event, Tablighi Jamaat's primary documented impact is on Muslim communities globally where its conservative missionary approach has been documented to discourage engagement with secular society and reinforce gender segregation.",
+    "price_illusion": "Tablighi Jamaat presents as a purely apolitical personal piety movement — and by documented organizational intention, it is. The security services' concern is not about the organization itself but about its social networks being exploited by others.",
+    "tax_math": "Tablighi Jamaat has no financial structure — no fees, no accounts, no employees. Members fund their own participation. The mosques where it operates are separately governed and funded.",
+    "wealth_velocity": "The movement has no organizational wealth — which is both its most distinctive characteristic and a reason why standard financial accountability analysis does not apply."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Muslim communities globally",
+        "how": "Free religious outreach encouraging Islamic practice; social network across 150 countries"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Southeast Asian communities",
+        "how": "COVID-19 super-spreader event from 2020 Kuala Lumpur gathering"
+      }
+    ],
+    "the_gap": "Tablighi Jamaat has 80-150 million participants. It has no membership, no fees, no organization, no accounts. The FBI called it a gateway to terrorism. Academics dispute this. Richard Reid and Germaine Lindsay had contact with Tablighi Jamaat before committing terrorism. Investigators found they were not radicalized within Tablighi's own network. France banned their mosque. The organization does not designate terrorism in any Western country. A gathering in Malaysia in 2020 became one of the largest COVID super-spreader events in history. The organization did not intend this."
+  }
+}

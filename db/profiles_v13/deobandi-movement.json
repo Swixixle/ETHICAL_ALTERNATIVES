@@ -1,0 +1,193 @@
+{
+  "brand_name": "Deobandi Movement",
+  "brand_slug": "deobandi-movement",
+  "parent_company": "Multiple autonomous seminaries and organizations (sector profile)",
+  "ultimate_parent": "No central authority — sector analysis",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "THE DEOBANDI MOVEMENT PRODUCED THE TALIBAN — ITS PAKISTANI MADRASSA NETWORK EDUCATED MILLIONS OF STUDENTS IN A CURRICULUM WITH MINIMAL SECULAR CONTENT — AND DEOBANDI SCHOLARS ISSUED THE FATWA THAT JUSTIFIED SUICIDE BOMBING",
+  "executive_summary": "The Deobandi movement is a Sunni Islamic revivalist tradition founded in Deoband, India in 1867 — initially as a response to British colonialism, emphasizing strict adherence to Islamic law and rejection of Sufi practices and local religious syncretism. The Taliban — which governed Afghanistan 1996-2001 and has governed it again since 2021 — is a product of the Deobandi tradition, formed in Pakistani Deobandi madrassas in the 1990s. Pakistan's Deobandi seminary network — with an estimated 20,000+ madrassas — has educated millions of students in a curriculum critics document as providing minimal secular education while emphasizing religious texts. Deobandi scholars associated with Pakistani militant groups issued fatwas (religious rulings) justifying suicide bombing as a weapon against Western forces — a significant departure from traditional Islamic jurisprudence. Saudi Arabia has documented funding Deobandi madrassas as part of its broader anti-Iranian Sunni religious outreach, creating a documented intersection with the Saudi Wahhabi establishment.",
+  "verdict_tags": [
+    "taliban_deobandi_product_1990s_madrassas",
+    "minimal_secular_education_documented",
+    "suicide_bombing_fatwa_issued",
+    "saudi_funding_deobandi_madrassas_documented",
+    "20000_plus_pakistani_madrassas_estimated",
+    "taliban_1996_2001_governance",
+    "taliban_2021_return_governance",
+    "darul_uloom_deoband_founding_1867"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": false,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Madrassa students in the Deobandi network receive room and board in exchange for religious study — a traditional Islamic educational model. Pakistani madrassa education has been documented to provide minimal or no secular vocational skills. Students who spend years in full-time madrassa education emerge with limited options in the secular Pakistani economy.",
+    "flags": [
+      "minimal_secular_vocational_training_documented",
+      "limited_secular_economy_options"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental positions or enforcement actions have been identified for the Deobandi movement at the sector level.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Taliban's governance of Afghanistan — both 1996-2001 (ended by US invasion following 9/11) and 2021-present (following US withdrawal) — represents the most direct documented political consequence of the Deobandi movement. Taliban governance has documented: elimination of women's right to education and public life; execution of opponents; harboring of Al Qaeda (1996-2001); and systematic human rights violations. Pakistani Deobandi groups — including Jaish-e-Mohammed and Lashkar-e-Taiba (though the latter is more Ahl-e-Hadith) — have been designated terrorist organizations by the United States for attacks in India and Afghanistan.",
+    "flags": [
+      "taliban_deobandi_product_documented",
+      "women_education_eliminated_2021",
+      "al_qaeda_harbored_1996_2001",
+      "jaish_e_mohammed_designated_terrorist",
+      "pakistan_deobandi_militant_groups_documented"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "The Taliban is not universally designated as a terrorist organization by the United States — it is designated as a Specially Designated Global Terrorist entity but not under the formal FTO (Foreign Terrorist Organization) designation, a distinction that affected the US withdrawal negotiations. Al Qaeda — which operated from Taliban-governed Afghanistan — is designated FTO. Pakistani Deobandi militant groups including Jaish-e-Mohammed (responsible for the 2019 Pulwama attack killing 40 Indian security forces) are designated. Darul Uloom Deoband — the founding seminary — is not designated and has issued fatwas condemning terrorism, though other Deobandi scholars have issued contradictory rulings.",
+    "flags": [
+      "taliban_sdgt_not_fto",
+      "al_qaeda_fto_from_deobandi_Afghanistan",
+      "jaish_e_mohammed_fto_designated",
+      "pulwama_2019_40_killed",
+      "darul_uloom_deoband_not_designated_terrorism_condemnation_fatwa"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Pakistani madrassas operate as religious educational institutions — many receiving public funding from the Pakistani government and documented Saudi funding — without the financial transparency standards of Western nonprofit organizations. The Deobandi movement's financial structure is extremely decentralized across thousands of autonomous seminaries.",
+    "flags": [
+      "pakistani_government_funding_documented",
+      "saudi_funding_documented",
+      "decentralized_no_transparency"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "The Deobandi movement has no central leadership. Darul Uloom Deoband — the founding seminary in Deoband, India — remains an influential institution whose scholarly positions are taken seriously across the movement. The Taliban's Supreme Leader — Haibatullah Akhundzada — leads from Kandahar and issues religious rulings governing Taliban-controlled Afghanistan. The Pakistani Deobandi political party Jamiat Ulema-e-Islam (JUI) is led by Fazlur Rehman — a documented political figure with relationships across Pakistani political parties.",
+    "flags": [
+      "no_central_leadership",
+      "akhundzada_taliban_supreme_leader",
+      "jui_fazlur_rehman_pakistan_politics"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The 9/11 Commission documented Al Qaeda's presence in Taliban-governed Afghanistan and the Taliban's knowledge of bin Laden's operations. The Pakistani intelligence service (ISI) documented relationship with Deobandi militant groups has been a persistent source of US-Pakistan tension. Saudi funding for Pakistani Deobandi madrassas — documented in the context of the Saudi-Iran proxy competition — connects the Wahhabi and Deobandi traditions despite their theological differences.",
+    "flags": [
+      "9_11_commission_al_qaeda_taliban_documented",
+      "isi_militant_group_relationship_us_tension",
+      "saudi_funding_anti_iran_proxy_connection"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "US officials and researchers have alleged that Pakistan's ISI has maintained documented support for Deobandi militant groups — including the Haqqani Network and Afghan Taliban — as strategic assets against India and Afghanistan, while simultaneously cooperating with the US on counterterrorism. This 'double game' allegation has been documented by US officials including Secretary of State Hillary Clinton. Pakistan disputes the characterization.",
+    "flags": [
+      "isi_double_game_militant_support_alleged_clinton",
+      "haqqani_network_afghan_taliban_isi_assets_alleged",
+      "pakistan_disputes_characterization"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Taliban governance of Afghanistan 2021-present has eliminated women's access to secondary and higher education — affecting millions of Afghan girls and women. This represents a documented public health and human rights emergency specifically produced by a Deobandi-influenced governance system. Taliban public executions, amputations, and documented torture of opponents have been reported by multiple human rights organizations. The suicide bombing fatwas issued by some Deobandi scholars have contributed to documented mass casualty attacks in Afghanistan, Pakistan, and India.",
+    "flags": [
+      "women_education_eliminated_millions_affected_2021",
+      "public_execution_amputation_documented",
+      "suicide_bombing_fatwa_mass_casualty_attacks"
+    ],
+    "sources": [
+      "https://www.hrw.org/tag/afghanistan"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Mainstream Sunni Islamic education that does not produce documented militant movements",
+      "Secular Pakistani education that provides vocational skills alongside Islamic studies"
+    ],
+    "healthier": [
+      "Islamic educational traditions that emphasize girls' education, civic participation, and secular skills"
+    ],
+    "diy": [
+      "The 9/11 Commission Report documents Taliban-Al Qaeda connections extensively",
+      "Human Rights Watch's Afghanistan documentation is publicly available at hrw.org"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1867,
+      "event": "Darul Uloom Deoband founded in India — initially as anti-colonial Islamic revivalist institution",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1980,
+      "event": "Soviet invasion of Afghanistan; Pakistani madrassas absorb Afghan refugees; Deobandi curriculum expands; Saudi funding increases",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 1994,
+      "event": "Taliban founded in Quetta-area Pakistani madrassas by Mullah Omar; draws on Deobandi students and theology",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1996,
+      "event": "Taliban captures Kabul; establishes government; hosts Al Qaeda; bans women's education",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2001,
+      "event": "US invasion following 9/11; Taliban regime falls; Al Qaeda connection documented",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "Jaish-e-Mohammed (Deobandi militant group) kills 40 Indian security forces in Pulwama attack; India-Pakistan crisis",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "US withdrawal; Taliban retakes Afghanistan; immediately bans women's secondary education",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Afghan women and girls — estimated 14+ million — have been displaced from educational participation since 2021 under Taliban governance rooted in Deobandi theology. Communities in Afghanistan, Pakistan, and India have absorbed the documented violence of Deobandi-influenced militant groups. The estimated 20,000+ Pakistani madrassas provide religious education to millions of students annually while providing minimal secular skills.",
+    "price_illusion": "The Deobandi movement presents as authentic Islamic revivalism — a return to core Islamic practice cleansed of local syncretism and colonial influence. Its political product in Afghanistan has eliminated women's education, conducted public executions, and harbored Al Qaeda.",
+    "tax_math": "Pakistani madrassas receive Pakistani government funding and documented Saudi funding while operating outside standard financial transparency frameworks. The financial support from external state sources — Saudi Arabia primarily — represents foreign funding of an educational system producing documented radicalization environments.",
+    "wealth_velocity": "The Deobandi movement's resources flow through thousands of autonomous madrassas without consolidated financial oversight. Saudi funding — directed at Deobandi institutions as part of the anti-Iranian Sunni outreach — represents documented external wealth injection into a decentralized educational network."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Taliban leadership",
+        "how": "Religious legitimacy from Deobandi tradition; governance of Afghanistan; sanctuary during 1996-2001 period enabled Al Qaeda 9/11 planning"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Afghan women and girls",
+        "how": "Education eliminated under Taliban governance; 14+ million excluded from secondary and higher education since 2021"
+      },
+      {
+        "group": "9/11 victims and their families",
+        "how": "Al Qaeda operations planned from Taliban-governed Afghanistan; Taliban-Al Qaeda relationship documented by 9/11 Commission"
+      }
+    ],
+    "the_gap": "The Taliban was founded in Pakistani Deobandi madrassas in 1994. It governed Afghanistan from 1996 to 2001 while hosting Al Qaeda. The 9/11 Commission documented the connection. The US invaded and removed the Taliban in 2001. The Taliban returned in 2021. The first thing they did was ban girls from secondary school. 14 million Afghan women and girls are now excluded from education. Pakistan's ISI has documented relationships with Deobandi militant groups. Saudi Arabia funds Deobandi madrassas. The cycle is documented."
+  }
+}
