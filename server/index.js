@@ -24,6 +24,11 @@ import impactRouter from './routes/impact.js';
 import barcodeRouter from './routes/barcode.route.js';
 import { getProviderHealthSnapshot } from './services/aiProvider.js';
 import {
+  investigationCache,
+  barcodeCache,
+  cityNarrativeCache,
+} from './services/cacheStore.js';
+import {
   buildProportionalityPacket,
   PROPORTIONALITY_CATEGORIES,
 } from './services/proportionality.js';
@@ -44,7 +49,14 @@ app.use(express.json({ limit: '10mb' }));
 app.use(registryHeaders);
 
 app.get('/health', (_req, res) => {
-  res.json({ ok: true });
+  res.json({
+    ok: true,
+    cache: {
+      investigation: { size: investigationCache.size, maxSize: 300 },
+      barcode: { size: barcodeCache.size, maxSize: 500 },
+      cityNarrative: { size: cityNarrativeCache.size, maxSize: 200 },
+    },
+  });
 });
 
 app.get('/api/health/providers', (_req, res) => {

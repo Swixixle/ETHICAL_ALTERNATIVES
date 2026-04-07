@@ -14,6 +14,7 @@ import {
 import { corroborateLayerC, mergeLayerCCorroborationIntoProfileJson } from './corroboration.js';
 import { assignShareRiskTier } from './shareRiskTier.js';
 import { kickPerimeterCheckForInvestigation } from './perimeterCache.js';
+import { investigationCache } from './cacheStore.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -1339,6 +1340,13 @@ async function realtimeInvestigation(brandName, corporateParent, healthFlag, pro
     `[investigation] realtimeInvestigation start brand=${brandName || '∅'} parent=${corporateParent || '∅'} category=${productCategory || '∅'}`
   );
 
+  const cacheKey = `inv:${(brandName || '').toLowerCase().trim()}:${(corporateParent || '').toLowerCase().trim()}`;
+  const cached = investigationCache.get(cacheKey);
+  if (cached) {
+    console.log(`[investigation] cache hit: ${cacheKey}`);
+    return cached;
+  }
+
   const userPrompt = buildResearchPrompt(brandName, corporateParent, healthFlag, productCategory);
 
   const tools = [{ type: 'web_search_20250305', name: 'web_search', max_uses: 10 }];
@@ -1443,7 +1451,19 @@ If web search is unavailable, use only well-established public knowledge. Use ov
     parsed = buildUnparseableRealtimeStub(brandName, corporateParent, healthFlag, text);
   }
 
-  return await finalizeRealtimeFromParsed(parsed, citationUrls, brandName, corporateParent, healthFlag, 'claude');
+  const result = await finalizeRealtimeFromParsed(
+    parsed,
+    citationUrls,
+    brandName,
+    corporateParent,
+    healthFlag,
+    'claude'
+  );
+  if (result && !result.investigation?.is_stub_investigation) {
+    investigationCache.set(cacheKey, result);
+    console.log(`[investigation] cache set: ${cacheKey} size=${investigationCache.size}`);
+  }
+  return result;
 }
 
 /** Structured completion log for debugging thin / missing profiles. */
@@ -1604,6 +1624,7 @@ export async function getInvestigationProfile(brandName, corporateParent, option
   }
 
   const slug = resolveIncumbentSlug(brandName, corporateParent);
+  const investigationCacheKey = `inv:${(brandName || '').toLowerCase().trim()}:${(corporateParent || '').toLowerCase().trim()}`;
   console.log('[investigation] getInvestigationProfile:start', {
     brandName,
     corporateParent,
@@ -1663,6 +1684,9 @@ export async function getInvestigationProfile(brandName, corporateParent, option
         const finalized = incumbentRowToInvestigation(row, brandName, corporateParent, healthFlag);
         kickPerimeterCheckForInvestigation(finalized);
         logInvestigationProfileEnd('database', finalized);
+        if (finalized && !finalized.is_stub_investigation) {
+          investigationCache.set(investigationCacheKey, finalized);
+        }
         return finalized;
       }
     } catch (e) {

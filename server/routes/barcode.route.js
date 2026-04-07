@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { barcodeCache } from '../services/cacheStore.js';
 
 const router = Router();
 
@@ -21,6 +22,12 @@ router.post('/', async (req, res) => {
   }
   const barcode = String(raw).trim();
 
+  const cached = barcodeCache.get(barcode);
+  if (cached) {
+    console.log(`[barcode] cache hit: ${barcode}`);
+    return res.json(cached);
+  }
+
   const url = `https://world.openfoodfacts.org/api/v2/product/${encodeURIComponent(barcode)}.json?fields=product_name,brands,brand_owner,categories`;
 
   const controller = new AbortController();
@@ -34,17 +41,23 @@ router.post('/', async (req, res) => {
     });
 
     if (!offRes.ok) {
-      return res.json({ found: false, barcode });
+      const result = { found: false, barcode };
+      barcodeCache.set(barcode, result);
+      return res.json(result);
     }
 
     const data = await offRes.json().catch(() => null);
     if (!data || (data.status !== 1 && data.status !== '1')) {
-      return res.json({ found: false, barcode });
+      const result = { found: false, barcode };
+      barcodeCache.set(barcode, result);
+      return res.json(result);
     }
 
     const product = data.product;
     if (!product || typeof product !== 'object') {
-      return res.json({ found: false, barcode });
+      const result = { found: false, barcode };
+      barcodeCache.set(barcode, result);
+      return res.json(result);
     }
 
     const brandsRaw = product.brands;
@@ -64,18 +77,24 @@ router.post('/', async (req, res) => {
     const category = firstCsvSegment(catRaw);
 
     if (brand) {
-      return res.json({
+      const result = {
         found: true,
         brand,
         product_name,
         category,
         barcode,
-      });
+      };
+      barcodeCache.set(barcode, result);
+      return res.json(result);
     }
 
-    return res.json({ found: false, barcode });
+    const notFound = { found: false, barcode };
+    barcodeCache.set(barcode, notFound);
+    return res.json(notFound);
   } catch {
-    return res.json({ found: false, barcode });
+    const result = { found: false, barcode };
+    barcodeCache.set(barcode, result);
+    return res.json(result);
   } finally {
     clearTimeout(timeout);
   }

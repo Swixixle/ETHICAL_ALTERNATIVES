@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import Anthropic from '@anthropic-ai/sdk';
+import { cityNarrativeCache } from '../services/cacheStore.js';
 
 const router = Router();
 const anthropic = new Anthropic();
@@ -60,8 +61,17 @@ router.post('/', async (req, res) => {
         : String(state);
   const userMsg = `City: ${cityStr}, State: ${statePart || '(none)'}`;
 
+  const cacheKey = `${(cityStr || '').toLowerCase().trim()}:${(statePart || '').toLowerCase().trim()}`;
+  const cached = cityNarrativeCache.get(cacheKey);
+  if (cached) {
+    console.log(`[cityNarrative] cache hit: ${cacheKey}`);
+    return res.json(cached);
+  }
+
   if (!process.env.ANTHROPIC_API_KEY) {
-    return res.json(fallbackPayload(cityStr));
+    const fb = fallbackPayload(cityStr);
+    cityNarrativeCache.set(cacheKey, { headline: fb.headline, body: fb.body });
+    return res.json(fb);
   }
 
   try {
@@ -84,16 +94,22 @@ router.post('/', async (req, res) => {
       parsed.headline.trim() &&
       parsed.body.trim()
     ) {
-      return res.json({
+      const payload = {
         headline: parsed.headline.trim(),
         body: parsed.body.trim(),
-      });
+      };
+      cityNarrativeCache.set(cacheKey, { headline: payload.headline, body: payload.body });
+      return res.json(payload);
     }
 
-    return res.json(fallbackPayload(cityStr));
+    const fb = fallbackPayload(cityStr);
+    cityNarrativeCache.set(cacheKey, { headline: fb.headline, body: fb.body });
+    return res.json(fb);
   } catch (err) {
     console.error('[city-narrative]', err?.message || err);
-    return res.json(fallbackPayload(cityStr));
+    const fb = fallbackPayload(cityStr);
+    cityNarrativeCache.set(cacheKey, { headline: fb.headline, body: fb.body });
+    return res.json(fb);
   }
 });
 
