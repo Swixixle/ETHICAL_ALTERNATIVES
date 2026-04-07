@@ -23,6 +23,7 @@ import {
 } from '../services/travelTracker.js';
 import { getGoogleMapsUrl, getStreetAddressLine } from '../utils/localBusinessMaps.js';
 import PrivacyConsentPanel from './PrivacyConsentPanel.jsx';
+import OnboardingDeck from './OnboardingDeck.jsx';
 
 const ONBOARD_KEY = 'ea_geo_onboard';
 
@@ -324,11 +325,11 @@ function apiPrefix() {
 }
 
 function initialPhase() {
-  if (typeof window === 'undefined') return 'prompt';
+  if (typeof window === 'undefined') return 'onboarding';
   if (sessionStorage.getItem(ONBOARD_KEY) === 'skipped') return 'skipped';
   // Once GPS or manual city succeeded, never show the location prompt again this session.
   if (sessionStorage.getItem(ONBOARD_KEY) === 'granted') return 'loading';
-  return 'prompt';
+  return 'onboarding';
 }
 
 function LocationPrompt({
@@ -1239,6 +1240,10 @@ export default function HomeScreen({
     const shuffleOpts = { dateKey, city: location.city, state: location.state };
     setFeed(dailyFeedShuffle(pack.feed, shuffleOpts));
     setChainResults(dailyChainShuffle(pack.chain_results, shuffleOpts));
+  }
+
+  if (phase === 'onboarding') {
+    return <OnboardingDeck onComplete={() => setPhase('prompt')} />;
   }
 
   if (phase === 'prompt') {
