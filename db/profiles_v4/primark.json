@@ -1,0 +1,168 @@
+{
+  "brand_name": "Primark",
+  "brand_slug": "primark",
+  "parent_company": "Associated British Foods plc",
+  "ultimate_parent": "Wittington Investments (Weston family, 54.5% ABF ownership)",
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "PRIMARK SELLS T-SHIRTS FOR £3 AND JEANS FOR £7 — SOMEONE IS ABSORBING THE DIFFERENCE AND IT IS DOCUMENTED TO BE GARMENT WORKERS IN BANGLADESH",
+  "executive_summary": "Primark is an Irish-headquartered fast fashion retailer operating approximately 400 stores primarily in the UK, Ireland, and Europe, owned by Associated British Foods. Primark's price points — £3 t-shirts, £7 jeans, £1 socks — represent the extreme end of fast fashion pricing. The Clean Clothes Campaign, War on Want, and other organizations have documented that Primark's price points are structurally impossible without wage suppression and safety under-investment in its supplier factories. Primark had supplier factories in the Rana Plaza building that collapsed in Bangladesh in 2013 — killing 1,134 garment workers. Primark paid compensation to Rana Plaza victims and their families. The company does not have an e-commerce operation — it only sells in stores — which has insulated it from some digital marketing scrutiny.",
+  "verdict_tags": [
+    "rana_plaza_supplier_1134_dead",
+    "3_pound_t_shirt_structurally_impossible_without_wage_suppression",
+    "no_ecommerce_store_only",
+    "clean_clothes_campaign_documented",
+    "weston_family_abf_ownership"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": false,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Primark's supply chain spans approximately 800 factories in 30 countries. Rana Plaza (2013): Primark had supplier factories in the building; 1,134 garment workers killed. Primark paid compensation to affected workers and families — one of the few brands to do so. The structural critique: Primark's price points (£3 t-shirt) require margins at the bottom of the supply chain that independent researchers document as inconsistent with living wages. The Clean Clothes Campaign has documented that Primark's supplier monitoring has improved post-Rana Plaza but wage levels remain below living wage benchmarks in producing countries.",
+    "flags": [
+      "rana_plaza_supplier_factories_1134_dead",
+      "compensation_paid_one_of_few_brands",
+      "3_pound_t_shirt_structurally_impossible_living_wage",
+      "supplier_monitoring_improved_wages_still_below"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Primark's volume — approximately 400 million garment units annually across 400 stores — represents significant textile waste. The company has made commitments through its Primark Cares sustainability program. Unlike most fast fashion competitors, Primark has no e-commerce, which reduces last-mile delivery emissions but does not address production volume environmental impact.",
+    "flags": [
+      "400_million_garment_units_annually",
+      "primark_cares_commitments_volume_contradiction"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Primark's parent ABF is controlled by the Weston family through Wittington Investments. The company has been a consistent target of fair fashion campaigners in the UK parliamentary system — UK MPs have raised Primark labor practices in parliamentary questions. Primark signed the Bangladesh Accord on Fire and Building Safety following Rana Plaza.",
+    "flags": [
+      "weston_family_abf_control",
+      "uk_parliamentary_questions_labor_practices",
+      "bangladesh_accord_signatory"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "No major criminal enforcement actions against Primark have been documented. Primark paid voluntary compensation to Rana Plaza victims — not pursuant to a legal judgment. Supply chain litigation: Primark has faced civil claims in multiple jurisdictions related to supplier factory conditions. UK Modern Slavery Act: Primark publishes annual transparency statements as required.",
+    "flags": [
+      "rana_plaza_voluntary_compensation",
+      "supply_chain_civil_claims",
+      "modern_slavery_act_statements"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Primark operates through Associated British Foods, which uses standard international holding arrangements. ABF's Weston family ownership through Wittington Investments includes significant charitable giving — the Garfield Weston Foundation is one of the UK's largest grant-making charities, funded by ABF dividends. No major criminal tax enforcement has been documented.",
+    "flags": [
+      "garfield_weston_foundation_abf_dividends",
+      "standard_international_holding_arrangements"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Primark CEO Paul Marchant leads the company. The Weston family's control through Wittington Investments and the Garfield Weston Foundation creates a governance structure where Primark's profits fund charitable giving — a combination that coexists with the documented supply chain labor conditions. No Primark executive has been criminally charged for supply chain violations.",
+    "flags": [
+      "weston_family_charitable_giving_primark_profits",
+      "no_executive_charges"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Primark's position at the extreme low-price end of fast fashion — below H&M, Zara, and even Shein on some items — represents the most compressed version of the fast fashion supply chain margin model. Its supplier factory network overlaps with the same Bangladesh, Pakistan, and Sri Lanka ecosystems documented for labor conditions across the fast fashion sector.",
+    "flags": [
+      "below_hm_zara_shein_price_points",
+      "overlapping_supplier_ecosystem"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The Clean Clothes Campaign has alleged that Primark's price points are structurally impossible to achieve at documented factory gate prices consistent with living wages and safe working conditions — and that Primark's supplier auditing, while improved post-Rana Plaza, cannot verify conditions at the level of specificity that would confirm living wage compliance.",
+    "flags": [
+      "price_points_structurally_inconsistent_living_wage_alleged",
+      "audit_verification_insufficient_specificity_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Rana Plaza (2013): 1,134 garment workers killed in building collapse. Workers had reported cracks in the building the day before; factory managers ordered workers in anyway. Primark's suppliers were among the brands with confirmed factories in the building. Ongoing: garment workers in Primark's supply chain face documented occupational health hazards from textile chemicals, repetitive stress, and unsafe factory conditions in producing countries with variable regulatory enforcement.",
+    "flags": [
+      "rana_plaza_1134_dead_primark_supplier_confirmed",
+      "cracks_reported_managers_ordered_in_anyway",
+      "textile_chemical_repetitive_stress_ongoing"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Secondhand clothing: charity shops, Vinted, Depop — genuinely cheaper on per-wear basis than Primark's price-per-garment",
+      "Capsule wardrobe approach: fewer, more durable items typically cheaper over a 2-year horizon than Primark volume purchasing"
+    ],
+    "healthier": [
+      "The True Cost documentary available on streaming — explains the supply chain behind £3 t-shirts more accessibly than academic research",
+      "Fair trade certified clothing brands — People Tree, Thought Clothing — with verified supply chain standards"
+    ],
+    "diy": [
+      "Primark is one of the brands on the Fashion Checker (fashionchecker.org) — the tool shows whether brands pay living wages in their supply chains",
+      "Mending, altering, and extending garment life is the most direct individual response to fast fashion's waste and labor model"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2013,
+      "event": "Rana Plaza collapse: 1,134 dead; Primark suppliers confirmed in building; Primark pays voluntary compensation to victims",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2013,
+      "event": "Bangladesh Accord on Fire and Building Safety: Primark among signatories",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "Primark launches 'Primark Cares' sustainability program; targets for sustainable materials",
+      "severity": "moderate",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "Clean Clothes Campaign documents ongoing wage below living wage benchmarks in Primark supply chain despite Cares commitments",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Garment communities in Bangladesh, Pakistan, and Sri Lanka producing for Primark live in conditions that independent researchers document as below living wage — wages insufficient for housing, food, healthcare, and education for their families. Rana Plaza demonstrated the physical safety endpoint of building and safety cost pressure on suppliers.",
+    "price_illusion": "The £3 t-shirt price is real. The full cost includes: garment worker wages documented below living wage in producing countries; fire and building safety deficiencies from supplier cost pressure; textile waste from volume production; and the 1,134 people who died in the Rana Plaza building producing for fast fashion brands.",
+    "tax_math": "ABF's profits — including Primark — fund the Garfield Weston Foundation's charitable giving. This structure means Primark's supply chain labor model partially funds UK philanthropic activity.",
+    "wealth_velocity": "The Weston family's wealth — built through ABF and Primark — includes substantial philanthropic giving through Garfield Weston. Garment workers in Primark's supply chain earning below living wages produce the goods that generate those philanthropic resources."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Primark shoppers",
+        "how": "Genuine price savings on clothing — £3 t-shirts are real; the gap is paid elsewhere in the supply chain"
+      },
+      {
+        "group": "Weston family and ABF shareholders",
+        "how": "Margins from extreme fast fashion pricing enabled by supply chain wage compression and safety under-investment"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Garment workers in Bangladesh, Pakistan, Sri Lanka",
+        "how": "Wages documented below living wage; 1,134 killed at Rana Plaza in suppliers producing for Primark and other brands"
+      }
+    ],
+    "the_gap": "Primark sells t-shirts for £3. Jeans for £7. Socks for £1. Someone is absorbing the difference between what things cost to make at a living wage and what Primark pays. The Clean Clothes Campaign says it's the workers. Primark had suppliers in Rana Plaza. 1,134 people died. Primark paid compensation. The price is still £3."
+  }
+}

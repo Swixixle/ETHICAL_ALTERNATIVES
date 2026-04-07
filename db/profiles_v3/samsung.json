@@ -1,0 +1,169 @@
+{
+  "brand_name": "Samsung",
+  "brand_slug": "samsung",
+  "parent_company": "Samsung Electronics Co., Ltd.",
+  "ultimate_parent": "Lee Family (via Samsung Life Insurance and cross-shareholdings)",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "SAMSUNG'S HEIR WAS CONVICTED OF BRIBERY — PARDONED — CONVICTED AGAIN — AND IS NOW RUNNING THE COMPANY WHILE KOREA'S GOVERNMENT DEBATES HIS THIRD PARDON",
+  "executive_summary": "Samsung Electronics Co., Ltd. is South Korea's largest company and the world's largest producer of semiconductors and smartphones. The Lee family — descendants of founder Lee Byung-chul — controls Samsung through a complex web of cross-shareholdings despite owning relatively small direct stakes. Lee Jae-yong (Jay Y. Lee), the heir and current Samsung chairman, was convicted of bribery in 2017, sentenced to prison, pardoned in 2018, had his conviction reinstated by the Supreme Court, was sentenced again to 2.5 years in 2021, was paroled in 2021, and received a presidential pardon in 2022 — returning to lead Samsung. The bribery covered payments to a confidante of President Park Geun-hye in exchange for government support for a Samsung merger.",
+  "verdict_tags": [
+    "lee_jae_yong_convicted_twice_pardoned_twice",
+    "bribery_president_park_geun_hye",
+    "samsung_chaebol_cross_shareholding_control",
+    "galaxy_note_7_recall_3m_devices",
+    "workers_semiconductor_occupational_illness"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Samsung semiconductor workers have been the subject of a sustained campaign by the advocacy group SHARPS (Supporters for the Health and Rights of People in the Semiconductor Industry) documenting occupational illness — including leukemia and other cancers — among workers in Samsung's chip fabrication facilities. Samsung initially denied the connection; in 2018 Samsung's CEO issued a formal apology to affected workers and their families after years of litigation and advocacy.",
+    "flags": [
+      "semiconductor_worker_leukemia_cancer_documented",
+      "sharps_advocacy_campaign",
+      "ceo_apology_2018_after_years_denial"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Samsung is the world's largest producer of semiconductors — manufacturing processes involve chemical exposure, significant water consumption, and PFC emissions. The company has made renewable energy commitments. No major standalone environmental enforcement actions have been identified.",
+    "flags": [
+      "semiconductor_pfc_water_chemical_manufacturing"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Lee family's control of Samsung through cross-shareholdings — where Samsung affiliates own each other's shares in circular structures — is the defining example of the Korean chaebol system that concentrates economic and political power in family dynasties. Lee Jae-yong's two convictions, two pardons, and continued leadership of Samsung illustrate the documented relationship between chaebol power and Korean government decision-making.",
+    "flags": [
+      "chaebol_cross_shareholding_circular_control",
+      "two_convictions_two_pardons_pattern",
+      "park_geun_hye_bribery_presidential_connection"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "2017: Lee Jae-yong convicted of bribery, embezzlement, and other charges; sentenced to 5 years. 2018: Pardoned. 2019: Korean Supreme Court reinstates conviction. 2021: Retrial sentences Lee to 2.5 years; paroled after 18 months. 2022: Presidential pardon issued. Galaxy Note 7: Samsung recalled approximately 3 million devices globally in 2016 after batteries caught fire; the recall cost approximately $5 billion.",
+    "flags": [
+      "lee_jae_yong_5_year_sentence_2017",
+      "supreme_court_reinstated_conviction",
+      "galaxy_note_7_3m_recall_5b_cost"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Samsung's chaebol structure — with circular cross-shareholdings between Samsung Electronics, Samsung Life Insurance, Samsung C&T, and other affiliates — creates complex tax planning arrangements. The Lee family's inheritance of control across the Samsung group has generated significant Korean inheritance tax obligations that the family has contested.",
+    "flags": [
+      "chaebol_circular_cross_shareholding_tax",
+      "lee_family_inheritance_tax_dispute"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Lee Jae-yong became Samsung Electronics chairman in 2022 after his pardon — despite two bribery convictions. His father Lee Kun-hee led Samsung until his 2014 heart attack and death in 2020 — himself having been convicted of tax evasion in 2009 and pardoned. The pattern of conviction, pardon, and return to leadership is documented across two generations of Samsung leadership.",
+    "flags": [
+      "two_generation_conviction_pardon_pattern",
+      "lee_kun_hee_tax_evasion_convicted_pardoned",
+      "lee_jae_yong_chairman_post_second_pardon"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Samsung's market position — dominant in semiconductors, smartphones, and displays — makes it a critical supplier to Apple, Google, and every major technology company. Its chaebol structure connects Samsung Electronics to Samsung Life Insurance, Samsung Heavy Industries, and dozens of other affiliates — creating an economic empire whose governance is controlled by one family.",
+    "flags": [
+      "apple_google_critical_supplier",
+      "chaebol_empire_dozens_affiliates"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Korean labor researchers and SHARPS have alleged that Samsung systematically denied the occupational illness connection for years while having internal data suggesting elevated cancer rates in its semiconductor facilities — a pattern they characterize as parallel to corporate suppression of health data in other industries. Samsung contested the causal connection until the 2018 CEO apology.",
+    "flags": [
+      "occupational_illness_data_suppression_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "SHARPS documented cases of leukemia, multiple sclerosis, brain tumors, and other serious illnesses among Samsung semiconductor workers — primarily women in their 20s and 30s working in chip fabrication. After years of denial and litigation, Samsung's CEO issued a formal apology in 2018 acknowledging the illness of workers and their families, though Samsung continued to contest direct causal linkage to working conditions.",
+    "flags": [
+      "leukemia_brain_tumor_young_female_workers",
+      "2018_ceo_apology_after_denial",
+      "causal_linkage_contested_apology_issued"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "For smartphones: Google Pixel (different supply chain) or Apple iPhone (its own documented supply chain issues but different specific record)"
+    ],
+    "healthier": [
+      "No major consumer electronics manufacturer has a fully clean supply chain — the alternative is extended product life to reduce overall manufacturing demand"
+    ],
+    "diy": [
+      "iFixit.com provides repair guides for Samsung devices — extending device life by 2 years halves the manufacturing impact per year of use"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2016,
+      "event": "Galaxy Note 7 recall — approximately 3 million devices; batteries catching fire; $5B cost",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "Lee Jae-yong convicted of bribery in Park Geun-hye scandal; sentenced to 5 years",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "Lee Jae-yong pardoned. Samsung CEO issues formal apology to semiconductor workers with occupational illnesses",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "Lee Jae-yong retried; sentenced to 2.5 years; paroled after 18 months",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Lee Jae-yong receives second presidential pardon; becomes Samsung chairman",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Samsung semiconductor workers — primarily young women — developed serious illnesses including leukemia in facilities where Samsung denied occupational causation for years. Their families bore the cost of illness while Samsung contested the connection.",
+    "price_illusion": "Samsung products are priced competitively against Apple and other premium electronics brands. The price does not reflect: occupational illness among workers in semiconductor facilities; the chaebol governance structure that has produced two bribery convictions for the controlling family member; or the cost of the Note 7 recall borne by the company's balance sheet.",
+    "tax_math": "The Lee family's inheritance of Samsung control has generated significant Korean inheritance tax obligations. The chaebol cross-shareholding structure complicates both tax assessment and payment.",
+    "wealth_velocity": "The Lee family controls Samsung through cross-shareholdings representing economic interests that make them among Korea's wealthiest families. The workers who developed leukemia in Samsung's semiconductor facilities were paid factory wages."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Lee family",
+        "how": "Control of Korea's largest company through chaebol cross-shareholdings; two convictions resolved through presidential pardons; continued leadership"
+      },
+      {
+        "group": "Samsung shareholders",
+        "how": "Market dominance in semiconductors and smartphones maintained through chaebol structure that insulates leadership from accountability"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Samsung semiconductor workers with occupational illness",
+        "how": "Leukemia, brain tumors, and other serious illness; years of denial before 2018 CEO apology; causal linkage still contested"
+      }
+    ],
+    "the_gap": "Samsung's heir was convicted of bribery. He was pardoned. The Supreme Court reinstated the conviction. He was convicted again. He was paroled. He was pardoned again. He is now chairman. His father was convicted of tax evasion and also pardoned. Young women who worked in Samsung's semiconductor factories got leukemia. Samsung denied it for years. In 2018 the CEO apologized. Samsung still contests the cause."
+  }
+}

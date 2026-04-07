@@ -1,0 +1,172 @@
+{
+  "brand_name": "Glencore",
+  "brand_slug": "glencore",
+  "parent_company": "Glencore plc",
+  "ultimate_parent": "Glencore plc",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "GLENCORE PLEADED GUILTY TO BRIBING OFFICIALS IN 7 COUNTRIES AND MANIPULATING OIL MARKETS — THEN PAID $1.5 BILLION GLOBALLY AND KEPT MINING COBALT IN THE CONGO",
+  "executive_summary": "Glencore plc is one of the world's largest commodity trading and mining companies, headquartered in Baar, Switzerland. In May 2022, Glencore pleaded guilty to a 7-count criminal information in US District Court covering bribery of foreign government officials in Nigeria, Cameroon, Ivory Coast, Equatorial Guinea, Brazil, Venezuela, and the Democratic Republic of Congo between 2007 and 2018. Glencore paid approximately $1.1 billion to US authorities. Simultaneously, Glencore paid £281 million to the UK Serious Fraud Office, settled with Brazil and Dutch authorities, and admitted to market manipulation of oil prices at US delivery points. The total global resolution exceeded $1.5 billion. Glencore's Democratic Republic of Congo cobalt mining operations — which provide a significant proportion of the cobalt used in smartphone and electric vehicle batteries globally — have been the subject of documented investigations into child labor in artisanal mining activities surrounding Glencore's industrial operations.",
+  "verdict_tags": [
+    "1_1b_us_doj_bribery_7_countries",
+    "281m_uk_sfo_bribery",
+    "1_5b_total_global_resolution",
+    "oil_market_manipulation_admitted",
+    "drc_cobalt_child_labor_artisanal_mining"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Glencore's cobalt mining operations in the Democratic Republic of Congo are adjacent to artisanal and small-scale mining operations where child labor has been extensively documented by Amnesty International, Washington Post investigations, and academic researchers. Colombian coal mining operations have involved documented labor disputes and community displacement.",
+    "flags": [
+      "drc_cobalt_artisanal_child_labor_adjacent_documented",
+      "colombia_coal_community_displacement"
+    ],
+    "sources": [
+      "https://www.amnesty.org/en/documents/afr62/3183/2016/en/"
+    ]
+  },
+  "environmental": {
+    "summary": "Glencore is one of the world's largest coal exporters — with significant Australian and Colombian coal operations — placing it among the largest corporate contributors to climate-changing greenhouse gas emissions globally. Tailings dam failures at Zambian copper operations have created environmental contamination.",
+    "flags": [
+      "worlds_largest_coal_exporters",
+      "zambia_copper_tailings_failures"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "The bribery scheme Glencore pleaded guilty to was systematic and senior — involving payments to officials including ministers and heads of state-owned enterprises across seven countries over more than a decade. In the DRC, Glencore paid bribes to obtain mining rights and favorable treatment for its Katanga copper and cobalt operations.",
+    "flags": [
+      "senior_employee_participation_bribery_multiple_countries",
+      "mining_rights_drc_obtained_through_bribery"
+    ],
+    "sources": [
+      "https://www.justice.gov/opa/pr/glencore-entered-guilty-pleas-foreign-bribery-and-market-manipulation-schemes"
+    ]
+  },
+  "legal": {
+    "summary": "May 2022: Glencore plc entered guilty pleas to a 7-count criminal information covering bribery of foreign government officials (FCPA) and commodities fraud (oil market manipulation). US DOJ criminal penalty: $1.11 billion. UK SFO: £281 million. Dutch and Brazilian authorities: additional settlements. Total global: approximately $1.5 billion — the largest FCPA resolution in DOJ history at the time for a commodity company.",
+    "flags": [
+      "1_11b_us_doj_criminal_penalty",
+      "281m_uk_sfo",
+      "1_5b_total_global_largest_commodity_company_fcpa"
+    ],
+    "sources": [
+      "https://www.justice.gov/opa/pr/glencore-entered-guilty-pleas-foreign-bribery-and-market-manipulation-schemes"
+    ]
+  },
+  "tax": {
+    "summary": "Glencore's Swiss domicile — in the low-tax canton of Zug — is a standard structure for major commodity trading houses. The company has used transfer pricing between its Swiss trading operations and its mining operations to concentrate profits in low-tax jurisdictions.",
+    "flags": [
+      "swiss_zug_low_tax_domicile",
+      "transfer_pricing_mining_trading_profit_concentration"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Gary Nagle succeeded Ivan Glasenberg in June 2021, one year before the guilty pleas. Glasenberg was investigated by the UK SFO but charges were not pursued against him personally. A limited number of executives faced personal criminal charges in the US.",
+    "flags": [
+      "glasenberg_sfo_investigated_not_charged",
+      "corporate_guilty_plea_limited_individual_accountability"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Glencore's DRC cobalt operations connect it to the global supply chains for electric vehicle batteries and consumer electronics — cobalt from the DRC passes through Glencore's industrial operations and the surrounding artisanal mining ecosystem to reach battery manufacturers and ultimately into products from Tesla, Apple, Samsung, and every major EV and electronics manufacturer.",
+    "flags": [
+      "drc_cobalt_ev_consumer_electronics_global_supply_chain",
+      "tesla_apple_samsung_downstream_connection"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Human Rights Watch and Amnesty International have alleged that Glencore's industrial cobalt operations in the DRC cannot be meaningfully separated from the artisanal mining ecosystem where child labor is documented. Tax justice researchers have alleged that transfer pricing between Glencore's Swiss trading operations and its DRC and Zambian mining subsidiaries systematically understates the value of extracted resources.",
+    "flags": [
+      "industrial_artisanal_separation_impossible_alleged",
+      "transfer_pricing_resource_country_revenue_deprivation_alleged"
+    ],
+    "sources": [
+      "https://www.hrw.org/report/2021/11/09/this-is-what-we-die-doing/human-rights-abuses-cobalt-supply-chains"
+    ]
+  },
+  "health_record": {
+    "summary": "Artisanal cobalt mining in the DRC involves children working in hand-dug tunnels prone to collapse, without protective equipment. Cobalt dust exposure is associated with 'hard metal lung disease' — a fatal occupational illness. Adult and child artisanal miners absorb this health risk for earnings that human rights organizations have documented as subsistence-level.",
+    "flags": [
+      "artisanal_child_miner_tunnel_collapse_respiratory_documented",
+      "cobalt_dust_hard_metal_lung_disease_fatal"
+    ],
+    "sources": [
+      "https://www.amnesty.org/en/documents/afr62/3183/2016/en/"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Glencore is a B2B commodity company — consumers do not directly purchase from Glencore. The alternatives are policy-level: mandatory supply chain due diligence for cobalt and coal."
+    ],
+    "healthier": [
+      "Reduce demand for cobalt through product life extension — keeping smartphones and laptops longer reduces the cobalt demand driving artisanal mining"
+    ],
+    "diy": [
+      "The Responsible Minerals Initiative (responsibleminerals.org) maintains a database of smelters and refiners with verified sourcing practices",
+      "Support organizations working on DRC mining community rights: Global Witness, Amnesty International"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2007,
+      "event": "Estimated beginning of systematic bribery program across seven countries per DOJ findings",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2016,
+      "event": "Amnesty International documents child labor in DRC cobalt artisanal mining adjacent to Glencore's industrial operations",
+      "severity": "critical",
+      "source_url": "https://www.amnesty.org/en/documents/afr62/3183/2016/en/"
+    },
+    {
+      "year": 2021,
+      "event": "Dan Gertler — alleged DRC bribery intermediary — sanctioned by US Treasury OFAC for corruption",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "May: Glencore pleads guilty to 7-count US criminal information; $1.11B US penalty; $281M UK SFO; $1.5B+ total global",
+      "severity": "critical",
+      "source_url": "https://www.justice.gov/opa/pr/glencore-entered-guilty-pleas-foreign-bribery-and-market-manipulation-schemes"
+    }
+  ],
+  "community_impact": {
+    "displacement": "Communities in the DRC's Katanga region face displacement from mining expansion, water contamination from tailings, and the social disruption of artisanal mining economies.",
+    "price_illusion": "Glencore's traded commodities are priced on global commodity markets without reflecting the cost of the bribery that secured access to their extraction sites.",
+    "tax_math": "Glencore's Swiss trading operations capture the margin on commodity trades while the tax base remains in low-tax Zug. Resource-producing countries collect reduced royalties and taxes due to transfer pricing arrangements.",
+    "wealth_velocity": "Glencore's 2011 IPO concentrated wealth for Ivan Glasenberg and other long-term employee-shareholders. The communities in Nigeria, the DRC, and elsewhere whose resources were accessed through bribery received neither the market value of their resources nor the taxes that honest commercial transactions would have generated."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Glencore shareholders and senior employees",
+        "how": "Mining rights and oil contracts in 7 countries obtained through bribery; $1.5B settlement is a fraction of revenues from those operations"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Resource-producing country governments and citizens",
+        "how": "Mining and oil access rights granted for less than fair value through bribery; tax revenues reduced by transfer pricing"
+      },
+      {
+        "group": "DRC artisanal mining community, including children",
+        "how": "Occupational hazards in cobalt mining ecosystem adjacent to Glencore's industrial operations"
+      }
+    ],
+    "the_gap": "Glencore bribed officials in 7 countries for over a decade. They pleaded guilty. They paid $1.5 billion. The cobalt from their DRC operations goes into electric vehicle batteries and smartphones. Children mine artisanal cobalt adjacent to their industrial operations. Their Swiss headquarters sits in the canton with some of Europe's lowest corporate taxes. The communities in the DRC and Nigeria received none of the $1.5 billion."
+  }
+}

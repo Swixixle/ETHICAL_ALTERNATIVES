@@ -1,0 +1,138 @@
+{
+  "brand_slug": "volkswagen-group",
+  "members": [
+    {
+      "person_slug": "martin-winterkorn",
+      "full_name": "Martin Winterkorn",
+      "role": "CEO",
+      "tenure_start": "2007",
+      "tenure_end": "2015",
+      "is_current": false,
+      "committees": [
+        "Executive"
+      ],
+      "present_during": [
+        "defeat_device_installation_2006_2015",
+        "defeat_device_disclosure_2015"
+      ],
+      "departure_reason": "Resigned — defeat device disclosure",
+      "departure_context": "Resigned September 23, 2015 — five days after EPA issued notice of violation. German prosecutors subsequently charged Winterkorn with fraud. A May 2014 internal memo — documented by the Wall Street Journal — showed Winterkorn had been briefed on emissions discrepancies over a year before public disclosure.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "German criminal proceedings for fraud ongoing as of 2024. Trial repeatedly delayed citing Winterkorn's health. If convicted, would be the most senior automotive executive jailed for emissions fraud.",
+      "sources": [
+        "https://www.wsj.com/articles/volkswagen-ceo-knew-of-possible-emissions-issues-in-may-2014-email-shows-1448998294"
+      ]
+    },
+    {
+      "person_slug": "rupert-stadler",
+      "full_name": "Rupert Stadler",
+      "role": "CEO of Audi AG (VW Group subsidiary)",
+      "tenure_start": "2007",
+      "tenure_end": "2018",
+      "is_current": false,
+      "committees": [],
+      "present_during": [
+        "defeat_device_installation_2006_2015",
+        "defeat_device_disclosure_2015"
+      ],
+      "departure_reason": "Convicted — resigned",
+      "departure_context": "Convicted by Munich Regional Court in December 2023 of fraud in connection with the diesel emissions scandal affecting Audi vehicles. Received a suspended sentence of 22 months — no prison time. Paid a personal fine of €1.1 million.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Convicted 2023. Suspended sentence. Among the most senior European automotive executives convicted in connection with emissions fraud.",
+      "sources": [
+        "https://www.theguardian.com/business/2023/dec/19/former-audi-boss-rupert-stadler-guilty-diesel-emissions-scandal"
+      ]
+    },
+    {
+      "person_slug": "ferdinand-piech",
+      "full_name": "Ferdinand Piëch",
+      "role": "Supervisory Board Chairman",
+      "tenure_start": "2002",
+      "tenure_end": "2015",
+      "is_current": false,
+      "committees": [
+        "Supervisory Board"
+      ],
+      "present_during": [
+        "defeat_device_installation_2006_2015"
+      ],
+      "departure_reason": "Resigned — internal power struggle with Winterkorn",
+      "departure_context": "Ferdinand Piëch — grandson of Ferdinand Porsche and the dominant shareholder figure in VW's controlling structure — resigned from the supervisory board in April 2015 after a power struggle with Winterkorn. The defeat device scandal broke five months later.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [
+        "porsche-se"
+      ],
+      "prior_government": false,
+      "notes": "Died 2019. The Piëch family and Porsche family together maintain voting control of Volkswagen AG through Porsche Automobil Holding SE.",
+      "sources": []
+    },
+    {
+      "person_slug": "hans-dieter-poetsch",
+      "full_name": "Hans Dieter Pötsch",
+      "role": "CFO, then Supervisory Board Chairman",
+      "tenure_start": "2003",
+      "tenure_end": null,
+      "is_current": true,
+      "committees": [
+        "Supervisory Board",
+        "Finance"
+      ],
+      "present_during": [
+        "defeat_device_installation_2006_2015",
+        "defeat_device_disclosure_2015",
+        "30b_settlement_period"
+      ],
+      "departure_reason": null,
+      "departure_context": "Pötsch was VW's CFO during the defeat device period and became Supervisory Board Chairman in October 2015 — one month after the defeat device disclosure. He faced personal criminal charges in Germany for allegedly delaying disclosure of the defeat device to investors; the charges were settled via personal fine without admission.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Still current as of 2024. Settled personal criminal charges via fine without admission.",
+      "sources": []
+    },
+    {
+      "person_slug": "matthias-mueller-vw",
+      "full_name": "Matthias Müller",
+      "role": "CEO",
+      "tenure_start": "2015",
+      "tenure_end": "2018",
+      "is_current": false,
+      "committees": [
+        "Executive"
+      ],
+      "present_during": [
+        "30b_settlement_period"
+      ],
+      "departure_reason": "Replaced — board decision",
+      "departure_context": "Replaced by Herbert Diess in April 2018 as VW sought to shift leadership image during the settlement period. Had previously been CEO of Porsche AG.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [
+        "porsche-se"
+      ],
+      "prior_government": false,
+      "notes": "Led the initial crisis management period. Replaced as board sought image shift.",
+      "sources": []
+    }
+  ],
+  "connections": [
+    {
+      "person_slug": "ferdinand-piech",
+      "brand_slug_a": "volkswagen-group",
+      "brand_slug_b": "volkswagen-group",
+      "overlap_start": "2002",
+      "overlap_end": "2015",
+      "pattern_type": "family_control",
+      "description": "The Piëch and Porsche families together control approximately 53% of VW's voting shares through Porsche Automobil Holding SE — creating a governance structure that insulates VW management from standard public company accountability mechanisms.",
+      "significance": "Family control meant no outside shareholder could force disclosure of the defeat device or demand different conduct during the 9-year period it was in use."
+    }
+  ]
+}

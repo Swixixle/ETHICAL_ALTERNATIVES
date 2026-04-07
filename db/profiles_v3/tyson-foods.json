@@ -1,0 +1,173 @@
+{
+  "brand_name": "Tyson Foods",
+  "brand_slug": "tyson-foods",
+  "parent_company": "Tyson Foods, Inc.",
+  "ultimate_parent": "Tyson Family (24% ownership)",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "TYSON FOODS PAID $221 MILLION FOR PRICE FIXING CHICKEN — ITS PLANTS WERE COVID'S DEADLIEST WORKPLACES — AND ITS MANAGERS BET ON HOW MANY WORKERS WOULD GET SICK",
+  "executive_summary": "Tyson Foods, Inc. is the world's second-largest processor and marketer of chicken, beef, and pork — producing approximately 20% of the meat consumed in the United States. During the COVID-19 pandemic, Tyson's meat processing plants became some of the deadliest workplaces in the country — with thousands of workers infected and dozens dying. A lawsuit filed by the family of a deceased Waterloo, Iowa plant manager alleged that plant managers had organized a betting pool on how many workers would contract COVID-19. Tyson subsequently fired seven plant managers. Tyson has also paid $221.5 million to resolve federal antitrust charges for participating in a broiler chicken price-fixing conspiracy.",
+  "verdict_tags": [
+    "221m_chicken_price_fixing",
+    "covid_betting_pool_managers_fired",
+    "covid_deadliest_workplaces_thousands_infected",
+    "workers_died_covid_meatpacking",
+    "tyson_family_24pct_control"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": false,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Tyson's meatpacking plants — employing predominantly immigrant and minority workers — became COVID-19 hotspots in 2020. The Waterloo, Iowa plant remained open despite local health officials requesting closure; hundreds of workers were infected and at least six died at that facility alone. The betting pool allegation — that plant managers wagered on COVID infection rates among workers — was documented in a lawsuit and resulted in termination of seven managers. Meatpacking work is among the most dangerous occupational categories in the US.",
+    "flags": [
+      "waterloo_iowa_hundreds_infected_six_dead",
+      "betting_pool_managers_fired_seven",
+      "local_health_officials_closure_request_ignored",
+      "meatpacking_high_injury_rate"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Tyson Foods is one of the largest contributors to water pollution in the United States. Environment America found Tyson's facilities released more toxic pollutants into US waterways than ExxonMobil between 2010 and 2014. The company's CAFOs and processing plants generate ammonia, nitrogen, and phosphorus discharge affecting rivers and streams across the Midwest.",
+    "flags": [
+      "more_toxic_pollutants_than_exxonmobil_2010_2014",
+      "cafo_ammonia_nitrogen_phosphorus_discharge",
+      "midwest_waterway_pollution"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Tyson lobbied to keep meat processing plants open as essential businesses during COVID-19 despite documented worker illness and death. The company has lobbied against animal welfare regulations, environmental discharge standards, and worker safety improvements in meatpacking. Its political spending has focused on agricultural and food safety regulation.",
+    "flags": [
+      "essential_business_lobbying_covid_plants_open",
+      "animal_welfare_environmental_discharge_opposition"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "2020-2023: Tyson paid $221.5 million as part of a broader broiler chicken price-fixing settlement — joining Pilgrim's Pride and other poultry processors in resolving antitrust charges that they coordinated to inflate chicken prices paid by restaurants and food companies. COVID-related litigation: multiple wrongful death and injury lawsuits filed by workers and families; settlements reached in several cases.",
+    "flags": [
+      "221_5m_chicken_price_fixing",
+      "broiler_antitrust_pilgrim_coordinated",
+      "covid_wrongful_death_injury_litigation"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Tyson Foods is a US-headquartered company paying US corporate taxes. The Tyson family's control through dual-class shares provides governance stability. No major offshore tax enforcement actions have been documented.",
+    "flags": [
+      "tyson_family_dual_class_share_control"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Donnie King leads Tyson Foods. During the COVID crisis, President and CEO Noel White and other executives came under scrutiny for the decision to keep plants open. Seven plant managers were fired following the betting pool revelation. No criminal charges were filed against any Tyson executive for COVID-related plant decisions.",
+    "flags": [
+      "seven_managers_fired_betting_pool",
+      "no_executive_criminal_charges_covid_deaths",
+      "plant_open_decisions_executive_scrutiny"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Tyson's price-fixing conspiracy connected it to Pilgrim's Pride (majority-owned by JBS of Brazil), Koch Foods, Perdue Farms, and other major poultry processors — suggesting industry-wide coordination. JBS — Tyson's largest competitor — separately paid $52.5 million in criminal fines for the same conspiracy. The meatpacking industry's COVID response collectively illustrated the documented vulnerability of essential food system workers.",
+    "flags": [
+      "jbs_pilgrim_koch_perdue_price_fixing_connected",
+      "jbs_52_5m_criminal_fine_same_conspiracy"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Worker advocates and the UFCW union have alleged that Tyson's COVID response prioritized production continuity over worker safety — that decisions to maintain production speed and delay protective measures were made with knowledge of worker illness rates. Tyson has disputed these characterizations.",
+    "flags": [
+      "production_continuity_over_safety_alleged",
+      "protective_measure_delay_knowledge_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "COVID-19: Thousands of Tyson workers infected across multiple plants; dozens died. The Waterloo betting pool illustrated documented management indifference to worker infection rates at the management level. Occupational injury rates in meatpacking are among the highest of any US industry — repetitive stress injuries, lacerations, and musculoskeletal disorders are documented at elevated rates. Tyson's water pollution affects drinking water quality downstream from processing facilities.",
+    "flags": [
+      "thousands_infected_dozens_died_covid",
+      "betting_pool_management_indifference",
+      "meatpacking_injury_rate_among_highest",
+      "water_pollution_downstream_drinking_water"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Plant-based protein: lentils, beans, chickpeas — dramatically cheaper per gram of protein than chicken",
+      "Reduced meat consumption rather than brand switching — structural alternative to meatpacking industry's documented harms"
+    ],
+    "healthier": [
+      "Local butchers with documented sourcing — traceable back to specific farms",
+      "Certified Humane or Animal Welfare Approved products — independent verification of animal welfare standards"
+    ],
+    "diy": [
+      "The UFCW (United Food and Commercial Workers) tracks meatpacking worker conditions — ufcw.org provides current campaign information",
+      "Reducing chicken consumption by half eliminates your contribution to Tyson's market share more effectively than brand switching"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2020,
+      "event": "COVID-19 spreads through Tyson plants; Waterloo, Iowa plant: hundreds infected, at least six dead; local health officials' closure request ignored",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "Lawsuit reveals Waterloo plant managers organized betting pool on worker COVID infection rates; Tyson fires seven managers",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "Tyson begins paying into broiler chicken price-fixing settlement — total Tyson share: $221.5 million",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Multiple COVID wrongful death lawsuits settled; terms confidential",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Meatpacking communities — many built around single Tyson facilities — experienced mass COVID infection events that affected entire towns, not just plant workers. Workers who died left families without income; workers with long COVID faced lasting disability.",
+    "price_illusion": "Cheap chicken is the most visible consumer benefit of Tyson's scale. The full cost includes: worker injury and death at elevated occupational rates; COVID deaths when plants stayed open; water pollution from processing facilities; and chicken prices that were inflated by a price-fixing conspiracy for years before the antitrust settlement.",
+    "tax_math": "The $221.5 million price-fixing settlement is tax-deductible as a business expense. The public health costs of treating COVID-infected Tyson workers — through Medicaid and community health systems — were borne by taxpayers.",
+    "wealth_velocity": "The Tyson family controls Tyson Foods through dual-class shares. Revenue from meat processing — including chicken priced above competitive levels during the conspiracy period — concentrates in family and institutional shareholder returns. Meatpacking workers earning near-minimum wage with high injury rates do not share in these returns."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Tyson Foods shareholders and Tyson family",
+        "how": "Above-market chicken prices during price-fixing conspiracy; production maintained through COVID at worker health cost"
+      },
+      {
+        "group": "Co-conspirators (Pilgrim's, JBS, Koch Foods)",
+        "how": "Coordinated above-market pricing across broiler chicken market for years"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Tyson workers who died of COVID",
+        "how": "Plants kept open over local health official objections; management organized betting pools on infection rates; dozens died"
+      },
+      {
+        "group": "Restaurants and food companies",
+        "how": "Above-market chicken prices during price-fixing conspiracy — passed to consumers"
+      }
+    ],
+    "the_gap": "Tyson kept their plants open during COVID. Local health officials asked them to close. Workers got sick. Six died at one plant. The managers organized a betting pool on how many workers would get infected. Seven managers were fired. No criminal charges were filed. Tyson paid $221 million for fixing chicken prices. The chicken was cheap."
+  }
+}

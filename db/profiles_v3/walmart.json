@@ -1,0 +1,174 @@
+{
+  "brand_name": "Walmart",
+  "brand_slug": "walmart",
+  "parent_company": "Walmart Inc.",
+  "ultimate_parent": "Walton Family (50.9% ownership)",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "WALMART PAID $282 MILLION FOR BRIBING OFFICIALS IN FOUR COUNTRIES — AND A SINGLE WALTON FAMILY HEIR HAS MORE WEALTH THAN THE BOTTOM 40% OF AMERICANS COMBINED",
+  "executive_summary": "Walmart Inc. is the world's largest company by revenue and largest private employer with approximately 2.1 million US employees. In 2019, Walmart paid $282 million to resolve DOJ and SEC FCPA charges for bribing government officials in Mexico, Brazil, China, and India. In Mexico, the bribery scandal — first reported by the New York Times in 2012 — showed executives authorized payments to obtain construction permits for store expansion. The Walton family owns approximately 50.9% of Walmart stock — a concentration of wealth that makes individual Walton heirs among the wealthiest people on Earth.",
+  "verdict_tags": [
+    "282m_fcpa_four_countries",
+    "walton_family_50_9pct_ownership",
+    "mexico_bribery_nyt_2012",
+    "2_1_million_us_employees",
+    "wage_suppression_documented"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Walmart's wage structure — historically at or near minimum wage for the majority of its US workforce — has been documented to produce employees who qualify for Medicaid and food stamps, effectively subsidizing Walmart's labor costs with public funds. A UC Berkeley study found Walmart employees in California collected approximately $86 million annually in public assistance.",
+    "flags": [
+      "employees_qualify_medicaid_food_stamps",
+      "uc_berkeley_86m_public_assistance_california"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Walmart is the world's largest buyer of consumer goods — its purchasing decisions have significant supply chain environmental implications. The company has made renewable energy commitments and has moved toward LED lighting across stores. Its supply chain spans countries with variable environmental enforcement.",
+    "flags": [
+      "largest_consumer_goods_buyer",
+      "supply_chain_environmental_variability"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Mexico FCPA bribery scandal — first reported by the NYT in 2012 — showed that Walmart's internal investigators had documented the bribery as early as 2005 and executives chose not to report it. Walmart lobbied against minimum wage increases in multiple states and has spent significantly opposing union organizing.",
+    "flags": [
+      "mexico_bribery_internal_knowledge_2005",
+      "minimum_wage_increase_opposition",
+      "anti_union_lobbying"
+    ],
+    "sources": [
+      "https://www.nytimes.com/2012/04/22/business/at-walmart-in-mexico-a-bribe-inquiry-silenced.html"
+    ]
+  },
+  "legal": {
+    "summary": "June 2019: Walmart agreed to pay $282 million — $138 million criminal penalty plus $144 million civil — to resolve FCPA violations in Mexico, Brazil, China, and India. The investigation began after NYT reporting in 2012 revealed Walmart had suppressed its own internal bribery investigation in Mexico.",
+    "flags": [
+      "282m_fcpa_settlement",
+      "138m_criminal_144m_civil",
+      "internal_investigation_suppressed_2005"
+    ],
+    "sources": [
+      "https://www.justice.gov/opa/pr/walmart-inc-and-brazil-based-subsidiary-agree-pay-137-million-resolve-foreign-corrupt"
+    ]
+  },
+  "tax": {
+    "summary": "Walmart has used international corporate structures including Luxembourg holding companies for its international operations. The company has benefited significantly from the 2017 Tax Cuts and Jobs Act. A 2015 Americans for Tax Fairness report estimated Walmart held $76 billion in assets in 78 overseas tax haven subsidiaries.",
+    "flags": [
+      "luxembourg_holding_structure",
+      "76b_assets_78_overseas_subsidiaries_2015"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Doug McMillon leads Walmart. The Walton family — descendants of founder Sam Walton — controls the company through a 50.9% ownership stake. No Walmart executive was criminally charged in the FCPA settlement — the criminal penalty was at the subsidiary level.",
+    "flags": [
+      "walton_family_50_9pct_control",
+      "no_executive_criminal_charges_282m"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Walmart's market power — as the largest buyer of consumer goods globally — gives it extraordinary leverage over suppliers that has been documented to compress supplier margins and contribute to offshoring of US manufacturing. The company's pharmacy and healthcare expansion connects it to prescription drug pricing dynamics.",
+    "flags": [
+      "supplier_margin_compression_offshoring",
+      "pharmacy_prescription_drug_expansion"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Current and former Walmart executives have alleged that the decision to suppress the Mexico bribery investigation in 2005 was made at the highest levels of the company — including by executives who were subsequently promoted. Walmart has disputed this characterization.",
+    "flags": [
+      "mexico_suppression_executive_level_alleged"
+    ],
+    "sources": [
+      "https://www.nytimes.com/2012/04/22/business/at-walmart-in-mexico-a-bribe-inquiry-silenced.html"
+    ]
+  },
+  "health_record": {
+    "summary": "Walmart's pharmacy operations make it one of the largest US prescription dispensers — with documented opioid dispensing compliance concerns. The company paid $3.1 billion in 2023 to settle opioid-related claims covering its pharmacy operations' failure to flag suspicious prescriptions.",
+    "flags": [
+      "3_1b_opioid_pharmacy_settlement_2023",
+      "suspicious_prescription_flagging_failure"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Local grocery stores and food co-ops for food purchases",
+      "Target for general merchandise — different corporate structure, different documented issues"
+    ],
+    "healthier": [
+      "Food co-ops and farmers markets for grocery items — money stays in community",
+      "Local pharmacies for prescription drugs — independent pharmacies without the opioid dispensing record"
+    ],
+    "diy": [
+      "Instacart from local grocers keeps money in your community rather than routing through Walmart's supply chain",
+      "The Real Walmart (makingchangeatwalmart.org) tracks labor practices and ongoing campaigns"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2005,
+      "event": "Walmart internal investigators document Mexico bribery; executives suppress the investigation rather than reporting to DOJ",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2012,
+      "event": "New York Times publishes investigation revealing Mexico bribery and suppression; DOJ investigation begins",
+      "severity": "critical",
+      "source_url": "https://www.nytimes.com/2012/04/22/business/at-walmart-in-mexico-a-bribe-inquiry-silenced.html"
+    },
+    {
+      "year": 2019,
+      "event": "$282M FCPA settlement — Mexico, Brazil, China, India; 7-year investigation concludes",
+      "severity": "critical",
+      "source_url": "https://www.justice.gov/opa/pr/walmart-inc-and-brazil-based-subsidiary-agree-pay-137-million-resolve-foreign-corrupt"
+    },
+    {
+      "year": 2023,
+      "event": "$3.1B opioid settlement covering Walmart pharmacy dispensing failures",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Communities where Walmart opened stores have documented patterns of local retail business closure — the Walmart effect on main street retail has been studied extensively with consistent findings of net local business displacement.",
+    "price_illusion": "Walmart's low prices are real. The full cost includes: employees qualifying for public assistance (effectively a public subsidy of Walmart's labor costs); supplier margin compression that has contributed to US manufacturing offshoring; and bribery of officials in four countries to accelerate store expansion.",
+    "tax_math": "A UC Berkeley study found Walmart's California workforce collected approximately $86 million annually in public assistance — Medicaid, food stamps, housing assistance. This represents a public subsidy of Walmart's below-living-wage pay structure.",
+    "wealth_velocity": "The Walton family's 50.9% stake in Walmart makes individual heirs among the wealthiest people in human history. A single Walton heir has more wealth than the bottom 40% of Americans combined — a statistic documented by multiple independent wealth researchers."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Walton family",
+        "how": "50.9% ownership of world's largest company; wealth exceeding bottom 40% of Americans combined"
+      },
+      {
+        "group": "Walmart shareholders",
+        "how": "Bribery in four countries accelerated store expansion and market access; suppressed internal investigation avoided early penalty"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Walmart employees on public assistance",
+        "how": "Wages insufficient to avoid Medicaid and food stamp eligibility; public funds subsidize Walmart's labor cost structure"
+      },
+      {
+        "group": "US manufacturing communities",
+        "how": "Supplier margin compression contributed to offshoring of manufacturing that had employed those communities"
+      }
+    ],
+    "the_gap": "Walmart knew about the Mexico bribery in 2005. They suppressed their own investigation. The New York Times found out in 2012. The DOJ took seven years. The fine was $282 million. The Walton family owns 50.9% of the company. One Walton heir has more wealth than the bottom 40% of Americans. Walmart employees in California collected $86 million a year in public assistance. The prices are low."
+  }
+}

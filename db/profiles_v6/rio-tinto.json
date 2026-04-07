@@ -1,0 +1,161 @@
+{
+  "brand_name": "Rio Tinto",
+  "brand_slug": "rio-tinto",
+  "parent_company": "Rio Tinto plc / Rio Tinto Limited",
+  "ultimate_parent": "Rio Tinto plc (UK) / Rio Tinto Limited (Australia)",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "RIO TINTO HAD ARCHAEOLOGICAL SURVEYS SHOWING JUUKAN GORGE WAS 46,000 YEARS OLD — THEY BLEW IT UP TO MINE IRON ORE AND SAID THEY WERE 'SORRY'",
+  "executive_summary": "Rio Tinto plc is one of the world's largest mining companies. On May 24, 2020, Rio Tinto detonated explosives at Juukan Gorge in the Pilbara region of Western Australia — destroying two rock shelters that had provided evidence of continuous Aboriginal habitation for 46,000 years, making them among the oldest known human occupation sites in Australia. Rio Tinto had received archaeological surveys confirming the sites' extraordinary cultural and historical significance and had been explicitly warned by the Puutu Kunti Kurrama and Pinikura (PKKP) people that the sites were sacred. The destruction was legal under a 1972 Western Australia law. CEO Jean-Sébastien Jacques and two other senior executives resigned following shareholder and public backlash. Australia subsequently amended the Aboriginal Heritage Act in 2021. A 2021-2022 independent review documented a pervasive culture of sexual harassment, bullying, and racism at Rio Tinto's Australian operations.",
+  "verdict_tags": [
+    "juukan_gorge_46000_year_site_destroyed",
+    "ceo_resigned_two_executives",
+    "legal_under_1972_law_amended_2021",
+    "pkkp_people_explicitly_warned",
+    "21pct_women_sexual_harassment_broderick_review"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "A 2021-2022 independent review commissioned by Rio Tinto and conducted by former sex discrimination commissioner Elizabeth Broderick documented a pervasive culture of sexual harassment, bullying, and racism at Rio Tinto's Australian operations. The review found 21% of women experienced sexual harassment; 28% experienced bullying.",
+    "flags": [
+      "21pct_women_sexual_harassment_broderick_review",
+      "28pct_bullying_documented",
+      "racism_documented_australian_operations"
+    ],
+    "sources": [
+      "https://www.riotinto.com/en/invest/reports/broderick-report"
+    ]
+  },
+  "environmental": {
+    "summary": "Mining is inherently an environmentally transformative activity. Rio Tinto's Juukan Gorge destruction is one dimension of its environmental footprint. The company's tailings storage facilities represent ongoing environmental management obligations across multiple continents.",
+    "flags": [
+      "tailings_storage_facilities_multiple_continents"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Juukan Gorge destruction was legal under Western Australia's 1972 Aboriginal Heritage Act — which allowed mineral extraction to proceed over Aboriginal heritage sites with ministerial approval. The PKKP people's objections were legally subordinate to the mining company's approved operational plan. The destruction triggered Australian Senate inquiries and the 2021 amendment of the Aboriginal Heritage Act.",
+    "flags": [
+      "legal_under_1972_law_indigenous_rights_subordinated",
+      "senate_inquiry_triggered",
+      "2021_wa_aboriginal_heritage_act_amendment"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Rio Tinto's destruction of Juukan Gorge was legal under existing Australian law at the time — no criminal charges were filed. The company reached a confidential settlement with the PKKP people, reportedly including financial compensation, cultural preservation commitments, and joint management arrangements. The WA Aboriginal Heritage Act Amendment Act 2021 subsequently strengthened protections.",
+    "flags": [
+      "juukan_destruction_legal_at_time",
+      "pkkp_settlement_confidential",
+      "no_criminal_charges",
+      "2021_wa_act_strengthened_post_juukan"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Rio Tinto is dual-listed on the London and Australian stock exchanges. The company has faced scrutiny for its transfer pricing arrangements between its Australian iron ore production operations and its Singapore marketing hub — a structure the Australian Taxation Office has investigated.",
+    "flags": [
+      "australia_singapore_transfer_pricing_ato_scrutiny"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Jean-Sébastien Jacques and two executives resigned in September 2020 following shareholder pressure. Jacques' initial response — expressing 'deep regret' while linking the destruction to 'misunderstandings' — was condemned by the PKKP people and shareholders. Jakob Stausholm became CEO in January 2021.",
+    "flags": [
+      "jacques_misunderstandings_response_condemned",
+      "three_senior_executives_resigned_shareholder_pressure"
+    ],
+    "sources": [
+      "https://www.theguardian.com/australia-news/2020/sep/11/rio-tinto-chief-executive-jean-sebastien-jacques-to-resign-over-juukan-gorge"
+    ]
+  },
+  "connections": {
+    "summary": "Rio Tinto's iron ore feeds Chinese steel production — approximately 60% of its iron ore goes to China. The company's Oyu Tolgoi copper and gold project in Mongolia is one of the world's largest undeveloped copper deposits.",
+    "flags": [
+      "60pct_iron_ore_china_steel_dependence"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The PKKP people and their advocates have alleged that Rio Tinto's decision-making process treated Juukan Gorge as a cost-benefit calculation — weighing the mineral value against heritage preservation — rather than as an absolute limit. Internal Rio Tinto communications released to Australian Senate investigators showed that concerns about the heritage significance had been raised internally and were known to operational decision-makers before the detonation.",
+    "flags": [
+      "cost_benefit_heritage_calculation_alleged",
+      "internal_communications_heritage_concerns_known_before_detonation"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "The Broderick review's documented sexual harassment and bullying rates — 21% of women experiencing sexual harassment — represent occupational health harm to Rio Tinto's own workforce. The destruction of Juukan Gorge is an irreversible cultural health harm to the PKKP people — loss of a site that represented 46,000 years of their ancestry and spiritual connection.",
+    "flags": [
+      "21pct_women_sexual_harassment_occupational_health",
+      "pkkp_irreversible_cultural_harm"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Rio Tinto is B2B — consumers do not directly choose Rio Tinto. The alternative is policy: mandatory free, prior, and informed consent for Indigenous heritage sites before mining approval."
+    ],
+    "healthier": [
+      "Support the UN Declaration on the Rights of Indigenous Peoples implementation in Australia and other resource-extraction jurisdictions"
+    ],
+    "diy": [
+      "If you are an investor in Rio Tinto: the Broderick report and Juukan Gorge response are documented ESG failures; shareholder resolutions on Indigenous heritage and workplace culture have been active at Rio Tinto's AGMs"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2013,
+      "event": "Rio Tinto archaeological survey confirms Juukan Gorge's extraordinary significance — 46,000 years of continuous habitation evidence",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2014,
+      "event": "PKKP people formally registered their objection to disturbance of Juukan Gorge sites with Rio Tinto",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "May 24: Rio Tinto detonates explosives at Juukan Gorge, destroying the 46,000-year-old rock shelters to access iron ore. September: CEO Jacques and two executives resign under shareholder pressure.",
+      "severity": "critical",
+      "source_url": "https://www.theguardian.com/australia-news/2020/sep/11/rio-tinto-chief-executive-jean-sebastien-jacques-to-resign-over-juukan-gorge"
+    },
+    {
+      "year": 2021,
+      "event": "Broderick review documents 21% sexual harassment, 28% bullying in Australian operations. WA Aboriginal Heritage Act amended — Juukan Gorge destruction cited as direct catalyst.",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "The destruction of Juukan Gorge is irreversible. A site documenting 46,000 years of continuous Aboriginal habitation no longer exists. The PKKP people described the loss as 'devastating' and equivalent to the destruction of their identity.",
+    "price_illusion": "Rio Tinto's iron ore is priced on global commodity markets. The destruction of Juukan Gorge — valued by Rio Tinto's operational planning as an obstacle to iron ore extraction — was a cost-benefit decision in which the cultural value to the PKKP people was legally subordinate to the mineral extraction value.",
+    "tax_math": "Rio Tinto's Australian-Singapore transfer pricing — under ATO scrutiny — potentially reduces Australian taxable income from iron ore sales.",
+    "wealth_velocity": "Rio Tinto's dual-listed structure concentrates ownership among UK and Australian institutional shareholders. The iron ore extracted from the Pilbara generates dividends that flow to London and Sydney shareholders."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Rio Tinto shareholders",
+        "how": "Iron ore extracted from the site that required Juukan Gorge's destruction; mineral value accessed through legal but irreversible heritage destruction"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Puutu Kunti Kurrama and Pinikura people",
+        "how": "Irreversible loss of a 46,000-year-old site of ancestral significance; described by PKKP elders as loss of their identity and history"
+      }
+    ],
+    "the_gap": "Rio Tinto had archaeological surveys telling them Juukan Gorge was 46,000 years old. The PKKP people had formally objected. Rio Tinto detonated it anyway because the law let them. The CEO called it a misunderstanding. The PKKP people called it the destruction of their history. Three executives resigned after the shareholders pushed. No criminal charges were filed. The site does not exist anymore."
+  }
+}

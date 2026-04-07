@@ -1,0 +1,154 @@
+{
+  "brand_name": "Lactalis",
+  "brand_slug": "lactalis",
+  "parent_company": "Groupe Lactalis",
+  "ultimate_parent": "Besnier family (private)",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "LACTALIS KNEW ITS INFANT FORMULA FACTORY HAD SALMONELLA IN 2005 — KEPT MAKING FORMULA THERE — AND COVERED UP A 2017 OUTBREAK THAT SICKENED BABIES IN 83 COUNTRIES",
+  "executive_summary": "Groupe Lactalis is the world's largest dairy company, headquartered in Laval, France, owned entirely by the reclusive Besnier family. In December 2017, Lactalis infant formula produced at its Le Craon factory was contaminated with Salmonella Agona — causing illness in at least 36 infants in France and hundreds internationally across 83 countries. French government investigations subsequently established that the Le Craon factory had experienced a prior Salmonella outbreak in 2005 and that contamination indicators had been present in the years before 2017. Lactalis was found to have continued selling contaminated formula after becoming aware of the contamination. In 2021, a French criminal court convicted Lactalis of aggravated deceit and fined the company. CEO Emmanuel Besnier refused to testify before the French Senate's inquiry committee.",
+  "verdict_tags": [
+    "83_countries_infant_formula_salmonella",
+    "le_craon_factory_2005_prior_salmonella",
+    "continued_selling_after_contamination_known",
+    "besnier_refused_senate_testimony",
+    "2021_french_criminal_conviction"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Lactalis employs approximately 85,000 people globally across its dairy brands. The family-controlled private structure provides workers with limited transparency about company finances.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Lactalis's dairy operations have a significant water and greenhouse gas footprint. Lactalis does not publish comprehensive ESG reporting, consistent with its broader opacity as a private company.",
+    "flags": [
+      "dairy_emissions_intensive_limited_esg_disclosure"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Emmanuel Besnier — head of Lactalis and one of Europe's most reclusive billionaires — refused to appear before the French Senate's inquiry commission examining the contaminated formula crisis. The Senate commission voted to have Besnier summoned, but he contested the compulsion to testify.",
+    "flags": [
+      "besnier_refused_testimony",
+      "compelled_summons_contested",
+      "private_structure_parliamentary_accountability_limitation"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "In 2021, a French criminal court convicted Lactalis of 'tromperie aggravée' (aggravated deceit) related to the 2017 salmonella contamination and issued fines. The conviction established that Lactalis knew of contamination risks at the Le Craon factory from its 2005 salmonella history. Court proceedings documented that Lactalis continued to distribute formula products after it had been notified of contamination and after issuing an initial partial recall. Lactalis paid approximately €78 million in compensation to victim families. French court records document over 40 product lot numbers in circulation after the recall announcement.",
+    "flags": [
+      "2021_french_criminal_conviction_aggravated_deceit",
+      "continued_distribution_after_notification_documented",
+      "40_plus_lots_in_circulation_post_recall",
+      "78m_victim_family_compensation"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Lactalis's private, family-owned structure provides minimal public tax disclosure. No major formal tax enforcement actions against Lactalis have been publicly documented.",
+    "flags": [
+      "private_structure_minimal_tax_disclosure"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Emmanuel Besnier has been CEO since 2000, succeeding his father Michel Besnier. The Besnier family is estimated to have a net worth exceeding €22 billion, built almost entirely on Lactalis. Besnier is one of France's most private businessmen — rarely photographed, almost never interviewed, refusing parliamentary testimony.",
+    "flags": [
+      "besnier_refused_testimony_22b_net_worth",
+      "extreme_personal_opacity"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Lactalis's global reach through brands like Président, Galbani, and Parmalat means the 2017 contamination affected markets across Europe, Asia, Africa, and Latin America. Retailers in 83 countries received contaminated products.",
+    "flags": [
+      "83_countries_supply_chain_recall_difficulty"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "French consumer protection investigators have alleged that Lactalis was aware of contamination indicators at the Le Craon factory before December 2017 and did not initiate proactive testing or disclosure. Parent advocacy groups have alleged that Lactalis's initial recall was deliberately limited in scope.",
+    "flags": [
+      "prior_contamination_indicators_awareness_alleged",
+      "deliberately_limited_recall_scope_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Salmonella Agona in infant formula is particularly dangerous because formula is often the sole food source for newborns. At least 36 infants in France were confirmed ill, with hundreds affected internationally across 83 countries. The Le Craon factory's documented Salmonella history from 2005 — 12 years before the 2017 outbreak — establishes that the contamination risk was known and not adequately addressed.",
+    "flags": [
+      "formula_sole_food_source_newborn_vulnerability",
+      "36_french_infants_hundreds_internationally",
+      "12_year_gap_between_known_risk_and_outbreak"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Store brand infant formula — same FDA nutritional requirements as Lactalis brands; different manufacturing chain"
+    ],
+    "healthier": [
+      "Any infant formula brand with published third-party manufacturing audit results"
+    ],
+    "diy": [
+      "Check FDA and EFSA recall databases for any current Lactalis product recalls before purchase"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2005,
+      "event": "Le Craon factory experiences Salmonella contamination episode — documented in subsequent investigation; not publicly disclosed",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "December: Salmonella Agona contamination confirmed at Le Craon infant formula factory; 36+ French infants ill",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "French Senate inquiry; Emmanuel Besnier refuses to testify; recall found inadequate with 40+ lots still circulating; 83 countries found to have received contaminated formula",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "French criminal court convicts Lactalis of aggravated deceit; fines issued; €78M victim family compensation paid",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Infants across 83 countries who consumed contaminated Lactalis formula had no way to know their formula posed a health risk. The recall's documented inadequacy meant that families who attempted to comply with recall guidance may still have received contaminated products.",
+    "price_illusion": "Infant formula is priced as a safe, nutritionally complete alternative to breastfeeding. The 2017 crisis established that the Le Craon factory had a known contamination history and that Lactalis continued distributing after the initial contamination notification.",
+    "tax_math": "Lactalis's private structure makes precise tax analysis impossible. The family's estimated €22 billion in wealth was built with minimal public disclosure of tax payments.",
+    "wealth_velocity": "The Besnier family's estimated €22 billion accumulated from a global dairy business operated with near-complete public opacity. The parents of infants sickened by Lactalis formula received €78 million in compensation — a fraction of the Besnier family's estimated annual wealth growth."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Besnier family",
+        "how": "€22B+ estimated wealth from world's largest dairy company; opacity enabled continued operation after 2005 Salmonella without public accountability until 2017"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "36+ French infants and hundreds internationally",
+        "how": "Salmonella illness from formula that was the sole food source for newborns; formula from a factory with documented 12-year contamination history"
+      }
+    ],
+    "the_gap": "The Le Craon factory had Salmonella in 2005. Lactalis kept making infant formula there. In 2017 babies got sick from that factory's formula in 83 countries. The recall was documented as inadequate — 40+ contaminated lots kept circulating. The CEO refused to testify before parliament. The company was convicted of aggravated deceit. The family is worth €22 billion. They own the world's largest dairy company. You have probably bought their products today."
+  }
+}

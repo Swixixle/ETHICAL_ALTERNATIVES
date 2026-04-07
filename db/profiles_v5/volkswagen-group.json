@@ -1,0 +1,162 @@
+{
+  "brand_name": "Volkswagen Group",
+  "brand_slug": "volkswagen-group",
+  "parent_company": "Volkswagen AG",
+  "ultimate_parent": "Volkswagen AG",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "VOLKSWAGEN INSTALLED SOFTWARE TO CHEAT EMISSIONS TESTS IN 11 MILLION VEHICLES — THEIR OWN CEO RESIGNED AND SIX EXECUTIVES WERE CONVICTED",
+  "executive_summary": "Volkswagen AG is the world's largest automaker. In September 2015, the US EPA revealed that Volkswagen had installed defeat device software in approximately 11 million diesel vehicles — software that detected emissions testing and reduced NOx only during tests, while emitting up to 40 times the legal NOx limit during real-world driving. CEO Martin Winterkorn resigned within days. VW pleaded guilty to US criminal charges in 2017 and paid $4.3 billion — the largest criminal penalty ever assessed against an automaker. Total global settlements exceeded $30 billion. Six VW executives were convicted in German courts.",
+  "verdict_tags": [
+    "defeat_device_11_million_vehicles",
+    "4_3b_us_criminal_penalty_largest_automaker",
+    "30b_global_settlements",
+    "ceo_resigned",
+    "six_executives_convicted_germany",
+    "nox_40x_legal_limit"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "30,000 job cuts as VW restructured to fund $30 billion in settlements.",
+    "flags": [
+      "30000_job_cuts_scandal_restructuring"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "NOx emissions from 11 million defeat-device vehicles exceeded legal limits by up to 40 times during real-world driving. A study estimated the excess NOx caused approximately 59 premature deaths in the United States and 1,200 new cases of asthma.",
+    "flags": [
+      "40x_nox_legal_limit_real_world",
+      "59_estimated_us_premature_deaths"
+    ],
+    "sources": [
+      "https://ehp.niehs.nih.gov/doi/10.1289/EHP1875"
+    ]
+  },
+  "political": {
+    "summary": "VW lobbied against stricter real-world emissions testing standards in the years before the defeat device was discovered. EU regulatory reform followed the scandal.",
+    "flags": [
+      "vw_lobbied_against_stricter_testing_pre_scandal"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "January 2017: VW AG pleaded guilty to three US criminal charges. Criminal penalty: $2.8 billion. Civil penalty: $1.5 billion. Consumer settlement: $14.7 billion. Six VW executives convicted in Germany. Rupert Stadler convicted 2023.",
+    "flags": [
+      "4_3b_largest_automaker_criminal_penalty",
+      "14_7b_us_consumer_settlement",
+      "six_executives_convicted_germany"
+    ],
+    "sources": [
+      "https://www.justice.gov/opa/pr/volkswagen-ag-agrees-plead-guilty-and-pay-43-billion-criminal-and-civil-penalties-six"
+    ]
+  },
+  "tax": {
+    "summary": "The $30 billion in settlements generated tax deductions reducing the net penalty cost to VW shareholders.",
+    "flags": [
+      "settlement_provision_tax_deduction_global"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Martin Winterkorn resigned September 23, 2015 and was subsequently charged with fraud by German prosecutors. Rupert Stadler convicted 2023. James Liang sentenced to 40 months in the US.",
+    "flags": [
+      "winterkorn_criminal_charges_germany",
+      "stadler_convicted_suspended_sentence",
+      "liang_40_months_us_imprisonment"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "VW's defeat device relied on engine management software supplied by Bosch — which separately settled US claims for $327.5 million. The Piëch and Porsche family ownership gives founding families voting control insulating the company from shareholder accountability.",
+    "flags": [
+      "bosch_supplier_settled_separately",
+      "piech_porsche_family_voting_control"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "German prosecutors alleged Winterkorn was briefed on the defeat device as early as May 2014 — over a year before public disclosure.",
+    "flags": [
+      "winterkorn_2014_briefing_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Study estimated 59 premature US deaths and 1,200 asthma cases from excess NOx. European estimates exceed 1,000 premature deaths. Communities near highways absorbed the highest exposure.",
+    "flags": [
+      "59_us_premature_deaths_estimated"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Toyota hybrids — consistently lowest total cost of ownership without diesel complexity"
+    ],
+    "healthier": [
+      "Battery electric vehicles eliminate diesel NOx entirely"
+    ],
+    "diy": [
+      "Check your VW diesel VIN at the EPA VW settlement website for extended warranty coverage"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2006,
+      "event": "Defeat device software development begins",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2015,
+      "event": "September 18: EPA issues notice of violation. September 23: CEO Winterkorn resigns.",
+      "severity": "critical",
+      "source_url": "https://www.epa.gov/vw"
+    },
+    {
+      "year": 2017,
+      "event": "$4.3B US criminal + civil penalty. James Liang sentenced to 40 months.",
+      "severity": "critical",
+      "source_url": "https://www.justice.gov/opa/pr/volkswagen-ag-agrees-plead-guilty-and-pay-43-billion-criminal-and-civil-penalties-six"
+    },
+    {
+      "year": 2023,
+      "event": "Former Audi CEO Rupert Stadler convicted in Germany",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Communities near highways absorbed elevated NOx from 11 million non-compliant vehicles for years without knowledge or consent.",
+    "price_illusion": "VW diesel vehicles were marketed with 'TDI Clean Diesel' branding commanding a premium for environmental performance that did not exist.",
+    "tax_math": "The $30 billion in global settlements generated tax deductions reducing the net penalty cost to VW shareholders.",
+    "wealth_velocity": "Volkswagen is controlled by the Piëch and Porsche families through Porsche Automobil Holding SE."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Volkswagen shareholders and Piëch/Porsche families",
+        "how": "Eight years of diesel sales at premium TDI pricing without the cost of actual NOx reduction technology"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Communities near highways",
+        "how": "Excess NOx exposure for eight years; 59 estimated US premature deaths"
+      },
+      {
+        "group": "VW diesel owners",
+        "how": "Premium price for environmental performance that did not exist"
+      }
+    ],
+    "the_gap": "Volkswagen installed software in 11 million vehicles specifically designed to cheat on emissions tests. The vehicles emitted 40 times the legal limit when nobody was measuring. The CEO resigned. Six executives were convicted. The company paid $30 billion. The engineer who built it served 40 months. The communities near the highways where those vehicles drove absorbed the emissions for eight years."
+  }
+}

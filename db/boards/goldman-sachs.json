@@ -1,0 +1,166 @@
+{
+  "brand_slug": "goldman-sachs",
+  "members": [
+    {
+      "person_slug": "lloyd-blankfein",
+      "full_name": "Lloyd Blankfein",
+      "role": "CEO and Chairman",
+      "tenure_start": "2006",
+      "tenure_end": "2018",
+      "is_current": false,
+      "committees": [
+        "Executive"
+      ],
+      "present_during": [
+        "2008_financial_crisis",
+        "abacus_cdo_fraud",
+        "1mdb_bribery_period"
+      ],
+      "departure_reason": "Retired",
+      "departure_context": "CEO during the 2008 financial crisis when Goldman received $10 billion in TARP funds and benefited from the AIG bailout. Goldman paid $550 million to the SEC in 2010 for the ABACUS CDO fraud — the largest SEC settlement against a Wall Street bank at the time. Blankfein notoriously told the Times of London in 2009 that Goldman was doing 'God's work.'",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "No criminal charges. CEO during both the ABACUS fraud and the beginning of the 1MDB scheme.",
+      "sources": []
+    },
+    {
+      "person_slug": "hank-paulson",
+      "full_name": "Henry 'Hank' Paulson",
+      "role": "CEO",
+      "tenure_start": "1999",
+      "tenure_end": "2006",
+      "is_current": false,
+      "committees": [
+        "Executive"
+      ],
+      "present_during": [
+        "pre_crisis_cdo_period"
+      ],
+      "departure_reason": "Appointed US Treasury Secretary",
+      "departure_context": "Left Goldman to become George W. Bush's Treasury Secretary in 2006 — overseeing the 2008 financial crisis response that included the bailout of AIG, which directly benefited Goldman Sachs. Paulson held meetings with Goldman executives during the crisis that were subsequently scrutinized for potential conflicts of interest.",
+      "revolving_door": true,
+      "revolving_door_note": "CEO of Goldman → US Treasury Secretary → Oversaw bailout that directly benefited Goldman. Classic revolving door with documented conflict of interest scrutiny.",
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Paradigmatic example of Goldman's Treasury revolving door. Also preceded by Robert Rubin (Goldman co-chairman → Clinton Treasury Secretary).",
+      "sources": []
+    },
+    {
+      "person_slug": "jon-corzine",
+      "full_name": "Jon Corzine",
+      "role": "CEO and Co-Chairman",
+      "tenure_start": "1994",
+      "tenure_end": "1999",
+      "is_current": false,
+      "committees": [
+        "Executive"
+      ],
+      "present_during": [
+        "goldman_ipo_period"
+      ],
+      "departure_reason": "Left to run for US Senate (New Jersey)",
+      "departure_context": "Left Goldman to successfully run for US Senate from New Jersey in 2000, then became Governor of New Jersey 2006-2010. Later became CEO of MF Global which collapsed in 2011 after $1.6 billion in customer funds went missing; Corzine was sued by the CFTC.",
+      "revolving_door": true,
+      "revolving_door_note": "Goldman CEO → US Senator → Governor of New Jersey → MF Global CEO (where $1.6B in customer funds went missing before bankruptcy).",
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "MF Global collapsed 2011; CFTC sued Corzine over missing customer funds. Settled 2017 for $5M personal payment.",
+      "sources": []
+    },
+    {
+      "person_slug": "david-solomon",
+      "full_name": "David Solomon",
+      "role": "CEO",
+      "tenure_start": "2018",
+      "tenure_end": null,
+      "is_current": true,
+      "committees": [
+        "Executive"
+      ],
+      "present_during": [
+        "1mdb_settlement_2020",
+        "consumer_bank_losses"
+      ],
+      "departure_reason": null,
+      "departure_context": "CEO during the $2.9 billion 1MDB global resolution in 2020 — the largest DOJ settlement for a bank's role in government corruption. Also oversaw Goldman's ill-fated consumer banking expansion (Marcus) which generated billions in losses before being wound down.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Faced significant internal criticism from partners over management style and Marcus losses. Known as DJ D-Sol outside the office.",
+      "sources": []
+    },
+    {
+      "person_slug": "gary-cohn",
+      "full_name": "Gary Cohn",
+      "role": "President and COO",
+      "tenure_start": "2006",
+      "tenure_end": "2017",
+      "is_current": false,
+      "committees": [
+        "Executive"
+      ],
+      "present_during": [
+        "2008_financial_crisis",
+        "abacus_cdo_fraud",
+        "1mdb_bribery_period"
+      ],
+      "departure_reason": "Appointed Director of National Economic Council",
+      "departure_context": "Left Goldman to become Trump's Director of the National Economic Council in January 2017. Resigned February 2018 over Trump's steel and aluminum tariffs. Received approximately $285 million in Goldman stock awards upon departure for government service.",
+      "revolving_door": true,
+      "revolving_door_note": "Goldman President/COO → Trump National Economic Council Director. Received $285M in accelerated Goldman equity upon joining government.",
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "$285M in Goldman equity vested upon joining government. Resigned from NEC over tariffs 2018.",
+      "sources": []
+    },
+    {
+      "person_slug": "robert-rubin",
+      "full_name": "Robert Rubin",
+      "role": "Co-Senior Partner and Co-Chairman",
+      "tenure_start": "1966",
+      "tenure_end": "1992",
+      "is_current": false,
+      "committees": [
+        "Executive"
+      ],
+      "present_during": [
+        "goldman_partnership_era"
+      ],
+      "departure_reason": "Appointed to Clinton administration",
+      "departure_context": "Left Goldman to become Clinton's Director of the National Economic Council (1993-1995) then Treasury Secretary (1995-1999). His tenure as Treasury Secretary involved repeal of Glass-Steagall and deregulation of derivatives — regulatory changes that contributed to the conditions enabling the 2008 financial crisis. After Treasury, became Chairman of Citigroup's executive committee — where he earned $126 million over 10 years while Citi accumulated the risky positions that nearly destroyed it in 2008.",
+      "revolving_door": true,
+      "revolving_door_note": "Goldman Co-Chairman → Clinton Treasury Secretary (Glass-Steagall repeal) → Citigroup Chairman ($126M, 10 years) → Citigroup required $476B bailout in 2008.",
+      "other_boards": [
+        "citigroup"
+      ],
+      "prior_government": false,
+      "notes": "The paradigmatic Goldman revolving door case. Treasury Secretary role shaped financial deregulation; subsequent Citigroup role captured deregulation benefits.",
+      "sources": []
+    }
+  ],
+  "connections": [
+    {
+      "person_slug": "hank-paulson",
+      "brand_slug_a": "goldman-sachs",
+      "brand_slug_b": "citigroup",
+      "overlap_start": "2006",
+      "overlap_end": "2009",
+      "pattern_type": "revolving_door",
+      "description": "Paulson left Goldman to become Treasury Secretary and oversaw a bailout that benefited Goldman through the AIG rescue. Rubin went from Goldman to Treasury to Citigroup. The Goldman-Treasury pipeline is a documented structural pattern.",
+      "significance": "The pattern created documented conflicts of interest during the 2008 crisis when former Goldman executives in government positions made decisions that directly benefited Goldman Sachs."
+    },
+    {
+      "person_slug": "robert-rubin",
+      "brand_slug_a": "goldman-sachs",
+      "brand_slug_b": "citigroup",
+      "overlap_start": "1999",
+      "overlap_end": "2009",
+      "pattern_type": "revolving_door",
+      "description": "Robert Rubin went from Goldman Co-Chairman to Clinton Treasury Secretary to Citigroup Chairman — earning $126M at Citigroup while it accumulated the positions that required a $476B government bailout in 2008.",
+      "significance": "Rubin's Treasury deregulation and subsequent Citigroup leadership represent a complete cycle of the revolving door: regulatory dismantlement followed by capture of deregulation benefits."
+    }
+  ]
+}

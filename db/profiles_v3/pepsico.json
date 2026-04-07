@@ -1,0 +1,154 @@
+{
+  "brand_name": "PepsiCo",
+  "brand_slug": "pepsico",
+  "parent_company": "PepsiCo, Inc.",
+  "ultimate_parent": "PepsiCo, Inc.",
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "PEPSICO SELLS $91 BILLION IN BEVERAGES AND SNACKS ANNUALLY WHILE BEING THE WORLD'S SECOND LARGEST PLASTIC POLLUTER — AND PAYING $7.7 MILLION FOR DECEPTIVE HEALTH CLAIMS ON NAKED JUICE",
+  "executive_summary": "PepsiCo, Inc. is one of the world's largest food and beverage companies, generating approximately $91 billion in annual revenue across brands including Pepsi, Mountain Dew, Gatorade, Lay's, Doritos, Quaker, Tropicana, and Naked Juice. PepsiCo is consistently ranked among the top plastic polluters globally by Break Free From Plastic's annual brand audit. In 2013, PepsiCo paid $9 million to settle a class action alleging that its Naked Juice products were falsely marketed as 'all natural' when they contained synthetic ingredients. The company has been criticized for aggressive marketing of ultra-processed foods and sugary beverages in developing markets and to lower-income communities.",
+  "verdict_tags": [
+    "second_largest_plastic_polluter_break_free",
+    "naked_juice_9m_false_advertising",
+    "ultra_processed_food_developing_market_targeting",
+    "sugary_beverage_marketing_lower_income"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "PepsiCo employs approximately 315,000 people globally. The company has documented pay equity commitments. No major systematic labor violations have been identified as a primary concern.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Break Free From Plastic's annual Brand Audit has consistently ranked PepsiCo as one of the top plastic polluters globally — second only to Coca-Cola in multiple years. PepsiCo's single-use plastic packaging across Lay's, Doritos, Pepsi, and other brands generates billions of plastic units annually.",
+    "flags": [
+      "second_largest_plastic_polluter_global",
+      "single_use_plastic_billions_units_annually"
+    ],
+    "sources": [
+      "https://www.breakfreefromplastic.org"
+    ]
+  },
+  "political": {
+    "summary": "PepsiCo has lobbied against sugar taxes, soda taxes, and mandatory front-of-pack nutrition labeling in the US and internationally. The company funds the American Beverage Association, which has spent significantly opposing nutrition regulation.",
+    "flags": [
+      "sugar_soda_tax_opposition",
+      "american_beverage_association_funding",
+      "front_of_pack_labeling_opposition"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "2013: $9 million settlement for Naked Juice 'all natural' false advertising — products contained synthetic vitamins and GMO ingredients contrary to marketing claims. Various state consumer protection settlements for beverage marketing claims.",
+    "flags": [
+      "9m_naked_juice_false_advertising_2013",
+      "all_natural_synthetic_ingredients"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "PepsiCo uses international holding structures for its global brand portfolio. The company has benefited from the 2017 Tax Cuts and Jobs Act. No major criminal tax enforcement actions have been documented.",
+    "flags": [
+      "international_brand_ip_structures"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Ramon Laguarta leads PepsiCo. No executive has been criminally charged in connection with PepsiCo's documented violations. The company's executive compensation is tied to revenue growth — metrics maximized by the same sugary beverage and snack sales that generate nutrition and environmental concerns.",
+    "flags": [
+      "revenue_growth_compensation_structure"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "PepsiCo and Coca-Cola together dominate global beverages — a duopoly that collectively represents the two largest plastic polluters globally per Break Free From Plastic. Both companies market sugary beverages aggressively in communities with higher rates of obesity and diabetes.",
+    "flags": [
+      "coca_cola_duopoly_top_2_plastic_polluters",
+      "sugary_beverage_obesity_diabetes_community_targeting"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Public health researchers have alleged that PepsiCo's marketing in developing markets — including India, Latin America, and sub-Saharan Africa — specifically targets lower-income consumers with sugary beverages and snacks at a time when those markets lack the regulatory infrastructure to limit such marketing.",
+    "flags": [
+      "developing_market_targeting_lower_income_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "PepsiCo's portfolio — Mountain Dew, Pepsi, Doritos, Lay's, Cheetos — consists primarily of ultra-processed foods and sugary beverages associated with obesity, type 2 diabetes, and cardiovascular disease. The NOVA food classification system categorizes most PepsiCo products as Class 4 ultra-processed. The Naked Juice false advertising settlement established that 'all natural' marketing was misleading.",
+    "flags": [
+      "ultra_processed_food_obesity_diabetes_association",
+      "nova_class_4_portfolio",
+      "naked_juice_misleading_natural_claims"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Water — tap water in most US markets is safe, cheap, and produces no plastic",
+      "Store brand snacks for equivalent ultra-processed options"
+    ],
+    "healthier": [
+      "Whole foods replacing Doritos and Lay's; sparkling water replacing Pepsi",
+      "Gatorade alternatives: LMNT, Liquid IV for electrolytes without sugar load"
+    ],
+    "diy": [
+      "Break Free From Plastic's annual audit at breakfreefromplastic.org shows which brands generate the most plastic waste in your region",
+      "Check Naked Juice ingredient lists against 'all natural' claims — the 2013 settlement established these claims were historically misleading"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2013,
+      "event": "$9M Naked Juice 'all natural' false advertising settlement",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "Break Free From Plastic ranks PepsiCo second largest global plastic polluter",
+      "severity": "high",
+      "source_url": "https://www.breakfreefromplastic.org"
+    },
+    {
+      "year": 2022,
+      "event": "PepsiCo commits to 50% reduction in virgin plastic by 2030; progress tracking disputed by environmental groups",
+      "severity": "moderate",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Communities with limited access to clean water or healthy food alternatives are disproportionately served PepsiCo's sugary beverages and snack products — the same communities with the highest rates of diet-related chronic disease.",
+    "price_illusion": "PepsiCo's products appear affordable at point of sale. The full cost includes: plastic pollution borne by communities and ecosystems; healthcare costs of diet-related chronic disease from ultra-processed food consumption; and the public health infrastructure costs of managing those diseases.",
+    "tax_math": "PepsiCo's international IP structures minimize tax obligations on global brand royalties. The company has benefited from TCJA provisions. No major criminal tax enforcement has been documented.",
+    "wealth_velocity": "PepsiCo is broadly held by institutional investors. Revenue from sugary beverages and ultra-processed snacks concentrates through global institutional ownership while the health costs of consumption are borne by individuals and public health systems."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "PepsiCo shareholders",
+        "how": "$91B annual revenue from sugary beverages and ultra-processed snacks; plastic packaging costs externalized to environment and communities"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Communities with plastic pollution",
+        "how": "PepsiCo is the second largest plastic polluter globally; communities absorb plastic waste from billions of single-use packaging units"
+      },
+      {
+        "group": "Consumers with diet-related chronic disease",
+        "how": "Ultra-processed food and sugary beverage consumption associated with obesity, diabetes, and cardiovascular disease"
+      }
+    ],
+    "the_gap": "PepsiCo is the second largest plastic polluter on Earth. They paid $9 million for lying about Naked Juice being all natural. Their portfolio is primarily ultra-processed food and sugary beverages. They lobby against the taxes that would make those products more accurately priced. Their revenue is $91 billion."
+  }
+}

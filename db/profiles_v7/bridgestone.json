@@ -1,0 +1,185 @@
+{
+  "brand_name": "Bridgestone",
+  "brand_slug": "bridgestone",
+  "parent_company": "Bridgestone Corporation",
+  "ultimate_parent": "Bridgestone Corporation",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "BRIDGESTONE PAID $425 MILLION FOR FIXING TIRE PRICES — AND ITS LIBERIA RUBBER PLANTATION HAS 40 YEARS OF DOCUMENTED WORKER ABUSE THE US DEPARTMENT OF LABOR CALLED 'SLAVE-LIKE'",
+  "executive_summary": "Bridgestone Corporation is the world's largest tire and rubber company. In February 2014, Bridgestone Americas agreed to pay $425 million to the US DOJ for participating in a decade-long price-fixing conspiracy affecting automotive parts sold to major US automakers. Bridgestone's Liberia operations — the Firestone Natural Rubber Company plantation in Harbel — have generated sustained documentation of labor conditions the US Department of Labor described as exploitative, including child labor, dangerous working conditions, and a company town structure where workers are dependent on Bridgestone for housing, healthcare, and services. The Harbel plantation covers approximately 220 square miles.",
+  "verdict_tags": [
+    "425m_price_fixing_automotive_parts",
+    "firestone_liberia_plantation_dol_documented",
+    "child_labor_liberia_documented",
+    "company_town_dependence_structure",
+    "220_square_mile_plantation",
+    "1926_colonial_agreement_99_year_lease"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": false,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "The US Department of Labor's 2005 report documented workers required to tap a daily quota of rubber from 750 trees — a quota the DOL found impossible to meet without workers enlisting family members including children. Workers were paid per kilo of latex and forced into debt for housing and supplies provided by the company. The plantation houses approximately 80,000 people in its company town.",
+    "flags": [
+      "dol_report_child_labor_quota_system",
+      "750_tree_daily_quota_impossible_without_children",
+      "company_town_debt_dependency_structure"
+    ],
+    "sources": [
+      "https://www.hrw.org/report/2006/11/20/rubber-giants-footprint/how-firestone-natural-rubber-company-shapes-life-liberia"
+    ]
+  },
+  "environmental": {
+    "summary": "The Firestone/Bridgestone rubber plantation covers 220 square miles of equatorial forest land originally converted from forest. Rubber processing generates wastewater. The plantation's monoculture character creates documented biodiversity and soil concerns.",
+    "flags": [
+      "220_square_mile_forest_to_plantation_conversion"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Firestone plantation has roots in the 1926 Firestone-Liberia agreement — one of the most documented examples of 20th century American corporate-colonial relationships, giving Firestone a 99-year lease on up to one million acres for minimal royalties. During Liberia's civil wars the plantation continued operating.",
+    "flags": [
+      "1926_colonial_agreement_99_year_lease_one_million_acres",
+      "liberia_civil_war_operation_continued"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "February 2014: Bridgestone Americas agreed to pay $425 million to the DOJ for participating in a price-fixing conspiracy in automotive anti-vibration rubber components sold to Toyota, Honda, Chrysler, and other automakers. The conspiracy ran from at least 2001 to 2010. Bridgestone pleaded guilty. Multiple Bridgestone executives were indicted and convicted.",
+    "flags": [
+      "425m_price_fixing_guilty_plea_automotive_parts",
+      "2001_2010_conspiracy_toyota_honda_chrysler",
+      "executives_convicted"
+    ],
+    "sources": [
+      "https://www.justice.gov/opa/pr/bridgestone-corporation-agrees-pay-425-million-and-plead-guilty-price-fixing-automotive-parts"
+    ]
+  },
+  "tax": {
+    "summary": "Bridgestone is a Japanese company paying Japanese corporate taxes. The original 1926 Firestone-Liberia lease agreement included extremely low royalty rates to the Liberian government — a form of economic extraction generating Bridgestone profits while providing minimal public revenue to Liberia.",
+    "flags": [
+      "1926_lease_minimal_liberian_royalties"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Shu Ishibashi leads Bridgestone. The price-fixing conviction involved executives at multiple levels — some Japanese executives were prosecuted in the US. Bridgestone acquired Firestone from Ford Motor Company in 1988 — inheriting the Liberia plantation and its historical labor structure.",
+    "flags": [
+      "firestone_acquired_from_ford_1988",
+      "executives_prosecuted_price_fixing"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Bridgestone's price-fixing conspiracy connected it to the broader Japanese automotive parts price-fixing scandal — the largest price-fixing investigation in US history — which implicated over 40 companies and resulted in over $2.8 billion in criminal fines.",
+    "flags": [
+      "largest_us_price_fixing_investigation_40_companies",
+      "2_8b_total_automotive_parts_fines"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Human Rights Watch alleged in its 2006 report that Bridgestone/Firestone's plantation structure created conditions of debt bondage — where workers' wages were insufficient to cover the costs the company charged for housing and services in the company town.",
+    "flags": [
+      "debt_bondage_wages_insufficient_company_costs_alleged"
+    ],
+    "sources": [
+      "https://www.hrw.org/report/2006/11/20/rubber-giants-footprint/how-firestone-natural-rubber-company-shapes-life-liberia"
+    ]
+  },
+  "health_record": {
+    "summary": "The quota system required workers to tap 750 trees daily — rubber tappers work in darkness before dawn with headlamps, using machetes, and handling latex with chemical exposure. Children participating to help parents meet quotas face the same hazards. The company town's healthcare system is provided by Bridgestone — creating dependence on the employer for medical care while working in hazardous conditions.",
+    "flags": [
+      "pre_dawn_machete_work_hazardous_liberia",
+      "child_hazardous_work_exposure_quota_system",
+      "healthcare_employer_dependence_company_town"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Continental (German) — major tire alternative; different supply chain",
+      "Goodyear (US) — domestic alternative with different supply chain"
+    ],
+    "healthier": [
+      "No tire manufacturer has a fully clean supply chain — Bridgestone's documented combination of price-fixing and plantation labor conditions is notably severe"
+    ],
+    "diy": [
+      "When purchasing tires: the DOL's List of Goods Produced by Child Labor lists rubber from Liberia",
+      "Support the Fair Rubber Association's standards — an independent certification for natural rubber"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1926,
+      "event": "Firestone Natural Rubber Company signs 99-year lease with Liberian government for up to one million acres at minimal royalties",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 1988,
+      "event": "Bridgestone acquires Firestone from Ford Motor Company for $2.6B; inherits Liberia plantation and historical labor structure",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2001,
+      "event": "Price-fixing conspiracy in automotive anti-vibration parts begins; sold to Toyota, Honda, Chrysler among others",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2005,
+      "event": "US Department of Labor report documents Liberia plantation child labor, dangerous quota system, company town dependence",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2006,
+      "event": "Human Rights Watch publishes 'Rubber Giant's Footprint' — detailed documentation of plantation labor conditions",
+      "severity": "critical",
+      "source_url": "https://www.hrw.org/report/2006/11/20/rubber-giants-footprint/how-firestone-natural-rubber-company-shapes-life-liberia"
+    },
+    {
+      "year": 2014,
+      "event": "$425M DOJ price-fixing guilty plea — automotive parts conspiracy 2001-2010; executives convicted",
+      "severity": "critical",
+      "source_url": "https://www.justice.gov/opa/pr/bridgestone-corporation-agrees-pay-425-million-and-plead-guilty-price-fixing-automotive-parts"
+    }
+  ],
+  "community_impact": {
+    "displacement": "The 80,000 people living in Firestone's Liberia company town are economically dependent on Bridgestone for housing, healthcare, schooling, and services — making exit from the plantation's labor market structurally difficult.",
+    "price_illusion": "Bridgestone tires are priced as premium safety products. The price does not reflect the Liberian plantation workers' wages documented as insufficient to meet company-charged costs, or the decade of price-fixed component costs inflating vehicles' prices.",
+    "tax_math": "The 1926 lease provided Liberia's government with minimal royalties on extraction from a plantation covering hundreds of thousands of acres — one of the most documented examples of foreign corporate extraction from a developing nation with minimal public revenue return.",
+    "wealth_velocity": "Bridgestone is a Tokyo-listed company with Japanese institutional and retail shareholder ownership. The natural rubber extracted from Liberian plantation workers' labor generates tire revenue for Japanese shareholders."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Bridgestone shareholders",
+        "how": "Below-market natural rubber from plantation with documented exploitative conditions; above-market component prices from price-fixing conspiracy"
+      },
+      {
+        "group": "Automotive part price-fixing co-conspirators",
+        "how": "Collectively inflated prices to Toyota, Honda, Chrysler and others for a decade"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Liberian plantation workers and their children",
+        "how": "Dangerous pre-dawn quota work; child labor to help parents meet quotas; company town debt dependence"
+      },
+      {
+        "group": "US automakers and ultimately consumers",
+        "how": "Above-market prices for anti-vibration automotive parts for a decade of price-fixing conspiracy"
+      }
+    ],
+    "the_gap": "Bridgestone's Liberia plantation has a quota that requires tappers to process 750 trees a day before dawn with a headlamp and a machete. The Department of Labor found they couldn't do it without their children helping. The company town charges them for housing so their wages don't cover their costs. Bridgestone fixed prices with its competitors for a decade. They paid $425 million. The plantation is still operating."
+  }
+}

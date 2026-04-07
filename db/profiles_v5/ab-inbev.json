@@ -1,0 +1,152 @@
+{
+  "brand_name": "AB InBev",
+  "brand_slug": "ab-inbev",
+  "parent_company": "Anheuser-Busch InBev SA/NV",
+  "ultimate_parent": "Anheuser-Busch InBev SA/NV",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "AB INBEV CONTROLS 25% OF ALL BEER SOLD ON EARTH AND PAID $100 MILLION FOR BRIBING OFFICIALS IN INDIA — IT ALSO WATERED DOWN BUDWEISER AND ADMITTED IT",
+  "executive_summary": "Anheuser-Busch InBev SA/NV is the world's largest beer company, controlling approximately 25% of global beer volume across over 500 brands including Budweiser, Bud Light, Corona, and Stella Artois. AB InBev paid $100 million in 2016 to the SEC and DOJ to resolve FCPA violations — its Indian subsidiary had bribed government officials to obtain regulatory approvals. In 2015, AB InBev paid $20 million to settle a class action alleging it had watered down Budweiser, Bud Light, and other beers — reducing their alcohol content below what was labeled. The company's 3G Capital-driven zero-based budgeting model has generated documented product quality concerns and workforce destruction across its acquired brands.",
+  "verdict_tags": [
+    "100m_fcpa_india_bribery",
+    "20m_watered_down_budweiser_settlement",
+    "25pct_global_beer_market",
+    "3g_capital_zero_based_budgeting",
+    "craft_beer_acquisition_independence_concerns"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "AB InBev's 3G Capital-driven management model applies zero-based budgeting resulting in systematic workforce reductions across acquired companies. When AB InBev acquired SABMiller in 2016 for $107 billion, thousands of jobs were eliminated through ZBB cost-cutting.",
+    "flags": [
+      "3g_capital_zero_based_budgeting_workforce_destruction",
+      "sabmiller_acquisition_job_cuts"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Beer production is water-intensive — AB InBev has committed to water stewardship targets given that water scarcity directly threatens its production. The company is among the world's largest commercial water users.",
+    "flags": [
+      "largest_commercial_water_users",
+      "water_scarcity_production_risk"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "AB InBev's FCPA violations in India involved its subsidiary paying approximately $2.7 million in bribes to state government officials to obtain regulatory approvals. The company lobbies against alcohol advertising restrictions and minimum pricing legislation globally.",
+    "flags": [
+      "india_government_official_bribes_regulatory_approvals",
+      "alcohol_advertising_restriction_opposition"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "2016: AB InBev paid $100 million to the SEC and DOJ — $45 million criminal penalty plus $55 million civil — to resolve FCPA violations covering bribery of Indian government officials by its subsidiary. 2015: $20 million class action settlement alleging AB InBev watered down Budweiser, Bud Light, and other beers — reducing alcohol content below labeled levels.",
+    "flags": [
+      "100m_fcpa_india_45m_criminal_55m_civil",
+      "20m_watered_down_budweiser_class_action",
+      "alcohol_content_below_labeled_levels"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "AB InBev is incorporated in Belgium — benefiting from Belgian tax arrangements. The company's acquisition of SABMiller created complex international tax structures across over 50 markets. 3G Capital's management model includes aggressive cost management that extends to tax optimization across jurisdictions.",
+    "flags": [
+      "belgium_incorporation_tax_arrangements",
+      "sabmiller_complex_international_tax"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Michel Doukeris leads AB InBev. Jorge Paulo Lemann (3G Capital founder) and his partners created the ZBB model defining AB InBev's management. No AB InBev executive was criminally charged in the India FCPA settlement.",
+    "flags": [
+      "3g_capital_lemann_investment_philosophy",
+      "no_executive_criminal_charges_india_fcpa"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "AB InBev's acquisition strategy — buying independent craft breweries including Goose Island, Blue Point, 10 Barrel Brewing, and others — has generated consumer backlash from craft beer communities. AB InBev has been accused of using these acquisitions to compete with genuinely independent craft brewers while obscuring its ownership.",
+    "flags": [
+      "craft_brewery_acquisition_independence_deception",
+      "goose_island_10_barrel_ownership_obscured"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The watered-down beer class action alleged that AB InBev used a flow meter in its production process that systematically reduced the alcohol content of finished products below labeled levels — and that this was a cost-reduction practice rather than a production accident. AB InBev denied intentional watering but settled for $20 million.",
+    "flags": [
+      "flow_meter_systematic_alcohol_reduction_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "AB InBev controls 25% of global beer — its marketing decisions shape alcohol consumption patterns at population scale. The watered-down beer settlement established that products were sold with inaccurate alcohol content labeling — affecting consumers who made decisions based on labeled alcohol levels.",
+    "flags": [
+      "25pct_global_beer_consumption_marketing_influence",
+      "inaccurate_alcohol_labeling_settled"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Genuinely independent craft breweries — Brewers Association maintains a list of verified independent craft brewers",
+      "Local microbreweries and brewpubs — profits stay in community"
+    ],
+    "healthier": [
+      "Reduced alcohol consumption — no brand switching addresses the underlying alcohol health question"
+    ],
+    "diy": [
+      "The Brewers Association's independent craft brewer seal (independentcraft.com) identifies genuinely independent breweries",
+      "AB InBev-owned craft brands include: Goose Island, Blue Point, 10 Barrel, Elysian, Golden Road, Karbach, Wicked Weed"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2008,
+      "event": "InBev acquires Anheuser-Busch for $52B; creates world's largest beer company",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2015,
+      "event": "$20M class action settlement for watering down Budweiser, Bud Light, and other beers below labeled alcohol content",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2016,
+      "event": "$100M FCPA settlement for India bribery. $107B SABMiller acquisition completed.",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "AB InBev's ZBB model applies global cost standards to local operations, eliminating thousands of jobs across acquired brands.",
+    "price_illusion": "AB InBev's watered-down beer settlement established that Budweiser and Bud Light were sold with inaccurate alcohol content labeling. AB InBev's 'craft' acquisitions present as independent local breweries while routing revenue to a Belgian holding company.",
+    "tax_math": "AB InBev's Belgian incorporation and complex international structure manages global tax obligations across 50+ markets. The $100 million FCPA settlement is tax-deductible.",
+    "wealth_velocity": "AB InBev is publicly traded on Euronext Brussels. 3G Capital partners — Jorge Paulo Lemann, Marcel Telles, and Carlos Sicupira — hold significant stakes and have become among the wealthiest people in the world through the beer consolidation strategy."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "3G Capital partners and AB InBev shareholders",
+        "how": "25% global beer market share through aggressive acquisition; ZBB cost model extracting margins from every acquired operation; India market access obtained through bribery"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Consumers who bought watered-down Budweiser",
+        "how": "Paid for labeled alcohol content they did not receive; $20M settlement"
+      }
+    ],
+    "the_gap": "AB InBev controls 25% of all beer sold on Earth. It paid $100 million for bribing Indian government officials. It paid $20 million for watering down Budweiser below its labeled alcohol content. It owns Goose Island, Blue Point, 10 Barrel, and dozens of other 'craft' breweries that most consumers don't know are AB InBev. Jorge Paulo Lemann is one of the wealthiest people in the world. The beer is cheaper now."
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "brand_name": "Procter & Gamble",
+  "brand_slug": "procter-and-gamble",
+  "parent_company": "The Procter & Gamble Company",
+  "ultimate_parent": "The Procter & Gamble Company",
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "P&G PAID $45 MILLION FOR FIXING LAUNDRY DETERGENT PRICES IN EUROPE — ITS TIDE PODS SENT 10,000 CHILDREN TO EMERGENCY ROOMS IN A SINGLE YEAR",
+  "executive_summary": "The Procter & Gamble Company is one of the world's largest consumer goods companies, operating across beauty, grooming, health, fabric, home care, and baby/feminine care categories with approximately $84 billion in annual revenue. In 2011, the European Commission fined P&G €211 million (approximately $280 million) as part of a broader €315 million fine against P&G and Unilever for fixing laundry detergent prices across Europe. P&G's Tide Pods — the concentrated laundry detergent pods — were linked to approximately 10,000 calls to poison control centers and emergency room visits in 2017 alone, primarily involving children who ingested the colorful pods. P&G has also been subject to significant greenwashing scrutiny for its environmental claims.",
+  "verdict_tags": [
+    "211m_eu_laundry_detergent_price_fixing",
+    "tide_pods_10000_children_poison_control_2017",
+    "unilever_coordinated_price_fixing",
+    "greenwashing_environmental_claims_scrutiny"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "P&G employs approximately 107,000 people globally. The company has documented diversity and inclusion commitments. No major systematic labor violations have been identified as a primary concern.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "P&G has been criticized by environmental groups for greenwashing — making environmental claims that independent auditors find overstated. The company's palm oil supply chain has documented deforestation concerns. P&G committed to sustainable palm oil sourcing but independent monitoring has found gaps in supply chain traceability.",
+    "flags": [
+      "greenwashing_environmental_claims_overstated",
+      "palm_oil_deforestation_traceability_gaps"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "P&G has lobbied against chemical safety reforms, environmental disclosure requirements, and product ingredient transparency regulations. The company funds trade associations that lobby against regulations affecting its product categories.",
+    "flags": [
+      "chemical_safety_reform_opposition",
+      "ingredient_transparency_regulation_opposition"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "2011: EU Commission fines P&G €211 million for coordinating laundry detergent prices with Unilever across multiple European markets. Tide Pods: P&G faced regulatory pressure and class action litigation following the pediatric poisoning surge in 2017; implemented child-resistant packaging upgrades. No criminal enforcement actions against P&G executives have been documented.",
+    "flags": [
+      "211m_eu_price_fixing_laundry_detergent",
+      "tide_pods_pediatric_poisoning_regulatory_pressure"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "P&G uses international IP holding structures across its global brand portfolio. The company has benefited from TCJA provisions. EU state aid investigations have examined multinational consumer goods IP structures, including P&G's Belgian operations. No criminal tax enforcement has been documented.",
+    "flags": [
+      "international_ip_holding_structures",
+      "eu_state_aid_investigation_belgium"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Jon Moeller leads P&G. No executive was personally charged in the EU price-fixing case — the penalty was at the corporate level. P&G has maintained continuity of leadership through its compliance issues.",
+    "flags": [
+      "no_executive_criminal_charges_211m_fine"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The P&G-Unilever European price-fixing coordination represents a documented cartel between the two largest consumer goods companies operating in European markets — companies that together dominate household cleaning products, beauty, and personal care globally.",
+    "flags": [
+      "unilever_p_and_g_largest_consumer_goods_cartel"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Environmental advocates have alleged that P&G's 'responsible sourcing' certifications for palm oil do not provide meaningful assurance of deforestation-free supply chains given the fragmented structure of palm oil smallholder farming and the limitations of current certification bodies.",
+    "flags": [
+      "palm_oil_certification_inadequate_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Tide Pods: approximately 10,000 poison control center calls and emergency room visits in 2017 involving children who ingested the concentrated detergent pods. The colorful, candy-like appearance of pods contributed to pediatric ingestion rates. P&G implemented packaging and formulation changes following regulatory pressure. The CPSC and AAP issued warnings about Tide Pods specifically.",
+    "flags": [
+      "10000_children_poison_control_er_2017",
+      "candy_like_appearance_pediatric_ingestion",
+      "cpsc_aap_warnings_tide_pods"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Store brand laundry detergent — often manufactured by P&G or Unilever; same chemistry, lower price",
+      "Powder detergent — lower packaging volume, lower cost per load, no pod ingestion risk"
+    ],
+    "healthier": [
+      "Powder detergent in cardboard packaging — no pod ingestion risk; lower plastic packaging",
+      "Method, Seventh Generation — marketed as plant-based with different environmental claims"
+    ],
+    "diy": [
+      "Tide Pods should be stored in locked or high cabinets out of reach of children — the CPSC child-resistant packaging does not prevent access if left accessible",
+      "DIY laundry powder: washing soda + borax + bar soap is significantly cheaper per load than any branded product"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2011,
+      "event": "EU Commission fines P&G €211M and Unilever for laundry detergent price-fixing across multiple European markets",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2012,
+      "event": "Tide Pods launched in US; bright colors and concentrated formula create pediatric ingestion risk",
+      "severity": "moderate",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "Approximately 10,000 children involved in Tide Pod poisoning incidents; CPSC and AAP issue warnings; viral 'Tide Pod Challenge' adds teen cases",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "P&G implements child-resistant upgrades to Tide Pod packaging following regulatory pressure",
+      "severity": "moderate",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Pediatric Tide Pod poisoning incidents affected children and families across the US — an entirely preventable harm from a product designed without adequate consideration of its appeal to children.",
+    "price_illusion": "P&G products are priced as premium consumer goods with strong environmental and safety marketing. The €211 million price-fixing settlement established that detergent prices in Europe were artificially elevated through coordination with Unilever. The premium consumers paid was partly a function of cartel pricing.",
+    "tax_math": "P&G's international IP structures minimize tax obligations on global brand royalties. The EU price-fixing fine is tax-deductible as a business expense.",
+    "wealth_velocity": "P&G is broadly held by institutional investors. Revenue from laundry detergent priced above competitive levels during the cartel period concentrated in shareholder returns."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "P&G and Unilever shareholders",
+        "how": "Above-market laundry detergent prices across European markets during the coordination period"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "European consumers",
+        "how": "Above-market detergent prices during the P&G-Unilever price-fixing coordination"
+      },
+      {
+        "group": "10,000 children and their families in 2017",
+        "how": "Pediatric poisoning from Tide Pod ingestion; hospital visits; lasting effects in some cases"
+      }
+    ],
+    "the_gap": "P&G coordinated laundry detergent prices with Unilever across Europe. The EU fined them €211 million. They designed Tide Pods to look like candy. 10,000 children went to poison control or the emergency room in one year. P&G implemented child-resistant packaging after the regulatory pressure. They still make Tide Pods."
+  }
+}

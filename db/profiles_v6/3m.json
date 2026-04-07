@@ -1,0 +1,189 @@
+{
+  "brand_name": "3M",
+  "brand_slug": "3m",
+  "parent_company": "3M Company",
+  "ultimate_parent": "3M Company",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "3M KNEW PFAS CHEMICALS CAUSED CANCER IN THE 1970S — KEPT MAKING THEM FOR DECADES — AND PAID $10.3 BILLION FOR CONTAMINATING DRINKING WATER ACROSS AMERICA",
+  "executive_summary": "3M Company invented PFAS — synthetic 'forever chemicals' that do not break down in the environment or the human body — in the 1940s. Internal 3M documents revealed through litigation showed the company discovered PFAS were accumulating in human blood globally by the 1970s and documented health concerns including cancer associations. 3M continued manufacturing PFAS for decades. In June 2023, 3M agreed to pay $10.3 billion over 13 years to settle claims from US public water systems contaminated by PFAS. Separately, 3M's subsidiary Aearo Technologies manufactured Combat Arms dual-ended earplugs sold to the US military between 2003 and 2015 with a design defect that 3M knew about before sale. In August 2023, 3M agreed to pay $6 billion — later increased to $9.1 billion — to settle claims from approximately 250,000 US military veterans who suffered hearing damage.",
+  "verdict_tags": [
+    "10_3b_pfas_water_settlement_13_years",
+    "9_1b_military_earplug_settlement_250000_veterans",
+    "pfas_health_risk_known_1970s_continued_manufacturing",
+    "forever_chemicals_cannot_break_down",
+    "aearo_technologies_defective_earplug_known_defect",
+    "20b_total_recent_settlements"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "3M employs approximately 85,000 people globally. Workers at 3M's PFAS manufacturing facilities — including its Decatur, Alabama plant — have documented elevated rates of PFAS-related illness including cancer.",
+    "flags": [
+      "manufacturing_worker_pfas_exposure_documented"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "PFAS contamination from 3M's manufacturing and product use is documented in drinking water sources across the United States and globally. Military bases where 3M's aqueous film-forming foam (AFFF) was used for firefighting training have documented PFAS contamination of surrounding groundwater. PFAS do not break down in the environment — contamination is effectively permanent without active remediation.",
+    "flags": [
+      "pfas_permanent_contamination_water_systems_nationwide",
+      "military_base_afff_contamination_hundreds_installations",
+      "minnesota_897m_separate_state_settlement"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "3M has lobbied extensively against PFAS regulation — opposing EPA maximum contaminant level standards for PFAS in drinking water and resisting state-level restrictions on PFAS-containing products. The company funded third-party research challenging the health effects of PFAS.",
+    "flags": [
+      "pfas_regulation_lobbying_documented",
+      "third_party_research_health_effect_challenging"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "June 2023: 3M agreed to pay $10.3 billion over 13 years to settle class action claims from public water systems contaminated by PFAS. August 2023: 3M agreed to pay between $6 billion and $9.1 billion to approximately 250,000 US military veterans who suffered hearing damage from defective Combat Arms dual-ended earplugs. 3M's subsidiary Aearo Technologies filed for bankruptcy in 2022 to limit earplug liability — the bankruptcy was dismissed by a judge who found it lacked good faith. Separate state PFAS settlements include Minnesota ($897 million, 2018).",
+    "flags": [
+      "10_3b_pfas_water_class_action_settlement",
+      "9_1b_earplug_250000_veterans",
+      "aearo_texas_two_step_dismissed_good_faith",
+      "known_defect_before_earplug_sale",
+      "20b_total_obligations"
+    ],
+    "sources": [
+      "https://news.3m.com/2023-06-22-3M-Agrees-to-Resolve-PFAS-Claims-by-Water-Utilities-for-10-3B"
+    ]
+  },
+  "tax": {
+    "summary": "3M has historically maintained effective tax rates below the US statutory corporate rate through international profit allocation structures. 3M's $10.3 billion PFAS settlement payments are spread over 13 years and may be substantially tax-deductible — meaning US taxpayers partially subsidize a penalty for contaminating their own water systems.",
+    "flags": [
+      "pfas_settlement_deductibility_taxpayer_subsidy"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Mike Roman has led 3M through the PFAS and earplug settlements and the Solventum healthcare spinoff. 3M's attempt to use Aearo Technologies' Texas Two-Step bankruptcy was rejected by the court as lacking good faith, requiring 3M to settle from its own balance sheet.",
+    "flags": [
+      "texas_two_step_rejected_good_faith_failed",
+      "no_executive_criminal_charges_known_1970s_health_risks"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "3M's PFAS chemicals are used in thousands of products from dozens of manufacturers. DuPont and its spinoffs (Chemours, Corteva) face separate massive PFAS liability. The military's use of AFFF firefighting foam — for which 3M was a primary supplier — has contaminated groundwater at hundreds of US military installations. 3M's earplug case directly parallels J&J's talc Texas Two-Step attempt — both rejected.",
+    "flags": [
+      "pfas_industry_wide_problem_3m_originated",
+      "jnj_talc_texas_two_step_parallel"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Internal 3M documents obtained in litigation have shown that 3M scientists documented PFAS accumulation in human blood in the early 1970s, conducted animal studies showing health effects, and continued manufacturing for decades. Plaintiffs have alleged that 3M engaged in a deliberate campaign to suppress and discredit scientific evidence of PFAS harm while lobbying against regulation.",
+    "flags": [
+      "1970s_blood_accumulation_documented_continued_manufacturing",
+      "scientific_evidence_suppression_alleged"
+    ],
+    "sources": [
+      "https://www.ewg.org/news-insights/news/2020/11/3m-knew-about-pfas-dangers-decades-ago"
+    ]
+  },
+  "health_record": {
+    "summary": "PFAS are associated with kidney cancer, testicular cancer, thyroid disease, immune system suppression, elevated cholesterol, and reproductive harm. The EPA in 2024 set a maximum contaminant level of 4 parts per trillion for PFAS in drinking water. An estimated 45% of US tap water is contaminated with PFAS. Approximately 250,000 military veterans suffered hearing damage — tinnitus and permanent hearing loss — from defective 3M earplugs.",
+    "flags": [
+      "45pct_us_tap_water_pfas_contaminated",
+      "kidney_testicular_cancer_thyroid_immune_association",
+      "250000_veterans_hearing_damage_tinnitus"
+    ],
+    "sources": [
+      "https://www.epa.gov/pfas/pfas-strategic-roadmap"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "PFAS-free cookware: cast iron, stainless steel, carbon steel — cheaper over lifetime than Teflon-coated replacements",
+      "PFAS-free water filtration: NSF/ANSI 58 certified reverse osmosis systems remove PFAS from drinking water"
+    ],
+    "healthier": [
+      "NSF 58-certified reverse osmosis or NSF 53-certified activated carbon filters remove PFAS from drinking water",
+      "PFAS-free cookware: cast iron, stainless steel"
+    ],
+    "diy": [
+      "Check your drinking water PFAS levels: EWG's tap water database at ewg.org/tapwater shows contamination levels by zip code",
+      "If you are a veteran who served 2003-2015 and experienced hearing loss: consult a veterans' attorney about ongoing litigation options"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1970,
+      "event": "Internal 3M documents show PFAS accumulating in human blood globally; company studies document health concerns",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2003,
+      "event": "3M subsidiary Aearo Technologies begins supplying Combat Arms CAEv2 earplugs to US military; internal tests show potential loosening defect",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "$897M Minnesota PFAS settlement for Cottage Grove manufacturing contamination",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Aearo Technologies files for bankruptcy Texas Two-Step; court dismisses — lacks good faith",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "June: $10.3B PFAS municipal water systems settlement. August: $6-9.1B earplug settlement for approximately 250,000 US military veterans.",
+      "severity": "critical",
+      "source_url": "https://news.3m.com/2023-06-22-3M-Agrees-to-Resolve-PFAS-Claims-by-Water-Utilities-for-10-3B"
+    },
+    {
+      "year": 2024,
+      "event": "EPA sets 4 ppt PFAS maximum contaminant level; 3M had been documenting health concerns since the 1970s",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Communities near 3M manufacturing facilities have documented PFAS contamination in drinking water that has persisted for decades and cannot be fully remediated. Military base communities across the United States face PFAS contamination of groundwater affecting local residents who had no connection to military activities.",
+    "price_illusion": "3M products — Post-it notes, Scotch tape, Filtrete filters — are everyday household products. The cost of producing them included PFAS manufacturing operations whose environmental and health consequences 3M's own scientists documented in the 1970s. The consumer price did not include the eventual $10.3 billion cost of cleaning up the drinking water they contaminated.",
+    "tax_math": "3M's $10.3 billion PFAS water settlement, paid over 13 years, is partially tax-deductible — meaning the public water systems being compensated for 3M's contamination are partly reimbursed from taxpayer funds that simultaneously subsidize 3M's penalty.",
+    "wealth_velocity": "3M is a publicly traded US company with broad institutional and retail shareholder ownership. The profits from PFAS-containing products accumulated over decades when the health consequences were being documented internally."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "3M shareholders",
+        "how": "Decades of profits from PFAS products while internal scientists documented health risks; competitive advantage from not disclosing hazards"
+      },
+      {
+        "group": "US military (short-term)",
+        "how": "Purchased defective earplugs at lower cost than functional alternatives; longer-term cost is borne by VA healthcare"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Communities with contaminated drinking water",
+        "how": "PFAS in approximately 45% of US tap water; cancer, thyroid, immune, and reproductive health effects documented"
+      },
+      {
+        "group": "Approximately 250,000 US military veterans",
+        "how": "Hearing damage — tinnitus and permanent hearing loss — from earplugs with a known defect 3M did not disclose"
+      }
+    ],
+    "the_gap": "3M's scientists documented in the 1970s that PFAS was accumulating in human blood globally and showed health effects in animals. 3M kept making PFAS. The EPA set a drinking water standard in 2024 — 50 years later. 3M paid $10.3 billion for contaminating drinking water. They also sold defective earplugs to the military for 12 years. They tried to put the earplug liability in a subsidiary bankruptcy. The court said no. 250,000 veterans have hearing damage."
+  }
+}

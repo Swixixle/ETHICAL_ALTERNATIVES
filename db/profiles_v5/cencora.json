@@ -1,0 +1,152 @@
+{
+  "brand_name": "Cencora",
+  "brand_slug": "cencora",
+  "parent_company": "Cencora, Inc.",
+  "ultimate_parent": "Cencora, Inc.",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "AMERISOURCEBERGEN — NOW CENCORA — DISTRIBUTED BILLIONS OF OPIOID PILLS AND PAID $6.1 BILLION. THE REBRAND DID NOT CHANGE THE UNDERLYING BUSINESS.",
+  "executive_summary": "Cencora, Inc. is one of the three dominant US pharmaceutical distributors — formerly known as AmerisourceBergen until a 2023 rebrand. Together with McKesson and Cardinal Health, Cencora controls approximately 85-90% of US drug distribution. As part of the $21 billion three-distributor opioid settlement reached in 2022, Cencora agreed to pay $6.1 billion over 18 years. Like McKesson and Cardinal Health, Cencora distributed billions of opioid pills to pharmacies while allegedly failing to implement the anti-diversion controls required by the Controlled Substances Act. The company rebranded from AmerisourceBergen to Cencora in 2023.",
+  "verdict_tags": [
+    "6_1b_opioid_settlement_21b_three_distributor",
+    "opioid_distribution_billions_of_pills",
+    "anti_diversion_failure_documented",
+    "rebrand_amerisourcebergen_to_cencora_2023",
+    "distribution_oligopoly_85_90pct"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Cencora employs approximately 46,000 people globally. No major documented systemic labor violations have been identified as a primary concern.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Pharmaceutical distribution involves cold-chain logistics with significant refrigeration and transportation energy consumption. No major environmental enforcement actions have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Cencora and its distributor peers lobbied against the HALT Act — legislation that would have strengthened the DEA's authority to suspend distributors' licenses. A Washington Post and 60 Minutes investigation documented how the drug distribution industry worked to weaken DEA enforcement authority.",
+    "flags": [
+      "halt_act_opposition_dea_authority_weakening",
+      "washington_post_60_minutes_investigation"
+    ],
+    "sources": [
+      "https://www.washingtonpost.com/investigations/the-drug-industrys-triumph-over-the-dea/2017/10/15/"
+    ]
+  },
+  "legal": {
+    "summary": "In 2022, AmerisourceBergen (now Cencora) agreed to pay $6.1 billion over 18 years as part of the three-distributor $21 billion opioid settlement — the largest pharmaceutical settlement in US history. The settlement resolves claims that AmerisourceBergen failed to detect, investigate, and report suspicious opioid orders. The company has never admitted wrongdoing.",
+    "flags": [
+      "6_1b_opioid_settlement_18_years",
+      "no_admission_wrongdoing"
+    ],
+    "sources": [
+      "https://www.justice.gov/opa/pr/justice-department-announces-global-resolution-opioid-lawsuits-against-three-largest-us"
+    ]
+  },
+  "tax": {
+    "summary": "Cencora's $6.1 billion settlement payments are spread over 18 years and may be partially tax-deductible — effectively requiring US taxpayers to subsidize a portion of the opioid distribution penalty.",
+    "flags": [
+      "settlement_18_year_payment_schedule",
+      "potential_deductibility_taxpayer_subsidy"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Steven Collis has led Cencora through the opioid settlement and rebrand. No Cencora executive has been criminally charged. The rebrand from AmerisourceBergen to Cencora in August 2023 was publicly explained as reflecting global growth.",
+    "flags": [
+      "no_executive_criminal_charges",
+      "rebrand_timing_post_settlement"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Cencora, McKesson, and Cardinal Health together control 85-90% of US drug distribution — a concentrated oligopoly. All three are defendants in the $21 billion opioid settlement. All three lobbied against stronger DEA oversight. The structure that allowed the opioid crisis remains intact.",
+    "flags": [
+      "three_distributor_oligopoly_intact_post_settlement",
+      "all_three_lobbied_dea_oversight"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "State attorneys general have alleged that AmerisourceBergen was aware of the suspicious opioid order patterns its own system was generating and chose not to report them to the DEA — prioritizing distribution volume over compliance obligations.",
+    "flags": [
+      "suspicious_order_awareness_no_dea_reporting_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "The opioid crisis killed approximately 500,000 Americans from prescription opioid, heroin, and synthetic opioid overdoses between 1999 and 2019. Cencora's distribution of billions of opioid pills without the anti-diversion controls the Controlled Substances Act required contributed directly to this catastrophe.",
+    "flags": [
+      "500000_overdose_deaths_opioid_crisis",
+      "anti_diversion_failure_contributed_deaths"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Drug distribution is B2B infrastructure. The reform alternative is mandatory anti-diversion reporting with real enforcement consequences."
+    ],
+    "healthier": [
+      "Non-opioid pain management: physical therapy, regional anesthesia, NSAIDs, CBT for chronic pain",
+      "SAMHSA National Helpline: 1-800-662-4357 for substance use disorder treatment referral"
+    ],
+    "diy": [
+      "Support harm reduction: naloxone distribution, needle exchanges, medication-assisted treatment programs"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2017,
+      "event": "Washington Post / 60 Minutes investigation documents drug industry lobbying against DEA enforcement",
+      "severity": "critical",
+      "source_url": "https://www.washingtonpost.com/investigations/the-drug-industrys-triumph-over-the-dea/2017/10/15/"
+    },
+    {
+      "year": 2022,
+      "event": "$21B three-distributor opioid settlement; AmerisourceBergen's share: $6.1B over 18 years; no admission of wrongdoing",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "AmerisourceBergen rebrands to Cencora",
+      "severity": "moderate",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "West Virginia communities experienced workforce destruction, family dissolution, and increased foster care placements from the opioid crisis.",
+    "price_illusion": "Pharmaceutical distribution appears to be invisible infrastructure. The economics are direct: distributors earn a per-pill margin on every opioid they ship. Anti-diversion controls that would have reduced suspicious orders would have directly reduced revenue.",
+    "tax_math": "The $6.1 billion settlement is spread over 18 years and may be partially tax-deductible. The public healthcare costs of opioid addiction substantially exceed the settlement amount.",
+    "wealth_velocity": "Cencora's revenue — approximately $238 billion annually — flows to institutional shareholders. The settlement is paid from future earnings generated by the same distribution business."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Cencora/AmerisourceBergen shareholders",
+        "how": "Per-pill revenue from distributing billions of opioids; settlement paid over 18 years; rebrand separates current name from conduct history"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Approximately 500,000 Americans who died of opioid overdoses",
+        "how": "Prescription pill saturation of communities directly connected to distribution volumes"
+      },
+      {
+        "group": "Appalachian and rural communities",
+        "how": "Disproportionate per-capita pill volumes; highest overdose death rates; generational economic destruction"
+      }
+    ],
+    "the_gap": "AmerisourceBergen distributed billions of opioid pills. The Washington Post documented that they lobbied against the regulations that would have required them to report suspicious orders. They paid $6.1 billion. No executive was criminally charged. They renamed the company Cencora. The settlement is paid over 18 years. The opioid crisis killed 500,000 people."
+  }
+}

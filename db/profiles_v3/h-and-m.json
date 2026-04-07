@@ -1,0 +1,178 @@
+{
+  "brand_name": "H&M",
+  "brand_slug": "h-and-m",
+  "parent_company": "H & M Hennes & Mauritz AB",
+  "ultimate_parent": "Persson family (approximately 36% ownership)",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "H&M HAS $4 BILLION IN UNSOLD CLOTHING ROTTING IN WAREHOUSES — IT BURNED 60 TONS OF NEW CLOTHING IN DENMARK — AND ITS GREENWASHING LABELS WERE RULED MISLEADING",
+  "executive_summary": "H & M Hennes & Mauritz AB is the world's second-largest fashion retailer operating approximately 4,700 stores globally. H&M is a pioneer and leading practitioner of fast fashion — a production model generating unprecedented clothing volume at minimal prices with documented environmental and labor consequences. H&M has approximately $4 billion in unsold inventory annually. In 2017, Danish broadcaster TV2 documented that H&M burned approximately 60 tons of new, unsold clothing at an incineration facility in Denmark — contradicting its sustainability marketing. The Norwegian Consumer Authority ruled in 2022 that H&M's 'Conscious Choice' sustainability labels were misleading and lacked adequate substantiation. H&M's supply chain in Bangladesh, Cambodia, and Myanmar has documented wage theft and unsafe working conditions including the documented use of garment factories with fire safety deficiencies.",
+  "verdict_tags": [
+    "4b_unsold_inventory_annually",
+    "60_tons_new_clothing_burned_denmark",
+    "conscious_choice_labels_ruled_misleading_norway",
+    "bangladesh_myanmar_wage_theft_supply_chain",
+    "fast_fashion_pioneer"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "H&M's supply chain spans approximately 900 suppliers in 60 countries. Investigations by the Clean Clothes Campaign, Worker Rights Consortium, and others have documented wage theft, unpaid overtime, unsafe working conditions, and suppression of union organizing in H&M's Bangladesh, Cambodia, and Myanmar supplier factories. H&M has committed to living wages in its supply chain since 2013 — a commitment that independent monitors find remains largely unmet a decade later.",
+    "flags": [
+      "wage_theft_bangladesh_cambodia_myanmar",
+      "living_wage_commitment_2013_unmet_decade_later",
+      "union_suppression_supplier_factories",
+      "clean_clothes_campaign_documented"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "H&M produces approximately 3 billion garment pieces annually — a volume that contributes to fashion's status as one of the world's most polluting industries. The 2017 revelation that H&M burned 60 tons of new clothing in Denmark contradicted its sustainability positioning. H&M's 'Conscious Collection' uses some recycled or organic materials but comprises a small fraction of overall production. Textile dyeing in H&M's Asian supplier factories has documented wastewater pollution effects.",
+    "flags": [
+      "3_billion_garment_pieces_annually",
+      "60_tons_new_clothing_burned_denmark_2017",
+      "conscious_collection_small_fraction_overall",
+      "textile_dye_wastewater_asian_suppliers"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Norwegian Consumer Authority's 2022 ruling that H&M's Conscious Choice labels lacked adequate substantiation — and constituted misleading marketing — followed similar scrutiny in Germany and the Netherlands. H&M has been a target of EU greenwashing enforcement that is establishing precedent for sustainability claim standards across the fashion industry.",
+    "flags": [
+      "norway_consumer_authority_misleading_ruling_2022",
+      "eu_greenwashing_enforcement_target",
+      "sustainability_claim_standard_precedent"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Norway 2022: Consumer Authority rules H&M's 'Conscious Choice' sustainability labels misleading — finds claims lack adequate substantiation and could deceive consumers about environmental impact. H&M faced class action litigation in the US for similar greenwashing claims in 2023. Supply chain: multiple settlements with worker rights organizations over specific supplier factory violations.",
+    "flags": [
+      "norway_conscious_choice_misleading_ruling",
+      "us_class_action_greenwashing_2023",
+      "supplier_factory_violation_settlements"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "H&M's Swedish corporate structure and European operations use standard holding company arrangements. The Persson family's controlling stake provides governance stability. No major criminal tax enforcement actions have been documented.",
+    "flags": [
+      "persson_family_controlling_stake_governance"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Helena Helmersson leads H&M. The Persson family — descendants of founder Erling Persson — retain approximately 36% ownership through Stefan Persson and family. Stefan Persson served as executive chairman for decades and remains the controlling shareholder. No H&M executive has been criminally charged in connection with documented supply chain violations.",
+    "flags": [
+      "persson_family_36pct_ownership_control",
+      "no_executive_charges_supply_chain_violations"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "H&M and Zara (Inditex) together pioneered fast fashion — a production model that has fundamentally changed global clothing manufacturing and consumption. Both companies source from the same Asian manufacturing ecosystems with documented labor conditions. H&M's Conscious Choice marketing coexisted with its fast fashion production model — producing more clothing while claiming sustainability credentials.",
+    "flags": [
+      "inditex_zara_fast_fashion_co_pioneers",
+      "same_asian_manufacturing_ecosystem",
+      "conscious_choice_fast_fashion_contradiction"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The Clean Clothes Campaign has alleged that H&M's supplier auditing system — which it uses to verify living wage commitments and safety standards — is systematically ineffective because audits are announced in advance, conducted by auditors paid by the brand rather than independent parties, and do not include worker interviews outside management presence.",
+    "flags": [
+      "supplier_audit_announced_advance_ineffective_alleged",
+      "auditor_independence_conflict_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "H&M's Bangladesh supply chain has documented garment factories with fire safety deficiencies — a category of risk illustrated most severely by the 2013 Rana Plaza collapse (which killed 1,134 garment workers for brands including H&M suppliers). H&M signed the Bangladesh Accord on Fire and Building Safety following Rana Plaza. Textile dyeing chemicals in supplier factories expose workers to documented occupational health hazards.",
+    "flags": [
+      "rana_plaza_supplier_connection",
+      "bangladesh_accord_fire_safety_signatory",
+      "textile_dye_worker_occupational_hazard"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Thrift stores and secondhand — Depop, ThredUp, local charity shops — genuinely cheaper than H&M; no new production",
+      "Fewer, higher-quality items — cost per wear calculation often favors quality over H&M volume pricing"
+    ],
+    "healthier": [
+      "Certified B Corp fashion brands — Patagonia, Eileen Fisher, Pact — with documented accountability",
+      "Second-hand clothing platforms: lower environmental impact than any new clothing purchase"
+    ],
+    "diy": [
+      "The True Cost documentary (2015) provides accessible documentation of fast fashion supply chain conditions — available on streaming",
+      "Clothes swap events in most urban areas provide free clothing exchange without new production"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1947,
+      "event": "H&M founded in Västerås, Sweden by Erling Persson",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2013,
+      "event": "Rana Plaza collapse kills 1,134 garment workers; H&M supplier connection documented; H&M signs Bangladesh Accord",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2013,
+      "event": "H&M announces living wage commitment for supply chain by 2018 — commitment subsequently unmet",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "TV2 Denmark documents H&M burning 60 tons of new, unsold clothing at incineration facility",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Norwegian Consumer Authority rules H&M's 'Conscious Choice' labels misleading; inadequate substantiation",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "US class action filed for greenwashing claims in H&M marketing",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Garment workers in Bangladesh, Cambodia, and Myanmar — predominantly young women — bear the occupational hazard, wage theft, and organizing suppression that enables H&M's price points. The Rana Plaza collapse — which killed workers in factories producing for multiple fast fashion brands — is the documented endpoint of supply chain pressure on building and fire safety.",
+    "price_illusion": "H&M's €10 t-shirt appears affordable. The full cost includes: garment worker wages insufficient to meet basic needs in producing countries; fire and building safety deficiencies from cost pressure on suppliers; 60 tons of new clothing burned when unsold; and sustainability labels ruled misleading by European regulators.",
+    "tax_math": "H&M's Swedish structure manages European tax obligations through standard holding arrangements. The Persson family's wealth — built on fast fashion volume — is concentrated in Swedish and international investment structures.",
+    "wealth_velocity": "The Persson family's approximately 36% stake in H&M makes them among Europe's wealthiest families. Revenue from garments produced in factories with documented wage theft and safety deficiencies concentrates in Swedish family wealth. Garment workers in Bangladesh producing those garments earn wages documented as insufficient for basic needs."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Persson family and H&M shareholders",
+        "how": "Fast fashion volume and margins enabled by supply chain wage pressure and safety deficiencies; 'Conscious Choice' marketing premium on products Norway ruled misleading"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Garment workers in Bangladesh, Cambodia, Myanmar",
+        "how": "Wage theft, unsafe working conditions, union suppression — enabling H&M's price points"
+      }
+    ],
+    "the_gap": "H&M burned 60 tons of new clothing in Denmark. Their sustainability labels were ruled misleading in Norway. Their living wage commitment from 2013 is still unmet. Their garment workers in Bangladesh experience documented wage theft. H&M produced 3 billion garment pieces last year. The Persson family is worth approximately $18 billion. The t-shirt is €10."
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "brand_name": "Michelin",
+  "brand_slug": "michelin",
+  "parent_company": "Compagnie Générale des Établissements Michelin",
+  "ultimate_parent": "Michelin family (controlling shareholder via Société en commandite par actions structure)",
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "MICHELIN PAID $100 MILLION FOR PRICE FIXING TIRES — AND A FRENCH COURT FOUND ITS COLOMBIAN SUBSIDIARY PAID PARAMILITARIES WHO KILLED WORKERS AND UNION LEADERS",
+  "executive_summary": "Compagnie Générale des Établissements Michelin is the world's second-largest tire manufacturer, headquartered in Clermont-Ferrand, France and controlled by the Michelin family through a partnership structure that insulates the company from standard shareholder governance. In 2008, Michelin paid $100 million to the US DOJ for its participation in a price-fixing cartel for replacement tires — coordinating with Bridgestone and others. French investigative journalists and a French court inquiry documented that Michelin's Colombian subsidiary had commercial relationships with paramilitary groups — including the AUC (United Self-Defense Forces of Colombia, a US-designated terrorist organization) — during the period when Colombian paramilitaries were conducting documented massacres and killing labor leaders in the regions where Michelin operated.",
+  "verdict_tags": [
+    "100m_price_fixing_replacement_tires",
+    "colombia_paramilitary_relationship_french_court_inquiry",
+    "auc_us_designated_terrorist_organization",
+    "labor_leaders_killed_colombian_operations",
+    "michelin_family_controlling_partnership_structure"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "French investigative journalism and parliamentary inquiries have documented that Michelin's Colombian operations — specifically plantations providing natural rubber — had relationships with paramilitary groups during Colombia's armed conflict period. Union leaders and workers in Colombian rubber-producing regions where Michelin sourced were killed by paramilitary groups.",
+    "flags": [
+      "colombia_paramilitary_rubber_plantation_relationship",
+      "labor_leaders_killed_documented"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Michelin is the second-largest tire manufacturer with the associated natural rubber supply chain, manufacturing emissions, and end-of-life tire waste concerns. The company has made commitments to sustainable natural rubber.",
+    "flags": [
+      "natural_rubber_supply_chain_sustainability"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Colombia paramilitary connection — if established as documented in French inquiries — would connect Michelin to a US-designated terrorist organization whose funding supported documented massacres of Colombian civilians. The AUC was responsible for some of Colombia's worst documented atrocities during the 2000s conflict. The French judicial investigation into corporate complicity with Colombian paramilitaries has been slow-moving.",
+    "flags": [
+      "auc_us_designated_terrorist_documented_massacres",
+      "french_corporate_colombia_investigation_multiple_companies",
+      "slow_moving_judicial_process"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "2008: Michelin NA (North America) paid $100 million to the DOJ for participating in a price-fixing conspiracy in the replacement tire market — coordinating prices with Bridgestone and others. Colombia: French investigative journalists have documented that Michelin's Colombian plantation operations had documented relationships with paramilitary groups during the armed conflict. French magistrates have examined potential corporate complicity. No formal conviction has been issued as of 2026.",
+    "flags": [
+      "100m_price_fixing_doj_2008",
+      "colombia_french_magistrate_investigation",
+      "no_conviction_as_of_2026"
+    ],
+    "sources": [
+      "https://www.justice.gov/opa/pr/michelin-north-america-inc-agrees-plead-guilty-and-pay-100-million-fine-participating"
+    ]
+  },
+  "tax": {
+    "summary": "Michelin's Société en commandite par actions (limited partnership) structure — controlled by the Michelin family — provides governance insulation and tax management advantages. The company is listed on Euronext Paris but the Michelin family's limited partner controlling position limits standard shareholder accountability mechanisms.",
+    "flags": [
+      "societe_en_commandite_par_actions_family_control"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Florent Menegaux leads Michelin. The Michelin family's control through the partnership structure has shaped the company's corporate culture. No individual Michelin executive was criminally charged in the US price-fixing case. German prosecutions of specific Michelin engineers in the broader price-fixing ecosystem have varied outcomes.",
+    "flags": [
+      "family_control_long_term_thinking",
+      "no_us_executive_charges"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Michelin's price-fixing conspiracy connected it to the broader auto parts and tire price-fixing ecosystem — overlapping with Bridgestone's $425 million conviction. The Colombia paramilitary connection pattern — also documented for Chiquita Brands ($25M criminal fine), Drummond coal — represents a systemic documented pattern of corporate payment to AUC forces in exchange for security in conflict-affected regions.",
+    "flags": [
+      "bridgestone_tire_price_fixing_overlap",
+      "colombia_auc_corporate_payment_systemic_pattern",
+      "chiquita_drummond_parallel_criminal_penalties"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "French investigative journalists and researchers examining corporate complicity in Colombian paramilitary violence have alleged that Michelin's Colombian operations made payments to AUC-affiliated groups during the 1990s-2000s conflict period in exchange for security of its operations — similar to the documented pattern at Chiquita and Drummond. These allegations are under judicial examination in France and have not resulted in a formal conviction. Colombian survivors of paramilitary attacks in rubber-producing regions have alleged that Michelin's commercial presence was directly connected to paramilitary protection arrangements.",
+    "flags": [
+      "auc_payment_security_arrangement_alleged",
+      "colombian_survivor_testimony_connection_alleged",
+      "french_judicial_examination_not_convicted"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "The Colombian paramilitary groups — including AUC — that are documented or alleged to have been connected to Michelin's regional operations conducted massacres of civilians and assassinations of labor leaders and union organizers. These acts caused direct deaths and community trauma in Colombian communities. The price-fixing conspiracy raised tire replacement costs for distributors and consumers.",
+    "flags": [
+      "auc_massacre_civilian_labor_leader_killings"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Continental (German) — major tire alternative without Colombian paramilitary history",
+      "Goodyear (US) — domestic alternative with different supply chain record"
+    ],
+    "healthier": [
+      "Pirelli (Italian/Chinese-owned) — no documented Colombia connection",
+      "Yokohama or Hankook — Asian alternatives with different geographic operations"
+    ],
+    "diy": [
+      "The Colombian paramilitary corporate payment pattern that implicated Chiquita (convicted) and Drummond (investigated) also touched other agriculture and extractive companies — understanding this pattern helps contextualize Michelin's Colombian exposure without prejudging unresolved judicial proceedings"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2000,
+      "event": "Estimated period of most active Colombian paramilitary operations in regions where Michelin operated; AUC active in Colombian agricultural regions",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2008,
+      "event": "$100M DOJ price-fixing guilty plea for replacement tire market coordination with Bridgestone and others",
+      "severity": "critical",
+      "source_url": "https://www.justice.gov/opa/pr/michelin-north-america-inc-agrees-plead-guilty-and-pay-100-million-fine-participating"
+    },
+    {
+      "year": 2010,
+      "event": "French investigative journalism begins documenting French corporate connections to Colombian paramilitary groups; Michelin among companies examined",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "French magistrate investigations into corporate Colombia complicity continue; Michelin among companies under examination; no formal charges filed as of 2026",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Colombian communities in rubber-producing regions where paramilitaries operated — and where Michelin had commercial interests — experienced documented violence including massacres and targeted killings of labor leaders.",
+    "price_illusion": "Michelin tires carry a premium associated with safety, quality, and the beloved Michelin Man brand. The price-fixing conviction established that Michelin coordinated replacement tire prices to charge above-market rates to distributors and dealers.",
+    "tax_math": "Michelin's partnership structure and French tax treatment provide governance and financial advantages. The $100 million price-fixing settlement is tax-deductible as a business expense.",
+    "wealth_velocity": "Michelin family control through the partnership structure concentrates governance and economic benefit. Revenue from tire sales globally — including in markets where price-fixing artificially elevated replacement tire costs — flows through this structure to family and institutional investors."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Michelin shareholders and family",
+        "how": "Above-market replacement tire prices during price-fixing period; Colombian operation security from paramilitary presence if allegations established"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Colombian labor leaders and civilians in paramilitary-affected regions",
+        "how": "Violence, killings, and community trauma by paramilitary groups in regions where Michelin and other companies operated — judicial examination ongoing"
+      },
+      {
+        "group": "US tire distributors and consumers",
+        "how": "Above-market replacement tire prices during the price-fixing period"
+      }
+    ],
+    "the_gap": "Michelin paid $100 million for fixing tire prices. French courts are examining whether their Colombian operations were connected to a paramilitary group the US designated as a terrorist organization. That group killed labor leaders in the regions where Michelin operated. Chiquita paid a criminal fine for the same pattern. Michelin has not been convicted. The investigation is ongoing."
+  }
+}

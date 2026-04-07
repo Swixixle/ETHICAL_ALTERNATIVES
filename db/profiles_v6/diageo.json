@@ -1,0 +1,164 @@
+{
+  "brand_name": "Diageo",
+  "brand_slug": "diageo",
+  "parent_company": "Diageo plc",
+  "ultimate_parent": "Diageo plc",
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "DIAGEO BRIBED OFFICIALS IN INDIA THAILAND AND SOUTH KOREA AND PAID $16 MILLION — IT ALSO CONTROLS 30% OF GLOBAL PREMIUM SPIRITS WITH PERNOD RICARD AND MARKETS TO YOUNG AUDIENCES",
+  "executive_summary": "Diageo plc is the world's largest spirits company by volume and revenue, headquartered in London. Its brands include Johnnie Walker, Guinness, Smirnoff, Tanqueray, and Don Julio — spanning Scotch whisky, beer, vodka, gin, rum, and tequila. In July 2011, Diageo's subsidiaries agreed to pay $16.4 million to the SEC and DOJ to resolve FCPA violations covering bribes paid to government officials in India, Thailand, and South Korea to secure licenses, regulatory approvals, and preferential treatment. Together with Pernod Ricard, Diageo controls approximately 30% of global premium spirits. Diageo's documented marketing practices — particularly in emerging markets — have drawn regulatory and public health criticism for targeting younger consumers.",
+  "verdict_tags": [
+    "16_4m_fcpa_india_thailand_south_korea",
+    "30pct_global_spirits_pernod_ricard_duopoly",
+    "underage_marketing_emerging_markets_documented",
+    "water_extraction_drought_stressed_regions"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Diageo employs approximately 27,000 people globally. No major documented systemic labor violations have been identified as a primary concern.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Spirits production is water-intensive. Diageo's Don Julio and Casamigos tequila production in Jalisco — where agave farming contributes to significant water stress — is a documented environmental concern.",
+    "flags": [
+      "scotch_highland_water_extraction",
+      "jalisco_tequila_groundwater_depletion_documented"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Diageo's FCPA violations covered three distinct markets and three distinct government systems — indicating a systematic approach to bribery in markets where regulatory approvals, import licenses, and government-controlled distribution created incentive structures for corruption. The company lobbies against alcohol advertising restrictions, minimum unit pricing legislation, and excise tax increases.",
+    "flags": [
+      "three_country_systematic_bribery_different_government_types",
+      "minimum_unit_pricing_scotland_opposition",
+      "advertising_restriction_lobbying"
+    ],
+    "sources": [
+      "https://www.sec.gov/news/press-release/2011-154"
+    ]
+  },
+  "legal": {
+    "summary": "July 2011: Three Diageo subsidiaries entered deferred prosecution agreements with the DOJ and agreed to pay $16.4 million — $11.3 million to the DOJ and $5.1 million disgorgement to the SEC. The violations covered payments to government officials in India, Thailand, and South Korea. No Diageo executive was personally charged. The company has faced UK Advertising Standards Authority enforcement actions for social media campaigns that reached underage audiences.",
+    "flags": [
+      "16_4m_fcpa_deferred_prosecution_agreements",
+      "11_3m_doj_5_1m_sec_disgorgement",
+      "no_executive_charges",
+      "uk_asa_enforcement_social_media_underage"
+    ],
+    "sources": [
+      "https://www.sec.gov/news/press-release/2011-154"
+    ]
+  },
+  "tax": {
+    "summary": "Diageo is UK-incorporated and pays UK corporate taxes as a primary domicile. The company's international brand IP — particularly for Scotch whisky — is managed through structures that optimize royalty income.",
+    "flags": [
+      "scotch_whisky_uk_tax_provisions",
+      "brand_ip_royalty_optimization"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Debra Crew leads Diageo. Her predecessor Ivan Menezes led the company for a decade. The FCPA violations occurred under prior leadership. No Diageo executive was personally charged for the FCPA violations.",
+    "flags": [
+      "no_executive_fcpa_charges"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Diageo and Pernod Ricard together control approximately 30% of global premium spirits — a duopoly with extraordinary marketing reach and pricing power. Both companies have faced similar FCPA enforcement actions. Both lobby against the same alcohol advertising restrictions and minimum pricing legislation.",
+    "flags": [
+      "pernod_ricard_30pct_duopoly_joint_lobbying_fcpa"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Public health researchers have alleged that Diageo's marketing in sub-Saharan Africa specifically targets lower-income consumers with high-alcohol-content products at low price points. Digital marketing researchers have alleged that Diageo's social media campaigns on Instagram and TikTok reach underage audiences at rates that violate its own stated marketing standards.",
+    "flags": [
+      "africa_high_alcohol_low_income_marketing_alleged",
+      "instagram_tiktok_underage_reach_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "The global alcohol industry's contribution to public health harm is documented: alcohol causes approximately 3 million deaths annually (WHO), is the leading risk factor for death among people aged 15-49, and is causally linked to liver disease, multiple cancers, cardiovascular disease, and alcohol use disorder. Diageo, controlling approximately 15% of global premium spirits, is a significant actor in these outcomes.",
+    "flags": [
+      "3m_deaths_annually_alcohol_global_who",
+      "15_49_age_group_leading_risk_factor"
+    ],
+    "sources": [
+      "https://www.who.int/news-room/fact-sheets/detail/alcohol"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Local craft spirits in your region — independent distilleries with transparent ownership; money stays local",
+      "Non-alcoholic spirits (Seedlip, Lyre's, Athletic Brewing for non-alcoholic beer)"
+    ],
+    "healthier": [
+      "Reduction in alcohol consumption — WHO documents no safe level of alcohol consumption"
+    ],
+    "diy": [
+      "If you see Diageo advertising on social media that appears to target underage audiences: report to the UK Advertising Standards Authority or your national equivalent"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1997,
+      "event": "Diageo formed through merger of Guinness PLC and Grand Metropolitan; creates world's largest spirits company",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2011,
+      "event": "July: $16.4M FCPA settlement — three Diageo subsidiaries enter deferred prosecution agreements for bribing officials in India, Thailand, South Korea",
+      "severity": "critical",
+      "source_url": "https://www.sec.gov/news/press-release/2011-154"
+    },
+    {
+      "year": 2015,
+      "event": "Diageo acquires Don Julio tequila; expands into premium tequila market with Jalisco water stress implications",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "UK Advertising Standards Authority enforcement actions against Diageo campaigns for reaching underage audiences on social media",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Diageo's tequila production in Jalisco's Lowlands region contributes to documented water stress from agave farming and distillation that affects local agricultural communities.",
+    "price_illusion": "Diageo's premium spirits are priced as lifestyle products. The price does not reflect the water extraction from drought-stressed communities, the FCPA bribes paid to access regulatory-controlled markets, or the public health costs of alcohol consumption at population scale.",
+    "tax_math": "Diageo's UK corporate tax payments benefit from Scotch whisky production provisions and international IP arrangements. The $16.4 million FCPA settlement is tax-deductible as a business expense.",
+    "wealth_velocity": "Diageo is listed on the London Stock Exchange with broad UK and international institutional ownership. Revenue from premium spirits brands consumed globally concentrates in London."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Diageo shareholders",
+        "how": "30% premium spirits market control; FCPA bribery enabled regulatory approvals in three markets; premiumization driving margin expansion"
+      },
+      {
+        "group": "Government officials in India, Thailand, South Korea who received bribes",
+        "how": "Personal enrichment from payments enabling Diageo's regulatory market access"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Consumers with alcohol use disorder",
+        "how": "Alcohol causes approximately 3 million deaths annually; Diageo's marketing contributes to consumption patterns at the company responsible for approximately 15% of premium spirits globally"
+      }
+    ],
+    "the_gap": "Diageo bribed officials in three countries to sell alcohol in those markets. They paid $16.4 million. No executive was charged. Together with Pernod Ricard they control 30% of global premium spirits. Their marketing has been found to reach underage audiences. Alcohol causes 3 million deaths annually. It is the leading cause of death for people aged 15-49. Diageo is the world's largest company selling it."
+  }
+}

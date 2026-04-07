@@ -1,0 +1,175 @@
+{
+  "brand_slug": "purdue-pharma",
+  "members": [
+    {
+      "person_slug": "richard-sackler",
+      "full_name": "Richard Sackler",
+      "role": "President, then Board Co-Chair",
+      "tenure_start": "1990",
+      "tenure_end": "2018",
+      "is_current": false,
+      "committees": [
+        "Executive"
+      ],
+      "present_during": [
+        "oxycontin_launch_1996",
+        "2007_guilty_plea",
+        "10b_extraction_period"
+      ],
+      "departure_reason": "Resigned amid mounting litigation",
+      "departure_context": "Internal documents quoted Richard Sackler directing the company to 'hammer on the abusers' when overdose deaths became public. He was president during the 1996 OxyContin launch and the misleading marketing that preceded the 2007 guilty plea.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "No criminal charges filed. NY AG alleged Sackler directed specific deceptive marketing decisions. Internal documents show awareness of addiction crisis and direction to minimize it publicly.",
+      "sources": [
+        "https://www.nytimes.com/2019/01/15/health/sacklers-purdue-oxycontin-opioids.html"
+      ]
+    },
+    {
+      "person_slug": "mortimer-sackler-sr",
+      "full_name": "Mortimer D.A. Sackler",
+      "role": "Board Member (Mortimer branch)",
+      "tenure_start": "1990",
+      "tenure_end": "2019",
+      "is_current": false,
+      "committees": [],
+      "present_during": [
+        "oxycontin_launch_1996",
+        "2007_guilty_plea",
+        "10b_extraction_period"
+      ],
+      "departure_reason": "Bankruptcy filing",
+      "departure_context": "Mortimer branch of the Sackler family received billions in dividends from Purdue during the opioid crisis period. The branch maintained international philanthropic presence including major donations to Oxford University (since declined).",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "No criminal charges filed. Mortimer branch received approximately $4B+ in dividends from Purdue before bankruptcy.",
+      "sources": []
+    },
+    {
+      "person_slug": "jonathan-sackler",
+      "full_name": "Jonathan Sackler",
+      "role": "Board Member (Raymond branch)",
+      "tenure_start": "1990",
+      "tenure_end": "2019",
+      "is_current": false,
+      "committees": [],
+      "present_during": [
+        "oxycontin_launch_1996",
+        "2007_guilty_plea",
+        "10b_extraction_period"
+      ],
+      "departure_reason": "Died 2020",
+      "departure_context": "Raymond branch board member throughout the OxyContin era.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Died June 2020 before bankruptcy resolution.",
+      "sources": []
+    },
+    {
+      "person_slug": "michael-friedman-purdue",
+      "full_name": "Michael Friedman",
+      "role": "President and CEO",
+      "tenure_start": "2000",
+      "tenure_end": "2007",
+      "is_current": false,
+      "committees": [
+        "Executive"
+      ],
+      "present_during": [
+        "aggressive_marketing_2000_2007",
+        "2007_guilty_plea"
+      ],
+      "departure_reason": "Guilty plea — resigned",
+      "departure_context": "Pleaded guilty to federal misbranding charges in 2007. Paid $34.5M personal fine. Avoided prison. One of three Purdue executives who pleaded guilty.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Avoided prison despite guilty plea. Fine was $34.5M shared across three executives.",
+      "sources": [
+        "https://www.justice.gov/archive/usao/vaw/press_releases/2007/may/purdue_pharma_plea.html"
+      ]
+    },
+    {
+      "person_slug": "howard-udell",
+      "full_name": "Howard Udell",
+      "role": "Chief Legal Officer",
+      "tenure_start": "1995",
+      "tenure_end": "2007",
+      "is_current": false,
+      "committees": [],
+      "present_during": [
+        "aggressive_marketing_2000_2007",
+        "2007_guilty_plea"
+      ],
+      "departure_reason": "Guilty plea — resigned",
+      "departure_context": "Pleaded guilty to federal misbranding charges in 2007 alongside Friedman and Goldenheim. Paid personal fine as part of $34.5M shared settlement. Avoided prison.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Died 2013.",
+      "sources": []
+    },
+    {
+      "person_slug": "paul-goldenheim",
+      "full_name": "Paul Goldenheim",
+      "role": "Chief Medical Officer",
+      "tenure_start": "1995",
+      "tenure_end": "2007",
+      "is_current": false,
+      "committees": [],
+      "present_during": [
+        "oxycontin_launch_1996",
+        "aggressive_marketing_2000_2007",
+        "2007_guilty_plea"
+      ],
+      "departure_reason": "Guilty plea — resigned",
+      "departure_context": "Pleaded guilty to federal misbranding charges in 2007. As CMO, had direct oversight of the medical claims that formed the basis of the misbranding conviction. Avoided prison.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "CMO during the period when 'less than 1% addiction rate' claim was deployed by the sales force. Avoided prison despite guilty plea.",
+      "sources": []
+    },
+    {
+      "person_slug": "david-haddox",
+      "full_name": "David Haddox",
+      "role": "Vice President, Health Policy",
+      "tenure_start": "1999",
+      "tenure_end": "2010",
+      "is_current": false,
+      "committees": [],
+      "present_during": [
+        "aggressive_marketing_2000_2007"
+      ],
+      "departure_reason": "Left company",
+      "departure_context": "Haddox co-authored papers promoting opioid prescribing and was the company's primary public spokesperson defending OxyContin's safety profile during the aggressive marketing period. His academic work on 'pseudoaddiction' — the concept that apparent addiction is actually undertreated pain — was used by the sales force.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Academic work on 'pseudoaddiction' widely criticized as providing intellectual cover for aggressive opioid prescribing.",
+      "sources": []
+    }
+  ],
+  "connections": [
+    {
+      "person_slug": "richard-sackler",
+      "brand_slug_a": "purdue-pharma",
+      "brand_slug_b": "purdue-pharma",
+      "overlap_start": "1990",
+      "overlap_end": "2018",
+      "pattern_type": "family_control",
+      "description": "Sackler family controlled Purdue through both Raymond and Mortimer branches, extracting approximately $10-11 billion in dividends before bankruptcy while the opioid crisis unfolded.",
+      "significance": "The family control structure insulated Purdue from standard corporate governance accountability — no independent shareholders could force different conduct."
+    }
+  ]
+}

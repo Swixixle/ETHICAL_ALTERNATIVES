@@ -1,0 +1,155 @@
+{
+  "brand_name": "Mondelez International",
+  "brand_slug": "mondelez-international",
+  "parent_company": "Mondelez International, Inc.",
+  "ultimate_parent": "Mondelez International, Inc.",
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "MONDELEZ CLOSED THE CADBURY FACTORY IT PROMISED TO KEEP OPEN WITHIN WEEKS OF ACQUIRING IT — AND PAID $13 MILLION FOR BRIBING INDIAN GOVERNMENT OFFICIALS",
+  "executive_summary": "Mondelez International, Inc. is one of the world's largest snack food companies — producing Oreo, Cadbury, Toblerone, and dozens of other major brands — spun off from Kraft Foods in 2012. In 2010, Kraft Foods acquired Cadbury PLC in a hostile takeover for £11.5 billion. During the acquisition, Kraft CEO Irene Rosenfeld explicitly promised UK parliamentarians that it would keep open the Somerdale factory near Bristol. Within weeks of completing the acquisition, Kraft reversed this commitment and closed Somerdale — eliminating approximately 400 jobs. The closure triggered a parliamentary inquiry and the UK Takeover Code was subsequently amended. As Mondelez, the company paid $13 million to the DOJ in 2022 to resolve FCPA violations for bribing Indian government officials. Mondelez's cocoa supply chain shares the same documented West African child labor problem as Nestlé and Lindt.",
+  "verdict_tags": [
+    "somerdale_factory_closed_weeks_after_promise_to_keep_open",
+    "13m_fcpa_india_bribery_2022",
+    "cadbury_hostile_takeover_11_5b",
+    "west_africa_cocoa_child_labor_supply_chain",
+    "uk_takeover_code_changed_cadbury_closure_cited"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "The Somerdale closure — eliminating approximately 400 jobs within weeks of Kraft's explicit parliamentary commitment to keep the factory open — is the most documented labor-related failure in Mondelez's history.",
+    "flags": [
+      "somerdale_400_jobs_closed_after_promise"
+    ],
+    "sources": [
+      "https://www.theguardian.com/business/2010/mar/31/kraft-somerdale-cadbury-closure"
+    ]
+  },
+  "environmental": {
+    "summary": "Mondelez's cocoa supply chain involves sourcing from Ivory Coast and Ghana where deforestation is a documented side effect of cocoa farming expansion. The company's palm oil supply chain has the same deforestation and labor concerns as other major palm oil buyers.",
+    "flags": [
+      "cocoa_deforestation_ivory_coast_ghana",
+      "palm_oil_deforestation_labor"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Somerdale closure became a cause célèbre in British political discourse. UK Takeover Code changes subsequently required acquirers to honor stated intentions for a longer period.",
+    "flags": [
+      "uk_takeover_code_changed_cadbury_closure_cited"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "August 2022: Mondelez International agreed to pay $13 million to the DOJ and SEC to resolve FCPA violations — Mondelez's subsidiary in India had paid approximately $1.7 million in bribes to Indian government officials to obtain licenses and approvals. The DOJ entered into a non-prosecution agreement with Mondelez rather than criminal charges.",
+    "flags": [
+      "13m_fcpa_india_non_prosecution_agreement",
+      "1_7m_india_government_bribes"
+    ],
+    "sources": [
+      "https://www.justice.gov/opa/pr/mondelez-international-inc-agrees-pay-13-million-resolve-foreign-corrupt-practices-act"
+    ]
+  },
+  "tax": {
+    "summary": "Mondelez's separation from Kraft Foods in 2012 involved significant IP restructuring — Mondelez holds major brand IP through international structures that concentrate royalty income in favorable jurisdictions.",
+    "flags": [
+      "brand_ip_international_structures"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Dirk Van de Put leads Mondelez. His predecessor Irene Rosenfeld led the Cadbury acquisition and made the Somerdale promise. No Mondelez executive was personally charged in the India FCPA matter.",
+    "flags": [
+      "rosenfeld_somerdale_promise_cited",
+      "no_executive_charges_india_fcpa"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Mondelez's cocoa supply chain connects it to the same West African child labor ecosystem documented for Nestlé, Mars, Lindt, and Hershey. The Harkin-Engel Protocol has failed to eliminate child labor since 2001 — a commitment all these brands made and missed.",
+    "flags": [
+      "same_west_africa_cocoa_ecosystem_nestle_lindt_mars",
+      "harkin_engel_failed_2001_all_companies"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former Cadbury employees and UK trade union representatives have alleged that Kraft's Somerdale commitment was never genuinely intended to be honored — that the commitment was made specifically to smooth parliamentary concerns during a contested acquisition and that internal Kraft planning documents had already incorporated the closure.",
+    "flags": [
+      "somerdale_commitment_never_genuine_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Mondelez's portfolio — Oreo, Chips Ahoy, Ritz — consists primarily of ultra-processed foods associated in population studies with elevated rates of chronic disease. The cocoa child labor supply chain involves hazardous agricultural work by children including machete use and pesticide exposure.",
+    "flags": [
+      "ultra_processed_food_chronic_disease_association",
+      "cocoa_child_labor_hazardous_agricultural_work"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Store brand biscuits and chocolate — same food category at lower price",
+      "Local and regional confectionery brands for chocolate"
+    ],
+    "healthier": [
+      "Tony's Chocolonely for chocolate — independently verified child-labor-free cocoa mission"
+    ],
+    "diy": [
+      "Check any chocolate brand's cocoa supply chain at goodchocolateguide.org before purchase"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2010,
+      "event": "January: Kraft Foods completes hostile takeover of Cadbury for £11.5B; CEO Rosenfeld had told MPs Somerdale would remain open. March: Somerdale closure announced within weeks; 400 jobs eliminated.",
+      "severity": "critical",
+      "source_url": "https://www.theguardian.com/business/2010/mar/31/kraft-somerdale-cadbury-closure"
+    },
+    {
+      "year": 2012,
+      "event": "Kraft spins off international snack business as Mondelez International",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "August: $13M DOJ/SEC FCPA non-prosecution agreement for bribing Indian government officials",
+      "severity": "high",
+      "source_url": "https://www.justice.gov/opa/pr/mondelez-international-inc-agrees-pay-13-million-resolve-foreign-corrupt-practices-act"
+    }
+  ],
+  "community_impact": {
+    "displacement": "The Somerdale closure displaced approximately 400 workers from a factory that Kraft had explicitly committed to keep open during parliamentary testimony.",
+    "price_illusion": "Cadbury chocolate carries a premium associated with British heritage. Under Kraft/Mondelez ownership, that heritage has been sustained as a marketing asset while the operational practices that created it were not continued.",
+    "tax_math": "Mondelez's international IP structures for its Oreo, Cadbury, and other brand royalties concentrate income in favorable jurisdictions.",
+    "wealth_velocity": "Mondelez is publicly traded with institutional and retail shareholder ownership globally. The Cadbury acquisition premium transferred one of Britain's most beloved food brands to a US company that closed a factory it promised to keep open."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Kraft/Mondelez shareholders",
+        "how": "Cadbury brand portfolio acquired; Somerdale cost saved through closure despite promise; India licensing obtained through bribes"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "400 Somerdale workers",
+        "how": "Jobs eliminated weeks after company committed to parliament they would be preserved"
+      },
+      {
+        "group": "West African child cocoa laborers",
+        "how": "Hazardous agricultural work supplying Cadbury and Milka cocoa supply chain"
+      }
+    ],
+    "the_gap": "Kraft's CEO told UK parliament Somerdale would stay open. The takeover completed. Somerdale closed within weeks. The Takeover Panel said they couldn't enforce it. The UK changed the Takeover Code. Mondelez paid $13 million for bribing Indian government officials. Their Cadbury chocolate supply chain has the same West African child labor problem as every other chocolate company that's been promising to fix it since 2001."
+  }
+}

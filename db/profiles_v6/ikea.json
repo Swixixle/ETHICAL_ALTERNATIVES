@@ -1,0 +1,188 @@
+{
+  "brand_name": "IKEA",
+  "brand_slug": "ikea",
+  "parent_company": "INGKA Holding B.V.",
+  "ultimate_parent": "Stichting INGKA Foundation (Netherlands)",
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "IKEA'S OWNERSHIP STRUCTURE IS DESIGNED SO NO INDIVIDUAL OR GOVERNMENT CAN CONTROL IT — AND THE EU ESTIMATED IT AVOIDED €1 BILLION IN TAXES OVER SIX YEARS",
+  "executive_summary": "IKEA is the world's largest furniture retailer, operating approximately 460 stores globally under a complex ownership structure deliberately designed to obscure ultimate beneficial ownership and minimize taxation. The company's retail operations are owned by the Stichting INGKA Foundation — a Dutch charitable foundation — which the Economist Intelligence Unit described as 'one of the world's most ingenious tax avoidance structures.' The European Parliament's TAXE committee estimated in 2016 that IKEA's structure allowed it to avoid approximately €1 billion in EU taxes between 2009 and 2014. IKEA's wood supply chain was documented to have sourced wood through Belarus and Ukraine from suppliers connected to illegal logging in protected forests. Following Russia's 2022 invasion of Ukraine, IKEA shut its Russia operations and factories, displacing approximately 12,000 workers. In 2016, six US children were killed by tipping MALM dressers.",
+  "verdict_tags": [
+    "eu_parliament_1b_tax_avoidance_estimate_2009_2014",
+    "stichting_foundation_tax_structure",
+    "belarus_ukraine_illegal_logging_documented",
+    "russia_ukraine_12000_worker_displacement",
+    "malm_dresser_six_child_deaths_recalled"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "IKEA employs approximately 220,000 people globally (called 'co-workers'). The company's Russia exit displaced approximately 12,000 workers with limited severance. IKEA's model — requiring customers to assemble furniture themselves — externalizes labor cost to consumers.",
+    "flags": [
+      "12000_russia_workers_displaced_limited_severance",
+      "assembly_externalized_labor_cost_to_consumers"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "IKEA requires massive quantities of timber annually — it consumes approximately 1% of the world's commercial wood supply. Investigative reporting by the Guardian documented that IKEA's supply chain in Belarus and Ukraine sourced wood through intermediaries connected to illegal logging in protected forests.",
+    "flags": [
+      "1pct_world_commercial_wood_consumption",
+      "belarus_illegal_logging_documented_guardian",
+      "ukraine_protected_forest_supply_chain_documented"
+    ],
+    "sources": [
+      "https://www.theguardian.com/environment/2020/nov/23/ikea-linked-to-illegal-logging-in-ukraine-beeches"
+    ]
+  },
+  "political": {
+    "summary": "IKEA's Dutch foundation structure uses royalty payments from its retail operations to Inter IKEA Group (domiciled in Luxembourg, then Liechtenstein) to shift profits to low-tax jurisdictions. The EU Commission has investigated IKEA's Netherlands tax arrangements. IKEA maintained operations in Russia until the 2022 Ukraine invasion.",
+    "flags": [
+      "eu_commission_netherlands_tax_investigation",
+      "inter_ikea_luxembourg_liechtenstein_royalty_structure"
+    ],
+    "sources": [
+      "https://www.europarl.europa.eu/cmsdata/92481/2016-07-04%20TAXE2%20final%20report.pdf"
+    ]
+  },
+  "legal": {
+    "summary": "The EU Commission opened a State Aid investigation into IKEA's Dutch tax arrangements in 2017. The investigation was closed in 2021 without a formal State Aid finding. MALM dresser recall: IKEA recalled MALM dressers in 2016 after six US children died from tip-overs. IKEA initially resisted the US recall while recalling in other markets, ultimately issuing a recall and settling wrongful death claims.",
+    "flags": [
+      "eu_commission_state_aid_investigation_2017_2021",
+      "malm_dresser_six_child_deaths_recall_2016",
+      "recall_us_resisted_while_other_markets_recalled"
+    ],
+    "sources": [
+      "https://www.cpsc.gov/Recalls/2016/ikea-recalls-chests-and-dressers-due-to-serious-tip-over-hazard"
+    ]
+  },
+  "tax": {
+    "summary": "IKEA's corporate structure separates the franchise system (Inter IKEA Group) from the retail operations (INGKA Group). Retail stores pay royalties to Inter IKEA. Inter IKEA was domiciled in Luxembourg, then moved to Liechtenstein (1% effective corporate tax). The EU Parliament's 2016 TAXE committee estimated IKEA had avoided approximately €1 billion in EU taxes between 2009 and 2014.",
+    "flags": [
+      "eu_parliament_1b_tax_avoidance_estimate",
+      "inter_ikea_liechtenstein_1pct_effective_rate",
+      "stichting_foundation_no_dividend_tax"
+    ],
+    "sources": [
+      "https://www.europarl.europa.eu/cmsdata/92481/2016-07-04%20TAXE2%20final%20report.pdf"
+    ]
+  },
+  "executives": {
+    "summary": "IKEA's ownership structure is deliberately designed so that no individual — including the Kamprad family — has legal ownership or control over the company's assets. Ingvar Kamprad, who founded IKEA in 1943 and died in 2018, established the foundation structure specifically to prevent IKEA from being broken up, sold, or controlled by any individual including his own heirs.",
+    "flags": [
+      "kamprad_no_individual_ownership_structure_deliberate",
+      "foundation_heirs_excluded_deliberate"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "IKEA's wood supply chain connects it to global timber markets where certification compliance varies significantly by country and supplier. The Belarus sourcing — which continued after international sanctions were applied to the Lukashenko government — connected IKEA's commercial operations to revenue flows benefiting a government that imprisoned political opponents.",
+    "flags": [
+      "belarus_lukashenko_government_revenue_connection"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Investigative reporters at the Guardian documented in 2020 that IKEA's Ukrainian and Belarusian wood suppliers were sourcing timber from protected forests using fraudulent documentation. Swedish journalists have alleged that IKEA's foundation structure was specifically designed by Ingvar Kamprad with tax avoidance as a primary motivation alongside succession protection.",
+    "flags": [
+      "protected_forest_fraudulent_documentation_illegal_logging_alleged",
+      "foundation_structure_tax_motivation_primary_alleged"
+    ],
+    "sources": [
+      "https://www.theguardian.com/environment/2020/nov/23/ikea-linked-to-illegal-logging-in-ukraine-beeches"
+    ]
+  },
+  "health_record": {
+    "summary": "IKEA has had significant product safety recalls — most notably MALM dressers, which were recalled in 2016 after six children in the US died from the dressers tipping over onto them. IKEA initially resisted the recall in the US while recalling in other markets, ultimately issuing a recall and settlement. The product safety concern was documented in IKEA's engineering testing before the child deaths.",
+    "flags": [
+      "malm_dresser_six_child_deaths_recalled",
+      "recall_us_resisted_while_other_markets_recalled",
+      "pre_death_engineering_concerns_documented"
+    ],
+    "sources": [
+      "https://www.cpsc.gov/Recalls/2016/ikea-recalls-chests-and-dressers-due-to-serious-tip-over-hazard"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Thrift stores and secondhand furniture markets — the most sustainable furniture option at the lowest price point",
+      "Local carpenters and furniture makers — often price-competitive with IKEA for quality furniture"
+    ],
+    "healthier": [
+      "Certified sustainable wood furniture from B Corp furniture companies",
+      "Second-hand platforms: Facebook Marketplace, Craigslist, Chairish — genuine circular economy alternative"
+    ],
+    "diy": [
+      "Check whether your IKEA MALM dresser is covered by the recall — CPSC.gov maintains the full model list",
+      "IKEA's as-is section in stores and IKEA second-hand programs offer the product at lower cost with reduced new production impact"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1982,
+      "event": "Ingvar Kamprad transfers IKEA ownership to the Stichting INGKA Foundation (Netherlands); no individual owns IKEA",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2016,
+      "event": "Six US children killed by MALM dresser tip-overs; recall issued after initial US resistance. EU Parliament TAXE committee estimates IKEA avoided €1B in EU taxes 2009-2014.",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "EU Commission opens State Aid investigation into IKEA's Netherlands tax arrangements",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "Guardian investigates IKEA's Belarus and Ukraine wood supply chains; illegal logging in protected forests documented",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Russia invades Ukraine; IKEA closes Russia stores and factories; 12,000 Russian workers displaced",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "The 12,000 workers employed at IKEA's Russia factories and stores were displaced by the Russia closure. Communities near timber extraction sites in Ukraine and Belarus absorbed the environmental cost of logging.",
+    "price_illusion": "IKEA's prices appear competitive because of genuine operational efficiency. The prices are also lower because of tax structures that the EU Parliament estimated avoided €1 billion in European taxes.",
+    "tax_math": "The EU Parliament's estimate of €1 billion in avoided EU taxes over six years represents school funding, healthcare funding, and infrastructure funding that IKEA's tax structure reduced.",
+    "wealth_velocity": "IKEA's structure deliberately eliminates individual ownership — no Kamprad heir owns IKEA. But the tax efficiency still represents public revenue foregone."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "INGKA Foundation (IKEA's owner)",
+        "how": "€1B+ estimated EU tax avoidance through royalty structure; foundation accumulates commercial profits without individual shareholder dividend tax"
+      },
+      {
+        "group": "IKEA customers",
+        "how": "Below-market furniture prices enabled partly by operational efficiency and partly by tax structure"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "EU taxpayer-funded public services",
+        "how": "Estimated €1B in taxes not collected from IKEA's European operations over six years"
+      },
+      {
+        "group": "Six children killed by MALM dressers and their families",
+        "how": "Product safety failure; IKEA initially resisted US recall while recalling in other markets"
+      }
+    ],
+    "the_gap": "IKEA's ownership structure is one of the most complex tax arrangements in the world. A Dutch foundation owns a €53 billion retail empire with no individual beneficial owner and no dividend tax. The EU Parliament estimated €1 billion in avoided EU taxes. Six children died from IKEA dressers while IKEA resisted the US recall. Their wood supply chain was documented sourcing from protected forests. The MALM dresser is still the most popular dresser in the world."
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "brand_name": "Vale",
+  "brand_slug": "vale",
+  "parent_company": "Vale S.A.",
+  "ultimate_parent": "Brazilian Federal Government (partial) and Previ pension fund",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "VALE OWNS TWO OF THE THREE WORST MINING DAM DISASTERS IN HISTORY — MARIANA 2015 AND BRUMADINHO 2019 — 272 PEOPLE DIED AND VALE STILL HASN'T FULLY COMPENSATED THE COMMUNITIES",
+  "executive_summary": "Vale S.A. is the world's largest iron ore producer and one of the world's largest mining companies, headquartered in Rio de Janeiro. Vale has been responsible for two of the most catastrophic mining dam failures in history. In November 2015, the Fundão tailings dam — jointly owned by Vale and BHP — failed at the Samarco mine in Mariana, Minas Gerais, killing 19 people and releasing 43 million cubic meters of iron ore mining waste into the Doce River — Brazil's longest river and an environmental catastrophe affecting hundreds of communities. In January 2019, Vale's Brumadinho tailings dam failed, releasing approximately 12 million cubic meters of mining waste that killed 272 people — the deadliest mining dam disaster in Brazilian history. Vale had received safety certifications for the Brumadinho dam weeks before its failure.",
+  "verdict_tags": [
+    "brumadinho_2019_272_dead_deadliest_mining_dam_brazil",
+    "mariana_2015_19_dead_doce_river_environmental_catastrophe",
+    "dam_certified_safe_weeks_before_failure",
+    "$7b_settlement_brumadinho",
+    "samarco_bhp_joint_venture_mariana"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "The Brumadinho dam failure killed 272 people — the majority of whom were Vale employees and contractors working at the mine site or in a cafeteria directly downstream. The dam failed during lunch hour. Vale had received safety certifications from German engineering firm TÜV SÜD weeks before the collapse — TÜV SÜD has faced separate legal proceedings in Germany for its certification conduct.",
+    "flags": [
+      "272_dead_majority_employees_contractors",
+      "cafeteria_destroyed_lunch_hour",
+      "tuv_sud_false_certification_proceedings"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "The Brumadinho and Mariana disasters together represent the two worst mining dam failures in Brazilian history and among the worst globally. The Mariana/Samarco disaster released toxic mining waste into the Doce River, destroying aquatic ecosystems for hundreds of kilometers and affecting the water supplies of hundreds of communities. Years after the Brumadinho failure, the Paraopeba River downstream from the dam site remains severely affected. Vale and BHP's reparations process for Mariana has been documented as inadequate and slow by affected communities and Brazilian prosecutors.",
+    "flags": [
+      "doce_river_destroyed_hundreds_kilometers",
+      "paraopeba_river_severely_affected",
+      "mariana_reparations_inadequate_slow"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "The Brumadinho dam failure — occurring on a dam that had received safety certification weeks earlier — generated intense scrutiny of Brazil's dam safety certification system and the relationships between mining companies and certification bodies. Brazilian prosecutors filed criminal charges against 16 Vale employees and executives, and against TÜV SÜD employees. Vale's political relationships with the Minas Gerais state government were scrutinized following both disasters.",
+    "flags": [
+      "criminal_charges_16_vale_employees_executives",
+      "tuv_sud_employees_charged",
+      "minas_gerais_government_relationship_scrutiny"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Brumadinho: In 2021, Vale reached a $7 billion settlement with the state of Minas Gerais for reparations — the largest environmental settlement in Brazilian history. Criminal proceedings against Vale executives and TÜV SÜD employees continue in Brazilian courts as of 2026. Mariana/Samarco: Vale and BHP face ongoing litigation in Brazil and in UK courts — a UK class action involving approximately 720,000 claimants has proceeded despite Vale and BHP's jurisdictional challenges.",
+    "flags": [
+      "7b_brumadinho_minas_gerais_settlement_largest_brazil",
+      "criminal_proceedings_executives_ongoing",
+      "720000_uk_class_action_claimants"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Vale is listed on the NYSE and São Paulo Stock Exchange. The Brazilian government and Previ pension fund hold significant stakes. Vale uses standard mining company international structures for its global operations across Brazil, Canada, Indonesia, and other jurisdictions. No major criminal tax enforcement has been documented.",
+    "flags": [
+      "international_mining_structures",
+      "government_previ_partial_ownership"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Eduardo Bartolomeo has led Vale through the Brumadinho aftermath and reparations process. Former CEO Fabio Schvartsman was among the executives charged by Brazilian prosecutors in connection with Brumadinho — he had received internal warnings about dam safety risks prior to the failure. Schvartsman resigned days after the disaster.",
+    "flags": [
+      "schvartsman_charged_prosecutors",
+      "schvartsman_received_internal_warnings_pre_failure",
+      "resigned_days_after_disaster"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Vale's Samarco joint venture with BHP — the company behind the 2015 Mariana disaster — illustrates how major mining companies structure operations in ways that complicate liability attribution. Both Vale and BHP have contested full liability for Mariana in international courts. The UK class action representing 720,000 claimants is one of the largest environmental mass tort cases in English legal history.",
+    "flags": [
+      "bhp_joint_venture_liability_attribution_complication",
+      "uk_class_action_largest_environmental_english_history"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Brazilian prosecutors have alleged that Vale executives received internal engineering reports warning about Brumadinho dam stability in the months before failure — and that decisions were made to seek continued certification rather than to decommission the dam. TÜV SÜD employees have been alleged to have falsified or inadequately conducted the safety certification that declared the dam safe weeks before failure.",
+    "flags": [
+      "executive_warning_received_certification_sought_alleged",
+      "tuv_sud_falsified_certification_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "272 people died in the Brumadinho disaster — the deadliest mining dam failure in Brazilian history. 19 people died in the Mariana/Samarco disaster. Communities along the Doce and Paraopeba rivers experienced contamination of water supplies used for drinking, agriculture, and fishing. Long-term health monitoring of communities downstream from both disaster sites has documented elevated rates of skin conditions, respiratory illness, and mental health impacts from displacement and loss.",
+    "flags": [
+      "272_brumadinho_dead",
+      "19_mariana_dead",
+      "doce_paraopeba_water_contamination",
+      "downstream_health_monitoring_elevated_illness"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Vale is B2B infrastructure — consumers don't choose their iron ore producer. The systemic alternative is mandatory independent dam safety certification with criminal liability for false certification."
+    ],
+    "healthier": [
+      "Advocacy for the International Commission on Large Dams (ICOLD) safety standards enforcement in Brazilian dam certification"
+    ],
+    "diy": [
+      "The UK class action representing Mariana/Samarco victims is public record — claimants can register through their legal representatives",
+      "Support Brazilian dam safety reform: Brazilian environmental organization APEDEMA tracks dam safety legislation"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2015,
+      "event": "November: Samarco/Fundão dam failure in Mariana — 19 killed; 43 million cubic meters mining waste into Doce River; Vale and BHP jointly liable",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "January: Brumadinho dam failure — 272 killed; dam had received TÜV SÜD safety certification weeks earlier; majority of dead are Vale employees",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "CEO Schvartsman and other executives charged by Brazilian prosecutors; Schvartsman had received internal safety warnings",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "$7B settlement with Minas Gerais state — largest environmental settlement in Brazilian history",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "UK class action of 720,000 Mariana claimants proceeds; Vale and BHP jurisdictional challenges overruled",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "272 people were killed in Brumadinho. The majority were Vale employees eating lunch when the dam failed. Communities along both river systems were displaced by toxic waste, lost fishing and agricultural livelihoods, and face ongoing water contamination. The $7 billion Minas Gerais settlement funds reparations that affected communities have documented as arriving slowly and incompletely.",
+    "price_illusion": "Iron ore is priced on global commodity markets. The price does not include the cost of dam failures affecting communities downstream. The Brumadinho dam — which killed 272 people — had been certified safe. The certification was issued weeks before failure.",
+    "tax_math": "The $7 billion Brumadinho settlement is paid by Vale to the Minas Gerais state government for reparation distribution. The environmental cost of both disasters — remediation of two river systems, healthcare for affected communities — is borne by Brazilian public funds beyond the settlement.",
+    "wealth_velocity": "Vale's institutional shareholders — including global mining and index funds — receive iron ore production revenue. The communities downstream from Brumadinho and Mariana receive reparations documented as slow and incomplete."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Vale shareholders and iron ore buyers",
+        "how": "Iron ore production from mines whose dam safety costs were minimized through deficient certification and risk management"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "272 people killed at Brumadinho",
+        "how": "Died when a dam that had been certified safe weeks earlier failed during their lunch break"
+      },
+      {
+        "group": "Communities along Doce and Paraopeba rivers",
+        "how": "Water contamination, livelihood destruction, displacement, ongoing health impacts from two of Brazil's worst environmental disasters"
+      }
+    ],
+    "the_gap": "Vale's Brumadinho dam was certified safe in November 2018. In January 2019 it collapsed. 272 people died. Most of them were eating lunch. Vale executives had received internal warnings about dam stability. The certifying firm TÜV SÜD faces criminal charges in Brazil. Vale paid $7 billion — the largest environmental settlement in Brazilian history. The river systems are still recovering. The criminal proceedings are still ongoing."
+  }
+}

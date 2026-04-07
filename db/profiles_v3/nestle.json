@@ -1,0 +1,151 @@
+{
+  "brand_name": "Nestlé",
+  "brand_slug": "nestle",
+  "parent_company": "Nestlé S.A.",
+  "ultimate_parent": "Nestlé S.A.",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "NESTLÉ TOLD MOTHERS IN DEVELOPING COUNTRIES THEIR FORMULA WAS SAFER THAN BREAST MILK — THE BOYCOTT IS NOW 45 YEARS OLD AND STILL ACTIVE",
+  "executive_summary": "Nestlé S.A. is the world's largest food and beverage company. Its decades-long marketing of infant formula in developing countries generated a global boycott launched in 1977 that remains active. Nestlé has also been documented extracting water from drought-stressed communities, using child labor in its cocoa supply chain, and paying $100 million in a US price-fixing settlement for chocolate.",
+  "verdict_tags": [
+    "infant_formula_developing_countries_who_violation",
+    "global_boycott_1977_still_active",
+    "water_extraction_drought_communities",
+    "cocoa_child_labor_supply_chain",
+    "100m_chocolate_price_fixing"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Nestlé's cocoa supply chain has documented child labor including hazardous agricultural work. A 2021 US federal lawsuit alleged Nestlé knowingly benefited from child slave labor on cocoa farms. The Supreme Court dismissed on jurisdictional grounds in 2021 but did not rule on the underlying facts.",
+    "flags": [
+      "cocoa_child_labor_ivory_coast_ghana",
+      "2021_supreme_court_case_dismissed_jurisdictional"
+    ],
+    "sources": [
+      "https://www.supremecourt.gov/opinions/21pdf/19-416_i4dj.pdf"
+    ]
+  },
+  "environmental": {
+    "summary": "Nestlé has been documented extracting water from drought-stressed communities in California and Michigan — paying minimal royalties for municipal water sources then selling at significant markup.",
+    "flags": [
+      "water_extraction_drought_communities",
+      "minimal_royalties_municipal_sources"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Nestlé's former CEO stated in a 2005 documentary that the idea water is a human right is 'extreme' — a position Nestlé subsequently distanced itself from after global backlash.",
+    "flags": [
+      "water_human_right_extreme_brabeck_statement"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "2008: Nestlé paid $100 million as part of a chocolate price-fixing settlement. The 2021 Supreme Court case over cocoa child slavery was dismissed on jurisdictional grounds.",
+    "flags": [
+      "100m_chocolate_price_fixing"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Nestlé is incorporated in Vevey, Switzerland — benefiting from Swiss cantonal tax arrangements.",
+    "flags": [
+      "swiss_cantonal_tax_arrangements"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Ulf Mark Schneider leads Nestlé. Former CEO Peter Brabeck-Letmathe's water rights comments became one of the most shared corporate video clips in social media criticism history.",
+    "flags": [
+      "brabeck_water_rights_viral_criticism"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Nestlé's infant formula marketing practices were codified into the WHO International Code of Marketing of Breast-milk Substitutes in 1981. The boycott is one of the longest-running consumer boycotts in history.",
+    "flags": [
+      "who_code_1981_repeated_violations"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "IBFAN's monitoring reports have consistently alleged that Nestlé violates the WHO marketing code in developing countries including providing free formula samples to hospitals that disrupt breastfeeding.",
+    "flags": [
+      "who_code_hospital_sample_violation_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Nestlé's infant formula marketing contributed to formula use in contexts where clean water for preparation was unavailable, leading to documented infant illness and death.",
+    "flags": [
+      "formula_contaminated_water_preparation_infant_deaths"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Store brand infant formula — same FDA nutritional requirements; different supply chain"
+    ],
+    "healthier": [
+      "Breastfeeding support through WIC — free lactation consulting available"
+    ],
+    "diy": [
+      "The boycott covers Nestlé brands including Nescafé, KitKat, Maggi, Purina, Häagen-Dazs, and San Pellegrino"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1977,
+      "event": "Global boycott of Nestlé launched; still active as of 2026",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 1981,
+      "event": "WHO International Code of Marketing of Breast-milk Substitutes adopted — directly in response to Nestlé practices",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2008,
+      "event": "$100M chocolate price-fixing settlement",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "Supreme Court dismisses child slavery cocoa case on jurisdictional grounds",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Communities in developing countries where formula was marketed as superior to breast milk experienced preventable infant illness and death.",
+    "price_illusion": "Nestlé formula was marketed as safer and more modern than breastfeeding in communities where the infrastructure to use it safely did not exist.",
+    "tax_math": "Swiss incorporation and cantonal tax arrangements reduce Nestlé's effective tax rate on global operations.",
+    "wealth_velocity": "Revenue from water brands extracted from drought-stressed communities concentrates in Vevey."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Nestlé shareholders",
+        "how": "Formula sales in developing countries; water extraction at minimal royalty rates sold at significant markup"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Infants in developing countries",
+        "how": "Formula prepared with contaminated water in communities marketed to abandon breastfeeding"
+      }
+    ],
+    "the_gap": "Nestlé marketed formula to mothers in developing countries as safer than breast milk. The WHO created an international code specifically because of what Nestlé did. The boycott started in 1977. It is still running. The cocoa child labor case reached the Supreme Court. The Court dismissed it on jurisdiction — not on the facts. Nestlé still makes KitKat."
+  }
+}

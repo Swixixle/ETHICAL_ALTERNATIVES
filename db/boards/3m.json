@@ -1,0 +1,133 @@
+{
+  "brand_slug": "3m",
+  "members": [
+    {
+      "person_slug": "livio-desimone",
+      "full_name": "Livio D. DeSimone",
+      "role": "CEO and Chairman",
+      "tenure_start": "1991",
+      "tenure_end": "2001",
+      "is_current": false,
+      "committees": [
+        "Executive"
+      ],
+      "present_during": [
+        "pfas_knowledge_accumulation_1970s_2000s"
+      ],
+      "departure_reason": "Retired",
+      "departure_context": "Led 3M during the period when PFAS health concerns were accumulating internally but not publicly disclosed. The 2000 voluntary phase-out of PFOS — the specific PFAS compound in Scotchgard — began under DeSimone after EPA pressure.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "CEO during the 2000 PFOS phase-out — the first public acknowledgment that a specific 3M PFAS compound required action.",
+      "sources": []
+    },
+    {
+      "person_slug": "james-mcnerney",
+      "full_name": "W. James McNerney Jr.",
+      "role": "CEO and Chairman",
+      "tenure_start": "2001",
+      "tenure_end": "2005",
+      "is_current": false,
+      "committees": [
+        "Executive"
+      ],
+      "present_during": [
+        "pfas_knowledge_accumulation_1970s_2000s"
+      ],
+      "departure_reason": "Left to become CEO of Boeing",
+      "departure_context": "Left 3M to become CEO of Boeing in 2005. His 3M tenure coincided with the post-PFOS phase-out period when PFAS replacement compounds continued to be manufactured and sold despite accumulating evidence of their health effects.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [
+        "boeing"
+      ],
+      "prior_government": false,
+      "notes": "Moved from 3M CEO to Boeing CEO — Boeing subsequently experienced its own series of safety and compliance failures.",
+      "sources": []
+    },
+    {
+      "person_slug": "george-buckley-3m",
+      "full_name": "George W. Buckley",
+      "role": "CEO and Chairman",
+      "tenure_start": "2005",
+      "tenure_end": "2012",
+      "is_current": false,
+      "committees": [
+        "Executive"
+      ],
+      "present_during": [
+        "pfas_knowledge_accumulation_1970s_2000s",
+        "earplug_defect_known_2000s"
+      ],
+      "departure_reason": "Retired",
+      "departure_context": "CEO during the period when the Combat Arms earplug (CAEv2) was being sold to the US military with the known loosening defect. The defect was identified in internal Aearo Technologies testing before the contract was awarded.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "CEO during earplug sale period 2005-2012. No criminal charges.",
+      "sources": []
+    },
+    {
+      "person_slug": "inge-thulin",
+      "full_name": "Inge G. Thulin",
+      "role": "CEO and Chairman",
+      "tenure_start": "2012",
+      "tenure_end": "2018",
+      "is_current": false,
+      "committees": [
+        "Executive"
+      ],
+      "present_during": [
+        "earplug_sale_period_2003_2015",
+        "minnesota_pfas_897m_settlement"
+      ],
+      "departure_reason": "Retired",
+      "departure_context": "CEO during the $897 million Minnesota PFAS settlement (2018) — the first major PFAS water contamination settlement against 3M. Also CEO during the final years of Combat Arms earplug sales to the military (contract ended 2015).",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "CEO during $897M Minnesota settlement. Retired before the $10.3B water system settlement and $9.1B earplug settlement.",
+      "sources": []
+    },
+    {
+      "person_slug": "mike-roman",
+      "full_name": "Mike Roman",
+      "role": "CEO and Chairman",
+      "tenure_start": "2018",
+      "tenure_end": null,
+      "is_current": true,
+      "committees": [
+        "Executive"
+      ],
+      "present_during": [
+        "10_3b_pfas_settlement_2023",
+        "9_1b_earplug_settlement_2023",
+        "aearo_texas_two_step_failed"
+      ],
+      "departure_reason": null,
+      "departure_context": "CEO during the two largest settlements in 3M history — $10.3 billion for PFAS water system contamination and $9.1 billion for defective military earplugs. Also oversaw the failed Texas Two-Step bankruptcy attempt through Aearo Technologies that courts rejected as lacking good faith.",
+      "revolving_door": false,
+      "revolving_door_note": null,
+      "other_boards": [],
+      "prior_government": false,
+      "notes": "Oversaw $20B+ in combined settlements. Aearo bankruptcy Texas Two-Step rejected. Solventum healthcare spinoff completed 2024.",
+      "sources": []
+    }
+  ],
+  "connections": [
+    {
+      "person_slug": "james-mcnerney",
+      "brand_slug_a": "3m",
+      "brand_slug_b": "3m",
+      "overlap_start": "2001",
+      "overlap_end": "2005",
+      "pattern_type": "interlocking_directorate",
+      "description": "McNerney moved from 3M CEO to Boeing CEO. Boeing subsequently experienced documented safety and compliance failures. The executive pipeline between major industrial companies creates shared governance culture.",
+      "significance": "Illustrates how executive mobility shapes corporate culture across industries."
+    }
+  ]
+}

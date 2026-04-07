@@ -1,0 +1,168 @@
+{
+  "brand_name": "DJI",
+  "brand_slug": "dji",
+  "parent_company": "SZ DJI Technology Co., Ltd.",
+  "ultimate_parent": "Frank Wang (founder, controlling shareholder)",
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "DJI CONTROLS 70% OF THE GLOBAL CONSUMER DRONE MARKET AND THE US GOVERNMENT SAYS ITS DRONES SEND DATA TO CHINA — CONGRESS HAS TRIED TO BAN THEM FOUR TIMES",
+  "executive_summary": "SZ DJI Technology Co., Ltd. is the world's dominant consumer and commercial drone manufacturer, controlling approximately 70% of the global consumer drone market and significant portions of the commercial and enterprise drone market. DJI is headquartered in Shenzhen, China and is subject to Chinese national security laws that require Chinese companies to cooperate with Chinese state intelligence. The US Department of Defense has placed DJI on its list of companies allegedly working with the Chinese military. The US Department of the Interior grounded its entire DJI drone fleet in 2019 citing data security concerns. Congress has repeatedly attempted to ban federal agencies from purchasing DJI drones. DJI drones have been documented used by both sides in the Russia-Ukraine conflict — raising questions about dual-use technology export controls.",
+  "verdict_tags": [
+    "70pct_global_consumer_drone_market",
+    "dod_chinese_military_company_list",
+    "dhs_data_security_alert",
+    "interior_department_fleet_grounded",
+    "russia_ukraine_both_sides_documented"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": false,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "DJI manufactures in Shenzhen, China — with the same labor conditions standard to Chinese electronics manufacturing. No major standalone DJI-specific labor violations have been documented beyond general Chinese manufacturing sector conditions. DJI employs approximately 14,000 people globally.",
+    "flags": [
+      "shenzhen_manufacturing_standard_conditions"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Drone manufacturing involves electronic components, batteries, and plastics with associated environmental concerns. DJI has made limited public environmental disclosures. No major environmental enforcement actions have been identified.",
+    "flags": [
+      "electronic_battery_manufacturing_environmental"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "DJI's Chinese ownership subjects it to China's National Intelligence Law — which requires Chinese companies to support, assist, and cooperate with state intelligence activities. The US DHS issued a May 2019 alert warning that DJI drones were transferring sensitive data to accessible servers. The US DoD placed DJI on its list of Chinese military companies in 2022. Four separate Congressional bills have attempted to ban federal DJI drone purchases. DJI has consistently denied that it shares data with the Chinese government.",
+    "flags": [
+      "china_national_intelligence_law_obligation",
+      "dhs_sensitive_data_alert_2019",
+      "dod_chinese_military_company_list_2022",
+      "four_congressional_ban_bills"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "DJI is on the US Entity List (export control restrictions) since 2020 — restricting US companies from selling technology to DJI without a license. DJI is on the DoD's Chinese military company list. The Interior Department grounded DJI drones in 2019. No criminal enforcement actions against DJI have been completed in the US, but the Entity List designation restricts technology transfer.",
+    "flags": [
+      "entity_list_since_2020",
+      "dod_chinese_military_company_list",
+      "interior_fleet_grounded_2019"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "DJI is a Chinese private company — its corporate structure is not publicly disclosed. The company's valuation was estimated at approximately $16 billion in its last disclosed funding round. Tax information is not publicly available for the private Chinese entity.",
+    "flags": [
+      "private_company_limited_disclosure"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Frank Wang (Wang Tao) is DJI's founder and controlling shareholder. The company has maintained a relatively low executive public profile outside the drone industry. DJI has hired Western lobbyists and public relations firms to contest US government classifications and push back against federal purchase restrictions.",
+    "flags": [
+      "wang_tao_founder_controlling_shareholder",
+      "western_lobbyists_hired_us_classification_challenge"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "DJI's dominance — 70% global market share — means most commercial, agricultural, law enforcement, and media drone operations globally use DJI equipment. This creates documented intelligence collection infrastructure operated by a company subject to Chinese national security law across virtually every sector that uses drones.",
+    "flags": [
+      "70pct_market_intelligence_collection_infrastructure",
+      "law_enforcement_media_agricultural_dji_dependent"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "US defense and intelligence officials have alleged — in unclassified threat assessments — that DJI drones transmit flight path data, imagery, and operator information to servers accessible to the Chinese government. DJI has denied these allegations and has released firmware versions marketed as 'Government Edition' that purport to disable data transmission. Independent security researchers have found mixed results in auditing these claims.",
+    "flags": [
+      "dji_data_transmission_government_servers_alleged",
+      "government_edition_firmware_mixed_audit_results"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "DJI's documented concern is primarily national security and data sovereignty rather than direct health harm. Drone flight safety — the risk of drone-related injuries from equipment failure or pilot error — is a secondary concern managed through FAA regulation. No major health enforcement actions against DJI have been identified.",
+    "flags": [
+      "national_security_data_primary_concern"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Autel Robotics — US-distributed, non-Chinese-owned alternative; similar price points to DJI entry-level products",
+      "Skydio — US-based autonomous drone manufacturer; currently more expensive than DJI but US ownership"
+    ],
+    "healthier": [
+      "Skydio — US company, no Chinese intelligence law obligation; government and enterprise users concerned about data security",
+      "Parrot — French manufacturer; EU-based; no US national security designation"
+    ],
+    "diy": [
+      "If you use DJI for commercial or sensitive operations: DJI's 'Local Data Mode' disables internet connectivity during flights — enables operation without data transmission; verify independently",
+      "For hobbyist use: the data security concern is primarily relevant to sensitive sites and infrastructure; casual recreational use carries different risk profile"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2006,
+      "event": "Frank Wang founds DJI in Shenzhen dormitory room; begins drone development",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "May: DHS issues security alert about DJI drones transferring data to accessible servers. Interior Department grounds DJI fleet.",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "DJI placed on US Entity List — restricts US technology sales to DJI",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "DoD places DJI on Chinese military company list",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "DJI drones documented used by both Russian and Ukrainian forces in conflict; dual-use export control questions raised",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Law enforcement agencies across the US that use DJI drones for surveillance — including border patrol, police departments, and emergency response — operate equipment subject to Chinese national security law data obligations. Communities surveilled by these drones have no practical visibility into where that data goes.",
+    "price_illusion": "DJI drones are priced as consumer and professional electronics products with standard commercial value propositions. The national security dimension — equipment operated by US law enforcement and critical infrastructure that is subject to Chinese intelligence law — is not reflected in the product price or marketing.",
+    "tax_math": "DJI is a private Chinese company with minimal public financial disclosure. Tax information is not available.",
+    "wealth_velocity": "DJI's estimated $16 billion valuation concentrates in Frank Wang and early investors. The surveillance data generated by DJI drones operated by law enforcement, agriculture, media, and consumers globally — on equipment subject to Chinese intelligence law — represents an information asset whose value and destination are not disclosed."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Frank Wang and DJI investors",
+        "how": "70% global drone market share built on hardware that the US government has documented as creating data security risks"
+      },
+      {
+        "group": "Chinese state intelligence (alleged)",
+        "how": "Potential access to drone flight data, imagery, and operator information from equipment operated globally"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "US law enforcement and government agencies",
+        "how": "Operated equipment the DoD classified as Chinese military company products; Interior Department discovered after fleet deployment"
+      }
+    ],
+    "the_gap": "DJI controls 70% of the global drone market. The US Department of Homeland Security said their drones send data to servers accessible to the Chinese government. The Department of the Interior grounded their entire DJI fleet. The Department of Defense put DJI on the Chinese military company list. Congress has tried to ban them four times. DJI drones were used by both sides in Ukraine. DJI says they don't share data with China."
+  }
+}

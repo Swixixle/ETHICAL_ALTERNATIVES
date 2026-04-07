@@ -1,0 +1,155 @@
+{
+  "brand_name": "Lindt",
+  "brand_slug": "lindt",
+  "parent_company": "Chocoladefabriken Lindt & Sprüngli AG",
+  "ultimate_parent": "Chocoladefabriken Lindt & Sprüngli AG (Swiss family influence)",
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "LINDT SELLS $5 CHOCOLATE BARS AND MARKETS ITSELF AS PREMIUM — ITS COCOA COMES FROM THE SAME IVORY COAST SUPPLY CHAIN WITH DOCUMENTED CHILD LABOR AS HERSHEY AND NESTLÉ",
+  "executive_summary": "Chocoladefabriken Lindt & Sprüngli AG is Switzerland's premier premium chocolate manufacturer, operating the Lindt and Ghirardelli brands. Lindt markets itself as a premium chocolate brand — positioned above the mass market through higher prices, distinctive gold rabbit and Master Chocolatier branding, and Swiss heritage. However, Lindt's cocoa supply chain sources from the same West African — primarily Ivory Coast and Ghana — smallholder ecosystem documented across the chocolate industry for child labor, hazardous agricultural work, and poverty-level farmer incomes. A 2020 class action filed in the US alleged Lindt's 'no child labor' claims were false advertising. Lindt has been named in the same industry-wide child labor litigation that has implicated Nestlé, Mars, Mondelez, Hershey, and others sourcing West African cocoa.",
+  "verdict_tags": [
+    "cocoa_child_labor_ivory_coast_supply_chain",
+    "no_child_labor_claim_false_advertising_2020",
+    "same_ecosystem_as_nestle_mars_hershey",
+    "premium_brand_same_supply_chain_concerns",
+    "harkin_engel_protocol_failed_all_brands"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": false,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Lindt's West African cocoa supply chain — primarily Ivory Coast — shares the documented child labor ecosystem with Nestlé, Mars, Hershey, and Mondelez. The 2020 US class action alleged Lindt's marketing claims of no child labor were false advertising given the documented conditions in its supply chain. The Harkin-Engel Protocol (2001) committed the chocolate industry to eliminate child labor by 2005 — a target missed by every major brand. An independent study commissioned by the US Department of Labor found child labor persisting across the Ivory Coast cocoa sector serving all major brands.",
+    "flags": [
+      "ivory_coast_child_labor_supply_chain",
+      "2020_no_child_labor_false_advertising_claim",
+      "harkin_engel_2001_commitment_missed_all_brands",
+      "dol_study_child_labor_persists"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Cocoa farming in Ivory Coast and Ghana is associated with documented deforestation as smallholder farmers expand into forest land to increase production. Lindt has made sustainable sourcing commitments including traceability programs. No major standalone environmental enforcement actions have been identified.",
+    "flags": [
+      "cocoa_deforestation_ivory_coast_ghana",
+      "sustainable_sourcing_traceability_commitments"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "Lindt's political profile is primarily through its supply chain advocacy — the company participates in industry coalitions working on sustainable cocoa. No major standalone political concerns comparable to peers have been identified.",
+    "flags": [
+      "industry_coalition_sustainable_cocoa"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "2020: US class action filed against Lindt alleging false advertising — specifically that Lindt's marketing claims of sourcing cocoa from farms with no child labor were materially misleading given documented conditions in its Ivory Coast supply chain. No formal US criminal enforcement action has been completed against Lindt for supply chain labor practices.",
+    "flags": [
+      "2020_us_class_action_false_advertising",
+      "no_child_labor_claim_challenged"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Lindt is incorporated in Switzerland — benefiting from Swiss cantonal tax arrangements. The company is listed on the Swiss Exchange. No major criminal tax enforcement actions have been documented.",
+    "flags": [
+      "swiss_cantonal_tax_incorporation"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Adalbert Leyendecker leads Lindt. The company's Swiss executive team has maintained the premium brand positioning while facing supply chain scrutiny consistent with the broader chocolate industry. No Lindt executive has been criminally charged for supply chain violations.",
+    "flags": [],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Lindt's supply chain connects it to the same Ivory Coast cocoa farming ecosystem as Nestlé, Mars, Mondelez, Hershey, and every major chocolate brand. The child labor documentation applies to this ecosystem broadly — not to specific Lindt-exclusive farms. The premium pricing Lindt commands does not provide premium supply chain accountability relative to mass-market peers.",
+    "flags": [
+      "same_ecosystem_all_major_chocolate_brands",
+      "premium_price_no_premium_accountability"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The 2020 class action alleged that Lindt's marketing — including claims that its chocolates were sourced from farms adhering to strict no-child-labor standards — was materially misleading because Lindt sources from the same Ivory Coast supply chain where child labor is documented by independent research. Lindt has disputed the characterization.",
+    "flags": [
+      "marketing_claims_misleading_supply_chain_conditions_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Child labor in cocoa farming involves hazardous agricultural work — machete use, pesticide exposure, heavy lifting — performed by children as young as 5-6 years in some documented cases. The hazardous child labor documentation spans the Ivory Coast cocoa sector serving all major chocolate brands including Lindt.",
+    "flags": [
+      "machete_pesticide_heavy_lifting_child_hazardous_work",
+      "children_5_6_documented_cases"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Tony's Chocolonely — mission-driven brand with independently verified child-labor-free sourcing; similar price to Lindt",
+      "Divine Chocolate — farmer-owned cooperative chocolate; Fairtrade certified"
+    ],
+    "healthier": [
+      "Tony's Chocolonely — most independently verified cocoa supply chain of any major chocolate brand",
+      "Fairtrade certified chocolate — independent certification with farmer income standards"
+    ],
+    "diy": [
+      "The Good Chocolate Guide (goodchocolateguide.org) independently rates chocolate brands on supply chain standards — Lindt's rating can be compared against alternatives",
+      "Tony's Chocolonely's annual report provides the most detailed public cocoa supply chain data of any chocolate company — useful benchmark"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1845,
+      "event": "Lindt & Sprüngli founded in Zurich; inventor of the conching process that defines modern smooth chocolate",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2001,
+      "event": "Harkin-Engel Protocol: chocolate industry commits to eliminate child labor from cocoa supply chains by 2005 — commitment missed",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "US class action filed against Lindt and other chocolate brands for false advertising — 'no child labor' claims challenged",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "US Supreme Court dismisses Nestlé/Cargill child slavery case on jurisdiction — industry liability pattern continues unresolved",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Ivory Coast cocoa farming communities — where children perform hazardous agricultural work as documented by NORC at the University of Chicago — absorb the cost of supplying cocoa at prices that all major chocolate brands, including Lindt, have not increased sufficiently to fund farm-level living wages and education alternatives to child labor.",
+    "price_illusion": "Lindt charges a premium for Swiss chocolatier heritage and quality. The premium price does not translate to premium supply chain accountability — Lindt's cocoa comes from the same Ivory Coast ecosystem documented for child labor as mass-market brands costing a fraction of Lindt's price point.",
+    "tax_math": "Swiss incorporation provides favorable tax treatment. The price premium Lindt commands — above mass-market chocolate — generates additional margin that is not documented to translate into higher farmer prices or supply chain labor improvements proportional to the premium.",
+    "wealth_velocity": "Lindt is listed on the Swiss Exchange. Revenue from premium-priced chocolate sourced from supply chains with documented child labor concentrates in Swiss shareholder returns."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Lindt shareholders",
+        "how": "Premium pricing on chocolate sourced from the same documented child labor ecosystem as mass-market brands; brand premium not reflected in supply chain investment"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Ivory Coast child cocoa workers",
+        "how": "Hazardous agricultural labor — machetes, pesticides, heavy lifting — in cocoa farms supplying Lindt and every other major chocolate brand"
+      }
+    ],
+    "the_gap": "Lindt charges $5 for a chocolate bar and markets itself as premium. The cocoa comes from Ivory Coast. The same Ivory Coast supply chain that Nestlé and Hershey use. The same child labor that all of them promised to eliminate in 2001. They all missed the deadline. Lindt's marketing said no child labor. A class action said that was false advertising. The children are still working."
+  }
+}

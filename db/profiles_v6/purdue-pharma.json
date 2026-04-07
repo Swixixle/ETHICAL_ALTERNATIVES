@@ -1,0 +1,177 @@
+{
+  "brand_name": "Purdue Pharma",
+  "brand_slug": "purdue-pharma",
+  "parent_company": "Purdue Pharma L.P. (bankrupt)",
+  "ultimate_parent": "Sackler Family (via trusts and holding companies)",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "THE SACKLER FAMILY EXTRACTED $10 BILLION FROM PURDUE BEFORE BANKRUPTCY WHILE THEIR OXYCONTIN KILLED HUNDREDS OF THOUSANDS — THE SUPREME COURT SAID THEY CAN'T HIDE BEHIND THE BANKRUPTCY SHIELD",
+  "executive_summary": "Purdue Pharma L.P. manufactured OxyContin — the branded extended-release oxycodone formulation whose mass marketing beginning in 1996 is widely documented as the ignition point of the US prescription opioid epidemic. Purdue marketed OxyContin to physicians as safer and less addictive than other opioids — claims the FDA subsequently determined were misleading. Purdue paid $634 million in 2007 to resolve DOJ charges that it misbranded OxyContin. The Sackler family — owners of Purdue — extracted approximately $10-11 billion from the company in dividends before it filed for bankruptcy in 2019 amid 3,000+ lawsuits. The family negotiated a bankruptcy plan that would have shielded them from civil lawsuits in exchange for a $6 billion contribution — a plan the US Supreme Court blocked in June 2024, ruling 5-4 that bankruptcy law cannot extinguish civil claims against parties who have not themselves filed for bankruptcy.",
+  "verdict_tags": [
+    "634m_2007_oxycontin_misbranding",
+    "sackler_10_11b_extraction_before_bankruptcy",
+    "supreme_court_2024_blocked_sackler_shield",
+    "opioid_epidemic_documented_origin",
+    "3000_plus_lawsuits"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Purdue Pharma employed approximately 1,600 people at its bankruptcy filing. The sales force that marketed OxyContin executed the marketing strategy that generated the fraud finding, without necessarily being aware that the marketing claims were misleading.",
+    "flags": [
+      "1600_employees_bankruptcy_job_loss"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major primary environmental enforcement actions against Purdue have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Purdue lobbied extensively against opioid prescribing restrictions and FDA regulatory oversight. The company funded professional medical organizations, pain management advocacy groups, and patient advocacy organizations that promoted broader opioid prescribing. Purdue's payments to the Joint Commission, which developed pain as 'the fifth vital sign' guidelines, have been documented in academic research.",
+    "flags": [
+      "medical_organization_funding_prescribing_guidelines",
+      "fifth_vital_sign_joint_commission_documented_payments"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "May 2007: Purdue Pharma and three executives — President Michael Friedman, Chief Legal Officer Howard Udell, and Chief Medical Officer Paul Goldenheim — pleaded guilty to federal charges of misbranding OxyContin. Purdue paid $634 million; the three executives paid $34.5 million and avoided prison. In 2019, Purdue filed for Chapter 11 bankruptcy. The proposed $6 billion Sackler family contribution in exchange for civil lawsuit immunity was blocked by the Supreme Court in June 2024 (5-4).",
+    "flags": [
+      "634m_2007_misbranding_executives_guilty_plea_no_prison",
+      "sackler_6b_civil_immunity_blocked_supreme_court_2024",
+      "bankruptcy_non_debtor_shield_ruled_impermissible"
+    ],
+    "sources": [
+      "https://www.justice.gov/archive/usao/vaw/press_releases/2007/may/purdue_pharma_plea.html",
+      "https://www.supremecourt.gov/opinions/23pdf/23-124_jd8c.pdf"
+    ]
+  },
+  "tax": {
+    "summary": "The Sackler family's $10-11 billion in dividends extracted from Purdue were managed through a global network of trusts and holding companies designed to minimize US estate and income taxes. The family maintained accounts in Switzerland.",
+    "flags": [
+      "sackler_global_trust_network_us_tax_minimization",
+      "switzerland_accounts_documented"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "The Sackler family — divided into the 'Raymond' and 'Mortimer' branches — owned Purdue through trusts and controlled its board. Richard Sackler, as president and then board chair, was the primary driver of OxyContin's aggressive marketing strategy. Internal documents revealed in litigation quoted Richard Sackler saying the goal was to 'hammer on the abusers in every way possible' when overdoses became public. No Sackler family member has been criminally charged.",
+    "flags": [
+      "richard_sackler_hammer_abusers_quote_documented",
+      "family_members_no_criminal_charges",
+      "2007_executives_avoided_prison"
+    ],
+    "sources": [
+      "https://www.nytimes.com/2019/01/15/health/sacklers-purdue-oxycontin-opioids.html"
+    ]
+  },
+  "connections": {
+    "summary": "Purdue's OxyContin marketing created the prescribing culture that opioid distributors — McKesson, Cencora, Cardinal Health — then amplified through distribution of billions of pills. The Sackler family's philanthropic reputation — built on donations to museums and universities — was used as social legitimacy while the family extracted billions. Many institutions have since removed the Sackler name.",
+    "flags": [
+      "distributor_ecosystem_mckesson_cencora_connected",
+      "sackler_name_removal_museums_universities"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "State attorney general investigations have alleged that the Sackler family was directly involved in specific deceptive marketing decisions at Purdue — not merely passive investors. The New York attorney general alleged the Sackler family secretly transferred approximately $1 billion out of Purdue into accounts in Switzerland in the years leading up to bankruptcy specifically to insulate it from litigation.",
+    "flags": [
+      "richard_sackler_marketing_direction_alleged",
+      "1b_transfer_switzerland_pre_bankruptcy_ny_ag_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Approximately 500,000 Americans died of opioid overdoses between 1999 and 2019. The CDC identifies the prescription opioid wave (1999-2010) as the first of three overlapping overdose waves. Purdue's marketing claimed OxyContin had less than 1% addiction rate — a figure derived from a single letter to a medical journal that Purdue's sales force cited as clinical evidence for years. The claim was false.",
+    "flags": [
+      "500000_overdose_deaths_opioid_crisis",
+      "less_than_1pct_addiction_claim_documented_false"
+    ],
+    "sources": [
+      "https://www.cdc.gov/opioids/data/analysis-resources.html"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "OxyContin is off-patent — generic oxycodone is available. For patients with legitimate pain needs, the medication class exists without the Purdue brand."
+    ],
+    "healthier": [
+      "Multimodal pain management: physical therapy, cognitive behavioral therapy for chronic pain, regional anesthesia, NSAIDs",
+      "For opioid use disorder: buprenorphine and methadone — SAMHSA National Helpline 1-800-662-4357"
+    ],
+    "diy": [
+      "SAMHSA National Helpline: 1-800-662-4357 — free, confidential, 24/7 treatment referral",
+      "Naloxone (Narcan) is available without prescription at most pharmacies"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1996,
+      "event": "OxyContin approved by FDA and aggressively marketed; sales force trained to tell physicians it is less addictive than other opioids",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2007,
+      "event": "Purdue pays $634M; three executives plead guilty to misbranding; no prison time",
+      "severity": "critical",
+      "source_url": "https://www.justice.gov/archive/usao/vaw/press_releases/2007/may/purdue_pharma_plea.html"
+    },
+    {
+      "year": 2008,
+      "event": "Sackler family begins accelerating dividend extraction from Purdue; approximately $10-11B extracted 2008-2018",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "Purdue files Chapter 11 bankruptcy amid 3,000+ lawsuits",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "June: US Supreme Court blocks Sackler immunity deal 5-4; rules bankruptcy cannot shield non-debtors without consent",
+      "severity": "critical",
+      "source_url": "https://www.supremecourt.gov/opinions/23pdf/23-124_jd8c.pdf"
+    }
+  ],
+  "community_impact": {
+    "displacement": "Communities across Appalachian states and rural America experienced destruction of workforce capacity, family stability, and community cohesion from prescription opioid addiction that OxyContin's marketing contributed to igniting.",
+    "price_illusion": "OxyContin was priced and marketed as a breakthrough pain medication with a superior safety profile. The $634 million misbranding settlement established that the safety claims were false.",
+    "tax_math": "The Sackler family's $10-11 billion in dividends were managed through global trust structures to minimize US estate and income taxes. The public costs of the opioid epidemic are estimated at over $1 trillion.",
+    "wealth_velocity": "The Sackler family extracted $10-11 billion from Purdue Pharma. That wealth supported philanthropic donations to universities and museums globally — donations now being refused or returned by institutions removing the Sackler name."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Sackler family",
+        "how": "$10-11B extracted from Purdue before bankruptcy; Supreme Court blocked permanent immunity but family retained most extracted wealth"
+      },
+      {
+        "group": "Purdue executives 2007",
+        "how": "Pleaded guilty to misbranding; paid personal fines totaling $34.5M; avoided prison"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Approximately 500,000 Americans who died of opioid overdoses",
+        "how": "The prescription opioid wave — which OxyContin's marketing contributed to igniting — is the first of three overlapping overdose waves"
+      },
+      {
+        "group": "Opioid victims seeking civil accountability",
+        "how": "The Sackler family attempted to extinguish civil claims through bankruptcy shield; Supreme Court blocked it"
+      }
+    ],
+    "the_gap": "Purdue told doctors OxyContin had less than a 1% addiction rate. It was false. They pleaded guilty in 2007. Nobody went to prison. The family extracted $10 billion before the bankruptcy. They offered $6 billion for permanent immunity from lawsuits. The Supreme Court said no. The opioid epidemic killed 500,000 people. The Sackler name is still on buildings."
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "brand_name": "Medtronic",
+  "brand_slug": "medtronic",
+  "parent_company": "Medtronic plc",
+  "ultimate_parent": "Medtronic plc",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "MEDTRONIC PAID $190 MILLION FOR PAYING SURGEONS TO USE ITS SPINAL PRODUCTS — THEN TAX INVERTED TO IRELAND FROM MINNESOTA — ITS INFUSE BONE PROTEIN CAUSED HARM IT PAID TO SUPPRESS",
+  "executive_summary": "Medtronic plc is the world's largest medical device company by revenue, originally headquartered in Minneapolis, Minnesota. In 2015, Medtronic completed a $49.9 billion acquisition of Irish medical company Covidien and reincorporated in Dublin, Ireland — one of the most prominent 'tax inversion' transactions in US corporate history. Medtronic has paid multiple DOJ settlements for paying physician kickbacks to prescribe and use its medical devices, including a $190 million settlement in 2017 covering spinal surgery products. The company's INFUSE bone morphogenetic protein product was the subject of a major 2011 Spine journal investigation showing that Medtronic had paid physician-authors of clinical studies on INFUSE who had concealed significant adverse events including cancer risk, ectopic bone growth, and male infertility.",
+  "verdict_tags": [
+    "190m_spinal_kickback_settlement",
+    "49_9b_covidien_tax_inversion_ireland",
+    "infuse_adverse_event_suppression_paid_authors",
+    "infuse_cancer_ectopic_bone_male_infertility",
+    "multiple_doj_kickback_settlements"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Medtronic employs approximately 90,000 people globally. The company has maintained manufacturing operations in Minnesota following the Ireland reincorporation.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "Medtronic's pharmaceutical manufacturing generates chemical waste streams. No major environmental enforcement actions have been identified as a primary concern.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Medtronic's 2015 Ireland tax inversion — through the Covidien acquisition — represented one of the most prominent examples of a US company using an acquisition to reincorporate in a lower-tax jurisdiction. US Treasury subsequently issued rules in 2016 attempting to limit such inversions. Medtronic lobbied against the Affordable Care Act's medical device excise tax.",
+    "flags": [
+      "tax_inversion_triggered_treasury_rule_changes",
+      "medical_device_excise_tax_aca_opposition"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "2006: Medtronic paid $40 million to DOJ for kickbacks to orthopedic surgeons. 2017: Medtronic paid $190 million to DOJ for kickbacks to spine surgeons — the largest medical device kickback settlement at that time. The conduct covered 2006-2017 and involved payments disguised as consulting fees, royalties, and research grants. INFUSE-related litigation: Medtronic settled class action and individual claims related to undisclosed adverse events in its INFUSE bone protein product.",
+    "flags": [
+      "190m_spinal_kickback_2017_largest_at_time",
+      "40m_orthopedic_kickback_2006",
+      "infuse_adverse_event_suppression_spine_journal_documented"
+    ],
+    "sources": [
+      "https://www.justice.gov/opa/pr/medtronic-agrees-pay-190-million-resolve-kickback-lawsuit"
+    ]
+  },
+  "tax": {
+    "summary": "Medtronic's 2015 reincorporation in Ireland moved the company's legal domicile from Minnesota to Dublin while maintaining most operations in the US. Ireland's 12.5% corporate tax rate vs. the then-35% US statutory rate created documented tax savings estimated at $1+ billion annually.",
+    "flags": [
+      "ireland_12_5pct_vs_us_35pct_tax_rate",
+      "1b_estimated_annual_tax_savings"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Geoffrey Martha leads Medtronic. The physician kickback schemes covered multiple leadership periods. No Medtronic executive was personally criminally charged for the kickback settlements. The physician-authors who received Medtronic payments and published favorable INFUSE studies faced academic and professional scrutiny.",
+    "flags": [
+      "no_executive_criminal_charges_kickback_settlements",
+      "infuse_physician_authors_medtronic_payments_documented"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Medtronic's physician kickback schemes represent a documented structural problem in medical device marketing where physician influence over procedure decisions creates inherent conflicts of interest. The INFUSE case specifically shows how Medtronic's payments to physician-researchers shaped the clinical literature on its own products — physicians who received Medtronic funding authored studies that the Spine journal found had systematically omitted adverse events.",
+    "flags": [
+      "physician_conflict_of_interest_structural_problem_documented",
+      "manufacturer_funded_research_adverse_event_omission"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The Spine journal's 2011 special issue alleged that Medtronic's INFUSE adverse event data was known to the company before publication of studies that omitted it — and that the physician-authors who concealed adverse events received a combined $210 million in Medtronic royalties and consulting fees over the study period.",
+    "flags": [
+      "210m_physician_royalties_during_infuse_adverse_event_suppression",
+      "unnecessary_surgery_kickback_incentive_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "INFUSE bone morphogenetic protein (rhBMP-2) is used in spinal fusion surgeries to stimulate bone growth. The 2011 Spine journal investigation found that adverse events documented in internal clinical trial data — including ectopic bone growth, cancer risk association, retrograde ejaculation, and bone resorption — were systematically omitted from published studies. Patients who received INFUSE based on the published favorable evidence had not been informed of these risks.",
+    "flags": [
+      "infuse_ectopic_bone_growth_adverse_event_suppressed",
+      "infuse_cancer_risk_retrograde_ejaculation_suppressed",
+      "kickback_marginal_indication_surgery_incentive"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Before spinal surgery: ask your spine surgeon specifically about their financial relationships with Medtronic and other device manufacturers — the Physician Sunshine Act requires disclosure"
+    ],
+    "healthier": [
+      "Before spinal surgery: physical therapy, pain management, and non-surgical alternatives should be documented as exhausted before elective procedures"
+    ],
+    "diy": [
+      "Check physician financial disclosures at OpenPaymentsData.cms.gov",
+      "The FDA's MAUDE database contains adverse event reports for medical devices including Medtronic products"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2006,
+      "event": "$40M DOJ settlement for kickbacks to orthopedic surgeons",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2011,
+      "event": "Spine journal publishes special issue documenting INFUSE adverse event suppression; physician-authors received $210M Medtronic payments",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2015,
+      "event": "$49.9B Covidien acquisition; Medtronic reincorporates in Dublin, Ireland — prominent tax inversion",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "$190M DOJ kickback settlement — largest medical device kickback settlement at time",
+      "severity": "critical",
+      "source_url": "https://www.justice.gov/opa/pr/medtronic-agrees-pay-190-million-resolve-kickback-lawsuit"
+    }
+  ],
+  "community_impact": {
+    "displacement": "Patients who underwent spinal surgeries influenced by Medtronic's physician kickback scheme may have had procedures they did not clinically need. Patients who received INFUSE based on published studies that suppressed adverse event data were not able to make informed consent decisions.",
+    "price_illusion": "Medtronic's INFUSE product was sold and prescribed based on a clinical evidence base that the Spine journal found was systematically distorted by payments to physician-authors who omitted adverse events.",
+    "tax_math": "Medtronic's Ireland reincorporation saves an estimated $1+ billion annually in US corporate taxes. The company remains primarily a US operation — manufacturing in Minnesota, employing US workers, generating significant US revenues.",
+    "wealth_velocity": "Medtronic is publicly traded on the New York Stock Exchange. Its Ireland reincorporation concentrated tax savings that flow to shareholders."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Medtronic shareholders",
+        "how": "Physician kickbacks drove device sales; Ireland tax inversion saves estimated $1B+ annually; INFUSE favorable literature drove adoption"
+      },
+      {
+        "group": "Spine surgeons receiving kickbacks",
+        "how": "$190M total documented kickback payments across consulting, royalties, and research payments"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Patients with INFUSE-related adverse events",
+        "how": "Ectopic bone growth, cancer risk, male infertility — adverse events suppressed in manufacturer-funded literature; no informed consent possible"
+      },
+      {
+        "group": "US taxpayers",
+        "how": "$1B+ annual corporate tax savings from Ireland reincorporation reduces US public revenue while Medtronic maintains primarily US operations"
+      }
+    ],
+    "the_gap": "Medtronic paid $210 million to the doctors who wrote the clinical studies on their INFUSE product. Those doctors left out the cancer risk. And the infertility risk. And the ectopic bone growth. Medtronic paid $190 million for paying other doctors to use their spine products. No executive was criminally charged. The company is legally headquartered in Ireland and saves over a billion dollars a year in US taxes. It was founded in Minneapolis."
+  }
+}

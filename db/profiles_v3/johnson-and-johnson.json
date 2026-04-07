@@ -1,0 +1,174 @@
+{
+  "brand_name": "Johnson & Johnson",
+  "brand_slug": "johnson-and-johnson",
+  "parent_company": "Johnson & Johnson",
+  "ultimate_parent": "Johnson & Johnson",
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "J&J KNEW ITS BABY POWDER CONTAINED ASBESTOS SINCE 1971 — PAID $8.9 BILLION — AND TRIED TO PUT THE TALC LIABILITY INTO A FAKE BANKRUPTCY TO PROTECT SHAREHOLDERS",
+  "executive_summary": "Johnson & Johnson is one of the world's largest healthcare companies. Internal J&J documents revealed through litigation showed the company had knowledge of asbestos contamination in its talc-based baby powder dating to at least 1971 — and continued selling the product for decades. In 2019, Reuters published an investigation documenting these internal records. J&J paid $100 million to the FTC in 2022 for deceptive marketing of its surgical mesh products. Most significantly, J&J used the 'Texas Two-Step' bankruptcy maneuver — creating a subsidiary LTL Management specifically to hold talc liability, then placing it in bankruptcy — in an attempt to resolve approximately 40,000 talc/asbestos lawsuits at a discount while shielding J&J's own assets. Courts ultimately rejected this approach. J&J agreed to pay $8.9 billion to settle talc claims.",
+  "verdict_tags": [
+    "asbestos_baby_powder_knowledge_1971",
+    "8_9b_talc_settlement",
+    "texas_two_step_bankruptcy_rejected",
+    "100m_ftc_surgical_mesh",
+    "talc_asbestos_internal_documents_reuters"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "J&J employs approximately 152,000 people globally. No major systematic labor violations have been identified as a primary concern relative to its product liability record.",
+    "flags": [],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "J&J's pharmaceutical manufacturing generates chemical waste streams. No major standalone environmental enforcement actions have been identified as a primary concern.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "J&J's Texas Two-Step strategy — using a subsidiary bankruptcy to limit talc liability — generated significant congressional and legal scrutiny. Senators introduced legislation specifically targeting the Two-Step maneuver. J&J lobbied extensively against restrictions on its ability to use subsidiary bankruptcy for mass tort liability management.",
+    "flags": [
+      "texas_two_step_legislation_targeted",
+      "subsidiary_bankruptcy_mass_tort_lobbying"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "2019: Reuters investigation publishes internal J&J documents showing asbestos knowledge in talc dating to 1971. 2021: J&J creates LTL Management subsidiary, places it in Chapter 11 bankruptcy in Texas Two-Step. 2023: Third Circuit rejects LTL bankruptcy — finds it lacks good faith. 2024: J&J agrees to pay $8.9 billion over 25 years to settle approximately 40,000 talc claims — contingent on 75% plaintiff acceptance. The talc settlement remains the largest personal injury settlement in US history for asbestos-related claims.",
+    "flags": [
+      "8_9b_talc_settlement_largest_asbestos_personal_injury",
+      "ltl_management_bankruptcy_rejected_bad_faith",
+      "25_year_payment_schedule",
+      "reuters_1971_asbestos_knowledge_documents"
+    ],
+    "sources": [
+      "https://www.reuters.com/investigates/special-report/johnsonand-johnson-cancer/"
+    ]
+  },
+  "tax": {
+    "summary": "J&J's pharmaceutical and medical device operations use standard international IP and transfer pricing structures. The company benefits from US R&D tax credits. The $8.9 billion settlement is paid over 25 years and is partially tax-deductible. No major criminal tax enforcement actions have been documented.",
+    "flags": [
+      "8_9b_settlement_partial_deductibility",
+      "pharmaceutical_ip_transfer_pricing"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "CEO Joaquin Duato leads J&J following the split of the consumer products business into Kenvue. No J&J executive has been criminally charged for the talc asbestos suppression. The Two-Step bankruptcy maneuver — which attempted to shield J&J's assets while limiting plaintiff recovery — was designed and executed under prior CEO Alex Gorsky's tenure.",
+    "flags": [
+      "gorsky_era_texas_two_step_design",
+      "no_executive_criminal_charges",
+      "kenvue_consumer_spinoff_post_settlement"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "J&J's Texas Two-Step strategy was mirrored by 3M (Aearo Technologies for earplug liability) — both were ultimately rejected by courts. The parallel rejection of Two-Step maneuvers in 2023-2024 represents a significant limit on the use of subsidiary bankruptcy to manage mass tort liability.",
+    "flags": [
+      "3m_aearo_parallel_texas_two_step_both_rejected"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Plaintiff attorneys have alleged that J&J's internal documents — spanning from 1971 to the 1990s — show executives were aware of asbestos contamination and made decisions to continue sales and marketing while suppressing the contamination findings. J&J has contested this characterization and disputes that its talc caused the plaintiffs' cancers.",
+    "flags": [
+      "executive_awareness_suppression_1971_alleged",
+      "continued_sales_contamination_knowledge_alleged"
+    ],
+    "sources": [
+      "https://www.reuters.com/investigates/special-report/johnsonand-johnson-cancer/"
+    ]
+  },
+  "health_record": {
+    "summary": "Asbestos exposure is a documented cause of mesothelioma — a rare and aggressive cancer — and other respiratory cancers. The approximately 40,000 plaintiffs in the talc litigation allege ovarian cancer and mesothelioma from decades of talc-based baby powder use. Internal J&J documents published by Reuters showed company scientists noting asbestos presence in talc samples dating to 1971. J&J disputes causation. The $8.9 billion settlement, while not an admission of liability, is the largest personal injury settlement for asbestos-related claims in US history.",
+    "flags": [
+      "mesothelioma_asbestos_documented_cause",
+      "40000_plaintiffs_ovarian_cancer_mesothelioma",
+      "1971_internal_documents_asbestos_noted"
+    ],
+    "sources": [
+      "https://www.reuters.com/investigates/special-report/johnsonand-johnson-cancer/"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Cornstarch-based baby powder — widely available, no asbestos-in-talc concern, comparable price",
+      "Store brand cornstarch powder — identical function, no talc"
+    ],
+    "healthier": [
+      "Cornstarch baby powder — no asbestos contamination risk",
+      "For dry skin: unscented cornstarch or arrowroot powder as talc alternatives"
+    ],
+    "diy": [
+      "J&J discontinued talc-based baby powder in the US and Canada in 2020; if you have remaining talc-based J&J powder from before 2020, the FDA recommends against use",
+      "Check any cosmetic or personal care product ingredient list for 'talc' — the FDA provides guidance on talc testing at fda.gov"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1971,
+      "event": "Internal J&J documents show company scientists note asbestos in talc samples — per Reuters investigation",
+      "severity": "critical",
+      "source_url": "https://www.reuters.com/investigates/special-report/johnsonand-johnson-cancer/"
+    },
+    {
+      "year": 2019,
+      "event": "Reuters publishes investigation revealing internal documents; J&J stock falls; class action litigation accelerates",
+      "severity": "critical",
+      "source_url": "https://www.reuters.com/investigates/special-report/johnsonand-johnson-cancer/"
+    },
+    {
+      "year": 2020,
+      "event": "J&J discontinues talc baby powder in US and Canada; continues selling internationally until 2023",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "J&J creates LTL Management subsidiary; Texas Two-Step bankruptcy filed",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2023,
+      "event": "Third Circuit rejects LTL bankruptcy — lacks good faith; Two-Step failed",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "$8.9B settlement over 25 years — largest asbestos personal injury settlement in US history",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Approximately 40,000 plaintiffs — predominantly women who used J&J talc baby powder over decades — allege ovarian cancer and mesothelioma. The Texas Two-Step attempt would have resolved their claims at a significantly lower amount while shielding J&J's full balance sheet from liability.",
+    "price_illusion": "Johnson's Baby Powder carried a brand identity of safety and gentle care — 'as gentle as Johnson's' — while internal documents from 1971 showed awareness of asbestos in the talc. The brand's safety association was its primary commercial value.",
+    "tax_math": "The $8.9 billion settlement paid over 25 years generates deductions that reduce J&J's taxable income across the payment period. The Texas Two-Step strategy — had it succeeded — would have resolved billions in liability at a fraction of the cost through a good-faith-lacking subsidiary bankruptcy.",
+    "wealth_velocity": "J&J is publicly traded with broad institutional ownership. The $8.9 billion settlement represents a cost to these shareholders. The alternative — the Texas Two-Step — would have minimized this cost at the expense of the 40,000 plaintiffs with cancer diagnoses they attribute to J&J's product."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "J&J shareholders",
+        "how": "Decades of talc baby powder revenue while internal documents showed asbestos awareness; Texas Two-Step attempted to minimize liability cost"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "40,000 plaintiffs with ovarian cancer and mesothelioma",
+        "how": "Cancer diagnoses attributed to decades of talc use; J&J's Texas Two-Step attempted to resolve their claims at a discount through bad-faith subsidiary bankruptcy"
+      }
+    ],
+    "the_gap": "J&J's internal documents from 1971 showed their scientists noting asbestos in talc. They kept selling baby powder. Reuters published the documents in 2019. 40,000 people sued. J&J created a fake subsidiary, put the liability in it, and filed for bankruptcy to pay less. The court said no. J&J paid $8.9 billion. It is the largest asbestos settlement in US history. They called the product Johnson's Baby Powder."
+  }
+}
