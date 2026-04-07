@@ -931,7 +931,7 @@ function FeedCard({ business, chainFootnote = false }) {
               Visit ↗
             </a>
           ) : null}
-          {mapsHref ? (
+          {mapsHref && !chainFootnote ? (
             <a href={mapsHref} target="_blank" rel="noreferrer" style={directionsLinkStyle}>
               GET DIRECTIONS ↗
             </a>
@@ -978,6 +978,7 @@ export default function HomeScreen({
   const [identity, setIdentity] = useState(null);
   const [feed, setFeed] = useState([]);
   const [chainResults, setChainResults] = useState([]);
+  const [showAllChains, setShowAllChains] = useState(false);
   const [category, setCategory] = useState('all');
   const [loadingFeed, setLoadingFeed] = useState(false);
   const [geoHint, setGeoHint] = useState(null);
@@ -1805,9 +1806,39 @@ export default function HomeScreen({
                 >
                   Chain locations (reference only)
                 </div>
-                {chainResults.map((business) => (
-                  <FeedCard key={`chain-${business.id}`} business={business} chainFootnote />
-                ))}
+                {(() => {
+                  const visibleChains = showAllChains ? chainResults : chainResults.slice(0, 12);
+                  return (
+                    <>
+                      {visibleChains.map((business) => (
+                        <FeedCard key={`chain-${business.id}`} business={business} chainFootnote />
+                      ))}
+                      {chainResults.length > 12 && !showAllChains ? (
+                        <button
+                          type="button"
+                          onClick={() => setShowAllChains(true)}
+                          style={{
+                            display: 'block',
+                            margin: '8px 16px 16px',
+                            width: 'calc(100% - 32px)',
+                            fontFamily: "'Space Mono', monospace",
+                            fontSize: 10,
+                            letterSpacing: 2,
+                            textTransform: 'uppercase',
+                            background: 'transparent',
+                            border: '1px solid #2a3f52',
+                            color: '#6a8a9a',
+                            padding: '10px',
+                            borderRadius: 2,
+                            cursor: 'pointer',
+                          }}
+                        >
+                          Show {chainResults.length - 12} more nearby chains ↓
+                        </button>
+                      ) : null}
+                    </>
+                  );
+                })()}
               </div>
             ) : null}
 
