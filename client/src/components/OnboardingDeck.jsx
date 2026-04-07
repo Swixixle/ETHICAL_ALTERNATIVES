@@ -49,10 +49,11 @@ const CARDS = [
     labelFont: "'Space Mono', monospace",
     headlineFont: "'Space Mono', monospace",
     label: 'HOW IT WORKS',
-    headline: 'Point at anything.',
-    subtext: 'Tap the brand. See the investigation. Find the alternative.',
+    headline: 'Point. Tap. Or scan.',
+    subtext:
+      'Tap any brand for an investigation. Hold to select a specific object. Barcode scanning is automatic and unlimited.',
     accent: 'scanLine',
-    footer: 'TAP ANY LOGO · ANYWHERE · ANYTIME',
+    footer: '5 INVESTIGATIONS/DAY · UNLIMITED BARCODE SCANS · FREE SEARCH',
     footerStyle: 'mono',
   },
   {
@@ -83,7 +84,7 @@ const CARDS = [
     label: 'BEFORE YOU CONTINUE',
     headline: 'No account. No tracking. Just receipts.',
     subtext:
-      "Location is used only to find what's near you. Never stored. Never sold. 5 free investigations per day — no account needed.",
+      '5 camera investigations per day. Unlimited barcode scans. Unlimited Black Book search. No account. Location never stored.',
     accent: 'none',
     footer: 'cta',
     footerStyle: 'cta',
