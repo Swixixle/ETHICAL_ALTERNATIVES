@@ -19,10 +19,11 @@ Point camera → Tap brand → See the record → Find the alternative
 ```
 
 1. **Point** — open the camera, aim at any product or scene
-2. **Tap** — touch any brand in the frame
-3. **Identify** — Claude Vision resolves the brand and corporate parent; Gemini Vision independently corroborates with a weighted confidence score
-4. **Investigate** — structured profile loads across six categories with sourced findings and evidence grades
-5. **Act** — verified independent alternatives surface from Etsy, local sellers, and nearby businesses
+2. **Tap** — touch any brand in the frame. Hold for 600ms to isolate a specific object with a selection box
+3. **Scan** — barcodes are detected automatically in the background. EAN, UPC, QR — no tap needed
+4. **Identify** — Claude Vision resolves the brand and corporate parent; Gemini Vision independently corroborates with a weighted confidence score across three tracks
+5. **Investigate** — structured profile loads across six categories with sourced findings and evidence grades
+6. **Act** — verified independent alternatives surface from Etsy, local sellers, and nearby businesses
 
 ---
 
@@ -39,29 +40,44 @@ Every investigation produces a structured record across six categories:
 | **Tax** | Effective rate vs statutory rate, offshore entities, subsidies |
 | **Product Health** | Documented harms, recalls, ingredient concerns |
 
-Each category gets an evidence grade — `established`, `strong`, `documented`, `alleged` — based on source quality and model corroboration. Nothing is presented as fact without a source.
+Each category gets an evidence grade — `established`, `strong`, `documented`, `alleged` — based on source quality and model corroboration. Nothing is presented as fact without a source. Every allegation section explicitly states the organization's documented response, or states that no formal response has been found.
 
 ---
 
 ## The Black Book
 
-94 pre-investigated profiles across corporations, religious institutions, and nonprofits — available without a camera tap at `/library`.
+171 pre-investigated profiles across corporations, religious institutions, and nonprofits — available without a camera tap at `/library`.
 
 Filter by type. Read the record. Find the alternative.
 
-The Black Book covers organizations including ExxonMobil, Purdue Pharma, Volkswagen, Goldman Sachs, the Roman Catholic Church, the Southern Baptist Convention, the LDS Church, the Boy Scouts of America, Goodwill Industries, the NRA, and dozens more — each with sourced timelines, board member records, allegation responses, and documented community impact.
+Profiles include ExxonMobil, Purdue Pharma, Volkswagen, Goldman Sachs, the Roman Catholic Church, the Southern Baptist Convention, the LDS Church, the Boy Scouts of America, Goodwill Industries, the NRA, and dozens more — each with sourced timelines, allegation responses, executive records, and documented community impact.
+
+---
+
+## Accuracy and governance
+
+EthicalAlt is built around a documented research standard — [`RESEARCH_ALGORITHM.md`](./RESEARCH_ALGORITHM.md).
+
+**What protects accuracy:**
+
+- Every claim carries an evidence grade (`established` → `alleged`) based on source quality and model agreement
+- Every allegation section states the organization's documented response, or explicitly states none was found
+- A share risk tier is computed server-side on every investigation — high risk content is blocked from export, medium risk gets a mandatory disclaimer
+- A three-track confidence scorer (documentary 0.5 / model agreement 0.3 / cross-reference 0.2) flags weak corroboration
+- A corroboration script re-investigates every stored profile using live web search and diffs against stored facts
+- Users can report factual errors directly from any investigation via the "report an error" link — all reports land in a reviewed queue
+
+**What EthicalAlt is not:**
+
+EthicalAlt is not a law firm. It is not a regulator. It is not a news organization. It is a mirror. Clean businesses get a clean record here. Companies with documented issues get a documented record. The mirror does not editorialize.
 
 ---
 
 ## Neutral by design
 
-EthicalAlt is a mirror. It finds what it finds.
-
 A business with a clean record gets a clean record — sourced, scored, and displayed with the same rigor as a heavy file. A 55-year independent press with no documented violations, family owned, four primary sources: that is the finding, and that is what gets published.
 
 For honest independent businesses that is not a liability. It is free verified documentation that no marketing budget can replicate.
-
-EthicalAlt is not a law firm. It is not a regulator. It is not a news organization. It does not editorialize. The mirror reflects what the documented record contains.
 
 ---
 
@@ -70,29 +86,32 @@ EthicalAlt is not a law firm. It is not a regulator. It is not a news organizati
 **Stack:** React 19 + Vite (client) / Node.js + Express (server) / PostgreSQL (profiles)
 
 **AI pipeline:**
-- Vision: Claude Vision primary, Gemini Vision failover
-- Investigation: Claude multi-turn with web search, Perplexity + Gemini fallback chain
-- Confidence: three-track weighted scoring (documentary 0.5, model agreement 0.3, cross-reference 0.2), clamped 0.15–0.97
+- Vision: Claude Vision primary, Gemini Vision failover, crop enhancement (contrast + sharpen) on held selections
+- Investigation: Claude multi-turn with web search (up to 10 searches), Perplexity + Gemini parallel fallback
+- Confidence: three-track weighted scoring clamped 0.15–0.97
+- Barcode: native BarcodeDetector API → Open Food Facts → brand lookup, bypasses vision entirely
 
-**Data:**
-- 94 pre-investigated profiles in PostgreSQL with `profile_json` JSONB
-- 41 board member records across 8 institutions
-- Allegation response standard applied across all profiles per documented research algorithm
-- Alternatives sourced from Etsy API, OpenStreetMap/Overpass, local seller registry
+**Cache layer:**
+- Investigation results: 6 hour TTL, 300 max entries
+- Barcode lookups: 24 hour TTL, 500 max entries
+- City narrative: 24 hour TTL, 200 max entries
 
-**Rate limiting:** 5 investigations per IP per 24 hours. No account required.
+**Rate limiting:** 5 camera investigations per IP per 24 hours. Barcode scans and Black Book search are unlimited.
 
-**Privacy:** Location is used only to find nearby independents. Never stored. Never sold.
+**Privacy:** Location is used only to find nearby independents. Never stored. Never sold. No account required.
 
 ---
 
 ## Research standard
 
-Every profile follows the documented research algorithm at [`RESEARCH_ALGORITHM.md`](./RESEARCH_ALGORITHM.md).
+Every profile follows [`RESEARCH_ALGORITHM.md`](./RESEARCH_ALGORITHM.md).
 
 Core principle: if something happened, it should be verifiable. If something is claimed, there should be a receipt.
 
-Every allegation section explicitly states the organization's documented response — or states that no formal response has been documented. Absence of evidence is stated explicitly, never silently omitted.
+Three allegation response types:
+- **Type 1** — documented denial or dispute (with source)
+- **Type 2** — documented acknowledgment (with source)
+- **Type 3** — no formal public response documented (stated explicitly, never silently omitted)
 
 ---
 
@@ -103,7 +122,7 @@ Every allegation section explicitly states the organization's documented respons
 npm install
 cd client && npm install
 
-# Environment — copy and fill in keys
+# Environment
 cp .env.example .env
 
 # Run
@@ -111,7 +130,7 @@ npm run dev          # server on :3001
 cd client && npm run dev   # client on :5173
 ```
 
-**Required env vars:**
+**Required:**
 ```
 ANTHROPIC_API_KEY=
 DATABASE_URL=        # optional — degrades gracefully without it
@@ -119,8 +138,8 @@ DATABASE_URL=        # optional — degrades gracefully without it
 
 **Optional:**
 ```
-GEMINI_API_KEY=      # vision failover + investigation fallback
-PERPLEXITY_API_KEY=  # Layer C corroboration
+GEMINI_API_KEY=      # vision failover + parallel investigation fallback
+PERPLEXITY_API_KEY=  # parallel investigation fallback + Layer C corroboration
 ETSY_API_KEY=        # Etsy alternatives
 ```
 
@@ -131,10 +150,14 @@ ETSY_API_KEY=        # Etsy alternatives
 Functional MVP. Pre-user acquisition phase.
 
 - Camera tap → investigation pipeline: operational
-- Black Book (94 profiles): operational
+- Barcode detection (EAN/UPC/QR): operational
+- Hold-to-select with crop enhancement: operational
+- Black Book (171 profiles): operational
 - Local independents feed: operational
 - City narrative on load: operational
-- Rate limiting: operational
+- Rate limiting (5/day camera, unlimited barcode + search): operational
+- Error reporting: operational
+- Corroboration pass against live web search: ready to run
 - Civic features (witness registry, worker profiles): built, currently parked
 
 ---
