@@ -1,0 +1,200 @@
+{
+  "brand_name": "FLDS Church",
+  "brand_slug": "flds-church",
+  "parent_company": "Fundamentalist Church of Jesus Christ of Latter-Day Saints",
+  "ultimate_parent": "Warren Jeffs (imprisoned)",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "WARREN JEFFS RAN A THEOCRATIC COMPOUND WHERE HE ARRANGED MARRIAGES BETWEEN ADULT MEN AND GIRLS AS YOUNG AS 12 — HE IS SERVING LIFE PLUS 20 YEARS AND IS STILL ISSUING COMMANDS FROM PRISON",
+  "executive_summary": "The Fundamentalist Church of Jesus Christ of Latter-Day Saints (FLDS) is a polygamous fundamentalist Mormon splinter group that broke from the mainstream LDS Church when it abandoned plural marriage in 1890. Under Warren Jeffs — who led the FLDS from 2002 until his imprisonment — the organization operated as a theocratic system centered on the Yearning for Zion Ranch in Eldorado, Texas and the twin border towns of Hildale, Utah and Colorado City, Arizona. Jeffs arranged marriages between adult men and girls as young as 12, had dozens of wives himself including underage girls, expelled thousands of boys ('Lost Boys') from the community to reduce male competition for wives, and controlled members through complete economic and social dependence on the organization. Jeffs was convicted in 2011 on two counts of sexual assault of a child and aggravated sexual assault of a child — sentenced to life plus 20 years. He has continued issuing religious directives from prison that his followers obey.",
+  "verdict_tags": [
+    "jeffs_life_plus_20_years_child_sexual_assault",
+    "girls_as_young_as_12_arranged_marriages",
+    "lost_boys_thousands_expelled",
+    "yft_ranch_2008_texas_raid_439_children",
+    "jeffs_still_issuing_directives_from_prison",
+    "economic_social_total_control",
+    "hildale_colorado_city_theocratic_control",
+    "polygamy_underage_girls_documented"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "FLDS members worked in FLDS-controlled businesses — construction, manufacturing, agriculture — with wages often paid to the organization rather than to individual members. The United Effort Plan (UEP) — the community property trust that held most FLDS members' housing and property — was placed under state receivership by Utah courts in 2005 after Jeffs fled from state authorities. Members who left the FLDS typically did so with no personal assets, no credit history, and no marketable credentials outside the community.",
+    "flags": [
+      "wages_paid_to_organization_not_members",
+      "uep_trust_state_receivership_2005",
+      "members_exit_no_assets_no_credit_history",
+      "flds_controlled_businesses_labor_capture"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental enforcement actions against FLDS have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The FLDS exercised near-total political control over Hildale, Utah and Colorado City, Arizona — the twin border towns where the majority of members lived. Local law enforcement (the Colorado City Marshal's Office) was staffed by FLDS members who enforced community rules rather than state law — documented by the Arizona Attorney General's investigation. The community blocked outside businesses, controlled housing through the UEP trust, and expelled members who challenged Jeffs's authority. The political control was so complete that state governments of Utah, Arizona, and Texas all took legal action against various FLDS entities.",
+    "flags": [
+      "hildale_colorado_city_police_flds_members",
+      "arizona_ag_investigation_police_documented",
+      "uep_state_receivership_utah",
+      "total_political_community_control",
+      "three_state_legal_actions"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "2006: Warren Jeffs placed on FBI Ten Most Wanted list; arrested in Nevada. 2007: Jeffs convicted in Utah of rape as an accomplice (arranging marriage of 14-year-old to adult cousin); conviction later overturned on jury instruction error. 2008: Texas Rangers raid Yearning for Zion Ranch; 439 children taken into state custody — the largest child protective action in Texas history; children ultimately returned after courts found insufficient evidence of individual abuse for most children. 2011: Jeffs convicted in Texas on two counts of sexual assault of a child (a 12-year-old) and aggravated sexual assault of a child (a 15-year-old); sentenced to life plus 20 years plus $10,000 fine. 2012: UEP trust distributed to members and former members by Utah court. Jeffs continues to issue religious directives from prison.",
+    "flags": [
+      "jeffs_life_plus_20_2011_texas",
+      "fbi_ten_most_wanted",
+      "yfz_raid_439_children_largest_texas_cps",
+      "uep_distributed_utah_court_2012",
+      "jeffs_prison_directives_ongoing"
+    ],
+    "sources": [
+      "https://www.justice.gov/usao-wdtx/pr/warren-jeffs-sentenced-life-plus-20-years"
+    ]
+  },
+  "tax": {
+    "summary": "The United Effort Plan (UEP) trust — which held most FLDS members' housing and property — was placed under state receivership by Utah courts and ultimately distributed to members and former members. FLDS organizations have claimed religious tax exemption. The economic control structure — where members' labor and wages flowed to FLDS-controlled entities — represents a documented system of economic extraction under religious cover.",
+    "flags": [
+      "uep_state_receivership_distributed",
+      "economic_extraction_under_religious_tax_exemption"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Warren Jeffs — 'prophet, seer, and revelator' of the FLDS — is serving life plus 20 years in Texas for child sexual assault. He has issued religious directives from prison that a portion of his followers continue to obey, including dietary restrictions, dress codes, and relationship rules. Jeffs succeeded his father Rulon Jeffs as FLDS prophet in 2002. Lyle Jeffs — Warren's brother — was convicted in 2017 of food stamp fraud for diverting food assistance money from members' EBT cards to FLDS-controlled accounts; he fled before sentencing and was later caught.",
+    "flags": [
+      "jeffs_life_plus_20",
+      "jeffs_directives_from_prison_obeyed",
+      "lyle_jeffs_food_stamp_fraud_convicted_fled"
+    ],
+    "sources": [
+      "https://www.justice.gov/usao-wdtx/pr/warren-jeffs-sentenced-life-plus-20-years"
+    ]
+  },
+  "connections": {
+    "summary": "The FLDS is the largest of several fundamentalist Mormon polygamous groups that broke from the mainstream LDS Church. The Kingston Group, the Apostolic United Brethren, and other groups share similar origins but are organizationally distinct. The mainstream LDS Church has explicitly and repeatedly disavowed the FLDS and all polygamous fundamentalist groups.",
+    "flags": [
+      "largest_of_multiple_fundamentalist_polygamous_groups",
+      "mainstream_lds_explicit_disavowal"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former FLDS members — including Jeffs's own nephew Brent Jeffs, who wrote a memoir — have alleged that sexual abuse of children within the community was systematic and multigenerational, and that the organizational structure was specifically designed to prevent reporting to outside authorities through complete social, economic, and informational control. These allegations are consistent with the documented criminal findings but extend to claimed patterns beyond the specific acts for which Jeffs was convicted.",
+    "flags": [
+      "systematic_multigenerational_abuse_alleged",
+      "structure_designed_prevent_reporting_alleged"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Warren Jeffs was convicted of sexually assaulting girls aged 12 and 15. He arranged marriages between adult men and girls as young as 12 — documented in evidence presented at trial. 'Lost Boys' — young men expelled from the community to reduce male competition for wives — were documented by researchers to face severe adjustment difficulties including substance abuse, homelessness, and inability to function outside the community's total control structure. Members who escaped documented psychological trauma from systematic isolation and control.",
+    "flags": [
+      "12_year_old_sexual_assault_convicted",
+      "lost_boys_expulsion_documented_harm",
+      "members_escape_psychological_trauma_documented"
+    ],
+    "sources": [
+      "https://www.justice.gov/usao-wdtx/pr/warren-jeffs-sentenced-life-plus-20-years"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "There is no alternative to the FLDS for members whose entire social, economic, and family structure is controlled by the organization — exit requires rebuilding everything simultaneously"
+    ],
+    "healthier": [
+      "Holding Out HELP (holdingouthelp.org) — support organization for individuals leaving polygamous fundamentalist groups",
+      "Flora Jessop's organization — former FLDS member who assists those leaving"
+    ],
+    "diy": [
+      "The Texas court records from the YFZ Ranch case and Warren Jeffs's trial are public",
+      "'Stolen Innocence' by Elissa Wall and 'Church of Lies' by Flora Jessop are documented first-person accounts"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1890,
+      "event": "Mainstream LDS Church discontinues polygamy; fundamentalist members who continue are eventually excommunicated, forming FLDS predecessors",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2002,
+      "event": "Warren Jeffs succeeds father Rulon Jeffs as FLDS prophet; begins systematic consolidation of control",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2005,
+      "event": "Utah court places UEP trust under state receivership",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2006,
+      "event": "Jeffs placed on FBI Ten Most Wanted; arrested in Nevada with underage 'spiritual wife'",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2008,
+      "event": "Texas Rangers raid YFZ Ranch; 439 children removed — largest CPS action in Texas history; children returned after court rulings",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2011,
+      "event": "Jeffs convicted in Texas: life plus 20 years for sexual assault of 12-year-old and 15-year-old",
+      "severity": "critical",
+      "source_url": "https://www.justice.gov/usao-wdtx/pr/warren-jeffs-sentenced-life-plus-20-years"
+    },
+    {
+      "year": 2017,
+      "event": "Lyle Jeffs convicted of food stamp fraud; had diverted EBT funds from members to FLDS accounts; fled before sentencing; recaptured",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Thousands of 'Lost Boys' — young men expelled from the FLDS to reduce male competition for wives — were released into outside communities with no money, no education credentials, no credit, no identification documents in many cases, and no experience navigating non-FLDS society. Women who escaped faced similar challenges plus the additional complexity of leaving with children in jurisdictions where their marriages (to men who took multiple wives) had uncertain legal status.",
+    "price_illusion": "The FLDS presents as a restored form of original Mormon Christianity — a return to the plural marriage practices discontinued under government pressure. Members are told their eternal salvation depends on obedience to the prophet. The 'price' of this salvation is total surrender of property, income, marriage choice, and reproductive autonomy to Warren Jeffs — who is serving life in prison for child rape.",
+    "tax_math": "The UEP trust — which held members' housing, businesses, and land — operated as a tax-exempt religious trust while functioning as a mechanism of economic control that prevented members from accumulating personal assets. When the trust was placed under state receivership and distributed, members received assets they had effectively already paid for through their labor.",
+    "wealth_velocity": "The FLDS's economic model — where member labor and wages flowed to organization-controlled entities — concentrated assets in the UEP trust controlled by Warren Jeffs and FLDS leadership while members held no personal assets. Jeffs himself accumulated dozens of 'spiritual wives' whose reproductive labor created children for his household."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Warren Jeffs and FLDS leadership",
+        "how": "Complete economic, social, reproductive, and spiritual control over thousands of members; labor and wages of members captured by organization"
+      },
+      {
+        "group": "Adult male FLDS members with allocated wives",
+        "how": "Access to multiple wives arranged by Jeffs; economic labor of wives and children"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Girls assigned as wives to adult men",
+        "how": "Jeffs arranged marriages between adult men and girls as young as 12; Jeffs himself convicted of sexually assaulting girls aged 12 and 15"
+      },
+      {
+        "group": "'Lost Boys' expelled from community",
+        "how": "Expelled with nothing to reduce male competition for wives; documented homelessness, substance abuse, inability to function outside the only society they knew"
+      }
+    ],
+    "the_gap": "Warren Jeffs arranged marriages between adult men and girls as young as 12. He sexually assaulted a 12-year-old and a 15-year-old. He is serving life plus 20 years. He is still issuing religious commands from prison. His followers still obey them. He expelled thousands of teenage boys from the community so older men could have more wives. Those boys were dropped on the street with nothing. The Texas Rangers took 439 children from his compound. Most were returned. Jeffs is still the prophet."
+  }
+}

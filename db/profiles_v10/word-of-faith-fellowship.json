@@ -1,0 +1,182 @@
+{
+  "brand_name": "Word of Faith Fellowship",
+  "brand_slug": "word-of-faith-fellowship",
+  "parent_company": "Word of Faith Fellowship",
+  "ultimate_parent": "Jane Whaley (founder-leader)",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "WORD OF FAITH FELLOWSHIP PRACTICES 'BLASTING' — MEMBERS SCREAM AT EACH OTHER FOR HOURS TO CAST OUT DEMONS — FORMER MEMBERS DOCUMENT PHYSICAL ABUSE, CHILD LABOR, AND MEMBERS SENT TO BRAZIL TO CONCEAL CRIMES",
+  "executive_summary": "Word of Faith Fellowship (WOFF) is a Spindale, North Carolina-based evangelical church founded by Jane Whaley in 1979 with approximately 750 members. It has been investigated by law enforcement and documented by the Associated Press in a Pulitzer Prize-winning investigative series as operating as a controlling high-demand religious group with documented physical abuse. WOFF's signature practice is 'blasting' — where members are subjected to hours of loud screaming by other members to cast out demons. Former members have documented systematic physical abuse of children in the name of discipline, members being sent to a Brazilian sister congregation to remove them from US law enforcement jurisdiction when legal trouble arose, labor exploitation of members, and total control over members' personal lives, communications, and relationships. Jane Whaley has never been criminally charged despite investigations by multiple agencies.",
+  "verdict_tags": [
+    "blasting_hours_screaming_cast_demons",
+    "ap_pulitzer_prize_investigation",
+    "physical_abuse_children_documented",
+    "brazil_sister_congregation_jurisdiction_escape",
+    "jane_whaley_never_charged_investigations",
+    "total_control_communications_relationships",
+    "labor_exploitation_documented",
+    "former_members_criminal_charges_obstruction"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": false,
+    "political": false,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Former WOFF members have documented being directed to work in church-controlled businesses for below-market or no wages, with the labor controlled by Whaley's direction. The AP investigation documented that WOFF members worked in painting, landscaping, and other businesses where their labor was directed by church leadership with minimal individual compensation.",
+    "flags": [
+      "church_controlled_business_labor_documented",
+      "below_market_no_wage_documented",
+      "ap_investigation_labor_exploitation"
+    ],
+    "sources": [
+      "https://apnews.com/special-reports/word-of-faith-fellowship"
+    ]
+  },
+  "environmental": {
+    "summary": "No environmental enforcement actions against WOFF have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "WOFF does not engage in conventional political activity. Its political influence is limited to its effect on the Spindale, North Carolina community where it has significant local presence. Former members have alleged that local law enforcement's proximity to church members affected the responsiveness to abuse complaints in the community.",
+    "flags": [
+      "local_law_enforcement_proximity_alleged_effect"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Multiple law enforcement investigations — by state agencies and the FBI — have been conducted into WOFF without resulting in charges against Jane Whaley. Former WOFF members — including children who were physically abused — filed criminal complaints that were not prosecuted. The AP documented that some members were sent to WOFF's Brazilian affiliate church when US legal scrutiny increased. Several former members and church leaders have faced charges related to obstruction of investigations and child abuse — but not Whaley herself. A 2017 Rutherford County, North Carolina grand jury investigated WOFF; no indictments were returned against Whaley.",
+    "flags": [
+      "multiple_investigations_no_whaley_charges",
+      "brazil_members_sent_jurisdiction_documented",
+      "former_members_charged_not_whaley",
+      "2017_grand_jury_no_indictment_whaley"
+    ],
+    "sources": [
+      "https://apnews.com/special-reports/word-of-faith-fellowship"
+    ]
+  },
+  "tax": {
+    "summary": "WOFF is registered as a tax-exempt religious organization. Its finances are not publicly disclosed. The church's control over member employment and labor — documented by the AP — represents an economic control structure that operates under religious exemption.",
+    "flags": [
+      "tax_exempt_no_public_disclosure",
+      "economic_control_religious_exemption"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Jane Whaley founded WOFF in 1979 and remains its leader as of 2024. She has been described by former members as exercising complete authority over members' lives — including approving marriages, directing careers, controlling communication with family outside the church, and directing the blasting sessions. Her husband Sam Whaley is also in leadership. Despite multiple investigations, no criminal charges have been filed against Whaley. The AP's multi-year investigation won a Pulitzer Prize for Investigative Reporting in 2017.",
+    "flags": [
+      "whaley_no_criminal_charges_multiple_investigations",
+      "complete_authority_documented_ap",
+      "ap_pulitzer_2017"
+    ],
+    "sources": [
+      "https://apnews.com/special-reports/word-of-faith-fellowship"
+    ]
+  },
+  "connections": {
+    "summary": "WOFF operates a Brazilian affiliate church — the Comunidade Cristã Palavra da Fé in Curitiba — that has been documented as a destination for WOFF members sent outside US jurisdiction when legal scrutiny increased. The Brazilian church operates with similar practices to WOFF. WOFF is not affiliated with any denomination.",
+    "flags": [
+      "brazil_affiliate_curitiba_jurisdiction_escape",
+      "no_denominational_affiliation_accountability"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former WOFF members — including individuals who were raised in the church from childhood — have alleged systematic physical abuse during 'discipline' sessions, food deprivation as punishment, isolation from non-WOFF family members, prohibition on medical care without Whaley's approval, sleep deprivation through extended prayer and blasting sessions, and the use of the Brazil congregation to move members beyond US legal jurisdiction. These allegations are documented in the AP investigation but Whaley has not been criminally convicted.",
+    "flags": [
+      "systematic_physical_abuse_discipline_alleged",
+      "food_deprivation_punishment_alleged",
+      "medical_care_whaley_approval_required",
+      "sleep_deprivation_extended_blasting",
+      "brazil_legal_jurisdiction_escape_documented_ap"
+    ],
+    "sources": [
+      "https://apnews.com/special-reports/word-of-faith-fellowship"
+    ]
+  },
+  "health_record": {
+    "summary": "'Blasting' — the practice of having multiple members scream at a target member for hours to cast out demons — is documented by the AP and by former members as both physically and psychologically harmful. Former members have documented receiving or witnessing physical beatings during discipline sessions administered by adults including parents directed by church leadership. The prohibition on medical care without Whaley's approval has been documented to result in delayed or denied treatment for medical conditions. Children raised in WOFF have documented lasting psychological trauma from their upbringing.",
+    "flags": [
+      "blasting_physical_psychological_harm_documented",
+      "physical_beatings_discipline_documented",
+      "medical_care_approval_delayed_denied",
+      "children_lasting_trauma_documented"
+    ],
+    "sources": [
+      "https://apnews.com/special-reports/word-of-faith-fellowship"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Any other evangelical Christian congregation without a controlling high-demand structure"
+    ],
+    "healthier": [
+      "BITE Model Awareness (bitemodel.org) — Steven Hassan's framework for evaluating controlling religious groups",
+      "Recovering from Religion Foundation — support for those leaving high-demand religious groups"
+    ],
+    "diy": [
+      "The AP's Word of Faith Fellowship investigative series is publicly available at apnews.com",
+      "'Twisted Minds' documentary covers WOFF"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1979,
+      "event": "Jane Whaley founds Word of Faith Fellowship in Spindale, North Carolina",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1995,
+      "event": "First significant media and law enforcement attention to WOFF practices; ABC News 20/20 investigation",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2012,
+      "event": "Former members begin filing criminal complaints for abuse; law enforcement investigations begin",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2017,
+      "event": "AP publishes Pulitzer Prize-winning investigation into WOFF; Brazil congregation documented as jurisdiction escape",
+      "severity": "critical",
+      "source_url": "https://apnews.com/special-reports/word-of-faith-fellowship"
+    },
+    {
+      "year": 2017,
+      "event": "Rutherford County grand jury investigates WOFF; no indictments returned against Whaley",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Children raised in WOFF who leave as adults face rebuilding their lives with limited outside relationships, limited education beyond what Whaley permitted, and the psychological effects of the practices they experienced. Former members who maintained contact with non-WOFF family members were subject to church discipline — making those connections difficult to maintain.",
+    "price_illusion": "WOFF presents as a Pentecostal Christian church focused on spiritual warfare and deliverance from demonic influence. The 'price' of membership — documented by the AP and by former members — includes submission to Whaley's authority over every major life decision, participation in blasting sessions, and the effective severing of relationships with non-members including biological family.",
+    "tax_math": "WOFF's tax-exempt religious status covers an organization that the AP documented as exercising economic control over members' labor, directing members to work in church-controlled businesses, and — per former members — controlling members' access to their own earnings.",
+    "wealth_velocity": "WOFF's economic control over member labor — through church-directed employment in church-controlled businesses — represents wealth accumulation through the directed labor of controlled members operating under religious exemption."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Jane Whaley and WOFF leadership",
+        "how": "Complete control over members' lives, labor, and relationships; labor directed to church-controlled businesses; no criminal charges despite multiple investigations"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "WOFF members — especially those raised from childhood",
+        "how": "Hours of blasting; physical abuse during 'discipline'; medical care requiring Whaley approval; isolation from family; labor directed by church; lasting psychological harm"
+      }
+    ],
+    "the_gap": "Word of Faith Fellowship has a practice called blasting where members scream at each other for hours to cast out demons. The AP won a Pulitzer Prize documenting it. Former members describe systematic physical abuse of children. Some members were sent to a church in Brazil when US law enforcement started looking. Multiple investigations have been conducted. Jane Whaley has never been charged with anything. The grand jury returned no indictments. The church is tax-exempt. It has 750 members."
+  }
+}

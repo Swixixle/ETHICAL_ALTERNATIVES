@@ -1,0 +1,173 @@
+{
+  "brand_name": "United Methodist Church",
+  "brand_slug": "united-methodist-church",
+  "parent_company": "United Methodist Church",
+  "ultimate_parent": "Council of Bishops",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "THE UNITED METHODIST CHURCH SPLIT IN HALF OVER LGBTQ INCLUSION — OVER $600 MILLION IN PROPERTY WAS AT STAKE — AND THE DENOMINATION THAT STAYED INCLUSIVE NOW HAS TO REBUILD FROM A SMALLER BASE",
+  "executive_summary": "The United Methodist Church (UMC) is the second-largest Protestant denomination in the United States with approximately 5 million US members and 12 million globally. In 2022-2024, the UMC experienced the largest denominational split in American Protestantism in decades — with theologically conservative congregations departing to form the Global Methodist Church over the question of LGBTQ inclusion, particularly same-sex marriage and the ordination of openly LGBTQ clergy. Over 7,500 congregations (approximately 25% of US UMC churches) voted to disaffiliate, taking approximately $600 million in property. The remaining UMC voted in 2024 to remove its historic prohibition on same-sex marriage and LGBTQ ordination. The financial and membership consequences of the split will take years to fully assess.",
+  "verdict_tags": [
+    "7500_congregations_disaffiliated",
+    "600m_property_split",
+    "global_methodist_church_conservative_departure",
+    "lgbtq_inclusion_vote_2024",
+    "wespath_21b_pension_fund",
+    "clergy_sexual_misconduct_documented",
+    "connectional_structure_financial_complexity"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": false,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "The UMC employs approximately 30,000 clergy and significant lay staff across its connectional structure. The split has created documented employment uncertainty for clergy in departing congregations and for denominational staff. Clergy sexual misconduct has been a documented issue — the UMC has a formal complaint and response process, and the Council of Bishops has addressed multiple cases.",
+    "flags": [
+      "clergy_sexual_misconduct_formal_process",
+      "split_employment_uncertainty"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "The UMC has official positions on environmental stewardship and climate change — generally supportive of action — through its Social Principles. Its Wespath investment fund manages approximately $21 billion in pension assets with documented ESG considerations.",
+    "flags": [
+      "wespath_21b_esg_investment",
+      "social_principles_climate_support"
+    ],
+    "sources": []
+  },
+  "political": {
+    "summary": "The UMC's denominational split reflects the most consequential internal political division in American mainline Protestantism since the 19th century slavery-era splits. The conservative Global Methodist Church has aligned with African and Asian UMC conferences that voted against LGBTQ inclusion. The remaining UMC's 2024 vote to remove prohibitions on same-sex marriage and LGBTQ ordination represents the culmination of a 50-year internal debate.",
+    "flags": [
+      "50_year_lgbtq_debate_culmination",
+      "african_asian_conference_conservative_alignment",
+      "global_methodist_church_formed"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "The disaffiliation process required departing congregations to pay a financial exit cost — calculated as a share of denominational pension liabilities — generating significant litigation in multiple annual conference jurisdictions where congregations contested the exit terms. Courts have issued varying rulings on whether departing congregations could take their property. The $600 million in property involved in disaffiliations represents the largest property dispute in American Protestant history.",
+    "flags": [
+      "disaffiliation_exit_cost_litigation",
+      "600m_property_dispute_largest_protestant",
+      "annual_conference_court_rulings_varying"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "The UMC and its affiliated entities are exempt from federal income tax. Wespath — the denominational pension fund — manages approximately $21 billion in assets for clergy and lay employees. The disaffiliation financial settlements — including exit payments from departing congregations — represent a novel financial transaction in the nonprofit religious sector with tax implications that are still being assessed.",
+    "flags": [
+      "wespath_21b_pension_fund",
+      "disaffiliation_tax_implications_assessed"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "The Council of Bishops — currently 46 active bishops — governs the UMC. Bishop Thomas Bickerton chairs the Council. The denomination's handling of the split — including the negotiated disaffiliation process — has been managed through a complex interplay of the Council of Bishops, the Judicial Council (the denomination's supreme court), and General Conference (the global legislative body that meets every four years). The 2024 General Conference was the decisive legislative moment removing LGBTQ prohibitions.",
+    "flags": [
+      "council_bishops_46_active",
+      "2024_general_conference_decisive_vote",
+      "judicial_council_supreme_court"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The UMC's connectional structure — where congregations, annual conferences, and the general church are financially linked — means the disaffiliation split has financial ripple effects across pension obligations, apportionments, and denominational budgets that will take years to resolve. The departing Global Methodist Church has aligned with more conservative theological networks internationally.",
+    "flags": [
+      "connectional_financial_ripple_effects",
+      "global_methodist_international_conservative_alignment"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Progressive UMC advocates have alleged that the disaffiliation process — which allowed conservative congregations to leave with their property in exchange for exit payments — represented a financial settlement that disproportionately benefited departing congregations at the expense of the remaining denomination and its pension obligations. Conservative departing congregations have alleged the exit costs were punitive and designed to deter departure. Both characterizations reflect genuine theological and financial disputes rather than established facts.",
+    "flags": [
+      "exit_cost_disputed_both_sides"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "No major public health enforcement actions against the UMC have been identified. The LGBTQ inclusion debate — particularly the denomination's historic position that homosexuality is 'incompatible with Christian teaching' (now removed) — has been documented by researchers as contributing to spiritual harm for LGBTQ United Methodists over the decades the prohibition was in effect.",
+    "flags": [
+      "incompatible_with_christian_teaching_historic_position_harm_documented",
+      "position_removed_2024"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Evangelical Methodist Church — smaller, conservative Methodist alternative",
+      "African Methodist Episcopal Church — historic Black Methodist denomination with different structure"
+    ],
+    "healthier": [
+      "The remaining UMC — now fully inclusive — for LGBTQ United Methodists",
+      "Reconciling Ministries Network tracks affirming UMC congregations"
+    ],
+    "diy": [
+      "UMC's official Wespath pension disclosures are available at wespath.org",
+      "The 2024 General Conference proceedings are publicly available through UMC.org"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1972,
+      "event": "UMC General Conference adds 'incompatible with Christian teaching' language about homosexuality to Social Principles",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "Special General Conference adopts Traditional Plan strengthening LGBTQ prohibitions; progressive churches signal departure intentions",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Disaffiliation process begins; thousands of conservative congregations begin voting to leave",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Global Methodist Church formally launches as destination denomination for departing UMC congregations",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "General Conference removes 'incompatible with Christian teaching' language; approves same-sex marriage and LGBTQ ordination; disaffiliation closes",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "LGBTQ United Methodists who remained in the denomination through decades of 'incompatible with Christian teaching' language — and who experienced the split from the conservative wing — have experienced documented spiritual harm from an institution that debated their full humanity for 50 years before voting for inclusion. Departing conservative congregations have experienced the disruption of leaving a 150-year institutional home.",
+    "price_illusion": "The UMC's connectional structure presents as financial solidarity — apportionments from local congregations fund global ministry. The disaffiliation process revealed the complexity of unwinding these financial connections when theological disagreement breaks the connection.",
+    "tax_math": "The $600 million in property involved in disaffiliations — exempt from property and income tax as religious property — represents one of the largest tax-exempt asset transfers in American religious history.",
+    "wealth_velocity": "Wespath's $21 billion in pension assets represents the accumulated retirement savings of clergy and lay employees across both the remaining UMC and the departing Global Methodist Church — whose pension obligations remain with Wespath."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Departing congregations (Global Methodist Church)",
+        "how": "Retained local property in exchange for exit payments; departed with physical assets built over generations of connectional giving"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "LGBTQ United Methodists",
+        "how": "50 years of 'incompatible with Christian teaching' in official denominational doctrine; split and financial disruption to the inclusive denomination they remained in"
+      },
+      {
+        "group": "Remaining UMC pension fund",
+        "how": "Pension obligations for departing clergy remain; smaller contribution base to fund them"
+      }
+    ],
+    "the_gap": "The United Methodist Church said homosexuality was incompatible with Christian teaching for 52 years. 7,500 congregations left when that changed. They took $600 million in property. The remaining denomination voted to remove the prohibition in 2024. The pension fund has $21 billion and a smaller base to fund it. The split is the largest in American Protestantism in a century. Both sides claim the other caused it."
+  }
+}

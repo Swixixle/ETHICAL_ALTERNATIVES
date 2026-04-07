@@ -1,0 +1,177 @@
+{
+  "brand_name": "International Churches of Christ",
+  "brand_slug": "international-churches-of-christ",
+  "parent_company": "Multiple autonomous congregations (former Boston Movement)",
+  "ultimate_parent": "No central authority (post-2002 restructuring)",
+  "overall_concern_level": "moderate",
+  "profile_type": "religious_institution",
+  "generated_headline": "THE BOSTON MOVEMENT / ICOC WAS DOCUMENTED AS ONE OF THE MOST CONTROLLING RELIGIOUS ORGANIZATIONS IN AMERICA — IT COLLAPSED WHEN ITS FOUNDER WAS FORCED OUT — AND ITS CONTROLLING TACTICS REMAIN IN DOCUMENTED USE BY SOME AFFILIATED CHURCHES",
+  "executive_summary": "The International Churches of Christ (ICOC) — formerly called the Boston Movement — is a network of autonomous congregations that grew rapidly in the 1980s and 1990s under the leadership of Kip McKean, who built the movement from a single Boston congregation into a global network of over 100,000 members before its collapse in 2002. The ICOC was documented by cult researchers, journalists, and former members as one of the most psychologically controlling religious organizations in America — requiring members to have 'discipling partners' who monitored their spiritual and personal lives, imposing strict dating and sexual standards enforced through peer accountability, requiring disclosure of personal information to leaders, and using intense social pressure to prevent members from leaving. After McKean was forced out in 2002 amid scandals about his leadership conduct, the ICOC restructured as autonomous congregations. McKean subsequently founded a new organization — the International Christian Church (ICC) — which former members document as using the same controlling practices.",
+  "verdict_tags": [
+    "boston_movement_cult_documentation_extensive",
+    "discipling_partner_monitoring_control",
+    "kip_mckean_forced_out_2002_founded_icc",
+    "icc_same_practices_documented",
+    "campus_ministry_recruitment_documented",
+    "shunning_disfellowshipping_family_impact",
+    "cult_education_network_documented",
+    "rapid_growth_collapse_pattern"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": false,
+    "tax": true,
+    "health": true,
+    "legal": false
+  },
+  "labor": {
+    "summary": "ICOC members in full-time ministry ('interns' and full-time staff) worked within a system where their compensation, housing, and social life were controlled by the organization. No formal legal labor violations have been documented, but former members have described conditions where leaving ministry employment meant simultaneously losing housing, income, and social community.",
+    "flags": [
+      "ministry_employment_housing_social_tied",
+      "exit_simultaneous_loss_multiple_dependencies"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No environmental positions or enforcement actions have been identified for the ICOC.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The ICOC does not engage in conventional political advocacy. Its influence operates through its campus ministry recruitment — historically targeting college students — and through its control over members' personal lives rather than through political lobbying.",
+    "flags": [
+      "campus_ministry_recruitment_college_students",
+      "personal_life_control_not_political_lobbying"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "No major criminal enforcement actions against the ICOC or its successor organizations have been documented. The organization's practices — discipling partnerships, confession of personal information to leaders, intensive accountability structures — have been extensively documented by cult researchers and former members but have not resulted in criminal prosecution. Campus ministries at universities have been banned from operating on some campuses based on their documented practices. Harvard University banned the Boston Church of Christ from campus in the 1980s.",
+    "flags": [
+      "harvard_campus_ban_1980s",
+      "no_criminal_prosecution",
+      "cult_researcher_documentation_extensive",
+      "some_universities_banned"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "ICOC congregations are tax-exempt religious organizations. Their finances are managed at the congregational level following the 2002 restructuring. Kip McKean's new ICC organization is separately tax-exempt. No major tax enforcement actions have been documented.",
+    "flags": [
+      "congregational_tax_exemption",
+      "post_restructuring_decentralized"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Kip McKean built the Boston Movement from a single Gainesville, Florida congregation (1979) through Boston (1979) and then globally. He was forced to step down in 2002 amid widespread member criticism of his authoritarian leadership style and reports of abuse. He subsequently founded the International Christian Church (ICC) in 2006, which former members document as operating with the same controlling practices as the original ICOC. Current ICOC leadership is decentralized across autonomous congregations globally.",
+    "flags": [
+      "mckean_forced_out_2002",
+      "mckean_founded_icc_2006_same_practices",
+      "decentralized_post_restructuring"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The ICOC's campus ministry recruitment model — targeting college freshmen through friendship and social integration before introducing religious expectations — has been documented by cult researchers as a sophisticated gradual commitment technique. The 'love bombing' recruitment strategy and subsequent discipling control structure have been analyzed in academic literature on high-demand groups. Former members have documented the practices' psychological impact in extensive testimony.",
+    "flags": [
+      "love_bombing_gradual_commitment_documented_academic",
+      "high_demand_group_academic_analysis",
+      "former_member_testimony_extensive"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former ICOC and ICC members have alleged that the discipling system — requiring disclosure of personal information, sexual history, and doubts to accountability partners who report to leaders — created conditions where leaving felt psychologically impossible, where personal information was used as leverage, and where members who left were shunned by the community they had been integrated into. These practices are documented in cult research literature but have not been prosecuted.",
+    "flags": [
+      "personal_information_leverage_alleged",
+      "leaving_psychologically_impossible_conditions_alleged",
+      "shunning_departure_documented"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Former ICOC and ICC members — particularly those who were recruited as college students — have documented depression, anxiety, and PTSD following exit from the organization. The combination of total social integration into the group, disclosure of personal information to accountability partners, and the social consequences of leaving (shunning) creates a documented pattern of psychological harm that cult researchers characterize as consistent with high-demand group dynamics.",
+    "flags": [
+      "depression_anxiety_ptsd_former_members_documented",
+      "high_demand_group_psychological_harm_pattern",
+      "college_student_recruitment_vulnerability"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Mainstream Churches of Christ — the denominational tradition from which the ICOC broke — without the discipling control structure",
+      "Non-denominational evangelical churches without mandatory accountability partnerships"
+    ],
+    "healthier": [
+      "Christian communities without mandatory disclosure structures and social pressure to remain",
+      "Recovery resources: Recovering from Religion, BITE Model Awareness"
+    ],
+    "diy": [
+      "The Cult Education Network (culteducation.com) has extensive documentation of ICOC practices",
+      "Former members maintain documentation at REVEAL (reveal.org)"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1979,
+      "event": "Kip McKean revitalizes a small Church of Christ congregation in Gainesville, Florida; begins developing 'discipling' theology",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1979,
+      "event": "McKean moves to Boston; builds the Boston Church of Christ; begins rapid international expansion",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1988,
+      "event": "Movement adopts 'International Churches of Christ' name; global membership approaches 100,000",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1992,
+      "event": "Harvard University bans ICOC-affiliated campus ministry; documented pattern of campus restrictions begins",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2002,
+      "event": "Kip McKean forced to step down amid widespread leadership criticism; ICOC restructures as autonomous congregations",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2006,
+      "event": "McKean founds International Christian Church (ICC) with same discipling practices; former ICOC members document continuation",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "College students recruited into the ICOC — particularly those who became deeply integrated into the community's social structure — have documented losing their entire social network, sometimes their academic progress, and their psychological equilibrium when they left or were pushed out. The recruitment strategy targeting college freshmen — at a period of high social vulnerability — is documented as specifically effective at integration.",
+    "price_illusion": "The ICOC presents as a high-commitment Christian community — authentic discipleship modeled on early Christianity. Former members document that the commitment required extends to disclosure of personal information, monitoring of dating and sexual life, and social consequences for leaving that were not disclosed during recruitment.",
+    "tax_math": "ICOC congregations are tax-exempt. Their financial practices — including requirements that members contribute significant portions of income — are not subject to public disclosure at the congregational level.",
+    "wealth_velocity": "The ICOC's rapid growth model — where new congregations in new cities were 'planted' by trained members from existing churches — created a rapidly scaling organization funded by member contributions. The decentralization following McKean's departure makes current financial tracking impossible."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "ICOC/ICC leadership including Kip McKean",
+        "how": "Built a global organization of 100,000+ members through a recruitment and control model documented by cult researchers; founded new ICC after forced departure from ICOC"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "College students recruited into ICOC/ICC",
+        "how": "Social integration followed by disclosure requirements and control structures; departure costs including loss of entire social network; documented psychological harm"
+      }
+    ],
+    "the_gap": "The Boston Movement recruited college freshmen. They called it friendship. Then they called it discipleship. You disclosed your sexual history to your discipling partner. Your discipling partner reported to a leader. When members left they lost their entire social network simultaneously. Harvard banned them from campus in 1992. Kip McKean was forced out in 2002. He started a new organization in 2006 with the same practices. Former members document the same patterns. It is tax-exempt."
+  }
+}

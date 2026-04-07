@@ -1,0 +1,188 @@
+{
+  "brand_name": "Westboro Baptist Church",
+  "brand_slug": "westboro-baptist-church",
+  "parent_company": "Westboro Baptist Church",
+  "ultimate_parent": "Phelps family",
+  "overall_concern_level": "significant",
+  "profile_type": "religious_institution",
+  "generated_headline": "WESTBORO BAPTIST CHURCH PICKETS MILITARY FUNERALS WITH 'GOD HATES FAGS' SIGNS — THE SUPREME COURT RULED 8-1 THAT THIS IS PROTECTED SPEECH — THE ENTIRE ORGANIZATION IS ONE EXTENDED FAMILY",
+  "executive_summary": "Westboro Baptist Church (WBC) is a small Topeka, Kansas-based congregation of approximately 70-100 members, almost all of whom are members of the extended Phelps family — descendants of founder Fred Phelps. Despite its tiny size, WBC has had extraordinary cultural impact through its strategy of picketing military funerals, LGBT events, Jewish institutions, and other locations with signs bearing slogans including 'God Hates Fags,' 'Thank God for Dead Soldiers,' and 'God Hates Jews.' The church's picketing of the funeral of Marine Lance Corporal Matthew Snyder led to the Supreme Court case Snyder v. Phelps (2011) — in which the Court ruled 8-1 that WBC's speech, however offensive, was protected by the First Amendment. The organization is designated a hate group by the SPLC and other organizations. Its founder Fred Phelps died in 2014 — reportedly having been excommunicated from his own church shortly before his death.",
+  "verdict_tags": [
+    "god_hates_fags_military_funerals",
+    "snyder_v_phelps_8_1_first_amendment_protected",
+    "splc_hate_group_designation",
+    "70_100_members_entire_phelps_family",
+    "fred_phelps_excommunicated_own_church",
+    "picketing_jewish_institutions_schools",
+    "legal_training_enables_harassment_within_law"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "WBC members are almost all members of the extended Phelps family. Many adult members are lawyers — a deliberate strategic choice that allows the organization to conduct its protest activities within the precise boundaries of First Amendment protection while maximizing legal counter-leverage against municipalities that attempt to restrict their activities.",
+    "flags": [
+      "majority_members_lawyers_strategic_choice",
+      "first_amendment_precision_documented"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No environmental positions or enforcement actions have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "WBC's political philosophy is that the United States — and the world — is under divine judgment for tolerating homosexuality, Judaism, and other practices WBC condemns. This theology drives picketing of military funerals (soldiers die because America tolerates gays), Jewish institutions (for rejecting Jesus), and Catholic churches (for harboring child abusers, in WBC's framing). WBC has also picketed other Protestant churches, mosques, and schools. WBC members have traveled internationally to protest in countries including the UK (where Fred Phelps's daughter Shirley Phelps-Roper was banned from entry). WBC does not register lobbyists or engage in conventional political activity.",
+    "flags": [
+      "divine_judgment_theology_drives_all_activity",
+      "military_funeral_picketing_protected_speech",
+      "international_protests_uk_banned",
+      "catholic_jewish_mosque_protestant_all_targeted"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Snyder v. Phelps (2011): Supreme Court rules 8-1 that WBC's picketing at Matthew Snyder's military funeral was protected First Amendment speech on matters of public concern. Chief Justice Roberts wrote the majority; only Justice Alito dissented. WBC has used its legal knowledge to remain within First Amendment protection while maximizing psychological impact. It has collected significant damages from municipalities and law enforcement that attempted to improperly restrict its activities — creating a documented revenue stream from civil rights violations against WBC that funds its protest travel.",
+    "flags": [
+      "snyder_v_phelps_8_1_2011",
+      "municipalities_damages_revenue_stream",
+      "legal_knowledge_maximizes_impact_within_law"
+    ],
+    "sources": [
+      "https://www.supremecourt.gov/opinions/10pdf/09-751.pdf"
+    ]
+  },
+  "tax": {
+    "summary": "WBC is registered as a Baptist church and claims tax exemption. Its finances are not publicly disclosed. The organization collects damages from municipalities that improperly restrict its activities — a revenue stream documented by journalists covering the organization. Its pickets are self-funded through member labor.",
+    "flags": [
+      "tax_exempt_church",
+      "municipal_damages_revenue",
+      "finances_not_disclosed"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Fred Phelps founded WBC in 1955. He was reportedly excommunicated from his own church in 2013 — shortly before his death in March 2014 — by members of his own family, after he allegedly suggested the church should adopt a kinder approach. Shirley Phelps-Roper — Fred's daughter — is the most publicly visible current spokesperson. The church is governed entirely by the Phelps family. Fred Phelps was a civil rights attorney in the 1960s who successfully litigated desegregation cases in Kansas — a biographical fact that complicates the simple hate group narrative but does not change the documented conduct.",
+    "flags": [
+      "fred_phelps_civil_rights_attorney_1960s",
+      "fred_phelps_excommunicated_own_church_2013",
+      "shirley_phelps_roper_spokesperson",
+      "entirely_family_governed"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "WBC's primary connection is the legal precedent it has established — Snyder v. Phelps is a significant First Amendment case that protects speech on public matters regardless of how offensive it is. WBC has paradoxically contributed to First Amendment jurisprudence that protects all speech. Its influence on hate group discourse is primarily symbolic — its extreme visibility has made it a reference point for debates about speech, hate, and legal limits.",
+    "flags": [
+      "snyder_v_phelps_first_amendment_precedent",
+      "symbolic_reference_point_hate_group_debate"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former WBC members — including Fred Phelps's granddaughter Megan Phelps-Roper, who left and wrote a memoir — have alleged that children raised in WBC were subjected to psychological abuse through the organization's extremist theology, were isolated from the outside world, and were used as props in protests from a young age without capacity to consent. Megan Phelps-Roper's memoir 'Unfollow' documents her experience from the inside.",
+    "flags": [
+      "children_raised_psychological_isolation_alleged",
+      "protest_use_from_young_age_documented_megan"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "WBC's picketing of military funerals — with signs including 'Thank God for Dead Soldiers' — has been documented to cause severe psychological harm to grieving military families. The Supreme Court acknowledged the harm but found the speech constitutionally protected. The organization's theology — that God kills soldiers as punishment for America's tolerance of homosexuality — represents documented psychological harm delivered to families at their most vulnerable moments.",
+    "flags": [
+      "military_family_grief_documented_harm",
+      "supreme_court_acknowledged_harm_protected_anyway"
+    ],
+    "sources": [
+      "https://www.supremecourt.gov/opinions/10pdf/09-751.pdf"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Any other Baptist congregation"
+    ],
+    "healthier": [
+      "Megan Phelps-Roper's 'Unfollow' (2019) documents exit from WBC — resource for those in similar extremist religious environments"
+    ],
+    "diy": [
+      "Snyder v. Phelps Supreme Court opinion is publicly available — documents both the harm and the First Amendment analysis",
+      "Counter-protest organizations including Planting Peace operate near WBC's Topeka location"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1955,
+      "event": "Fred Phelps founds Westboro Baptist Church in Topeka, Kansas",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1991,
+      "event": "WBC begins its first major protest campaign — against a Topeka park it claimed was a gay cruising site",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2006,
+      "event": "WBC pickets funeral of Marine Lance Corporal Matthew Snyder; Snyder's father sues",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2011,
+      "event": "Supreme Court rules 8-1 in Snyder v. Phelps: WBC's speech at military funerals is constitutionally protected",
+      "severity": "critical",
+      "source_url": "https://www.supremecourt.gov/opinions/10pdf/09-751.pdf"
+    },
+    {
+      "year": 2013,
+      "event": "Fred Phelps reportedly excommunicated from his own church by family members",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2014,
+      "event": "Fred Phelps dies; Shirley Phelps-Roper continues as primary spokesperson",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "Megan Phelps-Roper publishes 'Unfollow' — memoir of growing up in and leaving WBC",
+      "severity": "moderate",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Military families who experienced WBC picketing at their loved ones' funerals have documented severe and lasting psychological harm. The Supreme Court acknowledged this harm and ruled the speech protected. Matthew Snyder's father Albert Snyder — who initially won an $11 million judgment before it was overturned and he was ordered to pay WBC's legal costs — spent years in litigation with the organization that picketed his son's funeral.",
+    "price_illusion": "WBC presents as a remnant of authentic Calvinist theology that other churches have abandoned. Its 70-100 members are almost entirely one family. Its influence is wildly disproportionate to its size — a function of its deliberate media strategy of maximum offense at maximum visibility events.",
+    "tax_math": "WBC collects damages from municipalities that improperly restrict its protests — a revenue stream that funds its travel to protests nationwide. These damages come from public funds. The organization's tax exemption covers its operations.",
+    "wealth_velocity": "WBC's revenue model — tax exemption plus municipal damages for First Amendment violations — is unique. Fred Phelps's background as a civil rights attorney enabled the precision legal strategy that keeps WBC within constitutional protection while maximizing harm."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "WBC/Phelps family",
+        "how": "First Amendment protection for maximally offensive speech; municipal damages fund protest travel; media coverage amplifies tiny group to global recognition"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Military families at funerals",
+        "how": "WBC pickets with 'Thank God for Dead Soldiers' signs; Albert Snyder won $11M judgment then was ordered to pay WBC's costs"
+      },
+      {
+        "group": "LGBTQ individuals and communities",
+        "how": "'God Hates Fags' signs at funerals, pride events, schools — documented psychological harm at maximum vulnerability moments"
+      }
+    ],
+    "the_gap": "Fred Phelps was a civil rights attorney who desegregated Topeka schools in the 1960s. Then he founded a church that pickets military funerals with 'Thank God for Dead Soldiers' signs. The Supreme Court said 8-1 that this is protected speech. His own family excommunicated him from his own church before he died. His granddaughter wrote a book about escaping. The organization has 70 members and they are almost all one family. Albert Snyder won $11 million for them picketing his son's funeral. The courts made him pay their legal costs instead."
+  }
+}
