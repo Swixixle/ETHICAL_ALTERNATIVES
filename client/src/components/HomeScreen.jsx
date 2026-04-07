@@ -341,6 +341,23 @@ function LocationPrompt({
   manualBusy,
 }) {
   const [manualCity, setManualCity] = useState('');
+  const [buttonState, setButtonState] = useState(/** @type {'idle' | 'waiting' | 'granted'} */ ('idle'));
+
+  function handleShareLocationClick() {
+    if (buttonState !== 'idle') return;
+    setButtonState('waiting');
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setButtonState('granted');
+        geoShare.success(position);
+      },
+      (err) => {
+        setButtonState('idle');
+        geoShare.error(err);
+      },
+      geoShare.options
+    );
+  }
 
   async function submitManual(e) {
     e.preventDefault();
@@ -364,6 +381,17 @@ function LocationPrompt({
         textAlign: 'center',
       }}
     >
+      <style>
+        {`
+          @keyframes ea-location-pulse {
+            0%, 100% { opacity: 0.55; }
+            50% { opacity: 0.85; }
+          }
+          .ea-location-btn--waiting {
+            animation: ea-location-pulse 1s ease-in-out infinite;
+          }
+        `}
+      </style>
       <div
         style={{
           fontFamily: "'Bebas Neue', sans-serif",
@@ -408,27 +436,44 @@ function LocationPrompt({
 
       <button
         type="button"
-        onClick={() =>
-          navigator.geolocation.getCurrentPosition(geoShare.success, geoShare.error, geoShare.options)
-        }
+        data-no-disintegrate=""
+        onClick={handleShareLocationClick}
+        className={buttonState === 'waiting' ? 'ea-location-btn--waiting' : undefined}
         style={{
           fontFamily: "'Space Mono', monospace",
           fontSize: 11,
           letterSpacing: 2,
           textTransform: 'uppercase',
-          background: '#f0a820',
-          color: '#0f1520',
-          border: 'none',
+          background:
+            buttonState === 'waiting'
+              ? '#2a3f52'
+              : buttonState === 'granted'
+                ? '#1a6b3a'
+                : '#f0a820',
+          color:
+            buttonState === 'waiting'
+              ? '#6a8a9a'
+              : buttonState === 'granted'
+                ? '#a8f0c0'
+                : '#0f1520',
+          border:
+            buttonState === 'waiting' ? '1px solid #6a8a9a' : buttonState === 'granted' ? 'none' : 'none',
           padding: '14px 32px',
           borderRadius: 2,
-          cursor: 'pointer',
+          cursor: buttonState === 'idle' ? 'pointer' : 'default',
           fontWeight: 700,
           marginBottom: 12,
           width: '100%',
           maxWidth: 320,
+          pointerEvents: buttonState === 'idle' ? 'auto' : 'none',
+          opacity: buttonState === 'waiting' ? 0.7 : 1,
         }}
       >
-        Share My Location
+        {buttonState === 'waiting'
+          ? 'WAITING FOR PERMISSION...'
+          : buttonState === 'granted'
+            ? '✓ LOCATION FOUND — LOADING →'
+            : 'SHARE MY LOCATION'}
       </button>
 
       <button
