@@ -10,24 +10,6 @@ EthicalAlt is a mobile-first web app that turns your camera into an investigatio
 
 Then find something better nearby.
 
----
-
-## Screenshots
-
-**Investigation with alternatives** — production: structured record, health callout, verified local options.
-
-![Investigation results with alternatives sidebar](docs/readme/screenshots/investigation-alternatives.png)
-
-**The record** — identification, confidence, and verdict tags after a tap (local dev).
-
-![Investigation: identification and the record](docs/readme/screenshots/investigation-the-record.png)
-
-**Share the record** — exportable card for a clean or partial profile.
-
-![Share the record modal](docs/readme/screenshots/share-the-record.png)
-
-**Home** — search, snap, investigate, and nearby independents.
-
 ![Home: local feed and actions](docs/readme/screenshots/home-local-feed.png)
 
 ---
@@ -62,6 +44,8 @@ Every investigation produces a structured record across six categories:
 
 Each category gets an evidence grade — `established`, `strong`, `documented`, `alleged` — based on source quality and model corroboration. Nothing is presented as fact without a source. Every allegation section explicitly states the organization's documented response, or states that no formal response has been found.
 
+![Investigation: identification and the record](docs/readme/screenshots/investigation-the-record.png)
+
 ---
 
 ## The Black Book
@@ -91,6 +75,8 @@ EthicalAlt is built around a documented research standard — [`RESEARCH_ALGORIT
 
 EthicalAlt is not a law firm. It is not a regulator. It is not a news organization. It is a mirror. Clean businesses get a clean record here. Companies with documented issues get a documented record. The mirror does not editorialize.
 
+![Investigation results with alternatives sidebar](docs/readme/screenshots/investigation-alternatives.png)
+
 ---
 
 ## Neutral by design
@@ -119,6 +105,8 @@ For honest independent businesses that is not a liability. It is free verified d
 **Rate limiting:** 5 camera investigations per IP per 24 hours. Barcode scans and Black Book search are unlimited.
 
 **Privacy:** Location is used only to find nearby independents. Never stored. Never sold. No account required.
+
+![Share the record modal](docs/readme/screenshots/share-the-record.png)
 
 ---
 
