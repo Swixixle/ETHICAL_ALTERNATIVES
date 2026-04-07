@@ -79,7 +79,7 @@
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
-    "summary": "Plaintiff attorneys alleged that FCA's defeat device was as deliberate as VW's — that the software was specifically engineered to detect the particular drive cycles used in US regulatory testing. FCA denied this characterization. No formal public response from Stellantis to these specific allegations has been documented in credible sources as of this profile's research date. EthicalAlt allegation response type: Type 3 — no documented response found.",
+    "summary": "Plaintiff attorneys alleged that FCA's defeat device was as deliberate as VW's — that the software was specifically engineered to detect the particular drive cycles used in US regulatory testing. FCA denied this characterization. Stellantis has acknowledged emissions testing failures at Fiat Chrysler (a predecessor entity) and paid regulatory settlements. On the UAW corruption scandal involving FCA executives who paid bribes to union officials, Stellantis (as FCA's successor) has stated it has implemented enhanced ethics and compliance programs. No formal public response to specific allegations about its EV transition pace has been documented beyond general electrification commitment statements.",
     "flags": [
       "defeat_device_deliberate_intent_disputed"
     ],

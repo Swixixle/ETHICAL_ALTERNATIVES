@@ -80,7 +80,7 @@
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
-    "summary": "US defense and intelligence officials have alleged — in unclassified threat assessments — that DJI drones transmit flight path data, imagery, and operator information to servers accessible to the Chinese government. DJI has denied these allegations and has released firmware versions marketed as 'Government Edition' that purport to disable data transmission. Independent security researchers have found mixed results in auditing these claims.",
+    "summary": "US defense and intelligence officials have alleged — in unclassified threat assessments — that DJI drones transmit flight path data, imagery, and operator information to servers accessible to the Chinese government. DJI has denied these allegations and has released firmware versions marketed as 'Government Edition' that purport to disable data transmission. Independent security researchers have found mixed results in auditing these claims. DJI has formally disputed US government national security designations, stating its drones do not transmit data to the Chinese government and that its data security practices have been independently verified. DJI has stated it has implemented a local data mode that prevents any internet transmission and has invited independent security audits. DJI has disputed labor violation allegations in its Shenzhen manufacturing operations, stating it complies with all applicable Chinese labor law.",
     "flags": [
       "dji_data_transmission_government_servers_alleged",
       "government_edition_firmware_mixed_audit_results"

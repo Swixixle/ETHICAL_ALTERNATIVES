@@ -86,7 +86,7 @@
   },
   "allegations": {
     "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
-    "summary": "Arizona construction workers and IBEW representatives alleged that TSMC's use of Taiwanese workers created a dual-track workforce where American workers were assigned secondary roles and denied the technical knowledge transfer they expected from the project — reducing the domestic skill-building benefit that the CHIPS Act investment was designed to generate.",
+    "summary": "Arizona construction workers and IBEW representatives alleged that TSMC's use of Taiwanese workers created a dual-track workforce where American workers were assigned secondary roles and denied the technical knowledge transfer they expected from the project — reducing the domestic skill-building benefit that the CHIPS Act investment was designed to generate. TSMC has not issued formal public responses to specific allegations about its role in the US-China technology competition beyond stating that it complies with all applicable export control regulations and cooperates with government inquiries. On environmental concerns about its water usage in Taiwan, TSMC has stated it has invested in water recycling and efficiency technology. On labor conditions at its Arizona facilities, TSMC has acknowledged cultural adaptation challenges and worker concerns, and has stated it is working with its US workforce on integration. TSMC has disputed characterizations of its Taiwan workforce as subject to mandatory overtime beyond legal requirements.",
     "flags": [
       "secondary_role_assignment_american_workers_alleged",
       "knowledge_transfer_denied_chips_act_intent_undermined_alleged"
