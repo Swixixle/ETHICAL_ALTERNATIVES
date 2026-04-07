@@ -1,0 +1,190 @@
+{
+  "brand_name": "Planned Parenthood",
+  "brand_slug": "planned-parenthood",
+  "parent_company": "Planned Parenthood Federation of America",
+  "ultimate_parent": "Planned Parenthood Federation of America",
+  "overall_concern_level": "moderate",
+  "profile_type": "nonprofit",
+  "generated_headline": "PLANNED PARENTHOOD'S FOUNDER MARGARET SANGER WROTE ABOUT ELIMINATING 'HUMAN WEEDS' AND SPOKE AT A KKK RALLY — THE ORGANIZATION REMOVED HER NAME FROM ITS NEW YORK CLINIC IN 2020 — AND PAID ITS PRESIDENT $1.2 MILLION",
+  "executive_summary": "Planned Parenthood Federation of America is the United States' largest reproductive health care provider, operating approximately 600 health centers and serving approximately 2 million patients annually. It receives approximately $670 million in government funding (primarily Medicaid reimbursements) and raises approximately $660 million in private donations annually. The organization's documented controversies span its history: founder Margaret Sanger's documented eugenics writings and racist statements; the 2015 Center for Medical Progress videos alleging the organization profited from fetal tissue donations (a charge the organization disputed and investigators found did not support criminal charges in most jurisdictions); its significant political spending through affiliated PACs; and former president Cecile Richards's compensation exceeding $1.2 million annually. In 2020, Planned Parenthood of Greater New York removed Sanger's name from its flagship Manhattan clinic, acknowledging Sanger's documented racism.",
+  "verdict_tags": [
+    "sanger_eugenics_writings_documented",
+    "sanger_kkk_speech_documented",
+    "sanger_name_removed_2020",
+    "center_medical_progress_videos_2015",
+    "fetal_tissue_investigation_no_charges_most_jurisdictions",
+    "cecile_richards_1_2m_compensation",
+    "670m_government_funding",
+    "660m_private_donations",
+    "political_pac_spending_significant"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "Planned Parenthood employs approximately 16,000 staff. No major documented systemic labor violations have been identified. The organization's internal culture has been described by some former employees as having significant tensions between clinical and political missions.",
+    "flags": [
+      "clinical_political_mission_tension_documented"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental positions or enforcement actions have been identified for Planned Parenthood.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "Planned Parenthood Action Fund — the organization's 501(c)(4) and connected PAC — is one of the most significant reproductive rights political spenders in the United States, spending tens of millions in federal and state elections. The organization opposed the 2022 Susan G. Komen defunding publicly and successfully. Its political spending and advocacy have made it a primary target of conservative political campaigns. Former President Trump's administration made defunding Planned Parenthood a primary stated objective; Congress retained its Medicaid funding. The organization's documented political activities — while legal — create a documented tension between its self-description as a healthcare provider and its role as a major political actor.",
+    "flags": [
+      "action_fund_501c4_pac_tens_millions",
+      "primary_target_conservative_campaigns",
+      "medicaid_retained_trump_attempt_defund",
+      "healthcare_provider_political_actor_tension"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "2015 Center for Medical Progress videos: undercover videos alleged Planned Parenthood was illegally profiting from fetal tissue donations — federal law allows tissue donation but prohibits profit. Investigations in approximately 13 states found no criminal violations; two Texas grand juries indicted the videographers rather than Planned Parenthood. The organization paid $26.4 million in a 2019 federal court settlement for consumer protection violations — related to Medicaid billing practices. Multiple states have investigated and some have defunded Planned Parenthood affiliates under state law. Texas courts upheld Texas's exclusion of Planned Parenthood from Medicaid.",
+    "flags": [
+      "center_medical_progress_investigations_no_charges",
+      "texas_grand_jury_indicted_videographers",
+      "26_4m_medicaid_billing_settlement",
+      "texas_excluded_medicaid_courts_upheld"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "Planned Parenthood Federation of America is a 501(c)(3) — donations are tax-deductible. Its Action Fund is a 501(c)(4) — contributions not deductible. It files Form 990. Cecile Richards's compensation was disclosed at approximately $1.2 million annually through Form 990 — generating significant criticism from opponents and some supporters. The organization receives approximately $670 million in government funding primarily through Medicaid reimbursements for patient services. This is reimbursement for services rendered, not grants — the same reimbursement any Medicaid provider would receive for covered services.",
+    "flags": [
+      "form_990_public",
+      "richards_1_2m_disclosed",
+      "670m_medicaid_reimbursement_not_grants",
+      "501c4_action_fund"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Alexis McGill Johnson has served as Planned Parenthood president since 2021. Cecile Richards led the organization from 2006 to 2018 with compensation of approximately $1.2 million annually — the figure most cited by critics. Dr. Leana Wen briefly served as president in 2018-2019 before her sudden departure, which she later described as a forced resignation — she characterized the organization as primarily a political advocacy organization rather than a healthcare provider, creating conflict with the board. Leana Wen's departure illustrates documented internal tension between the clinical and political dimensions of the organization.",
+    "flags": [
+      "mcgill_johnson_current_president",
+      "richards_1_2m_2006_2018",
+      "wen_forced_departure_clinical_vs_political_tension",
+      "wen_characterized_primarily_political_not_healthcare"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "Planned Parenthood's political connections — as the primary abortion provider and advocate in American politics — make it the central institution in the reproductive rights debate. Its relationship with the Democratic Party establishment is documented. Its conflict with Republican-aligned organizations including the NRA, FRC, and ADF creates a defined political ecosystem in which Planned Parenthood is the primary progressive institutional actor on reproductive issues.",
+    "flags": [
+      "democratic_party_alignment_documented",
+      "nra_frc_adf_conflict_ecosystem",
+      "primary_progressive_reproductive_actor"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "The Center for Medical Progress alleged in its 2015 videos that Planned Parenthood staff discussed fetal tissue donation in ways that suggested profit — which is illegal. Planned Parenthood maintained that its tissue donation practices were legal. State investigations in approximately 13 jurisdictions found no criminal violations; two grand juries indicted the videographers for criminal conduct in their undercover operation. The Medicaid billing settlement ($26.4 million) covered overbilling practices in California and other states — not fetal tissue. Margaret Sanger's documented writings on eugenics and 'human weeds' are primary sources, not allegations — though the interpretation of her full corpus is a matter of historical debate.",
+    "flags": [
+      "cmp_fetal_tissue_profit_alleged",
+      "investigations_no_criminal_violations",
+      "medicaid_billing_separate_from_fetal_tissue",
+      "sanger_primary_sources_interpretation_debated"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "Planned Parenthood provides documented primary care, STI testing and treatment, contraception, cancer screenings, and abortion services to approximately 2 million patients annually — the majority of its services are not abortion-related. The organization's documented health contribution to underserved communities is significant and contested simultaneously with its documented political and historical controversies. Sanger's eugenics writings — which explicitly advocated for the elimination of those she characterized as 'human weeds' through reproductive control — represent a documented founding ideology that the current organization has explicitly repudiated.",
+    "flags": [
+      "2_million_patients_majority_non_abortion",
+      "underserved_community_health_documented",
+      "sanger_eugenics_human_weeds_documented_repudiated_2020"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Federally Qualified Health Centers (FQHCs) — community health centers providing primary care on sliding scale without abortion services",
+      "Title X family planning clinics — federally funded family planning without the political controversy"
+    ],
+    "healthier": [
+      "For abortion services in states where available: other abortion providers, independent abortion clinics",
+      "For contraception: any primary care provider or OB/GYN with Medicaid acceptance"
+    ],
+    "diy": [
+      "Planned Parenthood's Form 990 is available at ProPublica Nonprofit Explorer",
+      "Margaret Sanger's primary writings are available through historical archives — including her eugenics writings and correspondence",
+      "The Center for Medical Progress videos and the subsequent investigative findings are documented public record"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1916,
+      "event": "Margaret Sanger opens first birth control clinic in Brooklyn, New York; founds organization that becomes Planned Parenthood",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1926,
+      "event": "Sanger speaks at KKK auxiliary meeting in New Jersey — documented in her autobiography; context and intent have been debated",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 1929,
+      "event": "Sanger writes about 'human weeds' and eugenics in documented publications",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2015,
+      "event": "Center for Medical Progress releases undercover videos alleging fetal tissue profit; investigations in 13 states find no criminal violations; Texas grand jury indicts videographers",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "$26.4M federal court settlement for Medicaid billing violations — separate from fetal tissue controversy",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "Planned Parenthood of Greater New York removes Sanger's name from flagship Manhattan clinic; acknowledges her racism",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2022,
+      "event": "Supreme Court overturns Roe v. Wade in Dobbs v. Jackson; Planned Parenthood's political role intensifies",
+      "severity": "critical",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "The Dobbs decision — eliminating federal constitutional abortion protection — has resulted in Planned Parenthood clinics closing in states with abortion bans, reducing reproductive healthcare access in those states. Communities where Planned Parenthood was the primary Title X family planning provider experienced loss of contraception and STI services alongside abortion access.",
+    "price_illusion": "Planned Parenthood presents as a healthcare organization. Former president Leana Wen characterized it as primarily a political advocacy organization in her account of her departure. Both characterizations capture dimensions of a documented dual-identity organization — significant healthcare provider and significant political actor — whose annual budget reflects both.",
+    "tax_math": "Planned Parenthood's $670 million in Medicaid reimbursements represents standard healthcare provider payment for covered services — the same reimbursement mechanism that pays any Medicaid provider. Conservative characterizations of this as 'government funding' conflate standard healthcare payment with grant funding. Its Action Fund's 501(c)(4) political spending is not tax-deductible.",
+    "wealth_velocity": "Planned Parenthood's combined $1.3+ billion annual revenue funds both clinical operations and political advocacy through its affiliated Action Fund. The organization's resources have grown as the reproductive rights political stakes have increased following Dobbs."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Planned Parenthood as institution",
+        "how": "$670M in Medicaid reimbursements + $660M in donations + significant political spending capacity; primary institutional position in reproductive rights advocacy"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Patients in states with abortion bans post-Dobbs",
+        "how": "Planned Parenthood clinic closures reduced healthcare access; abortion access eliminated in multiple states"
+      }
+    ],
+    "the_gap": "Margaret Sanger wrote about eliminating 'human weeds.' She spoke at a KKK auxiliary meeting. Planned Parenthood removed her name from its New York clinic in 2020. The Center for Medical Progress released videos alleging profit from fetal tissue. 13 state investigations found no criminal violations. Texas grand juries indicted the videographers instead. The organization paid $26.4 million for Medicaid billing violations. The former president Leana Wen said the board forced her out because she wanted to emphasize healthcare over politics. Cecile Richards made $1.2 million a year. The Supreme Court overturned Roe v. Wade. Planned Parenthood clinics closed in states with bans. The patients who relied on those clinics for contraception and cancer screenings lost access too."
+  }
+}

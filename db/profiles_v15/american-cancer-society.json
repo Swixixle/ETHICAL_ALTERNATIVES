@@ -1,0 +1,163 @@
+{
+  "brand_name": "American Cancer Society",
+  "brand_slug": "american-cancer-society",
+  "parent_company": "American Cancer Society",
+  "ultimate_parent": "American Cancer Society Board of Directors",
+  "overall_concern_level": "moderate",
+  "profile_type": "nonprofit",
+  "generated_headline": "THE AMERICAN CANCER SOCIETY'S CEO MADE $2.4 MILLION — MORE THAN THE HEADS OF MOST MAJOR CORPORATIONS — WHILE SPENDING LESS THAN HALF ITS REVENUE ON CANCER RESEARCH AND PATIENT SERVICES",
+  "executive_summary": "The American Cancer Society (ACS) is the nation's largest voluntary health organization focused on cancer, raising approximately $800 million annually and deploying a workforce of approximately 3,200 employees and millions of volunteers. Its CEO Gary Reedy received total compensation of approximately $2.4 million annually — making him one of the highest-paid nonprofit executives in the United States. The organization's spending ratio has been the subject of sustained criticism: critics, including Charity Navigator and independent watchdogs, have documented that ACS spends a significant portion of revenue on fundraising and administrative overhead, with less than half of total revenue going to cancer research and patient services. The organization's diversified portfolio — including patient services, research grants, advocacy, and its Real Men Wear Pink campaign — has been criticized as having diluted its research focus.",
+  "verdict_tags": [
+    "reedy_2_4m_compensation",
+    "less_than_half_revenue_research_patient_services_documented",
+    "800m_annual_revenue",
+    "charity_navigator_overhead_concerns",
+    "real_men_wear_pink_pinkwashing_adjacent",
+    "cancer_action_network_political_arm",
+    "fundraising_administrative_overhead_ratio",
+    "research_focus_diluted_criticism"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": false
+  },
+  "labor": {
+    "summary": "ACS employs approximately 3,200 paid staff and deploys millions of volunteers. Significant workforce reductions have occurred over the past decade as the organization restructured from a regional model to a national model. No major documented labor violations have been identified.",
+    "flags": [
+      "significant_workforce_reductions_restructuring"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental enforcement actions against ACS have been identified. The pinkwashing concern — licensing ACS's brand to companies selling products with potentially cancer-associated ingredients — is less documented for ACS than for Komen.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The American Cancer Society Cancer Action Network (ACS CAN) is the organization's 501(c)(4) advocacy arm, lobbying for cancer-related legislation including tobacco regulation, cancer research funding, and insurance coverage requirements. ACS CAN spent approximately $20-30 million annually on advocacy and political activities. This advocacy work — while focused on cancer policy — represents significant political spending from an organization that presents primarily as a research and patient service charity.",
+    "flags": [
+      "acs_can_501c4_20_30m_political_advocacy",
+      "tobacco_regulation_research_insurance_advocacy"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "No major criminal enforcement actions against ACS have been identified. The compensation and overhead controversies have not generated legal proceedings. ACS files Form 990 — its finances are publicly available.",
+    "flags": [
+      "no_criminal_enforcement",
+      "form_990_public"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "ACS is a 501(c)(3) — donations are tax-deductible. Gary Reedy's $2.4 million compensation is disclosed through Form 990. The organization's spending ratio — the percentage of revenue going to research and patient services versus overhead and fundraising — has been the primary accountability metric. Charity Navigator's rating methodology differs from the organization's own characterization of its spending allocation.",
+    "flags": [
+      "form_990_public_reedy_2_4m",
+      "spending_ratio_primary_accountability_metric",
+      "charity_navigator_rating_differs_self_characterization"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Karen Knudsen has served as CEO following Gary Reedy's tenure, with lower disclosed compensation. Gary Reedy's $2.4 million compensation — disclosed through Form 990 — was the primary executive accountability issue and was documented in multiple journalism investigations into nonprofit CEO pay. Reedy's compensation was significantly higher than cancer research institution heads at comparable budget sizes.",
+    "flags": [
+      "reedy_2_4m_primary_accountability_issue",
+      "knudsen_successor_lower_compensation",
+      "higher_than_comparable_research_institution_heads"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "ACS's political connections — through ACS CAN — give it documented relationships with Congress and state legislatures on cancer policy. The organization's relationships with pharmaceutical companies — as research funders and advocacy partners — create documented interests in pharmaceutical cancer treatment policy that intersect with its advocacy priorities.",
+    "flags": [
+      "pharma_research_funding_advocacy_conflict",
+      "acs_can_congressional_relationships",
+      "cancer_treatment_policy_pharma_intersection"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Cancer advocacy critics have alleged that ACS's overhead-heavy model — where fundraising costs consume significant revenue — represents a prioritization of organizational maintenance over cancer mission, and that the CEO compensation at $2.4 million is inconsistent with a charitable mission focused on cancer patients. ACS maintains that its overhead reflects the cost of national infrastructure enabling its patient services and research programs. Independent rating agencies have reached different conclusions about whether ACS's spending ratio is appropriate.",
+    "flags": [
+      "overhead_model_organizational_maintenance_alleged",
+      "ceo_compensation_mission_inconsistency_alleged",
+      "rating_agencies_different_conclusions"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "ACS's positive health contributions — research grants, patient navigation services, Hope Lodge cancer patient housing, and advocacy for evidence-based cancer policy — are documented and significant. These genuine contributions coexist with documented overhead and compensation concerns that critics argue reduce the organization's effectiveness relative to its revenue.",
+    "flags": [
+      "research_grants_patient_navigation_hope_lodge_documented",
+      "overhead_compensation_effectiveness_reduction_argued"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "American Cancer Society's own research arm is separate from some donor concerns",
+      "V Foundation for Cancer Research — higher research spending ratio",
+      "Leukemia & Lymphoma Society — disease-specific with documented high research allocation"
+    ],
+    "healthier": [
+      "Cancer-specific research foundations with documented higher research-to-overhead ratios",
+      "Direct contributions to academic medical cancer research centers — highest research allocation"
+    ],
+    "diy": [
+      "ACS's Form 990 is available at ProPublica Nonprofit Explorer — spending allocation is disclosed",
+      "Charity Navigator and GiveWell both rate ACS and provide alternative cancer research organizations"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1913,
+      "event": "American Cancer Society founded in New York City",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2009,
+      "event": "Gary Reedy becomes CEO; compensation grows to approximately $2.4M annually",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2015,
+      "event": "Multiple journalism investigations document ACS CEO compensation and overhead ratios",
+      "severity": "high",
+      "source_url": ""
+    },
+    {
+      "year": 2021,
+      "event": "Karen Knudsen becomes CEO following Reedy retirement; compensation restructured downward",
+      "severity": "moderate",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Cancer patients who donated to ACS expecting their contributions to fund research and patient services received an organization where documented overhead consumed a significant percentage of their donations.",
+    "price_illusion": "ACS presents as a cancer research and patient service organization. Its overhead ratio — and CEO compensation at $2.4 million — reflects an organizational infrastructure whose size and cost have been documented as consuming significant revenue relative to mission delivery.",
+    "tax_math": "$2.4 million in CEO compensation from a tax-exempt cancer charity represents charitable donations being used for executive compensation at a rate critics have documented as inconsistent with the organization's charitable framing.",
+    "wealth_velocity": "Gary Reedy's $2.4 million compensation — from a tax-exempt organization — was higher than most comparable organization leaders. The organization's $800 million annual revenue is funded by charitable donations and fundraising events."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "ACS executive leadership",
+        "how": "$2.4M CEO compensation; overhead infrastructure maintaining significant organizational size"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Cancer patients and their families who donated",
+        "how": "Significant portion of donations to overhead and fundraising rather than research and patient services — documented ratio disputed between ACS and charity watchdogs"
+      }
+    ],
+    "the_gap": "The American Cancer Society's CEO made $2.4 million a year. The organization spends less than half its revenue on cancer research and patient services by some analyses. It raises $800 million. The overhead ratio has been criticized by Charity Navigator. The organization restructured after multiple journalism investigations. The new CEO makes less. The spending ratio question remains. There are cancer research organizations that allocate significantly higher percentages to research. The ACS is the most recognized cancer charity in America."
+  }
+}

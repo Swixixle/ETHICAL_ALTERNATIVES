@@ -1,0 +1,191 @@
+{
+  "brand_name": "National Rifle Association",
+  "brand_slug": "nra",
+  "parent_company": "National Rifle Association of America",
+  "ultimate_parent": "NRA Board of Directors",
+  "overall_concern_level": "significant",
+  "profile_type": "nonprofit",
+  "generated_headline": "THE NRA'S CEO SPENT $14.4 MILLION IN DONOR FUNDS ON PERSONAL EXPENSES — SUITS, VACATIONS, AND PRIVATE JETS — A NEW YORK COURT FOUND HIM PERSONALLY LIABLE AND ORDERED HIM TO PAY $4.4 MILLION BACK",
+  "executive_summary": "The National Rifle Association of America is the country's most powerful gun rights advocacy organization with approximately 5 million members and an estimated $300-400 million in annual revenue at its peak. In August 2020, New York Attorney General Letitia James filed suit to dissolve the NRA — alleging that CEO Wayne LaPierre and other executives had diverted millions in NRA funds for personal benefit. The suit documented $14.4 million in personal spending by LaPierre from NRA accounts — including luxury clothing from Zegna, private jet travel for himself and family members, yacht vacations, and payments to vendors connected to NRA executives. In February 2024, a New York jury found LaPierre personally liable for breach of fiduciary duty and ordered him to pay $4.4 million back to the NRA. LaPierre resigned as NRA CEO in January 2024, days before the trial. The NRA had previously attempted to file for bankruptcy in Texas — widely seen as an attempt to escape New York AG jurisdiction — a maneuver that a federal bankruptcy judge rejected as filed in bad faith.",
+  "verdict_tags": [
+    "lapierre_14_4m_personal_spending_documented",
+    "jury_found_lapierre_personally_liable_4_4m",
+    "lapierre_resigned_january_2024_days_before_trial",
+    "ny_ag_dissolution_suit_2020",
+    "texas_bankruptcy_rejected_bad_faith",
+    "zegna_suits_yacht_vacations_private_jets",
+    "nra_political_spending_200m_elections",
+    "board_failed_oversight_documented"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": true,
+    "tax": true,
+    "health": false,
+    "legal": true
+  },
+  "labor": {
+    "summary": "The NRA employs approximately 800 staff. The AG's investigation documented a toxic workplace culture where executives who raised concerns about LaPierre's spending were marginalized or terminated. Former NRA President Oliver North — who attempted to expose LaPierre's spending — was forced out in 2019 before the AG investigation became public.",
+    "flags": [
+      "oliver_north_forced_out_exposing_lapierre",
+      "concerned_executives_marginalized",
+      "toxic_culture_documented"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No environmental positions or enforcement actions have been identified for the NRA beyond its consistent opposition to environmental regulations that intersect with hunting and land use.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The NRA spent approximately $200 million on political activities between 2014 and 2017 — funding candidates, independent expenditures, and lobbying. Its political influence on gun legislation has been documented as the primary factor preventing passage of universal background check legislation that polls show approximately 90% of Americans support. The NRA's financial scandal — which became public during the same period as its political peak — has significantly weakened its fundraising and political spending capacity. Russian national Maria Butina was convicted in 2018 of acting as an unregistered foreign agent after infiltrating NRA events and cultivating relationships with NRA leadership on behalf of Russian interests.",
+    "flags": [
+      "200m_political_spending_2014_2017",
+      "universal_background_checks_blocked_90pct_support",
+      "maria_butina_russian_infiltration_convicted",
+      "political_capacity_weakened_financial_scandal"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "August 2020: NY AG Letitia James files suit alleging NRA leadership diverted $64 million over three years. The suit named LaPierre, former CFO Wilson Phillips Jr., former General Counsel John Frazer, and former President Peter Brownell. February 2024: New York jury finds LaPierre personally liable for breach of fiduciary duty; orders him to repay $4.4 million to the NRA. Phillips found liable for $2 million. Texas bankruptcy: NRA filed for Chapter 11 in Texas in January 2021 — federal bankruptcy judge dismissed the case in May 2021 as filed in bad faith to avoid NY AG oversight rather than for legitimate bankruptcy reasons. Maria Butina: pled guilty in 2018 to conspiracy to act as a foreign agent; sentenced to 18 months.",
+    "flags": [
+      "ny_ag_64m_three_years_suit",
+      "lapierre_4_4m_liable_jury",
+      "phillips_2m_liable",
+      "texas_bankruptcy_bad_faith_dismissed",
+      "butina_foreign_agent_guilty_18_months"
+    ],
+    "sources": [
+      "https://ag.ny.gov/press-release/2020/attorney-general-james-sues-nra-and-its-senior-leadership-failing-manage-funds",
+      "https://www.nytimes.com/2024/02/16/nyregion/nra-wayne-lapierre-verdict.html"
+    ]
+  },
+  "tax": {
+    "summary": "The NRA is a 501(c)(4) social welfare organization — contributions are not tax-deductible. Its affiliated Institute for Legislative Action (ILA) conducts lobbying. Its affiliated NRA Foundation is a 501(c)(3) — donations are tax-deductible. The $14.4 million in personal spending documented by the AG was drawn from the NRA's tax-exempt revenue — funds raised from members and donors under the representation of being used for gun rights advocacy. LaPierre's compensation was approximately $2.2 million annually — in addition to the $14.4 million in undisclosed personal benefit.",
+    "flags": [
+      "501c4_contributions_not_deductible",
+      "nra_foundation_501c3_deductible",
+      "14_4m_from_tax_exempt_revenue",
+      "lapierre_2_2m_disclosed_plus_14_4m_undisclosed"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Wayne LaPierre served as NRA CEO from 1991 to January 2024 — 33 years. He was found personally liable by a New York jury for breach of fiduciary duty and ordered to repay $4.4 million. He resigned four days before the trial began. Oliver North — decorated Vietnam veteran and Iran-Contra figure — served as NRA President briefly in 2018-2019 before being forced out after attempting to expose LaPierre's spending. The board's documented failure to exercise oversight of LaPierre's spending was a central finding of both the AG suit and the trial.",
+    "flags": [
+      "lapierre_33_years_ceo",
+      "lapierre_liable_4_4m",
+      "resigned_4_days_before_trial",
+      "north_forced_out_exposing_lapierre",
+      "board_oversight_failure_documented"
+    ],
+    "sources": [
+      "https://www.nytimes.com/2024/02/16/nyregion/nra-wayne-lapierre-verdict.html"
+    ]
+  },
+  "connections": {
+    "summary": "The NRA's political network — connecting gun manufacturers, dealers, and millions of members to federal and state legislators — remains one of the most documented single-issue political machines in American history despite its financial weakening. Russian national Maria Butina's documented infiltration of NRA events — cultivating relationships with NRA leadership on behalf of Russian government interests — represents a documented foreign intelligence operation targeting one of America's most politically influential organizations.",
+    "flags": [
+      "single_issue_political_machine_documented",
+      "butina_russian_infiltration_nra_leadership",
+      "gun_manufacturer_dealer_political_network"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Former NRA employees and the NY AG's investigation alleged that the board of directors was aware of LaPierre's spending patterns and chose not to act — that some board members received NRA benefits that created conflicts preventing them from challenging LaPierre. These allegations were partially supported by the trial record — the jury found LaPierre liable while the court found other executives liable at lower amounts.",
+    "flags": [
+      "board_awareness_chose_not_act_alleged",
+      "board_conflicts_benefits_preventing_challenge_alleged",
+      "trial_record_partially_supports"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "The NRA's lobbying against gun safety legislation has documented public health consequences — the US firearm homicide rate is significantly higher than comparable wealthy nations, and research documents that NRA-opposed measures including universal background checks and assault weapons restrictions would reduce firearm deaths. These are documented policy connections rather than direct organizational health violations.",
+    "flags": [
+      "us_firearm_homicide_rate_documented_higher_comparable_nations",
+      "background_check_assault_weapons_restrictions_evidence_base",
+      "nra_lobbied_against_documented"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Gun Owners of America — alternative gun rights organization without documented financial scandal",
+      "National Shooting Sports Foundation — industry trade association with different structure"
+    ],
+    "healthier": [
+      "Everytown for Gun Safety — gun safety advocacy",
+      "Giffords Law Center — gun safety legal advocacy"
+    ],
+    "diy": [
+      "The NY AG's complaint against the NRA is publicly available at ag.ny.gov",
+      "NRA's Form 990 is available at ProPublica Nonprofit Explorer",
+      "The trial verdict documents are public court records"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1991,
+      "event": "Wayne LaPierre becomes NRA CEO; begins 33-year tenure",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 2018,
+      "event": "Maria Butina arrested for acting as unregistered Russian foreign agent; NRA events documented as infiltration target",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "Oliver North attempts to expose LaPierre spending; is forced out as NRA President before completing term",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2020,
+      "event": "NY AG files suit to dissolve NRA; documents $14.4M in LaPierre personal spending",
+      "severity": "critical",
+      "source_url": "https://ag.ny.gov/press-release/2020/attorney-general-james-sues-nra-and-its-senior-leadership-failing-manage-funds"
+    },
+    {
+      "year": 2021,
+      "event": "NRA files Chapter 11 bankruptcy in Texas; federal judge dismisses as bad faith attempt to escape NY jurisdiction",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2024,
+      "event": "January: LaPierre resigns 4 days before trial. February: New York jury finds LaPierre personally liable; orders $4.4M repayment.",
+      "severity": "critical",
+      "source_url": "https://www.nytimes.com/2024/02/16/nyregion/nra-wayne-lapierre-verdict.html"
+    }
+  ],
+  "community_impact": {
+    "displacement": "NRA members who paid dues and donated to the organization under the representation that funds would be used for gun rights advocacy were documented — through the AG investigation and trial — to have had a portion of those funds used for LaPierre's personal expenses including luxury clothing, yacht vacations, and private jets.",
+    "price_illusion": "The NRA presents as a grassroots membership organization defending Second Amendment rights on behalf of gun owners. The documented financial scandal — $14.4 million in personal spending by the CEO, board oversight failures, and a Texas bankruptcy filing characterized by a federal judge as bad faith — reveals an organizational culture prioritizing leadership benefit over member interests.",
+    "tax_math": "The NRA's 501(c)(4) structure allows political advocacy without donor disclosure in many circumstances. LaPierre's $14.4 million in personal spending — drawn from NRA accounts in addition to his $2.2 million disclosed salary — was received from a tax-exempt organization and was not disclosed to members or the IRS as required.",
+    "wealth_velocity": "LaPierre's 33-year tenure generated personal wealth — $2.2 million annual salary plus $14.4 million in documented personal spending — from a member-funded organization. The NRA's weakened financial position following the scandal represents a documented transfer of organizational resources to individual benefit."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Wayne LaPierre",
+        "how": "$2.2M annual salary + $14.4M undisclosed personal spending for 33 years; luxury clothing, yacht vacations, private jets; found personally liable for $4.4M"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "NRA members and donors",
+        "how": "Dues and donations used for CEO's personal expenses including suits from Zegna, yacht trips, and private jet travel for family; funds raised for gun rights advocacy diverted to personal benefit"
+      }
+    ],
+    "the_gap": "Wayne LaPierre ran the NRA for 33 years. A New York court found he spent $14.4 million of donor money on personal expenses. Suits. Yacht vacations. Private jets for his family. Oliver North tried to stop it and was forced out as NRA President. LaPierre resigned 4 days before his trial started. The jury found him personally liable and ordered him to repay $4.4 million. The NRA filed for bankruptcy in Texas specifically to escape the New York investigation. The judge called it bad faith and threw it out. A Russian spy was documented infiltrating NRA events to cultivate relationships with leadership."
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "brand_name": "YMCA",
+  "brand_slug": "ymca",
+  "parent_company": "YMCA of the USA (Y-USA)",
+  "ultimate_parent": "YMCA of the USA",
+  "overall_concern_level": "significant",
+  "profile_type": "nonprofit",
+  "generated_headline": "YMCA HAS DOCUMENTED SEXUAL ABUSE OF CHILDREN AT CAMPS AND FACILITIES SPANNING DECADES — MULTIPLE LOCAL Ys HAVE PAID SETTLEMENTS — AND THE ORGANIZATION'S DECENTRALIZED STRUCTURE LIMITS NATIONAL ACCOUNTABILITY",
+  "executive_summary": "The YMCA (Young Men's Christian Association) is one of the largest nonprofit organizations in the United States, operating approximately 2,700 facilities across the country with approximately 21 million members and program participants, collectively generating approximately $7 billion in annual revenue across all Y affiliates. Like the Boy Scouts, the YMCA operates a decentralized model — each YMCA is an independent affiliate of Y-USA rather than a centrally controlled organization. This structure has been documented as creating accountability gaps in responding to sexual abuse across the network. Multiple local YMCA affiliates have been defendants in sexual abuse lawsuits spanning decades — covering abuse at camps, youth programs, and facilities. The YMCA's youth programming — day camps, overnight camps, after-school programs, and swim lessons — represents one of the largest youth program networks in the country, creating both extraordinary community benefit and documented abuse risk.",
+  "verdict_tags": [
+    "decentralized_structure_accountability_gaps",
+    "multiple_affiliate_abuse_lawsuits",
+    "camp_youth_program_abuse_documented",
+    "21_million_members_7b_revenue",
+    "swim_lesson_coach_abuse_documented",
+    "larry_brown_ymca_convicted_documented",
+    "local_affiliate_independent_no_central_accountability",
+    "criminal_background_check_gaps_documented"
+  ],
+  "concern_flags": {
+    "labor": false,
+    "environmental": false,
+    "political": false,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "labor": {
+    "summary": "YMCA affiliates collectively employ approximately 20,000 full-time and 200,000+ part-time and seasonal staff. Seasonal camp staff — who have direct access to children — have been documented in multiple abuse cases. Background check and screening practices have been documented as inconsistent across affiliates. No major systemic labor violations beyond the abuse documentation have been identified.",
+    "flags": [
+      "seasonal_camp_staff_abuse_documented",
+      "background_check_inconsistency_across_affiliates"
+    ],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "No major environmental enforcement actions against the YMCA have been identified.",
+    "flags": [],
+    "sources": []
+  },
+  "political": {
+    "summary": "The YMCA has not been a major political actor. Its historical roots as a Christian organization have evolved — the YMCA operates in communities across religious and political spectrums and does not engage in documented political advocacy.",
+    "flags": [
+      "historically_christian_evolved_broad_community"
+    ],
+    "sources": []
+  },
+  "legal": {
+    "summary": "Multiple YMCA affiliates have been defendants in sexual abuse lawsuits across decades. Documented cases include: Larry Brown — a YMCA swimming coach in Georgia convicted of child molestation; his case generated a civil lawsuit against the YMCA affiliate. Multiple YMCA camps have been defendants in abuse lawsuits where staff were convicted of abuse. The decentralized affiliate structure has been used by some Y affiliates to limit national Y-USA's involvement in local litigation. Statute of limitations has been a significant barrier to older abuse claims — the same issue that affected BSA survivors. Multiple settlements have been reached across different affiliate jurisdictions; aggregated totals are not publicly reported by Y-USA.",
+    "flags": [
+      "larry_brown_coach_convicted_ymca_lawsuit",
+      "multiple_camp_abuse_lawsuits",
+      "decentralized_structure_limits_national_involvement",
+      "statute_limitations_barrier",
+      "settlements_not_aggregated_yusa"
+    ],
+    "sources": []
+  },
+  "tax": {
+    "summary": "YMCA of the USA is a 501(c)(3) — donations are tax-deductible. Individual YMCA affiliates are separately incorporated 501(c)(3) entities filing their own Form 990s. Local affiliate CEO compensation varies significantly — some large metropolitan YMCA CEOs receive compensation exceeding $400,000 annually. Y-USA's CEO Kevin Washington received approximately $700,000 annually. The $7 billion in collective affiliate revenue is not consolidated in any single public disclosure.",
+    "flags": [
+      "yusa_501c3_affiliates_separate",
+      "washington_700k_compensation",
+      "affiliates_ceo_400k_plus",
+      "7b_not_consolidated_disclosure"
+    ],
+    "sources": []
+  },
+  "executives": {
+    "summary": "Suzanne McCormick serves as Y-USA President and CEO following Kevin Washington's retirement. Individual affiliate CEOs are independently employed. The YMCA of the USA's role is primarily as a membership and brand organization rather than an operational controller of affiliates — a structure that limits both its authority and its accountability for affiliate conduct.",
+    "flags": [
+      "mccormick_current_yusa_ceo",
+      "affiliate_ceos_independent",
+      "yusa_brand_membership_not_operational_control"
+    ],
+    "sources": []
+  },
+  "connections": {
+    "summary": "The YMCA's program network — day camps, overnight camps, swim lessons, youth sports, after-school programs — represents one of the largest private youth program ecosystems in the United States. The same decentralized structure that creates accountability gaps also creates community benefit through locally responsive programming. The structural similarities with the Boy Scouts — decentralized model, extensive youth programming, documented abuse — represent a parallel institutional accountability challenge.",
+    "flags": [
+      "largest_private_youth_program_ecosystem",
+      "decentralized_community_benefit_accountability_tradeoff",
+      "bsa_structural_parallel_documented"
+    ],
+    "sources": []
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Child safety advocates have alleged that the YMCA's decentralized structure — where affiliates operate independently with minimal Y-USA oversight of program safety — creates a documented accountability gap that has allowed abuse to continue across the network without national-level response. Y-USA has updated its child protection guidelines and training requirements; advocates dispute whether these measures are adequate given the decentralized implementation.",
+    "flags": [
+      "decentralized_accountability_gap_alleged",
+      "national_level_response_absence_alleged",
+      "child_protection_updates_adequacy_disputed"
+    ],
+    "sources": []
+  },
+  "health_record": {
+    "summary": "The YMCA's documented abuse cases — spanning swim coaches, camp counselors, and program staff — represent the organization's primary documented health harm. Children in YMCA programs who were abused by staff in a trusted organizational context experienced documented lasting psychological harm. The YMCA's community health benefit — providing accessible fitness, swim lessons, and youth programming to millions — coexists with documented cases of program staff abuse.",
+    "flags": [
+      "coach_camp_program_staff_abuse_documented",
+      "trusted_organizational_context_harm_amplified",
+      "community_health_benefit_coexists"
+    ],
+    "sources": []
+  },
+  "alternatives": {
+    "cheaper": [
+      "Parks and Recreation departments — public facilities with government oversight",
+      "Boys & Girls Clubs of America — youth organization with different structure"
+    ],
+    "healthier": [
+      "Community fitness and youth program organizations with published safeguarding protocols and centralized accountability",
+      "Programs that require background checks and training consistent across all locations"
+    ],
+    "diy": [
+      "Check whether your local YMCA has a published child protection policy",
+      "Ask specifically about background check requirements for all staff with child access — seasonal and part-time as well as full-time"
+    ]
+  },
+  "timeline": [
+    {
+      "year": 1851,
+      "event": "YMCA established in North America; begins building youth program and facility network",
+      "severity": "neutral",
+      "source_url": ""
+    },
+    {
+      "year": 1990,
+      "event": "Multiple documented YMCA affiliate abuse cases emerge across different states — patterns begin to be documented across the decentralized network",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2012,
+      "event": "Larry Brown, Georgia YMCA swim coach, convicted of child molestation; YMCA affiliate named in civil lawsuit",
+      "severity": "critical",
+      "source_url": ""
+    },
+    {
+      "year": 2019,
+      "event": "Multiple states expand statute of limitations for child abuse claims — enabling older YMCA abuse cases to proceed that previously would have been time-barred",
+      "severity": "high",
+      "source_url": ""
+    }
+  ],
+  "community_impact": {
+    "displacement": "Children who experienced abuse at YMCA facilities and programs — in a trusted community institution — experienced lasting psychological harm. The statute of limitations that barred many historical claims prevented legal accountability for documented abuse.",
+    "price_illusion": "The YMCA presents as a trusted community institution — 'a cause for all.' Its decentralized structure, which creates community-responsive programming, simultaneously creates accountability gaps documented in abuse cases across affiliates.",
+    "tax_math": "The YMCA's collective $7 billion in affiliate revenue is entirely within tax-exempt organizations. Local affiliate CEO compensation — in some cases exceeding $400,000 — is paid from tax-exempt revenue. Settlements for abuse claims have been paid from tax-exempt resources.",
+    "wealth_velocity": "The YMCA's collective $7 billion in revenue across 2,700 facilities represents significant distributed wealth in a decentralized structure. Individual affiliate CEO compensation reflects local market conditions rather than a centralized accountability framework."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "YMCA affiliates",
+        "how": "Decentralized structure limits national liability; settlements managed locally without aggregated disclosure; brand maintained through Y-USA while accountability distributed across affiliates"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Children abused at YMCA programs and facilities",
+        "how": "Abuse by swim coaches, camp counselors, and program staff in trusted community institutional context; statute of limitations barred many claims"
+      }
+    ],
+    "the_gap": "The YMCA runs programs serving 21 million people. It has documented sexual abuse cases spanning decades across its affiliate network. The decentralized structure means each case is handled locally without national reporting or aggregated accountability. The Boy Scouts operated the same way for 70 years with the same result. The YMCA's collective revenue is $7 billion. Y-USA's role is brand and membership — not operational control. When abuse happens at a local Y, Y-USA says it's a local affiliate matter. The local affiliate handles it. There is no public accounting of how many cases have been settled or for how much."
+  }
+}
