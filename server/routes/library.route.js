@@ -24,11 +24,11 @@ router.get('/', async (req, res) => {
         brand_name,
         parent_company,
         LOWER(COALESCE(
-          profile_json->>'overall_concern_level',
-          overall_concern_level,
+          NULLIF(TRIM(profile_json->>'overall_concern_level'), ''),
+          NULLIF(TRIM(overall_concern_level::text), ''),
           'unknown'
         )) AS concern_level,
-        profile_json->>'generated_headline' AS headline,
+        COALESCE(profile_json->>'generated_headline', '') AS headline,
         SUBSTRING(
           COALESCE(
             NULLIF(TRIM(profile_json->>'executive_summary'), ''),
@@ -39,8 +39,6 @@ router.get('/', async (req, res) => {
         ) AS summary_snippet,
         updated_at
       FROM incumbent_profiles
-      WHERE profile_json IS NOT NULL
-        AND LENGTH(profile_json::text) > 50
       ORDER BY brand_name ASC
     `);
 

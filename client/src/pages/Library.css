@@ -22,8 +22,20 @@
   background: #141414;
 }
 
+.bb-page__head-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  width: 100%;
+  max-width: 100%;
+}
+
 .bb-page__title {
   margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
   font-family: 'IBM Plex Mono', ui-monospace, monospace;
   font-size: 13px;
   font-weight: 600;
@@ -34,6 +46,7 @@
 
 .bb-page__count {
   margin-left: auto;
+  flex-shrink: 0;
   font-family: 'IBM Plex Mono', ui-monospace, monospace;
   font-size: 11px;
   color: #737373;
@@ -490,6 +503,17 @@
   font-weight: 500;
   line-height: 1.65;
   color: #ececec;
+}
+
+.bb-dossier__gap-cost {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.bb-dossier__gap-cost .bb-dossier__who {
+  font-size: 14px;
+  color: #9a9a9a;
 }
 
 .bb-dossier__alt-grid {

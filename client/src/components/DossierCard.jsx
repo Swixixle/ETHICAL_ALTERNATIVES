@@ -1,9 +1,9 @@
-import { useMemo, useState } from 'react';
-import ActiveNowSection from './ActiveNowSection.jsx';
+import { useEffect, useMemo, useState } from 'react';
 
+/** Wireframe order: Labor first, then Legal, … (default tab remains legal). */
 const TAB_ORDER = [
-  { key: 'legal', label: 'Legal' },
   { key: 'labor', label: 'Labor' },
+  { key: 'legal', label: 'Legal' },
   { key: 'environmental', label: 'Environmental' },
   { key: 'political', label: 'Political' },
   { key: 'tax', label: 'Tax' },
@@ -67,6 +67,12 @@ export default function DossierCard({ profile, prev, next, onNavigate, compact }
   const [tab, setTab] = useState('legal');
 
   const p = profile || {};
+  const bookSlugForReset =
+    typeof p.brand_slug === 'string' && p.brand_slug.trim() ? p.brand_slug.trim() : '';
+
+  useEffect(() => {
+    setTab('legal');
+  }, [bookSlugForReset]);
 
   const headline =
     typeof p.generated_headline === 'string' && p.generated_headline.trim()
@@ -196,15 +202,8 @@ export default function DossierCard({ profile, prev, next, onNavigate, compact }
     );
   }, [tab, p, healthRecord, productHealth]);
 
-  const allegations =
-    p.allegations && typeof p.allegations === 'object' ? p.allegations : null;
-
-  const bookSlug =
-    typeof p.brand_slug === 'string' && p.brand_slug.trim() ? p.brand_slug.trim() : '';
-
   return (
     <article className={`bb-dossier${compact ? ' bb-dossier--compact' : ''}`}>
-      {bookSlug ? <ActiveNowSection brandSlug={bookSlug} variant="book" /> : null}
       <header className="bb-dossier__header">
         <div className={concernChipClass(concern)}>{String(concern).toUpperCase()}</div>
         <h1 className="bb-dossier__brand">{brandName}</h1>
@@ -221,19 +220,6 @@ export default function DossierCard({ profile, prev, next, onNavigate, compact }
           </div>
         ) : null}
       </header>
-
-      {allegations &&
-      (allegations.summary || (Array.isArray(allegations.flags) && allegations.flags.length)) ? (
-        <section className="bb-dossier__section bb-dossier__allegations">
-          <h2 className="bb-dossier__section-title">Allegations</h2>
-          {typeof allegations.disclaimer === 'string' && allegations.disclaimer.trim() ? (
-            <p className="bb-dossier__disclaimer">{allegations.disclaimer}</p>
-          ) : null}
-          {typeof allegations.summary === 'string' ? (
-            <p className="bb-dossier__prose">{allegations.summary}</p>
-          ) : null}
-        </section>
-      ) : null}
 
       <nav className="bb-dossier__tabs" aria-label="Record sections">
         {TAB_ORDER.map(({ key, label }) => (
@@ -303,46 +289,44 @@ export default function DossierCard({ profile, prev, next, onNavigate, compact }
         </section>
       ) : null}
 
-      {whoBen.length || whoPaid.length ? (
-        <section className="bb-dossier__section bb-dossier__section--subtle">
-          <h2 className="bb-dossier__section-title">Cost absorption</h2>
-          {whoBen.length ? (
-            <div>
-              <h3 className="bb-dossier__mini-label">Who benefited</h3>
-              <ul className="bb-dossier__who">
-                {whoBen.map((row, i) =>
-                  row && typeof row === 'object' ? (
-                    <li key={i}>
-                      <strong>{String(row.group || '')}</strong>
-                      {row.how ? ` — ${String(row.how)}` : ''}
-                    </li>
-                  ) : null
-                )}
-              </ul>
-            </div>
-          ) : null}
-          {whoPaid.length ? (
-            <div style={{ marginTop: whoBen.length ? 16 : 0 }}>
-              <h3 className="bb-dossier__mini-label">Who paid</h3>
-              <ul className="bb-dossier__who">
-                {whoPaid.map((row, i) =>
-                  row && typeof row === 'object' ? (
-                    <li key={i}>
-                      <strong>{String(row.group || '')}</strong>
-                      {row.how ? ` — ${String(row.how)}` : ''}
-                    </li>
-                  ) : null
-                )}
-              </ul>
-            </div>
-          ) : null}
-        </section>
-      ) : null}
-
-      {theGap ? (
+      {theGap || whoBen.length || whoPaid.length ? (
         <section className="bb-dossier__gap" aria-label="The gap">
           <h2 className="bb-dossier__gap-title">The gap</h2>
-          <p className="bb-dossier__gap-body">{theGap}</p>
+          {theGap ? <p className="bb-dossier__gap-body">{theGap}</p> : null}
+          {whoBen.length || whoPaid.length ? (
+            <div className="bb-dossier__gap-cost">
+              {whoBen.length ? (
+                <div>
+                  <h3 className="bb-dossier__mini-label">Who benefited</h3>
+                  <ul className="bb-dossier__who">
+                    {whoBen.map((row, i) =>
+                      row && typeof row === 'object' ? (
+                        <li key={i}>
+                          <strong>{String(row.group || '')}</strong>
+                          {row.how ? ` — ${String(row.how)}` : ''}
+                        </li>
+                      ) : null
+                    )}
+                  </ul>
+                </div>
+              ) : null}
+              {whoPaid.length ? (
+                <div style={{ marginTop: whoBen.length ? 16 : 0 }}>
+                  <h3 className="bb-dossier__mini-label">Who paid</h3>
+                  <ul className="bb-dossier__who">
+                    {whoPaid.map((row, i) =>
+                      row && typeof row === 'object' ? (
+                        <li key={i}>
+                          <strong>{String(row.group || '')}</strong>
+                          {row.how ? ` — ${String(row.how)}` : ''}
+                        </li>
+                      ) : null
+                    )}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
+          ) : null}
         </section>
       ) : null}
 

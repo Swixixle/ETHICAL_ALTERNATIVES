@@ -233,11 +233,13 @@ export default function Library({ onBack }) {
   return (
     <div className="bb-page">
       <header className="bb-page__top">
-        <button type="button" className="bb-page__back-home" onClick={onBack}>
-          ← Home
-        </button>
-        <h1 className="bb-page__title">Black Book</h1>
-        <span className="bb-page__count">{total} companies</span>
+        <div className="bb-page__head-row">
+          <button type="button" className="bb-page__back-home" onClick={onBack}>
+            ← Home
+          </button>
+          <h1 className="bb-page__title">Black Book</h1>
+          <span className="bb-page__count">{total} companies</span>
+        </div>
         <div className="bb-page__controls">
           <input
             type="search"
@@ -287,11 +289,12 @@ export default function Library({ onBack }) {
                 <button
                   key={p.slug}
                   type="button"
-                  className={`bb-index-item${selectedSlug === p.slug ? ' bb-index-item--active' : ''}`}
+                  data-concern={p.concern_level || ''}
+                  className={`library-index-item bb-index-item${selectedSlug === p.slug ? ' bb-index-item--active' : ''}`}
                   onClick={() => navigateToSlug(p.slug)}
                 >
-                  <span className="bb-index-item__name">{p.name || p.slug}</span>
-                  <span className={concernDotClass(p.concern_level)} aria-hidden />
+                  <span className="company-name bb-index-item__name">{p.name || p.slug}</span>
+                  <span className={`concern-dot ${concernDotClass(p.concern_level)}`} aria-hidden />
                 </button>
               ))}
             </div>
