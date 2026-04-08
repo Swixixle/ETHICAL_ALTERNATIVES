@@ -11,8 +11,6 @@ import HomeScreen from './components/HomeScreen.jsx';
 import HistoryScreen from './components/HistoryScreen.jsx';
 import ResearchNarrative from './components/ResearchNarrative.jsx';
 import ShareCard from './components/ShareCard.jsx';
-import WitnessRegistry from './components/WitnessRegistry.jsx';
-import WorkerProfilePage from './components/WorkerProfilePage.jsx';
 import ConfidenceBadge from './components/ConfidenceBadge.jsx';
 import InvestigationCard, { NoRecordCompactModule } from './components/InvestigationCard.jsx';
 import { persistLocation, readCachedLocation, readUserCityState } from './services/location.js';
@@ -251,11 +249,8 @@ function TapRetapFullScreen({ message, onTryAgain }) {
 }
 
 export default function App() {
-  /** home — feed; snap — photo tap (Quick); deep — typed investigation (rabbit hole); history — saved taps; witnesses — civic registry */
+  /** home — feed; snap — photo tap (Quick); deep — typed investigation (rabbit hole); history — saved taps */
   const [mode, setMode] = useState('home');
-  const [witnessReturnMode, setWitnessReturnMode] = useState('home');
-  const [workerProfileSlug, setWorkerProfileSlug] = useState(/** @type {string | null} */ (null));
-  const [hireDirectShareFootnote, setHireDirectShareFootnote] = useState('');
 
   const {
     image,
@@ -340,81 +335,40 @@ export default function App() {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  const openWitnessRegistry = useCallback(() => {
-    setWitnessReturnMode(mode);
-    try {
-      window.history.pushState({}, '', '/witnesses');
-    } catch {
-      /* ignore */
-    }
-    setMode('witnesses');
-  }, [mode]);
-
-  const openWorkerProfile = useCallback((slug) => {
-    const s = String(slug || '').trim();
-    if (!s) return;
-    setWorkerProfileSlug(s);
-    try {
-      window.history.pushState({}, '', `/workers/${encodeURIComponent(s)}`);
-    } catch {
-      /* ignore */
-    }
-    setMode('worker-profile');
-  }, []);
-
-  const closeWorkerProfile = useCallback(() => {
-    setWorkerProfileSlug(null);
-    try {
-      window.history.replaceState({}, '', '/');
-    } catch {
-      /* ignore */
-    }
-    setMode('home');
-  }, []);
-
   useEffect(() => {
     const syncPath = () => {
       const path = (window.location.pathname || '/').replace(/\/$/, '') || '/';
-      if (path === '/witnesses') {
-        setWitnessReturnMode('home');
-        setMode('witnesses');
-        return;
-      }
-      const wm = path.match(/^\/workers\/([^/]+)$/);
-      if (wm) {
-        setWorkerProfileSlug(decodeURIComponent(wm[1]));
-        setMode('worker-profile');
+      if (path === '/witnesses' || /^\/workers\//.test(path)) {
+        try {
+          window.history.replaceState({}, '', '/');
+        } catch {
+          /* ignore */
+        }
+        setMode('home');
         return;
       }
       if (path === '/directory') {
-        setWorkerProfileSlug(null);
         setMode('directory');
         return;
       }
       if (path === '/impact') {
-        setWorkerProfileSlug(null);
         setMode('impact');
         return;
       }
       if (/^\/library(?:\/[^/]+)?$/.test(path)) {
-        setWorkerProfileSlug(null);
         setMode('library');
         return;
       }
       const prof = path.match(/^\/profile\/([^/]+)$/);
       if (prof) {
-        setWorkerProfileSlug(null);
         const slug = decodeURIComponent(prof[1]);
         setDeepBrand(slug);
         setMode('deep');
         void investigateByBrandNav(slug);
         return;
       }
-      setWorkerProfileSlug(null);
       setMode((prev) =>
-        prev === 'worker-profile' || prev === 'directory' || prev === 'impact' || prev === 'library'
-          ? 'home'
-          : prev
+        prev === 'directory' || prev === 'impact' || prev === 'library' ? 'home' : prev
       );
     };
     syncPath();
@@ -438,7 +392,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (mode === 'witnesses' || !cityGateChecked) return;
+    if (!cityGateChecked) return;
     const loc = readCachedLocation();
     try {
       if (loc?.city || sessionStorage.getItem('ea_user_city')) setCityGateOpen(false);
@@ -502,10 +456,6 @@ export default function App() {
   useEffect(() => {
     if (!result) setShowReportError(false);
   }, [result]);
-
-  useEffect(() => {
-    setHireDirectShareFootnote('');
-  }, [tapSession]);
 
   const investigationShownRef = useRef(false);
   useEffect(() => {
@@ -639,39 +589,6 @@ export default function App() {
     );
   }
 
-  if (mode === 'worker-profile' && workerProfileSlug) {
-    return (
-      <>
-        {false && (
-          <div className="app">
-            <WorkerProfilePage slug={workerProfileSlug} onBack={closeWorkerProfile} />
-          </div>
-        )}
-      </>
-    );
-  }
-
-  if (mode === 'witnesses') {
-    return (
-      <>
-        {false && (
-          <div className="app">
-            <WitnessRegistry
-              onBack={() => {
-                try {
-                  window.history.replaceState({}, '', '/');
-                } catch {
-                  /* ignore */
-                }
-                setMode(witnessReturnMode);
-              }}
-            />
-          </div>
-        )}
-      </>
-    );
-  }
-
   if (mode === 'directory') {
     return (
       <div className="app">
@@ -697,8 +614,6 @@ export default function App() {
             setMode('snap');
           }}
           onOpenHistory={() => setMode('history')}
-          onOpenWitnesses={() => {}}
-          onOpenWorkerProfile={() => {}}
           onOpenDirectory={() => {
             try {
               window.history.pushState({}, '', '/directory');
@@ -1022,7 +937,6 @@ export default function App() {
                   ? { x: tapPosition.x, y: tapPosition.y }
                   : null
               }
-              onHireDirectShareFootnote={false ? setHireDirectShareFootnote : undefined}
               onWrongBrand={() => {
                 resetSession();
                 setMode('snap');
@@ -1443,12 +1357,11 @@ export default function App() {
         <ShareCard
           investigation={result.investigation}
           identification={id}
-          hireDirectShareFooter={false ? hireDirectShareFootnote : undefined}
           onClose={() => setShowShare(false)}
         />
       ) : null}
 
-      {cityGateChecked && cityGateOpen && mode !== 'witnesses' ? (
+      {cityGateChecked && cityGateOpen ? (
         <LocationCitySheet
           onResolved={() => {
             setCityGateOpen(false);
@@ -1529,14 +1442,6 @@ export default function App() {
               </span>
               <span className="app__bottom-nav__label">Local</span>
             </button>
-            {false && (
-              <button type="button" className="app__bottom-nav__item" onClick={openWitnessRegistry}>
-                <span className="app__bottom-nav__icon" aria-hidden>
-                  ✧
-                </span>
-                <span className="app__bottom-nav__label">Registry</span>
-              </button>
-            )}
           </nav>
         </>
       ) : null}

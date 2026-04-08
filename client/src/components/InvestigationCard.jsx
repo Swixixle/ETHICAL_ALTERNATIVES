@@ -16,7 +16,6 @@ import {
   ExecutivesIcon,
   HealthIcon,
 } from './icons/SectionIcons';
-import HireDirectInvestigationBlock from './HireDirectInvestigationBlock.jsx';
 import ActiveNowSection from './ActiveNowSection.jsx';
 import { fetchProportionality } from '../lib/fetchProportionality.js';
 import { methodologyPageUrl } from '../lib/methodologyUrl.js';
@@ -647,7 +646,6 @@ function confidenceLabelFromId(c) {
  *   onShare?: () => void;
  *   onRunLiveInvestigation?: () => void;
  *   showNoRecordModule?: boolean;
- *   onHireDirectShareFootnote?: (footnote: string) => void;
  *   onWrongBrand?: () => void;
  *   onReportError?: () => void;
  *   userCaptureSrc?: string | null;
@@ -664,7 +662,6 @@ export default function InvestigationCard({
   onShare,
   onRunLiveInvestigation,
   showNoRecordModule = false,
-  onHireDirectShareFootnote,
   onWrongBrand,
   onReportError,
   userCaptureSrc = null,
@@ -1154,18 +1151,9 @@ export default function InvestigationCard({
         />
       </div>
 
-      {Array.isArray(investigation.hire_direct_categories) && investigation.hire_direct_categories.length > 0 ? (
-        <HireDirectInvestigationBlock
-          hireDirectCategories={investigation.hire_direct_categories.map(String)}
-          onShareFootnoteChange={onHireDirectShareFootnote}
-        />
-      ) : null}
-
       <div style={{ padding: '0 0 12px' }}>
         <Timeline events={investigation.timeline} />
       </div>
-
-      <SourcesLedger investigation={investigation} result={result} />
 
       <div className="investigation-card__accordion">
         {sectionItems.map((item) => {
@@ -1271,6 +1259,8 @@ export default function InvestigationCard({
           <p className="investigation-card__subs-body investigation-card__body">{investigation.subsidiaries.join(' · ')}</p>
         </div>
       ) : null}
+
+      <SourcesLedger investigation={investigation} result={result} />
 
       <p className="investigation-card__methodology investigation-card__body-muted">
         <a

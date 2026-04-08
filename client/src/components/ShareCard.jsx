@@ -1,11 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { getImpactFetchHeaders } from '../lib/impactConsent.js';
 import ShareSheet from './Civic/ShareSheet.jsx';
-import {
-  WITNESS_LEGAL_NOTICE,
-  WITNESS_LEGAL_NOTICE_COMPACT,
-  ETHICALALT_CONTACT,
-} from '../constants/witnessLegalNotice.js';
+import { WITNESS_LEGAL_NOTICE, WITNESS_LEGAL_NOTICE_COMPACT } from '../constants/witnessLegalNotice.js';
 import { methodologyPageUrl } from '../lib/methodologyUrl.js';
 
 function apiPrefix() {
@@ -194,14 +190,7 @@ const DEFAULT_OPEN = {
  *   onClose: () => void;
  * }} props
  */
-export default function ShareCard({ investigation, identification, onClose, hireDirectShareFooter }) {
-  const [witnessStep, setWitnessStep] = useState('prompt');
-  const [witnessName, setWitnessName] = useState('');
-  const [witnessCity, setWitnessCity] = useState('');
-  const [witnessMsg, setWitnessMsg] = useState('');
-  const [witnessId, setWitnessId] = useState(null);
-  const [witnessBusy, setWitnessBusy] = useState(false);
-
+export default function ShareCard({ investigation, identification, onClose }) {
   const [shareData, setShareData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState(null);
@@ -298,45 +287,6 @@ export default function ShareCard({ investigation, identification, onClose, hire
       : investigation && typeof investigation.brand === 'string'
         ? investigation.brand.trim()
         : 'this company';
-
-  const slugForWitness =
-    (investigation && typeof investigation.brand_slug === 'string' && investigation.brand_slug.trim()) ||
-    (shareData && typeof shareData.brand_slug === 'string' && shareData.brand_slug.trim()) ||
-    '';
-
-  const submitWitness = async () => {
-    if (!witnessName.trim() || !slugForWitness) return;
-    setWitnessBusy(true);
-    try {
-      const res = await fetch(`${apiPrefix()}/api/witness`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', ...getImpactFetchHeaders() },
-        body: JSON.stringify({
-          session_id: sessionStorage.getItem('ea_session') || Date.now().toString(),
-          display_name: witnessName.trim(),
-          brand_slug: slugForWitness,
-          brand_name: brandLabel,
-          investigation_headline:
-            typeof investigation?.generated_headline === 'string'
-              ? investigation.generated_headline
-              : null,
-          city: witnessCity.trim() || null,
-          public_message: witnessMsg.trim() || null,
-        }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setWitnessId(data.witness_id);
-        setWitnessStep('confirmed');
-      } else {
-        setWitnessStep('skip');
-      }
-    } catch {
-      setWitnessStep('skip');
-    } finally {
-      setWitnessBusy(false);
-    }
-  };
 
   const selectedTotal = useMemo(() => {
     if (!shareData) return 0;
@@ -443,17 +393,12 @@ export default function ShareCard({ investigation, identification, onClose, hire
 
     try {
       const pressPicked = (s.press_outlets || []).filter((o) => sel[pressRowId(o.handle)]);
-      const hireDirectFoot =
-        typeof hireDirectShareFooter === 'string' && hireDirectShareFooter.trim()
-          ? `\n\n${hireDirectShareFooter.trim()}`
-          : '';
       const twitterFeedText =
-        (pressPicked.length > 0 ? composeTwitterWithPress(s, pressPicked, 'feed') : s.share_texts.twitter) +
-        hireDirectFoot;
+        (pressPicked.length > 0 ? composeTwitterWithPress(s, pressPicked, 'feed') : s.share_texts.twitter) || '';
       const twitterCompanyText =
         (pressPicked.length > 0
           ? composeTwitterWithPress(s, pressPicked, 'company')
-          : s.share_texts.twitter_company) + hireDirectFoot;
+          : s.share_texts.twitter_company) || '';
 
       if (sel.twitter_feed) {
         window.open(tweetUrl(twitterFeedText), '_blank', 'noopener,noreferrer');
@@ -695,7 +640,7 @@ export default function ShareCard({ investigation, identification, onClose, hire
     );
   }
 
-  const showDestinationList = witnessStep === 'skip' || witnessStep === 'confirmed';
+  const showDestinationList = true;
 
   return (
     <div
@@ -890,190 +835,6 @@ export default function ShareCard({ investigation, identification, onClose, hire
           WebkitOverflowScrolling: 'touch',
         }}
       >
-        {witnessStep === 'prompt' ? (
-          <div style={{ padding: '8px 0 16px', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-            <div
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 10,
-                letterSpacing: 1.5,
-                color: '#a8c4d8',
-                marginBottom: 12,
-              }}
-            >
-              Civic witness registry
-            </div>
-            <div style={{ fontFamily: "'Crimson Pro', serif", fontSize: 15, color: '#e0e0e0', marginBottom: 8 }}>
-              Add your name to the public record.
-            </div>
-            <div
-              style={{
-                fontFamily: "'Crimson Pro', serif",
-                fontSize: 12,
-                color: '#6a8a9a',
-                lineHeight: 1.65,
-                marginBottom: 16,
-              }}
-            >
-              The Civic Witness Registry is a voluntary public ledger. By adding your name you state that you have
-              reviewed this documented investigation and choose to be on record. This is not a legal filing. Your
-              name and message become public. Removal: {ETHICALALT_CONTACT}.
-            </div>
-            <div style={{ display: 'flex', gap: 10 }}>
-              <button
-                type="button"
-                onClick={() => setWitnessStep('form')}
-                style={{
-                  flex: 1,
-                  background: '#d4a017',
-                  color: '#0a1f3d',
-                  border: 'none',
-                  padding: 12,
-                  borderRadius: 6,
-                  fontSize: 13,
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                }}
-              >
-                Add my name
-              </button>
-              <button
-                type="button"
-                onClick={() => setWitnessStep('skip')}
-                style={{
-                  flex: 1,
-                  background: 'transparent',
-                  color: '#6a8a9a',
-                  border: '1px solid #6a8a9a',
-                  padding: 12,
-                  borderRadius: 6,
-                  fontSize: 13,
-                  cursor: 'pointer',
-                }}
-              >
-                Share anonymously
-              </button>
-            </div>
-          </div>
-        ) : null}
-
-        {witnessStep === 'form' ? (
-          <div style={{ padding: '8px 0 16px', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-            <div
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 10,
-                letterSpacing: 1.5,
-                color: '#a8c4d8',
-                marginBottom: 12,
-              }}
-            >
-              Your public witness entry
-            </div>
-            <input
-              placeholder="Your name (as it will appear publicly)"
-              value={witnessName}
-              onChange={(e) => setWitnessName(e.target.value)}
-              maxLength={80}
-              style={{
-                width: '100%',
-                marginBottom: 10,
-                padding: '10px 12px',
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(255,255,255,0.15)',
-                borderRadius: 6,
-                color: '#e0e0e0',
-                fontSize: 14,
-                boxSizing: 'border-box',
-              }}
-            />
-            <input
-              placeholder="City, State (optional)"
-              value={witnessCity}
-              onChange={(e) => setWitnessCity(e.target.value)}
-              maxLength={60}
-              style={{
-                width: '100%',
-                marginBottom: 10,
-                padding: '10px 12px',
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(255,255,255,0.15)',
-                borderRadius: 6,
-                color: '#e0e0e0',
-                fontSize: 14,
-                boxSizing: 'border-box',
-              }}
-            />
-            <textarea
-              placeholder="Optional: why this matters to you (280 chars, public)"
-              value={witnessMsg}
-              onChange={(e) => setWitnessMsg(e.target.value.slice(0, 280))}
-              rows={3}
-              style={{
-                width: '100%',
-                marginBottom: 8,
-                padding: '10px 12px',
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(255,255,255,0.15)',
-                borderRadius: 6,
-                color: '#e0e0e0',
-                fontSize: 13,
-                resize: 'none',
-                boxSizing: 'border-box',
-              }}
-            />
-            <div
-              style={{
-                fontFamily: "'Crimson Pro', serif",
-                fontSize: 11,
-                color: '#6a8a9a',
-                marginBottom: 12,
-                lineHeight: 1.5,
-                whiteSpace: 'pre-wrap',
-              }}
-            >
-              {WITNESS_LEGAL_NOTICE}
-            </div>
-            <button
-              type="button"
-              onClick={() => void submitWitness()}
-              disabled={!witnessName.trim() || witnessBusy}
-              style={{
-                width: '100%',
-                background: witnessName.trim() && !witnessBusy ? '#d4a017' : '#333',
-                color: witnessName.trim() && !witnessBusy ? '#0a1f3d' : '#666',
-                border: 'none',
-                padding: 13,
-                borderRadius: 6,
-                fontSize: 14,
-                fontWeight: 700,
-                cursor: witnessName.trim() && !witnessBusy ? 'pointer' : 'not-allowed',
-              }}
-            >
-              {witnessBusy ? 'Saving…' : 'Enter my name in the public record'}
-            </button>
-          </div>
-        ) : null}
-
-        {witnessStep === 'confirmed' ? (
-          <div
-            style={{
-              padding: '16px 0',
-              borderBottom: '1px solid rgba(255,255,255,0.08)',
-              textAlign: 'center',
-            }}
-          >
-            <div style={{ fontSize: 20, marginBottom: 8 }}>⬡</div>
-            <div style={{ fontSize: 14, color: '#d4a017', fontWeight: 700, marginBottom: 4 }}>
-              You are on the record
-            </div>
-            <div style={{ fontSize: 12, color: '#6a8a9a', lineHeight: 1.6 }}>
-              {witnessName} has been added to the public {brandLabel} witness ledger.
-              {witnessId != null ? ` Witness #${witnessId}.` : ''} Now share the investigation.
-            </div>
-          </div>
-        ) : null}
-
         {showDestinationList && (previewHeadline || cd) ? (
           <div
             style={{

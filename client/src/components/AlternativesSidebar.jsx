@@ -1,9 +1,8 @@
+import { useMemo } from 'react';
 import RegistryCard from './RegistryCard.jsx';
 import TrustStrip from './TrustStrip.jsx';
-import ListYourShop from './ListYourShop.jsx';
-import SecondhandLinks from './SecondhandLinks.jsx';
-import DiySection from './DiySection.jsx';
 import { getGoogleMapsUrl, getStreetAddressLine } from '../utils/localBusinessMaps.js';
+import { filterLocalRetailPlaces, filterOnlineSellerRows } from '../utils/alternativesFilters.js';
 
 function SectionLabel({ children }) {
   return (
@@ -244,16 +243,15 @@ export default function AlternativesSidebar({
   registryResults,
   localResults,
   etsyResults,
-  identification,
-  investigation,
+  identification: _identification,
+  investigation: _investigation,
 }) {
-  const hasRegistry = Array.isArray(registryResults) && registryResults.length > 0;
-  const hasLocal = Array.isArray(localResults) && localResults.length > 0;
-  const hasEtsy = Array.isArray(etsyResults) && etsyResults.length > 0;
+  const nearYou = useMemo(() => filterLocalRetailPlaces(localResults).slice(0, 6), [localResults]);
+  const onlineSellers = useMemo(() => filterOnlineSellerRows(registryResults), [registryResults]);
+  const etsyList = Array.isArray(etsyResults) ? etsyResults : [];
 
-  const object = identification?.object ? String(identification.object) : '';
-  const keywords = identification?.search_keywords ? String(identification.search_keywords) : '';
-  const category = identification?.category ? String(identification.category) : '';
+  const hasNear = nearYou.length > 0;
+  const hasOnline = onlineSellers.length > 0 || etsyList.length > 0;
 
   return (
     <div>
@@ -278,48 +276,31 @@ export default function AlternativesSidebar({
           marginBottom: 20,
         }}
       >
-        Independent, local, and ethical options for what you tapped.
+        Local independent stores and online alternatives to this brand.
       </div>
 
-      {hasRegistry ? (
-        <>
-          <SectionLabel>Independent Sellers</SectionLabel>
-          {registryResults.map((seller) => (
-            <RegistryCard key={String(seller.id)} seller={seller} />
-          ))}
-        </>
-      ) : null}
-
-      {hasLocal ? (
+      {hasNear ? (
         <>
           <SectionLabel>Near You</SectionLabel>
-          {localResults.slice(0, 6).map((place) => (
+          {nearYou.map((place) => (
             <LocalCard key={String(place.osm_id ?? place.name)} place={place} />
           ))}
         </>
       ) : null}
 
-      {hasEtsy ? (
+      {hasOnline ? (
         <>
-          <SectionLabel>Indie Makers — Ships to You</SectionLabel>
-          {etsyResults.slice(0, 5).map((listing) => (
+          <SectionLabel>Online — Independent Shops & Alternatives</SectionLabel>
+          {onlineSellers.map((seller) => (
+            <RegistryCard key={String(seller.id)} seller={seller} />
+          ))}
+          {etsyList.slice(0, 5).map((listing) => (
             <EtsyCard key={String(listing.listing_id)} listing={listing} />
           ))}
         </>
       ) : null}
 
-      <SectionLabel>Secondhand</SectionLabel>
-      <SecondhandLinks keywords={keywords} object={object} />
-
-      <SectionLabel>Make It Yourself</SectionLabel>
-      <DiySection
-        object={object}
-        category={category}
-        keywords={keywords}
-        investigation={investigation}
-      />
-
-      {!hasRegistry && !hasLocal && !hasEtsy ? (
+      {!hasNear && !hasOnline ? (
         <div
           style={{
             fontFamily: "'Crimson Pro', serif",
@@ -329,16 +310,10 @@ export default function AlternativesSidebar({
             padding: '16px 0',
           }}
         >
-          No alternatives found near you yet for this category.
-          <br />
-          <br />
-          Know an independent maker or local shop that belongs here?
+          No independent retail or online alternatives matched this tap yet. Try again with location enabled, or search
+          the Black Book for documented independents.
         </div>
       ) : null}
-
-      <div style={{ marginTop: 24 }}>
-        <ListYourShop />
-      </div>
     </div>
   );
 }

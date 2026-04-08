@@ -8,10 +8,7 @@ import {
 import { getCityIdentity } from '../services/cityIdentity.js';
 import { dailyChainShuffle, dailyFeedShuffle, utcDateKey } from '../utils/dailyShuffle.js';
 import LocalCommercial from './LocalCommercial.jsx';
-import HireDirectLocalSection from './HireDirectLocalSection.jsx';
 import TrustStrip from './TrustStrip.jsx';
-import ListYourShop from './ListYourShop.jsx';
-import CommunityBoard from './CommunityBoard.jsx';
 import EventsFeed from './EventsFeed.jsx';
 import TerritoryCard from './TerritoryCard.jsx';
 import {
@@ -961,14 +958,12 @@ function FeedCard({ business, chainFootnote = false }) {
 }
 
 /**
- * @param {{ onStartSnap: () => void; onOpenWorkerProfile?: (slug: string) => void; onOpenDirectory?: () => void; onOpenLibrary?: () => void; onOpenImpact?: () => void }} props
+ * @param {{ onStartSnap: () => void; onOpenDirectory?: () => void; onOpenLibrary?: () => void; onOpenImpact?: () => void }} props
  */
 export default function HomeScreen({
   onStartSnap,
   onSearchInvestigate,
   onOpenHistory,
-  onOpenWitnesses,
-  onOpenWorkerProfile,
   onOpenDirectory,
   onOpenLibrary,
   onOpenImpact,
@@ -986,7 +981,6 @@ export default function HomeScreen({
   const [manualCityBusy, setManualCityBusy] = useState(false);
   const [territoryData, setTerritoryData] = useState(null);
   const [territoryOverlayOpen, setTerritoryOverlayOpen] = useState(false);
-  const [communityBoardOpen, setCommunityBoardOpen] = useState(false);
   const [travelStayActive, setTravelStayActive] = useState(false);
   const [travelStayFeed, setTravelStayFeed] = useState([]);
   const [travelStayChain, setTravelStayChain] = useState([]);
@@ -1403,27 +1397,6 @@ export default function HomeScreen({
           ETHICALALT
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          {typeof onOpenWitnesses === 'function' ? (
-            <button
-              type="button"
-              onClick={() => onOpenWitnesses()}
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 10,
-                letterSpacing: 2,
-                textTransform: 'uppercase',
-                background: 'transparent',
-                border: '1px solid #6aaa8a',
-                color: '#6aaa8a',
-                padding: '6px 12px',
-                borderRadius: 2,
-                cursor: 'pointer',
-                flexShrink: 0,
-              }}
-            >
-              Registry
-            </button>
-          ) : null}
           {typeof onOpenHistory === 'function' ? (
             <button
               type="button"
@@ -1767,12 +1740,6 @@ export default function HomeScreen({
                 }}
               >
                 No independent businesses found in this category near you yet.
-                <br />
-                <br />
-                Know one that should be here?
-                <div style={{ marginTop: 20, display: 'flex', justifyContent: 'center' }}>
-                  <ListYourShop />
-                </div>
               </div>
             ) : null}
 
@@ -1868,58 +1835,6 @@ export default function HomeScreen({
             ) : null}
           </>
         )}
-
-        {phase === 'ready' ? (
-          <>
-            {typeof onOpenWorkerProfile === 'function' ? (
-              <HireDirectLocalSection
-                lat={typeof location?.lat === 'number' ? location.lat : null}
-                lng={typeof location?.lng === 'number' ? location.lng : null}
-                onWorkerProfile={onOpenWorkerProfile}
-              />
-            ) : null}
-
-            <div
-              style={{
-                margin: '28px 16px 0',
-                padding: 18,
-                border: '1px solid #2a3f52',
-                borderRadius: 4,
-                background: '#121820',
-              }}
-            >
-              <button
-                type="button"
-                onClick={() => setCommunityBoardOpen((o) => !o)}
-                style={{
-                  display: 'flex',
-                  width: '100%',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: 12,
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 11,
-                  letterSpacing: 2,
-                  textTransform: 'uppercase',
-                  color: '#f0a820',
-                  background: 'transparent',
-                  border: 'none',
-                  cursor: 'pointer',
-                  padding: 0,
-                  textAlign: 'left',
-                }}
-              >
-                <span>Community Board →</span>
-                <span aria-hidden="true">{communityBoardOpen ? '▾' : '▸'}</span>
-              </button>
-            </div>
-            {communityBoardOpen ? (
-              <div style={{ margin: '16px 16px 0' }}>
-                <CommunityBoard location={location} />
-              </div>
-            ) : null}
-          </>
-        ) : null}
 
         {typeof onOpenDirectory === 'function' || typeof onOpenLibrary === 'function' ? (
           <div
