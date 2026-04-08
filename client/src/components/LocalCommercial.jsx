@@ -212,7 +212,7 @@ export default function LocalCommercial({
         <div
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 9,
+            fontSize: 13,
             letterSpacing: 2,
             textTransform: 'uppercase',
             color: '#6a8a9a',
@@ -253,7 +253,7 @@ export default function LocalCommercial({
           style={{
             flex: '1 1 220px',
             fontFamily: "'Space Mono', monospace",
-            fontSize: 9,
+            fontSize: 13,
             letterSpacing: 1,
             textTransform: 'uppercase',
             color: '#6a8a9a',
@@ -269,14 +269,9 @@ export default function LocalCommercial({
             style={{
               width: '100%',
               boxSizing: 'border-box',
-              background: '#162030',
-              border: '1px solid #2a3f52',
               borderRadius: 2,
               padding: '10px 12px',
               fontFamily: "'Crimson Pro', serif",
-              fontSize: 16,
-              color: '#f0e8d0',
-              outline: 'none',
             }}
           />
         </label>
@@ -285,7 +280,7 @@ export default function LocalCommercial({
           onClick={handlePreviewGo}
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 11,
+            fontSize: 13,
             letterSpacing: 2,
             textTransform: 'uppercase',
             background: '#f0a820',

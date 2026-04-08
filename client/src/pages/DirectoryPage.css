@@ -3,6 +3,9 @@
   margin: 0 auto;
   padding: 1.5rem 1rem 4rem;
   font-family: var(--font-sans, system-ui, sans-serif);
+  background: #0f1520;
+  color: #f0e8d0;
+  min-height: 100vh;
 }
 
 .dir-header {
@@ -13,21 +16,21 @@
   background: none;
   border: none;
   font-size: 13px;
-  color: var(--color-text-secondary, #666);
+  color: #a8c4d8;
   cursor: pointer;
   padding: 0 0 12px;
   font-family: inherit;
 }
 
 .dir-back:hover {
-  color: var(--color-text-primary, #111);
+  color: #f0e8d0;
 }
 
 .dir-label {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-text-tertiary, #999);
+  color: #6a8a9a;
   font-family: var(--font-mono, monospace);
   margin-bottom: 4px;
 }
@@ -35,21 +38,23 @@
 .dir-headline {
   font-size: 22px;
   font-weight: 500;
-  color: var(--color-text-primary, #111);
+  color: #f0e8d0;
   margin-bottom: 4px;
 }
 
 .dir-sub {
-  font-size: 13px;
-  color: var(--color-text-secondary, #666);
+  font-size: 16px;
+  color: #a8c4d8;
 }
 
 .dir-search {
   width: 100%;
   max-width: 400px;
   margin-bottom: 1rem;
-  font-size: 13px;
+  font-size: 16px;
+  padding: 12px 14px;
   font-family: var(--font-mono, monospace);
+  border-radius: 2px;
 }
 
 .dir-filters {
@@ -60,26 +65,26 @@
 }
 
 .dir-filter-btn {
-  font-size: 11px;
-  padding: 4px 10px;
+  font-size: 13px;
+  padding: 6px 12px;
   border-radius: 100px;
-  border: 0.5px solid var(--color-border-tertiary, #ddd);
+  border: 1px solid #2a3f52;
   background: transparent;
-  color: var(--color-text-secondary, #666);
+  color: #a8c4d8;
   cursor: pointer;
   font-family: var(--font-mono, monospace);
   transition: background 0.12s, color 0.12s, border-color 0.12s;
 }
 
 .dir-filter-btn:hover {
-  border-color: var(--color-border-secondary, #ccc);
-  color: var(--color-text-primary, #111);
+  border-color: #f0a820;
+  color: #f0e8d0;
 }
 
 .dir-filter-btn.active {
-  background: var(--color-text-primary, #111);
-  color: var(--color-background-primary, #fff);
-  border-color: var(--color-text-primary, #111);
+  background: #f0a820;
+  color: #0f1520;
+  border-color: #f0a820;
 }
 
 .dir-error {

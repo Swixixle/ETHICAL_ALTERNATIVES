@@ -28,7 +28,7 @@ const CATEGORIES = [
 function labelStyle(required) {
   return {
     fontFamily: "'Space Mono', monospace",
-    fontSize: 11,
+    fontSize: 13,
     letterSpacing: 1.5,
     textTransform: 'uppercase',
     color: required ? '#f0a820' : '#6a8a9a',
@@ -40,15 +40,10 @@ function labelStyle(required) {
 
 const input = {
   width: '100%',
-  background: '#0f1520',
-  border: '1px solid #2a3f52',
   borderRadius: 2,
-  padding: '8px 12px',
+  padding: '10px 12px',
   fontFamily: "'Crimson Pro', serif",
-  fontSize: 16,
-  color: '#f0e8d0',
   boxSizing: 'border-box',
-  outline: 'none',
 };
 
 export default function ListYourShop() {

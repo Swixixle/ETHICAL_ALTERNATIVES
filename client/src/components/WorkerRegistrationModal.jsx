@@ -203,20 +203,16 @@ export default function WorkerRegistrationModal({ onClose, origin }) {
   const field = {
     width: '100%',
     boxSizing: 'border-box',
-    background: '#0f1520',
-    border: '1px solid #2a3f52',
     borderRadius: 6,
-    color: '#f0e8d0',
     padding: '10px 12px',
     fontFamily: "'Crimson Pro', serif",
-    fontSize: 16,
   };
 
   const sectionTitle = (t) => (
     <div
       style={{
         fontFamily: "'Space Mono', monospace",
-        fontSize: 10,
+        fontSize: 14,
         letterSpacing: 2,
         color: '#D4A017',
         margin: '18px 0 10px',

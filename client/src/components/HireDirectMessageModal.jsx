@@ -111,13 +111,9 @@ export default function HireDirectMessageModal({ worker, onClose }) {
               style={{
                 width: '100%',
                 boxSizing: 'border-box',
-                background: '#0f1520',
-                border: '1px solid #2a3f52',
                 borderRadius: 6,
-                color: '#f0e8d0',
                 padding: 10,
                 fontFamily: "'Crimson Pro', serif",
-                fontSize: 16,
                 resize: 'vertical',
               }}
             />
@@ -130,13 +126,9 @@ export default function HireDirectMessageModal({ worker, onClose }) {
                 width: '100%',
                 boxSizing: 'border-box',
                 marginTop: 10,
-                background: '#0f1520',
-                border: '1px solid #2a3f52',
                 borderRadius: 6,
-                color: '#f0e8d0',
                 padding: '10px 12px',
                 fontFamily: "'Crimson Pro', serif",
-                fontSize: 15,
               }}
             />
             {err ? (

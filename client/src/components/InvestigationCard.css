@@ -42,7 +42,7 @@
 
 .investigation-card__headline {
   font-family: 'Bebas Neue', system-ui, sans-serif;
-  font-size: 22px;
+  font-size: clamp(22px, 4vw, 28px);
   line-height: 1.15;
   letter-spacing: 0.04em;
   font-weight: 700;
@@ -81,8 +81,8 @@
 
 .investigation-card__photo-label {
   font-family: 'Space Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.14em;
+  font-size: 13px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #6a8a9a;
   margin: 0 0 8px;
@@ -120,7 +120,7 @@
 
 .investigation-card__match-line {
   margin: 0;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -130,7 +130,7 @@
   border-radius: 4px;
   border-left: 4px solid #d4a017;
   background: rgba(212, 160, 23, 0.12);
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--color-text-main, #e0e0e0);
 }
@@ -155,7 +155,7 @@
   background: none;
   color: #f0a820;
   font: inherit;
-  font-size: 13px;
+  font-size: 16px;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -192,7 +192,7 @@
 
 .investigation-card__verdict-pill {
   font-family: 'Space Mono', monospace;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.06em;
   text-transform: none;
   padding: 5px 10px;
@@ -208,7 +208,7 @@
 
 .investigation-card__verdict-cat {
   font-family: 'Space Mono', monospace;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #a8c4d8;
@@ -219,7 +219,7 @@
 .investigation-card__exec-summary {
   margin: 0 0 14px;
   font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.65;
   font-weight: 400;
   color: #e0e0e0;
@@ -227,7 +227,7 @@
 
 .investigation-card__body {
   font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.65;
   font-weight: 400;
   color: #e0e0e0;
@@ -250,7 +250,7 @@
 
 .investigation-card__sources-ledger-label {
   font-family: 'Space Mono', monospace;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #a8c4d8;
@@ -291,14 +291,14 @@
 
 .investigation-card__sources-ledger-name {
   font-family: 'Space Mono', monospace;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
   grid-column: 1;
 }
 
 .investigation-card__sources-ledger-url {
   font-family: 'Space Mono', monospace;
-  font-size: 12px;
+  font-size: 14px;
   color: #a8c4d8;
   word-break: break-all;
   grid-column: 1;
@@ -306,7 +306,7 @@
 
 .investigation-card__sources-ledger-ts {
   font-family: 'Space Mono', monospace;
-  font-size: 12px;
+  font-size: 13px;
   color: #6a8a9a;
   grid-column: 1;
 }
@@ -385,13 +385,13 @@
 }
 
 .investigation-card__accordion-row-meta {
-  font-size: 10px;
+  font-size: 13px;
   white-space: nowrap;
 }
 
 .investigation-card__evidence-row-label {
   font-family: 'Space Mono', monospace;
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   background: none;
@@ -411,8 +411,8 @@
 
 .investigation-card__accordion-title {
   font-family: 'Space Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 1.5px;
+  font-size: 14px;
+  letter-spacing: 1.2px;
   font-weight: 600;
   color: #a8c4d8;
   flex: 1;
@@ -442,7 +442,7 @@
   margin: 0 0 16px;
   padding-left: 12px;
   border-left: 3px solid #d4a017;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.45;
   font-weight: 400;
   opacity: 1;
@@ -460,7 +460,7 @@
 }
 
 .investigation-card__inline-source {
-  font-size: 12px;
+  font-size: 16px;
   color: #a8c4d8;
   word-break: break-all;
 }
@@ -468,7 +468,7 @@
 .investigation-card__empty-chip {
   display: inline-block;
   font-family: 'Space Mono', monospace;
-  font-size: 11px;
+  font-size: 13px;
   color: #6a8a9a;
   padding: 4px 10px;
   border-radius: 999px;
@@ -486,7 +486,7 @@
 
 .investigation-card__studies-label {
   font-family: 'Space Mono', monospace;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #a8c4d8;
@@ -495,13 +495,13 @@
 }
 
 .investigation-card__study-link {
-  font-size: 12px;
+  font-size: 16px;
   color: #a8c4d8;
 }
 
 .investigation-card__health-severity-pill {
   font-family: 'Space Mono', monospace;
-  font-size: 9px;
+  font-size: 13px;
   letter-spacing: 0.1em;
   padding: 4px 8px;
   border-radius: 999px;
@@ -520,7 +520,7 @@
 
 .investigation-card__notable-label {
   font-family: 'Space Mono', monospace;
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: #6a8a9a;
@@ -528,7 +528,7 @@
 }
 
 .investigation-card__clean-card {
-  font-size: 13px;
+  font-size: 16px;
   color: #a8f0c0;
   margin: 0 0 12px;
   padding: 0 4px;
@@ -541,14 +541,14 @@
 .investigation-card__subs {
   padding: 12px 4px 0;
   margin-top: 8px;
-  font-size: 13px;
+  font-size: 16px;
   color: #a8c4d8;
 }
 
 .investigation-card__subs-label {
   display: block;
   font-family: 'Space Mono', monospace;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #a8c4d8;
@@ -562,7 +562,7 @@
 
 .investigation-card__methodology {
   margin: 16px 4px 0;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -596,7 +596,7 @@
 }
 
 .investigation-card__no-record-copy {
-  font-size: 13px;
+  font-size: 16px;
   color: #6a8a9a;
   margin-bottom: 12px;
 }
@@ -610,7 +610,7 @@
 }
 
 .investigation-card__no-record-pill {
-  font-size: 11px;
+  font-size: 13px;
   padding: 3px 8px;
   border-radius: 12px;
   border: 1px solid #6a8a9a;
@@ -623,7 +623,7 @@
   border: none;
   padding: 10px 20px;
   border-radius: 6px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   font-family: 'Space Mono', monospace;
