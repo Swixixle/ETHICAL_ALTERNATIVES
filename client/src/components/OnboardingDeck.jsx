@@ -474,6 +474,10 @@ export default function OnboardingDeck({ onComplete, onSkip, onRequestLocation }
 
   function onPointerDown(e) {
     if (transitioningRef.current) return;
+    // Do not capture swipe when the user interacts with a button (NEXT, SKIP, dots, etc.).
+    // Otherwise setPointerCapture on the region breaks click activation on those controls.
+    const t = e.target;
+    if (t instanceof Element && t.closest('button')) return;
     pointerStartRef.current = { x: e.clientX, y: e.clientY };
     try {
       e.currentTarget.setPointerCapture(e.pointerId);
@@ -483,6 +487,16 @@ export default function OnboardingDeck({ onComplete, onSkip, onRequestLocation }
   }
 
   function onPointerUp(e) {
+    const t = e.target;
+    if (t instanceof Element && t.closest('button')) {
+      pointerStartRef.current = null;
+      try {
+        e.currentTarget.releasePointerCapture(e.pointerId);
+      } catch {
+        /* ignore */
+      }
+      return;
+    }
     const start = pointerStartRef.current;
     pointerStartRef.current = null;
     try {
@@ -521,6 +535,8 @@ export default function OnboardingDeck({ onComplete, onSkip, onRequestLocation }
           type="button"
           aria-label="Previous card"
           disabled={transitioning}
+          onPointerDown={(e) => e.stopPropagation()}
+          onPointerUp={(e) => e.stopPropagation()}
           onClick={(e) => {
             e.stopPropagation();
             goPrev();
@@ -606,14 +622,14 @@ export default function OnboardingDeck({ onComplete, onSkip, onRequestLocation }
               width: '100%',
               height: '100%',
               pointerEvents: 'none',
-              zIndex: 2,
+              zIndex: 0,
             }}
           />
 
           <div
             style={{
               position: 'relative',
-              zIndex: 1,
+              zIndex: 2,
               minHeight: 240,
             }}
           >
@@ -654,6 +670,8 @@ export default function OnboardingDeck({ onComplete, onSkip, onRequestLocation }
               <button
                 type="button"
                 data-no-disintegrate=""
+                onPointerDown={(e) => e.stopPropagation()}
+                onPointerUp={(e) => e.stopPropagation()}
                 onClick={(e) => {
                   e.stopPropagation();
                   goNext();
@@ -661,6 +679,8 @@ export default function OnboardingDeck({ onComplete, onSkip, onRequestLocation }
                 style={{
                   ...goldButtonStyle,
                   marginTop: 16,
+                  position: 'relative',
+                  zIndex: 3,
                 }}
               >
                 NEXT →
@@ -673,11 +693,15 @@ export default function OnboardingDeck({ onComplete, onSkip, onRequestLocation }
                   gap: 12,
                   marginTop: 16,
                   alignItems: 'stretch',
+                  position: 'relative',
+                  zIndex: 3,
                 }}
               >
                 <button
                   type="button"
                   data-no-disintegrate=""
+                  onPointerDown={(e) => e.stopPropagation()}
+                  onPointerUp={(e) => e.stopPropagation()}
                   onClick={(e) => {
                     e.stopPropagation();
                     finishDeck();
@@ -692,6 +716,8 @@ export default function OnboardingDeck({ onComplete, onSkip, onRequestLocation }
                 <button
                   type="button"
                   data-no-disintegrate=""
+                  onPointerDown={(e) => e.stopPropagation()}
+                  onPointerUp={(e) => e.stopPropagation()}
                   onClick={(e) => {
                     e.stopPropagation();
                     onRequestLocation();
