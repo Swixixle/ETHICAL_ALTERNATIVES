@@ -1251,6 +1251,19 @@ export default function HomeScreen({
           sessionStorage.setItem(ONBOARD_KEY, 'skipped');
           setPhase('skipped');
         }}
+        onRequestLocation={() => {
+          if (typeof navigator === 'undefined' || !navigator.geolocation) {
+            setGeoHint('Location is not available in this browser. Enter your city below.');
+            setManualCityVisible(true);
+            setPhase('prompt');
+            return;
+          }
+          navigator.geolocation.getCurrentPosition(
+            geoShare.success,
+            geoShare.error,
+            geoShare.options
+          );
+        }}
       />
     );
   }

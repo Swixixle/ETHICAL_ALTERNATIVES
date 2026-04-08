@@ -5,91 +5,66 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 const EXIT_MS = 500;
 const ENTRANCE_MS = 400;
 
+/** Dark shell + gold accent particles (exit animations). */
+const BG = '#0f1520';
+
 /** @type {const} */
 const CARDS = [
   {
     exit: 'shatter',
-    primary: '#1a1a1a',
-    bg: '#f8f4ee',
-    labelColor: '#8a7a6a',
-    headlineColor: '#1a1a1a',
-    subColor: '#8a7a6a',
-    labelFont: "'Georgia', serif",
-    headlineFont: "'Georgia', serif",
-    label: 'YOU ALREADY KNOW THESE BRANDS',
-    headline: 'Clean packaging. Great marketing. Busy lawyers.',
-    subtext: "There's a record behind every logo.",
-    accent: 'goldBorder',
-    footer: 'tm',
-    footerStyle: 'corporate',
+    primary: '#f0a820',
+    bg: BG,
+    headline:
+      'Point your camera at any product or brand logo to investigate it',
+    subtext: '',
   },
   {
     exit: 'explode',
     primary: '#f0a820',
-    bg: '#0f1520',
-    labelColor: '#a8c4d8',
-    headlineColor: '#f0a820',
-    subColor: '#a8c4d8',
-    labelFont: "'Space Mono', monospace",
-    headlineFont: "'Space Mono', monospace",
-    label: 'WHAT WE FOUND',
-    headline: 'Every company has a paper trail.',
-    subtext: "Settlements. Fines. Who paid. Who didn't.",
-    accent: 'amberLine',
-    footer: '94 PROFILES · 41 BOARD MEMBERS · DOCUMENTED',
-    footerStyle: 'mono',
+    bg: BG,
+    headline: "Scan a barcode to trace what's inside and who owns it",
+    subtext: '',
   },
   {
     exit: 'melt',
-    primary: '#00e676',
-    bg: '#0a0f0a',
-    labelColor: '#4a7a4a',
-    headlineColor: '#00e676',
-    subColor: '#4a7a4a',
-    labelFont: "'Space Mono', monospace",
-    headlineFont: "'Space Mono', monospace",
-    label: 'HOW IT WORKS',
-    headline: 'Point. Tap. Or scan.',
-    subtext:
-      'Tap any brand for an investigation. Hold to select a specific object. Barcode scanning is automatic and unlimited.',
-    accent: 'scanLine',
-    footer: '5 INVESTIGATIONS/DAY · UNLIMITED BARCODE SCANS · FREE SEARCH',
-    footerStyle: 'mono',
+    primary: '#f0a820',
+    bg: BG,
+    headline: 'Search any company, brand, or CEO by name',
+    subtext: '',
   },
   {
     exit: 'float',
-    primary: '#e8c87a',
-    bg: '#1a120a',
-    labelColor: '#a89060',
-    headlineColor: '#e8c87a',
-    subColor: '#a89060',
-    labelFont: "'Space Mono', monospace",
-    headlineFont: "'Crimson Pro', serif",
-    label: 'THE ALTERNATIVE',
-    headline: 'The independent is closer than you think.',
-    subtext: 'Real businesses. Real people. Your city.',
-    accent: 'leftBar',
-    footer: 'LOCAL · VERIFIED · YOURS',
-    footerStyle: 'mixed',
+    primary: '#f0a820',
+    bg: BG,
+    headline: 'Save findings to your Black Book for later',
+    subtext: '',
   },
   {
     exit: 'none',
-    primary: '#f0e8d0',
-    bg: '#0f1520',
-    labelColor: '#6a8a9a',
-    headlineColor: '#f0e8d0',
-    subColor: '#6a8a9a',
-    labelFont: "'Space Mono', monospace",
-    headlineFont: "'Space Mono', monospace",
-    label: 'BEFORE YOU CONTINUE',
-    headline: 'No account. No tracking. Just receipts.',
-    subtext:
-      '5 camera investigations per day. Unlimited barcode scans. Unlimited Black Book search. No account. Location never stored.',
-    accent: 'none',
-    footer: 'cta',
-    footerStyle: 'cta',
+    primary: '#f0a820',
+    bg: BG,
+    headline: 'No account. No tracking. 5 camera investigations per day.',
+    subtext: '',
   },
 ];
+
+const goldButtonStyle = {
+  fontFamily: "'Space Mono', monospace",
+  fontSize: 11,
+  letterSpacing: 2,
+  textTransform: 'uppercase',
+  background: '#f0a820',
+  color: '#0f1520',
+  border: 'none',
+  padding: '14px 32px',
+  borderRadius: 2,
+  cursor: 'pointer',
+  fontWeight: 700,
+  width: '100%',
+  maxWidth: 320,
+  marginTop: 8,
+  boxShadow: '0 0 0 1px rgba(240,168,32,0.35)',
+};
 
 function hexToRgb(hex) {
   const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -360,9 +335,9 @@ function runUniversalEntranceOnly(dir, colorHex, canvasRef, w, h) {
 }
 
 /**
- * @param {{ onComplete: () => void; onSkip: () => void }} props
+ * @param {{ onComplete: () => void; onSkip: () => void; onRequestLocation: () => void }} props
  */
-export default function OnboardingDeck({ onComplete, onSkip }) {
+export default function OnboardingDeck({ onComplete, onSkip, onRequestLocation }) {
   const [cardIndex, setCardIndex] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
   const cardWrapRef = useRef(/** @type {HTMLDivElement | null} */ (null));
@@ -541,15 +516,6 @@ export default function OnboardingDeck({ onComplete, onSkip }) {
         userSelect: 'none',
       }}
     >
-      <style>
-        {`
-          @keyframes ea-onboard-scan {
-            0% { top: 0%; }
-            100% { top: 100%; }
-          }
-        `}
-      </style>
-
       {cardIndex > 0 ? (
         <button
           type="button"
@@ -566,7 +532,7 @@ export default function OnboardingDeck({ onComplete, onSkip }) {
             zIndex: 10,
             fontFamily: "'Space Mono', monospace",
             fontSize: 18,
-            color: card.headlineColor,
+            color: '#f0e8d0',
             opacity: 0.7,
             background: 'none',
             border: 'none',
@@ -625,8 +591,8 @@ export default function OnboardingDeck({ onComplete, onSkip }) {
             maxWidth: 420,
             boxSizing: 'border-box',
             minHeight: 360,
-            border: card.accent === 'goldBorder' ? '1px solid #c8a84a' : undefined,
-            padding: card.accent === 'goldBorder' ? '40px 32px' : '40px 32px',
+            border: '1px solid #2a3f52',
+            padding: '40px 32px',
             cursor: transitioning ? 'default' : 'pointer',
           }}
         >
@@ -648,170 +614,101 @@ export default function OnboardingDeck({ onComplete, onSkip }) {
             style={{
               position: 'relative',
               zIndex: 1,
-              minHeight: 280,
+              minHeight: 240,
             }}
           >
-            {card.accent === 'amberLine' ? (
-              <div
-                aria-hidden
-                style={{
-                  position: 'absolute',
-                  top: '40%',
-                  left: 0,
-                  right: 0,
-                  height: 1,
-                  background: '#f0a820',
-                  zIndex: 0,
-                }}
-              />
-            ) : null}
-
-            <div
-              style={{
-                fontFamily: card.labelFont,
-                fontSize: 10,
-                letterSpacing: card.accent === 'goldBorder' ? 2 : 1.5,
-                fontVariant: 'small-caps',
-                color: card.labelColor,
-                marginBottom: 16,
-                textAlign: card.accent === 'goldBorder' ? 'center' : 'left',
-                position: 'relative',
-                zIndex: 1,
-                paddingLeft: card.accent === 'leftBar' ? 12 : undefined,
-              }}
-            >
-              {card.label}
-            </div>
-
-            {card.accent === 'scanLine' ? (
-              <div
-                style={{
-                  position: 'relative',
-                  height: 200,
-                  marginBottom: 16,
-                  overflow: 'hidden',
-                }}
-              >
-                <div
-                  style={{
-                    position: 'absolute',
-                    left: 0,
-                    right: 0,
-                    height: 1,
-                    background: '#00e676',
-                    opacity: 0.3,
-                    animation: 'ea-onboard-scan 3s linear infinite',
-                  }}
-                />
-              </div>
-            ) : null}
-
             <h1
               style={{
-                fontFamily: card.headlineFont,
-                fontSize: card.accent === 'goldBorder' ? 26 : 24,
-                fontWeight: card.accent === 'goldBorder' ? 400 : 700,
-                color: card.headlineColor,
-                lineHeight: 1.25,
-                margin: '0 0 16px',
-                textAlign: card.accent === 'goldBorder' ? 'center' : 'left',
+                fontFamily: "'Crimson Pro', serif",
+                fontSize: 24,
+                fontWeight: 600,
+                color: '#f0e8d0',
+                lineHeight: 1.35,
+                margin: '0 0 20px',
+                textAlign: 'left',
                 position: 'relative',
                 zIndex: 1,
-                paddingLeft: card.accent === 'leftBar' ? 12 : undefined,
               }}
             >
               {card.headline}
             </h1>
 
-            <p
-              style={{
-                fontFamily: card.accent === 'goldBorder' ? "'Georgia', serif" : card.headlineFont,
-                fontSize: 16,
-                color: card.subColor,
-                lineHeight: 1.6,
-                margin: '0 0 24px',
-                textAlign: card.accent === 'goldBorder' ? 'center' : 'left',
-                position: 'relative',
-                zIndex: 1,
-                paddingLeft: card.accent === 'leftBar' ? 12 : undefined,
-              }}
-            >
-              {card.subtext}
-            </p>
-
-            {card.accent === 'leftBar' ? (
-              <div
-                style={{
-                  position: 'absolute',
-                  left: 0,
-                  top: 72,
-                  bottom: 72,
-                  width: 3,
-                  background: '#e8c87a',
-                }}
-              />
-            ) : null}
-
-            {card.footer === 'tm' ? (
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: 24,
-                  right: 24,
-                  fontFamily: "'Georgia', serif",
-                  fontSize: 32,
-                  color: '#c8a84a',
-                  textShadow: '0 1px 0 rgba(255,255,255,0.4)',
-                }}
-              >
-                ™
-              </div>
-            ) : null}
-
-            {card.footerStyle === 'mono' || card.footerStyle === 'mixed' ? (
+            {card.subtext ? (
               <p
                 style={{
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 10,
-                  letterSpacing: 1,
-                  color: card.labelColor,
-                  margin: '32px 0 0',
-                  textTransform: 'uppercase',
+                  fontFamily: "'Crimson Pro', serif",
+                  fontSize: 16,
+                  color: '#6a8a9a',
+                  lineHeight: 1.6,
+                  margin: '0 0 24px',
+                  textAlign: 'left',
+                  position: 'relative',
+                  zIndex: 1,
                 }}
               >
-                {card.footer}
+                {card.subtext}
               </p>
             ) : null}
 
-            {card.footer === 'cta' ? (
+            {cardIndex < 4 ? (
               <button
                 type="button"
                 data-no-disintegrate=""
                 onClick={(e) => {
                   e.stopPropagation();
-                  finishDeck();
+                  goNext();
                 }}
                 style={{
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 11,
-                  letterSpacing: 2,
-                  textTransform: 'uppercase',
-                  background: '#f0a820',
-                  color: '#0f1520',
-                  border: 'none',
-                  padding: '14px 32px',
-                  borderRadius: 2,
-                  cursor: 'pointer',
-                  fontWeight: 700,
-                  width: '100%',
-                  maxWidth: 320,
-                  marginTop: 8,
-                  boxShadow: '0 0 0 1px rgba(240,168,32,0.35)',
+                  ...goldButtonStyle,
+                  marginTop: 16,
                 }}
               >
-                SHARE MY LOCATION →
+                NEXT →
               </button>
-            ) : null}
+            ) : (
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 12,
+                  marginTop: 16,
+                  alignItems: 'stretch',
+                }}
+              >
+                <button
+                  type="button"
+                  data-no-disintegrate=""
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    finishDeck();
+                  }}
+                  style={{
+                    ...goldButtonStyle,
+                    marginTop: 0,
+                  }}
+                >
+                  GET STARTED
+                </button>
+                <button
+                  type="button"
+                  data-no-disintegrate=""
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onRequestLocation();
+                  }}
+                  style={{
+                    ...goldButtonStyle,
+                    background: 'transparent',
+                    color: '#f0a820',
+                    border: '1px solid #f0a820',
+                    boxShadow: 'none',
+                    marginTop: 0,
+                  }}
+                >
+                  SHARE MY LOCATION →
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -864,32 +761,6 @@ export default function OnboardingDeck({ onComplete, onSkip }) {
             />
           ))}
         </div>
-        {cardIndex < CARDS.length - 1 ? (
-          <button
-            type="button"
-            data-no-disintegrate=""
-            onPointerDown={(e) => e.stopPropagation()}
-            onClick={(e) => {
-              e.stopPropagation();
-              goNext();
-            }}
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: 11,
-              letterSpacing: 2,
-              textTransform: 'uppercase',
-              background: 'transparent',
-              color: card.headlineColor,
-              border: `1px solid ${card.headlineColor}`,
-              padding: '12px 28px',
-              borderRadius: 2,
-              cursor: transitioning ? 'default' : 'pointer',
-              opacity: transitioning ? 0.5 : 0.95,
-            }}
-          >
-            Next →
-          </button>
-        ) : null}
       </div>
     </div>
   );
