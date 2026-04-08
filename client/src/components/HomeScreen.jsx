@@ -1244,7 +1244,15 @@ export default function HomeScreen({
   }
 
   if (phase === 'onboarding') {
-    return <OnboardingDeck onComplete={() => setPhase('prompt')} />;
+    return (
+      <OnboardingDeck
+        onComplete={() => setPhase('prompt')}
+        onSkip={() => {
+          sessionStorage.setItem(ONBOARD_KEY, 'skipped');
+          setPhase('skipped');
+        }}
+      />
+    );
   }
 
   if (phase === 'prompt') {

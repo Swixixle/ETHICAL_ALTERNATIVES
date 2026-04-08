@@ -360,9 +360,9 @@ function runUniversalEntranceOnly(dir, colorHex, canvasRef, w, h) {
 }
 
 /**
- * @param {{ onComplete: () => void }} props
+ * @param {{ onComplete: () => void; onSkip: () => void }} props
  */
-export default function OnboardingDeck({ onComplete }) {
+export default function OnboardingDeck({ onComplete, onSkip }) {
   const [cardIndex, setCardIndex] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
   const cardWrapRef = useRef(/** @type {HTMLDivElement | null} */ (null));
@@ -438,9 +438,18 @@ export default function OnboardingDeck({ onComplete }) {
     [measure]
   );
 
+  const finishDeck = useCallback(() => {
+    onComplete();
+  }, [onComplete]);
+
   const goNext = useCallback(() => {
+    if (transitioningRef.current) return;
+    if (cardIndexRef.current >= CARDS.length - 1) {
+      finishDeck();
+      return;
+    }
     runTransition(1, 'left');
-  }, [runTransition]);
+  }, [runTransition, finishDeck]);
 
   const goPrev = useCallback(() => {
     runTransition(-1, 'right');
@@ -451,7 +460,7 @@ export default function OnboardingDeck({ onComplete }) {
       if (transitioningRef.current) return;
       if (e.key === 'ArrowRight') {
         e.preventDefault();
-        if (cardIndexRef.current < 4) goNext();
+        goNext();
       }
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
@@ -461,6 +470,32 @@ export default function OnboardingDeck({ onComplete }) {
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [goNext, goPrev]);
+
+  const jumpToSlide = useCallback(
+    (i) => {
+      if (transitioningRef.current) return;
+      if (i < 0 || i >= CARDS.length) return;
+      if (i === cardIndexRef.current) return;
+      transitioningRef.current = false;
+      setTransitioning(false);
+      cardIndexRef.current = i;
+      setCardIndex(i);
+      const canvas = canvasRef.current;
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        if (ctx) ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+    },
+    []
+  );
+
+  /** Advance from card tap; ignores clicks that originate on buttons/links. */
+  function onCardAreaClick(e) {
+    if (transitioningRef.current) return;
+    const t = e.target;
+    if (t instanceof Element && t.closest('button')) return;
+    goNext();
+  }
 
   function onPointerDown(e) {
     if (transitioningRef.current) return;
@@ -546,9 +581,12 @@ export default function OnboardingDeck({ onComplete }) {
       {cardIndex < 4 ? (
         <button
           type="button"
+          data-no-disintegrate=""
+          onPointerDown={(e) => e.stopPropagation()}
+          onPointerUp={(e) => e.stopPropagation()}
           onClick={(e) => {
             e.stopPropagation();
-            onComplete();
+            onSkip();
           }}
           style={{
             position: 'absolute',
@@ -580,6 +618,7 @@ export default function OnboardingDeck({ onComplete }) {
       >
         <div
           ref={cardWrapRef}
+          onClick={onCardAreaClick}
           style={{
             position: 'relative',
             width: '100%',
@@ -588,6 +627,7 @@ export default function OnboardingDeck({ onComplete }) {
             minHeight: 360,
             border: card.accent === 'goldBorder' ? '1px solid #c8a84a' : undefined,
             padding: card.accent === 'goldBorder' ? '40px 32px' : '40px 32px',
+            cursor: transitioning ? 'default' : 'pointer',
           }}
         >
           <canvas
@@ -749,7 +789,7 @@ export default function OnboardingDeck({ onComplete }) {
                 data-no-disintegrate=""
                 onClick={(e) => {
                   e.stopPropagation();
-                  onComplete();
+                  finishDeck();
                 }}
                 style={{
                   fontFamily: "'Space Mono', monospace",
@@ -776,28 +816,81 @@ export default function OnboardingDeck({ onComplete }) {
         </div>
       </div>
 
-      {cardIndex < 4 ? (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 16,
+          paddingBottom: 32,
+          paddingLeft: 16,
+          paddingRight: 16,
+        }}
+      >
         <div
           style={{
             display: 'flex',
             justifyContent: 'center',
+            alignItems: 'center',
             gap: 8,
-            paddingBottom: 32,
+            flexWrap: 'wrap',
           }}
         >
-          {CARDS.slice(0, 5).map((_, i) => (
-            <div
+          {CARDS.map((_, i) => (
+            <button
               key={i}
+              type="button"
+              data-no-disintegrate=""
+              aria-label={`Slide ${i + 1} of ${CARDS.length}`}
+              aria-current={i === cardIndex ? 'true' : undefined}
+              disabled={transitioning}
+              onPointerDown={(e) => e.stopPropagation()}
+              onClick={(e) => {
+                e.stopPropagation();
+                jumpToSlide(i);
+              }}
               style={{
-                width: 6,
-                height: 6,
+                width: i === cardIndex ? 10 : 6,
+                height: i === cardIndex ? 10 : 6,
                 borderRadius: 999,
+                border: 'none',
+                padding: 0,
                 background: i === cardIndex ? '#f0a820' : '#2a3f52',
+                cursor: transitioning ? 'default' : 'pointer',
+                flexShrink: 0,
+                boxSizing: 'border-box',
+                opacity: i === cardIndex ? 1 : 0.85,
               }}
             />
           ))}
         </div>
-      ) : null}
+        {cardIndex < CARDS.length - 1 ? (
+          <button
+            type="button"
+            data-no-disintegrate=""
+            onPointerDown={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation();
+              goNext();
+            }}
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 11,
+              letterSpacing: 2,
+              textTransform: 'uppercase',
+              background: 'transparent',
+              color: card.headlineColor,
+              border: `1px solid ${card.headlineColor}`,
+              padding: '12px 28px',
+              borderRadius: 2,
+              cursor: transitioning ? 'default' : 'pointer',
+              opacity: transitioning ? 0.5 : 0.95,
+            }}
+          >
+            Next →
+          </button>
+        ) : null}
+      </div>
     </div>
   );
 }
