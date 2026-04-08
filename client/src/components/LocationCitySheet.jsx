@@ -61,7 +61,7 @@ export default function LocationCitySheet({ onResolved }) {
           id="ea-city-prompt-label"
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 10,
+            fontSize: 13,
             letterSpacing: 1.5,
             textTransform: 'uppercase',
             color: AMBER,
@@ -84,12 +84,7 @@ export default function LocationCitySheet({ onResolved }) {
             minHeight: 44,
             padding: '0 12px',
             borderRadius: 4,
-            border: '1px solid #2a4a6a',
-            background: '#071528',
-            color: '#E0E0E0',
             fontFamily: "'Crimson Text', serif",
-            fontSize: 17,
-            outline: 'none',
             marginBottom: 12,
           }}
         />

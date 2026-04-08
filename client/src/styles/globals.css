@@ -1,9 +1,22 @@
-/* Global styles — expand in PROMPT 2+ */
+/* EthicalAlt — global typography & form tokens */
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+:root {
+  --ea-body: #e8e4dc;
+  --ea-body-size: 16px;
+  --ea-caption-size: 13px;
+  --ea-section-header-size: 14px;
+  --ea-cream: #f0e8d0;
+  --ea-input-bg: #1a2535;
+  --ea-input-text: #f0e8d0;
+  --ea-input-border: #2a3f52;
+  --ea-input-border-focus: #f0a820;
+  --ea-placeholder: #6b7a8d;
 }
 
 html,
@@ -15,5 +28,60 @@ body,
 
 body {
   font-family: 'Space Mono', ui-monospace, monospace;
+  font-size: var(--ea-body-size);
+  line-height: 1.55;
+  color: var(--ea-body);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Body copy in serif areas */
+p,
+li,
+dd,
+dt,
+blockquote,
+label {
+  font-size: max(1rem, 16px);
+}
+
+/* App-wide: form fields (excludes buttons & special inputs) */
+textarea,
+select,
+input:not([type='button']):not([type='submit']):not([type='reset']):not([type='checkbox']):not([type='radio']):not(
+    [type='range']
+  ):not([type='file']):not([type='hidden']):not([type='image']) {
+  font-size: max(1rem, 16px);
+  line-height: 1.45;
+  background-color: var(--ea-input-bg) !important;
+  color: var(--ea-input-text) !important;
+  border: 1px solid var(--ea-input-border) !important;
+  border-radius: 2px;
+  outline: none;
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: var(--ea-placeholder) !important;
+  opacity: 1;
+}
+
+textarea:focus,
+select:focus,
+input:not([type='button']):not([type='submit']):not([type='reset']):not([type='checkbox']):not([type='radio']):not(
+    [type='range']
+  ):not([type='file']):not([type='hidden']):not([type='image']):focus {
+  border-color: var(--ea-input-border-focus) !important;
+  box-shadow: 0 0 0 1px rgba(240, 168, 32, 0.25);
+}
+
+select option {
+  background-color: var(--ea-input-bg);
+  color: var(--ea-input-text);
+}
+
+/* Utility: opt out if a screen needs native styling */
+.ea-input--native {
+  background-color: revert !important;
+  color: revert !important;
+  border: revert !important;
 }

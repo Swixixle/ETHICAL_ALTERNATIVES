@@ -60,14 +60,9 @@ function SearchBar({ onSearch, onStartSnap, onLocalStory }) {
     width: '100%',
     minHeight: 48,
     boxSizing: 'border-box',
-    background: '#162030',
-    border: '1px solid #2a3f52',
     borderRadius: 2,
     padding: '0 16px',
     fontFamily: "'Crimson Pro', serif",
-    fontSize: 17,
-    color: '#f0e8d0',
-    outline: 'none',
   };
 
   return (
@@ -102,7 +97,7 @@ function SearchBar({ onSearch, onStartSnap, onLocalStory }) {
           onClick={() => onStartSnap()}
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: 12,
+            fontSize: 13,
             letterSpacing: 2,
             textTransform: 'uppercase',
             background: '#f0a820',
@@ -512,7 +507,7 @@ function LocationPrompt({
             htmlFor="ea-manual-city"
             style={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: 12,
+              fontSize: 13,
               letterSpacing: 1.5,
               textTransform: 'uppercase',
               color: '#a8c4d8',
@@ -532,12 +527,8 @@ function LocationPrompt({
             disabled={manualBusy}
             style={{
               fontFamily: "'Crimson Pro', serif",
-              fontSize: 18,
               padding: '12px 14px',
               borderRadius: 2,
-              border: '1px solid #2a3f52',
-              background: '#0a1018',
-              color: '#f0e8d0',
               width: '100%',
               boxSizing: 'border-box',
             }}
@@ -1479,7 +1470,7 @@ export default function HomeScreen({
                 style={{
                   marginTop: 20,
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: 10,
+                  fontSize: 13,
                   letterSpacing: 1,
                   textTransform: 'uppercase',
                   background: 'transparent',
@@ -1500,7 +1491,7 @@ export default function HomeScreen({
               style={{
                 marginTop: 12,
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 10,
+                fontSize: 13,
                 letterSpacing: 1,
                 textTransform: 'uppercase',
                 background: '#2a3f52',

@@ -18,7 +18,7 @@ const labelStyle = {
 
 const hintStyle = {
   fontFamily: "'Space Mono', monospace",
-  fontSize: 10,
+  fontSize: 13,
   letterSpacing: 0.5,
   color: '#6a8a9a',
   marginTop: 4,
@@ -40,7 +40,7 @@ export default function PrivacyConsentPanel({ variant = 'full', showReset = true
   }, []);
 
   const rowGap = variant === 'compact' ? 14 : 18;
-  const titleSize = variant === 'compact' ? 12 : 13;
+  const titleSize = 14;
 
   return (
     <div style={{ textAlign: 'left', maxWidth: 420, margin: '0 auto' }}>
@@ -60,7 +60,7 @@ export default function PrivacyConsentPanel({ variant = 'full', showReset = true
         style={{
           ...hintStyle,
           marginBottom: 16,
-          fontSize: variant === 'compact' ? 10 : 11,
+          fontSize: 13,
         }}
       >
         All off by default. Nothing here identifies you. You can change this anytime in Local home →

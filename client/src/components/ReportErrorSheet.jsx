@@ -92,7 +92,7 @@ export default function ReportErrorSheet({ brandName, brandSlug, onClose }) {
               id="report-error-title"
               style={{
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 11,
+                fontSize: 14,
                 letterSpacing: 2,
                 color: '#f0a820',
                 textTransform: 'uppercase',
@@ -104,7 +104,7 @@ export default function ReportErrorSheet({ brandName, brandSlug, onClose }) {
             <p
               style={{
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 9,
+                fontSize: 13,
                 color: '#6a8a9a',
                 margin: '0 0 24px',
               }}
@@ -127,10 +127,6 @@ export default function ReportErrorSheet({ brandName, brandSlug, onClose }) {
               style={{
                 width: '100%',
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 10,
-                background: '#162030',
-                border: '1px solid #2a3f52',
-                color: '#f0e8d0',
                 padding: '10px 12px',
                 borderRadius: 2,
                 marginBottom: 16,
@@ -150,10 +146,6 @@ export default function ReportErrorSheet({ brandName, brandSlug, onClose }) {
               style={{
                 width: '100%',
                 fontFamily: "'Crimson Pro', serif",
-                fontSize: 16,
-                background: '#162030',
-                border: '1px solid #2a3f52',
-                color: '#f0e8d0',
                 padding: 12,
                 borderRadius: 2,
                 resize: 'vertical',
@@ -192,7 +184,7 @@ export default function ReportErrorSheet({ brandName, brandSlug, onClose }) {
                 display: 'block',
                 margin: '12px auto 0',
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 9,
+                fontSize: 13,
                 color: '#6a8a9a',
                 background: 'transparent',
                 border: 'none',
@@ -233,7 +225,7 @@ export default function ReportErrorSheet({ brandName, brandSlug, onClose }) {
               onClick={onClose}
               style={{
                 fontFamily: "'Space Mono', monospace",
-                fontSize: 10,
+                fontSize: 13,
                 color: '#6a8a9a',
                 background: 'transparent',
                 border: 'none',
