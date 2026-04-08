@@ -844,7 +844,7 @@ async function realtimeEmergencyOrDegraded(brandName, corporateParent, healthFla
   );
 }
 
-function buildResearchPrompt(brandName, corporateParent, healthFlag, productCategory) {
+export function buildResearchPrompt(brandName, corporateParent, healthFlag, productCategory) {
   const primary = [brandName, corporateParent].filter(Boolean).join(' / ') || 'unknown entity';
   const query = `${brandName || ''} ${corporateParent || ''} news reviews complaints lawsuit registration owner BBB OSHA EPA`
     .trim()
