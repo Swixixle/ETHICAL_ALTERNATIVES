@@ -1,0 +1,984 @@
+{
+  "generated_at": "2026-04-09T01:19:38.612Z",
+  "total_profiles": 15,
+  "profiles_checked": 15,
+  "discrepancies_found": 15,
+  "confirmed": 0,
+  "errors": 0,
+  "estimated_cost_usd": 3.4754,
+  "results": [
+    {
+      "slug": "purdue-pharma",
+      "brand_name": "Purdue Pharma",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"2020: Purdue agreed to $8 billion settlement including $2 billion criminal forfeiture, $3.54 billion criminal fine, and $2.8 billion civil damages; guilty plea to three criminal charges[1]\",\"2025: Federal judge approved $7.4 billion settlement with Sackler family contributing up to $7 billion over 15 years[3][4][5]\",\"2025: Purdue filed plan for over $7.4 billion in creditor distributions, approved by 55 states/territories but pending final votes[2][5]\",\"2020: Separate DOJ criminal/civil settlements satisfied via bankruptcy plan with $1",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1996",
+          "live": "earliest year token: 2007",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "sackler_10_11b_extraction_before_bankruptcy, supreme_court_2024_blocked_sackler_shield",
+          "live": "8_3b_2020_federal_criminal_civil_penalty, sackler_11b_extraction_before_bankruptcy, supreme_court_2024_blocked_nonconsensual_sackler_shield, 7_4b_2025_bankruptcy_settlement_confirmed, no_criminal_charges_sackler_individuals, purdue_dissolution_knoa_pharma_successor",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~10 heuristic name tokens",
+          "live": "Knoa Pharma, Steve Miller, Board Chairman, Former Chairman, Mortimer Jr, Beverly Sackler, Bankruptcy Court, Knoa Pharma, In October, Bankruptcy Court, Knoa Pharma, In October, Steve Miller, Mortimer Jr, Beverly Sackler",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Purdue Pharma's six-year Chapter 11 bankruptcy concluded with a court-confirmed $7.4 billion settlement on November 18, 2025, permanently exiling the Sackler family from the opioid business and dissolving Purdue into a nonprofit successor (Knoa Pharma). Despite two corporate criminal guilty pleas (2007, 2020) and documented extraction of ~$11 billion from Purdue pre-bankruptcy, no individual Sackler family member has faced criminal charges as of April 2026. Steve Miller (Board Chairman, Purdue P",
+      "tokens_used": {
+        "input": 48823,
+        "output": 1321
+      },
+      "estimated_cost_usd": 0.1663,
+      "duration_ms": 27232,
+      "timestamp": "2026-04-09T01:10:37.295Z"
+    },
+    {
+      "slug": "volkswagen-group",
+      "brand_name": "Volkswagen Group",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"US Clean Air Act civil settlements: ~$15 billion for 2.0L vehicles (2016), additional for 3.0L (2017), total costs up to $10B+ for recalls and consumer compensation[2][6]\",\"US DOJ criminal plea by Volkswagen AG for conspiracy, obstruction of justice (2017)[2]\",\"Braunschweig court terminated proceedings against Chairman (current) and former Board member (now Supervisory Chairman) for €4.5M each (2020)[1]\",\"Australian ACCC settlements up to AUD 125M (2019, pending appeal finality)[1]\",\"German consumer settlements ~€770M with 245k custome",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "defeat_device_11_million_vehicles, 4_3b_us_criminal_penalty_largest_automaker, 30b_global_settlements, ceo_resigned, six_executives_convicted_germany, nox_40x_legal_limit",
+          "live": "Core tags remain factually grounded but need updates: the '30b_global_settlements' tag is now understated (€33B/$37.5B as of 2025); 'six_executives_convicted_germany' is inaccurate — four executives were convicted in Germany in May 2025 (with Winterkorn's case still suspended), while the '6 charged' figure referred to US indictments not German convictions; a separate US conviction (Schmidt) should be distinguished.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "MEDIUM",
+          "stored": "$30,000,000,000 (largest normalized)",
+          "live": "$37,500,000,000 (largest normalized)",
+          "note": "Financial headline figures differ moderately (~20%) after USD normalization."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 2006",
+          "live": "earliest year token: 2015",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "4_3b_us_criminal_penalty_largest_automaker, 30b_global_settlements, ceo_resigned, six_executives_convicted_germany",
+          "live": "4_3b_us_criminal_and_civil_penalty_largest_automaker, 33b_plus_global_total_costs, ceo_resigned_winterkorn_2015, four_executives_convicted_germany_2025, additional_us_convictions_schmidt, winterkorn_trial_suspended_health, 31_additional_defendants_pending_germany",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~8 heuristic name tokens",
+          "live": "No Dieselgate, Herbert Diess, Arno Antlitz, Hans Dieter, Supervisory Board, Oliver Schmidt, Jens Hadler, Hanno Jelden, Jakob Neusser, Convicted May, Richard Dorenkamp, Clean Diesel, Convicted May, No Dieselgate, Herbert Diess",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Volkswagen's Dieselgate scandal remains one of the largest corporate fraud cases in automotive history, with global costs now exceeding €33B (~$37.5B USD) and four former German executives convicted in May 2025 after a four-year trial in Braunschweig. Key stored tags are directionally accurate but contain material inaccuracies in the conviction count and total settlement figure, and Winterkorn's German criminal case remains unresolved due to health. Oliver Blume (CEO, Volkswagen AG (since Sept 2",
+      "tokens_used": {
+        "input": 36043,
+        "output": 1330
+      },
+      "estimated_cost_usd": 0.1281,
+      "duration_ms": 30773,
+      "timestamp": "2026-04-09T01:11:08.069Z"
+    },
+    {
+      "slug": "goldman-sachs",
+      "brand_name": "Goldman Sachs",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"$5.06 billion RMBS settlement with DOJ (2014)\",\"$550 million SEC civil fraud settlement (2010)\",\"$215 million gender discrimination class action settlement (2023)\",\"$110 million state settlement (year not specified)\"],\"executive_accountability\":\"No documented criminal convictions or guilty pleas of named executives or controlling owners in the provided sources. All resolutions are civil settlements by the firm with no admission of liability by individuals.\",\"caveats\":\"Search results cover select cases up to 2023; comprehensive totals e",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$47,000,000,000 (largest normalized)",
+          "live": "$6,800,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~86% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1999",
+          "live": "earliest year token: 2005",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~27 heuristic name tokens",
+          "live": "Apple Card, Chief Executive Officer, Chief Operating Officer, Director February, Chief Financial Officer, Apple Card, Apple Card, Director February, Apple Card",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Goldman Sachs carries a well-documented record of significant regulatory and criminal enforcement actions, most notably the $6.8B+ 1MDB global settlement (including a subsidiary criminal guilty plea), a $5B mortgage-crisis settlement, and a 2024 CFPB Apple Card enforcement action. Current named executives face no documented personal criminal liability, but the firm's cumulative legal exposure and pattern of governance failures sustain an overall 'significant' concern rating. David M. Solomon (Ch",
+      "tokens_used": {
+        "input": 24860,
+        "output": 767
+      },
+      "estimated_cost_usd": 0.0861,
+      "duration_ms": 21185,
+      "timestamp": "2026-04-09T01:11:29.255Z"
+    },
+    {
+      "slug": "nra",
+      "brand_name": "National Rifle Association",
+      "profile_type": "nonprofit",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"NRA paid $12 million settlement to former PR firm Ackerman McQueen in March 2022[1][2][5]\",\"Jury found NRA liable for mismanagement; Wayne LaPierre caused $5.4 million in damages, Woody Phillips $2 million (NY AG trial verdict, year not specified in results)[4]\",\"NRA resolved NY AG lawsuit in December 2024 with no fines or penalties paid by NRA; court entitled NRA to collect millions from former executives[3]\"],\"executive_accountability\":\"Jury found former CEO Wayne LaPierre, former CFO Woody Phillips, and General Counsel John Frazer l",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "lapierre_14_4m_personal_spending_documented, jury_found_lapierre_personally_liable_4_4m, lapierre_resigned_january_2024_days_before_trial, ny_ag_dissolution_suit_2020, texas_bankruptcy_rejected_bad_faith, zegna_suits_yacht_vacations_private_jets, nra_political_spending_200m_elections, board_failed_oversight_documented",
+          "live": "Core tags are directionally accurate but the damages figure stored as '14_4m_personal_spending' conflates spending allegations with the $5.4M jury damage finding (net order $4.35M, not $4.4M); the resignation tag understates that LaPierre resigned effective Jan 31 on the eve of trial (not merely 'days before'); DC Foundation consent order (2024) is absent from stored tags and should be added.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$400,000,000 (largest normalized)",
+          "live": "$35,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~91% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1991",
+          "live": "earliest year token: 2021",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "lapierre_14_4m_personal_spending_documented, jury_found_lapierre_personally_liable_4_4m, lapierre_resigned_january_2024_days_before_trial, ny_ag_dissolution_suit_2020, texas_bankruptcy_rejected_bad_faith, zegna_suits_yacht_vacations_private_jets, nra_political_spending_200m_elections",
+          "live": "lapierre_5_4m_damages_jury_finding_net_repayment_4_35m, jury_found_lapierre_personally_liable_civil_not_criminal, lapierre_resigned_january_31_2024_eve_of_trial, ny_ag_dissolution_suit_filed_2020_ongoing_remedies_phase, texas_bankruptcy_dismissed_bad_faith_2021, zegna_suits_yacht_vacations_private_jets_documented, nra_political_spending_hundreds_of_millions_elections, dc_ag_nra_foundation_consent_order_governance_reforms_2024, nra_false_regulatory_filings_jury_finding_2024",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~13 heuristic name tokens",
+          "live": "Doug Hamlin, Doug Hamlin, Executive Vice President, Executive Director, Annual Meeting, Bill Bachenberg, Annual Meeting, John Frazer, General Counsel, Wilson Phillips, Wilson Phillips, Doug Hamlin, Executive Director, Annual Meeting, Bill Bachenberg",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The NRA remains under significant legal and reputational strain following a February 2024 Manhattan jury verdict finding LaPierre and other executives civilly liable for corruption and ordering $6.35M in total repayments, and an April 2024 DC consent order requiring NRA Foundation governance reforms. New CEO Doug Hamlin (installed May 2024) is leading a post-LaPierre rebuilding effort, but pending NY court remedies—including possible permanent bars on LaPierre and Phillips from nonprofit service",
+      "tokens_used": {
+        "input": 71086,
+        "output": 1197
+      },
+      "estimated_cost_usd": 0.2312,
+      "duration_ms": 35173,
+      "timestamp": "2026-04-09T01:12:34.430Z"
+    },
+    {
+      "slug": "boy-scouts-of-america",
+      "brand_name": "Boy Scouts of America",
+      "profile_type": "nonprofit",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"$18.5 million jury verdict (2010) - Portland, Oregon sexual abuse case involving assistant troop leader Timur Dykes\",\"$850 million settlement proposed (July 2021) with 60,000+ survivors\",\"$2.46 billion settlement fund established (2023) for 80,000+ survivors, with payouts ranging $3,500 to $2.7 million per claim\",\"$1.656 billion in insurance settlements approved (Hartford, Century, Clarendon, Zurich)\",\"Chapter 11 bankruptcy filed (February 2020) following surge in sexual abuse claims enabled by state law changes\",\"As of February 2024, ",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "82000_survivors_largest_youth_organization_abuse, 850m_settlement_largest_youth_organization, perversion_files_70_years_concealed, chapter_11_2020_abuse_claims_driven, perversion_files_never_shared_law_enforcement, local_councils_asset_separate_bankruptcy, chartered_organizations_co_defendants, 1_million_current_scouts",
+          "live": "Core tags remain factually grounded but need updates: settlement figure is $2.46B (not $850M, which was an insurer sub-contribution figure); organization rebranded to Scouting America in 2025; Supreme Court finalized settlement in January 2026; WSJ reported total abuse costs now exceed $7B when including all council and insurer contributions.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$850,000,000 (largest normalized)",
+          "live": "$7,000,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~88% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1910",
+          "live": "earliest year token: 2010",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "850m_settlement_largest_youth_organization, perversion_files_70_years_concealed, perversion_files_never_shared_law_enforcement, local_councils_asset_separate_bankruptcy, chartered_organizations_co_defendants, 1_million_current_scouts",
+          "live": "2_46b_settlement_largest_youth_organization, perversion_files_concealed_decades_not_shared_law_enforcement, local_councils_asset_separate_from_national_bankruptcy, chartered_organizations_released_via_third_party_releases, 1_million_current_scouts_rebranded_scouting_america, settlement_finalized_2026_supreme_court_declined_review, total_abuse_cost_exceeds_7b_per_wsj_2025",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~7 heuristic name tokens",
+          "live": "Scouting America, Supreme Court, Roger Krone, Scouting Settlement Trust, Chief Scout Executive, Former Chairman, Devang Desai, National Commissioner, Brad Tilden, National Chair, National Executive Board, Supreme Court, Perversion Files, Supreme Court, Perversion Files",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Boy Scouts of America (now Scouting America) resolved the largest youth-organization sexual abuse case in U.S. history via a $2.46B bankruptcy settlement, finalized when the Supreme Court declined review in January 2026. The organization, led by CEO Roger Krone since November 2023, retains ~1 million youth members and continues paying out claims through the Scouting Settlement Trust. Roger A. Krone (President & CEO (Chief Scout Executive), appointed November 2023) liability:none Former Chairman/",
+      "tokens_used": {
+        "input": 69892,
+        "output": 1116
+      },
+      "estimated_cost_usd": 0.2264,
+      "duration_ms": 24928,
+      "timestamp": "2026-04-09T01:12:59.359Z"
+    },
+    {
+      "slug": "roman-catholic-church",
+      "brand_name": "Roman Catholic Church",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"Vatican paid $244m settlement in 1982 related to Banco Ambrosiano collapse[1]\",\"European Court of Justice ordered Vatican to pay €4bn in back taxes in 2021 for tax evasion on Rome properties (2006-2011)[1]\"],\"executive_accountability\":\"Cardinal Angelo Becciu was convicted of embezzlement and fraud by the Vatican in 2023, but the conviction was overturned on appeal in March 2026 due to procedural errors by prosecutors and Pope Francis; a new trial is set for June 22, 2026[7]. No other convictions or pleas of named executives or controll",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$170,000,000,000 (largest normalized)",
+          "live": "$5,000,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~97% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1922",
+          "live": "earliest year token: 2002",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "3b_plus_us_sexual_abuse_settlements",
+          "live": "5b_plus_us_sexual_abuse_settlements, cardinal_becciu_convicted_embezzlement_2023_retrial_2026, la_archdiocese_880m_settlement_2024, diocese_bankruptcies_20_plus_us",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~37 heuristic name tokens",
+          "live": "Pope Leo, Pope Leo, Robert Francis Prevost, Supreme Pontiff, Former Substitute, General Affairs, Convicted December, Former Archbishop, Rome December, Los Angeles, Vatican Cardinal Angelo Becciu, State Department, Los Angeles, Vatican Cardinal Angelo Becciu, State Department",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Roman Catholic Church carries a 'significant' overall concern profile driven by a multi-decade, multi-billion-dollar clergy sexual abuse crisis with over $5 billion paid in U.S. settlements as of 2025 and litigation still expanding under new lookback laws. Vatican financial governance has also been materially compromised, evidenced by historic criminal convictions of senior officials in the 2023 'trial of the century' and longstanding IOR money-laundering investigations, though Pope Leo XIV ",
+      "tokens_used": {
+        "input": 108843,
+        "output": 1303
+      },
+      "estimated_cost_usd": 0.3461,
+      "duration_ms": 33764,
+      "timestamp": "2026-04-09T01:13:33.123Z"
+    },
+    {
+      "slug": "southern-baptist-convention",
+      "brand_name": "Southern Baptist Convention",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"moderate\",\"key_legal_facts\":[\"SBC Executive Committee legal expenses for sexual abuse investigations and related litigation exceeded $12.1 million from 2021-2023, approaching $13 million by late 2024[1][3][4]\",\"Confidential settlement in 2025 by Champion Forest Baptist Church (SBC affiliate) with three survivors abused by youth minister Timothy Jeltema; amount undisclosed, initially sought $1 million[2]\",\"Ongoing $100 million defamation lawsuit by former SBC president Johnny Hunt filed in 2023 against SBC, EC, and Guidepost; no settlement as of latest reports, trial p",
+        "vs_claude": {
+          "perplexity_concern": "moderate",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1995",
+          "live": "earliest year token: 2004",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "700_plus_accused_abusers_secret_list",
+          "live": "703_accused_abusers_secret_list, doj_investigation_concluded_no_entity_charges, seminary_official_convicted_false_statements_fbi, erlc_abolition_motion_defeated_2025, ongoing_civil_litigation_from_abuse_survivors",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~17 heuristic name tokens",
+          "live": "Matt Queen, Clint Pressley, Hickory Grove Baptist Church, Jeff Iorg, Gateway Seminary, Brent Leatherwood, Matt Queen, Southwestern Baptist Theological Seminary, Matt Queen, Johnny Hunt, Matt Queen, Johnny Hunt, Clint Pressley, Hickory Grove Baptist Church, Jeff Iorg",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: moderate",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The SBC's core abuse scandal findings from the 2022 Guidepost report remain fully substantiated, the DOJ probe closed without charges against the denomination but produced one criminal conviction (Matt Queen, 2025), and current leadership under Iorg and Pressley is pursuing incremental reform while the ERLC survived a 2025 abolition vote and continues active anti-abortion and social-conservative lobbying. Clint Pressley (SBC President (re-elected June 2025)) liability:none Pastor of Hickory Grov",
+      "tokens_used": {
+        "input": 71172,
+        "output": 1329
+      },
+      "estimated_cost_usd": 0.2335,
+      "duration_ms": 31878,
+      "timestamp": "2026-04-09T01:14:35.004Z"
+    },
+    {
+      "slug": "lds-church",
+      "brand_name": "Church of Jesus Christ of Latter-day Saints",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"$32 million settlement (West Virginia, 2018/2025)\",\"$2.28 billion verdict (California, 2023/2024)\",\"$1 million settlement (California, 2023)\",\"$1.1 million settlement (Washington, 2023)\",\"$4.2 million settlement (Washington, undisclosed year)\",\"$4 million settlement (undisclosed location, involving Robert Blome)\"],\"executive_accountability\":\"No documented criminal convictions or plea deals for named executives or controlling owners of the Church of Jesus Christ of Latter-day Saints. Individual abusers such as Michael Jensen (convicted ",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "5b_sec_settlement_largest_religious_organization, ensign_peak_32b_hidden_22_years, 13_shell_llcs_concealment_structure, 100b_plus_estimated_total_holdings, largest_private_landowner_florida, tithing_condition_temple_access, historic_polygamy_doctrine, lgbtq_family_proclamation_policy",
+          "live": "The stored tag '5b_sec_settlement_largest_religious_organization' overstates the fine (actual settlement was $5M not $5B); '22_years' should be updated to 1997–2019 (22 years is accurate); 'largest_private_landowner_florida' is confirmed current; '100b_plus_estimated_total_holdings' reflects a whistleblower allegation not a verified figure; leadership tag for Russell Nelson is now obsolete as Dallin H. Oaks is the current president as of Oct 2025.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1978",
+          "live": "earliest year token: 1997",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "5b_sec_settlement_largest_religious_organization, ensign_peak_32b_hidden_22_years, 100b_plus_estimated_total_holdings",
+          "live": "5m_sec_settlement_largest_religious_organization, ensign_peak_32b_hidden_1997_to_2019, 100b_plus_estimated_total_reserves_whistleblower_allegation, largest_5th_private_landowner_us_nationally, dallin_oaks_new_church_president_2025",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~16 heuristic name tokens",
+          "live": "President Russell, Church President, Became Church President, First Counselor, Todd Christofferson, Second Counselor, Christopher Waddell, Presiding Bishop, In Sep, Salt Lake Tribune, In Sep, Salt Lake Tribune, Became Church President, Todd Christofferson, Christopher Waddell",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Church of Jesus Christ of Latter-day Saints and its investment arm Ensign Peak Advisors paid a combined $5M SEC settlement in Feb 2023 for concealing a ~$32B equity portfolio behind 13 shell LLCs from 1997–2019, the most material documented legal finding. Leadership transitioned in Oct 2025 when President Russell M. Nelson died and Dallin H. Oaks was ordained the 18th Church President; no executives carry documented criminal liability. Dallin H. Oaks (18th President of the Church / Corporati",
+      "tokens_used": {
+        "input": 71584,
+        "output": 1200
+      },
+      "estimated_cost_usd": 0.2328,
+      "duration_ms": 29386,
+      "timestamp": "2026-04-09T01:15:04.391Z"
+    },
+    {
+      "slug": "jehovahs-witnesses",
+      "brand_name": "Jehovah's Witnesses",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"$154,000+ fines against Philip Brumley and Watchtower, upheld by 9th Circuit (2024)[2]\",\"Confidential settlements in two Montana federal child abuse cases after 5+ years litigation (July 2024)[2]\",\"$13.5 million verdict against Watchtower (overturned, case ongoing) (2015)[3][4]\",\"$2 million+ penalties for withholding records (2016, upheld on appeal)[3]\",\"$35 million verdict against Watchtower (overturned) (Montana)[4]\",\"$28 million verdict against Watchtower (reduced on appeal) (California)[3][4]\"],\"executive_accountability\":\"Watchtowe",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "two_witness_rule_enables_abuse_courts_found, 35m_conti_california_verdict, blood_transfusion_refusal_documented_deaths_children, shunning_doctrine_human_rights_violation_courts, norway_banned_funding_human_rights_violation, watch_tower_brooklyn_real_estate_empire, disfellowshipping_family_separation_documented",
+          "live": "The stored tag '35m_conti_california_verdict' conflates two separate cases — the $35M verdict was in Montana, not California (Conti was a California case with an original $28M jury award later reduced); the Norway tag needs updating as the 2024 funding ban was overturned by the Borgarting Court of Appeal in March 2025; all other stored tags remain substantively accurate.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$1,300,000,000 (largest normalized)",
+          "live": "$35,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~97% after normalizing to USD. [escalated: Claude & Perplexity agree vs stored]"
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1940",
+          "live": "earliest year token: 1927",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "35m_conti_california_verdict, shunning_doctrine_human_rights_violation_courts, norway_banned_funding_human_rights_violation, watch_tower_brooklyn_real_estate_empire",
+          "live": "conti_california_28m_verdict_reduced_on_appeal, montana_35m_child_abuse_verdict_watchtower, shunning_doctrine_human_rights_scrutiny_multiple_jurisdictions, norway_funding_ban_reversed_on_appeal_2025, watch_tower_real_estate_holdings_significant, general_counsel_brumley_sanctioned_misleading_court, ongoing_child_abuse_litigation_multiple_jurisdictions",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~18 heuristic name tokens",
+          "live": "Borgarting Court, General Counsel Philip Brumley, Kenneth Cook Jr, Governing Body Member, Gage Fleegle, Governing Body Member, Appointed January, Geoffrey Jackson, Governing Body Member, David Splane, Governing Body Member, Robert Ciranko, Watch Tower Bible, Tract Society, Philip Brumley",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Jehovah's Witnesses / Watch Tower face sustained and significant legal exposure across multiple jurisdictions primarily for systemic child sexual abuse cover-up, with the two-witness rule and secrecy policies repeatedly scrutinised in court; the Norway state-funding ban — a key stored tag — was overturned in March 2025 by the Borgarting Court of Appeal, materially changing that finding. No current Governing Body member or named corporate executive carries documented criminal charges or convictio",
+      "tokens_used": {
+        "input": 104576,
+        "output": 1400
+      },
+      "estimated_cost_usd": 0.3347,
+      "duration_ms": 34232,
+      "timestamp": "2026-04-09T01:15:38.624Z"
+    },
+    {
+      "slug": "church-of-scientology",
+      "brand_name": "Church of Scientology",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"Paid $12.5 million to IRS in 1993 settlement to resolve tax dispute (estimated debt around $1 billion)[2][5]\",\"Paid $8,674,643 to Larry Wollersheim in 2002 after 22-year litigation; original jury award was $30 million in 1986, reduced on appeal to $2.5 million plus $130,506.71 in attorney fees[1][3]\",\"Settled FACTNet copyright lawsuit in 1999 with conditional $1 million penalty if violations found[1]\",\"Estimated $20 million per year spent on legal actions as of 1991[1]\",\"Thousands of lawsuits filed against newspapers, magazines, govern",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "HIGH",
+          "stored": "$600,000 (largest normalized)",
+          "live": "$900,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~33% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1950",
+          "live": "earliest year token: 2009",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "france_criminal_conviction_2009",
+          "live": "france_criminal_conviction_2009_upheld_2013, federal_human_trafficking_lawsuit_pending, civil_rico_claims_filed_2023, arbitration_clause_found_unconscionable_2024, miscavige_service_evasion_documented",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Church of Scientology carries a significant and growing legal concern profile, with its 2009 French organized-fraud conviction (upheld through 2013) joined by active federal human-trafficking and civil-RICO suits as of 2024–2025. Leader David Miscavige remains the central named defendant across multiple proceedings but has not been criminally charged; multiple courts have documented his deliberate evasion of civil process. David Miscavige (Chairman of the Board, Religious Technology Center (",
+      "tokens_used": {
+        "input": 40216,
+        "output": 887
+      },
+      "estimated_cost_usd": 0.134,
+      "duration_ms": 27004,
+      "timestamp": "2026-04-09T01:16:35.630Z"
+    },
+    {
+      "slug": "flds-church",
+      "brand_name": "FLDS Church",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"$152 million judgment against Warren Jeffs (2016, Utah District Court for forced labor, sexual servitude, etc.)[1]\",\"$16 million judgment against Warren Jeffs and FLDS (year not specified, Utah 3rd District Court for child marriage)[2]\",\"FLDS-linked business settled lawsuit by surrendering property (2006)[3]\",\"$5.2 million settlement by Short Creek towns in federal discrimination lawsuit (post-2011)[4]\",\"$1.9 million lawsuit by Department of Labor against FLDS church leaders for child labor (year not specified)[5]\"],\"executive_accounta",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$10,000 (largest normalized)",
+          "live": "$12,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~100% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 2002",
+          "live": "earliest year token: 2011",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "yft_ranch_2008_texas_raid_439_children, hildale_colorado_city_theocratic_control",
+          "live": "yfz_ranch_2008_texas_raid_439_children, hildale_colorado_city_theocratic_control_now_waning, snap_welfare_fraud_12_million, child_labor_violations_dol_fines, flds_influence_declining_post_jeffs_imprisonment",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~16 heuristic name tokens",
+          "live": "Seth Jeffs, Samuel Bateman, Seth Jeffs, Custer County, Cook County, Powledge Unit, Paragon Contractors, Powledge Unit, Paragon Contractors, Seth Jeffs, Cook County",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The FLDS Church remains a significant-concern entity: its president Warren Jeffs is serving life plus 20 years for child sexual assault and is still reported to issue controlling directives from his Texas prison cell. Key lieutenants Lyle and Seth Jeffs have been federally convicted of welfare fraud, the group has paid millions in labor and civil penalties, and while FLDS territorial grip on Hildale/Colorado City has materially weakened, active abuse allegations and splinter-group activity (incl",
+      "tokens_used": {
+        "input": 88733,
+        "output": 1163
+      },
+      "estimated_cost_usd": 0.2836,
+      "duration_ms": 30162,
+      "timestamp": "2026-04-09T01:17:05.793Z"
+    },
+    {
+      "slug": "yeshiva-university",
+      "brand_name": "Yeshiva University",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[\"$680 million sexual abuse lawsuit dismissed by federal court in 2013 due to statute of limitations[1]\",\"$380 million sexual abuse lawsuit previously dismissed by federal judges (pre-2019)[7]\",\"LGBTQ student club lawsuit settled in 2025 with university recognition under new name and guidelines, no monetary amount reported[2][4][6]\"],\"executive_accountability\":\"No documented convictions, pleas, or personal civil liability for named executives or controlling owners such as President Ari Berman or Vice Provost Chaim Nissel, who were applicants i",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "mta_high_school_deans_decades_abuse, lamm_acknowledged_knew_asked_leave_no_reporting, 2012_dinner_honoring_accused_abuser, 50_plus_survivors_forward_investigation, bankruptcy_2023_abuse_claims, finkelstein_gordon_abusers_named, yeshiva_statue_of_limitations_expired_many_cases",
+          "live": "The stored 'bankruptcy_2023_abuse_claims' tag is inaccurate — no YU Chapter 11 bankruptcy filing for abuse claims has been documented; the 2012 dinner tag needs clarification (it was a Hanukkah dinner where then-White House Chief of Staff Jack Lew condemned the abuse, not an event honoring an abuser); all other core tags remain substantively accurate with updates needed to reflect 2024–2026 litigation developments.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1970",
+          "live": "earliest year token: 2012",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "2012_dinner_honoring_accused_abuser, 50_plus_survivors_forward_investigation, bankruptcy_2023_abuse_claims, finkelstein_gordon_abusers_named, yeshiva_statue_of_limitations_expired_many_cases",
+          "live": "2012_forward_investigation_triggered_public_crisis, 50_plus_survivors_active_litigation, partial_settlements_2024_terms_undisclosed, finkelstein_gordon_andron_abusers_named, ny_child_victims_act_revived_cases, statute_of_limitations_prior_dismissals_2013_2015, jan_2026_appellate_court_cases_proceed, yula_los_angeles_new_abuse_lawsuit_2024",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~15 heuristic name tokens",
+          "live": "President Ari Berman, Rosh Yeshiva, Michael Schreiber, Business Affairs, Legal Affairs, General Counsel, Former President, George Finkelstein, Macy Gordon, Child Victims Act, George Finkelstein, Macy Gordon, Child Victims Act, Michael Schreiber, White House Chief",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Yeshiva University faces active, large-scale civil litigation by 50+ former MTA high school students alleging decades of sexual abuse by principal Finkelstein, teacher Gordon, and others, with a NY appellate court confirming in January 2026 that the cases may proceed toward trial; nine plaintiffs settled in September 2024 on undisclosed terms. No bankruptcy filing tied to abuse claims has been confirmed, the stored 'bankruptcy_2023' tag appears to be an error, and current leadership under Presid",
+      "tokens_used": {
+        "input": 67433,
+        "output": 1134
+      },
+      "estimated_cost_usd": 0.2193,
+      "duration_ms": 30583,
+      "timestamp": "2026-04-09T01:17:36.377Z"
+    },
+    {
+      "slug": "lev-tahor",
+      "brand_name": "Lev Tahor",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"Elazar Rumpler fined NIS 10,000 and NIS 12,000 victim compensation (2024 or 2025), sentenced to 2 years prison via plea for aggravated assault on child and travel ban violation[1]\",\"Yakov Weingarten 14 years prison (2024), Shmiel Weingarten 14 years (2024), Yoil Weingarten 12 years (2024) for kidnapping and child sexual exploitation[2]\",\"Nachman Helbrans 12 years prison (2022), Mayer Rosner 12 years (2022) for kidnapping, sex trafficking, child exploitation[3][5]\",\"Matityau Moshe Malka 66 months prison, Mordechay Malka 57 months (recen",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "fled_canada_guatemala_trinidad_investigations, nachman_helbrans_federal_charges, 2018_international_parental_kidnapping_charged, isis_contact_alleged_documented, children_removed_canada",
+          "live": "fled_canada_guatemala_multiple_countries_investigations, nachman_helbrans_federal_conviction_12yr_sentence, mayer_rosner_federal_conviction_12yr_sentence, weingarten_brothers_convicted_2024, 2018_international_parental_kidnapping_convicted, yoel_alter_human_trafficking_charged_2025, iran_asylum_request_khamenei_allegiance_documented, children_removed_canada_guatemala_colombia, 2024_guatemala_raid_160_minors_rescued, 2025_colombia_raid_17_minors_rescued",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~10 heuristic name tokens",
+          "live": "Yoel Alter, Convicted Nov, Mayer Rosner, Convicted Nov, Convicted Mar, Yoel Alter, Arrested Jan, Mexico July, Mayer Rosner, Brothers Yoil, Shmiel Weingarten, Founder Shlomo Helbrans, Mayer Rosner, Brothers Yoil, Shmiel Weingarten",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Lev Tahor is an extremely high-concern extremist sect with nine leaders convicted in U.S. federal court for kidnapping and child sexual exploitation, an active 2025 human trafficking arrest (Yoel Alter, Guatemala/Mexico), and ongoing international law-enforcement actions including a December 2024 Guatemalan raid rescuing 160 minors and a November 2025 Colombian raid rescuing 17 more. The stored verdict tag 'isis_contact_alleged_documented' appears unsupported — the documented adversarial-state c",
+      "tokens_used": {
+        "input": 84278,
+        "output": 1302
+      },
+      "estimated_cost_usd": 0.2724,
+      "duration_ms": 31277,
+      "timestamp": "2026-04-09T01:18:37.657Z"
+    },
+    {
+      "slug": "clinton-foundation",
+      "brand_name": "Clinton Foundation",
+      "profile_type": "nonprofit",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[\"No evidence of wrongdoing found through 2019 after multiple investigations including two-year Trump Justice Department inquiry\",\"One $500,000 donation from Algeria (2009-2013 period) violated State Department vetting agreement but no fine or settlement documented\",\"No criminal convictions or civil settlements against Clinton Foundation or named executives identified in public record\"],\"executive_accountability\":\"No named executives or controlling owners have faced criminal conviction or civil liability. Hillary Clinton denied allegations of ",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$150,000,000 (largest normalized)",
+          "live": "$2,000,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~93% after normalizing to USD."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "irs_compliance_problems_whistleblower, 1b_plus_raised_clinton_global_initiative, foundation_operations_audit_findings, chelsea_clinton_salary_600k_documented",
+          "live": "irs_whistleblower_criminal_probe_halted_2019, 2b_plus_raised_lifetime_foundation_and_cgi, foundation_state_registration_compliance_failures, chelsea_clinton_600k_nbc_salary_not_foundation_salary, doj_investigation_closed_no_charges_2023, us_tax_court_whistleblower_case_active_2025",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~13 heuristic name tokens",
+          "live": "Tax Court, Board Member, Board Member, Former Secretary, State Dept, Vice Chair, Board Member, Bob Harrison, Former Goldman Sachs, Kevin Thurm, John Moynihan, Larry Doyle, Tax Court, New Mexico, John Moynihan",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Clinton Foundation has never been charged with or convicted of any crime, and all major DOJ/FBI investigations were closed without prosecution as confirmed in May 2023. However, active U.S. Tax Court whistleblower litigation against the IRS alleging the Foundation's criminal tax probe was improperly shut down remained ongoing through late 2025, keeping the entity's risk profile at 'significant.' Bill Clinton (Founder / Board Member) liability:none No charges or convictions; subject of closed",
+      "tokens_used": {
+        "input": 80657,
+        "output": 1164
+      },
+      "estimated_cost_usd": 0.2594,
+      "duration_ms": 31805,
+      "timestamp": "2026-04-09T01:19:09.463Z"
+    },
+    {
+      "slug": "gates-foundation",
+      "brand_name": "Bill & Melinda Gates Foundation",
+      "profile_type": "nonprofit",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[\"Bill & Melinda Gates Foundation ordered to pay $4.9M in damages to former executive Todd Pierce for breach of contract and promissory estoppel (2018).\",\"Bill Gates (personal, not foundation) agreed to pay $800,000 civil penalty for violating antitrust premerger reporting requirements (2004).\"],\"executive_accountability\":\"No convictions, pleas, or personal liability documented for named executives or controlling owners of the Bill & Melinda Gates Foundation. The 2004 civil penalty was against Bill Gates individually for an unrelated personal ",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "70b_endowment_largest_private_foundation, epstein_gates_meetings_multiple_post_conviction, melinda_french_gates_epstein_factor_divorce, foundation_invests_criticized_companies, who_gavi_global_health_policy_control, investment_conflicts_grant_making_documented, democratic_accountability_gap_global_health, mark_suzman_ceo_1_5m_compensation",
+          "live": "The '$70B endowment / largest private foundation' tag is now outdated — the endowment is $77.2B (end-2024) or $86B (July 2025) and the foundation ranks third-largest globally; CEO compensation tag should reflect ~$1.6–1.7M; new material tags should capture the January 2025 rename, congressional Epstein deposition, and Kenya diplomatic immunity controversy.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "MEDIUM",
+          "stored": "$70,000,000,000 (largest normalized)",
+          "live": "$86,000,000,000 (largest normalized)",
+          "note": "Financial headline figures differ moderately (~19%) after USD normalization."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 2000",
+          "live": "earliest year token: 2011",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "70b_endowment_largest_private_foundation, foundation_invests_criticized_companies, who_gavi_global_health_policy_control, investment_conflicts_grant_making_documented, democratic_accountability_gap_global_health, mark_suzman_ceo_1_5m_compensation",
+          "live": "77b_endowment_now_86b_assets_third_largest_private_foundation, foundation_trust_invests_criticized_companies_max_return_policy, who_gavi_global_health_policy_outsized_private_influence, investment_grant_conflicts_pharma_holdings_documented, democratic_accountability_gap_global_health_peer_reviewed_2025, mark_suzman_ceo_approx_1_6m_to_1_7m_compensation, foundation_renamed_gates_foundation_jan_2025, gates_epstein_congressional_testimony_june_2025, kenya_diplomatic_immunity_court_suspension_2024, bill_gates_house_oversight_epstein_deposition_2025",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~17 heuristic name tokens",
+          "live": "Sole Trustee, Gates Foundation Trust, House Oversight Committee Epstein, Board Member, Michael Larson, Chief Investment Officer, Gates Foundation Trust, Cascade Asset Management, High Court, Immunities Act, House Oversight Committee, High Court, Immunities Act, House Oversight Committee, House Oversight Committee Epstein",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Gates Foundation (renamed from Bill & Melinda Gates Foundation in January 2025) holds an $86B trust endowment as of mid-2025, making it the third-largest private foundation globally — the stored 'largest' and '$70B' claims are both stale. Reputational concerns remain significant, centered on Bill Gates's documented post-conviction Epstein meetings, Melinda French Gates's confirmed Epstein-factor divorce, investment-vs-grantmaking conflicts, unelected global health policy influence over WHO a",
+      "tokens_used": {
+        "input": 101211,
+        "output": 1193
+      },
+      "estimated_cost_usd": 0.3215,
+      "duration_ms": 29148,
+      "timestamp": "2026-04-09T01:19:38.612Z"
+    }
+  ]
+}
