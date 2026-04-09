@@ -306,5 +306,9 @@
   "claritev": "multiplan",
   "ctev": "multiplan",
   "teamhealth": "teamhealth",
-  "team-health": "teamhealth"
+  "team-health": "teamhealth",
+  "envision-healthcare": "envision-healthcare",
+  "envision": "envision-healthcare",
+  "emcare": "envision-healthcare",
+  "amsurg": "envision-healthcare"
 }
