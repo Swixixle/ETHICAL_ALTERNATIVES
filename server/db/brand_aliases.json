@@ -317,5 +317,10 @@
   "epic-ehr": "epic-systems",
   "tenet-healthcare": "tenet-healthcare",
   "tenet": "tenet-healthcare",
-  "conifer-health": "tenet-healthcare"
+  "conifer-health": "tenet-healthcare",
+  "lifepoint-health": "lifepoint-health",
+  "lifepoint": "lifepoint-health",
+  "rcch": "lifepoint-health",
+  "radiology-partners": "radiology-partners",
+  "radpartners": "radiology-partners"
 }
