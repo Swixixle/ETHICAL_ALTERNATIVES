@@ -3,6 +3,7 @@ import Timeline from './Timeline';
 import CommunityImpact from './CommunityImpact';
 import CostAbsorption from './CostAbsorption.jsx';
 import WealthChart from './WealthChart.jsx';
+import CompanyCharts from './CompanyCharts.jsx';
 import ProofBlock from './ProofBlock.jsx';
 import ConfidenceBadge from './ConfidenceBadge.jsx';
 import { getConfidenceBadgePresentation } from '../utils/investigationConfidence.js';
@@ -1041,6 +1042,11 @@ export default function InvestigationCard({
   const showActiveNow =
     Boolean(perimeterSlug) && (profileType === 'database' || serviceDegraded);
 
+  const isStubInvestigation =
+    Boolean(result?.is_stub_investigation) || Boolean(investigation.is_stub_investigation);
+  const hasResultInvestigation = result == null || result.investigation != null;
+  const showFinancialAnalysis = !isStubInvestigation && hasResultInvestigation;
+
   return (
     <section className={`investigation-card investigation-card--bento${variantClass}`}>
       {serviceDegraded && degradedMessage ? (
@@ -1246,6 +1252,13 @@ export default function InvestigationCard({
           );
         })}
       </div>
+
+      {showFinancialAnalysis ? (
+        <div className="investigation-card__financial-analysis">
+          <h2 className="investigation-card__financial-analysis-title">FINANCIAL ANALYSIS</h2>
+          <CompanyCharts profile={investigation} />
+        </div>
+      ) : null}
 
       <div className="investigation-card__footer-blocks">
         <CostAbsorption data={investigation.cost_absorption} />

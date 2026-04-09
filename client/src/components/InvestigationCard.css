@@ -539,6 +539,20 @@
   padding: 0 4px;
 }
 
+.investigation-card__financial-analysis {
+  margin: 20px 0 8px;
+}
+
+.investigation-card__financial-analysis-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f0a820;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
 .investigation-card__footer-blocks {
   padding: 8px 0 0;
 }

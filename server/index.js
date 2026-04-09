@@ -24,6 +24,7 @@ import cityNarrativeRouter from './routes/cityNarrative.route.js';
 import impactRouter from './routes/impact.js';
 import barcodeRouter from './routes/barcode.route.js';
 import reportErrorRouter from './routes/reportError.route.js';
+import executivePayRouter from './routes/executivePay.route.js';
 import { getProviderHealthSnapshot } from './services/aiProvider.js';
 import {
   investigationCache,
@@ -109,6 +110,7 @@ app.use('/api/workers', workersRouter);
 app.use('/api', tapRouter);
 app.use('/api/barcode', barcodeRouter);
 app.use('/api/report-error', reportErrorRouter);
+app.use('/api/executive-pay', executivePayRouter);
 app.use('/api', impactRouter);
 app.use('/api/profiles', profileIndexRouter);
 app.use('/api/library', libraryRouter);
@@ -127,9 +129,8 @@ app.use('/api/local-commercial', localCommercialRouter);
 app.use('/api/witness', witnessRouter);
 app.use('/api/documentary', documentaryRouter);
 
-const PORT = Number(process.env.PORT) || 3001;
-app.listen(PORT, () => {
-  console.log(`ethicalalt-server listening on ${PORT}`);
+app.listen(process.env.PORT || 3001, () => {
+  console.log(`ethicalalt-server listening on ${process.env.PORT || 3001}`);
   console.log(
     pool
       ? 'database: pool enabled (DATABASE_URL)'

@@ -1,0 +1,96 @@
+{
+  "brand_name": "MultiPlan",
+  "brand_slug": "multiplan",
+  "parent_company": "MultiPlan Corporation",
+  "ultimate_parent": "MultiPlan Corporation",
+  "subsidiaries": ["PHCS (legacy PPO network brand)", "Claritev (parent publicly rebranded from MultiPlan in 2025; NYSE: CTEV)"],
+  "overall_concern_level": "critical",
+  "profile_type": "database",
+  "generated_headline": "OUT-OF-NETWORK REPRICING FOR HIRE — PERCENTAGE-OF-SAVINGS FEES REWARD UNDERPAYMENT WHILE PATIENTS CATCH THE BALANCE",
+  "executive_summary": "MultiPlan Corporation listed on the NYSE as MPLN (the company unveiled the Claritev corporate brand and CTEV ticker in 2025) and operates one of the largest U.S. healthcare cost-containment and out-of-network (OON) claims repricing stacks, sitting between self-insured employers, national insurers, and providers without contracted network rates. News investigations—most prominently a 2024 New York Times series by Chris Hamby, alongside years of Wall Street Journal deal reporting, parallel deep dives such as ProPublica’s coverage of payment-intermediary fee schemes, and trade scrutiny of MultiPlan’s payer ties and private-equity ownership—documented how MultiPlan and major payers can earn fees tied to “savings” off billed charges. Because those fees scale when allowed amounts shrink relative to provider bills, reporters and plaintiffs characterize the model as a structural incentive to press OON payments downward, shifting residual balances toward patients and squeezing hospitals and physician groups. Hellman & Friedman took MultiPlan private in 2016 and later paired it with Michael Klein’s Churchill Capital III SPAC in an approximately $11 billion take-public (announced 2020, completed October 2020). UnitedHealthcare, Cigna, and Aetna (now part of CVS Health) are among the national payers whose plans have leaned on MultiPlan analytics as clients and commercial counterparties; public ownership remains concentrated with sponsors and institutional investors rather than insurer majority control, but investigations emphasized fee designs that align vendor and payer incentives around aggressive discounts. Litigation and congressional scrutiny escalated after 2024 reporting: providers consolidated federal antitrust cases into an Illinois multidistrict proceeding alleging hub-and-spoke collusion through shared repricing tools; Senator Amy Klobuchar urged the DOJ and FTC to examine algorithmic payment practices; the DOJ Antitrust Division filed a statement of interest in 2025 supporting providers’ theories that shared algorithms can facilitate unlawful coordination; and professional groups including the AMA sued over independent-practice harms when OON benchmarks compress.",
+  "verdict_tags": ["percentage_of_savings_conflict", "out_of_network_repricing", "payer_vendor_incentive_alignment", "private_equity_spac_history", "mdl_algorithmic_antitrust", "patient_balance_billing_risk"],
+  "concern_flags": {"labor": true, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
+  "tax": {
+    "summary": "MultiPlan files as a public corporation (MPLN) with standard corporate income tax obligations and Delaware/New York–anchored corporate governance typical of PE-sponsored roll-ups. Repricing revenue and ‘savings’ fee structures are ordinary income items; any intercompany management fees, debt shields from SPAC-era leverage, and state apportionment across customer jurisdictions affect effective rates. If litigation produces settlements or judgments, their deductibility would follow general tax rules—with distributional consequences for how much of a remedy truly comes out of shareholders versus being offset over time.",
+    "flags": ["public_c_corporation_apportionment", "pe_sponsor_history_intercompany_fees", "litigation_reserve_and_deductibility_risk"],
+    "sources": ["https://www.sec.gov"]
+  },
+  "legal": {
+    "summary": "MultiPlan’s legal exposure centers on antitrust, ERISA/benefits, and consumer theories. After New York Times reporting in 2024, hospitals and medical societies filed coordinated complaints alleging UnitedHealthcare, Aetna, Cigna, other Blues and national insurers, and MultiPlan conspired to suppress OON reimbursement using shared repricing and benchmarking products (so-called hub-and-spoke price fixing). The Judicial Panel on Multidistrict Litigation centralized many actions in the Northern District of Illinois (In re MultiPlan Health Insurance Provider Litigation, MDL No. 3121). In 2025, District Judge Matthew F. Kennelly largely denied motions to dismiss, permitting federal and certain state claims to proceed, while the DOJ Antitrust Division filed a statement of interest arguing shared pricing algorithms among competitors can violate Section 1 of the Sherman Act. Parallel AMA litigation raises related market-allocation and buyer-power themes. Congressional letters pressed enforcers after the Times investigation; state insurance departments have also issued consumer alerts in adjacent markets where limited-benefit products were marketed alongside MultiPlan-affiliated PPO network language—distinct fact patterns but part of the reputational and compliance perimeter.",
+    "flags": ["mdl_hub_spoke_algorithmic_price_fixing_allegations", "motions_to_dismiss_denied_2025", "doj_statement_of_interest_sherman_act_2025", "ama_antitrust_complaint_parallel_track", "congressional_ftc_doj_attention_post_2024_press"],
+    "sources": ["https://www.reuters.com/legal/government/us-judge-rules-health-insurers-multiplan-must-face-price-fixing-lawsuits-2025-06-03/", "https://www.reuters.com/legal/government/us-justice-dept-backs-medical-providers-lawsuit-over-data-analytics-software-2025-03-27/", "https://www.klobuchar.senate.gov/public/index.cfm/2024/5/klobuchar-urges-department-of-justice-federal-trade-commission-to-investigate-conduct-in-health-care-payment-market", "https://www.courtlistener.com/docket/69011985/1/in-re-multiplan-health-insurance-provider-litigation/"]
+  },
+  "labor": {
+    "summary": "MultiPlan employs analysts, engineers, customer operations staff, and clinical coders who implement repricing policy in a high-pressure revenue environment tied to ‘savings’ metrics. Integration work after the SPAC and ongoing automation investments create typical enterprise-software workforce churn. When insurers delay provider payments after OON disputes, downstream pressure hits billing departments and bedside staff who must spend uncompensated time on appeals—an externality only loosely visible on MultiPlan’s own HR ledgers.",
+    "flags": ["savings_kpi_culture_risk", "post_spac_restructuring_churn", "provider_side_administrative_burden_externalized"],
+    "sources": []
+  },
+  "environmental": {
+    "summary": "As a software-centric intermediary, MultiPlan’s direct environmental footprint is modest compared with manufacturers—primarily office and data-center energy tied to hosted analytics. The policy controversy is not emissions but the material waste of redundant billing cycles, mailed appeals, and fax-era workarounds when OON disputes balloon.",
+    "flags": ["data_center_energy_minor_relative_to_sector", "paperwork_intensive_billing_externalities"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Large payers that purchase MultiPlan services are themselves heavyweight federal lobbyists; MultiPlan’s own influence operates through that buyer channel, trade groups like AHIP and Blue Cross associations, and private-equity policy voices defending intermediated payment models. The 2024 investigation catalyzed Senate attention—Klobuchar publicly urged DOJ and FTC review—and renewed bipartisan interest in surprise billing, reference pricing, and algorithmic transparency. The American Hospital Association and medical societies amplified calls for enforcement after the Times series.",
+    "flags": ["buyer_channel_lobbying_via_major_payors", "congressional_antitrust_health_payment_scrutiny_2024", "provider_trade_groups_aha_ama_amplification"],
+    "sources": ["https://www.klobuchar.senate.gov/public/index.cfm/2024/5/klobuchar-urges-department-of-justice-federal-trade-commission-to-investigate-conduct-in-health-care-payment-market", "https://www.aha.org"]
+  },
+  "executives": {
+    "summary": "Leadership through the Churchill SPAC era and post-listing cycle tied executive pay to equity awards and performance metrics emphasizing revenue from payment integrity and repricing—categories that scale with ‘identified savings.’ After the April 2024 press cycle, MPLN equity experienced severe market pressure, raising investor-loss claims and governance questions about disclosure around reliance on percentage-of-savings economics.",
+    "flags": ["equity_comp_tied_to_savings_linked_revenue", "post_investigation_share_price_volatility_governance_scrutiny"],
+    "sources": ["https://www.sec.gov", "https://www.nytimes.com/2024/04/26/technology/private-equity-healthcare.html"]
+  },
+  "connections": {
+    "summary": "MultiPlan connects hundreds of payers and tens of millions of covered lives to a shared stack of benchmarking, editing, and OON reference pricing—overlapping the same national carriers named in MDL complaints (UnitedHealth, Elevance/Anthem networks, Cigna, Aetna, HCSC, Centene platforms, Humana contexts, Kaiser in some pleadings, and Blues entities). Hellman & Friedman remains the defining sponsor lineage from the take-private through the SPAC combination, linking MultiPlan to broader private-equity consolidation debates in payer services. Financially, payers are customers whose contracts historically produced parallel incentives documented by press: both vendor and carrier can book larger administrative or savings-linked fees when allowed OON dollars fall.",
+    "flags": ["national_payer_client_cluster_overlaps_mdl_defendants", "hf_pe_sponsor_lineage", "shared_repricing_rail_across_competing_insurers_alleged"],
+    "sources": ["https://www.reuters.com/article/us-multiplan-m-a-churchill-capita/multiplan-merges-with-churchill-capital-to-go-public-in-11-billion-deal-idUSKCN24D0V5/", "https://www.nytimes.com/2024/04/25/business/health-insurance-fees.html"]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims documented in credible sources but not adjudicated.",
+    "summary": "Civil complaints allege MultiPlan operates a price-fixing hub: insurers allegedly supply competitively sensitive claim data, MultiPlan’s algorithms emit correlated ‘reasonable’ OON amounts, and carriers allegedly settle near those outputs—coordinating buy-side outcomes without the messy public competition legislators assumed. Separately, news investigations assert percentage-of-savings contracts create moral hazard to lowball providers, even absent explicit agreement. Patients allege surprise balance bills when allowed amounts diverge sharply from facility charges and plan documents obscure repricing mechanics.",
+    "flags": ["hub_and_spoke_collusion_theory_pending_prove_up", "moral_hazard_underpayment_incentives_journalism", "balance_billing_trauma_episodic_documentation"],
+    "sources": ["https://www.nytimes.com/2024/04/25/business/health-insurance-fees.html", "https://www.reuters.com/legal/government/us-judge-rules-health-insurers-multiplan-must-face-price-fixing-lawsuits-2025-06-03/"]
+  },
+  "health_record": {
+    "summary": "OON repricing is not a bedside clinical decision, but it routes dollars that determine whether a patient gets timely follow-up, rehab, or avoidable collections trauma. When claims stall at artificially low allowed amounts, providers may delay elective care, require up-front deposits, or refer patients into financial toxicity pathways (credit reporting, lawsuits) documented in investigative anecdotes. Accumulated underpayment also stresses safety-net hospitals that treat higher-acuity OON emergencies—precisely the settings where aggressive benchmarks hit hardest.",
+    "flags": ["financial_toxicity_from_low_allowed_oon_payments", "safety_net_hospital_margin_compression", "access_delays_when_billing_disputes_linger"],
+    "sources": ["https://www.nytimes.com/2024/04/25/business/health-insurance-fees.html"]
+  },
+  "alternatives": {
+    "cheaper": ["Reference pricing tied to transparent percentiles of actual paid amounts—not proprietary ‘savings’ cuts—auditable by employers", "All-payer claims databases and public benchmarks so OON disputes use reproducible statistics", "Fiduciary plan design that bans vendor comp as a percent of denied dollars"],
+    "healthier": ["Strengthen network adequacy so fewer acute episodes fall OON", "Advance surprise-billing enforcement with real transparency on which repricer touched the claim", "Antitrust remedies if courts find hub-and-spoke coordination"],
+    "diy": ["If balance-billed after an OON emergency: request the explanation of benefits, repricing vendor name, and machine-readable claim (837/JSON) breadcrumbs under federal price-transparency norms where applicable", "Appeal through plan ERISA channels for self-funded employers", "Report patterns to state insurance consumer services and congressional casework—MDL outcomes may eventually produce discovery useful to policymakers"]
+  },
+  "timeline": [
+    {"year": 1980, "event": "MultiPlan traces roots to a New York–led PPO consortium coordinating discounted provider access—later scaled nationally via mergers", "severity": "neutral", "source_url": ""},
+    {"year": 2014, "month": 2, "event": "Starr Investment-led group acquires MultiPlan in a roughly $4.4 billion take-private, highlighting insurer-service consolidation", "severity": "moderate", "source_url": "https://www.reuters.com/article/us-starrinvestment-acquisition-multiplan-idUSBREA1G0P620140217/"},
+    {"year": 2016, "event": "Hellman & Friedman buys MultiPlan for approximately $7.5B, embedding private-equity leverage and growth expectations ahead of a later SPAC exit", "severity": "moderate", "source_url": "https://www.prnewswire.com/news-releases/multiplan-announces-agreement-to-be-acquired-by-hellman--friedman-300264042.html"},
+    {"year": 2020, "month": 7, "event": "MultiPlan agrees to merge with Churchill Capital III SPAC in an ~$11B transaction billed as the largest SPAC deal of its cycle", "severity": "high", "source_url": "https://www.reuters.com/article/us-multiplan-m-a-churchill-capita/multiplan-merges-with-churchill-capital-to-go-public-in-11-billion-deal-idUSKCN24D0V5/"},
+    {"year": 2020, "month": 10, "event": "Transaction closes; combined MultiPlan Corporation trades on NYSE under ticker MPLN", "severity": "moderate", "source_url": "https://www.sec.gov/Archives/edgar/data/1793229/000110465920113620/tm2031325d1_ex99-2.htm"},
+    {"year": 2024, "month": 4, "event": "New York Times investigation details percentage-of-savings fees linking MultiPlan repricing UnitedHealthcare, Cigna, Aetna, and other payers—sparking equities fallout and political attention", "severity": "critical", "source_url": "https://www.nytimes.com/2024/04/25/business/health-insurance-fees.html"},
+    {"year": 2024, "month": 5, "event": "Senator Klobuchar urges DOJ and FTC to investigate conduct in healthcare payment markets, citing MultiPlan’s algorithmic role", "severity": "high", "source_url": "https://www.klobuchar.senate.gov/public/index.cfm/2024/5/klobuchar-urges-department-of-justice-federal-trade-commission-to-investigate-conduct-in-health-care-payment-market"},
+    {"year": 2024, "month": 8, "event": "JPML centralizes provider antitrust suits as MDL No. 3121 in the Northern District of Illinois (In re MultiPlan Health Insurance Provider Litigation)", "severity": "high", "source_url": "https://dockets.justia.com/docket/multi-district/jpml/MDL%20No.%203121/1688882"},
+    {"year": 2025, "month": 2, "event": "Company announces corporate rebrand to Claritev and eventual NYSE ticker shift toward CTEV while retaining MultiPlan service brands", "severity": "moderate", "source_url": "https://www.businesswire.com/news/home/20250215487239/en/MultiPlan-Enters-New-Era-and-Unveils-New-Brand-Claritev-Reflecting-Companys-Transformation-and-Mission-to-Support-the-Healthcare-Continuum"},
+    {"year": 2025, "month": 3, "event": "DOJ Antitrust Division files statement of interest backing providers’ theory that shared pricing software can constitute unlawful concerted action", "severity": "high", "source_url": "https://www.reuters.com/legal/government/us-justice-dept-backs-medical-providers-lawsuit-over-data-analytics-software-2025-03-27/"},
+    {"year": 2025, "month": 6, "event": "Federal judge largely denies motions to dismiss MDL claims against MultiPlan and major insurers, allowing discovery on algorithmic coordination theories to proceed", "severity": "critical", "source_url": "https://www.reuters.com/legal/government/us-judge-rules-health-insurers-multiplan-must-face-price-fixing-lawsuits-2025-06-03/"}
+  ],
+  "community_impact": {
+    "displacement": "Independent physicians and rural hospitals—already losing leverage with payers—face OON cases where benchmarks erase the narrow margins that keep doors open. When practices close or sell to systems, communities lose local access and travel burdens rise.",
+    "price_illusion": "Employer buyers are marketed ‘savings’ off chargemaster-like numbers without always seeing how much of the ‘discount’ is clawed back via vendor and carrier fees—and how much lands on employees as cost-sharing.",
+    "tax_math": "Self-funded plans enjoy tax preferences intended to smooth health consumption; repricing that books phantom savings can distort the pre-tax versus post-tax incidence, leaving workers with nondeductible medical debt.",
+    "wealth_velocity": "Savings-fee economics concentrate cash in payer services and sponsor returns while households absorb balance bills—another pipeline where middlemen monetize complexity faster than regulators adapt."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Hellman & Friedman and subsequent MPLN shareholders", "how": "Sponsor gains from leveraged growth, SPAC listing, and repricing revenue scaling with payer uptake"},
+      {"group": "National insurers (as alleged in complaints)", "how": "Lower OON allowed amounts can reduce medical-loss ratios while generating administrative or savings-linked fees—if courts prove collusion, labels shift from ‘efficiency’ to ‘rent’"},
+      {"group": "MultiPlan management and bondholders", "how": "Fee-for-service and SaaS-like analytics contracts reward volume of touched claims"}
+    ],
+    "who_paid": [
+      {"group": "Out-of-network providers", "how": "Underpayments, delayed cash, and litigation costs fighting denials"},
+      {"group": "Patients", "how": "Balance billing, credit harm, and foregone care after unexpected liability"},
+      {"group": "Self-insured employers and taxpayers", "how": "Fees on ‘savings,’ employee churn, and productivity loss from financial stress—without guaranteed true economic efficiency"}
+    ],
+    "the_gap": "The vendor and the payer both do better when the check to the doctor shrinks; the patient story is where the math breaks—critical concern because medicine is not a normal market and consent is rarely informed."
+  }
+}

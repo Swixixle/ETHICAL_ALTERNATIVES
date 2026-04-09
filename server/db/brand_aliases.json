@@ -291,5 +291,18 @@
   "medtronic": "medtronic",
   "puritan-bennett": "medtronic",
   "pb980": "medtronic",
-  "pb840": "medtronic"
+  "pb840": "medtronic",
+  "baxter": "baxter-international",
+  "baxter-international": "baxter-international",
+  "baxter-iv": "baxter-international",
+  "hillrom": "baxter-international",
+  "vantive": "baxter-international",
+  "change-healthcare": "change-healthcare",
+  "optum": "change-healthcare",
+  "optumrx": "change-healthcare",
+  "multiplan": "multiplan",
+  "mpln": "multiplan",
+  "phcs": "multiplan",
+  "claritev": "multiplan",
+  "ctev": "multiplan"
 }
