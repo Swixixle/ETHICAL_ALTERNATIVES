@@ -1,5 +1,9 @@
 import { getGoogleMapsUrl } from '../utils/localBusinessMaps.js';
-import { filterLocalRetailPlaces, filterOnlineSellerRows } from '../utils/alternativesFilters.js';
+import {
+  filterLocalRetailPlaces,
+  filterOnlineSellerRows,
+  sortLocalPlacesByDistanceAsc,
+} from '../utils/alternativesFilters.js';
 
 const directionsLinkStyle = {
   fontFamily: "'Space Mono', monospace",
@@ -22,7 +26,9 @@ const directionsLinkStyle = {
  */
 export default function QuickAlternatives({ registryResults, localResults }) {
   const reg = filterOnlineSellerRows(Array.isArray(registryResults) ? registryResults : []);
-  const loc = filterLocalRetailPlaces(Array.isArray(localResults) ? localResults : []);
+  const loc = sortLocalPlacesByDistanceAsc(
+    filterLocalRetailPlaces(Array.isArray(localResults) ? localResults : [])
+  );
   /** @type {Array<Record<string, unknown>>} */
   const picks = [];
 

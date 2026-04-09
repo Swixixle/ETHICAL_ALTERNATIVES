@@ -181,8 +181,34 @@ function Callout({ label, children }) {
  * Systemic community / category effects (no company names — category lens only).
  * @param {{ data: Record<string, unknown> | null | undefined }} props
  */
+function ChevronDown({ open: expanded }) {
+  return (
+    <svg
+      width={18}
+      height={18}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#f0a820"
+      strokeWidth={2.25}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      style={{
+        display: 'block',
+        flexShrink: 0,
+        transform: expanded ? 'rotate(180deg)' : 'rotate(0deg)',
+        transition: 'transform 0.2s ease',
+      }}
+      aria-hidden
+    >
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  );
+}
+
 export default function CommunityImpact({ data }) {
   const [open, setOpen] = useState(false);
+  const [headerHover, setHeaderHover] = useState(false);
+  const [headerActive, setHeaderActive] = useState(false);
 
   if (!data) return null;
 
@@ -195,29 +221,49 @@ export default function CommunityImpact({ data }) {
 
   if (!hasContent) return null;
 
+  const headerBg = headerActive
+    ? 'rgba(240, 168, 32, 0.22)'
+    : headerHover
+      ? 'rgba(240, 168, 32, 0.16)'
+      : 'rgba(240, 168, 32, 0.09)';
+
   return (
     <section style={{ margin: '36px 0' }}>
       <button
         type="button"
+        aria-expanded={open}
+        aria-controls="community-impact-panel"
+        id="community-impact-toggle"
         onClick={() => setOpen((o) => !o)}
+        onMouseEnter={() => setHeaderHover(true)}
+        onMouseLeave={() => {
+          setHeaderHover(false);
+          setHeaderActive(false);
+        }}
+        onMouseDown={() => setHeaderActive(true)}
+        onMouseUp={() => setHeaderActive(false)}
+        onTouchStart={() => setHeaderActive(true)}
+        onTouchEnd={() => setHeaderActive(false)}
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
+          gap: 12,
           width: '100%',
           cursor: 'pointer',
-          borderBottom: '2px solid #f0a820',
-          paddingBottom: 6,
-          marginBottom: open ? 28 : 0,
           userSelect: 'none',
-          background: 'transparent',
-          borderTop: 'none',
-          borderLeft: 'none',
-          borderRight: 'none',
-          paddingLeft: 0,
-          paddingRight: 0,
+          WebkitTapHighlightColor: 'transparent',
+          background: headerBg,
+          border: '2px solid #f0a820',
+          boxShadow: headerHover
+            ? '0 0 0 1px rgba(240, 168, 32, 0.35), 0 4px 14px rgba(0, 0, 0, 0.25)'
+            : '0 2px 8px rgba(0, 0, 0, 0.12)',
+          borderRadius: 8,
+          padding: '14px 16px',
+          marginBottom: open ? 28 : 0,
           font: 'inherit',
           textAlign: 'left',
+          transition: 'background 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease',
         }}
       >
         <h2
@@ -228,12 +274,14 @@ export default function CommunityImpact({ data }) {
             color: '#f0a820',
             textTransform: 'uppercase',
             margin: 0,
+            textShadow: headerHover ? '0 0 20px rgba(240, 168, 32, 0.25)' : 'none',
+            transition: 'text-shadow 0.15s ease',
           }}
         >
           Community Impact
         </h2>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           {data.category_label ? (
             <span
               style={{
@@ -250,23 +298,12 @@ export default function CommunityImpact({ data }) {
               {data.category_label}
             </span>
           ) : null}
-          <span
-            style={{
-              color: '#6a8a9a',
-              fontSize: 16,
-              display: 'inline-block',
-              transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
-              transition: 'transform 0.2s',
-            }}
-            aria-hidden
-          >
-            ▾
-          </span>
+          <ChevronDown open={open} />
         </div>
       </button>
 
       {open ? (
-        <div>
+        <div id="community-impact-panel" role="region" aria-labelledby="community-impact-toggle">
           {data.displacement_effect ? (
             <SubSection icon={<BarChartIcon />} title="Local Business Displacement">
               {data.displacement_effect.summary ? <Body>{data.displacement_effect.summary}</Body> : null}

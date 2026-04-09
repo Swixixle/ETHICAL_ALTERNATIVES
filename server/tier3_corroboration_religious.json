@@ -1,0 +1,2745 @@
+{
+  "generated_at": "2026-04-09T05:20:28.490Z",
+  "total_profiles": 41,
+  "profiles_checked": 41,
+  "discrepancies_found": 39,
+  "confirmed": 0,
+  "errors": 2,
+  "estimated_cost_usd": 11.7807,
+  "results": [
+    {
+      "slug": "agudath-israel-of-america",
+      "brand_name": "Agudath Israel of America",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented convictions, pleas, or civil liability for any named executives or controlling owners of Agudath Israel of America.\",\"caveats\":\"Search results document only lawsuits initiated by Agudath Israel of America as plaintiff, with no evidence of legal settlements, fines, or accountability against the organization or its leaders.\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1922",
+          "live": "earliest year token: 2019",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~8 heuristic name tokens",
+          "live": "Rabbi Labish Becker, Executive Director, Executive Director, Rabbi Yitzchok Ehrman, Chief Operating Officer, National Director, Government Affairs, State Relations, Rabbi Yehoshua Pinkus, Yeshiva Services, New York, Second Circuit, Albany Supreme Court, New York, Second Circuit",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Agudath Israel of America is a significant-concern entity due to its sustained, documented lobbying against child-abuse mandatory-reporting reforms and retroactive civil SOL windows, combined with aggressive dual-track advocacy in Albany and Washington on yeshiva funding and secular-education standards. No executives carry individual criminal liability; the organization itself has no regulatory fines but is party to multiple active and recent lawsuits as plaintiff, and its child-protection polic",
+      "tokens_used": {
+        "input": 113856,
+        "output": 1158
+      },
+      "estimated_cost_usd": 0.3589,
+      "duration_ms": 30984,
+      "timestamp": "2026-04-09T04:20:29.011Z"
+    },
+    {
+      "slug": "aipac",
+      "brand_name": "AIPAC",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[\"No documented legal settlements or major fines directly against AIPAC in the provided sources.[4]\"],\"executive_accountability\":\"Former AIPAC employees Steven Rosen and Keith Weissman were indicted in 2005 for conspiring to disclose classified information but all charges were dropped in 2009.[4] No convictions or pleas for AIPAC executives or owners.\",\"caveats\":\"Search results reference a 2005 investigation involving AIPAC staff with charges dropped; no current or recent legal actions, settlements, or fines against AIPAC itself identified in ",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "100m_2022_midterms_progressive_targeting, united_democracy_project_super_pac, fara_foreign_agent_debate_60_years, kennedy_investigation_predecessor, 3_million_declared_members, no_electoral_disclosure_historically, andy_levin_summer_lee_targeting, bipartisan_congressional_access_documented",
+          "live": "Core tags remain broadly valid but require updates: the $100M figure now applies to the 2024 cycle (not 2022 midterms, where UDP spent ~$32.9M); member count has grown from the stored '3 million' to AIPAC's self-reported 5-6 million as of 2025; the FARA debate tag is accurate but should note the predecessor AZC Kennedy-era order specifically; the 'no_electoral_disclosure_historically' tag is now obsolete since AIPAC has operated PAC/super PAC with FEC disclosures since 2022.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1953",
+          "live": "earliest year token: 1962",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "100m_2022_midterms_progressive_targeting, fara_foreign_agent_debate_60_years, kennedy_investigation_predecessor, 3_million_declared_members, no_electoral_disclosure_historically, andy_levin_summer_lee_targeting",
+          "live": "100m_plus_2024_cycle_electoral_spending, fara_foreign_agent_debate_ongoing, azc_predecessor_fara_kennedy_1962, espionage_act_rosen_weissman_charges_dropped_2009, andy_levin_summer_lee_cori_bush_bowman_progressive_targeting, membership_claim_updated_5_to_6_million, no_monetary_fec_enforcement_actions_documented, 2026_cycle_quieter_strategy_adopted",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~12 heuristic name tokens",
+          "live": "Espionage Act, Elliot Brandt, Chief Executive Officer, Succeeded Howard Kohr, Weissman Espionage Act, Steven Rosen, Former Policy Director, Espionage Act, Keith Weissman, Keith Weissman, Former Senior Iran Analyst, Espionage Act, Steven Rosen, Keith Weissman, Espionage Act",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "AIPAC is a powerful domestic pro-Israel lobbying organization with no monetary fines or civil judgments on record; its most significant legal exposure was the 2005 Espionage Act indictment of two former staffers (charges ultimately dropped), and its predecessor AZC faced a withdrawn FARA order in 1962. The organization's profile has materially shifted since 2022 with the launch of AIPAC PAC and the United Democracy Project super PAC, which together spent over $100M in the 2024 election cycle wit",
+      "tokens_used": {
+        "input": 94219,
+        "output": 1529
+      },
+      "estimated_cost_usd": 0.3056,
+      "duration_ms": 32921,
+      "timestamp": "2026-04-09T04:21:01.933Z"
+    },
+    {
+      "slug": "alliance-defending-freedom",
+      "brand_name": "Alliance Defending Freedom",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[\"No documented legal settlements or major fines found in provided sources\",\"No criminal convictions or plea agreements involving named executives identified in provided sources\"],\"executive_accountability\":\"No criminal or civil liability documented for executives in available sources. Michael Farris served as President and CEO (receiving $880,741 in 2023) with no adverse legal findings noted.\",\"caveats\":\"The provided search results do not contain comprehensive information about all potential settlements, fines, or executive accountability mat",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "splc_hate_group_designation_2016, 8_supreme_court_wins_including_303_creative, 100m_annual_revenue_growing, blackstone_fellowship_4000_lawyers_trained, uganda_anti_homosexuality_act_model_legislation, 50_plus_countries_anti_lgbtq_cases, knights_of_columbus_major_donor, masterpiece_cakeshop_303_creative_wins",
+          "live": "Several stored tags need updating: revenue now exceeds $110M (not just '$100M growing'); ADF's direct SCOTUS wins are 17 (not 8, and '303 Creative' is one of many); Blackstone has trained 2,100+ fellows per ADF's own figure (not 4,000); Uganda tag should reflect ADF International's general anti-LGBTQ activity in Uganda and globally, not that ADF wrote the Anti-Homosexuality Act model (that is disputed/unverified); Knights of Columbus as a named major donor is unverified in public records—the Servant Foundation ($50M+) is the largest documented single-donor bloc; the '50+ countries' tag is broadly accurate for ADF International's reach.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "MEDIUM",
+          "stored": "$100,000,000 (largest normalized)",
+          "live": "$110,000,000 (largest normalized)",
+          "note": "Financial headline figures differ moderately (~9%) after USD normalization."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1994",
+          "live": "earliest year token: 2003",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "splc_hate_group_designation_2016, 8_supreme_court_wins_including_303_creative, 100m_annual_revenue_growing, blackstone_fellowship_4000_lawyers_trained, uganda_anti_homosexuality_act_model_legislation, 50_plus_countries_anti_lgbtq_cases, knights_of_columbus_major_donor, masterpiece_cakeshop_303_creative_wins",
+          "live": "splc_hate_group_designation_2016_ongoing, 17_supreme_court_direct_wins_since_2011, 84_total_scotus_victories_including_advocacy_roles, 303_creative_and_masterpiece_cakeshop_wins, 110m_plus_annual_revenue_fy2024, blackstone_fellowship_2100_plus_lawyers_trained, allied_attorney_network_4600_plus, uganda_operations_covid_and_religious_freedom_litigation, adf_international_50_plus_countries_active, servant_foundation_50m_plus_donor_2018_2020, project_2025_advisory_board_member, dobbs_roe_overturn_co_counsel",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~16 heuristic name tokens",
+          "live": "Kristen Waggoner, General Counsel, Creative Supreme Court, President Trump, Religious Liberty Commission, Paul Coleman, Executive Director, Jeremy Tedesco, Corporate Engagement, Senior Counsel, The Guardian, Prosperity Foundation, The Guardian, Prosperity Foundation, Kristen Waggoner",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "ADF is a major, financially growing ($110M+ revenue FY2024) conservative Christian legal organization with 17 confirmed direct SCOTUS wins since 2011, an active global anti-LGBTQ litigation network spanning 50+ countries, and a maintained SPLC hate-group designation since 2016. No executives face criminal liability, but the organization faces growing scrutiny over alleged evidence misrepresentation in conversion-therapy litigation and its role in shaping anti-LGBTQ legislation domestically and i",
+      "tokens_used": {
+        "input": 93978,
+        "output": 1373
+      },
+      "estimated_cost_usd": 0.3025,
+      "duration_ms": 31302,
+      "timestamp": "2026-04-09T04:21:33.236Z"
+    },
+    {
+      "slug": "assemblies-of-god",
+      "brand_name": "Assemblies of God",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"moderate\",\"key_legal_facts\":[\"Oregon Royal Rangers sexual abuse lawsuit settled in 2021 for undisclosed amount[4][5]\",\"Two prior Royal Rangers settlements in 1990 and 2017 for undisclosed amounts[4]\",\"$4,000 damages awarded to defendants in 1991 Missouri boundary dispute case (not abuse-related)[3]\"],\"executive_accountability\":\"No documented criminal convictions or plea deals for named executives or controlling owners of Assemblies of God. Daniel Savala, a former missionary, was convicted in 2012 for sexual abuse of boys in the 1990s, but he is not identified as an ex",
+        "vs_claude": {
+          "perplexity_concern": "moderate",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "jim_bakker_158m_fraud_convicted_defrocked, jimmy_swaggart_prostitution_defrocked, prosperity_gospel_adjacent_theology, 69_million_members_largest_pentecostal, global_expansion_latin_america_africa_asia, televangelism_wealth_accumulation, covid_miracle_cure_claims_bakker",
+          "live": "The stored '69_million_members_largest_pentecostal' tag is outdated (WAGF worldwide adherents now ~88-89 million per 2024 data, US adherents ~3 million); 'jimmy_swaggart_prostitution_defrocked' needs update noting his death July 2025; a major new tag for the 2025 NBC News child sexual abuse investigation is entirely absent from stored tags.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1914",
+          "live": "earliest year token: 1987",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "jimmy_swaggart_prostitution_defrocked, 69_million_members_largest_pentecostal, covid_miracle_cure_claims_bakker",
+          "live": "jimmy_swaggart_prostitution_defrocked_deceased_2025, covid_miracle_cure_claims_bakker_silver_solution_settled, child_sexual_abuse_200_leaders_50yr_pattern_nbc_2025, sex_abuse_cover_up_reinstatement_of_predators, 88_million_members_largest_pentecostal_worldwide, us_membership_3_million_adherents_2024",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~12 heuristic name tokens",
+          "live": "The General Council, General Superintendent Doug Clay, Donna Barrett, General Secretary, Chi Alpha, Rick Ross, General Treasurer, Morningside Church Productions, Silver Solution, Morningside Church Productions, Silver Solution, Donna Barrett, Chi Alpha, Rick Ross",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: moderate",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The General Council of the Assemblies of God (General Superintendent Doug Clay, re-elected 2025) carries significant historical reputational liabilities from the Bakker fraud conviction ($158M, 1989) and Swaggart defrocking (1988), both former AG ministers now long removed from the denomination. The concern level is elevated to 'significant' primarily by the October 2025 NBC News 'Pastors and Prey' investigation exposing a 50-year pattern of child sexual abuse cover-ups involving ~200 accused le",
+      "tokens_used": {
+        "input": 157572,
+        "output": 1650
+      },
+      "estimated_cost_usd": 0.4975,
+      "duration_ms": 38131,
+      "timestamp": "2026-04-09T04:22:41.368Z"
+    },
+    {
+      "slug": "billy-graham-evangelistic-association",
+      "brand_name": "Billy Graham Evangelistic Association",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[\"£25,000 in damages and £84,000 in legal fees settlement from Blackpool Council (2021)\",\"Collective settlements from multiple UK venues totaling ~£500,000 (~$650,000) for event cancellations (2018-2024)\"],\"executive_accountability\":\"No convictions, pleas, or civil liability against any BGEA executives or owners documented. BGEA, led by Franklin Graham, was the prevailing party in all referenced UK lawsuits.\",\"caveats\":\"Exact amounts and years for all individual venue settlements beyond Blackpool not specified in sources; no US or other jurisd",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "franklin_graham_800k_dual_compensation, franklin_graham_islam_evil_wicked_statement, lgbtq_wicked_sinful_statement, trump_january_6_defense, billy_graham_every_president_truman_obama, anti_kissinger_antisemitism_tape_revealed, graham_dynasty_inherited_presidency, 130m_annual_revenue",
+          "live": "Core reputational tags remain accurate but require updates: the '$800k dual compensation' figure is outdated (Samaritan's Purse salary is now ~$661k; BGEA amount is hidden due to no Form 990); '$130M annual revenue' is stale (peak revenue reported at $168M in 2024); 'trump_january_6_defense' should be specified as Franklin Graham's antifa false-flag claim; 'anti_kissinger_antisemitism_tape_revealed' is a misnomer—the tapes involved Nixon/Haldeman with antisemitic remarks Billy Graham affirmed, not specifically targeting Kissinger.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "HIGH",
+          "stored": "$130,000,000 (largest normalized)",
+          "live": "$168,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~23% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1950",
+          "live": "earliest year token: 2008",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "franklin_graham_800k_dual_compensation, trump_january_6_defense, anti_kissinger_antisemitism_tape_revealed, 130m_annual_revenue",
+          "live": "franklin_graham_dual_compensation_undisclosed_bgea, franklin_graham_trump_third_term_cpac_advocacy, franklin_graham_jan6_antifa_false_flag_claim, billy_graham_nixon_antisemitism_tape_1972, bgea_168m_annual_revenue_2024, bgea_no_form_990_church_exemption_claimed",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~11 heuristic name tokens",
+          "live": "Will Graham, Vice Chairman, Executive Vice President, Cissie Graham Lynch, Billy Graham Defense Fund, Scottish Event Campus, Hydro Arena, Equality Act, Billy Graham Defense Fund, Scottish Event Campus, Hydro Arena, Equality Act, Billy Graham Defense Fund, Will Graham, Cissie Graham Lynch",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "BGEA is a high-profile evangelical nonprofit with significant reputational risk driven by Franklin Graham's documented inflammatory statements on Islam, LGBTQ issues, and overt Trump political advocacy, including a Jan. 6 false-flag claim. No criminal liability or regulatory fines exist, but opacity around compensation (no Form 990 filed) and the outdated stored financial figures warrant a 'significant' concern rating. Franklin Graham (Chairman, President & CEO — BGEA and Samaritan's Purse) liab",
+      "tokens_used": {
+        "input": 88503,
+        "output": 1320
+      },
+      "estimated_cost_usd": 0.2853,
+      "duration_ms": 29917,
+      "timestamp": "2026-04-09T04:23:11.286Z"
+    },
+    {
+      "slug": "birthright-israel",
+      "brand_name": "Birthright Israel (Taglit)",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented convictions, pleas, legal settlements, or major fines involving named executives or controlling owners appear in the public record from verifiable sources.\",\"caveats\":\"Search results contain no government filings, court records, or regulator reports on legal actions against Birthright Israel; only opinion pieces and unrelated settlement discussions.\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "moderate",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "800000_participants_67_countries, adelson_380m_donor, israeli_government_equal_funding, occupation_not_shown_documented, ifnotnow_protests_documented, participants_walked_off_visit_palestinians, sheldon_schusterman_bronfman_major_donors, propaganda_characterization_critics",
+          "live": "Core tags remain valid but three need updating: participant count is now 900,000+ from 68 countries (not 800,000/67); Adelson lifetime giving is documented at nearly $500M (not $380M); 'Israeli government equal funding' is inaccurate — government provides ~27% vs. ~67% from private donors per Birthright's own breakdown.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "HIGH",
+          "stored": "$380,000,000 (largest normalized)",
+          "live": "$500,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~24% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1999",
+          "live": "earliest year token: 2012",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "800000_participants_67_countries, adelson_380m_donor, israeli_government_equal_funding, sheldon_schusterman_bronfman_major_donors",
+          "live": "900000_participants_68_countries, adelson_nearly_500m_lifetime_donor, private_donors_67pct_israeli_govt_27pct_funding_split, steinhardt_bronfman_schusterman_major_donors, steinhardt_antiquities_settlement_70m_no_criminal_charge, steinhardt_sexual_harassment_allegations_no_charge, participation_declined_post_2018_budget_pressure",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: moderate; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "moderate",
+      "live_executive_summary": "Taglit-Birthright Israel is a large, legally clean nonprofit organization at the entity level, but its co-founder Michael Steinhardt carries significant personal legal baggage — a $70M antiquities surrender (2021, no criminal charge) and unresolved sexual harassment allegations (2019). Stored verdict tags are directionally accurate but require factual corrections on participant counts, country totals, Adelson donation totals, and the Israeli government funding share. Gidi Mark (International CEO",
+      "tokens_used": {
+        "input": 168650,
+        "output": 1376
+      },
+      "estimated_cost_usd": 0.5266,
+      "duration_ms": 33114,
+      "timestamp": "2026-04-09T04:23:44.401Z"
+    },
+    {
+      "slug": "chabad-lubavitch",
+      "brand_name": "Chabad-Lubavitch",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"minor\",\"key_legal_facts\":[\"Chabad-Lubavitch of California ordered to pay nearly $850,000 in damages for misappropriating federal grant funds (2010 lawsuit, judgment December 9, year not specified in results)\",\"Village of Old Westbury settled with Lubavitch of Old Westbury for $19 million in damages after zoning dispute (settlement approved March 18, 2026)[1][3][4]\",\"Village of Atlantic Beach settled with Chabad of the Beaches for $950,000 over property and zoning dispute (July 2025)[2][4][6]\"],\"executive_accountability\":\"No convictions, pleas, or personal liability do",
+        "vs_claude": {
+          "perplexity_concern": "minor",
+          "claude_concern": "moderate",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1940",
+          "live": "earliest year token: 1933",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "5000_centers_100_countries_no_central_oversight, australian_royal_commission_abuse_cover_up, crown_heights_brooklyn_headquarters, schneerson_death_no_successor",
+          "live": "5000_plus_centers_100_countries_no_central_oversight, australian_royal_commission_abuse_cover_up_confirmed, crown_heights_brooklyn_headquarters_770, schneerson_death_1994_no_successor_named, tunnel_incident_2024_fringe_messianic_group, kotlarsky_succession_gap_2024",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~28 heuristic name tokens",
+          "live": "Rabbi Yehuda Krinsky, Inyonei Chinuch, Machne Israel, Agudas Chasidei Chabad, Lubavitch World, Vice Chairman, Inyonei Chinuch, Rabbi Mendy Kotlarsky, Rabbi Mendy Kotlarsky, Moshe Kotlarsky, Rabbi Abraham Shemtov, Agudas Chasidei Chabad, Old Westbury, Old Westbury, Old Westbury",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: moderate; Perplexity: minor",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "moderate",
+      "live_executive_summary": "Chabad-Lubavitch carries moderate overall concern driven by the documented Australian Royal Commission findings of institutional abuse cover-up and the 2024 Crown Heights tunnel criminal proceedings, though in both cases HQ distanced itself from the actors involved. Core structural risks—decentralized financial opacity, no rebbe successor since 1994, and a post-Kotlarsky leadership gap—remain live and unresolved. Rabbi Yehuda Krinsky (Chairman, Merkos L'Inyonei Chinuch / Machne Israel / Agudas C",
+      "tokens_used": {
+        "input": 103955,
+        "output": 1216
+      },
+      "estimated_cost_usd": 0.3301,
+      "duration_ms": 30161,
+      "timestamp": "2026-04-09T04:24:44.563Z"
+    },
+    {
+      "slug": "church-of-england",
+      "brand_name": "Church of England",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[\"No documented legal settlements or major fines with specific amounts and years against the Church of England as an entity.\",\"Adrian and Gail Wallbank faced a £250,000 bill in an 18-year chancel repair liability dispute (pre-2013), leading to sale of their home; not a fine or settlement against the Church[2].\",\"Proposed National Redress Scheme for abuse claims with awards up to £660,000 in rare cases (as of 2024), but not yet implemented or resulting in finalized payments[1].\"],\"executive_accountability\":\"No convictions, pleas, or documented ",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$10,000,000,000 (largest normalized)",
+          "live": "$250,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~98% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1970",
+          "live": "earliest year token: 1940",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "40m_plus_abuse_compensation, 10b_investment_fund_church_commissioners, john_smyth_qc_serial_abuser_church_protected",
+          "live": "150m_to_200m_plus_abuse_redress_fund_unannounced, 11b_investment_fund_church_commissioners_2024, john_smyth_qc_serial_abuser_church_protected_makin_review_2024, welby_resigned_over_abuse_coverup_2024, george_carey_disciplinary_proceedings_2025, redress_scheme_delayed_victims_still_waiting_2025",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~20 heuristic name tokens",
+          "live": "Archbishop Carey, Archbishop Mullally, Dame Sarah Mullally, Confirmed October, Justin Welby, Former Archbishop, George Carey, Former Archbishop, Facing Clergy Discipline Measure, Archbishop George Carey, George Bell, Carlile Review, Archbishop George Carey, George Bell, Carlile Review",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Church of England faces a 'significant' concern profile driven by the landmark 2020 IICSA finding of systemic child abuse cover-up, a £150–200m+ redress scheme still not open as of 2025, and the seismic 2024 Makin Review which forced Archbishop Welby's resignation and triggered disciplinary action against 10 clergy including former Archbishop Carey. The newly installed Archbishop Mullally (March 2026) leads an institution whose £11.1bn investment fund and 26 Lords Spiritual seats give it out",
+      "tokens_used": {
+        "input": 179741,
+        "output": 1633
+      },
+      "estimated_cost_usd": 0.5637,
+      "duration_ms": 40736,
+      "timestamp": "2026-04-09T04:25:25.299Z"
+    },
+    {
+      "slug": "lds-church",
+      "brand_name": "Church of Jesus Christ of Latter-day Saints",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"$2.28 billion verdict to woman abused by stepfather (California 2023)[2][4]\",\"$32 million settlement for West Virginia child sexual abuse claims (2025)[1][2][3]\",\"$4.2 million settlement for two sisters abused by stepfather (Washington)[4]\",\"$4 million settlement for boy abused by Robert Blome (Washington)[4]\",\"$3 million settlement for Oregon man regarding covered-up abuse[4]\",\"$1 million settlement for California abuse case (2023)[2][3]\",\"$1.1 million settlement in Washington (2023)[3]\",\"$1 million SEC penalty for investment disclosu",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "5b_sec_settlement_largest_religious_organization, ensign_peak_32b_hidden_22_years, 13_shell_llcs_concealment_structure, 100b_plus_estimated_total_holdings, largest_private_landowner_florida, tithing_condition_temple_access, historic_polygamy_doctrine, lgbtq_family_proclamation_policy",
+          "live": "The tag '5b_sec_settlement_largest_religious_organization' overstates the penalty (actual fine was $5M not $5B) and '100b_plus_estimated_total_holdings' is significantly understated — current independent estimates place total Church wealth at $265B–$293B (2023–2024); all other stored tags remain substantively accurate.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$100,000,000,000 (largest normalized)",
+          "live": "$293,000,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~66% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1978",
+          "live": "earliest year token: 1997",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "5b_sec_settlement_largest_religious_organization, ensign_peak_32b_hidden_22_years, 100b_plus_estimated_total_holdings",
+          "live": "5m_sec_settlement_largest_religious_organization, ensign_peak_32b_hidden_1997_to_2019, 265b_to_293b_estimated_total_wealth_2023_2024, potential_additional_sec_disclosure_failure_9b_pension_fund, irs_whistleblower_100b_reserve_allegation_unresolved",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~16 heuristic name tokens",
+          "live": "First Counselor, Todd Christofferson, Second Counselor, Christopher Waddell, Presiding Bishop, Salt Lake Tribune, Salt Lake Tribune, Todd Christofferson, Christopher Waddell",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Church and Ensign Peak settled 2023 SEC charges for $5M after concealing a $32B equity portfolio via 13 shell LLCs for over two decades; no criminal liability has been documented against any current leader. Independent analysts estimate total Church wealth at approximately $265B–$293B as of 2023–2024, with the Church remaining Florida's largest private landowner and maintaining temple-access tied to full-tithe compliance. Dallin H. Oaks (President of the Church (18th President, ordained Octo",
+      "tokens_used": {
+        "input": 64636,
+        "output": 1076
+      },
+      "estimated_cost_usd": 0.21,
+      "duration_ms": 28080,
+      "timestamp": "2026-04-09T04:25:53.381Z"
+    },
+    {
+      "slug": "church-of-scientology",
+      "brand_name": "Church of Scientology",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"IRS settlement: $12.5 million paid in 1993 for tax compliance and tax-exempt status restoration[2][3]\",\"Wollersheim v. Church of Scientology: $30 million jury award in 1986, reduced to $2.5 million on appeal, final settlement of $8,674,643 in 2002[1][5]\",\"Wollersheim attorney fees: $130,506.71 awarded in 1996[1]\",\"FACTNet settlement 1999: conditional $1 million penalty if copyright violations found[1]\",\"Time magazine 1991 estimate: Church spent approximately $20 million annually on legal actions[1]\"],\"executive_accountability\":\"No crim",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "HIGH",
+          "stored": "$600,000 (largest normalized)",
+          "live": "$900,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~33% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1950",
+          "live": "earliest year token: 1974",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "(none)",
+          "live": "federal_human_trafficking_lawsuit_active, rico_criminal_enterprise_allegations_pending, miscavige_service_evasion_judicially_noted, danny_masterson_rape_conviction_church_civil_liability_pending",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Church of Scientology and its parent CSI carry a significant and worsening legal and reputational risk profile: confirmed criminal convictions in France (2009) and Canada (1992) for fraud and breach of public trust remain on record, while multiple active U.S. civil suits—including a federal human-trafficking case and a RICO-expansion harassment suit—escalate exposure for both the organization and leader David Miscavige, who faces investigation-level scrutiny but no criminal charges to date. ",
+      "tokens_used": {
+        "input": 44475,
+        "output": 894
+      },
+      "estimated_cost_usd": 0.1468,
+      "duration_ms": 25124,
+      "timestamp": "2026-04-09T04:26:48.508Z"
+    },
+    {
+      "slug": "cair",
+      "brand_name": "Council on American-Islamic Relations (CAIR)",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"moderate\",\"key_legal_facts\":[\"CAIR settled fraud lawsuit with victims of CAIR lawyer Morris Days in 2019 after adverse court decisions; terms confidential[1]\",\"CAIR settled defamation lawsuit with former board member Lori Saroya in February 2025 to avoid disclosing funding sources; amount undisclosed[5]\",\"CAIR v. Gaubatz lawsuit settled in December 2024 after 15 years; terms undisclosed[6]\"],\"executive_accountability\":\"No documented criminal convictions or plea deals for any named CAIR executives or controlling owners in the provided sources. CAIR was named an unindic",
+        "vs_claude": {
+          "perplexity_concern": "moderate",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$30,000,000 (largest normalized)",
+          "live": "$12,400,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~59% after normalizing to USD."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "(none)",
+          "live": "state_terrorist_designation_texas_florida_2025, congressional_fto_designation_review_pending_2025, uae_terrorist_designation_2014, biden_white_house_disavowal_2023",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~15 heuristic name tokens",
+          "live": "Palestine Committee, National Executive Director, White House, Edward Ahmed Mitchell, National Deputy Director, Ibrahim Hooper, National Communications Director, National Litigation Director, General Counsel, Government Affairs Director, Fifth Amendment, Ghassan Elashi, Palestine Committee, Fifth Amendment, Ghassan Elashi",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: moderate",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "CAIR remains the largest U.S. Muslim civil rights and advocacy organization (founded 1994), carrying unresolved reputational and institutional scrutiny stemming from its HLF unindicted co-conspirator listing, the FBI's 2009 suspension of liaison relations, and founding-leadership connections to the Palestine Committee/Muslim Brotherhood documented at trial — all of which CAIR disputes and no federal indictment has ever resulted. Scrutiny escalated sharply in late 2025 with state-level FTO design",
+      "tokens_used": {
+        "input": 67713,
+        "output": 1264
+      },
+      "estimated_cost_usd": 0.2221,
+      "duration_ms": 31047,
+      "timestamp": "2026-04-09T04:27:19.557Z"
+    },
+    {
+      "slug": "deobandi-movement",
+      "brand_name": "Deobandi Movement",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented legal settlements, major fines, convictions, or plea deals involving named executives or controlling owners of Deobandi seminaries or organizations are identified in the provided sources.\",\"caveats\":\"Search results focus on Pakistan's blasphemy laws and general religious freedom issues, with no specific legal actions against Deobandi entities or leaders documented.\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "suicide_bombing_fatwa_issued, saudi_funding_deobandi_madrassas_documented, 20000_plus_pakistani_madrassas_estimated, darul_uloom_deoband_founding_1867",
+          "live": "suicide_bombing_fatwa_issued_by_affiliated_militant_groups, saudi_funding_deobandi_madrassas_documented_1980s_2000s, 40000_plus_pakistani_madrassas_estimated_peak, darul_uloom_deoband_founding_1866, deobandi_anti_terrorism_fatwa_issued_2008, uk_deobandi_mosque_control_documented",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~21 heuristic name tokens",
+          "live": "Arshad Madani, Teaching Faculty, Jamiat Ulama, Abul Qasim Nomani, Announced May, Muhammad Sufyan Qasmi, Darul Uloom Waqf Deoband, Maulana Fazlur Rehman, Prominent Deobandi, Darul Uloom Haqqania, Maulana Hamidul Haq Haqqani, Darul Uloom Haqqania, Maulana Hamidul Haq Haqqani, Arshad Madani, Abul Qasim Nomani",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Deobandi movement is a decentralized Sunni revivalist tradition founded in 1866 whose Pakistani militant offshoots—particularly the Taliban, TTP, SSP, and JeM—have driven its 'significant' concern profile, while the Indian mothership institution Darul Uloom Deoband has formally condemned terrorism and maintains no criminal liability. All stored verdict tags are directionally accurate with minor corrections needed on the founding year (1866 not 1867) and madrassa count (contemporary Pakistani",
+      "tokens_used": {
+        "input": 82529,
+        "output": 1212
+      },
+      "estimated_cost_usd": 0.2658,
+      "duration_ms": 29524,
+      "timestamp": "2026-04-09T04:27:49.082Z"
+    },
+    {
+      "slug": "family-research-council",
+      "brand_name": "Family Research Council",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented convictions, pleas, or civil liability for named executives or controlling owners of Family Research Council.\",\"caveats\":\"Search results contain no verifiable government filings, court records, or regulator reports of legal settlements, fines, or executive accountability against FRC; only FRC's own mentions of winning a $3.4 million defamation settlement from SPLC.\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "HIGH",
+          "stored": "$15,000,000 (largest normalized)",
+          "live": "$22,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~32% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1983",
+          "live": "earliest year token: 1996",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "splc_hate_group_designation_2010, 15m_annual_budget_political_lobbying, designated_essential_worker_trump",
+          "live": "splc_hate_group_designation_2010_ongoing, 22m_annual_revenue_2023, irs_association_of_churches_reclassification_2020, project_2025_advisory_board_member, conversion_therapy_promotion, frc_action_501c4_lobbying_arm",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~14 heuristic name tokens",
+          "live": "Executive Vice President, Travis Weber, Vice President, Government Affairs, Brent Keilen, Vice President, Strategic Initiatives, Woody Jenkins, Impact Mail, Ugandan Resolution Pro, Homosexuality Bill, Woody Jenkins, Impact Mail, Ugandan Resolution Pro, Homosexuality Bill",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Family Research Council remains an active, SPLC-designated anti-LGBTQ hate group (since 2010) led by Tony Perkins, whose only documented quasi-legal finding is a $3,000 FEC civil settlement tied to a 1996 campaign he managed, not FRC itself. The organization's most material concerns are its SPLC designation, international LGBTQ criminalization advocacy, IRS church reclassification shielding financial disclosure, and Project 2025 advisory board participation. Tony Perkins (President (since 2003))",
+      "tokens_used": {
+        "input": 88930,
+        "output": 1104
+      },
+      "estimated_cost_usd": 0.2833,
+      "duration_ms": 29835,
+      "timestamp": "2026-04-09T04:28:48.920Z"
+    },
+    {
+      "slug": "flds-church",
+      "brand_name": "FLDS Church",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"$152M damages awarded against Warren Jeffs to ex-FLDS members (2023 or prior)\",\"$16M damages awarded against Warren Jeffs and FLDS to Elissa Wall (2017)\",\"$5.2M settlement by Short Creek towns with U.S. Justice Department (post-2011)\",\"FLDS-linked business settled UEP Trust lawsuit by surrendering property (2006)\",\"$1.9M lawsuit by Department of Labor against FLDS church leaders (date unspecified)\"],\"executive_accountability\":\"Warren Jeffs, FLDS leader, was convicted in 2011 in Texas of two felony counts of child sexual assault and is ",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$10,000 (largest normalized)",
+          "live": "$152,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~100% after normalizing to USD. [escalated: Claude & Perplexity agree vs stored]"
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 2002",
+          "live": "earliest year token: 2011",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "yft_ranch_2008_texas_raid_439_children",
+          "live": "yfz_ranch_2008_texas_raid_multiple_convictions, snap_fraud_welfare_exploitation, child_labor_violations_dol_fines, 152m_civil_judgment_forced_labor_sexual_servitude, uep_trust_asset_seizure_state_oversight, splinter_groups_ongoing_samuel_bateman_offshoot",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~16 heuristic name tokens",
+          "live": "Samuel Bateman, Powledge Unit, Seth Jeffs, South Dakota, South Dakota, Black Hills, Helaman Jeffs, Powledge Unit, Seth Jeffs, South Dakota, Black Hills, Helaman Jeffs",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The FLDS Church remains a high-concern entity: Warren Jeffs continues to issue directives from a Texas prison where he is serving life plus 20 years, a $152M civil judgment has been entered against him and the church, and active successor-cult abuse cases (Samuel Bateman) confirm systemic harm persists. All stored verdict tags are substantiated by the public record, with several additional tags warranted. Warren Jeffs (President and Prophet (nominal, incarcerated)) liability:convicted Convicted ",
+      "tokens_used": {
+        "input": 46993,
+        "output": 1054
+      },
+      "estimated_cost_usd": 0.1568,
+      "duration_ms": 25176,
+      "timestamp": "2026-04-09T04:29:14.096Z"
+    },
+    {
+      "slug": "focus-on-the-family",
+      "brand_name": "Focus on the Family",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented convictions, pleas, or civil liability for any named executives or controlling owners of Focus on the Family.\",\"caveats\":\"Search results contain no verifiable government filings, court records, or established news reports of legal settlements, fines, or executive accountability specifically involving the organization 'Focus on the Family'.\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "conversion_therapy_movement_founder, every_major_medical_org_harmful_ineffective, 20_plus_states_conversion_therapy_ban_opposition, 90m_annual_revenue, dobson_founded_major_political_influence, day_of_dialogue_counter_day_of_silence, exodus_international_connected, alliance_defending_freedom_network",
+          "live": "Core substance is accurate but several tags need updates: '90m_annual_revenue' is stale (FY2024 total revenue was ~$142.7M; even FY2023 was ~$135.4M); 'conversion_therapy_movement_founder' overstates FOTF's role vs. broader ex-gay movement; '20_plus_states_conversion_therapy_ban_opposition' remains directionally accurate but the SCOTUS Chiles v. Salazar March 2026 ruling (via ADF, co-founded by Dobson) has now largely invalidated those bans; new material tags should include the May 2025 SPLC hate-group designation and the church tax-status reclassification.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "HIGH",
+          "stored": "$90,000,000 (largest normalized)",
+          "live": "$142,700,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~37% after normalizing to USD."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "conversion_therapy_movement_founder, 20_plus_states_conversion_therapy_ban_opposition, 90m_annual_revenue, exodus_international_connected, alliance_defending_freedom_network",
+          "live": "conversion_therapy_promotion_ongoing, conversion_therapy_ban_opposition_via_adf_network, revenue_135m_plus_annually, exodus_international_love_won_out_connected, alliance_defending_freedom_co_founded_by_dobson, splc_hate_group_designated_may_2025, church_tax_status_transparency_concern",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~10 heuristic name tokens",
+          "live": "Tricia Esser, Nightlight Christian Adoption Services, Chairman Emeritus, Alliance Defending Freedom, Tricia Esser, Nightlight Christian Adoption Services, Alliance Defending Freedom, Salazar March",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Focus on the Family is a high-revenue (~$142.7M FY2024) evangelical advocacy organization formally designated an anti-LGBTQ+ hate group by the SPLC in May 2025, with no criminal liability on record for any executive. Its stored revenue tag is materially understated and several tags require updating to reflect the 2025–2026 SCOTUS/ADF conversion-therapy ruling and SPLC designation. Jim Daly (President & CEO) liability:none Current president since ~2005; also hosts daily radio broadcast; publicly ",
+      "tokens_used": {
+        "input": 93412,
+        "output": 1294
+      },
+      "estimated_cost_usd": 0.2996,
+      "duration_ms": 30017,
+      "timestamp": "2026-04-09T04:29:44.115Z"
+    },
+    {
+      "slug": "greek-orthodox-ecumenical-patriarchate",
+      "brand_name": "Greek Orthodox / Ecumenical Patriarchate",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[\"No documented legal settlements or major fines against the Ecumenical Patriarchate.\",\"ECHR rulings against Turkey for property expropriations (e.g., 2008 Orphanage Case, 2022 Greek Orthodox foundation, 2023 Mor Gabriel Syriac monastery) but no fines or settlements imposed on the Patriarchate itself.[2][5]\",\"Turkish lawsuits filed against Patriarch Bartholomew (2018, recent) remain unadjudicated with no convictions or penalties.[3][4][6]\"],\"executive_accountability\":\"No convictions, pleas, or civil liability documented for Ecumenical Patriarc",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "moderate",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$300,000,000 (largest normalized)",
+          "live": "$40,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~87% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1923",
+          "live": "earliest year token: 1971",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "st_nicholas_shrine_40m_financial_scandal, archbishop_demetrios_forced_resign",
+          "live": "halki_reopening_targeted_september_2026, st_nicholas_shrine_financial_misappropriation_federal_probe, archbishop_demetrios_forced_resign_2019, turkey_denies_ecumenical_title_official_correspondence",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~26 heuristic name tokens",
+          "live": "Archbishop Elpidophoros, Archbishop Elpidophoros, Ecumenical Patriarchate Synod, Former Archbishop, Nicholas Shrine, Grant Thornton, State Attorney General, New York, New Jersey, Nicholas Shrine, Grant Thornton, State Attorney General, New York, New Jersey, Archbishop Elpidophoros",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: moderate; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "moderate",
+      "live_executive_summary": "The Ecumenical Patriarchate of Constantinople faces persistent institutional restrictions in Turkey (Halki closure since 1971, Turkish-citizen-only succession rule, denial of 'ecumenical' title in official correspondence) with active diplomacy pointing to a possible Halki reopening by September 2026. Its U.S. arm (GOA) suffered a significant financial scandal in 2017–2019 involving misappropriation of shrine funds, federal/state probes, and the forced resignation of Archbishop Demetrios; no crim",
+      "tokens_used": {
+        "input": 84619,
+        "output": 1407
+      },
+      "estimated_cost_usd": 0.275,
+      "duration_ms": 34239,
+      "timestamp": "2026-04-09T04:30:48.357Z"
+    },
+    {
+      "slug": "gulen-movement",
+      "brand_name": "Gülen Movement (Hizmet)",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[\"US court fined a Turkish man (not Gülen affiliate) $3 million in 2024 for defaming a Turkish-American over alleged Gülen association[1]\",\"ECtHR ruled Turkey violated rights of 137 people detained over Gülen links, ordering €3,000 each in non-pecuniary damages in 2025[2]\"],\"executive_accountability\":\"No documented convictions, pleas, or liability of named Gülen Movement executives or controlling owners in verifiable government, court, or regulator records outside Turkey's disputed designations. Turkish courts have convicted over 122,632 for a",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "largest_charter_school_us_170_schools_26_states, 500m_plus_annual_federal_state_funding, h1b_visa_fraud_allegations_documented, teacher_salary_transfer_golden_generation, turkey_feto_terrorist_designation, 2016_coup_attempt_gulen_accused, extradition_refused_gulen_died_2024, bid_rigging_construction_investigations",
+          "live": "The stored tag 'largest_charter_school_us_170_schools_26_states' overstates current count (sources cite ~120–167 linked schools, Harmony alone has 61 in TX); '500m_plus_annual_federal_state_funding' is plausible for Harmony alone but CBS News cited $2.1B cumulative since 2010, not a single-year figure; 'extradition_refused_gulen_died_2024' is accurate; all other stored tags are broadly accurate but benefit from more precise framing.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$1,000,000,000 (largest normalized)",
+          "live": "$2,100,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~52% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1999",
+          "live": "earliest year token: 2010",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "largest_charter_school_us_170_schools_26_states, 500m_plus_annual_federal_state_funding, h1b_visa_fraud_allegations_documented, teacher_salary_transfer_golden_generation, turkey_feto_terrorist_designation, 2016_coup_attempt_gulen_accused, extradition_refused_gulen_died_2024, bid_rigging_construction_investigations",
+          "live": "charter_school_network_approx_160_schools_26_states, cumulative_federal_state_funding_exceeds_2b_since_2010, h1b_visa_abuse_allegations_fbi_doe_investigated, teacher_salary_kickback_scheme_documented_whistleblowers, bid_rigging_construction_50m_public_funds_alleged, turkey_feto_terrorist_designation_since_2016, 2016_coup_attempt_gulen_accused_denied, gulen_died_oct_2024_extradition_never_executed, movement_continues_post_gulen_no_formal_successor",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~6 heuristic name tokens",
+          "live": "Fatih Ay, Charter School Growth Fund, Alp Aslandogan, Executive Director, Shared Values, Died October, Mehmet Ali, Ahmet Kurucan, Labor Dept, Bank Asya, Atlas Texas Construction, Texas Education Agency, Labor Dept, Bank Asya, Atlas Texas Construction",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Gülen Movement (Hizmet) operates one of the largest US charter school networks (~120–167 affiliated schools across 26 states), receiving billions in public funding, and remains under documented scrutiny for H-1B visa abuse, salary kickback schemes, and bid-rigging; founder Fethullah Gülen died October 20, 2024 in Pennsylvania without ever being extradited to Turkey or charged in US courts. Turkey's FETÖ terrorist designation stands, the movement denies wrongdoing, and no formal US prosecutio",
+      "tokens_used": {
+        "input": 100394,
+        "output": 1337
+      },
+      "estimated_cost_usd": 0.3212,
+      "duration_ms": 37332,
+      "timestamp": "2026-04-09T04:31:25.690Z"
+    },
+    {
+      "slug": "haredi-orthodox-sector",
+      "brand_name": "Haredi Orthodox Sector",
+      "profile_type": "religious_institution",
+      "status": "ERROR",
+      "error": "Hard timeout 300s exceeded",
+      "duration_ms": 983276,
+      "timestamp": "2026-04-09T04:47:48.967Z"
+    },
+    {
+      "slug": "international-churches-of-christ",
+      "brand_name": "International Churches of Christ",
+      "profile_type": "religious_institution",
+      "status": "ERROR",
+      "error": "Hard timeout 300s exceeded",
+      "duration_ms": 1009714,
+      "timestamp": "2026-04-09T05:05:08.684Z"
+    },
+    {
+      "slug": "jehovahs-witnesses",
+      "brand_name": "Jehovah's Witnesses",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"$35 million verdict (2018, Montana; later overturned)\",\"$28 million verdict (2012, California; reduced on appeal)\",\"$13.5 million verdict (2015, California; overturned, case ongoing)\",\"$2.8 million upheld on appeal (California)\",\"$154,000+ fines against Philip Brumley and Watchtower (2024, Montana federal court; upheld on appeal)\",\"$2 million+ penalties for withholding records (2016, ongoing)\"],\"executive_accountability\":\"Watchtower chief counsel Philip Brumley was fined over $154,000 in 2024 by Montana federal court for filing false a",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "two_witness_rule_enables_abuse_courts_found, 35m_conti_california_verdict, blood_transfusion_refusal_documented_deaths_children, shunning_doctrine_human_rights_violation_courts, norway_banned_funding_human_rights_violation, watch_tower_brooklyn_real_estate_empire, disfellowshipping_family_separation_documented",
+          "live": "The stored '35m_conti_california_verdict' tag is factually wrong—the $35M verdict was a Montana case, not California; the Conti verdict was originally $28M (California) but reduced substantially on appeal, and the Norway tag needs updating because the 2024 district court ban was overturned by the Borgarting Court of Appeal in March 2025, with Norway's Supreme Court now hearing the case.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$1,300,000,000 (largest normalized)",
+          "live": "$100,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~92% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1940",
+          "live": "earliest year token: 1927",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "35m_conti_california_verdict, shunning_doctrine_human_rights_violation_courts, norway_banned_funding_human_rights_violation",
+          "live": "28m_conti_california_verdict_reduced_on_appeal, 35m_montana_verdict_watchtower_negligence, 40m_hawaii_verdict_elder_abuse, 100m_plus_total_us_sexual_abuse_verdicts_settlements, shunning_doctrine_challenged_norway_district_court_2024, norway_funding_ban_overturned_appeal_court_march_2025, general_counsel_sanctioned_misleading_court_declarations, ongoing_pennsylvania_criminal_investigations_multiple_members",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~18 heuristic name tokens",
+          "live": "Watch Tower Bible, Tract Society, General Counsel, The Norway, Kenneth Cook Jr, Governing Body Member, Geoffrey Jackson, Governing Body Member, Institutional Responses, Philip Brumley, General Counsel, Watch Tower Bible, Tract Society, Robert Ciranko, Watch Tower Bible",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Jehovah's Witnesses and parent Watch Tower Bible and Tract Society of Pennsylvania face significant and ongoing legal exposure, including over $100M in US CSA verdicts and settlements, active Pennsylvania criminal investigations, and sanctions against their General Counsel for misleading courts. The Norway state-funding ban—used as a stored verdict tag—was overturned by the Court of Appeal in March 2025 and is now before Norway's Supreme Court, materially changing that tag's accuracy. Kenneth Co",
+      "tokens_used": {
+        "input": 79497,
+        "output": 1143
+      },
+      "estimated_cost_usd": 0.2556,
+      "duration_ms": 57216,
+      "timestamp": "2026-04-09T05:06:06.001Z"
+    },
+    {
+      "slug": "jewish-federations-north-america",
+      "brand_name": "Jewish Federations of North America",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented legal settlements, major fines, convictions, or pleas involving named executives or controlling owners appear in the public record from government filings, courts, regulators, or established news.\",\"caveats\":\"Search results focus on funding controversies rather than legal actions; no verifiable legal proceedings identified.\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "minor",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "3_billion_annual_fundraising, 40_50_pct_overseas_allocation_documented, fingerhut_1_2m_compensation, 146_federations_largest_nonprofit_network, allocation_established_institutions_over_emerging, governance_major_donor_conservative_bias_documented, jewish_agency_jdc_overseas_recipients, local_vs_overseas_allocation_debate",
+          "live": "The stored '3_billion_annual_fundraising' tag is now confirmed accurate for 2024 (a record year boosted by Oct. 7 emergency giving) but is atypically high vs. prior years (~$2B typical); '40_50_pct_overseas_allocation_documented' is inaccurate—public 990 data and federation-level reports show 20-33% overseas in normal years (70-80% retained domestically), with overseas share spiking only during emergency campaigns; 'fingerhut_1_2m_compensation' overstates the annual figure—$699K was reported for FY2022, with $1.8M cumulative over three years, not a single-year figure.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "minor",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1932",
+          "live": "earliest year token: 2020",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "3_billion_annual_fundraising, 40_50_pct_overseas_allocation_documented, fingerhut_1_2m_compensation, jewish_agency_jdc_overseas_recipients",
+          "live": "3_billion_system_wide_annual_fundraising_2024, fingerhut_approx_700k_annual_compensation_fy2022, jewish_agency_jdc_primary_overseas_recipients, overseas_allocation_majority_via_united_israel_appeal, domestic_70_80pct_overseas_20_30pct_typical_allocation, israel_emergency_campaign_908m_raised_post_oct7",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~11 heuristic name tokens",
+          "live": "Israel Emergency Campaign, Gary Torgow, Board Chair, David Heller, National Campaign Chair, National Campaign Chair, New Mexico, New Mexico, Gary Torgow, David Heller, National Campaign Chair",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: minor; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "minor",
+      "live_executive_summary": "JFNA is a clean-record national nonprofit umbrella with no documented fines, lawsuits, or criminal liability at the organizational or leadership level; its 2024 system-wide fundraising reached a record $3B driven by the Israel Emergency Campaign, though typical annual fundraising runs ~$2B and overseas allocation ratios are lower than stored tags suggest. Eric Fingerhut (President & CEO) liability:none Confirmed active as of early 2025 conference; latest disclosed compensation was $699,010 for F",
+      "tokens_used": {
+        "input": 76989,
+        "output": 1034
+      },
+      "estimated_cost_usd": 0.2465,
+      "duration_ms": 28047,
+      "timestamp": "2026-04-09T05:06:34.049Z"
+    },
+    {
+      "slug": "knights-of-columbus",
+      "brand_name": "Knights of Columbus",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"minor\",\"key_legal_facts\":[\"$2.6 million settlement in wrongful termination case (Jose Martinez v. Knights of Columbus, 2021) - arbitrator awarded $2.1 million in damages plus fees\",\"$500,000 jury award to UKnight Interactive for breach of verbal contract (September 2019)\",\"Class action wage and hour settlement (Jaurigue v. Knights of Columbus, San Bernardino County, 2018-2019) - specific settlement amount not disclosed in available documents\"],\"executive_accountability\":\"No criminal convictions or plea agreements of named executives identified in available court recor",
+        "vs_claude": {
+          "perplexity_concern": "minor",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "2_4m_annual_compensation_supreme_knight, 29b_insurance_assets_no_form_990, 1_4m_prop_8_donation_largest_catholic, anti_lgbtq_anti_abortion_tens_millions_spent, carl_anderson_43_year_reign, texas_anti_abortion_legislation_funding, no_public_financial_disclosure",
+          "live": "Several stored tags contain material errors: Anderson's tenure was ~21 years (2000–2021), not 43 years; insurance assets are now $29–31B (not $29B flat, and the 'no Form 990' claim is partly wrong — a 990 IS filed but numerical data extraction is limited due to 501(c)(8) status); Prop 8 donation is confirmed at ~$1.4M total (not $1.4M labeled 'largest Catholic' — it was the single largest donor overall); the $2.4M compensation figure is from Anderson's era (2014 peak ~$2.29M), not confirmed for current Supreme Knight Kelly; Texas anti-abortion legislation funding tag is not distinctly supported in public record versus general national anti-abortion spending.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$29,000,000,000 (largest normalized)",
+          "live": "$124,000,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~77% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1980",
+          "live": "earliest year token: 2000",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "2_4m_annual_compensation_supreme_knight, 29b_insurance_assets_no_form_990, 1_4m_prop_8_donation_largest_catholic, carl_anderson_43_year_reign, texas_anti_abortion_legislation_funding, no_public_financial_disclosure",
+          "live": "multi_million_compensation_supreme_knight, 29_31b_insurance_assets_limited_public_disclosure, 1_4m_prop_8_donation_largest_single_catholic_donor, carl_anderson_21_year_reign_not_43, ohio_abortion_ballot_1m_donation_2023, no_granular_public_financial_disclosure_501c8, patrick_kelly_current_supreme_knight_since_2021",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~12 heuristic name tokens",
+          "live": "Former Navy, Past Supreme Knight, Deputy Supreme Knight, Supreme Advocate, General Counsel, Supreme Treasurer, Former Navy, Supreme Knight Kelly",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: minor",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Knights of Columbus is a financially powerful Catholic fraternal insurer with $29–31B in assets and ~$124B life insurance in force, with documented multi-million-dollar executive compensation (Anderson ~$2.3M in 2014) and tens of millions spent over two decades opposing abortion and LGBTQ rights, including $1.4M to Prop 8 (2008) and $1M to the Ohio anti-abortion campaign (2023); no legal violations, fines, or criminal liability have been identified for any officer. Several stored verdict tags co",
+      "tokens_used": {
+        "input": 136456,
+        "output": 1359
+      },
+      "estimated_cost_usd": 0.4298,
+      "duration_ms": 34969,
+      "timestamp": "2026-04-09T05:07:39.022Z"
+    },
+    {
+      "slug": "lev-tahor",
+      "brand_name": "Lev Tahor",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"Elazar Rumpler sentenced to 2 years prison, NIS 10,000 fine, NIS 12,000 victim compensation (2025, Israel)[1]\",\"Yakov Weingarten: 14 years prison (2024, US)[2]\",\"Shmiel Weingarten: 14 years prison (2024, US)[2]\",\"Yoil Weingarten: 12 years prison (2024, US)[2]\",\"Nachman Helbrans: 12 years prison (2022, US)[3][5]\",\"Mayer/Meyer Rosner: 12 years prison (2022, US)[3][5]\",\"Matityau Moshe Malka: 66 months prison (2023/2024, US)[4]\",\"Mordechay Malka: 57 months prison (2023/2024, US)[4]\",\"Jacob Rosner: 38 months prison, released on time served ",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1994",
+          "live": "earliest year token: 2017",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "nachman_helbrans_federal_charges, 2018_international_parental_kidnapping_charged, isis_contact_alleged_documented, children_removed_canada",
+          "live": "nachman_helbrans_federal_charges_convicted_2022, weingarten_brothers_convicted_2024, 2018_international_parental_kidnapping_charged_convicted, iran_asylum_khamenei_allegiance_documented, children_removed_canada_guatemala_2024, human_trafficking_indictment_mexico_2025, colombia_raid_minors_rescued_2025, multinational_flight_pattern_ongoing",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~10 heuristic name tokens",
+          "live": "Convicted November, Mayer Rosner, Yoel Alter, Guatemala January, Mexico December, Shmiel Weingarten, Convicted March, Eliezer Rompler, El Salvador, Mayer Rosner, Brothers Yoil, Shmiel Weingarten, Santa Rosa, Yoel Alter, Mayer Rosner",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Lev Tahor is a fully active, high-severity extremist cult with a continuous, escalating criminal record: its top leadership tier is now largely imprisoned following multiple U.S. federal convictions (2021–2024) for child kidnapping and sexual exploitation, while a December 2024 Guatemalan raid removed 160 children and a 2025 Mexico indictment adds human trafficking charges against a second-tier leader. The group continues operating transnationally—most recently surfacing in Colombia in late 2025",
+      "tokens_used": {
+        "input": 79383,
+        "output": 1290
+      },
+      "estimated_cost_usd": 0.2575,
+      "duration_ms": 31432,
+      "timestamp": "2026-04-09T05:08:10.456Z"
+    },
+    {
+      "slug": "muslim-brotherhood",
+      "brand_name": "Muslim Brotherhood",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"Alamoudi pled guilty in 2004 to illegally importing $340,000 from Libya and financial dealings with Hamas and al Qaeda, sentenced to 23 years in jail[1]\",\"Egyptian court sentenced 529 Muslim Brotherhood members to death in 2014 following a police station attack[2]\",\"Egyptian court ordered the group outlawed and assets seized in 2013[2]\"],\"executive_accountability\":\"Abdulrahman Alamoudi, linked to Muslim Brotherhood organizations, pled guilty in 2004 to terrorism-related financial charges and was sentenced to 23 years in prison[1]. Moha",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "hamas_founded_as_mb_offshoot, designated_terrorist_egypt_saudi_uae_not_us_eu, morsi_egypt_president_2012_2013_military_coup, banna_founded_1928_egypt, sayyid_qutb_ideological_influence_al_qaeda, us_designation_debated_not_pursued, qatar_documented_mb_supporter, ikhwan_social_services_electoral_political_model",
+          "live": "The stored tag 'designated_terrorist_egypt_saudi_uae_not_us_eu' and 'us_designation_debated_not_pursued' are now materially outdated: as of January 2026 the U.S. designated three MB branches (Egyptian, Jordanian, Lebanese) as SDGTs/FTO under Trump EO 14362, Jordan also formally banned the MB in April 2025, and Bahrain and Austria are additional designating states not reflected in stored tags.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1928",
+          "live": "earliest year token: 2013",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "designated_terrorist_egypt_saudi_uae_not_us_eu, us_designation_debated_not_pursued",
+          "live": "designated_terrorist_egypt_saudi_uae_bahrain_austria_not_eu_wide, us_branches_designated_sdgt_fto_january_2026, us_designation_pursued_trump_eo14362_nov2025, jordan_banned_mb_april_2025, mb_leadership_fractured_imprisoned_in_exile, syria_post_baath_government_mb_linked_december_2024, sudanese_mb_designated_sdgt_march_2026",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~25 heuristic name tokens",
+          "live": "The Egyptian, Mohamed Badie, Supreme Guide, Mahmoud Ezzat, Supreme Guide, Khairat Al, Deputy Supreme Guide, Salah Abdel Haq, Muhammad Fawzi Taqqosh, Secretary General, Lebanese Muslim Brotherhood, State Department, Jordanian Muslim Brotherhood, Specially Designated Global Terrorists, State Department",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Muslim Brotherhood's risk profile has escalated significantly since the stored tags were last reviewed: the U.S. formally designated its Egyptian, Jordanian, and Lebanese branches as terrorist entities in January 2026, and Jordan banned the organization outright in April 2025 after exposing a domestic terror plot. The Egyptian core leadership remains imprisoned, the organization is deeply fragmented between exiled factions, and the global designation push under Trump EO 14362 is explicitly d",
+      "tokens_used": {
+        "input": 45080,
+        "output": 1214
+      },
+      "estimated_cost_usd": 0.1535,
+      "duration_ms": 29755,
+      "timestamp": "2026-04-09T05:08:40.213Z"
+    },
+    {
+      "slug": "nation-of-islam",
+      "brand_name": "Nation of Islam",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[\"No documented legal settlements or major fines against Nation of Islam (NOI).\",\"NOI won lawsuit against New York State Department of Corrections (1990s)[1].\",\"NOI received $364,500 in federal contracts from US Bureau of Prisons and DOJ (2008-2019)[2][4].\",\"NOI's $4.8B defamation lawsuit against ADL and Simon Wiesenthal Center dismissed (2023 or later)[8].\"],\"executive_accountability\":\"No convictions, pleas, or civil liability documented for any named executives or controlling owners of the Nation of Islam. Separate convictions for forced lab",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$1,995,000,000 (largest normalized)",
+          "live": "$4,800,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~58% after normalizing to USD. [escalated: Claude & Perplexity agree vs stored]"
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1930",
+          "live": "earliest year token: 1981",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "(none)",
+          "live": "adl_hate_group_designation, farrakhan_adl_lawsuit_dismissed_2024, farrakhan_facebook_ban_2019, noi_youtube_channel_removed_2020, noi_gaddafi_financial_ties, farrakhan_criterion_speech_antisemitism_2020",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~18 heuristic name tokens",
+          "live": "Ishmael Muhammad, National Minister, Ishmael Muhammad, Student National Assistant Minister, Executive Council, Ava Muhammad, Senior Minister, Mosque No, Simon Wiesenthal Center, Muammar Gaddafi, Clinton Administration, Simon Wiesenthal Center, Muammar Gaddafi, Clinton Administration, Ishmael Muhammad",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Nation of Islam remains an active SPLC- and ADL-designated hate group with a well-documented record of antisemitism, black nationalism, and anti-LGBT rhetoric under Louis Farrakhan, now 91 and increasingly sidelined, with Ishmael Muhammad emerging as the de facto successor. No criminal convictions or material financial judgments against the core NOI entity exist, though a $4.8B defamation suit NOI filed against the ADL was dismissed in 2024. Louis Farrakhan (National Minister / Head of the N",
+      "tokens_used": {
+        "input": 40688,
+        "output": 984
+      },
+      "estimated_cost_usd": 0.1368,
+      "duration_ms": 23653,
+      "timestamp": "2026-04-09T05:09:33.870Z"
+    },
+    {
+      "slug": "opus-dei",
+      "brand_name": "Opus Dei",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"moderate\",\"key_legal_facts\":[\"Opus Dei paid $977,000 settlement in 2005 for sexual misconduct allegations against priest C. John McCloskey from a 2002 complaint.[1][3][5]\",\"Ongoing 2024 New York lawsuit (JMRNNY Doe v Opus Dei) alleges negligence and prior knowledge of McCloskey's propensity for sexual abuse; motion to dismiss denied.[2]\",\"Ongoing Argentine judicial investigation (as of 2023-2025) into labor exploitation and human trafficking claims against regional vicars; no settlement or conviction reported.[6]\"],\"executive_accountability\":\"No documented criminal co",
+        "vs_claude": {
+          "perplexity_concern": "moderate",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1928",
+          "live": "earliest year token: 2005",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "90000_members_significant_elite_networks",
+          "live": "93000_members_significant_elite_networks, human_trafficking_allegations_argentina_active, project_2025_us_conservative_network_ties, vatican_reform_pressure_2022_2025",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~17 heuristic name tokens",
+          "live": "Financial Times, Gareth Gore, Mariano Fazio, Auxiliary Vicar General, Carlos Nannei, Patricio Olmos, Prelate Oc, Vicar General Fazio, Financial Times, Prelate Oc, Vicar General Fazio, Financial Times, Mariano Fazio, Carlos Nannei, Patricio Olmos",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: moderate",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Opus Dei faces escalating legal and reputational risk as of 2025: Argentine federal prosecutors are actively pursuing a human trafficking and labor exploitation case implicating former vicars and potentially the current prelate, while a 2024 Financial Times investigation and Gareth Gore's book (Simon & Schuster, 2024) have renewed global scrutiny of numerary assistant conditions, opaque finances, and deep US conservative political entanglement. The organization denies all trafficking charges and",
+      "tokens_used": {
+        "input": 42068,
+        "output": 1176
+      },
+      "estimated_cost_usd": 0.1438,
+      "duration_ms": 27370,
+      "timestamp": "2026-04-09T05:10:01.241Z"
+    },
+    {
+      "slug": "orthodox-union",
+      "brand_name": "Orthodox Union",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented convictions, pleas, or civil liability for any named executives or controlling owners.\",\"caveats\":\"Search results contain no records of legal settlements, major fines, or executive accountability from government filings, courts, regulators, or established news; only employment litigation dismissed in favor of the organization under the ministerial exception.\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$30,000,000 (largest normalized)",
+          "live": "$1,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~97% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1924",
+          "live": "earliest year token: 2002",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "forward_2000_investigation_preceded_conviction, 1000_member_congregations",
+          "live": "lanner_civil_lawsuit_settled_2024, jewish_week_2000_investigation_preceded_conviction, nearly_1000_member_congregations, women_clergy_ban_formalized_2017",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~15 heuristic name tokens",
+          "live": "Rabbi Dr, Josh Joseph, Rabbi Menachem Genack, Kosher Division, Yaakov Markel, Yaakov Markel, Rabbi Dr, Josh Joseph, Rabbi Menachem Genack, The Jewish Week",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The OU's most material legal exposure is the 2024 undisclosed settlement of a civil negligence suit by Lanner abuse survivors, capping a scandal rooted in the 2002 criminal conviction of NCSY official Baruch Lanner. Current leadership holds no criminal liability; the organization remains the largest Orthodox synagogue body in North America and operator of the world's largest kosher certification program. Mitchel R. Aeder (President (18th President, elected Jan 2023)) liability:none Retired Price",
+      "tokens_used": {
+        "input": 80071,
+        "output": 1046
+      },
+      "estimated_cost_usd": 0.2559,
+      "duration_ms": 26966,
+      "timestamp": "2026-04-09T05:10:28.209Z"
+    },
+    {
+      "slug": "prosperity-gospel-sector",
+      "brand_name": "Prosperity Gospel Sector",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented convictions, pleas, or civil liability for named executives or controlling owners in the prosperity gospel sector from verifiable sources.\",\"caveats\":\"Search results reference a 2007 Senate Finance Committee investigation into six media-based ministries including Paula White’s former church, which closed without penalties; no specific legal settlements, fines, or executive accountability detailed for prosperity gospel ministries.\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1949",
+          "live": "earliest year token: 2007",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "copeland_1b_raised_decade, grassley_investigation_refused_documents, benny_hinn_divorce_remarriage_healing_fraud_allegations",
+          "live": "copeland_20m_church_jet_tax_exempt, grassley_investigation_four_ministries_refused_documents, grassley_investigation_no_penalties_outcome, benny_hinn_divorce_finalized_2025, benny_hinn_irs_raid_2017_no_charges, benny_hinn_ministry_debt_fraud_civil_judgment, copeland_self_described_billionaire",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~30 heuristic name tokens",
+          "live": "Senior Pastor, Eagle Mountain International Church, Gloria Copeland, Senior Pastor, World Changers Church International, World Healing Center Church, World Healing Center Church, Senate Finance Committee, World Healing Center Church, Senate Finance Committee, Gloria Copeland",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Prosperity Gospel sector presents documented, ongoing patterns of tax-exempt wealth accumulation, opaque governance, and resistance to oversight, most recently confirmed by the 2025 finalization of Benny Hinn's second divorce and sustained civil/regulatory scrutiny across all major figures. No criminal convictions exist, but the 2017 IRS raid on Hinn's ministry, the $1.8M civil judgment against his church, and four ministries' refusal to cooperate with the Senate inquiry collectively sustain",
+      "tokens_used": {
+        "input": 99160,
+        "output": 1228
+      },
+      "estimated_cost_usd": 0.3159,
+      "duration_ms": 30173,
+      "timestamp": "2026-04-09T05:11:28.385Z"
+    },
+    {
+      "slug": "roman-catholic-church",
+      "brand_name": "Roman Catholic Church",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"US Catholic dioceses paid over $5 billion in abuse settlements from 2004-2023, exceeding $5.59 billion with 2024 additions like $880 million (Los Angeles, 2024) and $323 million (Rockville Centre, 2024)\",\"Archdiocese of Los Angeles: $660 million (2007, 508 victims), $880 million (2024, 1300 claims), prior $114 million\",\"Other major settlements: Boston $85 million (2003, 552 victims), Dallas $31 million (1997), Louisville $25.7 million (2003)\"],\"executive_accountability\":\"No documented criminal convictions or plea deals for named execut",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$170,000,000,000 (largest normalized)",
+          "live": "$5,000,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~97% after normalizing to USD. [escalated: Claude & Perplexity agree vs stored]"
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1922",
+          "live": "earliest year token: 1982",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "3b_plus_us_sexual_abuse_settlements, cardinal_law_fled_prosecution_died_rome, vatican_bank_money_laundering_three_investigations, banco_ambrosiano_roberto_calvi_blackfriars_bridge, pennsylvania_grand_jury_301_priests_1000_victims",
+          "live": "5b_plus_us_sexual_abuse_settlements_as_of_2024, la_archdiocese_880m_settlement_2024_largest_single_payout, cardinal_law_fled_to_rome_died_uncharged_2017, vatican_bank_ior_money_laundering_multiple_investigations, banco_ambrosiano_roberto_calvi_blackfriars_bridge_244m_settlement, cardinal_becciu_convicted_embezzlement_2023, pennsylvania_grand_jury_301_priests_1000_plus_victims_2018",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~37 heuristic name tokens",
+          "live": "Pope Leo, Pope Leo, Robert Francis Prevost, Supreme Pontiff, Elected May, Cardinal Pietro Parolin, Senior Vatican, Former Prefect, Convicted December, Former Archbishop, Rome December, Los Angeles, Los Angeles, Pope Leo, Robert Francis Prevost",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Roman Catholic Church carries significant, multi-decade legal exposure across clergy sexual abuse (US settlements now exceeding $5B as of 2024, 17,000+ documented survivors, landmark 2024 LA Archdiocese $880M payout) and Vatican financial misconduct (Banco Ambrosiano, IOR money-laundering investigations, and the 2023 Becciu embezzlement conviction). Current leadership under Pope Leo XIV (elected May 2025) inherits ongoing structural abuse accountability and Vatican financial reform obligatio",
+      "tokens_used": {
+        "input": 106971,
+        "output": 1099
+      },
+      "estimated_cost_usd": 0.3374,
+      "duration_ms": 28011,
+      "timestamp": "2026-04-09T05:11:56.397Z"
+    },
+    {
+      "slug": "russian-orthodox-church",
+      "brand_name": "Russian Orthodox Church",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"minor\",\"key_legal_facts\":[\"Nizhny Novgorod diocese settled $11,500 debt (including $3,244 unpaid + $817 fines/legal fees) via court-approved prayers in 2016[2][7]\"],\"executive_accountability\":\"No documented convictions or pleas for named executives or controlling owners of the Russian Orthodox Church / Moscow Patriarchate.\",\"caveats\":\"Search results primarily cover actions against affiliated clergy in Ukraine or minor Russian fines on individuals; no major fines, settlements, or executive liability for the central organization itself; potential bans or charges in Ukra",
+        "vs_claude": {
+          "perplexity_concern": "minor",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$30,000,000,000,000 (largest normalized)",
+          "live": "$4,000,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~100% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1988",
+          "live": "earliest year token: 1972",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "eu_sanctions_kirill_2022, kirill_watch_30000_digitally_erased_photo, ukraine_orthodox_independence_2019",
+          "live": "eu_sanctions_kirill_blocked_hungary_repeatedly, kirill_watch_breguet_photo_digitally_erased, ukraine_orthodox_independence_tomos_2019, kirill_holy_war_declaration_march_2024, fbi_warning_roc_intelligence_recruitment_2023, roc_used_as_kremlin_soft_power_instrument",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~21 heuristic name tokens",
+          "live": "All Russia, Czech Republic, Metropolitan Hilarion, Metropolitan Anthony, Viktor Sevryuk, External Church Relations, Metropolitan Onufriy, Orest Berezovsky, Holds Russian, Ukrainska Pravda, Under Ukrainian, United Kingdom, Czech Republic, United Kingdom, Czech Republic",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: minor",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Russian Orthodox Church / Moscow Patriarchate presents a significant and well-documented concern profile: Patriarch Kirill's KGB past (codename 'Mikhailov', confirmed by Swiss/Soviet archives), active FSB infiltration of church structures (SBU busts, FBI warnings, multiple European expulsions), the 1990s tobacco-alcohol import scandal, and his unreserved theological endorsement of Russia's Ukraine invasion are all corroborated by multiple independent sources. No criminal convictions exist ag",
+      "tokens_used": {
+        "input": 162097,
+        "output": 1627
+      },
+      "estimated_cost_usd": 0.5107,
+      "duration_ms": 41208,
+      "timestamp": "2026-04-09T05:12:37.606Z"
+    },
+    {
+      "slug": "samaritans-purse",
+      "brand_name": "Samaritan's Purse",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented criminal convictions, pleas, or civil liability for named executives or controlling owners.\",\"caveats\":\"Search results contain no verifiable government filings, court records, or established news reporting legal settlements, fines, or executive accountability for Samaritan's Purse.\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "graham_800k_dual_compensation_two_organizations, covid_field_hospital_central_park_anti_lgbtq_statement, volunteers_sign_anti_homosexuality_statement, operation_christmas_child_proselytization, nyc_council_condemned_field_hospital_conditions, 800m_annual_revenue, franklin_graham_political_trump_support",
+          "live": "The stored '800k' and '800m' figures are outdated — Graham's 2023 SP compensation is $882k and revenue is $1.2B; all qualitative tags remain accurate but ECFA resignation (Oct 2025) and MinistryWatch 'Withhold Giving' downgrade are material new developments requiring new tags.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$800,000,000 (largest normalized)",
+          "live": "$2,500,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~68% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1970",
+          "live": "earliest year token: 2008",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "graham_800k_dual_compensation_two_organizations, 800m_annual_revenue",
+          "live": "graham_882k_sp_compensation_2023, graham_dual_compensation_sp_and_bgea, 1_2b_annual_revenue_2023_2024, ecfa_membership_resigned_2025, ministrywatch_withhold_giving_designation_2025, excess_asset_accumulation_concern, nepotism_related_party_compensation",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~12 heuristic name tokens",
+          "live": "Withhold Giving, William Franklin Graham, Edward Bell Graham, Chief Operating Officer, Board Member, Christopher Weeks, Affiliate Office, William Franklin Graham, Edward Bell Graham, Christopher Weeks, Withhold Giving",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Samaritan's Purse is a large, financially robust evangelical relief nonprofit ($1.2B revenue, $2.5B net assets per 2023 Form 990) with no criminal findings against leadership, but carries significant ongoing reputational concerns: Franklin Graham's high dual-org compensation, mandatory anti-LGBTQ statement of faith for staff and volunteers, Operation Christmas Child proselytization criticism, and a 2025 resignation from ECFA triggering a MinistryWatch 'Withhold Giving' downgrade. William Frankli",
+      "tokens_used": {
+        "input": 42990,
+        "output": 1001
+      },
+      "estimated_cost_usd": 0.144,
+      "duration_ms": 28006,
+      "timestamp": "2026-04-09T05:13:35.614Z"
+    },
+    {
+      "slug": "saudi-wahhabi-establishment",
+      "brand_name": "Saudi Wahhabi Establishment",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented legal settlements, major fines, convictions, or pleas involving named executives or controlling owners of the Saudi Wahhabi Establishment, Kingdom of Saudi Arabia, or Ministry of Islamic Affairs appear in the provided sources.\",\"caveats\":\"Search results focus on general legal system descriptions, anti-corruption laws, and human rights critiques but lack specific verifiable cases of fines, settlements, or executive accountability from government filings, courts, or regulators.\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "75_100b_wahhabi_funding_exported_estimated, 15_of_19_hijackers_saudi_nationals, 28_pages_saudi_government_connections_documented, 1b_2016_payments_9_11_families, global_mosque_madrassa_funding_100_countries, jamal_khashoggi_assassination_cia_mbs_ordered, khashoggi_1b_cia_mbs_ordered, no_us_terrorism_designation",
+          "live": "Several stored tags are misleading or unverified: '1b_2016_payments_9_11_families' is unsupported — no confirmed $1B Saudi payment to 9/11 families occurred in 2016 (JASTA passed that year enabling suits, but no settlement exists); 'khashoggi_1b_cia_mbs_ordered' appears to be a garbled duplicate tag conflating two separate issues; all other core tags are substantively accurate but benefit from added precision on dates and legal status.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "HIGH",
+          "stored": "$100,000,000,000 (largest normalized)",
+          "live": "$75,000,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~25% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1973",
+          "live": "earliest year token: 1982",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "75_100b_wahhabi_funding_exported_estimated, 28_pages_saudi_government_connections_documented, 1b_2016_payments_9_11_families, global_mosque_madrassa_funding_100_countries, jamal_khashoggi_assassination_cia_mbs_ordered, khashoggi_1b_cia_mbs_ordered, no_us_terrorism_designation",
+          "live": "75b_wahhabi_funding_exported_1982_2005_estimated, 28_pages_saudi_government_connections_documented_declassified_2016, no_confirmed_1b_saudi_payment_to_911_families, jasta_2016_enabled_ongoing_trillion_dollar_lawsuit_vs_ksa, global_mosque_madrassa_funding_100_plus_countries, khashoggi_assassination_2018_odni_assessed_mbs_approved, no_us_terrorism_designation_saudi_arabia, 9_11_civil_suit_motion_to_dismiss_denied_2025",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~23 heuristic name tokens",
+          "live": "The Saudi Wahhabi Establishment, Crown Prince, King Salman, Abdulaziz Al Saud, Prime Minister, Sheikh Dr, Abdulaziz Al, Terrorist Attacks, Terrorist Attacks, King Salman, Abdulaziz Al Saud, Sheikh Dr, Abdulaziz Al",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Saudi Wahhabi Establishment, operating primarily through the Ministry of Islamic Affairs, has exported an estimated $75B+ in Wahhabi/Salafi infrastructure globally since the 1980s and faces an active, unresolved trillion-dollar U.S. civil lawsuit over alleged 9/11 material support that survived a motion to dismiss in August 2025. The CIA/ODNI formally assessed in 2021 that Crown Prince MBS approved the 2018 Khashoggi assassination; Saudi Arabia has never been designated a U.S. state sponsor ",
+      "tokens_used": {
+        "input": 180760,
+        "output": 1614
+      },
+      "estimated_cost_usd": 0.5665,
+      "duration_ms": 41474,
+      "timestamp": "2026-04-09T05:14:17.090Z"
+    },
+    {
+      "slug": "society-of-saint-pius-x",
+      "brand_name": "Society of Saint Pius X",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented criminal convictions, plea deals, or civil liability for named executives or controlling owners of the Society of Saint Pius X (SSPX). No legal settlements or major fines involving SSPX are recorded in the provided sources.\",\"caveats\":\"Search results focus exclusively on mainstream Catholic dioceses and archdioceses; no verifiable government filings, court records, or established news mention SSPX-specific cases up to April 2026.\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1970",
+          "live": "earliest year token: 2006",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "williamson_expelled_sspx_continued_denial",
+          "live": "williamson_convicted_german_court_incitement_fine, williamson_expelled_sspx_2012_continued_denial, williamson_deceased_2025, pagliarani_2026_unauthorized_consecrations_planned_excommunication_risk, sspx_not_in_full_communion_holy_see",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~12 heuristic name tokens",
+          "live": "Davide Pagliarani, In February, Cardinal Fern, Bishop Bernard Fellay, Former Superior General, Bishop Alfonso, South America, Davide Pagliarani, In February, Cardinal Fern, Bishop Bernard Fellay, Former Superior General, Bishop Alfonso, South America",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Fr. Davide Pagliarani (Superior General (since July 2018)) liability:none In February 2026 announced unauthorized episcopal consecrations planned for July 1, 2026, which under canon law would incur automatic excommunication; met with Cardinal Fernández on Feb 12, 2026 but confirmed plans proceeding.; Bishop Bernard Fellay (Bishop (one of two remaining SSPX bishops)) liability:none Former Superior General 2006–2018; one of four bishops whose excommunication was lifted by Benedict XVI in 2009; off",
+      "tokens_used": {
+        "input": 68208,
+        "output": 897
+      },
+      "estimated_cost_usd": 0.2181,
+      "duration_ms": 24632,
+      "timestamp": "2026-04-09T05:14:41.724Z"
+    },
+    {
+      "slug": "southern-baptist-convention",
+      "brand_name": "Southern Baptist Convention",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"moderate\",\"key_legal_facts\":[\"SBC Executive Committee legal expenses exceed $13M since 2021 on sexual abuse investigation, DOJ probe, litigation, and defense (no victim settlements specified for SBC entity)[1][3][5]\",\"Champion Forest Baptist Church (SBC affiliate) confidential settlement with three survivors (initially seeking $1M); details undisclosed, 2025[2]\",\"No documented major fines or settlements directly against SBC entity; ongoing lawsuits including Johnny Hunt ($100M claim, trial June 2025 or later) and David Sills[3][5][6]\"],\"executive_accountability\":\"No d",
+        "vs_claude": {
+          "perplexity_concern": "moderate",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$800,000,000 (largest normalized)",
+          "live": "$31,700,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~96% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1995",
+          "live": "earliest year token: 2020",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "(none)",
+          "live": "doj_investigation_closed_one_conviction_only, 12_million_plus_legal_costs_forced_hq_sale, ministry_check_database_delayed_no_names_published, ongoing_civil_class_action_consolidation_2025",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~17 heuristic name tokens",
+          "live": "Matthew Queen, Jeff Iorg, Cooperative Program, Clint Pressley, Senior Pastor, Hickory Grove Baptist Church, Dallas Annual Meeting, Nathan Finn, Recording Secretary, Transformational Leadership, North Greenville University, Matthew Queen, Former Interim Provost, Southwestern Baptist Theological Seminary, Cooperative Program",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: moderate",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The SBC remains under significant institutional and legal stress: the 2.5-year DOJ investigation closed March 2025 with only one conviction (Matthew Queen, false statements), while $12.1M+ in abuse-related legal costs forced the Nashville HQ sale and federal class-action civil suits are in active consolidation with potential nine-figure settlement exposure. Core findings of the 2022 Guidepost report — secret abuser lists, Executive Committee cover-up, and autonomy-as-shield — remain confirmed an",
+      "tokens_used": {
+        "input": 67886,
+        "output": 1194
+      },
+      "estimated_cost_usd": 0.2216,
+      "duration_ms": 31932,
+      "timestamp": "2026-04-09T05:15:43.658Z"
+    },
+    {
+      "slug": "tablighi-jamaat",
+      "brand_name": "Tablighi Jamaat",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"minor\",\"key_legal_facts\":[\"205 FIRs registered against foreign Tablighi members across 11 Indian states (2020); members paid fines of Rs 5,000-10,000 under plea bargaining to return home\",\"Delhi High Court quashed 16 cases against 70 Indian nationals in 2020 for housing foreign attendees\",\"No Tablighi Jamaat members have been convicted in India; courts criticized prosecutions as 'malicious' and devoid of evidence\",\"Russia banned Tablighi Jamaat in 2009 and sentenced individual members to 2-4.5 years imprisonment under extremism charges, though human rights organizatio",
+        "vs_claude": {
+          "perplexity_concern": "minor",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "80_150_million_followers_largest_islamic_movement, no_formal_organization_membership_fees, fbi_gateway_terrorism_characterization, richard_reid_germaine_lindsay_tablighi_contact, france_mosque_ban_security_2020, not_designated_terrorist_organization, chilla_practice_travel_mosques, india_1927_founding",
+          "live": "Stored tag '80_150_million_followers_largest_islamic_movement' overstates consensus (Wikipedia and Pew cite 12–80 million); '1927_founding' is disputed (most sources say 1926); 'france_mosque_ban_security_2020' is not corroborated—France used 'antechamber' rhetoric but no mosque ban in 2020 is documented; Germaine Lindsay's direct TJ membership is not confirmed in authoritative sources (he attended Dewsbury Islamic circles adjacent to TJ but primary influence was Abdullah el-Faisal); all other core tags remain accurate.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "HIGH",
+          "stored": "$150,000,000 (largest normalized)",
+          "live": "$80,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~47% after normalizing to USD."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "80_150_million_followers_largest_islamic_movement, no_formal_organization_membership_fees, richard_reid_germaine_lindsay_tablighi_contact, france_mosque_ban_security_2020, not_designated_terrorist_organization, chilla_practice_travel_mosques, india_1927_founding",
+          "live": "12_80_million_followers_150_countries, no_formal_membership_or_dues_self_funded_travel, richard_reid_jose_padilla_john_walker_lindh_tablighi_contact, germaine_lindsay_attended_dewsbury_tablighi_mosque_circles, not_designated_terrorist_organization_us_or_eu, banned_russia_kazakhstan_tajikistan_saudi_arabia, chilla_40_day_khuruj_preaching_mission_practice, india_1926_founding_mewat_deobandi_roots, internal_leadership_schism_saad_vs_alami_shura, covid19_super_spreader_nizamuddin_2020",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~14 heuristic name tokens",
+          "live": "Saudi Arabia, Maulana Saad Kandhlawi, World Leader, Ajit Doval, Alami Shura, Maulana Ibrahim Dewla, Alami Shura, Supreme Court, Supreme Court, Maulana Saad Kandhlawi, Ajit Doval, Alami Shura, Maulana Ibrahim Dewla, Dewsbury Islamic",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: minor",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Tablighi Jamaat is a decentralized, self-funded Islamic missionary movement with an estimated 12–80 million adherents across 150 countries, founded in India in 1926 with no formal parent organization. It has never been designated a terrorist organization by the US or any EU state, but is banned in Russia, Kazakhstan, Tajikistan, Saudi Arabia, and others, and multiple Western intelligence agencies characterize it as a radicalization 'gateway,' with documented peripheral links to figures such as R",
+      "tokens_used": {
+        "input": 114705,
+        "output": 1323
+      },
+      "estimated_cost_usd": 0.364,
+      "duration_ms": 31753,
+      "timestamp": "2026-04-09T05:16:15.412Z"
+    },
+    {
+      "slug": "the-family-c-street",
+      "brand_name": "The Family (C Street)",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented convictions, pleas, or civil liability for any named executives or controlling owners.\",\"caveats\":\"Search results contain no verifiable government filings, court records, or established news reporting legal settlements, fines, or executive accountability for The Family (C Street) / The Fellowship Foundation.\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$96,000 (largest normalized)",
+          "live": "$10,400,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~99% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1935",
+          "live": "earliest year token: 2017",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "national_prayer_breakfast_organized_secretly, fellowship_foundation_church_registration, jeff_sharlet_documented_theology",
+          "live": "national_prayer_breakfast_organized_secretly_until_2023_split, fellowship_foundation_501c3_not_registered_as_church, jeff_sharlet_documented_theology_and_power_focus, npb_gathering_rebranding_post_split, uganda_anti_homosexuality_act_funding_2023, fara_filing_foreign_influence_activities",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~21 heuristic name tokens",
+          "live": "Katherine Crane, Katherine Crane, Fellowship Foundation Inc, Doug Burleigh, Alexander Torshin, Larry Ross, International Foundation, The Gathering, National Prayer Breakfast Foundation, Fellowship Foundation Inc, Fellowship Foundation, Tim Walberg, Ugandan National Prayer Breakfast, Fellowship Foundation Inc, Fellowship Foundation",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Fellowship Foundation (The Family/C Street) retains significant concern status: no criminal convictions or fines on record, but it lost formal control of the National Prayer Breakfast in 2023 amid ethics and transparency pressure, continues active foreign influence activities documented in FARA filings, and funded anti-LGBTQ advocacy abroad in 2023. Current president Katherine Crane leads a deliberately decentralized, opaque structure with ~$10.4M annual revenue and no publicly named board. ",
+      "tokens_used": {
+        "input": 75716,
+        "output": 1009
+      },
+      "estimated_cost_usd": 0.2423,
+      "duration_ms": 31859,
+      "timestamp": "2026-04-09T05:16:47.273Z"
+    },
+    {
+      "slug": "united-methodist-church",
+      "brand_name": "United Methodist Church",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"moderate\",\"key_legal_facts\":[\"Mt. Bethel United Methodist Church settlement: $13.1 million to disaffiliate from UMC (2024, per AJC)\",\"UMC settlement in Boy Scouts of America bankruptcy: $30 million for survivors of scouting-related sexual abuse (announced December 2021, per UMNews)\",\"Jonesboro First United Methodist Church settlement: $1.1 million to Arkansas Conference (August 2024, per ARUMC)\",\"UMC to help raise additional $100 million from non-UMC chartering organizations in BSA settlement (per UMNews)\"],\"executive_accountability\":\"No named executives or controllin",
+        "vs_claude": {
+          "perplexity_concern": "moderate",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "7500_congregations_disaffiliated, 600m_property_split, global_methodist_church_conservative_departure, lgbtq_inclusion_vote_2024, wespath_21b_pension_fund, clergy_sexual_misconduct_documented, connectional_structure_financial_complexity",
+          "live": "Core tags remain directionally accurate but require updates: disaffiliation count is ~7,600 (not 7,500), Wespath AUM is ~$26B (not $21B) as of Dec 2024, and new tags for closed disaffiliation pathways and active multistate property litigation are now material.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "MEDIUM",
+          "stored": "$21,000,000,000 (largest normalized)",
+          "live": "$26,000,000,000 (largest normalized)",
+          "note": "Financial headline figures differ moderately (~19%) after USD normalization."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1972",
+          "live": "earliest year token: 2018",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "7500_congregations_disaffiliated, 600m_property_split, wespath_21b_pension_fund, clergy_sexual_misconduct_documented",
+          "live": "7600_congregations_disaffiliated, property_litigation_multistate_ongoing, wespath_26b_pension_fund, clergy_sexual_misconduct_documented_formal_apology_2024, disaffiliation_pathway_closed_2024, judicial_council_trust_clause_enforcement",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~13 heuristic name tokens",
+          "live": "Bishop Tracy, Bishop Ruben Saenz Jr, Horizon Texas Conference, Stephanie Remington, Ordained Elder, Missouri Conference, Jeffrey Epstein, South Carolina, West Virginia, Dakotas Conference, South Carolina, West Virginia, Dakotas Conference, Bishop Tracy, Bishop Ruben Saenz Jr",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: moderate",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The UMC is navigating its largest structural disruption in modern history: over 7,600 U.S. congregations exited by end-2023, the 2024 General Conference removed the disaffiliation provision entirely and lifted LGBTQ restrictions, and Judicial Council rulings have triggered a wave of multistate property lawsuits. Wespath pension assets stand at ~$26B (sound), but legal exposure from property disputes, an institutional sexual-misconduct apology, and ongoing clergy investigations keep the overall c",
+      "tokens_used": {
+        "input": 129862,
+        "output": 1225
+      },
+      "estimated_cost_usd": 0.408,
+      "duration_ms": 35096,
+      "timestamp": "2026-04-09T05:17:52.371Z"
+    },
+    {
+      "slug": "westboro-baptist-church",
+      "brand_name": "Westboro Baptist Church",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[\"$10.9 million jury award to Snyder family in 2007, reduced to $5 million by district court in 2008[1][2][4][5]\",\"$5 million judgment reversed by Fourth Circuit and U.S. Supreme Court in 2011 on First Amendment grounds[1][2][3][4][6]\"],\"executive_accountability\":\"No documented criminal convictions or plea deals for Fred Phelps or other Westboro Baptist Church executives. Civil judgments against Phelps and church in Snyder v. Phelps were overturned by appellate courts, with no payment required or enforced.\",\"caveats\":\"Search results limited to",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1955",
+          "live": "earliest year token: 1993",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "splc_hate_group_designation, 70_100_members_entire_phelps_family, fred_phelps_excommunicated_own_church, picketing_jewish_institutions_schools, legal_training_enables_harassment_within_law",
+          "live": "splc_adl_hate_group_designation, approximately_60_70_members_primarily_phelps_family, fred_phelps_excommunicated_august_2013, picketing_jewish_institutions_synagogues_schools, phelps_chartered_law_firm_legal_harassment_strategy, steve_drain_current_de_facto_leader, shirley_phelps_roper_sidelined_post_2013_power_shift, banned_uk_canada, shifting_protest_focus_to_transgender_issues",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~15 heuristic name tokens",
+          "live": "Steve Drain, Steve Drain, Daily Beast, Phelps Chartered, Tim Phelps, Shawnee County, Margie Phelps, Phelps Chartered, Argued Snyder, In Snyder, Albert Snyder, Fourth Circuit, Funeral Picketing Act, In Snyder, Albert Snyder",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Westboro Baptist Church remains operational in Topeka, Kansas under a male elder board led de facto by Steve Drain, with roughly 60-70 members (mostly Phelps family) and no successful civil judgments against it — its legal strategy has consistently converted attempted suppression into fee awards. All stored verdict tags are accurate; the profile should be updated to reflect shrinking but stable membership, Drain's leadership, and WBC's 2020s shift toward targeting transgender events. Steve Drain",
+      "tokens_used": {
+        "input": 93466,
+        "output": 1202
+      },
+      "estimated_cost_usd": 0.2984,
+      "duration_ms": 30087,
+      "timestamp": "2026-04-09T05:18:22.460Z"
+    },
+    {
+      "slug": "word-of-faith-fellowship",
+      "brand_name": "Word of Faith Fellowship",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"Word of Faith Fellowship settled federal lawsuit with Rutherford County Department of Social Services for $300,000 (2003 filing, settlement date not specified in sources)\",\"Jane Whaley convicted of misdemeanor assault in 2004; conviction overturned after five years of appeals\",\"Jerry Gross and Jason Lee Gross pleaded guilty to wire fraud on May 25 (year not specified in source, but context suggests 2018 based on charging date of May 11, 2018)\",\"Brooke Covington went to trial in May 2017; mistrial declared due to jury foreman misconduct",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1979",
+          "live": "earliest year token: 2004",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~8 heuristic name tokens",
+          "live": "First Amendment, Brooke Covington, Matthew Fenner, Kent Covington, Brooke Covington, Minister Kent Covington, Jerry Gross, Jason Gross, Brooke Covington, Matthew Fenner, Minister Kent Covington, Jerry Gross, Jason Gross, Brooke Covington, Matthew Fenner",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Word of Faith Fellowship remains a high-concern organization: multiple church ministers have been federally convicted for fraud, a senior minister faces unresolved kidnapping and assault charges now under a special prosecutor (as of February 2026), and founder Jane Whaley has never been criminally charged despite being named in fraud filings and facing decades of documented abuse allegations. Membership has reportedly shrunk from ~750 to 300-400, but the organization continues to operate, denies",
+      "tokens_used": {
+        "input": 60325,
+        "output": 1033
+      },
+      "estimated_cost_usd": 0.1965,
+      "duration_ms": 25536,
+      "timestamp": "2026-04-09T05:18:47.998Z"
+    },
+    {
+      "slug": "yeshiva-university",
+      "brand_name": "Yeshiva University",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"$380 million lawsuit filed 2013 by 19 former students alleging decades of sexual abuse cover-up at Yeshiva University High School; federal court dismissed as time-barred[8]\",\"$900,000 settlement 2000s: Dr. Heidi S. Weissmann sex-discrimination lawsuit against Yeshiva's medical college and Montefiore Medical Center ($35,000 back pay, $325,000 legal fees, $540,000 pain and suffering)[2]\",\"Nine former MTA students settled with YU in sexual abuse lawsuit; original 19-student lawsuit sought $680 million total compensation[7]\"],\"executive_ac",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1970",
+          "live": "earliest year token: 2012",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "2012_dinner_honoring_accused_abuser, 50_plus_survivors_forward_investigation, bankruptcy_2023_abuse_claims, finkelstein_gordon_abusers_named, yeshiva_statue_of_limitations_expired_many_cases",
+          "live": "2012_hanukkah_dinner_abuse_revelations, 50_plus_survivors_active_litigation, cva_lawsuits_revived_after_sol_dismissals, finkelstein_gordon_andron_abusers_named, statute_of_limitations_barrier_pre_cva, partial_settlements_2024_terms_undisclosed, sullivan_cromwell_investigation_criticized_incomplete, appellate_court_upheld_cases_jan_2025",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~15 heuristic name tokens",
+          "live": "New York, Child Victims Act, Rosh Yeshiva, Legal Affairs, General Counsel, Michael Schreiber, Business Affairs, Selma Botman, Academic Affairs, Michael Schreiber, Selma Botman",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Yeshiva University faces active multi-plaintiff civil litigation under New York's Child Victims Act over decades of alleged sexual abuse at its MTA high school by principal Finkelstein and others, with partial undisclosed settlements reached in Sept 2024 and an appellate court allowing remaining claims to proceed as of Jan 2025. No criminal charges have been filed against current university leadership, but institutional cover-up allegations and withheld investigation documents remain central to ",
+      "tokens_used": {
+        "input": 65925,
+        "output": 1103
+      },
+      "estimated_cost_usd": 0.2143,
+      "duration_ms": 29162,
+      "timestamp": "2026-04-09T05:19:47.163Z"
+    },
+    {
+      "slug": "zionist-organization-of-america",
+      "brand_name": "Zionist Organization of America",
+      "profile_type": "religious_institution",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented convictions, pleas, or civil liability for any named executives or controlling owners of the Zionist Organization of America. Internal litigation such as Rosen v. Zionist Org. of Am. (2023) involved a motion to dismiss a retaliation claim by a former employee, with no settlement, fine, or liability imposed on ZOA or its executives.\",\"caveats\":\"Search results show ZOA primarily as plaintiff in antisemitism lawsuits resulting in settlements by defendants (e.g., Cherry Hill School District, 2026); no g",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$15,000,000 (largest normalized)",
+          "live": "$1,200,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~92% after normalizing to USD."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "splc_monitoring",
+          "live": "splc_hatewatch_coverage, tax_exempt_status_lapsed_2012, 2024_board_member_lawsuit_dismissed_2025, klein_financial_misconduct_allegations_ongoing",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~10 heuristic name tokens",
+          "live": "National President, David Schoen, Board Chair, Supreme Court Judge Engoron, John Rosen, Supreme Court Judge Engoron, John Rosen, David Schoen",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "ZOA and its long-serving president Morton Klein face a substantial and documented record of civil litigation, workplace misconduct allegations, and inflammatory public statements, though no criminal charges have been filed and the most recent board-member lawsuit was dismissed in May 2025. The organization remains active and influential within right-wing pro-Israel circles, closely aligned with Trump-era policies, and continues to face internal governance disputes and SPLC Hatewatch scrutiny. Mo",
+      "tokens_used": {
+        "input": 162809,
+        "output": 1624
+      },
+      "estimated_cost_usd": 0.5128,
+      "duration_ms": 41325,
+      "timestamp": "2026-04-09T05:20:28.490Z"
+    }
+  ]
+}

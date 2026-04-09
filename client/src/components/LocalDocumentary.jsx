@@ -174,7 +174,7 @@ export default function LocalDocumentary({
         tryRelease();
         return;
       }
-      const p = Math.min(100, (elapsed / 25000) * 100);
+      const p = Math.min(85, (elapsed / 25000) * 100);
       setProgress(p);
       progressRafRef.current = requestAnimationFrame(tickProgress);
     };
@@ -236,23 +236,42 @@ export default function LocalDocumentary({
       </p>
       <div
         style={{
-          maxWidth: 320,
+          maxWidth: 420,
           width: '100%',
           flex: '0 1 auto',
-          fontFamily: "'Crimson Text', serif",
-          fontSize: 14,
-          lineHeight: 1.8,
-          color: BODY,
-          textAlign: 'center',
-          whiteSpace: 'pre-wrap',
         }}
       >
-        {shown}
+        <div
+          style={{
+            fontFamily: "'Crimson Text', serif",
+            fontSize: 'clamp(18px, 4.2vw, 20px)',
+            lineHeight: 1.75,
+            color: BODY,
+            textAlign: 'center',
+            whiteSpace: 'pre-wrap',
+          }}
+        >
+          {shown}
+        </div>
+        <p
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontSize: 10,
+            letterSpacing: 1.5,
+            color: '#6a8a9a',
+            textTransform: 'uppercase',
+            textAlign: 'center',
+            margin: '20px 0 0',
+            lineHeight: 1.5,
+          }}
+        >
+          Live investigations may take up to 10 minutes — we&apos;re searching public records in real time.
+        </p>
       </div>
       <div
         style={{
           marginTop: 'auto',
-          width: 'min(320px, 100%)',
+          width: 'min(420px, 100%)',
           height: 3,
           background: 'rgba(212,160,23,0.2)',
           borderRadius: 2,
@@ -268,6 +287,21 @@ export default function LocalDocumentary({
           }}
         />
       </div>
+      {!investigationReady && progress >= 85 && (
+        <div
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontSize: 9,
+            letterSpacing: 2,
+            textTransform: 'uppercase',
+            color: '#6a8a9a',
+            marginTop: 6,
+            textAlign: 'center',
+          }}
+        >
+          RUNNING LIVE INVESTIGATION...
+        </div>
+      )}
     </div>
   );
 }

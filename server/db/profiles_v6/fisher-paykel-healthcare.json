@@ -1,0 +1,259 @@
+{
+  "brand_name": "Fisher & Paykel Healthcare",
+  "brand_slug": "fisher-paykel-healthcare",
+  "parent_company": "Fisher & Paykel Healthcare Corporation Limited",
+  "ultimate_parent": "Fisher & Paykel Healthcare Corporation Limited",
+  "subsidiaries": [
+    "Fisher & Paykel Healthcare Inc. (U.S. sales, distribution, and field service—e.g., California, Irvine-area operations referenced in historical FDA context)",
+    "Manufacturing entities in New Zealand (East Tāmaki, Auckland) and Mexico (Tijuana / Baja California cluster)"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "2007 FDA WARNING LETTER — CLASS I INFANT CPAP PRONGS — RESMED PATENT WARS — AIRVO ALARM CLASS II — NZ UNION PICKETS & MEXICO CAPACITY",
+  "executive_summary": "Fisher & Paykel Healthcare Corporation Limited is a New Zealand–domiciled respiratory and acute-care medtech company dual-listed on NZX and ASX (ticker FPH), known globally for heated humidification, Optiflow high-flow nasal cannula ecosystems, Airvo/myAirvo high-flow generators, ICU/OSA interfaces, and CPAP/BiPAP-style sleep products. Documented U.S. regulatory history includes a February 2007 FDA warning letter cycle: the company’s exchange announcement attributed deviations from U.S. Quality System regulation to a late-2006 inspection of its California sales and distribution operation (Fisher & Paykel Healthcare Inc.), while contemporaneous Reuters reporting summarized a related FDA letter citing under-documentation of malfunctions and field complaints on radiant infant warmers/neonatal lines, servicing verification gaps, and training deficiencies—company commentary described corrective actions and ongoing FDA dialogue. Post-market databases show serious recalls: a November 2012 Class I recall of 900MR068 reusable breathing circuits (tube defect risking pressure loss), an April 2014 Class I recall of infant nasal CPAP prongs (detach from tubing—therapy interruption; press and regulators framed choking/airway risk for neonates), a 2013 Class II recall of ICON home CPAP units for power failures, a 2014 Class II recall on CosyCot warmer replacement components, and an April 2024 Class II recall on Airvo 2 / myAirvo 2 humidifiers built before August 2017 for speaker/alarm audibility issues (oxygen desaturation if therapy stops unnoticed). Patent litigation against ResMed spanned U.S. district court, ITC, and foreign venues before a 2019 global settlement shutting outstanding cases without payment or liability admission per joint releases. Labor: 2023 Auckland manufacturing disruption drew E tū pickets and overtime/ weekend-rate disputes affecting a large unionized membership at East Tāmaki. Supply chain: public filings and trade press describe finished-goods manufacturing concentrated in New Zealand and a major multi-plant expansion in Tijuana—creating geographic concentration benefits (USMCA logistics for Americas) alongside single-region disruption risk.",
+  "verdict_tags": [
+    "fda_warning_letter_2007_california_qsr_neonatal_complaints_reported",
+    "class_i_recall_900mr068_reusable_circuits_2012",
+    "class_i_recall_infant_nasal_cpap_prongs_2014",
+    "class_ii_recall_icon_cpap_power_2013",
+    "class_ii_recall_cosycot_replacement_head_2014",
+    "class_ii_recall_airvo2_myairvo2_speaker_alarm_2024",
+    "resmed_patent_litigation_multijurisdiction_2016_2018",
+    "resmed_fph_global_patent_settlement_2019",
+    "etu_industrial_action_overtime_2023_auckland",
+    "manufacturing_duel_anchor_nz_auckland_mexico_tijuana"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "As an NZX/ASX listed New Zealand resident issuer, Fisher & Paykel Healthcare files financial statements under NZ IFRS with Australian clearing disclosure obligations; corporate income tax, withholding on cross-border royalties, and transfer pricing between Kiwi design hubs, Mexican assembly, and U.S. distribution are ordinary listed-multinational issues. Dividend imputation (New Zealand) and Australian franking credits interact with shareholder base across both exchanges.",
+    "flags": [
+      "nzx_asx_dual_listed_transfer_pricing",
+      "nz_tax_resident_multinational_supply_chain"
+    ],
+    "sources": [
+      "https://www.fphcare.com/en-gb/corporate/investor/",
+      "https://www.nzx.com/markets/NZSX/securities/FPH"
+    ]
+  },
+  "legal": {
+    "summary": "FDA / Quality systems: February 2007—Fisher & Paykel Healthcare Corporation advised the market that Fisher & Paykel Healthcare Inc. received an FDA warning letter tied to U.S. QSR deviations seen in a late-2006 inspection of the California sales and distribution facility; the company described immediate corrective actions and collaboration with FDA. Reuters (Feb. 27, 2007) reported FDA’s letter dated Feb. 2, 2007 alleging undocumented device malfunctions/complaint-file gaps on neonatal/radiant-warmer–related matters, plus servicing verification and training shortcomings; the article noted the company’s December 2006 training and complaint-handling remediation commitments. A targeted search did not surface a more recent FDA warning letter naming Fisher & Paykel in this research pass—re-query FDA’s warning-letter index for updates. Recalls: FDA recall database entries include Class I 900MR068 reusable circuits (Nov. 2012 initiation; tubbing hole/leak risk); Class I infant nasal CPAP prongs (April 2014 initiation; detachment/therapy interruption; FDA determined cause: device design); Class II ICON CPAP (April 2013; power failure/inoperability risk); Class II CosyCot/head kit correction (2014); Class II Airvo 2 and myAirvo 2 (April 2024 initiation; pre–Aug. 14, 2017 builds—speaker/alarm audibility; therapy interruption may desaturate patients—recall Z-1823-2024). Patent litigation: Fisher & Paykel and ResMed filed countervailing infringement actions in multiple countries; ResMed withdrew a U.S. ITC complaint targeting Simplus/Eson masks in 2017 per company newsflow, and in April 2019 the parties announced a worldwide settlement dismissing all pending matters with no payment or admission of liability, covering named flow generators, masks, and heated circuits on both sides.",
+    "flags": [
+      "fda_warning_letter_2007_documented",
+      "neonatal_infant_interface_class_i_history",
+      "hfnc_alarm_recall_2024_class_ii",
+      "resmed_patent_war_settled_2019",
+      "verify_post_2007_fda_warning_letters_periodically"
+    ],
+    "sources": [
+      "https://www.fphcare.com/us/corporate/investor/news/archive/fisher-paykel-healthcare-receives-fda-warning-lett/",
+      "https://www.reuters.com/article/business/healthcare-pharmaceuticals/fda-warns-fisher-paykel-of-neonatal-problems-idUSN27390712/",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=114789",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=126776",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=72581",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=131307",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=207160",
+      "https://www.fphcare.com/us/corporate/news/fy24/fph-voluntary-limited-recall-of-airvo2-myairvo2/",
+      "https://www.fphcare.com/en-ca/corporate/news/fy19/resmed-fph-announce-settlement/",
+      "https://www.fphcare.com/us/corporate/investor/news/fy18/withdrawal-of-us-international-trade-commission-co/",
+      "https://www.biospace.com/fda-warns-on-fisher-and-paykel-healthcare-s-infant-cpap-systems-following-dozens-of-complaints",
+      "https://www.rnz.co.nz/news/business/512892/breathing-devices-recalled-by-fisher-and-paykel-healthcare"
+    ]
+  },
+  "labor": {
+    "summary": "In November 2023, Auckland media documented pickets by E tū–represented Fisher & Paykel Healthcare workers at the East Tāmaki site (~1,550 members cited in reporting), focused on employer proposals to treat Sundays as ordinary time, tighten overtime around shift flex, and expand part-time hiring—issues affecting take-home pay and weekend premia in a manufacturing workforce that had been described in other years as expanding headcount for pandemic-era demand. Earlier RNZ archive pieces captured executive reluctance to rule out layoffs during prior downturn narratives—useful as historical context distinct from 2020s hiring bursts.",
+    "flags": [
+      "etu_picket_overtime_weekend_rates_2023",
+      "large_auckland_site_union_density_reported",
+      "historical_management_commentary_on_possible_job_cuts_press"
+    ],
+    "sources": [
+      "https://www.nzherald.co.nz/business/companies/healthcare/fisher-paykel-healthcare-staff-picket-after-pay-and-overtime-dispute/46EW6ODCF5DURPJWIMBWTFO5C4/",
+      "https://1news.co.nz/2023/11/07/auckland-fisher-paykel-healthcare-workers-picket/",
+      "https://www.rnz.co.nz/news/national/12928/fisher-and-paykel-won't-rule-out-job-layoffs"
+    ]
+  },
+  "environmental": {
+    "summary": "Respiratory disposables and humidifier platforms imply polymer and electronics throughput; dual-shore manufacturing (New Zealand and Mexico) lengthens ocean and land logistics versus single-region sourcing but can shorten road miles into U.S. hospitals when goods exit Tijuana. Company sustainability reporting (annual report microsites) addresses energy and waste at expanded Auckland and Karaka campuses alongside Mexican plants—investor PDFs are the authoritative environmental metrics source.",
+    "flags": [
+      "trans_pacific_and_border_logistics_footprint",
+      "disposable_and_electronics_medtech_waste_streams"
+    ],
+    "sources": [
+      "https://annualreport.fphcare.com/",
+      "https://www.fphcare.com/en-gb/corporate/investor/"
+    ]
+  },
+  "political": {
+    "summary": "FPH’s revenue mix leans on U.S. hospital and home-care markets; investor communications have highlighted USMCA-qualified production in Mexico as a tariff posture hedge—trade policy volatility therefore directly affects margin narratives. NZ industrial relations law shapes E tū bargaining; export credit and health-system procurement policies in Asia-Pacific and the Americas influence Optiflow adoption.",
+    "flags": [
+      "us_tariff_and_usmca_exposure_via_mexico_sourcing",
+      "nz_union_law_and_health_export_politics"
+    ],
+    "sources": [
+      "https://www.fphcare.com/en-gb/corporate/investor/",
+      "https://sleepreviewmag.com/sleep-health/demographics/regional/fisher-paykel-opens-third-manufacturing-facility-tijuana"
+    ]
+  },
+  "executives": {
+    "summary": "Lewis Gradon has served as Managing Director and Chief Executive Officer since 2015, succeeding long-tenured CEO Michael Daniell. Executive remuneration—including performance rights disclosed at annual meetings—is published in NZX/ASX circulars rather than U.S. proxy form simplicity; verify totals from notice of meeting documents.",
+    "flags": [
+      "ceo_gradon_since_2015",
+      "verify_pay_from_nzx_asx_meeting_materials"
+    ],
+    "sources": [
+      "https://www.fphcare.com/en-gb/corporate/news/archive/fisher-paykel-healthcare-s-md-ceo-michael-daniell/",
+      "https://www.fphcare.com/us/corporate/news/2024-annual-shareholders-meeting-results/"
+    ]
+  },
+  "connections": {
+    "summary": "Clinicians often pair Optiflow interfaces with Airvo/hospital humidification platforms—creating bundled brand loyalty that also concentrates adverse events within FPH’s complaint stream. ResMed is both competitor and former multi-front patent adversary; settlement preserved market access for Simplus/Eson mask lines and ResMed flow generators named in releases. The Fisher & Paykel Appliances consumer division is historically related by heritage but a separate listed/operational track—do not conflate appliance layoff headlines with healthcare manufacturing unless sources specify the entity.",
+    "flags": [
+      "optiflow_airvo_ecosystem_integration",
+      "resmed_competitor_and_former_patent_litigant",
+      "fisher_paykel_appliances_vs_healthcare_entity_distinction"
+    ],
+    "sources": [
+      "https://www.fphcare.com/en-ca/corporate/news/fy19/resmed-fph-announce-settlement/",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=207160"
+    ]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims beyond settled findings, or interpretations disputed in part by the company.",
+    "summary": "Competition-policy commentators sometimes argue oversized CPAP mask patent campaigns between ResMed and Fisher & Paykel raised prices and slowed interoperability innovations even when cases settled without cash changing hands—interpretations both OEMs would dispute. Neonatal safety advocates may claim alarm audibility recalls on high-flow consoles expose systemic alarm-fatigue engineering debt; FPH has framed Airvo/myAirvo actions as bounded component configuration mitigations with therapy delivery unaffected.",
+    "flags": [
+      "patent_litigation_as_anticompetitive_drag_alleged",
+      "alarm_engineering_debt_narrative_after_2024_recall_alleged"
+    ],
+    "sources": [
+      "https://www.fphcare.com/en-ca/corporate/news/fy19/resmed-fph-announce-settlement/",
+      "https://www.fphcare.com/us/corporate/news/fy24/fph-voluntary-limited-recall-of-airvo2-myairvo2/"
+    ]
+  },
+  "health_record": {
+    "summary": "Class I infant nasal prong detachment risks interrupt bubble CPAP/CPAP therapy in neonates and, per FDA and trade reporting at the time, posed ingestion/choking hazard narratives requiring destruction of affected lots. Class I reusable circuit leaks could drop ventilator circuit pressure in adults. Class II ICON power faults could leave OSA patients without treatment until replacement. Airvo/myAirvo Class II recall: muted alarms during therapy interruption shift burden to bedside monitoring—clinicians must not rely on audible alarms alone per firm labeling reminders.",
+    "flags": [
+      "neonatal_airway_and_oxygenation_risk_class_i_prongs",
+      "circuit_pressure_loss_class_i",
+      "osa_therapy_interruption_icon_recall",
+      "high_flow_alarm_failure_mode_airvo_2024"
+    ],
+    "sources": [
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=126776",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=114789",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=72581",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=207160",
+      "https://www.biospace.com/fda-warns-on-fisher-and-paykel-healthcare-s-infant-cpap-systems-following-dozens-of-complaints"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Hospital contracting pits high-flow ecosystems (FPH, Medtronic, Vapotherm-class competitors—not adjudicated here) against capitated bundles; compare total interface spend.",
+      "Home OSA devices compete on payer reimbursement and DME channel economics, not sticker price."
+    ],
+    "healthier": [
+      "After infant prong or humidifier recalls, follow FPH field-action letters: destroy/cut prongs, quarantine serial ranges, escalate replacements.",
+      "For Airvo units, pair manufacturer alarm mitigations with continuous pulse oximetry where clinically indicated."
+    ],
+    "diy": [
+      "FDA recalls: search “Fisher & Paykel”, “Airvo”, “Optiflow”, “ICON”, “900MR068”.",
+      "NZX announcements: FPH market releases for recalls and FY guidance revisions.",
+      "ResMed settlement press release archive for litigation closure citations."
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2007,
+      "event": "FDA warning letter disclosed—California sales/distribution QSR deviations per FPH; Reuters summarizes neonatal complaint-documentation and training issues in agency letter dated Feb. 2",
+      "severity": "critical",
+      "source_url": "https://www.fphcare.com/us/corporate/investor/news/archive/fisher-paykel-healthcare-receives-fda-warning-lett/"
+    },
+    {
+      "year": 2012,
+      "event": "Class I recall: 900MR068 reusable breathing circuits—potential tubing holes/gas leaks (Nov. 19 initiation per FDA database)",
+      "severity": "critical",
+      "source_url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=114789"
+    },
+    {
+      "year": 2013,
+      "event": "Class II recall: ICON CPAP—power issue could render device inoperable (April 22 initiation)",
+      "severity": "high",
+      "source_url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=72581"
+    },
+    {
+      "year": 2014,
+      "event": "Class I recall: infant nasal CPAP prongs—detach from tubing; FDA cause determination: device design (April 15 initiation)",
+      "severity": "critical",
+      "source_url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=126776"
+    },
+    {
+      "year": 2014,
+      "event": "Class II recall: CosyCot infant warmer replacement head/kit issues (firm correction per FDA database)",
+      "severity": "high",
+      "source_url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=131307"
+    },
+    {
+      "year": 2017,
+      "event": "ResMed withdraws U.S. ITC complaint targeting Fisher & Paykel mask lines after parallel global litigation",
+      "severity": "moderate",
+      "source_url": "https://www.fphcare.com/us/corporate/investor/news/fy18/withdrawal-of-us-international-trade-commission-co/"
+    },
+    {
+      "year": 2019,
+      "event": "ResMed and Fisher & Paykel announce global patent settlement—no payment, no admission, dismissals worldwide",
+      "severity": "moderate",
+      "source_url": "https://www.fphcare.com/en-ca/corporate/news/fy19/resmed-fph-announce-settlement/"
+    },
+    {
+      "year": 2023,
+      "event": "Trade press: third Tijuana manufacturing facility inaugurated; company cites ~$100M investment and large regional job creation; E tū pickets in Auckland over overtime/weekend pay proposals",
+      "severity": "moderate",
+      "source_url": "https://factore.com.mx/2023/09/18/fisher-paykel-healthcare-inaugura-tercera-planta-en-tijuana/"
+    },
+    {
+      "year": 2024,
+      "event": "Class II recall: Airvo 2 / myAirvo 2 (pre–Aug. 14, 2017 builds)—speaker configuration may impair alarms; FPH guides ~USD 12M charge",
+      "severity": "high",
+      "source_url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=207160"
+    }
+  ],
+  "community_impact": {
+    "displacement": "Auckland manufacturing jobs pay family-supporting wages with weekend premia unions seek to preserve; Mexican plant expansion relocates some labor-value capture south while anchoring U.S.-bound tariff efficiency.",
+    "price_illusion": "High-flow and OSA devices are billed as gentle, patient-centric respiratory support—recalls show hard failure modes (silent alarms, prong detachment) that export risk to NICU nurses and parents.",
+    "tax_math": "Dual-listed structure splits shareholder taxation between Australian and New Zealand regimes; offshore manufacturing affects effective rates via OECD transfer pricing.",
+    "wealth_velocity": "Global respiratory share gains and post-settlement R&D freedom concentrate upside with FPH shareholders and executives while bedside clinicians absorb field-action workload."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "FPH shareholders (NZX/ASX) during revenue growth windows",
+        "how": "Installed base of humidifiers, high-flow hardware, and masks with recurring disposables"
+      },
+      {
+        "group": "Tijuana regional workforce and suppliers",
+        "how": "Capital-intensive greenfield expansions cited in Mexican business press"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Neonatal patients and bedside staff during infant prong and warmer recall waves",
+        "how": "Class I detachment risks and therapy interruptions documented by FDA"
+      },
+      {
+        "group": "Hospital biomeds and respiratory therapists",
+        "how": "Airvo swap-outs, circuit destruction, ICON returns"
+      },
+      {
+        "group": "Auckland union members facing weekend-pay compression proposals",
+        "how": "Documented 2023 bargaining conflict"
+      }
+    ],
+    "the_gap": "The same brand that markets quiet high-flow therapy once drew FDA fire for neonatal complaint paperwork—and later recalled thousands of infant prongs for coming apart in mucus-laden airways. Geography spread production from Tamaki to Tijuana, but regulators still read serial numbers out of California and Auckland the moment alarms go quiet."
+  }
+}

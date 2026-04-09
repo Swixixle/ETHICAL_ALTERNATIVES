@@ -1,0 +1,74 @@
+{
+  "generated_at": "2026-04-09T05:59:07.686Z",
+  "total_profiles": 1,
+  "profiles_checked": 1,
+  "discrepancies_found": 1,
+  "confirmed": 0,
+  "errors": 0,
+  "estimated_cost_usd": 0.2189,
+  "results": [
+    {
+      "slug": "boy-scouts-of-america",
+      "brand_name": "Boy Scouts of America",
+      "profile_type": "nonprofit",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"$18.5 million jury verdict in Portland, Oregon sexual abuse lawsuit (2010)[4]\",\"$20 million verdict leading to release of BSA files (2012)[4]\",\"$850 million proposed settlement with 60,000+ survivors (2021)[1][2][4][6]\",\"$2.46 billion settlement approved in bankruptcy court (2022), with payments ongoing into 2026[2][3][4][5]\"],\"executive_accountability\":\"No documented criminal convictions or plea deals for named executives or controlling owners in the provided sources. All referenced actions are civil settlements and bankruptcy proceed",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$850,000,000 (largest normalized)",
+          "live": "$2,460,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~65% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1910",
+          "live": "earliest year token: 1965",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "82000_survivors_largest_youth_organization_abuse, 850m_settlement_largest_youth_organization, perversion_files_70_years_concealed, perversion_files_never_shared_law_enforcement, chartered_organizations_co_defendants, 1_million_current_scouts",
+          "live": "82000_survivors_largest_youth_org_abuse, 2_46b_settlement_chapter11_2022, perversion_files_decades_concealed_law_enforcement, perversion_files_not_shared_law_enforcement, chartered_organizations_released_via_settlement, approx_1_million_current_scouts, rebranded_scouting_america_2025, settlement_finalized_2026_scotus_denial",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~7 heuristic name tokens",
+          "live": "Scouting America, Supreme Court, Chief Executive Officer, Chief Scout Executive, Appointed November, Devang Desai, National Commissioner, Elected May, Third Circuit, Supreme Court, Third Circuit, Supreme Court, Appointed November, Devang Desai, Elected May",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "BSA (now legally 'Scouting America' as of February 2025) resolved the largest youth-organization sexual abuse case in US history via a $2.46B bankruptcy settlement covering 82,000+ claimants, finalized when the Supreme Court declined review in January 2026. All stored verdict tags remain accurate; the previously noted '$850M' figure was the insurer contribution sub-component, not the total — the full settlement is $2.46B. Roger A. Krone (President & Chief Executive Officer (Chief Scout Executive",
+      "tokens_used": {
+        "input": 68447,
+        "output": 905
+      },
+      "estimated_cost_usd": 0.2189,
+      "duration_ms": 23432,
+      "timestamp": "2026-04-09T05:59:07.686Z"
+    }
+  ]
+}

@@ -2,7 +2,11 @@ import { useMemo } from 'react';
 import RegistryCard from './RegistryCard.jsx';
 import TrustStrip from './TrustStrip.jsx';
 import { getGoogleMapsUrl, getStreetAddressLine } from '../utils/localBusinessMaps.js';
-import { filterLocalRetailPlaces, filterOnlineSellerRows } from '../utils/alternativesFilters.js';
+import {
+  filterLocalRetailPlaces,
+  filterOnlineSellerRows,
+  sortLocalPlacesByDistanceAsc,
+} from '../utils/alternativesFilters.js';
 
 function SectionLabel({ children }) {
   return (
@@ -246,7 +250,10 @@ export default function AlternativesSidebar({
   identification: _identification,
   investigation: _investigation,
 }) {
-  const nearYou = useMemo(() => filterLocalRetailPlaces(localResults).slice(0, 6), [localResults]);
+  const nearYou = useMemo(
+    () => sortLocalPlacesByDistanceAsc(filterLocalRetailPlaces(localResults)).slice(0, 6),
+    [localResults]
+  );
   const onlineSellers = useMemo(() => filterOnlineSellerRows(registryResults), [registryResults]);
   const etsyList = Array.isArray(etsyResults) ? etsyResults : [];
 

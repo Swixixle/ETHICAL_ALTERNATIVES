@@ -12,7 +12,7 @@ import HistoryScreen from './components/HistoryScreen.jsx';
 import ResearchNarrative from './components/ResearchNarrative.jsx';
 import ShareCard from './components/ShareCard.jsx';
 import ConfidenceBadge from './components/ConfidenceBadge.jsx';
-import InvestigationCard, { NoRecordCompactModule } from './components/InvestigationCard.jsx';
+import InvestigationCard from './components/InvestigationCard.jsx';
 import { persistLocation, readCachedLocation, readUserCityState } from './services/location.js';
 import CommunityImpact from './components/CommunityImpact.jsx';
 import { useTapAnalysis } from './hooks/useTapAnalysis.js';
@@ -20,8 +20,8 @@ import {
   getInvestigationRecordPresentation,
   getConfidenceBadgePresentation,
 } from './utils/investigationConfidence.js';
-import { haptic } from './utils/haptics.js';
-import { playReveal } from './utils/sounds.js';
+// import { haptic } from './utils/haptics.js';
+// import { playReveal } from './utils/sounds.js';
 import { slugifyBrandName } from './utils/brandSlug.js';
 import LocalDocumentary from './components/LocalDocumentary.jsx';
 import LocationCitySheet from './components/LocationCitySheet.jsx';
@@ -461,8 +461,8 @@ export default function App() {
   useEffect(() => {
     if (result?.investigation) {
       if (!investigationShownRef.current) {
-        playReveal();
-        haptic('success');
+        // playReveal();
+        // haptic('success');
         investigationShownRef.current = true;
       }
     } else {
@@ -482,6 +482,44 @@ export default function App() {
     }, 1500);
     return () => window.clearTimeout(timer);
   }, [result?.research_loading]);
+
+  /**
+   * After vision/sourcing returns no DB profile, run one live investigation (replaces NoRecordCompactModule CTA).
+   * investigateByBrand bumps tapSession — skip when tapSession === firedFrom + 1 so we never loop on empty IB.
+   */
+  const noRecordAutoLiveFromTapRef = useRef(/** @type {number | null} */ (null));
+  useEffect(() => {
+    if (mode !== 'snap' && mode !== 'deep') return;
+    if (!result || result.research_loading || result.investigation || loading) return;
+    const rp = getInvestigationRecordPresentation(result.identification, result.investigation, {
+      researchLoading: Boolean(result?.research_loading),
+      searchedSources: result.searched_sources,
+    });
+    if (!rp || rp.variant !== 'no_record') return;
+    const idObj = result.identification;
+    const b =
+      idObj && typeof idObj.brand === 'string' && idObj.brand.trim()
+        ? idObj.brand.trim()
+        : idObj && typeof idObj.object === 'string' && idObj.object.trim()
+          ? idObj.object.trim()
+          : '';
+    if (!b) return;
+    const firedFrom = noRecordAutoLiveFromTapRef.current;
+    if (firedFrom != null && tapSession === firedFrom + 1) return;
+    if (firedFrom === tapSession) return;
+    noRecordAutoLiveFromTapRef.current = tapSession;
+    void investigateByBrandNav(b);
+  }, [
+    mode,
+    result,
+    result?.research_loading,
+    result?.investigation,
+    result?.searched_sources,
+    result?.identification,
+    loading,
+    tapSession,
+    investigateByBrandNav,
+  ]);
 
   const dataUrl = image ? `data:image/jpeg;base64,${image}` : null;
 
@@ -676,7 +714,7 @@ export default function App() {
     dbPreview.community_impact !== null
       ? dbPreview.community_impact
       : null;
-  const showResearchBanner = Boolean(result?.research_loading) && !docRun;
+  const showResearchBanner = Boolean(result?.research_loading);
 
   const recordPresentation = result
     ? getInvestigationRecordPresentation(id, result.investigation, {
@@ -809,23 +847,6 @@ export default function App() {
           />
         ) : null}
 
-        {id &&
-        recordPresentation &&
-        recordPresentation.variant === 'no_record' &&
-        !showResearchBanner ? (
-          <NoRecordCompactModule
-            onRunLiveInvestigation={() => {
-              const b =
-                id && typeof id.brand === 'string' && id.brand.trim()
-                  ? id.brand.trim()
-                  : id && typeof id.object === 'string' && id.object.trim()
-                    ? id.object.trim()
-                    : '';
-              if (b) void investigateByBrandNav(b);
-            }}
-          />
-        ) : null}
-
         <HealthCallout investigation={result.investigation} />
         {result.investigation ? (
           <div
@@ -942,7 +963,7 @@ export default function App() {
                 setMode('snap');
               }}
               onShare={() => {
-                haptic('confirm');
+                // haptic('confirm');
                 setShowShare(true);
               }}
               onReportError={() => setShowReportError(true)}
@@ -1401,7 +1422,7 @@ export default function App() {
             onClick={() => {
               resetSession();
               setMode('snap');
-              haptic('tap');
+              // haptic('tap');
             }}
           />
           <nav className="app__bottom-nav" aria-label="Primary navigation">
@@ -1421,7 +1442,7 @@ export default function App() {
               onClick={() => {
                 resetSession();
                 setMode('snap');
-                haptic('tap');
+                // haptic('tap');
               }}
             >
               <span className="app__bottom-nav__icon app__bottom-nav__icon--scan" aria-hidden>

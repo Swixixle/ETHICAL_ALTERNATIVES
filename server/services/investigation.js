@@ -1396,41 +1396,40 @@ If web search is unavailable, use only well-established public knowledge. Use ov
 
   if (!parsed || realtimeParsedIsIncomplete(parsed)) {
     const reason = !parsed ? 'no parseable JSON' : 'incomplete legal/tax/concern fields';
-    console.log(`[investigation] realtime: ${reason} — running one completion turn with full-schema prompt`);
-    const labelForPrompt = brandName || corporateParent || 'this brand';
-    const completionPrompt = `Your previous response was incomplete. Please provide the full investigation JSON for ${labelForPrompt} including all seven sections (tax, legal, labor, environmental, political, product_health, executive) with substantive tax_summary and legal_summary strings, overall_concern_level set, and remaining sections as required by the schema.${
-      shouldIncludeNotableMentions(productCategory)
-        ? ' For a restaurant or food venue, include notable_mentions (awards, press, known_for) when known.'
-        : ''
-    } Return ONLY valid JSON — no markdown fences, no commentary.`;
+    console.log(
+      `[investigation] realtime: ${reason} — gap-fill via text fallback chain (Perplexity/Gemini); Claude JSON repair only if still incomplete/unparseable`
+    );
 
-    try {
-      const second = await runInvestigationAnthropicTurn(completionPrompt, tools);
-      citationUrls = [...citationUrls, ...second.citationUrls];
-      const secondExtract = await extractParsedFromAssistantMessage(second.message, brandLabel);
-      if (secondExtract.parsed) {
-        parsed = mergeRealtimeParsed(parsed, secondExtract.parsed);
+    const fb = await runInvestigationTextFallbackChain(userPrompt);
+    if (fb) {
+      let gapParsed = parseInvestigationJson(fb.text);
+      if (gapParsed) {
+        parsed = mergeRealtimeParsed(parsed, gapParsed);
       }
-      if (!text && secondExtract.text) text = secondExtract.text;
-    } catch (e) {
-      console.error('[investigation] realtime: completion Anthropic turn threw', e);
-      recordProviderFailure('claude');
-      const fb = await runInvestigationTextFallbackChain(userPrompt);
-      if (fb) {
-        const p = await extractParsedFromPlainText(fb.text, brandLabel);
-        if (p) {
-          parsed = mergeRealtimeParsed(parsed, p);
+      if ((!parsed || realtimeParsedIsIncomplete(parsed)) && fb.text?.trim()) {
+        try {
+          console.log('[investigation] realtime: gap-fill still incomplete — Claude repairInvestigationJson');
+          const repaired = await repairInvestigationJson(brandLabel, fb.text);
+          if (repaired) {
+            parsed = mergeRealtimeParsed(parsed, repaired);
+          }
+        } catch (e) {
+          console.warn('[investigation] realtime: Claude JSON repair (gap-fill) failed:', e?.message || e);
         }
       }
-      if (!parsed || realtimeParsedIsIncomplete(parsed)) {
-        return realtimeEmergencyOrDegraded(
-          brandName,
-          corporateParent,
-          healthFlag,
-          productCategory,
-          e?.message || 'API error on completion turn'
-        );
+      if ((!parsed || realtimeParsedIsIncomplete(parsed)) && text?.trim() && fb.text?.trim()) {
+        try {
+          const combined = `${String(text).trim()}\n\n---\n\n${String(fb.text).trim()}`;
+          console.log('[investigation] realtime: Claude repairInvestigationJson on combined first-pass + gap-fill text');
+          const repaired = await repairInvestigationJson(brandLabel, combined);
+          if (repaired) {
+            parsed = mergeRealtimeParsed(parsed, repaired);
+          }
+        } catch (e) {
+          console.warn('[investigation] realtime: Claude JSON repair (combined) failed:', e?.message || e);
+        }
       }
+      if (!text && fb.text?.trim()) text = fb.text;
     }
   }
 

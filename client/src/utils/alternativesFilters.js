@@ -19,6 +19,26 @@ export function filterLocalRetailPlaces(places) {
 }
 
 /**
+ * Sort key for {@link distance_miles}: finite numbers first (ascending), missing last.
+ * @param {Record<string, unknown> | null | undefined} place
+ */
+function distanceMilesSortKey(place) {
+  const d = place?.distance_miles;
+  const n = typeof d === 'number' ? d : Number(d);
+  return Number.isFinite(n) ? n : Number.POSITIVE_INFINITY;
+}
+
+/**
+ * Copy sorted by `distance_miles` ascending (closest first).
+ * @param {Array<Record<string, unknown>> | undefined} places
+ * @returns {Array<Record<string, unknown>>}
+ */
+export function sortLocalPlacesByDistanceAsc(places) {
+  if (!Array.isArray(places)) return [];
+  return [...places].sort((a, b) => distanceMilesSortKey(a) - distanceMilesSortKey(b));
+}
+
+/**
  * Registry / seller rows (independent websites shipped to you).
  * @param {Array<Record<string, unknown>> | undefined} sellers
  * @returns {Array<Record<string, unknown>>}

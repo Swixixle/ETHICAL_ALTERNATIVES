@@ -1,0 +1,234 @@
+{
+  "brand_name": "Getinge",
+  "brand_slug": "getinge",
+  "parent_company": "Getinge AB",
+  "ultimate_parent": "Getinge AB",
+  "subsidiaries": [
+    "Maquet Critical Care AB",
+    "Maquet Cardiovascular (legacy Datascope)",
+    "Lancer / sterilization businesses"
+  ],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "CARDIOVASCULAR DEVICES UNDER FDA CONSENT DECREE — A DOZEN RECALLS — WHILE BRAZIL LENIENCY RESOLVED YEARS OF TENDER MANIPULATION",
+  "executive_summary": "Getinge AB is a Swedish multinational medical technology company listed in Stockholm, with global sales of critical-care and surgical equipment including Servo-i and Servo-u intensive-care ventilators, OR tables, perfusion, and sterilization systems—many sold under the Maquet name after Getinge acquired Maquet in 2000 and later unified brands. U.S. regulators have repeatedly challenged Getinge’s quality systems: FDA warning letters to U.S. facilities, an expanded consent decree tying cardiovascular manufacturing (including Datascope) to enhanced oversight, and a 2024 FDA letter to clinicians flagging continued safety and quality concerns with Cardiosave IABP and Cardiohelp devices following a cluster of Class I recalls and thousands of medical device reports. Maquet Critical Care ventilator lines have also drawn Class I and high-visibility corrections for software and component issues affecting neonatal and general ICU use. Separately, Brazilian authorities secured leniency and competition settlements over 2004–2015 tender manipulation involving Getinge’s Brazilian Maquet subsidiaries—a documented anti-corruption and anticompetitive enforcement episode, not a U.S. FCPA plea. The company has also carried out periodic workforce reductions in Sweden and elsewhere during restructuring.",
+  "verdict_tags": [
+    "fda_consent_decree_datascope_cardiovascular",
+    "class_i_recalls_cardiosave_iabp_cluster",
+    "fda_2024_hcp_letter_cardiovascular_quality",
+    "servo_ventilator_class_i_recalls_neonatal_correction",
+    "brazil_leniency_tender_manipulation_2004_2015",
+    "cade_antitrust_settlement_brazil_2019",
+    "maquet_platform_acquisition_2000",
+    "restructuring_layoffs_documented"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "Getinge AB is headquartered in Sweden and reports as a listed group with operations worldwide. Like other multinationals, transfer pricing and jurisdictional profit allocation affect its global tax footprint; public scrutiny in Sweden and the EU applies to large listed medtech groups. Brazil-related settlements were treated as provisions and cash penalties in financial reporting rather than routine income tax.",
+    "flags": ["listed_swedish_multinational_transfer_pricing_exposure", "brazil_penalties_booked_as_provisions"],
+    "sources": [
+      "https://www.getinge.com",
+      "https://www.reuters.com/article/getinge-provision-brazil-idUSL8N1R35FE/"
+    ]
+  },
+  "legal": {
+    "summary": "U.S.: FDA issued a warning letter to Getinge’s Wayne, New Jersey production unit in 2010 citing documentation and recall-related QMS issues on vascular graft and cardiac surgery products. Datascope (now within Maquet Cardiovascular) received a 2019 FDA warning letter on quality system operations; in November 2022 the FDA publicly announced broadening an existing consent decree to add Datascope’s Mahwah, New Jersey facility after inspections found ongoing QMS noncompliance. In 2023–2024 the FDA classified multiple voluntary recalls of Cardiosave intra-aortic balloon pumps as Class I; by May 2024 the agency published a letter to healthcare providers recommending transition away from Cardiosave IABP and Cardiohelp systems citing persistent safety and quality concerns and large volumes of adverse event reports. Ventilation: Maquet Critical Care (Getinge) has conducted Class I recalls and urgent corrections on Servo-u / Servo-n / Servo-air families and issued FDA-visible corrections for Servo ventilator software affecting neonatal tidal-volume accuracy when certain leakage-test settings are misused with some humidifiers; a Servo-i nebulizer connector recall also occurred in 2020. Brazil: In July 2018 Getinge entered a leniency agreement with Brazil’s Federal Public Prosecutor’s Office over manipulation of public tenders (2004–2015) involving Maquet Brazilian subsidiaries, with a company fine on the order of ~276 million SEK; additional provisions were booked earlier in 2018. In 2019 Getinge reached further Brazilian competition authority (CADE) settlements (tens of millions of SEK scale) over related anticompetitive conduct.",
+    "flags": [
+      "fda_wayne_warning_letter_2010",
+      "datascope_warning_letter_2019",
+      "fda_consent_decree_broadened_2022",
+      "cardiosave_class_i_recall_series",
+      "fda_hcp_switch_recommendation_2024",
+      "servo_class_i_recall_2022",
+      "brazil_leniency_mpf_2018",
+      "cade_settlement_2019"
+    ],
+    "sources": [
+      "https://www.fda.gov/medical-devices/letters-health-care-providers/safety-and-quality-concerns-getinge-cardiovascular-devices-letter-health-care-providers",
+      "https://www.fda.gov/medical-devices/medical-device-recalls",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm",
+      "https://www.reuters.com/business/healthcare-pharmaceuticals/fda-classifies-recall-getinges-heart-devices-most-serious-2023-01-25/",
+      "https://www.reuters.com/business/healthcare-pharmaceuticals/us-fda-recommends-healthcare-providers-switch-getinges-heart-devices-2024-05-08/",
+      "https://getinge.com/us/company/news/press-releases/2010/272327-Getinge-receives-warning-letter-from-the-FDA-concerning",
+      "https://www.getinge.com/int/company/news/press-releases/2022/4404539-U.S.-Food-and-Drug-Administration-broadens-the-consent",
+      "https://getinge.com/int/company/news/press-releases/2018/2983072-Getinge-enters-into-an-agreement-with-authority-in-Brazil",
+      "https://getinge.com/us/company/news/press-releases/2019/3496771-Getinge-enters-into-additional-Settlement-Agreements-with-authority"
+    ]
+  },
+  "labor": {
+    "summary": "Getinge has notified Swedish employees of redundancies during reorganizations—including reported notices at sterilization and disinfection sites linked to order weakness, tariffs affecting life-science capex customers, and efficiency programs. Earlier rounds (e.g., infection-control related notices around 2013) were tied to demand and productivity initiatives. ICU and device demand cycles (including post-COVID normalization) have influenced staffing and manufacturing load.",
+    "flags": ["documented_sweden_workforce_notices_restructuring", "cost_programs_linked_to_tariffs_and_orders_2020s"],
+    "sources": [
+      "https://www.industrinyheter.se/20190804/10787/getinge-varslar-50-anstallda",
+      "https://www.sverigesradio.se/artikel/5824612",
+      "https://www.medtechmagazine.se/article/view/1214017/getinge_sterilization_varslar_anstallda_om_uppsagning",
+      "https://www.reuters.com/business/healthcare-pharmaceuticals/medical-gear-maker-getinges-q4-lags-dividend-rises-2024-02-01/"
+    ]
+  },
+  "environmental": {
+    "summary": "Sterilization, autoclave, and life-science equipment manufacturing involve energy-intensive processes and regulated waste streams; hospital customers face scrutiny on reprocessing and chemical sterilants. Getinge’s footprint is typical of large capital medical equipment suppliers—materials use, logistics emissions, and end-of-life equipment handling scale with installed base.",
+    "flags": ["capital_equipment_manufacturing_energy_and_waste_profile", "sterilization_chemicals_regulatory_context"],
+    "sources": ["https://www.getinge.com"]
+  },
+  "political": {
+    "summary": "Medtech access depends on public procurement, hospital group purchasing, and regulator interface (FDA, EU MDR, notified bodies). Brazil’s leniency and CADE matters underscore political economy risk where public tenders are central to revenue. EU and U.S. policy on device cybersecurity, recalls, and quality system oversight directly affect Getinge’s cardiovascular and ventilation franchises.",
+    "flags": ["public_tender_exposure_emerging_markets", "fda_eu_quality_and_recall_policy_dependent"],
+    "sources": [
+      "https://www.getinge.com/us/company/news/press-releases/2019/3496771-Getinge-enters-into-additional-Settlement-Agreements-with-authority",
+      "https://www.fda.gov/medical-devices/letters-health-care-providers/safety-and-quality-concerns-getinge-cardiovascular-devices-letter-health-care-providers"
+    ]
+  },
+  "executives": {
+    "summary": "Mattias Perjos has led Getinge as President and CEO since 2017. Swedish and trade press and data vendors have highlighted very high CEO total remuneration relative to listed Swedish medtech peers—figures in media-derived summaries on the order of tens of millions of SEK annually—along side shareholder returns that have been weak in some multi-year windows, prompting governance questions at annual meetings. Verify compensation from Getinge’s annual report and remuneration policy rather than secondary summaries alone.",
+    "flags": ["ceo_pay_scrutiny_vs_peer_median_reported", "agm_attention_compensation_performance_mismatch_reported"],
+    "sources": [
+      "https://www.getinge.com/us/company/corporate-governance/remuneration/",
+      "https://simplywall.st/stocks/se/healthcare/sto-geti-b/getinge-shares/news/it-looks-like-getinge-ab-publs-stogeti-b-ceo-may-expect-their-salary-to-be-put-under-the-microscope"
+    ]
+  },
+  "connections": {
+    "summary": "Getinge’s 2000 acquisition of Maquet from RWE created the core Maquet surgical and critical-care platform still central to branding today; later combinations (e.g., Atrium Medical in cardiovascular grafts) expanded the U.S. cardiovascular cluster that would involve Datascope and attract FDA consent-decree oversight. Maquet Critical Care AB in Sweden anchors Servo ventilation engineering. Brazilian misconduct involved Maquet-named subsidiaries serving public hospitals—linking group ethics programs to geographically dispersed sales and tender channels.",
+    "flags": ["maquet_acquisition_2000_platform", "cardiovascular_cluster_datascope_fda_consent_decree", "brazil_maquet_subsidiaries_leniency"],
+    "sources": [
+      "https://getinge.com/us/company/news/press-releases/2000/30636-Getinge-acquires-Maquet---global-leader-in-surgical",
+      "https://en.wikipedia.org/wiki/Maquet",
+      "https://getinge.com/int/company/news/press-releases/2018/2983072-Getinge-enters-into-an-agreement-with-authority-in-Brazil"
+    ]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims beyond settled findings, or interpretations disputed in part by the company.",
+    "summary": "Patient-safety advocates and clinical engineers have alleged that repeated Class I pump and ventilator actions point to systemic design and post-market surveillance stress rather than isolated field events—arguments made in public commentary around FDA’s 2024 HCP letter. Getinge has issued corrective actions, field actions, and public statements emphasizing patient safety cooperation with regulators; characterization of ‘systemic failure’ as distinct from discrete engineering issues is disputed in public discourse.",
+    "flags": [
+      "repeated_class_i_actions_raise_systemic_qms_questions_alleged",
+      "company_contests_broad_characterization_public_statements"
+    ],
+    "sources": [
+      "https://www.fda.gov/medical-devices/letters-health-care-providers/safety-and-quality-concerns-getinge-cardiovascular-devices-letter-health-care-providers",
+      "https://www.reuters.com/business/healthcare-pharmaceuticals/us-fda-recommends-healthcare-providers-switch-getinges-heart-devices-2024-05-08/"
+    ]
+  },
+  "health_record": {
+    "summary": "FDA’s 2024 communication summarized thousands of medical device reports on Cardiosave and Cardiohelp devices, including reports of death or serious injury, alongside many Class I recalls—creating direct ICU and cath-lab patient risk during mechanical circulatory support. Servo ventilator corrections, including neonatal PRVC tidal-volume display risks under specific leakage-test and humidifier configurations, can lead to hypoventilation if settings are wrong. These are regulator-documented device risks requiring clinical mitigation and substitution planning where FDA recommends transitioning devices.",
+    "flags": [
+      "icu_cardiovascular_device_reports_and_deaths_fda_cited_2024",
+      "servo_neonatal_tidal_volume_correction_fda_2025",
+      "class_i_ventilator_recalls_documented"
+    ],
+    "sources": [
+      "https://www.fda.gov/medical-devices/letters-health-care-providers/safety-and-quality-concerns-getinge-cardiovascular-devices-letter-health-care-providers",
+      "https://www.fda.gov/medical-devices/medical-device-recalls/continuous-ventilator-respirator-correction-maquet-critical-care-ab-updates-use-instructions-servo",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=194852"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "Hospital consortiums and GPOs negotiate capital purchase and service contracts across competing ventilator and pump OEMs—price is institution-level, not consumer retail.",
+      "Refurbished and third-party service markets exist for some legacy devices; verify regulatory clearance and liability with biomeds."
+    ],
+    "healthier": [
+      "Where FDA recommends moving off a device family, follow institutional replacement plans with cleared alternatives from other PMA/510(k) manufacturers.",
+      "For ventilation, adherence to manufacturer IFUs after corrections (e.g., leakage test defaults) is a direct patient-safety measure."
+    ],
+    "diy": [
+      "FDA Medical Device Recalls database: search “Getinge”, “Maquet”, “Datascope”, “Cardiosave”.",
+      "Getinge investor filings and press releases document Brazil leniency and FDA consent decree milestones.",
+      "Biomedical/clinical engineering society guidance on fleet management after Class I actions."
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2000,
+      "event": "Getinge acquires Maquet AG—surgical tables and OR platform; foundation of later Maquet critical-care branding",
+      "severity": "neutral",
+      "source_url": "https://getinge.com/us/company/news/press-releases/2000/30636-Getinge-acquires-Maquet---global-leader-in-surgical"
+    },
+    {
+      "year": 2010,
+      "event": "FDA warning letter to Getinge Wayne, NJ facility—documentation and QMS issues tied to earlier recalls on vascular/cardiac surgery products",
+      "severity": "high",
+      "source_url": "https://getinge.com/us/company/news/press-releases/2010/272327-Getinge-receives-warning-letter-from-the-FDA-concerning"
+    },
+    {
+      "year": 2018,
+      "event": "Brazil: Leniency agreement with Federal Public Prosecutor on tender manipulation (2004–2015); ~276 MSEK fine; earlier provisions booked",
+      "severity": "critical",
+      "source_url": "https://getinge.com/int/company/news/press-releases/2018/2983072-Getinge-enters-into-an-agreement-with-authority-in-Brazil"
+    },
+    {
+      "year": 2019,
+      "event": "Additional Brazilian CADE settlements on anticompetitive practices; Datascope FDA warning letter on quality system",
+      "severity": "critical",
+      "source_url": "https://getinge.com/us/company/news/press-releases/2019/3496771-Getinge-enters-into-additional-Settlement-Agreements-with-authority"
+    },
+    {
+      "year": 2020,
+      "event": "Voluntary recall: Servo-i nebulizer connector length specification (limited units)",
+      "severity": "moderate",
+      "source_url": "https://www.getinge.com/us/company/news/press-releases/2020/3778025-Getinge-is-announcing-a-voluntary-recall-of-the/"
+    },
+    {
+      "year": 2022,
+      "event": "FDA broadens consent decree to include Datascope Mahwah after continued QMS inspection findings; Class I ventilator recall on Servo-u/n/air family (battery/power subsystem)",
+      "severity": "critical",
+      "source_url": "https://www.getinge.com/int/company/news/press-releases/2022/4404539-U.S.-Food-and-Drug-Administration-broadens-the-consent"
+    },
+    {
+      "year": 2023,
+      "event": "Media: FDA Class I classification of Cardiosave IABP recalls amid serious malfunction reports",
+      "severity": "critical",
+      "source_url": "https://www.reuters.com/business/healthcare-pharmaceuticals/fda-classifies-recall-getinges-heart-devices-most-serious-2023-01-25/"
+    },
+    {
+      "year": 2024,
+      "event": "FDA letter to healthcare providers: continued Cardiosave / Cardiohelp quality concerns; recommends switching devices; cites many recalls and MDR volume",
+      "severity": "critical",
+      "source_url": "https://www.fda.gov/medical-devices/letters-health-care-providers/safety-and-quality-concerns-getinge-cardiovascular-devices-letter-health-care-providers"
+    },
+    {
+      "year": 2025,
+      "event": "FDA publishes Maquet Servo ventilator correction: neonatal tidal volume accuracy risk under specific leakage-test/humidifier configurations",
+      "severity": "critical",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-recalls/continuous-ventilator-respirator-correction-maquet-critical-care-ab-updates-use-instructions-servo"
+    }
+  ],
+  "community_impact": {
+    "displacement": "Brazilian public-health purchasers and taxpayers bore costs of years of allegedly rigged tenders for capital equipment; leniency payments and CADE settlements respond to documented harm to fair competition in public hospitals, diverting funds from care if overpriced contracts prevailed.",
+    "price_illusion": "Capital medtech is sold as life-saving infrastructure; when quality systems fail, hospitals absorb mitigation, fleet replacement, and training costs while patients face device-level risk.",
+    "tax_math": "Geographic profit booking and provisions for foreign penalties influence effective rates and investor optics; Brazil fines were booked as provisions before payment.",
+    "wealth_velocity": "Revenue from acute-care devices concentrates with listed shareholders and highly compensated executives while adverse events and recall burdens fall on patients, clinicians, and sometimes under-resourced public systems."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Getinge shareholders and bondholders during revenue growth windows",
+        "how": "Medtech oligopoly positions in OR and ICU segments; recurring service and consumables"
+      },
+      {
+        "group": "Executives under long-term incentive programs",
+        "how": "Compensation reported at high levels vs Swedish peers in media analyses of filings"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "ICU and cardiac surgical patients exposed to recalled or transition-phase devices",
+        "how": "FDA-cited deaths and serious injuries in MDR data for Cardiosave family; clinical disruption during device changes"
+      },
+      {
+        "group": "Brazilian public purchasers (2004–2015 period)",
+        "how": "Leniency and CADE findings on tender manipulation and anticompetitive conduct"
+      },
+      {
+        "group": "Workers notified under restructuring",
+        "how": "Documented layoff notices at Swedish sites tied to demand and efficiency programs"
+      }
+    ],
+    "the_gap": "Brazil: years of tender manipulation resolved with leniency and fines. U.S.: consent decree and Class I recall cluster on lifesaving pumps—then FDA tells clinicians to plan migration off the devices. Ventilators: Class I power recall and neonatal software corrections on machines used when breath means everything. Maquet built the OR table; Getinge built the compliance debt."
+  }
+}

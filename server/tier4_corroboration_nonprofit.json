@@ -1,0 +1,806 @@
+{
+  "generated_at": "2026-04-09T05:32:59.055Z",
+  "total_profiles": 13,
+  "profiles_checked": 13,
+  "discrepancies_found": 11,
+  "confirmed": 0,
+  "errors": 2,
+  "estimated_cost_usd": 2.76,
+  "results": [
+    {
+      "slug": "american-cancer-society",
+      "brand_name": "American Cancer Society",
+      "profile_type": "nonprofit",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented convictions, pleas, or civil liability for named executives or controlling owners.\",\"caveats\":\"Search results contain no verifiable government filings, court records, or established news on legal settlements, fines, or executive accountability for the American Cancer Society.\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "moderate",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "reedy_2_4m_compensation, less_than_half_revenue_research_patient_services_documented, 800m_annual_revenue, charity_navigator_overhead_concerns, real_men_wear_pink_pinkwashing_adjacent, cancer_action_network_political_arm, fundraising_administrative_overhead_ratio, research_focus_diluted_criticism",
+          "live": "The 'reedy_2_4m_compensation' tag is partially outdated (Reedy's active salary was ~$1M; the $2.4M figure relates to a prior CEO Seffrin); the '800m_annual_revenue' tag is directionally accurate but revenue reached ~$738M public support in 2023 with total operations over $800M; 'charity_navigator_overhead_concerns' is now stale — ACS holds a four-star Charity Navigator rating at 99% and 81% program allocation, so the concern tag misrepresents current status.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1913",
+          "live": "earliest year token: 1995",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "reedy_2_4m_compensation, less_than_half_revenue_research_patient_services_documented, 800m_annual_revenue, charity_navigator_overhead_concerns, cancer_action_network_political_arm, fundraising_administrative_overhead_ratio, research_focus_diluted_criticism",
+          "live": "knudsen_era_ceo_comp_1_5m, reedy_historical_comp_scrutiny, 800m_plus_annual_revenue, charity_navigator_four_star_current, program_ratio_81_percent_mission, less_than_quarter_revenue_to_research, cancer_action_network_501c4_political_arm, fundraising_overhead_watchdog_scrutiny, executive_leadership_transition_2025",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~9 heuristic name tokens",
+          "live": "Shane Jacobson, Shane Jacobson, Cancer Research, Former Interim, Executive Strategic Advisor, John Seffrin, Big Tobacco, John Seffrin, Big Tobacco, Shane Jacobson, Cancer Research",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: moderate; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "moderate",
+      "live_executive_summary": "ACS has no documented material legal judgments or regulatory penalties against the entity itself; the primary ongoing concerns are historical executive compensation scrutiny and the sub-25% research allocation within program spending. Leadership has fully turned over as of August 2025 with new CEO Shane Jacobson, and the organization currently holds a four-star Charity Navigator rating with 81% functional allocation to mission. Shane Jacobson (CEO, ACS and ACS CAN (effective August 12, 2025)) li",
+      "tokens_used": {
+        "input": 130485,
+        "output": 1204
+      },
+      "estimated_cost_usd": 0.4095,
+      "duration_ms": 34501,
+      "timestamp": "2026-04-09T05:25:22.656Z"
+    },
+    {
+      "slug": "american-red-cross",
+      "brand_name": "American Red Cross",
+      "profile_type": "nonprofit",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"moderate\",\"key_legal_facts\":[\"$950,000 ERISA class action settlement for retirement plan mismanagement (preliminary approval June 2025, fairness hearing October 2025)[1][2][3]\",\"$5.7 million fine for blood safety law violations (2006)[5]\"],\"executive_accountability\":\"No documented criminal convictions or pleas for named executives or controlling owners. The 2025 ERISA settlement involves the American National Red Cross and its Benefit Plan Committee as defendants, with no individual liability specified; defendants deny allegations[1][2].\",\"caveats\":\"2025 ERISA settlem",
+        "vs_claude": {
+          "perplexity_concern": "moderate",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "HIGH",
+          "stored": "$5,200,000,000 (largest normalized)",
+          "live": "$3,200,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~38% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1903",
+          "live": "earliest year token: 1993",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "propublica_npr_2015_investigation_pulitzer, ceo_gail_mcgovern_salary_600k, blood_supply_monopoly_revenue, 3b_annual_revenue",
+          "live": "propublica_npr_2015_investigation, ceo_mcgovern_era_salary_approx_600k, blood_supply_40pct_market_dominance, fda_consent_decree_47m_fines_lifted_2015, 3b_plus_annual_revenue, erisa_retirement_plan_settlement_2025, haiti_class_action_lawsuit_active_2024, antitrust_immunity_ruling_2024",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~12 heuristic name tokens",
+          "live": "Cliff Holtz, Sherman Act, Cliff Holtz, Clara Barton, American Red Cross, American National Red Cross, American Red Cross, American National Red Cross, Cliff Holtz, Clara Barton",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: moderate",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The American Red Cross carries significant reputational and legal legacy risk stemming from the documented Haiti relief failures, $47M+ in FDA blood-safety fines (resolved 2015), and an active 2024 Haiti donor class-action; leadership has transitioned to CEO Cliff Holtz as of July 2024 with no criminal findings against any executive. Annual revenue remains approximately $3.2 billion, dominated by biomedical/blood-product sales, and a 2024 court ruling confirmed ARC is exempt from Sherman Act ant",
+      "tokens_used": {
+        "input": 70168,
+        "output": 1054
+      },
+      "estimated_cost_usd": 0.2263,
+      "duration_ms": 27218,
+      "timestamp": "2026-04-09T05:25:49.875Z"
+    },
+    {
+      "slug": "gates-foundation",
+      "brand_name": "Bill & Melinda Gates Foundation",
+      "profile_type": "nonprofit",
+      "status": "ERROR",
+      "error": "JSON parse failed: Unexpected non-whitespace character after JSON at position 3090",
+      "duration_ms": 25681,
+      "timestamp": "2026-04-09T05:26:15.557Z"
+    },
+    {
+      "slug": "boy-scouts-of-america",
+      "brand_name": "Boy Scouts of America",
+      "profile_type": "nonprofit",
+      "status": "ERROR",
+      "error": "JSON parse failed: Unexpected non-whitespace character after JSON at position 2378",
+      "duration_ms": 24163,
+      "timestamp": "2026-04-09T05:27:09.722Z"
+    },
+    {
+      "slug": "clinton-foundation",
+      "brand_name": "Clinton Foundation",
+      "profile_type": "nonprofit",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented convictions, pleas, or civil liability for any named executives or controlling owners. Multiple investigations, including a two-year inquiry by the Trump Justice Department, found no evidence of wrongdoing through 2019.[2]\",\"caveats\":\"No documented legal settlements or major fines identified in verifiable sources; one unvetted $500,000 donation from Algeria in 2010 violated an MOU but resulted in no known penalties.[2]\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "foreign_government_donations_secretary_state_conflict, irs_compliance_problems_whistleblower, haiti_reconstruction_clinton_connected_companies, pay_to_play_state_department_email_documented, 1b_plus_raised_clinton_global_initiative, qatar_saudi_donations_while_hillary_sos, foundation_operations_audit_findings, chelsea_clinton_salary_600k_documented",
+          "live": "Most stored tags reflect real documented controversies, but 'chelsea_clinton_salary_600k_documented' is misleading because the $600K was her NBC News salary, not Foundation pay, and the Foundation confirms she receives $0 from it; 'pay_to_play_state_department_email_documented' overstates the evidentiary record since all investigations closed without finding malfeasance; '1b_plus_raised_clinton_global_initiative' understates actual lifetime fundraising (~$2B through 2016); a new tag for the DOJ investigation closure (2021) and state nondisclosure violations should be added.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$150,000,000 (largest normalized)",
+          "live": "$2,000,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~93% after normalizing to USD."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "irs_compliance_problems_whistleblower, pay_to_play_state_department_email_documented, 1b_plus_raised_clinton_global_initiative, chelsea_clinton_salary_600k_documented",
+          "live": "irs_compliance_problems_form_990_amendments, pay_to_play_allegations_no_prosecution_found, 2b_plus_raised_lifetime_cumulative, chelsea_clinton_600k_nbc_salary_not_foundation_salary, doj_investigation_closed_no_case_2021, state_charity_registration_nondisclosure_violations",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~13 heuristic name tokens",
+          "live": "Robert Harrison, Board Chair, Board Chair, Hillary Rodham Clinton, Board Member, Former Secretary, State Dept, Vice Chair, Clinton Global Initiative, Kevin Thurm, Lisa Hern, Interim Chief Development Officer, Hillary Rodham Clinton Leadership, Oversees Secretary Clinton, Hillary Rodham Clinton Institute",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Bill, Hillary & Chelsea Clinton Foundation has faced sustained scrutiny over foreign-government donations, IRS filing errors requiring multi-year 990 amendments, and a multi-year DOJ/FBI investigation that was formally closed in early 2021 with no charges. No executive has been criminally charged or convicted in connection with Foundation activities, and as of late 2024 the Foundation operates under Interim CEO Robert Harrison following a leadership transition. Bill Clinton (Founder and Boar",
+      "tokens_used": {
+        "input": 119648,
+        "output": 1491
+      },
+      "estimated_cost_usd": 0.3813,
+      "duration_ms": 35772,
+      "timestamp": "2026-04-09T05:27:45.495Z"
+    },
+    {
+      "slug": "goodwill-industries",
+      "brand_name": "Goodwill Industries",
+      "profile_type": "nonprofit",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"minor\",\"key_legal_facts\":[\"$500,000 settlement for MERS Missouri Goodwill data breach class action (2023 breach, settled 2025)[1][4]\",\"$65,000 settlement by Goodwill Industries of Greater NY & NJ for disability discrimination (EEOC, year not specified)[2][6]\",\"$60,000 settlement by Goodwill Industries of Southeastern Louisiana for disability discrimination (EEOC, year not specified)[3]\"],\"executive_accountability\":\"No documented convictions, pleas, or individual civil liability for named executives or controlling owners in the provided sources.\",\"caveats\":\"Settlements",
+        "vs_claude": {
+          "perplexity_concern": "minor",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "section_14c_subminimum_wage_0_22_per_hour, ceo_400k_700k_while_workers_cents, 6b_annual_revenue_recognized_brand, 157_independent_local_affiliates, donated_goods_resold_revenue, disability_rights_advocacy_opposition, congressional_hearings_14c_documented, goodwill_international_no_direct_control_affiliates",
+          "live": "Core tags are directionally accurate but require material updates: the 22-cents-per-hour figure is a legacy data point (2013 petition era), GII-level 14c use has dropped to only 7 affiliates as of Sept 2025, network revenue is now $8.6B (not $6B), and affiliate count is 161-165 (not 157); the stored '157_independent_local_affiliates' and '6b_annual_revenue' tags are now outdated.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "HIGH",
+          "stored": "$6,000,000,000 (largest normalized)",
+          "live": "$8,600,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~30% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1902",
+          "live": "earliest year token: 2013",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "section_14c_subminimum_wage_0_22_per_hour, ceo_400k_700k_while_workers_cents, 6b_annual_revenue_recognized_brand, 157_independent_local_affiliates, donated_goods_resold_revenue, disability_rights_advocacy_opposition, congressional_hearings_14c_documented",
+          "live": "section_14c_subminimum_wage_historically_documented, 14c_usage_sharply_declining_only_7_goodwill_affiliates_active_2025, ceo_gii_approx_724k_fy2024, affiliate_ceo_pay_range_400k_to_905k, 8_6b_network_wide_annual_revenue_fy2024, 161_to_165_independent_local_affiliates, donated_goods_resold_revenue_primary_model, disability_rights_advocacy_opposition_ongoing, congressional_and_dol_hearings_14c_documented, data_breach_settlements_2023_2024, anti_union_spending_documented_2024, federal_14c_phase_out_rule_withdrawn_july_2025",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~13 heuristic name tokens",
+          "live": "Cindy Laatsch, Chief Financial Officer, David Eagles, Chief Operating Officer, Urban Development, Missouri Goodwill Industries, Social Security, Greater New York, Northern New Jersey, Nebraska Attorney General, Missouri Goodwill Industries, Social Security, Greater New York, Northern New Jersey, Nebraska Attorney General",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: minor",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Goodwill Industries International remains under significant reputational and advocacy pressure over its historic Section 14(c) subminimum wage use, though affiliate participation has collapsed to just 7 organizations as of September 2025 and the Biden-era federal phase-out rule was withdrawn in July 2025. Network-wide revenue reached $8.6B in FY2024, CEO Preston earned ~$724K, and recent legal exposure centers on affiliate-level data breach settlements rather than any criminal or regulatory acti",
+      "tokens_used": {
+        "input": 79397,
+        "output": 1171
+      },
+      "estimated_cost_usd": 0.2558,
+      "duration_ms": 29982,
+      "timestamp": "2026-04-09T05:28:15.478Z"
+    },
+    {
+      "slug": "nra",
+      "brand_name": "National Rifle Association",
+      "profile_type": "nonprofit",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"NRA paid $12 million settlement to former PR firm Ackerman McQueen in March 2022[1][2][5]\",\"Jury found NRA liable for mismanagement; Wayne LaPierre caused $5.4 million in damages, Woody Phillips $2 million (NY AG trial verdict, year not specified in results)[4]\",\"NRA resolved NY AG lawsuit in December 2024 with no fines or penalties paid by NRA; court entitled NRA to collect millions from former executives[3]\"],\"executive_accountability\":\"Jury found former CEO Wayne LaPierre, former CFO Woody Phillips, and General Counsel John Frazer l",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$400,000,000 (largest normalized)",
+          "live": "$64,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~84% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1991",
+          "live": "earliest year token: 2020",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "lapierre_14_4m_personal_spending_documented, jury_found_lapierre_personally_liable_4_4m, lapierre_resigned_january_2024_days_before_trial, ny_ag_dissolution_suit_2020, texas_bankruptcy_rejected_bad_faith, zegna_suits_yacht_vacations_private_jets, nra_political_spending_200m_elections, board_failed_oversight_documented",
+          "live": "lapierre_resigned_january_2024_eve_of_trial, jury_found_lapierre_civilly_liable_4_35m, lapierre_5_4m_total_damages_found_by_jury, phillips_liable_2m_damages, ny_ag_dissolution_suit_2020_governance_judgment_2024, texas_bankruptcy_dismissed_bad_faith_2021, zegna_suits_yacht_vacations_private_jets_documented, nra_board_failed_oversight_2014_2022, nra_governance_reform_ordered_december_2024, lapierre_10_year_fiduciary_ban",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~13 heuristic name tokens",
+          "live": "Doug Hamlin, President Bill Bachenberg, John Frazer, Doug Hamlin, Executive Vice President, Bill Bachenberg, John Frazer, General Counsel, Joshua Powell, Joshua Powell, Doug Hamlin, Bill Bachenberg, John Frazer",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The NRA's yearslong NY AG corruption case fully resolved in December 2024 with a final judgment ordering $6.35M in payments from LaPierre and Phillips, 12+ governance reforms, and a 10-year bar on LaPierre from NRA fiduciary roles; dissolution and an external monitor were denied. New leadership (EVP/CEO Doug Hamlin, President Bill Bachenberg) is in place, but John Frazer—found to have authorized false regulatory filings—remains as Secretary. Doug Hamlin (Executive Vice President & CEO (since May",
+      "tokens_used": {
+        "input": 79730,
+        "output": 1176
+      },
+      "estimated_cost_usd": 0.2568,
+      "duration_ms": 31205,
+      "timestamp": "2026-04-09T05:29:16.685Z"
+    },
+    {
+      "slug": "planned-parenthood",
+      "brand_name": "Planned Parenthood",
+      "profile_type": "nonprofit",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"minor\",\"key_legal_facts\":[\"Planned Parenthood Los Angeles agreed to $6M class action settlement in 2021 data breach case (no admission of wrongdoing)\",\"Planned Parenthood awarded $2.2M in damages in 2019 civil lawsuit against Center for Medical Progress for recording law violations\"],\"executive_accountability\":\"No documented criminal convictions or civil liability for named executives or controlling owners of Planned Parenthood Federation of America.\",\"caveats\":\"Search results show no major fines, convictions, or executive liability against PPFA; recent funding litiga",
+        "vs_claude": {
+          "perplexity_concern": "minor",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "sanger_eugenics_writings_documented, sanger_kkk_speech_documented, sanger_name_removed_2020, center_medical_progress_videos_2015, fetal_tissue_investigation_no_charges_most_jurisdictions, cecile_richards_1_2m_compensation, 670m_government_funding, 660m_private_donations, political_pac_spending_significant",
+          "live": "Core historical tags remain accurate, but financials are materially outdated: government funding has risen to a record $832M (FY2025), private donations are ~$728M, CEO compensation tag should reference McGill Johnson at ~$904K not Cecile Richards' $1.2M figure, and three new material legal findings (TX Medicaid suit, two data-breach settlements) warrant addition.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "moderate",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$670,000,000 (largest normalized)",
+          "live": "$1,800,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~63% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1916",
+          "live": "earliest year token: 2020",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "cecile_richards_1_2m_compensation, 670m_government_funding, 660m_private_donations",
+          "live": "alexis_mcgill_johnson_900k_compensation, 832m_government_funding_fy2025_record, 728m_private_donations_fy2025, ppla_6m_data_breach_settlement_2024, texas_1_8b_medicaid_fraud_suit_pending, ppmt_400k_data_breach_settlement_2025",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~16 heuristic name tokens",
+          "live": "False Claims Act, Alexandra Guevara, Board Chair, False Claims Act, Planned Parenthood Los Angeles, False Claims Act, Planned Parenthood Los Angeles, Alexandra Guevara",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: significant; Perplexity: minor",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "significant",
+      "live_executive_summary": "PPFA operates under no criminal findings against current leadership, but faces a live $1.8B False Claims Act suit in Texas and two recently settled data-breach class actions totaling ~$6.4M. Financial profile has grown substantially, with government reimbursements hitting a record $832M in FY2025, making several stored dollar-figure tags stale. Alexis McGill Johnson (President & CEO, PPFA and Planned Parenthood Action Fund) liability:none Permanent CEO since June 2020; most recently reported com",
+      "tokens_used": {
+        "input": 37598,
+        "output": 1056
+      },
+      "estimated_cost_usd": 0.1286,
+      "duration_ms": 27579,
+      "timestamp": "2026-04-09T05:29:44.265Z"
+    },
+    {
+      "slug": "salvation-army",
+      "brand_name": "Salvation Army",
+      "profile_type": "nonprofit",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"moderate\",\"key_legal_facts\":[\"$1,875,250 FCRA class action settlement (2024)\",\"$227 million civil settlement for thrift store collapse (2017)\",\"$450,000 religious discrimination settlement (2014)\",\"$55,000 EEOC disability discrimination consent decree (year not specified)\"],\"executive_accountability\":\"No documented criminal convictions or pleas for named executives or controlling owners. Ongoing FLSA wage lawsuits (e.g., Geiser v. Salvation Army, Clancy v. Salvation Army) involve the organization but no individual liability established.\",\"caveats\":\"FLSA collective act",
+        "vs_claude": {
+          "perplexity_concern": "moderate",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$4,000,000,000 (largest normalized)",
+          "live": "$25,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~100% after normalizing to USD."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "2b_government_contracts_lgbtq_discrimination, australia_director_homosexuality_death_statement, transgender_shelter_denial_documented, lgbtq_renounce_sexuality_services_condition, 4b_annual_revenue_christian_organization, 2_billion_government_funded_lgbtq_discrimination",
+          "live": "australia_director_homosexuality_death_statement_2012_apologized, 2b_government_contracts_lgbtq_discrimination_historical, transgender_shelter_denial_documented_isolated_incidents, arc_unpaid_wages_forced_labor_litigation_active, religious_exemption_antidiscrimination_lobbying_historical, 2_billion_plus_annual_revenue_christian_organization",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~12 heuristic name tokens",
+          "live": "General Lyndon Buckingham, International General, Commissioner Kenneth, National Commander, New York, Ann Arbor, New York, Ann Arbor, General Lyndon Buckingham, Commissioner Kenneth",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: moderate",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "The Salvation Army carries a significant and documented history of LGBTQ-related policy controversies, government-contract church-state entanglement, and ongoing ARC unpaid-wages litigation (active class actions filed 2022, FLSA minimum-wage claims still pending), though its most serious legal exposures remain unresolved rather than adjudicated. Current leadership shows no criminal liability, and the organization's official non-discrimination statements have evolved, but structural tensions betw",
+      "tokens_used": {
+        "input": 100260,
+        "output": 1005
+      },
+      "estimated_cost_usd": 0.3159,
+      "duration_ms": 28191,
+      "timestamp": "2026-04-09T05:30:12.457Z"
+    },
+    {
+      "slug": "susan-g-komen",
+      "brand_name": "Susan G. Komen",
+      "profile_type": "nonprofit",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[\"No documented legal settlements, major fines, or criminal convictions found in available search results\"],\"executive_accountability\":\"No named executives or controlling owners with documented criminal convictions or civil liability findings in the provided search results.\",\"caveats\":\"The search results provided do not contain information about legal settlements, fines, convictions, or executive accountability. A comprehensive answer would require access to court records, IRS enforcement actions, state attorney general filings, and investigat",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "moderate",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "HIGH",
+          "stored": "$2,000,000,000 (largest normalized)",
+          "live": "$3,500,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~43% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1980",
+          "live": "earliest year token: 2011",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "2b_raised_research_awareness_ratio_criticized",
+          "live": "research_spending_ratio_criticized, lawsuits_for_the_cure_trademark_enforcement, ceo_succession_2025_interim_leadership",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~10 heuristic name tokens",
+          "live": "Charity Navigator, Ed Dandridge, Chief Marketing, Communications Officer, Honorary Vice Chair, Ria Williams, Chief Financial Officer, Ed Dandridge, Chief Marketing, Communications Officer, Ria Williams",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: moderate; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "moderate",
+      "live_executive_summary": "Susan G. Komen carries persistent reputational concerns—pinkwashing, low research-spending ratios, the 2012 Planned Parenthood controversy, and Nancy Brinker's outsized compensation—but has no documented regulatory fines, government sanctions, or criminal liability against any executive. The organization has stabilized (4-star Charity Navigator rating as of 2023, 73% of FY2024 expenses on program services) and is in a CEO transition after Paula Schneider stepped down in August 2025, with a natio",
+      "tokens_used": {
+        "input": 63801,
+        "output": 1023
+      },
+      "estimated_cost_usd": 0.2067,
+      "duration_ms": 27451,
+      "timestamp": "2026-04-09T05:31:09.910Z"
+    },
+    {
+      "slug": "united-way",
+      "brand_name": "United Way",
+      "profile_type": "nonprofit",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"minor\",\"key_legal_facts\":[\"UPS settled class action lawsuit for $1.3 million in 2023 (or prior) for unauthorized United Way deductions from employee paychecks; United Way retained the funds[1]\",\"United Way of Central Carolinas settled legal dispute with former CEO Gloria Pace King for $700,000 in 2010[7]\"],\"executive_accountability\":\"No documented criminal convictions or pleas for any United Way Worldwide executives or owners. Civil matters include settlements like the 2010 $700k with former local CEO Gloria Pace King (status resolved) and employee lawsuits alleging r",
+        "vs_claude": {
+          "perplexity_concern": "minor",
+          "claude_concern": "moderate",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "aramony_convicted_25_counts_fraud_sentenced_7_years, teenage_girlfriend_donor_funds, 1_6m_current_ceo_compensation, 3_7b_annual_fundraising, 1700_local_affiliates, workplace_campaign_corporate_fixture, passthrough_allocation_model_criticized, aramony_1992_resignation_scandal",
+          "live": "Core historical tags (Aramony scandal, teenage girlfriend, resignation) remain accurate, but the conviction count is 23 not 25 per court records; CEO compensation tag overstates at $1.6M (actual FY2024 ~$929K total); fundraising figure should be ~$4.4B (2023 network-wide), not $3.7B; affiliate count is ~1,800 globally / 1,100+ in US+Canada, not 1,700; Williams' retirement announcement and declining UWW HQ revenue are material new tags.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "MEDIUM",
+          "stored": "$3,700,000,000 (largest normalized)",
+          "live": "$4,400,000,000 (largest normalized)",
+          "note": "Financial headline figures differ moderately (~16%) after USD normalization."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1970",
+          "live": "earliest year token: 1992",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "aramony_convicted_25_counts_fraud_sentenced_7_years, 1_6m_current_ceo_compensation, 3_7b_annual_fundraising, 1700_local_affiliates",
+          "live": "aramony_convicted_23_counts_fraud_sentenced_7_years, ceo_compensation_approx_930k_fy2024, 4_4b_network_fundraising_2023, 1800_global_affiliates_1100_plus_us_canada, declining_uww_headquarters_revenue, ceo_retirement_announced_2025",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~10 heuristic name tokens",
+          "live": "First Black, Brian Gallagher, Former President, President William Aramony, Eastern District, President William Aramony, Eastern District, First Black, Brian Gallagher",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: moderate; Perplexity: minor",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "moderate",
+      "live_executive_summary": "United Way's dominant historical risk remains the 1992–1995 Aramony fraud scandal, which is fully adjudicated and decades old; no current criminal or regulatory actions against the organization or its leadership have been identified. Key stored data points (conviction count, CEO compensation figure, fundraising total, affiliate count) are materially outdated and should be refreshed against 2023–2024 Form 990 data. Angela F. Williams (President & CEO (announced retirement pending successor select",
+      "tokens_used": {
+        "input": 83768,
+        "output": 1053
+      },
+      "estimated_cost_usd": 0.2671,
+      "duration_ms": 29443,
+      "timestamp": "2026-04-09T05:31:39.354Z"
+    },
+    {
+      "slug": "wounded-warrior-project",
+      "brand_name": "Wounded Warrior Project",
+      "profile_type": "nonprofit",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[\"No documented legal settlements, major fines, convictions, or pleas against Wounded Warrior Project in provided sources.\",\"WWP initiated lawsuits against former employees (2016), including two injured veterans for severance recovery (one demanding over $52,000), but no outcomes or fines against WWP reported.[1]\"],\"executive_accountability\":\"No convictions, pleas, or civil liability documented for any named executives or controlling owners of Wounded Warrior Project.\",\"caveats\":\"Search results lack government filings, court judgments, or regu",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "moderate",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 2003",
+          "live": "earliest year token: 2010",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "cbs_news_40_employees_investigation, charity_navigator_rating_decline_recovery, 500m_annual_revenue, overhead_spending_dramatic_growth",
+          "live": "cbs_news_nyt_investigation_2016, charity_navigator_rating_decline_recovery_four_star, 385m_annual_revenue_fy2024, overhead_spending_dramatic_growth_reformed, congressional_inquiry_2016, high_fundraising_cost_ratio, donor_data_sale_allegations, trademark_bullying_small_charities",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~6 heuristic name tokens",
+          "live": "Chief Executive Officer, Retired Lt, Retired Lt, Steven Nardizzi, Steven Nardizzi, Steven Nardizzi, Retired Lt, Retired Lt, Steven Nardizzi",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "moderate",
+          "live": "Claude: moderate; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "moderate",
+      "live_concern_level": "moderate",
+      "live_executive_summary": "WWP's headline scandal — lavish spending, CBS/NYT investigation, and dual executive firings — occurred in 2016 and is well-documented but now nearly a decade old; the organization has since restructured under two successive retired generals, recovered to a Charity Navigator four-star rating, and reported $385M in FY2024 revenue with ~70% directed to programs. No criminal liability has been established against any executive, and no material government fines or court judgments appear in the public",
+      "tokens_used": {
+        "input": 37551,
+        "output": 1011
+      },
+      "estimated_cost_usd": 0.1278,
+      "duration_ms": 25957,
+      "timestamp": "2026-04-09T05:32:05.312Z"
+    },
+    {
+      "slug": "ymca",
+      "brand_name": "YMCA",
+      "profile_type": "nonprofit",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"moderate\",\"key_legal_facts\":[\"St. Cloud Area Family YMCA agreed to pay $140,000 in EEOC sexual harassment consent decree[5]\",\"$65M jury verdict awarded against former YMCA staff member (not organization) for child sexual abuse in 1990s, Niagara County[3]\",\"Hamden/North Haven YMCA (Central Connecticut Coast YMCA) agreed to pay $3,000 in DOJ disability access settlement[6]\",\"YMCA of Middle Tennessee entered ADA settlement agreement (amount not specified), 2020[7]\",\"Norwich Family YMCA entered ADA settlement agreement requiring payment to U.S. (amount not specified), 201",
+        "vs_claude": {
+          "perplexity_concern": "moderate",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1990",
+          "live": "earliest year token: 1976",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "21_million_members_7b_revenue, larry_brown_ymca_convicted_documented",
+          "live": "ongoing_new_abuse_cases_2024_2026, financial_strain_urban_branch_closures",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~7 heuristic name tokens",
+          "live": "Erie County, New York, Child Victims Act, Camp Seymour, Silicon Valley, Erie County, New York, Child Victims Act, Camp Seymour, Silicon Valley, David Andrew Adams",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: moderate",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "YMCA affiliates continue to face significant, multi-jurisdiction sexual abuse litigation with jury verdicts as large as $65M, driven by structural accountability gaps in a decentralized federation of over 2,700 independent local YMCAs. Y-USA President & CEO Suzanne McCormick bears no documented criminal liability; abuse liability remains at the affiliate level with no documented central enforcement mechanism. Suzanne McCormick (President & CEO, YMCA of the USA (Y-USA)) liability:none In role sin",
+      "tokens_used": {
+        "input": 57290,
+        "output": 821
+      },
+      "estimated_cost_usd": 0.1842,
+      "duration_ms": 23742,
+      "timestamp": "2026-04-09T05:32:59.055Z"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { haptic } from '../utils/haptics.js';
+// import { haptic } from '../utils/haptics.js';
 import { getImpactFetchHeaders } from '../lib/impactConsent.js';
 import { enhanceRegionCrop } from '../utils/imageEnhance.js';
 
@@ -66,7 +66,7 @@ export function useTapAnalysis() {
   useEffect(() => {
     if (error) {
       if (!errorHapticFired.current) {
-        haptic('error');
+        // haptic('error');
         errorHapticFired.current = true;
       }
     } else {
@@ -254,7 +254,7 @@ export function useTapAnalysis() {
       setTapPosition({ x: tapX, y: tapY });
       setActiveSelectionBox(selBox);
       setLoading(true);
-      haptic('scan');
+      // haptic('scan');
       setError(null);
       setResult(null);
       setPendingConfirmation(null);
@@ -426,7 +426,7 @@ export function useTapAnalysis() {
       return;
     }
     setLoading(true);
-    haptic('scan');
+    // haptic('scan');
     setError(null);
     setResult(null);
     setImage(null);

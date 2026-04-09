@@ -1,0 +1,275 @@
+{
+  "brand_name": "Vyaire Medical",
+  "brand_slug": "vyaire-medical",
+  "parent_company": "Vyaire Medical Inc.",
+  "ultimate_parent": "Vyaire Medical Inc.",
+  "subsidiaries": [
+    "Historical / divested operating clusters (2023–2024): ventilation platforms (e.g., bellavista, LTV, fabian, 3100 HFOV) sold to ZOLL Medical Corporation; respiratory diagnostics sold to Trudell Medical Limited; respiratory & anesthesia consumables sold to SunMed (per company releases)",
+    "Legacy integration: BD Respiratory Solutions (post–CareFusion merger assets) spun into Vyaire at formation"
+  ],
+  "overall_concern_level": "critical",
+  "profile_type": "database",
+  "generated_headline": "CLASS I AIRLIFE RESUSCITATOR REMOVAL AT MILLION-UNIT SCALE — BELLAVISTA SOFTWARE RECALLS — CHAPTER 11 AND SPLIT SALE TO ZOLL & TRUDELL",
+  "executive_summary": "For anyone still scanning legacy asset tags: Vyaire Medical no longer exists as one company—after 2024 bankruptcy sales, ventilation (e.g., bellavista, LTV, fabian, 3100 HFOV) sits under ZOLL Medical Corporation, respiratory diagnostics under Trudell Medical (Jaeger branding), and respiratory/anesthesia consumables under SunMed—so service contracts, Field Safety Notices, training, and spare-part escalations are fragmented across successors, not a single Vyaire OEM chain. Vyaire Medical Inc. was the U.S.-headquartered respiratory medtech company (Mettawa, Illinois area) formed in October 2016 when Becton Dickinson and funds advised by Apax Partners closed a joint venture over BD’s global Respiratory Solutions business—assets tracing in part through BD’s 2015 acquisition of CareFusion. Apax held 50.1% at launch with BD retaining 49.9%; by April 2018 Apax-affiliated funds acquired BD’s remaining stake, taking full private ownership under the Vyaire banner (BD/Apax press releases). Some secondary summaries name Madison Dearborn Partners as sponsor; this research pass did not locate primary transaction materials tying MDP to a Vyaire buyout—verify claims against deal announcements (documented counterparty remains Apax). Product lines spanned AirLife consumables, manual resuscitators, LTV and bellavista ventilators, 3100A high-frequency oscillatory ventilation, Vyntus respiratory diagnostics, and anesthesia-delivery adjacencies before a strategic breakup. FDA post-market records show major Class I actions: December 2021–era correction on bellavista 1000/1000e (G6 software ≥V6.0.1600.0) for potential ventilation cessation when HL7 data communication was enabled—FDA recall cause determination “software change control”; a December 6, 2023–initiated Class I recall of nine AirLife Adult Manual Resuscitator catalog numbers (2017-and-earlier or undated builds) after duckbill/ring mold defects risked hypoventilation—FDA and firm cited 37 incidents including two injuries and two deaths, with Reuters reporting >6.6 million U.S. units in scope; April 2024 Class I recall on Twin Tube components for Vyntus CPX after nozzle separation risk (choking/airway hazard). Class II matters include bellavista touchscreen “APP Hang” software levels 6.1.0.2 / 6.1.1 (May 2023 initiation) and erroneous U.S. distribution of non-U.S. 3100A patient circuits (October 2023). A public FDA warning letter indexed directly to “Vyaire Medical” was not located in this search pass—re-run FDA’s warning-letter database for legacy CareFusion/BD facility letters if deeper history is needed. Labor/consolidation: Minnesota press documented a Plymouth plant closure with about fifty WARN-notified roles (2019). In June 2024 Vyaire filed Chapter 11, marketed business units, completed a ~$90.5 million combined sale order reported by trade press, sold ventilation to ZOLL (closed October 2024 per Vyaire), respiratory diagnostics to Trudell (November 2024 per Vyaire), and had previously divested consumables to SunMed (2023)—leaving users to track warranties and FSNs across successor OEMs.",
+  "verdict_tags": [
+    "bd_apax_vyaire_joint_venture_2016",
+    "apax_full_ownership_bd_buyout_2018",
+    "madison_dearborn_sponsor_claim_not_substantiated_primary",
+    "class_i_recall_airlife_manual_resuscitator_mold_hypoventilation_deaths_reported",
+    "class_i_recall_bellavista_hl7_software_ventilation_cessation_2021",
+    "class_ii_recall_bellavista_touchscreen_app_hang_2023",
+    "class_i_recall_twin_tube_vyntus_cpx_nozzle_2024",
+    "class_ii_recall_3100a_circuit_foreign_market_mis_shipped_us",
+    "chapter_11_bankruptcy_june_2024",
+    "entity_defunct_fragmented_oem_support_zoll_trudell_sunmed",
+    "zoll_acquired_ventilation_unit_ltv_bellavista_2024",
+    "trudell_acquired_respiratory_diagnostics_2024",
+    "sunmed_acquired_consumables_unit_2023",
+    "plymouth_minnesota_plant_closure_warn_reported",
+    "fda_warning_letter_vyaire_not_located_research_pass"
+  ],
+  "concern_flags": {
+    "labor": true,
+    "environmental": true,
+    "political": true,
+    "tax": true,
+    "health": true,
+    "legal": true
+  },
+  "tax": {
+    "summary": "As a privately held, PE-backed U.S. group (historically Apax funds) prior to Chapter 11, Vyaire did not file public SEC 10-K tax footnotes; interest deductibility, NOLs, and debt restructuring through the 2024 bankruptcy estate materially shaped effective tax outcomes. Post-deal, successor legal entities (ZOLL, Trudell affiliates, SunMed) inherit product revenue streams under their own tax profiles.",
+    "flags": [
+      "private_equity_owned_pre_bankruptcy_limited_transparency",
+      "chapter_11_estate_and_successor_entity_fragmentation"
+    ],
+    "sources": [
+      "https://news.bd.com/2016-10-04-BD-and-Apax-Partners-Announce-Closing-of-Joint-Venture-to-Launch-Global-Respiratory-Business",
+      "https://www.prnewswire.com/news-releases/funds-advised-by-apax-partners-to-acquire-remaining-minority-stake-in-vyaire-medical-from-bd-300615945.html",
+      "https://www.vyaire.com/news-events/vyaire-medical-files-chapter-11-protection-markets-business-units-sale"
+    ]
+  },
+  "legal": {
+    "summary": "FDA recalls: (1) AirLife manual resuscitators—Class I; firm initiation Dec. 6, 2023; urgent customer letter Jan. 10, 2024; defect from pre-2017 tooling; FDA page lists 37 incidents, 2 injuries, 2 deaths; Reuters reported >6.6 million devices recalled in the United States after FDA classified action March 21, 2024. (2) bellavista 1000/1000e—Class I; Dec. 20, 2021 initiation; cessation of ventilation under HL7-enabled configurations; FDA determined cause “software change control”; thousands of units (database: 4,189 in commerce) worldwide; terminated Aug. 28, 2024. (3) bellavista 1000/1000e—Class II; May 5, 2023 initiation; touchscreen APP Hang and use-error pathways; ventilation said to continue during hang but alarms/UI degradation. (4) Twin Tube (Vyntus CPX)—Class I; nozzle separation; FDA early-alert page April 2024. (5) 3100A flexible patient circuits—Class II; non-U.S.–approved SKUs distributed in U.S. (Florida), Oct. 27, 2023 initiation. Corporate transactions: Chapter 11 filed June 2024; Delaware bankruptcy court approved ~$90.5M sale of units (Law360 reporting); Vyaire announced closings—ZOLL for ventilation including LTV/bellavista/fabian/3100 lines (Oct. 14, 2024) and Trudell for respiratory diagnostics (Nov. 13, 2024), with >750 employees transferring per company summary. Consumables business sold to SunMed (May 2023 announcement cycle). Warning letters: no FDA warning letter URL under Vyaire Medical Inc. surfaced in this pass—legacy BD/CareFusion site letters may exist separately.",
+    "flags": [
+      "class_i_manual_resuscitator_patient_deaths_cited_fda",
+      "icu_ventilator_software_recalls_bellavista",
+      "regulatory_distribution_control_failure_3100a_circuits",
+      "chapter_11_and_successor_liability_partitioning",
+      "verify_supplier_quality_mold_history_pre_2017_airlife"
+    ],
+    "sources": [
+      "https://www.fda.gov/medical-devices/medical-device-recalls-and-early-alerts/vyaire-medical-inc-recalls-airlife-manual-resuscitators-due-manufacturing-defect-can-lead-injury-or",
+      "https://www.reuters.com/business/healthcare-pharmaceuticals/us-fda-classifies-recall-vyaire-medicals-respiratory-devices-most-serious-2024-03-21/",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=191357",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=199975",
+      "https://www.fda.gov/medical-devices/medical-device-recalls-and-early-alerts/vyaire-medical-inc-recalls-twin-tube-due-potential-nozzle-separating-during-patient-use",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=206744",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=205568",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=204026",
+      "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/vyaire-medical-issues-voluntary-correction-certain-bellavistatm-ventilators-specific-software",
+      "https://www.vyaire.com/news-events/vyaire-medical-files-chapter-11-protection-markets-business-units-sale",
+      "https://www.vyaire.com/news-events/vyaire-medical-completes-transaction-zoll-medical-corporation",
+      "https://www.vyaire.com/news-events/vyaire-medical-delivers-commitment-completes-ventilation-and-respiratory-diagnostics",
+      "https://www.vyaire.com/news-events/vyaire-medical-sell-consumables-business-sunmed",
+      "https://www.law360.com/bankruptcy-authority/articles/1875004/vyaire-medical-gets-ok-for-90m-sale-of-business-units"
+    ]
+  },
+  "labor": {
+    "summary": "Vyaire notified Minnesota officials of a Plymouth manufacturing closure affecting roughly fifty positions (2019 WARN reporting summarized in Star Tribune and trade press). Chapter 11 communications (2024) emphasized continued operations during marketing of divisions; Vyaire later stated more than seven hundred fifty employees would transfer with sold businesses—restructuring churn even where headcount formally persists under buyers. John Bibb became Group CEO in May 2023 after serving as Chief Legal Officer and HR leader, steering SunMed consumable divestiture then bankruptcy auctions.",
+    "flags": [
+      "documented_plant_closure_plymouth_mn_small_scale",
+      "chapter_11_workforce_transfer_to_zoll_trudell_reported",
+      "ceo_transition_bibb_2023"
+    ],
+    "sources": [
+      "https://www.startribune.com/vyaire-medical-closing-plant-in-plymouth-50-jobs-affected/478654823",
+      "https://www.vyaire.com/news-events/vyaire-medical-files-chapter-11-protection-markets-business-units-sale",
+      "https://www.vyaire.com/news-events/vyaire-medical-delivers-commitment-completes-ventilation-and-respiratory-diagnostics",
+      "https://www.vyaire.com/news-events/vyaire-medical-appoints-john-bibb-group-chief-executive-officer"
+    ]
+  },
+  "environmental": {
+    "summary": "High-volume disposable AirLife and circuit manufacturing carries plastic waste, ethylene oxide or alternative sterilization burdens (verify per SKU), and global logistics emissions; manual resuscitator recalls imply destruction volumes at customer sites. Multi-site footprint across the U.S., Mexico, and other regions (legacy BD network) concentrates environmental compliance duties that fractured among buyers after 2024.",
+    "flags": [
+      "single_use_disposable_medical_supply_volume",
+      "post_divestiture_environmental_liability_allocation_opacity"
+    ],
+    "sources": [
+      "https://news.bd.com/2016-10-04-BD-and-Apax-Partners-Announce-Closing-of-Joint-Venture-to-Launch-Global-Respiratory-Business",
+      "https://www.fda.gov/medical-devices/medical-device-recalls-and-early-alerts/vyaire-medical-inc-recalls-airlife-manual-resuscitators-due-manufacturing-defect-can-lead-injury-or"
+    ]
+  },
+  "political": {
+    "summary": "During COVID-19, legacy LTV and related ventilator lines featured in U.S. strategic-stockpile conversations; subsequent bankruptcy and sale to ZOLL shifted industrial policy questions about domestic surge capacity. FDA Class I oxygen-delivery recalls intersect with HHS emergency readiness narratives because faulty bag-valve devices fail in code-blue settings.",
+    "flags": [
+      "pandemic_ventilator_supply_chain_political_salience",
+      "fda_class_i_airlife_recall_public_health_communications"
+    ],
+    "sources": [
+      "https://www.reuters.com/business/healthcare-pharmaceuticals/us-fda-classifies-recall-vyaire-medicals-respiratory-devices-most-serious-2024-03-21/",
+      "https://www.vyaire.com/news-events/vyaire-medical-completes-transaction-zoll-medical-corporation"
+    ]
+  },
+  "executives": {
+    "summary": "John Bibb has led Vyaire as Group CEO since May 2023, following senior legal and HR roles inside the company and prior Acelity executive leadership. Prior CEOs during the Apax repositioning included leaders named in contemporaneous debt and M&A documents—verify compensation from bankruptcy court filings and private-side lender disclosures rather than public proxies.",
+    "flags": [
+      "legal_hr_background_ceo_during_chapter_11",
+      "compensation_from_bankruptcy_and_pe_side_letters_not_sec_proxy"
+    ],
+    "sources": [
+      "https://www.vyaire.com/news-events/vyaire-medical-appoints-john-bibb-group-chief-executive-officer",
+      "https://www.prnewswire.com/news-releases/vyaire-medical-appoints-john-bibb-as-group-chief-executive-officer-301832926.html"
+    ]
+  },
+  "connections": {
+    "summary": "Vyaire bundled CareFusion-era respiratory assets ventilated through BD’s 2015 merger before Apax provided buyout capital and board control. bellavista engineering ties to Swiss-origin imtmedical AG appear in FDA recall metadata (510(k) applicant field). The 2024 triad sale links legacy Vyaire portfolios to ZOLL (Asahi Kasei group), Trudell (Canada-anchored respiratory player), and SunMed—creating successor-service complexity for hospital fleets.",
+    "flags": [
+      "carefusion_bd_lineage_into_vyaire_spin",
+      "apax_pe_sponsor_documented",
+      "imtmedical_engineering_bellavista_traceability",
+      "zoll_trudell_sunmed_successor_web_2024"
+    ],
+    "sources": [
+      "https://news.bd.com/2016-10-04-BD-and-Apax-Partners-Announce-Closing-of-Joint-Venture-to-Launch-Global-Respiratory-Business",
+      "https://www.apax.com/partnerships/vyaire-medical/",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=191357",
+      "https://www.vyaire.com/news-events/vyaire-medical-completes-transaction-zoll-medical-corporation"
+    ]
+  },
+  "allegations": {
+    "disclaimer": "The following are allegations and unproven claims beyond settled findings, or interpretations disputed in part by the company.",
+    "summary": "Industry observers sometimes allege PE-sponsored debt loads and delayed integration after the BD carve-out contributed to operational stress culminating in bankruptcy—claims that require docket-level citation of leverage covenants to prove causation. Plaintiffs’ bar commentary may argue million-scale resuscitator recalls evidence years-long latent QMS failure; Vyaire publicly framed AirLife actions as historical mold remediation with 2017 corrective manufacturing.",
+    "flags": [
+      "pe_leverage_bankruptcy_narrative_requires_docket_proof",
+      "latent_mold_defect_alleged_systemic_quality_debt"
+    ],
+    "sources": [
+      "https://www.vyaire.com/news-events/vyaire-medical-files-chapter-11-protection-markets-business-units-sale",
+      "https://www.fda.gov/medical-devices/medical-device-recalls-and-early-alerts/vyaire-medical-inc-recalls-airlife-manual-resuscitators-due-manufacturing-defect-can-lead-injury-or"
+    ]
+  },
+  "health_record": {
+    "summary": "FDA stated use of recalled AirLife manual resuscitators could yield inadequate or no ventilation—hypoventilation, hypoxia, serious injury or death—with four sentinel outcomes among 37 incidents in regulator summaries. bellavista Class I HL7-related failure modes stop active ventilation in defined configurations until mitigated. Twin Tube separation poses aspiration/choking mechanics during CPX testing. Mis-shipped 3100A circuits raise jurisdiction-of-approval mismatches for neonatal HFOV circuits.",
+    "flags": [
+      "documented_deaths_airlife_recall_fda_sourced",
+      "ventilator_software_stop_modes_bellavista",
+      "diagnostic_hardware_ingestion_risk_twin_tube"
+    ],
+    "sources": [
+      "https://www.fda.gov/medical-devices/medical-device-recalls-and-early-alerts/vyaire-medical-inc-recalls-airlife-manual-resuscitators-due-manufacturing-defect-can-lead-injury-or",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=191357",
+      "https://www.fda.gov/medical-devices/medical-device-recalls-and-early-alerts/vyaire-medical-inc-recalls-twin-tube-due-potential-nozzle-separating-during-patient-use",
+      "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=204026"
+    ]
+  },
+  "alternatives": {
+    "cheaper": [
+      "After 2024 transactions, negotiate service contracts with ZOLL (ventilation), Trudell/Jaeger (diagnostics), and SunMed (consumables) rather than legacy Vyaire POs.",
+      "Biomed networks should reconcile consignment closets for recalled AirLife lot rules versus successor catalogs."
+    ],
+    "healthier": [
+      "Execute FDA-directed destruction of pre-2017 AirLife resuscitators; keep reserve BVM stock from alternate 510(k) cleared suppliers.",
+      "For bellavista fleets inherited by ZOLL, apply consolidated FSN/software patches before enabling HL7 integrations."
+    ],
+    "diy": [
+      "FDA recall DB keyword search: “Vyaire”, “AirLife”, “bellavista”, “3100A”.",
+      "Delaware bankruptcy docket (2024) for first-lien lender recoveries and WARN successor notices.",
+      "BD and Apax archive press releases for cap-table provenance."
+    ]
+  },
+  "timeline": [
+    {
+      "year": 2015,
+      "event": "BD closes CareFusion acquisition—respiratory assets later earmarked for respiratory JV/spin",
+      "severity": "neutral",
+      "source_url": "https://news.bd.com/2016-10-04-BD-and-Apax-Partners-Announce-Closing-of-Joint-Venture-to-Launch-Global-Respiratory-Business"
+    },
+    {
+      "year": 2016,
+      "event": "BD + Apax close Vyaire joint venture: Apax 50.1%, BD 49.9%; standalone global respiratory company launched",
+      "severity": "neutral",
+      "source_url": "https://www.vyaire.com/news-events/bd-and-apax-partners-announce-closing-joint-venture-launch-global-respiratory-business"
+    },
+    {
+      "year": 2018,
+      "event": "Funds advised by Apax acquire BD’s remaining minority stake—Vyaire fully private to Apax-led ownership",
+      "severity": "neutral",
+      "source_url": "https://www.prnewswire.com/news-releases/funds-advised-by-apax-partners-to-acquire-remaining-minority-stake-in-vyaire-medical-from-bd-300615945.html"
+    },
+    {
+      "year": 2019,
+      "event": "Minnesota: Vyaire Plymouth plant closure—~50 jobs, WARN notice (press)",
+      "severity": "moderate",
+      "source_url": "https://www.startribune.com/vyaire-medical-closing-plant-in-plymouth-50-jobs-affected/478654823"
+    },
+    {
+      "year": 2021,
+      "event": "Class I recall initiated Dec. 20: bellavista 1000/1000e HL7-related ventilation cessation risk (FDA database)",
+      "severity": "critical",
+      "source_url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=191357"
+    },
+    {
+      "year": 2023,
+      "event": "May: Class II bellavista APP Hang software recall; company closes consumables sale to SunMed (announcement cycle); John Bibb appointed Group CEO",
+      "severity": "high",
+      "source_url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfRES/res.cfm?id=199975"
+    },
+    {
+      "year": 2023,
+      "event": "October: Class II recall—non-U.S. 3100A patient circuits erroneously distributed in Florida",
+      "severity": "high",
+      "source_url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfres/res.cfm?id=204026"
+    },
+    {
+      "year": 2023,
+      "event": "December 6: Firm initiates AirLife manual resuscitator recall for pre-2017 mold defect (becomes FDA Class I)",
+      "severity": "critical",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-recalls-and-early-alerts/vyaire-medical-inc-recalls-airlife-manual-resuscitators-due-manufacturing-defect-can-lead-injury-or"
+    },
+    {
+      "year": 2024,
+      "event": "March 21: FDA classifies AirLife resuscitator recall most serious; Reuters cites >6.6M U.S. devices; April: Twin Tube Class I recall",
+      "severity": "critical",
+      "source_url": "https://www.reuters.com/business/healthcare-pharmaceuticals/us-fda-classifies-recall-vyaire-medicals-respiratory-devices-most-serious-2024-03-21/"
+    },
+    {
+      "year": 2024,
+      "event": "June: Chapter 11 filed; August: bankruptcy court approves ~$90.5M sale of business units (Law360); October: ZOLL closes ventilation purchase; November: Trudell closes respiratory diagnostics purchase",
+      "severity": "critical",
+      "source_url": "https://www.vyaire.com/news-events/vyaire-medical-delivers-commitment-completes-ventilation-and-respiratory-diagnostics"
+    }
+  ],
+  "community_impact": {
+    "displacement": "Plymouth closure removed paid manufacturing roles from a Minneapolis suburb; Chapter 11 sales shifted payroll contracts to out-of-state or foreign-parent buyers while claiming employee continuity.",
+    "price_illusion": "Private equity balance sheets concealed leverage until covenant stress; clinicians saw familiar blue AirLife branding without visibility into mold-era liability backlog.",
+    "tax_math": "Debt-for-equity swaps and estate liquidation affect federal and state NOL utilization; successor asset deals re-based stepped-up basis off purchase price filings.",
+    "wealth_velocity": "Apax and lenders captured fees and sale proceeds through bankruptcy waterfalls; patients bore resuscitation risk when duckbill rings failed before bedside nurses noticed."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {
+        "group": "Apax funds and secured creditors (pre-pack outcomes per bankruptcy reporting)",
+        "how": "Carve-out from BD, dividend/recap economics up to distress"
+      },
+      {
+        "group": "Strategic buyers ZOLL, Trudell, SunMed",
+        "how": "Distressed acquisitions of entrenched hospital SKUs"
+      }
+    ],
+    "who_paid": [
+      {
+        "group": "Patients relying on recalled manual resuscitators",
+        "how": "Hypoventilation outcomes including fatalities cited by FDA"
+      },
+      {
+        "group": "Hospital supply chains",
+        "how": "Nationwide quarantine/destroy campaigns and rebadged OEM support"
+      },
+      {
+        "group": "Workers at closed domestic plants and stressed field service teams",
+        "how": "WARN events plus integration uncertainty through 2024"
+      }
+    ],
+    "the_gap": "A resuscitation bag is the last line in a arrest—Vyaire’s mold defect turned ambient oxygen into a lottery for years after tooling was supposedly fixed, then corporate dissolution scattered the accountability map across three buyers."
+  }
+}
