@@ -1,0 +1,89 @@
+{
+  "brand_name": "AMSURG",
+  "brand_slug": "amsurg",
+  "parent_company": "Envision Healthcare (legacy corporate family; see restructuring)",
+  "ultimate_parent": "AMSURG (standalone ambulatory surgery platform post–Chapter 11 split)",
+  "subsidiaries": ["Joint-venture ASC partnerships with health systems and physicians", "Gastroenterology, ophthalmology, and multi-specialty outpatient surgical facilities"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "ASC ROLL-UP FROM THE ENVISION ERA — OUTPATIENT SURGERY MEETS PAYER WARS AND ANESTHESIA BILLING FRICTION",
+  "executive_summary": "AMSURG operates one of the largest ambulatory surgery center (ASC) networks in the United States—historically on the order of 250+ centers and thousands of affiliated clinicians across dozens of states—focused heavily on high-volume endoscopy, ophthalmology, orthopedics, and other same-day procedures. For years AMSURG operated inside Envision Healthcare’s enterprise alongside emergency and hospital-based physician staffing; that integration placed ASC economics in the same policy crosshairs as Envision’s out-of-network and surprise-billing controversies, including payer battles and federal independent-dispute-resolution fights that intensified after the No Surprises Act. Reuters and Becker’s reporting on Envision’s 2023 Chapter 11 restructuring described court approval for splitting the company so that AMSURG would continue as a separately financed ASC platform with its own debt and ownership (creditor and alternative-asset investors replacing KKR’s equity), while Envision Physician Services carried hospital-based staffing—meaning “parent” in the colloquial sense shifted from a unified Envision banner to legally separate operators even though branding and referral relationships can remain intertwined in markets. Sector coverage links AMSURG/Envision campaigns on billing transparency to Nsa-era anesthesia and facility-professional split claims. Consolidation of outpatient surgery into national platforms raises antitrust and quality questions—standardization can improve throughput or, critics argue, tilt case-mix toward higher-margin procedures while independents lose OR access. Overall concern is significant: ASCs are lower-acuity than inpatient towers but still gate surgical access; financial engineering, affiliated anesthesia staffing models, and insurer network disputes can still produce balance-bill risk or billing confusion in gray-zone episodes despite federal protections for many in-network ASC episodes.",
+  "verdict_tags": ["asc_network_scale", "envision_historical_integration", "chapter_11_split_2023_creditor_ownership", "nsa_era_payer_disputes_peer_context", "anesthesia_facility_professional_billing_friction", "outpatient_surgical_consolidation"],
+  "concern_flags": {"labor": true, "environmental": true, "political": true, "tax": true, "health": true, "legal": true},
+  "tax": {
+    "summary": "ASC joint ventures use partnership blocks, fee-for-management entities, and 603(h)-style structures familiar to outpatient surgical real estate. Post-restructuring AMSURG-level debt creates interest deductibility and state apportionment across many LLC stacks. Physician income characterization (W-2 vs. K-1) varies by JV.",
+    "flags": ["jv_partnership_blocks", "post_reorg_debt_tax_shield", "multistate_asc_apportionment"],
+    "sources": ["https://www.irs.gov", "https://www.reuters.com/business/healthcare-pharmaceuticals/bankrupt-envision-healthcare-gets-ok-split-two-cut-7-bln-debt-2023-10-11/"]
+  },
+  "legal": {
+    "summary": "AMSURG inherits sector-wide payer litigation risk from the Envision era—UnitedHealthcare and other carriers have fought professional-fee levels and network status in courts and arbitrations industry-wide. The No Surprises Act created federal guardrails for many out-of-network air and emergency contexts; CMS materials specify certain anesthesia protections when ASCs are in-network, but implementation disputes persist in marginal scenarios. Antitrust agencies sporadically review specialty rollup transactions; ASC rollups below HSR thresholds still drew academic scrutiny in PE health-care inquiries. State certificate-of-need and licensure dockets are the routine compliance baseline.",
+    "flags": ["payer_network_litigation_peer_context", "nsa_facility_anesthesia_interpretations", "asc_jv_stark_anti_kickback_surface", "pe_healthcare_consolidation_rfis_peer_set"],
+    "sources": ["https://www.reuters.com/business/healthcare-pharmaceuticals/bankrupt-envision-healthcare-gets-ok-split-two-cut-7-bln-debt-2023-10-11/", "https://www.kff.org/health-costs/issue-brief/no-surprises-act/", "https://www.beckersasc.com/asc-news/amsurg-to-officially-split-from-envision/"]
+  },
+  "labor": {
+    "summary": "ASC nursing and sterile-processing teams run tight turn rooms; productivity metrics interact with safe staffing during GI block schedules. Anesthesia staffing may mix employed MDs, AA/CRNA models, and outsourced groups—each with different union density and liability chains. Surgeon partners balance case volume targets against clinical discretion.",
+    "flags": ["high_throughput_gi_ortho_staffing_pressure", "anesthesia_model_variation", "physician_hospital_jv_governance_tension"],
+    "sources": ["https://www.beckersasc.com"]
+  },
+  "environmental": {
+    "summary": "Single-use sterile instruments and scope reprocessing chemicals dominate ASC waste streams. Energy use is lower per case than inpatient towers but single-use device intensity can exceed hospital OR norms. Patient travel to suburban ASCs increases VMT versus downtown hospitals.",
+    "flags": ["single_use_disposable_intensity", "reprocessing_chemical_exposure", "suburban_access_transport_emissions"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Site-neutral payment fights in Medicare affect whether cases stay hospital outpatient versus ASC. ASGE/specialty societies lobby on GI screening coverage; insurers lobby on reference pricing. PE ownership of ASC platforms sits in the same congressional skepticism bucket as ED staffing roll-ups.",
+    "flags": ["medicare_site_neutral_rule_risk", "specialty_society_screening_advocacy", "congressional_pe_outpatient_scrutiny_peer_context"],
+    "sources": ["https://www.cms.gov", "https://www.ftc.gov"]
+  },
+  "executives": {
+    "summary": "Post-bankruptcy boards blend creditor representatives, operations leaders, and clinical figureheads; incentives emphasize covenant compliance, EBITDA per case, and payer re-contracting. Legacy Envision executives largely steward EVPS while AMSURG names its own leadership bench.",
+    "flags": ["creditor_board_governance_post_reorg", "ebitda_per_case_incentive_design", "split_management_from_evps"],
+    "sources": ["https://www.envisionhealth.com"]
+  },
+  "connections": {
+    "summary": "AMSURG competes with hospital outpatient departments, other national ASC brands, and local surgeon-owned centers. Health systems joint-venture with AMSURG for case migration off expensive inpatient ORs. Envision Physician Services overlap remains in communities where both brands operate distinct contracts.",
+    "flags": ["hospital_jv_codependency", "case_migration_from_hopd", "envision_peer_brand_split"],
+    "sources": ["https://www.beckersasc.com/asc-coding-billing-and-collections/envision-amsurg-launches-campaign-blaming-surprise-medical-bills-on-insurance-regulations-6-insights.html"]
+  },
+  "allegations": {
+    "disclaimer": "The following includes payer and policy allegations common to Envision-affiliated billing ecosystems—not specific final judgments against every AMSURG center.",
+    "summary": "Insurers have alleged inflated professional charges tied to Envision-era staffing; patient advocates allege surprise bills when networks narrow. Academic work on out-of-network ED staffing sometimes cites Envision affiliates; ASC-specific surprise bill volume is lower post-NSA but disputes continue.",
+    "flags": ["professional_fee_inflation_alleged_sector_wide", "narrow_network_balance_bill_risk_marginal_cases", "pe_roll_up_access_alleged"],
+    "sources": ["https://www.beckersasc.com/asc-coding-billing-and-collections/envision-amsurg-launches-campaign-blaming-surprise-medical-bills-on-insurance-regulations-6-insights.html"]
+  },
+  "health_record": {
+    "summary": "ASC migration can reduce SSIs versus inpatient ORs when protocols hold, but rushed turnovers threaten sterilization quality. Colonoscopy access improves when endoscopy centers proliferate—unless narrow networks block referrals. Anesthesia depth and monitoring remain safety-critical in short-stay models.",
+    "flags": ["turnover_linked_infection_risk_if_understaffed", "endoscopy_access_upsides", "anesthesia_safety_dependency"],
+    "sources": ["https://www.cms.gov/medicare/quality-initiatives-patient-assessment-instruments/hospital-quality-initiatives"]
+  },
+  "alternatives": {
+    "cheaper": ["Hospital-owned ASCs with unified facility–professional billing", "Surgeon-owned CMS-certified centers with transparent global fees", "Hospital outpatient departments where pricing is shoppable under CMS rules"],
+    "healthier": ["Verify in-network status for facility and anesthesia before elective cases", "State CON processes that block predatory ASC dumping of charity care", "Strong peer review in multi-specialty ASC boards"],
+    "diy": ["Use CMS pricing tools for shoppable ASC procedures", "Appeal unexpected professional bills through NSA pathways when applicable", "Ask whether your GI referral routes to a JV ASC with split billing"]
+  },
+  "timeline": [
+    {"year": 2014, "event": "AMSURG-era roll-up accelerates national ASC scale (industry timeline)", "severity": "neutral", "source_url": "https://www.amsurg.com"},
+    {"year": 2016, "event": "AMSURG merges into broader Envision Healthcare enterprise combining ASC and physician staffing assets", "severity": "moderate", "source_url": ""},
+    {"year": 2023, "event": "May: Envision Chapter 11 filed amid debt, NSA, and payer pressures", "severity": "high", "source_url": "https://www.reuters.com/markets/deals/kkr-backed-envision-healthcare-files-bankruptcy-2023-05-15/"},
+    {"year": 2023, "event": "October: Bankruptcy court approves split separating AMSURG ASC platform from Envision Physician Services with distinct financing", "severity": "high", "source_url": "https://www.reuters.com/business/healthcare-pharmaceuticals/bankrupt-envision-healthcare-gets-ok-split-two-cut-7-bln-debt-2023-10-11/"}
+  ],
+  "community_impact": {
+    "displacement": "Local surgeons may lose hospital block time when cases divert to national JV ASCs—shaping who operates where.",
+    "price_illusion": "Patients see a familiar health-system logo on the door while professional bills may route through different tax IDs.",
+    "tax_math": "Medicare site-neutral cuts can shift margin from hospitals to ASC investors—county hospitals may lose cross-subsidy cases.",
+    "wealth_velocity": "Creditor equity and sponsor promote capture outpatient surgical margin; communities trade OR jobs for ASC lane jobs."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Patients with shorter stays and lower facility fees when ASC pricing works", "how": "Outpatient efficiency"},
+      {"group": "Post-reorg debt holders converting to equity", "how": "Restructuring recoveries"},
+      {"group": "High-volume specialists", "how": "Throughput economics in de-risked elective lanes"}
+    ],
+    "who_paid": [
+      {"group": "Patients caught in network gaps", "how": "Residual balance and confusion bills"},
+      {"group": "Competing hospitals", "how": "Revenue migration"},
+      {"group": "Medicaid-heavy communities if cases cherry-pick to commercially insured ASCs", "how": "Cross-subsidy erosion"}
+    ],
+    "the_gap": "Outpatient surgery felt safer from surprise-billing headlines than ED staffing—until network and anesthesia splits proved otherwise in edge cases."
+  }
+}
