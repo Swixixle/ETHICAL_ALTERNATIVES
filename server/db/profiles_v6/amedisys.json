@@ -1,0 +1,88 @@
+{
+  "brand_name": "Amedisys",
+  "brand_slug": "amedisys",
+  "parent_company": "UnitedHealth Group / Optum (post-acquisition)",
+  "ultimate_parent": "UnitedHealth Group",
+  "subsidiaries": ["Amedisys home health agencies", "Amedisys hospice locations", "High-touch personal care segments", "Brands folded into Optum Health delivery after 2025 close"],
+  "overall_concern_level": "significant",
+  "profile_type": "database",
+  "generated_headline": "NATIONAL HOME HEALTH AND HOSPICE — HISTORICAL FCA BILLING, OPTUM BUYOUT, AND QUALITY OVERSIGHT",
+  "executive_summary": "Amedisys Inc. (historically NYSE: AMED) is among the largest U.S. home health and hospice platforms—thousands of care episodes annually where nurse visits, therapy minutes, and comfort-measure documentation translate directly into Medicare dollars. In 2014 the company and affiliates agreed to pay $150 million to resolve Justice Department False Claims Act allegations that certain locations billed Medicare for unnecessary or inadequately documented home health services, maintained problematic referral relationships, and faced management pressure narratives common in FCA pleadings—creating long-run compliance debt even after the checks cleared. Regulatory concentrated home health has since re-entered antitrust headlines: UnitedHealth’s Optum agreed to acquire Amedisys for roughly $3.3 billion in a path that drew Justice Department litigation arguing the combination would harm competition across hundreds of local markets; the parties ultimately reached a remedy involving divestiture of numerous locations and the transaction closed in 2025 after judicial approval—meaning Amedisys is now an Optum delivery asset, extending UnitedHealth’s vertical stack from insurance into more bedside labor. Quality concerns in home health and hospice travel with the sector: survey deficiencies, staffing levels, and caregiver turnover correlate with adverse events in frail populations, while remote documentation can obscure under-care as easily as overbilling. Overall concern is significant because payer-owned home health fuses utilization management incentives with visit-level revenue codes—patients are least able to shop when bedbound.",
+  "verdict_tags": ["national_home_health_hospice_scale", "historical_doj_fca_home_health_settlement_150m_2014", "optum_acquisition_antitrust_divestiture_2025", "post_merger_payer_provider_integration_um_bias_risk", "home_care_quality_oversight_sector"],
+  "concern_flags": {"labor": true, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
+  "tax": {
+    "summary": "As a UnitedHealth subsidiary, home health margin rolls into consolidated insurance and services tax reporting; visit-based revenue recognition and ACO touchpoints interact with MLR and transfer pricing inside the group.",
+    "flags": ["visit_based_medicare_revenue_recognition", "optum_consolidated_transfer_pricing_peer_pattern", "hospice_cap_accounting"],
+    "sources": ["https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=000896262", "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000731766"]
+  },
+  "legal": {
+    "summary": "Legacy FCA settlement established relator and DOJ monitoring expectations; the Optum deal triggered DOJ suit and consent divestitures rather than an outright block—local market fixes are only as durable as buyer discipline.",
+    "flags": ["resolved_fca_home_health_billing_2014", "doj_merger_challenge_optum_amedisys_2024_2025", "divestiture_buyer_dependent_remedy"],
+    "sources": ["https://oig.hhs.gov/fraud/enforcement/amedisys-home-health-companies-agree-to-pay-150-million-to-resolve-false-claims-act-allegations/", "https://www.justice.gov/opa/pr/justice-department-sues-block-unitedhealth-groups-acquisition-home-health-and-hospice", "https://www.justice.gov/atr/case/us-and-plaintiff-states-v-unitedhealth-group-inc-and-amedisys-inc", "https://www.healthcaredive.com/news/unitedhealth-amedisys-deal-closes-doj/757742/"]
+  },
+  "labor": {
+    "summary": "Home health nurses and therapists face visit quotas; post-Optum integration aligns wages with Optum’s broader clinical staffing strategy—union density is low relative to hospitals.",
+    "flags": ["visit_quota_productivity_metrics", "hospice_aide_turnover", "post_merger_hr_policy_harmonization"],
+    "sources": ["https://www.healthcaredive.com/news/unitedhealth-amedisys-deal-closes-doj/757742/"]
+  },
+  "environmental": {
+    "summary": "Fleet travel for home visits dominates carbon footprint; disposable medical supplies for wound and infusion care accumulate waste.",
+    "flags": ["rn_lpn_vehicle_miles", "single_use_supply_intensity"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Home health payment rebasing, PDGM coding incentives, and Medicare Advantage prior authorization for post-acute care drive lobbying through UnitedHealth’s umbrella.",
+    "flags": ["pdgm_payment_policy_exposure", "ma_post_acute_um_interface", "federal_antitrust_divestiture_negotiations"],
+    "sources": ["https://www.cms.gov", "https://www.opensecrets.org"]
+  },
+  "executives": {
+    "summary": "Leadership historically rewarded episode growth and margin; Optum integration shifts accountability to UnitedHealth service segment executives.",
+    "flags": ["pre_close_amedisys_incentive_equity", "post_close_optum_reporting_lines"],
+    "sources": ["https://www.reuters.com/markets/deals/amedisys-agrees-unitedhealth-buyout-offer-scraps-option-care-deal-2023-06-26/"]
+  },
+  "connections": {
+    "summary": "Competes or competed with LHC Group (also absorbed into Optum), Enhabit, and regional nonprofits; payer-owned home health stacks beside Optum’s other acquisitions.",
+    "flags": ["optum_serial_home_health_roll_up", "nonprofit_home_health_benchmark_contrast"],
+    "sources": ["https://apnews.com/article/b5789346dde22d6aec22a6d964d83b5b", "https://www.healthcaredive.com/news/unitedhealth-amedisys-deal-closes-doj/757742/"]
+  },
+  "allegations": {
+    "disclaimer": "2014 FCA counts were settled; merger theories were litigated and remediated via divestitures rather than abandonment.",
+    "summary": "Relators alleged upcoding and unnecessary services; DOJ alleged merger harm to price and wage competition; families allege under-service in isolated malpractice and survey contexts sector-wide.",
+    "flags": ["medically_unnecessary_home_health_alleged_resolved", "merger_to_monopoly_local_geographies_alleged_remediated"],
+    "sources": ["https://oig.hhs.gov/fraud/enforcement/amedisys-home-health-companies-agree-to-pay-150-million-to-resolve-false-claims-act-allegations/", "https://www.justice.gov/opa/pr/justice-department-sues-block-unitedhealth-groups-acquisition-home-health-and-hospice", "https://www.justice.gov/atr/case/us-and-plaintiff-states-v-unitedhealth-group-inc-and-amedisys-inc"]
+  },
+  "health_record": {
+    "summary": "Under-documentation risks missed wound care; over-documentation risks invasive visits. Payer integration may tighten authorization for skilled episodes—delaying PT after hospital discharge.",
+    "flags": ["skilled_need_certification_friction", "hospice_eligibility_timing_sensitivity", "ma_um_post_acute_delays_peer_sector"],
+    "sources": ["https://www.medicare.gov/coverage/home-health-services"]
+  },
+  "alternatives": {
+    "cheaper": ["Hospital-based home care where nonprofit hospitals subsidize visits", "VA or county programs for eligible veterans and low-income seniors"],
+    "healthier": ["Physician-directed nonprofit hospice where available", "Stronger state survey enforcement and public staffing minimums", "Independent Medicare audit appeal support"],
+    "diy": ["Compare Home Health Compare star ratings before agency acceptance", "Request copy of plan of care and therapist schedules", "Appeal early discharge from skilled home health"]
+  },
+  "timeline": [
+    {"year": 2014, "event": "Amedisys pays $150 million to resolve DOJ False Claims Act allegations on home health billing", "severity": "critical", "source_url": "https://oig.hhs.gov/fraud/enforcement/amedisys-home-health-companies-agree-to-pay-150-million-to-resolve-false-claims-act-allegations/"},
+    {"year": 2023, "event": "Amedisys agrees to ~$3.3 billion UnitedHealth / Optum acquisition, dropping rival bidder", "severity": "high", "source_url": "https://www.reuters.com/markets/deals/amedisys-agrees-unitedhealth-buyout-offer-scraps-option-care-deal-2023-06-26/"},
+    {"year": 2024, "event": "Justice Department sues to block Optum–Amedisys deal citing local market concentration", "severity": "high", "source_url": "https://www.justice.gov/opa/pr/justice-department-sues-block-unitedhealth-groups-acquisition-home-health-and-hospice"},
+    {"year": 2025, "event": "Court approves divestiture settlement; UnitedHealth completes Optum acquisition of Amedisys", "severity": "high", "source_url": "https://www.justice.gov/opa/pr/court-approves-justice-departments-settlement-unitedhealth-group-and-amedisys-merger"}
+  ],
+  "community_impact": {
+    "displacement": "Serial roll-ups replace independent agencies; divestiture buyers patch markets but ownership churn disrupts continuity.",
+    "price_illusion": "Medicare home health looks free at point of service while taxpayers fund episode economics shaped by coding.",
+    "tax_math": "Post-acute reimbursement leakage rewards integration with MA plans—benchmark fights land on visit authorization.",
+    "wealth_velocity": "UnitedHealth market capitalization captures scaled home health EBITDA; bedside nurses rarely equity-share."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "UnitedHealth shareholders", "how": "Optum clinical delivery depth"},
+      {"group": "Amedisys shareholders at close", "how": "Takeover premium"}
+    ],
+    "who_paid": [
+      {"group": "Federal Medicare", "how": "Historical overbilling settlements and ongoing episode payments"},
+      {"group": "Homebound patients", "how": "Quality variance when staffing thins"},
+      {"group": "Workers in concentrated markets", "how": "Wage suppression risks alleged in merger litigation"}
+    ],
+    "the_gap": "When the insurer authorizing therapy minutes owns the agency delivering them, what independent clinical voice remains in the living room?"
+  }
+}
