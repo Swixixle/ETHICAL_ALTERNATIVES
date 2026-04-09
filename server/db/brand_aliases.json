@@ -304,5 +304,7 @@
   "mpln": "multiplan",
   "phcs": "multiplan",
   "claritev": "multiplan",
-  "ctev": "multiplan"
+  "ctev": "multiplan",
+  "teamhealth": "teamhealth",
+  "team-health": "teamhealth"
 }
