@@ -322,5 +322,9 @@
   "lifepoint": "lifepoint-health",
   "rcch": "lifepoint-health",
   "radiology-partners": "radiology-partners",
-  "radpartners": "radiology-partners"
+  "radpartners": "radiology-partners",
+  "owens-minor": "owens-minor",
+  "owens-and-minor": "owens-minor",
+  "premier-inc": "premier-inc",
+  "premier-gpo": "premier-inc"
 }
