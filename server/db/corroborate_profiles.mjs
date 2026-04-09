@@ -92,20 +92,94 @@ function estimateCost(input, output) {
   );
 }
 
+/**
+ * LLM fields often use compact "millions" (8.6) while prose uses full USD or "$12.5 million".
+ */
+function coerceApproxUsdToFullDollars(n) {
+  if (!Number.isFinite(n) || n === 0) return null;
+  const a = Math.abs(n);
+  if (a >= 250_000) return Math.round(n); // already full USD
+  if (a > 0 && a <= 1_000) return Math.round(n * 1_000_000); // e.g. 8.6 → 8.6M
+  return Math.round(n);
+}
+
+/**
+ * Apply unit word / suffix to a base number → USD dollars.
+ */
+function applyMoneyUnit(base, unitRaw) {
+  let n = parseFloat(String(base).replace(/,/g, ''));
+  if (!Number.isFinite(n) || n < 0) return null;
+  const u = String(unitRaw || '')
+    .toLowerCase()
+    .trim();
+  if (!u) return n;
+  if (u.startsWith('trillion') || u === 'tn') n *= 1_000_000_000_000;
+  else if (u === 'b' || u === 'bn' || u.startsWith('billion')) n *= 1_000_000_000;
+  else if (u === 'm' || u === 'mm' || u.startsWith('million')) n *= 1_000_000;
+  else if (u === 'k' || u.startsWith('thousand')) n *= 1_000;
+  return n;
+}
+
+/**
+ * Collect monetary figures normalized to USD (absolute dollars). Filters noise & duplicate scales.
+ */
+function extractNormalizedUsdAmounts(text) {
+  const raw = String(text || '');
+  const amounts = [];
+  const seen = new Set();
+
+  function add(n) {
+    if (n == null || !Number.isFinite(n) || n < 1_000) return; // ignore sub-$1k noise
+    const key = String(Math.round(n / 100) * 100); // ~$100 bucket dedupe
+    if (seen.has(key)) return;
+    seen.add(key);
+    amounts.push(n);
+  }
+
+  // $12,500,000 | $12.5 million | $3.5bn | $2M
+  for (const m of raw.matchAll(
+    /\$\s*([\d,]+(?:\.\d+)?)\s*(trillion|billion|million|thousand|bn|tn|mill\.|bill\.|thous\.|[mMbBkK])?/gi
+  )) {
+    const unit = m[2];
+    let n = applyMoneyUnit(m[1], unit);
+    if (n == null) continue;
+    const baseNum = parseFloat(String(m[1]).replace(/,/g, ''));
+    // Skip tiny bare amounts like "$8.6" with no scale (avoid treating as dollars)
+    if (!unit && Number.isFinite(baseNum) && baseNum >= 1 && baseNum < 10_000) continue;
+    if (!unit && Number.isFinite(baseNum) && baseNum < 250_000 && /\.\d/.test(m[1])) continue;
+    add(n);
+  }
+
+  // 12.5 million | 3 billion (no dollar sign)
+  for (const m of raw.matchAll(/\b([\d,]+(?:\.\d+)?)\s+(trillion|billion|million|thousand)\b/gi)) {
+    const n = applyMoneyUnit(m[1], m[2]);
+    if (n != null) add(n);
+  }
+
+  // Compact suffix: 8.6M, $2B (letter must be M/B/K)
+  for (const m of raw.matchAll(/\$?\s*([\d,]+(?:\.\d+)?)\s*([mMbBkK])(?=\b|[.,\s]|$)/g)) {
+    const suf = (m[2] || '').toLowerCase();
+    const unit =
+      suf === 'm' ? 'million' : suf === 'b' ? 'billion' : suf === 'k' ? 'thousand' : '';
+    const n = applyMoneyUnit(m[1], unit);
+    if (n != null) add(n);
+  }
+
+  // Full-dollar integers: 12,500,000 or 8600000 (exclude years 1900–2039)
+  for (const m of raw.matchAll(/\b(\d{1,3}(?:,\d{3})+|\d{6,})\b/g)) {
+    const digits = m[1].replace(/,/g, '');
+    const n = parseInt(digits, 10);
+    if (!Number.isFinite(n) || n < 100_000) continue;
+    if (n >= 1900 && n <= 2039) continue;
+    add(n);
+  }
+
+  return amounts.sort((a, b) => b - a);
+}
+
+/** @deprecated use extractNormalizedUsdAmounts — kept name for clarity in callers */
 function extractDollarAmounts(text) {
-  const raw = text || '';
-  const matches = [
-    ...raw.matchAll(/\$([\d,]+(?:\.\d+)?)\s*(million|billion|thousand|M|B|K)?/gi),
-  ];
-  const amounts = matches.map((m) => {
-    let n = parseFloat(m[1].replace(/,/g, ''));
-    const unit = (m[2] || '').toLowerCase();
-    if (unit === 'billion' || unit === 'b') n *= 1_000_000_000;
-    else if (unit === 'million' || unit === 'm') n *= 1_000_000;
-    else if (unit === 'thousand' || unit === 'k') n *= 1_000;
-    return n;
-  });
-  return amounts;
+  return extractNormalizedUsdAmounts(text);
 }
 
 function extractYears(text) {
@@ -163,7 +237,15 @@ function profileTextStored(pj) {
 function profileTextLive(live) {
   if (!live || typeof live !== 'object') return '';
   const lf = Array.isArray(live.legal_findings)
-    ? live.legal_findings.map((f) => `${f.summary} ${f.amount_usd_approx ?? ''} ${f.year ?? ''}`).join(' ')
+    ? live.legal_findings
+        .map((f) => {
+          const bits = [f.summary || ''];
+          const full = coerceApproxUsdToFullDollars(Number(f.amount_usd_approx));
+          if (full != null) bits.push(`$${full.toLocaleString('en-US')}`);
+          if (f.year != null) bits.push(String(f.year));
+          return bits.join(' ');
+        })
+        .join(' ')
     : '';
   const execN = Array.isArray(live.executives)
     ? live.executives.map((e) => `${e.name} ${e.criminal_liability} ${e.note || ''}`).join(' ')
@@ -624,22 +706,25 @@ function compareProfilesCore(slug, storedPj, live) {
   if (storedAmounts.length > 0 && liveAmounts.length > 0) {
     const storedMax = storedAmounts[0];
     const liveMax = liveAmounts[0];
-    const diff = Math.abs(storedMax - liveMax) / Math.max(storedMax, 1);
+    const denom = Math.max(Math.abs(storedMax), Math.abs(liveMax), 1);
+    const diff = Math.abs(storedMax - liveMax) / denom;
+    const pct = Math.min(9_999, Math.round(diff * 100));
+    const pctNote = `~${pct}%`;
     if (diff > 0.2) {
       discrepancies.push({
         field: 'dollar_amounts',
         severity: diff > 0.5 ? 'CRITICAL' : 'HIGH',
-        stored: `$${storedMax.toLocaleString()} (largest parsed)`,
-        live: `$${liveMax.toLocaleString()} (largest parsed)`,
-        note: `Largest financial figure differs by ~${Math.round(diff * 100)}%.`,
+        stored: `$${storedMax.toLocaleString()} (largest normalized)`,
+        live: `$${liveMax.toLocaleString()} (largest normalized)`,
+        note: `Largest headline amounts differ ${pctNote} after normalizing to USD.`,
       });
     } else if (diff > 0.08) {
       discrepancies.push({
         field: 'dollar_amounts',
         severity: 'MEDIUM',
-        stored: `$${storedMax.toLocaleString()} (largest parsed)`,
-        live: `$${liveMax.toLocaleString()} (largest parsed)`,
-        note: `Financial headline figures differ moderately (~${Math.round(diff * 100)}%).`,
+        stored: `$${storedMax.toLocaleString()} (largest normalized)`,
+        live: `$${liveMax.toLocaleString()} (largest normalized)`,
+        note: `Financial headline figures differ moderately (${pctNote}) after USD normalization.`,
       });
     }
   }
