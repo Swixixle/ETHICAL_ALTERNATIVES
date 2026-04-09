@@ -1,0 +1,91 @@
+{
+  "brand_name": "Vizient",
+  "brand_slug": "vizient",
+  "parent_company": "Vizient Inc.",
+  "ultimate_parent": "Member health systems and hospitals (private, member-governed enterprise)",
+  "subsidiaries": ["Kaufman Hall (advisory)", "Intalere legacy networks", "Sg2 analytics", "MedAssets-derived supply chain businesses", "Safe & Reliable Healthcare (high reliability consulting)"],
+  "overall_concern_level": "moderate",
+  "profile_type": "database",
+  "generated_headline": "NEARLY THREE QUARTERS OF ACUTE BEDS ON ONE CONTRACT STACK — MEMBER-OWNED, YET STILL VENDOR-FEE FED",
+  "executive_summary": "Vizient, Inc. is the largest hospital performance-improvement and group purchasing organization in the United States by many bed- and spend-based measures. Company disclosures state that members include more than 69% of the nation’s acute care hospitals, 97% of academic medical centers, and a large share of ambulatory spend—concentrating purchasing data and contracting access in a single alliance comparable in scale to Premier before its 2025 go-private. Unlike publicly floated GPO parents, Vizient emphasizes mutual, member governance: owners are the health systems themselves rather than outside equity float, which changes incentive geometry but not the underlying economics of vendor-funded administrative fees and rebates that Premier critics argue can misalign intermediary incentives. Federal anti-kickback safe harbors cap and disclose certain GPO fee flows precisely because money from manufacturers to purchasing intermediaries looks like kickbacks absent guardrails. Antitrust debate mirrors Premier: buyer power can lower sticker prices while exclusive tiers, single-source awards, or portfolio bundling may disadvantage insurgent suppliers and, downstream, rural innovators who lack analytics staff to arbitrage rebates. Vizient’s roll-up history—merging VHA, Novation, MedAssets segments, Intalere, and advisory assets like Kaufman Hall—mirrors vertical integration of consulting, capital, and sourcing, raising questions about lock-in comparable to Big Tech health stacks though without listed equity drama. Overall concern stays moderate: member ownership mitigates extractive PE headlines, yet market concentration and vendor-side payments remain structural policy issues.",
+  "verdict_tags": ["largest_us_hospital_gpo_by_beds_reported", "member_governed_not_public_float", "acute_hospital_share_sixty_nine_percent_disclosed", "vendor_administrative_fees_and_rebates", "gpo_safe_harbor_dependency", "rollup_history_novation_medassets_intalere", "buyer_power_antitrust_debates"],
+  "concern_flags": {"labor": true, "environmental": false, "political": true, "tax": true, "health": true, "legal": true},
+  "tax": {
+    "summary": "Vizient’s tax profile reflects a complex of taxable and tax-exempt components common to health-system services organizations—intercompany charges among alliance subsidiaries, pass-through patronage concepts, and unrelated business income risk when commercial consulting crosses lines. Member hospitals separately navigate 501(r) community benefit; Vizient-level taxes hinge on corporate form and state nexus from national consulting travel.",
+    "flags": ["member_patronage_and_ubi_analysis", "multistate_service_nexus", "integration_tax_planning_post_kaufman"],
+    "sources": ["https://www.irs.gov", "https://www.vizientinc.com/about-us/governance"]
+  },
+  "legal": {
+    "summary": "GPO conduct attracts Sherman Act buyer-cartel counter-arguments and supplier Robinson-Patman replies; cases vary. OIG anti-kickback safe harbors for GPO administrative fees require disclosures to members and adherence to percentage caps—breach theories appear in qui tam complaints industry-wide though not uniformly targeting Vizient. Merger reviews attended Intalere and Kaufman Hall acquisitions; FTC historically cleared many health-services deals contingent on behavioral promises. Data stewardship crosses HIPAA when analytics platforms host PHI for quality benchmarking.",
+    "flags": ["buyer_power_antitrust_complaints_sector", "gpo_safe_harbor_compliance_program", "phi_in_analytics_platforms", "m_a_clearences_behavioral_remedies_context"],
+    "sources": ["https://oig.hhs.gov/compliance/anti-kickback-statute", "https://www.justice.gov/atr", "https://www.vizientinc.com"]
+  },
+  "labor": {
+    "summary": "Corporate analysts, consultants, and technologists staff Vizient; hospitals members employ the bedside workforce whose schedules purchasing decisions indirectly stress. Consulting engagements can recommend productivity targets that nurses experience as staffing cuts—a second-order labor linkage.",
+    "flags": ["consulting_recommendations_downstream_staffing_pressure", "professional_knowledge_workforce_corporate"],
+    "sources": ["https://www.vizientinc.com/about-us/careers"]
+  },
+  "environmental": {
+    "summary": "Indirect environmental impact dominates: contract portfolios favoring disposable kits vs. reusables shift waste intensity at member hospitals; logistics consolidation can reduce duplicative truck miles when warehouse networks rationalize.",
+    "flags": ["contract_driven_single_use_intensity_indirect", "potential_logistics_efficiency_gains"],
+    "sources": []
+  },
+  "political": {
+    "summary": "Vizient’s public policy shop engages Medicare payment, 340B, supply resilience, and site-neutral rules—topics where mega-GPO bargaining power influences Hill debate. Member ownership means lobbying often aligns with nonprofit hospital association priorities yet still opposes policies threatening admin fee streams.",
+    "flags": ["hospital_payment_advocacy", "supply_chain_resilience_policy", "gpo_fee_transparency_defense"],
+    "sources": ["https://www.vizientinc.com/about-us/public-policy", "https://www.congress.gov"]
+  },
+  "executives": {
+    "summary": "Leadership answers to a board drawn from member systems—different accountability than quarterly PE funds but still pressure to grow fee-based services and retain large systems. CEO tenure interacts with M&A integration waves (Kaufman Hall, Safe & Reliable).",
+    "flags": ["member_board_accountability", "services_growth_mandate_parallel_purchasing", "post_merger_integration_leadership"],
+    "sources": ["https://www.vizientinc.com/about-us/governance"]
+  },
+  "connections": {
+    "summary": "Vizient, Premier (now PE-owned), and HealthTrust form the triad whose contracts touch most U.S. beds; manufacturers must win all three or accept exclusion risk. Academic medical center penetration (97% claim) links Vizient timelines to NIH-funded trial sites and pharma distribution. Kaufman Hall ties Vizient to capital advisory overlapping investment banking.",
+    "flags": ["mega_gpo_triad_overlap", "amc_near_universal_membership_statistic", "kaufman_finance_advisory_stack"],
+    "sources": ["https://www.vizientinc.com/about-us", "https://www.definitivehc.com/blog/top-10-gpos-by-staffed-beds"]
+  },
+  "allegations": {
+    "disclaimer": "Policy critiques below are general GPO criticisms echoed in literature—not specific court judgments against Vizient in aggregate.",
+    "summary": "Reform advocates allege vendor-side fees inflate net prices after rebates. Smaller suppliers allege portfolio exclusivity locks them out. Economists debate whether giant buying coalitions hurt patients when hospitals merge concurrently.",
+    "flags": ["vendor_fee_hidden_markup_thesis", "exclusivity_harms_smaller_suppliers_alleged", "parallel_hospital_consolidation_compounding_buyer_power"],
+    "sources": ["https://www.ftc.gov/advice-guidance/competition-guidance", "https://careandcost.com/2012/02/14/connecting-the-dots-how-anticompetitive-contracting-practices-kickbacks-and-self-dealing-by-hospital-group-purchasing-organizations-gpos-caused-the-u-s-drug-shortage/"]
+  },
+  "health_record": {
+    "summary": "Better purchasing analytics can reduce device infections when clinicians pick evidence-based SKUs; conversely, incentive misalignment might delay adoption of superior but less rebate-rich implants. Quality collaboratives can lower mortality when data transparency works.",
+    "flags": ["evidence_based_sku_selection_upside", "rebate_distortion_in_device_choice_risk", "collaborative_quality_programs_upside"],
+    "sources": ["https://www.ahrq.gov"]
+  },
+  "alternatives": {
+    "cheaper": ["Multisource contracts with transparent net price dashboards", "State-supervised hospital cooperative purchasing", "Direct manufacturer alliances for implants when scale permits"],
+    "healthier": ["Board-level review of GPO fee flows per hospital member", "Antitrust monitoring of portfolio loyalty tiers", "Maintain clinician veto on commodity substitutions affecting infection rates"],
+    "diy": ["Member CFOs: request line-level rebate share-backs in writing", "Compare Vizient vs competing GPO effective net on high-spend categories annually", "Support researchers studying post-merger patient outcomes"]
+  },
+  "timeline": [
+    {"year": 1977, "event": "VHA founded as voluntary hospital alliance—lineage to modern Vizient", "severity": "neutral", "source_url": "https://www.vizientinc.com/about-us"},
+    {"year": 1997, "event": "Novation joint venture expands national contracting volume", "severity": "neutral", "source_url": "https://www.vizientinc.com/about-us"},
+    {"year": 2015, "event": "VHA, University HealthSystem Consortium, Novation unify under Vizient brand", "severity": "moderate", "source_url": "https://www.vizientinc.com/about-us"},
+    {"year": 2016, "event": "Acquires MedAssets SCM and Sg2—deepens analytics and spend management stack", "severity": "moderate", "source_url": "https://www.vizientinc.com/about-us"},
+    {"year": 2021, "event": "Completes Intalere acquisition—broadens rural and DSH membership mix", "severity": "moderate", "source_url": "https://www.vizientinc.com/about-us"},
+    {"year": 2024, "event": "Completes Kaufman Hall acquisition—adds finance and strategy advisory", "severity": "moderate", "source_url": "https://www.vizientinc.com/about-us"}
+  ],
+  "community_impact": {
+    "displacement": "When contracts shift spend to national winners, regional device vendors may close sales offices—local job effects even if hospital ‘saves’ ten basis points.",
+    "price_illusion": "Rebate waterfalls arrive quarters later; municipal systems without analysts confuse distributor invoice with true net.",
+    "tax_math": "Nonprofit members rely on GPO savings to fund charity care; savings that evaporate in vendor fee opacity leave missions underfunded.",
+    "wealth_velocity": "Administrative fees split between GPO operations and member distributions—governance decides who keeps the marginal dollar."
+  },
+  "cost_absorption": {
+    "who_benefited": [
+      {"group": "Member systems when rebates exceed fees", "how": "Lower supply expense vs standalone purchasing"},
+      {"group": "Large incumbent suppliers", "how": "Locked national volumes"},
+      {"group": "Patients in systems that reinvest savings clinically", "how": "Better staffing or capital when boards allocate surplus well"}
+    ],
+    "who_paid": [
+      {"group": "Challenger medtech firms", "how": "Harder contract access"},
+      {"group": "Uninsured patients", "how": "If hospital costs stay high despite GPO branding"},
+      {"group": "Taxpayers", "how": "If Medicare prices do not fall commensurately with touted savings"}
+    ],
+    "the_gap": "Member ownership curbs outside equity extraction but not the theoretical kickback geometry of vendor-paid intermediaries—that is statutory and cultural work still unfinished."
+  }
+}
