@@ -194,15 +194,33 @@ export default function TapOverlay({
             left: `${holdIndicator.x * 100}%`,
             top: `${holdIndicator.y * 100}%`,
             transform: 'translate(-50%, -50%)',
-            width: 64,
-            height: 64,
-            borderRadius: '50%',
-            border: '2px solid #f0a820',
-            background: 'transparent',
-            animation: 'holdPulse 400ms ease-out forwards',
+            width: 160,
+            height: 120,
+            boxSizing: 'border-box',
+            border: '2px dashed #f0a820',
+            background: 'rgba(240, 168, 32, 0.08)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '8px 10px',
+            animation: 'holdRegionFadeIn 280ms ease-out forwards',
             pointerEvents: 'none',
           }}
-        />
+        >
+          <span
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 9,
+              letterSpacing: 1.2,
+              textTransform: 'uppercase',
+              color: '#f0a820',
+              textAlign: 'center',
+              lineHeight: 1.35,
+            }}
+          >
+            Hold &amp; drag to select
+          </span>
+        </div>
       ) : null}
       {marker &&
       typeof marker.x === 'number' &&

@@ -18,7 +18,7 @@ const PERPLEXITY_MODEL =
   process.env.PERPLEXITY_MODEL ||
   'sonar';
 
-const GEMINI_MODEL = process.env.GEMINI_VISION_MODEL || 'gemini-2.0-flash';
+const GEMINI_MODEL = process.env.GEMINI_VISION_MODEL || 'gemini-2.0-flash-lite';
 
 const PERPLEXITY_TIMEOUT_MS = Math.min(
   Math.max(Number(process.env.PERPLEXITY_PERIMETER_TIMEOUT_MS) || 14_000, 5000),

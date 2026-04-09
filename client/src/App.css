@@ -839,6 +839,16 @@ body,
   }
 }
 
+/* Hold-to-select region hint (TapOverlay) */
+@keyframes holdRegionFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes slideUp {
   from {
     transform: translateY(20px);

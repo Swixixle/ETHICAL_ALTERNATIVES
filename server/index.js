@@ -1,4 +1,5 @@
 import './env.js';
+import { pool } from './db/pool.js';
 import cors from 'cors';
 import express from 'express';
 import { registryHeaders } from './middleware/registryHeaders.js';
@@ -129,4 +130,9 @@ app.use('/api/documentary', documentaryRouter);
 const PORT = Number(process.env.PORT) || 3001;
 app.listen(PORT, () => {
   console.log(`ethicalalt-server listening on ${PORT}`);
+  console.log(
+    pool
+      ? 'database: pool enabled (DATABASE_URL)'
+      : 'database: pool disabled — set DATABASE_URL in server/.env, repo-root .env, or cwd .env'
+  );
 });
