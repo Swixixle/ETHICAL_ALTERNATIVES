@@ -1,4 +1,5 @@
 {
+  "_corroboration_note": "Dollar figures updated via corroboration pass April 2026",
   "brand_name": "Goldman Sachs",
   "brand_slug": "goldman-sachs",
   "parent_company": "The Goldman Sachs Group Inc.",
@@ -12,7 +13,7 @@
   "overall_concern_level": "significant",
   "profile_type": "database",
   "generated_headline": "GOLDMAN SACHS PAID $1.6 BILLION IN BRIBES TO STEAL FROM A MALAYSIAN DEVELOPMENT FUND AND CALLED IT BANKING",
-  "executive_summary": "Goldman Sachs is one of the most powerful investment banks on earth, generating over $47 billion in net revenue in 2024. The bank pleaded guilty — through its Malaysian subsidiary — to conspiracy to violate the Foreign Corrupt Practices Act in 2020, paying a combined $5.1 billion to settle with the U.S. DOJ, SEC, Malaysian government, and international regulators. The 1MDB scandal involved paying $1.6 billion in bribes to Malaysian and Abu Dhabi officials to secure Goldman's role as underwriter of $6.5 billion in bonds for a Malaysian development fund — from which $4.5 billion was subsequently stolen. It is the largest FCPA settlement in history. Goldman's record also includes its central role in the 2008 financial crisis, where it simultaneously sold mortgage-backed securities to clients while betting against them.",
+  "executive_summary": "Goldman Sachs is one of the most powerful investment banks on earth, generating over $47 billion in net revenue in 2024. The bank pleaded guilty — through its Malaysian subsidiary — to conspiracy to violate the Foreign Corrupt Practices Act in 2020, paying a combined approximately $6.8 billion to settle with the U.S. DOJ, SEC, Malaysian government, and international regulators (U.S. components often summarized as roughly $2.9 billion criminal-related and roughly $3.9 billion civil/regulatory). The 1MDB scandal involved paying $1.6 billion in bribes to Malaysian and Abu Dhabi officials to secure Goldman's role as underwriter of $6.5 billion in bonds for a Malaysian development fund — from which $4.5 billion was subsequently stolen. It is the largest FCPA settlement in history. Goldman's record also includes its central role in the 2008 financial crisis, where it simultaneously sold mortgage-backed securities to clients while betting against them.",
   "verdict_tags": [
     "bribery_1_6b",
     "1mdb_criminal_guilty_plea",
@@ -41,9 +42,9 @@
     ]
   },
   "legal": {
-    "summary": "1MDB (2020): Goldman's Malaysian subsidiary pleaded guilty; parent company entered Deferred Prosecution Agreement; combined $5.1 billion in settlements with DOJ, SEC, Malaysian government, UK FCA, Singapore, and Hong Kong regulators — the largest FCPA settlement in history. The scheme involved paying $1.6 billion in bribes to secure underwriting of $6.5 billion in bonds, generating $600 million in fees for Goldman while $4.5 billion was stolen from the fund. 2016 Mortgage Crisis Settlement: Goldman paid $5 billion to resolve DOJ claims for selling toxic mortgage-backed securities while its own traders bet against them. 2012: Goldman paid $22 million to settle SEC charges for giving hedge fund clients advance notice of analyst downgrades. Goldman has a documented history of conflict of interest settlements.",
+    "summary": "1MDB (2020): Goldman's Malaysian subsidiary pleaded guilty; parent company entered Deferred Prosecution Agreement; combined approximately $6.8 billion in settlements with DOJ, SEC, Malaysian government, UK FCA, Singapore, and Hong Kong regulators (U.S. components often summarized as roughly $2.9 billion criminal-related and roughly $3.9 billion civil/regulatory) — the largest FCPA settlement in history. The scheme involved paying $1.6 billion in bribes to secure underwriting of $6.5 billion in bonds, generating $600 million in fees for Goldman while $4.5 billion was stolen from the fund. 2016 Mortgage Crisis Settlement: Goldman paid $5 billion to resolve DOJ claims for selling toxic mortgage-backed securities while its own traders bet against them. 2012: Goldman paid $22 million to settle SEC charges for giving hedge fund clients advance notice of analyst downgrades. Goldman has a documented history of conflict of interest settlements.",
     "flags": [
-      "1mdb_5_1b_fcpa_record",
+      "1mdb_6_8b_fcpa_record",
       "malaysian_subsidiary_guilty_plea",
       "5b_mortgage_crisis_settlement",
       "advance_notice_analyst_downgrades"
@@ -198,7 +199,7 @@
     },
     {
       "year": 2020,
-      "event": "$5.1B total 1MDB settlements across DOJ, SEC, Malaysia, UK, Singapore, Hong Kong — largest FCPA settlement in history; Malaysian subsidiary guilty plea",
+      "event": "~$6.8B total 1MDB settlements across DOJ, SEC, Malaysia, UK, Singapore, Hong Kong (U.S. share often cited as ~$2.9B criminal + ~$3.9B civil) — largest FCPA settlement in history; Malaysian subsidiary guilty plea",
       "severity": "critical",
       "source_url": "https://www.justice.gov"
     },
@@ -244,6 +245,6 @@
         "how": "$22.9B in direct and indirect bailout funds; crisis costs borne broadly by the economy"
       }
     ],
-    "the_gap": "Goldman earned $600 million underwriting bonds for a fund from which $4.5 billion was stolen. Goldman paid $5.1 billion in settlements. One banker went to prison. The CEO said the firm was doing God's work."
+    "the_gap": "Goldman earned $600 million underwriting bonds for a fund from which $4.5 billion was stolen. Goldman paid approximately $6.8 billion in settlements. One banker went to prison. The CEO said the firm was doing God's work."
   }
 }

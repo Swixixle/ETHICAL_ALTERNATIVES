@@ -1,15 +1,16 @@
 {
+  "_corroboration_note": "Dollar figures updated via corroboration pass April 2026",
   "brand_name": "Boy Scouts of America",
   "brand_slug": "boy-scouts-of-america",
   "parent_company": "Boy Scouts of America",
   "ultimate_parent": "Boy Scouts of America National Council",
   "overall_concern_level": "significant",
   "profile_type": "nonprofit",
-  "generated_headline": "THE BOY SCOUTS KEPT SECRET FILES ON SEXUAL PREDATORS FOR 70 YEARS — CALLED THEM 'PERVERSION FILES' — AND PAID $850 MILLION TO 82,000 ABUSE SURVIVORS IN THE LARGEST YOUTH ORGANIZATION ABUSE SETTLEMENT IN US HISTORY",
-  "executive_summary": "The Boy Scouts of America (BSA) is one of the largest youth organizations in the United States, with approximately 1 million current Scouts and a century-long history. In February 2020, the BSA filed for Chapter 11 bankruptcy — driven by the overwhelming volume of sexual abuse claims from survivors. The bankruptcy process revealed that the BSA had maintained internal files on suspected and known sexual predators since the 1920s — files it called 'perversion files' internally — that were never shared with law enforcement. By the time the bankruptcy concluded, approximately 82,000 survivors had filed claims. In September 2023, the BSA's reorganization plan was confirmed, providing approximately $850 million in settlements — the largest settlement for sexual abuse in any youth-serving organization in US history. The bankruptcy also revealed that the BSA had concealed the perversion files from parents, law enforcement, and the public for approximately 70 years.",
+  "generated_headline": "THE BOY SCOUTS KEPT SECRET FILES ON SEXUAL PREDATORS FOR 70 YEARS — CALLED THEM 'PERVERSION FILES' — AND PAID $2.46 BILLION TO 82,000 ABUSE SURVIVORS IN THE LARGEST YOUTH ORGANIZATION ABUSE SETTLEMENT IN US HISTORY",
+  "executive_summary": "The Boy Scouts of America (BSA) is one of the largest youth organizations in the United States, with approximately 1 million current Scouts and a century-long history. In February 2020, the BSA filed for Chapter 11 bankruptcy — driven by the overwhelming volume of sexual abuse claims from survivors. The bankruptcy process revealed that the BSA had maintained internal files on suspected and known sexual predators since the 1920s — files it called 'perversion files' internally — that were never shared with law enforcement. By the time the bankruptcy concluded, approximately 82,000 survivors had filed claims. In September 2023, the BSA's reorganization plan was confirmed, providing approximately $2.46 billion in settlements — the largest settlement for sexual abuse in any youth-serving organization in US history. The bankruptcy also revealed that the BSA had concealed the perversion files from parents, law enforcement, and the public for approximately 70 years.",
   "verdict_tags": [
     "82000_survivors_largest_youth_organization_abuse",
-    "850m_settlement_largest_youth_organization",
+    "2_46b_settlement_largest_youth_organization",
     "perversion_files_70_years_concealed",
     "chapter_11_2020_abuse_claims_driven",
     "perversion_files_never_shared_law_enforcement",
@@ -47,11 +48,11 @@
     "sources": []
   },
   "legal": {
-    "summary": "February 2020: BSA files for Chapter 11 bankruptcy. The bankruptcy process: local BSA councils filed separately, preserving their assets outside the national bankruptcy estate. Chartered organizations (churches, civic groups that sponsor troops) were separately named in abuse claims and were required to contribute to the settlement fund. September 2023: Reorganization plan confirmed; approximately $850 million settlement covering approximately 82,000 survivor claims. The perversion files: the BSA had maintained files on known and suspected sexual predators since the 1920s — never shared with law enforcement or parents. These files were ordered released by an Oregon court in 2012; they documented abuse patterns the organization had been aware of for decades.",
+    "summary": "February 2020: BSA files for Chapter 11 bankruptcy. The bankruptcy process: local BSA councils filed separately, preserving their assets outside the national bankruptcy estate. Chartered organizations (churches, civic groups that sponsor troops) were separately named in abuse claims and were required to contribute to the settlement fund. September 2023: Reorganization plan confirmed; approximately $2.46 billion settlement covering approximately 82,000 survivor claims. The perversion files: the BSA had maintained files on known and suspected sexual predators since the 1920s — never shared with law enforcement or parents. These files were ordered released by an Oregon court in 2012; they documented abuse patterns the organization had been aware of for decades.",
     "flags": [
       "chapter_11_2020",
       "82000_survivors",
-      "850m_settlement",
+      "2_46b_settlement",
       "perversion_files_released_oregon_2012",
       "local_councils_separate_estate",
       "chartered_organizations_required_contribution"
@@ -159,15 +160,15 @@
     },
     {
       "year": 2023,
-      "event": "September: $850M settlement confirmed for approximately 82,000 survivors — largest youth organization abuse settlement in US history",
+      "event": "September: ~$2.46B settlement confirmed for approximately 82,000 survivors — largest youth organization abuse settlement in US history",
       "severity": "critical",
       "source_url": "https://www.nbcnews.com/news/us-news/boy-scouts-bankruptcy-plan-confirmed-82-000-sexual-abuse-survivors-rcna100988"
     }
   ],
   "community_impact": {
-    "displacement": "82,000 Americans who were abused as Scouts — in the context of a trusted youth development organization — have received settlements averaging approximately $10,000 each from the $850 million fund, which survivor advocates characterized as dramatically insufficient relative to documented harm.",
+    "displacement": "82,000 Americans who were abused as Scouts — in the context of a trusted youth development organization — have received settlements averaging approximately $30,000 each from the $2.46 billion fund, which survivor advocates characterized as dramatically insufficient relative to documented harm.",
     "price_illusion": "The BSA presented itself as a character-building organization focused on trustworthiness, loyalty, and duty — the Scout Law's core values. It simultaneously maintained files on known sexual predators for 70 years without sharing them with law enforcement, enabling documented reoffending in new troops.",
-    "tax_math": "The BSA and local councils operated as tax-exempt organizations during the 70-year period documented in the perversion files. The $850 million settlement was funded partly through bankruptcy proceedings and partly through chartered organizations' required contributions — with tax implications for all parties.",
+    "tax_math": "The BSA and local councils operated as tax-exempt organizations during the 70-year period documented in the perversion files. The $2.46 billion settlement was funded partly through bankruptcy proceedings and partly through chartered organizations' required contributions — with tax implications for all parties.",
     "wealth_velocity": "The BSA's bankruptcy preserved significant local council assets outside the national estate — a structure that survivor advocates argued was specifically designed to minimize settlement payments while maintaining organizational continuity. Local council property and endowments remained available to the continuing organization after settlement."
   },
   "cost_absorption": {
@@ -184,9 +185,9 @@
     "who_paid": [
       {
         "group": "82,000 sexual abuse survivors",
-        "how": "Childhood sexual abuse in trusted youth organization; 70 years of organizational knowledge of patterns without law enforcement disclosure; $850M settlement averaging approximately $10,000 per survivor"
+        "how": "Childhood sexual abuse in trusted youth organization; 70 years of organizational knowledge of patterns without law enforcement disclosure; $2.46B settlement averaging approximately $30,000 per survivor"
       }
     ],
-    "the_gap": "The Boy Scouts kept files on sexual predators since the 1920s. They called them perversion files. They never showed them to law enforcement. When a court ordered them released in 2012 they documented 70 years of known abuse patterns. 82,000 survivors filed claims in the bankruptcy. The settlement was $850 million. The average payment was approximately $10,000. The local councils kept their assets. The organization still exists."
+    "the_gap": "The Boy Scouts kept files on sexual predators since the 1920s. They called them perversion files. They never showed them to law enforcement. When a court ordered them released in 2012 they documented 70 years of known abuse patterns. 82,000 survivors filed claims in the bankruptcy. The settlement was $2.46 billion. The average payment was approximately $30,000. The local councils kept their assets. The organization still exists."
   }
 }

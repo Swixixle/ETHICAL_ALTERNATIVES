@@ -1,4 +1,5 @@
 {
+  "_corroboration_note": "Dollar figures updated via corroboration pass April 2026",
   "brand_name": "FLDS Church",
   "brand_slug": "flds-church",
   "parent_company": "Fundamentalist Church of Jesus Christ of Latter-Day Saints",
@@ -52,7 +53,7 @@
     "sources": []
   },
   "legal": {
-    "summary": "2006: Warren Jeffs placed on FBI Ten Most Wanted list; arrested in Nevada. 2007: Jeffs convicted in Utah of rape as an accomplice (arranging marriage of 14-year-old to adult cousin); conviction later overturned on jury instruction error. 2008: Texas Rangers raid Yearning for Zion Ranch; 439 children taken into state custody — the largest child protective action in Texas history; children ultimately returned after courts found insufficient evidence of individual abuse for most children. 2011: Jeffs convicted in Texas on two counts of sexual assault of a child (a 12-year-old) and aggravated sexual assault of a child (a 15-year-old); sentenced to life plus 20 years plus $10,000 fine. 2012: UEP trust distributed to members and former members by Utah court. Jeffs continues to issue religious directives from prison.",
+    "summary": "2006: Warren Jeffs placed on FBI Ten Most Wanted list; arrested in Nevada. 2007: Jeffs convicted in Utah of rape as an accomplice (arranging marriage of 14-year-old to adult cousin); conviction later overturned on jury instruction error. 2008: Texas Rangers raid Yearning for Zion Ranch; 439 children taken into state custody — the largest child protective action in Texas history; children ultimately returned after courts found insufficient evidence of individual abuse for most children. 2011: Jeffs convicted in Texas on two counts of sexual assault of a child (a 12-year-old) and aggravated sexual assault of a child (a 15-year-old); sentenced to life plus 20 years plus $10,000 criminal fine. 2016–2017: Federal SNAP/food-stamp fraud prosecution of FLDS leaders alleged taxpayer losses on the order of $12 million (prosecutors described the loss figure as an estimate). 2012: UEP trust distributed to members and former members by Utah court. Jeffs continues to issue religious directives from prison.",
     "flags": [
       "jeffs_life_plus_20_2011_texas",
       "fbi_ten_most_wanted",
