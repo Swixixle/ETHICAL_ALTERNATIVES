@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Component, useCallback, useEffect, useMemo, useState } from 'react';
+import '../styles/onboardingPress.css';
 import { getImpactFetchHeaders } from '../lib/impactConsent.js';
 import ShareSheet from './Civic/ShareSheet.jsx';
 import { WITNESS_LEGAL_NOTICE, WITNESS_LEGAL_NOTICE_COMPACT } from '../constants/witnessLegalNotice.js';
@@ -39,6 +40,78 @@ function checklistLabelForRegulator(reg) {
 function pressRowId(handle) {
   const h = String(handle || '').replace(/^@+/, '');
   return `press_${h}`;
+}
+
+class ShareCardErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { error };
+  }
+
+  componentDidCatch(error, info) {
+    console.error('[ShareCard] render or child error', error, info?.componentStack);
+  }
+
+  render() {
+    if (this.state.error) {
+      const { onClose } = this.props;
+      return (
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: '#0f1520',
+            zIndex: 1000,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 24,
+            textAlign: 'center',
+          }}
+          role="alert"
+        >
+          <p
+            style={{
+              fontFamily: "'Crimson Pro', serif",
+              fontSize: 17,
+              color: '#a8c4d8',
+              lineHeight: 1.5,
+              maxWidth: 360,
+              margin: '0 0 24px',
+            }}
+          >
+            Something went wrong loading share options.
+          </p>
+          <button
+            type="button"
+            className="ea-onb-press"
+            onClick={() => onClose?.()}
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 11,
+              letterSpacing: 2,
+              textTransform: 'uppercase',
+              background: '#f0a820',
+              color: '#0f1520',
+              border: 'none',
+              padding: '14px 28px',
+              borderRadius: 2,
+              cursor: 'pointer',
+              fontWeight: 700,
+            }}
+          >
+            Close
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
 }
 
 function composeTwitterWithPress(shareData, outlets, variant) {
@@ -190,7 +263,7 @@ const DEFAULT_OPEN = {
  *   onClose: () => void;
  * }} props
  */
-export default function ShareCard({ investigation, identification, onClose }) {
+function ShareCardContent({ investigation, identification, onClose }) {
   const [shareData, setShareData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState(null);
@@ -542,12 +615,16 @@ export default function ShareCard({ investigation, identification, onClose }) {
     : [];
 
   const regRows =
-    shareData?.relevant_regulators?.map((reg) => ({
-      id: `reg_${reg.agency}`,
-      primary: checklistLabelForRegulator(reg),
-    })) || [];
+    (shareData?.relevant_regulators || [])
+      .filter((reg) => reg && typeof reg.agency === 'string')
+      .map((reg) => ({
+        id: `reg_${reg.agency}`,
+        primary: checklistLabelForRegulator(reg),
+      }));
 
-  const pressOutlets = shareData?.press_outlets || [];
+  const pressOutlets = (shareData?.press_outlets || []).filter(
+    (o) => o && (o.handle != null || o.name != null)
+  );
   const cd = shareData?.card_data;
   const previewHeadline =
     cd?.headline ||
@@ -647,7 +724,7 @@ export default function ShareCard({ investigation, identification, onClose }) {
       style={{
         position: 'fixed',
         inset: 0,
-        background: 'rgba(15, 21, 32, 0.97)',
+        background: '#0f1520',
         zIndex: 1000,
         display: 'flex',
         flexDirection: 'column',
@@ -667,6 +744,8 @@ export default function ShareCard({ investigation, identification, onClose }) {
           padding: '12px 18px 10px',
           minHeight: 44,
           boxSizing: 'border-box',
+          borderBottom: '1px solid #2a3f52',
+          background: '#0f1520',
         }}
       >
         <div
@@ -839,10 +918,12 @@ export default function ShareCard({ investigation, identification, onClose }) {
           <div
             style={{
               margin: '12px 0',
-              padding: '12px 14px',
-              background: '#121a24',
-              borderRadius: 4,
+              padding: '16px 16px',
+              background: '#0f1520',
+              border: '1px solid #2a3f52',
+              borderRadius: 2,
               boxSizing: 'border-box',
+              textAlign: 'center',
             }}
           >
             <div
@@ -850,14 +931,22 @@ export default function ShareCard({ investigation, identification, onClose }) {
                 fontFamily: "'Bebas Neue', sans-serif",
                 fontSize: 17,
                 letterSpacing: 0.5,
-                color: '#fff',
+                color: '#f0e8d0',
                 lineHeight: 1.1,
               }}
             >
               {previewHeadline}
             </div>
             {cd?.top_tags ? (
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 10 }}>
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: 6,
+                  marginTop: 10,
+                  justifyContent: 'center',
+                }}
+              >
                 {(cd.top_tags || []).slice(0, 3).map((tag, i) => (
                   <span
                     key={i}
@@ -977,7 +1066,7 @@ export default function ShareCard({ investigation, identification, onClose }) {
                 onToggle={() => flipSection('press')}
               >
                 {pressOutlets.map((o) => {
-                  const pid = pressRowId(o.handle);
+                  const pid = pressRowId(o?.handle ?? '');
                   return (
                     <label key={pid} style={{ ...rowStyle, borderBottom: '0.5px solid rgba(255,255,255,0.06)' }}>
                       <input
@@ -1245,5 +1334,16 @@ export default function ShareCard({ investigation, identification, onClose }) {
         </div>
       ) : null}
     </div>
+  );
+}
+
+/**
+ * @param {{ investigation: Record<string, unknown> | null; identification: Record<string, unknown> | null; onClose: () => void }} props
+ */
+export default function ShareCard(props) {
+  return (
+    <ShareCardErrorBoundary onClose={props.onClose}>
+      <ShareCardContent {...props} />
+    </ShareCardErrorBoundary>
   );
 }

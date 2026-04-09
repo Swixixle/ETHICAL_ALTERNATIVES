@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import {
-  getImpactConsentCivic,
   getImpactConsentOutcome,
   getImpactConsentUsage,
-  setImpactConsentCivic,
   setImpactConsentOutcome,
   setImpactConsentUsage,
   clearAllImpactConsents,
@@ -31,12 +29,10 @@ const hintStyle = {
 export default function PrivacyConsentPanel({ variant = 'full', showReset = true }) {
   const [usage, setUsage] = useState(() => getImpactConsentUsage());
   const [outcome, setOutcome] = useState(() => getImpactConsentOutcome());
-  const [civic, setCivic] = useState(() => getImpactConsentCivic());
 
   useEffect(() => {
     setUsage(getImpactConsentUsage());
     setOutcome(getImpactConsentOutcome());
-    setCivic(getImpactConsentCivic());
   }, []);
 
   const rowGap = variant === 'compact' ? 14 : 18;
@@ -68,6 +64,7 @@ export default function PrivacyConsentPanel({ variant = 'full', showReset = true
       </p>
 
       <label
+        className="ea-onb-press"
         style={{
           display: 'flex',
           gap: 12,
@@ -93,6 +90,7 @@ export default function PrivacyConsentPanel({ variant = 'full', showReset = true
       </label>
 
       <label
+        className="ea-onb-press"
         style={{
           display: 'flex',
           gap: 12,
@@ -120,41 +118,14 @@ export default function PrivacyConsentPanel({ variant = 'full', showReset = true
         </span>
       </label>
 
-      <label
-        style={{
-          display: 'flex',
-          gap: 12,
-          alignItems: 'flex-start',
-          marginBottom: rowGap,
-          cursor: 'pointer',
-        }}
-      >
-        <input
-          type="checkbox"
-          checked={civic}
-          onChange={(e) => {
-            const on = e.target.checked;
-            setCivic(on);
-            setImpactConsentCivic(on);
-          }}
-          style={{ marginTop: 4 }}
-        />
-        <span>
-          <span style={labelStyle}>Civic action stats</span>
-          <div style={hintStyle}>
-            Count witness registrations, share-exports, and narrations you trigger — daily totals only.
-          </div>
-        </span>
-      </label>
-
       {showReset ? (
         <button
           type="button"
+          className="ea-onb-press"
           onClick={() => {
             clearAllImpactConsents();
             setUsage(false);
             setOutcome(false);
-            setCivic(false);
           }}
           style={{
             marginTop: 8,

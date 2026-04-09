@@ -21,6 +21,7 @@ import {
 import { getGoogleMapsUrl, getStreetAddressLine } from '../utils/localBusinessMaps.js';
 import PrivacyConsentPanel from './PrivacyConsentPanel.jsx';
 import OnboardingDeck from './OnboardingDeck.jsx';
+import '../styles/onboardingPress.css';
 
 const ONBOARD_KEY = 'ea_geo_onboard';
 
@@ -429,9 +430,9 @@ function LocationPrompt({
 
       <button
         type="button"
+        className={`ea-onb-press${buttonState === 'waiting' ? ' ea-location-btn--waiting' : ''}`}
         data-no-disintegrate=""
         onClick={handleShareLocationClick}
-        className={buttonState === 'waiting' ? 'ea-location-btn--waiting' : undefined}
         style={{
           fontFamily: "'Space Mono', monospace",
           fontSize: 11,
@@ -471,6 +472,7 @@ function LocationPrompt({
 
       <button
         type="button"
+        className="ea-onb-press"
         onClick={onSkip}
         style={{
           fontFamily: "'Space Mono', monospace",
@@ -535,6 +537,7 @@ function LocationPrompt({
           />
           <button
             type="submit"
+            className="ea-onb-press"
             disabled={manualBusy || !manualCity.trim()}
             style={{
               fontFamily: "'Space Mono', monospace",
@@ -556,6 +559,7 @@ function LocationPrompt({
       ) : (
         <button
           type="button"
+          className="ea-onb-press"
           onClick={onOpenManualEntry}
           style={{
             fontFamily: "'Crimson Pro', serif",
@@ -1336,6 +1340,7 @@ export default function HomeScreen({
         </div>
         <button
           type="button"
+          className="ea-onb-press"
           onClick={onStartSnap}
           style={{
             fontFamily: "'Space Mono', monospace",
