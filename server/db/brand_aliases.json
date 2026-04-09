@@ -310,5 +310,9 @@
   "envision-healthcare": "envision-healthcare",
   "envision": "envision-healthcare",
   "emcare": "envision-healthcare",
-  "amsurg": "envision-healthcare"
+  "amsurg": "envision-healthcare",
+  "epic-systems": "epic-systems",
+  "epic": "epic-systems",
+  "mychart": "epic-systems",
+  "epic-ehr": "epic-systems"
 }
