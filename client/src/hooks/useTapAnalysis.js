@@ -76,14 +76,23 @@ export function useTapAnalysis() {
 
   const captureGeoOnce = useCallback(() => {
     if (geo !== null || typeof navigator === 'undefined' || !navigator.geolocation) return;
+
+    const applyPosition = (pos) => {
+      setGeo({
+        lat: pos.coords.latitude,
+        lng: pos.coords.longitude,
+      });
+    };
+
     navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        setGeo({
-          lat: pos.coords.latitude,
-          lng: pos.coords.longitude,
-        });
+      applyPosition,
+      () => {
+        navigator.geolocation.getCurrentPosition(
+          applyPosition,
+          () => setGeo(false),
+          { enableHighAccuracy: false, timeout: 15_000, maximumAge: 60_000 }
+        );
       },
-      () => setGeo(false),
       { enableHighAccuracy: true, timeout: 15_000, maximumAge: 30_000 }
     );
   }, [geo]);

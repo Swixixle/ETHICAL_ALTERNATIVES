@@ -10,7 +10,7 @@ import {
   resolveIncumbentSlug,
 } from '../services/investigation.js';
 import { queryLocalBusinesses } from '../services/overpass.js';
-import { CATEGORY_TO_SHOP_TYPES, DEFAULT_SHOP_TYPES } from '../services/categoryShopTypes.js';
+import { getLocalOsmTypes } from '../services/categoryShopTypes.js';
 import { validateImagePayload } from '../utils/imageUtils.js';
 import { findLocalSellers } from '../services/sellerRegistry.js';
 import { pool } from '../db/pool.js';
@@ -159,7 +159,7 @@ async function loadAlternativesBundle(finalIdentification, user_lat, user_lng) {
   const lng = Number(user_lng);
   const hasGeo = Number.isFinite(lat) && Number.isFinite(lng);
 
-  const shopTypes = CATEGORY_TO_SHOP_TYPES[finalIdentification.category] || DEFAULT_SHOP_TYPES;
+  const { shopTypes, amenityTypes } = getLocalOsmTypes(finalIdentification.category);
 
   const localPromise = hasGeo
     ? queryLocalBusinesses({
@@ -167,6 +167,7 @@ async function loadAlternativesBundle(finalIdentification, user_lat, user_lng) {
         lng,
         radiusMeters: 25_000,
         shopTypes,
+        amenityTypes,
         excludeNameSubstrings: chainExclusions,
       })
     : Promise.resolve([]);

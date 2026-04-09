@@ -421,15 +421,20 @@
 .investigation-card__accordion-panel {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 180ms ease-out;
+  transition: max-height 280ms ease-out;
 }
 
 .investigation-card__accordion-panel--open {
-  max-height: 600px;
+  /* Cap panel height so long sections scroll inside the accordion instead of clipping at 600px */
+  max-height: min(92vh, 5600px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .investigation-card__accordion-inner {
   padding: 0 16px 16px 40px;
+  min-height: 0;
 }
 
 .investigation-card__section-summary {

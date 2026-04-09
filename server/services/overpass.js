@@ -40,30 +40,50 @@ function buildStreetCityLine(tags) {
   return line || '';
 }
 
+function escapeOsmClassRegexToken(s) {
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 /**
  * @param {object} opts
  * @param {number} opts.lat
  * @param {number} opts.lng
  * @param {number} [opts.radiusMeters] default 25000
- * @param {string[]} opts.shopTypes
+ * @param {string[]} [opts.shopTypes]
+ * @param {string[]} [opts.amenityTypes]
  * @param {string[]} [opts.excludeNameSubstrings] chain needles (matched case-insensitively)
  */
 export async function queryLocalBusinesses({
   lat,
   lng,
   radiusMeters = 25_000,
-  shopTypes,
+  shopTypes = [],
+  amenityTypes = [],
   excludeNameSubstrings = [],
 }) {
-  if (!Number.isFinite(lat) || !Number.isFinite(lng) || !shopTypes?.length) {
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
     return [];
   }
 
-  const pattern = shopTypes.map((s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  const shops = Array.isArray(shopTypes) ? shopTypes.filter(Boolean) : [];
+  const amenities = Array.isArray(amenityTypes) ? amenityTypes.filter(Boolean) : [];
+  if (!shops.length && !amenities.length) {
+    return [];
+  }
+
+  const unionLines = [];
+  if (shops.length) {
+    const pattern = shops.map(escapeOsmClassRegexToken).join('|');
+    unionLines.push(`  node["shop"~"^(${pattern})$",i](around:${radiusMeters},${lat},${lng});`);
+  }
+  if (amenities.length) {
+    const apat = amenities.map(escapeOsmClassRegexToken).join('|');
+    unionLines.push(`  node["amenity"~"^(${apat})$",i](around:${radiusMeters},${lat},${lng});`);
+  }
 
   const query = `[out:json][timeout:25];
 (
-  node["shop"~"^(${pattern})$",i](around:${radiusMeters},${lat},${lng});
+${unionLines.join('\n')}
 );
 out body;`;
 
@@ -85,16 +105,20 @@ out body;`;
     const needles = normalizeChainNeedles(excludeNameSubstrings);
 
     const out = [];
+    const seenIds = new Set();
     for (const el of elements) {
       if (el.type !== 'node' || !Number.isFinite(el.lat) || !Number.isFinite(el.lon)) continue;
+      const id = String(el.id);
+      if (seenIds.has(id)) continue;
       const tags = el.tags || {};
       const name = tags.name || tags['name:en'] || 'Local business';
       if (nameMatchesChain(name, needles)) continue;
 
       const streetLine = buildStreetCityLine(tags);
+      seenIds.add(id);
       out.push({
         type: 'local',
-        osm_id: String(el.id),
+        osm_id: id,
         name,
         address: buildAddress(tags) || `${el.lat.toFixed(4)}, ${el.lon.toFixed(4)}`,
         street_address_line: streetLine || null,
