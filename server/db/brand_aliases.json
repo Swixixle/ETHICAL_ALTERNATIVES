@@ -314,5 +314,8 @@
   "epic-systems": "epic-systems",
   "epic": "epic-systems",
   "mychart": "epic-systems",
-  "epic-ehr": "epic-systems"
+  "epic-ehr": "epic-systems",
+  "tenet-healthcare": "tenet-healthcare",
+  "tenet": "tenet-healthcare",
+  "conifer-health": "tenet-healthcare"
 }
