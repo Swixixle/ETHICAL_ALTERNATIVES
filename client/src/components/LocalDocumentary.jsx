@@ -70,7 +70,10 @@ export default function LocalDocumentary({
 
   invReadyRef.current = investigationReady;
 
-  const tryRelease = useCallback(() => {
+  /** True when 8s elapsed, investigation ready, and stream/sentence gate satisfied — user may tap PROCEED. */
+  const [canTapProceed, setCanTapProceed] = useState(false);
+
+  const updateProceedGate = useCallback(() => {
     if (releasedRef.current) return;
     const minOk = Date.now() - startMsRef.current >= 8000;
     const inv = invReadyRef.current;
@@ -80,12 +83,15 @@ export default function LocalDocumentary({
       const target = invEarlyPosRef.current;
       sentenceOk = displayIdxRef.current >= target;
     }
-    if (minOk && inv && sentenceOk) {
-      releasedRef.current = true;
-      if (abortRef.current) abortRef.current.abort();
-      onRelease?.();
-    }
-  }, [onRelease]);
+    setCanTapProceed(Boolean(minOk && inv && sentenceOk));
+  }, []);
+
+  const handleProceed = useCallback(() => {
+    if (!canTapProceed || releasedRef.current) return;
+    releasedRef.current = true;
+    if (abortRef.current) abortRef.current.abort();
+    onRelease?.();
+  }, [canTapProceed, onRelease]);
 
   useEffect(() => {
     releasedRef.current = false;
@@ -99,6 +105,7 @@ export default function LocalDocumentary({
     setProgress(0);
     startMsRef.current = Date.now();
     progressStartRef.current = Date.now();
+    setCanTapProceed(false);
 
     const ac = new AbortController();
     abortRef.current = ac;
@@ -162,7 +169,7 @@ export default function LocalDocumentary({
         displayIdxRef.current = idx;
         setShown(full.slice(0, idx));
       }
-      tryRelease();
+      updateProceedGate();
     }, 42);
 
     const tickProgress = () => {
@@ -171,12 +178,13 @@ export default function LocalDocumentary({
       if (invReadyRef.current) {
         setProgress(100);
         progressRafRef.current = requestAnimationFrame(tickProgress);
-        tryRelease();
+        updateProceedGate();
         return;
       }
       const p = Math.min(85, (elapsed / 25000) * 100);
       setProgress(p);
       progressRafRef.current = requestAnimationFrame(tickProgress);
+      updateProceedGate();
     };
     progressRafRef.current = requestAnimationFrame(tickProgress);
 
@@ -185,7 +193,7 @@ export default function LocalDocumentary({
       if (typeTimerRef.current) clearInterval(typeTimerRef.current);
       if (progressRafRef.current) cancelAnimationFrame(progressRafRef.current);
     };
-  }, [runKey, city, state, brandName, brandSlug, tryRelease]);
+  }, [runKey, city, state, brandName, brandSlug, updateProceedGate]);
 
   useEffect(() => {
     if (investigationReady && !invEarlyRef.current && !streamDoneRef.current) {
@@ -197,8 +205,8 @@ export default function LocalDocumentary({
       invEarlyPosRef.current = dot >= 0 ? cur + dot + 1 : full.length;
     }
     if (investigationReady) setProgress(100);
-    tryRelease();
-  }, [investigationReady, tryRelease]);
+    updateProceedGate();
+  }, [investigationReady, updateProceedGate]);
 
   const labelCity = (city && String(city).trim()) || 'your area';
   const labelState = state != null && String(state).trim() ? String(state).trim() : '';
@@ -287,21 +295,31 @@ export default function LocalDocumentary({
           }}
         />
       </div>
-      {!investigationReady && progress >= 85 && (
-        <div
-          style={{
-            fontFamily: "'Space Mono', monospace",
-            fontSize: 9,
-            letterSpacing: 2,
-            textTransform: 'uppercase',
-            color: '#6a8a9a',
-            marginTop: 6,
-            textAlign: 'center',
-          }}
-        >
-          RUNNING LIVE INVESTIGATION...
-        </div>
-      )}
+      <button
+        type="button"
+        disabled={!canTapProceed}
+        onClick={handleProceed}
+        style={{
+          marginTop: 20,
+          width: 'min(420px, 100%)',
+          fontFamily: "'Space Mono', monospace",
+          fontSize: 12,
+          letterSpacing: investigationReady ? 2 : 1.5,
+          textTransform: 'uppercase',
+          padding: '14px 20px',
+          border: investigationReady ? `2px solid #f0a820` : `2px solid #2a3f52`,
+          borderRadius: 4,
+          cursor: canTapProceed ? 'pointer' : 'not-allowed',
+          transition: 'background 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease',
+          background: investigationReady ? '#f0a820' : '#1a2838',
+          color: investigationReady ? '#0f1520' : '#6a8a9a',
+          opacity: canTapProceed ? 1 : investigationReady ? 0.55 : 0.85,
+          boxShadow:
+            investigationReady && canTapProceed ? '0 0 20px rgba(240, 168, 32, 0.35)' : 'none',
+        }}
+      >
+        {investigationReady ? 'Proceed →' : 'Investigating...'}
+      </button>
     </div>
   );
 }

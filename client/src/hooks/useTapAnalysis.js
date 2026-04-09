@@ -84,7 +84,7 @@ export function useTapAnalysis() {
         });
       },
       () => setGeo(false),
-      { enableHighAccuracy: false, timeout: 8000, maximumAge: 300_000 }
+      { enableHighAccuracy: true, timeout: 15_000, maximumAge: 30_000 }
     );
   }, [geo]);
 
