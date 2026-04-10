@@ -207,8 +207,6 @@ function ChevronDown({ open: expanded }) {
 
 export default function CommunityImpact({ data }) {
   const [open, setOpen] = useState(false);
-  const [headerHover, setHeaderHover] = useState(false);
-  const [headerActive, setHeaderActive] = useState(false);
 
   if (!data) return null;
 
@@ -221,65 +219,17 @@ export default function CommunityImpact({ data }) {
 
   if (!hasContent) return null;
 
-  const headerBg = headerActive
-    ? 'rgba(240, 168, 32, 0.22)'
-    : headerHover
-      ? 'rgba(240, 168, 32, 0.16)'
-      : 'rgba(240, 168, 32, 0.09)';
-
   return (
     <section style={{ margin: '36px 0' }}>
       <button
         type="button"
+        className={`community-impact__toggle${open ? ' community-impact__toggle--open' : ''}`}
         aria-expanded={open}
         aria-controls="community-impact-panel"
         id="community-impact-toggle"
         onClick={() => setOpen((o) => !o)}
-        onMouseEnter={() => setHeaderHover(true)}
-        onMouseLeave={() => {
-          setHeaderHover(false);
-          setHeaderActive(false);
-        }}
-        onMouseDown={() => setHeaderActive(true)}
-        onMouseUp={() => setHeaderActive(false)}
-        onTouchStart={() => setHeaderActive(true)}
-        onTouchEnd={() => setHeaderActive(false)}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: 12,
-          width: '100%',
-          cursor: 'pointer',
-          userSelect: 'none',
-          WebkitTapHighlightColor: 'transparent',
-          background: headerBg,
-          border: '2px solid #f0a820',
-          boxShadow: headerHover
-            ? '0 0 0 1px rgba(240, 168, 32, 0.35), 0 4px 14px rgba(0, 0, 0, 0.25)'
-            : '0 2px 8px rgba(0, 0, 0, 0.12)',
-          borderRadius: 8,
-          padding: '14px 16px',
-          marginBottom: open ? 28 : 0,
-          font: 'inherit',
-          textAlign: 'left',
-          transition: 'background 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease',
-        }}
       >
-        <h2
-          style={{
-            fontFamily: "'Bebas Neue', sans-serif",
-            fontSize: 28,
-            letterSpacing: 3,
-            color: '#f0a820',
-            textTransform: 'uppercase',
-            margin: 0,
-            textShadow: headerHover ? '0 0 20px rgba(240, 168, 32, 0.25)' : 'none',
-            transition: 'text-shadow 0.15s ease',
-          }}
-        >
-          Community Impact
-        </h2>
+        <h2 className="community-impact__title">Community Impact</h2>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           {data.category_label ? (

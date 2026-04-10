@@ -64,7 +64,7 @@ export default function PrivacyConsentPanel({ variant = 'full', showReset = true
       </p>
 
       <label
-        className="ea-onb-press"
+        className="ea-press-label"
         style={{
           display: 'flex',
           gap: 12,
@@ -90,7 +90,7 @@ export default function PrivacyConsentPanel({ variant = 'full', showReset = true
       </label>
 
       <label
-        className="ea-onb-press"
+        className="ea-press-label"
         style={{
           display: 'flex',
           gap: 12,
@@ -121,7 +121,6 @@ export default function PrivacyConsentPanel({ variant = 'full', showReset = true
       {showReset ? (
         <button
           type="button"
-          className="ea-onb-press"
           onClick={() => {
             clearAllImpactConsents();
             setUsage(false);

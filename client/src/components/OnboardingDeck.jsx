@@ -1,6 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import '../styles/onboardingPress.css';
-
 /** Dark shell (matches app chrome). */
 const BG = '#0f1520';
 
@@ -225,7 +223,6 @@ export default function OnboardingDeck({
       {cardIndex > 0 ? (
         <button
           type="button"
-          className="ea-onb-press"
           data-no-disintegrate=""
           aria-label="Previous card"
           disabled={transitioning}
@@ -257,7 +254,6 @@ export default function OnboardingDeck({
       {cardIndex < 4 ? (
         <button
           type="button"
-          className="ea-onb-press"
           data-no-disintegrate=""
           onPointerDown={(e) => e.stopPropagation()}
           onPointerUp={(e) => e.stopPropagation()}
@@ -352,7 +348,6 @@ export default function OnboardingDeck({
             {cardIndex < 4 ? (
               <button
                 type="button"
-                className="ea-onb-press"
                 data-no-disintegrate=""
                 onPointerDown={(e) => e.stopPropagation()}
                 onPointerUp={(e) => e.stopPropagation()}
@@ -388,7 +383,6 @@ export default function OnboardingDeck({
                       <>
                         <button
                           type="button"
-                          className="ea-onb-press"
                           data-no-disintegrate=""
                           onPointerDown={(e) => e.stopPropagation()}
                           onPointerUp={(e) => e.stopPropagation()}
@@ -405,7 +399,6 @@ export default function OnboardingDeck({
                         </button>
                         <button
                           type="button"
-                          className="ea-onb-press"
                           data-no-disintegrate=""
                           onPointerDown={(e) => e.stopPropagation()}
                           onPointerUp={(e) => e.stopPropagation()}
@@ -435,7 +428,6 @@ export default function OnboardingDeck({
                     return (
                       <button
                         type="button"
-                        className="ea-onb-press"
                         data-no-disintegrate=""
                         onPointerDown={(e) => e.stopPropagation()}
                         onPointerUp={(e) => e.stopPropagation()}
@@ -483,7 +475,6 @@ export default function OnboardingDeck({
             <button
               key={i}
               type="button"
-              className="ea-onb-press"
               data-no-disintegrate=""
               aria-label={`Slide ${i + 1} of ${CARDS.length}`}
               aria-current={i === cardIndex ? 'true' : undefined}

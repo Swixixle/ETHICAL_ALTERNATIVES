@@ -873,7 +873,3 @@ body,
   }
 }
 
-.app__btn:active {
-  transform: scale(0.96);
-  transition: transform 0.1s;
-}

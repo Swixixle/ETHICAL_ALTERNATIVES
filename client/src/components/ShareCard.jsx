@@ -1,5 +1,4 @@
 import { Component, useCallback, useEffect, useMemo, useState } from 'react';
-import '../styles/onboardingPress.css';
 import { getImpactFetchHeaders } from '../lib/impactConsent.js';
 import ShareSheet from './Civic/ShareSheet.jsx';
 import { WITNESS_LEGAL_NOTICE, WITNESS_LEGAL_NOTICE_COMPACT } from '../constants/witnessLegalNotice.js';
@@ -89,7 +88,6 @@ class ShareCardErrorBoundary extends Component {
           </p>
           <button
             type="button"
-            className="ea-onb-press"
             onClick={() => onClose?.()}
             style={{
               fontFamily: "'Space Mono', monospace",

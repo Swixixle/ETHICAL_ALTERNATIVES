@@ -1,0 +1,121 @@
+/**
+ * Unified press/hover feedback — values taken from CommunityImpact.jsx (Community Impact header).
+ * Amber wash + outer ring + elevation on hover; stronger ring + slight dim on active. No scale.
+ */
+
+/* ── Community Impact collapsible header (canonical; pure CSS, no duplicate JS state) ── */
+.community-impact__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background: rgba(240, 168, 32, 0.09);
+  border: 2px solid #f0a820;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 0;
+  font: inherit;
+  text-align: left;
+  transition: background 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.community-impact__toggle--open {
+  margin-bottom: 28px;
+}
+
+.community-impact__toggle:hover {
+  background: rgba(240, 168, 32, 0.16);
+  box-shadow:
+    0 0 0 1px rgba(240, 168, 32, 0.35),
+    0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.community-impact__toggle:active {
+  background: rgba(240, 168, 32, 0.22);
+}
+
+.community-impact__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 3px;
+  color: #f0a820;
+  text-transform: uppercase;
+  margin: 0;
+  transition: text-shadow 0.15s ease;
+}
+
+.community-impact__toggle:hover .community-impact__title {
+  text-shadow: 0 0 20px rgba(240, 168, 32, 0.25);
+}
+
+/* ── All other buttons: same language (ring + depth), opt out with [data-ea-no-press] ── */
+button:not(:disabled),
+input[type='button']:not(:disabled),
+input[type='submit']:not(:disabled),
+input[type='reset']:not(:disabled),
+[role='button']:not([aria-disabled='true']) {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:not(:disabled):not(.community-impact__toggle):not([data-ea-no-press]),
+input[type='button']:not(:disabled):not([data-ea-no-press]),
+input[type='submit']:not(:disabled):not([data-ea-no-press]),
+input[type='reset']:not(:disabled):not([data-ea-no-press]),
+[role='button']:not([aria-disabled='true']):not([data-ea-no-press]) {
+  transition:
+    background-color 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease,
+    filter 0.12s ease,
+    color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+@media (hover: hover) {
+  button:not(:disabled):not(.community-impact__toggle):not([data-ea-no-press]):hover {
+    box-shadow:
+      0 0 0 1px rgba(240, 168, 32, 0.35),
+      0 4px 14px rgba(0, 0, 0, 0.25);
+  }
+}
+
+button:not(:disabled):not(.community-impact__toggle):not([data-ea-no-press]):active,
+input[type='button']:not(:disabled):not([data-ea-no-press]):active,
+input[type='submit']:not(:disabled):not([data-ea-no-press]):active,
+input[type='reset']:not(:disabled):not([data-ea-no-press]):active,
+[role='button']:not([aria-disabled='true']):not([data-ea-no-press]):active {
+  box-shadow:
+    0 0 0 2px rgba(240, 168, 32, 0.45),
+    0 2px 10px rgba(0, 0, 0, 0.2);
+  filter: brightness(0.94);
+}
+
+/* Floating scan: keep elevation; layer Community-style ring */
+@media (hover: hover) {
+  .app__fab-scan:not(:disabled):hover {
+    box-shadow:
+      0 6px 22px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(240, 168, 32, 0.45);
+  }
+}
+
+.app__fab-scan:not(:disabled):active {
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.35),
+    0 0 0 2px rgba(240, 168, 32, 0.55);
+  filter: brightness(0.92);
+}
+
+/* Privacy / consent: label hit targets are not native buttons */
+label.ea-press-label {
+  transition: filter 0.12s ease;
+}
+
+label.ea-press-label:active {
+  filter: brightness(0.92);
+}
