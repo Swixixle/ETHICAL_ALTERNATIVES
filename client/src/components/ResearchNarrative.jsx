@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 /**
  * @param {{
@@ -55,7 +56,7 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
     };
   }, [city, state]);
 
-  return (
+  const ui = (
     <>
       <style>{`
         @keyframes researchNarrativePulse {
@@ -65,24 +66,63 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
         .research-narrative__dot {
           animation: researchNarrativePulse 1.4s ease-in-out infinite;
         }
+        .research-narrative__shell {
+          position: fixed;
+          inset: 0;
+          z-index: 200;
+          box-sizing: border-box;
+          background: #0f1520;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          min-height: 0;
+          height: 100vh;
+          max-height: 100vh;
+          height: 100dvh;
+          max-height: 100dvh;
+          overflow: hidden;
+        }
+        .research-narrative__scroll {
+          flex: 1 1 0;
+          min-height: 0;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+          touch-action: pan-y;
+          overscroll-behavior: contain;
+          width: 100%;
+          box-sizing: border-box;
+        }
+        .research-narrative__body-loading {
+          flex: 1 1 0;
+          min-height: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          padding: 0 20px 32px;
+          box-sizing: border-box;
+        }
+        .research-narrative__footer {
+          flex-shrink: 0;
+          position: sticky;
+          bottom: 0;
+          width: 100%;
+          padding: 16px 20px calc(16px + env(safe-area-inset-bottom, 0px));
+          border-top: 1px solid #2a3f52;
+          background: #0f1520;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 64px;
+        }
       `}</style>
       <div
+        className="research-narrative__shell"
         role="dialog"
         aria-modal="true"
         aria-busy={phase === 'loading'}
-        style={{
-          position: 'fixed',
-          inset: 0,
-          zIndex: 200,
-          background: '#0f1520',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'stretch',
-          boxSizing: 'border-box',
-          height: '100dvh',
-          maxHeight: '100dvh',
-          overflow: 'hidden',
-        }}
       >
         <div
           style={{
@@ -101,19 +141,7 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
         </div>
 
         {phase === 'loading' ? (
-          <div
-            style={{
-              flex: '1 1 auto',
-              minHeight: 0,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%',
-              padding: '0 20px 32px',
-              boxSizing: 'border-box',
-            }}
-          >
+          <div className="research-narrative__body-loading">
             <div
               className="research-narrative__dot"
               aria-hidden
@@ -139,19 +167,7 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
           </div>
         ) : (
           <>
-            <div
-              style={{
-                flex: '1 1 auto',
-                minHeight: 0,
-                overflowY: 'auto',
-                WebkitOverflowScrolling: 'touch',
-                touchAction: 'pan-y',
-                overscrollBehavior: 'contain',
-                width: '100%',
-                padding: '0 20px',
-                boxSizing: 'border-box',
-              }}
-            >
+            <div className="research-narrative__scroll" style={{ padding: '0 20px' }}>
               <div
                 style={{
                   display: 'flex',
@@ -202,22 +218,7 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
               </div>
             </div>
 
-            <div
-              style={{
-                flexShrink: 0,
-                position: 'sticky',
-                bottom: 0,
-                width: '100%',
-                padding: '16px 20px calc(16px + env(safe-area-inset-bottom, 0px))',
-                borderTop: '1px solid #2a3f52',
-                background: '#0f1520',
-                boxSizing: 'border-box',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                minHeight: 64,
-              }}
-            >
+            <div className="research-narrative__footer">
               {!reportReady ? (
                 <p
                   style={{
@@ -260,4 +261,6 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
       </div>
     </>
   );
+
+  return createPortal(ui, document.body);
 }
