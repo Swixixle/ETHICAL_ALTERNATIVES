@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 /**
@@ -13,6 +13,8 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
   const [phase, setPhase] = useState(/** @type {'loading' | 'ready'} */ ('loading'));
   const [headline, setHeadline] = useState('');
   const [bodyText, setBodyText] = useState('');
+  const shellRef = useRef(/** @type {HTMLDivElement | null} */ (null));
+  const scrollRef = useRef(/** @type {HTMLDivElement | null} */ (null));
 
   useEffect(() => {
     let cancelled = false;
@@ -56,6 +58,22 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
     };
   }, [city, state]);
 
+  /** Desktop: wheel on fixed overlay can chain-scroll #root (e.g. .app__results-main). Capture on shell. */
+  useEffect(() => {
+    if (phase !== 'ready') return;
+    const shell = shellRef.current;
+    const scrollEl = scrollRef.current;
+    if (!shell || !scrollEl) return;
+    const onWheel = (e) => {
+      if (scrollEl.scrollHeight <= scrollEl.clientHeight) return;
+      e.preventDefault();
+      e.stopPropagation();
+      scrollEl.scrollBy({ top: e.deltaY });
+    };
+    shell.addEventListener('wheel', onWheel, { passive: false });
+    return () => shell.removeEventListener('wheel', onWheel);
+  }, [phase]);
+
   const ui = (
     <>
       <style>{`
@@ -69,7 +87,7 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
         .research-narrative__shell {
           position: fixed;
           inset: 0;
-          z-index: 200;
+          z-index: 7500;
           box-sizing: border-box;
           background: #0f1520;
           display: flex;
@@ -81,14 +99,11 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
           height: 100dvh;
           max-height: 100dvh;
           overflow: hidden;
+          pointer-events: auto;
         }
         .research-narrative__scroll {
           flex: 1 1 0;
           min-height: 0;
-          overflow-y: auto;
-          -webkit-overflow-scrolling: touch;
-          touch-action: pan-y;
-          overscroll-behavior: contain;
           width: 100%;
           box-sizing: border-box;
         }
@@ -119,6 +134,7 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
         }
       `}</style>
       <div
+        ref={shellRef}
         className="research-narrative__shell"
         role="dialog"
         aria-modal="true"
@@ -167,7 +183,19 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
           </div>
         ) : (
           <>
-            <div className="research-narrative__scroll" style={{ padding: '0 20px' }}>
+            <div
+              ref={scrollRef}
+              className="research-narrative__scroll"
+              style={{
+                padding: '0 20px',
+                overflowY: 'scroll',
+                scrollbarGutter: 'stable',
+                WebkitOverflowScrolling: 'touch',
+                touchAction: 'pan-y',
+                pointerEvents: 'auto',
+                overscrollBehavior: 'contain',
+              }}
+            >
               <div
                 style={{
                   display: 'flex',
