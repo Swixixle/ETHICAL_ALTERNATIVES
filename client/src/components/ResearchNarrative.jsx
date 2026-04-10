@@ -77,13 +77,18 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
           background: '#0f1520',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
+          alignItems: 'stretch',
           boxSizing: 'border-box',
+          height: '100dvh',
+          maxHeight: '100dvh',
+          overflow: 'hidden',
         }}
       >
         <div
           style={{
+            flexShrink: 0,
             paddingTop: 28,
+            paddingBottom: 8,
             width: '100%',
             textAlign: 'center',
             fontFamily: "'Bebas Neue', sans-serif",
@@ -95,121 +100,144 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
           ETHICALALT
         </div>
 
-        <div
-          style={{
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '100%',
-            padding: '0 20px 32px',
-            boxSizing: 'border-box',
-          }}
-        >
-          {phase === 'loading' ? (
-            <>
-              <div
-                className="research-narrative__dot"
-                aria-hidden
-                style={{
-                  width: 8,
-                  height: 8,
-                  borderRadius: '50%',
-                  background: '#f0a820',
-                }}
-              />
-              <p
-                style={{
-                  marginTop: 20,
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 10,
-                  letterSpacing: 3,
-                  color: '#6a8a9a',
-                  textTransform: 'uppercase',
-                }}
-              >
-                PULLING THE RECORD...
-              </p>
-            </>
-          ) : (
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: 400 }}>
-              <div
-                style={{
-                  width: 40,
-                  height: 1,
-                  background: '#f0a820',
-                  margin: '24px auto',
-                }}
-              />
-              <h2
-                style={{
-                  margin: 0,
-                  fontFamily: "'Bebas Neue', sans-serif",
-                  fontSize: 'clamp(28px, 5vw, 48px)',
-                  color: '#f0e8d0',
-                  letterSpacing: 2,
-                  textAlign: 'center',
-                  maxWidth: 360,
-                  lineHeight: 1.1,
-                }}
-              >
-                {headline}
-              </h2>
-              <p
-                style={{
-                  marginTop: 12,
-                  fontFamily: "'Crimson Pro', serif",
-                  fontSize: 18,
-                  color: '#a8c4d8',
-                  lineHeight: 1.7,
-                  textAlign: 'center',
-                  maxWidth: 340,
-                  marginBottom: 0,
-                }}
-              >
-                {bodyText}
-              </p>
-
+        {phase === 'loading' ? (
+          <div
+            style={{
+              flex: '1 1 auto',
+              minHeight: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              padding: '0 20px 32px',
+              boxSizing: 'border-box',
+            }}
+          >
+            <div
+              className="research-narrative__dot"
+              aria-hidden
+              style={{
+                width: 8,
+                height: 8,
+                borderRadius: '50%',
+                background: '#f0a820',
+              }}
+            />
+            <p
+              style={{
+                marginTop: 20,
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 10,
+                letterSpacing: 3,
+                color: '#6a8a9a',
+                textTransform: 'uppercase',
+              }}
+            >
+              PULLING THE RECORD...
+            </p>
+          </div>
+        ) : (
+          <>
+            <div
+              style={{
+                flex: '1 1 auto',
+                minHeight: 0,
+                overflowY: 'auto',
+                WebkitOverflowScrolling: 'touch',
+                touchAction: 'pan-y',
+                overscrollBehavior: 'contain',
+                width: '100%',
+                padding: '0 20px',
+                boxSizing: 'border-box',
+              }}
+            >
               <div
                 style={{
-                  position: 'relative',
-                  marginTop: 28,
-                  minHeight: 52,
-                  width: '100%',
                   display: 'flex',
-                  justifyContent: 'center',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  maxWidth: 400,
+                  margin: '0 auto',
+                  paddingTop: 8,
+                  paddingBottom: 24,
                 }}
               >
+                <div
+                  style={{
+                    width: 40,
+                    height: 1,
+                    background: '#f0a820',
+                    margin: '16px auto',
+                  }}
+                />
+                <h2
+                  style={{
+                    margin: 0,
+                    fontFamily: "'Bebas Neue', sans-serif",
+                    fontSize: 'clamp(28px, 5vw, 48px)',
+                    color: '#f0e8d0',
+                    letterSpacing: 2,
+                    textAlign: 'center',
+                    maxWidth: 360,
+                    lineHeight: 1.1,
+                  }}
+                >
+                  {headline}
+                </h2>
+                <p
+                  style={{
+                    marginTop: 12,
+                    fontFamily: "'Crimson Pro', serif",
+                    fontSize: 18,
+                    color: '#a8c4d8',
+                    lineHeight: 1.7,
+                    textAlign: 'center',
+                    maxWidth: 340,
+                    marginBottom: 0,
+                  }}
+                >
+                  {bodyText}
+                </p>
+              </div>
+            </div>
+
+            <div
+              style={{
+                flexShrink: 0,
+                position: 'sticky',
+                bottom: 0,
+                width: '100%',
+                padding: '16px 20px calc(16px + env(safe-area-inset-bottom, 0px))',
+                borderTop: '1px solid #2a3f52',
+                background: '#0f1520',
+                boxSizing: 'border-box',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                minHeight: 64,
+              }}
+            >
+              {!reportReady ? (
                 <p
                   style={{
                     margin: 0,
-                    position: 'absolute',
-                    left: '50%',
-                    top: 0,
-                    transform: 'translateX(-50%)',
                     fontFamily: "'Space Mono', monospace",
                     fontSize: 9,
                     letterSpacing: 2,
                     color: '#6a8a9a',
                     textTransform: 'uppercase',
-                    whiteSpace: 'nowrap',
-                    opacity: reportReady ? 0 : 1,
-                    transition: 'opacity 0.4s ease',
-                    pointerEvents: 'none',
+                    textAlign: 'center',
                   }}
                 >
                   BUILDING YOUR REPORT...
                 </p>
+              ) : (
                 <button
                   type="button"
                   data-no-disintegrate
                   onClick={onSkip}
                   style={{
-                    position: 'absolute',
-                    left: '50%',
-                    top: 0,
-                    transform: 'translateX(-50%)',
                     fontFamily: "'Space Mono', monospace",
                     fontSize: 11,
                     letterSpacing: 2,
@@ -221,17 +249,14 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
                     cursor: 'pointer',
                     fontWeight: 700,
                     textTransform: 'uppercase',
-                    opacity: reportReady ? 1 : 0,
-                    transition: 'opacity 0.4s ease',
-                    pointerEvents: reportReady ? 'auto' : 'none',
                   }}
                 >
                   REPORT READY — ENTER →
                 </button>
-              </div>
+              )}
             </div>
-          )}
-        </div>
+          </>
+        )}
       </div>
     </>
   );
