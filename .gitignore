@@ -22,3 +22,5 @@ client/.vite/
 
 # Test / coverage
 coverage/
+server/deep_research_output/
+server/tier5_corroboration_healthcare.json
