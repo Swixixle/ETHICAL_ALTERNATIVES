@@ -41,6 +41,12 @@ const PERPLEXITY_FALLBACK_ENDPOINT = 'https://api.perplexity.ai/v1/sonar';
 const DEEP_RESEARCH_MODEL_PRIMARY = 'sonar-deep-research';
 const DEEP_RESEARCH_MODEL_FALLBACK = process.env.PERPLEXITY_MODEL || 'sonar';
 
+/** Perplexity output cap; default raised above 4096 to limit truncation on long research runs. */
+const PERPLEXITY_MAX_TOKENS = Math.max(
+  4096,
+  Number(process.env.PERPLEXITY_MAX_OUTPUT_TOKENS) || 16384
+);
+
 const CLAUDE_MODEL = process.env.ANTHROPIC_INVESTIGATION_MODEL || 'claude-sonnet-4-20250514';
 const MAX_CLAUDE_OUTPUT = 8192;
 
@@ -111,6 +117,23 @@ const SECTOR_CATEGORIES = {
     'institutional_enablement',
     'subsidies_and_bailouts',
   ],
+};
+
+/** Short prompts for a second Perplexity pass when Claude extracts 0 incidents (shallow `sonar` often misses). */
+const categorySimpleKeywords = {
+  environmental: 'EPA environmental pollution cleanup fine',
+  subsidies_and_bailouts: 'government subsidies tax breaks bailout incentives received',
+  labor_and_wage: 'OSHA wage theft labor violation settlement',
+  antitrust_and_market_power: 'antitrust price fixing monopoly FTC DOJ',
+  regulatory_and_legal: 'DOJ FTC enforcement settlement fine penalty',
+  product_safety: 'FDA recall CPSC enforcement product safety',
+  financial_misconduct: 'SEC enforcement fraud accounting fine',
+  data_and_privacy: 'data breach privacy fine FTC state AG',
+  discrimination_and_civil_rights: 'EEOC discrimination civil rights settlement',
+  institutional_enablement: 'lobbying government subsidy revolving door investigation',
+  executive_and_governance: 'executive compensation proxy SEC governance',
+  supply_chain: 'supply chain labor forced labor violation',
+  corporate_structure: '',
 };
 
 const CATEGORY_LABEL_OVERFLOW = {
@@ -662,10 +685,10 @@ async function runSnakeDraftCategoryPasses(
     const prompt =
       buildEntityAnchor(companyName) + buildCategoryPrompt(companyName, subsidiaries, baseTemplate);
 
-    const pp = await queryPerplexity(companyName, subsidiaries, cat, prompt);
+    let pp = await queryPerplexity(companyName, subsidiaries, cat, prompt);
     applySnakePerplexityCost(costState, pp.costUsd, onPpCost);
 
-    const { incidents_raw, inputTokens, outputTokens } = await extractIncidentsForCategory(
+    let { incidents_raw, inputTokens, outputTokens } = await extractIncidentsForCategory(
       anthropic,
       cat,
       pp,
@@ -674,12 +697,48 @@ async function runSnakeDraftCategoryPasses(
     anthropicInputSnake += inputTokens;
     anthropicOutputSnake += outputTokens;
 
+    let ppCostRound = pp.costUsd;
+    let claudeInRound = inputTokens;
+    let claudeOutRound = outputTokens;
+
+    const simpleKw = categorySimpleKeywords[cat];
+    if (
+      simpleKw &&
+      Array.isArray(incidents_raw) &&
+      incidents_raw.length === 0 &&
+      cat !== 'corporate_structure' &&
+      !costState.haltedForCap
+    ) {
+      const subHint =
+        subsidiaries.length > 0
+          ? ` Also search: ${subsidiaries.slice(0, 12).join(', ')}.`
+          : '';
+      const simpleQuery =
+        buildEntityAnchor(companyName) +
+        `${companyName} ${simpleKw} violations enforcement penalties settlements.${subHint}`;
+      console.log(`[queryPerplexity] zero-incident retry (simplified prompt) category: ${cat}`);
+      const pp2 = await queryPerplexity(companyName, subsidiaries, cat, simpleQuery, {
+        isSimpleRetry: true,
+      });
+      applySnakePerplexityCost(costState, pp2.costUsd, onPpCost);
+      ppCostRound += pp2.costUsd;
+      const ex2 = await extractIncidentsForCategory(anthropic, cat, pp2, maxChars);
+      anthropicInputSnake += ex2.inputTokens;
+      anthropicOutputSnake += ex2.outputTokens;
+      claudeInRound += ex2.inputTokens;
+      claudeOutRound += ex2.outputTokens;
+      if (Array.isArray(ex2.incidents_raw) && ex2.incidents_raw.length > 0) {
+        pp = pp2;
+        incidents_raw = ex2.incidents_raw;
+      }
+    }
+
     const roundEntry = {
       round: roundNum,
       incidents_raw,
-      perplexity_usd: pp.costUsd,
-      claude_input_tokens: inputTokens,
-      claude_output_tokens: outputTokens,
+      perplexity_usd: ppCostRound,
+      claude_input_tokens: claudeInRound,
+      claude_output_tokens: claudeOutRound,
       saved_at: new Date().toISOString(),
     };
     state.rounds.push(roundEntry);
@@ -687,7 +746,7 @@ async function runSnakeDraftCategoryPasses(
     saveCategorySnakeState(slug, state);
 
     const bundle = bundleFromSnakeRounds(cat, state.rounds);
-    logCategorySnakeRoundComplete(cat, roundNum, pp.costUsd, bundle);
+    logCategorySnakeRoundComplete(cat, roundNum, ppCostRound, bundle);
   }
 
   for (const cat of categoriesToRun) {
@@ -784,17 +843,20 @@ function perplexityCostFromUsage(usage) {
  * @param {string[]} subsidiaries
  * @param {string} category
  * @param {string} prompt
- * @param {{ model?: string, endpoint?: string }} [options]
+ * @param {{ model?: string, endpoint?: string, isSimpleRetry?: boolean }} [options]
  */
 async function queryPerplexity(companyName, subsidiaries, category, prompt, options = {}) {
   console.log('[queryPerplexity] Firing query for category:', category);
+  if (options.isSimpleRetry) {
+    console.log('[queryPerplexity] (simple-retry pass after 0 Claude incidents)');
+  }
   const key = process.env.PERPLEXITY_API_KEY;
   if (!key?.trim()) throw new Error('PERPLEXITY_API_KEY not set');
 
   let body = {
     model: options.model || DEEP_RESEARCH_MODEL_PRIMARY,
     messages: [{ role: 'user', content: prompt }],
-    max_tokens: 12000,
+    max_tokens: PERPLEXITY_MAX_TOKENS,
     temperature: 0.2,
     search_recency_filter: null,
     return_citations: true,
@@ -833,13 +895,18 @@ async function queryPerplexity(companyName, subsidiaries, category, prompt, opti
         const citations = citationsFromPerplexityResponse(data);
         const usage = data?.usage || null;
         const costUsd = perplexityCostFromUsage(usage);
+        const modelUsed =
+          (typeof data?.model === 'string' && data.model) ||
+          (typeof data?.choices?.[0]?.model === 'string' && data.choices[0].model) ||
+          body.model;
+        console.log(`[queryPerplexity] model used: ${modelUsed}, category: ${category}`);
 
         return {
           text: String(text || '').trim(),
           citations,
           usage,
           costUsd,
-          model: data?.model || body.model,
+          model: modelUsed,
           category,
           companyName,
           subsidiaries,
