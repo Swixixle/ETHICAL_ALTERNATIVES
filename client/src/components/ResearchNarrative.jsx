@@ -89,15 +89,11 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
           inset: 0;
           z-index: 7500;
           box-sizing: border-box;
-          background: #0f1520;
+          background-color: #0f1520;
           display: flex;
           flex-direction: column;
           align-items: stretch;
           min-height: 0;
-          height: 100vh;
-          max-height: 100vh;
-          height: 100dvh;
-          max-height: 100dvh;
           overflow: hidden;
           pointer-events: auto;
         }
@@ -106,6 +102,9 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
           min-height: 0;
           width: 100%;
           box-sizing: border-box;
+          overflow-y: scroll;
+          -webkit-overflow-scrolling: touch;
+          touch-action: pan-y;
         }
         .research-narrative__body-loading {
           flex: 1 1 0;
@@ -123,9 +122,10 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
           position: sticky;
           bottom: 0;
           width: 100%;
-          padding: 16px 20px calc(16px + env(safe-area-inset-bottom, 0px));
+          padding: 16px 24px;
+          padding-bottom: max(16px, env(safe-area-inset-bottom, 0px));
           border-top: 1px solid #2a3f52;
-          background: #0f1520;
+          background-color: #0f1520;
           box-sizing: border-box;
           display: flex;
           justify-content: center;
@@ -188,10 +188,7 @@ export default function ResearchNarrative({ city, state, onSkip, reportReady }) 
               className="research-narrative__scroll"
               style={{
                 padding: '0 20px',
-                overflowY: 'scroll',
                 scrollbarGutter: 'stable',
-                WebkitOverflowScrolling: 'touch',
-                touchAction: 'pan-y',
                 pointerEvents: 'auto',
                 overscrollBehavior: 'contain',
               }}

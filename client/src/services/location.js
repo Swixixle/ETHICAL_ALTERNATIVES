@@ -112,10 +112,10 @@ export function getUserLocation() {
         });
       },
       (err) => {
-        console.log('[location] error', err.code, err.message);
+        console.error('[geolocation] failed:', err.code, err.message);
         reject(err);
       },
-      { timeout: 15000, maximumAge: 300000, enableHighAccuracy: false }
+      { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
     );
   });
 }

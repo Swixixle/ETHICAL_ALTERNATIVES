@@ -6,7 +6,8 @@ import {
   reverseGeocode,
 } from '../services/location.js';
 import { getCityIdentity } from '../services/cityIdentity.js';
-import { dailyChainShuffle, dailyFeedShuffle, utcDateKey } from '../utils/dailyShuffle.js';
+import { utcDateKey } from '../utils/dailyShuffle.js';
+import { sortLocalBusinessesByProximity } from '../utils/geoDistance.js';
 import LocalCommercial from './LocalCommercial.jsx';
 import TrustStrip from './TrustStrip.jsx';
 import EventsFeed from './EventsFeed.jsx';
@@ -30,20 +31,27 @@ function geolocationFailureHint(err) {
   if (code === 1) {
     return {
       message:
-        'Location access was denied. You can enable it in your browser settings or enter your city below.',
+        'Location access was denied. Enable it in your browser settings, or enter your city below.',
+    };
+  }
+  if (code === 2) {
+    return {
+      message:
+        'Location unavailable — your device could not determine position. Enter your city below.',
     };
   }
   if (code === 3) {
     return {
-      message: 'Location timed out — enter your city:',
+      message:
+        'Location timed out after 10 seconds. Enter your city below, or try again with a clearer sky or Wi‑Fi.',
     };
   }
   const base =
     typeof err?.message === 'string' && err.message.trim()
       ? err.message.trim()
-      : 'Could not get your location.';
+      : 'Location unavailable';
   return {
-    message: `${base} Enter your city below to see the same home experience.`,
+    message: `${base} — enter your city below to see local independents.`,
   };
 }
 
@@ -345,6 +353,7 @@ function LocationPrompt({
         geoShare.success(position);
       },
       (err) => {
+        console.error('[geolocation] failed:', err?.code, err?.message);
         setButtonState('idle');
         geoShare.error(err);
       },
@@ -833,7 +842,7 @@ function FeedCard({ business, chainFootnote = false }) {
             </div>
           ) : null}
 
-          {business.distance_mi != null ? (
+          {business.distance_mi != null && Number.isFinite(Number(business.distance_mi)) ? (
             <div
               style={{
                 fontFamily: "'Space Mono', monospace",
@@ -844,7 +853,7 @@ function FeedCard({ business, chainFootnote = false }) {
                 marginBottom: streetLine || hasBadges ? 8 : 0,
               }}
             >
-              {business.distance_mi} mi away
+              {Number(business.distance_mi).toFixed(1)} mi away
             </div>
           ) : null}
 
@@ -1033,14 +1042,8 @@ export default function HomeScreen({
         ]);
         if (cancelled) return;
         setIdentity(identityData);
-        const dateKey = utcDateKey();
-        const shuffleOpts = {
-          dateKey,
-          city: loc.city,
-          state: loc.state,
-        };
-        setFeed(dailyFeedShuffle(pack.feed, shuffleOpts));
-        setChainResults(dailyChainShuffle(pack.chain_results, shuffleOpts));
+        setFeed(sortLocalBusinessesByProximity(pack.feed, loc.lat, loc.lng));
+        setChainResults(sortLocalBusinessesByProximity(pack.chain_results, loc.lat, loc.lng));
         setCategory('all');
         sessionStorage.setItem(ONBOARD_KEY, 'granted');
         setPhase('ready');
@@ -1111,13 +1114,10 @@ export default function HomeScreen({
     (async () => {
       const pack = await fetchFeed(location.lat, location.lng, 'stay', { silent: true });
       if (cancelled) return;
-      const shuffleOpts = {
-        dateKey: utcDateKey(),
-        city: location.city,
-        state: location.state,
-      };
-      setTravelStayFeed(dailyFeedShuffle(pack.feed, shuffleOpts));
-      setTravelStayChain(dailyChainShuffle(pack.chain_results, shuffleOpts));
+      setTravelStayFeed(sortLocalBusinessesByProximity(pack.feed, location.lat, location.lng));
+      setTravelStayChain(
+        sortLocalBusinessesByProximity(pack.chain_results, location.lat, location.lng)
+      );
     })();
     return () => {
       cancelled = true;
@@ -1126,7 +1126,7 @@ export default function HomeScreen({
 
   const geoShare = useMemo(
     () => ({
-      options: { enableHighAccuracy: true, timeout: 20000, maximumAge: 0 },
+      options: { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 },
       success: (position) => {
         setGeoHint(null);
         setManualCityVisible(false);
@@ -1150,6 +1150,7 @@ export default function HomeScreen({
           });
       },
       error: (err) => {
+        console.error('[geolocation] failed:', err?.code, err?.message);
         const { message } = geolocationFailureHint(err);
         setGeoHint(message);
         setManualCityVisible(true);
@@ -1222,10 +1223,8 @@ export default function HomeScreen({
     }
     setEventsPayload(null);
     const pack = await fetchFeed(location.lat, location.lng, cat);
-    const dateKey = utcDateKey();
-    const shuffleOpts = { dateKey, city: location.city, state: location.state };
-    setFeed(dailyFeedShuffle(pack.feed, shuffleOpts));
-    setChainResults(dailyChainShuffle(pack.chain_results, shuffleOpts));
+    setFeed(sortLocalBusinessesByProximity(pack.feed, location.lat, location.lng));
+    setChainResults(sortLocalBusinessesByProximity(pack.chain_results, location.lat, location.lng));
   }
 
   if (phase === 'onboarding') {

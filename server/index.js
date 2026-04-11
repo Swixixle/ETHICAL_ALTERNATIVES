@@ -49,6 +49,10 @@ app.use(
   })
 );
 app.use(express.json({ limit: '10mb' }));
+app.use((_req, res, next) => {
+  res.setHeader('Permissions-Policy', 'geolocation=(self)');
+  next();
+});
 app.use(registryHeaders);
 
 app.get('/health', (_req, res) => {

@@ -92,18 +92,59 @@ function mapOsmRow(b, trust) {
   };
 }
 
-const sortFeed = (a, b) => {
-  const ra = a.type === 'registry' ? 0 : 1;
-  const rb = b.type === 'registry' ? 0 : 1;
-  if (ra !== rb) return ra - rb;
-  const da = a.distance_mi ?? 9999;
-  const db = b.distance_mi ?? 9999;
-  if (da !== db) return da - db;
-  if (Boolean(b.verified) !== Boolean(a.verified)) return a.verified ? -1 : 1;
-  const ta = a.trust_tier === 'verified_independent' ? 0 : 1;
-  const tb = b.trust_tier === 'verified_independent' ? 0 : 1;
-  return ta - tb;
-};
+function haversineMiles(lat1, lon1, lat2, lon2) {
+  const R = 3958.8;
+  const dLat = ((lat2 - lat1) * Math.PI) / 180;
+  const dLon = ((lon2 - lon1) * Math.PI) / 180;
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos((lat1 * Math.PI) / 180) *
+      Math.cos((lat2 * Math.PI) / 180) *
+      Math.sin(dLon / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+/** @param {Record<string, unknown>} item @param {number} userLat @param {number} userLng */
+function distanceMiForItem(item, userLat, userLng) {
+  const d = item.distance_mi;
+  if (d != null && Number.isFinite(Number(d))) return Number(d);
+  const la = item.lat != null ? Number(item.lat) : NaN;
+  const lo = item.lng != null ? Number(item.lng) : NaN;
+  if (Number.isFinite(la) && Number.isFinite(lo) && Number.isFinite(userLat) && Number.isFinite(userLng)) {
+    return haversineMiles(userLat, userLng, la, lo);
+  }
+  return Number.POSITIVE_INFINITY;
+}
+
+/**
+ * Nearest first; tie-break: registry before OSM, then verification flags.
+ * Mutates items to set `distance_mi` when it was missing but coordinates exist.
+ */
+function sortFeedNearestFirst(items, userLat, userLng) {
+  for (const item of items) {
+    const computed = distanceMiForItem(item, userLat, userLng);
+    if (
+      (item.distance_mi == null || !Number.isFinite(Number(item.distance_mi))) &&
+      Number.isFinite(computed) &&
+      computed !== Number.POSITIVE_INFINITY
+    ) {
+      item.distance_mi = Math.round(computed * 10) / 10;
+    }
+  }
+  items.sort((a, b) => {
+    const da = distanceMiForItem(a, userLat, userLng);
+    const db = distanceMiForItem(b, userLat, userLng);
+    if (da !== db) return da - db;
+    const ra = a.type === 'registry' ? 0 : 1;
+    const rb = b.type === 'registry' ? 0 : 1;
+    if (ra !== rb) return ra - rb;
+    if (Boolean(b.verified) !== Boolean(a.verified)) return a.verified ? -1 : 1;
+    const ta = a.trust_tier === 'verified_independent' ? 0 : 1;
+    const tb = b.trust_tier === 'verified_independent' ? 0 : 1;
+    return ta - tb;
+  });
+  return items;
+}
 
 /** GET /api/local-feed?lat=&lng=&category=&radius= */
 router.get('/', async (req, res) => {
@@ -151,14 +192,19 @@ router.get('/', async (req, res) => {
       }
     }
 
-    const feed = [...registryFeed, ...osmPlaces.map((b) => mapOsmRow(b, 'local'))].sort(sortFeed);
+    const feed = sortFeedNearestFirst(
+      [...registryFeed, ...osmPlaces.map((b) => mapOsmRow(b, 'local'))],
+      lat,
+      lng
+    );
 
     const not_verified_independent = [];
 
-    const chain_results = [
-      ...registryChain,
-      ...osmExcludedByList.map((b) => mapOsmRow(b, 'chain')),
-    ].sort(sortFeed);
+    const chain_results = sortFeedNearestFirst(
+      [...registryChain, ...osmExcludedByList.map((b) => mapOsmRow(b, 'chain'))],
+      lat,
+      lng
+    );
 
     res.json({
       feed,
