@@ -1,0 +1,1232 @@
+{
+  "generated_at": "2026-04-10T07:20:16.936Z",
+  "total_profiles": 1,
+  "profiles_checked": 1,
+  "discrepancies_found": 17,
+  "confirmed": 0,
+  "errors": 12,
+  "estimated_cost_usd": 4.5104,
+  "results": [
+    {
+      "slug": "baxter-international",
+      "brand_name": "Baxter International",
+      "profile_type": "database",
+      "status": "ERROR",
+      "error": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CZtDkDg5wF4WcYe8uYWnT\"}",
+      "duration_ms": 237,
+      "timestamp": "2026-04-09T12:46:05.843Z"
+    },
+    {
+      "slug": "change-healthcare",
+      "brand_name": "Change Healthcare",
+      "profile_type": "database",
+      "status": "ERROR",
+      "error": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CZtEAdB87bdsfyipwDb7T\"}",
+      "duration_ms": 251,
+      "timestamp": "2026-04-09T12:51:36.939Z"
+    },
+    {
+      "slug": "multiplan",
+      "brand_name": "MultiPlan",
+      "profile_type": "database",
+      "status": "ERROR",
+      "error": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CZtEb4YHAtS4LzJrXT93S\"}",
+      "duration_ms": 242,
+      "timestamp": "2026-04-09T12:57:08.440Z"
+    },
+    {
+      "slug": "centene",
+      "brand_name": "Centene Corporation",
+      "profile_type": "database",
+      "status": "ERROR",
+      "error": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CZtF1UCVQWvaGsVcisV4j\"}",
+      "duration_ms": 209,
+      "timestamp": "2026-04-09T13:02:39.549Z"
+    },
+    {
+      "slug": "teamhealth",
+      "brand_name": "TeamHealth",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"$60 million settlement with DOJ for Medicare/Medicaid False Claims Act violations (up-coding), 2017[4]\",\"$4.4 million settlement for billing fraud allegations, 2023[1]\",\"Ongoing medical overbilling lawsuit filed by City of Plaquemine, 2023[3]\"],\"executive_accountability\":\"No documented criminal convictions or pleas for named executives or controlling owners. TeamHealth entered civil settlements and a five-year Corporate Integrity Agreement with HHS-OIG, but no individual liability specified[4].\",\"caveats\":\"Pending overbilling lawsuit s",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "overall_concern_level",
+          "severity": "CRITICAL",
+          "stored": "critical",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation. [escalated: Claude & Perplexity agree vs stored]"
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1979",
+          "live": "earliest year token: 2017",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~10 heuristic name tokens",
+          "live": "False Claims Act, Leif Murphy, Michael Wiechart, David Jones, Chief Financial Officer, False Claims Act, False Claims Act, Eastern District, Gerry Wood Auto Group, False Claims Act, False Claims Act, Eastern District, Gerry Wood Auto Group, Leif Murphy, Michael Wiechart",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "critical",
+      "live_concern_level": "significant",
+      "live_executive_summary": "TeamHealth, Blackstone's privately held emergency physician staffing giant, carries significant and well-documented legal risk across repeat False Claims Act settlements ($60M in 2017, $4.4M in 2023), active overbilling class actions, and Senate/FTC-DOJ-HHS scrutiny over PE-driven staffing practices. Its disproportionate use of No Surprises Act arbitration—co-filing 43% of all resolved IDR claims in 2023-2024—combined with physician pay-and-independence complaints keeps its risk profile firmly i",
+      "tokens_used": {
+        "input": 29843,
+        "output": 989
+      },
+      "estimated_cost_usd": 0.1044,
+      "duration_ms": 21134,
+      "timestamp": "2026-04-10T04:49:58.121Z"
+    },
+    {
+      "slug": "envision-healthcare",
+      "brand_name": "Envision Healthcare",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"moderate\",\"key_legal_facts\":[\"$50,250 CMP settlement with OIG for alleged remuneration violation via home devices, 2020[4]\",\"$177.5 million securities class action settlement, announced 2024 (related to pre-bankruptcy conduct)[5]\",\"$155,000 employment screening violation, 2017[3]\"],\"executive_accountability\":\"No documented criminal convictions, pleas, or individual civil liability for named executives or controlling owners such as KKR in the provided sources. All identified matters involve corporate civil settlements or arbitrations.\",\"caveats\":\"Search results show no",
+        "vs_claude": {
+          "perplexity_concern": "moderate",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "critical",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "HIGH",
+          "stored": "$10,000,000,000 (largest normalized)",
+          "live": "$7,700,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~23% after normalizing to USD."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "(none)",
+          "live": "securities_fraud_class_action_settlement, doj_emcare_billing_settlement, post_bankruptcy_creditor_owned, california_ed_operations_exit_2024",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~9 heuristic name tokens",
+          "live": "Envision Physician Services, Jason Owen, Michael Bruff, Replaced Henry Howe, Steve Nelson, Appointed November, General Counsel, Jason Owen, Michael Bruff, Replaced Henry Howe, Steve Nelson, Appointed November",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "critical",
+          "live": "Claude: significant; Perplexity: moderate",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "critical",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Envision Healthcare completed Chapter 11 reorganization in November 2023, shedding over 70% of its ~$7.7 billion debt and splitting into Envision Physician Services and AMSURG under separate creditor ownership with KKR fully exited. Significant legal exposure persists via a $177.5M securities fraud settlement, a prior $31M DOJ billing settlement, and ongoing arbitration and regulatory litigation stemming from its balance-billing business model. Jason Owen (President & CEO (appointed April 2024))",
+      "tokens_used": {
+        "input": 55942,
+        "output": 897
+      },
+      "estimated_cost_usd": 0.1813,
+      "duration_ms": 22683,
+      "timestamp": "2026-04-10T04:55:30.748Z"
+    },
+    {
+      "slug": "epic-systems",
+      "brand_name": "Epic Systems",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"minor\",\"key_legal_facts\":[\"$5.4 million FLSA overtime misclassification settlement in 2014[2][4]\",\"$940 million award (including $240M compensatory and $700M punitive) against Tata Consultancy for trade secret misappropriation and breach of contract in 2016 (Tata appealed)[1]\"],\"executive_accountability\":\"No documented convictions, pleas, or civil liability for named executives or controlling owners. All cases involved Epic as defendant or plaintiff in civil matters without individual executive accountability.\",\"caveats\":\"Texas AG antitrust lawsuit ongoing with unknow",
+        "vs_claude": {
+          "perplexity_concern": "minor",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1979",
+          "live": "earliest year token: 2024",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~11 heuristic name tokens",
+          "live": "Particle Health, Stirling Martin, Chief Security Officer, Senior Vice President, Sumit Rana, Senior Vice President, Particle Health, Particle Health, Stirling Martin, Sumit Rana",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: minor",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Epic Systems faces escalating legal and regulatory pressure via three active antitrust suits (Texas AG, Particle Health, CureIS) alleging monopolistic EHR data-gatekeeping, alongside persistent scrutiny over information blocking, switching-cost lock-in, and parental health-record access. No criminal liability attaches to any named executive; the company remains privately held under founder-CEO Judy Faulkner with no publicly traded disclosure obligations. Judy Faulkner (Founder and CEO) liability",
+      "tokens_used": {
+        "input": 30387,
+        "output": 812
+      },
+      "estimated_cost_usd": 0.1033,
+      "duration_ms": 22878,
+      "timestamp": "2026-04-10T05:01:01.931Z"
+    },
+    {
+      "slug": "hca-healthcare",
+      "brand_name": "HCA Healthcare",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"moderate\",\"key_legal_facts\":[\"2025: Multimillion-dollar class action settlement (est. $9-9.3 million) for 2023 data breach affecting 11+ million patients, approved by Tennessee federal court; no admission of liability[1][2][5][7]\",\"2025: $2.9 million total penalties across California ($1.16M), Colorado ($0.97M), Nevada ($0.79M) for unlawful training repayment agreements (TRAPs) on nurses; plus restitution to affected nurses[3][4][8]\"],\"executive_accountability\":\"No documented convictions, pleas, or individual civil liability for named executives or controlling owners ",
+        "vs_claude": {
+          "perplexity_concern": "moderate",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "critical",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$33,000,000,000 (largest normalized)",
+          "live": "$1,770,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~95% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1968",
+          "live": "earliest year token: 2000",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~19 heuristic name tokens",
+          "live": "Violation Tracker, Mike Marks, Executive Vice President, Jon Foster, Executive Vice President, Executive Vice President, Chief Legal, Administrative Officer, Promoted April, Mike Marks, Jon Foster, Promoted April",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "critical",
+          "live": "Claude: significant; Perplexity: moderate",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "critical",
+      "live_concern_level": "significant",
+      "live_executive_summary": "HCA Healthcare carries a significant concern profile anchored by the largest healthcare fraud settlement in U.S. history (~$1.7B, 2000–2002) involving felony pleas, upcoding, and physician kickbacks, with the recidivism risk tag still warranted given ongoing penalty accumulation ($1.77B+ since 2000 per Violation Tracker). Recent material events include a pending class-action settlement over a 27.7M-record data breach (2023) and a 2025 multistate $2.9M AG settlement over unlawful nurse training d",
+      "tokens_used": {
+        "input": 60102,
+        "output": 1085
+      },
+      "estimated_cost_usd": 0.1966,
+      "duration_ms": 28292,
+      "timestamp": "2026-04-10T05:06:38.174Z"
+    },
+    {
+      "slug": "tenet-healthcare",
+      "brand_name": "Tenet Healthcare",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"$900M settlement with DOJ for Medicare billing fraud including outlier overbilling, kickbacks, and upcoding (2006)[1][2]\",\"$500M settlement for unnecessary surgeries at Redding Hospital (2006)[3]\",\"$368M civil settlement for kickbacks to Clinica de la Mama for patient referrals, plus $145M criminal forfeiture (2016)[4][6]\",\"$100M class-action settlement for overcharging uninsured patients (2005)[5]\",\"$215M securities class-action settlement (2006)[7]\"],\"executive_accountability\":\"No documented criminal convictions or pleas of named exe",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "overall_concern_level",
+          "severity": "CRITICAL",
+          "stored": "critical",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation. [escalated: Claude & Perplexity agree vs stored]"
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$340,000,000,000 (largest normalized)",
+          "live": "$900,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~100% after normalizing to USD. [escalated: Claude & Perplexity agree vs stored]"
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~15 heuristic name tokens",
+          "live": "Tenet Healthcare, Saum Sutaria, Chief Executive Officer, Sun Park, Executive Vice President, Chief Financial Officer, Tom Arnst, Executive Vice President, Chief Administrative Officer, General Counsel, Chief Risk Officer, Paola Arbour, Executive Vice President, Chief Information Officer, South Carolina",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "critical",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Tenet Healthcare carries a significant and multi-decade legal concern profile anchored by a $900M False Claims Act settlement (2006), a $513M criminal-civil kickback resolution with two subsidiary guilty pleas (2016), and a 2023 DMC/Vanguard FCA payout, with no individual executive criminal liability on record. Active labor pressure continues through recurring California nurse staffing strikes (most recently October 2025) and the company retains material revenue-cycle concentration risk through ",
+      "tokens_used": {
+        "input": 60810,
+        "output": 1003
+      },
+      "estimated_cost_usd": 0.1975,
+      "duration_ms": 24782,
+      "timestamp": "2026-04-10T05:12:05.521Z"
+    },
+    {
+      "slug": "lifepoint-health",
+      "brand_name": "LifePoint Health",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented convictions, pleas, or civil liability for named executives or controlling owners of LifePoint Health or Apollo Global Management in relation to LifePoint.\",\"caveats\":\"Search results contain no verifiable government filings, court records, or regulator reports of legal settlements, major fines, or executive accountability specific to LifePoint Health / Apollo Global Management; general Apollo penalties listed in Violation Tracker are not tied to LifePoint.\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "critical",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$340,000,000,000 (largest normalized)",
+          "live": "$5,600,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~98% after normalizing to USD."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1999",
+          "live": "earliest year token: 2013",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "joint_venture_cms_enforcement_examples, nonurban_staffing_and_closure_pressures",
+          "live": "senate_budget_committee_investigation_lifepoint, senate_homeland_security_committee_er_staffing_probe, patient_safety_quality_of_care_deficiencies, wage_and_labor_law_violations, retirement_plan_erisa_litigation_pending, apollo_intra_fund_asset_transfer_risk",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~5 heuristic name tokens",
+          "live": "Senate Budget Committee, Ottumwa Regional Health Center, Senate Homeland Security Committee, New Mexico, David Dill, Chief Executive Officer, Jason Zachariah, Chief Operating Officer, Aaron Lewis, Executive Vice President, Chief Financial Officer, Michael Coggin, Jennifer Peters, Executive Vice President, Chief Administrative",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "critical",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "critical",
+      "live_concern_level": "significant",
+      "live_executive_summary": "LifePoint Health, majority-owned by Apollo Global Management since the 2018 $5.6B LBO and RCCH roll-in, faces significant and escalating regulatory and legislative scrutiny: a bipartisan Senate Budget Committee investigation published in January 2025 found patient-safety failures and PE profit extraction at Ottumwa Regional Health Center, a parallel Senate Homeland Security Committee probe into ER staffing practices named LifePoint directly, and a 2024 FLSA wage settlement ($9.5M) and pending ER",
+      "tokens_used": {
+        "input": 71496,
+        "output": 1094
+      },
+      "estimated_cost_usd": 0.2309,
+      "duration_ms": 28137,
+      "timestamp": "2026-04-10T05:17:39.870Z"
+    },
+    {
+      "slug": "radiology-partners",
+      "brand_name": "Radiology Partners",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[\"No documented legal settlements, major fines, or convictions directly involving Radiology Partners, Starr Investment Holdings, or New Enterprise Associates in the provided sources[1][4][6][7]\",\"Ongoing disputes include UnitedHealthcare arbitration (vacated $134M award, no recovery for either party, 2022-2025)[1]\",\"Aetna lawsuit alleging corporate practice of medicine violations and fraudulent billing (ongoing)[6]\"],\"executive_accountability\":\"No convictions, pleas, or civil liability documented for any named executives or controlling owners ",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$700,000,000 (largest normalized)",
+          "live": "$24,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~97% after normalizing to USD."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "payer_litigation_uhc_2025_allegations",
+          "live": "payer_litigation_uhc_aetna_2025, pass_through_billing_allegations, rico_civil_complaint_2025, bcbs_antitrust_opt_out_litigation, false_claims_act_affiliate_settlement_2025",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~7 heuristic name tokens",
+          "live": "Rich Whitney, Venture Advisor, Anthony Gabriel, Mohamad Makhzoumi, Board Member, Renaissance Imaging Medical Associates, False Claims Act, Renaissance Imaging Medical Associates, False Claims Act, Rich Whitney, Venture Advisor, Anthony Gabriel, Mohamad Makhzoumi",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Radiology Partners faces escalating multi-front payer litigation—civil RICO and NSA IDR abuse suits from UnitedHealthcare (Aug 2025) and a fraud/NSA scheme suit from Aetna (Dec 2024)—all contested by RP, alongside a $2.35M FCA affiliate settlement (Mar 2025); no criminal charges against any executive have been documented. The PE-backed roll-up model, heavy IDR usage (>90% of professional radiology IDR nationally), and pass-through billing allegations collectively sustain a 'significant' concern ",
+      "tokens_used": {
+        "input": 38187,
+        "output": 981
+      },
+      "estimated_cost_usd": 0.1293,
+      "duration_ms": 25351,
+      "timestamp": "2026-04-10T05:23:07.932Z"
+    },
+    {
+      "slug": "owens-minor",
+      "brand_name": "Owens & Minor",
+      "profile_type": "database",
+      "status": "ERROR",
+      "error": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"Invalid authentication credentials\"},\"request_id\":\"req_011CZuYAW6KzDeA4PrzSyC1p\"}",
+      "duration_ms": 143,
+      "timestamp": "2026-04-10T05:28:13.705Z"
+    },
+    {
+      "slug": "premier-inc",
+      "brand_name": "Premier Inc.",
+      "profile_type": "database",
+      "status": "ERROR",
+      "error": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"Invalid authentication credentials\"},\"request_id\":\"req_011CZuYatsTLHhxzFt9HT19h\"}",
+      "duration_ms": 143,
+      "timestamp": "2026-04-10T05:33:44.623Z"
+    },
+    {
+      "slug": "henry-schein",
+      "brand_name": "Henry Schein",
+      "profile_type": "database",
+      "status": "ERROR",
+      "error": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"Invalid authentication credentials\"},\"request_id\":\"req_011CZuZ1HJkSRufULoXDowP4\"}",
+      "duration_ms": 232,
+      "timestamp": "2026-04-10T05:39:15.501Z"
+    },
+    {
+      "slug": "medline-industries",
+      "brand_name": "Medline Industries",
+      "profile_type": "database",
+      "status": "ERROR",
+      "error": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"Invalid authentication credentials\"},\"request_id\":\"req_011CZuZRgQUeAjL6waNgnn81\"}",
+      "duration_ms": 155,
+      "timestamp": "2026-04-10T05:44:46.431Z"
+    },
+    {
+      "slug": "vizient",
+      "brand_name": "Vizient",
+      "profile_type": "database",
+      "status": "ERROR",
+      "error": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"Invalid authentication credentials\"},\"request_id\":\"req_011CZuZr4nJRTGEUYXVHnEWz\"}",
+      "duration_ms": 169,
+      "timestamp": "2026-04-10T05:50:17.229Z"
+    },
+    {
+      "slug": "amsurg",
+      "brand_name": "AMSURG",
+      "profile_type": "database",
+      "status": "ERROR",
+      "error": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"Invalid authentication credentials\"},\"request_id\":\"req_011CZuaGTwzWw4PkxrCn37Pb\"}",
+      "duration_ms": 118,
+      "timestamp": "2026-04-10T05:55:48.238Z"
+    },
+    {
+      "slug": "molina-healthcare",
+      "brand_name": "Molina Healthcare",
+      "profile_type": "database",
+      "status": "ERROR",
+      "error": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"Invalid authentication credentials\"},\"request_id\":\"req_011CZuagrBP9CDtfjysqJYM2\"}",
+      "duration_ms": 145,
+      "timestamp": "2026-04-10T06:01:19.036Z"
+    },
+    {
+      "slug": "humana",
+      "brand_name": "Humana",
+      "profile_type": "database",
+      "status": "ERROR",
+      "error": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"Invalid authentication credentials\"},\"request_id\":\"req_011CZub7F9fqyumAwnVzghi3\"}",
+      "duration_ms": 170,
+      "timestamp": "2026-04-10T06:06:49.993Z"
+    },
+    {
+      "slug": "elevance-health",
+      "brand_name": "Elevance Health",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"$12.9 million settlement in 2025 for class action over denied mental health/substance use residential treatment coverage (preliminary approval granted)[1][2]\",\"$3.3 million settlement for denied spinal surgery coverage claims[7]\",\"$90 million consumer protection violation settlement in 2012 (WellPoint Inc.)[6]\",\"$61 million insurance violation in 2011 (Empire HealthChoice)[6]\",\"Lost Medicare Advantage star ratings lawsuit in 2025, costing $375 million in bonuses[3][4]\"],\"executive_accountability\":\"No documented criminal convictions or ",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "overall_concern_level",
+          "severity": "CRITICAL",
+          "stored": "critical",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation. [escalated: Claude & Perplexity agree vs stored]"
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$54,000,000,000 (largest normalized)",
+          "live": "$375,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~99% after normalizing to USD. [escalated: Claude & Perplexity agree vs stored]"
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~10 heuristic name tokens",
+          "live": "Chief Executive Officer, Mark Kaye, Executive Vice President, Chief Financial Officer, Executive Vice President, Chief Health Benefits Officer, Health Benefits, Blair Todt, Executive Vice President, Chief Legal, Administrative Officer, Kickback Statute, Kickback Statute, Mark Kaye, Blair Todt",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "critical",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Elevance Health faces a materially elevated legal and regulatory risk profile in 2025–2026, anchored by a live DOJ False Claims Act complaint over MA broker kickbacks (no settlement), an active CMS enforcement action threatening MA enrollment suspension over seven-plus years of risk adjustment data noncompliance (deadline extended to May 30, 2026), and a parallel securities class action. No executives carry documented criminal liability, but cumulative regulatory and litigation exposure is subst",
+      "tokens_used": {
+        "input": 76041,
+        "output": 1316
+      },
+      "estimated_cost_usd": 0.2479,
+      "duration_ms": 32155,
+      "timestamp": "2026-04-10T06:23:18.676Z"
+    },
+    {
+      "slug": "davita",
+      "brand_name": "DaVita",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"$389M settlement (2014) for False Claims Act violations and kickbacks to doctors ($350M federal + $39M forfeiture + $11.5M state)[2][3][4]\",\"$383.5M jury verdict (2018) leading to confidential settlement for patient deaths at DaVita clinics[1]\",\"$135M securities fraud class action settlement (2021)[5]\",\"$34.5M settlement (2025) for illegal kickbacks to induce referrals[7]\"],\"executive_accountability\":\"No documented criminal convictions or pleas for named executives or controlling owners. Whistleblowers David Barbetta (2009 qui tam suit",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "overall_concern_level",
+          "severity": "CRITICAL",
+          "stored": "critical",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation. [escalated: Claude & Perplexity agree vs stored]"
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$350,000,000 (largest normalized)",
+          "live": "$1,000,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~65% after normalizing to USD."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "berkshire_major_long_term_shareholder",
+          "live": "doj_fca_kickback_rx_referral_settlement_2024, berkshire_major_long_term_shareholder_45pct_stake, repeat_whistleblower_fca_enforcement_target",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~4 heuristic name tokens",
+          "live": "Chief Executive Officer, Joel Ackerman, Chief Financial Officer, Champions Oncology, Warburg Pincus, David Maughan, Chief Operating Officer, Hospital Services, Joel Ackerman, Champions Oncology, Warburg Pincus, David Maughan, Hospital Services",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "critical",
+      "live_concern_level": "significant",
+      "live_executive_summary": "DaVita remains a significant-concern entity with a decade-long pattern of DOJ/FCA enforcement actions—most recently a $34.5M kickback settlement in July 2024—and cumulative civil settlements exceeding $1B since 2012. Berkshire Hathaway holds approximately 44% of outstanding shares under a formal repurchase-cap agreement, and no current executives carry documented criminal liability. Javier J. Rodriguez (Chief Executive Officer & Director (since June 2019)) liability:none Tops medtech CEO pay ran",
+      "tokens_used": {
+        "input": 35336,
+        "output": 907
+      },
+      "estimated_cost_usd": 0.1196,
+      "duration_ms": 24148,
+      "timestamp": "2026-04-10T06:28:41.475Z"
+    },
+    {
+      "slug": "amedisys",
+      "brand_name": "Amedisys",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"minor\",\"key_legal_facts\":[\"Amedisys paid $1.1 million civil penalty in 2025 for falsely certifying HSR Act compliance\",\"UnitedHealth and Amedisys required to divest 164 home health and hospice locations across 19 states (approximately $528 million in annual revenue) per DOJ settlement approved 2025\",\"$3.3 billion acquisition by Optum completed following DOJ settlement in 2025\"],\"executive_accountability\":\"No criminal convictions or individual executive liability documented in public record. The $1.1 million civil penalty was assessed against Amedisys as a corporate en",
+        "vs_claude": {
+          "perplexity_concern": "minor",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "optum_acquisition_antitrust_divestiture_2025",
+          "live": "optum_acquisition_antitrust_divestiture_completed_2025, hsr_act_false_certification_civil_penalty_2025, vertical_integration_payvider_conflict_of_interest",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~5 heuristic name tokens",
+          "live": "Richard Ashworth, Appointed April, Patrick Conway, Named Optum, Krista Nelson, Optum Health, Optum Health, Scott Ginn, Corporate Integrity Agreement, Rodino Act Second Request, New Jersey, New York, Corporate Integrity Agreement, Rodino Act Second Request, New Jersey",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: minor",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Amedisys, now a wholly-owned Optum/UnitedHealth subsidiary following the August 2025 close of its $3.3B acquisition, carries two material legal findings: a 2014 $150M FCA Medicare fraud settlement and a 2025 $1.1M HSR civil penalty plus the largest-ever outpatient healthcare merger divestiture (164 locations, ~$528M revenue). The post-merger vertical integration of a major payer with a leading home health and hospice provider sustains elevated concern around utilization management bias and quali",
+      "tokens_used": {
+        "input": 107002,
+        "output": 1212
+      },
+      "estimated_cost_usd": 0.3392,
+      "duration_ms": 38046,
+      "timestamp": "2026-04-10T06:34:26.137Z"
+    },
+    {
+      "slug": "getinge",
+      "brand_name": "Getinge",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"moderate\",\"key_legal_facts\":[\"Brazilian CADE settlement agreements for anticompetitive practices: BRL 15.2M (~SEK 35M), announced 2019, payment in 2020[1][4]\",\"US MDL surgical mesh product liability settlement by subsidiary Atrium Medical: additional SEK 600M provision, agreement 2021, final payment expected H1 2022 (not an admission of liability)[2][3]\",\"Prior SEK 1.8Bn provision in 2018 for surgical mesh claims[2][3]\",\"FTC consent order in 2008 requiring divestiture of Datascope EVH assets to resolve anticompetitive merger concerns (no monetary penalty specified)[6]",
+        "vs_claude": {
+          "perplexity_concern": "moderate",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$276,000,000 (largest normalized)",
+          "live": "$800,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~66% after normalizing to USD. [escalated: Claude & Perplexity agree vs stored]"
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 2000",
+          "live": "earliest year token: 1989",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: significant; Perplexity: moderate",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Getinge carries a 'significant' concern profile anchored by a decade-long FDA/DOJ consent decree still unresolved as of 2024-2025, a cluster of Class I IABP and ventilator recalls, and settled Brazilian antitrust (CADE) proceedings with an additional CGU enforcement negotiation still open. No individual executives face documented criminal liability, but cumulative regulatory remediation costs have exceeded USD 470 million and the company is exiting its surgical-perfusion business under roughly U",
+      "tokens_used": {
+        "input": 94888,
+        "output": 1343
+      },
+      "estimated_cost_usd": 0.3048,
+      "duration_ms": 42966,
+      "timestamp": "2026-04-10T06:40:01.953Z"
+    },
+    {
+      "slug": "draeger",
+      "brand_name": "Dräger",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented convictions, pleas, or civil liability for any named executives or controlling owners.\",\"caveats\":\"Search results contain no evidence of legal settlements, major fines, or executive accountability; only routine corporate, merger review, and audit matters are referenced.\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "moderate",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "fda_warning_letter_andover_2020_infinity_iacs, qsit_design_validation_capa_cited_2020, class_i_recall_evita_babylog_ps500_power_supply, class_i_recall_oxylog_3000_plus_battery_2023, class_ii_recalls_evita_v500_v800_software, germany_restructuring_layoffs_2016_documented, ig_metall_personnel_cost_agreement_2019_wage_freeze_reported, us_fcpa_2010_drager_claim_not_verified_primary_agency, kgaa_family_governance_medtech",
+          "live": "Core stored tags remain substantiated; 'class_ii_recalls_evita_v500_v800_software' is imprecise — V500/Babylog recalls were Class I battery/power issues not Class II software; add tags for 2023 Carina PE-PUR foam recall and 2025 ErgoStar catheter mount recall; FCPA tag remains unverified against any primary DOJ/SEC enforcement record.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "significant",
+          "live": "moderate",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 2010",
+          "live": "earliest year token: 2014",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "class_i_recall_evita_babylog_ps500_power_supply, class_ii_recalls_evita_v500_v800_software, us_fcpa_2010_drager_claim_not_verified_primary_agency",
+          "live": "class_i_recall_evita_babylog_ps500_power_supply_2014_2016, class_ii_recalls_infinity_iacs_software_ongoing, class_ii_recall_carina_subacute_ventilator_pepur_foam_2023, ergostar_catheter_mount_recall_2025, us_fcpa_2010_drager_claim_not_verified_no_primary_agency_record",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~8 heuristic name tokens",
+          "live": "Warning Letter, Bernd Sponholtz, Hartwig Lescow, Stefanie Hirsch, Plus Emergency, Transport Ventilator, Warning Letter, Draeger Medical, Repeated Class, Power Supply Unit, Plus Emergency, Transport Ventilator, Warning Letter, Draeger Medical, Repeated Class",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: moderate; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "moderate",
+      "live_executive_summary": "Dräger's risk profile is moderate — the company has a documented history of multiple serious (Class I) FDA recalls affecting ventilators and monitoring systems, plus a 2020 FDA Warning Letter for CAPA and 510(k) failures, but no confirmed fines, settlements, or criminal liability against executives. The FCPA allegation in the stored tags has no verifiable primary agency record, and the KGaA family-governance structure with Stefan Dräger's reappointment through 2030 remains intact. Stefan Dräger ",
+      "tokens_used": {
+        "input": 153667,
+        "output": 1544
+      },
+      "estimated_cost_usd": 0.4842,
+      "duration_ms": 39416,
+      "timestamp": "2026-04-10T06:45:29.410Z"
+    },
+    {
+      "slug": "hamilton-medical",
+      "brand_name": "Hamilton Medical",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"clean\",\"key_legal_facts\":[],\"executive_accountability\":\"No documented convictions, pleas, or civil liability for named executives or controlling owners of Hamilton Medical AG.\",\"caveats\":\"Search results reference unrelated entities like Hamilton Health Center and Hamilton Medical Group; no verifiable legal settlements, fines, or executive actions found for Hamilton Medical AG specifically.\"}",
+        "vs_claude": {
+          "perplexity_concern": "clean",
+          "claude_concern": "moderate",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "class_i_recall_c1_c2_c3_t1_neonatal_uptime_ambient_state_2023, class_i_recall_c1_t1_mr1_capacitor_leak_control_board_2023, class_i_correction_c6_software_restart_open_suction_2024, class_i_correction_c6_esm_circuit_board_2025, hamilton_g5_panel_connection_software_correction_2019, privately_held_bonaduz_hamilton_family_led, fda_warning_letter_not_found_public_index_research_pass, swiss_hamilton_group_outsourcing_romania_press_2010s",
+          "live": "Stored tags remain substantively valid but are now incomplete: two new Class I actions (C6 ESM/ambient-state correction Aug 2025 and coaxial breathing circuit recall Aug 2025) must be added, the Romania outsourcing tag should be updated from 2010s-era press framing to reflect confirmed ongoing manufacturing presence, and a new tag for the 2025 Texas appellate litigation should be added.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "significant",
+          "live": "moderate",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1983",
+          "live": "earliest year token: 2001",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "swiss_hamilton_group_outsourcing_romania_press_2010s",
+          "live": "class_i_recall_coaxial_breathing_circuit_inner_tube_crack_2025, class_i_correction_c6_ambient_state_startup_esm_2025, swiss_hamilton_group_outsourcing_romania_manufacturing_ongoing, texas_appellate_litigation_hamilton_medical_ag_inc_2025",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~6 heuristic name tokens",
+          "live": "Bob Hamilton, Robert Hamilton, Andreas Wieland, Warning Letter, District Court, Harris County, Warning Letter, District Court, Harris County, Bob Hamilton, Robert Hamilton, Andreas Wieland",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: moderate; Perplexity: clean",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "moderate",
+      "live_executive_summary": "Hamilton Medical AG carries a 'moderate' concern profile driven exclusively by a recurring pattern of FDA Class I recalls and corrections (2019–2025) affecting multiple ICU ventilator lines and accessories — no monetary fines, warning letters, consent decrees, or executive criminal liability appear in the public record. The regulatory cadence has accelerated (six Class I actions in roughly six years), but the company remains privately held under the Hamilton family with no financial enforcement ",
+      "tokens_used": {
+        "input": 151792,
+        "output": 1478
+      },
+      "estimated_cost_usd": 0.4775,
+      "duration_ms": 41567,
+      "timestamp": "2026-04-10T06:51:02.513Z"
+    },
+    {
+      "slug": "fisher-paykel-healthcare",
+      "brand_name": "Fisher & Paykel Healthcare",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"minor\",\"key_legal_facts\":[\"$50,000 settlement with HHS OIG in 2017 for alleged Civil Monetary Penalties Law violation involving remuneration to DME suppliers[3]\"],\"executive_accountability\":\"No documented convictions, pleas, or civil liability for any named executives or controlling owners.\",\"caveats\":\"Only one minor regulatory settlement identified; no ongoing or recent major fines, convictions, or executive actions in public records up to 2026. Patent disputes were civil settlements with no payments or liability admissions.\"}",
+        "vs_claude": {
+          "perplexity_concern": "minor",
+          "claude_concern": "moderate",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "significant",
+          "live": "moderate",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$100,000,000 (largest normalized)",
+          "live": "$12,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~88% after normalizing to USD."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "resmed_fph_global_patent_settlement_2019, manufacturing_duel_anchor_nz_auckland_mexico_tijuana",
+          "live": "class_ii_recall_airvo3_software_flow_alarm_2025, airvo2_myairvo2_medical_device_correction_disinfection_kit_2025, resmed_fph_global_patent_settlement_no_payment_2019, manufacturing_dual_anchor_nz_auckland_mexico_tijuana",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~11 heuristic name tokens",
+          "live": "Neville Mitchell, Cochlear Limited, Andy Niccol, Chief Operating Officer, Raelene Leonard, General Counsel, Company Secretary, Warning Letter, Quality System Regulation, Warning Letter, Quality System Regulation, Neville Mitchell, Cochlear Limited, Andy Niccol, Raelene Leonard",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: moderate; Perplexity: minor",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "moderate",
+      "live_executive_summary": "Fisher & Paykel Healthcare carries a moderate concern profile driven by a recurring recall history across multiple product lines (most recently the 2024 Airvo 2/myAirvo 2 speaker-alarm recall provisioned at ~NZD $12M and a 2025 Airvo 3 Class II recall) and a resolved but high-profile multi-jurisdictional patent war with ResMed settled in 2019 with no financial payment. No criminal liability attaches to any current executive, and the 2023 ETU industrial action over overtime was a labour-relations",
+      "tokens_used": {
+        "input": 93352,
+        "output": 1424
+      },
+      "estimated_cost_usd": 0.3014,
+      "duration_ms": 33681,
+      "timestamp": "2026-04-10T06:56:25.675Z"
+    },
+    {
+      "slug": "ge-healthcare",
+      "brand_name": "GE HealthCare",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"$362.5 million securities fraud class action settlement with GE (proposed 2024, related to LTSA receivables factoring)[1][3]\",\"$200 million SEC civil penalty for disclosure failures in power and insurance businesses (2020)[2]\",\"$30 million False Claims Act settlement by GE Healthcare for acquired company's conduct (year not specified in results)[6]\",\"$193,585 OSHA proposed fines against Haier (GE appliances manufacturer) for safety violations (recent, post-2016 history)[4]\"],\"executive_accountability\":\"No criminal convictions or pleas ",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "moderate",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "significant",
+          "live": "moderate",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "MEDIUM",
+          "stored": "$10,000,000,000 (largest normalized)",
+          "live": "$8,250,000,000 (largest normalized)",
+          "note": "Financial headline figures differ moderately (~18%) after USD normalization."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 2000",
+          "live": "earliest year token: 2010",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "spin_financing_multibillion_senior_notes_pension_transfer, sec_fcpa_oil_for_food_2010_23_4m_ge_healthcare_ltd_amersham_thread, user_claim_30m_doj_sec_china_romania_indonesia_misaligned_primary, class_i_nuclear_medicine_detector_fall_600_800_series, evair_formaldehyde_hcp_letter_2024_iterative_corrections, giraffe_omnibed_formaldehyde_neonatal_instructions, panda_giraffe_electrical_safety_manufacturing_recall_2024, tariff_headwind_500m_annual_reuters_2025",
+          "live": "spin_financing_8_25b_senior_notes_5_2b_pension_transfer, sec_fcpa_oil_for_food_2010_23_4m_ge_amersham_ionics, class_i_recall_giraffe_omnibed_formaldehyde_neonatal_2023_2024, class_i_recall_giraffe_omnibed_heater_door_electrical_safety_2024, evair_formaldehyde_hcp_letter_iterative_corrections, tariff_headwind_500m_annual_2025_china_bilateral_primary, user_claim_30m_doj_sec_china_romania_indonesia_unverified",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~18 heuristic name tokens",
+          "live": "Jay Saccaro, Frank Jimenez, General Counsel, Corporate Secretary, Taha Kass, Chief Science, Technology Officer, Jay Saccaro, Frank Jimenez, Taha Kass",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "significant",
+          "live": "Claude: moderate; Perplexity: significant",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "moderate",
+      "live_executive_summary": "Peter J. Arduini (President & CEO) liability:none CEO since January 2022; no criminal charges or investigations documented.; Jay Saccaro (VP & CFO) liability:none CFO; no criminal charges or investigations documented.; Frank Jimenez (General Counsel & Corporate Secretary) liability:none GC since spin-off; no criminal charges or investigations documented.; Taha Kass-Hout (Chief Science & Technology Officer) liability:none No criminal charges or investigations documented.",
+      "tokens_used": {
+        "input": 126241,
+        "output": 1205
+      },
+      "estimated_cost_usd": 0.3968,
+      "duration_ms": 32948,
+      "timestamp": "2026-04-10T07:09:17.149Z"
+    },
+    {
+      "slug": "medtronic",
+      "brand_name": "Medtronic",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": false,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"significant\",\"key_legal_facts\":[\"$35 million settlement fund for SynchroMed II pump harms (2024, master settlement April)\",\"$382 million antitrust damages ruling for vessel sealing devices monopoly (2026, plans to appeal)\",\"$8.1 million DOJ settlement for kickbacks and false claims via SynchroMed II pumps (2020)\",\"$43 million securities fraud settlement for INFUSE Bone Graft misrepresentations (2018)\",\"$85 million securities settlement for INFUSE off-label promotion and misleading statements (2012)\"],\"executive_accountability\":\"No documented criminal convictions or pl",
+        "vs_claude": {
+          "perplexity_concern": "significant",
+          "claude_concern": "significant",
+          "concern_alignment": "aligned",
+          "claude_agreement": "agree",
+          "summary": "Perplexity agrees with Claude on concern level (or one side unknown).",
+          "escalation_note": "Cross-source: escalate severities where both models challenge stored amounts/concern."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "verdict_tags_review",
+          "severity": "MEDIUM",
+          "stored": "190m_spinal_kickback_settlement, 49_9b_covidien_tax_inversion_ireland, infuse_adverse_event_suppression_paid_authors, infuse_cancer_ectopic_bone_male_infertility, multiple_doj_kickback_settlements",
+          "live": "The stored tag '190m_spinal_kickback_settlement' is not corroborated by public DOJ records — the confirmed spinal kickback settlement is $40M (2006, Sofamor Danek); the $210M figure refers to Medtronic's total payments to physician authors of Infuse studies, not a settlement amount, so that tag should be corrected; all other stored tags are substantively accurate and well-supported.",
+          "note": "Live check flagged stored verdict_tags as no longer accurate."
+        },
+        {
+          "field": "timeline_years",
+          "severity": "MEDIUM",
+          "stored": "earliest year token: 1949",
+          "live": "earliest year token: 1998",
+          "note": "Earliest cited years differ — check founding dates and milestone years."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "190m_spinal_kickback_settlement",
+          "live": "40m_spinal_sofamor_danek_kickback_settlement_2006, 75m_kyphon_medicare_fraud_settlement_2008, 9_2m_synchromed_kickback_open_payments_settlement_2020, infuse_85m_shareholder_settlement_off_label_concealment",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~5 heuristic name tokens",
+          "live": "Thierry Pi, Appointed March, Michelle Quinn, General Counsel, Ivan Fong, Sofamor Danek, Corporate Integrity Agreement, False Claims Act, Open Payments Program, South Dakota, Wilson Asfora, Sofamor Danek, Corporate Integrity Agreement, False Claims Act, Open Payments Program",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "significant",
+      "live_concern_level": "significant",
+      "live_executive_summary": "Medtronic (Medtronic plc) carries a significant concern profile driven by a documented pattern of multiple DOJ kickback settlements spanning pacemakers, spinal products, and infusion pumps, plus the Senate-investigated Infuse BMP-2 adverse-event suppression scandal and the $49.9B Covidien tax-inversion redomicile to Ireland. No current named executives face criminal charges; the company denies liability across most settled matters and has not admitted wrongdoing in the majority of cases. Geoffre",
+      "tokens_used": {
+        "input": 133547,
+        "output": 1149
+      },
+      "estimated_cost_usd": 0.4179,
+      "duration_ms": 35190,
+      "timestamp": "2026-04-10T07:14:50.223Z"
+    },
+    {
+      "slug": "vyaire-medical",
+      "brand_name": "Vyaire Medical",
+      "profile_type": "database",
+      "status": "DISCREPANCY",
+      "needs_human_review": true,
+      "perplexity_corroboration": {
+        "ran": true,
+        "skipped_reason": null,
+        "error": null,
+        "model": "sonar",
+        "parsed_excerpt": "{\"overall_concern_level\":\"moderate\",\"key_legal_facts\":[\"In 2023 a state court granted partial summary judgment against Vyaire Medical, Inc. for breach of contract, though the specific settlement or damages amount is not publicly disclosed in the available source.\",\"In 2024 Vyaire Medical, Inc. and certain subsidiaries filed for Chapter 11 bankruptcy in Delaware, leading to dual 363 sales of its ventilation business to ZOLL Medical Corp. for about $45.8 million in cash plus a $7.9 million MIM payment and capped cure costs, and its respiratory diagnostics business to Trudell Medical Limited for ",
+        "vs_claude": {
+          "perplexity_concern": "moderate",
+          "claude_concern": "significant",
+          "concern_alignment": "divergent",
+          "claude_agreement": "disagree",
+          "summary": "Perplexity disagrees with Claude on concern level.",
+          "escalation_note": "Models diverge — NEEDS_HUMAN_REVIEW."
+        }
+      },
+      "discrepancies": [
+        {
+          "field": "overall_concern_level",
+          "severity": "HIGH",
+          "stored": "critical",
+          "live": "significant",
+          "note": "Concern level assessment differs between stored profile and live investigation."
+        },
+        {
+          "field": "dollar_amounts",
+          "severity": "CRITICAL",
+          "stored": "$90,500,000 (largest normalized)",
+          "live": "$435,000,000 (largest normalized)",
+          "note": "Largest headline amounts differ ~79% after normalizing to USD."
+        },
+        {
+          "field": "verdict_tags",
+          "severity": "LOW",
+          "stored": "apax_full_ownership_bd_buyout_2018, entity_defunct_fragmented_oem_support_zoll_trudell_sunmed, zoll_acquired_ventilation_unit_ltv_bellavista_2024, trudell_acquired_respiratory_diagnostics_2024, sunmed_acquired_consumables_unit_2023, plymouth_minnesota_plant_closure_warn_reported",
+          "live": "apax_full_ownership_bd_buyout_2018_435m, class_i_recall_airlife_infant_heated_wire_circuit_2025, entity_defunct_wind_down_confirmed_nov_2024, zoll_acquired_ventilation_unit_ltv_bellavista_37m_2024, trudell_acquired_respiratory_diagnostics_rdx_30m_2024, sunmed_acquired_consumables_unit_310m_2023, plymouth_minnesota_plant_closure_warn_reported_2020",
+          "note": "Verdict tag sets diverge — may be taxonomy drift or new findings."
+        },
+        {
+          "field": "named_individuals",
+          "severity": "LOW",
+          "stored": "~18 heuristic name tokens",
+          "live": "Group Chief Executive Officer, Will Throp, Chief Executive Officer, Business Unit, Gaurav Agarwal, Bankruptcy Court, Manual Resuscitators, Vyaire Twin Tube, Bankruptcy Court, Manual Resuscitators, Vyaire Twin Tube, Will Throp, Gaurav Agarwal, Madison Dearborn, Infant Heated Wire Circuits",
+          "note": "Live text contains many capitalized names not surfaced in stored profile (heuristic)."
+        },
+        {
+          "field": "cross_source.claude_vs_perplexity_concern",
+          "severity": "NEEDS_HUMAN_REVIEW",
+          "stored": "critical",
+          "live": "Claude: significant; Perplexity: moderate",
+          "note": "Claude and Perplexity disagree on overall concern — human review."
+        }
+      ],
+      "net_new_findings": [],
+      "stored_concern_level": "critical",
+      "live_concern_level": "significant",
+      "live_executive_summary": "John Bibb (Group Chief Executive Officer (appointed May 2023; served through wind-down, November 2024)) liability:none Previously CLO/Secretary at Vyaire; led Chapter 11 process and both asset sales to ZOLL and Trudell; entity now wound down.; Will Throp (Chief Executive Officer, Vyaire RDx Business Unit) liability:none Led RDx unit through Trudell acquisition; continued post-sale transition.; Gaurav Agarwal (Group CEO (January 2020 – replaced by Bibb, May 2023)) liability:none Presided over pos",
+      "tokens_used": {
+        "input": 86298,
+        "output": 1258
+      },
+      "estimated_cost_usd": 0.2778,
+      "duration_ms": 31025,
+      "timestamp": "2026-04-10T07:20:16.936Z"
+    }
+  ]
+}

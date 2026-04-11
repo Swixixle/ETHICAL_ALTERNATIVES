@@ -10,9 +10,11 @@
  *   node server/scripts/deep_research_profile.mjs --slug walmart --category labor_and_wage --dry-run
  *   node server/scripts/deep_research_profile.mjs --all-categories --slug walmart --dry-run
  *   node server/scripts/deep_research_profile.mjs --slug target --sector retail --dry-run --cost-cap 5 --resume
+ *   node server/scripts/deep_research_profile.mjs --slug target --category labor_and_wage --dry-run --merge-existing
  *
  * Sector sets: up to 6 categories per run (from `profile_type` / `profile_json.sector` or `--sector`), unless `--all-categories`.
  * Category passes use a **snake draft**: round 1 forward (one Perplexity+Claude per category), round 2 reverse if budget remains. Each category saves to `deep_research_output/[slug]/[category].json` immediately; per-category resume skips completed rounds. **`--resume`** skips all Perplexity (subsidiary map + category queries) and loads existing temp files, then runs dedup → institutional → summary only. Final merge writes `[slug]_deep.json` and removes the temp dir on full success.
+ * **`--merge-existing`** (dry-run): if `deep_research_output/[slug]_deep.json` exists, merge it with this run before write — union `per_category` (current run wins per category), `mergeIncidentsPreserveConfirmed` for `incidents`, concat+dedupe `gaps` / `related_clusters`; keep `institutional_enablement`, `summaries`, `corporate_tree` from the current run when present, else prior file; sum `costs`.
  * Perplexity spend cap: --cost-cap (USD), else PERPLEXITY_DEEP_RESEARCH_COST_CAP_USD, else default **10** (sector-aware runs). Category rounds halt gracefully at cap; saved progress is merged.
  * Truncation: `--max-chars` (default 25000) on Perplexity text before Claude extraction.
  *
@@ -332,6 +334,7 @@ const { values: opts } = parseArgs({
     'all-categories': { type: 'boolean' },
     'max-chars': { type: 'string', default: '25000' },
     resume: { type: 'boolean' },
+    'merge-existing': { type: 'boolean' },
   },
   strict: true,
 });
@@ -356,6 +359,7 @@ const PERPLEXITY_COST_CAP_USD =
 
 const DRY_RUN = Boolean(opts['dry-run']);
 const RESUME_FLAG = Boolean(opts.resume);
+const MERGE_EXISTING_FLAG = Boolean(opts['merge-existing']);
 const RUN_ALL = Boolean(opts.all);
 const BATCH_SIZE = Math.max(1, parseInt(opts['batch-size'], 10) || 2);
 let DELAY_MS = Math.max(0, parseInt(opts.delay, 10) || 60_000);
@@ -1154,6 +1158,159 @@ function mergeIncidentsPreserveConfirmed(existing, incoming) {
   return [...noUrl, ...byUrl.values()];
 }
 
+function dryRunDeepJsonPath(slug) {
+  return join(__dirname, '..', 'deep_research_output', `${slug}_deep.json`);
+}
+
+/**
+ * @param {string} slug
+ * @returns {Record<string, unknown> | null}
+ */
+function loadExistingDryRunDeepJson(slug) {
+  const p = dryRunDeepJsonPath(slug);
+  if (!existsSync(p)) return null;
+  try {
+    const raw = readFileSync(p, 'utf8');
+    const j = JSON.parse(raw);
+    return j && typeof j === 'object' && !Array.isArray(j) ? /** @type {Record<string, unknown>} */ (j) : null;
+  } catch {
+    return null;
+  }
+}
+
+/** @param {unknown} gaps */
+function dedupeGapEntries(gaps) {
+  const seen = new Set();
+  /** @type {unknown[]} */
+  const out = [];
+  for (const g of Array.isArray(gaps) ? gaps : []) {
+    if (!g || typeof g !== 'object') continue;
+    const o = /** @type {Record<string, unknown>} */ (g);
+    const key = JSON.stringify({ period: o.period, note: o.note });
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(g);
+  }
+  return out;
+}
+
+/** @param {unknown} clusters */
+function dedupeRelatedClusterEntries(clusters) {
+  const seen = new Set();
+  /** @type {unknown[]} */
+  const out = [];
+  for (const c of Array.isArray(clusters) ? clusters : []) {
+    if (!c || typeof c !== 'object') continue;
+    const o = /** @type {Record<string, unknown>} */ (c);
+    const key = JSON.stringify({ label: o.label, incident_indices: o.incident_indices });
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(c);
+  }
+  return out;
+}
+
+/**
+ * Union by category key; current run wins when both define the same category.
+ * @param {unknown} existingList
+ * @param {unknown} currentList
+ */
+function mergePerCategoryArrays(existingList, currentList) {
+  /** @type {Map<string, Record<string, unknown>>} */
+  const byCat = new Map();
+  for (const b of Array.isArray(existingList) ? existingList : []) {
+    if (b && typeof b === 'object' && typeof b.category === 'string') {
+      byCat.set(b.category, /** @type {Record<string, unknown>} */ (b));
+    }
+  }
+  for (const b of Array.isArray(currentList) ? currentList : []) {
+    if (b && typeof b === 'object' && typeof b.category === 'string') {
+      byCat.set(b.category, /** @type {Record<string, unknown>} */ (b));
+    }
+  }
+  return [...byCat.values()];
+}
+
+/**
+ * @param {unknown} a
+ * @param {unknown} b
+ */
+function mergeDryRunCostObjects(a, b) {
+  const aOk = a && typeof a === 'object' && !Array.isArray(a);
+  const bOk = b && typeof b === 'object' && !Array.isArray(b);
+  if (!aOk) return bOk ? b : undefined;
+  if (!bOk) return a;
+  const ac = /** @type {Record<string, unknown>} */ (a);
+  const bc = /** @type {Record<string, unknown>} */ (b);
+  const ai = /** @type {{ input?: number; output?: number }} */ (ac.claude_tokens || {});
+  const bi = /** @type {{ input?: number; output?: number }} */ (bc.claude_tokens || {});
+  const inSum = Number(ai.input || 0) + Number(bi.input || 0);
+  const outSum = Number(ai.output || 0) + Number(bi.output || 0);
+  return {
+    perplexity_usd_this_slug:
+      Number(ac.perplexity_usd_this_slug || 0) + Number(bc.perplexity_usd_this_slug || 0),
+    claude_tokens: { input: inSum, output: outSum },
+    claude_usd_estimate: estimateAnthropicCostUsd(inSum, outSum),
+  };
+}
+
+/**
+ * Merge prior `deep_research_output/${slug}_deep.json` with this dry-run payload (flat shape).
+ * @param {string} slug
+ * @param {Record<string, unknown>} newPayload
+ */
+function mergeDryRunPayloadWithExisting(slug, newPayload) {
+  const existing = loadExistingDryRunDeepJson(slug);
+  if (!existing) {
+    console.log(
+      `[deep_research_profile] --merge-existing: no existing file at ${dryRunDeepJsonPath(slug)}`
+    );
+    return newPayload;
+  }
+
+  const ex = /** @type {Record<string, unknown>} */ (existing);
+  const nw = /** @type {Record<string, unknown>} */ (newPayload);
+
+  const merged = {
+    ...ex,
+    ...nw,
+    slug: nw.slug ?? ex.slug,
+    companyName: nw.companyName ?? ex.companyName,
+    dry_run: nw.dry_run ?? ex.dry_run,
+    generated_at: nw.generated_at,
+    sector_key: nw.sector_key ?? ex.sector_key,
+    all_categories_mode: nw.all_categories_mode ?? ex.all_categories_mode,
+    perplexity_max_chars_before_claude:
+      nw.perplexity_max_chars_before_claude ?? ex.perplexity_max_chars_before_claude,
+    model_perplexity_primary: nw.model_perplexity_primary ?? ex.model_perplexity_primary,
+    model_perplexity_effective: nw.model_perplexity_effective ?? ex.model_perplexity_effective,
+    model_claude: nw.model_claude ?? ex.model_claude,
+    per_category: mergePerCategoryArrays(ex.per_category, nw.per_category),
+    incidents: mergeIncidentsPreserveConfirmed(
+      Array.isArray(ex.incidents) ? ex.incidents : [],
+      Array.isArray(nw.incidents) ? nw.incidents : []
+    ),
+    gaps: dedupeGapEntries([
+      ...(Array.isArray(ex.gaps) ? ex.gaps : []),
+      ...(Array.isArray(nw.gaps) ? nw.gaps : []),
+    ]),
+    related_clusters: dedupeRelatedClusterEntries([
+      ...(Array.isArray(ex.related_clusters) ? ex.related_clusters : []),
+      ...(Array.isArray(nw.related_clusters) ? nw.related_clusters : []),
+    ]),
+    institutional_enablement: nw.institutional_enablement ?? ex.institutional_enablement,
+    summaries: nw.summaries ?? ex.summaries,
+    corporate_tree: nw.corporate_tree ?? ex.corporate_tree,
+    executive_governance: nw.executive_governance ?? ex.executive_governance,
+    costs: mergeDryRunCostObjects(ex.costs, nw.costs),
+  };
+
+  console.log(
+    `[deep_research_profile] --merge-existing: merged with on-disk file → per_category=${Array.isArray(merged.per_category) ? merged.per_category.length : 0} categories, incidents=${Array.isArray(merged.incidents) ? merged.incidents.length : 0}`
+  );
+  return merged;
+}
+
 async function loadRow(pool, slug) {
   const { rows } = await pool.query(
     `SELECT brand_slug, brand_name, parent_company, ultimate_parent, profile_type, overall_concern_level, profile_json, last_researched
@@ -1379,6 +1536,12 @@ async function main() {
   console.log('[deep_research_profile] Starting slug:', RUN_ALL ? '(all)' : slugOpt);
   console.log('[deep_research_profile] Dry run:', DRY_RUN);
   console.log('[deep_research_profile] Resume (skip Perplexity, use temp files):', RESUME_FLAG);
+  console.log('[deep_research_profile] Merge existing dry-run JSON:', MERGE_EXISTING_FLAG);
+  if (MERGE_EXISTING_FLAG && !DRY_RUN) {
+    console.warn(
+      '[deep_research_profile] --merge-existing only applies with --dry-run; ignoring for live run.'
+    );
+  }
   console.log(
     '[deep_research_profile] Flags: --all-categories=',
     ALL_CATEGORIES_FLAG,
@@ -1433,7 +1596,13 @@ async function main() {
       costState
     );
     if (DRY_RUN) {
-      writeDryRunOutput(slug, { slug, companyName, dry_run: true, ...deep_research });
+      let payload = { slug, companyName, dry_run: true, ...deep_research };
+      if (MERGE_EXISTING_FLAG) {
+        payload = /** @type {Record<string, unknown>} */ (
+          mergeDryRunPayloadWithExisting(slug, payload)
+        );
+      }
+      writeDryRunOutput(slug, payload);
     } else if (pool) {
       await updateProfileDb(pool, slug, patch);
       console.log(`  Updated DB for ${slug}`);
@@ -1454,7 +1623,13 @@ async function main() {
       try {
         if (DRY_RUN) {
           const r = await runOneCompany(slug, pool, anthropic, costState);
-          writeDryRunOutput(slug, { slug, companyName: r.companyName, dry_run: true, ...r.deep_research });
+          let payload = { slug, companyName: r.companyName, dry_run: true, ...r.deep_research };
+          if (MERGE_EXISTING_FLAG) {
+            payload = /** @type {Record<string, unknown>} */ (
+              mergeDryRunPayloadWithExisting(slug, payload)
+            );
+          }
+          writeDryRunOutput(slug, payload);
         } else {
           const r = await runOneCompany(slug, pool, anthropic, costState);
           await updateProfileDb(/** @type {import('pg').Pool} */ (pool), slug, r.patch);
