@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import InvestigationCard from '../components/InvestigationCard.jsx';
 import AlternativesSidebar from '../components/AlternativesSidebar.jsx';
 import ShareCard from '../components/ShareCard.jsx';
+import InvestigationReceipt from '../components/InvestigationReceipt.jsx';
 import { getInvestigationRecordPresentation } from '../utils/investigationConfidence.js';
 
 function apiPrefix() {
@@ -173,6 +174,7 @@ export default function ReportPermalinkPage({ slug, onHome }) {
           }
         }}
       />
+      <InvestigationReceipt investigation={investigation} />
     </div>
   );
 

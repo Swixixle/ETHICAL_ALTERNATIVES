@@ -29,6 +29,8 @@ import DirectoryPage from './pages/DirectoryPage.jsx';
 import ImpactPublicPage from './pages/ImpactPublicPage.jsx';
 import Library from './pages/Library.jsx';
 import ReportPermalinkPage from './pages/ReportPermalinkPage.jsx';
+import VerifyReceiptPage from './pages/VerifyReceiptPage.jsx';
+import InvestigationReceipt from './components/InvestigationReceipt.jsx';
 import ImpactOutcomePrompt from './components/ImpactOutcomePrompt.jsx';
 import ReportErrorSheet from './components/ReportErrorSheet.jsx';
 import { getImpactConsentOutcome, getImpactFetchHeaders } from './lib/impactConsent.js';
@@ -198,6 +200,7 @@ function parseRoute(pathname) {
     deepBrand: /** @type {string | null} */ (null),
     witnessRewrite: false,
     profileSlug: /** @type {string | null} */ (null),
+    receiptId: /** @type {string | null} */ (null),
   };
   const repMatch = path.match(/^\/report\/([^/]+)$/i);
   if (repMatch) {
@@ -205,6 +208,14 @@ function parseRoute(pathname) {
       ...base,
       mode: 'report',
       reportSlug: decodeURIComponent(repMatch[1]),
+    };
+  }
+  const verifyMatch = path.match(/^\/verify\/([^/]+)$/i);
+  if (verifyMatch) {
+    return {
+      ...base,
+      mode: 'verify',
+      receiptId: decodeURIComponent(verifyMatch[1]),
     };
   }
   if (path === '/witnesses' || /^\/workers\//.test(path)) {
@@ -308,6 +319,9 @@ export default function App() {
   const [deepBrand, setDeepBrand] = useState(() =>
     route0.witnessRewrite ? null : route0.deepBrand
   );
+  const [verifyReceiptId, setVerifyReceiptId] = useState(() =>
+    route0.witnessRewrite ? null : route0.receiptId || null
+  );
 
   const {
     image,
@@ -407,10 +421,18 @@ export default function App() {
       }
       if (r.mode === 'report' && r.reportSlug) {
         setReportSlug(r.reportSlug);
+        setVerifyReceiptId(null);
         setMode('report');
         return;
       }
       setReportSlug(null);
+      if (r.mode === 'verify' && r.receiptId) {
+        setVerifyReceiptId(r.receiptId);
+        setDeepBrand(null);
+        setMode('verify');
+        return;
+      }
+      setVerifyReceiptId(null);
       if (r.mode === 'directory') {
         setMode('directory');
         return;
@@ -424,6 +446,7 @@ export default function App() {
         return;
       }
       if (r.profileSlug) {
+        setVerifyReceiptId(null);
         setDeepBrand(r.profileSlug);
         setMode('deep');
         void investigateByBrandNav(r.profileSlug);
@@ -653,6 +676,7 @@ export default function App() {
     }
     resetSession();
     setReportSlug(null);
+    setVerifyReceiptId(null);
     setMode('home');
   };
 
@@ -788,6 +812,28 @@ export default function App() {
               <p className="app__text-loader">Loading…</p>
             </div>
           )}
+        </main>
+      </div>
+    );
+  }
+
+  if (mode === 'verify' && verifyReceiptId) {
+    return (
+      <div className="app">
+        <header className="app__header app__header--minimal">
+          <div className="app__header-inner app__header-inner--minimal">
+            <div className="app__header-left">
+              <button type="button" className="app__logo-wrap" onClick={goHome} title="Home">
+                <span className="app__logo">ETHICALALT</span>
+              </button>
+            </div>
+            <button type="button" className="app__btn app__btn--ghost app__btn--header" onClick={goHome}>
+              ← Home
+            </button>
+          </div>
+        </header>
+        <main className="app__main">
+          <VerifyReceiptPage receiptId={verifyReceiptId} onHome={goHome} />
         </main>
       </div>
     );
@@ -1068,6 +1114,7 @@ export default function App() {
                 if (b) void investigateByBrandNav(b);
               }}
             />
+            <InvestigationReceipt investigation={result.investigation} />
             {showReportError && result?.identification ? (
               <ReportErrorSheet
                 brandName={

@@ -24,10 +24,19 @@ function requirePool(res) {
   return pool;
 }
 
+function truncateSigDisplay(sig) {
+  const s = String(sig || '');
+  const m = s.match(/^ed25519:(.+)$/);
+  const body = m ? m[1] : s;
+  if (body.length <= 16) return s || '—';
+  return `ed25519:${body.slice(0, 8)}…${body.slice(-8)}`;
+}
+
 /**
  * @param {Record<string, unknown>} receiptBody
+ * @param {string | null | undefined} signatureStored
  */
-async function streamReceiptPdf(res, receiptBody) {
+async function streamReceiptPdf(res, receiptBody, signatureStored) {
   const id = typeof receiptBody.receipt_id === 'string' ? receiptBody.receipt_id : '';
   const verifyUrl = receiptVerifyUrl(id);
   const navy = '#0f1520';
@@ -121,7 +130,9 @@ async function streamReceiptPdf(res, receiptBody) {
   }
   doc.fillColor(amber).fontSize(11).text('Signature', 48, y);
   y += 14;
-  doc.fillColor('#a8c4d8').fontSize(9).text(`Receipt ID: ${id}`, 48, y);
+  doc.fillColor('#a8c4d8').fontSize(9).text(truncateSigDisplay(signatureStored), 48, y);
+  y += 14;
+  doc.text(`Receipt ID: ${id}`, 48, y);
   y += 14;
   doc.text(`Verify: ${verifyUrl}`, 48, y, { width: doc.page.width - 96, link: verifyUrl });
   y += 36;
@@ -233,14 +244,22 @@ router.post('/generate', async (req, res) => {
     if (dup.rows.length) {
       const existing = dup.rows[0];
       receipt_id = String(existing.id);
-      const existingJson = existing.receipt_json;
-      const merged = typeof existingJson === 'object' && existingJson ? { ...existingJson } : {};
-      merged.receipt_id = receipt_id;
       signature = existing.signature;
+      let cachedReceipt = existing.receipt_json;
+      if (typeof cachedReceipt === 'string') {
+        try {
+          cachedReceipt = JSON.parse(cachedReceipt);
+        } catch {
+          cachedReceipt = null;
+        }
+      }
+      if (!cachedReceipt || typeof cachedReceipt !== 'object') {
+        return res.status(500).json({ ok: false, error: 'invalid_cached_receipt' });
+      }
       const verify_url = receiptVerifyUrl(receipt_id);
       return res.json({
         receipt_id,
-        signed_receipt: merged,
+        signed_receipt: cachedReceipt,
         signature,
         public_key: pub,
         verify_url,
@@ -284,10 +303,20 @@ router.get('/verify/:receipt_id', async (req, res) => {
   }
 
   try {
-    const { rows } = await p.query(
-      `SELECT receipt_json, signature FROM investigation_receipts WHERE id = $1::uuid LIMIT 1`,
-      [receipt_id]
-    );
+    let rows;
+    try {
+      const q = await p.query(
+        `SELECT receipt_json, signature FROM investigation_receipts WHERE id = $1::uuid LIMIT 1`,
+        [receipt_id]
+      );
+      rows = q.rows;
+    } catch (err) {
+      const msg = err && typeof err === 'object' && 'message' in err ? String(err.message) : '';
+      if (/invalid input syntax for type uuid/i.test(msg)) {
+        return res.status(400).json({ valid: false, signature_verified: false, error: 'invalid_receipt_id' });
+      }
+      throw err;
+    }
     if (!rows.length) {
       return res.status(404).json({
         valid: false,
@@ -336,10 +365,20 @@ router.get('/:receipt_id/pdf', async (req, res) => {
   }
 
   try {
-    const { rows } = await p.query(
-      `SELECT receipt_json FROM investigation_receipts WHERE id = $1::uuid LIMIT 1`,
-      [receipt_id]
-    );
+    let rows;
+    try {
+      const q = await p.query(
+        `SELECT receipt_json, signature FROM investigation_receipts WHERE id = $1::uuid LIMIT 1`,
+        [receipt_id]
+      );
+      rows = q.rows;
+    } catch (err) {
+      const msg = err && typeof err === 'object' && 'message' in err ? String(err.message) : '';
+      if (/invalid input syntax for type uuid/i.test(msg)) {
+        return res.status(400).send('invalid receipt id');
+      }
+      throw err;
+    }
     if (!rows.length) {
       return res.status(404).send('not found');
     }
@@ -354,7 +393,11 @@ router.get('/:receipt_id/pdf', async (req, res) => {
     if (!receipt || typeof receipt !== 'object') {
       return res.status(500).send('invalid receipt');
     }
-    await streamReceiptPdf(res, /** @type {Record<string, unknown>} */ (receipt));
+    await streamReceiptPdf(
+      res,
+      /** @type {Record<string, unknown>} */ (receipt),
+      rows[0].signature
+    );
   } catch (e) {
     console.error('[receipt] pdf', e);
     if (!res.headersSent) res.status(500).send('error');
