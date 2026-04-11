@@ -57,7 +57,8 @@ app.use((_req, res, next) => {
 });
 app.use(registryHeaders);
 
-app.use('/report', reportPermalinkRouter);
+/** Permalink JSON lives under /api so /report/:slug stays a client-only path (SPA + static rewrites). */
+app.use('/api/report', reportPermalinkRouter);
 app.use('/api/send-report', sendReportRouter);
 
 app.get('/health', (_req, res) => {

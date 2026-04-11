@@ -38,7 +38,9 @@ export default function ReportPermalinkPage({ slug, onHome }) {
       return undefined;
     }
     const base = apiPrefix();
-    const url = base ? `${base}/report/${encodeURIComponent(s)}` : `/report/${encodeURIComponent(s)}`;
+    const url = base
+      ? `${base}/api/report/${encodeURIComponent(s)}`
+      : `/api/report/${encodeURIComponent(s)}`;
     setLoading(true);
     setError(null);
     setInvestigation(null);

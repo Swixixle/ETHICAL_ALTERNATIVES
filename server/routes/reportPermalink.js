@@ -3,7 +3,7 @@ import { getStoredInvestigationBySlug } from '../services/investigation.js';
 
 const router = Router();
 
-/** GET /report/:slug — JSON investigation snapshot from incumbent_profiles (no live pipeline). */
+/** GET /api/report/:slug — JSON investigation snapshot from incumbent_profiles (no live pipeline). */
 router.get('/:slug', async (req, res) => {
   const slug = decodeURIComponent(String(req.params.slug || '')).trim().toLowerCase();
   if (!slug) {
