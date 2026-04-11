@@ -14,8 +14,17 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
   const [phase, setPhase] = useState(/** @type {'loading' | 'ready'} */ ('loading'));
   const [headline, setHeadline] = useState('');
   const [bodyText, setBodyText] = useState('');
+  const [isWide, setIsWide] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth > 768
+  );
   const shellRef = useRef(/** @type {HTMLDivElement | null} */ (null));
   const scrollRef = useRef(/** @type {HTMLDivElement | null} */ (null));
+
+  useEffect(() => {
+    const onResize = () => setIsWide(window.innerWidth > 768);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
   const locationHeading = useMemo(() => {
     const c = String(city || '').trim();
@@ -34,6 +43,11 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
     if (locationHeading) return locationHeading;
     return String(city || '').trim() || 'this company';
   }, [brandName, locationHeading, city]);
+
+  const loadingCityTitle = useMemo(() => {
+    const c = String(city || '').trim();
+    return c ? c.toUpperCase() : 'YOUR AREA';
+  }, [city]);
 
   useEffect(() => {
     let cancelled = false;
@@ -95,6 +109,97 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
     return () => shell.removeEventListener('wheel', onWheel);
   }, [phase]);
 
+  const shellStyle = {
+    position: 'fixed',
+    inset: 0,
+    zIndex: 7500,
+    display: 'flex',
+    flexDirection: 'column',
+    overflow: 'hidden',
+    backgroundColor: '#0f1520',
+    boxSizing: 'border-box',
+    minHeight: '100dvh',
+    pointerEvents: 'auto',
+  };
+
+  const mainStyle = {
+    display: 'flex',
+    flexDirection: isWide ? 'row' : 'column',
+    flex: 1,
+    minHeight: 0,
+    overflow: 'hidden',
+    alignItems: 'stretch',
+  };
+
+  const leftColStyle = {
+    flex: isWide ? '1 1 60%' : '1 1 0',
+    minWidth: 0,
+    minHeight: 0,
+    display: 'flex',
+    flexDirection: 'column',
+    boxSizing: 'border-box',
+  };
+
+  const rightColStyle = {
+    flex: isWide ? '0 0 40%' : '0 0 auto',
+    width: isWide ? '40%' : '100%',
+    maxWidth: isWide ? '40%' : 'none',
+    minWidth: isWide ? 0 : undefined,
+    display: isWide ? 'flex' : 'none',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 32,
+    borderLeft: isWide ? '1px solid #1a2a3a' : 'none',
+    boxSizing: 'border-box',
+    background: 'rgba(15, 21, 32, 0.96)',
+    textAlign: 'center',
+  };
+
+  const scrollAreaStyle = {
+    flex: '1 1 0',
+    minHeight: 0,
+    width: '100%',
+    boxSizing: 'border-box',
+    overflowY: 'auto',
+    WebkitOverflowScrolling: 'touch',
+    touchAction: 'pan-y',
+    padding: '0 20px',
+    scrollbarGutter: 'stable',
+    pointerEvents: 'auto',
+    overscrollBehavior: 'contain',
+  };
+
+  const mobileFooterStyle = {
+    flexShrink: 0,
+    position: 'sticky',
+    bottom: 0,
+    width: '100%',
+    padding: '16px 24px',
+    paddingBottom: 'max(16px, env(safe-area-inset-bottom, 0px))',
+    borderTop: '1px solid #2a3f52',
+    backgroundColor: '#0f1520',
+    boxSizing: 'border-box',
+    display: isWide ? 'none' : 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 10,
+    minHeight: 64,
+  };
+
+  const ctaBase = {
+    fontFamily: "'Space Mono', monospace",
+    letterSpacing: '2px',
+    background: '#f0a820',
+    color: '#0f1520',
+    border: 'none',
+    borderRadius: 2,
+    cursor: 'pointer',
+    fontWeight: 700,
+    textTransform: 'uppercase',
+  };
+
   const ui = (
     <>
       <style>{`
@@ -107,118 +212,12 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
           50% { opacity: 1; }
           100% { opacity: 0.2; }
         }
+        @keyframes researchNarrativeDotBounce {
+          0%, 80%, 100% { transform: translateY(0); opacity: 0.35; }
+          40% { transform: translateY(-6px); opacity: 1; }
+        }
         .research-narrative__dot {
           animation: researchNarrativePulse 1.4s ease-in-out infinite;
-        }
-        .research-narrative__shell {
-          position: fixed;
-          inset: 0;
-          z-index: 7500;
-          box-sizing: border-box;
-          background-color: #0f1520;
-          display: flex;
-          flex-direction: column;
-          align-items: stretch;
-          min-height: 100dvh;
-          overflow: hidden;
-          pointer-events: auto;
-        }
-        .research-narrative__main {
-          flex: 1 1 0;
-          min-height: 0;
-          display: flex;
-          flex-direction: column;
-          align-items: stretch;
-        }
-        .research-narrative__col-left {
-          flex: 1 1 0;
-          min-height: 0;
-          display: flex;
-          flex-direction: column;
-          box-sizing: border-box;
-        }
-        .research-narrative__scroll {
-          flex: 1 1 0;
-          min-height: 0;
-          width: 100%;
-          box-sizing: border-box;
-          overflow-y: auto;
-          -webkit-overflow-scrolling: touch;
-          touch-action: pan-y;
-        }
-        .research-narrative__col-right {
-          display: none;
-          box-sizing: border-box;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          padding: 24px 28px;
-          border-left: 1px solid #2a3f52;
-          background: rgba(15, 21, 32, 0.96);
-        }
-        .research-narrative__body-loading {
-          flex: 1 1 0;
-          min-height: 0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          padding: 0 20px 32px;
-          box-sizing: border-box;
-        }
-        .research-narrative__footer {
-          flex-shrink: 0;
-          position: sticky;
-          bottom: 0;
-          width: 100%;
-          padding: 16px 24px;
-          padding-bottom: max(16px, env(safe-area-inset-bottom, 0px));
-          border-top: 1px solid #2a3f52;
-          background-color: #0f1520;
-          box-sizing: border-box;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          gap: 10px;
-          min-height: 64px;
-        }
-        .research-narrative__footer-note {
-          margin: 0;
-          font-family: 'Space Mono', monospace;
-          font-size: 8px;
-          letter-spacing: 1.5px;
-          color: #5a7a8a;
-          text-transform: uppercase;
-          text-align: center;
-          line-height: 1.4;
-          max-width: 280px;
-        }
-        .research-narrative__cta {
-          font-family: 'Space Mono', monospace;
-          letter-spacing: 2px;
-          background: #f0a820;
-          color: #0f1520;
-          border: none;
-          border-radius: 2px;
-          cursor: pointer;
-          font-weight: 700;
-          text-transform: uppercase;
-        }
-        .research-narrative__cta--mobile {
-          font-size: 11px;
-          padding: 14px 32px;
-        }
-        .research-narrative__cta--desktop {
-          font-size: 13px;
-          padding: 18px 40px;
-          min-width: 260px;
-        }
-        .research-narrative__cta:disabled {
-          opacity: 0.45;
-          cursor: not-allowed;
         }
         .research-narrative__waiting-name {
           animation: researchNarrativePulse 2s ease-in-out infinite;
@@ -228,30 +227,24 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
           display: inline-block;
           animation: researchNarrativeEllipsis 1.2s ease-in-out infinite;
         }
-        @media (min-width: 769px) {
-          .research-narrative__main {
-            flex-direction: row;
-            align-items: stretch;
-          }
-          .research-narrative__col-left {
-            flex: 0 0 60%;
-            width: 60%;
-            max-width: 60%;
-          }
-          .research-narrative__col-right {
-            display: flex;
-            flex: 0 0 40%;
-            width: 40%;
-            max-width: 40%;
-          }
-          .research-narrative__footer--mobile-only {
-            display: none;
-          }
+        .research-narrative__load-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: #f0a820;
+          animation: researchNarrativeDotBounce 1s ease-in-out infinite;
+        }
+        .research-narrative__load-dot:nth-child(1) { animation-delay: 0s; }
+        .research-narrative__load-dot:nth-child(2) { animation-delay: 0.15s; }
+        .research-narrative__load-dot:nth-child(3) { animation-delay: 0.3s; }
+        .research-narrative__cta:disabled {
+          opacity: 0.45;
+          cursor: not-allowed;
         }
       `}</style>
       <div
         ref={shellRef}
-        className="research-narrative__shell"
+        style={shellStyle}
         role="dialog"
         aria-modal="true"
         aria-busy={phase === 'loading'}
@@ -273,44 +266,79 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
         </div>
 
         {phase === 'loading' ? (
-          <div className="research-narrative__body-loading">
-            <div
-              className="research-narrative__dot"
-              aria-hidden
+          <div
+            style={{
+              flex: 1,
+              minHeight: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              padding: '0 20px 24px',
+              boxSizing: 'border-box',
+            }}
+          >
+            <h2
               style={{
-                width: 8,
-                height: 8,
-                borderRadius: '50%',
-                background: '#f0a820',
-              }}
-            />
-            <p
-              style={{
-                marginTop: 20,
-                fontFamily: "'Space Mono', monospace",
-                fontSize: 10,
-                letterSpacing: 3,
-                color: '#6a8a9a',
-                textTransform: 'uppercase',
+                margin: 0,
+                paddingTop: 'clamp(24px, 6vh, 72px)',
+                fontFamily: "'Bebas Neue', sans-serif",
+                fontSize: 'clamp(32px, 6vw, 52px)',
+                color: '#f0e8d0',
+                letterSpacing: 2,
+                textAlign: 'center',
+                lineHeight: 1.1,
               }}
             >
-              PULLING THE RECORD...
-            </p>
+              {loadingCityTitle}
+            </h2>
+            <div
+              style={{
+                flex: 1,
+                minHeight: 100,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 20,
+              }}
+            >
+              <div style={{ display: 'flex', gap: 10, alignItems: 'center' }} aria-hidden>
+                <span className="research-narrative__load-dot" />
+                <span className="research-narrative__load-dot" />
+                <span className="research-narrative__load-dot" />
+              </div>
+              <p
+                style={{
+                  margin: 0,
+                  fontFamily: "'Crimson Pro', serif",
+                  fontSize: 17,
+                  color: '#a8c4d8',
+                  lineHeight: 1.6,
+                  textAlign: 'center',
+                  maxWidth: 360,
+                }}
+              >
+                Searching public records in real time
+              </p>
+              <p
+                style={{
+                  margin: 0,
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 9,
+                  letterSpacing: 2,
+                  color: '#6a8a9a',
+                  textTransform: 'uppercase',
+                  textAlign: 'center',
+                }}
+              >
+                PULLING THE RECORD...
+              </p>
+            </div>
           </div>
         ) : (
           <>
-            <div className="research-narrative__main">
-              <div className="research-narrative__col-left">
-                <div
-                  ref={scrollRef}
-                  className="research-narrative__scroll"
-                  style={{
-                    padding: '0 20px',
-                    scrollbarGutter: 'stable',
-                    pointerEvents: 'auto',
-                    overscrollBehavior: 'contain',
-                  }}
-                >
+            <div style={mainStyle}>
+              <div style={leftColStyle}>
+                <div ref={scrollRef} style={scrollAreaStyle}>
                   <div
                     style={{
                       display: 'flex',
@@ -320,7 +348,7 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
                       margin: '0 auto',
                       paddingTop: 8,
                       paddingBottom: 24,
-                      minHeight: 'min(40vh, 280px)',
+                      minHeight: isWide ? 0 : 'min(36vh, 240px)',
                     }}
                   >
                     {showSparseNarrative ? (
@@ -329,6 +357,7 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
                           className="research-narrative__waiting-name"
                           style={{
                             margin: 0,
+                            paddingTop: isWide ? 0 : 'clamp(8px, 3vh, 32px)',
                             fontFamily: "'Bebas Neue', sans-serif",
                             fontSize: 'clamp(26px, 4vw, 40px)',
                             color: '#f0e8d0',
@@ -340,6 +369,19 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
                         >
                           {recordsSearchLabel}
                         </h2>
+                        <div
+                          style={{
+                            marginTop: 28,
+                            display: 'flex',
+                            gap: 10,
+                            alignItems: 'center',
+                          }}
+                          aria-hidden
+                        >
+                          <span className="research-narrative__load-dot" />
+                          <span className="research-narrative__load-dot" />
+                          <span className="research-narrative__load-dot" />
+                        </div>
                         <p
                           className="research-narrative__ellipsis-dots"
                           style={{
@@ -353,7 +395,7 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
                             marginBottom: 0,
                           }}
                         >
-                          Searching public records
+                          Searching public records in real time
                         </p>
                       </>
                     ) : (
@@ -400,7 +442,7 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
                 </div>
               </div>
 
-              <aside className="research-narrative__col-right" aria-label="Report status">
+              <aside style={rightColStyle} aria-label="Report status">
                 <h2
                   style={{
                     margin: '0 0 20px',
@@ -431,7 +473,13 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
                   data-no-disintegrate
                   onClick={reportReady ? onSkip : undefined}
                   disabled={!reportReady}
-                  className="research-narrative__cta research-narrative__cta--desktop"
+                  className="research-narrative__cta"
+                  style={{
+                    ...ctaBase,
+                    fontSize: 13,
+                    padding: '18px 40px',
+                    minWidth: 260,
+                  }}
                 >
                   {reportReady ? 'ENTER REPORT →' : 'PLEASE WAIT…'}
                 </button>
@@ -452,7 +500,7 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
               </aside>
             </div>
 
-            <div className="research-narrative__footer research-narrative__footer--mobile-only">
+            <div style={mobileFooterStyle}>
               <p
                 style={{
                   margin: 0,
@@ -471,11 +519,28 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
                 data-no-disintegrate
                 onClick={reportReady ? onSkip : undefined}
                 disabled={!reportReady}
-                className="research-narrative__cta research-narrative__cta--mobile"
+                className="research-narrative__cta"
+                style={{
+                  ...ctaBase,
+                  fontSize: 11,
+                  padding: '14px 32px',
+                }}
               >
                 {reportReady ? 'REPORT READY — ENTER →' : 'PLEASE WAIT…'}
               </button>
-              <p className="research-narrative__footer-note">
+              <p
+                style={{
+                  margin: 0,
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 8,
+                  letterSpacing: 1.5,
+                  color: '#5a7a8a',
+                  textTransform: 'uppercase',
+                  textAlign: 'center',
+                  lineHeight: 1.4,
+                  maxWidth: 280,
+                }}
+              >
                 LIVE INVESTIGATIONS MAY TAKE UP TO 10 MINUTES
               </p>
             </div>

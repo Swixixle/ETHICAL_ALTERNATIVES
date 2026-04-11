@@ -212,114 +212,173 @@ export default function LocalDocumentary({
   const labelState = state != null && String(state).trim() ? String(state).trim() : '';
 
   return (
-    <div
-      role="status"
-      aria-live="polite"
-      aria-busy={!streamComplete}
-      style={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 4000,
-        background: NAVY,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '24px 20px 32px',
-        boxSizing: 'border-box',
-      }}
-    >
-      <p
-        style={{
-          fontFamily: "'Space Mono', monospace",
-          fontSize: 10,
-          letterSpacing: 1.8,
-          textTransform: 'uppercase',
-          color: AMBER,
-          margin: '0 0 24px',
-        }}
-      >
-        FIELD REPORT · {labelCity.toUpperCase()}
-        {labelState ? `, ${labelState.toUpperCase()}` : ''}
-      </p>
+    <>
+      <style>{`
+        @keyframes localDocDotBounce {
+          0%, 80%, 100% { transform: translateY(0); opacity: 0.35; }
+          40% { transform: translateY(-6px); opacity: 1; }
+        }
+        .local-documentary__dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: ${AMBER};
+          animation: localDocDotBounce 1s ease-in-out infinite;
+        }
+        .local-documentary__dot:nth-child(1) { animation-delay: 0s; }
+        .local-documentary__dot:nth-child(2) { animation-delay: 0.15s; }
+        .local-documentary__dot:nth-child(3) { animation-delay: 0.3s; }
+      `}</style>
       <div
+        role="status"
+        aria-live="polite"
+        aria-busy={!streamComplete}
         style={{
-          maxWidth: 420,
-          width: '100%',
-          flex: '0 1 auto',
+          position: 'fixed',
+          inset: 0,
+          zIndex: 4000,
+          background: NAVY,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+          padding: '24px 20px 28px',
+          boxSizing: 'border-box',
+          minHeight: '100dvh',
         }}
       >
-        <div
-          style={{
-            fontFamily: "'Crimson Text', serif",
-            fontSize: 'clamp(18px, 4.2vw, 20px)',
-            lineHeight: 1.75,
-            color: BODY,
-            textAlign: 'center',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {shown}
-        </div>
         <p
           style={{
+            flexShrink: 0,
             fontFamily: "'Space Mono', monospace",
             fontSize: 10,
-            letterSpacing: 1.5,
-            color: '#6a8a9a',
+            letterSpacing: 1.8,
             textTransform: 'uppercase',
+            color: AMBER,
+            margin: 0,
+            paddingTop: 'clamp(16px, 5vh, 56px)',
             textAlign: 'center',
-            margin: '20px 0 0',
-            lineHeight: 1.5,
           }}
         >
-          Live investigations may take up to 10 minutes — we&apos;re searching public records in real time.
+          FIELD REPORT · {labelCity.toUpperCase()}
+          {labelState ? `, ${labelState.toUpperCase()}` : ''}
         </p>
-      </div>
-      <div
-        style={{
-          marginTop: 'auto',
-          width: 'min(420px, 100%)',
-          height: 3,
-          background: 'rgba(212,160,23,0.2)',
-          borderRadius: 2,
-          overflow: 'hidden',
-        }}
-      >
+
         <div
           style={{
-            height: '100%',
-            width: `${progress}%`,
-            background: AMBER,
-            transition: investigationReady ? 'width 0.35s ease-out' : 'none',
+            flex: 1,
+            minHeight: 120,
+            width: '100%',
+            maxWidth: 420,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 20,
           }}
-        />
+        >
+          <div style={{ display: 'flex', gap: 10, alignItems: 'center' }} aria-hidden>
+            <span className="local-documentary__dot" />
+            <span className="local-documentary__dot" />
+            <span className="local-documentary__dot" />
+          </div>
+          <p
+            style={{
+              margin: 0,
+              fontFamily: "'Crimson Text', serif",
+              fontSize: 17,
+              color: '#a8c4d8',
+              lineHeight: 1.6,
+              textAlign: 'center',
+            }}
+          >
+            Searching public records in real time
+          </p>
+        </div>
+
+        <div
+          style={{
+            maxWidth: 420,
+            width: '100%',
+            flexShrink: 0,
+          }}
+        >
+          <div
+            style={{
+              fontFamily: "'Crimson Text', serif",
+              fontSize: 'clamp(18px, 4.2vw, 20px)',
+              lineHeight: 1.75,
+              color: BODY,
+              textAlign: 'center',
+              whiteSpace: 'pre-wrap',
+              maxHeight: 'min(28vh, 220px)',
+              overflowY: 'auto',
+              marginBottom: 12,
+            }}
+          >
+            {shown}
+          </div>
+          <p
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 10,
+              letterSpacing: 1.5,
+              color: '#6a8a9a',
+              textTransform: 'uppercase',
+              textAlign: 'center',
+              margin: '0 0 16px',
+              lineHeight: 1.5,
+            }}
+          >
+            Live investigations may take up to 10 minutes — we&apos;re searching public records in
+            real time.
+          </p>
+          <div
+            style={{
+              width: '100%',
+              height: 3,
+              background: 'rgba(212,160,23,0.2)',
+              borderRadius: 2,
+              overflow: 'hidden',
+            }}
+          >
+            <div
+              style={{
+                height: '100%',
+                width: `${progress}%`,
+                background: AMBER,
+                transition: investigationReady ? 'width 0.35s ease-out' : 'none',
+              }}
+            />
+          </div>
+          <button
+            type="button"
+            disabled={!canTapProceed}
+            onClick={handleProceed}
+            style={{
+              marginTop: 16,
+              width: '100%',
+              fontFamily: "'Space Mono', monospace",
+              fontSize: 12,
+              letterSpacing: investigationReady ? 2 : 1.5,
+              textTransform: 'uppercase',
+              padding: '14px 20px',
+              border: investigationReady ? `2px solid #f0a820` : `2px solid #2a3f52`,
+              borderRadius: 4,
+              cursor: canTapProceed ? 'pointer' : 'not-allowed',
+              transition:
+                'background 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease',
+              background: investigationReady ? '#f0a820' : '#1a2838',
+              color: investigationReady ? '#0f1520' : '#6a8a9a',
+              opacity: canTapProceed ? 1 : investigationReady ? 0.55 : 0.85,
+              boxShadow:
+                investigationReady && canTapProceed ? '0 0 20px rgba(240, 168, 32, 0.35)' : 'none',
+            }}
+          >
+            {investigationReady ? 'Proceed →' : 'Investigating...'}
+          </button>
+        </div>
       </div>
-      <button
-        type="button"
-        disabled={!canTapProceed}
-        onClick={handleProceed}
-        style={{
-          marginTop: 20,
-          width: 'min(420px, 100%)',
-          fontFamily: "'Space Mono', monospace",
-          fontSize: 12,
-          letterSpacing: investigationReady ? 2 : 1.5,
-          textTransform: 'uppercase',
-          padding: '14px 20px',
-          border: investigationReady ? `2px solid #f0a820` : `2px solid #2a3f52`,
-          borderRadius: 4,
-          cursor: canTapProceed ? 'pointer' : 'not-allowed',
-          transition: 'background 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease',
-          background: investigationReady ? '#f0a820' : '#1a2838',
-          color: investigationReady ? '#0f1520' : '#6a8a9a',
-          opacity: canTapProceed ? 1 : investigationReady ? 0.55 : 0.85,
-          boxShadow:
-            investigationReady && canTapProceed ? '0 0 20px rgba(240, 168, 32, 0.35)' : 'none',
-        }}
-      >
-        {investigationReady ? 'Proceed →' : 'Investigating...'}
-      </button>
-    </div>
+    </>
   );
 }
