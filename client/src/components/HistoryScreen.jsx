@@ -36,8 +36,11 @@ function getSessionId() {
 
 function concernBadgeColor(level) {
   const l = String(level || '').toLowerCase();
-  if (l === 'significant') return { bg: 'rgba(255,107,107,0.15)', text: '#ff6b6b', border: '#ff6b6b' };
-  if (l === 'minor' || l === 'clean') return { bg: 'rgba(106,170,138,0.15)', text: '#6aaa8a', border: '#6aaa8a' };
+  if (l === 'critical') return { bg: 'rgba(201,42,42,0.18)', text: '#e03131', border: '#c92a2a' };
+  if (l === 'significant' || l === 'high')
+    return { bg: 'rgba(255,107,107,0.15)', text: '#ff6b6b', border: '#ff6b6b' };
+  if (l === 'minor' || l === 'low' || l === 'clean')
+    return { bg: 'rgba(106,170,138,0.15)', text: '#6aaa8a', border: '#6aaa8a' };
   return { bg: 'rgba(240,168,32,0.1)', text: '#f0a820', border: '#f0a820' };
 }
 

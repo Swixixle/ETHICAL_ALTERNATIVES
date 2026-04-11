@@ -1262,7 +1262,11 @@ export default function InvestigationCard({
 
       <div className="investigation-card__footer-blocks">
         <CostAbsorption data={investigation.cost_absorption} />
-        {String(investigation.overall_concern_level || '').toLowerCase() === 'significant' ? <WealthChart /> : null}
+        {['significant', 'high', 'critical'].includes(
+          String(investigation.overall_concern_level || '').toLowerCase()
+        ) ? (
+          <WealthChart />
+        ) : null}
         <CommunityImpact data={investigation.community_impact} />
       </div>
 

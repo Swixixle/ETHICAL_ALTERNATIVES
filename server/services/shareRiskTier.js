@@ -123,14 +123,15 @@ export function assignShareRiskTier(inv) {
     .trim()
     .toLowerCase();
   const confidence = overallConfidencePct(inv);
-  const significant = concern === 'significant';
+  const severeConcern =
+    concern === 'significant' || concern === 'high' || concern === 'critical';
   const weak = weakCorroborationCount(inv);
 
   if (hasHighRiskKeyword(inv) || hasHighRiskVerdictTag(inv)) {
     return 'high';
   }
 
-  if (significant && confidence != null && confidence < 60) {
+  if (severeConcern && confidence != null && confidence < 60) {
     return 'high';
   }
 
@@ -138,7 +139,7 @@ export function assignShareRiskTier(inv) {
     return 'high';
   }
 
-  if (significant || (confidence != null && confidence < 55) || weak >= 1) {
+  if (severeConcern || (confidence != null && confidence < 55) || weak >= 1) {
     return 'medium';
   }
 

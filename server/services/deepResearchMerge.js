@@ -2,6 +2,22 @@
  * Merge `profile_json.deep_research` into investigation API responses and append live deltas.
  */
 
+/** @type {Record<string, string>} */
+export const CATEGORY_LABELS = {
+  labor_and_wage: 'labor and wage',
+  environmental: 'environmental',
+  regulatory_and_legal: 'legal and regulatory',
+  product_safety: 'product safety',
+  financial_misconduct: 'financial misconduct',
+  data_and_privacy: 'data and privacy',
+  antitrust_and_market_power: 'antitrust',
+  discrimination_and_civil_rights: 'civil rights',
+  institutional_enablement: 'institutional enablement',
+  executive_and_governance: 'governance',
+  supply_chain: 'supply chain',
+  subsidies_and_bailouts: 'subsidies and bailouts',
+};
+
 /** @type {Record<string, string>} deep_research category key → investigation section key */
 export const DR_CATEGORY_TO_SECTION = {
   labor_and_wage: 'labor',
@@ -62,6 +78,83 @@ function parseYearFromDate(val) {
   const m = String(val).match(/^(\d{4})/);
   if (m) return parseInt(m[1], 10);
   return null;
+}
+
+/**
+ * @param {unknown} cat
+ */
+function categoryTotalFound(cat) {
+  if (!cat || typeof cat !== 'object') return 0;
+  const rec = /** @type {Record<string, unknown>} */ (cat);
+  const tf = rec.total_found;
+  if (typeof tf === 'number' && Number.isFinite(tf) && tf >= 0) return Math.floor(tf);
+  const inc = Array.isArray(rec.incidents) ? rec.incidents : [];
+  return inc.length;
+}
+
+/**
+ * @param {unknown} cat
+ * @returns {number | null}
+ */
+function earliestYearFromCategory(cat) {
+  if (!cat || typeof cat !== 'object') return null;
+  const rec = /** @type {Record<string, unknown>} */ (cat);
+  let best = null;
+  const yr = rec.year_range;
+  if (yr && typeof yr === 'object') {
+    const e = /** @type {Record<string, unknown>} */ (yr).earliest;
+    if (e != null) {
+      const y = parseInt(String(e), 10);
+      if (Number.isFinite(y)) best = y;
+    }
+  }
+  const incidents = Array.isArray(rec.incidents) ? rec.incidents : [];
+  for (const inc of incidents) {
+    if (!inc || typeof inc !== 'object') continue;
+    const d = /** @type {Record<string, unknown>} */ (inc).date;
+    const y = parseYearFromDate(d);
+    if (y != null && (best == null || y < best)) best = y;
+  }
+  return best;
+}
+
+/**
+ * @param {Record<string, unknown>} deepResearch
+ * @param {string} companyName
+ */
+export function generateSummaryFromDeepResearch(deepResearch, companyName) {
+  const perCategory = Array.isArray(deepResearch.per_category) ? deepResearch.per_category : [];
+  const findings = perCategory
+    .filter((cat) => categoryTotalFound(cat) > 0)
+    .map((cat) => {
+      if (!cat || typeof cat !== 'object') return null;
+      const c = /** @type {Record<string, unknown>} */ (cat);
+      const key = typeof c.category === 'string' ? c.category : '';
+      const n = categoryTotalFound(cat);
+      const label = CATEGORY_LABELS[key] || key || 'category';
+      return `${n} documented ${label} action${n > 1 ? 's' : ''}`;
+    })
+    .filter(Boolean);
+
+  if (findings.length === 0) return null;
+
+  const totalIncidents = perCategory.reduce((sum, cat) => sum + categoryTotalFound(cat), 0);
+  const yearCandidates = perCategory
+    .map((cat) => earliestYearFromCategory(cat))
+    .filter((y) => y != null);
+  const earliestYear = yearCandidates.length ? Math.min(...yearCandidates) : null;
+
+  const yearNote = earliestYear != null ? ` going back to ${earliestYear}` : '';
+
+  return `Public records document ${totalIncidents} enforcement actions, settlements, and regulatory findings involving ${companyName}${yearNote}, including ${findings.slice(0, 3).join(', ')}. Sources are linked directly. This is a record of public actions, not a legal finding.`;
+}
+
+/** @param {number} totalIncidents */
+export function concernLevelFromDeepResearchIncidentCount(totalIncidents) {
+  if (totalIncidents <= 0) return 'low';
+  if (totalIncidents <= 5) return 'moderate';
+  if (totalIncidents <= 15) return 'high';
+  return 'critical';
 }
 
 /** @param {unknown} outcome */
@@ -139,6 +232,9 @@ function incidentSourceUrls(incidents) {
 export function applyDeepResearchToInvestigation(inv, dr, healthFlag) {
   if (!inv || !dr || !Array.isArray(dr.per_category)) return;
 
+  /** @type {string[]} */
+  const execGovBlocks = [];
+
   /** @type {Map<string, { findings: string[]; sources: string[]; incidents: unknown[] }>} */
   const sectionData = new Map();
   const ensure = (k) => {
@@ -158,9 +254,7 @@ export function applyDeepResearchToInvestigation(inv, dr, healthFlag) {
         const finding = buildFindingFromCategory(/** @type {Record<string, unknown>} */ (cat));
         if (finding) {
           const execHead = 'Operations & governance (indexed record)';
-          inv.executive_summary = inv.executive_summary
-            ? `${inv.executive_summary}\n\n${execHead}:\n${finding}`
-            : `${execHead}:\n${finding}`;
+          execGovBlocks.push(`${execHead}:\n${finding}`);
         }
         inv.executive_sources = mergeUniqueStringArrays(
           inv.executive_sources,
@@ -269,6 +363,28 @@ export function applyDeepResearchToInvestigation(inv, dr, healthFlag) {
   }
   timeline.sort((a, b) => a.year - b.year || String(a.event).localeCompare(String(b.event)));
   inv.timeline = timeline;
+
+  const totalDeepIncidents = dr.per_category.reduce((sum, cat) => sum + categoryTotalFound(cat), 0);
+  inv.overall_concern_level = concernLevelFromDeepResearchIncidentCount(totalDeepIncidents);
+  if (totalDeepIncidents > 0) {
+    inv.clean_card = false;
+  }
+
+  const displayName =
+    typeof inv.brand === 'string' && inv.brand.trim() ? inv.brand.trim() : 'This company';
+  const generatedExec = generateSummaryFromDeepResearch(dr, displayName);
+  if (generatedExec || execGovBlocks.length) {
+    let execOut = generatedExec
+      ? generatedExec
+      : typeof inv.executive_summary === 'string'
+        ? inv.executive_summary.trim()
+        : '';
+    if (execGovBlocks.length) {
+      const block = execGovBlocks.join('\n\n');
+      execOut = execOut ? `${execOut}\n\n${block}` : block;
+    }
+    if (execOut) inv.executive_summary = execOut;
+  }
 }
 
 /**

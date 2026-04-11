@@ -550,7 +550,16 @@ function normalizeInvestigation(parsed, brandName, corporateParent, healthFlag) 
     typeof parsed?.overall_concern_level === 'string'
       ? parsed.overall_concern_level.trim().toLowerCase()
       : '';
-  const ALLOWED_CONCERN = new Set(['significant', 'moderate', 'minor', 'clean', 'unknown']);
+  const ALLOWED_CONCERN = new Set([
+    'critical',
+    'high',
+    'significant',
+    'moderate',
+    'low',
+    'minor',
+    'clean',
+    'unknown',
+  ]);
   let overall = ALLOWED_CONCERN.has(rawConcern) ? rawConcern : 'moderate';
   const concernWasIndeterminate = !ALLOWED_CONCERN.has(rawConcern);
 
@@ -926,7 +935,7 @@ Return ONLY valid JSON (no markdown). Shape:
   "product_health_evidence_grade": { "level": "...", "source_types": string[], "note": string | null } | null,
   "executive_summary": string | null,
   "executive_sources": string[],
-  "overall_concern_level": "significant" | "moderate" | "minor" | "clean",
+  "overall_concern_level": "critical" | "high" | "significant" | "moderate" | "low" | "minor" | "clean" | "unknown",
   "verdict_tags": string[],
   "generated_headline": string | null,
   "community_impact": {

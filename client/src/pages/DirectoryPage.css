@@ -172,8 +172,11 @@
   white-space: nowrap;
 }
 
+.badge-critical { background: #fde8e8; color: #7a1f1f; }
+.badge-high        { background: #fcebeb; color: #a32d2d; }
 .badge-significant { background: #fcebeb; color: #a32d2d; }
 .badge-moderate    { background: #e6f1fb; color: #185fa5; }
+.badge-low         { background: #eaf3de; color: #2d6a4f; }
 .badge-minor       { background: #faeeda; color: #854f0b; }
 .badge-clean       { background: #eaf3de; color: #3b6d11; }
 .badge-unknown     { background: var(--color-background-secondary, #f5f5f5); color: var(--color-text-tertiary, #999); }

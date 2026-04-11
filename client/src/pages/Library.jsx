@@ -8,7 +8,8 @@ function apiPrefix() {
 
 function concernDotClass(level) {
   const l = String(level || '').toLowerCase();
-  if (l === 'significant') return 'bb-concern-dot bb-concern-dot--significant';
+  if (l === 'critical' || l === 'high' || l === 'significant')
+    return 'bb-concern-dot bb-concern-dot--significant';
   if (l === 'moderate') return 'bb-concern-dot bb-concern-dot--moderate';
   return 'bb-concern-dot bb-concern-dot--other';
 }
@@ -81,7 +82,9 @@ export default function Library({ onBack }) {
       );
     }
     if (concernFilter === 'significant') {
-      rows = rows.filter((p) => String(p.concern_level || '').toLowerCase() === 'significant');
+      rows = rows.filter((p) =>
+        ['significant', 'high', 'critical'].includes(String(p.concern_level || '').toLowerCase())
+      );
     }
     if (typeFilter === 'corporations') {
       rows = rows.filter((p) => p.profile_type === 'database');

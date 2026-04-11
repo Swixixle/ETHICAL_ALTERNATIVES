@@ -2,16 +2,22 @@ import { useState, useEffect, useMemo } from 'react';
 import './DirectoryPage.css';
 
 const CONCERN_LABEL = {
+  critical:    'Critical',
+  high:        'High',
   significant: 'Significant',
   moderate:    'Moderate',
+  low:         'Low',
   minor:       'Minor',
   clean:       'Clean',
   unknown:     'Unknown',
 };
 
 const CONCERN_CLASS = {
+  critical:    'badge-critical',
+  high:        'badge-high',
   significant: 'badge-significant',
   moderate:    'badge-moderate',
+  low:         'badge-low',
   minor:       'badge-minor',
   clean:       'badge-clean',
   unknown:     'badge-unknown',
