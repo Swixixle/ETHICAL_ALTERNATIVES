@@ -27,6 +27,7 @@ import impactRouter from './routes/impact.js';
 import barcodeRouter from './routes/barcode.route.js';
 import reportErrorRouter from './routes/reportError.route.js';
 import executivePayRouter from './routes/executivePay.route.js';
+import receiptRouter from './routes/receipt.js';
 import { getProviderHealthSnapshot } from './services/aiProvider.js';
 import {
   investigationCache,
@@ -131,6 +132,7 @@ app.use('/api/city-identity', cityIdentityRouter);
 app.use('/api/local-feed', localFeedRouter);
 app.use('/api/share-card', shareCardRouter);
 app.use('/api/share-export', shareExportRouter);
+app.use('/api/receipt', receiptRouter);
 app.use('/api/geocode', geocodeRouter);
 app.use('/api/board', communityBoardRouter);
 app.use('/api/territory', territoryRouter);
