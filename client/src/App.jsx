@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import PhotoCapture from './components/PhotoCapture.jsx';
 import TapOverlay from './components/TapOverlay.jsx';
 import ConfirmTap from './components/ConfirmTap.jsx';
@@ -186,6 +186,52 @@ function TapRateLimitFullScreen({ message, onOpenBlackBook, onHome }) {
   );
 }
 
+/**
+ * Map `location.pathname` to app route fields (same rules as URL sync in App).
+ * @param {string} pathname
+ */
+function parseRoute(pathname) {
+  const path = (pathname || '/').replace(/\/$/, '') || '/';
+  const base = {
+    mode: 'home',
+    reportSlug: /** @type {string | null} */ (null),
+    deepBrand: /** @type {string | null} */ (null),
+    witnessRewrite: false,
+    profileSlug: /** @type {string | null} */ (null),
+  };
+  const repMatch = path.match(/^\/report\/([^/]+)$/i);
+  if (repMatch) {
+    return {
+      ...base,
+      mode: 'report',
+      reportSlug: decodeURIComponent(repMatch[1]),
+    };
+  }
+  if (path === '/witnesses' || /^\/workers\//.test(path)) {
+    return { ...base, witnessRewrite: true };
+  }
+  if (path === '/directory') {
+    return { ...base, mode: 'directory' };
+  }
+  if (path === '/impact') {
+    return { ...base, mode: 'impact' };
+  }
+  if (/^\/library(?:\/[^/]+)?$/.test(path)) {
+    return { ...base, mode: 'library' };
+  }
+  const prof = path.match(/^\/profile\/([^/]+)$/);
+  if (prof) {
+    const slug = decodeURIComponent(prof[1]);
+    return {
+      ...base,
+      mode: 'deep',
+      deepBrand: slug,
+      profileSlug: slug,
+    };
+  }
+  return { ...base };
+}
+
 function TapRetapFullScreen({ message, onTryAgain }) {
   return (
     <div
@@ -251,8 +297,17 @@ function TapRetapFullScreen({ message, onTryAgain }) {
 
 export default function App() {
   /** home — feed; snap — photo tap (Quick); deep — typed investigation (rabbit hole); history — saved taps; report — permalink */
-  const [mode, setMode] = useState('home');
-  const [reportSlug, setReportSlug] = useState(/** @type {string | null} */ (null));
+  const route0 =
+    typeof window !== 'undefined'
+      ? parseRoute(window.location.pathname)
+      : parseRoute('/');
+  const [mode, setMode] = useState(() => (route0.witnessRewrite ? 'home' : route0.mode));
+  const [reportSlug, setReportSlug] = useState(() =>
+    route0.witnessRewrite ? null : route0.reportSlug
+  );
+  const [deepBrand, setDeepBrand] = useState(() =>
+    route0.witnessRewrite ? null : route0.deepBrand
+  );
 
   const {
     image,
@@ -321,7 +376,6 @@ export default function App() {
 
   /** Local documentary overlay during async investigation */
   const [docRun, setDocRun] = useState(null);
-  const [deepBrand, setDeepBrand] = useState(null);
   const [cityGateOpen, setCityGateOpen] = useState(false);
   const [cityGateChecked, setCityGateChecked] = useState(false);
 
@@ -337,43 +391,42 @@ export default function App() {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  useEffect(() => {
+  /** Sync mode from URL before paint (direct loads, back/forward). */
+  useLayoutEffect(() => {
     const syncPath = () => {
-      const path = (window.location.pathname || '/').replace(/\/$/, '') || '/';
-      const repMatch = path.match(/^\/report\/([^/]+)$/);
-      if (repMatch) {
-        setReportSlug(decodeURIComponent(repMatch[1]));
-        setMode('report');
-        return;
-      }
-      setReportSlug(null);
-      if (path === '/witnesses' || /^\/workers\//.test(path)) {
+      const r = parseRoute(window.location.pathname);
+      if (r.witnessRewrite) {
         try {
           window.history.replaceState({}, '', '/');
         } catch {
           /* ignore */
         }
+        setReportSlug(null);
         setMode('home');
         return;
       }
-      if (path === '/directory') {
+      if (r.mode === 'report' && r.reportSlug) {
+        setReportSlug(r.reportSlug);
+        setMode('report');
+        return;
+      }
+      setReportSlug(null);
+      if (r.mode === 'directory') {
         setMode('directory');
         return;
       }
-      if (path === '/impact') {
+      if (r.mode === 'impact') {
         setMode('impact');
         return;
       }
-      if (/^\/library(?:\/[^/]+)?$/.test(path)) {
+      if (r.mode === 'library') {
         setMode('library');
         return;
       }
-      const prof = path.match(/^\/profile\/([^/]+)$/);
-      if (prof) {
-        const slug = decodeURIComponent(prof[1]);
-        setDeepBrand(slug);
+      if (r.profileSlug) {
+        setDeepBrand(r.profileSlug);
         setMode('deep');
-        void investigateByBrandNav(slug);
+        void investigateByBrandNav(r.profileSlug);
         return;
       }
       setMode((prev) =>
