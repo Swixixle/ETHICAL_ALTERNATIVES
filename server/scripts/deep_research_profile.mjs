@@ -13,7 +13,7 @@
  *
  * Sector sets: up to 6 categories per run (from `profile_type` / `profile_json.sector` or `--sector`), unless `--all-categories`.
  * Category passes use a **snake draft**: round 1 forward (one Perplexity+Claude per category), round 2 reverse if budget remains. Each category saves to `deep_research_output/[slug]/[category].json` immediately; per-category resume skips completed rounds. **`--resume`** skips all Perplexity (subsidiary map + category queries) and loads existing temp files, then runs dedup → institutional → summary only. Final merge writes `[slug]_deep.json` and removes the temp dir on full success.
- * Perplexity spend cap: --cost-cap (USD), else PERPLEXITY_DEEP_RESEARCH_COST_CAP_USD, else default **3** (sector-aware runs). Category rounds halt gracefully at cap; saved progress is merged.
+ * Perplexity spend cap: --cost-cap (USD), else PERPLEXITY_DEEP_RESEARCH_COST_CAP_USD, else default **10** (sector-aware runs). Category rounds halt gracefully at cap; saved progress is merged.
  * Truncation: `--max-chars` (default 25000) on Perplexity text before Claude extraction.
  *
  * Requires: PERPLEXITY_API_KEY, ANTHROPIC_API_KEY. DATABASE_URL for slug lookup / writes (unless --dry-run with inferred name).
@@ -46,7 +46,7 @@ const ANTHROPIC_INPUT_PER_M = 3.0;
 const ANTHROPIC_OUTPUT_PER_M = 15.0;
 
 /** Default cap tuned for ~6 category (sector) runs; use `--cost-cap` for full `--all-categories` passes. */
-const DEFAULT_PERPLEXITY_COST_CAP_USD = 3;
+const DEFAULT_PERPLEXITY_COST_CAP_USD = 10;
 const MIN_BATCH_DELAY_MS = 60_000;
 
 /** Max incidents kept per category after merging rounds (sort amount_usd, date); remainder in overflow fields. */
@@ -327,7 +327,7 @@ const { values: opts } = parseArgs({
     'batch-size': { type: 'string', default: '2' },
     delay: { type: 'string', default: '60000' },
     category: { type: 'string' },
-    'cost-cap': { type: 'string' },
+    'cost-cap': { type: 'string', default: '10' },
     sector: { type: 'string' },
     'all-categories': { type: 'boolean' },
     'max-chars': { type: 'string', default: '25000' },
