@@ -1448,6 +1448,13 @@ export default function App() {
         <ResearchNarrative
           city={researchBackdropLoc.city}
           state={researchBackdropLoc.state ?? null}
+          brandName={
+            typeof id?.brand === 'string' && id.brand.trim()
+              ? id.brand.trim()
+              : typeof id?.corporate_parent === 'string' && id.corporate_parent.trim()
+                ? id.corporate_parent.trim()
+                : null
+          }
           reportReady={!result?.research_loading}
           onSkip={() => setResearchNarrativeOn(false)}
         />
