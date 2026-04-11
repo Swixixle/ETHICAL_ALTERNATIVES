@@ -15,6 +15,11 @@ import { corroborateLayerC, mergeLayerCCorroborationIntoProfileJson } from './co
 import { assignShareRiskTier } from './shareRiskTier.js';
 import { kickPerimeterCheckForInvestigation } from './perimeterCache.js';
 import { investigationCache } from './cacheStore.js';
+import {
+  applyDeepResearchToInvestigation,
+  extractDeepResearchFromProfileJson,
+  mergeLiveInvestigationDelta,
+} from './deepResearchMerge.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -778,16 +783,33 @@ export function buildLimited(brandName, corporateParent, healthFlag) {
  */
 function incumbentRowToInvestigation(row, brandName, corporateParent, healthFlag) {
   let inv;
+  /** @type {Record<string, unknown> | null} */
+  let deepResearch = null;
   if (row.profile_json) {
     let data =
       typeof row.profile_json === 'string' ? JSON.parse(row.profile_json) : row.profile_json;
+    deepResearch = extractDeepResearchFromProfileJson(data);
     data = flattenNestedProfileJson(data);
     inv = normalizeInvestigation(data, brandName, corporateParent, healthFlag);
   } else {
     const parsed = relationalRowToParsed(row);
     inv = normalizeInvestigation(parsed, brandName, corporateParent, healthFlag);
   }
-  const finalized = finalizeInvestigation(inv, 'database');
+  let finalized = finalizeInvestigation(inv, 'database');
+  if (
+    deepResearch &&
+    Array.isArray(deepResearch.per_category) &&
+    deepResearch.per_category.length > 0
+  ) {
+    applyDeepResearchToInvestigation(finalized, deepResearch, healthFlag);
+    finalized = finalizeInvestigation(
+      { ...finalized, concern_axis_booleans: inv.concern_axis_booleans || [] },
+      'database'
+    );
+  }
+  if (typeof deepResearch?.generated_at === 'string' && deepResearch.generated_at.trim()) {
+    finalized.last_deep_researched = deepResearch.generated_at.trim();
+  }
   const lr = row.last_researched;
   finalized.last_updated =
     lr instanceof Date ? lr.toISOString().slice(0, 10) : lr ? String(lr).slice(0, 10) : finalized.last_updated;
@@ -844,7 +866,10 @@ async function realtimeEmergencyOrDegraded(brandName, corporateParent, healthFla
   );
 }
 
-export function buildResearchPrompt(brandName, corporateParent, healthFlag, productCategory) {
+/**
+ * @param {{ recentNewsOnly?: boolean }} [promptOptions] — when recentNewsOnly, restrict web search to ~last 30 days (delta pass)
+ */
+export function buildResearchPrompt(brandName, corporateParent, healthFlag, productCategory, promptOptions = {}) {
   const primary = [brandName, corporateParent].filter(Boolean).join(' / ') || 'unknown entity';
   const query = `${brandName || ''} ${corporateParent || ''} news reviews complaints lawsuit registration owner BBB OSHA EPA`
     .trim()
@@ -1041,7 +1066,13 @@ where awards covers Michelin stars, James Beard nominations, and recognized loca
     : ''
 }
 
-Do not include profile_type or last_updated in the JSON.`;
+Do not include profile_type or last_updated in the JSON.${
+    promptOptions.recentNewsOnly
+      ? `
+
+CRITICAL — Recent delta only: Only find news and regulatory actions from the last 30 days (relative to today). Do not repeat or summarize historical enforcement, old settlements, or long-running cases that would already appear in a full public-record profile. If nothing material appeared in the last 30 days, say so clearly in each section and keep summaries minimal. For timeline: include only events from the last 30 days, or use an empty array.`
+      : ''
+  }`;
 }
 
 /**
@@ -1335,19 +1366,22 @@ async function finalizeRealtimeFromParsed(
   return wrapRealtimeInvestigationResult(investigation, profileJsonForDb);
 }
 
-async function realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory) {
+async function realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory, promptOptions = {}) {
+  const recentOnly = Boolean(promptOptions.recentNewsOnly);
   console.log(
-    `[investigation] realtimeInvestigation start brand=${brandName || '∅'} parent=${corporateParent || '∅'} category=${productCategory || '∅'}`
+    `[investigation] realtimeInvestigation start brand=${brandName || '∅'} parent=${corporateParent || '∅'} category=${productCategory || '∅'} recentOnly=${recentOnly}`
   );
 
   const cacheKey = `inv:${(brandName || '').toLowerCase().trim()}:${(corporateParent || '').toLowerCase().trim()}`;
-  const cached = investigationCache.get(cacheKey);
-  if (cached) {
-    console.log(`[investigation] cache hit: ${cacheKey}`);
-    return cached;
+  if (!recentOnly) {
+    const cached = investigationCache.get(cacheKey);
+    if (cached) {
+      console.log(`[investigation] cache hit: ${cacheKey}`);
+      return cached;
+    }
   }
 
-  const userPrompt = buildResearchPrompt(brandName, corporateParent, healthFlag, productCategory);
+  const userPrompt = buildResearchPrompt(brandName, corporateParent, healthFlag, productCategory, promptOptions);
 
   const tools = [{ type: 'web_search_20250305', name: 'web_search', max_uses: 10 }];
 
@@ -1458,7 +1492,7 @@ If web search is unavailable, use only well-established public knowledge. Use ov
     healthFlag,
     'claude'
   );
-  if (result && !result.investigation?.is_stub_investigation) {
+  if (!recentOnly && result && !result.investigation?.is_stub_investigation) {
     investigationCache.set(cacheKey, result);
     console.log(`[investigation] cache set: ${cacheKey} size=${investigationCache.size}`);
   }
@@ -1668,8 +1702,8 @@ export async function getInvestigationProfile(brandName, corporateParent, option
             }
             const today = new Date().toISOString().slice(0, 10);
             const out = stubPersisted
-              ? { ...upgraded, profile_type: 'database', last_updated: today }
-              : upgraded;
+              ? { ...upgraded, profile_type: 'database', last_updated: today, data_source: 'live_only' }
+              : { ...upgraded, data_source: 'live_only' };
             kickPerimeterCheckForInvestigation(out);
             logInvestigationProfileEnd(stubPersisted ? 'database_stub_upgrade' : 'stub_upgrade_realtime_only', out);
             return out;
@@ -1680,13 +1714,50 @@ export async function getInvestigationProfile(brandName, corporateParent, option
         }
 
         console.log('[investigation] getInvestigationProfile:route', { slug, source: 'database' });
-        const finalized = incumbentRowToInvestigation(row, brandName, corporateParent, healthFlag);
-        kickPerimeterCheckForInvestigation(finalized);
-        logInvestigationProfileEnd('database', finalized);
-        if (finalized && !finalized.is_stub_investigation) {
-          investigationCache.set(investigationCacheKey, finalized);
+        let out = incumbentRowToInvestigation(row, brandName, corporateParent, healthFlag);
+        const dr = extractDeepResearchFromProfileJson(row.profile_json);
+        const hasDeepCategories = Boolean(dr?.per_category?.length);
+
+        if (hasDeepCategories) {
+          const lr = row.last_researched;
+          try {
+            const rt = await realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory, {
+              recentNewsOnly: true,
+            });
+            const live = rt.investigation ?? rt;
+            mergeLiveInvestigationDelta(out, live, healthFlag);
+            out = finalizeInvestigation(
+              { ...out, concern_axis_booleans: out.concern_axis_booleans || [] },
+              'database'
+            );
+            out.last_updated =
+              lr instanceof Date
+                ? lr.toISOString().slice(0, 10)
+                : lr
+                  ? String(lr).slice(0, 10)
+                  : out.last_updated;
+            if (typeof dr?.generated_at === 'string' && dr.generated_at.trim()) {
+              out.last_deep_researched = dr.generated_at.trim();
+            }
+            out.data_source = 'deep_research+live';
+          } catch (e) {
+            console.error('[investigation] deep profile: recent-news pass failed', slug, e);
+            out = {
+              ...out,
+              live_investigation_failed: true,
+              data_source: 'deep_research+live',
+            };
+          }
+        } else {
+          out = { ...out, data_source: 'database' };
         }
-        return finalized;
+
+        kickPerimeterCheckForInvestigation(out);
+        logInvestigationProfileEnd(hasDeepCategories ? 'database_deep_plus_live' : 'database', out);
+        if (out && !out.is_stub_investigation && out.data_source !== 'deep_research+live') {
+          investigationCache.set(investigationCacheKey, out);
+        }
+        return out;
       }
     } catch (e) {
       console.error('incumbent_profiles query', e);
@@ -1701,7 +1772,7 @@ export async function getInvestigationProfile(brandName, corporateParent, option
 
   try {
     const rt = await realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory);
-    const inv = rt.investigation ?? rt;
+    const inv = { ...(rt.investigation ?? rt), data_source: 'live_only' };
     logInvestigationProfileEnd('realtime', inv);
     return inv;
   } catch (e) {
