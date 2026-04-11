@@ -14,8 +14,9 @@ const severityBorder = {
   minor:       "3px solid #6a8a9a",
 };
 
-export default function Timeline({ events }) {
+export default function Timeline({ events, minEvents = 0 }) {
   if (!events || events.length === 0) return null;
+  if (minEvents > 0 && events.length < minEvents) return null;
 
   return (
     <section style={{ margin: "20px 0 16px" }}>

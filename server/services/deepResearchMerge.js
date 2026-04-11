@@ -166,6 +166,110 @@ function outcomeToSeverity(outcome) {
   return 'moderate';
 }
 
+/** Short labels for investigation UI chips (uppercase). */
+const DEEP_CATEGORY_CHIP_LABEL = {
+  labor_and_wage: 'LABOR',
+  environmental: 'ENVIRONMENT',
+  regulatory_and_legal: 'LEGAL',
+  institutional_enablement: 'POLITICAL',
+  subsidies_and_bailouts: 'SUBSIDIES',
+  antitrust_and_market_power: 'ANTITRUST',
+  financial_misconduct: 'FINANCIAL',
+  data_and_privacy: 'PRIVACY',
+  discrimination_and_civil_rights: 'CIVIL RIGHTS',
+  product_safety: 'PRODUCT',
+  executive_and_governance: 'GOVERNANCE',
+  supply_chain: 'SUPPLY CHAIN',
+  corporate_structure: 'STRUCTURE',
+};
+
+/** @param {unknown} inc */
+function parseIncidentDateMs(inc) {
+  if (!inc || typeof inc !== 'object') return 0;
+  const d = /** @type {Record<string, unknown>} */ (inc).date;
+  if (d == null) return 0;
+  const t = Date.parse(String(d));
+  return Number.isFinite(t) ? t : 0;
+}
+
+/** @param {unknown[]} incidentsRaw */
+function categorySeverityDot(incidentsRaw) {
+  if (!Array.isArray(incidentsRaw)) return 'low';
+  let worst = 0;
+  for (const inc of incidentsRaw) {
+    const sev = outcomeToSeverity(inc && typeof inc === 'object' ? /** @type {Record<string, unknown>} */ (inc).outcome : '');
+    if (sev === 'critical') return 'critical';
+    if (sev === 'significant') worst = Math.max(worst, 2);
+    else if (sev === 'moderate') worst = Math.max(worst, 1);
+  }
+  if (worst >= 2) return 'high';
+  if (worst >= 1) return 'moderate';
+  return 'low';
+}
+
+/**
+ * Structured per-category incidents for client accordion (newest first).
+ * @param {Record<string, unknown>} dr
+ */
+function buildDeepResearchCategoriesForClient(dr) {
+  const per = Array.isArray(dr.per_category) ? dr.per_category : [];
+  /** @type {Record<string, unknown>[]} */
+  const out = [];
+  for (const cat of per) {
+    if (!cat || typeof cat !== 'object' || typeof /** @type {Record<string, unknown>} */ (cat).category !== 'string') {
+      continue;
+    }
+    const c = /** @type {Record<string, unknown>} */ (cat);
+    const key = c.category;
+    const incidentsRaw = Array.isArray(c.incidents) ? c.incidents : [];
+    const total = categoryTotalFound(cat);
+    if (total <= 0) continue;
+
+    const sorted = [...incidentsRaw].sort((a, b) => parseIncidentDateMs(b) - parseIncidentDateMs(a));
+    const incidents = sorted.slice(0, 250).map((inc) => {
+      if (!inc || typeof inc !== 'object') return null;
+      const o = /** @type {Record<string, unknown>} */ (inc);
+      return {
+        date: o.date != null ? String(o.date) : '',
+        description: typeof o.description === 'string' ? o.description : '',
+        outcome: typeof o.outcome === 'string' ? o.outcome : '',
+        amount_usd:
+          o.amount_usd != null && Number.isFinite(Number(o.amount_usd)) ? Number(o.amount_usd) : null,
+        source_url: typeof o.source_url === 'string' ? o.source_url : '',
+        agency_or_court: typeof o.agency_or_court === 'string' ? o.agency_or_court : '',
+      };
+    });
+
+    const ov = typeof c.overflow_count === 'number' ? Math.max(0, Math.floor(c.overflow_count)) : 0;
+    const overflow_note_raw = typeof c.overflow_note === 'string' ? c.overflow_note.trim() : '';
+    const chipLabel =
+      DEEP_CATEGORY_CHIP_LABEL[key] ||
+      String(key)
+        .replace(/_/g, ' ')
+        .toUpperCase();
+
+    out.push({
+      category: key,
+      chip_label: chipLabel,
+      title:
+        typeof CATEGORY_LABELS[key] === 'string'
+          ? String(CATEGORY_LABELS[key])
+              .split(' ')
+              .map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : ''))
+              .join(' ')
+          : chipLabel,
+      total_found: total,
+      overflow_count: ov,
+      overflow_note:
+        overflow_note_raw || (ov > 0 ? `+${ov} more in records` : ''),
+      severity_dot: categorySeverityDot(incidentsRaw),
+      incidents: incidents.filter(Boolean),
+    });
+  }
+  out.sort((a, b) => Number(b.total_found) - Number(a.total_found));
+  return out;
+}
+
 /**
  * @param {Record<string, unknown>} cat — per_category entry
  */
@@ -385,6 +489,8 @@ export function applyDeepResearchToInvestigation(inv, dr, healthFlag) {
     }
     if (execOut) inv.executive_summary = execOut;
   }
+
+  inv.deep_research_categories = buildDeepResearchCategoriesForClient(dr);
 }
 
 /**

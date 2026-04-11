@@ -30,7 +30,6 @@ import ImpactPublicPage from './pages/ImpactPublicPage.jsx';
 import Library from './pages/Library.jsx';
 import ReportPermalinkPage from './pages/ReportPermalinkPage.jsx';
 import VerifyReceiptPage from './pages/VerifyReceiptPage.jsx';
-import InvestigationReceipt from './components/InvestigationReceipt.jsx';
 import ImpactOutcomePrompt from './components/ImpactOutcomePrompt.jsx';
 import ReportErrorSheet from './components/ReportErrorSheet.jsx';
 import { getImpactConsentOutcome, getImpactFetchHeaders } from './lib/impactConsent.js';
@@ -680,6 +679,10 @@ export default function App() {
     setMode('home');
   };
 
+  const scrollToAlternativesRegion = useCallback(() => {
+    document.getElementById('ea-alternatives-region')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, []);
+
   const researchBackdropLoc = researchNarrativeOn ? readCachedLocation() : null;
 
   if (mode === 'library') {
@@ -1106,6 +1109,7 @@ export default function App() {
                 setShowShare(true);
               }}
               onReportError={() => setShowReportError(true)}
+              onFindAlternatives={scrollToAlternativesRegion}
               onRunLiveInvestigation={() => {
                 const b =
                   id && typeof id.brand === 'string' && id.brand.trim()
@@ -1114,7 +1118,6 @@ export default function App() {
                 if (b) void investigateByBrandNav(b);
               }}
             />
-            <InvestigationReceipt investigation={result.investigation} />
             {showReportError && result?.identification ? (
               <ReportErrorSheet
                 brandName={
@@ -1134,6 +1137,7 @@ export default function App() {
   const alternativesAside =
     result ? (
       <aside
+        id="ea-alternatives-region"
         className={
           isDesktop ? 'app__results-sidebar' : 'app__results-sidebar app__results-sidebar--stacked'
         }
@@ -1238,7 +1242,11 @@ export default function App() {
       <div className="app__results-root">
         {isDesktop ? (
           <div className="app__results-grid app__results-grid--tap">
-            <aside className="app__results-sidebar app__results-sidebar--tap" aria-label="Alternatives">
+            <aside
+              id="ea-alternatives-region"
+              className="app__results-sidebar app__results-sidebar--tap"
+              aria-label="Alternatives"
+            >
               <div className="app__results-sidebar-head">
                 {investigationCapturePair
                   ? tapPhotoToolbarMinimal

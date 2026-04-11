@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Timeline from './Timeline';
 import CommunityImpact from './CommunityImpact';
 import CostAbsorption from './CostAbsorption.jsx';
@@ -18,6 +18,7 @@ import {
   HealthIcon,
 } from './icons/SectionIcons';
 import ActiveNowSection from './ActiveNowSection.jsx';
+import InvestigationReceipt from './InvestigationReceipt.jsx';
 import { fetchProportionality } from '../lib/fetchProportionality.js';
 import { methodologyPageUrl } from '../lib/methodologyUrl.js';
 import './InvestigationCard.css';
@@ -236,6 +237,126 @@ function formatUsdRecord(n) {
     currency: 'USD',
     maximumFractionDigits: 0,
   }).format(n);
+}
+
+/** Deep category key → investigation section accordion key (must match server deepResearchMerge). */
+const DR_CATEGORY_TO_SECTION_KEY = {
+  labor_and_wage: 'labor',
+  environmental: 'environmental',
+  regulatory_and_legal: 'legal',
+  institutional_enablement: 'political',
+  supply_chain: 'product_health',
+  subsidies_and_bailouts: 'tax',
+  antitrust_and_market_power: 'legal',
+  financial_misconduct: 'legal',
+  data_and_privacy: 'legal',
+  discrimination_and_civil_rights: 'labor',
+  product_safety: 'product_health',
+};
+
+/** @param {string} url */
+function sourceDomainFromUrl(url) {
+  try {
+    const u = new URL(String(url));
+    return u.hostname.replace(/^www\./, '');
+  } catch {
+    return 'Source';
+  }
+}
+
+/** @param {string | null | undefined} level */
+function concernTierBadgeProps(level) {
+  const l = String(level || 'moderate').toLowerCase();
+  if (l === 'critical') {
+    return {
+      label: 'CRITICAL',
+      color: '#ff6b6b',
+      border: 'rgba(255,107,107,0.5)',
+      bg: 'rgba(255,107,107,0.12)',
+    };
+  }
+  if (l === 'high') {
+    return {
+      label: 'HIGH',
+      color: '#f0a820',
+      border: 'rgba(240,168,32,0.55)',
+      bg: 'rgba(240,168,32,0.14)',
+    };
+  }
+  return {
+    label: l.replace(/_/g, ' ').toUpperCase() || 'MODERATE',
+    color: '#8a9aac',
+    border: 'rgba(138,154,172,0.35)',
+    bg: 'rgba(106,138,154,0.12)',
+  };
+}
+
+/** @param {string | null | undefined} summary */
+function extractPublicRecordsLede(summary) {
+  if (!summary || typeof summary !== 'string') return null;
+  const s = summary.trim();
+  const idx = s.indexOf('Public records document');
+  if (idx < 0) return null;
+  const slice = s.slice(idx);
+  const end = slice.search(/\.\s/);
+  const sentence = end >= 0 ? slice.slice(0, end + 1) : slice.split('\n')[0]?.split('.')[0] + '.' || slice;
+  return sentence.trim() || null;
+}
+
+/** @param {string} dot */
+function severityDotColor(dot) {
+  if (dot === 'critical') return '#ff6b6b';
+  if (dot === 'high') return '#f0a820';
+  return '#6a8a9a';
+}
+
+/**
+ * @param {{
+ *   incident: Record<string, unknown>;
+ * }} props
+ */
+function DeepIncidentCard({ incident }) {
+  const date = typeof incident.date === 'string' ? incident.date : '';
+  const desc =
+    typeof incident.description === 'string' && incident.description.trim()
+      ? incident.description.trim()
+      : '—';
+  const outcomeRaw = typeof incident.outcome === 'string' ? incident.outcome : '';
+  const outcomeLabel = outcomeRaw ? outcomeRaw.replace(/_/g, ' ') : '—';
+  const amt =
+    incident.amount_usd != null && Number.isFinite(Number(incident.amount_usd))
+      ? formatUsdRecord(Number(incident.amount_usd))
+      : null;
+  const url = typeof incident.source_url === 'string' ? incident.source_url : '';
+  const domain = url && /^https?:\/\//i.test(url) ? sourceDomainFromUrl(url) : null;
+  const linkLabel = domain ? `${domain} \u2197` : '';
+
+  return (
+    <div className="investigation-card__incident-card">
+      <div className="investigation-card__incident-card-grid">
+        <div className="investigation-card__incident-date">{date || '—'}</div>
+        <div className="investigation-card__incident-main">
+          <p className="investigation-card__incident-desc">{desc}</p>
+          <div className="investigation-card__incident-meta">
+            {outcomeRaw ? (
+              <span className="investigation-card__incident-outcome">{outcomeLabel}</span>
+            ) : null}
+            {amt ? <span className="investigation-card__incident-amount">{amt}</span> : null}
+          </div>
+          {domain && url ? (
+            <a
+              href={url}
+              target="_blank"
+              rel="noreferrer"
+              className="investigation-card__incident-source"
+            >
+              {linkLabel}
+            </a>
+          ) : null}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 /** @param {{ text: string; url?: string | null }} props */
@@ -652,6 +773,7 @@ function confidenceLabelFromId(c) {
  *   userCaptureSrc?: string | null;
  *   referenceImageSrc?: string | null;
  *   tapPositionNormalized?: { x: number; y: number } | null;
+ *   onFindAlternatives?: () => void;
  * }} props
  */
 export default function InvestigationCard({
@@ -668,6 +790,7 @@ export default function InvestigationCard({
   userCaptureSrc = null,
   referenceImageSrc = null,
   tapPositionNormalized = null,
+  onFindAlternatives,
 }) {
   const [openSection, setOpenSection] = useState(/** @type {string | null} */ (null));
   const [proportionalityClientPacket, setProportionalityClientPacket] = useState(
@@ -1047,6 +1170,44 @@ export default function InvestigationCard({
   const hasResultInvestigation = result == null || result.investigation != null;
   const showFinancialAnalysis = !isStubInvestigation && hasResultInvestigation;
 
+  const deepCategoriesRaw = investigation.deep_research_categories;
+  const deepCategories = Array.isArray(deepCategoriesRaw) ? deepCategoriesRaw : [];
+  const coveredSections = new Set();
+  for (const d of deepCategories) {
+    if (!d || typeof d !== 'object') continue;
+    const ck = typeof /** @type {Record<string, unknown>} */ (d).category === 'string' ? /** @type {Record<string, unknown>} */ (d).category : '';
+    const sk = DR_CATEGORY_TO_SECTION_KEY[ck];
+    if (sk) coveredSections.add(sk);
+    if (ck === 'executive_and_governance') coveredSections.add('executive');
+  }
+  const accordionSectionItems = sectionItems.filter((it) => !coveredSections.has(it.key));
+
+  const concernTier = concernTierBadgeProps(investigation.overall_concern_level);
+  const heroLede = extractPublicRecordsLede(execSummary);
+  const topChipCategories = deepCategories.slice(0, 4);
+  const moreChipCount = Math.max(0, deepCategories.length - 4);
+
+  const scrollToDeepCategory = useCallback((catKey) => {
+    setOpenSection(`deep:${catKey}`);
+    window.requestAnimationFrame(() => {
+      document.getElementById(`ea-deep-cat-${catKey}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }, []);
+
+  const handleFindAlternatives = useCallback(() => {
+    if (typeof onFindAlternatives === 'function') onFindAlternatives();
+    else
+      document.getElementById('ea-alternatives-region')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [onFindAlternatives]);
+
+  /** @param {string} catKey */
+  const legacySectionForDeepCategory = (catKey) => {
+    if (catKey === 'executive_and_governance') return sectionItems.find((s) => s.key === 'executive');
+    const sec = DR_CATEGORY_TO_SECTION_KEY[catKey];
+    if (!sec) return null;
+    return sectionItems.find((s) => s.key === sec);
+  };
+
   return (
     <section className={`investigation-card investigation-card--bento${variantClass}`}>
       {serviceDegraded && degradedMessage ? (
@@ -1076,16 +1237,66 @@ export default function InvestigationCard({
 
       {showActiveNow ? <ActiveNowSection brandSlug={perimeterSlug} variant="tap" /> : null}
 
-      <div className="investigation-card__hero investigation-card__hero-mount">
-        <h1 className="investigation-card__headline">{headline}</h1>
-        <div className="investigation-card__hero-row">
-          <ConfidenceBadge presentation={confPresent} />
+      <div className="investigation-card__hero investigation-card__hero-mount investigation-card__hero--redesign">
+        <div className="investigation-card__hero-top">
+          <h1 className="investigation-card__headline investigation-card__headline--hero">{headline}</h1>
+          <span
+            className="investigation-card__concern-tier"
+            style={{
+              color: concernTier.color,
+              borderColor: concernTier.border,
+              background: concernTier.bg,
+            }}
+          >
+            {concernTier.label}
+          </span>
+        </div>
+        {heroLede ? (
+          <p className="investigation-card__hero-lede investigation-card__body">{heroLede}</p>
+        ) : execSummary ? (
+          <p className="investigation-card__hero-lede investigation-card__body">{execSummary}</p>
+        ) : null}
+        {deepCategories.length > 0 ? (
+          <div className="investigation-card__category-chips" role="navigation" aria-label="Jump to category">
+            {topChipCategories.map((dc) => {
+              if (!dc || typeof dc !== 'object') return null;
+              const cat = typeof dc.category === 'string' ? dc.category : '';
+              const chip = typeof dc.chip_label === 'string' ? dc.chip_label : cat;
+              const n = typeof dc.total_found === 'number' ? dc.total_found : 0;
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  className="investigation-card__category-chip ea-press-label"
+                  onClick={() => scrollToDeepCategory(cat)}
+                >
+                  {chip} ({n})
+                </button>
+              );
+            })}
+            {moreChipCount > 0 && deepCategories[4] && typeof deepCategories[4].category === 'string' ? (
+              <button
+                type="button"
+                className="investigation-card__category-chip investigation-card__category-chip--more ea-press-label"
+                onClick={() => scrollToDeepCategory(String(deepCategories[4].category))}
+              >
+                +{moreChipCount} more
+              </button>
+            ) : null}
+          </div>
+        ) : null}
+        <div className="investigation-card__hero-row investigation-card__hero-row--compact">
+          <ConfidenceBadge presentation={confPresent} compact />
         </div>
         {id && typeof id === 'object' && ('confidence' in id || id.identification_method) ? (
-          <p className="investigation-card__match-line investigation-card__body-muted">
+          <p className="investigation-card__match-line investigation-card__body-muted investigation-card__match-line--compact">
             Match: {confidenceLabelFromId(id.confidence)} · {matchMethodReadable}
           </p>
         ) : null}
+      </div>
+
+      <div className="investigation-card__timeline-wrap">
+        <Timeline events={investigation.timeline} minEvents={3} />
       </div>
 
       {userCaptureSrc && referenceImageSrc ? (
@@ -1120,7 +1331,7 @@ export default function InvestigationCard({
         </div>
       ) : null}
 
-      <div className="investigation-card__verdict-block">
+      <div className="investigation-card__verdict-block investigation-card__verdict-block--compact">
         {flatVerdictPills.length ? (
           <div ref={verdictRef} className="investigation-card__verdict investigation-card__verdict-pills">
             {flatVerdictPills.map((tag) => (
@@ -1146,7 +1357,9 @@ export default function InvestigationCard({
           </div>
         ) : null}
 
-        {execSummary ? <p className="investigation-card__exec-summary investigation-card__body">{execSummary}</p> : null}
+        {!heroLede && execSummary ? (
+          <p className="investigation-card__exec-summary investigation-card__body">{execSummary}</p>
+        ) : null}
 
         <ProofBlock
           investigation={investigation}
@@ -1157,12 +1370,71 @@ export default function InvestigationCard({
         />
       </div>
 
-      <div style={{ padding: '0 0 12px' }}>
-        <Timeline events={investigation.timeline} />
-      </div>
-
       <div className="investigation-card__accordion">
-        {sectionItems.map((item) => {
+        {deepCategories.map((dc) => {
+          if (!dc || typeof dc !== 'object') return null;
+          const d = /** @type {Record<string, unknown>} */ (dc);
+          const cat = typeof d.category === 'string' ? d.category : '';
+          const title = typeof d.title === 'string' ? d.title : cat;
+          const totalFound = typeof d.total_found === 'number' ? d.total_found : 0;
+          const overflowNote = typeof d.overflow_note === 'string' ? d.overflow_note.trim() : '';
+          const sevDot = typeof d.severity_dot === 'string' ? d.severity_dot : 'low';
+          const incidents = Array.isArray(d.incidents) ? d.incidents : [];
+          const open = openSection === `deep:${cat}`;
+          return (
+            <div
+              key={cat}
+              id={`ea-deep-cat-${cat}`}
+              className="investigation-card__accordion-item investigation-card__accordion-item--confirmed"
+            >
+              <button
+                type="button"
+                className="investigation-card__accordion-trigger investigation-card__accordion-trigger--deep"
+                aria-expanded={open}
+                onClick={() => setOpenSection(open ? null : `deep:${cat}`)}
+              >
+                <span
+                  className="investigation-card__severity-dot"
+                  style={{ background: severityDotColor(sevDot) }}
+                  aria-hidden
+                />
+                <span className="investigation-card__accordion-title investigation-card__accordion-title--deep">
+                  {title}
+                </span>
+                <span className="investigation-card__accordion-count">({totalFound})</span>
+                {overflowNote ? (
+                  <span className="investigation-card__accordion-overflow">{overflowNote}</span>
+                ) : null}
+                <span
+                  className="investigation-card__accordion-chev investigation-card__accordion-chev--end"
+                  aria-hidden
+                  style={{ transform: open ? 'rotate(90deg)' : 'rotate(0deg)' }}
+                >
+                  ›
+                </span>
+              </button>
+              <div
+                className={`investigation-card__accordion-panel${open ? ' investigation-card__accordion-panel--open' : ''}`}
+              >
+                <div className="investigation-card__accordion-inner investigation-card__accordion-inner--incidents">
+                  {incidents.map((inc, idx) =>
+                    inc && typeof inc === 'object' ? (
+                      <DeepIncidentCard key={`${cat}-${idx}`} incident={/** @type {Record<string, unknown>} */ (inc)} />
+                    ) : null
+                  )}
+                  {(() => {
+                    const legacy = legacySectionForDeepCategory(cat);
+                    if (!legacy || !legacy.hasContent) return null;
+                    return (
+                      <div className="investigation-card__deep-legacy-context">{legacy.body}</div>
+                    );
+                  })()}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+        {accordionSectionItems.map((item) => {
           const SectionIcon = item.Icon;
           const open = openSection === item.key;
           const accentClass =
@@ -1253,22 +1525,24 @@ export default function InvestigationCard({
         })}
       </div>
 
-      {showFinancialAnalysis ? (
-        <div className="investigation-card__financial-analysis">
-          <h2 className="investigation-card__financial-analysis-title">FINANCIAL ANALYSIS</h2>
-          <CompanyCharts profile={investigation} />
-        </div>
-      ) : null}
-
-      <div className="investigation-card__footer-blocks">
+      <div className="investigation-card__footer-blocks investigation-card__footer-blocks--post-accordion">
         <CostAbsorption data={investigation.cost_absorption} />
-        {['significant', 'high', 'critical'].includes(
-          String(investigation.overall_concern_level || '').toLowerCase()
-        ) ? (
-          <WealthChart />
-        ) : null}
         <CommunityImpact data={investigation.community_impact} />
       </div>
+
+      {showFinancialAnalysis ? (
+        <details className="investigation-card__financial-details">
+          <summary className="investigation-card__financial-summary">Financial analysis</summary>
+          <div className="investigation-card__financial-inner">
+            <CompanyCharts profile={investigation} />
+            {['significant', 'high', 'critical'].includes(
+              String(investigation.overall_concern_level || '').toLowerCase()
+            ) ? (
+              <WealthChart />
+            ) : null}
+          </div>
+        </details>
+      ) : null}
 
       {Array.isArray(investigation.subsidiaries) && investigation.subsidiaries.length ? (
         <div className="investigation-card__subs">
@@ -1290,13 +1564,9 @@ export default function InvestigationCard({
         </a>
         <span className="investigation-card__methodology-rest"> — methodology, limits, corrections.</span>
       </p>
-      {typeof onShare === 'function' ? (
-        <div className="investigation-card__share-wrap">
-          <button type="button" className="app__btn app__btn--share investigation-card__share-btn" onClick={onShare}>
-            Share this record
-          </button>
-        </div>
-      ) : null}
+
+      <InvestigationReceipt investigation={investigation} />
+
       {typeof onReportError === 'function' ? (
         <button
           type="button"
@@ -1319,6 +1589,27 @@ export default function InvestigationCard({
           report an error
         </button>
       ) : null}
+
+      <div className="investigation-card__bottom-bar" aria-label="Primary actions">
+        <button
+          type="button"
+          className="investigation-card__bottom-bar-btn investigation-card__bottom-bar-btn--primary ea-press-label"
+          onClick={handleFindAlternatives}
+        >
+          FIND ALTERNATIVES →
+        </button>
+        {typeof onShare === 'function' ? (
+          <button
+            type="button"
+            className="investigation-card__bottom-bar-btn investigation-card__bottom-bar-btn--outline ea-press-label"
+            onClick={onShare}
+          >
+            SHARE ↑
+          </button>
+        ) : (
+          <span className="investigation-card__bottom-bar-spacer" aria-hidden />
+        )}
+      </div>
     </section>
   );
 }
