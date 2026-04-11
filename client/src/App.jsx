@@ -28,6 +28,7 @@ import LocationCitySheet from './components/LocationCitySheet.jsx';
 import DirectoryPage from './pages/DirectoryPage.jsx';
 import ImpactPublicPage from './pages/ImpactPublicPage.jsx';
 import Library from './pages/Library.jsx';
+import ReportPermalinkPage from './pages/ReportPermalinkPage.jsx';
 import ImpactOutcomePrompt from './components/ImpactOutcomePrompt.jsx';
 import ReportErrorSheet from './components/ReportErrorSheet.jsx';
 import { getImpactConsentOutcome, getImpactFetchHeaders } from './lib/impactConsent.js';
@@ -249,8 +250,9 @@ function TapRetapFullScreen({ message, onTryAgain }) {
 }
 
 export default function App() {
-  /** home — feed; snap — photo tap (Quick); deep — typed investigation (rabbit hole); history — saved taps */
+  /** home — feed; snap — photo tap (Quick); deep — typed investigation (rabbit hole); history — saved taps; report — permalink */
   const [mode, setMode] = useState('home');
+  const [reportSlug, setReportSlug] = useState(/** @type {string | null} */ (null));
 
   const {
     image,
@@ -338,6 +340,13 @@ export default function App() {
   useEffect(() => {
     const syncPath = () => {
       const path = (window.location.pathname || '/').replace(/\/$/, '') || '/';
+      const repMatch = path.match(/^\/report\/([^/]+)$/);
+      if (repMatch) {
+        setReportSlug(decodeURIComponent(repMatch[1]));
+        setMode('report');
+        return;
+      }
+      setReportSlug(null);
       if (path === '/witnesses' || /^\/workers\//.test(path)) {
         try {
           window.history.replaceState({}, '', '/');
@@ -368,7 +377,9 @@ export default function App() {
         return;
       }
       setMode((prev) =>
-        prev === 'directory' || prev === 'impact' || prev === 'library' ? 'home' : prev
+        prev === 'directory' || prev === 'impact' || prev === 'library' || prev === 'report'
+          ? 'home'
+          : prev
       );
     };
     syncPath();
@@ -588,6 +599,7 @@ export default function App() {
       /* ignore */
     }
     resetSession();
+    setReportSlug(null);
     setMode('home');
   };
 
@@ -696,6 +708,34 @@ export default function App() {
             setMode('home');
           }}
         />
+      </div>
+    );
+  }
+
+  if (mode === 'report') {
+    return (
+      <div className="app">
+        <header className="app__header app__header--minimal">
+          <div className="app__header-inner app__header-inner--minimal">
+            <div className="app__header-left">
+              <button type="button" className="app__logo-wrap" onClick={goHome} title="Home">
+                <span className="app__logo">ETHICALALT</span>
+              </button>
+            </div>
+            <button type="button" className="app__btn app__btn--ghost app__btn--header" onClick={goHome}>
+              ← Home
+            </button>
+          </div>
+        </header>
+        <main className="app__main">
+          {reportSlug ? (
+            <ReportPermalinkPage slug={reportSlug} onHome={goHome} />
+          ) : (
+            <div className="app__panel app__loader-panel" role="status">
+              <p className="app__text-loader">Loading…</p>
+            </div>
+          )}
+        </main>
       </div>
     );
   }

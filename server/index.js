@@ -21,6 +21,8 @@ import profileIndexRouter from './routes/profiles.index.route.js';
 import libraryRouter from './routes/library.route.js';
 import perimeterRouter from './routes/perimeter.route.js';
 import cityNarrativeRouter from './routes/cityNarrative.route.js';
+import reportPermalinkRouter from './routes/reportPermalink.js';
+import sendReportRouter from './routes/sendReport.js';
 import impactRouter from './routes/impact.js';
 import barcodeRouter from './routes/barcode.route.js';
 import reportErrorRouter from './routes/reportError.route.js';
@@ -54,6 +56,9 @@ app.use((_req, res, next) => {
   next();
 });
 app.use(registryHeaders);
+
+app.use('/report', reportPermalinkRouter);
+app.use('/api/send-report', sendReportRouter);
 
 app.get('/health', (_req, res) => {
   res.json({

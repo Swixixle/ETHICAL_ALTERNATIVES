@@ -27,6 +27,12 @@ services:
         sync: false
       - key: CORS_ORIGIN
         sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: RESEND_FROM_EMAIL
+        sync: false
+      - key: CLIENT_URL
+        value: https://ethicalalt-client.onrender.com
 
   - type: static_site
     name: ethicalalt-client

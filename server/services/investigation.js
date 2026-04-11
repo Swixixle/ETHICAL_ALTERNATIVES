@@ -1798,3 +1798,40 @@ export async function getInvestigationProfile(brandName, corporateParent, option
     return emergency;
   }
 }
+
+/**
+ * DB-only investigation snapshot for permalinks (no live or delta investigation calls).
+ * @param {string} brandSlug
+ * @param {{ healthFlag?: boolean }} [options]
+ * @returns {Promise<Record<string, unknown> | null>}
+ */
+export async function getStoredInvestigationBySlug(brandSlug, options = {}) {
+  if (!pool) return null;
+  let slug = String(brandSlug || '').trim();
+  try {
+    slug = decodeURIComponent(slug);
+  } catch {
+    /* keep raw */
+  }
+  slug = slug.toLowerCase();
+  if (!slug) return null;
+  const healthFlag = Boolean(options.healthFlag);
+  try {
+    const { rows } = await pool.query(
+      `SELECT *
+       FROM incumbent_profiles
+       WHERE brand_slug = $1
+       LIMIT 1`,
+      [slug]
+    );
+    const row = rows[0];
+    if (!row) return null;
+    const brandName = row.brand_name != null ? String(row.brand_name) : slug;
+    const parent = row.parent_company != null ? String(row.parent_company) : null;
+    const inv = incumbentRowToInvestigation(row, brandName, parent, healthFlag);
+    return { ...inv, permalink_source: 'database' };
+  } catch (e) {
+    console.error('[investigation] getStoredInvestigationBySlug failed', e?.message || e);
+    return null;
+  }
+}

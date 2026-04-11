@@ -12,14 +12,6 @@ function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-function tweetUrl(text) {
-  return `https://x.com/intent/tweet?text=${encodeURIComponent(text)}`;
-}
-
-function facebookShareUrl(pageUrl) {
-  return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
-}
-
 const REGULATOR_CHECKLIST_ACTION = {
   FTC: 'Open complaint form',
   SEC: 'Open tips portal',
@@ -110,35 +102,6 @@ class ShareCardErrorBoundary extends Component {
     }
     return this.props.children;
   }
-}
-
-function composeTwitterWithPress(shareData, outlets, variant) {
-  const cd = shareData.card_data || {};
-  const concern = String(cd.concern_level || 'unknown');
-  const emoji =
-    { significant: '🔴', moderate: '🟡', minor: '🟢', clean: '✅' }[concern] || '⚪';
-  const topTags = (cd.top_tags || [])
-    .slice(0, 3)
-    .map((t) => String(t).replace(/_/g, ' ').toUpperCase());
-  const site =
-    typeof shareData.share_url === 'string' && shareData.share_url
-      ? shareData.share_url
-      : 'https://ethicalalt-client.onrender.com';
-  const companyTag = typeof shareData.company_tag === 'string' ? shareData.company_tag : '';
-  const brandName =
-    typeof shareData.brand_name === 'string' && shareData.brand_name.trim()
-      ? shareData.brand_name.trim()
-      : 'Company';
-  const headline = String(cd.headline || brandName)
-    .replace(/\s+/g, ' ')
-    .trim();
-  const excerpt = headline.length > 200 ? `${headline.slice(0, 200)}…` : headline;
-  const tagStr = outlets.map((o) => o.handle).join(' ');
-  const intro = `${emoji} Investigated ${brandName}. ${excerpt}${tagStr ? `. ${tagStr}` : ''}`;
-  if (variant === 'company') {
-    return `${intro}\n\n${topTags.join(' · ')}\n\n${companyTag} — documented public record (primary sources in thread context).\n\n#EthicalAlt\n${site}`;
-  }
-  return `${intro}\n\n${topTags.join(' · ')}\n\nSourced public record · #EthicalAlt\n${companyTag}\n\n${site}`;
 }
 
 const US_STATES = [
@@ -245,7 +208,6 @@ function CollapseSection({ title, selectedCount, open, onToggle, children }) {
 }
 
 const DEFAULT_OPEN = {
-  social: false,
   press: false,
   regulators: false,
   state_ag: false,
@@ -276,6 +238,9 @@ function ShareCardContent({ investigation, identification, onClose }) {
   );
   const [openSections, setOpenSections] = useState(() => ({ ...DEFAULT_OPEN }));
   const [shareSheetOpen, setShareSheetOpen] = useState(false);
+  const [reportEmail, setReportEmail] = useState('');
+  const [reportEmailBusy, setReportEmailBusy] = useState(false);
+  const [reportEmailStatus, setReportEmailStatus] = useState(/** @type {string | null} */ (null));
 
   useEffect(() => {
     if (!sessionStorage.getItem('ea_session')) {
@@ -316,14 +281,7 @@ function ShareCardContent({ investigation, identification, onClose }) {
 
   useEffect(() => {
     if (!shareData) return;
-    const tiktokOk = !shareData.tiktok_export_blocked;
-    const next = {
-      twitter_feed: true,
-      twitter_tag: true,
-      instagram: true,
-      tiktok: tiktokOk,
-      facebook: true,
-    };
+    const next = {};
     for (const reg of shareData.relevant_regulators || []) {
       next[`reg_${reg.agency}`] = true;
     }
@@ -359,15 +317,89 @@ function ShareCardContent({ investigation, identification, onClose }) {
         ? investigation.brand.trim()
         : 'this company';
 
+  const permalinkSlug = useMemo(() => {
+    const a = investigation?.brand_slug;
+    if (typeof a === 'string' && a.trim()) return a.trim().toLowerCase();
+    const b = identification?.resolved_incumbent_slug;
+    if (typeof b === 'string' && b.trim()) return b.trim().toLowerCase();
+    return '';
+  }, [investigation, identification]);
+
+  const reportCompanyName =
+    shareData && typeof shareData.brand_name === 'string' && shareData.brand_name.trim()
+      ? shareData.brand_name.trim()
+      : brandLabel;
+
+  const sendReportToEmail = useCallback(async () => {
+    const dest = reportEmail.trim();
+    if (!permalinkSlug) {
+      setReportEmailStatus('Report link is unavailable for this record.');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(dest)) {
+      setReportEmailStatus('Enter a valid email address.');
+      return;
+    }
+    setReportEmailBusy(true);
+    setReportEmailStatus(null);
+    try {
+      const res = await fetch(`${apiPrefix()}/api/send-report`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', ...getImpactFetchHeaders() },
+        body: JSON.stringify({
+          slug: permalinkSlug,
+          company_name: reportCompanyName,
+          delivery: 'email',
+          destination: dest,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        if (data?.error === 'sms_not_available') {
+          setReportEmailStatus(data?.message || 'SMS is not available yet.');
+        } else if (data?.error === 'report_not_found') {
+          setReportEmailStatus('No saved report found for this company.');
+        } else if (data?.error === 'email_not_configured') {
+          setReportEmailStatus('Email delivery is not configured on the server.');
+        } else {
+          setReportEmailStatus(data?.message || 'Could not send. Try again.');
+        }
+        return;
+      }
+      setReportEmailStatus(`Report sent to ${dest}`);
+      setReportEmail('');
+    } catch {
+      setReportEmailStatus('Network error. Try again.');
+    } finally {
+      setReportEmailBusy(false);
+    }
+  }, [permalinkSlug, reportCompanyName, reportEmail]);
+
+  const openNativeShare = useCallback(async () => {
+    if (!permalinkSlug) {
+      setShareSheetOpen(true);
+      return;
+    }
+    const url = `${window.location.origin}/report/${encodeURIComponent(permalinkSlug)}`;
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: `EthicalAlt: ${reportCompanyName}`,
+          text: `Public records investigation into ${reportCompanyName}`,
+          url,
+        });
+        return;
+      } catch (e) {
+        if (e && typeof e === 'object' && 'name' in e && e.name === 'AbortError') return;
+      }
+    }
+    setShareSheetOpen(true);
+  }, [permalinkSlug, reportCompanyName]);
+
   const selectedTotal = useMemo(() => {
     if (!shareData) return 0;
     let n = 0;
     const s = selected;
-    if (s.twitter_feed) n += 1;
-    if (s.twitter_tag) n += 1;
-    if (s.instagram) n += 1;
-    if (s.tiktok) n += 1;
-    if (s.facebook) n += 1;
     for (const o of shareData.press_outlets || []) {
       if (s[pressRowId(o.handle)]) n += 1;
     }
@@ -388,16 +420,9 @@ function ShareCardContent({ investigation, identification, onClose }) {
 
   const sectionCounts = useMemo(() => {
     if (!shareData) {
-      return { social: 0, press: 0, regulators: 0, state_ag: 0, institutional: 0, labor: 0, ir: 0 };
+      return { press: 0, regulators: 0, state_ag: 0, institutional: 0, labor: 0, ir: 0 };
     }
     const s = selected;
-    let social = 0;
-    if (s.twitter_feed) social += 1;
-    if (s.twitter_tag) social += 1;
-    if (s.instagram) social += 1;
-    if (s.tiktok) social += 1;
-    if (s.facebook) social += 1;
-
     let press = 0;
     for (const o of shareData.press_outlets || []) {
       if (s[pressRowId(o.handle)]) press += 1;
@@ -421,7 +446,7 @@ function ShareCardContent({ investigation, identification, onClose }) {
     const labor = shareData.union && s.union ? 1 : 0;
     const ir = shareData.ir_contact?.url && s.ir ? 1 : 0;
 
-    return { social, press, regulators, state_ag, institutional, labor, ir };
+    return { press, regulators, state_ag, institutional, labor, ir };
   }, [shareData, selected]);
 
   const anyChecked = selectedTotal > 0;
@@ -448,7 +473,6 @@ function ShareCardContent({ investigation, identification, onClose }) {
     const completed = [];
     const sel = selected;
     const s = shareData;
-    const site = typeof s.share_url === 'string' && s.share_url ? s.share_url : 'https://ethicalalt-client.onrender.com';
 
     const copyEmail = async () => {
       const t = s.share_texts || {};
@@ -463,55 +487,6 @@ function ShareCardContent({ investigation, identification, onClose }) {
     };
 
     try {
-      const pressPicked = (s.press_outlets || []).filter((o) => sel[pressRowId(o.handle)]);
-      const twitterFeedText =
-        (pressPicked.length > 0 ? composeTwitterWithPress(s, pressPicked, 'feed') : s.share_texts.twitter) || '';
-      const twitterCompanyText =
-        (pressPicked.length > 0
-          ? composeTwitterWithPress(s, pressPicked, 'company')
-          : s.share_texts.twitter_company) || '';
-
-      if (sel.twitter_feed) {
-        window.open(tweetUrl(twitterFeedText), '_blank', 'noopener,noreferrer');
-        completed.push({ id: 'twitter_feed', label: 'X — Post to feed' });
-      }
-      if (sel.twitter_tag) {
-        await sleep(sel.twitter_feed ? 500 : 0);
-        window.open(tweetUrl(twitterCompanyText), '_blank', 'noopener,noreferrer');
-        completed.push({ id: 'twitter_tag', label: `X — Tag company (${s.company_tag})` });
-      }
-
-      if (sel.instagram && sel.tiktok && !s.tiktok_export_blocked) {
-        await navigator.clipboard.writeText(s.share_texts.instagram);
-        setToast('Caption copied — paste in Instagram and TikTok');
-        completed.push({ id: 'instagram', label: 'Instagram — caption copied' });
-        completed.push({ id: 'tiktok', label: 'TikTok — caption copied' });
-      } else if (sel.instagram && sel.tiktok && s.tiktok_export_blocked) {
-        await navigator.clipboard.writeText(s.share_texts.instagram);
-        setToast('Instagram caption copied (TikTok export disabled for this record)');
-        completed.push({ id: 'instagram', label: 'Instagram — caption copied' });
-      } else if (sel.instagram) {
-        await navigator.clipboard.writeText(s.share_texts.instagram);
-        setToast('Instagram caption copied');
-        completed.push({ id: 'instagram', label: 'Instagram — caption copied' });
-      } else if (sel.tiktok) {
-        if (s.tiktok_export_blocked) {
-          setToast('TikTok export is disabled for this investigation classification.');
-        } else {
-          await navigator.clipboard.writeText(s.share_texts.instagram);
-          setToast('TikTok caption copied');
-          completed.push({ id: 'tiktok', label: 'TikTok — caption copied' });
-        }
-      }
-
-      if (sel.instagram || sel.tiktok) await sleep(600);
-      setToast(null);
-
-      if (sel.facebook) {
-        window.open(facebookShareUrl(site), '_blank', 'noopener,noreferrer');
-        completed.push({ id: 'facebook', label: 'Facebook — share link' });
-      }
-
       const regs = (s.relevant_regulators || []).filter((r) => sel[`reg_${r.agency}`]);
       if (regs.length) {
         try {
@@ -599,18 +574,6 @@ function ShareCardContent({ investigation, identification, onClose }) {
   };
 
   if (!investigation || !identification) return null;
-
-  const staticRows = shareData
-    ? [
-        { id: 'twitter_feed', primary: 'X / Twitter — Post to my feed' },
-        { id: 'twitter_tag', primary: `X / Twitter — Tag the company (${shareData.company_tag})` },
-        { id: 'instagram', primary: 'Instagram — Copy caption to clipboard' },
-        ...(shareData.tiktok_export_blocked
-          ? []
-          : [{ id: 'tiktok', primary: 'TikTok — Copy caption to clipboard' }]),
-        { id: 'facebook', primary: 'Facebook — Share link' },
-      ]
-    : [];
 
   const regRows =
     (shareData?.relevant_regulators || [])
@@ -759,7 +722,7 @@ function ShareCardContent({ investigation, identification, onClose }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
           <button
             type="button"
-            onClick={() => setShareSheetOpen(true)}
+            onClick={() => void openNativeShare()}
             style={{
               fontFamily: "'Space Mono', monospace",
               fontSize: 10,
@@ -1009,52 +972,142 @@ function ShareCardContent({ investigation, identification, onClose }) {
 
         {showDestinationList && shareData && !loading ? (
           <div style={{ marginTop: 8 }}>
-            <CollapseSection
-              title="Social"
-              selectedCount={sectionCounts.social}
-              open={openSections.social}
-              onToggle={() => flipSection('social')}
+            <div
+              style={{
+                marginBottom: 20,
+                padding: '16px 14px',
+                border: '1px solid #2a3f52',
+                borderRadius: 4,
+                background: 'rgba(15,21,32,0.6)',
+              }}
             >
-              {shareData.tiktok_export_blocked ? (
+              <div
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 10,
+                  letterSpacing: 1.5,
+                  textTransform: 'uppercase',
+                  color: '#f0a820',
+                  marginBottom: 12,
+                }}
+              >
+                Send this report
+              </div>
+              <label
+                style={{
+                  display: 'block',
+                  fontFamily: "'Crimson Pro', serif",
+                  fontSize: 13,
+                  color: '#a8c4d8',
+                  marginBottom: 6,
+                }}
+              >
+                Email
+                <input
+                  type="email"
+                  name="report-email"
+                  autoComplete="email"
+                  value={reportEmail}
+                  onChange={(e) => {
+                    setReportEmail(e.target.value);
+                    setReportEmailStatus(null);
+                  }}
+                  placeholder="you@example.com"
+                  disabled={reportEmailBusy || !permalinkSlug}
+                  style={{
+                    display: 'block',
+                    width: '100%',
+                    marginTop: 6,
+                    boxSizing: 'border-box',
+                    padding: '10px 12px',
+                    borderRadius: 4,
+                    border: '1px solid #344d62',
+                    fontFamily: "'Crimson Pro', serif",
+                    fontSize: 15,
+                    background: '#121a28',
+                    color: '#f0e8d0',
+                  }}
+                />
+              </label>
+              <button
+                type="button"
+                disabled={reportEmailBusy || !permalinkSlug || !reportEmail.trim()}
+                onClick={() => void sendReportToEmail()}
+                style={{
+                  marginTop: 12,
+                  width: '100%',
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 11,
+                  letterSpacing: 1,
+                  textTransform: 'uppercase',
+                  padding: '12px 16px',
+                  borderRadius: 4,
+                  border: 'none',
+                  cursor:
+                    reportEmailBusy || !permalinkSlug || !reportEmail.trim() ? 'not-allowed' : 'pointer',
+                  background:
+                    reportEmailBusy || !permalinkSlug || !reportEmail.trim() ? '#2a3f52' : '#f0a820',
+                  color: reportEmailBusy || !permalinkSlug || !reportEmail.trim() ? '#6a8a9a' : '#0f1520',
+                  fontWeight: 700,
+                }}
+              >
+                {reportEmailBusy ? 'Sending…' : 'Send report'}
+              </button>
+              <label
+                style={{
+                  display: 'block',
+                  fontFamily: "'Crimson Pro', serif",
+                  fontSize: 13,
+                  color: '#5a6a78',
+                  marginTop: 14,
+                }}
+              >
+                SMS — coming soon
+                <input
+                  type="tel"
+                  disabled
+                  placeholder="+1 mobile number"
+                  style={{
+                    display: 'block',
+                    width: '100%',
+                    marginTop: 6,
+                    boxSizing: 'border-box',
+                    padding: '10px 12px',
+                    borderRadius: 4,
+                    border: '1px solid #283648',
+                    opacity: 0.45,
+                    cursor: 'not-allowed',
+                    background: '#121a28',
+                    color: '#6a8a9a',
+                  }}
+                />
+              </label>
+              {!permalinkSlug ? (
                 <p
                   style={{
-                    fontFamily: "'Space Mono', monospace",
-                    fontSize: 10,
-                    letterSpacing: 0.5,
-                    color: '#d4a017',
-                    margin: '0 0 10px',
+                    fontFamily: "'Crimson Pro', serif",
+                    fontSize: 12,
+                    color: '#d4a574',
+                    margin: '10px 0 0',
+                  }}
+                >
+                  Save this investigation to the Black Book to enable emailed report links.
+                </p>
+              ) : null}
+              {reportEmailStatus ? (
+                <p
+                  style={{
+                    fontFamily: "'Crimson Pro', serif",
+                    fontSize: 14,
+                    color: reportEmailStatus.startsWith('Report sent') ? '#6aaa8a' : '#d4a574',
+                    margin: '12px 0 0',
                     lineHeight: 1.5,
                   }}
                 >
-                  TikTok export is disabled for this record (high-risk classification). Other social
-                  options remain available. Your photo is never included in any share payload.
+                  {reportEmailStatus}
                 </p>
               ) : null}
-              {staticRows.map((row) => (
-                <label key={row.id} style={rowStyle}>
-                  <input
-                    type="checkbox"
-                    checked={Boolean(selected[row.id])}
-                    onChange={() => toggle(row.id)}
-                    style={{ width: 18, height: 18, accentColor: '#d4a017', cursor: 'pointer', flexShrink: 0 }}
-                  />
-                  <div
-                    style={{
-                      fontFamily: "'Crimson Pro', serif",
-                      fontSize: 14,
-                      color: '#e0e0e0',
-                      flex: 1,
-                      minWidth: 0,
-                    }}
-                  >
-                    {row.primary}
-                  </div>
-                  <span style={{ color: '#6a8a9a' }} aria-hidden>
-                    ›
-                  </span>
-                </label>
-              ))}
-            </CollapseSection>
+            </div>
 
             {pressOutlets.length > 0 ? (
               <CollapseSection

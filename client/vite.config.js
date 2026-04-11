@@ -9,6 +9,10 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     server: {
       proxy: {
+        '/report': {
+          target,
+          changeOrigin: true,
+        },
         '/api': {
           target,
           changeOrigin: true,
