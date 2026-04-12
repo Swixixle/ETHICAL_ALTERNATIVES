@@ -237,9 +237,20 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
         .research-narrative__load-dot:nth-child(1) { animation-delay: 0s; }
         .research-narrative__load-dot:nth-child(2) { animation-delay: 0.15s; }
         .research-narrative__load-dot:nth-child(3) { animation-delay: 0.3s; }
-        .research-narrative__cta:disabled {
-          opacity: 0.45;
-          cursor: not-allowed;
+        @keyframes researchNarrativeCtaGlow {
+          0%, 100% {
+            box-shadow:
+              0 0 0 1px rgba(240, 168, 32, 0.35),
+              0 0 18px rgba(240, 168, 32, 0.06);
+          }
+          50% {
+            box-shadow:
+              0 0 0 2px rgba(240, 168, 32, 0.55),
+              0 0 32px rgba(240, 168, 32, 0.2);
+          }
+        }
+        .research-narrative__cta-panel--building {
+          animation: researchNarrativeCtaGlow 2.2s ease-in-out infinite;
         }
       `}</style>
       <div
@@ -443,46 +454,79 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
               </div>
 
               <aside style={rightColStyle} aria-label="Report status">
-                <h2
+                <div
+                  className={reportReady ? undefined : 'research-narrative__cta-panel--building'}
                   style={{
-                    margin: '0 0 20px',
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: 'clamp(22px, 2.2vw, 32px)',
-                    color: '#f0e8d0',
-                    letterSpacing: 2,
-                    lineHeight: 1.15,
+                    width: '100%',
                     maxWidth: 320,
+                    padding: '28px 22px 24px',
+                    borderRadius: 4,
+                    border: '1px solid rgba(240, 168, 32, 0.35)',
+                    background: 'rgba(10, 16, 26, 0.85)',
+                    boxSizing: 'border-box',
                   }}
                 >
-                  {primaryHeading || '—'}
-                </h2>
-                <p
-                  style={{
-                    margin: '0 0 24px',
-                    fontFamily: "'Space Mono', monospace",
-                    fontSize: 10,
-                    letterSpacing: 2,
-                    color: reportReady ? '#6aaa8a' : '#f0a820',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  {reportReady ? 'REPORT READY' : 'BUILDING YOUR REPORT...'}
-                </p>
-                <button
-                  type="button"
-                  data-no-disintegrate
-                  onClick={reportReady ? onSkip : undefined}
-                  disabled={!reportReady}
-                  className="research-narrative__cta"
-                  style={{
-                    ...ctaBase,
-                    fontSize: 13,
-                    padding: '18px 40px',
-                    minWidth: 260,
-                  }}
-                >
-                  {reportReady ? 'ENTER REPORT →' : 'PLEASE WAIT…'}
-                </button>
+                  <h2
+                    style={{
+                      margin: '0 0 12px',
+                      fontFamily: "'Bebas Neue', sans-serif",
+                      fontSize: 'clamp(28px, 3.2vw, 42px)',
+                      color: '#f0a820',
+                      letterSpacing: 2,
+                      lineHeight: 1.1,
+                      textAlign: 'center',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    {primaryHeading || '—'}
+                  </h2>
+                  <p
+                    style={{
+                      margin: '0 0 22px',
+                      fontFamily: "'Space Mono', monospace",
+                      fontSize: 10,
+                      letterSpacing: 2,
+                      color: reportReady ? '#6aaa8a' : '#a8c4d8',
+                      textTransform: 'uppercase',
+                      textAlign: 'center',
+                      lineHeight: 1.45,
+                    }}
+                  >
+                    {reportReady ? 'REPORT READY' : 'BUILDING YOUR REPORT...'}
+                  </p>
+                  {reportReady ? (
+                    <button
+                      type="button"
+                      data-no-disintegrate
+                      onClick={onSkip}
+                      className="research-narrative__cta"
+                      style={{
+                        ...ctaBase,
+                        fontSize: 13,
+                        padding: '18px 24px',
+                        width: '100%',
+                        boxSizing: 'border-box',
+                      }}
+                    >
+                      ENTER →
+                    </button>
+                  ) : (
+                    <div
+                      style={{
+                        display: 'flex',
+                        gap: 10,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        minHeight: 52,
+                      }}
+                      aria-hidden
+                    >
+                      <span className="research-narrative__load-dot" />
+                      <span className="research-narrative__load-dot" />
+                      <span className="research-narrative__load-dot" />
+                    </div>
+                  )}
+                </div>
                 <p
                   style={{
                     margin: '20px 0 0',
@@ -501,36 +545,82 @@ export default function ResearchNarrative({ city, state, brandName, onSkip, repo
             </div>
 
             <div style={mobileFooterStyle}>
-              <p
+              <div
+                className={reportReady ? undefined : 'research-narrative__cta-panel--building'}
                 style={{
-                  margin: 0,
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: 9,
-                  letterSpacing: 2,
-                  color: '#6a8a9a',
-                  textTransform: 'uppercase',
-                  textAlign: 'center',
+                  width: '100%',
+                  maxWidth: 360,
+                  margin: '0 auto',
+                  padding: '18px 18px 16px',
+                  borderRadius: 4,
+                  border: '1px solid rgba(240, 168, 32, 0.35)',
+                  background: 'rgba(10, 16, 26, 0.92)',
+                  boxSizing: 'border-box',
                 }}
               >
-                {reportReady ? 'REPORT READY' : 'BUILDING YOUR REPORT...'}
-              </p>
-              <button
-                type="button"
-                data-no-disintegrate
-                onClick={reportReady ? onSkip : undefined}
-                disabled={!reportReady}
-                className="research-narrative__cta"
-                style={{
-                  ...ctaBase,
-                  fontSize: 11,
-                  padding: '14px 32px',
-                }}
-              >
-                {reportReady ? 'REPORT READY — ENTER →' : 'PLEASE WAIT…'}
-              </button>
+                <h2
+                  style={{
+                    margin: '0 0 8px',
+                    fontFamily: "'Bebas Neue', sans-serif",
+                    fontSize: 'clamp(24px, 6vw, 34px)',
+                    color: '#f0a820',
+                    letterSpacing: 2,
+                    lineHeight: 1.1,
+                    textAlign: 'center',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  {primaryHeading || '—'}
+                </h2>
+                <p
+                  style={{
+                    margin: '0 0 16px',
+                    fontFamily: "'Space Mono', monospace",
+                    fontSize: 9,
+                    letterSpacing: 2,
+                    color: reportReady ? '#6aaa8a' : '#a8c4d8',
+                    textTransform: 'uppercase',
+                    textAlign: 'center',
+                  }}
+                >
+                  {reportReady ? 'REPORT READY' : 'BUILDING YOUR REPORT...'}
+                </p>
+                {reportReady ? (
+                  <button
+                    type="button"
+                    data-no-disintegrate
+                    onClick={onSkip}
+                    className="research-narrative__cta"
+                    style={{
+                      ...ctaBase,
+                      fontSize: 12,
+                      padding: '16px 24px',
+                      width: '100%',
+                      boxSizing: 'border-box',
+                    }}
+                  >
+                    ENTER →
+                  </button>
+                ) : (
+                  <div
+                    style={{
+                      display: 'flex',
+                      gap: 10,
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      minHeight: 48,
+                    }}
+                    aria-hidden
+                  >
+                    <span className="research-narrative__load-dot" />
+                    <span className="research-narrative__load-dot" />
+                    <span className="research-narrative__load-dot" />
+                  </div>
+                )}
+              </div>
               <p
                 style={{
-                  margin: 0,
+                  margin: '12px 0 0',
                   fontFamily: "'Space Mono', monospace",
                   fontSize: 8,
                   letterSpacing: 1.5,

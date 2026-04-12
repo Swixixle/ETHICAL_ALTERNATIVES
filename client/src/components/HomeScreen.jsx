@@ -180,8 +180,33 @@ const CATEGORIES = [
   { value: 'repair', label: 'Repair' },
   { value: 'art', label: 'Art' },
   { value: 'tonight', label: 'Tonight' },
+  /** Lodging: same `/api/local-feed` + Overpass `stay` path as other categories (registry + OSM independents). */
   { value: 'stay', label: 'Stay' },
 ];
+
+/** Tab icon for Stay — bed/house motif, matches monospace tab color. */
+function StayCategoryIcon({ active }) {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      aria-hidden
+      style={{
+        display: 'inline-block',
+        verticalAlign: '-0.2em',
+        marginRight: 6,
+        flexShrink: 0,
+        opacity: active ? 1 : 0.75,
+      }}
+    >
+      <path
+        fill="currentColor"
+        d="M2 17v3h2v-2h16v2h2v-3H2zm18-9h-4V5H8v3H4l-2 5v3h20v-3l-2-5zM8 7h8v2H8V7z"
+      />
+    </svg>
+  );
+}
 
 /** Below OSM/registry lodging: third-party tools biased toward small hosts. */
 function BookIndependentStayLinks({ city, state }) {
@@ -1550,8 +1575,11 @@ export default function HomeScreen({
               cursor: 'pointer',
               whiteSpace: 'nowrap',
               flexShrink: 0,
+              display: 'inline-flex',
+              alignItems: 'center',
             }}
           >
+            {cat.value === 'stay' ? <StayCategoryIcon active={category === cat.value} /> : null}
             {cat.label}
           </button>
         ))}
