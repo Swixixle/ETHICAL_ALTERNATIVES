@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 const RECEIPT_RULE = '━━━━━━━━━━━━━━━━━━━━━━━━━';
 
@@ -34,6 +34,7 @@ export default function InvestigationReceipt({ investigation }) {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState(/** @type {string | null} */ (null));
   const [payload, setPayload] = useState(/** @type {Record<string, unknown> | null} */ (null));
+  const [shareToast, setShareToast] = useState(/** @type {string | null} */ (null));
 
   useEffect(() => {
     if (!brandSlug || !lastDeep) {
@@ -91,10 +92,16 @@ export default function InvestigationReceipt({ investigation }) {
     };
   }, [brandSlug, lastDeep, dataSource]);
 
-  const onVerify = useCallback(() => {
-    const u = payload && typeof payload.verify_url === 'string' ? payload.verify_url : '';
-    if (u) window.open(u, '_blank', 'noopener,noreferrer');
+  /** Same-origin SPA route `/verify/:id` (avoids server VERIFY_BASE pointing at production when testing locally). */
+  const verifyPageUrl = useMemo(() => {
+    const rid = payload && typeof payload.receipt_id === 'string' ? payload.receipt_id.trim() : '';
+    if (!rid || typeof window === 'undefined') return '';
+    return `${window.location.origin}/verify/${encodeURIComponent(rid)}`;
   }, [payload]);
+
+  const onVerify = useCallback(() => {
+    if (verifyPageUrl) window.open(verifyPageUrl, '_blank', 'noopener,noreferrer');
+  }, [verifyPageUrl]);
 
   const onDownloadJson = useCallback(() => {
     if (!payload) return;
@@ -115,17 +122,35 @@ export default function InvestigationReceipt({ investigation }) {
     URL.revokeObjectURL(a.href);
   }, [payload, brandSlug]);
 
+  const copyVerifyLinkWithToast = useCallback(async () => {
+    if (!verifyPageUrl) return;
+    try {
+      await navigator.clipboard.writeText(verifyPageUrl);
+      setShareToast('Link copied!');
+      window.setTimeout(() => setShareToast(null), 2500);
+    } catch {
+      window.open(verifyPageUrl, '_blank', 'noopener,noreferrer');
+    }
+  }, [verifyPageUrl]);
+
   const onShare = useCallback(async () => {
     if (!payload) return;
-    const receiptId = typeof payload.receipt_id === 'string' ? payload.receipt_id : '';
-    const verifyUrl = typeof payload.verify_url === 'string' ? payload.verify_url : '';
+    const receiptId = typeof payload.receipt_id === 'string' ? payload.receipt_id.trim() : '';
+    if (!receiptId || typeof window === 'undefined') return;
+
+    const verifyUrl = verifyPageUrl || `${window.location.origin}/verify/${encodeURIComponent(receiptId)}`;
+    const title = `EthicalAlt Receipt: ${brandName}`;
+    const text = `Investigation receipt for ${brandName} — signed by EthicalAlt. Verify: ${verifyUrl}`;
+
+    if (typeof navigator.share !== 'function') {
+      await copyVerifyLinkWithToast();
+      return;
+    }
+
     const base = apiPrefix();
     const pdfUrl = base
       ? `${base}/api/receipt/${encodeURIComponent(receiptId)}/pdf`
       : `/api/receipt/${encodeURIComponent(receiptId)}/pdf`;
-
-    const title = `EthicalAlt Receipt: ${brandName}`;
-    const text = `Investigation receipt for ${brandName} — signed by EthicalAlt. Verify: ${verifyUrl}`;
 
     try {
       const pdfRes = await fetch(pdfUrl);
@@ -140,7 +165,7 @@ export default function InvestigationReceipt({ investigation }) {
         signed_receipt: payload.signed_receipt,
         signature: payload.signature,
         public_key: payload.public_key,
-        verify_url: payload.verify_url,
+        verify_url: verifyUrl,
       };
       const jsonBlob = new Blob([JSON.stringify(jsonBundle, null, 2)], { type: 'application/json' });
       const jsonFile = new File([jsonBlob], `ethicalalt-receipt-${brandSlug}-${receiptId.slice(0, 8)}.json`, {
@@ -148,7 +173,8 @@ export default function InvestigationReceipt({ investigation }) {
       });
 
       const shareData = { title, text, url: verifyUrl };
-      if (navigator.share && navigator.canShare) {
+      const canShare = typeof navigator.canShare === 'function';
+      if (canShare) {
         const withPdfJson = { ...shareData, files: [pdfFile, jsonFile] };
         if (navigator.canShare(withPdfJson)) {
           await navigator.share(withPdfJson);
@@ -160,20 +186,11 @@ export default function InvestigationReceipt({ investigation }) {
           return;
         }
       }
-      if (navigator.share) {
-        await navigator.share(shareData);
-        return;
-      }
+      await navigator.share(shareData);
     } catch {
-      /* fall through */
+      await copyVerifyLinkWithToast();
     }
-
-    try {
-      if (verifyUrl) window.open(verifyUrl, '_blank', 'noopener,noreferrer');
-    } catch {
-      /* ignore */
-    }
-  }, [payload, brandName, brandSlug]);
+  }, [payload, brandName, brandSlug, copyVerifyLinkWithToast, verifyPageUrl]);
 
   if (!brandSlug || !lastDeep) return null;
 
@@ -259,9 +276,26 @@ export default function InvestigationReceipt({ investigation }) {
               flexWrap: 'wrap',
               gap: 10,
               justifyContent: 'center',
+              alignItems: 'center',
               marginTop: 8,
             }}
           >
+            {shareToast ? (
+              <p
+                role="status"
+                style={{
+                  width: '100%',
+                  textAlign: 'center',
+                  margin: '0 0 4px',
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: 10,
+                  letterSpacing: 1,
+                  color: '#6aaa8a',
+                }}
+              >
+                {shareToast}
+              </p>
+            ) : null}
             <button
               type="button"
               className="app__btn app__btn--ghost"
@@ -273,6 +307,7 @@ export default function InvestigationReceipt({ investigation }) {
                 color: '#f0a820',
               }}
               onClick={onVerify}
+              disabled={!verifyPageUrl}
             >
               VERIFY →
             </button>

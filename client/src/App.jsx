@@ -10,7 +10,7 @@ import AlternativesSidebar from './components/AlternativesSidebar.jsx';
 import HomeScreen from './components/HomeScreen.jsx';
 import HistoryScreen from './components/HistoryScreen.jsx';
 import ResearchNarrative from './components/ResearchNarrative.jsx';
-import ShareCard from './components/ShareCard.jsx';
+import ReceiptShareModal from './components/ReceiptShareModal.jsx';
 import ConfidenceBadge from './components/ConfidenceBadge.jsx';
 import InvestigationCard from './components/InvestigationCard.jsx';
 import { persistLocation, readCachedLocation, readUserCityState } from './services/location.js';
@@ -1523,11 +1523,7 @@ export default function App() {
       </main>
 
       {showShare && result?.investigation && id ? (
-        <ShareCard
-          investigation={result.investigation}
-          identification={id}
-          onClose={() => setShowShare(false)}
-        />
+        <ReceiptShareModal investigation={result.investigation} onClose={() => setShowShare(false)} />
       ) : null}
 
       {cityGateChecked && cityGateOpen ? (

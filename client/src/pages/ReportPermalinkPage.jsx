@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import InvestigationCard from '../components/InvestigationCard.jsx';
 import AlternativesSidebar from '../components/AlternativesSidebar.jsx';
-import ShareCard from '../components/ShareCard.jsx';
+import ReceiptShareModal from '../components/ReceiptShareModal.jsx';
 import { getInvestigationRecordPresentation } from '../utils/investigationConfidence.js';
 
 function apiPrefix() {
@@ -237,12 +237,8 @@ export default function ReportPermalinkPage({ slug, onHome }) {
           {alternativesAside}
         </div>
       )}
-      {showShare && identification ? (
-        <ShareCard
-          investigation={investigation}
-          identification={identification}
-          onClose={() => setShowShare(false)}
-        />
+      {showShare && investigation ? (
+        <ReceiptShareModal investigation={investigation} onClose={() => setShowShare(false)} />
       ) : null}
     </div>
   );

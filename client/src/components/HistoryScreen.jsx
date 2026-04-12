@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import InvestigationCard from './InvestigationCard.jsx';
 import HealthCallout from './HealthCallout.jsx';
-import ShareCard from './ShareCard.jsx';
+import ReceiptShareModal from './ReceiptShareModal.jsx';
 import { getInvestigationRecordPresentation } from '../utils/investigationConfidence.js';
 import QuickAlternatives from './QuickAlternatives.jsx';
 
@@ -194,11 +194,7 @@ export default function HistoryScreen({ onBack }) {
         </div>
 
         {showShare && investigation && identification ? (
-          <ShareCard
-            investigation={investigation}
-            identification={identification}
-            onClose={() => setShowShare(false)}
-          />
+          <ReceiptShareModal investigation={investigation} onClose={() => setShowShare(false)} />
         ) : null}
       </div>
     );
