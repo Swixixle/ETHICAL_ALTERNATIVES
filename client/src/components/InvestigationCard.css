@@ -3,7 +3,7 @@
 /* Bento / hierarchy — minimal outer chrome */
 .investigation-card--bento {
   margin: 12px 0;
-  padding: 12px 0 calc(88px + env(safe-area-inset-bottom, 0px));
+  padding: 12px 0 calc(124px + env(safe-area-inset-bottom, 0px));
   border: none;
   border-radius: 0;
   background: transparent;
@@ -861,6 +861,40 @@ button.ea-press-label:active {
   flex: 1 1 200px;
 }
 
+.investigation-card__headline--public-records {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: clamp(18px, 4.2vw, 22px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: #fff;
+}
+
+.investigation-card__hero-latest {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0 0 14px;
+}
+
+.investigation-card__hero-latest-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6a8a9a;
+}
+
+.investigation-card__hero-latest-headline {
+  font-family: 'Bebas Neue', system-ui, sans-serif;
+  font-size: clamp(15px, 3.4vw, 19px);
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #a8c4d8;
+}
+
 .investigation-card__concern-tier {
   font-family: 'Space Mono', monospace;
   font-size: 10px;
@@ -898,6 +932,9 @@ button.ea-press-label:active {
   background: transparent;
   color: #f0a820;
   cursor: pointer;
+  flex-shrink: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .investigation-card__category-chip--more {
@@ -1080,11 +1117,11 @@ button.ea-press-label:active {
 
 .investigation-card__bottom-bar {
   position: fixed;
-  bottom: 0;
+  bottom: calc(56px + env(safe-area-inset-bottom, 0px));
   left: 0;
   right: 0;
-  z-index: 52;
-  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  z-index: 45;
+  padding: 10px 16px;
   background: #0f1520;
   border-top: 1px solid #1a2f45;
   display: flex;

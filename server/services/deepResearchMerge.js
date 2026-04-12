@@ -211,7 +211,7 @@ function categorySeverityDot(incidentsRaw) {
  * Structured per-category incidents for client accordion (newest first).
  * @param {Record<string, unknown>} dr
  */
-function buildDeepResearchCategoriesForClient(dr) {
+export function buildDeepResearchCategoriesForClient(dr) {
   const per = Array.isArray(dr.per_category) ? dr.per_category : [];
   /** @type {Record<string, unknown>[]} */
   const out = [];

@@ -303,6 +303,27 @@ function extractPublicRecordsLede(summary) {
   return sentence.trim() || null;
 }
 
+/** @param {unknown} raw */
+function normalizeDeepResearchCategories(raw) {
+  if (raw == null) return [];
+  if (Array.isArray(raw)) return raw.filter((x) => x != null && typeof x === 'object');
+  if (typeof raw === 'string') {
+    try {
+      const p = JSON.parse(raw);
+      return Array.isArray(p) ? p.filter((x) => x != null && typeof x === 'object') : [];
+    } catch {
+      return [];
+    }
+  }
+  if (typeof raw === 'object' && !Array.isArray(raw)) {
+    const vals = Object.values(/** @type {Record<string, unknown>} */ (raw));
+    if (vals.length && vals.every((v) => v != null && typeof v === 'object' && !Array.isArray(v))) {
+      return vals;
+    }
+  }
+  return [];
+}
+
 /** @param {string} dot */
 function severityDotColor(dot) {
   if (dot === 'critical') return '#ff6b6b';
@@ -803,13 +824,6 @@ export default function InvestigationCard({
 
   const profileType = investigation ? String(investigation.profile_type || '') : '';
 
-  const headline =
-    headlineProp && String(headlineProp).trim()
-      ? String(headlineProp).trim()
-      : investigation && typeof investigation.generated_headline === 'string' && investigation.generated_headline.trim()
-        ? investigation.generated_headline.trim()
-        : 'Investigation';
-
   const confPresent = getConfidenceBadgePresentation(investigation, identification, result);
 
   if (showNoRecordModule && !investigation) {
@@ -838,6 +852,32 @@ export default function InvestigationCard({
       : typeof investigation.investigation_summary === 'string' && investigation.investigation_summary.trim()
         ? investigation.investigation_summary.trim()
         : '';
+
+  const dataSource = typeof investigation.data_source === 'string' ? investigation.data_source : '';
+  const heroLede = extractPublicRecordsLede(execSummary);
+  const useDeepPublicRecordHero =
+    dataSource === 'deep_research+live' &&
+    typeof execSummary === 'string' &&
+    execSummary.startsWith('Public records document') &&
+    Boolean(heroLede);
+
+  const liveHeadline =
+    (headlineProp && String(headlineProp).trim()) ||
+    (typeof investigation.generated_headline === 'string' && investigation.generated_headline.trim()
+      ? investigation.generated_headline.trim()
+      : '');
+
+  const primaryHeroTitle = useDeepPublicRecordHero ? heroLede : liveHeadline || 'Investigation';
+
+  const showLatestSubhead =
+    useDeepPublicRecordHero &&
+    Boolean(liveHeadline) &&
+    liveHeadline.trim() !== String(primaryHeroTitle).trim();
+
+  const execSummaryAfterLede =
+    useDeepPublicRecordHero && heroLede && execSummary.startsWith(heroLede)
+      ? execSummary.slice(heroLede.length).trim().replace(/^[\s\n—\-]+/, '')
+      : '';
 
   const id = identification || {};
 
@@ -1170,8 +1210,8 @@ export default function InvestigationCard({
   const hasResultInvestigation = result == null || result.investigation != null;
   const showFinancialAnalysis = !isStubInvestigation && hasResultInvestigation;
 
-  const deepCategoriesRaw = investigation.deep_research_categories;
-  const deepCategories = Array.isArray(deepCategoriesRaw) ? deepCategoriesRaw : [];
+  const deepCategories = normalizeDeepResearchCategories(investigation.deep_research_categories);
+  if (import.meta.env.DEV) console.log('[InvestigationCard] deep_research_categories', deepCategories);
   const coveredSections = new Set();
   for (const d of deepCategories) {
     if (!d || typeof d !== 'object') continue;
@@ -1183,7 +1223,6 @@ export default function InvestigationCard({
   const accordionSectionItems = sectionItems.filter((it) => !coveredSections.has(it.key));
 
   const concernTier = concernTierBadgeProps(investigation.overall_concern_level);
-  const heroLede = extractPublicRecordsLede(execSummary);
   const topChipCategories = deepCategories.slice(0, 4);
   const moreChipCount = Math.max(0, deepCategories.length - 4);
 
@@ -1239,7 +1278,13 @@ export default function InvestigationCard({
 
       <div className="investigation-card__hero investigation-card__hero-mount investigation-card__hero--redesign">
         <div className="investigation-card__hero-top">
-          <h1 className="investigation-card__headline investigation-card__headline--hero">{headline}</h1>
+          <h1
+            className={`investigation-card__headline investigation-card__headline--hero${
+              useDeepPublicRecordHero ? ' investigation-card__headline--public-records' : ''
+            }`}
+          >
+            {primaryHeroTitle}
+          </h1>
           <span
             className="investigation-card__concern-tier"
             style={{
@@ -1251,21 +1296,33 @@ export default function InvestigationCard({
             {concernTier.label}
           </span>
         </div>
-        {heroLede ? (
+        {useDeepPublicRecordHero ? (
+          <>
+            {execSummaryAfterLede ? (
+              <p className="investigation-card__hero-lede investigation-card__body">{execSummaryAfterLede}</p>
+            ) : null}
+            {showLatestSubhead ? (
+              <div className="investigation-card__hero-latest">
+                <span className="investigation-card__hero-latest-kicker">Latest</span>
+                <span className="investigation-card__hero-latest-headline">{liveHeadline}</span>
+              </div>
+            ) : null}
+          </>
+        ) : heroLede ? (
           <p className="investigation-card__hero-lede investigation-card__body">{heroLede}</p>
         ) : execSummary ? (
           <p className="investigation-card__hero-lede investigation-card__body">{execSummary}</p>
         ) : null}
         {deepCategories.length > 0 ? (
           <div className="investigation-card__category-chips" role="navigation" aria-label="Jump to category">
-            {topChipCategories.map((dc) => {
+            {topChipCategories.map((dc, i) => {
               if (!dc || typeof dc !== 'object') return null;
               const cat = typeof dc.category === 'string' ? dc.category : '';
               const chip = typeof dc.chip_label === 'string' ? dc.chip_label : cat;
               const n = typeof dc.total_found === 'number' ? dc.total_found : 0;
               return (
                 <button
-                  key={cat}
+                  key={cat ? `${cat}-${i}` : `chip-${i}`}
                   type="button"
                   className="investigation-card__category-chip ea-press-label"
                   onClick={() => scrollToDeepCategory(cat)}
@@ -1357,7 +1414,7 @@ export default function InvestigationCard({
           </div>
         ) : null}
 
-        {!heroLede && execSummary ? (
+        {!useDeepPublicRecordHero && !heroLede && execSummary ? (
           <p className="investigation-card__exec-summary investigation-card__body">{execSummary}</p>
         ) : null}
 

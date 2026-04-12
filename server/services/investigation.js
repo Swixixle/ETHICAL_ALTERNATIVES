@@ -17,6 +17,7 @@ import { kickPerimeterCheckForInvestigation } from './perimeterCache.js';
 import { investigationCache } from './cacheStore.js';
 import {
   applyDeepResearchToInvestigation,
+  buildDeepResearchCategoriesForClient,
   extractDeepResearchFromProfileJson,
   mergeLiveInvestigationDelta,
 } from './deepResearchMerge.js';
@@ -1739,6 +1740,9 @@ export async function getInvestigationProfile(brandName, corporateParent, option
               { ...out, concern_axis_booleans: out.concern_axis_booleans || [] },
               'database'
             );
+            if (dr && Array.isArray(dr.per_category) && dr.per_category.length > 0) {
+              out.deep_research_categories = buildDeepResearchCategoriesForClient(dr);
+            }
             out.last_updated =
               lr instanceof Date
                 ? lr.toISOString().slice(0, 10)
