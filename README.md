@@ -2,172 +2,82 @@
 
 **Point your camera at anything. Tap the brand. Get the record.**
 
-Live at [ethicalalt-client.onrender.com](https://ethicalalt-client.onrender.com)
+[ethicalalt-client.onrender.com](https://ethicalalt-client.onrender.com)
 
 ---
 
-EthicalAlt is a mobile-first web app that turns your camera into an investigation. Point it at a product on a shelf, a storefront, a logo on a truck — tap the brand — and receive a structured record of that company's documented history across six categories: environmental violations, labor practices, political spending, legal settlements, tax structure, and product health.
+You're standing in an aisle. You're about to buy something. EthicalAlt tells you what the company behind that product has done — sourced from public records, not opinion.
 
-Then find something better nearby.
-
-![Home: local feed and actions](docs/readme/screenshots/home-local-feed.png)
+Point the camera. Tap the logo. See what's documented. Find something better nearby.
 
 ---
 
-## How it works
-
-```
-Point camera → Tap brand → See the record → Find the alternative
-```
-
-1. **Point** — open the camera, aim at any product or scene
-2. **Tap** — touch any brand in the frame. Hold for 600ms to isolate a specific object with a selection box
-3. **Scan** — barcodes are detected automatically in the background. EAN, UPC, QR — no tap needed
-4. **Identify** — Claude Vision resolves the brand and corporate parent; Gemini Vision independently corroborates with a weighted confidence score across three tracks
-5. **Investigate** — structured profile loads across six categories with sourced findings and evidence grades
-6. **Act** — verified independent alternatives surface from Etsy, local sellers, and nearby businesses
-
----
-
-## The record
+## What you get
 
 Every investigation produces a structured record across six categories:
 
-| Category | What it covers |
-|---|---|
-| **Environmental** | EPA enforcement, spills, emissions violations, cleanup costs |
-| **Labor** | OSHA violations, wage theft, union suppression, worker safety |
-| **Legal** | Criminal convictions, civil settlements, regulatory actions |
-| **Political** | Lobbying spend, PAC donations, revolving door hires |
-| **Tax** | Effective rate vs statutory rate, offshore entities, subsidies |
-| **Product Health** | Documented harms, recalls, ingredient concerns |
+- **Environmental** — EPA enforcement, spills, emissions violations, cleanup orders
+- **Labor** — OSHA citations, wage theft settlements, union suppression, worker injury records
+- **Legal** — Criminal convictions, civil settlements, regulatory actions and outcomes
+- **Political** — Lobbying spend, PAC donations, revolving door hires
+- **Tax** — Offshore structures, effective rates vs statutory rates, government subsidies received
+- **Product Health** — Documented harms, recalls, ingredient concerns
 
-Each category gets an evidence grade — `established`, `strong`, `documented`, `alleged` — based on source quality and model corroboration. Nothing is presented as fact without a source. Every allegation section explicitly states the organization's documented response, or states that no formal response has been found.
-
-![Investigation: identification and the record](docs/readme/screenshots/investigation-the-record.png)
+Every finding carries a source link. Every allegation includes the company's documented response, or states that none was found.
 
 ---
 
-## The Black Book
+## The deep research database
 
-171 pre-investigated profiles across corporations, religious institutions, and nonprofits — available without a camera tap at `/library`.
+20 major corporations have been fully investigated using a two-phase pipeline: Perplexity sonar-deep-research finds and cites the raw record, Claude normalizes and structures it. Each profile includes up to 90 sourced incidents across all six categories.
 
-Filter by type. Read the record. Find the alternative.
+Target · Walmart · Amazon · Apple · Disney · Coca-Cola · UnitedHealth · BP · Shell · Chevron · McDonald's · Comcast · Cigna · Nestlé · Tyson Foods · Philip Morris · Altria · Humana · Kraft Heinz · PepsiCo
 
-Profiles include ExxonMobil, Purdue Pharma, Volkswagen, Goldman Sachs, the Roman Catholic Church, the Southern Baptist Convention, the LDS Church, the Boy Scouts of America, Goodwill Industries, the NRA, and dozens more — each with sourced timelines, allegation responses, executive records, and documented community impact.
-
----
-
-## Accuracy and governance
-
-EthicalAlt is built around a documented research standard — [`RESEARCH_ALGORITHM.md`](./RESEARCH_ALGORITHM.md).
-
-**What protects accuracy:**
-
-- Every claim carries an evidence grade (`established` → `alleged`) based on source quality and model agreement
-- Every allegation section states the organization's documented response, or explicitly states none was found
-- A share risk tier is computed server-side on every investigation — high risk content is blocked from export, medium risk gets a mandatory disclaimer
-- A three-track confidence scorer (documentary 0.5 / model agreement 0.3 / cross-reference 0.2) flags weak corroboration
-- A corroboration script re-investigates every stored profile using live web search and diffs against stored facts
-- Users can report factual errors directly from any investigation via the "report an error" link — all reports land in a reviewed queue
-
-**What EthicalAlt is not:**
-
-EthicalAlt is not a law firm. It is not a regulator. It is not a news organization. It is a mirror. Clean businesses get a clean record here. Companies with documented issues get a documented record. The mirror does not editorialize.
-
-![Investigation results with alternatives sidebar](docs/readme/screenshots/investigation-alternatives.png)
+Every other scan runs a live investigation against real-time public records.
 
 ---
 
-## Neutral by design
+## The investigation index
 
-A business with a clean record gets a clean record — sourced, scored, and displayed with the same rigor as a heavy file. A 55-year independent press with no documented violations, family owned, four primary sources: that is the finding, and that is what gets published.
+184 additional company profiles are available in the investigation index — corporations, fast food chains, healthcare providers, gas stations, streaming services, and more.
 
-For honest independent businesses that is not a liability. It is free verified documentation that no marketing budget can replicate.
+These profiles are built from AI training data and live web search, not the deep research pipeline. They are accurate starting points, not exhaustive records. The documented incidents are real and sourced, but the coverage is shallower than the 20 fully researched profiles above.
 
----
+When you scan a company from the index, EthicalAlt runs a live investigation on top of the stored profile — checking for anything new in the last 30 days and flagging recent developments.
 
-## Technical overview
-
-**Stack:** React 19 + Vite (client) / Node.js + Express (server) / PostgreSQL (profiles)
-
-**AI pipeline:**
-- Vision: Claude Vision primary, Gemini Vision failover, crop enhancement (contrast + sharpen) on held selections
-- Investigation: Claude multi-turn with web search (up to 10 searches), Perplexity + Gemini parallel fallback
-- Confidence: three-track weighted scoring clamped 0.15–0.97
-- Barcode: native BarcodeDetector API → Open Food Facts → brand lookup, bypasses vision entirely
-
-**Cache layer:**
-- Investigation results: 6 hour TTL, 300 max entries
-- Barcode lookups: 24 hour TTL, 500 max entries
-- City narrative: 24 hour TTL, 200 max entries
-
-**Rate limiting:** 5 camera investigations per IP per 24 hours. Barcode scans and Black Book search are unlimited.
-
-**Privacy:** Location is used only to find nearby independents. Never stored. Never sold. No account required.
-
-![Share the record modal](docs/readme/screenshots/share-the-record.png)
+The full deep research treatment is being extended to the full index. The 20 companies above are the first wave.
 
 ---
 
-## Research standard
+## Cryptographic receipts
 
-Every profile follows [`RESEARCH_ALGORITHM.md`](./RESEARCH_ALGORITHM.md).
+Every completed investigation generates a signed receipt — Ed25519, verifiable at `/verify/:receipt_id`. The receipt includes:
 
-Core principle: if something happened, it should be verifiable. If something is claimed, there should be a receipt.
+- Subject, investigation timestamp, incident count, source URLs
+- SHA-256 hash of the full incident array
+- Signature from the Nikodemus Systems public key
+- A downloadable JSON artifact you can hand to a journalist or attorney
 
-Three allegation response types:
-- **Type 1** — documented denial or dispute (with source)
-- **Type 2** — documented acknowledgment (with source)
-- **Type 3** — no formal public response documented (stated explicitly, never silently omitted)
-
----
-
-## Local development
-
-```bash
-# Install
-npm install
-cd client && npm install
-
-# Environment
-cp .env.example .env
-
-# Run
-npm run dev          # server on :3001
-cd client && npm run dev   # client on :5173
-```
-
-**Required:**
-```
-ANTHROPIC_API_KEY=
-DATABASE_URL=        # optional — degrades gracefully without it
-```
-
-**Optional:**
-```
-GEMINI_API_KEY=      # vision failover + parallel investigation fallback
-PERPLEXITY_API_KEY=  # parallel investigation fallback + Layer C corroboration
-ETSY_API_KEY=        # Etsy alternatives
-```
+A receipt is not a verdict. It is proof that this investigation happened, at this time, against these sources.
 
 ---
 
-## Status
+## Alternatives
 
-Functional MVP. Pre-user acquisition phase.
-
-- Camera tap → investigation pipeline: operational
-- Barcode detection (EAN/UPC/QR): operational
-- Hold-to-select with crop enhancement: operational
-- Black Book (171 profiles): operational
-- Local independents feed: operational
-- City narrative on load: operational
-- Rate limiting (5/day camera, unlimited barcode + search): operational
-- Error reporting: operational
-- Corroboration pass against live web search: ready to run
-- Civic features (witness registry, worker profiles): built, currently parked
+Every investigation surfaces independent alternatives nearby — local businesses, Etsy sellers, verified independent stores — sorted by distance. Not sponsored. Not paid placement.
 
 ---
 
-> *Clean businesses get a clean record here. Companies with documented issues get a documented record. The mirror does not editorialize.*
+## What this is not
+
+EthicalAlt is not a law firm. Not a regulator. Not a news organization.
+
+It is a mirror. Clean businesses get a clean record. Companies with documented issues get a documented record. The mirror does not editorialize.
+
+---
+
+## Stack
+
+React/Vite PWA · Node.js/Express · PostgreSQL · Ed25519 signing · Perplexity sonar-deep-research · Claude Vision · Gemini Vision · Render
+
+Built by Alex Maksimovich / [Nikodemus Systems](https://swixixle.github.io)
