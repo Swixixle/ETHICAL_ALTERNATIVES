@@ -43,6 +43,23 @@ export default function TapOverlay({
     };
   }, []);
 
+  /** New capture / remount — drop stale pointer/hold state so taps work on the next run. */
+  useEffect(() => {
+    pointerDownRef.current = false;
+    holdCompletedRef.current = false;
+    movedTooFarRef.current = false;
+    if (holdTimerRef.current != null) {
+      window.clearTimeout(holdTimerRef.current);
+      holdTimerRef.current = null;
+    }
+    if (holdIndicatorClearRef.current != null) {
+      window.clearTimeout(holdIndicatorClearRef.current);
+      holdIndicatorClearRef.current = null;
+    }
+    setHoldIndicator(null);
+    setRipple(null);
+  }, [imageUrl]);
+
   function clearHoldTimer() {
     if (holdTimerRef.current != null) {
       window.clearTimeout(holdTimerRef.current);

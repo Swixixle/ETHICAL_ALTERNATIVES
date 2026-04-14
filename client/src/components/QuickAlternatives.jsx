@@ -58,7 +58,9 @@ export default function QuickAlternatives({ registryResults, localResults }) {
   for (const p of loc) {
     if (picks.length >= 3) break;
     const name = p.name ? String(p.name) : 'Local';
-    const website = p.website ? String(p.website) : null;
+    const rawSite = p.website ?? p.url;
+    const website =
+      rawSite != null && String(rawSite).trim() ? String(rawSite).trim() : null;
     const href = website ? (website.startsWith('http') ? website : `https://${website}`) : null;
     const dist =
       p.distance_miles != null && Number.isFinite(Number(p.distance_miles))
@@ -97,81 +99,113 @@ export default function QuickAlternatives({ registryResults, localResults }) {
             <div
               key={`${item.kind}-${idx}-${item.name}`}
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                gap: 12,
-                padding: '12px 14px',
+                position: 'relative',
                 borderBottom: idx < picks.length - 1 ? '1px solid #283648' : 'none',
               }}
             >
-              <div style={{ minWidth: 0, flex: 1 }}>
-                <div
+              {item.href ? (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  tabIndex={-1}
+                  aria-hidden="true"
                   style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: 17,
-                    letterSpacing: 1,
-                    color: 'var(--color-text, #f0e8d0)',
-                    lineHeight: 1.15,
+                    position: 'absolute',
+                    inset: 0,
+                    zIndex: 0,
                   }}
-                >
-                  {item.name}
-                </div>
-                {item.dist ? (
+                />
+              ) : null}
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: 12,
+                  padding: '12px 14px',
+                  position: 'relative',
+                  zIndex: 1,
+                  pointerEvents: item.href ? 'none' : 'auto',
+                }}
+              >
+                <div style={{ minWidth: 0, flex: 1 }}>
                   <div
                     style={{
-                      fontFamily: "'Space Mono', monospace",
-                      fontSize: 11,
-                      color: '#6a8a9a',
-                      textTransform: 'uppercase',
+                      fontFamily: "'Bebas Neue', sans-serif",
+                      fontSize: 17,
                       letterSpacing: 1,
-                      marginTop: 4,
+                      color: 'var(--color-text, #f0e8d0)',
+                      lineHeight: 1.15,
                     }}
                   >
-                    {item.dist}
+                    {item.name}
                   </div>
-                ) : null}
-              </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'center', justifyContent: 'flex-end' }}>
-                {item.href ? (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{
-                      fontFamily: "'Space Mono', monospace",
-                      fontSize: 11,
-                      letterSpacing: 1,
-                      textTransform: 'uppercase',
-                      color: '#0f1520',
-                      background: '#f0a820',
-                      padding: '8px 14px',
-                      borderRadius: 2,
-                      textDecoration: 'none',
-                      fontWeight: 700,
-                      flexShrink: 0,
-                    }}
-                  >
-                    Visit ↗
-                  </a>
-                ) : null}
-                {mapsHref ? (
-                  <a href={mapsHref} target="_blank" rel="noreferrer" style={directionsLinkStyle}>
-                    GET DIRECTIONS ↗
-                  </a>
-                ) : null}
-                {!item.href && !mapsHref ? (
-                  <span
-                    style={{
-                      fontFamily: "'Space Mono', monospace",
-                      fontSize: 11,
-                      color: 'var(--color-text-muted, #6a8a9a)',
-                      flexShrink: 0,
-                    }}
-                  >
-                    —
-                  </span>
-                ) : null}
+                  {item.dist ? (
+                    <div
+                      style={{
+                        fontFamily: "'Space Mono', monospace",
+                        fontSize: 11,
+                        color: '#6a8a9a',
+                        textTransform: 'uppercase',
+                        letterSpacing: 1,
+                        marginTop: 4,
+                      }}
+                    >
+                      {item.dist}
+                    </div>
+                  ) : null}
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: 8,
+                    alignItems: 'center',
+                    justifyContent: 'flex-end',
+                    pointerEvents: 'auto',
+                  }}
+                >
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        fontFamily: "'Space Mono', monospace",
+                        fontSize: 11,
+                        letterSpacing: 1,
+                        textTransform: 'uppercase',
+                        color: '#0f1520',
+                        background: '#f0a820',
+                        padding: '8px 14px',
+                        borderRadius: 2,
+                        textDecoration: 'none',
+                        fontWeight: 700,
+                        flexShrink: 0,
+                      }}
+                    >
+                      Visit ↗
+                    </a>
+                  ) : null}
+                  {mapsHref ? (
+                    <a href={mapsHref} target="_blank" rel="noopener noreferrer" style={directionsLinkStyle}>
+                      GET DIRECTIONS ↗
+                    </a>
+                  ) : null}
+                  {!item.href && !mapsHref ? (
+                    <span
+                      style={{
+                        fontFamily: "'Space Mono', monospace",
+                        fontSize: 11,
+                        color: 'var(--color-text-muted, #6a8a9a)',
+                        flexShrink: 0,
+                      }}
+                    >
+                      —
+                    </span>
+                  ) : null}
+                </div>
               </div>
             </div>
           );

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { dedupeTimelineEvents } from '../utils/enforcementDisplay.js';
 
 /** Wireframe order: Labor first, then Legal, … (default tab remains legal). */
 const TAB_ORDER = [
@@ -94,9 +95,12 @@ export default function DossierCard({ profile, prev, next, onNavigate, compact }
   const verdictTags = Array.isArray(p.verdict_tags) ? p.verdict_tags.map(String) : [];
   const concern = p.overall_concern_level || 'unknown';
 
-  const timeline = Array.isArray(p.timeline)
-    ? [...p.timeline].filter((e) => e && Number.isInteger(e.year))
-    : [];
+  const timeline = useMemo(() => {
+    const raw = Array.isArray(p.timeline)
+      ? [...p.timeline].filter((e) => e && Number.isInteger(e.year))
+      : [];
+    return dedupeTimelineEvents(raw);
+  }, [p.timeline]);
 
   const ci = p.community_impact && typeof p.community_impact === 'object' ? p.community_impact : null;
   const costAbs =
@@ -260,73 +264,91 @@ export default function DossierCard({ profile, prev, next, onNavigate, compact }
       </section>
 
       {ci ? (
-        <section className="bb-dossier__section">
-          <h2 className="bb-dossier__section-title">Community impact</h2>
-          {ci.displacement ? (
-            <div className="bb-dossier__impact-block">
-              <h3 className="bb-dossier__impact-label">Displacement</h3>
-              <p>{String(ci.displacement)}</p>
-            </div>
-          ) : null}
-          {ci.price_illusion ? (
-            <div className="bb-dossier__impact-block">
-              <h3 className="bb-dossier__impact-label">Price illusion</h3>
-              <p>{String(ci.price_illusion)}</p>
-            </div>
-          ) : null}
-          {ci.tax_math ? (
-            <div className="bb-dossier__impact-block">
-              <h3 className="bb-dossier__impact-label">Tax math</h3>
-              <p>{String(ci.tax_math)}</p>
-            </div>
-          ) : null}
-          {ci.wealth_velocity ? (
-            <div className="bb-dossier__impact-block">
-              <h3 className="bb-dossier__impact-label">Wealth velocity</h3>
-              <p>{String(ci.wealth_velocity)}</p>
-            </div>
-          ) : null}
+        <section className="bb-dossier__interpretive bb-dossier__interpretive--tier2" aria-label="Background">
+          <p className="bb-dossier__interpretive-kicker bb-dossier__interpretive-kicker--tier2">Background</p>
+          <p className="bb-dossier__interpretive-note">
+            Contextual framing; not counted as formal enforcement actions.
+          </p>
+          <section className="bb-dossier__section bb-dossier__section--interpretive-inner">
+            <h2 className="bb-dossier__section-title bb-dossier__section-title--interpretive">Community impact</h2>
+            {ci.displacement ? (
+              <div className="bb-dossier__impact-block">
+                <h3 className="bb-dossier__impact-label">Displacement</h3>
+                <p>{String(ci.displacement)}</p>
+              </div>
+            ) : null}
+            {ci.price_illusion ? (
+              <div className="bb-dossier__impact-block">
+                <h3 className="bb-dossier__impact-label">Price illusion</h3>
+                <p>{String(ci.price_illusion)}</p>
+              </div>
+            ) : null}
+            {ci.tax_math ? (
+              <div className="bb-dossier__impact-block">
+                <h3 className="bb-dossier__impact-label">Tax math</h3>
+                <p>{String(ci.tax_math)}</p>
+              </div>
+            ) : null}
+            {ci.wealth_velocity ? (
+              <div className="bb-dossier__impact-block">
+                <h3 className="bb-dossier__impact-label">Wealth velocity</h3>
+                <p>{String(ci.wealth_velocity)}</p>
+              </div>
+            ) : null}
+          </section>
         </section>
       ) : null}
 
       {theGap || whoBen.length || whoPaid.length ? (
-        <section className="bb-dossier__gap" aria-label="The gap">
-          <h2 className="bb-dossier__gap-title">The gap</h2>
-          {theGap ? <p className="bb-dossier__gap-body">{theGap}</p> : null}
-          {whoBen.length || whoPaid.length ? (
-            <div className="bb-dossier__gap-cost">
-              {whoBen.length ? (
-                <div>
-                  <h3 className="bb-dossier__mini-label">Who benefited</h3>
-                  <ul className="bb-dossier__who">
-                    {whoBen.map((row, i) =>
-                      row && typeof row === 'object' ? (
-                        <li key={i}>
-                          <strong>{String(row.group || '')}</strong>
-                          {row.how ? ` — ${String(row.how)}` : ''}
-                        </li>
-                      ) : null
-                    )}
-                  </ul>
-                </div>
-              ) : null}
-              {whoPaid.length ? (
-                <div style={{ marginTop: whoBen.length ? 16 : 0 }}>
-                  <h3 className="bb-dossier__mini-label">Who paid</h3>
-                  <ul className="bb-dossier__who">
-                    {whoPaid.map((row, i) =>
-                      row && typeof row === 'object' ? (
-                        <li key={i}>
-                          <strong>{String(row.group || '')}</strong>
-                          {row.how ? ` — ${String(row.how)}` : ''}
-                        </li>
-                      ) : null
-                    )}
-                  </ul>
-                </div>
-              ) : null}
-            </div>
-          ) : null}
+        <section
+          className="bb-dossier__interpretive bb-dossier__interpretive--tier3"
+          aria-label="Analysis — not a finding"
+        >
+          <p className="bb-dossier__interpretive-kicker bb-dossier__interpretive-kicker--tier3">
+            Analysis — not a finding
+          </p>
+          <p className="bb-dossier__interpretive-note bb-dossier__interpretive-note--tier3">
+            Distributional and narrative claims without a single mapped enforcement docket; excluded from action
+            counts.
+          </p>
+          <section className="bb-dossier__gap bb-dossier__gap--interpretive-inner" aria-label="The gap">
+            <h2 className="bb-dossier__gap-title bb-dossier__gap-title--interpretive">The gap</h2>
+            {theGap ? <p className="bb-dossier__gap-body bb-dossier__gap-body--interpretive">{theGap}</p> : null}
+            {whoBen.length || whoPaid.length ? (
+              <div className="bb-dossier__gap-cost">
+                {whoBen.length ? (
+                  <div>
+                    <h3 className="bb-dossier__mini-label bb-dossier__mini-label--interpretive">Who benefited</h3>
+                    <ul className="bb-dossier__who bb-dossier__who--interpretive">
+                      {whoBen.map((row, i) =>
+                        row && typeof row === 'object' ? (
+                          <li key={i}>
+                            <strong>{String(row.group || '')}</strong>
+                            {row.how ? ` — ${String(row.how)}` : ''}
+                          </li>
+                        ) : null
+                      )}
+                    </ul>
+                  </div>
+                ) : null}
+                {whoPaid.length ? (
+                  <div style={{ marginTop: whoBen.length ? 16 : 0 }}>
+                    <h3 className="bb-dossier__mini-label bb-dossier__mini-label--interpretive">Who paid</h3>
+                    <ul className="bb-dossier__who bb-dossier__who--interpretive">
+                      {whoPaid.map((row, i) =>
+                        row && typeof row === 'object' ? (
+                          <li key={i}>
+                            <strong>{String(row.group || '')}</strong>
+                            {row.how ? ` — ${String(row.how)}` : ''}
+                          </li>
+                        ) : null
+                      )}
+                    </ul>
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
+          </section>
         </section>
       ) : null}
 

@@ -2,6 +2,8 @@
  * Merge `profile_json.deep_research` into investigation API responses and append live deltas.
  */
 
+import { resolveIncidentActionType } from '../../client/src/utils/enforcementActionType.js';
+
 /** @type {Record<string, string>} */
 export const CATEGORY_LABELS = {
   labor_and_wage: 'labor and wage',
@@ -229,6 +231,8 @@ export function buildDeepResearchCategoriesForClient(dr) {
     const incidents = sorted.slice(0, 250).map((inc) => {
       if (!inc || typeof inc !== 'object') return null;
       const o = /** @type {Record<string, unknown>} */ (inc);
+      const catKey = typeof key === 'string' ? key : '';
+      const { action_type } = resolveIncidentActionType(o, catKey);
       return {
         date: o.date != null ? String(o.date) : '',
         description: typeof o.description === 'string' ? o.description : '',
@@ -237,6 +241,8 @@ export function buildDeepResearchCategoriesForClient(dr) {
           o.amount_usd != null && Number.isFinite(Number(o.amount_usd)) ? Number(o.amount_usd) : null,
         source_url: typeof o.source_url === 'string' ? o.source_url : '',
         agency_or_court: typeof o.agency_or_court === 'string' ? o.agency_or_court : '',
+        jurisdiction: typeof o.jurisdiction === 'string' ? o.jurisdiction : '',
+        action_type,
       };
     });
 
@@ -248,7 +254,10 @@ export function buildDeepResearchCategoriesForClient(dr) {
         .replace(/_/g, ' ')
         .toUpperCase();
 
-    out.push({
+    const perplexity_citations = Array.isArray(c.perplexity_citations) ? c.perplexity_citations : [];
+
+    /** @type {Record<string, unknown>} */
+    const row = {
       category: key,
       chip_label: chipLabel,
       title:
@@ -264,7 +273,11 @@ export function buildDeepResearchCategoriesForClient(dr) {
         overflow_note_raw || (ov > 0 ? `+${ov} more in records` : ''),
       severity_dot: categorySeverityDot(incidentsRaw),
       incidents: incidents.filter(Boolean),
-    });
+    };
+    if (perplexity_citations.length > 0) {
+      row.perplexity_citations = perplexity_citations;
+    }
+    out.push(row);
   }
   out.sort((a, b) => Number(b.total_found) - Number(a.total_found));
   return out;
@@ -402,12 +415,10 @@ export function applyDeepResearchToInvestigation(inv, dr, healthFlag) {
     const gradeKey = `${sec}_evidence_grade`;
     const sumKey = `${sec}_summary`;
 
-    const deepHeader = 'Verified public record (deep research profile)';
     const findingBlock = bucket.findings.filter(Boolean).join('\n\n');
     if (findingBlock) {
       const prev = typeof inv[findKey] === 'string' ? inv[findKey].trim() : '';
-      const block = `${deepHeader}:\n${findingBlock}`;
-      inv[findKey] = prev ? `${block}\n\n${prev}` : block;
+      inv[findKey] = prev ? `${findingBlock}\n\n${prev}` : findingBlock;
     }
 
     if (bucket.sources.length) {

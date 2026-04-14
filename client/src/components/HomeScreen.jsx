@@ -55,8 +55,8 @@ function geolocationFailureHint(err) {
   };
 }
 
-/** @param {{ onSearch: (q: string) => void; onStartSnap: () => void; onLocalStory?: () => void }} props */
-function SearchBar({ onSearch, onStartSnap, onLocalStory }) {
+/** @param {{ onSearch: (q: string) => void; onStartSnap: () => void; onLocalStory?: () => void; onOpenBlackBook?: () => void }} props */
+function SearchBar({ onSearch, onStartSnap, onLocalStory, onOpenBlackBook }) {
   const [query, setQuery] = useState('');
 
   function handleSubmit(e) {
@@ -147,6 +147,37 @@ function SearchBar({ onSearch, onStartSnap, onLocalStory }) {
           ▶ Local Story
         </button>
       </div>
+      {typeof onOpenBlackBook === 'function' ? (
+        <p
+          style={{
+            margin: '0 0 12px',
+            fontFamily: "'Crimson Pro', serif",
+            fontSize: 15,
+            color: '#a8c4d8',
+            lineHeight: 1.55,
+          }}
+        >
+          Not looking for something specific?{' '}
+          <button
+            type="button"
+            onClick={() => onOpenBlackBook()}
+            style={{
+              display: 'inline',
+              padding: 0,
+              margin: 0,
+              border: 'none',
+              background: 'none',
+              cursor: 'pointer',
+              font: 'inherit',
+              color: '#f0a820',
+              textDecoration: 'underline',
+              textUnderlineOffset: '3px',
+            }}
+          >
+            Browse the full index →
+          </button>
+        </p>
+      ) : null}
       <button
         type="submit"
         style={{
@@ -282,7 +313,7 @@ function BookIndependentStayLinks({ city, state }) {
           <a
             href={item.href}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             style={{
               display: 'flex',
               alignItems: 'baseline',
@@ -789,7 +820,9 @@ function CityCard({ identity, city, state }) {
 }
 
 function FeedCard({ business, chainFootnote = false }) {
-  const website = business.website;
+  const rawSite = business.website ?? business.url;
+  const website =
+    rawSite != null && String(rawSite).trim() ? String(rawSite).trim() : null;
   const hasBadges = business.ethics_badges?.length > 0;
   const visitHref =
     website && (website.startsWith('http') ? website : `https://${website}`);
@@ -832,15 +865,42 @@ function FeedCard({ business, chainFootnote = false }) {
       ? business.provenance_label.trim()
       : undefined;
 
+  const cardShellStyle = {
+    ...cardStyle,
+    position: 'relative',
+  };
+
   return (
-    <div style={cardStyle}>
-      <TrustStrip
-        trustTier={trustTier}
-        chainFootnote={chainFootnote}
-        customLabel={provenance}
-      />
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <div style={{ flex: 1, minWidth: 0 }}>
+    <div style={cardShellStyle}>
+      {visitHref ? (
+        <a
+          href={visitHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          tabIndex={-1}
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 0,
+            borderRadius: 4,
+          }}
+        />
+      ) : null}
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 1,
+          pointerEvents: visitHref ? 'none' : 'auto',
+        }}
+      >
+        <TrustStrip
+          trustTier={trustTier}
+          chainFootnote={chainFootnote}
+          customLabel={provenance}
+        />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+          <div style={{ flex: 1, minWidth: 0 }}>
           <div
             style={{
               fontFamily: "'Bebas Neue', sans-serif",
@@ -930,13 +990,14 @@ function FeedCard({ business, chainFootnote = false }) {
             flexShrink: 0,
             marginLeft: 12,
             alignSelf: 'flex-start',
+            pointerEvents: 'auto',
           }}
         >
           {website ? (
             <a
               href={visitHref}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               style={{
                 fontFamily: "'Space Mono', monospace",
                 fontSize: 11,
@@ -954,7 +1015,7 @@ function FeedCard({ business, chainFootnote = false }) {
             </a>
           ) : null}
           {mapsHref && !chainFootnote ? (
-            <a href={mapsHref} target="_blank" rel="noreferrer" style={directionsLinkStyle}>
+            <a href={mapsHref} target="_blank" rel="noopener noreferrer" style={directionsLinkStyle}>
               GET DIRECTIONS ↗
             </a>
           ) : null}
@@ -978,12 +1039,13 @@ function FeedCard({ business, chainFootnote = false }) {
           ) : null}
         </div>
       </div>
+      </div>
     </div>
   );
 }
 
 /**
- * @param {{ onStartSnap: () => void; onOpenDirectory?: () => void; onOpenLibrary?: () => void; onOpenImpact?: () => void }} props
+ * @param {{ onStartSnap: () => void; onOpenDirectory?: () => void; onOpenLibrary?: () => void; onOpenBlackBook?: () => void; onOpenImpact?: () => void }} props
  */
 export default function HomeScreen({
   onStartSnap,
@@ -991,6 +1053,7 @@ export default function HomeScreen({
   onOpenHistory,
   onOpenDirectory,
   onOpenLibrary,
+  onOpenBlackBook,
   onOpenImpact,
 }) {
   const [phase, setPhase] = useState(() => initialPhase());
@@ -1540,6 +1603,7 @@ export default function HomeScreen({
           onSearch={onSearchInvestigate}
           onStartSnap={onStartSnap}
           onLocalStory={() => setLocalCommercialOpen(true)}
+          onOpenBlackBook={onOpenBlackBook}
         />
       ) : null}
 

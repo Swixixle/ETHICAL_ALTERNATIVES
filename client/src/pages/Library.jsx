@@ -2,6 +2,17 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import DossierCard from '../components/DossierCard.jsx';
 import './Library.css';
 
+/** Canonical list URL: `/black-book` when user landed there; otherwise `/library`. */
+function getBlackBookListPath() {
+  try {
+    const raw = (window.location.pathname || '/').replace(/\/$/, '') || '/';
+    if (/^\/black-book(?:\/|$)/.test(raw)) return '/black-book';
+  } catch {
+    /* ignore */
+  }
+  return '/library';
+}
+
 function apiPrefix() {
   return (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
 }
@@ -137,7 +148,7 @@ export default function Library({ onBack }) {
   const readSlugFromLocation = useCallback(() => {
     try {
       const raw = (window.location.pathname || '/').replace(/\/$/, '') || '/';
-      const m = raw.match(/^\/library(?:\/([^/]+))?$/);
+      const m = raw.match(/^\/(?:library|black-book)(?:\/([^/]+))?$/);
       if (!m) return null;
       return m[1] ? decodeURIComponent(m[1]) : null;
     } catch {
@@ -156,7 +167,11 @@ export default function Library({ onBack }) {
     if (isDesktop && alphaFirstSlug) {
       setSelectedSlug(alphaFirstSlug);
       try {
-        window.history.replaceState({}, '', `/library/${encodeURIComponent(alphaFirstSlug)}`);
+        window.history.replaceState(
+          {},
+          '',
+          `${getBlackBookListPath()}/${encodeURIComponent(alphaFirstSlug)}`
+        );
       } catch {
         /* ignore */
       }
@@ -180,7 +195,11 @@ export default function Library({ onBack }) {
     if (!s) return;
     setSelectedSlug(s);
     try {
-      window.history.pushState({}, '', `/library/${encodeURIComponent(s)}`);
+      window.history.pushState(
+        {},
+        '',
+        `${getBlackBookListPath()}/${encodeURIComponent(s)}`
+      );
     } catch {
       /* ignore */
     }
@@ -361,7 +380,7 @@ export default function Library({ onBack }) {
               onClick={() => {
                 setSelectedSlug(null);
                 try {
-                  window.history.pushState({}, '', '/library');
+                  window.history.pushState({}, '', getBlackBookListPath());
                 } catch {
                   /* ignore */
                 }

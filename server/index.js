@@ -117,13 +117,17 @@ app.get('/proportionality', (req, res) => {
   res.json({ ok: true, proportionality: packet });
 });
 
+/**
+ * Register specific /api/... path prefixes before any `app.use('/api', router)` catch-alls
+ * (tap + impact). Otherwise /api/profiles/* may never reach its router depending on Express
+ * / middleware behavior.
+ */
 app.use('/api/workers', workersRouter);
-app.use('/api', tapRouter);
 app.use('/api/barcode', barcodeRouter);
 app.use('/api/report-error', reportErrorRouter);
 app.use('/api/executive-pay', executivePayRouter);
-app.use('/api', impactRouter);
 app.use('/api/profiles', profileIndexRouter);
+console.log('[server] mounted profileIndexRouter at /api/profiles');
 app.use('/api/library', libraryRouter);
 app.use('/api/perimeter', perimeterRouter);
 app.use('/api/city-narrative', cityNarrativeRouter);
@@ -140,6 +144,8 @@ app.use('/api/events', localEventsRouter);
 app.use('/api/local-commercial', localCommercialRouter);
 app.use('/api/witness', witnessRouter);
 app.use('/api/documentary', documentaryRouter);
+app.use('/api', tapRouter);
+app.use('/api', impactRouter);
 
 app.listen(process.env.PORT || 3001, () => {
   console.log(`ethicalalt-server listening on ${process.env.PORT || 3001}`);

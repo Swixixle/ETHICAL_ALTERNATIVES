@@ -1,10 +1,10 @@
-import { hasDocumentedHealthConcerns } from '../utils/investigationHealth.js';
+import { shouldShowPrimaryHealthRiskMessaging } from '../utils/investigationHealth.js';
 
 /**
  * @param {{ investigation?: Record<string, unknown> | null }} props
  */
 export default function HealthCallout({ investigation }) {
-  if (!hasDocumentedHealthConcerns(investigation)) return null;
+  if (!shouldShowPrimaryHealthRiskMessaging(investigation)) return null;
 
   return (
     <aside

@@ -50,9 +50,13 @@ function ActiveNowSkeleton({ variant = 'tap' }) {
 /**
  * Live perimeter layer — polls GET /api/perimeter/:slug after static card loads.
  *
- * @param {{ brandSlug: string; variant?: 'tap' | 'book' }} props
+ * @param {{
+ *   brandSlug: string;
+ *   variant?: 'tap' | 'book';
+ *   dossierListsOngoingMatters?: boolean;
+ * }} props
  */
-export default function ActiveNowSection({ brandSlug, variant = 'tap' }) {
+export default function ActiveNowSection({ brandSlug, variant = 'tap', dossierListsOngoingMatters = false }) {
   const [activity, setActivity] = useState(/** @type {Record<string, unknown> | null} */ (null));
   const [loading, setLoading] = useState(true);
   const [timedOut, setTimedOut] = useState(false);
@@ -131,10 +135,15 @@ export default function ActiveNowSection({ brandSlug, variant = 'tap' }) {
           : 'active-now__dot active-now__dot--unknown';
 
   if (!cases.length) {
-    const quietMessage =
+    const defaultQuiet =
       timedOut && !summary
         ? 'Live check did not finish in time — open again in a moment.'
         : 'No active legal or regulatory cases verified in the scanned window (last ~24 months).';
+
+    const quietMessage =
+      !summary && !timedOut && dossierListsOngoingMatters
+        ? 'Live perimeter scan found no additional active-case hits in the last ~24 months; indexed research may still list ongoing regulatory actions, recalls, or civil allegations.'
+        : defaultQuiet;
 
     return (
       <div className={`active-now active-now--quiet active-now--${variant}`}>

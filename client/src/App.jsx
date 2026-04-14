@@ -226,7 +226,7 @@ function parseRoute(pathname) {
   if (path === '/impact') {
     return { ...base, mode: 'impact' };
   }
-  if (/^\/library(?:\/[^/]+)?$/.test(path)) {
+  if (/^\/library(?:\/[^/]+)?$/.test(path) || /^\/black-book(?:\/[^/]+)?$/.test(path)) {
     return { ...base, mode: 'library' };
   }
   const prof = path.match(/^\/profile\/([^/]+)$/);
@@ -350,6 +350,8 @@ export default function App() {
   } = useTapAnalysis();
 
   const outcomeScheduleRef = useRef(null);
+  /** Cleared on full Snap reset so the next session is not gated by stale no-record auto-live bookkeeping. */
+  const noRecordAutoLiveFromTapRef = useRef(/** @type {number | null} */ (null));
   const [outcomePrompt, setOutcomePrompt] = useState(/** @type {{ tapKey: number } | null} */ (null));
 
   const investigateByBrandNav = useCallback(
@@ -361,6 +363,7 @@ export default function App() {
   );
 
   const resetSession = useCallback(() => {
+    noRecordAutoLiveFromTapRef.current = null;
     if (result?.investigation && getImpactConsentOutcome()) {
       outcomeScheduleRef.current = tapSession;
     } else {
@@ -573,7 +576,6 @@ export default function App() {
    * After vision/sourcing returns no DB profile, run one live investigation (replaces NoRecordCompactModule CTA).
    * investigateByBrand bumps tapSession — skip when tapSession === firedFrom + 1 so we never loop on empty IB.
    */
-  const noRecordAutoLiveFromTapRef = useRef(/** @type {number | null} */ (null));
   useEffect(() => {
     if (mode !== 'snap' && mode !== 'deep') return;
     if (!result || result.research_loading || result.investigation || loading) return;
@@ -611,7 +613,6 @@ export default function App() {
 
   const onImageSelected = (b64) => {
     setImage(b64);
-    captureGeoOnce();
   };
 
   const onBarcodeDetected = useCallback(
@@ -652,14 +653,13 @@ export default function App() {
             low_confidence_warning: false,
           });
           setMode('snap');
-          captureGeoOnce();
           runResearchPhase(identification);
         }
       } catch {
         /* silent — lookup failure should not interrupt tap flow */
       }
     },
-    [result, loading, runResearchPhase, setResult, captureGeoOnce]
+    [result, loading, runResearchPhase, setResult]
   );
 
   const id = result?.identification;
@@ -770,6 +770,14 @@ export default function App() {
           onOpenLibrary={() => {
             try {
               window.history.pushState({}, '', '/library');
+            } catch {
+              /* ignore */
+            }
+            setMode('library');
+          }}
+          onOpenBlackBook={() => {
+            try {
+              window.history.pushState({}, '', '/black-book');
             } catch {
               /* ignore */
             }
@@ -1360,8 +1368,10 @@ export default function App() {
         {mode === 'snap' && !image ? (
           <div className="app__panel">
             <PhotoCapture
+              key={`snap-capture-${tapSession}`}
               onImageSelected={onImageSelected}
               onBarcodeDetected={onBarcodeDetected}
+              onUserGeolocationOpportunity={captureGeoOnce}
               loading={false}
             />
           </div>

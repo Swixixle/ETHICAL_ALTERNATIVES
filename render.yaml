@@ -45,6 +45,11 @@ services:
       - key: VITE_API_URL
         sync: false
     routes:
+      # Proxy API to the Node web service so /api/* is not swallowed by the SPA fallback.
+      # If you rename ethicalalt-server, update this URL to match its public onrender.com host.
+      - type: rewrite
+        source: /api/*
+        destination: https://ethicalalt-server.onrender.com/api/*
       - type: rewrite
         source: /*
         destination: /index.html

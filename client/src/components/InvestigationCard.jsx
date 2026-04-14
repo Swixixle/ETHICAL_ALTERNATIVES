@@ -1,4 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  prepareDeepCategoryForDisplay,
+  countTier1UniqueMattersAcrossInvestigation,
+  dedupeTimelineEvents,
+  investigationHasIndexedActiveMatters,
+} from '../utils/enforcementDisplay.js';
 import Timeline from './Timeline';
 import CommunityImpact from './CommunityImpact';
 import CostAbsorption from './CostAbsorption.jsx';
@@ -8,6 +14,7 @@ import ProofBlock from './ProofBlock.jsx';
 import ConfidenceBadge from './ConfidenceBadge.jsx';
 import { getConfidenceBadgePresentation } from '../utils/investigationConfidence.js';
 import { collectSourceLedgerRows } from '../utils/investigationSources.js';
+import { consumerFacingSectionFinding } from '../utils/consumerInvestigationCopy.js';
 import {
   TaxIcon,
   LegalIcon,
@@ -331,12 +338,33 @@ function severityDotColor(dot) {
   return '#6a8a9a';
 }
 
+/** @param {{ actionType?: string }} props */
+function ActionTypeBadge({ actionType }) {
+  const t = String(actionType || 'disposition');
+  if (t === 'disposition') return null;
+  /** @type {Record<string, string>} */
+  const labels = {
+    regulator_action: 'Regulatory action',
+    recall: 'Recall',
+    civil_allegation: 'Allegation — unresolved',
+    contextual: 'Context',
+  };
+  const label = labels[t];
+  if (!label) return null;
+  const safe = t.replace(/_/g, '-').replace(/[^a-z-]/g, '') || 'other';
+  return (
+    <span className={`investigation-card__action-type-badge investigation-card__action-type-badge--${safe}`}>
+      {label}
+    </span>
+  );
+}
+
 /**
  * @param {{
  *   incident: Record<string, unknown>;
  * }} props
  */
-function DeepIncidentCard({ incident }) {
+function DeepIncidentCard({ incident, variant = 'default' }) {
   const date = typeof incident.date === 'string' ? incident.date : '';
   const desc =
     typeof incident.description === 'string' && incident.description.trim()
@@ -351,12 +379,36 @@ function DeepIncidentCard({ incident }) {
   const url = typeof incident.source_url === 'string' ? incident.source_url : '';
   const domain = url && /^https?:\/\//i.test(url) ? sourceDomainFromUrl(url) : null;
   const linkLabel = domain ? `${domain} \u2197` : '';
+  const agency =
+    typeof incident.agency_or_court === 'string' && incident.agency_or_court.trim()
+      ? incident.agency_or_court.trim()
+      : typeof incident.jurisdiction === 'string' && incident.jurisdiction.trim()
+        ? incident.jurisdiction.trim()
+        : '';
+  const actionType = typeof incident.action_type === 'string' ? incident.action_type : 'disposition';
+  const typeMod =
+    actionType === 'civil_allegation'
+      ? ' investigation-card__incident-card--allegation'
+      : actionType === 'regulator_action'
+        ? ' investigation-card__incident-card--regulator'
+        : actionType === 'recall'
+          ? ' investigation-card__incident-card--recall'
+          : '';
+
+  const cardClass =
+    variant === 'background'
+      ? `investigation-card__incident-card investigation-card__incident-card--background${typeMod}`
+      : `investigation-card__incident-card${typeMod}`;
 
   return (
-    <div className="investigation-card__incident-card">
+    <div className={cardClass}>
       <div className="investigation-card__incident-card-grid">
         <div className="investigation-card__incident-date">{date || '—'}</div>
         <div className="investigation-card__incident-main">
+          <ActionTypeBadge actionType={actionType} />
+          {agency ? (
+            <div className="investigation-card__incident-jurisdiction">{agency}</div>
+          ) : null}
           <p className="investigation-card__incident-desc">{desc}</p>
           <div className="investigation-card__incident-meta">
             {outcomeRaw ? (
@@ -368,7 +420,7 @@ function DeepIncidentCard({ incident }) {
             <a
               href={url}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="investigation-card__incident-source"
             >
               {linkLabel}
@@ -376,6 +428,72 @@ function DeepIncidentCard({ incident }) {
           ) : null}
         </div>
       </div>
+    </div>
+  );
+}
+
+/**
+ * @param {{
+ *   group: {
+ *     canonical: Record<string, unknown>;
+ *     alternates: Record<string, unknown>[];
+ *     amountDiscrepancyNote: string | null;
+ *   };
+ * }} props
+ */
+function Tier1MatterCard({ group }) {
+  const { canonical, alternates, amountDiscrepancyNote } = group;
+  return (
+    <div className="investigation-card__matter-block">
+      <DeepIncidentCard incident={canonical} />
+      {amountDiscrepancyNote ? (
+        <p className="investigation-card__incident-discrepancy">{amountDiscrepancyNote}</p>
+      ) : null}
+      {alternates.length > 0 ? (
+        <div className="investigation-card__incident-alternates">
+          <div className="investigation-card__incident-alternates-label">Also reported at</div>
+          <ul className="investigation-card__incident-alternates-list">
+            {alternates.map((alt, i) => {
+              if (!alt || typeof alt !== 'object') return null;
+              const u = typeof alt.source_url === 'string' ? alt.source_url : '';
+              const dom = u && /^https?:\/\//i.test(u) ? sourceDomainFromUrl(u) : 'Source';
+              return (
+                <li key={`${u}-${i}`}>
+                  {u ? (
+                    <a href={u} target="_blank" rel="noopener noreferrer" className="investigation-card__incident-source">
+                      {dom}
+                      {'\u2197'}
+                    </a>
+                  ) : (
+                    <span className="investigation-card__body-muted">{dom}</span>
+                  )}
+                  {alt.amount_usd != null && Number.isFinite(Number(alt.amount_usd)) ? (
+                    <span className="investigation-card__incident-alt-amt">
+                      {' '}
+                      · {formatUsdRecord(Number(alt.amount_usd))}
+                    </span>
+                  ) : null}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+/**
+ * @param {{ children: import('react').ReactNode }} props
+ */
+function InterpretiveAnalysisSilo({ children }) {
+  const arr = Array.isArray(children) ? children : [children];
+  const visible = arr.some((c) => c != null && c !== false);
+  if (!visible) return null;
+  return (
+    <div className="investigation-card__interpretive-silo">
+      <p className="investigation-card__interpretive-kicker">Analysis — not a finding</p>
+      <div className="investigation-card__interpretive-inner">{children}</div>
     </div>
   );
 }
@@ -881,6 +999,9 @@ export default function InvestigationCard({
 
   const id = identification || {};
 
+  const hasDeepResearchCategories =
+    normalizeDeepResearchCategories(investigation.deep_research_categories).length > 0;
+
   const sectionItems = [];
 
   for (const s of SECTIONS) {
@@ -893,7 +1014,11 @@ export default function InvestigationCard({
     const proportionalityPacketKey = `${s.key}_proportionality_packet`;
     const rawPacket = PROPORTIONALITY_SECTION_KEYS.has(s.key) ? investigation[proportionalityPacketKey] : null;
     const hasProportionality = rawPacket != null && typeof rawPacket === 'object';
-    const hasContent = hasSummary || hasFlags || hasSources || hasProportionality;
+    const findingKey = s.findingKey;
+    const findingRaw = findingKey ? investigation[findingKey] : null;
+    const findingText = consumerFacingSectionFinding(findingRaw, hasDeepResearchCategories);
+    const hasContent =
+      hasSummary || hasFlags || hasSources || hasProportionality || Boolean(findingText);
 
     const Icon = SECTION_ICONS[s.key];
     const evGrade =
@@ -905,13 +1030,13 @@ export default function InvestigationCard({
     const rowBadge = EVIDENCE_LEVEL_ROW_BADGE[levelRaw] || null;
     const hasEvidenceGradeLevel = Boolean(rowBadge);
     const isCollapsedEmpty =
-      !hasSummary && !hasSources && !hasEvidenceGradeLevel && !hasProportionality;
+      !hasSummary &&
+      !hasSources &&
+      !hasEvidenceGradeLevel &&
+      !hasProportionality &&
+      !findingText;
     const timelineYear = getMostRecentTimelineYearForSection(investigation.timeline, s.key);
 
-    const findingKey = s.findingKey;
-    const findingRaw = findingKey ? investigation[findingKey] : null;
-    const findingText =
-      typeof findingRaw === 'string' && findingRaw.trim() ? findingRaw.trim() : null;
     const findingBorderColor = rowBadge ? rowBadge.color : '#d4a017';
 
     sectionItems.push({
@@ -1212,6 +1337,28 @@ export default function InvestigationCard({
 
   const deepCategories = normalizeDeepResearchCategories(investigation.deep_research_categories);
   if (import.meta.env.DEV) console.log('[InvestigationCard] deep_research_categories', deepCategories);
+
+  const deepDisplayByCat = useMemo(() => {
+    /** @type {Map<string, { tier1Groups: object[]; tier2Incidents: object[]; display_total_found: number; action_type_subtitle: string }>} */
+    const m = new Map();
+    for (const dc of deepCategories) {
+      if (!dc || typeof dc !== 'object') continue;
+      const cat = typeof /** @type {Record<string, unknown>} */ (dc).category === 'string' ? /** @type {Record<string, unknown>} */ (dc).category : '';
+      if (cat) m.set(cat, prepareDeepCategoryForDisplay(/** @type {Record<string, unknown>} */ (dc)));
+    }
+    return m;
+  }, [deepCategories]);
+
+  const dossierListsOngoingMatters = useMemo(
+    () => investigationHasIndexedActiveMatters(investigation),
+    [investigation]
+  );
+
+  const displayTimelineEvents = useMemo(
+    () => dedupeTimelineEvents(investigation.timeline),
+    [investigation.timeline]
+  );
+
   const coveredSections = new Set();
   for (const d of deepCategories) {
     if (!d || typeof d !== 'object') continue;
@@ -1238,6 +1385,26 @@ export default function InvestigationCard({
     else
       document.getElementById('ea-alternatives-region')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [onFindAlternatives]);
+
+  const ca = investigation.cost_absorption;
+  const hasCostAbsorptionData =
+    ca &&
+    typeof ca === 'object' &&
+    ((Array.isArray(ca.who_benefited) && ca.who_benefited.length > 0) ||
+      (Array.isArray(ca.who_paid) && ca.who_paid.length > 0) ||
+      (typeof ca.the_gap === 'string' && ca.the_gap.trim()));
+  const ci = investigation.community_impact;
+  const hasCommunityImpactData =
+    ci &&
+    typeof ci === 'object' &&
+    Boolean(
+      ci.displacement_effect ||
+        ci.price_illusion ||
+        ci.tax_math ||
+        ci.wealth_velocity ||
+        ci.the_real_math
+    );
+  const showInterpretiveSilo = showFinancialAnalysis || hasCostAbsorptionData || hasCommunityImpactData;
 
   /** @param {string} catKey */
   const legacySectionForDeepCategory = (catKey) => {
@@ -1274,7 +1441,9 @@ export default function InvestigationCard({
         </p>
       ) : null}
 
-      {showActiveNow ? <ActiveNowSection brandSlug={perimeterSlug} variant="tap" /> : null}
+      {showActiveNow ? (
+        <ActiveNowSection brandSlug={perimeterSlug} variant="tap" dossierListsOngoingMatters={dossierListsOngoingMatters} />
+      ) : null}
 
       <div className="investigation-card__hero investigation-card__hero-mount investigation-card__hero--redesign">
         <div className="investigation-card__hero-top">
@@ -1319,7 +1488,14 @@ export default function InvestigationCard({
               if (!dc || typeof dc !== 'object') return null;
               const cat = typeof dc.category === 'string' ? dc.category : '';
               const chip = typeof dc.chip_label === 'string' ? dc.chip_label : cat;
-              const n = typeof dc.total_found === 'number' ? dc.total_found : 0;
+              const prep = cat ? deepDisplayByCat.get(cat) : null;
+              const n =
+                prep != null
+                  ? prep.display_total_found
+                  : typeof dc.total_found === 'number'
+                    ? dc.total_found
+                    : 0;
+              const br = prep?.action_type_subtitle;
               return (
                 <button
                   key={cat ? `${cat}-${i}` : `chip-${i}`}
@@ -1327,7 +1503,10 @@ export default function InvestigationCard({
                   className="investigation-card__category-chip ea-press-label"
                   onClick={() => scrollToDeepCategory(cat)}
                 >
-                  {chip} ({n})
+                  <span className="investigation-card__category-chip-line1">
+                    {chip} ({n})
+                  </span>
+                  {br ? <span className="investigation-card__category-chip-breakdown">{br}</span> : null}
                 </button>
               );
             })}
@@ -1353,7 +1532,7 @@ export default function InvestigationCard({
       </div>
 
       <div className="investigation-card__timeline-wrap">
-        <Timeline events={investigation.timeline} minEvents={3} />
+        <Timeline events={displayTimelineEvents} minEvents={3} />
       </div>
 
       {userCaptureSrc && referenceImageSrc ? (
@@ -1433,10 +1612,10 @@ export default function InvestigationCard({
           const d = /** @type {Record<string, unknown>} */ (dc);
           const cat = typeof d.category === 'string' ? d.category : '';
           const title = typeof d.title === 'string' ? d.title : cat;
-          const totalFound = typeof d.total_found === 'number' ? d.total_found : 0;
+          const prep = cat ? deepDisplayByCat.get(cat) : prepareDeepCategoryForDisplay(d);
+          const totalFound = prep.display_total_found;
           const overflowNote = typeof d.overflow_note === 'string' ? d.overflow_note.trim() : '';
           const sevDot = typeof d.severity_dot === 'string' ? d.severity_dot : 'low';
-          const incidents = Array.isArray(d.incidents) ? d.incidents : [];
           const open = openSection === `deep:${cat}`;
           return (
             <div
@@ -1455,8 +1634,15 @@ export default function InvestigationCard({
                   style={{ background: severityDotColor(sevDot) }}
                   aria-hidden
                 />
-                <span className="investigation-card__accordion-title investigation-card__accordion-title--deep">
-                  {title}
+                <span className="investigation-card__accordion-title-wrap">
+                  <span className="investigation-card__accordion-title investigation-card__accordion-title--deep">
+                    {title}
+                  </span>
+                  {prep.action_type_subtitle ? (
+                    <span className="investigation-card__accordion-type-breakdown investigation-card__body-muted">
+                      {prep.action_type_subtitle}
+                    </span>
+                  ) : null}
                 </span>
                 <span className="investigation-card__accordion-count">({totalFound})</span>
                 {overflowNote ? (
@@ -1474,11 +1660,26 @@ export default function InvestigationCard({
                 className={`investigation-card__accordion-panel${open ? ' investigation-card__accordion-panel--open' : ''}`}
               >
                 <div className="investigation-card__accordion-inner investigation-card__accordion-inner--incidents">
-                  {incidents.map((inc, idx) =>
-                    inc && typeof inc === 'object' ? (
-                      <DeepIncidentCard key={`${cat}-${idx}`} incident={/** @type {Record<string, unknown>} */ (inc)} />
-                    ) : null
-                  )}
+                  {prep.tier1Groups.map((g, idx) => (
+                    <Tier1MatterCard key={g.key || `${cat}-t1-${idx}`} group={g} />
+                  ))}
+                  {prep.tier2Incidents.length > 0 ? (
+                    <div className="investigation-card__background-block">
+                      <div className="investigation-card__background-label">Background</div>
+                      <p className="investigation-card__background-hint investigation-card__body-muted">
+                        Contextual reporting and sourced narrative — not a standalone enforcement finding.
+                      </p>
+                      {prep.tier2Incidents.map((inc, idx) =>
+                        inc && typeof inc === 'object' ? (
+                          <DeepIncidentCard
+                            key={`${cat}-t2-${idx}`}
+                            variant="background"
+                            incident={/** @type {Record<string, unknown>} */ (inc)}
+                          />
+                        ) : null
+                      )}
+                    </div>
+                  ) : null}
                   {(() => {
                     const legacy = legacySectionForDeepCategory(cat);
                     if (!legacy || !legacy.hasContent) return null;
@@ -1582,23 +1783,26 @@ export default function InvestigationCard({
         })}
       </div>
 
-      <div className="investigation-card__footer-blocks investigation-card__footer-blocks--post-accordion">
-        <CostAbsorption data={investigation.cost_absorption} />
-        <CommunityImpact data={investigation.community_impact} />
-      </div>
-
-      {showFinancialAnalysis ? (
-        <details className="investigation-card__financial-details">
-          <summary className="investigation-card__financial-summary">Financial analysis</summary>
-          <div className="investigation-card__financial-inner">
-            <CompanyCharts profile={investigation} />
-            {['significant', 'high', 'critical'].includes(
-              String(investigation.overall_concern_level || '').toLowerCase()
-            ) ? (
-              <WealthChart />
-            ) : null}
+      {showInterpretiveSilo ? (
+        <InterpretiveAnalysisSilo>
+          {showFinancialAnalysis ? (
+            <details className="investigation-card__financial-details">
+              <summary className="investigation-card__financial-summary">Financial analysis</summary>
+              <div className="investigation-card__financial-inner">
+                <CompanyCharts profile={investigation} />
+                {['significant', 'high', 'critical'].includes(
+                  String(investigation.overall_concern_level || '').toLowerCase()
+                ) ? (
+                  <WealthChart />
+                ) : null}
+              </div>
+            </details>
+          ) : null}
+          <div className="investigation-card__footer-blocks investigation-card__footer-blocks--post-accordion">
+            <CostAbsorption data={investigation.cost_absorption} />
+            <CommunityImpact data={investigation.community_impact} />
           </div>
-        </details>
+        </InterpretiveAnalysisSilo>
       ) : null}
 
       {Array.isArray(investigation.subsidiaries) && investigation.subsidiaries.length ? (

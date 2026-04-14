@@ -83,7 +83,6 @@ export default function ProofBlock({
   const inv = investigation;
   const id = identification || {};
   const totalSources = countIndexedSources(inv, result);
-  const extraSearch = Array.isArray(result?.searched_sources) ? result.searched_sources.length : 0;
 
   const grade = worstEvidenceGrade(inv);
   const gradeLevel = grade && typeof grade.level === 'string' ? grade.level.toLowerCase() : '';
@@ -223,23 +222,17 @@ export default function ProofBlock({
         </div>
       </div>
 
-      {typeof result?.response_ms === 'number' || extraSearch > 0 ? (
-        <p
-          style={{
-            fontFamily: "'Space Mono', monospace",
-            fontSize: 11,
-            color: 'var(--color-text-muted, #6a8a9a)',
-            margin: '12px 0 0',
-            letterSpacing: 0.5,
-          }}
-        >
-          {typeof result?.response_ms === 'number' ? `${result.response_ms} ms` : ''}
-          {typeof result?.response_ms === 'number' && Array.isArray(result?.searched_sources) ? ' · ' : ''}
-          {Array.isArray(result?.searched_sources)
-            ? `Coverage: ${result.searched_sources.join(', ')}`
-            : null}
-        </p>
-      ) : null}
+      {(() => {
+        const ms = typeof result?.response_ms === 'number' ? result.response_ms : null;
+        const cov = Array.isArray(result?.searched_sources) ? result.searched_sources : null;
+        if (ms == null && (!cov || cov.length === 0)) return null;
+        const parts = [];
+        if (ms != null) parts.push(`${ms} ms`);
+        if (cov && cov.length) parts.push(`Coverage: ${cov.join(', ')}`);
+        const line = parts.join(' · ');
+        if (line) console.log('[ProofBlock] tap performance', line);
+        return null;
+      })()}
     </div>
   );
 }

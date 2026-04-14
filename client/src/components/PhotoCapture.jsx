@@ -53,9 +53,15 @@ function fileToResizedJpegBase64(file) {
  * @param {object} props
  * @param {(base64: string) => void} props.onImageSelected — JPEG base64 only (no data URL prefix)
  * @param {(value: string, format: string) => void} [props.onBarcodeDetected]
+ * @param {() => void} [props.onUserGeolocationOpportunity] — call synchronously on user gestures (before awaits) so desktop browsers can show the location permission prompt
  * @param {boolean} [props.loading]
  */
-export default function PhotoCapture({ onImageSelected, onBarcodeDetected, loading = false }) {
+export default function PhotoCapture({
+  onImageSelected,
+  onBarcodeDetected,
+  onUserGeolocationOpportunity,
+  loading = false,
+}) {
   const videoRef = useRef(null);
   const streamRef = useRef(null);
   const barcodeDetectorRef = useRef(null);
@@ -186,7 +192,10 @@ export default function PhotoCapture({ onImageSelected, onBarcodeDetected, loadi
     if (e.target && 'value' in e.target && typeof e.target.value === 'string') {
       e.target.value = '';
     }
-    if (file) void emitFile(file);
+    if (file) {
+      onUserGeolocationOpportunity?.();
+      void emitFile(file);
+    }
   };
 
   function handleDrag(e) {
@@ -202,11 +211,13 @@ export default function PhotoCapture({ onImageSelected, onBarcodeDetected, loadi
     setDragActive(false);
     const file = e.dataTransfer.files?.[0];
     if (file && file.type.startsWith('image/')) {
-      handleFileChange({ target: { files: [file] } });
+      onUserGeolocationOpportunity?.();
+      void emitFile(file);
     }
   }
 
   const finishFromVideo = useCallback(() => {
+    onUserGeolocationOpportunity?.();
     const video = videoRef.current;
     if (!video) return;
     const sw = video.videoWidth;
@@ -228,7 +239,7 @@ export default function PhotoCapture({ onImageSelected, onBarcodeDetected, loadi
     onImageSelected(base64);
     stopCamera();
     setCameraMode(false);
-  }, [onImageSelected, stopCamera]);
+  }, [onImageSelected, onUserGeolocationOpportunity, stopCamera]);
 
   const openLiveCamera = async () => {
     if (!navigator.mediaDevices?.getUserMedia) {
@@ -535,7 +546,10 @@ export default function PhotoCapture({ onImageSelected, onBarcodeDetected, loadi
       {showCameraCta ? (
         <button
           type="button"
-          onClick={() => void openLiveCamera()}
+          onClick={() => {
+            onUserGeolocationOpportunity?.();
+            void openLiveCamera();
+          }}
           disabled={busy}
           style={{
             marginTop: 14,

@@ -38,7 +38,9 @@ function LocalCard({ place }) {
       ? place.provenance_label.trim()
       : undefined;
   const name = place.name || 'Independent Business';
-  const website = place.website ? String(place.website) : null;
+  const rawSite = place.website ?? place.url;
+  const website =
+    rawSite != null && String(rawSite).trim() ? String(rawSite).trim() : null;
   const phone = place.phone ? String(place.phone) : null;
   const addr = place.address ? String(place.address) : '';
   const streetLine = getStreetAddressLine(place);
@@ -75,94 +77,126 @@ function LocalCard({ place }) {
         borderRadius: 4,
         padding: '12px 16px',
         marginBottom: 10,
+        position: 'relative',
       }}
     >
-      <TrustStrip trustTier={trustTier} customLabel={provenance} />
+      {websiteHref ? (
+        <a
+          href={websiteHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          tabIndex={-1}
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 0,
+            borderRadius: 4,
+          }}
+        />
+      ) : null}
       <div
         style={{
-          fontFamily: "'Bebas Neue', sans-serif",
-          fontSize: 18,
-          letterSpacing: 1,
-          color: '#f0e8d0',
-          marginBottom: 2,
+          position: 'relative',
+          zIndex: 1,
+          pointerEvents: websiteHref ? 'none' : 'auto',
         }}
       >
-        {name}
-      </div>
-
-      {distance_mi != null ? (
+        <TrustStrip trustTier={trustTier} customLabel={provenance} />
         <div
           style={{
-            fontFamily: "'Space Mono', monospace",
-            fontSize: 11,
-            letterSpacing: 1.5,
-            color: '#6a8a9a',
-            textTransform: 'uppercase',
-            marginBottom: 6,
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontSize: 18,
+            letterSpacing: 1,
+            color: '#f0e8d0',
+            marginBottom: 2,
           }}
         >
-          {distance_mi} mi away
+          {name}
         </div>
-      ) : null}
 
-      {displayAddr ? (
-        <div
-          style={{
-            fontFamily: "'Crimson Pro', serif",
-            fontSize: 14,
-            color: '#6a8a9a',
-            marginBottom: 6,
-          }}
-        >
-          {displayAddr}
-        </div>
-      ) : null}
-
-      <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', alignItems: 'center' }}>
-        {website ? (
-          <a
-            href={websiteHref}
-            target="_blank"
-            rel="noreferrer"
+        {distance_mi != null ? (
+          <div
             style={{
               fontFamily: "'Space Mono', monospace",
               fontSize: 11,
-              letterSpacing: 1,
+              letterSpacing: 1.5,
+              color: '#6a8a9a',
               textTransform: 'uppercase',
-              color: '#0f1520',
-              background: '#f0a820',
-              padding: '4px 10px',
-              borderRadius: 2,
-              textDecoration: 'none',
-              fontWeight: 700,
+              marginBottom: 6,
             }}
           >
-            Visit ↗
-          </a>
+            {distance_mi} mi away
+          </div>
         ) : null}
-        {mapsHref ? (
-          <a href={mapsHref} target="_blank" rel="noreferrer" style={directionsLinkStyle}>
-            GET DIRECTIONS ↗
-          </a>
-        ) : null}
-        {phone ? (
-          <a
-            href={`tel:${phone}`}
+
+        {displayAddr ? (
+          <div
             style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: 11,
-              letterSpacing: 1,
-              textTransform: 'uppercase',
-              color: '#a8c4d8',
-              border: '1px solid #2a3f52',
-              padding: '4px 10px',
-              borderRadius: 2,
-              textDecoration: 'none',
+              fontFamily: "'Crimson Pro', serif",
+              fontSize: 14,
+              color: '#6a8a9a',
+              marginBottom: 6,
             }}
           >
-            Call
-          </a>
+            {displayAddr}
+          </div>
         ) : null}
+
+        <div
+          style={{
+            display: 'flex',
+            gap: 6,
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            pointerEvents: 'auto',
+          }}
+        >
+          {website ? (
+            <a
+              href={websiteHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 11,
+                letterSpacing: 1,
+                textTransform: 'uppercase',
+                color: '#0f1520',
+                background: '#f0a820',
+                padding: '4px 10px',
+                borderRadius: 2,
+                textDecoration: 'none',
+                fontWeight: 700,
+              }}
+            >
+              Visit ↗
+            </a>
+          ) : null}
+          {mapsHref ? (
+            <a href={mapsHref} target="_blank" rel="noopener noreferrer" style={directionsLinkStyle}>
+              GET DIRECTIONS ↗
+            </a>
+          ) : null}
+          {phone ? (
+            <a
+              href={`tel:${phone}`}
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontSize: 11,
+                letterSpacing: 1,
+                textTransform: 'uppercase',
+                color: '#a8c4d8',
+                border: '1px solid #2a3f52',
+                padding: '4px 10px',
+                borderRadius: 2,
+                textDecoration: 'none',
+              }}
+            >
+              Call
+            </a>
+          ) : null}
+        </div>
       </div>
     </div>
   );
@@ -182,7 +216,7 @@ function EtsyCard({ listing }) {
     <a
       href={url}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       style={{
         display: 'block',
         background: '#162030',

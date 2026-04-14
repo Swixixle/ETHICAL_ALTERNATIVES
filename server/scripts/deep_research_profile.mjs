@@ -15,6 +15,7 @@
  * Sector sets: up to 6 categories per run (from `profile_type` / `profile_json.sector` or `--sector`), unless `--all-categories`.
  * Category passes use a **snake draft**: round 1 forward (one Perplexity+Claude per category), round 2 reverse if budget remains. Each category saves to `deep_research_output/[slug]/[category].json` immediately; per-category resume skips completed rounds. **`--resume`** skips all Perplexity (subsidiary map + category queries) and loads existing temp files, then runs dedup → institutional → summary only. Final merge writes `[slug]_deep.json` and removes the temp dir on full success.
  * **`--merge-existing`** (dry-run): if `deep_research_output/[slug]_deep.json` exists, merge it with this run before write — union `per_category` (current run wins per category), `mergeIncidentsPreserveConfirmed` for `incidents`, concat+dedupe `gaps` / `related_clusters`; keep `institutional_enablement`, `summaries`, `corporate_tree` from the current run when present, else prior file; sum `costs`.
+ * Each `per_category` entry includes **`perplexity_citations`**: deduped `{ url, title, snippet }[]` from every Perplexity round (audit trail; forward-only — older profiles lack this until re-run).
  * Perplexity spend cap: --cost-cap (USD), else PERPLEXITY_DEEP_RESEARCH_COST_CAP_USD, else default **10** (sector-aware runs). Category rounds halt gracefully at cap; saved progress is merged.
  * Truncation: `--max-chars` (default 25000) on Perplexity text before Claude extraction.
  *
@@ -155,7 +156,9 @@ const CATEGORY_QUERIES = {
   labor_and_wage: {
     round1: `Find every documented wage-and-hour action, FLSA or state-law class or collective action, off-the-clock or meal/rest break claim, scheduling or on-call pay dispute, worker misclassification or independent-contractor challenge, OSHA citation or serious safety violation, NLRB unfair labor practice charge or representation case, union organizing retaliation or bargaining impasse, WARN Act layoff, and employment discrimination or harassment case involving {company}. Search both the public brand name and legal employer names, retail banners, staffing vendors, and warehouse or logistics affiliates. Include docket or case numbers, filing dates, settlement or judgment amounts, agency determination IDs, and direct links to DOL WHD, OSHA, NLRB, EEOC, state labor agencies, or court records. Go back as far as digital records exist.`,
 
-    round2: `Second research pass, same labor scope: find additional incidents not clearly covered above. Prioritize PACER or state court complaints, DOL WHD enforcement summaries, OSHA inspection detail (IMIS/ECHO), NLRB case dashboards, multi-district wage-and-hour listings, and published consent decrees or settlements that include docket citations.`,
+    round2: `Second research pass, same labor scope: find additional incidents not clearly covered above. Prioritize PACER or state court complaints, DOL WHD enforcement summaries, OSHA inspection detail (IMIS/ECHO), NLRB case dashboards, multi-district wage-and-hour listings, and published consent decrees or settlements that include docket citations.
+
+Explicitly search and cite where relevant: OECDWATCH.org and the OECD Guidelines National Contact Point (NCP) case database and complaint outcomes; Worker Rights Consortium (workersrights.org) factory disclosures and reports; Clean Clothes Campaign public materials; ITEP (itep.org) tax and corporate structure analysis; Good Jobs First Violation Tracker (violationtracker.goodjobsfirst.org). These are primary for apparel and global supply-chain labor — include direct URLs when used.`,
   },
 
   environmental: {
@@ -179,7 +182,7 @@ const CATEGORY_QUERIES = {
   financial_misconduct: {
     round1: `Find every SEC enforcement action, accounting fraud, financial restatement, auditor resignation, tax shelter ruling, transfer pricing dispute, and PCAOB enforcement action involving {company}. Include case numbers, amounts, and direct links to SEC EDGAR or DOJ records.`,
 
-    round2: `Second pass: prioritize SEC litigation releases, administrative proceedings, AAERs, PCAOB disciplinary orders, and DOJ fraud indictments with docket links.`,
+    round2: `Second pass: prioritize SEC litigation releases, administrative proceedings, AAERs, PCAOB disciplinary orders, DOJ fraud indictments with docket links, and PACER dockets for securities class actions or disclosure-related civil filings naming {company} or subsidiaries.`,
   },
 
   data_and_privacy: {
@@ -213,9 +216,11 @@ const CATEGORY_QUERIES = {
   },
 
   supply_chain: {
-    round1: `Find documented use of prison labor, forced labor, or child labor in {company}'s supply chain, conflict mineral controversies, and major safety or labor violations at key suppliers that exist primarily because of {company}'s purchasing power. Include NGO reports, congressional investigations, and journalist investigations with sources.`,
+    round1: `Find documented use of prison labor, forced labor, or child labor in {company}'s supply chain, conflict mineral controversies, and major safety or labor violations at key suppliers that exist primarily because of {company}'s purchasing power. Include NGO reports, congressional investigations, and journalist investigations with sources.
 
-    round2: `Second pass: prioritize CBP withhold release orders, OECD/ILO-linked reports with named suppliers, customs complaints, and supplier audit disclosures.`,
+Prioritize retrieval from: OECDWATCH.org and OECD NCP cases involving {company} or named suppliers; Worker Rights Consortium (workersrights.org); Clean Clothes Campaign; ITEP (itep.org) on offshore tax and profit shifting where tied to operations; Good Jobs First Violation Tracker for US enforcement context. Use direct URLs.`,
+
+    round2: `Second pass: prioritize CBP withhold release orders, OECD/ILO-linked reports with named suppliers, customs complaints, and supplier audit disclosures. Re-check OECDWATCH.org NCP database, workersrights.org assessments, Clean Clothes Campaign case files, and PACER or federal court dockets for US securities or disclosure litigation naming {company} or subsidiaries.`,
   },
 
   subsidies_and_bailouts: {
@@ -587,14 +592,21 @@ function snakeStateHasRound(state, roundNum) {
 function bundleFromSnakeRounds(category, rounds) {
   /** @type {unknown[]} */
   const mergedRaw = [];
+  /** @type {{ url: string, title: string, snippet: string }[][]} */
+  const citationLists = [];
   for (const r of rounds) {
     if (r && typeof r === 'object' && Array.isArray(r.incidents_raw)) {
       mergedRaw.push(...r.incidents_raw);
     }
+    if (r && typeof r === 'object' && Array.isArray(r.perplexity_citations)) {
+      citationLists.push(r.perplexity_citations);
+    }
   }
   normalizeIncidentsArrayKeys(mergedRaw);
   const deduped = mergeIncidentsPreserveConfirmed([], mergedRaw);
-  return buildCategoryResultBundle(category, deduped).bundle;
+  const bundle = buildCategoryResultBundle(category, deduped).bundle;
+  bundle.perplexity_citations = mergePerplexityCitationLists(...citationLists);
+  return bundle;
 }
 
 function logCategorySnakeRoundComplete(category, roundNum, ppUsd, bundle) {
@@ -642,6 +654,7 @@ function loadPerCategoryBundlesFromSnakeTemp(slug, categoriesToRun) {
         total_found: 0,
         overflow_count: 0,
         year_range: { earliest: null, latest: null },
+        perplexity_citations: [],
       });
       continue;
     }
@@ -701,6 +714,9 @@ async function runSnakeDraftCategoryPasses(
     let claudeInRound = inputTokens;
     let claudeOutRound = outputTokens;
 
+    /** Audit trail: raw URLs Perplexity returned for this snake round (both passes if retry runs). */
+    let perplexityCitationsRound = mergePerplexityCitationLists(pp.citations || []);
+
     const simpleKw = categorySimpleKeywords[cat];
     if (
       simpleKw &&
@@ -722,6 +738,7 @@ async function runSnakeDraftCategoryPasses(
       });
       applySnakePerplexityCost(costState, pp2.costUsd, onPpCost);
       ppCostRound += pp2.costUsd;
+      perplexityCitationsRound = mergePerplexityCitationLists(pp.citations || [], pp2.citations || []);
       const ex2 = await extractIncidentsForCategory(anthropic, cat, pp2, maxChars);
       anthropicInputSnake += ex2.inputTokens;
       anthropicOutputSnake += ex2.outputTokens;
@@ -736,6 +753,7 @@ async function runSnakeDraftCategoryPasses(
     const roundEntry = {
       round: roundNum,
       incidents_raw,
+      perplexity_citations: perplexityCitationsRound,
       perplexity_usd: ppCostRound,
       claude_input_tokens: claudeInRound,
       claude_output_tokens: claudeOutRound,
@@ -825,6 +843,32 @@ function citationsFromPerplexityResponse(data) {
     const url = typeof u === 'string' ? u.trim() : '';
     if (!url || map.has(url)) continue;
     map.set(url, { url, title: url, snippet: '' });
+  }
+  return [...map.values()];
+}
+
+/**
+ * Dedupe Perplexity citation rows by URL (order-preserving: first wins).
+ * @param {...{ url: string, title: string, snippet: string }[][]} lists
+ * @returns {{ url: string, title: string, snippet: string }[]}
+ */
+function mergePerplexityCitationLists(...lists) {
+  /** @type {Map<string, { url: string, title: string, snippet: string }>} */
+  const map = new Map();
+  for (const list of lists) {
+    if (!Array.isArray(list)) continue;
+    for (const c of list) {
+      if (!c || typeof c !== 'object') continue;
+      const url = typeof c.url === 'string' ? c.url.trim() : '';
+      if (!url) continue;
+      if (!map.has(url)) {
+        map.set(url, {
+          url,
+          title: typeof c.title === 'string' && c.title.trim() ? c.title.trim() : url,
+          snippet: typeof c.snippet === 'string' ? c.snippet : '',
+        });
+      }
+    }
   }
   return [...map.values()];
 }

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { countTier1UniqueMattersAcrossInvestigation } from '../utils/enforcementDisplay.js';
 
 const RECEIPT_RULE = '━━━━━━━━━━━━━━━━━━━━━━━━━';
 
@@ -195,10 +196,15 @@ export default function InvestigationReceipt({ investigation }) {
   if (!brandSlug || !lastDeep) return null;
 
   const receipt = payload && payload.signed_receipt && typeof payload.signed_receipt === 'object' ? payload.signed_receipt : null;
+  const hasDeepCategories =
+    Array.isArray(inv.deep_research_categories) && inv.deep_research_categories.length > 0;
+  const tier1Unique = countTier1UniqueMattersAcrossInvestigation(inv);
   const incidentCount =
-    receipt && typeof receipt.incident_count === 'number' && Number.isFinite(receipt.incident_count)
-      ? receipt.incident_count
-      : '—';
+    hasDeepCategories && Number.isFinite(tier1Unique)
+      ? tier1Unique
+      : receipt && typeof receipt.incident_count === 'number' && Number.isFinite(receipt.incident_count)
+        ? receipt.incident_count
+        : '—';
   const sourceCount =
     receipt && typeof receipt.source_count === 'number' && Number.isFinite(receipt.source_count)
       ? receipt.source_count
@@ -260,7 +266,7 @@ export default function InvestigationReceipt({ investigation }) {
               <span style={{ color: '#8a9aac' }}>Sources:</span> {sourceCount} verified
             </div>
             <div>
-              <span style={{ color: '#8a9aac' }}>Incidents:</span> {incidentCount} documented
+              <span style={{ color: '#8a9aac' }}>Enforcement matters (Tier 1, deduped):</span> {incidentCount}
             </div>
             <div style={{ marginTop: 6 }}>
               <span style={{ color: '#8a9aac' }}>Signature:</span>{' '}

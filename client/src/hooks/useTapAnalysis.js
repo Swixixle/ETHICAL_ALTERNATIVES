@@ -48,7 +48,17 @@ function mergeSources(a, b) {
 const CONFIRM_THRESHOLD = 0.6;
 
 export function useTapAnalysis() {
-  const [image, setImage] = useState(null);
+  const [image, _setImage] = useState(null);
+  /** Bumps when Snap session resets or a new photo is chosen — drop stale async tap work. */
+  const snapEpochRef = useRef(0);
+
+  const setImage = useCallback((b64) => {
+    snapEpochRef.current += 1;
+    setLoading(false);
+    setError(null);
+    _setImage(b64);
+  }, []);
+
   const [tapPosition, setTapPosition] = useState(null);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
@@ -62,6 +72,8 @@ export function useTapAnalysis() {
   const selectionBoxRef = useRef(null);
   const [activeSelectionBox, setActiveSelectionBox] = useState(null);
   const errorHapticFired = useRef(false);
+  /** Prevents overlapping getCurrentPosition chains when geolocation is triggered multiple times quickly. */
+  const geoInFlightRef = useRef(false);
 
   useEffect(() => {
     if (error) {
@@ -75,10 +87,19 @@ export function useTapAnalysis() {
   }, [error]);
 
   const captureGeoOnce = useCallback(() => {
-    if (geo !== null || typeof navigator === 'undefined' || !navigator.geolocation) return;
+    const hasValidGeo =
+      geo && typeof geo === 'object' && Number.isFinite(geo.lat) && Number.isFinite(geo.lng);
+    if (hasValidGeo || typeof navigator === 'undefined' || !navigator.geolocation) return;
+    if (geoInFlightRef.current) return;
+    geoInFlightRef.current = true;
+
+    const endAttempt = (nextGeo) => {
+      geoInFlightRef.current = false;
+      setGeo(nextGeo);
+    };
 
     const applyPosition = (pos) => {
-      setGeo({
+      endAttempt({
         lat: pos.coords.latitude,
         lng: pos.coords.longitude,
       });
@@ -89,7 +110,7 @@ export function useTapAnalysis() {
       () => {
         navigator.geolocation.getCurrentPosition(
           applyPosition,
-          () => setGeo(false),
+          () => endAttempt(false),
           { enableHighAccuracy: false, timeout: 15_000, maximumAge: 60_000 }
         );
       },
@@ -243,6 +264,9 @@ export function useTapAnalysis() {
         return;
       }
 
+      snapEpochRef.current += 1;
+      const myEpoch = snapEpochRef.current;
+
       const selBox =
         selectionBox &&
         typeof selectionBox === 'object' &&
@@ -275,6 +299,7 @@ export function useTapAnalysis() {
           selection_box: selBox,
           imageOverride,
         });
+        if (snapEpochRef.current !== myEpoch) return;
         if (!preview.ok) {
           if (preview.status === 429) {
             const msg =
@@ -304,6 +329,7 @@ export function useTapAnalysis() {
         const db_preview = preview.data.db_preview ?? null;
 
         if (conf < CONFIRM_THRESHOLD) {
+          if (snapEpochRef.current !== myEpoch) return;
           setPendingConfirmation({
             identification: crop ? { ...idRaw, crop_base64: crop } : { ...idRaw },
             identification_tier: preview.data.identification_tier,
@@ -316,6 +342,7 @@ export function useTapAnalysis() {
           return;
         }
 
+        if (snapEpochRef.current !== myEpoch) return;
         setResult({
           identification: idRaw,
           identification_tier: preview.data.identification_tier,
@@ -335,10 +362,14 @@ export function useTapAnalysis() {
         });
         runResearchPhase(idRaw);
       } catch (e) {
-        setError(e instanceof Error ? e.message : 'Network error');
+        if (snapEpochRef.current === myEpoch) {
+          setError(e instanceof Error ? e.message : 'Network error');
+        }
       } finally {
-        setLoading(false);
-        setActiveSelectionBox(null);
+        if (snapEpochRef.current === myEpoch) {
+          setLoading(false);
+          setActiveSelectionBox(null);
+        }
       }
     },
     [image, fetchTap, runResearchPhase]
@@ -375,6 +406,7 @@ export function useTapAnalysis() {
   }, [pendingConfirmation, runResearchPhase]);
 
   const cancelPendingConfirmation = useCallback(() => {
+    snapEpochRef.current += 1;
     setPendingConfirmation(null);
     setTapPosition(null);
     selectionBoxRef.current = null;
@@ -394,6 +426,7 @@ export function useTapAnalysis() {
 
   const completeRegionSelect = useCallback(
     async (cx, cy, normRect = null) => {
+      const regionEpoch = snapEpochRef.current;
       setRegionSelectActive(false);
       setTapPosition({ x: cx, y: cy });
       setTapSession((s) => s + 1);
@@ -401,6 +434,7 @@ export function useTapAnalysis() {
       if (normRect && image) {
         try {
           const { enhancedBase64 } = await enhanceRegionCrop(image, normRect);
+          if (snapEpochRef.current !== regionEpoch) return;
           const nx = Number(normRect.x);
           const ny = Number(normRect.y);
           const nw = Number(normRect.width);
@@ -411,9 +445,11 @@ export function useTapAnalysis() {
             imageOverride: enhancedBase64,
           });
         } catch {
+          if (snapEpochRef.current !== regionEpoch) return;
           await analyzeTap(cx, cy, normRect);
         }
       } else {
+        if (snapEpochRef.current !== regionEpoch) return;
         await analyzeTap(cx, cy, normRect);
       }
     },
@@ -421,6 +457,7 @@ export function useTapAnalysis() {
   );
 
   const cancelRegionSelect = useCallback(() => {
+    snapEpochRef.current += 1;
     setRegionSelectActive(false);
     setTapPosition(null);
     selectionBoxRef.current = null;
@@ -434,11 +471,12 @@ export function useTapAnalysis() {
       setError('Enter a company or brand name');
       return;
     }
+    snapEpochRef.current += 1;
     setLoading(true);
     // haptic('scan');
     setError(null);
     setResult(null);
-    setImage(null);
+    _setImage(null);
     setTapPosition(null);
     setPendingConfirmation(null);
     setRegionSelectActive(false);
@@ -471,7 +509,9 @@ export function useTapAnalysis() {
   }, []);
 
   const reset = useCallback(() => {
-    setImage(null);
+    snapEpochRef.current += 1;
+    geoInFlightRef.current = false;
+    _setImage(null);
     setTapPosition(null);
     setLoading(false);
     setResult(null);
@@ -485,6 +525,7 @@ export function useTapAnalysis() {
   }, []);
 
   const clearResult = useCallback(() => {
+    snapEpochRef.current += 1;
     setResult(null);
     setError(null);
     setTapPosition(null);

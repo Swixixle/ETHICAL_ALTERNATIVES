@@ -144,8 +144,22 @@ export default function VerifyReceiptPage({ receiptId, onHome }) {
             </dd>
             {receipt && typeof receipt.incident_count === 'number' ? (
               <>
-                <dt style={{ color: '#6a8a9a' }}>Documented incidents</dt>
-                <dd style={{ margin: '0 0 12px' }}>{receipt.incident_count}</dd>
+                <dt
+                  style={{ color: '#6a8a9a', cursor: 'help' }}
+                  title="Incident count reflects the research snapshot at the time this receipt was signed. Live profiles may show a revised count after deduplication."
+                >
+                  Incident rows (signed bundle)
+                </dt>
+                <dd style={{ margin: '0 0 12px' }}>
+                  {receipt.incident_count}
+                  <span
+                    role="note"
+                    style={{ display: 'block', color: '#5a7a8a', fontSize: 10, marginTop: 4, lineHeight: 1.5 }}
+                  >
+                    Incident count reflects the research snapshot at the time this receipt was signed. Live profiles
+                    may show a revised count after deduplication.
+                  </span>
+                </dd>
               </>
             ) : null}
             {receipt && typeof receipt.source_count === 'number' ? (
