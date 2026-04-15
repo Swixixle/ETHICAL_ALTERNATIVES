@@ -1454,6 +1454,17 @@ export default function InvestigationCard({
   const topChipCategories = deepCategories.slice(0, 4);
   const moreChipCount = Math.max(0, deepCategories.length - 4);
 
+  const timelineAccordionResetKey = useMemo(() => {
+    const slug =
+      typeof investigation.brand_slug === 'string' && investigation.brand_slug.trim()
+        ? investigation.brand_slug.trim()
+        : '';
+    const brand = typeof id.brand === 'string' && id.brand.trim() ? id.brand.trim() : '';
+    const parent =
+      typeof id.corporate_parent === 'string' && id.corporate_parent.trim() ? id.corporate_parent.trim() : '';
+    return slug || brand || parent || 'investigation';
+  }, [investigation.brand_slug, id.brand, id.corporate_parent]);
+
   const scrollToDeepCategory = useCallback((catKey) => {
     setOpenSection(`deep:${catKey}`);
     window.requestAnimationFrame(() => {
@@ -1803,7 +1814,8 @@ export default function InvestigationCard({
       </div>
 
       <div className="investigation-card__timeline-wrap">
-        <Timeline events={displayTimelineEvents} minEvents={3} />
+        {/* key resets collapsed state per dossier; do not use minEvents — it hid the whole timeline when fewer than 3 events */}
+        <Timeline key={timelineAccordionResetKey} events={displayTimelineEvents} />
       </div>
 
       {userCaptureSrc && referenceImageSrc ? (
