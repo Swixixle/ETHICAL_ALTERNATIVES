@@ -5,7 +5,7 @@ import {
   combineConfidenceTracks,
 } from './confidenceScorer.js';
 
-const GEMINI_VISION_MODEL = process.env.GEMINI_VISION_MODEL || 'gemini-2.0-flash';
+const GEMINI_VISION_MODEL = process.env.GEMINI_VISION_MODEL || 'gemini-2.5-flash';
 const TIMEOUT_MS = 15_000;
 const AGREEMENT_THRESHOLD = 0.65;
 
