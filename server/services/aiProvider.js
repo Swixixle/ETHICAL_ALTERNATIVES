@@ -37,8 +37,10 @@ export function getProviderHealthSnapshot() {
   return { providers: { ...providerHealth }, keys_configured: configured };
 }
 
-const GEMINI_VISION_MODEL = process.env.GEMINI_VISION_MODEL || 'gemini-2.0-flash-lite';
-const GEMINI_TEXT_MODEL = process.env.GEMINI_INVESTIGATION_MODEL || process.env.GEMINI_TEXT_MODEL || 'gemini-2.0-flash-lite';
+/** Defaults avoid deprecated `gemini-2.0-flash-lite`; override via GEMINI_* env if needed. */
+const GEMINI_VISION_MODEL = process.env.GEMINI_VISION_MODEL || 'gemini-2.0-flash';
+const GEMINI_TEXT_MODEL =
+  process.env.GEMINI_INVESTIGATION_MODEL || process.env.GEMINI_TEXT_MODEL || 'gemini-2.0-flash';
 const PERPLEXITY_MODEL = process.env.PERPLEXITY_MODEL || 'sonar';
 
 /**
