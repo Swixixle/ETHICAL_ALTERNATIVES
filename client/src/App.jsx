@@ -22,8 +22,6 @@ import {
 } from './utils/investigationConfidence.js';
 // import { haptic } from './utils/haptics.js';
 // import { playReveal } from './utils/sounds.js';
-import { slugifyBrandName } from './utils/brandSlug.js';
-import LocalDocumentary from './components/LocalDocumentary.jsx';
 import LocationCitySheet from './components/LocationCitySheet.jsx';
 import DirectoryPage from './pages/DirectoryPage.jsx';
 import ImpactPublicPage from './pages/ImpactPublicPage.jsx';
@@ -390,12 +388,83 @@ export default function App() {
   const [showReportError, setShowReportError] = useState(false);
   const [researchNarrativeOn, setResearchNarrativeOn] = useState(false);
 
-  /** Local documentary overlay during async investigation */
-  const [docRun, setDocRun] = useState(null);
+  /** @type {null | { brandLabel: string; orphan: boolean; tapSession: number; detail: Record<string, unknown> }} */
+  const [reportReadyNotice, setReportReadyNotice] = useState(null);
+  const reportNoticeDismissedKeyRef = useRef(/** @type {string | null} */ (null));
+
+  useEffect(() => {
+    if (result?.research_loading) reportNoticeDismissedKeyRef.current = null;
+  }, [result?.research_loading]);
+
+  const dismissReportReadyNotice = useCallback(() => {
+    setReportReadyNotice((n) => {
+      if (n) reportNoticeDismissedKeyRef.current = `${n.tapSession}:${n.brandLabel}`;
+      return null;
+    });
+  }, []);
+
+  useEffect(() => {
+    /** @param {Event} e */
+    const onInvestigationReady = (e) => {
+      const d = /** @type {CustomEvent} */ (e).detail || {};
+      const ts = typeof d.tapSession === 'number' ? d.tapSession : -1;
+      const brandLabel = typeof d.brandLabel === 'string' ? d.brandLabel : 'Report';
+      const key = `${ts}:${brandLabel}`;
+      if (reportNoticeDismissedKeyRef.current === key) return;
+      setReportReadyNotice({
+        brandLabel,
+        orphan: Boolean(d.orphan),
+        tapSession: ts,
+        detail: /** @type {Record<string, unknown>} */ (d),
+      });
+    };
+    window.addEventListener('ea-investigation-ready', onInvestigationReady);
+    return () => window.removeEventListener('ea-investigation-ready', onInvestigationReady);
+  }, []);
+
+  const onReportReadyReadNow = useCallback(() => {
+    if (!reportReadyNotice) return;
+    if (reportReadyNotice.orphan) {
+      const d = reportReadyNotice.detail;
+      const ident = d.identification && typeof d.identification === 'object' ? d.identification : {};
+      setResult({
+        identification: ident,
+        investigation: d.investigation ?? null,
+        is_stub_investigation: Boolean(d.is_stub_investigation),
+        research_loading: false,
+        sourcing_complete: true,
+        results: [],
+        registry_results: [],
+        local_results: [],
+        scene_inventory: null,
+        identification_tier: 'confirmed',
+        version: 'v1',
+        response_ms: null,
+        searched_sources: Array.isArray(d.searched_sources) ? d.searched_sources : [],
+        empty_sources: [],
+        low_confidence_warning: false,
+        rate_limited: Boolean(d.rate_limited),
+        rate_limit_message:
+          typeof d.rate_limit_message === 'string' ? d.rate_limit_message : null,
+        rate_limit_resets_in_ms:
+          typeof d.rate_limit_resets_in_ms === 'number' ? d.rate_limit_resets_in_ms : null,
+      });
+      setMode('snap');
+    } else {
+      window.requestAnimationFrame(() => {
+        document
+          .getElementById('ea-investigation-anchor')
+          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+    if (reportReadyNotice) {
+      reportNoticeDismissedKeyRef.current = `${reportReadyNotice.tapSession}:${reportReadyNotice.brandLabel}`;
+    }
+    setReportReadyNotice(null);
+  }, [reportReadyNotice, setResult]);
+
   const [cityGateOpen, setCityGateOpen] = useState(false);
   const [cityGateChecked, setCityGateChecked] = useState(false);
-
-  const releaseDocumentary = useCallback(() => setDocRun(null), []);
 
   const [isDesktop, setIsDesktop] = useState(
     () => typeof window !== 'undefined' && window.innerWidth >= 768
@@ -491,49 +560,13 @@ export default function App() {
   }, [mode, cityGateChecked]);
 
   useEffect(() => {
-    if (mode !== 'snap') return;
-    if (result?.research_loading && !result?.investigation) {
-      const id = result.identification;
-      const brand =
-        (id?.brand && String(id.brand).trim()) ||
-        (id?.corporate_parent && String(id.corporate_parent).trim()) ||
-        (id?.object && String(id.object).trim()) ||
-        'Unknown';
-      setDocRun({
-        key: `tap-${tapSession}-${brand}`,
-        brandName: brand,
-        brandSlug: slugifyBrandName(brand),
-      });
-    }
-  }, [mode, result?.research_loading, result?.investigation, result?.identification, tapSession]);
-
-  useEffect(() => {
-    if (mode !== 'deep') return;
-    if (loading && deepBrand) {
-      setDocRun({
-        key: `deep-${tapSession}-${deepBrand}`,
-        brandName: deepBrand,
-        brandSlug: slugifyBrandName(deepBrand),
-      });
-    }
-  }, [mode, loading, deepBrand, tapSession]);
-
-  useEffect(() => {
-    if (result && result.research_loading === false && !result.investigation && docRun) {
-      setDocRun(null);
-    }
-  }, [result?.research_loading, result?.investigation, result, docRun]);
-
-  useEffect(() => {
     if (mode === 'deep' && error && !loading) {
-      setDocRun(null);
       setDeepBrand(null);
     }
   }, [mode, error, loading]);
 
   useEffect(() => {
     if (mode === 'home' && !loading) {
-      setDocRun(null);
       setDeepBrand(null);
     }
   }, [mode, loading]);
@@ -562,15 +595,6 @@ export default function App() {
   useEffect(() => {
     if (result == null) setResearchNarrativeOn(false);
   }, [result]);
-
-  useEffect(() => {
-    if (!result?.research_loading) return undefined;
-    const timer = window.setTimeout(() => {
-      const loc = readCachedLocation();
-      if (loc?.city) setResearchNarrativeOn(true);
-    }, 1500);
-    return () => window.clearTimeout(timer);
-  }, [result?.research_loading]);
 
   /**
    * After vision/sourcing returns no DB profile, run one live investigation (replaces NoRecordCompactModule CTA).
@@ -663,6 +687,15 @@ export default function App() {
   );
 
   const id = result?.identification;
+
+  const investigatingBrandLabel =
+    id?.brand && String(id.brand).trim()
+      ? String(id.brand).trim()
+      : id?.corporate_parent && String(id.corporate_parent).trim()
+        ? String(id.corporate_parent).trim()
+        : id?.object && String(id.object).trim()
+          ? String(id.object).trim()
+          : 'this brand';
 
   const tapPhase =
     image && !result && !pendingConfirmation && !regionSelectActive ? 'tap' : null;
@@ -979,17 +1012,6 @@ export default function App() {
           </div>
         ) : null}
 
-        {showResearchBanner ? (
-          <p
-            className="app__text-loader"
-            style={{ marginTop: 16, marginBottom: 4, textAlign: 'left' }}
-            role="status"
-            aria-busy="true"
-          >
-            Researching full record…
-          </p>
-        ) : null}
-
         {hasAlt ? (
           <QuickAlternatives
             registryResults={result.registry_results}
@@ -1000,6 +1022,7 @@ export default function App() {
         <HealthCallout investigation={result.investigation} />
         {result.investigation ? (
           <div
+            id="ea-investigation-anchor"
             key={`investigation-${tapSession}`}
             className="app__investigation-wrap investigation-card-enter"
           >
@@ -1288,7 +1311,7 @@ export default function App() {
     (mode === 'snap' &&
       result &&
       (image || id?.identification_method === 'barcode')) ||
-      (mode === 'deep' && result?.investigation)
+      (mode === 'deep' && result)
   );
 
   const docLoc = readUserCityState();
@@ -1322,13 +1345,21 @@ export default function App() {
         </div>
       </header>
 
-      <main className={`app__main${showResultsNav ? ' app__main--with-bottom-nav' : ''}`}>
-        {mode === 'deep' && loading && !docRun ? (
-          <div className="app__panel app__loader-panel" role="status" aria-busy="true">
-            <p className="app__text-loader">Researching...</p>
-          </div>
-        ) : null}
+      {result?.research_loading && (mode === 'snap' || mode === 'deep') ? (
+        <div className="app__investigation-progress" role="status" aria-live="polite">
+          <span className="app__investigation-progress-track" aria-hidden>
+            <span className="app__investigation-progress-track-indeterminate" />
+          </span>
+          <span className="app__investigation-progress-row">
+            <span className="app__investigation-progress-pulse" aria-hidden />
+            <span className="app__investigation-progress-label">
+              Investigating {investigatingBrandLabel}…
+            </span>
+          </span>
+        </div>
+      ) : null}
 
+      <main className={`app__main${showResultsNav ? ' app__main--with-bottom-nav' : ''}`}>
         {mode === 'deep' && error && !result ? (
           <div className="app__panel">
             {typeof error === 'string' && error.startsWith('RATE_LIMITED:') ? (
@@ -1544,20 +1575,6 @@ export default function App() {
         />
       ) : null}
 
-      {docRun && (mode === 'snap' || mode === 'deep') ? (
-        <LocalDocumentary
-          runKey={docRun.key}
-          city={documentaryCity}
-          state={documentaryState}
-          brandName={docRun.brandName}
-          brandSlug={docRun.brandSlug}
-          investigationReady={
-            mode === 'deep' ? !loading && Boolean(result?.investigation) : Boolean(result?.investigation)
-          }
-          onRelease={releaseDocumentary}
-        />
-      ) : null}
-
       {researchNarrativeOn && researchBackdropLoc?.city ? (
         <ResearchNarrative
           city={researchBackdropLoc.city}
@@ -1572,6 +1589,27 @@ export default function App() {
           reportReady={!result?.research_loading}
           onSkip={() => setResearchNarrativeOn(false)}
         />
+      ) : null}
+
+      {reportReadyNotice ? (
+        <div
+          className="app__report-ready-toast"
+          role="dialog"
+          aria-label="Investigation report ready"
+        >
+          <p className="app__report-ready-toast-msg">
+            <span aria-hidden>{String.fromCodePoint(0x1f4cb)}</span> {reportReadyNotice.brandLabel}{' '}
+            report ready
+          </p>
+          <div className="app__report-ready-toast-actions">
+            <button type="button" className="app__btn app__btn--ghost" onClick={onReportReadyReadNow}>
+              Read now
+            </button>
+            <button type="button" className="app__btn app__btn--ghost" onClick={dismissReportReadyNotice}>
+              Later
+            </button>
+          </div>
+        </div>
       ) : null}
 
       {showResultsNav ? (

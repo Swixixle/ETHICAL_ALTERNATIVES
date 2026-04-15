@@ -44,6 +44,43 @@ function mergeSources(a, b) {
   return [...s];
 }
 
+/**
+ * @param {Record<string, unknown>} identification
+ * @param {Record<string, unknown>} iData
+ * @param {boolean} orphan
+ * @param {number} tapSession
+ */
+function dispatchInvestigationReady(identification, iData, orphan, tapSession) {
+  if (typeof window === 'undefined') return;
+  const inv = iData.investigation ?? null;
+  const brand =
+    identification && typeof identification.brand === 'string' && identification.brand.trim()
+      ? identification.brand.trim()
+      : identification && typeof identification.corporate_parent === 'string' && identification.corporate_parent.trim()
+        ? identification.corporate_parent.trim()
+        : identification && typeof identification.object === 'string' && identification.object.trim()
+          ? identification.object.trim()
+          : 'Report';
+  window.dispatchEvent(
+    new CustomEvent('ea-investigation-ready', {
+      detail: {
+        orphan,
+        brandLabel: brand,
+        tapSession,
+        identification: identification ? { ...identification } : {},
+        investigation: inv,
+        is_stub_investigation:
+          iData.investigation?.is_stub_investigation ?? iData.is_stub_investigation ?? false,
+        rate_limited: Boolean(iData.rate_limited),
+        rate_limit_message:
+          typeof iData.rate_limit_message === 'string' ? iData.rate_limit_message : null,
+        rate_limit_resets_in_ms: iData.rate_limit_resets_in_ms ?? null,
+        searched_sources: Array.isArray(iData.searched_sources) ? iData.searched_sources : [],
+      },
+    })
+  );
+}
+
 /** Below this → confirm / disambiguation flow; 0.60–0.84 still loads the card with an on-card accuracy hint. */
 const CONFIRM_THRESHOLD = 0.6;
 
@@ -65,6 +102,10 @@ export function useTapAnalysis() {
   const [error, setError] = useState(null);
   const [geo, setGeo] = useState(null);
   const [tapSession, setTapSession] = useState(0);
+  const tapSessionRef = useRef(0);
+  useEffect(() => {
+    tapSessionRef.current = tapSession;
+  }, [tapSession]);
   /** @type {null | { identification: object, identification_tier: string, response_ms?: number, scene_inventory?: unknown, db_preview?: unknown }} */
   const [pendingConfirmation, setPendingConfirmation] = useState(null);
   const [regionSelectActive, setRegionSelectActive] = useState(false);
@@ -156,6 +197,7 @@ export function useTapAnalysis() {
 
   const runResearchPhase = useCallback(
     (identification) => {
+      const phaseEpoch = snapEpochRef.current;
       const session_id = getSessionId();
       const sourcingBody = {
         identification,
@@ -180,6 +222,7 @@ export function useTapAnalysis() {
             body: JSON.stringify(sourcingBody),
           });
           const sData = await sRes.json().catch(() => ({}));
+          if (snapEpochRef.current !== phaseEpoch) return;
           if (sRes.ok) {
             setResult((prev) => {
               if (!prev) return prev;
@@ -206,6 +249,7 @@ export function useTapAnalysis() {
       void (async () => {
         try {
           if (!identification.brand && !identification.corporate_parent) {
+            if (snapEpochRef.current !== phaseEpoch) return;
             setResult((prev) => (prev ? { ...prev, research_loading: false } : prev));
             return;
           }
@@ -215,18 +259,30 @@ export function useTapAnalysis() {
             body: JSON.stringify(invBody),
           });
           const iData = await iRes.json().catch(() => ({}));
+          if (snapEpochRef.current !== phaseEpoch) return;
           if (iRes.ok) {
+            const inv = iData.investigation ?? null;
+            let orphanMerge = false;
             setResult((prev) => {
-              if (!prev) return prev;
-              const inv = iData.investigation ?? null;
+              if (!prev) {
+                orphanMerge = true;
+                return prev;
+              }
               return {
                 ...prev,
                 investigation: inv,
                 is_stub_investigation:
                   iData.investigation?.is_stub_investigation ?? iData.is_stub_investigation ?? false,
                 research_loading: false,
+                rate_limited: false,
+                rate_limit_message: null,
+                rate_limit_resets_in_ms: null,
                 searched_sources: mergeSources(prev.searched_sources, iData.searched_sources),
               };
+            });
+            queueMicrotask(() => {
+              if (snapEpochRef.current !== phaseEpoch) return;
+              dispatchInvestigationReady(identification, iData, orphanMerge, tapSessionRef.current);
             });
           } else if (iRes.status === 429) {
             const msg =
@@ -248,6 +304,7 @@ export function useTapAnalysis() {
           }
         } catch (e) {
           console.error('[investigation]', e);
+          if (snapEpochRef.current !== phaseEpoch) return;
           setResult((prev) => (prev ? { ...prev, research_loading: false } : prev));
         }
       })();
@@ -472,41 +529,130 @@ export function useTapAnalysis() {
       return;
     }
     snapEpochRef.current += 1;
-    setLoading(true);
-    // haptic('scan');
+    const phaseEpoch = snapEpochRef.current;
+    setLoading(false);
     setError(null);
-    setResult(null);
     _setImage(null);
     setTapPosition(null);
     setPendingConfirmation(null);
     setRegionSelectActive(false);
     selectionBoxRef.current = null;
     setActiveSelectionBox(null);
-    setTapSession((s) => s + 1);
-    try {
-      const res = await fetch(investigateUrl(), {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', ...getImpactFetchHeaders() },
-        body: JSON.stringify({ brand: q, session_id: getSessionId() }),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        setError(data.error || `Request failed (${res.status})`);
-        return;
-      }
-      setResult({
-        ...data,
-        is_stub_investigation:
-          data.investigation?.is_stub_investigation ?? data.is_stub_investigation ?? false,
-        research_loading: false,
-        sourcing_complete: true,
-      });
-    } catch (e) {
-      setError(e instanceof Error ? e.message : 'Network error');
-    } finally {
-      setLoading(false);
+    setTapSession((s) => {
+      const next = s + 1;
+      tapSessionRef.current = next;
+      return next;
+    });
+
+    const identification = {
+      object: q,
+      brand: q,
+      corporate_parent: null,
+      category: 'search',
+      confidence: 1,
+      identification_method: 'text_search',
+      search_keywords: q,
+    };
+    const session_id = getSessionId();
+    const sourcingBody = {
+      identification,
+      session_id,
+    };
+    if (geo && typeof geo === 'object' && Number.isFinite(geo.lat) && Number.isFinite(geo.lng)) {
+      sourcingBody.user_lat = geo.lat;
+      sourcingBody.user_lng = geo.lng;
     }
-  }, []);
+
+    setResult({
+      identification,
+      identification_tier: 'confirmed',
+      investigation: null,
+      results: [],
+      registry_results: [],
+      local_results: [],
+      scene_inventory: null,
+      response_ms: null,
+      version: 'v1',
+      research_loading: true,
+      sourcing_complete: false,
+      searched_sources: [],
+      empty_sources: [],
+      low_confidence_warning: false,
+    });
+
+    void (async () => {
+      try {
+        const sRes = await fetch(tapSourcingUrl(), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', ...getImpactFetchHeaders() },
+          body: JSON.stringify(sourcingBody),
+        });
+        const sData = await sRes.json().catch(() => ({}));
+        if (snapEpochRef.current !== phaseEpoch) return;
+        if (sRes.ok) {
+          setResult((prev) => {
+            if (!prev) return prev;
+            return {
+              ...prev,
+              results: Array.isArray(sData.results) ? sData.results : prev.results,
+              registry_results: Array.isArray(sData.registry_results)
+                ? sData.registry_results
+                : prev.registry_results,
+              local_results: Array.isArray(sData.local_results)
+                ? sData.local_results
+                : prev.local_results,
+              empty_sources: sData.empty_sources ?? prev.empty_sources,
+              searched_sources: mergeSources(prev.searched_sources, sData.searched_sources),
+              sourcing_complete: true,
+            };
+          });
+        }
+      } catch (e) {
+        console.error('[sourcing-deep]', e);
+      }
+    })();
+
+    void (async () => {
+      try {
+        const res = await fetch(investigateUrl(), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', ...getImpactFetchHeaders() },
+          body: JSON.stringify({ brand: q, session_id }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (snapEpochRef.current !== phaseEpoch) return;
+        const ts = tapSessionRef.current;
+        if (!res.ok) {
+          setError(data.error || `Request failed (${res.status})`);
+          setResult((prev) => (prev ? { ...prev, research_loading: false } : prev));
+          return;
+        }
+        let orphanMerge = false;
+        setResult((prev) => {
+          if (!prev) {
+            orphanMerge = true;
+            return prev;
+          }
+          return {
+            ...prev,
+            ...data,
+            is_stub_investigation:
+              data.investigation?.is_stub_investigation ?? data.is_stub_investigation ?? false,
+            research_loading: false,
+            sourcing_complete: true,
+          };
+        });
+        queueMicrotask(() => {
+          if (snapEpochRef.current !== phaseEpoch) return;
+          dispatchInvestigationReady(identification, data, orphanMerge, tapSessionRef.current);
+        });
+      } catch (e) {
+        if (snapEpochRef.current !== phaseEpoch) return;
+        setError(e instanceof Error ? e.message : 'Network error');
+        setResult((prev) => (prev ? { ...prev, research_loading: false } : prev));
+      }
+    })();
+  }, [geo]);
 
   const reset = useCallback(() => {
     snapEpochRef.current += 1;

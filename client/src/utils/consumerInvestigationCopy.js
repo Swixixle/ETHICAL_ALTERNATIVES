@@ -44,19 +44,19 @@ function looksLikeJsonObjectDump(s) {
 }
 
 /**
- * Lines starting with a bullet then a date — machine-assembled incident rows that leaked into prose.
+ * Machine-assembled bullet dumps that leak into section finding prose (e.g. `• The Export-Import Bank…`,
+ * `• California provided…`, or date-prefixed incident rows from deep-research merge). Strips whole lines only.
  * @param {string} s
  */
 export function stripMachineDateBulletLines(s) {
   const lines = String(s || '').split(/\r?\n/);
-  /** @see buildFindingFromCategory / merge — ISO, US dates, month names, month-year */
-  const month = '(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec|January|February|March|April|June|July|August|September|October|November|December)\\.?';
-  const bulletDateLine = new RegExp(
-    `^\\s*(?:[•*]|\\u2022)\\s+(?:\\d{4}\\b(?:[-/]\\d{1,2}(?:[-/]\\d{1,2})?)?|\\d{1,2}[/\\-]\\d{1,2}(?:[/\\-]\\d{2,4})?\\b|${month}\\s+\\d{4}\\b|${month}\\s+\\d{1,2}(?:st|nd|rd|th)?,?\\s*(?:\\d{4})?)\\b`,
-    'i'
-  );
-  const kept = lines.filter((line) => !bulletDateLine.test(line));
-  return kept.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+  const machineBulletLine = /^\s*[•*\u2022\u2013\u2014-]\s+\S/;
+  const kept = lines.filter((line) => !machineBulletLine.test(line));
+  return kept
+    .join('\n')
+    .replace(/\n[ \t]*\n([ \t]*\n)+/g, '\n\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
 }
 
 /**
