@@ -95,6 +95,31 @@ function categoryTotalFound(cat) {
 }
 
 /**
+ * Same `incident_count` as the signed investigation receipt (rollup length when present, else summed tab totals).
+ *
+ * @param {Record<string, unknown>} dr
+ * @returns {number | null}
+ */
+export function computeReceiptIncidentCount(dr) {
+  if (!dr || typeof dr !== 'object') return null;
+  const perCategory = Array.isArray(dr.per_category) ? dr.per_category : [];
+  if (perCategory.length === 0) return null;
+
+  const topIncidents = Array.isArray(dr.incidents) ? dr.incidents.length : 0;
+  if (topIncidents > 0) return topIncidents;
+
+  let sum = 0;
+  for (const cat of perCategory) {
+    if (!cat || typeof cat !== 'object') continue;
+    const c = /** @type {Record<string, unknown>} */ (cat);
+    const category = typeof c.category === 'string' ? c.category : '';
+    if (!category) continue;
+    sum += categoryTotalFound(cat);
+  }
+  return sum;
+}
+
+/**
  * @param {unknown} cat
  * @returns {number | null}
  */
@@ -502,6 +527,38 @@ export function applyDeepResearchToInvestigation(inv, dr, healthFlag) {
   }
 
   inv.deep_research_categories = buildDeepResearchCategoriesForClient(dr);
+
+  const receiptN = computeReceiptIncidentCount(dr);
+  if (receiptN != null) inv.receipt_incident_count = receiptN;
+}
+
+/** UTC "through" date for live-delta copy — avoids model-invented calendar end dates. */
+function liveScanWindowThroughDate() {
+  return new Date().toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+
+/**
+ * Strip LLM-invented "30-day window ending …" lines; merge uses server `through` instead.
+ * @param {string} text
+ */
+function stripLiveDeltaWindowDateLeaks(text) {
+  let t = String(text || '').replace(/\r\n/g, '\n').trim();
+  if (!t) return '';
+  t = t.replace(
+    /(?:^|\n)\s*Recent overview for\s+(?:a\s+)?~?30[-\s]day window ending\s+[^.\n]+[.]?\s*/gi,
+    '\n'
+  );
+  t = t.replace(/(?:^|\n)\s*Recent overview\s*[—–-]\s*last ~30 days[^.\n]*(?:ending[^.\n]*)?[.]?\s*/gi, '\n');
+  t = t.replace(/(?:^|\n)\s*\(?Last ~30 days from[^.)]*\)?[.:]?\s*/gi, '\n');
+  t = t.replace(/\b~?30[-\s]day window ending\s+[A-Z][a-z]{2,9}\s+\d{1,2},\s*\d{4}\b\.?/gi, '');
+  t = t.replace(/\bfor the last ~30 days\s*\([^)]*ending[^)]*\)/gi, '');
+  t = t.replace(/\n{3,}/g, '\n\n').trim();
+  return t;
 }
 
 /**
@@ -512,13 +569,16 @@ export function applyDeepResearchToInvestigation(inv, dr, healthFlag) {
  */
 export function mergeLiveInvestigationDelta(base, live, healthFlag) {
   if (!base || !live) return;
+  const scanThrough = liveScanWindowThroughDate();
+  const recentPrefix = `Recent (last ~30 days through ${scanThrough})`;
   const sections = ['tax', 'legal', 'labor', 'environmental', 'political'];
 
   for (const s of sections) {
     const sumKey = `${s}_summary`;
-    const liveSum = typeof live[sumKey] === 'string' ? live[sumKey].trim() : '';
+    const liveSumRaw = typeof live[sumKey] === 'string' ? live[sumKey].trim() : '';
+    const liveSum = stripLiveDeltaWindowDateLeaks(liveSumRaw) || liveSumRaw;
     if (liveSum && !/^research pending\.?$/i.test(liveSum)) {
-      const prefix = 'Recent (last ~30 days)';
+      const prefix = recentPrefix;
       base[sumKey] =
         typeof base[sumKey] === 'string' && base[sumKey].trim()
           ? `${base[sumKey].trim()}\n\n— ${prefix}: ${liveSum}`
@@ -537,12 +597,13 @@ export function mergeLiveInvestigationDelta(base, live, healthFlag) {
   }
 
   if (healthFlag) {
-    const ph = typeof live.product_health === 'string' ? live.product_health.trim() : '';
+    const phRaw = typeof live.product_health === 'string' ? live.product_health.trim() : '';
+    const ph = stripLiveDeltaWindowDateLeaks(phRaw) || phRaw;
     if (ph && !/^research pending\.?$/i.test(ph)) {
       base.product_health =
         typeof base.product_health === 'string' && base.product_health.trim()
-          ? `${base.product_health.trim()}\n\n— Recent: ${ph}`
-          : ph;
+          ? `${base.product_health.trim()}\n\n— ${recentPrefix}: ${ph}`
+          : `${recentPrefix}: ${ph}`;
       base.product_health_sources = mergeUniqueStringArrays(
         base.product_health_sources,
         live.product_health_sources
@@ -558,12 +619,14 @@ export function mergeLiveInvestigationDelta(base, live, healthFlag) {
     }
   }
 
-  const liveExec = typeof live.executive_summary === 'string' ? live.executive_summary.trim() : '';
+  const liveExecRaw = typeof live.executive_summary === 'string' ? live.executive_summary.trim() : '';
+  const liveExec = stripLiveDeltaWindowDateLeaks(liveExecRaw) || liveExecRaw;
   if (liveExec && !liveExec.includes('encountered an issue')) {
+    const execLead = `Recent overview (last ~30 days through ${scanThrough})`;
     base.executive_summary =
       typeof base.executive_summary === 'string' && base.executive_summary.trim()
-        ? `${base.executive_summary.trim()}\n\n— Recent overview: ${liveExec}`
-        : liveExec;
+        ? `${base.executive_summary.trim()}\n\n— ${execLead}: ${liveExec}`
+        : `${execLead}: ${liveExec}`;
   }
 
   base.verdict_tags = mergeUniqueStringArrays(base.verdict_tags, live.verdict_tags);

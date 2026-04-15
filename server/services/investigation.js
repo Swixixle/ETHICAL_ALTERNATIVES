@@ -1080,7 +1080,9 @@ Do not include profile_type or last_updated in the JSON.${
     promptOptions.recentNewsOnly
       ? `
 
-CRITICAL — Recent delta only: Only find news and regulatory actions from the last 30 days (relative to today). Do not repeat or summarize historical enforcement, old settlements, or long-running cases that would already appear in a full public-record profile. If nothing material appeared in the last 30 days, say so clearly in each section and keep summaries minimal. For timeline: include only events from the last 30 days, or use an empty array.`
+CRITICAL — Recent delta only: Only find news and regulatory actions from the last 30 days (relative to today). Do not repeat or summarize historical enforcement, old settlements, or long-running cases that would already appear in a full public-record profile. If nothing material appeared in the last 30 days, say so clearly in each section and keep summaries minimal. For timeline: include only events from the last 30 days, or use an empty array.
+
+Never state a specific calendar end date or year for the "30-day window" (e.g. do not write "window ending April 15, 2025"). If you mention recency, say only that findings are from roughly the last 30 days — the product will stamp authoritative dates.`
       : ''
   }`;
 }

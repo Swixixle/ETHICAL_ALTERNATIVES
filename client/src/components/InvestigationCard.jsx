@@ -28,6 +28,9 @@ import ActiveNowSection from './ActiveNowSection.jsx';
 import InvestigationReceipt from './InvestigationReceipt.jsx';
 import { fetchProportionality } from '../lib/fetchProportionality.js';
 import { methodologyPageUrl } from '../lib/methodologyUrl.js';
+import { profileStructuredExportUrl } from '../lib/profileExportUrl.js';
+import { computeIncidentIndexCounts, computeIncidentProvenanceCounts } from '../utils/incidentIndexCounts.js';
+import { getSourceAuthorityTier } from '../utils/sourceAuthorityTier.js';
 import './InvestigationCard.css';
 
 const PLACEHOLDER_EMPTY_NORM = 'no indexed public material in this category';
@@ -271,6 +274,44 @@ function sourceDomainFromUrl(url) {
   }
 }
 
+/** @param {{ url: string | null | undefined }} props */
+function SourceAuthorityMark({ url }) {
+  const tier = getSourceAuthorityTier(url);
+  if (tier === 'primary_press') return null;
+  if (tier === 'official') {
+    return (
+      <span
+        className="investigation-card__source-tier investigation-card__source-tier--official"
+        title="Government or official primary record"
+      >
+        GOV
+      </span>
+    );
+  }
+  return (
+    <span
+      className="investigation-card__source-tier investigation-card__source-tier--secondary"
+      title="Secondary or contextual source"
+    >
+      SECONDARY
+    </span>
+  );
+}
+
+/** @param {{ href: string }} props */
+function AccordionSectionSourceLink({ href }) {
+  const h = String(href || '');
+  const label = /^https?:\/\//i.test(h) ? `${sourceDomainFromUrl(h)} \u2197` : h;
+  return (
+    <span className="investigation-card__source-link-wrap">
+      <a href={h} target="_blank" rel="noreferrer" className="investigation-card__inline-source" title={h}>
+        {label}
+      </a>
+      <SourceAuthorityMark url={h} />
+    </span>
+  );
+}
+
 /** @param {string | null | undefined} level */
 function concernTierBadgeProps(level) {
   const l = String(level || 'moderate').toLowerCase();
@@ -417,14 +458,17 @@ function DeepIncidentCard({ incident, variant = 'default' }) {
             {amt ? <span className="investigation-card__incident-amount">{amt}</span> : null}
           </div>
           {domain && url ? (
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="investigation-card__incident-source"
-            >
-              {linkLabel}
-            </a>
+            <span className="investigation-card__source-link-wrap investigation-card__source-link-wrap--incident">
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="investigation-card__incident-source"
+              >
+                {linkLabel}
+              </a>
+              <SourceAuthorityMark url={url} />
+            </span>
           ) : null}
         </div>
       </div>
@@ -460,10 +504,13 @@ function Tier1MatterCard({ group }) {
               return (
                 <li key={`${u}-${i}`}>
                   {u ? (
-                    <a href={u} target="_blank" rel="noopener noreferrer" className="investigation-card__incident-source">
-                      {dom}
-                      {'\u2197'}
-                    </a>
+                    <span className="investigation-card__source-link-wrap investigation-card__source-link-wrap--incident">
+                      <a href={u} target="_blank" rel="noopener noreferrer" className="investigation-card__incident-source">
+                        {dom}
+                        {'\u2197'}
+                      </a>
+                      <SourceAuthorityMark url={u} />
+                    </span>
                   ) : (
                     <span className="investigation-card__body-muted">{dom}</span>
                   )}
@@ -513,7 +560,12 @@ function ProportionalitySourceLine({ text, url }) {
     ) : (
       text
     );
-  return <p className="investigation-card__legal-context-source">{body}</p>;
+  return (
+    <p className="investigation-card__legal-context-source investigation-card__legal-context-source--with-tier">
+      {body}
+      {url && /^https?:\/\//i.test(url) ? <SourceAuthorityMark url={url} /> : null}
+    </p>
+  );
 }
 
 /** @param {unknown} chargeStatus */
@@ -1092,9 +1144,7 @@ export default function InvestigationCard({
                 const href = String(url);
                 return (
                   <li key={href}>
-                    <a href={href} target="_blank" rel="noreferrer" className="investigation-card__inline-source">
-                      {href}
-                    </a>
+                    <AccordionSectionSourceLink href={href} />
                   </li>
                 );
               })}
@@ -1134,9 +1184,7 @@ export default function InvestigationCard({
             <ul className="investigation-card__sources-inline">
               {cSources.map((url) => (
                 <li key={String(url)}>
-                  <a href={String(url)} target="_blank" rel="noreferrer" className="investigation-card__inline-source">
-                    {String(url)}
-                  </a>
+                  <AccordionSectionSourceLink href={String(url)} />
                 </li>
               ))}
             </ul>
@@ -1180,9 +1228,7 @@ export default function InvestigationCard({
             <ul className="investigation-card__sources-inline">
               {aSources.map((url) => (
                 <li key={String(url)}>
-                  <a href={String(url)} target="_blank" rel="noreferrer" className="investigation-card__inline-source">
-                    {String(url)}
-                  </a>
+                  <AccordionSectionSourceLink href={String(url)} />
                 </li>
               ))}
             </ul>
@@ -1236,9 +1282,12 @@ export default function InvestigationCard({
                   return (
                     <li key={`${url}-${i}`}>
                       {url ? (
-                        <a href={url} target="_blank" rel="noreferrer" className="investigation-card__study-link">
-                          {title || url}
-                        </a>
+                        <span className="investigation-card__source-link-wrap">
+                          <a href={url} target="_blank" rel="noreferrer" className="investigation-card__study-link">
+                            {title || sourceDomainFromUrl(url)}
+                          </a>
+                          <SourceAuthorityMark url={url} />
+                        </span>
                       ) : (
                         title
                       )}
@@ -1259,9 +1308,7 @@ export default function InvestigationCard({
             <ul className="investigation-card__sources-inline">
               {hSources.map((url) => (
                 <li key={String(url)}>
-                  <a href={String(url)} target="_blank" rel="noreferrer" className="investigation-card__inline-source">
-                    {String(url)}
-                  </a>
+                  <AccordionSectionSourceLink href={String(url)} />
                 </li>
               ))}
             </ul>
@@ -1358,6 +1405,40 @@ export default function InvestigationCard({
     () => dedupeTimelineEvents(investigation.timeline),
     [investigation.timeline]
   );
+
+  const incidentIndexCounts = useMemo(
+    () => computeIncidentIndexCounts(/** @type {Record<string, unknown>} */ (investigation)),
+    [investigation]
+  );
+  const incidentProvenance = useMemo(
+    () => computeIncidentProvenanceCounts(/** @type {Record<string, unknown>} */ (investigation)),
+    [investigation]
+  );
+  const placementTabTotalSum = useMemo(() => {
+    let s = 0;
+    for (const dc of deepCategories) {
+      if (!dc || typeof dc !== 'object') continue;
+      const tf = /** @type {Record<string, unknown>} */ (dc).total_found;
+      if (typeof tf === 'number' && Number.isFinite(tf)) s += Math.floor(tf);
+    }
+    return s;
+  }, [deepCategories]);
+  const receiptAlignedVerified = useMemo(() => {
+    const inv = /** @type {Record<string, unknown>} */ (investigation);
+    const r = inv.receipt_incident_count;
+    if (typeof r === 'number' && Number.isFinite(r)) return Math.max(0, Math.floor(r));
+    if (deepCategories.length > 0) return incidentIndexCounts.unique_incident_count;
+    return incidentProvenance.verifiedEnforcementMatters;
+  }, [
+    investigation,
+    deepCategories.length,
+    incidentIndexCounts.unique_incident_count,
+    incidentProvenance.verifiedEnforcementMatters,
+  ]);
+  const additionalContextualItems = useMemo(() => {
+    if (placementTabTotalSum > 0) return Math.max(0, placementTabTotalSum - receiptAlignedVerified);
+    return incidentProvenance.additionalItems;
+  }, [placementTabTotalSum, receiptAlignedVerified, incidentProvenance.additionalItems]);
 
   const coveredSections = new Set();
   for (const d of deepCategories) {
@@ -1482,18 +1563,27 @@ export default function InvestigationCard({
         ) : execSummary ? (
           <p className="investigation-card__hero-lede investigation-card__body">{execSummary}</p>
         ) : null}
+        <p className="investigation-card__index-counts investigation-card__body-muted" role="note">
+          {receiptAlignedVerified} verified enforcement matters · {additionalContextualItems} additional
+          contextual items · Tab totals are higher because incidents appear in multiple categories
+        </p>
         {deepCategories.length > 0 ? (
-          <div className="investigation-card__category-chips" role="navigation" aria-label="Jump to category">
+          <div
+            className="investigation-card__category-chips"
+            role="navigation"
+            aria-label="Jump to category (counts are placements per tab, not unique matters)"
+          >
             {topChipCategories.map((dc, i) => {
               if (!dc || typeof dc !== 'object') return null;
               const cat = typeof dc.category === 'string' ? dc.category : '';
               const chip = typeof dc.chip_label === 'string' ? dc.chip_label : cat;
               const prep = cat ? deepDisplayByCat.get(cat) : null;
+              const d = /** @type {Record<string, unknown>} */ (dc);
               const n =
-                prep != null
-                  ? prep.display_total_found
-                  : typeof dc.total_found === 'number'
-                    ? dc.total_found
+                typeof d.total_found === 'number' && Number.isFinite(d.total_found)
+                  ? Math.floor(d.total_found)
+                  : prep != null
+                    ? prep.display_total_found
                     : 0;
               const br = prep?.action_type_subtitle;
               return (
@@ -1502,9 +1592,10 @@ export default function InvestigationCard({
                   type="button"
                   className="investigation-card__category-chip ea-press-label"
                   onClick={() => scrollToDeepCategory(cat)}
+                  aria-label={`${chip}: ${n} category placements`}
                 >
                   <span className="investigation-card__category-chip-line1">
-                    {chip} ({n})
+                    {chip} ({n} placements)
                   </span>
                   {br ? <span className="investigation-card__category-chip-breakdown">{br}</span> : null}
                 </button>
@@ -1531,81 +1622,6 @@ export default function InvestigationCard({
         ) : null}
       </div>
 
-      <div className="investigation-card__timeline-wrap">
-        <Timeline events={displayTimelineEvents} minEvents={3} />
-      </div>
-
-      {userCaptureSrc && referenceImageSrc ? (
-        <div className="investigation-card__photo-pair" aria-label="Capture and editorial context">
-          <figure className="investigation-card__photo-cell">
-            <figcaption className="investigation-card__photo-label">Your capture</figcaption>
-            <div className="investigation-card__photo-frame">
-              <img src={userCaptureSrc} alt="Your photo used for this investigation" />
-              {tapPositionNormalized &&
-              typeof tapPositionNormalized.x === 'number' &&
-              typeof tapPositionNormalized.y === 'number' ? (
-                <span
-                  aria-hidden
-                  className="investigation-card__tap-dot"
-                  style={{
-                    left: `${tapPositionNormalized.x * 100}%`,
-                    top: `${tapPositionNormalized.y * 100}%`,
-                  }}
-                />
-              ) : null}
-            </div>
-          </figure>
-          <figure className="investigation-card__photo-cell">
-            <figcaption className="investigation-card__photo-label">Editorial — product context</figcaption>
-            <div className="investigation-card__photo-frame">
-              <img
-                src={referenceImageSrc}
-                alt="Editorial reference image for the same product category"
-              />
-            </div>
-          </figure>
-        </div>
-      ) : null}
-
-      <div className="investigation-card__verdict-block investigation-card__verdict-block--compact">
-        {flatVerdictPills.length ? (
-          <div ref={verdictRef} className="investigation-card__verdict investigation-card__verdict-pills">
-            {flatVerdictPills.map((tag) => (
-              <span key={tag} className="investigation-card__verdict-pill">
-                {String(tag).replace(/_/g, ' ')}
-              </span>
-            ))}
-          </div>
-        ) : Object.keys(grouped).length > 0 ? (
-          <div ref={verdictRef} className="investigation-card__verdict investigation-card__verdict-grouped">
-            {Object.entries(grouped).map(([category, tags]) => (
-              <div key={category} className="investigation-card__verdict-group">
-                <div className="investigation-card__verdict-cat">{category}</div>
-                <div className="investigation-card__verdict-tags-row">
-                  {tags.map((tag) => (
-                    <span key={tag} className="investigation-card__verdict-pill">
-                      {tag.replace(/_/g, ' ')}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : null}
-
-        {!useDeepPublicRecordHero && !heroLede && execSummary ? (
-          <p className="investigation-card__exec-summary investigation-card__body">{execSummary}</p>
-        ) : null}
-
-        <ProofBlock
-          investigation={investigation}
-          identification={identification}
-          result={result}
-          recordPresentation={recordPresentation}
-          suppressRecordBadge
-        />
-      </div>
-
       <div className="investigation-card__accordion">
         {deepCategories.map((dc) => {
           if (!dc || typeof dc !== 'object') return null;
@@ -1613,7 +1629,10 @@ export default function InvestigationCard({
           const cat = typeof d.category === 'string' ? d.category : '';
           const title = typeof d.title === 'string' ? d.title : cat;
           const prep = cat ? deepDisplayByCat.get(cat) : prepareDeepCategoryForDisplay(d);
-          const totalFound = prep.display_total_found;
+          const tabPlacementTotal =
+            typeof d.total_found === 'number' && Number.isFinite(d.total_found)
+              ? Math.floor(d.total_found)
+              : prep.display_total_found;
           const overflowNote = typeof d.overflow_note === 'string' ? d.overflow_note.trim() : '';
           const sevDot = typeof d.severity_dot === 'string' ? d.severity_dot : 'low';
           const open = openSection === `deep:${cat}`;
@@ -1644,7 +1663,7 @@ export default function InvestigationCard({
                     </span>
                   ) : null}
                 </span>
-                <span className="investigation-card__accordion-count">({totalFound})</span>
+                <span className="investigation-card__accordion-count">{tabPlacementTotal} placements</span>
                 {overflowNote ? (
                   <span className="investigation-card__accordion-overflow">{overflowNote}</span>
                 ) : null}
@@ -1783,6 +1802,81 @@ export default function InvestigationCard({
         })}
       </div>
 
+      <div className="investigation-card__timeline-wrap">
+        <Timeline events={displayTimelineEvents} minEvents={3} />
+      </div>
+
+      {userCaptureSrc && referenceImageSrc ? (
+        <div className="investigation-card__photo-pair" aria-label="Capture and editorial context">
+          <figure className="investigation-card__photo-cell">
+            <figcaption className="investigation-card__photo-label">Your capture</figcaption>
+            <div className="investigation-card__photo-frame">
+              <img src={userCaptureSrc} alt="Your photo used for this investigation" />
+              {tapPositionNormalized &&
+              typeof tapPositionNormalized.x === 'number' &&
+              typeof tapPositionNormalized.y === 'number' ? (
+                <span
+                  aria-hidden
+                  className="investigation-card__tap-dot"
+                  style={{
+                    left: `${tapPositionNormalized.x * 100}%`,
+                    top: `${tapPositionNormalized.y * 100}%`,
+                  }}
+                />
+              ) : null}
+            </div>
+          </figure>
+          <figure className="investigation-card__photo-cell">
+            <figcaption className="investigation-card__photo-label">Editorial — product context</figcaption>
+            <div className="investigation-card__photo-frame">
+              <img
+                src={referenceImageSrc}
+                alt="Editorial reference image for the same product category"
+              />
+            </div>
+          </figure>
+        </div>
+      ) : null}
+
+      <div className="investigation-card__verdict-block investigation-card__verdict-block--compact">
+        {flatVerdictPills.length ? (
+          <div ref={verdictRef} className="investigation-card__verdict investigation-card__verdict-pills">
+            {flatVerdictPills.map((tag) => (
+              <span key={tag} className="investigation-card__verdict-pill">
+                {String(tag).replace(/_/g, ' ')}
+              </span>
+            ))}
+          </div>
+        ) : Object.keys(grouped).length > 0 ? (
+          <div ref={verdictRef} className="investigation-card__verdict investigation-card__verdict-grouped">
+            {Object.entries(grouped).map(([category, tags]) => (
+              <div key={category} className="investigation-card__verdict-group">
+                <div className="investigation-card__verdict-cat">{category}</div>
+                <div className="investigation-card__verdict-tags-row">
+                  {tags.map((tag) => (
+                    <span key={tag} className="investigation-card__verdict-pill">
+                      {tag.replace(/_/g, ' ')}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : null}
+
+        {!useDeepPublicRecordHero && !heroLede && execSummary ? (
+          <p className="investigation-card__exec-summary investigation-card__body">{execSummary}</p>
+        ) : null}
+
+        <ProofBlock
+          investigation={investigation}
+          identification={identification}
+          result={result}
+          recordPresentation={recordPresentation}
+          suppressRecordBadge
+        />
+      </div>
+
       {showInterpretiveSilo ? (
         <InterpretiveAnalysisSilo>
           {showFinancialAnalysis ? (
@@ -1813,6 +1907,19 @@ export default function InvestigationCard({
       ) : null}
 
       <SourcesLedger investigation={investigation} result={result} />
+
+      {profileType === 'database' && perimeterSlug ? (
+        <p className="investigation-card__export-json-wrap">
+          <a
+            className="investigation-card__export-json"
+            href={profileStructuredExportUrl(perimeterSlug)}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {'{ }'} Export JSON
+          </a>
+        </p>
+      ) : null}
 
       <p className="investigation-card__methodology investigation-card__body-muted">
         <a

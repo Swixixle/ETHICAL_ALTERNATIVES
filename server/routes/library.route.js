@@ -42,7 +42,11 @@ router.get('/', async (req, res) => {
           )
           FROM 1 FOR 220
         ) AS summary_snippet,
-        updated_at
+        updated_at,
+        (
+          (profile_json->'deep_research') IS NOT NULL
+          AND (profile_json->'deep_research') <> 'null'::jsonb
+        ) AS has_deep_research
       FROM incumbent_profiles
       ORDER BY brand_name ASC
     `);
@@ -56,6 +60,7 @@ router.get('/', async (req, res) => {
       headline: row.headline || '',
       summary_snippet: row.summary_snippet || '',
       updated_at: row.updated_at,
+      has_deep_research: Boolean(row.has_deep_research),
     }));
 
     res.json({

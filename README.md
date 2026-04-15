@@ -1,83 +1,188 @@
 # EthicalAlt
 
-**Point your camera at anything. Tap the brand. Get the record.**
+A corporate accountability scanner for the physical world.
+
+Take a photo of anything. Tap what you want to know about. EthicalAlt identifies the brand, pulls its public enforcement record, and surfaces local independent alternatives near you. Every investigation is cryptographically signed and independently verifiable.
+
+**Philosophy:** A mirror, not a verdict. This is a record of public actions, not a legal finding. Sources are linked directly.
+
+## What it does
+
+1. Take a photo or upload an image containing any product, logo, or brand
+2. Tap the specific object or brand you want to investigate
+3. EthicalAlt identifies what you tapped — logo, label, packaging, clothing tag
+4. If the brand is recognized, its full corporate accountability record loads
+5. If the brand isn't in the database, local independent alternatives near you are surfaced instead
+6. Every investigation generates a cryptographically signed receipt
+
+---
+
+## Live at
 
 [ethicalalt-client.onrender.com](https://ethicalalt-client.onrender.com)
 
 ---
 
-You're standing in an aisle. You're about to buy something. EthicalAlt tells you what the company behind that product has done — sourced from public records, not opinion.
+## Profile database
 
-Point the camera. Tap the logo. See what's documented. Find something better nearby.
+**264 corporate profiles** including corporations, institutions, nonprofits, and religious organizations.
 
----
+**20 deep research profiles** with structured incident timelines, per-category source citations, and signed receipts. Remaining profiles are standard AI-generated records.
 
-## What you get
-
-Every investigation produces a structured record across six categories:
-
-- **Environmental** — EPA enforcement, spills, emissions violations, cleanup orders
-- **Labor** — OSHA citations, wage theft settlements, union suppression, worker injury records
-- **Legal** — Criminal convictions, civil settlements, regulatory actions and outcomes
-- **Political** — Lobbying spend, PAC donations, revolving door hires
-- **Tax** — Offshore structures, effective rates vs statutory rates, government subsidies received
-- **Product Health** — Documented harms, recalls, ingredient concerns
-
-Every finding carries a source link. Every allegation includes the company's documented response, or states that none was found.
+Deep research profiles include: Altria, Amazon, Apple, BP, Chevron, Cigna, Coca-Cola, Comcast, Disney, Humana, Kraft Heinz, McDonald's, Nestlé, PepsiCo, Philip Morris, Shell, Target, Tyson Foods, UnitedHealth, Walmart.
 
 ---
 
-## The deep research database
+## Enforcement action taxonomy
 
-20 major corporations have been fully investigated using a two-phase pipeline: Perplexity sonar-deep-research finds and cites the raw record, Claude normalizes and structures it. Each profile includes up to 90 sourced incidents across all six categories.
+Every incident is classified at ingest:
 
-Target · Walmart · Amazon · Apple · Disney · Coca-Cola · UnitedHealth · BP · Shell · Chevron · McDonald's · Comcast · Cigna · Nestlé · Tyson Foods · Philip Morris · Altria · Humana · Kraft Heinz · PepsiCo
+| Type | Meaning |
+|------|---------|
+| `disposition` | Completed settlement, conviction, consent decree, or agency penalty |
+| `regulator_action` | Stop-sale order, notice of violation, ongoing investigation |
+| `recall` | FDA, CPSC, or state product recall |
+| `civil_allegation` | Class action, plaintiff complaint, unresolved lawsuit |
+| `contextual` | Background, self-reported data, narrative context |
 
-Every other scan runs a live investigation against real-time public records.
-
----
-
-## The investigation index
-
-184 additional company profiles are available in the investigation index — corporations, fast food chains, healthcare providers, gas stations, streaming services, and more.
-
-These profiles are built from AI training data and live web search, not the deep research pipeline. They are accurate starting points, not exhaustive records. The documented incidents are real and sourced, but the coverage is shallower than the 20 fully researched profiles above.
-
-When you scan a company from the index, EthicalAlt runs a live investigation on top of the stored profile — checking for anything new in the last 30 days and flagging recent developments.
-
-The full deep research treatment is being extended to the full index. The 20 companies above are the first wave.
+Contextual items do not increment enforcement counts. Category tab totals are higher than unique incident counts because incidents can appear in multiple tabs.
 
 ---
 
-## Cryptographic receipts
+## Source authority
 
-Every completed investigation generates a signed receipt — Ed25519, verifiable at `/verify/:receipt_id`. The receipt includes:
+Every source link is labeled:
 
-- Subject, investigation timestamp, incident count, source URLs
-- SHA-256 hash of the full incident array
-- Signature from the Nikodemus Systems public key
-- A downloadable JSON artifact you can hand to a journalist or attorney
-
-A receipt is not a verdict. It is proof that this investigation happened, at this time, against these sources.
+- `GOV` — .gov domains and major regulatory agencies (DOJ, EPA, SEC, CARB, FDA, etc.)
+- `SECONDARY` — Wikipedia, advocacy organizations, aggregators
+- No label — primary press (NYT, Reuters, ProPublica, AP, etc.)
 
 ---
 
-## Alternatives
+## Receipt and export
 
-Every investigation surfaces independent alternatives nearby — local businesses, Etsy sellers, verified independent stores — sorted by distance. Not sponsored. Not paid placement.
+Every investigation generates a signed Ed25519 receipt including:
+- Subject, disclaimer, investigated date
+- Source URLs and source count
+- Incident count and incidents hash
+- Category summary
+- Signature and verify URL
+
+Structured JSON export available at `/api/profiles/:slug/export` — deduplicated incidents with action type, jurisdiction, amount, and source provenance.
+
+Receipt counts:
+- **Verified enforcement matters** — deduplicated Tier 1 canonical incidents
+- **Category placements** — higher because incidents appear across multiple tabs
+- **Sources indexed** — full source universe
+- **Verified sources** — curated subset with direct links
 
 ---
 
-## What this is not
+## AI provider chain
 
-EthicalAlt is not a law firm. Not a regulator. Not a news organization.
+Claude → Perplexity → Gemini → cached → emergency fallback
 
-It is a mirror. Clean businesses get a clean record. Companies with documented issues get a documented record. The mirror does not editorialize.
+Perplexity and Gemini run in parallel on investigation text path. Provider failures return null and the chain continues.
 
 ---
 
-## Stack
+## Project structure
 
-React/Vite PWA · Node.js/Express · PostgreSQL · Ed25519 signing · Perplexity sonar-deep-research · Claude Vision · Gemini Vision · Render
+```
+client/
+  src/
+    components/       InvestigationCard, Timeline, DossierCard, TapOverlay,
+                      InvestigationReceipt, AlternativesSidebar, PhotoCapture,
+                      HireDirect*, Library, and more
+    hooks/            useTapAnalysis — snap session state and async race management
+    pages/            DirectoryPage, Library, VerifyReceiptPage, ReportPermalinkPage
+    utils/            enforcementDisplay, enforcementActionType, sourceAuthorityTier,
+                      consumerInvestigationCopy, incidentIndexCounts, investigationHealth
+    services/         location, cityIdentity, travelTracker
+    lib/              api, profileExportUrl, fetchProportionality
+server/
+  routes/             tap, profiles, library, barcode, workers, receipt, perimeter
+  services/           investigation, deepResearchMerge, aiProvider, corroboration,
+                      perimeterCheck, investigationReceipt, profileIncidentExport
+  scripts/            deep_research_profile, corroborate_profiles, report_deep_research_sources,
+                      resignDeepResearchReceipts
+  db/                 migrations, import_all_profiles, corroborate_profiles
+```
 
-Built by Alex Maksimovich / [Nikodemus Systems](https://swixixle.github.io)
+---
+
+## Key endpoints
+
+```
+POST   /api/tap                              Identify brand from image tap
+POST   /api/tap/investigation               Full investigation for resolved brand
+GET    /api/profiles/index                  Browsable profile list (filter, sort, deep record flag)
+GET    /api/profiles/:slug                  Full profile
+GET    /api/profiles/:slug/export           Structured JSON export — deduplicated incidents
+POST   /api/receipt/generate               Generate signed investigation receipt
+GET    /verify/:receipt_id                 Verify receipt
+POST   /api/workers                        Hire Direct worker registration
+GET    /api/local                          Local alternatives by location
+```
+
+---
+
+## Black Book
+
+Browsable index of all 264 profiles at `/black-book`. Filter by:
+- Entity type (Corporations / Institutions / Nonprofits)
+- Concern category
+- Deep Record — profiles with full research pass
+
+---
+
+## Hire Direct
+
+Local worker marketplace built into the app. Workers register with a civic verification badge. Contact receipts are signed with Ed25519 for safety and accountability.
+
+---
+
+## Setup
+
+```bash
+# Clone
+git clone https://github.com/Swixixle/ETHICAL_ALTERNATIVES.git
+cd ETHICAL_ALTERNATIVES
+
+# Server
+cd server
+cp .env.example .env
+# Required: DATABASE_URL, ANTHROPIC_API_KEY
+# Optional: PERPLEXITY_API_KEY, GEMINI_API_KEY
+npm install
+node index.js
+
+# Client
+cd client
+npm install
+npm run dev
+```
+
+**Production:** Client deploys as Render static site. Server deploys as Render web service. `render.yaml` routes `/api/*` to the server and `/*` to the SPA fallback.
+
+---
+
+## Running deep research
+
+```bash
+# Research a single profile
+node server/scripts/deep_research_profile.mjs walmart
+
+# Corroborate profiles
+node server/db/corroborate_profiles.mjs --type database --batch-size 3
+
+# Re-sign all deep research receipts (from repo root)
+cd server && npm run db:resign:receipts:dry    # dry run
+cd server && npm run db:resign:receipts        # apply
+```
+
+---
+
+## License
+
+See LICENSE. All findings link directly to primary sources. This is a record of public actions, not a legal finding. No inference of guilt or wrongdoing is made or implied.

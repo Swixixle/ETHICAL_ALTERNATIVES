@@ -587,6 +587,26 @@ button.ea-press-label:active {
   margin: 0;
 }
 
+.investigation-card__export-json-wrap {
+  margin: 10px 4px 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--color-muted, #6a8a9a);
+}
+
+.investigation-card__export-json {
+  font-family: 'IBM Plex Mono', 'Space Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--color-link, #a8c4d8);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.investigation-card__export-json:hover {
+  color: #d4a017;
+}
+
 .investigation-card__methodology {
   margin: 16px 4px 0;
   font-size: 16px;
@@ -962,6 +982,58 @@ button.ea-press-label:active {
   color: #c4a060;
 }
 
+.investigation-card__index-counts {
+  margin: 12px 0 14px;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  color: var(--color-muted, #8a9aaa);
+  max-width: 52rem;
+}
+
+.investigation-card__source-link-wrap {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  max-width: 100%;
+}
+
+.investigation-card__source-link-wrap--incident {
+  margin-top: 6px;
+}
+
+.investigation-card__source-tier {
+  flex-shrink: 0;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 2px 5px;
+  border-radius: 2px;
+  line-height: 1.2;
+}
+
+.investigation-card__source-tier--official {
+  color: #b8d4a8;
+  border: 1px solid rgba(106, 170, 138, 0.65);
+  background: rgba(106, 170, 138, 0.12);
+}
+
+.investigation-card__source-tier--secondary {
+  color: #6a7a88;
+  border: 1px solid rgba(106, 122, 136, 0.45);
+  background: rgba(20, 28, 36, 0.5);
+}
+
+.investigation-card__legal-context-source--with-tier {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+}
+
 .investigation-card__hero-row--compact {
   margin-top: 4px;
   margin-bottom: 4px;
@@ -974,6 +1046,40 @@ button.ea-press-label:active {
 
 .investigation-card__timeline-wrap {
   margin: 8px 0 16px;
+}
+
+.investigation-card__timeline-expand-btn,
+.investigation-card__timeline-collapse-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: #a8c4d8;
+  background: none;
+  border: none;
+  padding: 14px 0 0;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: left;
+  display: block;
+}
+
+.investigation-card__timeline-collapse-btn {
+  padding-top: 22px;
+}
+
+@keyframes investigation-card-timeline-reveal {
+  from {
+    opacity: 0.72;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.investigation-card__timeline-reveal {
+  animation: investigation-card-timeline-reveal 0.34s ease-out;
 }
 
 /* Tier1 / Tier 2 enforcement display */

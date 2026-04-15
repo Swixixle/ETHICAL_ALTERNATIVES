@@ -171,12 +171,59 @@
   box-shadow: inset 3px 0 0 #6aaa8a;
 }
 
-.bb-index-item__name {
+.bb-index-item__name-row {
   flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+
+.bb-index-item__name {
   min-width: 0;
   color: #f0e8d0;
   font-weight: 700;
   font-size: 18px;
+}
+
+.bb-deep-record-badge {
+  flex-shrink: 0;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 2px;
+  border: 1px solid rgba(212, 168, 48, 0.9);
+  color: #e8c565;
+  background: rgba(48, 38, 14, 0.45);
+  line-height: 1.2;
+}
+
+.bb-filter-pill.bb-filter-pill--deep-record {
+  font-family: 'IBM Plex Mono', 'Space Mono', ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  border: 1px solid rgba(212, 168, 48, 0.75);
+  background: transparent;
+  color: #c9a227;
+}
+
+.bb-filter-pill.bb-filter-pill--deep-record:hover {
+  border-color: rgba(232, 197, 101, 0.95);
+  color: #e8c565;
+}
+
+.bb-filter-pill.bb-filter-pill--deep-record-active {
+  border: none;
+  background: linear-gradient(180deg, #c9a227 0%, #a67c00 100%);
+  color: #141208;
 }
 
 .bb-concern-dot {

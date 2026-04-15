@@ -41,7 +41,12 @@ router.get('/index', async (req, res) => {
           'moderate'
         ))                                              AS overall_concern_level,
 
-        ip.profile_json->>'generated_headline'          AS generated_headline
+        ip.profile_json->>'generated_headline'          AS generated_headline,
+
+        (
+          (ip.profile_json->'deep_research') IS NOT NULL
+          AND (ip.profile_json->'deep_research') <> 'null'::jsonb
+        )                                               AS has_deep_research
 
       FROM incumbent_profiles ip
       WHERE ip.profile_json IS NOT NULL

@@ -34,6 +34,7 @@ export default function Library({ onBack }) {
   const [search, setSearch] = useState('');
   const [concernFilter, setConcernFilter] = useState('all');
   const [typeFilter, setTypeFilter] = useState('all');
+  const [deepRecordOnly, setDeepRecordOnly] = useState(false);
   const [sort, setSort] = useState('az');
   const [selectedSlug, setSelectedSlug] = useState(/** @type {string | null} */ (null));
   const [detail, setDetail] = useState(/** @type {Record<string, unknown> | null} */ (null));
@@ -104,6 +105,9 @@ export default function Library({ onBack }) {
     } else if (typeFilter === 'nonprofits') {
       rows = rows.filter((p) => p.profile_type === 'nonprofit');
     }
+    if (deepRecordOnly) {
+      rows = rows.filter((p) => p.has_deep_research === true);
+    }
     rows.sort((a, b) => {
       if (sort === 'za') {
         return String(b.name || b.slug).localeCompare(String(a.name || a.slug), 'en', {
@@ -120,7 +124,7 @@ export default function Library({ onBack }) {
       });
     });
     return rows;
-  }, [profiles, search, concernFilter, typeFilter, sort]);
+  }, [profiles, search, concernFilter, typeFilter, deepRecordOnly, sort]);
 
   const grouped = useMemo(() => {
     const letters = new Map();
@@ -340,6 +344,14 @@ export default function Library({ onBack }) {
             </button>
           );
         })}
+        <button
+          type="button"
+          onClick={() => setDeepRecordOnly((v) => !v)}
+          aria-pressed={deepRecordOnly}
+          className={`bb-filter-pill bb-filter-pill--deep-record${deepRecordOnly ? ' bb-filter-pill--deep-record-active' : ''}`}
+        >
+          Deep record
+        </button>
       </div>
 
       {loading ? (
@@ -364,7 +376,12 @@ export default function Library({ onBack }) {
                   className={`library-index-item bb-index-item${selectedSlug === p.slug ? ' bb-index-item--active' : ''}`}
                   onClick={() => navigateToSlug(p.slug)}
                 >
-                  <span className="company-name bb-index-item__name">{p.name || p.slug}</span>
+                  <span className="bb-index-item__name-row">
+                    <span className="company-name bb-index-item__name">{p.name || p.slug}</span>
+                    {p.has_deep_research ? (
+                      <span className="bb-deep-record-badge">Deep record</span>
+                    ) : null}
+                  </span>
                   <span className={`concern-dot ${concernDotClass(p.concern_level)}`} aria-hidden />
                 </button>
               ))}

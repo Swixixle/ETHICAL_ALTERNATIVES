@@ -181,7 +181,9 @@ Return ONLY valid JSON in this shape:
 }
 
 If you find nothing current, return active_cases: [] and activity_level: "quiet".
-Do not hallucinate cases. If uncertain, omit.`;
+Do not hallucinate cases. If uncertain, omit.
+
+In perimeter_summary, do not invent specific "as of" calendar dates or multi-day scan window end dates (e.g. avoid "window ending April 15, 2025"). Describe recency in plain language only.`;
 
   const user = `Company: ${brandName}
 

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { countTier1UniqueMattersAcrossInvestigation } from '../utils/enforcementDisplay.js';
+import { countIndexedSources } from '../utils/investigationSources.js';
+import { computeIncidentIndexCounts } from '../utils/incidentIndexCounts.js';
 
 const RECEIPT_RULE = '━━━━━━━━━━━━━━━━━━━━━━━━━';
 
@@ -196,16 +197,27 @@ export default function InvestigationReceipt({ investigation }) {
   if (!brandSlug || !lastDeep) return null;
 
   const receipt = payload && payload.signed_receipt && typeof payload.signed_receipt === 'object' ? payload.signed_receipt : null;
-  const hasDeepCategories =
-    Array.isArray(inv.deep_research_categories) && inv.deep_research_categories.length > 0;
-  const tier1Unique = countTier1UniqueMattersAcrossInvestigation(inv);
-  const incidentCount =
-    hasDeepCategories && Number.isFinite(tier1Unique)
-      ? tier1Unique
-      : receipt && typeof receipt.incident_count === 'number' && Number.isFinite(receipt.incident_count)
-        ? receipt.incident_count
-        : '—';
-  const sourceCount =
+  const categoryPlacementsTotal = receipt
+    ? Array.isArray(receipt.category_summary)
+      ? receipt.category_summary.reduce((s, row) => {
+          if (
+            row &&
+            typeof row === 'object' &&
+            typeof /** @type {Record<string, unknown>} */ (row).count === 'number' &&
+            Number.isFinite(/** @type {Record<string, unknown>} */ (row).count)
+          ) {
+            return s + Math.floor(/** @type {Record<string, unknown>} */ (row).count);
+          }
+          return s;
+        }, 0)
+      : computeIncidentIndexCounts(inv).category_placement_count
+    : '—';
+  const signedIncidentCount =
+    receipt && typeof receipt.incident_count === 'number' && Number.isFinite(receipt.incident_count)
+      ? Math.floor(receipt.incident_count)
+      : '—';
+  const sourcesIndexed = countIndexedSources(inv, null);
+  const verifiedSources =
     receipt && typeof receipt.source_count === 'number' && Number.isFinite(receipt.source_count)
       ? receipt.source_count
       : '—';
@@ -263,11 +275,59 @@ export default function InvestigationReceipt({ investigation }) {
               <span style={{ color: '#8a9aac' }}>Investigated:</span> {investigated}
             </div>
             <div>
-              <span style={{ color: '#8a9aac' }}>Sources:</span> {sourceCount} verified
+              <span style={{ color: '#8a9aac' }}>Category placements (tab totals):</span> {categoryPlacementsTotal}
             </div>
             <div>
-              <span style={{ color: '#8a9aac' }}>Enforcement matters (Tier 1, deduped):</span> {incidentCount}
+              <span style={{ color: '#8a9aac' }}>Verified enforcement matters (signed):</span> {signedIncidentCount}
             </div>
+            <div>
+              <span style={{ color: '#8a9aac' }}>Sources indexed:</span> {sourcesIndexed}
+            </div>
+            <div>
+              <span style={{ color: '#8a9aac' }}>Verified sources:</span> {verifiedSources}
+            </div>
+            <details
+              style={{
+                marginTop: 10,
+                paddingTop: 8,
+                borderTop: '1px dashed rgba(138,154,172,0.25)',
+                color: '#a8c4d8',
+                fontSize: 10,
+                lineHeight: 1.55,
+              }}
+            >
+              <summary
+                style={{
+                  cursor: 'pointer',
+                  userSelect: 'none',
+                  color: '#c9b896',
+                  letterSpacing: 0.5,
+                  listStyle: 'none',
+                }}
+              >
+                What do these numbers mean?
+              </summary>
+              <ul style={{ margin: '10px 0 4px', paddingLeft: 18, listStyle: 'disc' }}>
+                <li style={{ marginBottom: 6 }}>
+                  <strong style={{ color: '#d4c4a8' }}>Category placements (tab totals)</strong> — Rows indexed
+                  per deep-research tab; sums exceed the signed count when the same matter appears under multiple
+                  categories.
+                </li>
+                <li style={{ marginBottom: 6 }}>
+                  <strong style={{ color: '#d4c4a8' }}>Verified enforcement matters (signed)</strong> — The{' '}
+                  <code style={{ fontSize: 9 }}>incident_count</code> field in the signed receipt body (rollup size
+                  when present, otherwise summed tab totals). This is what cryptography covers.
+                </li>
+                <li style={{ marginBottom: 6 }}>
+                  <strong style={{ color: '#d4c4a8' }}>Sources indexed</strong> — Full HTTP source universe
+                  this profile touched (summaries, citations, and related fields).
+                </li>
+                <li style={{ marginBottom: 2 }}>
+                  <strong style={{ color: '#d4c4a8' }}>Verified sources</strong> — Curated subset with direct
+                  links on cited incident rows in the signed deep-research snapshot.
+                </li>
+              </ul>
+            </details>
             <div style={{ marginTop: 6 }}>
               <span style={{ color: '#8a9aac' }}>Signature:</span>{' '}
               {formatSigPreview(/** @type {string} */ (payload?.signature))}

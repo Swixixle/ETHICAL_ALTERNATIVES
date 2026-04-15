@@ -9,7 +9,9 @@
     "dev:watch": "node --watch index.js",
     "db:import:v1": "node db/import_profiles_v1.mjs",
     "db:import:v2": "node db/import_profiles_v2.mjs",
-    "db:import:farmers-markets": "node db/import_farmers_markets.mjs"
+    "db:import:farmers-markets": "node db/import_farmers_markets.mjs",
+    "db:resign:receipts": "node scripts/resignDeepResearchReceipts.mjs",
+    "db:resign:receipts:dry": "node scripts/resignDeepResearchReceipts.mjs --dry-run"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",

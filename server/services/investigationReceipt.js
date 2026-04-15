@@ -4,7 +4,7 @@
 
 import { createHash, createPrivateKey, createPublicKey, sign, verify } from 'node:crypto';
 import { randomUUID } from 'node:crypto';
-import { extractDeepResearchFromProfileJson } from './deepResearchMerge.js';
+import { computeReceiptIncidentCount, extractDeepResearchFromProfileJson } from './deepResearchMerge.js';
 
 const VERIFY_BASE =
   typeof process.env.CLIENT_VERIFY_BASE_URL === 'string' && process.env.CLIENT_VERIFY_BASE_URL.trim()
@@ -171,14 +171,7 @@ export function buildReceiptPayloadFromProfileRow(profileJson, opts) {
       : new Date().toISOString();
 
   const generated_at = new Date().toISOString();
-  const topIncidents = Array.isArray(dr.incidents) ? dr.incidents.length : 0;
-  const incident_count =
-    topIncidents > 0
-      ? topIncidents
-      : category_summary.reduce(
-          (s, row) => s + (row && typeof row.count === 'number' ? row.count : 0),
-          0
-        );
+  const incident_count = computeReceiptIncidentCount(dr) ?? 0;
 
   const brandName =
     opts.brand_name && String(opts.brand_name).trim()

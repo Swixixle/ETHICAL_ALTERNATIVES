@@ -10,23 +10,41 @@ const FLAT_SOURCE_KEYS = [
 
 const NESTED_SOURCE_KEYS = ['connections', 'allegations', 'health_record'];
 
+/** User-facing sources only — excludes internal pipeline tokens (e.g. coverage layer ids). */
+export function isHttpProfileSourceUrl(raw) {
+  const s = String(raw ?? '').trim();
+  return /^https?:\/\//i.test(s);
+}
+
 /** @param {Record<string, unknown> | null | undefined} inv */
 /** @param {Record<string, unknown> | null | undefined} result */
 export function countIndexedSources(inv, result) {
+  let n = 0;
+  const countHttpStrings = (arr) => {
+    if (!Array.isArray(arr)) return 0;
+    return arr.reduce((acc, x) => acc + (isHttpProfileSourceUrl(x) ? 1 : 0), 0);
+  };
+
   if (!inv || typeof inv !== 'object') {
-    const extra = Array.isArray(result?.searched_sources) ? result.searched_sources.length : 0;
+    const extra = Array.isArray(result?.searched_sources) ? countHttpStrings(result.searched_sources) : 0;
     return extra;
   }
-  let n = 0;
   for (const k of FLAT_SOURCE_KEYS) {
-    const arr = inv[k];
-    if (Array.isArray(arr)) n += arr.length;
+    n += countHttpStrings(inv[k]);
   }
   for (const k of NESTED_SOURCE_KEYS) {
     const block = inv[k];
-    if (block && typeof block === 'object' && Array.isArray(block.sources)) n += block.sources.length;
+    if (block && typeof block === 'object' && Array.isArray(block.sources)) {
+      n += countHttpStrings(block.sources);
+    }
   }
-  const extra = Array.isArray(result?.searched_sources) ? result.searched_sources.length : 0;
+  const hr = inv.health_record;
+  if (hr && typeof hr === 'object' && Array.isArray(hr.studies)) {
+    for (const st of hr.studies) {
+      if (st && typeof st === 'object' && isHttpProfileSourceUrl(st.url)) n += 1;
+    }
+  }
+  const extra = Array.isArray(result?.searched_sources) ? countHttpStrings(result.searched_sources) : 0;
   return n + extra;
 }
 
@@ -51,7 +69,7 @@ export function collectSourceLedgerRows(inv, result) {
   const rows = [];
   const push = (u) => {
     const url = String(u).trim();
-    if (!url || seen.has(url)) return;
+    if (!isHttpProfileSourceUrl(url) || seen.has(url)) return;
     seen.add(url);
     rows.push({ url, name: hostLabel(url) });
   };
@@ -75,7 +93,10 @@ export function collectSourceLedgerRows(inv, result) {
     }
   }
   if (result && typeof result === 'object' && Array.isArray(result.searched_sources)) {
-    result.searched_sources.forEach((x) => push(typeof x === 'string' ? x : String(x)));
+    result.searched_sources.forEach((x) => {
+      const s = typeof x === 'string' ? x : x != null && typeof x === 'object' && 'url' in x ? String(/** @type {{url:unknown}} */ (x).url) : String(x);
+      push(s);
+    });
   }
   return rows;
 }

@@ -44,6 +44,22 @@ function looksLikeJsonObjectDump(s) {
 }
 
 /**
+ * Lines starting with a bullet then a date — machine-assembled incident rows that leaked into prose.
+ * @param {string} s
+ */
+export function stripMachineDateBulletLines(s) {
+  const lines = String(s || '').split(/\r?\n/);
+  /** @see buildFindingFromCategory / merge — ISO, US dates, month names, month-year */
+  const month = '(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec|January|February|March|April|June|July|August|September|October|November|December)\\.?';
+  const bulletDateLine = new RegExp(
+    `^\\s*(?:[•*]|\\u2022)\\s+(?:\\d{4}\\b(?:[-/]\\d{1,2}(?:[-/]\\d{1,2})?)?|\\d{1,2}[/\\-]\\d{1,2}(?:[/\\-]\\d{2,4})?\\b|${month}\\s+\\d{4}\\b|${month}\\s+\\d{1,2}(?:st|nd|rd|th)?,?\\s*(?:\\d{4})?)\\b`,
+    'i'
+  );
+  const kept = lines.filter((line) => !bulletDateLine.test(line));
+  return kept.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+}
+
+/**
  * @param {string | null | undefined} rawFinding
  * @param {boolean} hasDeepResearchCategories
  * @returns {string | null}
@@ -51,6 +67,8 @@ function looksLikeJsonObjectDump(s) {
 export function consumerFacingSectionFinding(rawFinding, hasDeepResearchCategories) {
   if (typeof rawFinding !== 'string' || !rawFinding.trim()) return null;
   let t = stripInternalFindingPreambles(rawFinding);
+  if (!t) return null;
+  t = stripMachineDateBulletLines(t);
   if (!t) return null;
   if (looksLikeJsonObjectDump(t)) return null;
   if (hasDeepResearchCategories && isMachineAssembledIncidentFindingList(t)) return null;
