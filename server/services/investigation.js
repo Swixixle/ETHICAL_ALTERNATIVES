@@ -49,9 +49,220 @@ export function brandSlug(name) {
     .replace(/^-|-$/g, '');
 }
 
+/** Hyphenated slug tail: `chevron-corporation` → canonical row slug. Applied repeatedly until stable. */
+const LEGAL_ENTITY_SLUG_SUFFIX_RE =
+  /-(corporation|companies|company|corp|incorporated|inc|ltd|limited|llc|plc|lp|group|holdings|international|global|enterprises|partners|solutions|stores)$/i;
+
+/**
+ * Vision / legal-name slug variants → incumbent_profiles.brand_slug (after brandSlug(), suffix strips).
+ * Keep in sync with deep-research roster; logged fuzzy matches supplement this.
+ */
+const SLUG_CANONICAL_MAP = /** @type {Record<string, string>} */ ({
+  unitedhealthcare: 'unitedhealth',
+  'unitedhealth-group': 'unitedhealth',
+  'united-health-group': 'unitedhealth',
+  unitedhealthgroup: 'unitedhealth',
+  'chevron-corporation': 'chevron',
+  'kraft-heinz-company': 'kraft-heinz',
+  'the-kraft-heinz-company': 'kraft-heinz',
+  'mcdonalds-corporation': 'mcdonalds',
+  'walmart-inc': 'walmart',
+  'walmart-stores': 'walmart',
+  'amazon-com': 'amazon',
+  'apple-inc': 'apple',
+  'alphabet-inc': 'google',
+  'meta-platforms': 'meta',
+  'meta-platforms-inc': 'meta',
+  'philip-morris-international': 'philip-morris',
+  'altria-group': 'altria',
+  'tyson-foods-inc': 'tyson-foods',
+});
+
+function applySlugCanonical(s) {
+  if (!s) return s;
+  return SLUG_CANONICAL_MAP[s] || s;
+}
+
+/**
+ * Repeatedly strip legal suffixes and apply JSON + canonical maps until stable.
+ * @param {string} primary
+ * @param {Record<string, string>} jsonAliases
+ */
+function normalizeSlugWithSuffixStrips(primary, jsonAliases) {
+  let s = primary;
+  for (let i = 0; i < 12; i++) {
+    if (jsonAliases[s]) return jsonAliases[s];
+    const canon = applySlugCanonical(s);
+    if (canon !== s) {
+      s = canon;
+      continue;
+    }
+    const next = s.replace(LEGAL_ENTITY_SLUG_SUFFIX_RE, '');
+    if (next !== s && next.length >= 2) {
+      s = next;
+      continue;
+    }
+    break;
+  }
+  if (jsonAliases[s]) return jsonAliases[s];
+  return applySlugCanonical(s);
+}
+
+/**
+ * @param {string | null | undefined} brandName
+ * @param {string | null | undefined} corporateParent
+ */
+function firstWordSlugFromLabels(brandName, corporateParent) {
+  const raw = String(brandName || corporateParent || '').trim();
+  if (!raw) return '';
+  const first = raw.split(/[\s/]+/)[0] || '';
+  return brandSlug(first);
+}
+
+/** @param {string} a @param {string} b */
+function levenshteinDistance(a, b) {
+  const m = a.length;
+  const n = b.length;
+  if (m === 0) return n;
+  if (n === 0) return m;
+  /** @type {number[]} */
+  let prev = new Array(n + 1);
+  /** @type {number[]} */
+  let cur = new Array(n + 1);
+  for (let j = 0; j <= n; j++) prev[j] = j;
+  for (let i = 1; i <= m; i++) {
+    cur[0] = i;
+    const ca = a.charCodeAt(i - 1);
+    for (let j = 1; j <= n; j++) {
+      const cost = ca === b.charCodeAt(j - 1) ? 0 : 1;
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + cost);
+    }
+    [prev, cur] = [cur, prev];
+  }
+  return prev[n];
+}
+
+/** @param {string} candidate @param {string} rowSlug */
+function slugSimilarityScore(candidate, rowSlug) {
+  const a = String(candidate || '').toLowerCase();
+  const b = String(rowSlug || '').toLowerCase();
+  if (!a || !b) return 0;
+  if (a === b) return 1;
+  const dist = levenshteinDistance(a, b);
+  const maxLen = Math.max(a.length, b.length);
+  return maxLen ? 1 - dist / maxLen : 0;
+}
+
+/**
+ * When exact slug misses, find a row: prefix match, then ILIKE on first word, then similarity tie-break.
+ * @param {string | null | undefined} brandName
+ * @param {string | null | undefined} corporateParent
+ * @param {string} candidateSlug — slug we already tried (from resolveIncumbentSlug)
+ * @returns {Promise<import('pg').QueryResultRow | null>}
+ */
+async function fetchIncumbentRowFuzzyMatch(brandName, corporateParent, candidateSlug) {
+  if (!pool || !candidateSlug || candidateSlug.length < 3) return null;
+
+  try {
+    const prefixRes = await pool.query(
+      `SELECT *
+       FROM incumbent_profiles
+       WHERE $1::text LIKE brand_slug || '%'
+         AND length(brand_slug) >= 4
+       ORDER BY length(brand_slug) DESC
+       LIMIT 8`,
+      [candidateSlug]
+    );
+    if (prefixRes.rows.length === 1) {
+      const chosen = prefixRes.rows[0];
+      console.log('[investigation] fuzzy_slug_match', {
+        kind: 'candidate_starts_with_row_slug',
+        candidate: candidateSlug,
+        chosen: chosen.brand_slug,
+        pool: 1,
+      });
+      return chosen;
+    }
+    if (prefixRes.rows.length > 1) {
+      let best = prefixRes.rows[0];
+      let bestScore = slugSimilarityScore(candidateSlug, best.brand_slug);
+      for (let i = 1; i < prefixRes.rows.length; i++) {
+        const r = prefixRes.rows[i];
+        const sc = slugSimilarityScore(candidateSlug, r.brand_slug);
+        if (sc > bestScore || (sc === bestScore && String(r.brand_slug).length > String(best.brand_slug).length)) {
+          bestScore = sc;
+          best = r;
+        }
+      }
+      console.log('[investigation] fuzzy_slug_match', {
+        kind: 'candidate_starts_with_row_slug',
+        candidate: candidateSlug,
+        chosen: best.brand_slug,
+        score: Number(bestScore.toFixed(4)),
+        pool: prefixRes.rows.length,
+        alternates: prefixRes.rows.map((r) => r.brand_slug),
+      });
+      return best;
+    }
+
+    let fw = firstWordSlugFromLabels(brandName, corporateParent);
+    if (fw.length < 4 && corporateParent && brandName) {
+      fw = firstWordSlugFromLabels(corporateParent, null);
+    }
+    if (fw.length < 3) return null;
+
+    const ilikeRes = await pool.query(
+      `SELECT *
+       FROM incumbent_profiles
+       WHERE brand_slug ILIKE $1
+         AND length(brand_slug) >= 4
+       LIMIT 24`,
+      [`%${fw}%`]
+    );
+    if (ilikeRes.rows.length === 0) return null;
+    if (ilikeRes.rows.length === 1) {
+      const chosen = ilikeRes.rows[0];
+      console.log('[investigation] fuzzy_slug_match', {
+        kind: 'ilike_first_word',
+        candidate: candidateSlug,
+        firstWord: fw,
+        chosen: chosen.brand_slug,
+        pool: 1,
+      });
+      return chosen;
+    }
+    let best = ilikeRes.rows[0];
+    let bestScore = slugSimilarityScore(candidateSlug, best.brand_slug);
+    for (let i = 1; i < ilikeRes.rows.length; i++) {
+      const r = ilikeRes.rows[i];
+      const sc = slugSimilarityScore(candidateSlug, r.brand_slug);
+      if (sc > bestScore) {
+        bestScore = sc;
+        best = r;
+      }
+    }
+    console.log('[investigation] fuzzy_slug_match', {
+      kind: 'ilike_first_word',
+      candidate: candidateSlug,
+      firstWord: fw,
+      chosen: best.brand_slug,
+      score: Number(bestScore.toFixed(4)),
+      pool: ilikeRes.rows.length,
+      alternates: ilikeRes.rows.map((r) => r.brand_slug),
+    });
+    return best;
+  } catch (e) {
+    console.error('[investigation] fuzzy_slug_match_error', e?.message || e);
+    return null;
+  }
+}
+
 /**
  * Maps vision/OCR brand strings to incumbent_profiles.brand_slug via server/db/brand_aliases.json.
  * Tries `brandName` first, then `corporateParent`.
+ *
+ * When only `corporateParent` is set (e.g. "Chevron Corporation") the raw slug is `chevron-corporation`,
+ * which often has no DB row — canonical rows use `chevron`. Strip common legal suffix segments after aliases.
  */
 export function resolveIncumbentSlug(brandName, corporateParent) {
   const map = loadBrandAliases();
@@ -60,7 +271,14 @@ export function resolveIncumbentSlug(brandName, corporateParent) {
     const s = brandSlug(raw);
     return map[s] || null;
   };
-  return apply(brandName) || apply(corporateParent) || brandSlug(brandName || corporateParent);
+  const fromAlias = apply(brandName) || apply(corporateParent);
+  if (fromAlias) return fromAlias;
+
+  const primary = brandSlug(brandName || corporateParent);
+  if (!primary) return '';
+  if (map[primary]) return map[primary];
+
+  return normalizeSlugWithSuffixStrips(primary, map);
 }
 
 /**
@@ -1669,11 +1887,13 @@ export async function getInvestigationProfile(brandName, corporateParent, option
   }
 
   const slug = resolveIncumbentSlug(brandName, corporateParent);
+  const rawVisionSlug = brandSlug(brandName || corporateParent);
   const investigationCacheKey = `inv:${(brandName || '').toLowerCase().trim()}:${(corporateParent || '').toLowerCase().trim()}`;
   console.log('[investigation] getInvestigationProfile:start', {
     brandName,
     corporateParent,
     slug,
+    rawVisionSlug,
     db_pool: Boolean(pool),
   });
 
@@ -1686,10 +1906,33 @@ export async function getInvestigationProfile(brandName, corporateParent, option
          LIMIT 1`,
         [slug]
       );
-      const row = rows[0];
+      let row = rows[0];
+      if (!row && slug) {
+        const strippedSlug = slug.replace(LEGAL_ENTITY_SLUG_SUFFIX_RE, '');
+        if (strippedSlug !== slug && strippedSlug.length >= 2) {
+          const { rows: altRows } = await pool.query(
+            `SELECT *
+             FROM incumbent_profiles
+             WHERE brand_slug = $1
+             LIMIT 1`,
+            [strippedSlug]
+          );
+          row = altRows[0];
+        }
+      }
+      if (!row) {
+        const fuzzyCandidate = [slug, rawVisionSlug]
+          .filter((s) => typeof s === 'string' && s.length >= 3)
+          .sort((a, b) => b.length - a.length)[0];
+        if (fuzzyCandidate) {
+          row = await fetchIncumbentRowFuzzyMatch(brandName, corporateParent, fuzzyCandidate);
+        }
+      }
       if (row) {
         const profileJsonChars = incumbentProfileJsonCharLength(row.profile_json);
-        if (profileJsonChars < STUB_PROFILE_JSON_MAX_CHARS) {
+        const drForStubGate = extractDeepResearchFromProfileJson(row.profile_json);
+        const hasStoredDeepResearch = Boolean(drForStubGate?.per_category?.length);
+        if (profileJsonChars < STUB_PROFILE_JSON_MAX_CHARS && !hasStoredDeepResearch) {
           console.log('[STUB UPGRADE]', slug);
           try {
             const rt = await realtimeInvestigation(
