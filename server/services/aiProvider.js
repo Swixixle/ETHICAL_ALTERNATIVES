@@ -1,9 +1,163 @@
 /**
  * Tiered AI provider helpers + health metrics for vision/investigation fallbacks.
- * Vision: Claude (vision.js) → Gemini. Investigation: Claude → Perplexity → Gemini.
+ * Vision: Claude (vision.js) -> Gemini.
+ * Investigation routing (cost-aware): major brands -> Gemini only; complex ownership -> Claude+web;
+ * default -> Gemini draft + Claude verify. Fallback chain: Perplexity then Gemini on failures.
  */
 
+
 const PROVIDERS = ['claude', 'perplexity', 'gemini'];
+
+/**
+ * @param {string | null | undefined} s
+ */
+export function normalizeBrandForRouting(s) {
+  return String(s || '')
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/** Subsidiary / structure language — prefer full Claude + web search. */
+const COMPLEX_OWNERSHIP_RE =
+  /\b(subsidiar(y|ies)|parent\s+company|ultimate\s+parent|holding\s+compan(y|ies)|\bdba\b|d\s*\/\s*b\/\s*a|formerly\s+known|spun\s+off|merger|acqui(red|sition)|joint\s+venture|division\s+of|owned\s+by|operates\s+as|licen[cs]ee|franchisee\s+of|part\s+of\s+[A-Za-z]|umbrella\s+of)\b/i;
+
+/** Normalized tokens / phrases — megabrands where Gemini-only draft is usually sufficient. */
+const MAJOR_BRAND_PHRASES = new Set(
+  [
+    'walmart',
+    'amazon',
+    'apple',
+    'google',
+    'alphabet',
+    'meta',
+    'facebook',
+    'microsoft',
+    'costco',
+    'target',
+    'cvs',
+    'walgreens',
+    'mcdonalds',
+    "mcdonald's",
+    'starbucks',
+    'coca cola',
+    'cocacola',
+    'pepsi',
+    'pepsico',
+    'procter and gamble',
+    'unilever',
+    'nestle',
+    'tesla',
+    'ford',
+    'gm',
+    'general motors',
+    'toyota',
+    'honda',
+    'nike',
+    'adidas',
+    'home depot',
+    'lowes',
+    "lowe's",
+    'kroger',
+    'best buy',
+    'dollar general',
+    'dollar tree',
+    'bank of america',
+    'jpmorgan',
+    'jp morgan',
+    'wells fargo',
+    'citigroup',
+    'goldman sachs',
+    'verizon',
+    'at t',
+    'att',
+    'comcast',
+    'disney',
+    'netflix',
+    'intel',
+    'ibm',
+    'oracle',
+    'salesforce',
+    'uber',
+    'lyft',
+    'airbnb',
+    'marriott',
+    'hilton',
+    'delta',
+    'united airlines',
+    'american airlines',
+    'southwest',
+    'fedex',
+    'ups',
+    'pfizer',
+    'johnson and johnson',
+    'abbvie',
+    'merck',
+    'boeing',
+    'lockheed',
+    'exxon',
+    'chevron',
+    'shell',
+    'bp',
+    'walgreen',
+  ].map((s) => normalizeBrandForRouting(s))
+);
+
+/**
+ * @param {string | null | undefined} brandName
+ * @param {string | null | undefined} corporateParent
+ */
+export function isMajorBrandForRouting(brandName, corporateParent) {
+  const candidates = [brandName, corporateParent].map(normalizeBrandForRouting).filter(Boolean);
+  for (const t of candidates) {
+    if (MAJOR_BRAND_PHRASES.has(t)) return true;
+    const first = t.split(' ')[0] || '';
+    if (first.length >= 3 && MAJOR_BRAND_PHRASES.has(first)) return true;
+    for (const phrase of MAJOR_BRAND_PHRASES) {
+      if (phrase.length < 4) continue;
+      if (t === phrase || t.startsWith(`${phrase} `)) return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * @param {string | null | undefined} brandName
+ * @param {string | null | undefined} corporateParent
+ */
+export function hasComplexOwnershipSignals(brandName, corporateParent) {
+  const hay = `${brandName || ''} ${corporateParent || ''}`.trim();
+  if (!hay) return false;
+  if (COMPLEX_OWNERSHIP_RE.test(hay)) return true;
+  const nb = normalizeBrandForRouting(brandName);
+  const np = normalizeBrandForRouting(corporateParent);
+  if (nb && np && nb !== np) return true;
+  if (/[;&]/.test(hay) && /\b(inc|llc|ltd|corp|co\.)\b/i.test(hay)) return true;
+  return false;
+}
+
+/**
+ * @param {string | null | undefined} brandName
+ * @param {string | null | undefined} corporateParent
+ * @returns {'gemini_only' | 'claude_web' | 'gemini_claude_verify'}
+ */
+export function resolveInvestigationRoute(brandName, corporateParent) {
+  if (isMajorBrandForRouting(brandName, corporateParent)) return 'gemini_only';
+  if (hasComplexOwnershipSignals(brandName, corporateParent)) return 'claude_web';
+  return 'gemini_claude_verify';
+}
+
+function anthropicMessageText(msg) {
+  const parts = [];
+  for (const b of msg?.content || []) {
+    if (b.type === 'text' && b.text) parts.push(b.text);
+  }
+  return parts.join('\n').trim();
+}
 
 /** @type {Record<string, { lastSuccess: string | null; lastFailure: string | null; failureCount: number }>} */
 const providerHealth = Object.fromEntries(
@@ -133,6 +287,54 @@ Return ONLY one valid JSON object matching the investigation schema — no markd
   const text = result?.response?.text?.() || '';
   if (!String(text).trim()) throw new Error('Gemini text empty response');
   recordProviderSuccess('gemini');
+  return text;
+}
+
+/**
+ * Gemini-first investigation draft (no web search). Used for cost routing.
+ * @param {string} prompt
+ */
+export async function runGeminiInvestigationDraft(prompt) {
+  console.log('[aiProvider] investigation: primary=gemini (draft)');
+  return geminiTextCompletion(prompt);
+}
+
+/**
+ * Light Claude pass: verify / normalize draft JSON without web search tools.
+ * @param {string} brandLabel
+ * @param {string} draftText
+ */
+export async function runClaudeInvestigationVerify(brandLabel, draftText) {
+  const key = process.env.ANTHROPIC_API_KEY;
+  if (!key) throw new Error('ANTHROPIC_API_KEY not set');
+
+  const { default: Anthropic } = await import('@anthropic-ai/sdk');
+  const client = new Anthropic({ apiKey: key });
+  const model =
+    process.env.ANTHROPIC_INVESTIGATION_VERIFY_MODEL ||
+    process.env.ANTHROPIC_INVESTIGATION_MODEL ||
+    'claude-sonnet-4-6';
+  const slice = String(draftText || '').slice(0, 14_000);
+
+  const msg = await client.messages.create({
+    model,
+    max_tokens: 8192,
+    messages: [
+      {
+        role: 'user',
+        content: `You verify a draft corporate investigation JSON for "${brandLabel}". The draft came from another model without live web access.
+
+Tasks: (1) Fix internal inconsistencies (brand vs parent vs subsidiaries vs overall_concern_level vs summaries). (2) Correct only well-established parent/subsidiary facts for famous companies; do not invent new enforcement cases or dollar amounts. (3) Preserve the same JSON shape and keys as the draft (legal_summary, tax_summary, labor_summary, executive_summary, overall_concern_level, timeline, flags, sources, verdict_tags, community_impact, etc.). (4) Output ONLY one valid JSON object — no markdown fences, no commentary.
+
+DRAFT:
+${slice}`,
+      },
+    ],
+  });
+
+  const text = anthropicMessageText(msg);
+  if (!String(text).trim()) throw new Error('Claude verify empty response');
+  recordProviderSuccess('claude');
   return text;
 }
 

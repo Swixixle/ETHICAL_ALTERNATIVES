@@ -9,6 +9,9 @@ import { attachProportionalityToInvestigation } from './proportionality.js';
 import {
   recordProviderFailure,
   recordProviderSuccess,
+  resolveInvestigationRoute,
+  runClaudeInvestigationVerify,
+  runGeminiInvestigationDraft,
   runInvestigationTextFallbackChain,
 } from './aiProvider.js';
 import { corroborateLayerC, mergeLayerCCorroborationIntoProfileJson } from './corroboration.js';
@@ -1539,7 +1542,7 @@ async function extractParsedFromPlainText(text, brandLabel) {
 /**
  * @param {Record<string, unknown>} parsed
  * @param {string[]} citationUrls
- * @param {string | null | undefined} investigationProvider — claude | perplexity | gemini
+ * @param {string | null | undefined} investigationProvider — claude_web | gemini | gemini+claude_verify | perplexity | gemini (fallback)
  */
 async function finalizeRealtimeFromParsed(
   parsed,
@@ -1555,7 +1558,14 @@ async function finalizeRealtimeFromParsed(
   const investigation = finalizeInvestigation(inv, 'realtime_search');
   const provider = investigationProvider || 'claude';
   investigation.investigation_provider = provider;
-  if (provider === 'claude') {
+  if (provider === 'claude' || provider === 'claude_web') {
+    recordProviderSuccess('claude');
+  } else if (provider === 'perplexity') {
+    recordProviderSuccess('perplexity');
+  } else if (provider === 'gemini') {
+    recordProviderSuccess('gemini');
+  } else if (provider === 'gemini+claude_verify') {
+    recordProviderSuccess('gemini');
     recordProviderSuccess('claude');
   }
 
@@ -1598,8 +1608,13 @@ async function finalizeRealtimeFromParsed(
 
 async function realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory, promptOptions = {}) {
   const recentOnly = Boolean(promptOptions.recentNewsOnly);
+  let costRoute = resolveInvestigationRoute(brandName, corporateParent);
+  if (recentOnly && costRoute !== 'claude_web') {
+    costRoute = 'claude_web';
+    console.log('[investigation] realtime: recentNewsOnly forces cost_route=claude_web');
+  }
   console.log(
-    `[investigation] realtimeInvestigation start brand=${brandName || '∅'} parent=${corporateParent || '∅'} category=${productCategory || '∅'} recentOnly=${recentOnly}`
+    `[investigation] realtimeInvestigation start brand=${brandName || '\u2205'} parent=${corporateParent || '\u2205'} category=${productCategory || '\u2205'} recentOnly=${recentOnly} cost_route=${costRoute}`
   );
 
   const cacheKey = `inv:${(brandName || '').toLowerCase().trim()}:${(corporateParent || '').toLowerCase().trim()}`;
@@ -1619,44 +1634,85 @@ async function realtimeInvestigation(brandName, corporateParent, healthFlag, pro
 
   let msg;
   let citationUrls = [];
+  /** @type {'claude_web' | 'gemini' | 'gemini+claude_verify'} */
+  let primaryProvider = 'claude_web';
 
-  try {
-    ({ message: msg, citationUrls } = await runInvestigationAnthropicTurn(userPrompt, tools));
-  } catch (e) {
-    console.warn('[investigation] realtime: web search path threw, retrying without tools:', e?.message || e);
+  async function runClaudeWebWithRetry() {
     try {
+      ({ message: msg, citationUrls } = await runInvestigationAnthropicTurn(userPrompt, tools));
+    } catch (e) {
+      console.warn('[investigation] realtime: web search path threw, retrying without tools:', e?.message || e);
       const fallbackPrompt = `${userPrompt}
 
 If web search is unavailable, use only well-established public knowledge. Use overall_concern_level "moderate" when evidence is thin; explain gaps in executive_summary. Still output valid JSON.`;
       ({ message: msg, citationUrls } = await runInvestigationAnthropicTurn(fallbackPrompt, null));
-    } catch (e2) {
-      console.error('[investigation] realtime: investigation request failed after retry', e2);
-      recordProviderFailure('claude');
-      const fb = await runInvestigationTextFallbackChain(userPrompt);
-      if (fb) {
-        const p = await extractParsedFromPlainText(fb.text, brandLabel);
-        if (p) {
-          return await finalizeRealtimeFromParsed(
-            p,
-            citationUrls,
-            brandName,
-            corporateParent,
-            healthFlag,
-            fb.provider
-          );
+    }
+    primaryProvider = 'claude_web';
+  }
+
+  try {
+    if (costRoute === 'claude_web') {
+      await runClaudeWebWithRetry();
+    } else if (costRoute === 'gemini_only') {
+      if (!process.env.GEMINI_API_KEY) {
+        console.warn('[investigation] realtime: gemini_only route but GEMINI_API_KEY missing - Claude web');
+        await runClaudeWebWithRetry();
+      } else {
+        try {
+          const textGem = await runGeminiInvestigationDraft(userPrompt);
+          msg = { role: 'assistant', content: [{ type: 'text', text: textGem }] };
+          citationUrls = [];
+          primaryProvider = 'gemini';
+        } catch (ge) {
+          console.warn('[investigation] realtime: Gemini draft failed - Claude web', ge?.message || ge);
+          await runClaudeWebWithRetry();
         }
       }
-      return realtimeEmergencyOrDegraded(
-        brandName,
-        corporateParent,
-        healthFlag,
-        productCategory,
-        e2?.message || 'API error'
-      );
+    } else {
+      if (!process.env.GEMINI_API_KEY || !process.env.ANTHROPIC_API_KEY) {
+        console.warn('[investigation] realtime: gemini_claude_verify route missing keys - Claude web');
+        await runClaudeWebWithRetry();
+      } else {
+        try {
+          const draft = await runGeminiInvestigationDraft(userPrompt);
+          const verified = await runClaudeInvestigationVerify(brandLabel, draft);
+          msg = { role: 'assistant', content: [{ type: 'text', text: verified }] };
+          citationUrls = [];
+          primaryProvider = 'gemini+claude_verify';
+        } catch (e) {
+          console.warn('[investigation] realtime: Gemini+verify failed - Claude web', e?.message || e);
+          await runClaudeWebWithRetry();
+        }
+      }
     }
+  } catch (e2) {
+    console.error('[investigation] realtime: primary investigation path failed', e2);
+    recordProviderFailure('claude');
+    const fb = await runInvestigationTextFallbackChain(userPrompt);
+    if (fb) {
+      const p = await extractParsedFromPlainText(fb.text, brandLabel);
+      if (p) {
+        return await finalizeRealtimeFromParsed(
+          p,
+          citationUrls,
+          brandName,
+          corporateParent,
+          healthFlag,
+          fb.provider
+        );
+      }
+    }
+    return realtimeEmergencyOrDegraded(
+      brandName,
+      corporateParent,
+      healthFlag,
+      productCategory,
+      e2?.message || 'API error'
+    );
   }
 
   let { text, parsed } = await extractParsedFromAssistantMessage(msg, brandLabel);
+
 
   if (!parsed || realtimeParsedIsIncomplete(parsed)) {
     const reason = !parsed ? 'no parseable JSON' : 'incomplete legal/tax/concern fields';
@@ -1720,7 +1776,7 @@ If web search is unavailable, use only well-established public knowledge. Use ov
     brandName,
     corporateParent,
     healthFlag,
-    'claude'
+    primaryProvider
   );
   if (!recentOnly && result && !result.investigation?.is_stub_investigation) {
     investigationCache.set(cacheKey, result);
