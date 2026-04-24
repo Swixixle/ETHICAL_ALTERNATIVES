@@ -1,0 +1,115 @@
+.human-scale {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ea-text, rgba(15, 23, 28, 0.92));
+}
+
+.human-scale__loading,
+.human-scale__error,
+.human-scale__muted {
+  margin: 0;
+  color: var(--ea-muted, rgba(15, 23, 28, 0.6));
+  font-size: 13px;
+}
+
+.human-scale__error {
+  color: #b91c1c;
+}
+
+.human-scale__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+  margin: 0 0 12px;
+}
+
+@media (max-width: 520px) {
+  .human-scale__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.human-scale__stat {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(15, 23, 28, 0.04);
+  border: 1px solid rgba(15, 23, 28, 0.08);
+}
+
+.human-scale__stat-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ea-muted, rgba(15, 23, 28, 0.55));
+  margin-bottom: 4px;
+}
+
+.human-scale__stat-value {
+  font-family: 'Space Mono', ui-monospace, monospace;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ea-text, #0f171c);
+}
+
+.human-scale__stat-value--sev {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.human-scale__thesis {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-left: 3px solid #d4a017;
+  background: rgba(212, 160, 23, 0.08);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.human-scale__details {
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(15, 23, 28, 0.1);
+  overflow: hidden;
+}
+
+.human-scale__details summary {
+  cursor: pointer;
+  padding: 10px 12px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  list-style: none;
+  background: rgba(15, 23, 28, 0.03);
+}
+
+.human-scale__details summary::-webkit-details-marker {
+  display: none;
+}
+
+.human-scale__pre {
+  margin: 0;
+  padding: 12px 14px;
+  max-height: 320px;
+  overflow: auto;
+  font-family: 'Space Mono', ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: rgba(15, 23, 28, 0.85);
+  background: rgba(15, 23, 28, 0.02);
+}
+
+.human-scale__heuristic {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.human-scale__heuristic-line {
+  margin: 0;
+  font-size: 13px;
+}
