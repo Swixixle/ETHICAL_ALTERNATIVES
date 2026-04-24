@@ -25,6 +25,7 @@ import {
   HealthIcon,
 } from './icons/SectionIcons';
 import ActiveNowSection from './ActiveNowSection.jsx';
+import HumanScaleAnalysis from './HumanScaleAnalysis.jsx';
 import InvestigationReceipt from './InvestigationReceipt.jsx';
 import { fetchProportionality } from '../lib/fetchProportionality.js';
 import { methodologyPageUrl } from '../lib/methodologyUrl.js';
@@ -1722,6 +1723,37 @@ export default function InvestigationCard({
             </div>
           );
         })}
+        {perimeterSlug ? (
+          <div
+            className="investigation-card__accordion-item investigation-card__accordion-item--confirmed"
+            key="ea-human-scale"
+          >
+            <button
+              type="button"
+              className="investigation-card__accordion-trigger"
+              aria-expanded={openSection === 'human-scale'}
+              onClick={() => setOpenSection(openSection === 'human-scale' ? null : 'human-scale')}
+            >
+              <span
+                className="investigation-card__accordion-chev"
+                aria-hidden
+                style={{ transform: openSection === 'human-scale' ? 'rotate(90deg)' : 'rotate(0deg)' }}
+              >
+                ›
+              </span>
+              <span className="investigation-card__accordion-title">HUMAN-SCALE PENALTY ANALYSIS</span>
+            </button>
+            <div
+              className={`investigation-card__accordion-panel${
+                openSection === 'human-scale' ? ' investigation-card__accordion-panel--open' : ''
+              }`}
+            >
+              <div className="investigation-card__accordion-inner">
+                <HumanScaleAnalysis brandSlug={perimeterSlug} />
+              </div>
+            </div>
+          </div>
+        ) : null}
         {accordionSectionItems.map((item) => {
           const SectionIcon = item.Icon;
           const open = openSection === item.key;
