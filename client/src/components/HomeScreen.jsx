@@ -402,19 +402,51 @@ function LocationPrompt({
 
   function handleShareLocationClick() {
     if (buttonState !== 'idle') return;
-    setButtonState('waiting');
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setButtonState('granted');
-        geoShare.success(position);
-      },
-      (err) => {
-        console.error('[geolocation] failed:', err?.code, err?.message);
-        setButtonState('idle');
-        geoShare.error(err);
-      },
-      geoShare.options
-    );
+    if (typeof window === 'undefined' || typeof navigator === 'undefined' || !navigator.geolocation) {
+      geoShare.error(
+        /** @type {GeolocationPositionError} */ ({
+          code: 2,
+          message: 'Geolocation is not available in this browser or context.',
+          PERMISSION_DENIED: 1,
+          POSITION_UNAVAILABLE: 2,
+          TIMEOUT: 3,
+        })
+      );
+      return;
+    }
+    const host = window.location?.hostname || '';
+    const isLoopback = host === 'localhost' || host === '127.0.0.1' || host === '[::1]';
+    if (!window.isSecureContext && !isLoopback) {
+      geoShare.error(
+        /** @type {GeolocationPositionError} */ ({
+          code: 2,
+          message: 'Location requires a secure (HTTPS) connection. Open the app over HTTPS or use localhost.',
+          PERMISSION_DENIED: 1,
+          POSITION_UNAVAILABLE: 2,
+          TIMEOUT: 3,
+        })
+      );
+      return;
+    }
+    try {
+      setButtonState('waiting');
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setButtonState('granted');
+          geoShare.success(position);
+        },
+        (err) => {
+          console.error('[geolocation] failed:', err?.code, err?.message);
+          setButtonState('idle');
+          geoShare.error(err);
+        },
+        geoShare.options
+      );
+    } catch (e) {
+      console.error('[geolocation] sync error', e);
+      setButtonState('idle');
+      geoShare.error(e instanceof Error ? e : new Error(String(e)));
+    }
   }
 
   async function submitManual(e) {
@@ -496,7 +528,12 @@ function LocationPrompt({
         type="button"
         className={buttonState === 'waiting' ? 'ea-location-btn--waiting' : undefined}
         data-no-disintegrate=""
-        onClick={handleShareLocationClick}
+        onPointerDown={(e) => e.stopPropagation()}
+        onPointerUp={(e) => e.stopPropagation()}
+        onClick={(e) => {
+          e.stopPropagation();
+          handleShareLocationClick();
+        }}
         style={{
           fontFamily: "'Space Mono', monospace",
           fontSize: 11,
