@@ -25,6 +25,9 @@ import {
   mergeLiveInvestigationDelta,
 } from './deepResearchMerge.js';
 
+// Multi-LLM Orchestrator
+import { orchestrateInvestigation, COST_ESTIMATES } from './investigationOrchestrator.js';
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /** @type {Record<string, string> | null} */
@@ -1924,11 +1927,76 @@ function wrapRealtimeInvestigationResult(investigation, profileJsonForDb) {
 }
 
 /**
+ * Get investigation profile using multi-LLM orchestration
  * @param {string | null} brandName
  * @param {string | null} corporateParent
  * @param {{ healthFlag?: boolean; productCategory?: string }} [options]
  */
-export async function getInvestigationProfile(brandName, corporateParent, options = {}) {
+export async function getInvestigationProfileOrchestrated(brandName, corporateParent, options = {}) {
+  const healthFlag = Boolean(options.healthFlag);
+  const productCategory = options.productCategory;
+  const primaryBrand = brandName || corporateParent;
+
+  if (!primaryBrand) {
+    console.log('[investigation] orchestrated: no primary brand');
+    return null;
+  }
+
+  const slug = resolveIncumbentSlug(brandName, corporateParent);
+
+  try {
+    const result = await orchestrateInvestigation({
+      brandName,
+      corporateParent,
+      healthFlag,
+      productCategory,
+      slug,
+    });
+
+    const investigation = result.investigation;
+
+    // Attach orchestration metadata
+    investigation._orchestration = result.orchestration;
+
+    // Ensure proper profile type
+    if (!investigation.profile_type) {
+      investigation.profile_type = result.orchestration.path.includes('cache')
+        ? 'database'
+        : 'realtime_search';
+    }
+
+    // Persist if we have profileJsonForDb
+    if (result.profileJsonForDb && pool) {
+      try {
+        await upsertIncumbentAfterStubUpgrade(slug, result.profileJsonForDb, investigation);
+      } catch (e) {
+        console.warn('[investigation] orchestrated: upsert failed:', e?.message);
+      }
+    }
+
+    kickPerimeterCheckForInvestigation(investigation);
+
+    console.log('[investigation] orchestrated: complete', {
+      brand: primaryBrand,
+      path: result.orchestration.path,
+      cost: result.orchestration.costSummary.totalEstimatedCostUsd,
+    });
+
+    return investigation;
+  } catch (e) {
+    console.error('[investigation] orchestrated: failed, falling back to legacy', e);
+    // Fall back to legacy implementation
+    return getInvestigationProfileLegacy(brandName, corporateParent, options);
+  }
+}
+
+/**
+ * Legacy implementation (original getInvestigationProfile)
+ * @param {string | null} brandName
+ * @param {string | null} corporateParent
+ * @param {{ healthFlag?: boolean; productCategory?: string }} [options]
+ */
+async function getInvestigationProfileLegacy(brandName, corporateParent, options = {}) {
   const healthFlag = Boolean(options.healthFlag);
   const productCategory = options.productCategory;
   const primaryBrand = brandName || corporateParent;
@@ -2150,6 +2218,25 @@ export async function getInvestigationProfile(brandName, corporateParent, option
     logInvestigationProfileEnd('realtime_emergency', emergency);
     return emergency;
   }
+}
+
+/**
+ * Main entry point for investigation profiles
+ * Uses orchestration when INVESTIGATION_USE_ORCHESTRATOR=1, otherwise legacy path
+ * @param {string | null} brandName
+ * @param {string | null} corporateParent
+ * @param {{ healthFlag?: boolean; productCategory?: string }} [options]
+ */
+export async function getInvestigationProfile(brandName, corporateParent, options = {}) {
+  // Check if orchestration is enabled
+  const useOrchestrator = process.env.INVESTIGATION_USE_ORCHESTRATOR === '1';
+
+  if (useOrchestrator) {
+    return getInvestigationProfileOrchestrated(brandName, corporateParent, options);
+  }
+
+  // Use legacy path
+  return getInvestigationProfileLegacy(brandName, corporateParent, options);
 }
 
 /**
