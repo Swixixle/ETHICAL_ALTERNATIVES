@@ -129,3 +129,166 @@
   color: #ffb84d;
   font-weight: 600;
 }
+
+/* Legal Foundation callout — distinct background for constitutional context */
+.human-scale__legal-foundation {
+  margin: 0 0 14px;
+  padding: 14px 16px;
+  background: rgba(59, 130, 246, 0.18);
+  border: 1px solid rgba(96, 165, 250, 0.42);
+  border-radius: 10px;
+  box-shadow: inset 4px 0 0 0 #3b82f6;
+}
+
+.human-scale__legal-foundation-title {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.human-scale__legal-foundation-title::before {
+  content: "⚖️";
+}
+
+.human-scale__legal-foundation-summary {
+  margin: 0 0 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.human-scale__legal-foundation-asymmetry {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 0 0 12px;
+}
+
+@media (max-width: 520px) {
+  .human-scale__legal-foundation-asymmetry {
+    grid-template-columns: 1fr;
+  }
+}
+
+.human-scale__legal-foundation-col {
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.32);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.human-scale__legal-foundation-col h5 {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3b82f6;
+}
+
+.human-scale__legal-foundation-col ul {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.human-scale__legal-foundation-col li {
+  margin-bottom: 3px;
+}
+
+.human-scale__legal-foundation-col cite {
+  font-style: normal;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  margin-top: 2px;
+}
+
+.human-scale__legal-foundation-thesis {
+  margin: 0;
+  padding: 10px 12px;
+  background: rgba(251, 191, 36, 0.14);
+  border-left: 3px solid #fbbf24;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #ffffff;
+}
+
+.human-scale__legal-foundation-thesis strong {
+  color: #fbbf24;
+}
+
+.human-scale__legal-foundation-details {
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.human-scale__legal-foundation-details summary {
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(59, 130, 246, 0.25);
+  list-style: none;
+}
+
+.human-scale__legal-foundation-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.human-scale__legal-foundation-cases {
+  padding: 12px 14px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.human-scale__legal-foundation-case {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.human-scale__legal-foundation-case:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.human-scale__legal-foundation-case strong {
+  display: block;
+  color: #ffffff;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.human-scale__legal-foundation-citation {
+  display: block;
+  font-size: 10px;
+  color: #3b82f6;
+  font-family: 'Space Mono', ui-monospace, monospace;
+  margin-bottom: 4px;
+}
+
+.human-scale__legal-foundation-case p {
+  margin: 4px 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.human-scale__legal-foundation-case a {
+  font-size: 10px;
+  color: #60a5fa;
+  text-decoration: underline;
+}

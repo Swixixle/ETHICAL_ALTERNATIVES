@@ -1282,6 +1282,15 @@ Keep each item to 1–2 sentences. Be specific where the record supports it.
 
 Rules:
 - Neutral tone. Cite primary sources as URLs in the *_sources arrays.
+- **CRITICAL - SOURCE URL REQUIREMENTS:**
+  - EVERY source_url you include MUST be a real, working URL you retrieved via web search
+  - NEVER invent, guess, or hallucinate URLs - only include URLs you actually accessed
+  - NEVER use placeholder URLs like example.com, localhost, or fake addresses
+  - If you cannot find a URL for a claim, use "source_url": null - do not make one up
+  - URLs must start with https:// and point to a real website (news, government, court, regulatory)
+  - For settlements and enforcement actions, link to the official source (DOJ, FTC, EPA, SEC, etc.)
+  - For news stories, link to the actual article on the publisher's website
+- **URL VALIDATION:** All URLs will be validated. Invalid URLs will be rejected and may cause the investigation to be rejected.
 - If insufficient evidence, use null summaries, empty flags, and overall_concern_level "moderate" (never "unknown").
 - verdict_tags: snake_case e.g. tax_avoidance, labor_violations, bribery, clean_record.
 - generated_headline: follow the headline rules above; null only when there is no substantive record to summarize.

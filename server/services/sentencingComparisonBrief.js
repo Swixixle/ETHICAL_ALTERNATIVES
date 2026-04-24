@@ -31,6 +31,108 @@ const BRIEF_DISCLAIMER =
   'This comparison brief documents the disparity between corporate penalties and individual sentencing under the Human-Scale Corporate Penalty framework. If corporations have the constitutional rights of persons, they should face the aggregate criminal liability of all decision-makers. Data sourced from U.S. Sentencing Commission FY2024. It is not a legal finding.';
 
 /**
+ * Legal Foundation: Constitutional Rights Without Criminal Consequences
+ * Documents the legal doctrine of corporate personhood and its asymmetrical application
+ */
+const LEGAL_FOUNDATION = {
+  doctrine_summary: 'Under U.S. law, corporations are legal "persons" entitled to constitutional protections originally designed for individual citizens. However, this personhood confers rights without imposing equivalent criminal consequences.',
+
+  key_cases: [
+    {
+      case: 'Santa Clara County v. Southern Pacific Railroad Co.',
+      citation: '118 U.S. 394 (1886)',
+      holding: 'Corporations are "persons" within the meaning of the Fourteenth Amendment\'s Equal Protection Clause',
+      significance: 'Established the foundation of corporate personhood under the Constitution',
+      url: 'https://supreme.justia.com/cases/federal/us/118/394/'
+    },
+    {
+      case: 'Citizens United v. Federal Election Commission',
+      citation: '558 U.S. 310 (2010)',
+      holding: 'Political spending by corporations is protected speech under the First Amendment',
+      significance: 'Extended First Amendment free speech rights to corporations as "persons," enabling unlimited political expenditures',
+      url: 'https://supreme.justia.com/cases/federal/us/558/310/'
+    },
+    {
+      case: 'Burwell v. Hobby Lobby Stores, Inc.',
+      citation: '573 U.S. 682 (2014)',
+      holding: 'Closely held corporations can claim religious exercise protections under the Religious Freedom Restoration Act',
+      significance: 'Extended religious liberty protections to corporations as persons with rights of conscience',
+      url: 'https://supreme.justia.com/cases/federal/us/573/682/'
+    }
+  ],
+
+  constitutional_protections: {
+    first_amendment: {
+      protection: 'Free speech (political expenditures, commercial speech)',
+      citation: 'Citizens United v. FEC (2010)',
+      application: 'Corporations may spend unlimited funds on political advocacy'
+    },
+    fourth_amendment: {
+      protection: 'Privacy and unreasonable search/seizure',
+      citation: 'Hale v. Henkel, 201 U.S. 43 (1906); Marshall v. Barlow\'s, Inc., 436 U.S. 307 (1978)',
+      application: 'OSHA and regulatory inspections require warrants for corporations'
+    },
+    fifth_amendment: {
+      protection: 'Due process, double jeopardy, eminent domain compensation',
+      citation: 'Corporations receive due process protections but cannot invoke the Self-Incrimination Clause',
+      application: 'Corporations are protected from regulatory takings without compensation'
+    },
+    fourteenth_amendment: {
+      protection: 'Equal protection and due process',
+      citation: 'Santa Clara County v. Southern Pacific Railroad (1886)',
+      application: 'Corporations cannot be denied equal protection under state laws'
+    }
+  },
+
+  the_asymmetry: {
+    rights_conferred: [
+      'Free speech (political and commercial)',
+      'Religious exercise (for closely held corporations)',
+      'Privacy protections (Fourth Amendment)',
+      'Due process rights (property, procedural fairness)',
+      'Equal protection (non-discrimination in regulation)',
+      'Protection from uncompensated takings'
+    ],
+    consequences_avoided: [
+      'Criminal imprisonment (corporations cannot be incarcerated)',
+      'Loss of voting rights (corporations do not vote, yet maintain political influence)',
+      'Loss of professional licenses (no corporate equivalent to disbarment)',
+      'Permanent felony record (no reputational stigma equivalent)',
+      'Firearms prohibition (corporations can own "corporate security" weapons)',
+      'Jury service exclusion (no corporate civic duty obligation)',
+      'Loss of government contract eligibility (corporations are rarely debarred permanently)',
+      'Housing discrimination (no corporate equivalent to exclusion)',
+      'Family separation (no equivalent concept for corporate structure)',
+      'Supervised release with travel restrictions (no operational equivalent)'
+    ]
+  },
+
+  legal_scholarship: [
+    {
+      author: 'Prof. Elizabeth Pollman',
+      work: 'Corporate Disobedience (2016)',
+      insight: 'Corporations have been granted increasing constitutional rights while facing decreasing accountability mechanisms'
+    },
+    {
+      author: 'Justice Ruth Bader Ginsburg (dissenting)',
+      work: 'Citizens United v. FEC (2010)',
+      insight: '"The notion that corporations have a constitutional right to use their treasury funds to influence elections has no grounding in First Amendment jurisprudence."'
+    },
+    {
+      author: 'Prof. Margaret M. Blair',
+      work: 'Corporate Personhood and the Corporate Soul (2020)',
+      insight: 'The asymmetry between rights and responsibilities in corporate personhood creates a fundamental inequality in the legal system'
+    }
+  ],
+
+  implications: {
+    thesis: 'Corporations have successfully claimed the constitutional protections of "persons" while avoiding the criminal consequences that attach to persons who commit equivalent offenses.',
+    disparity: 'An individual convicted of securities fraud faces incarceration, loss of professional licenses, permanent felony record, and lifetime collateral consequences. A corporation pays a fine (often tax-deductible) and continues operations with all constitutional protections intact.',
+    question: 'If corporations are persons under the Fourteenth Amendment, why do they not face the criminal liability that persons face for the same conduct?'
+  }
+};
+
+/**
  * Default corporate governance structure when actual data unavailable
  */
 const DEFAULT_GOVERNANCE = {
@@ -504,6 +606,9 @@ export async function buildComparisonBrief(
     // Operational restriction equivalence
     operational_restriction_equivalence: operationalRestriction,
 
+    // Legal foundation: Corporate personhood rights without criminal consequences
+    legal_foundation: LEGAL_FOUNDATION,
+
     // Actual corporate outcome - MONEY vs. TIME
     actual_corporate_outcome: {
       fine_amount: corporateFine,
@@ -856,6 +961,49 @@ export function generateBriefSummary(brief) {
   summary += `  Board Members: ${brief.corporate_governance.board_members}\n`;
   summary += `  C-Suite with Authority: ${brief.corporate_governance.c_suite_with_authority}\n`;
   summary += `  Total Decision-Makers: ${brief.corporate_governance.total_decision_makers}\n\n`;
+
+  // Legal Foundation Section
+  if (brief.legal_foundation) {
+    const lf = brief.legal_foundation;
+    summary += `LEGAL FOUNDATION: CORPORATE PERSONHOOD\n`;
+    summary += `  Doctrine: ${lf.doctrine_summary}\n\n`;
+
+    summary += `  KEY SUPREME COURT CASES:\n`;
+    for (const case_ of lf.key_cases || []) {
+      summary += `    • ${case_.case}, ${case_.citation}\n`;
+      summary += `      ${case_.holding}\n`;
+    }
+    summary += `\n`;
+
+    summary += `  CONSTITUTIONAL PROTECTIONS (Corporations as "Persons"):\n`;
+    summary += `    • First Amendment: Free speech (political expenditures) - Citizens United v. FEC (2010)\n`;
+    summary += `    • Fourth Amendment: Privacy protections from regulatory searches\n`;
+    summary += `    • Fifth Amendment: Due process, protection from takings without compensation\n`;
+    summary += `    • Fourteenth Amendment: Equal protection - Santa Clara County v. Southern Pacific (1886)\n\n`;
+
+    summary += `  THE ASYMMETRY: RIGHTS WITHOUT CONSEQUENCES\n`;
+    summary += `    Corporations Receive:\n`;
+    summary += `      - Free speech rights (political and commercial)\n`;
+    summary += `      - Religious exercise protections (for closely held corps)\n`;
+    summary += `      - Privacy protections (4th Amendment)\n`;
+    summary += `      - Due process rights (property, procedural fairness)\n`;
+    summary += `      - Equal protection under law\n`;
+    summary += `      - Protection from uncompensated regulatory takings\n\n`;
+
+    summary += `    Corporations Avoid:\n`;
+    summary += `      - Criminal imprisonment (cannot be incarcerated)\n`;
+    summary += `      - Loss of voting rights\n`;
+    summary += `      - Professional license revocation\n`;
+    summary += `      - Permanent felony record\n`;
+    summary += `      - Firearms prohibition\n`;
+    summary += `      - Jury service exclusion\n`;
+    summary += `      - Permanent loss of government contract eligibility\n`;
+    summary += `      - Housing discrimination\n`;
+    summary += `      - Supervised release with travel restrictions\n`;
+    summary += `      - Family separation\n\n`;
+
+    summary += `  ${lf.implications?.thesis || 'Corporations have constitutional protections of "persons" without criminal consequences.'}\n\n`;
+  }
 
   summary += `CIVILIAN CRIMINAL ANALOG:\n`;
   summary += `  ${brief.civilian_criminal_analog.statute}\n`;

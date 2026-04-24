@@ -27,6 +27,7 @@
 import { triageInvestigation, checkCachedResearch } from './triageLLM.js';
 import { checkRecentNews, validateFindings } from './recentNewsCheck.js';
 import { recordProviderSuccess, recordProviderFailure } from './aiProvider.js';
+import { validateInvestigationSources } from './sourceValidator.js';
 
 // Anthropic SDK for verification and deep research
 import Anthropic from '@anthropic-ai/sdk';
@@ -410,6 +411,31 @@ export async function orchestrateInvestigation({
       investigation._orchestration_path = 'full_research';
       path = 'full_research';
       break;
+    }
+  }
+
+  // Step 4: Validate source URLs before returning
+  if (investigation && process.env.INVESTIGATION_VALIDATE_SOURCES !== '0') {
+    try {
+      const validationStart = Date.now();
+      investigation = await validateInvestigationSources(investigation);
+      costTracker.addStep(
+        'source_validation',
+        'source-validator',
+        0, // No API cost for URL validation
+        Date.now() - validationStart,
+        'completed'
+      );
+    } catch (validationErr) {
+      console.warn('[orchestrator] Source validation failed:', validationErr?.message);
+      costTracker.addStep(
+        'source_validation',
+        'source-validator',
+        0,
+        0,
+        'failed'
+      );
+      // Continue with unvalidated sources rather than failing completely
     }
   }
 

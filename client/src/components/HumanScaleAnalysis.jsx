@@ -172,6 +172,7 @@ function BriefBlock({ brief, summaryText, mode }) {
   const fin = clc && typeof clc === 'object' && clc.financial && typeof clc.financial === 'object' ? clc.financial : null;
   const agg = fin && fin.aggregate && typeof fin.aggregate === 'object' ? fin.aggregate : null;
   const totalFin = agg && typeof agg.total_financial_impact === 'number' ? agg.total_financial_impact : null;
+  const lf = brief.legal_foundation && typeof brief.legal_foundation === 'object' ? brief.legal_foundation : null;
 
   const thesis =
     brief.disparity_visualization &&
@@ -187,6 +188,65 @@ function BriefBlock({ brief, summaryText, mode }) {
           Mode: {mode.replace(/_/g, ' ')}
         </p>
       ) : null}
+
+      {/* Legal Foundation Callout */}
+      {lf && (
+        <div className="human-scale__legal-foundation">
+          <h4 className="human-scale__legal-foundation-title">Legal Foundation: Corporate Personhood</h4>
+          <p className="human-scale__legal-foundation-summary">
+            {lf.doctrine_summary || 'Under U.S. law, corporations are legal "persons" entitled to constitutional protections.'}
+          </p>
+
+          <div className="human-scale__legal-foundation-asymmetry">
+            <div className="human-scale__legal-foundation-col">
+              <h5>Rights Conferred</h5>
+              <ul>
+                <li>Free speech (1st Amendment) <cite>Citizens United v. FEC (2010)</cite></li>
+                <li>Religious exercise <cite>Hobby Lobby (2014)</cite></li>
+                <li>Privacy (4th Amendment)</li>
+                <li>Due process (5th, 14th Amendments)</li>
+                <li>Equal protection (14th Amendment) <cite>Santa Clara County (1886)</cite></li>
+              </ul>
+            </div>
+            <div className="human-scale__legal-foundation-col">
+              <h5>Consequences Avoided</h5>
+              <ul>
+                <li>Criminal imprisonment</li>
+                <li>Loss of voting rights</li>
+                <li>Professional license revocation</li>
+                <li>Permanent felony record</li>
+                <li>Firearms prohibition</li>
+                <li>Jury service exclusion</li>
+                <li>Government contract disqualification</li>
+                <li>Supervised release restrictions</li>
+              </ul>
+            </div>
+          </div>
+
+          <p className="human-scale__legal-foundation-thesis">
+            <strong>The Asymmetry:</strong> Corporations have successfully claimed the constitutional
+            protections of "persons" while avoiding the criminal consequences that attach to persons
+            who commit equivalent offenses.
+          </p>
+
+          <details className="human-scale__legal-foundation-details">
+            <summary>Key Supreme Court Cases</summary>
+            <div className="human-scale__legal-foundation-cases">
+              {lf.key_cases?.map((c, i) => (
+                <div key={i} className="human-scale__legal-foundation-case">
+                  <strong>{c.case}</strong>
+                  <span className="human-scale__legal-foundation-citation">{c.citation}</span>
+                  <p>{c.holding}</p>
+                  <a href={c.url} target="_blank" rel="noopener noreferrer">
+                    View on Justia
+                  </a>
+                </div>
+              ))}
+            </div>
+          </details>
+        </div>
+      )}
+
       {thesis ? <p className="human-scale__thesis">{thesis}</p> : null}
       <div className="human-scale__grid">
         {hp ? (
