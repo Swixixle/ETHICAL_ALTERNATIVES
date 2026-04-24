@@ -21,9 +21,36 @@ export function haversineDistanceMiles(lat1, lon1, lat2, lon2) {
  * @param {Record<string, unknown>} b
  */
 function itemLatLng(b) {
-  const lat = typeof b?.lat === 'number' ? b.lat : b?.lat != null ? Number(b.lat) : NaN;
-  const lngRaw = b?.lng != null ? b.lng : b?.lon != null ? b.lon : null;
-  const lng = typeof lngRaw === 'number' ? lngRaw : lngRaw != null ? Number(lngRaw) : NaN;
+  if (b == null || typeof b !== 'object') return { lat: NaN, lng: NaN };
+  const n = (v) => (typeof v === 'number' ? v : v != null && v !== '' ? Number(v) : NaN);
+  let lat = n(/** @type {Record<string, unknown>} */ (b).lat);
+  let lng = n(
+    (() => {
+      const o = /** @type {Record<string, unknown>} */ (b);
+      if (o.lng != null) return o.lng;
+      if (o.lon != null) return o.lon;
+      if (o.longitude != null) return o.longitude;
+      return null;
+    })()
+  );
+  if (!Number.isFinite(lat)) {
+    const alat = n(/** @type {Record<string, unknown>} */ (b).latitude);
+    if (Number.isFinite(alat)) lat = alat;
+  }
+  // GeoJSON-style [lon, lat]
+  const coords = /** @type {Record<string, unknown>} */ (b).coordinates;
+  if (
+    (!Number.isFinite(lat) || !Number.isFinite(lng)) &&
+    Array.isArray(coords) &&
+    coords.length >= 2
+  ) {
+    const c0 = n(coords[0]);
+    const c1 = n(coords[1]);
+    if (Number.isFinite(c0) && Number.isFinite(c1)) {
+      lng = c0;
+      lat = c1;
+    }
+  }
   return { lat, lng };
 }
 

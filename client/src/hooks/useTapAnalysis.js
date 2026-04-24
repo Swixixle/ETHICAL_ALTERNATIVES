@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 // import { haptic } from '../utils/haptics.js';
 import { getImpactFetchHeaders } from '../lib/impactConsent.js';
+import { getEaSessionId } from '../utils/eaSessionId.js';
 import { enhanceRegionCrop } from '../utils/imageEnhance.js';
 
 const apiBase = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
@@ -19,23 +20,6 @@ function tapInvestigationUrl() {
 
 function investigateUrl() {
   return apiBase ? `${apiBase}/api/investigate` : '/api/investigate';
-}
-
-function getSessionId() {
-  if (typeof sessionStorage === 'undefined') return null;
-  try {
-    let id = sessionStorage.getItem('ea_session_id');
-    if (!id) {
-      id =
-        typeof crypto !== 'undefined' && crypto.randomUUID
-          ? crypto.randomUUID()
-          : `ea-${Date.now()}-${Math.random().toString(36).slice(2)}`;
-      sessionStorage.setItem('ea_session_id', id);
-    }
-    return id;
-  } catch {
-    return null;
-  }
 }
 
 /** @param {unknown} a @param {unknown} b */
@@ -166,7 +150,7 @@ export function useTapAnalysis() {
         tap_x: tapX,
         tap_y: tapY,
         preview_only,
-        session_id: getSessionId(),
+        session_id: getEaSessionId(),
       };
       if (selection_box && typeof selection_box === 'object') {
         body.selection_box = {
@@ -198,7 +182,7 @@ export function useTapAnalysis() {
   const runResearchPhase = useCallback(
     (identification) => {
       const phaseEpoch = snapEpochRef.current;
-      const session_id = getSessionId();
+      const session_id = getEaSessionId();
       const sourcingBody = {
         identification,
         session_id,
@@ -553,7 +537,7 @@ export function useTapAnalysis() {
       identification_method: 'text_search',
       search_keywords: q,
     };
-    const session_id = getSessionId();
+    const session_id = getEaSessionId();
     const sourcingBody = {
       identification,
       session_id,

@@ -4,6 +4,7 @@ import HealthCallout from './HealthCallout.jsx';
 import ReceiptShareModal from './ReceiptShareModal.jsx';
 import { getInvestigationRecordPresentation } from '../utils/investigationConfidence.js';
 import QuickAlternatives from './QuickAlternatives.jsx';
+import { getEaSessionId } from '../utils/eaSessionId.js';
 
 const apiBase = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
 
@@ -15,23 +16,6 @@ function historyListUrl(sessionId) {
 function historyDetailUrl(id, sessionId) {
   const q = new URLSearchParams({ session_id: sessionId });
   return apiBase ? `${apiBase}/api/history/${id}?${q}` : `/api/history/${id}?${q}`;
-}
-
-function getSessionId() {
-  if (typeof sessionStorage === 'undefined') return '';
-  try {
-    let id = sessionStorage.getItem('ea_session_id');
-    if (!id) {
-      id =
-        typeof crypto !== 'undefined' && crypto.randomUUID
-          ? crypto.randomUUID()
-          : `ea-${Date.now()}`;
-      sessionStorage.setItem('ea_session_id', id);
-    }
-    return id;
-  } catch {
-    return '';
-  }
 }
 
 function concernBadgeColor(level) {
@@ -48,7 +32,7 @@ function concernBadgeColor(level) {
  * @param {{ onBack: () => void }} props
  */
 export default function HistoryScreen({ onBack }) {
-  const [sessionId] = useState(() => getSessionId());
+  const [sessionId] = useState(() => getEaSessionId());
   const [items, setItems] = useState(/** @type {Array<Record<string, unknown>>} */ ([]));
   const [listLoading, setListLoading] = useState(true);
   const [listError, setListError] = useState(/**  @type {string | null} */ (null));

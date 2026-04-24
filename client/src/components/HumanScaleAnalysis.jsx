@@ -91,30 +91,65 @@ export default function HumanScaleAnalysis({ brandSlug }) {
 function HeuristicBlock({ analysis, brandName }) {
   const h = analysis.human_scale_penalty;
   const d = analysis.disparity;
+  const civ = analysis.civilian_analog;
+  const op = analysis.operational_restriction;
+  const out = analysis.actual_outcome;
   const hp = h && typeof h === 'object' ? h : null;
   const dp = d && typeof d === 'object' ? d : null;
+  const ca = civ && typeof civ === 'object' ? civ : null;
+  const opR = op && typeof op === 'object' ? op : null;
+  const ao = out && typeof out === 'object' ? out : null;
   return (
     <div className="human-scale human-scale__heuristic">
+      <p className="human-scale__heuristic-line" style={{ marginTop: 0 }}>
+        <strong>What this is:</strong> a USSC-style, category-based model (median civilian sentence for the
+        offense, scaled by how many board/C-suite roles could plausibly carry the decision). It is a
+        structured estimate, not a court filing. A full line-item “sentencing brief” (lifetime $, every
+        rubric) appears when the API has enforcement numbers or (for a reference demo) the Goldman
+        Sachs slug without <code>simple=1</code>.
+      </p>
       {typeof brandName === 'string' && brandName.trim() ? (
         <p className="human-scale__heuristic-line">
-          <strong>{brandName}</strong> — heuristic model (use Goldman-style demo on server for full USSC brief when applicable).
+          Brand: <strong>{brandName}</strong>
+        </p>
+      ) : null}
+      {ca ? (
+        <p className="human-scale__heuristic-line">
+          Civilian analog (USSC medians, comparable offense):{' '}
+          <strong>{String(ca.median_sentence_years ?? '—')}</strong> yr per person
+          {ca.sample_size != null ? ` · sample n=${String(ca.sample_size)}` : ''}
         </p>
       ) : null}
       {hp ? (
         <>
           <p className="human-scale__heuristic-line">
-            Human-scale total custody:{' '}
-            <strong>{String(hp.total_custody_years ?? '—')}</strong> years (aggregate across decision-makers)
+            <strong>Scaled to governance (aggregate):</strong> if each covered role bore that per-person
+            exposure, <strong>{String(hp.total_custody_years ?? '—')}</strong> years custody in the aggregate
+            (not “one person in prison for 12 years” unless the model says so).
           </p>
           <p className="human-scale__heuristic-line">
-            Per person: <strong>{String(hp.per_person_years ?? '—')}</strong> years · Decision-makers:{' '}
-            <strong>{String(hp.decision_makers ?? '—')}</strong>
+            Per role (median-weight): <strong>{String(hp.per_person_years ?? '—')}</strong> years ·
+            roles modeled: <strong>{String(hp.decision_makers ?? '—')}</strong>
+            {hp.interpretation ? <span> — {String(hp.interpretation)}</span> : null}
           </p>
         </>
       ) : null}
+      {opR && opR.years_ineligible != null ? (
+        <p className="human-scale__heuristic-line">
+          Operational ineligibility (brief rubric): <strong>{String(opR.years_ineligible)}</strong> yr
+          {opR.simple_comparison != null && String(opR.simple_comparison).trim()
+            ? ` — ${String(opR.simple_comparison)}`
+            : ''}
+        </p>
+      ) : null}
+      {ao && ao.fine != null && Number(ao.fine) > 0 ? (
+        <p className="human-scale__heuristic-line">
+          Modeled corporate fine anchor in this run: <strong>${Number(ao.fine).toLocaleString('en-US')}</strong>
+        </p>
+      ) : null}
       {dp ? (
         <p className="human-scale__heuristic-line">
-          Disparity: <strong>{String(dp.severity ?? '—')}</strong>
+          Disparity (corporate vs civilian benchmark): <strong>{String(dp.severity ?? '—')}</strong>
           {dp.interpretation ? ` — ${String(dp.interpretation)}` : ''}
         </p>
       ) : null}
