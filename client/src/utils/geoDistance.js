@@ -17,17 +17,26 @@ export function haversineDistanceMiles(lat1, lon1, lat2, lon2) {
 }
 
 /**
- * Sort key: finite distance in miles, else +Infinity.
+ * Pull numeric lat/lon from common feed shapes (OSM / registry / GeoJSON use `lon` sometimes).
+ * @param {Record<string, unknown>} b
+ */
+function itemLatLng(b) {
+  const lat = typeof b?.lat === 'number' ? b.lat : b?.lat != null ? Number(b.lat) : NaN;
+  const lngRaw = b?.lng != null ? b.lng : b?.lon != null ? b.lon : null;
+  const lng = typeof lngRaw === 'number' ? lngRaw : lngRaw != null ? Number(lngRaw) : NaN;
+  return { lat, lng };
+}
+
+/**
+ * Sort key: miles from the **current** user. When lat/lng exist for the row, we always
+ * recompute haversine (authoritative for this session). Stale or centroid-based `distance_mi`
+ * from the API must not win — that was breaking “sort by me” outside one city.
  * @param {Record<string, unknown>} b
  * @param {number} userLat
  * @param {number} userLng
  */
 function distanceSortKey(b, userLat, userLng) {
-  const raw = b?.distance_mi ?? b?.distance_miles;
-  const fromField = typeof raw === 'number' ? raw : Number(raw);
-  if (Number.isFinite(fromField)) return fromField;
-  const lat = typeof b?.lat === 'number' ? b.lat : b?.lat != null ? Number(b.lat) : NaN;
-  const lng = typeof b?.lng === 'number' ? b.lng : b?.lng != null ? Number(b.lng) : NaN;
+  const { lat, lng } = itemLatLng(b);
   if (
     Number.isFinite(lat) &&
     Number.isFinite(lng) &&
@@ -36,6 +45,9 @@ function distanceSortKey(b, userLat, userLng) {
   ) {
     return haversineDistanceMiles(userLat, userLng, lat, lng);
   }
+  const raw = b?.distance_mi ?? b?.distance_miles;
+  const fromField = typeof raw === 'number' ? raw : Number(raw);
+  if (Number.isFinite(fromField)) return fromField;
   return Number.POSITIVE_INFINITY;
 }
 
@@ -47,10 +59,12 @@ function distanceSortKey(b, userLat, userLng) {
  */
 export function sortLocalBusinessesByProximity(feed, userLat, userLng) {
   if (!Array.isArray(feed)) return [];
-  if (!Number.isFinite(userLat) || !Number.isFinite(userLng)) return [...feed];
+  const uLat = Number(userLat);
+  const uLng = Number(userLng);
+  if (!Number.isFinite(uLat) || !Number.isFinite(uLng)) return [...feed];
 
   const enriched = feed.map((b) => {
-    const d = distanceSortKey(b, userLat, userLng);
+    const d = distanceSortKey(b, uLat, uLng);
     const rounded = Number.isFinite(d) && d !== Number.POSITIVE_INFINITY ? Math.round(d * 10) / 10 : d;
     const next = { ...b };
     if (
@@ -64,8 +78,8 @@ export function sortLocalBusinessesByProximity(feed, userLat, userLng) {
   });
 
   return enriched.sort((a, b) => {
-    const da = distanceSortKey(a, userLat, userLng);
-    const db = distanceSortKey(b, userLat, userLng);
+    const da = distanceSortKey(a, uLat, uLng);
+    const db = distanceSortKey(b, uLat, uLng);
     if (da !== db) return da - db;
     const ra = a.type === 'registry' ? 0 : 1;
     const rb = b.type === 'registry' ? 0 : 1;
