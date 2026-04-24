@@ -434,6 +434,16 @@ export function applyDeepResearchToInvestigation(inv, dr, healthFlag) {
     }
   }
 
+  // Preserve existing summaries before processing deep research
+  // This ensures we don't lose data when deep_research is incomplete
+  const existingSummaries = {};
+  const summaryKeys = ['tax_summary', 'legal_summary', 'labor_summary', 'environmental_summary', 'political_summary', 'product_health_summary'];
+  for (const key of summaryKeys) {
+    if (inv[key] && typeof inv[key] === 'string' && inv[key].trim()) {
+      existingSummaries[key] = inv[key].trim();
+    }
+  }
+
   for (const [sec, bucket] of sectionData) {
     const findKey = `${sec}_finding`;
     const srcKey = `${sec}_sources`;
@@ -465,12 +475,35 @@ export function applyDeepResearchToInvestigation(inv, dr, healthFlag) {
     }
   }
 
+  // Restore any summaries that weren't set by deep research
+  // This prevents data loss when deep_research categories are missing
+  for (const key of summaryKeys) {
+    const current = inv[key];
+    const hasDeepResearchContent = current && typeof current === 'string' &&
+      (current.includes('Indexed:') || current.includes('incident(s) in this category'));
+
+    if (!hasDeepResearchContent && existingSummaries[key]) {
+      // If deep research didn't add meaningful content, restore the original
+      inv[key] = existingSummaries[key];
+    }
+  }
+
   if (politicalBits.length) {
     const p = politicalBits.join('\n\n');
     inv.political_finding = inv.political_finding?.trim() ? `${p}\n\n${inv.political_finding}` : p;
-    inv.political_summary = inv.political_summary?.trim()
-      ? `${p}\n\n${inv.political_summary}`
-      : p;
+    // Only update political_summary if deep research has content, otherwise preserve existing
+    const currentPolSum = inv.political_summary;
+    const hasPolDeepResearch = currentPolSum && typeof currentPolSum === 'string' &&
+      (currentPolSum.includes('Indexed:') || currentPolSum.includes('incident(s)'));
+
+    if (!hasPolDeepResearch && existingSummaries.political_summary) {
+      // Preserve existing summary if deep research didn't add meaningful content
+      inv.political_summary = existingSummaries.political_summary;
+    } else {
+      inv.political_summary = currentPolSum?.trim()
+        ? `${p}\n\n${currentPolSum}`
+        : p;
+    }
   }
 
   if (dr.summaries && typeof dr.summaries === 'object') {
