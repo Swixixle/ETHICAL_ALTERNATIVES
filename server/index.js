@@ -28,6 +28,9 @@ import barcodeRouter from './routes/barcode.route.js';
 import reportErrorRouter from './routes/reportError.route.js';
 import executivePayRouter from './routes/executivePay.route.js';
 import receiptRouter from './routes/receipt.js';
+import sceneRouter from './routes/scene.route.js';
+import investigationLibraryRouter from './routes/investigationLibrary.route.js';
+import humanScaleAnalysisRouter from './routes/humanScaleAnalysis.route.js';
 import { getProviderHealthSnapshot } from './services/aiProvider.js';
 import {
   investigationCache,
@@ -137,6 +140,7 @@ app.use('/api/local-feed', localFeedRouter);
 app.use('/api/share-card', shareCardRouter);
 app.use('/api/share-export', shareExportRouter);
 app.use('/api/receipt', receiptRouter);
+app.use('/api/v1', sceneRouter);
 app.use('/api/geocode', geocodeRouter);
 app.use('/api/board', communityBoardRouter);
 app.use('/api/territory', territoryRouter);
@@ -144,6 +148,8 @@ app.use('/api/events', localEventsRouter);
 app.use('/api/local-commercial', localCommercialRouter);
 app.use('/api/witness', witnessRouter);
 app.use('/api/documentary', documentaryRouter);
+app.use('/api', investigationLibraryRouter);
+app.use('/api', humanScaleAnalysisRouter);
 app.use('/api', tapRouter);
 app.use('/api', impactRouter);
 
