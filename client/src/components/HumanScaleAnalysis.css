@@ -1,19 +1,20 @@
+/* Human-Scale block inside InvestigationCard — tuned for dark panels / high contrast */
 .human-scale {
   font-size: 14px;
   line-height: 1.5;
-  color: var(--ea-text, rgba(15, 23, 28, 0.92));
+  color: #ffffff;
 }
 
 .human-scale__loading,
 .human-scale__error,
 .human-scale__muted {
   margin: 0;
-  color: var(--ea-muted, rgba(15, 23, 28, 0.6));
+  color: rgba(255, 255, 255, 0.9);
   font-size: 13px;
 }
 
 .human-scale__error {
-  color: #b91c1c;
+  color: #fca5a5;
 }
 
 .human-scale__grid {
@@ -33,8 +34,9 @@
   margin: 0;
   padding: 10px 12px;
   border-radius: 8px;
-  background: rgba(15, 23, 28, 0.04);
-  border: 1px solid rgba(15, 23, 28, 0.08);
+  /* ~2x prior panel tint: readable lift on dark backgrounds */
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.24);
 }
 
 .human-scale__stat-label {
@@ -42,7 +44,7 @@
   font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ea-muted, rgba(15, 23, 28, 0.55));
+  color: #d4e4f4;
   margin-bottom: 4px;
 }
 
@@ -50,7 +52,7 @@
   font-family: 'Space Mono', ui-monospace, monospace;
   font-size: 15px;
   font-weight: 600;
-  color: var(--ea-text, #0f171c);
+  color: #ffb84d;
 }
 
 .human-scale__stat-value--sev {
@@ -62,17 +64,21 @@
 .human-scale__thesis {
   margin: 0 0 12px;
   padding: 12px 14px;
-  border-left: 3px solid #d4a017;
-  background: rgba(212, 160, 23, 0.08);
+  background: rgba(255, 184, 77, 0.14);
   font-size: 13px;
   line-height: 1.55;
+  color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: inset 3px 0 0 0 #ffb84d;
 }
 
 .human-scale__details {
   margin-top: 8px;
   border-radius: 8px;
-  border: 1px solid rgba(15, 23, 28, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   overflow: hidden;
+  background: rgba(0, 0, 0, 0.22);
 }
 
 .human-scale__details summary {
@@ -82,7 +88,9 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   list-style: none;
-  background: rgba(15, 23, 28, 0.03);
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.32);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .human-scale__details summary::-webkit-details-marker {
@@ -99,8 +107,9 @@
   line-height: 1.45;
   white-space: pre-wrap;
   word-break: break-word;
-  color: rgba(15, 23, 28, 0.85);
-  background: rgba(15, 23, 28, 0.02);
+  color: #e8f2fc;
+  background: rgba(0, 0, 0, 0.45);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .human-scale__heuristic {
@@ -112,4 +121,11 @@
 .human-scale__heuristic-line {
   margin: 0;
   font-size: 13px;
+  color: #ffffff;
+}
+
+.human-scale__heuristic-line strong,
+.human-scale strong {
+  color: #ffb84d;
+  font-weight: 600;
 }
