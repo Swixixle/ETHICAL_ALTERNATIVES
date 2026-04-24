@@ -2028,46 +2028,85 @@ export async function getInvestigationProfile(brandName, corporateParent, option
         let out = incumbentRowToInvestigation(row, brandName, corporateParent, healthFlag);
         const dr = extractDeepResearchFromProfileJson(row.profile_json);
         const hasDeepCategories = Boolean(dr?.per_category?.length);
+        /** Default OFF: deep profiles are served from Postgres only (no extra Claude on every /tap). Set INVESTIGATION_LIVE_NEWS_MERGE=1 to re-enable the ~30d live news delta pass. */
+        const allowLiveNewsMerge = process.env.INVESTIGATION_LIVE_NEWS_MERGE === '1';
+
+        /**
+         * @param {string} [dataSource]
+         */
+        const applyStoredDeepResearchOnly = (dataSource) => {
+          out = finalizeInvestigation(
+            { ...out, concern_axis_booleans: out.concern_axis_booleans || [] },
+            'database'
+          );
+          if (dr && Array.isArray(dr.per_category) && dr.per_category.length > 0) {
+            out.deep_research_categories = buildDeepResearchCategoriesForClient(dr);
+          }
+          const lr = row.last_researched;
+          out.last_updated =
+            lr instanceof Date
+              ? lr.toISOString().slice(0, 10)
+              : lr
+                ? String(lr).slice(0, 10)
+                : out.last_updated;
+          if (typeof dr?.generated_at === 'string' && dr.generated_at.trim()) {
+            out.last_deep_researched = dr.generated_at.trim();
+          }
+          out.data_source = dataSource;
+        };
 
         if (hasDeepCategories) {
-          const lr = row.last_researched;
-          try {
-            const rt = await realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory, {
-              recentNewsOnly: true,
+          if (allowLiveNewsMerge) {
+            const lr = row.last_researched;
+            try {
+              const rt = await realtimeInvestigation(brandName, corporateParent, healthFlag, productCategory, {
+                recentNewsOnly: true,
+              });
+              const live = rt.investigation ?? rt;
+              mergeLiveInvestigationDelta(out, live, healthFlag);
+              out = finalizeInvestigation(
+                { ...out, concern_axis_booleans: out.concern_axis_booleans || [] },
+                'database'
+              );
+              if (dr && Array.isArray(dr.per_category) && dr.per_category.length > 0) {
+                out.deep_research_categories = buildDeepResearchCategoriesForClient(dr);
+              }
+              out.last_updated =
+                lr instanceof Date
+                  ? lr.toISOString().slice(0, 10)
+                  : lr
+                    ? String(lr).slice(0, 10)
+                    : out.last_updated;
+              if (typeof dr?.generated_at === 'string' && dr.generated_at.trim()) {
+                out.last_deep_researched = dr.generated_at.trim();
+              }
+              out.data_source = 'deep_research+live';
+            } catch (e) {
+              console.error('[investigation] deep profile: recent-news pass failed', slug, e);
+              applyStoredDeepResearchOnly('database_deep_research');
+              out = {
+                ...out,
+                live_investigation_failed: true,
+              };
+            }
+          } else {
+            applyStoredDeepResearchOnly('database_deep_research');
+            console.log('[investigation] using stored deep_research only (INVESTIGATION_LIVE_NEWS_MERGE is not 1)', {
+              slug,
             });
-            const live = rt.investigation ?? rt;
-            mergeLiveInvestigationDelta(out, live, healthFlag);
-            out = finalizeInvestigation(
-              { ...out, concern_axis_booleans: out.concern_axis_booleans || [] },
-              'database'
-            );
-            if (dr && Array.isArray(dr.per_category) && dr.per_category.length > 0) {
-              out.deep_research_categories = buildDeepResearchCategoriesForClient(dr);
-            }
-            out.last_updated =
-              lr instanceof Date
-                ? lr.toISOString().slice(0, 10)
-                : lr
-                  ? String(lr).slice(0, 10)
-                  : out.last_updated;
-            if (typeof dr?.generated_at === 'string' && dr.generated_at.trim()) {
-              out.last_deep_researched = dr.generated_at.trim();
-            }
-            out.data_source = 'deep_research+live';
-          } catch (e) {
-            console.error('[investigation] deep profile: recent-news pass failed', slug, e);
-            out = {
-              ...out,
-              live_investigation_failed: true,
-              data_source: 'deep_research+live',
-            };
           }
         } else {
           out = { ...out, data_source: 'database' };
         }
 
         kickPerimeterCheckForInvestigation(out);
-        logInvestigationProfileEnd(hasDeepCategories ? 'database_deep_plus_live' : 'database', out);
+        const endLabel =
+          hasDeepCategories && out.data_source === 'deep_research+live'
+            ? 'database_deep_plus_live'
+            : hasDeepCategories && (out.data_source === 'database_deep_research' || out.live_investigation_failed)
+              ? 'database_deep_research'
+              : 'database';
+        logInvestigationProfileEnd(endLabel, out);
         if (out && !out.is_stub_investigation && out.data_source !== 'deep_research+live') {
           investigationCache.set(investigationCacheKey, out);
         }
