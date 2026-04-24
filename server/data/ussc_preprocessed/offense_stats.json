@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "source": "U.S. Sentencing Commission FY2024",
+    "total_records": 61678,
+    "processed_at": "2026-04-23T23:48:34.670Z",
+    "csv_file": "opafy24.csv",
+    "version": "1.0"
+  },
+  "offense_stats": {
+    "fraud_economic": {
+      "offense_type": "fraud_economic",
+      "sample_size": 23804,
+      "median_sentence_months": 9,
+      "mean_sentence_months": 15.3,
+      "p25_sentence_months": 4,
+      "p75_sentence_months": 20,
+      "min_sentence_months": 0.03,
+      "max_sentence_months": 360,
+      "prison_rate_percent": 87.8,
+      "sentences_with_data": 21349,
+      "median_fine": 4,
+      "mean_fine": 292,
+      "fines_with_data": 7,
+      "median_restitution": 154536,
+      "mean_restitution": 2246675.9,
+      "restitutions_with_data": 4009
+    },
+    "all_other": {
+      "offense_type": "all_other",
+      "sample_size": 37874,
+      "median_sentence_months": 60,
+      "mean_sentence_months": 78.5,
+      "p25_sentence_months": 26,
+      "p75_sentence_months": 120,
+      "min_sentence_months": 0.03,
+      "max_sentence_months": 467,
+      "prison_rate_percent": 89.9,
+      "sentences_with_data": 34695,
+      "median_fine": 4,
+      "mean_fine": 4790.7,
+      "fines_with_data": 23,
+      "median_restitution": 16500,
+      "mean_restitution": 1080722.8,
+      "restitutions_with_data": 4120
+    }
+  }
+}

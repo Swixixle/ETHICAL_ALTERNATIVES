@@ -24,3 +24,6 @@ client/.vite/
 coverage/
 server/deep_research_output/
 server/tier5_corroboration_healthcare.json
+
+# USSC raw FY2024 commission extract (~1GB+). Keep README + download_fy2024.sh; fetch data locally.
+server/data/ussc_commission_datafiles/fy2024/
