@@ -12,6 +12,9 @@
  *   cd server && node db/corroborate_profiles.mjs --slug walmart --dry-run
  *   cd server && node db/corroborate_profiles.mjs --all --batch-size 3 --batch-delay 45000 --output report.json
  *
+ * For the separate auto-investigation **library** (Perplexity/GDELT/EPA/SEC/Claude stubs, `investigations` table),
+ * use: `node db/populate_investigation_library.mjs` (see server/lib/auto_investigation.mjs).
+ *
  * Requires: DATABASE_URL, ANTHROPIC_API_KEY (unless --dry-run). Optional: PERPLEXITY_API_KEY.
  */
 import pg from 'pg';

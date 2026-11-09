@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-04-17T02:11:15.108Z",
+  "total_profiles": 41,
+  "profiles_checked": 6,
+  "discrepancies_found": 0,
+  "confirmed": 0,
+  "errors": 6,
+  "estimated_cost_usd": 0,
+  "results": [
+    {
+      "slug": "agudath-israel-of-america",
+      "brand_name": "Agudath Israel of America",
+      "profile_type": "religious_institution",
+      "status": "ERROR",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ca8XmSj5fZVw3EbmHRdM1\"}",
+      "duration_ms": 221,
+      "timestamp": "2026-04-17T02:10:44.348Z"
+    },
+    {
+      "slug": "aipac",
+      "brand_name": "AIPAC",
+      "profile_type": "religious_institution",
+      "status": "ERROR",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ca8XmTGaLdXBt3FPHinNX\"}",
+      "duration_ms": 139,
+      "timestamp": "2026-04-17T02:10:44.487Z"
+    },
+    {
+      "slug": "alliance-defending-freedom",
+      "brand_name": "Alliance Defending Freedom",
+      "profile_type": "religious_institution",
+      "status": "ERROR",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ca8XmU5SNTURQzp7wcEnd\"}",
+      "duration_ms": 160,
+      "timestamp": "2026-04-17T02:10:44.647Z"
+    },
+    {
+      "slug": "assemblies-of-god",
+      "brand_name": "Assemblies of God",
+      "profile_type": "religious_institution",
+      "status": "ERROR",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ca8Xoh3c5rvfPwsQpXJSN\"}",
+      "duration_ms": 186,
+      "timestamp": "2026-04-17T02:11:14.835Z"
+    },
+    {
+      "slug": "billy-graham-evangelistic-association",
+      "brand_name": "Billy Graham Evangelistic Association",
+      "profile_type": "religious_institution",
+      "status": "ERROR",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ca8XohqyddUYDfTxmKLHu\"}",
+      "duration_ms": 186,
+      "timestamp": "2026-04-17T02:11:15.022Z"
+    },
+    {
+      "slug": "birthright-israel",
+      "brand_name": "Birthright Israel (Taglit)",
+      "profile_type": "religious_institution",
+      "status": "ERROR",
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ca8XoiKkGuWq8RzwuYfSd\"}",
+      "duration_ms": 85,
+      "timestamp": "2026-04-17T02:11:15.108Z"
+    }
+  ]
+}
